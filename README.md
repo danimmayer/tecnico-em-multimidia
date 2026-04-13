@@ -1,6 +1,6 @@
-# Fundamentos de Fotografia Digital e de Semiotica
+# Tecnico em Multimidia — SENAI
 
-Apresentacoes interativas em HTML para a UC **Fundamentos de Fotografia Digital e de Semiotica** do curso Tecnico em Multimidia — SENAI.
+Apresentacoes interativas em HTML para o curso **Tecnico em Multimidia** — SENAI.
 
 ## Como rodar
 
@@ -45,12 +45,9 @@ Acesse `http://localhost:8901/Aula_01_A_Imagem_Atraves_do_Tempo.html`
 ## Estrutura
 
 ```
-Aula 01/
 ├── Aula_01_A_Imagem_Atraves_do_Tempo.html   # Apresentacao
-├── imagens/                                   # Imagens utilizadas
-│   └── fotografos/                            # Fotos iconicas
-├── Aula_01_A_Imagem_Atraves_do_Tempo.pptx    # Versao PowerPoint (referencia)
-└── 00_Planejamento_Geral_UC.docx             # Planejamento da UC
+└── imagens/                                   # Imagens utilizadas
+    └── fotografos/                            # Fotos iconicas
 ```
 
 ## Licenca
