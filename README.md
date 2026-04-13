@@ -21,7 +21,19 @@ Abra o arquivo `Aula_01_A_Imagem_Atraves_do_Tempo.html` com duplo clique. Ele ab
 
 **Opcao B — Servidor local com Node.js (recomendado)**
 
-Requer [Node.js](https://nodejs.org/) instalado (baixe e instale se nao tiver).
+Requer [Node.js](https://nodejs.org/) instalado. Para instalar:
+
+```bash
+# Mac (com Homebrew)
+brew install node
+
+# Windows (com winget)
+winget install OpenJS.NodeJS
+
+# Ou baixe direto: https://nodejs.org/
+```
+
+Depois rode:
 
 ```bash
 npx serve -l 8901
