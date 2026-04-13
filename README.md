@@ -33,9 +33,10 @@ winget install OpenJS.NodeJS
 # Ou baixe direto: https://nodejs.org/
 ```
 
-Depois rode:
+Depois, dentro da pasta do projeto, rode:
 
 ```bash
+cd tecnico-em-multimidia
 npx serve -l 8901
 ```
 
@@ -46,6 +47,7 @@ Depois abra no navegador: [http://localhost:8901/Aula_01_A_Imagem_Atraves_do_Tem
 Requer Python 3 instalado (ja vem no Mac e na maioria das distros Linux).
 
 ```bash
+cd tecnico-em-multimidia
 python3 -m http.server 8901
 ```
 
