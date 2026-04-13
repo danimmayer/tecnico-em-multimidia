@@ -4,29 +4,47 @@ Apresentacoes interativas em HTML para o curso **Tecnico em Multimidia** — SEN
 
 ## Como rodar
 
-A apresentacao e um arquivo HTML unico e autocontido. Basta abrir no navegador.
+### 1. Baixar o projeto
 
-### Opcao 1 — Abrir direto
+```bash
+git clone https://github.com/danimmayer/tecnico-em-multimidia.git
+cd tecnico-em-multimidia
+```
 
-Abra o arquivo `Aula_01_A_Imagem_Atraves_do_Tempo.html` no navegador (duplo clique ou arraste para o browser).
+Ou baixe o ZIP: **Code > Download ZIP** no GitHub, extraia e abra a pasta.
 
-### Opcao 2 — Servidor local (recomendado)
+### 2. Abrir a apresentacao
+
+**Opcao A — Direto no navegador (mais simples)**
+
+Abra o arquivo `Aula_01_A_Imagem_Atraves_do_Tempo.html` com duplo clique. Ele abre direto no navegador.
+
+**Opcao B — Servidor local com Node.js (recomendado)**
+
+Requer [Node.js](https://nodejs.org/) instalado (baixe e instale se nao tiver).
 
 ```bash
 npx serve -l 8901
 ```
 
-Acesse `http://localhost:8901/Aula_01_A_Imagem_Atraves_do_Tempo.html`
+Depois abra no navegador: [http://localhost:8901/Aula_01_A_Imagem_Atraves_do_Tempo.html](http://localhost:8901/Aula_01_A_Imagem_Atraves_do_Tempo.html)
 
-> Requer [Node.js](https://nodejs.org/) instalado.
+**Opcao C — Servidor local com Python**
 
-### Opcao 3 — Python
+Requer Python 3 instalado (ja vem no Mac e na maioria das distros Linux).
 
 ```bash
 python3 -m http.server 8901
 ```
 
-Acesse `http://localhost:8901/Aula_01_A_Imagem_Atraves_do_Tempo.html`
+Depois abra no navegador: [http://localhost:8901/Aula_01_A_Imagem_Atraves_do_Tempo.html](http://localhost:8901/Aula_01_A_Imagem_Atraves_do_Tempo.html)
+
+### 3. Apresentar
+
+- Pressione **F** para tela cheia
+- Use as setas **← →** ou **Space** para navegar entre slides
+- Pressione **G** para ver a grade de todos os slides
+- Pressione **?** para ver todos os atalhos
 
 ## Atalhos de teclado
 
