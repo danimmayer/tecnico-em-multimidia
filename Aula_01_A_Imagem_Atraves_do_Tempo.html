@@ -1,0 +1,1820 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 01 · A Imagem Através do Tempo</title>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --accent: #C4A86C;
+  --accent-dim: #A08C5A;
+  --accent-bg: rgba(196,168,108,0.07);
+  --dark: #141414;
+  --dark-2: #181818;
+  --dark-card: #1C1C1C;
+  --dark-card-2: #202020;
+  --cream: #F0F0EC;
+  --cream-muted: #C8C4BC;
+  --muted: #908880;
+  --border: rgba(255,255,255,0.08);
+  --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'SF Mono', 'Fira Code', Consolas, monospace;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--dark);
+  color: var(--cream);
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* ===== PROGRESS BAR ===== */
+#progressBar {
+  position: fixed; top: 0; left: 0; height: 2px;
+  background: rgba(255,255,255,0.25);
+  transition: width 0.4s ease; z-index: 1000;
+  pointer-events: none;
+}
+
+/* ===== SLIDES ===== */
+.slide {
+  width: 100vw; height: 100vh;
+  position: absolute; top: 0; left: 0;
+  overflow: hidden;
+  background: var(--dark);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  display: flex; flex-direction: column;
+}
+.slide.active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.slide-inner {
+  flex: 1; display: flex; flex-direction: column;
+  padding: 48px 64px 56px; overflow: hidden;
+  position: relative;
+}
+
+/* ===== BOTTOM BAR ===== */
+#bottomBar {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  height: 40px;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0 20px 0 24px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  font-size: 13px; color: var(--muted); letter-spacing: 0.03em;
+  z-index: 900; background: var(--dark);
+}
+#bottomBar .bar-left {
+  display: flex; align-items: center; gap: 10px;
+  flex-shrink: 0;
+}
+#bottomBar .bar-left img {
+  height: 16px; width: auto; opacity: 0.35;
+  filter: grayscale(1) brightness(1.5);
+}
+#bottomBar .bar-right {
+  display: flex; align-items: center; gap: 8px;
+  flex-shrink: 0;
+}
+#slideCounter {
+  font-size: 13px; color: var(--muted);
+  letter-spacing: 0.1em; font-variant-numeric: tabular-nums;
+  cursor: pointer; padding: 4px 8px;
+  border-radius: 4px;
+  transition: background 0.2s;
+  user-select: none;
+}
+#slideCounter:hover { background: rgba(255,255,255,0.06); }
+.bar-btn {
+  width: 30px; height: 28px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 4px; background: rgba(255,255,255,0.03);
+  color: var(--muted); font-size: 14px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s, color 0.2s;
+  line-height: 1;
+}
+.bar-btn:hover { background: rgba(255,255,255,0.1); color: var(--cream); }
+.bar-btn:disabled { opacity: 0.2; cursor: not-allowed; }
+
+/* ===== TYPOGRAPHY ===== */
+.t-eyebrow {
+  font-size: 14px; font-weight: 700; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 12px;
+}
+.t-title {
+  font-size: 42px; font-weight: 700;
+  line-height: 1.15; color: var(--cream); letter-spacing: -0.01em;
+}
+.t-title-lg {
+  font-size: 54px; font-weight: 700;
+  line-height: 1.1; color: var(--cream); letter-spacing: -0.02em;
+}
+.t-subtitle {
+  font-size: 21px; color: var(--cream-muted); margin-top: 8px; line-height: 1.5;
+}
+.t-gold { color: var(--accent); }
+.t-muted { color: var(--cream-muted); }
+
+/* ===== HEADER + BODY ===== */
+.slide-header { margin-bottom: 24px; flex-shrink: 0; }
+.slide-body {
+  flex: 1; display: flex; flex-direction: column;
+  justify-content: center; overflow: hidden;
+}
+
+/* ===== LAYOUTS ===== */
+.two-col {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 40px; align-items: center; height: 100%;
+}
+.two-col-text { display: flex; flex-direction: column; gap: 14px; }
+.three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.four-col { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+/* ===== CARDS ===== */
+.card {
+  background: var(--dark-card); border: 1px solid var(--border);
+  border-radius: 6px; padding: 24px;
+}
+.card-accent {
+  height: 2px; background: var(--accent); opacity: 0.4;
+  border-radius: 1px 1px 0 0; margin: -24px -24px 16px;
+}
+.card-title {
+  font-size: 20px; font-weight: 700;
+  color: var(--accent); margin-bottom: 8px;
+}
+.card-body { font-size: 19px; color: var(--cream-muted); line-height: 1.6; }
+
+/* ===== LISTS ===== */
+ul.styled { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+ul.styled li {
+  display: flex; align-items: flex-start; gap: 12px;
+  font-size: 21px; color: var(--cream-muted); line-height: 1.45;
+}
+ul.styled li::before {
+  content: ''; flex-shrink: 0; width: 7px; height: 7px;
+  border-radius: 50%; background: var(--accent); margin-top: 11px;
+}
+ul.styled li.accent { color: var(--cream); font-weight: 500; }
+
+/* ===== HIGHLIGHT BOX ===== */
+.highlight-box {
+  background: rgba(255,255,255,0.03); border-left: 2px solid var(--accent);
+  padding: 18px 22px; border-radius: 0 4px 4px 0;
+  font-size: 19px; color: var(--cream-muted); line-height: 1.55;
+}
+.highlight-box strong { color: var(--accent); }
+
+/* ===== QUOTE ===== */
+.quote-block {
+  font-size: 22px; font-style: italic;
+  color: var(--cream-muted); line-height: 1.45; padding: 0 0 0 20px;
+  border-left: 2px solid rgba(255,255,255,0.12);
+}
+.quote-attr {
+  font-size: 15px; color: var(--muted); margin-top: 8px;
+  padding-left: 20px; font-style: normal;
+}
+
+/* ===== TIMELINE ===== */
+.timeline { position: relative; padding-left: 30px; display: flex; flex-direction: column; gap: 0; }
+.timeline::before {
+  content: ''; position: absolute; left: 10px; top: 8px; bottom: 8px;
+  width: 1px; background: rgba(255,255,255,0.1);
+}
+.tl-item { position: relative; padding: 0 0 10px 18px; }
+.tl-item:last-child { padding-bottom: 0; }
+.tl-item::before {
+  content: ''; position: absolute; left: -25px; top: 6px;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--dark); border: 2px solid var(--accent);
+}
+.tl-year { font-size: 15px; font-weight: 700; color: var(--accent); letter-spacing: 0.06em; margin-bottom: 2px; }
+.tl-text { font-size: 17px; color: var(--cream-muted); line-height: 1.4; }
+
+/* ===== TABLE ===== */
+.data-table { width: 100%; border-collapse: collapse; font-size: 18px; }
+.data-table th {
+  background: rgba(176,144,96,0.08); color: var(--accent); font-weight: 700;
+  letter-spacing: 0.04em; padding: 11px 14px; text-align: left;
+  border-bottom: 2px solid var(--border);
+}
+.data-table td {
+  padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: var(--cream-muted); vertical-align: top;
+}
+.data-table tr:hover td { background: rgba(176,144,96,0.03); }
+.data-table td:first-child { font-weight: 600; color: var(--cream); width: 22%; }
+
+/* ===== METRICS ===== */
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.stat-card {
+  background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+  border-radius: 6px; padding: 26px 16px; text-align: center;
+}
+.stat-number {
+  font-size: 2.6rem; font-weight: 700;
+  color: var(--cream); line-height: 1;
+}
+.stat-label { font-size: 15px; color: var(--cream-muted); margin-top: 10px; line-height: 1.4; }
+
+/* ===== PHOTO CARDS ===== */
+.photo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.photo-card {
+  background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+  border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; gap: 6px;
+}
+.photo-icon {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 600; color: var(--cream-muted); letter-spacing: 0.02em;
+}
+.photo-name { font-weight: 700; font-size: 17px; color: var(--cream); margin-top: 4px; }
+.photo-period { font-size: 14px; color: var(--accent); opacity: 0.8; }
+.photo-desc { font-size: 15px; color: var(--cream-muted); line-height: 1.5; }
+
+/* ===== SIGN CARDS (SEMIOTICA) ===== */
+.sign-card {
+  border-radius: 6px; padding: 22px 18px;
+  display: flex; flex-direction: column; gap: 8px; border: 1px solid;
+}
+.sign-icone, .sign-indice, .sign-simbolo { background: var(--card-bg, rgba(255,255,255,0.03)); border-color: var(--border); }
+.sign-symbol { font-size: 2rem; font-weight: 700; color: var(--accent); line-height: 1; font-family: var(--font-mono); }
+.sign-type { font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--accent); }
+.sign-relation { font-size: 15px; color: var(--cream-muted); font-weight: 500; }
+.sign-desc { font-size: 18px; color: var(--cream-muted); line-height: 1.5; }
+.sign-example {
+  font-size: 14px; color: var(--muted); border-top: 1px solid var(--border);
+  padding-top: 8px; margin-top: 4px;
+}
+
+/* ===== RESEARCH SLIDE ===== */
+.research-tag {
+  display: inline-block; font-size: 11px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: #141414; background: var(--accent); padding: 4px 12px;
+  border-radius: 3px; margin-bottom: 12px;
+}
+.research-prompt {
+  font-size: 22px; color: var(--cream); line-height: 1.5;
+  max-width: 700px; margin-bottom: 24px;
+}
+.research-tasks {
+  display: flex; flex-direction: column; gap: 12px;
+  max-width: 640px;
+}
+.research-task {
+  display: flex; align-items: flex-start; gap: 14px;
+  background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+  border-radius: 6px; padding: 16px 20px;
+}
+.research-task-num {
+  min-width: 28px; height: 28px; border-radius: 50%;
+  background: var(--accent); color: #141414;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700; flex-shrink: 0;
+}
+.research-task-text { font-size: 17px; color: var(--cream-muted); line-height: 1.5; }
+.research-task-text strong { color: var(--cream); }
+.research-timer {
+  margin-top: 24px; font-size: 15px; color: var(--muted);
+  display: flex; align-items: center; gap: 8px;
+}
+.research-timer-badge {
+  display: inline-block; font-size: 13px; font-weight: 700;
+  background: rgba(255,255,255,0.06); border: 1px solid var(--border);
+  padding: 4px 10px; border-radius: 4px; color: var(--accent);
+}
+.research-note {
+  margin-top: 16px; font-size: 14px; color: var(--muted);
+  font-style: italic; max-width: 600px;
+}
+
+/* ===== ACTIVITY STEPS ===== */
+.steps { display: flex; flex-direction: column; gap: 12px; }
+.step {
+  display: flex; align-items: flex-start; gap: 16px;
+  background: rgba(255,255,255,0.02); border: 1px solid var(--border);
+  border-radius: 4px; padding: 14px 18px;
+}
+.step-num {
+  min-width: 34px; height: 34px; border-radius: 50%;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 600; color: var(--cream-muted); flex-shrink: 0;
+}
+.step-content strong { display: block; color: var(--cream); font-size: 18px; margin-bottom: 3px; }
+.step-content p { font-size: 16px; color: var(--cream-muted); line-height: 1.5; margin: 0; }
+
+/* ===== IMAGES ===== */
+.img-frame {
+  position: relative; border-radius: 4px; overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.img-frame img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.img-frame.vintage img { filter: sepia(15%) brightness(0.95); }
+.img-caption {
+  text-align: center; margin-top: 8px;
+  font-size: 14px; color: var(--muted); line-height: 1.4;
+}
+.img-caption strong { color: var(--accent); font-size: 15px; }
+
+/* ===== CLICKABLE IMAGES ===== */
+.img-clickable { cursor: pointer; position: relative; }
+.img-clickable::after {
+  content: '+'; position: absolute; bottom: 6px; right: 6px;
+  background: rgba(0,0,0,0.55); color: rgba(255,255,255,0.7);
+  font-size: 14px; font-weight: 700;
+  width: 22px; height: 22px; border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity 0.2s;
+}
+.img-clickable:hover::after { opacity: 1; }
+
+/* ===== IMAGE MODAL ===== */
+#imgModal {
+  display: none; position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.92); align-items: center; justify-content: center;
+  padding: 40px;
+}
+#imgModal.open { display: flex; }
+#modalInner {
+  display: flex; align-items: center; gap: 32px; max-width: 92vw; max-height: 86vh;
+}
+#modalImg {
+  max-height: 82vh; max-width: 60vw; object-fit: contain; border-radius: 4px; flex-shrink: 0;
+}
+#modalCaption {
+  color: rgba(255,255,255,0.7); font-size: 16px; text-align: left;
+  max-width: 340px; line-height: 1.6; flex-shrink: 1;
+}
+#modalCaption .modal-title {
+  font-size: 20px; font-weight: 700; color: var(--cream); margin-bottom: 12px; line-height: 1.3;
+}
+#modalCaption .modal-context {
+  font-size: 13px; font-weight: 600; color: var(--accent); letter-spacing: 0.02em;
+  margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.08);
+  line-height: 1.5;
+}
+#modalCaption .modal-analysis {
+  font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.6;
+}
+#modalClose {
+  position: fixed; top: 16px; right: 20px; color: rgba(255,255,255,0.45);
+  font-size: 24px; cursor: pointer; z-index: 10000;
+  width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(255,255,255,0.15); border-radius: 4px;
+  background: rgba(0,0,0,0.4); transition: color 0.2s, background 0.2s;
+}
+#modalClose:hover { color: #fff; background: rgba(255,255,255,0.1); }
+
+/* ===== PILL BADGE ===== */
+.pill {
+  display: inline-block; background: rgba(255,255,255,0.05);
+  color: var(--cream-muted); border: 1px solid var(--border);
+  border-radius: 3px; padding: 3px 12px;
+  font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500;
+}
+
+/* ===== TITLE SLIDE ===== */
+.title-slide .slide-inner {
+  justify-content: center; align-items: center; text-align: center;
+}
+.title-content { position: relative; z-index: 2; text-align: center; max-width: 800px; }
+
+/* ===== CLOSING SLIDE ===== */
+.closing-slide .slide-inner { justify-content: center; align-items: center; text-align: center; }
+.closing-content { max-width: 700px; width: 100%; padding: 20px; position: relative; z-index: 2; }
+.closing-tag { font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.closing-title {
+  font-size: 2.4rem; font-weight: 700;
+  color: var(--cream); line-height: 1.2; margin-bottom: 14px; letter-spacing: -0.02em;
+}
+.closing-sub {
+  font-size: 18px; color: var(--cream-muted); line-height: 1.6;
+  max-width: 620px; margin: 0 auto 16px;
+}
+.closing-divider { width: 50px; height: 2px; background: rgba(176,144,96,0.35); margin: 16px auto; border-radius: 2px; }
+.closing-summary { display: flex; flex-direction: column; gap: 10px; text-align: left; max-width: 600px; margin: 0 auto; }
+.summary-point { display: flex; align-items: flex-start; gap: 14px; font-size: 17px; color: var(--cream-muted); line-height: 1.5; }
+.summary-bullet {
+  min-width: 26px; height: 26px; border-radius: 50%;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 600; color: var(--cream-muted); flex-shrink: 0; margin-top: 1px;
+}
+.next-class {
+  display: inline-flex; flex-direction: column; gap: 4px;
+  background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+  border-radius: 4px; padding: 12px 26px; margin-top: 16px;
+}
+.next-label { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); opacity: 0.8; }
+.next-title { font-size: 17px; color: var(--cream); font-weight: 600; }
+.instructor-tag { font-size: 14px; color: var(--muted); margin-top: 14px; letter-spacing: 0.05em; }
+
+/* ===== SLIDE GRID OVERVIEW ===== */
+#gridOverlay {
+  display: none; position: fixed; inset: 0; z-index: 8000;
+  background: rgba(10,10,10,0.96);
+  overflow-y: auto; padding: 40px 48px 48px;
+}
+#gridOverlay.open { display: block; }
+#gridOverlay .grid-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 28px;
+}
+#gridOverlay .grid-title {
+  font-size: 20px; font-weight: 700; color: var(--cream);
+  letter-spacing: -0.01em;
+}
+#gridOverlay .grid-close {
+  width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 4px; background: rgba(255,255,255,0.04);
+  color: var(--muted); font-size: 18px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: color 0.2s, background 0.2s;
+}
+#gridOverlay .grid-close:hover { color: var(--cream); background: rgba(255,255,255,0.1); }
+#gridOverlay .grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+.grid-thumb {
+  background: var(--dark-card); border: 1px solid var(--border);
+  border-radius: 4px; overflow: hidden; cursor: pointer;
+  transition: border-color 0.2s;
+  aspect-ratio: 16/10;
+  position: relative;
+}
+.grid-thumb:hover { border-color: var(--accent); }
+.grid-thumb.current { border-color: var(--accent); }
+.grid-thumb-inner {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  padding: 12px;
+  text-align: center;
+}
+.grid-thumb-num {
+  position: absolute; top: 6px; left: 8px;
+  font-size: 11px; font-weight: 700; color: var(--muted);
+  letter-spacing: 0.05em;
+}
+.grid-thumb-title {
+  font-size: 13px; font-weight: 600; color: var(--cream-muted);
+  line-height: 1.3;
+}
+
+/* ===== HELP OVERLAY ===== */
+#helpOverlay {
+  display: none; position: fixed; inset: 0; z-index: 8500;
+  background: rgba(10,10,10,0.92);
+  align-items: center; justify-content: center;
+}
+#helpOverlay.open { display: flex; }
+#helpOverlay .help-box {
+  background: var(--dark-card); border: 1px solid var(--border);
+  border-radius: 6px; padding: 32px 40px; max-width: 480px; width: 90%;
+}
+#helpOverlay .help-title {
+  font-size: 20px; font-weight: 700; color: var(--cream);
+  margin-bottom: 20px;
+}
+#helpOverlay .help-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+#helpOverlay .help-row:last-child { border-bottom: none; }
+#helpOverlay .help-key {
+  display: inline-flex; gap: 6px;
+}
+#helpOverlay .help-key kbd {
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 3px; padding: 2px 8px; font-family: var(--font-mono);
+  font-size: 12px; color: var(--cream-muted);
+}
+#helpOverlay .help-desc {
+  font-size: 14px; color: var(--muted);
+}
+#helpOverlay .help-close {
+  display: block; margin-top: 20px; text-align: center;
+  font-size: 13px; color: var(--muted);
+}
+
+/* ===== INFO BUTTON ===== */
+.info-btn {
+  position: absolute; top: 14px; right: 14px;
+  width: 30px; height: 30px; border-radius: 50%;
+  background: rgba(196,168,108,0.12); border: 1px solid rgba(196,168,108,0.3);
+  color: var(--accent); font-size: 16px; font-weight: 700;
+  font-style: italic; font-family: Georgia, serif;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s, transform 0.2s; z-index: 10;
+  line-height: 1;
+}
+.info-btn:hover { background: rgba(196,168,108,0.25); transform: scale(1.1); }
+.info-btn.active { background: var(--accent); color: #141414; }
+
+.info-popup {
+  display: none; position: absolute; top: 52px; right: 14px;
+  width: 380px; max-height: 72vh; overflow-y: auto;
+  background: rgba(24,24,24,0.97); border: 1px solid rgba(196,168,108,0.2);
+  border-radius: 6px; padding: 18px 20px; z-index: 10;
+  font-size: 14px; color: var(--cream-muted); line-height: 1.55;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+.info-popup.open { display: block; }
+.info-popup-title {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 12px;
+  padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.info-popup strong { color: var(--cream); }
+.info-answer {
+  background: rgba(255,255,255,0.03); border-left: 2px solid var(--accent);
+  padding: 8px 12px; margin: 8px 0 12px; border-radius: 0 4px 4px 0;
+  font-size: 13px; line-height: 1.5;
+}
+.info-answer:last-child { margin-bottom: 0; }
+.info-tip {
+  font-size: 12px; color: var(--muted); font-style: italic;
+  margin-top: 10px; padding-top: 8px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+@media print { .info-btn, .info-popup { display: none !important; } }
+
+/* ===== PRINT ===== */
+@media print {
+  body { overflow: visible; height: auto; }
+  .slide {
+    position: relative !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    page-break-after: always;
+    height: 100vh;
+  }
+  #bottomBar, #progressBar, #gridOverlay, #helpOverlay, #imgModal { display: none !important; }
+  .img-clickable::after { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div id="progressBar"></div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 01: CAPA                                                -->
+<!-- ============================================================ -->
+<div class="slide title-slide active" data-title="Capa">
+  <div class="slide-inner">
+    <div class="title-content">
+      <img src="imagens/Logo-novo-SENAI_-sem-slogan_755X325.png" alt="SENAI" style="height:40px;width:auto;opacity:0.7;margin-bottom:20px;">
+      <div class="t-eyebrow">Fundamentos de Fotografia Digital e de Semiótica</div>
+      <div class="t-title-lg">A Imagem<br><span class="t-gold">Através do Tempo</span></div>
+      <div class="t-subtitle" style="max-width:580px;">Da Câmera Obscura ao Smartphone: a história visual da humanidade</div>
+      <div style="margin-top:24px;display:flex;gap:24px;font-size:16px;color:var(--muted);justify-content:center;">
+        <span>Aula 01</span>
+        <span style="color:var(--border)">|</span>
+        <span>SENAI · Técnico em Multimídia</span>
+        <span style="color:var(--border)">|</span>
+        <span>Prof. Daniel</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 02: PROGRAMACAO DA NOITE                                -->
+<!-- ============================================================ -->
+<div class="slide" data-title="Programação da Noite">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">Roteiro da Aula</div>
+      <div class="t-title">Programação da Noite</div>
+    </div>
+    <div class="slide-body">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div class="card">
+          <div class="card-accent"></div>
+          <div class="card-title">19:00 – 19:30 · Bloco 1</div>
+          <div class="card-body">Apresentação e boas-vindas. O que é fotografia? Primeiro contato com a imagem.</div>
+        </div>
+        <div class="card">
+          <div class="card-accent"></div>
+          <div class="card-title">19:30 – 20:30 · Bloco 2</div>
+          <div class="card-body">Da Câmera Obscura ao Daguerreótipo. Os pioneiros e os primeiros passos da fotografia.</div>
+        </div>
+        <div class="card">
+          <div class="card-accent"></div>
+          <div class="card-title">20:30 – 21:30 · Bloco 3</div>
+          <div class="card-body">Do filme ao digital. A Kodak, a cor, e a democratização da fotografia.</div>
+        </div>
+        <div class="card">
+          <div class="card-accent"></div>
+          <div class="card-title">21:30 – 22:30 · Bloco 4</div>
+          <div class="card-body">A era do smartphone. Ética e imagem. Semiótica. Encerramento e próximos passos.</div>
+        </div>
+      </div>
+      <div class="highlight-box" style="margin-top:20px;">
+        <strong>Lembrete:</strong> Chamada no início de cada bloco. Lanche de 20 min após o 1º bloco.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 03: O QUE E FOTOGRAFIA                                  -->
+<!-- ============================================================ -->
+<div class="slide" data-title="O Que é Fotografia?">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">Conceito Fundamental</div>
+      <div class="t-title">O Que é Fotografia?</div>
+    </div>
+    <div class="slide-body">
+      <div class="two-col">
+        <div class="two-col-text">
+          <div class="highlight-box">
+            <strong>Foto + Grafia</strong>, do grego <em>phŏs</em> (luz) + <em>graphê</em> (escrita).<br>
+            A fotografia é literalmente a <strong>escrita com luz</strong>.
+          </div>
+          <ul class="styled">
+            <li class="accent"><strong>Técnica:</strong> controle de luz, exposição, composição</li>
+            <li><strong>Arte:</strong> expressão pessoal, estética, narrativa</li>
+            <li><strong>Comunicação:</strong> transmite mensagens, emoções, ideias</li>
+            <li><strong>Documento:</strong> registra a história, a memória, o real</li>
+            <li><strong>Signo:</strong> cada imagem carrega significados (semiótica)</li>
+          </ul>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
+          <div class="quote-block">
+            &#8220;A fotografia não é apenas o que vemos, é o que sentimos ao ver.&#8221;
+            <div class="quote-attr">— Henri Cartier-Bresson</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 04: CAMERA OBSCURA                                      -->
+<!-- ============================================================ -->
+<div class="slide" data-title="Câmera Obscura">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">Século V a.C. ao XVIII</div>
+      <div class="t-title">Câmera Obscura</div>
+    </div>
+    <div class="slide-body">
+      <div class="two-col">
+        <div class="two-col-text">
+          <ul class="styled">
+            <li class="accent"><strong>Câmera escura</strong>: caixa vedada com pequeno orifício</li>
+            <li>A luz entra pelo orifício e projeta a imagem <em>invertida</em> na parede oposta</li>
+            <li>Usada por artistas e cientistas para copiar paisagens com precisão</li>
+            <li>Não registrava a imagem, apenas a projetava transitoriamente</li>
+          </ul>
+          <div class="timeline" style="margin-top:10px;">
+            <div class="tl-item">
+              <div class="tl-year">384 a.C.</div>
+              <div class="tl-text"><strong>Aristóteles</strong>: primeiros registros do fenômeno</div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-year">1011</div>
+              <div class="tl-text"><strong>Ibn al-Haytham</strong>: descreveu o princípio óptico</div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-year">1502</div>
+              <div class="tl-text"><strong>Leonardo da Vinci</strong>: desenhou a câmera obscura</div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-year">Séc. XVI–XVIII</div>
+              <div class="tl-text"><strong>Vermeer</strong> e <strong>Canaletto</strong>: usaram como ferramenta de desenho</div>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:center;">
+          <div>
+            <div class="img-frame img-clickable" style="max-width:380px;" data-caption="Câmera Obscura · Princípio óptico da formação da imagem">
+              <img src="imagens/Caâmera obscura.jpg" alt="Câmera Obscura">
+            </div>
+            <div class="img-caption"><strong>Câmera Obscura</strong><br>Princípio óptico da formação da imagem</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PESQUISA: CÂMERA OBSCURA                                      -->
+<!-- ============================================================ -->
+<div class="slide" data-title="Pesquisa: Câmera Obscura">
+  <div class="slide-inner">
+    <div class="info-btn">i</div>
+    <div class="info-popup">
+      <div class="info-popup-title">Informações</div>
+      <strong>1. Como funciona e por que inverte:</strong>
+      <div class="info-answer">A luz passa pelo orifício e os raios cruzam (propagação retilínea da luz): os raios do topo da cena atingem a parte inferior da parede, e vice-versa, projetando a imagem invertida. Quanto menor o orifício, mais nítida (mas mais escura). Mesmo princípio do olho humano — a retina recebe a imagem invertida e o cérebro corrige.</div>
+      <strong>2. Câmera caseira:</strong>
+      <div class="info-answer">Sim! Caixa de sapato + fita isolante preta (vedar) + papel vegetal numa extremidade (tela) + furo de agulha na outra. Em ambiente escuro, a imagem aparece no papel vegetal, invertida.</div>
+    </div>
+    <div class="slide-header">
+      <div class="research-tag">Pesquisa no Laboratório</div>
+      <div class="t-title">Como Funciona a Câmera Obscura?</div>
+    </div>
+    <div class="slide-body">
+      <div class="research-prompt">Abram o navegador e pesquisem.</div>
+      <div class="research-tasks">
+        <div class="research-task">
+          <div class="research-task-num">1</div>
+          <div class="research-task-text">Pesquisem <strong>"como funciona uma câmera obscura"</strong>. Encontrem um vídeo curto ou diagrama. <strong>Por que a imagem aparece de cabeça para baixo?</strong></div>
+        </div>
+        <div class="research-task">
+          <div class="research-task-num">2</div>
+          <div class="research-task-text">Descubram: <strong>é possível montar uma câmera obscura caseira?</strong> O que seria necessário?</div>
+        </div>
+      </div>
+      <div class="research-timer">
+        <span class="research-timer-badge">5 min</span>
+        <span>Pesquisa individual.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 05: NIEPCE                                              -->
+<!-- ============================================================ -->
+<div class="slide" data-title="Joseph Nicéphore Niépce">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">1826 · A Primeira Fotografia Permanente da História</div>
+      <div class="t-title">Joseph Nicéphore Niépce</div>
+    </div>
+    <div class="slide-body">
+      <div class="two-col">
+        <div class="two-col-text">
+          <ul class="styled">
+            <li class="accent"><strong>Heliografia</strong>: placa de estanho revestida com betume da Judeia</li>
+            <li>Exposição de aproximadamente <strong>8 horas</strong></li>
+            <li>Resultado: imagem borrada, mas <em>permanente</em></li>
+          </ul>
+          <div class="highlight-box" style="margin-top:12px;">
+            <strong>Por que importa?</strong> Pela primeira vez, a luz registrou a realidade sem a mão humana. A imagem deixou de ser interpretação e passou a ser <em>registro</em>.
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;align-items:center;justify-content:center;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+            <div>
+              <div class="img-frame vintage img-clickable" style="height:240px;" data-caption="Vista da Janela em Le Gras, original (1826)">
+                <img src="imagens/Vista da Janela em Le Gras - ORIGINAL.jpg" alt="Vista da Janela em Le Gras, original" style="object-fit:contain;background:#1a1a1a;">
+              </div>
+              <div class="img-caption"><strong>Original (1826)</strong><br>Vista da Janela em Le Gras</div>
+            </div>
+            <div>
+              <div class="img-frame img-clickable" style="height:240px;" data-caption="Restauração por IA · Interpretação contemporânea">
+                <img src="imagens/ai-restoring-Vista da Janela em Le Gras.webp" alt="Restauração por IA" style="object-fit:contain;background:#1a1a1a;">
+              </div>
+              <div class="img-caption"><strong>Restauração por IA</strong><br>Interpretação contemporânea</div>
+            </div>
+          </div>
+          <div style="margin-top:10px;">
+            <div class="img-frame img-clickable" style="height:80px;width:80px;border-radius:50%;margin:0 auto;" data-caption="Joseph Nicéphore Niépce">
+              <img src="imagens/Joseph_Nicéphore_Niépce - Primeira fotografia.jpg" alt="Niépce" style="object-fit:cover;">
+            </div>
+            <div class="img-caption"><strong>Joseph N. Niépce</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 06: DAGUERREOTIPO                                       -->
+<!-- ============================================================ -->
+<div class="slide" data-title="O Daguerreótipo">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">1839 · O Mundo Conhece a Fotografia</div>
+      <div class="t-title">O Daguerreótipo</div>
+    </div>
+    <div class="slide-body">
+      <div class="two-col">
+        <div class="two-col-text">
+          <ul class="styled">
+            <li class="accent">Placa de cobre prateada, polida como espelho</li>
+            <li>Sensibilizada com vapores de iodo</li>
+            <li>Exposição de 15–30 minutos</li>
+            <li>Imagem única, sem negativos, sem cópias</li>
+          </ul>
+          <div class="highlight-box" style="margin-top:12px;">
+            <strong>Impacto:</strong> <em>"A partir de hoje, a pintura está morta!"</em>, disse Paul Delaroche. Retratos se tornaram acessíveis pela primeira vez. O debate começou: fotografia é arte ou ciência?
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;align-items:center;justify-content:center;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+            <div>
+              <div class="img-frame img-clickable" style="height:280px;" data-caption="Louis Daguerre, inventor do processo">
+                <img src="imagens/Louis-Jaques-Mandé Daguerre - criador do Daguerreotipo.jpeg" alt="Louis Daguerre" style="object-fit:contain;background:#1a1a1a;">
+              </div>
+              <div class="img-caption"><strong>Louis Daguerre</strong><br>Inventor do processo</div>
+            </div>
+            <div>
+              <div class="img-frame vintage img-clickable" style="height:280px;" data-caption="Daguerreótipo, exemplo do processo">
+                <img src="imagens/Daguerreotipo.jpg" alt="Daguerreótipo" style="object-fit:contain;background:#1a1a1a;">
+              </div>
+              <div class="img-caption"><strong>Daguerreótipo</strong><br>Exemplo do processo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PESQUISA: DAGUERREÓTIPO E HELIOGRAFIA                         -->
+<!-- ============================================================ -->
+<div class="slide" data-title="Pesquisa: Processos Fotográficos">
+  <div class="slide-inner">
+    <div class="info-btn">i</div>
+    <div class="info-popup">
+      <div class="info-popup-title">Informações</div>
+      <strong>1. Materiais do daguerreótipo:</strong>
+      <div class="info-answer">Placa de cobre prateada e polida, vapores de iodo (sensibilização), vapor de mercúrio (revelação), tiossulfato de sódio (fixação). <strong>Sim, perigoso:</strong> o mercúrio é altamente tóxico. Daguerreotipistas desenvolviam tremores, perda de dentes e problemas neurológicos.</div>
+      <strong>2. O que mudou de 8h → 30min:</strong>
+      <div class="info-answer">Niépce usava betume da Judeia, que endurecia lentamente com a luz (~8h de exposição). Daguerre usou prata iodada (muito mais sensível à luz) e descobriu que vapor de mercúrio revelava uma "imagem latente" invisível, amplificando o efeito. A exposição curta já era suficiente para criar a imagem latente, que o mercúrio tornava visível.</div>
+      <div class="info-tip">Destaque que Niépce e Daguerre eram sócios. Niépce morreu antes de ver o resultado final. Daguerre levou todo o crédito.</div>
+    </div>
+    <div class="slide-header">
+      <div class="research-tag">Pesquisa no Laboratório</div>
+      <div class="t-title">Heliografia vs. Daguerreótipo</div>
+    </div>
+    <div class="slide-body">
+      <div class="research-prompt">Vocês viram dois processos diferentes. Pesquisem e comparem.</div>
+      <div class="research-tasks">
+        <div class="research-task">
+          <div class="research-task-num">1</div>
+          <div class="research-task-text">Pesquisem <strong>"processo do daguerreótipo passo a passo"</strong>. Que materiais químicos eram usados? Algum deles era perigoso?</div>
+        </div>
+        <div class="research-task">
+          <div class="research-task-num">2</div>
+          <div class="research-task-text"><strong>Niépce precisou de 8 horas. Daguerre reduziu para 30 minutos.</strong> Pesquisem: o que mudou no processo para acelerar tanto?</div>
+        </div>
+      </div>
+      <div class="research-timer">
+        <span class="research-timer-badge">5 min</span>
+        <span>Pesquisa individual. Preparem-se: alguém vai explicar.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 07: CALOTIPO / FOX TALBOT                               -->
+<!-- ============================================================ -->
+<div class="slide" data-title="William Henry Fox Talbot">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">1841 · O Negativo Muda Tudo</div>
+      <div class="t-title">William Henry Fox Talbot</div>
+      <div class="t-subtitle">Calótipo: o sistema negativo-positivo</div>
+    </div>
+    <div class="slide-body">
+      <div class="two-col">
+        <div class="two-col-text">
+          <div class="highlight-box">
+            <strong>A grande inovação:</strong><br>
+            Daguerreótipo = imagem única (original)<br>
+            Calótipo = negativo em papel → <strong>múltiplas cópias</strong>
+          </div>
+          <ul class="styled" style="margin-top:12px;">
+            <li class="accent">Reprodução em massa de imagens</li>
+            <li>Fotografia em jornais e livros</li>
+            <li>Início da fotografia como meio de comunicação</li>
+            <li>Base do processo usado por <strong>150+ anos</strong> (até o digital)</li>
+          </ul>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;align-items:center;justify-content:center;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+            <div>
+              <div class="img-frame img-clickable" style="height:220px;" data-caption="Fox Talbot, inventor do calótipo">
+                <img src="imagens/William_Henry_Fox_Talbot,_1864.jpg" alt="Fox Talbot" style="object-fit:contain;background:#1a1a1a;">
+              </div>
+              <div class="img-caption"><strong>Fox Talbot</strong><br>Inventor do calótipo</div>
+            </div>
+            <div>
+              <div class="img-frame img-clickable" style="height:220px;" data-caption="Primeiro negativo, calótipo (1841)">
+                <img src="imagens/fox_talbot_203_307x400 - Primeira foto por negativo.jpg" alt="Primeiro negativo" style="object-fit:contain;background:#1a1a1a;">
+              </div>
+              <div class="img-caption"><strong>Primeiro negativo</strong><br>Calótipo, 1841</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:center;justify-content:center;margin-top:8px;">
+            <div style="text-align:center;">
+              <div style="width:100px;height:120px;background:linear-gradient(135deg,#0a0a0a,#2a2520);border:2px solid var(--border);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--muted);">NEGATIVO</div>
+              <div style="font-size:10px;color:var(--muted);margin-top:4px;">tons invertidos</div>
+            </div>
+            <div style="font-size:22px;color:var(--accent);">→</div>
+            <div style="text-align:center;">
+              <div style="width:100px;height:120px;background:linear-gradient(135deg,#e8e0d4,#c5bdb3);border:2px solid var(--border);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:14px;color:#333;">POSITIVO</div>
+              <div style="font-size:10px;color:var(--muted);margin-top:4px;">cópia final</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PESQUISA: NEGATIVO E POSITIVO                                 -->
+<!-- ============================================================ -->
+<div class="slide" data-title="Pesquisa: Negativo/Positivo">
+  <div class="slide-inner">
+    <div class="info-btn">i</div>
+    <div class="info-popup">
+      <div class="info-popup-title">Informações</div>
+      <strong>1. Por que tons invertidos:</strong>
+      <div class="info-answer">Áreas com mais luz escurecem mais os sais de prata (haletos) no filme. Muita luz → prata escurece → negativo fica escuro ali. Pouca luz → pouca reação → negativo fica claro. Para a imagem final, projeta-se luz através do negativo sobre papel fotossensível, invertendo os tons de volta.</div>
+      <strong>2. Vantagem sobre daguerreótipo:</strong>
+      <div class="info-answer">Daguerreótipo = 1 única imagem, impossível copiar. Se quebrou, perdeu. Negativo = uma matriz que gera infinitas cópias. Possibilitou jornais, livros, catálogos, álbuns. A fotografia virou meio de comunicação de massa.</div>
+      <strong>3. Até quando? Ainda existe?</strong>
+      <div class="info-answer">Filme negativo foi padrão até ~2005-2010. Ainda é fabricado: Kodak (Gold, Portra, Tri-X), Ilford (HP5, Delta), Fujifilm. Revival forte entre fotógrafos jovens desde 2015.</div>
+    </div>
+    <div class="slide-header">
+      <div class="research-tag">Pesquisa no Laboratório</div>
+      <div class="t-title">Negativo → Positivo: Como Funciona?</div>
+    </div>
+    <div class="slide-body">
+      <div class="research-prompt">O calótipo introduziu o sistema negativo-positivo. Pesquisem o processo.</div>
+      <div class="research-tasks">
+        <div class="research-task">
+          <div class="research-task-num">1</div>
+          <div class="research-task-text">Pesquisem <strong>"como funciona um negativo fotográfico"</strong>. Por que as cores e tons aparecem invertidos?</div>
+        </div>
+        <div class="research-task">
+          <div class="research-task-num">2</div>
+          <div class="research-task-text"><strong>Qual a vantagem do negativo sobre o daguerreótipo?</strong> Pensem em termos de quantidade: quantas cópias cada um permite?</div>
+        </div>
+        <div class="research-task">
+          <div class="research-task-num">3</div>
+          <div class="research-task-text">Descubram: <strong>até quando o filme negativo foi usado comercialmente?</strong> Ainda é fabricado hoje?</div>
+        </div>
+      </div>
+      <div class="research-timer">
+        <span class="research-timer-badge">5 min</span>
+        <span>Pesquisa individual.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 08: A KODAK                                             -->
+<!-- ============================================================ -->
+<div class="slide" data-title="A Kodak">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">1888 · Democratização da Fotografia</div>
+      <div class="t-title">A Kodak e a Revolução Popular</div>
+    </div>
+    <div class="slide-body">
+      <div class="two-col">
+        <div class="two-col-text">
+          <div class="timeline">
+            <div class="tl-item">
+              <div class="tl-year">1888</div>
+              <div class="tl-text"><strong>Kodak N.º 1</strong>. Primeira câmera pré-carregada com filme para 100 fotos. Slogan: <em>"You press the button, we do the rest."</em></div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-year">1900</div>
+              <div class="tl-text"><strong>Brownie</strong>. Vendida por US$ 1. Qualquer pessoa podia fotografar. A família média passa a ter álbuns fotográficos.</div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-year">1935</div>
+              <div class="tl-text"><strong>Kodachrome</strong>. Primeiro filme colorido de alta qualidade para o público geral.</div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-year">1975</div>
+              <div class="tl-text"><strong>Ironia histórica:</strong> Steven Sasson (Kodak) inventa a primeira câmera digital. A empresa arquiva a descoberta.</div>
+            </div>
+          </div>
+          <div class="highlight-box" style="margin-top:12px;">
+            <strong>Reflexão:</strong> A Kodak detinha 90% do mercado americano em 1976. Em 2012, pediu falência. O que isso nos ensina sobre inovação?
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px;align-items:center;justify-content:center;">
+          <div class="img-frame img-clickable" style="max-width:340px;" data-caption="You press the button, we do the rest · Publicidade Kodak, 1888">
+            <img src="imagens/You_press_the_button,_we_do_the_rest_(Kodak).jpg" alt="Kodak - You press the button" style="background:#fff;padding:8px;">
+          </div>
+          <div class="img-caption"><strong>"You press the button, we do the rest"</strong><br>Publicidade Kodak, 1888</div>
+          <img src="imagens/Kodak-Logo-1984-2006.png" alt="Kodak Logo" style="height:36px;width:auto;opacity:0.6;margin-top:4px;">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 09: FOTOGRAFIA COLORIDA                                 -->
+<!-- ============================================================ -->
+<div class="slide" data-title="Fotografia Colorida">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">Cor e Percepção</div>
+      <div class="t-title">A Cor Chega à Fotografia</div>
+    </div>
+    <div class="slide-body">
+      <div class="two-col">
+        <div>
+          <div class="timeline">
+            <div class="tl-item">
+              <div class="tl-year">1861</div>
+              <div class="tl-text"><strong>James Clerk Maxwell</strong>: primeira foto colorida usando três filtros (RGB).</div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-year">1907</div>
+              <div class="tl-text"><strong>Autochrome Lumière</strong>: primeiro processo colorido comercial. Usava grãos de amido tingidos.</div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-year">1935</div>
+              <div class="tl-text"><strong>Kodachrome</strong>: filme colorido acessível ao grande público. Cores vibrantes e precisas.</div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-year">1963</div>
+              <div class="tl-text"><strong>Polaroid Color</strong>: fotografia instantânea em cores. Revelação em 60 segundos.</div>
+            </div>
+          </div>
+          <div class="quote-block" style="margin-top:16px;">
+            &#8220;Quando fotografo em cor, vejo cor. Quando fotografo em preto e branco, vejo luz.&#8221;
+            <div class="quote-attr">— Duane Michals</div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div>
+              <div class="img-frame img-clickable" style="height:150px;" data-caption="James Clerk Maxwell · Primeira foto colorida, 1861">
+                <img src="imagens/James Clerk Maxwell — primeira foto colorida usando três filtros RGB sobrepostos .webp" alt="Maxwell" style="object-fit:contain;background:#1a1a1a;">
+              </div>
+              <div class="img-caption"><strong>Maxwell, 1861</strong></div>
+            </div>
+            <div>
+              <div class="img-frame img-clickable" style="height:150px;" data-caption="Autochrome Lumière · Primeiro processo comercial de cor, 1907">
+                <img src="imagens/Autochrome Lumière — primeiro processo comercial de cor, grânulos de amido coloridos.jpg" alt="Autochrome" style="object-fit:cover;">
+              </div>
+              <div class="img-caption"><strong>Autochrome, 1907</strong></div>
+            </div>
+            <div>
+              <div class="img-frame img-clickable" style="height:150px;" data-caption="Kodachrome · Filme colorido acessível, 1935">
+                <img src="imagens/Kodak_Kodachrome_1922_Kodachrome — filme colorido acessível ao grande público, cores vibrantes e precisas .jpg" alt="Kodachrome" style="object-fit:cover;">
+              </div>
+              <div class="img-caption"><strong>Kodachrome, 1935</strong></div>
+            </div>
+            <div>
+              <div class="img-frame img-clickable" style="height:150px;" data-caption="Polaroid Color · Fotografia instantânea em cores, 1963">
+                <img src="imagens/Polaroid Color — fotografia instantânea em cores, revelação em 60 segundos.jpg" alt="Polaroid Color" style="object-fit:contain;background:#1a1a1a;">
+              </div>
+              <div class="img-caption"><strong>Polaroid, 1963</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 10: FOTOGRAFOS QUE MUDARAM O MUNDO                      -->
+<!-- ============================================================ -->
+<div class="slide" data-title="Fotógrafos">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">Mestres da Imagem</div>
+      <div class="t-title">Fotógrafos que Mudaram o Olhar do Mundo</div>
+    </div>
+    <div class="slide-body">
+      <div class="photo-grid" style="grid-template-columns:repeat(5,1fr);gap:10px;">
+        <div class="photo-card" style="padding:12px 10px;">
+          <div class="photo-icon">H.C.B</div>
+          <div class="photo-name" style="font-size:15px;">Henri Cartier-Bresson</div>
+          <div class="photo-period" style="font-size:12px;">1908–2004 · Fotojornalismo</div>
+          <div class="photo-desc" style="font-size:13px;">Criador do <em>momento decisivo</em>. Co-fundador da Magnum.</div>
+        </div>
+        <div class="photo-card" style="padding:12px 10px;">
+          <div class="photo-icon">A.A</div>
+          <div class="photo-name" style="font-size:15px;">Ansel Adams</div>
+          <div class="photo-period" style="font-size:12px;">1902–1984 · Paisagem</div>
+          <div class="photo-desc" style="font-size:13px;">Mestre do P&B. Criou o <em>Sistema de Zonas</em> para exposição perfeita.</div>
+        </div>
+        <div class="photo-card" style="padding:12px 10px;">
+          <div class="photo-icon">D.L</div>
+          <div class="photo-name" style="font-size:15px;">Dorothea Lange</div>
+          <div class="photo-period" style="font-size:12px;">1895–1965 · Documental</div>
+          <div class="photo-desc" style="font-size:13px;"><em>Migrant Mother</em> (1936). O poder social da fotografia.</div>
+        </div>
+        <div class="photo-card" style="padding:12px 10px;">
+          <div class="photo-icon">S.S</div>
+          <div class="photo-name" style="font-size:15px;">Sebastião Salgado</div>
+          <div class="photo-period" style="font-size:12px;">1944–presente · Documental</div>
+          <div class="photo-desc" style="font-size:13px;">Brasileiro. <em>Trabalhadores</em> e <em>Gênesis</em>. Fotografia humanista.</div>
+        </div>
+        <div class="photo-card" style="padding:12px 10px;">
+          <div class="photo-icon">S.M</div>
+          <div class="photo-name" style="font-size:15px;">Steve McCurry</div>
+          <div class="photo-period" style="font-size:12px;">1950–presente · Fotojornalismo</div>
+          <div class="photo-desc" style="font-size:13px;"><em>Afghan Girl</em> (1985). Capa mais icônica da National Geographic.</div>
+        </div>
+        <div class="photo-card" style="padding:12px 10px;">
+          <div class="photo-icon">R.C</div>
+          <div class="photo-name" style="font-size:15px;">Robert Capa</div>
+          <div class="photo-period" style="font-size:12px;">1913–1954 · Guerra</div>
+          <div class="photo-desc" style="font-size:13px;">Fotografou 5 guerras. Co-fundador da Magnum. Morreu em campo.</div>
+        </div>
+        <div class="photo-card" style="padding:12px 10px;">
+          <div class="photo-icon">V.M</div>
+          <div class="photo-name" style="font-size:15px;">Vivian Maier</div>
+          <div class="photo-period" style="font-size:12px;">1926–2009 · Street</div>
+          <div class="photo-desc" style="font-size:13px;">Babá. 150 mil negativos. Descoberta após a morte num leilão.</div>
+        </div>
+        <div class="photo-card" style="padding:12px 10px;">
+          <div class="photo-icon">A.L</div>
+          <div class="photo-name" style="font-size:15px;">Annie Leibovitz</div>
+          <div class="photo-period" style="font-size:12px;">1949–presente · Retrato</div>
+          <div class="photo-desc" style="font-size:13px;">Rolling Stone, Vanity Fair. Retratos icônicos de celebridades.</div>
+        </div>
+        <div class="photo-card" style="padding:12px 10px;">
+          <div class="photo-icon">C.A</div>
+          <div class="photo-name" style="font-size:15px;">Claudia Andujar</div>
+          <div class="photo-period" style="font-size:12px;">1931–presente · Documental</div>
+          <div class="photo-desc" style="font-size:13px;">Suíça-brasileira. Documentou os Yanomami por décadas. Ativismo visual.</div>
+        </div>
+        <div class="photo-card" style="padding:12px 10px;">
+          <div class="photo-icon">P.V</div>
+          <div class="photo-name" style="font-size:15px;">Pierre Verger</div>
+          <div class="photo-period" style="font-size:12px;">1902–1996 · Etnográfica</div>
+          <div class="photo-desc" style="font-size:13px;">Francês radicado na Bahia. Registrou a cultura afro-brasileira como ninguém.</div>
+        </div>
+      </div>
+      <div class="highlight-box" style="margin-top:14px;">
+        <strong>Atividade:</strong> Escolha um desses fotógrafos e pesquise a foto mais famosa dele. O que ela comunica? Qual era o contexto da época?
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================================================ -->
+<!-- DISCUSSÃO: FOTOS ICÔNICAS                                     -->
+<!-- ============================================================ -->
+<div class="slide" data-title="Fotos Icônicas">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">Discussão</div>
+      <div class="t-title">5 Fotos que Mudaram o Mundo</div>
+      <div class="t-subtitle">Quem pesquisou algum desses? O que descobriram?</div>
+    </div>
+    <div class="slide-body">
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;align-items:start;">
+        <div>
+          <div class="img-frame img-clickable" style="height:240px;" data-caption="Migrant Mother · Dorothea Lange, 1936 · Contexto: EUA, Grande Depressão. 15 milhões de desempregados, famílias migrando em busca de trabalho. · Mãe de sete filhos num acampamento de colheita na Califórnia. O rosto dela virou símbolo universal de pobreza e resiliência. Uma única foto mobilizou o governo a enviar toneladas de alimentos para o local.">
+            <img src="imagens/fotografos/Migrant Mother (1936).jpg" alt="Migrant Mother" style="object-fit:contain;background:#1a1a1a;">
+          </div>
+          <div class="img-caption"><strong>Migrant Mother</strong><br>Dorothea Lange, 1936</div>
+        </div>
+        <div>
+          <div class="img-frame img-clickable" style="height:240px;" data-caption="Afghan Girl · Steve McCurry, 1985 · Contexto: invasão soviética do Afeganistão. Milhões de refugiados fugindo para o Paquistão. · Sharbat Gula, 12 anos, fotografada num campo de refugiados. O olhar intenso e os olhos verdes tornaram esta a capa mais famosa da National Geographic. Ela só foi identificada 17 anos depois.">
+            <img src="imagens/fotografos/Afghan Girl (1985).jpg" alt="Afghan Girl" style="object-fit:contain;background:#1a1a1a;">
+          </div>
+          <div class="img-caption"><strong>Afghan Girl</strong><br>Steve McCurry, 1985</div>
+        </div>
+        <div>
+          <div class="img-frame img-clickable" style="height:240px;" data-caption="Derrière la Gare Saint-Lazare · Henri Cartier-Bresson, 1932 · Contexto: Paris, entreguerras. A fotografia de rua ainda era uma prática nova e experimental. · Um homem salta sobre uma poça atrás da estação de trem. A foto define o 'momento decisivo': o instante exato em que todos os elementos se alinham. Cartier-Bresson fotografou por uma fresta na cerca, sem ver a cena.">
+            <img src="imagens/fotografos/W1siZiIsIjE0NDM3NiJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQDerrière la Gare Saint-Lazare (1932).jpg" alt="Derrière la Gare Saint-Lazare" style="object-fit:contain;background:#1a1a1a;">
+          </div>
+          <div class="img-caption"><strong>Gare Saint-Lazare</strong><br>Cartier-Bresson, 1932</div>
+        </div>
+        <div>
+          <div class="img-frame img-clickable" style="height:240px;" data-caption="Serra Pelada · Sebastião Salgado, 1986 · Contexto: corrida do ouro no Pará, Brasil. 100 mil garimpeiros num buraco a céu aberto, sem regulamentação, em condições subumanas. · Milhares de homens cobertos de lama escalam a mina carregando sacos. A imagem parece uma cena bíblica. Expôs ao mundo as condições desumanas do garimpo brasileiro.">
+            <img src="imagens/fotografos/Serra Pelada (1986).webp" alt="Serra Pelada" style="object-fit:contain;background:#1a1a1a;">
+          </div>
+          <div class="img-caption"><strong>Serra Pelada</strong><br>Sebastião Salgado, 1986</div>
+        </div>
+        <div>
+          <div class="img-frame img-clickable" style="height:240px;" data-caption="The Falling Soldier · Robert Capa, 1936 · Contexto: Guerra Civil Espanhola. Fascistas vs. republicanos. Prelúdio da Segunda Guerra Mundial, testando armas e táticas. · Um soldado republicano no instante exato em que é atingido. Foto de guerra mais famosa do século XX. Até hoje se debate se foi encenada ou real, levantando questões sobre ética e verdade na fotografia.">
+            <img src="imagens/fotografos/ The Falling Soldier (1936).jpeg" alt="The Falling Soldier" style="object-fit:contain;background:#1a1a1a;">
+          </div>
+          <div class="img-caption"><strong>The Falling Soldier</strong><br>Robert Capa, 1936</div>
+        </div>
+      </div>
+      <div class="highlight-box" style="margin-top:16px;">
+        <strong>Para cada foto:</strong> O que vocês veem? O que estavam sentindo as pessoas na foto? Por que essa imagem se tornou tão importante?
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 11: REVOLUCAO DIGITAL                                   -->
+<!-- ============================================================ -->
+<div class="slide" data-title="Revolução Digital">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">1975–2000s</div>
+      <div class="t-title">A Revolução Digital</div>
+    </div>
+    <div class="slide-body">
+      <div class="two-col">
+        <div>
+          <div class="timeline">
+            <div class="tl-item">
+              <div class="tl-year">1975</div>
+              <div class="tl-text"><strong>Steve Sasson (Kodak)</strong> cria a primeira câmera digital. Pesava 3,6 kg, resolução de 0,01 megapixel.</div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-year">1991</div>
+              <div class="tl-text"><strong>Kodak DCS 100</strong>. Primeira DSLR comercial. 1,3 megapixels. US$ 13.000.</div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-year">1994</div>
+              <div class="tl-text"><strong>Apple QuickTake 100</strong>. Uma das primeiras câmeras digitais para consumidor. 640×480 pixels.</div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-year">Anos 2000</div>
+              <div class="tl-text">Câmeras digitais compactas se popularizam. Fim do filme para o consumidor médio.</div>
+            </div>
+          </div>
+          <div class="highlight-box" style="margin-top:12px;">
+            <strong>Ironia:</strong> A Kodak inventou a câmera digital, mas faliu por não abraçar a tecnologia que criou.
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start;">
+          <div>
+            <div class="img-frame img-clickable" style="height:200px;" data-caption="Steve Sasson, 1975 · Primeira câmera digital, 0.01 MP">
+              <img src="imagens/Steve Sasson (Kodak) - 0,01 megapixel camera.jpeg" alt="Steve Sasson, primeira câmera digital" style="object-fit:contain;background:#1a1a1a;">
+            </div>
+            <div class="img-caption"><strong>Steve Sasson, 1975</strong><br>Primeira câmera digital, 0,01 MP</div>
+          </div>
+          <div>
+            <div class="img-frame img-clickable" style="height:200px;" data-caption="Kodak DCS-100, 1991 · Primeira DSLR comercial">
+              <img src="imagens/Kodak DCS-100 with DSU (© Kodak).jpg" alt="Kodak DCS-100" style="object-fit:contain;background:#1a1a1a;">
+            </div>
+            <div class="img-caption"><strong>Kodak DCS-100, 1991</strong><br>Primeira DSLR comercial</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 12: ANALOGICO VS DIGITAL                                -->
+<!-- ============================================================ -->
+<div class="slide" data-title="Analógico × Digital">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">Comparativo</div>
+      <div class="t-title">Analógico × Digital</div>
+      <div class="t-subtitle">Dois paradigmas, escolhas técnicas e estéticas com consequências diferentes</div>
+    </div>
+    <div class="slide-body" style="justify-content:flex-start;padding-top:8px;">
+      <table class="data-table">
+        <thead>
+          <tr><th>Dimensão</th><th>Analógico</th><th>Digital</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Suporte</td><td>Filme químico (haletos de prata)</td><td>Sensor eletrônico (CCD / CMOS)</td></tr>
+          <tr><td>Custo por foto</td><td>Alto (filme + revelação)</td><td>Próximo de zero</td></tr>
+          <tr><td>Feedback</td><td>Horas a dias (após revelação)</td><td>Imediato (LCD / tela)</td></tr>
+          <tr><td>Quantidade</td><td>24 ou 36 poses por rolo</td><td>Milhares por cartão</td></tr>
+          <tr><td>Grão / Ruído</td><td>Grão orgânico (estética)</td><td>Ruído digital (artefato)</td></tr>
+          <tr><td>Pós-produção</td><td>Quarto escuro (limitado)</td><td>Software (ilimitado)</td></tr>
+          <tr><td>Erro</td><td>Caro e definitivo</td><td>Gratuito, apaga e refaz</td></tr>
+          <tr><td>Autenticidade</td><td>Alta (índice físico)</td><td>Questionada (facilidade de edição)</td></tr>
+        </tbody>
+      </table>
+      <div class="highlight-box" style="margin-top:14px;">
+        <strong>Tendência atual:</strong> O retorno ao filme entre jovens não é nostalgia, é uma busca por <em>intencionalidade</em> e autenticidade num mundo saturado de imagens digitais descartáveis.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 13: ERA DO SMARTPHONE                                   -->
+<!-- ============================================================ -->
+<div class="slide" data-title="Era do Smartphone">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">2007 ao Presente</div>
+      <div class="t-title">A Era do Smartphone</div>
+      <div class="t-subtitle">Todos somos fotógrafos?</div>
+    </div>
+    <div class="slide-body">
+      <div class="stats-grid" style="margin-bottom:20px;">
+        <div class="stat-card">
+          <div class="stat-number">1,4 tri</div>
+          <div class="stat-label">Fotos tiradas por ano no mundo (2023)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">95%</div>
+          <div class="stat-label">Feitas com smartphones</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100 mi</div>
+          <div class="stat-label">Fotos postadas por dia só no Instagram</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">1,7 seg</div>
+          <div class="stat-label">Tempo médio de atenção por post no feed</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div class="highlight-box">
+          <strong>Democratização real:</strong> Qualquer pessoa pode documentar, comunicar e publicar imagens instantaneamente. O fotojornalismo cidadão mudou como vemos guerras e injustiças.
+        </div>
+        <div class="highlight-box">
+          <strong>Paradoxo da abundância:</strong> Quando tudo pode ser fotografado, o que vale a pena fotografar? O desafio é criar imagens que <em>parem o scroll</em>.
+        </div>
+      </div>
+      <div style="margin-top:16px;">
+        <div class="quote-block" style="font-size:16px;">
+          &#8220;Quando todo mundo é fotógrafo, o que diferencia uma boa foto? <strong>Técnica + intenção + significado.</strong> É isso que vamos aprender nesta UC.&#8221;
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 14: ETICA NA FOTOGRAFIA                                 -->
+<!-- ============================================================ -->
+<div class="slide" data-title="Ética e Imagem">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">Dimensão Ética</div>
+      <div class="t-title">Ética, Direitos e Imagem</div>
+      <div class="t-subtitle">Fotografar é um ato de poder: quem aperta o botão decide o que existe e como será lembrado</div>
+    </div>
+    <div class="slide-body">
+      <div class="three-col">
+        <div class="card">
+          <div class="card-title">Consentimento e Direito de Imagem</div>
+          <div class="card-body">
+            Toda pessoa tem direito sobre o uso da própria imagem. Fotografar alguém sem autorização e publicar pode gerar processo.<br><br>
+            <span style="font-size:14px;color:var(--muted);">Em trabalhos profissionais: sempre usar modelo de autorização de imagem.</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Manipulação e Verdade</div>
+          <div class="card-body">
+            Desde o séc. XIX fotografias são manipuladas. O digital tornou isso trivial. A IA generativa questiona a própria ontologia da imagem.<br><br>
+            <span style="font-size:14px;color:var(--muted);">Fotojornalismo: tolerância zero. Publicidade: manipulação é regra, com limites.</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Direitos Autorais</div>
+          <div class="card-body">
+            Quem tira a foto é o autor. Usar foto alheia sem crédito é plágio. Creative Commons oferece licenças com condições.<br><br>
+            <span style="font-size:14px;color:var(--muted);">Sempre creditar a fonte. Respeitar licenças de uso.</span>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:16px;">
+        <div class="quote-block" style="font-size:16px;">
+          &#8220;A fotografia é uma arma tão poderosa quanto qualquer outra. Pode destruir reputações, elevar causas, inspirar revoluções, e mentir com a mesma naturalidade com que diz a verdade.&#8221;
+          <div class="quote-attr">— Susan Sontag (adaptado)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 15: SEMIOTICA                                           -->
+<!-- ============================================================ -->
+<div class="slide" data-title="Semiótica">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">Ponte para as Aulas 03 e 04</div>
+      <div class="t-title">Toda Foto é um Signo</div>
+      <div class="t-subtitle">Charles S. Peirce: três tipos de signo que coexistem na imagem fotográfica</div>
+    </div>
+    <div class="slide-body">
+      <div class="three-col">
+        <div class="sign-card sign-icone">
+          <div class="sign-symbol">01</div>
+          <div class="sign-type">Ícone</div>
+          <div class="sign-relation">Se parece com o que representa</div>
+          <div class="sign-desc">A foto de um gato <em>parece</em> um gato. A imagem funciona pela semelhança visual com o objeto real.</div>
+          <div class="sign-example">Retrato, paisagem, foto de produto. Você olha e reconhece.</div>
+        </div>
+        <div class="sign-card sign-indice">
+          <div class="sign-symbol">02</div>
+          <div class="sign-type">Índice</div>
+          <div class="sign-relation">Foi causado pelo que representa</div>
+          <div class="sign-desc">A foto existe porque a luz <em>tocou</em> o sensor. É uma marca física, como pegada na areia ou fumaça indicando fogo.</div>
+          <div class="sign-example">Radiografia, pegada, sombra. A foto é rastro de luz.</div>
+        </div>
+        <div class="sign-card sign-simbolo">
+          <div class="sign-symbol">03</div>
+          <div class="sign-type">Símbolo</div>
+          <div class="sign-relation">Significa por convenção cultural</div>
+          <div class="sign-desc">Uma pomba numa foto significa <em>paz</em> porque a cultura nos ensinou isso. Não há semelhança, há <em>acordo social</em>.</div>
+          <div class="sign-example">Bandeira branca = rendição. Coração = amor. Sem cultura, sem sentido.</div>
+        </div>
+      </div>
+      <div class="highlight-box" style="margin-top:16px;">
+        <strong>Na prática, as três coexistem.</strong> Uma foto de uma bandeira vermelha: é <em>ícone</em> (parece uma bandeira), <em>índice</em> (alguém a colocou ali) e <em>símbolo</em> (vermelho = perigo, paixão).
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================================================ -->
+<!-- SLIDE 17: ENCERRAMENTO                                        -->
+<!-- ============================================================ -->
+<div class="slide closing-slide" data-title="Encerramento">
+  <div class="slide-inner">
+    <div class="closing-content">
+      <div style="height:16px;"></div>
+      <div class="closing-tag">Fundamentos de Fotografia Digital e de Semiótica</div>
+      <div class="closing-title">A Imagem que Você<br>Ainda Vai Criar</div>
+      <p class="closing-sub">Cada fotografia é uma decisão: de onde olhar, o que incluir, o que excluir, quando apertar o botão. Você acabou de aprender que essa decisão tem 200 anos de história, filosofia e técnica por trás.</p>
+      <div class="closing-divider"></div>
+      <div class="closing-summary">
+        <div class="summary-point">
+          <span class="summary-bullet">01</span>
+          <span>A fotografia nasceu da necessidade humana de fixar o olhar sobre o mundo.</span>
+        </div>
+        <div class="summary-point">
+          <span class="summary-bullet">02</span>
+          <span>Cada tecnologia, da heliografia ao smartphone, trouxe novas possibilidades e novos dilemas.</span>
+        </div>
+        <div class="summary-point">
+          <span class="summary-bullet">03</span>
+          <span>Imagens são signos: icônicos, indiciais e simbólicos ao mesmo tempo.</span>
+        </div>
+        <div class="summary-point">
+          <span class="summary-bullet">04</span>
+          <span>Fotografar com consciência é um ato técnico, estético e ético, simultaneamente.</span>
+        </div>
+      </div>
+      <div class="closing-divider"></div>
+      <div class="next-class">
+        <span class="next-label">Próxima Aula</span>
+        <span class="next-title">Aula 02: Formação da Imagem Digital</span>
+      </div>
+      <div class="instructor-tag">Prof. Daniel · SENAI · Técnico em Multimídia</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== BOTTOM BAR ===== -->
+<div id="bottomBar">
+  <div class="bar-left">
+    <img src="imagens/Logo-novo-SENAI_-sem-slogan_755X325.png" alt="SENAI">
+    <span>Fotografia Digital e Semiótica</span>
+  </div>
+  <div class="bar-right">
+    <span id="slideCounter" onclick="toggleGrid()" title="Ver todos os slides (G)">01 / 20</span>
+    <button class="bar-btn" id="prevBtn" onclick="prevSlide()" title="Anterior">&#8592;</button>
+    <button class="bar-btn" id="nextBtn" onclick="nextSlide()" title="Próximo">&#8594;</button>
+    <button class="bar-btn" id="fsBtn" onclick="toggleFullscreen()" title="Tela cheia (F)">&#x26F6;</button>
+    <button class="bar-btn" id="gridBtn" onclick="toggleGrid()" title="Grade de slides (G)">&#9638;</button>
+  </div>
+</div>
+
+<!-- ===== IMAGE MODAL ===== -->
+<div id="imgModal">
+  <div id="modalClose" onclick="closeModal()">&#10005;</div>
+  <div id="modalInner">
+    <img id="modalImg" src="" alt="">
+    <div id="modalCaption"></div>
+  </div>
+</div>
+
+<!-- ===== GRID OVERLAY ===== -->
+<div id="gridOverlay">
+  <div class="grid-header">
+    <div class="grid-title">Todos os Slides</div>
+    <div class="grid-close" onclick="toggleGrid()">&#10005;</div>
+  </div>
+  <div class="grid-container" id="gridContainer"></div>
+</div>
+
+<!-- ===== HELP OVERLAY ===== -->
+<div id="helpOverlay">
+  <div class="help-box">
+    <div class="help-title">Atalhos de Teclado</div>
+    <div class="help-row">
+      <span class="help-key"><kbd>→</kbd> <kbd>Space</kbd></span>
+      <span class="help-desc">Próximo slide</span>
+    </div>
+    <div class="help-row">
+      <span class="help-key"><kbd>←</kbd> <kbd>Backspace</kbd></span>
+      <span class="help-desc">Slide anterior</span>
+    </div>
+    <div class="help-row">
+      <span class="help-key"><kbd>Home</kbd></span>
+      <span class="help-desc">Primeiro slide</span>
+    </div>
+    <div class="help-row">
+      <span class="help-key"><kbd>End</kbd></span>
+      <span class="help-desc">Último slide</span>
+    </div>
+    <div class="help-row">
+      <span class="help-key"><kbd>G</kbd></span>
+      <span class="help-desc">Grade de slides</span>
+    </div>
+    <div class="help-row">
+      <span class="help-key"><kbd>F</kbd></span>
+      <span class="help-desc">Tela cheia</span>
+    </div>
+    <div class="help-row">
+      <span class="help-key"><kbd>Esc</kbd></span>
+      <span class="help-desc">Fechar modal / grade / ajuda</span>
+    </div>
+    <div class="help-row">
+      <span class="help-key"><kbd>?</kbd></span>
+      <span class="help-desc">Mostrar/esconder ajuda</span>
+    </div>
+    <div class="help-close">Pressione <kbd style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:3px;padding:2px 8px;font-family:var(--font-mono);font-size:12px;color:var(--cream-muted);">Esc</kbd> ou <kbd style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:3px;padding:2px 8px;font-family:var(--font-mono);font-size:12px;color:var(--cream-muted);">?</kbd> para fechar</div>
+  </div>
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  // ===== State =====
+  let currentIndex = 0;
+  let modalOpen = false;
+  let gridOpen = false;
+  let helpOpen = false;
+
+  const slides = document.querySelectorAll('.slide');
+  const total = slides.length;
+
+  // ===== Slide Navigation =====
+  function goTo(n) {
+    if (n < 0 || n >= total || n === currentIndex) return;
+    slides[currentIndex].classList.remove('active');
+    currentIndex = n;
+    slides[currentIndex].classList.add('active');
+    updateUI();
+  }
+
+  function nextSlide() {
+    if (!modalOpen && !gridOpen && !helpOpen) goTo(currentIndex + 1);
+  }
+  function prevSlide() {
+    if (!modalOpen && !gridOpen && !helpOpen) goTo(currentIndex - 1);
+  }
+
+  function updateUI() {
+    // Counter
+    const num = String(currentIndex + 1).padStart(2, '0');
+    document.getElementById('slideCounter').textContent = num + ' / ' + String(total).padStart(2, '0');
+    // Progress
+    const pct = total > 1 ? (currentIndex / (total - 1)) * 100 : 100;
+    document.getElementById('progressBar').style.width = pct + '%';
+    // Buttons
+    document.getElementById('prevBtn').disabled = (currentIndex === 0);
+    document.getElementById('nextBtn').disabled = (currentIndex === total - 1);
+  }
+
+  // ===== Fullscreen =====
+  function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(function(){});
+    } else {
+      document.exitFullscreen();
+    }
+  }
+
+  // ===== Image Modal =====
+  function openModal(src, caption) {
+    modalOpen = true;
+    document.getElementById('modalImg').src = src;
+    var cap = document.getElementById('modalCaption');
+    if (caption && caption.length > 80) {
+      var parts = caption.split(' · ');
+      var title = parts.slice(0, 2).join(' · ');
+      var rest = parts.slice(2);
+      var context = '';
+      var analysis = '';
+      for (var i = 0; i < rest.length; i++) {
+        if (rest[i].indexOf('Contexto:') === 0) {
+          context = rest[i];
+        } else {
+          analysis += (analysis ? ' ' : '') + rest[i];
+        }
+      }
+      cap.innerHTML = '<div class="modal-title">' + title + '</div>' +
+        (context ? '<div class="modal-context">' + context + '</div>' : '') +
+        (analysis ? '<div class="modal-analysis">' + analysis + '</div>' : '');
+    } else {
+      cap.innerHTML = '<div class="modal-title">' + (caption || '') + '</div>';
+    }
+    document.getElementById('imgModal').classList.add('open');
+  }
+
+  function closeModal() {
+    modalOpen = false;
+    document.getElementById('imgModal').classList.remove('open');
+    document.getElementById('modalImg').src = '';
+  }
+
+  // Bind clickable images
+  document.querySelectorAll('.img-clickable').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      e.stopPropagation();
+      e.preventDefault();
+      var img = el.querySelector('img');
+      if (img) {
+        var caption = el.getAttribute('data-caption') || '';
+        if (!caption) {
+          var captionEl = el.parentElement ? el.parentElement.querySelector('.img-caption') : null;
+          if (captionEl) caption = captionEl.textContent;
+        }
+        openModal(img.src, caption);
+      }
+    });
+  });
+
+  // Close modal on backdrop click (not on inner content)
+  document.getElementById('imgModal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+  document.getElementById('modalInner').addEventListener('click', function(e) {
+    e.stopPropagation();
+  });
+
+  // ===== Grid Overlay =====
+  function buildGrid() {
+    var container = document.getElementById('gridContainer');
+    container.innerHTML = '';
+    for (var i = 0; i < total; i++) {
+      var thumb = document.createElement('div');
+      thumb.className = 'grid-thumb' + (i === currentIndex ? ' current' : '');
+      var title = slides[i].getAttribute('data-title') || ('Slide ' + (i + 1));
+      thumb.innerHTML =
+        '<div class="grid-thumb-num">' + String(i + 1).padStart(2, '0') + '</div>' +
+        '<div class="grid-thumb-inner"><div class="grid-thumb-title">' + title + '</div></div>';
+      thumb.setAttribute('data-index', i);
+      thumb.addEventListener('click', function() {
+        var idx = parseInt(this.getAttribute('data-index'));
+        toggleGrid();
+        goTo(idx);
+      });
+      container.appendChild(thumb);
+    }
+  }
+
+  function toggleGrid() {
+    gridOpen = !gridOpen;
+    var overlay = document.getElementById('gridOverlay');
+    if (gridOpen) {
+      buildGrid();
+      overlay.classList.add('open');
+    } else {
+      overlay.classList.remove('open');
+    }
+  }
+
+  // ===== Help Overlay =====
+  function toggleHelp() {
+    helpOpen = !helpOpen;
+    var overlay = document.getElementById('helpOverlay');
+    if (helpOpen) {
+      overlay.classList.add('open');
+    } else {
+      overlay.classList.remove('open');
+    }
+  }
+
+  // ===== Keyboard =====
+  document.addEventListener('keydown', function(e) {
+    // ESC closes any overlay
+    if (e.key === 'Escape') {
+      if (modalOpen) { closeModal(); return; }
+      if (gridOpen) { toggleGrid(); return; }
+      if (helpOpen) { toggleHelp(); return; }
+      return;
+    }
+
+    // ? toggles help
+    if (e.key === '?') {
+      e.preventDefault();
+      toggleHelp();
+      return;
+    }
+
+    // Toggle info panel with 'i'
+    if (e.key === 'i' || e.key === 'I') {
+      var btn = document.querySelector('.slide.active .info-btn');
+      if (btn) { e.preventDefault(); btn.click(); return; }
+    }
+
+    // Don't navigate while overlays are open
+    if (modalOpen || gridOpen || helpOpen) return;
+
+    switch (e.key) {
+      case 'ArrowRight':
+      case ' ':
+        e.preventDefault(); nextSlide(); break;
+      case 'ArrowLeft':
+      case 'Backspace':
+        e.preventDefault(); prevSlide(); break;
+      case 'Home':
+        e.preventDefault(); goTo(0); break;
+      case 'End':
+        e.preventDefault(); goTo(total - 1); break;
+      case 'f': case 'F':
+        e.preventDefault(); toggleFullscreen(); break;
+      case 'g': case 'G':
+        e.preventDefault(); toggleGrid(); break;
+    }
+  });
+
+  // ===== Touch / Swipe =====
+  var touchStartX = 0;
+  var touchStartY = 0;
+  document.addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }, { passive: true });
+
+  document.addEventListener('touchend', function(e) {
+    if (modalOpen || gridOpen || helpOpen) return;
+    var dx = e.changedTouches[0].screenX - touchStartX;
+    var dy = e.changedTouches[0].screenY - touchStartY;
+    // Only trigger if horizontal swipe is dominant
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+      if (dx < 0) nextSlide();
+      else prevSlide();
+    }
+  }, { passive: true });
+
+  // ===== Info Buttons =====
+  document.querySelectorAll('.info-btn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var popup = this.nextElementSibling;
+      var wasOpen = popup.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.info-popup.open').forEach(function(p) { p.classList.remove('open'); });
+      document.querySelectorAll('.info-btn.active').forEach(function(b) { b.classList.remove('active'); });
+      if (!wasOpen) {
+        popup.classList.add('open');
+        this.classList.add('active');
+      }
+    });
+  });
+  // Close info on any slide click
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.info-btn') && !e.target.closest('.info-popup')) {
+      document.querySelectorAll('.info-popup.open').forEach(function(p) { p.classList.remove('open'); });
+      document.querySelectorAll('.info-btn.active').forEach(function(b) { b.classList.remove('active'); });
+    }
+  });
+  // Close info on slide change
+  var origGoTo = goTo;
+  goTo = function(n) {
+    document.querySelectorAll('.info-popup.open').forEach(function(p) { p.classList.remove('open'); });
+    document.querySelectorAll('.info-btn.active').forEach(function(b) { b.classList.remove('active'); });
+    origGoTo(n);
+  };
+
+  // ===== Expose for inline handlers =====
+  window.nextSlide = nextSlide;
+  window.prevSlide = prevSlide;
+  window.toggleFullscreen = toggleFullscreen;
+  window.toggleGrid = toggleGrid;
+  window.closeModal = closeModal;
+
+  // ===== Init =====
+  updateUI();
+
+})();
+</script>
+</body>
+</html>
