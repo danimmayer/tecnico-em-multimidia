@@ -900,7 +900,7 @@
     $('#pSfName').value = state.studentName;
     // read local buffered responses for this slide
     const bucketKey = 'senai-responses-' + title;
-    const prev = JSON.parse(localStorage.getItem(bucketKey) || '[]');
+    const prev = safeParseArray(localStorage.getItem(bucketKey), bucketKey);
     $('#pSfPrev').innerHTML = prev.length ? '<p style="font-size:12px;color:var(--p-muted);margin-top:8px;">Suas respostas anteriores: ' + prev.length + '</p>' : '';
 
     $('#pSfSubmit').onclick = function () {
@@ -948,7 +948,9 @@
     Object.keys(localStorage).forEach(k => {
       if (!k.indexOf('senai-responses-')) {
         const title = k.substring('senai-responses-'.length);
-        const arr = JSON.parse(localStorage.getItem(k) || '[]');
+        // Try/catch por chave: entrada corrompida não deve impedir
+        // que as demais respostas sejam mescladas no state.
+        const arr = safeParseArray(localStorage.getItem(k), k);
         if (!state.responses[title]) state.responses[title] = [];
         arr.forEach(r => {
           if (!state.responses[title].some(x => x.ts === r.ts && x.text === r.text)) {
@@ -958,6 +960,22 @@
       }
     });
     updateCollectBadges();
+  }
+
+  // Parse defensivo: retorna array vazio se o JSON estiver corrompido
+  // e remove a chave inválida para não repetir o erro em cada refresh.
+  function safeParseArray(raw, key) {
+    if (!raw) return [];
+    try {
+      const parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (err) {
+      try {
+        console.warn('[pedagogy] entrada localStorage inválida, descartando:', key, err);
+        localStorage.removeItem(key);
+      } catch (e) { /* ignora */ }
+      return [];
+    }
   }
   function updateCollectBadges() {
     $$('.p-collect').forEach(el => {
