@@ -570,6 +570,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
   .img-clickable::after { display: none; }
 }
 </style>
+<link rel="stylesheet" href="assets/pedagogy.css">
 </head>
 <body>
 
@@ -578,7 +579,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 <!-- ============================================================ -->
 <!-- SLIDE 01: CAPA                                                -->
 <!-- ============================================================ -->
-<div class="slide title-slide active" data-title="Capa">
+<div class="slide title-slide active" data-title="Capa" data-bloco="1" data-competencias="CK-PROF">
   <div class="slide-inner">
     <div class="title-content">
       <img src="imagens/Logo-novo-SENAI_-sem-slogan_755X325.png" alt="SENAI" style="height:40px;width:auto;opacity:0.7;margin-bottom:20px;">
@@ -599,7 +600,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 <!-- ============================================================ -->
 <!-- SLIDE 02: PROGRAMACAO DA NOITE                                -->
 <!-- ============================================================ -->
-<div class="slide" data-title="Programação da Noite">
+<div class="slide" data-title="Programação da Noite" data-bloco="1" data-competencias="CK-PROF">
   <div class="slide-inner">
     <div class="slide-header">
       <div class="t-eyebrow">Roteiro da Aula</div>
@@ -638,7 +639,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 <!-- ============================================================ -->
 <!-- SLIDE 03: O QUE E FOTOGRAFIA                                  -->
 <!-- ============================================================ -->
-<div class="slide" data-title="O Que é Fotografia?">
+<div class="slide" data-title="O Que é Fotografia?" data-bloco="2" data-competencias="CK-HIST,CT-MIDIAS">
   <div class="slide-inner">
     <div class="slide-header">
       <div class="t-eyebrow">Conceito Fundamental</div>
@@ -666,6 +667,13 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
           </div>
         </div>
       </div>
+      <div class="p-expand" data-depth="2">
+        <div class="p-expand-head"><span class="p-expand-tag">Expandir</span><span>Linha do Tempo Interativa · 2.500 anos de "escrita com luz"</span></div>
+        <div class="p-expand-body">
+          <p style="margin-bottom:10px;color:var(--cream-muted);font-size:14px;">Clique em cada marco para ver o contexto. Do primeiro registro do fenômeno da câmera obscura até a IA generativa, a fotografia é uma sucessão de saltos tecnológicos disparados por curiosidade científica.</p>
+          <div data-timeline="master"></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -673,7 +681,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 <!-- ============================================================ -->
 <!-- SLIDE 04: CAMERA OBSCURA                                      -->
 <!-- ============================================================ -->
-<div class="slide" data-title="Câmera Obscura">
+<div class="slide" data-title="Câmera Obscura" data-bloco="2" data-competencias="CK-HIST">
   <div class="slide-inner">
     <div class="slide-header">
       <div class="t-eyebrow">Século V a.C. ao XVIII</div>
@@ -716,6 +724,24 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
           </div>
         </div>
       </div>
+      <div class="p-expand" data-depth="2">
+        <div class="p-expand-head"><span class="p-expand-tag">Expandir</span><span>Demonstração em sala · Faça uma pinhole agora</span></div>
+        <div class="p-expand-body">
+          <ul class="styled" style="font-size:15px;">
+            <li class="accent">Uma caixa de sapato, papel alumínio, fita preta, papel vegetal.</li>
+            <li>Furo de <strong>0,3 mm</strong> (feito com agulha fina) no centro do alumínio.</li>
+            <li>Papel vegetal na face oposta ao furo funciona como "tela".</li>
+            <li>Aponte para uma janela bem iluminada em ambiente escuro: a cena surge invertida no vegetal.</li>
+            <li>Por que inverte? Os raios de luz se cruzam no furo — mesma geometria de uma lente convergente ideal.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="p-expand is-bonus" data-depth="3">
+        <div class="p-expand-head"><span class="p-expand-tag">Bônus</span><span>Vermeer e o debate da Câmera Obscura</span></div>
+        <div class="p-expand-body">
+          <p>O documentário <em>Tim's Vermeer</em> (2013) reconstrói o estúdio do pintor holandês e defende que ele usava um sistema óptico tipo câmera obscura + espelho para atingir aquele realismo impossível. Mostra como a fotografia existiu — fisicamente — séculos antes de alguém conseguir fixar a imagem quimicamente.</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -723,7 +749,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 <!-- ============================================================ -->
 <!-- PESQUISA: CÂMERA OBSCURA                                      -->
 <!-- ============================================================ -->
-<div class="slide" data-title="Pesquisa: Câmera Obscura">
+<div class="slide" data-title="Pesquisa: Câmera Obscura" data-bloco="2" data-competencias="CT-PESQ,CT-MIDIAS">
   <div class="slide-inner">
     <div class="info-btn">i</div>
     <div class="info-popup">
@@ -760,7 +786,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 <!-- ============================================================ -->
 <!-- SLIDE 05: NIEPCE                                              -->
 <!-- ============================================================ -->
-<div class="slide" data-title="Joseph Nicéphore Niépce">
+<div class="slide" data-title="Joseph Nicéphore Niépce" data-bloco="2" data-competencias="CK-HIST">
   <div class="slide-inner">
     <div class="slide-header">
       <div class="t-eyebrow">1826 · A Primeira Fotografia Permanente da História</div>
@@ -801,6 +827,19 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
           </div>
         </div>
       </div>
+      <div class="p-expand" data-depth="2">
+        <div class="p-expand-head"><span class="p-expand-tag">Expandir</span><span>Comparar Original × Restauração por IA</span></div>
+        <div class="p-expand-body">
+          <p style="margin-bottom:10px;color:var(--cream-muted);font-size:14px;">Arraste o controle sobre a imagem para comparar a <strong>vista original de Le Gras (1826)</strong> com a interpretação contemporânea restaurada por IA. Reflexão: a IA <em>restaura</em> ou <em>reimagina</em>? O registro ainda é o mesmo documento histórico?</p>
+          <div data-compare="niepce-restored" style="max-width:680px;margin:0 auto;"></div>
+        </div>
+      </div>
+      <div class="p-expand is-bonus" data-depth="3">
+        <div class="p-expand-head"><span class="p-expand-tag">Bônus</span><span>Por que 8 horas de exposição?</span></div>
+        <div class="p-expand-body">
+          <p>O betume da Judeia endurece apenas nas áreas atingidas por luz forte e prolongada. As partes não expostas eram lavadas com óleo de lavanda, revelando a imagem. Como a exposição durou todo um dia, o sol aparece em <strong>ambos os lados</strong> dos prédios — é por isso que a imagem parece "iluminada dos dois lados" ao mesmo tempo.</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -808,7 +847,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 <!-- ============================================================ -->
 <!-- SLIDE 06: DAGUERREOTIPO                                       -->
 <!-- ============================================================ -->
-<div class="slide" data-title="O Daguerreótipo">
+<div class="slide" data-title="O Daguerreótipo" data-bloco="2" data-competencias="CK-HIST">
   <div class="slide-inner">
     <div class="slide-header">
       <div class="t-eyebrow">1839 · O Mundo Conhece a Fotografia</div>
@@ -851,7 +890,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 <!-- ============================================================ -->
 <!-- PESQUISA: DAGUERREÓTIPO E HELIOGRAFIA                         -->
 <!-- ============================================================ -->
-<div class="slide" data-title="Pesquisa: Processos Fotográficos">
+<div class="slide" data-title="Pesquisa: Processos Fotográficos" data-bloco="2" data-competencias="CT-PESQ,CT-MIDIAS">
   <div class="slide-inner">
     <div class="info-btn">i</div>
     <div class="info-popup">
@@ -889,7 +928,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 <!-- ============================================================ -->
 <!-- SLIDE 07: CALOTIPO / FOX TALBOT                               -->
 <!-- ============================================================ -->
-<div class="slide" data-title="William Henry Fox Talbot">
+<div class="slide" data-title="William Henry Fox Talbot" data-bloco="2" data-competencias="CK-HIST">
   <div class="slide-inner">
     <div class="slide-header">
       <div class="t-eyebrow">1841 · O Negativo Muda Tudo</div>
@@ -946,7 +985,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 <!-- ============================================================ -->
 <!-- PESQUISA: NEGATIVO E POSITIVO                                 -->
 <!-- ============================================================ -->
-<div class="slide" data-title="Pesquisa: Negativo/Positivo">
+<div class="slide" data-title="Pesquisa: Negativo/Positivo" data-bloco="2" data-competencias="CT-PESQ,CT-MIDIAS">
   <div class="slide-inner">
     <div class="info-btn">i</div>
     <div class="info-popup">
@@ -989,7 +1028,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 <!-- ============================================================ -->
 <!-- SLIDE 08: A KODAK                                             -->
 <!-- ============================================================ -->
-<div class="slide" data-title="A Kodak">
+<div class="slide" data-title="A Kodak" data-bloco="3" data-competencias="CK-HIST,CT-MIDIAS">
   <div class="slide-inner">
     <div class="slide-header">
       <div class="t-eyebrow">1888 · Democratização da Fotografia</div>
@@ -1028,6 +1067,24 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
           <img src="imagens/Kodak-Logo-1984-2006.png" alt="Kodak Logo" style="height:36px;width:auto;opacity:0.6;margin-top:4px;">
         </div>
       </div>
+      <div class="p-expand" data-depth="2">
+        <div class="p-expand-head"><span class="p-expand-tag">Expandir</span><span>George Eastman e o primeiro "Instagram"</span></div>
+        <div class="p-expand-body">
+          <ul class="styled" style="font-size:15px;">
+            <li class="accent">Antes da Kodak, fotografar exigia <strong>laboratório portátil, químicos e vidro</strong>. Era um ofício.</li>
+            <li>Eastman padronizou o <strong>filme em rolo</strong> e cobrou pelo processamento. O usuário só apertava o botão.</li>
+            <li>A palavra "Kodak" foi inventada sem significado — para ser pronunciável em qualquer idioma. Marca global antes da globalização existir.</li>
+            <li>Em <strong>1900</strong>, a Brownie custava US$1 e pôs fotografia nas mãos de crianças. Nasce o instantâneo doméstico — o bisavô da selfie.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="p-expand is-bonus" data-depth="3">
+        <div class="p-expand-head"><span class="p-expand-tag">Bônus</span><span>A ironia de 2012: quem inventou a câmera digital</span></div>
+        <div class="p-expand-body">
+          <p>Steven <strong>Sasson</strong>, engenheiro da Kodak, montou o primeiro protótipo de câmera digital em <strong>1975</strong> — uma caixa de 3,6 kg com resolução de 100×100 px gravada numa fita cassette. A Kodak engavetou o projeto com medo de canibalizar o filme.</p>
+          <p style="margin-top:8px;">Resultado: em <strong>2012 a Kodak pediu concordata</strong>. O Instagram foi vendido para o Facebook por US$1 bilhão <em>no mesmo ano</em>. Lição: inovação que ameaça o próprio negócio é a mais difícil de executar.</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -1035,7 +1092,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 <!-- ============================================================ -->
 <!-- SLIDE 09: FOTOGRAFIA COLORIDA                                 -->
 <!-- ============================================================ -->
-<div class="slide" data-title="Fotografia Colorida">
+<div class="slide" data-title="Fotografia Colorida" data-bloco="3" data-competencias="CK-HIST,CT-MIDIAS">
   <div class="slide-inner">
     <div class="slide-header">
       <div class="t-eyebrow">Cor e Percepção</div>
@@ -1103,7 +1160,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 <!-- ============================================================ -->
 <!-- SLIDE 10: FOTOGRAFOS QUE MUDARAM O MUNDO                      -->
 <!-- ============================================================ -->
-<div class="slide" data-title="Fotógrafos">
+<div class="slide" data-title="Fotógrafos" data-bloco="3" data-competencias="CK-HIST,CT-MIDIAS">
   <div class="slide-inner">
     <div class="slide-header">
       <div class="t-eyebrow">Mestres da Imagem</div>
@@ -1183,7 +1240,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 <!-- ============================================================ -->
 <!-- DISCUSSÃO: FOTOS ICÔNICAS                                     -->
 <!-- ============================================================ -->
-<div class="slide" data-title="Fotos Icônicas">
+<div class="slide" data-title="Fotos Icônicas" data-bloco="3" data-competencias="CK-HIST,CK-ETICA,CS-INTEG">
   <div class="slide-inner">
     <div class="slide-header">
       <div class="t-eyebrow">Discussão</div>
@@ -1193,31 +1250,31 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
     <div class="slide-body">
       <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;align-items:start;">
         <div>
-          <div class="img-frame img-clickable" style="height:240px;" data-caption="Migrant Mother · Dorothea Lange, 1936 · Contexto: EUA, Grande Depressão. 15 milhões de desempregados, famílias migrando em busca de trabalho. · Mãe de sete filhos num acampamento de colheita na Califórnia. O rosto dela virou símbolo universal de pobreza e resiliência. Uma única foto mobilizou o governo a enviar toneladas de alimentos para o local.">
+          <div class="img-frame img-clickable" data-semiotic="migrant-mother" style="height:240px;" data-caption="Migrant Mother · Dorothea Lange, 1936 · Contexto: EUA, Grande Depressão. 15 milhões de desempregados, famílias migrando em busca de trabalho. · Mãe de sete filhos num acampamento de colheita na Califórnia. O rosto dela virou símbolo universal de pobreza e resiliência. Uma única foto mobilizou o governo a enviar toneladas de alimentos para o local.">
             <img src="imagens/fotografos/Migrant Mother (1936).jpg" alt="Migrant Mother" style="object-fit:contain;background:#1a1a1a;">
           </div>
           <div class="img-caption"><strong>Migrant Mother</strong><br>Dorothea Lange, 1936</div>
         </div>
         <div>
-          <div class="img-frame img-clickable" style="height:240px;" data-caption="Afghan Girl · Steve McCurry, 1985 · Contexto: invasão soviética do Afeganistão. Milhões de refugiados fugindo para o Paquistão. · Sharbat Gula, 12 anos, fotografada num campo de refugiados. O olhar intenso e os olhos verdes tornaram esta a capa mais famosa da National Geographic. Ela só foi identificada 17 anos depois.">
+          <div class="img-frame img-clickable" data-semiotic="afghan-girl" style="height:240px;" data-caption="Afghan Girl · Steve McCurry, 1985 · Contexto: invasão soviética do Afeganistão. Milhões de refugiados fugindo para o Paquistão. · Sharbat Gula, 12 anos, fotografada num campo de refugiados. O olhar intenso e os olhos verdes tornaram esta a capa mais famosa da National Geographic. Ela só foi identificada 17 anos depois.">
             <img src="imagens/fotografos/Afghan Girl (1985).jpg" alt="Afghan Girl" style="object-fit:contain;background:#1a1a1a;">
           </div>
           <div class="img-caption"><strong>Afghan Girl</strong><br>Steve McCurry, 1985</div>
         </div>
         <div>
-          <div class="img-frame img-clickable" style="height:240px;" data-caption="Derrière la Gare Saint-Lazare · Henri Cartier-Bresson, 1932 · Contexto: Paris, entreguerras. A fotografia de rua ainda era uma prática nova e experimental. · Um homem salta sobre uma poça atrás da estação de trem. A foto define o 'momento decisivo': o instante exato em que todos os elementos se alinham. Cartier-Bresson fotografou por uma fresta na cerca, sem ver a cena.">
+          <div class="img-frame img-clickable" data-semiotic="gare-saint-lazare" style="height:240px;" data-caption="Derrière la Gare Saint-Lazare · Henri Cartier-Bresson, 1932 · Contexto: Paris, entreguerras. A fotografia de rua ainda era uma prática nova e experimental. · Um homem salta sobre uma poça atrás da estação de trem. A foto define o 'momento decisivo': o instante exato em que todos os elementos se alinham. Cartier-Bresson fotografou por uma fresta na cerca, sem ver a cena.">
             <img src="imagens/fotografos/W1siZiIsIjE0NDM3NiJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQDerrière la Gare Saint-Lazare (1932).jpg" alt="Derrière la Gare Saint-Lazare" style="object-fit:contain;background:#1a1a1a;">
           </div>
           <div class="img-caption"><strong>Gare Saint-Lazare</strong><br>Cartier-Bresson, 1932</div>
         </div>
         <div>
-          <div class="img-frame img-clickable" style="height:240px;" data-caption="Serra Pelada · Sebastião Salgado, 1986 · Contexto: corrida do ouro no Pará, Brasil. 100 mil garimpeiros num buraco a céu aberto, sem regulamentação, em condições subumanas. · Milhares de homens cobertos de lama escalam a mina carregando sacos. A imagem parece uma cena bíblica. Expôs ao mundo as condições desumanas do garimpo brasileiro.">
+          <div class="img-frame img-clickable" data-semiotic="serra-pelada" style="height:240px;" data-caption="Serra Pelada · Sebastião Salgado, 1986 · Contexto: corrida do ouro no Pará, Brasil. 100 mil garimpeiros num buraco a céu aberto, sem regulamentação, em condições subumanas. · Milhares de homens cobertos de lama escalam a mina carregando sacos. A imagem parece uma cena bíblica. Expôs ao mundo as condições desumanas do garimpo brasileiro.">
             <img src="imagens/fotografos/Serra Pelada (1986).webp" alt="Serra Pelada" style="object-fit:contain;background:#1a1a1a;">
           </div>
           <div class="img-caption"><strong>Serra Pelada</strong><br>Sebastião Salgado, 1986</div>
         </div>
         <div>
-          <div class="img-frame img-clickable" style="height:240px;" data-caption="The Falling Soldier · Robert Capa, 1936 · Contexto: Guerra Civil Espanhola. Fascistas vs. republicanos. Prelúdio da Segunda Guerra Mundial, testando armas e táticas. · Um soldado republicano no instante exato em que é atingido. Foto de guerra mais famosa do século XX. Até hoje se debate se foi encenada ou real, levantando questões sobre ética e verdade na fotografia.">
+          <div class="img-frame img-clickable" data-semiotic="falling-soldier" style="height:240px;" data-caption="The Falling Soldier · Robert Capa, 1936 · Contexto: Guerra Civil Espanhola. Fascistas vs. republicanos. Prelúdio da Segunda Guerra Mundial, testando armas e táticas. · Um soldado republicano no instante exato em que é atingido. Foto de guerra mais famosa do século XX. Até hoje se debate se foi encenada ou real, levantando questões sobre ética e verdade na fotografia.">
             <img src="imagens/fotografos/ The Falling Soldier (1936).jpeg" alt="The Falling Soldier" style="object-fit:contain;background:#1a1a1a;">
           </div>
           <div class="img-caption"><strong>The Falling Soldier</strong><br>Robert Capa, 1936</div>
@@ -1233,7 +1290,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 <!-- ============================================================ -->
 <!-- SLIDE 11: REVOLUCAO DIGITAL                                   -->
 <!-- ============================================================ -->
-<div class="slide" data-title="Revolução Digital">
+<div class="slide" data-title="Revolução Digital" data-bloco="3" data-competencias="CK-HIST,CT-MIDIAS">
   <div class="slide-inner">
     <div class="slide-header">
       <div class="t-eyebrow">1975–2000s</div>
@@ -1286,7 +1343,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 <!-- ============================================================ -->
 <!-- SLIDE 12: ANALOGICO VS DIGITAL                                -->
 <!-- ============================================================ -->
-<div class="slide" data-title="Analógico × Digital">
+<div class="slide" data-title="Analógico × Digital" data-bloco="3" data-competencias="CT-MIDIAS">
   <div class="slide-inner">
     <div class="slide-header">
       <div class="t-eyebrow">Comparativo</div>
@@ -1319,7 +1376,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 <!-- ============================================================ -->
 <!-- SLIDE 13: ERA DO SMARTPHONE                                   -->
 <!-- ============================================================ -->
-<div class="slide" data-title="Era do Smartphone">
+<div class="slide" data-title="Era do Smartphone" data-bloco="4" data-competencias="CK-HIST,CK-ETICA,CT-MIDIAS">
   <div class="slide-inner">
     <div class="slide-header">
       <div class="t-eyebrow">2007 ao Presente</div>
@@ -1358,6 +1415,17 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
           &#8220;Quando todo mundo é fotógrafo, o que diferencia uma boa foto? <strong>Técnica + intenção + significado.</strong> É isso que vamos aprender nesta UC.&#8221;
         </div>
       </div>
+      <div class="p-expand" data-depth="2">
+        <div class="p-expand-head"><span class="p-expand-tag">Expandir</span><span>Computational Photography · o que seu celular faz em 0,2s</span></div>
+        <div class="p-expand-body">
+          <ul class="styled" style="font-size:15px;">
+            <li class="accent"><strong>Night Mode</strong>: captura 8-15 frames com exposições diferentes e alinha pixel a pixel via ML. A "foto" é uma média calculada.</li>
+            <li><strong>HDR</strong>: três exposições (sub, normal, super) fundidas em tempo real para preservar sombras e céu.</li>
+            <li><strong>Retrato</strong>: o desfoque é simulado por rede neural que estima profundidade — não existe ótica grande-angular pra isso num celular.</li>
+            <li><strong>Implicação:</strong> seu celular não <em>fotografa</em>, ele <em>interpreta</em>. Você está vendo a opinião do algoritmo sobre a cena.</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -1365,7 +1433,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 <!-- ============================================================ -->
 <!-- SLIDE 14: ETICA NA FOTOGRAFIA                                 -->
 <!-- ============================================================ -->
-<div class="slide" data-title="Ética e Imagem">
+<div class="slide" data-title="Ética e Imagem" data-bloco="4" data-competencias="CK-ETICA,CS-CONCIL,CS-INTEG">
   <div class="slide-inner">
     <div class="slide-header">
       <div class="t-eyebrow">Dimensão Ética</div>
@@ -1402,6 +1470,27 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
           <div class="quote-attr">— Susan Sontag (adaptado)</div>
         </div>
       </div>
+      <div class="p-expand" data-depth="2">
+        <div class="p-expand-head"><span class="p-expand-tag">Expandir</span><span>Deepfakes e o caso do "Papa de puffer branco"</span></div>
+        <div class="p-expand-body">
+          <p style="margin-bottom:10px;">Em março de 2023, uma imagem gerada por Midjourney mostrando o Papa Francisco com um casaco puffer Balenciaga branco se espalhou por redes sociais. Milhões acreditaram ser real — pela primeira vez uma imagem <em>100% sintética</em> atingiu escala massiva sem ser detectada.</p>
+          <ul class="styled" style="font-size:15px;">
+            <li class="accent"><strong>Por que enganou?</strong> A IA aprendeu a reproduzir índices: textura de tecido, dobras, iluminação difusa. Todos os marcadores de "foto real" presentes.</li>
+            <li><strong>O que mudou?</strong> Não podemos mais presumir que uma imagem é registro. Precisamos de <strong>procedência verificável</strong> — assinatura criptográfica, C2PA, metadados assinados.</li>
+            <li><strong>Pergunta ética:</strong> Quando você posta uma imagem feita por IA, tem a obrigação de avisar? E se não avisar e ela virar notícia?</li>
+          </ul>
+        </div>
+      </div>
+      <div class="p-expand is-bonus" data-depth="3">
+        <div class="p-expand-head"><span class="p-expand-tag">Bônus</span><span>Casos históricos de manipulação fotográfica</span></div>
+        <div class="p-expand-body">
+          <ul class="styled" style="font-size:15px;">
+            <li><strong>Stalin (1930s)</strong> — rivais políticos eram literalmente apagados das fotos oficiais após execução. A foto era reescrita junto com a história.</li>
+            <li><strong>Capa Time com O. J. Simpson (1994)</strong> — a foto foi escurecida para parecer mais ameaçador. Gerou acusações de racismo editorial.</li>
+            <li><strong>National Geographic (1982)</strong> — moveram uma pirâmide do Egito digitalmente para caber na capa vertical. Primeira grande polêmica de fotojornalismo digital.</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -1409,7 +1498,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 <!-- ============================================================ -->
 <!-- SLIDE 15: SEMIOTICA                                           -->
 <!-- ============================================================ -->
-<div class="slide" data-title="Semiótica">
+<div class="slide" data-title="Semiótica" data-bloco="4" data-competencias="CK-ETICA,CS-INTEG">
   <div class="slide-inner">
     <div class="slide-header">
       <div class="t-eyebrow">Ponte para as Aulas 03 e 04</div>
@@ -1443,6 +1532,25 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
       <div class="highlight-box" style="margin-top:16px;">
         <strong>Na prática, as três coexistem.</strong> Uma foto de uma bandeira vermelha: é <em>ícone</em> (parece uma bandeira), <em>índice</em> (alguém a colocou ali) e <em>símbolo</em> (vermelho = perigo, paixão).
       </div>
+      <div class="p-expand" data-depth="2">
+        <div class="p-expand-head"><span class="p-expand-tag">Expandir</span><span>Estudo de caso · anúncio de perfume</span></div>
+        <div class="p-expand-body">
+          <p>Pense no anúncio de um perfume num outdoor: uma mulher segurando o frasco num cenário dourado ao entardecer.</p>
+          <ul class="styled" style="font-size:15px;">
+            <li class="accent"><strong>Ícone:</strong> o rosto é um rosto, o frasco é um frasco — semelhança direta.</li>
+            <li><strong>Índice:</strong> a iluminação dourada e o cabelo ao vento indicam que <em>havia</em> vento e sol no momento do registro (ainda que produzidos).</li>
+            <li><strong>Símbolo:</strong> dourado = luxo, hora mágica = romance, modelo esguia = desejo. Tudo convenção cultural.</li>
+          </ul>
+          <p style="margin-top:10px;color:var(--cream-muted);font-size:14px;">Publicidade, fotojornalismo e arte operam nos três níveis simultaneamente. Dominar os três é o salto de operador de câmera para <strong>autor de imagens</strong>.</p>
+        </div>
+      </div>
+      <div class="p-expand is-bonus" data-depth="3">
+        <div class="p-expand-head"><span class="p-expand-tag">Bônus</span><span>Peirce, Saussure e a dúvida sobre a foto</span></div>
+        <div class="p-expand-body">
+          <p>Peirce (americano, pragmatista) classifica o signo pela <strong>relação com o objeto</strong> (ícone/índice/símbolo). Saussure (suíço, estruturalista) classifica pela relação <strong>entre significante e significado</strong>.</p>
+          <p style="margin-top:8px;">A fotografia é interessante porque desafia Saussure: para ele todo signo é arbitrário (um acordo). Peirce resolve: a foto é índice, não é arbitrária — foi <em>causada</em> pelo objeto. É por isso que a fotografia foi o signo mais estudado pela semiótica no século XX.</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -1451,7 +1559,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 <!-- ============================================================ -->
 <!-- SLIDE 17: ENCERRAMENTO                                        -->
 <!-- ============================================================ -->
-<div class="slide closing-slide" data-title="Encerramento">
+<div class="slide closing-slide" data-title="Encerramento" data-bloco="4" data-competencias="CS-CONCIL,CS-INTEG,CT-MIDIAS">
   <div class="slide-inner">
     <div class="closing-content">
       <div style="height:16px;"></div>
@@ -1816,5 +1924,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 
 })();
 </script>
+<script src="assets/pedagogy-data.js"></script>
+<script src="assets/pedagogy.js"></script>
 </body>
 </html>
