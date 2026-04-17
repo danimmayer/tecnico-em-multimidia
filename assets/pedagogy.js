@@ -517,9 +517,44 @@
   /* ----------------------------------------------------------------- */
   /* RESPONSE COLLECTION (QR)                                           */
   /* ----------------------------------------------------------------- */
+  // Base URL que o QR aponta para os alunos responderem.
+  // Prioridade:
+  //   1. `window.PEDAGOGY_QR_URL` (configurável pelo host HTML)
+  //   2. `<meta name="pedagogy-qr-url" content="...">`
+  //   3. URL atual do deck (só funciona mesmo origem/dispositivo)
+  // Em file:// `window.location.origin` é "null" — usamos `href` e
+  // removemos qualquer hash anterior para não concatenar parâmetros.
+  function getResponderBaseUrl() {
+    if (typeof window.PEDAGOGY_QR_URL === 'string' && window.PEDAGOGY_QR_URL) {
+      return window.PEDAGOGY_QR_URL;
+    }
+    const meta = document.querySelector('meta[name="pedagogy-qr-url"]');
+    if (meta && meta.content) return meta.content;
+    const origin = window.location.origin;
+    if (origin && origin !== 'null') {
+      return origin + window.location.pathname;
+    }
+    // file:// ou outro protocolo opaco: usa href sem hash/query
+    return window.location.href.split('#')[0].split('?')[0];
+  }
+
+  function buildResponderUrl(title) {
+    const base = getResponderBaseUrl();
+    const hasCustomUrl = !!(window.PEDAGOGY_QR_URL ||
+      document.querySelector('meta[name="pedagogy-qr-url"]'));
+    if (hasCustomUrl) {
+      // URL externa configurada (Google Forms/Typeform/webhook): anexa o
+      // título como query param para o formulário saber de qual slide.
+      const sep = base.indexOf('?') >= 0 ? '&' : '?';
+      return base + sep + 'slide=' + encodeURIComponent(title);
+    }
+    // URL interna do deck: usa hash #responder= (modo demo same-device).
+    return base + '#responder=' + encodeURIComponent(title);
+  }
+
   function openQr(slide) {
     const title = getSlideTitle(slide);
-    const url = window.location.origin + window.location.pathname + '#responder=' + encodeURIComponent(title);
+    const url = buildResponderUrl(title);
     const qrCanvas = $('#pQrCanvas');
     qrCanvas.innerHTML = '';
     try {
@@ -531,6 +566,18 @@
     }
     $('#pQrTitle').textContent = title;
     $('#pQrUrl').textContent = url;
+    // Aviso sobre a limitação same-device quando não há URL externa
+    const notice = $('#pQrNotice');
+    const hasCustomUrl = !!(window.PEDAGOGY_QR_URL ||
+      document.querySelector('meta[name="pedagogy-qr-url"]'));
+    if (notice) {
+      if (hasCustomUrl) {
+        notice.style.display = 'none';
+      } else {
+        notice.style.display = 'block';
+        notice.innerHTML = '⚠ <strong>Modo demo (mesmo dispositivo):</strong> as respostas são sincronizadas via <code>localStorage</code> + <code>BroadcastChannel</code>, que só funcionam entre abas do mesmo navegador. Para coleta real multi-dispositivo, configure <code>window.PEDAGOGY_QR_URL</code> ou <code>&lt;meta name="pedagogy-qr-url" content="…"&gt;</code> apontando para um Google Forms, Typeform ou webhook.';
+      }
+    }
     renderAnswers(title);
     $('#pQrModal').classList.add('is-open');
     state.qrOpen = true;
@@ -562,16 +609,20 @@
 
   // ------ QR algorithm (MIT - tiny adapter based on kazuhikoarase/qrcode-generator style) ------
   // Implementação compacta inlined: produz QR mode byte level L para strings curtas.
+  // IMPORTANTE: RS_BLOCK_TABLE abaixo só cobre versões 1-5. Textos que
+  // demandariam versão > 5 lançam erro explícito para que `openQr()`
+  // caia no fallback externo (api.qrserver.com) em vez de quebrar.
   function generateQrSvg(text, size) {
-    // Auto-pick typeNumber based on text length (byte mode, M level capacity):
-    // type 4 ≈ 62, type 6 ≈ 108, type 8 ≈ 170, type 10 ≈ 213, type 12 ≈ 304, type 14 ≈ 384
+    // Capacidade byte-mode nível M por versão: v1≈14, v2≈26, v3≈42, v4≈62, v5≈84.
     const len = text.length;
-    let typeNumber = 4;
-    if (len > 60) typeNumber = 6;
-    if (len > 100) typeNumber = 8;
-    if (len > 160) typeNumber = 10;
-    if (len > 200) typeNumber = 12;
-    if (len > 300) typeNumber = 14;
+    let typeNumber = 1;
+    if (len > 14) typeNumber = 2;
+    if (len > 26) typeNumber = 3;
+    if (len > 42) typeNumber = 4;
+    if (len > 62) typeNumber = 5;
+    if (len > 84) {
+      throw new Error('QR local: texto com ' + len + ' chars excede capacidade v5 (84). Use fallback.');
+    }
     const qr = new QRCode(typeNumber, 'M');
     qr.addData(text);
     qr.make();
@@ -1439,6 +1490,7 @@
           <h1 id="pQrTitle">—</h1>
           <p>Peça aos alunos para escanearem o QR ou abrirem o link a seguir. As respostas aparecem aqui em tempo real e entram no relatório.</p>
           <p style="font-family:var(--font-mono, monospace);font-size:11px;color:var(--p-muted);margin-top:10px;word-break:break-all;" id="pQrUrl"></p>
+          <div id="pQrNotice" style="display:none;margin-top:10px;padding:8px 10px;background:rgba(196,168,108,0.08);border:1px solid rgba(196,168,108,0.3);border-radius:4px;font-size:11px;line-height:1.45;color:var(--p-cream-mut);"></div>
           <div class="p-section-title" style="margin-top:18px;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--p-accent);">Respostas recebidas</div>
           <div class="p-qr-answers" id="pQrAnswers"></div>
           <div style="display:flex;gap:8px;margin-top:12px;justify-content:flex-end;">
