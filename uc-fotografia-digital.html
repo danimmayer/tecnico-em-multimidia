@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fundamentos de Fotografia Digital e de Semiótica · SENAI</title>
+<meta name="description" content="Dashboard da UC de Fundamentos de Fotografia Digital e de Semiótica — 12 aulas, 40 h. Prof. Daniel Mayer.">
+<link rel="stylesheet" href="assets/home.css">
+</head>
+<body>
+
+<div class="hub-shell">
+
+  <header class="hub-topbar">
+    <div class="brand">
+      <img src="imagens/Logo-novo-SENAI_-sem-slogan_755X325.png" alt="SENAI">
+      <span>Técnico em Multimídia</span>
+    </div>
+    <nav class="crumbs" aria-label="Navegação">
+      <a href="index.html" title="Home do curso (H)">Home</a>
+      <span class="sep">/</span>
+      <span class="current">Fotografia Digital e Semiótica</span>
+    </nav>
+  </header>
+
+  <main class="hub-main">
+
+    <section class="hub-hero">
+      <div class="eyebrow">Unidade Curricular · 40 horas · 12 aulas</div>
+      <h1>Fundamentos de Fotografia Digital e de Semiótica</h1>
+      <p class="lede">Da câmera obscura à imagem digital, passando pela semiótica de Peirce, pelo triângulo de exposição e pela ética da imagem. Cada aula é uma noite inteira: 4 blocos, chamadas, intervalo e atividades orientadas para projeção em sala.</p>
+      <div class="meta">
+        <div class="meta-item">
+          <span class="meta-label">Professor</span>
+          <span class="meta-value">Daniel Mayer</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Módulo</span>
+          <span class="meta-value">Básico</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Carga horária</span>
+          <span class="meta-value">40 h · 12 aulas</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Horário</span>
+          <span class="meta-value">19:00 — 22:30</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="hub-section-head">
+        <h2>Aulas</h2>
+        <span class="count" id="aulaCount">— / 12</span>
+      </div>
+      <div class="aula-grid" id="aulaGrid"></div>
+    </section>
+
+  </main>
+
+  <footer class="hub-footer">
+    <div>Objetivo geral · fundamentos técnicos e semióticos para composição e análise de imagens aplicadas à comunicação visual</div>
+    <div class="hint"><kbd>H</kbd> Home · <kbd>?</kbd> Ajuda</div>
+  </footer>
+
+</div>
+
+<!-- ===== HELP OVERLAY ===== -->
+<div id="helpOverlay" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+  <div class="help-box">
+    <div class="help-title" id="helpTitle">Atalhos de Teclado</div>
+    <div class="help-row">
+      <span><kbd>H</kbd></span>
+      <span class="help-desc">Voltar ao Home do curso</span>
+    </div>
+    <div class="help-row">
+      <span><kbd>1</kbd> — <kbd>9</kbd></span>
+      <span class="help-desc">Abrir aula pelo número</span>
+    </div>
+    <div class="help-row">
+      <span><kbd>?</kbd></span>
+      <span class="help-desc">Mostrar/esconder ajuda</span>
+    </div>
+    <div class="help-row">
+      <span><kbd>Esc</kbd></span>
+      <span class="help-desc">Fechar esta janela</span>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ------------------------------------------------------------------ */
+  /* AULAS · Fundamentos de Fotografia Digital e de Semiótica            */
+  /* Derivado do 00_Planejamento_Geral_UC.docx                           */
+  /* ------------------------------------------------------------------ */
+  const AULAS = [
+    {
+      num: '01',
+      titulo: 'A Imagem Através do Tempo',
+      descricao: 'Panorama histórico da fotografia — da câmara escura à era digital — com ética e semiótica como eixos.',
+      tags: ['História', 'Ética', 'Semiótica'],
+      status: 'pronta',
+      url: 'Aula_01_A_Imagem_Atraves_do_Tempo.html'
+    },
+    {
+      num: '02',
+      titulo: 'Formação da Imagem Digital',
+      descricao: 'Como o sensor captura luz: pixel, resolução, profundidade de cor, formatos de arquivo e organização do workspace.',
+      tags: ['Sensor', 'Pixel', 'Formatos'],
+      status: 'pronta',
+      url: 'Aula_02_Formacao_da_Imagem_Digital.html'
+    },
+    {
+      num: '03',
+      titulo: 'Semiótica I · O Universo dos Signos',
+      descricao: 'Introdução à semiótica de Peirce: signo em si, primeiridade, secundidade, terceiridade, quali-/sin-/legi-signos.',
+      tags: ['Peirce', 'Signo', 'Teoria'],
+      status: 'em breve'
+    },
+    {
+      num: '04',
+      titulo: 'Semiótica II · Leitura Semiótica da Imagem',
+      descricao: 'Ícones, índices, símbolos e a tríade rema/dicente/argumento aplicadas a fotografia e publicidade.',
+      tags: ['Leitura', 'Publicidade', 'Análise'],
+      status: 'em breve'
+    },
+    {
+      num: '05',
+      titulo: 'A Câmera Digital',
+      descricao: 'Tipos, partes, acessórios e o smartphone como ferramenta fotográfica profissional. Introdução à gestão do tempo.',
+      tags: ['Equipamento', 'Smartphone', 'Gestão'],
+      status: 'em breve'
+    },
+    {
+      num: '06',
+      titulo: 'Linguagem Fotográfica e Composição',
+      descricao: 'Regra dos terços, linhas guia, simetria, ponto de vista e enquadramento. Prática de composição.',
+      tags: ['Composição', 'Enquadramento', 'Prática'],
+      status: 'em breve'
+    },
+    {
+      num: '07',
+      titulo: 'Luz, Exposição e o Triângulo',
+      descricao: 'ISO, abertura e velocidade — como os três dialogam. Leitura de histograma e controle manual.',
+      tags: ['Exposição', 'ISO', 'Triângulo'],
+      status: 'em breve'
+    },
+    {
+      num: '08',
+      titulo: 'Ambiente · Luz Natural e Artificial',
+      descricao: 'Golden hour, temperatura de cor, esquemas clássicos de iluminação e modificadores de luz.',
+      tags: ['Iluminação', 'Temperatura', 'Ambiente'],
+      status: 'em breve'
+    },
+    {
+      num: '09',
+      titulo: 'Produção de Imagens · Prática Dirigida',
+      descricao: 'Fluxo completo de produção: pré-produção, produção e curadoria. Rodízio de papéis em equipe.',
+      tags: ['Produção', 'Equipe', 'Workflow'],
+      status: 'em breve'
+    },
+    {
+      num: '10',
+      titulo: 'Aplicações Gráficas, Edição e Avaliação',
+      descricao: 'Fotografia em cinema, publicidade e design. Ferramentas gratuitas de edição. Prova de múltipla escolha.',
+      tags: ['Edição', 'Aplicações', 'Avaliação'],
+      status: 'em breve'
+    },
+    {
+      num: '11',
+      titulo: 'Projeto Integrador · Ensaio em Trios',
+      descricao: 'Desenvolvimento presencial do ensaio fotográfico com análise semiótica. 10 trios + 1 quarteto.',
+      tags: ['Projeto', 'Trios', 'Ensaio'],
+      status: 'em breve'
+    },
+    {
+      num: '12',
+      titulo: 'Apresentações Finais e Encerramento',
+      descricao: 'Defesa oral dos ensaios, avaliação por pares, prova de recuperação e encerramento da UC.',
+      tags: ['Apresentação', 'Recuperação', 'Encerramento'],
+      status: 'em breve'
+    }
+  ];
+
+  function renderAulas() {
+    const grid = document.getElementById('aulaGrid');
+    const prontas = AULAS.filter(a => a.status === 'pronta').length;
+    document.getElementById('aulaCount').textContent = prontas + ' / ' + AULAS.length;
+
+    grid.innerHTML = AULAS.map(a => {
+      const soon = a.status !== 'pronta';
+      const cls = soon ? 'aula-card is-soon' : 'aula-card';
+      const tags = (a.tags || []).map(t => '<span class="aula-tag">' + t + '</span>').join('');
+      const foot = soon
+        ? '<span class="soon-chip">Em breve</span><span class="aula-cta" aria-hidden="true">·</span>'
+        : '<span>Pronta · 4 blocos</span><span class="aula-cta" aria-hidden="true">Abrir →</span>';
+      return '' +
+        '<article class="' + cls + '" ' + (soon ? '' : 'data-url="' + a.url + '"') + ' role="button" tabindex="' + (soon ? '-1' : '0') + '" aria-label="Aula ' + a.num + ': ' + a.titulo + (soon ? ' (em breve)' : '') + '">' +
+          '<div class="aula-num"><span class="aula-status" aria-hidden="true"></span>Aula ' + a.num + '</div>' +
+          '<h3 class="aula-title">' + a.titulo + '</h3>' +
+          '<p class="aula-desc">' + a.descricao + '</p>' +
+          '<div class="aula-tags">' + tags + '</div>' +
+          '<div class="aula-foot">' + foot + '</div>' +
+        '</article>';
+    }).join('');
+
+    grid.querySelectorAll('.aula-card:not(.is-soon)').forEach(card => {
+      card.addEventListener('click', () => { window.location.href = card.dataset.url; });
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.location.href = card.dataset.url; }
+      });
+    });
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* HOTKEYS                                                             */
+  /* H: Home do curso                                                    */
+  /* 1-9: Abre aula correspondente (se pronta)                           */
+  /* ?: Help                                                             */
+  /* Esc: fecha help                                                     */
+  /* ------------------------------------------------------------------ */
+  function toggleHelp(open) {
+    const overlay = document.getElementById('helpOverlay');
+    const isOpen = overlay.classList.contains('open');
+    const shouldOpen = (typeof open === 'boolean') ? open : !isOpen;
+    overlay.classList.toggle('open', shouldOpen);
+  }
+
+  document.getElementById('helpOverlay').addEventListener('click', (e) => {
+    if (e.target.id === 'helpOverlay') toggleHelp(false);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.target && /INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return;
+    if (e.key === '?') { e.preventDefault(); toggleHelp(); return; }
+    if (e.key === 'Escape') {
+      if (document.getElementById('helpOverlay').classList.contains('open')) {
+        toggleHelp(false); return;
+      }
+    }
+    if (e.key === 'h' || e.key === 'H') {
+      e.preventDefault();
+      window.location.href = 'index.html';
+      return;
+    }
+    // 1-9 abre aula (01-09)
+    if (/^[1-9]$/.test(e.key)) {
+      const num = '0' + e.key;
+      const a = AULAS.find(x => x.num === num && x.status === 'pronta');
+      if (a) { e.preventDefault(); window.location.href = a.url; }
+    }
+  });
+
+  renderAulas();
+})();
+</script>
+
+</body>
+</html>

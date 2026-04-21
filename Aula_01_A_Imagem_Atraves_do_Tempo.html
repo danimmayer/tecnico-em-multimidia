@@ -557,17 +557,38 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 @media print { .info-btn, .info-popup { display: none !important; } }
 
 /* ===== PRINT ===== */
+@page { size: A4 landscape; margin: 0; }
 @media print {
-  body { overflow: visible; height: auto; }
+  html, body {
+    overflow: visible !important; height: auto !important;
+    background: var(--dark) !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  *, *::before, *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
   .slide {
     position: relative !important;
     opacity: 1 !important;
     pointer-events: auto !important;
     page-break-after: always;
-    height: 100vh;
+    break-after: page;
+    width: 297mm;
+    height: 209mm;
+    overflow: hidden;
   }
+  .slide:last-child { page-break-after: auto; break-after: auto; }
+  .slide-inner { padding: 24px 32px; }
+  .t-title { font-size: 30px; }
+  .t-title-lg { font-size: 38px; }
   #bottomBar, #progressBar, #gridOverlay, #helpOverlay, #imgModal { display: none !important; }
   .img-clickable::after { display: none; }
+  .img-clickable { cursor: default; }
+  /* Revela conteúdos de Expandir/Bônus para material impresso */
+  [data-depth="2"], [data-depth="3"] { display: block !important; opacity: 1 !important; }
 }
 </style>
 <link rel="stylesheet" href="assets/pedagogy.css">
@@ -1607,6 +1628,8 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
     <button class="bar-btn" id="nextBtn" onclick="nextSlide()" title="Próximo">&#8594;</button>
     <button class="bar-btn" id="fsBtn" onclick="toggleFullscreen()" title="Tela cheia (F)">&#x26F6;</button>
     <button class="bar-btn" id="gridBtn" onclick="toggleGrid()" title="Grade de slides (G)">&#9638;</button>
+    <button class="bar-btn" id="pdfBtn" onclick="window.print()" title="Imprimir / Salvar PDF (D)" aria-label="Imprimir ou salvar PDF">&#x2B07;</button>
+    <button class="bar-btn" id="homeBtn" onclick="location.href='uc-fotografia-digital.html'" title="Voltar ao dashboard da UC (H)" aria-label="Home">&#8962;</button>
   </div>
 </div>
 
@@ -1651,6 +1674,14 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
     <div class="help-row">
       <span class="help-key"><kbd>G</kbd></span>
       <span class="help-desc">Grade de slides</span>
+    </div>
+    <div class="help-row">
+      <span class="help-key"><kbd>H</kbd></span>
+      <span class="help-desc">Voltar ao dashboard da UC</span>
+    </div>
+    <div class="help-row">
+      <span class="help-key"><kbd>D</kbd></span>
+      <span class="help-desc">Imprimir / Salvar PDF</span>
     </div>
     <div class="help-row">
       <span class="help-key"><kbd>F</kbd></span>
@@ -1860,6 +1891,14 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
         e.preventDefault(); toggleFullscreen(); break;
       case 'g': case 'G':
         e.preventDefault(); toggleGrid(); break;
+      case 'h': case 'H':
+        e.preventDefault();
+        window.location.href = 'uc-fotografia-digital.html';
+        break;
+      case 'd': case 'D':
+        e.preventDefault();
+        window.print();
+        break;
     }
   });
 
