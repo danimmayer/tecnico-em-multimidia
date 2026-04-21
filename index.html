@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Técnico em Multimídia · SENAI</title>
+<meta name="description" content="Hub de Unidades Curriculares do curso Técnico em Multimídia — SENAI. Prof. Daniel Mayer.">
+<link rel="stylesheet" href="assets/home.css">
+</head>
+<body>
+
+<div class="hub-shell">
+
+  <header class="hub-topbar">
+    <div class="brand">
+      <img src="imagens/Logo-novo-SENAI_-sem-slogan_755X325.png" alt="SENAI">
+      <span>Técnico em Multimídia</span>
+    </div>
+    <nav class="crumbs" aria-label="Navegação">
+      <span class="current">Home</span>
+    </nav>
+  </header>
+
+  <main class="hub-main">
+
+    <section class="hub-hero">
+      <div class="eyebrow">Curso Técnico · SENAI</div>
+      <h1>Técnico em Multimídia</h1>
+      <p class="lede">Materiais pedagógicos interativos das Unidades Curriculares. Cada apresentação roda no navegador, funciona off-line e foi desenhada para a realidade da sala de aula presencial.</p>
+      <div class="meta">
+        <div class="meta-item">
+          <span class="meta-label">Professor</span>
+          <span class="meta-value">Daniel Mayer</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Modalidade</span>
+          <span class="meta-value">Presencial · Noturno</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Ano</span>
+          <span class="meta-value">2026</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="hub-section-head">
+        <h2>Unidades Curriculares</h2>
+        <span class="count" id="ucCount">1 disponível</span>
+      </div>
+      <div class="uc-grid" id="ucGrid"></div>
+    </section>
+
+  </main>
+
+  <footer class="hub-footer">
+    <div>© 2026 · SENAI · Material didático — Prof. Daniel Mayer</div>
+    <div class="hint">Atalho: <kbd>H</kbd> volta ao Home · <kbd>?</kbd> mostra ajuda</div>
+  </footer>
+
+</div>
+
+<!-- ===== HELP OVERLAY ===== -->
+<div id="helpOverlay" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+  <div class="help-box">
+    <div class="help-title" id="helpTitle">Atalhos de Teclado</div>
+    <div class="help-row">
+      <span><kbd>H</kbd></span>
+      <span class="help-desc">Voltar ao Home (todas as páginas)</span>
+    </div>
+    <div class="help-row">
+      <span><kbd>?</kbd></span>
+      <span class="help-desc">Mostrar/esconder ajuda</span>
+    </div>
+    <div class="help-row">
+      <span><kbd>Esc</kbd></span>
+      <span class="help-desc">Fechar esta janela</span>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ------------------------------------------------------------------ */
+  /* CURSO · Técnico em Multimídia                                       */
+  /* Lista de UCs. Marque status='disponivel' apenas quando a UC existir */
+  /* ------------------------------------------------------------------ */
+  const UCS = [
+    {
+      codigo: 'UC · 01',
+      titulo: 'Fundamentos de Fotografia Digital e de Semiótica',
+      descricao: 'Da câmera obscura à imagem digital. História, fundamentos técnicos, semiótica peirciana e ética da imagem.',
+      cargaHoraria: '40 h',
+      aulas: 12,
+      status: 'disponivel',
+      url: 'uc-fotografia-digital.html'
+    }
+    // Novas UCs serão adicionadas aqui à medida que forem desenvolvidas.
+  ];
+
+  function renderUCs() {
+    const grid = document.getElementById('ucGrid');
+    const disponiveis = UCS.filter(u => u.status === 'disponivel').length;
+    document.getElementById('ucCount').textContent = disponiveis + (disponiveis === 1 ? ' disponível' : ' disponíveis');
+
+    grid.innerHTML = UCS.map(uc => {
+      const soon = uc.status !== 'disponivel';
+      const cls = soon ? 'uc-card is-soon' : 'uc-card is-available';
+      const cta = soon
+        ? '<div class="soon-tag">Em breve</div>'
+        : '<div class="uc-cta" aria-hidden="true">→</div>';
+      const meta = [
+        uc.cargaHoraria ? '<span>' + uc.cargaHoraria + '</span>' : '',
+        uc.aulas ? '<span>' + uc.aulas + ' aulas</span>' : ''
+      ].filter(Boolean).join('');
+      return '' +
+        '<article class="' + cls + '" ' + (soon ? '' : 'data-url="' + uc.url + '"') + ' role="button" tabindex="' + (soon ? '-1' : '0') + '" aria-label="' + uc.titulo + '">' +
+          '<div class="uc-code">' + uc.codigo + '</div>' +
+          '<h3 class="uc-title">' + uc.titulo + '</h3>' +
+          '<p class="uc-desc">' + uc.descricao + '</p>' +
+          '<div class="uc-meta">' + meta + '</div>' +
+          cta +
+        '</article>';
+    }).join('');
+
+    grid.querySelectorAll('.uc-card.is-available').forEach(card => {
+      card.addEventListener('click', () => { window.location.href = card.dataset.url; });
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.location.href = card.dataset.url; }
+      });
+    });
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* HOTKEYS                                                             */
+  /* H: Home (já estamos aqui, mas marca consistência)                   */
+  /* ?: Help overlay                                                     */
+  /* Esc: fecha overlay                                                  */
+  /* ------------------------------------------------------------------ */
+  function toggleHelp(open) {
+    const overlay = document.getElementById('helpOverlay');
+    const isOpen = overlay.classList.contains('open');
+    const shouldOpen = (typeof open === 'boolean') ? open : !isOpen;
+    overlay.classList.toggle('open', shouldOpen);
+  }
+
+  document.getElementById('helpOverlay').addEventListener('click', (e) => {
+    if (e.target.id === 'helpOverlay') toggleHelp(false);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.target && /INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return;
+    if (e.key === '?') { e.preventDefault(); toggleHelp(); return; }
+    if (e.key === 'Escape') {
+      if (document.getElementById('helpOverlay').classList.contains('open')) {
+        toggleHelp(false);
+        return;
+      }
+    }
+    if (e.key === 'h' || e.key === 'H') {
+      // Já estamos no Home; apenas rola ao topo para feedback.
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+
+  renderUCs();
+})();
+</script>
+
+</body>
+</html>
