@@ -329,6 +329,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 }
 .flux-step .flux-label { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
 .flux-step .flux-name { font-size: 16px; font-weight: 600; color: var(--cream); }
+.flux-step .flux-sub { font-size: 12px; color: var(--cream-muted); line-height: 1.35; margin-top: 2px; }
 .flux-step + .flux-step::before {
   content: '→'; position: absolute; left: -14px; top: 50%;
   transform: translateY(-50%); color: var(--accent); font-size: 18px;
@@ -371,29 +372,22 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
   border: 1px solid var(--border); border-radius: 4px; overflow: hidden;
   aspect-ratio: 1; position: relative; background: #0a0a0a;
 }
-.pixel-frame.stage-1 {
-  background:
-    radial-gradient(ellipse at 40% 60%, #D2B48C 0%, #A0826D 35%, #4A3728 75%, #1a0f0a 100%);
+.pixel-frame img {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: 50% 38%;
+  transform-origin: 50% 38%;
+  display: block;
 }
-.pixel-frame.stage-2 {
-  background:
-    radial-gradient(ellipse at 40% 60%, #D2B48C 0%, #A0826D 35%, #4A3728 75%, #1a0f0a 100%);
-  filter: blur(1.5px);
+.pixel-frame.stage-2 img {
+  transform: scale(8);
+}
+.pixel-frame.stage-3 img {
+  transform: scale(32);
   image-rendering: pixelated;
-}
-.pixel-frame.stage-3 {
-  background:
-    conic-gradient(from 45deg at 30% 40%, #C4A080 0 25%, #A0826D 25% 50%, #6B4E3E 50% 75%, #4A3728 75% 100%),
-    radial-gradient(ellipse at 40% 60%, #D2B48C, #4A3728);
-  background-size: 25% 25%, 100% 100%;
-  background-blend-mode: normal;
-  image-rendering: pixelated;
-}
-.pixel-frame.stage-3::before {
-  content: ''; position: absolute; inset: 0;
-  background:
-    linear-gradient(to right, transparent calc(25% - 1px), rgba(0,0,0,0.15) 25%, transparent calc(25% + 1px)) 0 0 / 25% 100%,
-    linear-gradient(to bottom, transparent calc(25% - 1px), rgba(0,0,0,0.15) 25%, transparent calc(25% + 1px)) 0 0 / 100% 25%;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
 }
 .pixel-caption { text-align: center; margin-top: 6px; font-size: 13px; color: var(--muted); }
 .pixel-caption strong { color: var(--accent); display: block; font-size: 15px; margin-bottom: 2px; }
@@ -562,8 +556,10 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 .tree-block {
   background: rgba(0,0,0,0.35); border: 1px solid var(--border);
   border-radius: 6px; padding: 20px 24px;
-  font-family: var(--font-mono); font-size: 14px;
+  font-family: var(--font-mono); font-size: 13px;
   color: var(--cream-muted); line-height: 1.65;
+  white-space: pre;
+  overflow-x: auto;
 }
 .tree-block .tree-folder { color: var(--accent); font-weight: 700; }
 .tree-block .tree-file { color: var(--cream-muted); }
@@ -593,12 +589,23 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 .exif-photo {
   aspect-ratio: 3/2;
   border: 1px solid var(--border); border-radius: 6px;
-  background:
-    linear-gradient(135deg, rgba(196,168,108,0.15), rgba(60,124,212,0.1)),
-    radial-gradient(ellipse at 30% 40%, #2a2018 0%, #0a0a0a 80%);
-  display: flex; align-items: center; justify-content: center;
-  color: var(--muted); font-size: 14px; letter-spacing: 0.1em;
-  text-transform: uppercase;
+  overflow: hidden;
+  background: #0a0a0a;
+  position: relative;
+}
+.exif-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.exif-photo figcaption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 8px 12px;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0));
+  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--cream-muted);
+  pointer-events: none;
 }
 .exif-table {
   background: rgba(0,0,0,0.4); border: 1px solid var(--border);
@@ -632,7 +639,98 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
   border-radius: 4px; padding: 10px 14px; font-size: 14px;
   color: var(--cream-muted); text-align: center;
 }
-.quiz-opt.correct { border-color: var(--accent); color: var(--accent); background: rgba(196,168,108,0.08); }
+/* Por padrão a resposta correta fica oculta. Revela ao pressionar "2" (Expandir). */
+.quiz-opt.correct { border-color: var(--border); color: var(--cream-muted); background: rgba(255,255,255,0.03); }
+html.p-depth-2 .slide.active .quiz-opt.correct,
+html.p-depth-3 .slide.active .quiz-opt.correct {
+  border-color: var(--accent); color: var(--accent); background: rgba(196,168,108,0.08);
+  position: relative;
+}
+html.p-depth-2 .slide.active .quiz-opt.correct::after,
+html.p-depth-3 .slide.active .quiz-opt.correct::after {
+  content: '✓'; position: absolute; top: 4px; right: 6px;
+  font-size: 11px; color: var(--accent); font-weight: 700;
+}
+/* Em modo impressão, sempre mostra as respostas (professor usa o print como gabarito). */
+@media print {
+  .quiz-opt.correct { border-color: var(--accent) !important; color: var(--accent) !important; background: rgba(196,168,108,0.08) !important; }
+}
+
+/* ===== RESPOSTAS INLINE · aparecem ao pressionar "2" na tela do slide ===== */
+.q-answer {
+  display: none;
+  margin-top: 14px;
+  padding: 14px 18px;
+  background: rgba(196,168,108,0.08);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  font-size: 14px;
+  color: var(--cream);
+  line-height: 1.55;
+}
+.q-answer strong { color: var(--accent); }
+.q-answer .q-label {
+  display: block;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 6px;
+}
+.q-answer ul { margin: 6px 0 0 20px; padding: 0; list-style: disc outside; }
+.q-answer li + li { margin-top: 6px; }
+html.p-depth-2 .slide.active .q-answer,
+html.p-depth-3 .slide.active .q-answer { display: block; }
+@media print { .q-answer { display: block !important; } }
+
+/* Lateraliza pergunta + resposta em colunas no Quiz para evitar clip vertical */
+html.p-depth-2 .slide.active .quiz-block,
+html.p-depth-3 .slide.active .quiz-block {
+  max-width: 1180px;
+  gap: 10px;
+}
+html.p-depth-2 .slide.active .quiz-q,
+html.p-depth-3 .slide.active .quiz-q {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  column-gap: 16px;
+  align-items: center;
+  padding: 10px 14px;
+}
+html.p-depth-2 .slide.active .quiz-q > *:not(.q-answer),
+html.p-depth-3 .slide.active .quiz-q > *:not(.q-answer) {
+  grid-column: 1;
+}
+html.p-depth-2 .slide.active .quiz-q .quiz-num,
+html.p-depth-3 .slide.active .quiz-q .quiz-num { margin-bottom: 4px; }
+html.p-depth-2 .slide.active .quiz-q .quiz-question,
+html.p-depth-3 .slide.active .quiz-q .quiz-question {
+  font-size: 15px; margin-bottom: 6px; line-height: 1.35;
+}
+html.p-depth-2 .slide.active .quiz-q .quiz-opt,
+html.p-depth-3 .slide.active .quiz-q .quiz-opt {
+  padding: 6px 10px; font-size: 13px;
+}
+html.p-depth-2 .slide.active .quiz-q > .q-answer,
+html.p-depth-3 .slide.active .quiz-q > .q-answer {
+  grid-column: 2;
+  grid-row: 1 / -1;
+  margin-top: 0;
+  align-self: center;
+  padding: 8px 12px;
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+html.p-depth-2 .slide.active .quiz-q > .q-answer .q-label,
+html.p-depth-3 .slide.active .quiz-q > .q-answer .q-label { margin-bottom: 3px; }
+@media print {
+  .quiz-q {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr) !important;
+    column-gap: 18px !important;
+  }
+  .quiz-q > *:not(.q-answer) { grid-column: 1 !important; }
+  .quiz-q > .q-answer {
+    grid-column: 2 !important; grid-row: 1 / -1 !important; margin-top: 0 !important;
+  }
+}
 
 /* ===== SENSOR SIZES ===== */
 .sensor-sizes { position: relative; height: 200px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 6px; padding: 20px; }
@@ -653,6 +751,13 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
   position: absolute; top: 16px; left: 20px;
   font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
 }
+.sensor-legend { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--cream-muted); line-height: 1.4; }
+.sensor-legend strong { color: var(--cream); }
+.sensor-legend .leg-dot { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: middle; border: 2px solid; }
+.sensor-legend .leg-ff { border-color: var(--bayer-r); }
+.sensor-legend .leg-aps { border-color: var(--bayer-g); }
+.sensor-legend .leg-m43 { border-color: var(--bayer-b); }
+.sensor-legend .leg-sm { border-color: var(--accent); }
 
 /* ===== GRID OVERLAY / HELP OVERLAY ===== */
 #gridOverlay {
@@ -772,7 +877,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 <div class="slide" data-title="Programação da Noite" data-bloco="1" data-competencias="CK-IMG,CS-ORG">
   <div class="slide-inner">
     <div class="slide-header">
-      <div class="t-eyebrow">19:00 — 22:30 · 4 blocos · chamada no início de cada</div>
+      <div class="t-eyebrow">19:00 às 22:30 · 4 blocos · chamada no início de cada</div>
       <div class="t-title">Programação da Noite</div>
     </div>
     <div class="slide-body">
@@ -795,7 +900,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
         </div>
       </div>
       <div class="highlight-box" style="margin-top:32px;">
-        <strong>Combinado da noite:</strong> hoje é só projeção. Vocês usam o celular apenas para votar nas enquetes (QR code). A matemática será feita em conjunto no quadro. Lanche de 20 minutos após o Bloco 2.
+        <strong>Combinado da noite:</strong> aula inteira na projeção, sem computador. A matemática do Bloco 4 é feita no quadro, com papel e caneta. Lanche de 20 minutos depois do Bloco 2.
       </div>
     </div>
   </div>
@@ -849,7 +954,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
     <div class="slide-header">
       <div class="t-eyebrow">Fluxo · Bloco 2</div>
       <div class="t-title">Como Nasce uma Imagem Digital</div>
-      <div class="t-subtitle">São cinco etapas. Em cada uma, o fotógrafo toma uma decisão técnica que afeta o resultado final.</div>
+      <div class="t-subtitle">Cinco etapas acontecem dentro da câmera quando você aperta o botão. Em cada uma, uma escolha técnica muda o resultado final.</div>
     </div>
     <div class="slide-body">
       <div class="flux-diagram">
@@ -857,44 +962,52 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
           <div class="flux-icon">☀</div>
           <div class="flux-label">01</div>
           <div class="flux-name">Luz</div>
+          <div class="flux-sub">entra na câmera</div>
         </div>
         <div class="flux-step">
           <div class="flux-icon">◎</div>
           <div class="flux-label">02</div>
           <div class="flux-name">Lente</div>
+          <div class="flux-sub">foca a luz no sensor</div>
         </div>
         <div class="flux-step">
           <div class="flux-icon">▦</div>
           <div class="flux-label">03</div>
           <div class="flux-name">Sensor</div>
+          <div class="flux-sub">transforma luz em sinal elétrico</div>
         </div>
         <div class="flux-step">
           <div class="flux-icon">⇌</div>
           <div class="flux-label">04</div>
           <div class="flux-name">Conversor A/D</div>
+          <div class="flux-sub">transforma sinal elétrico em números</div>
         </div>
         <div class="flux-step">
           <div class="flux-icon">▣</div>
           <div class="flux-label">05</div>
           <div class="flux-name">Arquivo</div>
+          <div class="flux-sub">salva a foto no cartão</div>
         </div>
       </div>
+      <div class="highlight-box" style="margin-top:22px;">
+        <strong>O que é um Conversor A/D?</strong> A letra A é de <em>analógico</em> (um sinal contínuo, como a voltagem de uma pilha). A letra D é de <em>digital</em> (números: 0, 1, 2, 3…). O sensor entrega uma pequena voltagem, proporcional à luz que recebeu. O conversor A/D mede essa voltagem e transforma em um número. É esse número que o computador consegue guardar e mostrar.
+      </div>
       <div class="p-expand" data-depth="2">
-        <div class="p-expand-head"><span class="p-expand-tag">Expandir</span><span>O que cada etapa faz</span></div>
+        <div class="p-expand-head"><span class="p-expand-tag">Expandir</span><span>O que cada etapa faz, em detalhe</span></div>
         <div class="p-expand-body">
           <ul class="styled" style="font-size:15px;">
-            <li><strong>Luz:</strong> os fótons da cena viajam até a câmera. A quantidade depende da iluminação e do tempo de exposição.</li>
-            <li><strong>Lente:</strong> foca e concentra esses fótons no sensor. Lente boa entrega luz limpa. Lente ruim gera distorção, vinheta e reflexos indesejados.</li>
-            <li><strong>Sensor:</strong> cada fotossítio recebe fótons e acumula carga elétrica na proporção. A carga é um sinal <em>analógico</em>.</li>
-            <li><strong>Conversor A/D:</strong> transforma a carga elétrica contínua em número binário (0 a 4095 em 12-bit, 0 a 65.535 em 16-bit).</li>
-            <li><strong>Arquivo:</strong> o processador da câmera aplica demosaicing, balanço de branco, nitidez e compressão. No final, salva em RAW ou JPEG.</li>
+            <li><strong>Luz:</strong> partículas de luz (fótons) viajam da cena até a câmera. Quanto mais iluminado está o ambiente e quanto mais tempo a câmera mantém a janela aberta (obturador), mais luz chega.</li>
+            <li><strong>Lente:</strong> conjunto de vidros curvos que concentra a luz no sensor. Lente boa entrega luz nítida. Lente ruim gera distorção, cantos escuros e reflexos.</li>
+            <li><strong>Sensor:</strong> placa com milhões de receptores. Cada receptor transforma a luz que recebeu em um pouco de eletricidade. Mais luz → mais eletricidade.</li>
+            <li><strong>Conversor A/D:</strong> mede a eletricidade em cada receptor e entrega um número para cada um. Mais luz → número maior → pixel mais claro.</li>
+            <li><strong>Arquivo:</strong> o processador da câmera junta todos os números, aplica cor, contraste e nitidez, e salva no cartão de memória como RAW ou JPEG.</li>
           </ul>
         </div>
       </div>
       <div class="p-expand is-bonus" data-depth="3">
         <div class="p-expand-head"><span class="p-expand-tag">Bônus</span><span>Quanto tempo isso leva?</span></div>
         <div class="p-expand-body">
-          <p>Em uma câmera profissional moderna, todo esse fluxo leva cerca de <strong>8 milissegundos</strong> por foto. Um celular topo de linha faz o mesmo em aproximadamente 5 ms, mas ainda aplica <em>fotografia computacional</em> por cima (HDR, empilhamento de exposições, reconhecimento de cena). Isso adiciona cerca de 100 ms. Por isso, ao fotografar uma cena em movimento rápido no celular, a imagem que aparece na galeria muitas vezes não é a foto que você viu no visor, e sim a fusão de várias exposições feitas pelo aparelho.</p>
+          <p>Em uma câmera profissional, o processo inteiro leva cerca de <strong>8 milésimos de segundo</strong> por foto. Um celular faz o mesmo em cerca de 5 ms, mas aplica <em>fotografia computacional</em> por cima: junta várias exposições, aplica HDR e reconhece rostos. Isso soma uns 100 ms. Por isso, ao fotografar uma cena rápida no celular, o que aparece na galeria nem sempre é exatamente o que você viu no visor: é uma mistura feita pelo aparelho.</p>
         </div>
       </div>
     </div>
@@ -924,16 +1037,22 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
           </div>
         </div>
         <div style="display:flex;flex-direction:column;gap:14px;">
-          <div class="img-frame img-clickable" style="height:180px;background:#0a0a0a;display:flex;align-items:center;justify-content:center;" data-caption="Sensor CMOS · Chip-scale package em perspectiva oblíqua · A área cinza-azulada no centro é a matriz de fotossítios (onde a luz é captada). As bordas laranja e verde são os contatos elétricos que levam o sinal bruto para o processador da câmera.">
+          <div class="img-frame img-clickable" style="height:180px;background:#0a0a0a;display:flex;align-items:center;justify-content:center;" data-caption="Sensor CMOS visto em perspectiva · A área cinza-azulada no centro é a parte que recebe a luz (a matriz de fotossítios, os receptores de luz). As bordas laranja e verde são os contatos elétricos: é por eles que o sinal sai do sensor em direção ao processador da câmera.">
             <img src="imagens/cmos-sensor-chip.jpg" alt="Sensor CMOS visto em perspectiva" style="width:auto;height:100%;object-fit:contain;">
           </div>
-          <div class="img-caption"><strong>Sensor CMOS visto de perto</strong>A área cinza-azulada no centro é onde ficam os milhões de fotossítios. As bordas laranja e verde são contatos elétricos que levam o sinal para o processador.</div>
+          <div class="img-caption"><strong>Sensor CMOS visto de perto</strong>A área cinza-azulada no centro é onde ficam os milhões de receptores que captam a luz. As bordas laranja e verde são os contatinhos elétricos que levam o sinal para o processador.</div>
           <div class="sensor-sizes" style="margin-top:4px;">
-            <div class="sensor-title">Tamanhos de sensor · comparação em escala</div>
+            <div class="sensor-title">Tamanhos de sensor · em escala real</div>
             <div class="sensor-rect sensor-ff"><span>Full Frame · 36×24mm</span></div>
             <div class="sensor-rect sensor-aps"><span>APS-C · 23×15mm</span></div>
             <div class="sensor-rect sensor-m43"><span>M4/3</span></div>
             <div class="sensor-rect sensor-sm"><span>📱</span></div>
+          </div>
+          <div class="sensor-legend">
+            <div><span class="leg-dot leg-ff"></span> <strong>Full Frame</strong> · câmera profissional de nível alto (o sensor tem o tamanho do antigo filme 35mm).</div>
+            <div><span class="leg-dot leg-aps"></span> <strong>APS-C</strong> · câmera profissional de entrada e intermediária (sensor menor, câmera mais barata).</div>
+            <div><span class="leg-dot leg-m43"></span> <strong>M4/3</strong> (Micro Quatro Terços) · câmeras compactas e alguns vídeos-câmera.</div>
+            <div><span class="leg-dot leg-sm"></span> <strong>Celular</strong> · o sensor é minúsculo. Por isso o celular recorre à fotografia computacional para compensar.</div>
           </div>
         </div>
       </div>
@@ -953,21 +1072,21 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
     <div class="slide-body">
       <div class="two-col">
         <div class="card" style="padding:28px;">
-          <div class="card-title">CCD <span style="font-size:13px;color:var(--muted);font-weight:400;margin-left:8px;">· Charge-Coupled Device</span></div>
+          <div class="card-title">CCD <span style="font-size:13px;color:var(--muted);font-weight:400;margin-left:8px;">· dispositivo de carga acoplada</span></div>
           <ul class="styled" style="font-size:17px;margin-top:10px;">
-            <li>O sinal passa de fotossítio em fotossítio até a borda do sensor, como baldes em fila.</li>
-            <li>Melhor qualidade de imagem em ISO baixo.</li>
-            <li>Produção cara e consumo alto de energia.</li>
-            <li>Foi o padrão até cerca de 2005. Hoje continua em uso em medicina e astronomia.</li>
+            <li>O sinal elétrico passa de receptor em receptor até chegar à borda do sensor, como baldes em fila passando água.</li>
+            <li>Imagem com menos ruído quando a luz está boa.</li>
+            <li>Caro de fabricar e gasta muita energia.</li>
+            <li>Foi o padrão até cerca de 2005. Hoje só continua em uso na medicina e astronomia.</li>
           </ul>
         </div>
         <div class="card" style="padding:28px;border-top:3px solid var(--accent);">
-          <div class="card-title">CMOS <span style="font-size:13px;color:var(--muted);font-weight:400;margin-left:8px;">· Complementary Metal-Oxide-Semiconductor</span></div>
+          <div class="card-title">CMOS <span style="font-size:13px;color:var(--muted);font-weight:400;margin-left:8px;">· semicondutor complementar</span></div>
           <ul class="styled" style="font-size:17px;margin-top:10px;">
-            <li class="accent">Cada fotossítio tem seu próprio amplificador e a leitura é feita em paralelo.</li>
-            <li class="accent">Muito mais barato, consumo menor e leitura mais rápida.</li>
-            <li>Venceu pelo custo. A qualidade alcançou o CCD com o tempo.</li>
-            <li>Hoje representa cerca de 99% do mercado: celulares, câmeras DSLR, mirrorless e câmeras de trânsito.</li>
+            <li class="accent">Cada receptor tem seu próprio amplificador. A leitura acontece em paralelo (todos ao mesmo tempo).</li>
+            <li class="accent">Mais barato, gasta menos energia e lê mais rápido.</li>
+            <li>Venceu pelo custo. A qualidade foi melhorando até igualar a do CCD.</li>
+            <li>Hoje é cerca de 99% do mercado: celulares, câmeras DSLR, mirrorless e até câmeras de trânsito.</li>
           </ul>
         </div>
       </div>
@@ -994,14 +1113,14 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
       <div class="two-col">
         <div class="two-col-text">
           <ul class="styled">
-            <li class="accent">O fotossítio só mede <strong>intensidade</strong> de luz. Ele não identifica se o raio é vermelho, verde ou azul.</li>
-            <li>Bryce Bayer, engenheiro da Kodak, resolveu isso em 1976 com um filtro RGB sobre cada fotossítio.</li>
-            <li>Proporção <strong>50% verde, 25% vermelho, 25% azul</strong>. Isso imita o olho humano, que é mais sensível ao verde.</li>
-            <li>Cada pixel enxerga apenas uma cor. As outras duas são <strong>calculadas</strong> com base nos vizinhos.</li>
-            <li>Esse cálculo se chama <strong>demosaicing</strong> e acontece milhões de vezes para cada foto.</li>
+            <li class="accent">O receptor de luz do sensor só mede <strong>quanta luz</strong> chegou. Ele não sabe dizer se a luz era vermelha, verde ou azul.</li>
+            <li>Bryce Bayer, engenheiro da Kodak, resolveu isso em 1976 colocando um pequeno filtro colorido sobre cada receptor.</li>
+            <li>Proporção: <strong>50% verde, 25% vermelho e 25% azul</strong>. É mais verde porque o olho humano enxerga essa cor com mais detalhe.</li>
+            <li>Cada receptor vê apenas uma cor. As outras duas cores de cada pixel são <strong>calculadas</strong> usando os vizinhos como referência.</li>
+            <li>Esse cálculo tem nome: <strong>demosaicing</strong> (pronuncia "de-mo-sai-cing"). É a câmera "montando" as cores a partir do mosaico de filtros coloridos.</li>
           </ul>
           <div class="highlight-box">
-            <strong>Detalhe importante:</strong> uma câmera de 24 MP tem 24 milhões de fotossítios, mas apenas cerca de 6 MP de dados reais de cada cor. O restante é interpolado. Por isso imagens ampliadas ao extremo começam a apresentar artefatos de cor: o filtro Bayer está, literalmente, inventando.
+            <strong>Por que isso importa?</strong> Uma câmera de 24 MP tem 24 milhões de receptores, mas apenas cerca de 6 MP de informação <em>real</em> de cada cor. O resto é calculado. Em imagens ampliadas ao extremo, é possível ver cores estranhas nas bordas; é o cálculo do Bayer "inventando" cor onde não tinha informação.
           </div>
         </div>
         <div class="bayer-wrap">
@@ -1040,11 +1159,11 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
               <div class="bayer-cell g"></div><div class="bayer-cell b"></div>
               <div class="bayer-cell g"></div><div class="bayer-cell b"></div>
             </div>
-            <div class="bayer-label">Como o sensor vê · mosaico Bayer</div>
+            <div class="bayer-label">Como o sensor vê · filtro Bayer colorido sobre cada receptor</div>
           </div>
           <div>
             <div class="bayer-rgb"></div>
-            <div class="bayer-label">Como você vê · após demosaicing</div>
+            <div class="bayer-label">Como você vê · depois da câmera calcular as cores</div>
           </div>
         </div>
       </div>
@@ -1065,15 +1184,15 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
     <div class="slide-body">
       <div class="pixel-zoom">
         <div>
-          <div class="pixel-frame stage-1"></div>
-          <div class="pixel-caption"><strong>Zoom 100%</strong>Você vê uma cena</div>
+          <div class="pixel-frame stage-1"><img src="imagens/fotografos/Afghan Girl (1985).jpg" alt="Retrato Afghan Girl, foto de Steve McCurry, 1985"></div>
+          <div class="pixel-caption"><strong>Zoom 100%</strong>Você vê o rosto da menina</div>
         </div>
         <div>
-          <div class="pixel-frame stage-2"></div>
-          <div class="pixel-caption"><strong>Zoom 800%</strong>A forma começa a quebrar</div>
+          <div class="pixel-frame stage-2"><img src="imagens/fotografos/Afghan Girl (1985).jpg" alt="Mesmo retrato com zoom de 8 vezes na região do olho"></div>
+          <div class="pixel-caption"><strong>Zoom 800%</strong>O olho começa a perder nitidez</div>
         </div>
         <div>
-          <div class="pixel-frame stage-3"></div>
+          <div class="pixel-frame stage-3"><img src="imagens/fotografos/Afghan Girl (1985).jpg" alt="Mesmo retrato com zoom de 32 vezes mostrando quadrados de cor sólida"></div>
           <div class="pixel-caption"><strong>Zoom 3200%</strong>Quadrados de cor sólida. Cada um é um pixel.</div>
         </div>
       </div>
@@ -1155,16 +1274,16 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
       <div class="two-col">
         <div class="two-col-text">
           <ul class="styled">
-            <li class="accent"><strong>PPI · Pixels Per Inch</strong>: densidade de pixels em uma tela ou em um arquivo de imagem.</li>
-            <li class="accent"><strong>DPI · Dots Per Inch</strong>: densidade de pontos de tinta em uma impressora.</li>
-            <li>Na prática, o mercado usa "DPI" para os dois conceitos. Todo mundo entende.</li>
-            <li>O que realmente muda é a <strong>distância de visualização</strong>: quanto mais longe o observador, menor a densidade necessária.</li>
+            <li class="accent"><strong>PPI</strong> (<em>pixels por polegada</em>) · é a quantidade de pixels em uma tela ou arquivo, a cada polegada.</li>
+            <li class="accent"><strong>DPI</strong> (<em>pontos por polegada</em>) · é a quantidade de pontos de tinta que uma impressora coloca no papel, a cada polegada.</li>
+            <li>Na prática, o mercado mistura tudo e só usa "DPI". Todo mundo entende.</li>
+            <li>O que muda na verdade é a <strong>distância de onde a pessoa vai olhar</strong>. Quanto mais longe, menos densidade é preciso.</li>
+            <li>1 polegada = 2,54 cm.</li>
           </ul>
           <div class="highlight-box">
-            <strong>Fórmula útil para hoje:</strong><br>
-            Pixels ÷ DPI = <em>polegadas</em><br>
-            Polegadas × 2,54 = <em>centímetros</em><br>
-            <em>(voltaremos a isso no Bloco 4)</em>
+            <strong>Fórmula única que vamos usar:</strong><br>
+            pixels ÷ DPI = <em>polegadas</em><br>
+            polegadas × 2,54 = <em>centímetros</em>
           </div>
         </div>
         <div>
@@ -1190,9 +1309,8 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
               <div class="dpi-use">5 m de distância</div>
             </div>
           </div>
-          <div class="quote-block" style="margin-top:24px;">
-            Outdoor é 72 DPI mesmo? Sim. Porque você vai olhar de longe. A retina "funde" os pontos de longe igual a um monitor de perto.
-            <div class="quote-attr">Regra do designer gráfico</div>
+          <div class="highlight-box" style="margin-top:24px;">
+            <strong>Por que outdoor é 72 DPI?</strong> Porque você vai ver de longe, de dentro do carro ou do outro lado da rua. A uma distância grande, o olho humano não percebe a diferença entre 72 e 300 DPI: os pontos "se fundem". Imprimir um outdoor em 300 DPI seria desperdício de tinta e de arquivo.
           </div>
         </div>
       </div>
@@ -1206,40 +1324,52 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 <div class="slide" data-title="Quiz de Resolução" data-bloco="2" data-competencias="CK-IMG,CT-MAT,CS-ORG">
   <div class="slide-inner">
     <div class="slide-header">
-      <div class="t-eyebrow">Dinâmica · 8 min · votação coletiva</div>
+      <div class="t-eyebrow">Quiz rápido · três perguntas</div>
       <div class="t-title">Quiz · Resolução e MP</div>
-      <div class="t-subtitle">Professor lê, turma vota levantando a mão (ou QR). Resposta aparece depois.</div>
+      <div class="t-subtitle">Três perguntas para fechar o Bloco 2.</div>
     </div>
     <div class="slide-body">
       <div class="quiz-block">
         <div class="quiz-q">
           <div class="quiz-num">Pergunta 1</div>
-          <div class="quiz-question">Foto 4.000 × 3.000 px. Quantos megapixels?</div>
+          <div class="quiz-question">Uma foto de 4.000 × 3.000 px tem quantos megapixels?</div>
           <div class="quiz-opts">
             <div class="quiz-opt">7 MP</div>
             <div class="quiz-opt correct">12 MP</div>
             <div class="quiz-opt">24 MP</div>
             <div class="quiz-opt">40 MP</div>
           </div>
+          <div class="q-answer">
+            <span class="q-label">Resposta · 12 MP</span>
+            4.000 × 3.000 = 12.000.000 pixels. Dividido por 1 milhão: <strong>12 MP</strong>.
+          </div>
         </div>
         <div class="quiz-q">
           <div class="quiz-num">Pergunta 2</div>
-          <div class="quiz-question">Quero imprimir uma foto A4 (21×29,7 cm) com qualidade profissional. Qual é o DPI mínimo?</div>
+          <div class="quiz-question">Para imprimir uma foto em A4 (21 × 29,7 cm) com qualidade profissional, qual é o DPI mínimo?</div>
           <div class="quiz-opts">
             <div class="quiz-opt">72 DPI</div>
             <div class="quiz-opt">150 DPI</div>
             <div class="quiz-opt correct">300 DPI</div>
             <div class="quiz-opt">600 DPI</div>
           </div>
+          <div class="q-answer">
+            <span class="q-label">Resposta · 300 DPI</span>
+            Padrão para impressão profissional (livro, revista, fotografia). Abaixo disso, a imagem impressa começa a perder nitidez.
+          </div>
         </div>
         <div class="quiz-q">
           <div class="quiz-num">Pergunta 3</div>
-          <div class="quiz-question">Celular tem 50 MP. Câmera profissional tem 24 MP. Qual entrega melhor qualidade em foto noturna?</div>
+          <div class="quiz-question">Um celular de 50 MP contra uma câmera profissional de 24 MP. Qual entrega melhor qualidade em foto noturna?</div>
           <div class="quiz-opts">
             <div class="quiz-opt">Celular (50 MP)</div>
             <div class="quiz-opt correct">Câmera (24 MP)</div>
             <div class="quiz-opt">Igual</div>
             <div class="quiz-opt">Depende do app</div>
+          </div>
+          <div class="q-answer">
+            <span class="q-label">Resposta · Câmera (24 MP)</span>
+            O sensor da câmera é muito maior. Cada pixel capta mais luz. Em baixa luz, isso vence o número de megapixels.
           </div>
         </div>
       </div>
@@ -1273,7 +1403,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
         </div>
       </div>
       <div class="highlight-box" style="margin-top:24px;">
-        <strong>Quando isso importa?</strong> Apenas durante a edição. Depois de exportado para redes sociais (em JPEG de 8-bit), o olho humano não percebe diferença. Mas ao editar, sobretudo ao clarear sombras ou corrigir céus, 8-bit quebra em faixas visíveis de cor. 16-bit mantém a transição limpa. Por isso o RAW sempre guarda entre 12 e 16 bits, enquanto o JPEG sempre trabalha com 8.
+        <strong>Quando isso faz diferença?</strong> Só na hora de editar. Depois que a foto é exportada em JPEG para rede social, o olho humano não percebe diferença. Mas na edição, principalmente ao clarear sombras ou corrigir um céu, o 8-bit começa a mostrar faixas visíveis de cor (parece uma rampa de degraus). O 16-bit mantém a transição lisa. É por isso que o RAW guarda 12 ou 16 bits e o JPEG sempre guarda 8.
       </div>
       <div class="p-expand is-bonus" data-depth="3">
         <div class="p-expand-head"><span class="p-expand-tag">Bônus</span><span>O HDR de 10-bit no celular</span></div>
@@ -1291,16 +1421,17 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 <div class="slide" data-title="Espaço de Cores" data-bloco="3" data-competencias="CK-IMG,CT-ANAL">
   <div class="slide-inner">
     <div class="slide-header">
-      <div class="t-eyebrow">Gamut · qual fatia das cores o arquivo carrega</div>
+      <div class="t-eyebrow">Quantas cores o arquivo consegue guardar</div>
       <div class="t-title">Espaços de Cor</div>
+      <div class="t-subtitle">Um "espaço de cor" é o conjunto de cores que um arquivo de imagem sabe representar. Existem vários tamanhos, cada um serve para uma situação diferente.</div>
     </div>
     <div class="slide-body">
       <div class="two-col">
         <div>
-          <div class="img-frame img-clickable" style="background:#fff;padding:20px;border:1px solid var(--border);height:320px;display:flex;align-items:center;justify-content:center;" data-modal-bg="#fff" data-modal-padding="32px" data-caption="Diagrama CIE 1931 · Mapa das cores perceptíveis pelo olho humano, desenvolvido pela Commission Internationale de l'Éclairage em 1931. Cada triângulo interno mostra a fatia do espectro que um espaço de cor específico consegue representar: sRGB, Adobe RGB (1998) e ProPhoto RGB. Fora dos triângulos há cores visíveis que nenhum desses espaços alcança.">
-            <img src="imagens/cie1931-gamut-comparison.svg" alt="Diagrama CIE 1931 com gamuts" style="height:100%;width:auto;object-fit:contain;">
+          <div class="img-frame img-clickable" style="background:#fff;padding:20px;border:1px solid var(--border);height:320px;display:flex;align-items:center;justify-content:center;" data-modal-bg="#fff" data-modal-padding="32px" data-caption="Diagrama CIE 1931 · Mapa criado em 1931 que mostra todas as cores que o olho humano consegue enxergar (a área colorida em forma de ferradura). Cada triângulo dentro representa um espaço de cor: quanto maior o triângulo, mais cores aquele espaço consegue guardar. Fora dos triângulos sobram cores visíveis que nenhum desses espaços alcança.">
+            <img src="imagens/cie1931-gamut-comparison.svg" alt="Diagrama CIE 1931 com espaços de cor" style="height:100%;width:auto;object-fit:contain;">
           </div>
-          <div class="img-caption" style="margin-top:8px;"><strong>Diagrama CIE 1931</strong>A área colorida representa todas as cores que o olho humano enxerga. Os triângulos menores mostram quanto de dessa faixa cabe em cada espaço de cor.</div>
+          <div class="img-caption" style="margin-top:8px;"><strong>Mapa das cores visíveis</strong>A área colorida é tudo o que o olho humano enxerga. Os triângulos mostram quanto de dessa faixa cada espaço de cor consegue guardar.</div>
         </div>
         <div class="two-col-text">
           <div class="card" style="border-top:3px solid #D4574A;">
@@ -1309,11 +1440,11 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
           </div>
           <div class="card" style="border-top:3px solid #5EB04D;">
             <div class="card-title" style="color:#5EB04D;">Adobe RGB</div>
-            <div class="card-body" style="font-size:16px;">Cerca de 35% maior que sRGB. Ideal para impressão profissional (CMYK). Exige monitor calibrado para editar corretamente. Caso contrário, o resultado fica distorcido.</div>
+            <div class="card-body" style="font-size:16px;">Cerca de 35% maior que o sRGB. Serve para impressão gráfica profissional (a gráfica trabalha com tintas ciano, magenta, amarelo e preto, o chamado CMYK). Exige monitor calibrado, senão o resultado fica distorcido.</div>
           </div>
           <div class="card" style="border-top:3px solid #3C7CD4;">
             <div class="card-title" style="color:#3C7CD4;">ProPhoto RGB</div>
-            <div class="card-body" style="font-size:16px;">O maior dos três. Inclui cores que o olho humano sequer percebe. Só faz sentido em fluxo RAW de nível profissional. <strong>Nunca exportar para web nesse espaço.</strong></div>
+            <div class="card-body" style="font-size:16px;">O maior dos três. Tão grande que inclui cores que o olho humano não enxerga. Só faz sentido para editar RAW em nível profissional. <strong>Nunca usar para web.</strong></div>
           </div>
         </div>
       </div>
@@ -1345,11 +1476,11 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
       <div class="two-col" style="margin-top:24px;">
         <div>
           <ul class="styled" style="font-size:18px;">
-            <li class="accent">Fontes de luz têm <strong>cor diferente</strong>, medida em graus Kelvin.</li>
-            <li>A câmera ajusta os canais RGB para que o branco apareça branco, independentemente da fonte de luz.</li>
-            <li>Quando o balanço de branco está errado, a foto fica com tom amarelado, alaranjado ou azulado.</li>
-            <li>O RAW guarda o balanço como metadado. Permite ajuste posterior sem perda de qualidade.</li>
-            <li>O JPEG grava o balanço diretamente nos pixels. Ajuste posterior causa degradação.</li>
+            <li class="accent">Cada fonte de luz tem uma <strong>cor diferente</strong>, medida em <strong>graus Kelvin (K)</strong>. É a escala de temperatura de cor.</li>
+            <li>A câmera compensa isso ajustando vermelho, verde e azul para que um papel branco apareça branco, não importa sob qual luz.</li>
+            <li>Se o balanço está errado, a foto fica puxada para o amarelo, laranja ou azul.</li>
+            <li>No RAW o balanço fica guardado como um "ajuste" e pode ser mudado na edição sem perder qualidade.</li>
+            <li>No JPEG o balanço já é aplicado nos pixels da foto. Mudar depois faz a imagem piorar.</li>
           </ul>
         </div>
         <div class="highlight-box">
@@ -1396,17 +1527,17 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
       </div>
       <div class="two-col" style="margin-top:24px;">
         <ul class="styled">
-          <li class="accent">O ISO <strong>amplifica o sinal</strong> captado pelo sensor de forma eletrônica.</li>
-          <li>Amplificar o sinal também amplifica o ruído de fundo.</li>
-          <li>O ruído tem dois tipos: <strong>luminância</strong> (granulação no brilho) e <strong>crominância</strong> (pontos coloridos aleatórios).</li>
-          <li>Sensor maior suporta valores de ISO mais altos antes que a imagem perca qualidade.</li>
+          <li class="accent">O ISO é um <strong>amplificador eletrônico</strong>: ele aumenta o sinal que vem do sensor, como o botão de volume de uma caixa de som.</li>
+          <li>O problema: ao amplificar o sinal, o aparelho amplifica também o "chiado", que na foto vira o ruído.</li>
+          <li>O ruído aparece de duas formas: <strong>grãozinho no brilho</strong> (o mais comum) e <strong>pontinhos coloridos aleatórios</strong> (mais feio).</li>
+          <li>Sensor maior aguenta ISO mais alto antes da imagem ficar ruim. Por isso a câmera profissional se sai melhor em pouca luz que o celular.</li>
         </ul>
         <div class="highlight-box">
-          <strong>Ordem das decisões em pouca luz:</strong><br>
-          1. Abrir o diafragma (número f menor). Isso deixa entrar mais luz.<br>
-          2. Usar velocidade mais lenta. Exige tripé para evitar tremor.<br>
+          <strong>Em pouca luz, a ordem é:</strong><br>
+          1. Abrir o diafragma (número <em>f</em> menor). Mais luz entra pela lente.<br>
+          2. Usar velocidade mais lenta. Mas isso exige tripé, senão a foto sai borrada.<br>
           3. Por último, aumentar o ISO.<br>
-          O ISO é o último recurso porque é o único parâmetro que sacrifica qualidade da imagem.
+          Por que por último? Porque o ISO é o único ajuste que piora a qualidade da imagem.
         </div>
       </div>
     </div>
@@ -1450,23 +1581,23 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
           <div class="fmt-name">PNG</div>
           <div class="fmt-size">5–30 MB · 8/16-bit</div>
           <ul class="fmt-list">
-            <li>Compressão sem perda</li>
-            <li>Suporte a transparência (alpha)</li>
+            <li>Comprime sem perder qualidade</li>
+            <li>Aceita fundo transparente</li>
             <li>Arquivo maior que JPEG</li>
             <li>Péssimo para fotos, ótimo para gráficos</li>
           </ul>
-          <div class="fmt-when">→ logo, ícone, screenshot</div>
+          <div class="fmt-when">→ logo, ícone, print de tela</div>
         </div>
         <div class="fmt-card tif">
           <div class="fmt-name">TIFF</div>
           <div class="fmt-size">50–500 MB · 16-bit</div>
           <ul class="fmt-list">
-            <li>Formato profissional de arquivo-mãe</li>
-            <li>Suporte a camadas (como PSD)</li>
-            <li>Lossless</li>
-            <li>Pesado mas indestrutível</li>
+            <li>Formato profissional, arquivo-mãe</li>
+            <li>Aceita camadas (como PSD)</li>
+            <li>Não perde qualidade na gravação</li>
+            <li>Pesado, mas indestrutível</li>
           </ul>
-          <div class="fmt-when">→ impressão gráfica pro</div>
+          <div class="fmt-when">→ gráfica profissional</div>
         </div>
       </div>
       <div class="highlight-box" style="margin-top:22px;">
@@ -1529,26 +1660,40 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 <div class="slide" data-title="Matemática da Imagem" data-bloco="4" data-competencias="CT-MAT,CK-IMG">
   <div class="slide-inner">
     <div class="slide-header">
-      <div class="t-eyebrow">Exercício coletivo · quadro branco · papel e caneta</div>
+      <div class="t-eyebrow">Exercício · feito no quadro, com papel e caneta</div>
       <div class="t-title">Matemática da Imagem</div>
-      <div class="t-subtitle">Três problemas reais para resolver em conjunto no quadro. Fórmula única: <code style="color:var(--accent);font-family:var(--font-mono);background:rgba(196,168,108,0.1);padding:2px 8px;border-radius:3px;">pixels ÷ DPI = polegadas</code></div>
+      <div class="t-subtitle">Três problemas reais para resolver em conjunto. Fórmula única: <code style="color:var(--accent);font-family:var(--font-mono);background:rgba(196,168,108,0.1);padding:2px 8px;border-radius:3px;">pixels ÷ DPI = polegadas</code> · e 1 polegada = 2,54 cm.</div>
     </div>
     <div class="slide-body">
       <div class="exercise-list">
         <div class="exercise">
           <div class="exercise-num">Exercício 1 · cabe em A4?</div>
           <div class="exercise-q">Uma foto de <code>4000 × 3000 px</code> vai ser impressa em qualidade profissional (300 DPI). Ela cabe em uma folha A4 (21 × 29,7 cm)?</div>
-          <div class="exercise-hint">Dica: calcule o tamanho em polegadas, converta pra cm (×2,54). Descubram juntos.</div>
+          <div class="exercise-hint">Caminho: pixels ÷ DPI = polegadas; polegadas × 2,54 = centímetros. Comparar com 21 × 29,7.</div>
+          <div class="q-answer">
+            <span class="q-label">Resposta · sim, cabe (com folga)</span>
+            4000 ÷ 300 = 13,33 pol = <strong>33,87 cm</strong>. 3000 ÷ 300 = 10 pol = <strong>25,4 cm</strong>. A4 tem 21 × 29,7 cm, a foto mede 25,4 × 33,87 cm. Cabe (girando ou recortando).
+          </div>
         </div>
         <div class="exercise">
           <div class="exercise-num">Exercício 2 · banner outdoor</div>
-          <div class="exercise-q">Queremos imprimir um outdoor de <code>4 × 2 m</code> a 72 DPI (outdoor, lembra?). Qual é a resolução mínima em megapixels?</div>
-          <div class="exercise-hint">Dica: 4 m = 400 cm = 157,5 polegadas. Calcule largura × altura em pixels, depois divida por 1 milhão.</div>
+          <div class="exercise-q">Um outdoor de <code>4 × 2 m</code> vai ser impresso a 72 DPI (padrão de outdoor, visto de longe). Qual é a resolução mínima em megapixels?</div>
+          <div class="exercise-hint">Caminho: converter metros em centímetros, depois em polegadas; multiplicar por 72; largura × altura ÷ 1.000.000.</div>
+          <div class="q-answer">
+            <span class="q-label">Resposta · cerca de 64 MP</span>
+            400 cm ÷ 2,54 = 157,48 pol × 72 DPI = <strong>11.338 px</strong> (largura). 200 cm ÷ 2,54 = 78,74 pol × 72 = <strong>5.669 px</strong> (altura). 11.338 × 5.669 = 64.273.322 ÷ 1.000.000 ≈ <strong>64 MP</strong>.<br>
+            Observação prática: como o outdoor é visto de longe, muitas gráficas aceitam 25 DPI e a necessidade cai para cerca de 8 MP.
+          </div>
         </div>
         <div class="exercise">
           <div class="exercise-num">Exercício 3 · Instagram vs impressão</div>
-          <div class="exercise-q">Mesma foto, dois destinos: (a) Instagram (1080 × 1080 px, 72 DPI) e (b) impressão 15 × 15 cm a 300 DPI. Quais pixels você exporta para cada?</div>
-          <div class="exercise-hint">Dica: 15 cm ÷ 2,54 = polegadas; ×300 = pixels. Discutam se faz sentido redimensionar.</div>
+          <div class="exercise-q">Uma mesma foto vai para dois destinos: <strong>(a)</strong> Instagram (1080 × 1080 px, 72 DPI) e <strong>(b)</strong> impressão de 15 × 15 cm a 300 DPI. Quantos pixels exportar para cada?</div>
+          <div class="exercise-hint">Caminho: no Instagram os pixels já estão dados. Para imprimir: 15 cm → polegadas → multiplicar por 300.</div>
+          <div class="q-answer">
+            <span class="q-label">Resposta · Instagram 1080 × 1080 px · Impressão 1.772 × 1.772 px</span>
+            Instagram: os pixels já vêm definidos pela plataforma. Exportar em <strong>1080 × 1080 px</strong>.<br>
+            Impressão: 15 cm ÷ 2,54 = 5,90 pol × 300 DPI = <strong>1.772 px</strong> em cada lado.
+          </div>
         </div>
       </div>
     </div>
@@ -1561,13 +1706,16 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 <div class="slide" data-title="Metadados EXIF" data-bloco="4" data-competencias="CK-IMG,CT-INFO">
   <div class="slide-inner">
     <div class="slide-header">
-      <div class="t-eyebrow">Exchangeable Image File · o currículo invisível da foto</div>
+      <div class="t-eyebrow">Os dados invisíveis dentro de cada foto</div>
       <div class="t-title">Metadados EXIF</div>
-      <div class="t-subtitle">Cada JPEG carrega 20+ campos que contam como, onde, quando e com o quê a foto foi feita.</div>
+      <div class="t-subtitle">Todo arquivo JPEG carrega 20 ou mais informações sobre a foto: com qual câmera foi feita, em que horário, onde, com qual ISO, com qual lente. Esse conjunto é chamado <strong>EXIF</strong>.</div>
     </div>
     <div class="slide-body">
       <div class="exif-panel">
-        <div class="exif-photo">Foto projetada · análise coletiva</div>
+        <figure class="exif-photo">
+          <img src="imagens/fotografos/Afghan Girl (1985).jpg" alt="Foto exemplo para leitura de EXIF">
+          <figcaption>Exemplo ilustrativo · dados fictícios ao lado</figcaption>
+        </figure>
         <div class="exif-table">
           <div class="exif-row"><span class="exif-key">Câmera</span><span class="exif-val">Canon EOS R6 Mark II</span></div>
           <div class="exif-row"><span class="exif-key">Lente</span><span class="exif-val">RF 50mm f/1.2L USM</span></div>
@@ -1576,18 +1724,27 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
           <div class="exif-row"><span class="exif-key">Abertura</span><span class="exif-val">f/2.0</span></div>
           <div class="exif-row"><span class="exif-key">Velocidade</span><span class="exif-val">1/125 s</span></div>
           <div class="exif-row"><span class="exif-key">Foco</span><span class="exif-val">2,3 m · manual</span></div>
-          <div class="exif-row"><span class="exif-key">WB</span><span class="exif-val">Custom · 3800 K</span></div>
-          <div class="exif-row"><span class="exif-key">Modo</span><span class="exif-val">Aperture Priority</span></div>
-          <div class="exif-row"><span class="exif-key">GPS</span><span class="exif-val">−23.5505, −46.6333</span></div>
+          <div class="exif-row"><span class="exif-key">WB</span><span class="exif-val">Personalizado · 3.800 K</span></div>
+          <div class="exif-row"><span class="exif-key">Modo</span><span class="exif-val">Prioridade de abertura</span></div>
+          <div class="exif-row"><span class="exif-key">GPS</span><span class="exif-val">−23,5505, −46,6333</span></div>
         </div>
       </div>
       <div class="highlight-box" style="margin-top:22px;">
-        <strong>Dinâmica em grupo:</strong> com base apenas nesses metadados, reconstruam a cena. Era dia ou noite? O fotógrafo estava com a câmera na mão ou no tripé? A foto foi feita em São Paulo ou em Tóquio? A luz era natural ou artificial? Por que o balanço de branco está em 3.800 K?
+        <strong>A partir desses dados, o que dá para saber sobre a cena?</strong> Horário (era dia ou noite?). ISO e velocidade (a câmera estava na mão ou no tripé?). Coordenadas de GPS (em que cidade foi feita?). Balanço de branco em 3.800 K (a luz era natural ou de lâmpada?).
+      </div>
+      <div class="q-answer">
+        <span class="q-label">Leitura da cena</span>
+        <ul>
+          <li><strong>Era noite.</strong> 18:42 em abril no hemisfério sul: o sol já se pôs ou está se pondo.</li>
+          <li><strong>Provavelmente na mão, não no tripé.</strong> 1/125 s é rápido o bastante para segurar a câmera; se fosse tripé seria muito mais lento para aproveitar a luz fraca.</li>
+          <li><strong>São Paulo (Brasil).</strong> As coordenadas de GPS apontam a Praça da Sé, Centro.</li>
+          <li><strong>Luz artificial morna.</strong> 3.800 K é uma luz alaranjada, típica de luminárias de rua e vitrines. Por isso o fotógrafo ajustou o balanço de branco.</li>
+        </ul>
       </div>
       <div class="p-expand is-bonus" data-depth="3">
         <div class="p-expand-head"><span class="p-expand-tag">Bônus</span><span>EXIF e privacidade</span></div>
         <div class="p-expand-body">
-          <p>Ao publicar uma foto sem remover os metadados EXIF, você expõe a localização GPS exata, o horário do registro, o modelo da câmera e, em alguns casos, o número de série do aparelho. Instagram e WhatsApp costumam remover esses dados automaticamente. Envio por e-mail e publicação em sites pessoais geralmente preservam. Antes de publicar uma foto sensível, use um leitor de EXIF para conferir e, se necessário, ative a opção de "remover dados de localização" no próprio celular.</p>
+          <p>Ao publicar uma foto sem remover o EXIF, você entrega junto a localização exata por GPS, o horário do registro e o modelo da câmera (às vezes até o número de série). Instagram e WhatsApp costumam remover esses dados. E-mail e sites pessoais geralmente não removem. Antes de publicar uma foto sensível, use um leitor de EXIF para conferir e ative a opção "não incluir localização" no próprio celular.</p>
         </div>
       </div>
     </div>
@@ -1605,23 +1762,23 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
     </div>
     <div class="slide-body">
       <div class="flux-diagram v8">
-        <div class="flux-step"><div class="flux-icon">☀</div><div class="flux-name">1.Luz + Lente</div></div>
-        <div class="flux-step"><div class="flux-icon">▦</div><div class="flux-name">2.Sensor captura</div></div>
-        <div class="flux-step"><div class="flux-icon">⇌</div><div class="flux-name">3.Amplif. ISO</div></div>
-        <div class="flux-step"><div class="flux-icon">#</div><div class="flux-name">4.A/D → bits</div></div>
-        <div class="flux-step"><div class="flux-icon">◧</div><div class="flux-name">5.Demosaicing</div></div>
-        <div class="flux-step"><div class="flux-icon">◉</div><div class="flux-name">6.WB + cor</div></div>
-        <div class="flux-step"><div class="flux-icon">✧</div><div class="flux-name">7.Nitidez + NR</div></div>
-        <div class="flux-step"><div class="flux-icon">▣</div><div class="flux-name">8.Compressão</div></div>
+        <div class="flux-step"><div class="flux-icon">☀</div><div class="flux-name">1. Luz + Lente</div></div>
+        <div class="flux-step"><div class="flux-icon">▦</div><div class="flux-name">2. Sensor capta a luz</div></div>
+        <div class="flux-step"><div class="flux-icon">⇌</div><div class="flux-name">3. Amplifica (ISO)</div></div>
+        <div class="flux-step"><div class="flux-icon">#</div><div class="flux-name">4. Converte em números (A/D)</div></div>
+        <div class="flux-step"><div class="flux-icon">◧</div><div class="flux-name">5. Monta as cores (Bayer)</div></div>
+        <div class="flux-step"><div class="flux-icon">◉</div><div class="flux-name">6. Ajusta branco e cor</div></div>
+        <div class="flux-step"><div class="flux-icon">✧</div><div class="flux-name">7. Nitidez + reduz ruído</div></div>
+        <div class="flux-step"><div class="flux-icon">▣</div><div class="flux-name">8. Comprime e salva</div></div>
       </div>
       <div class="two-col" style="margin-top:28px;">
         <div class="highlight-box">
-          <strong>Leva 8 ms em uma câmera profissional e cerca de 5 ms em um celular moderno.</strong> Todo esse processo acontece cada vez que alguém aperta o botão. A foto que aparece na galeria é o resultado de 8 decisões técnicas. Algumas são tomadas pelo fotógrafo, outras pela câmera. Quanto mais consciente o fotógrafo, mais ele controla o resultado.
+          <strong>Leva 8 milésimos de segundo em uma câmera profissional e cerca de 5 milésimos em um celular moderno.</strong> Todo esse processo acontece em cada clique. A foto na galeria é o resultado de oito decisões técnicas. Algumas são do fotógrafo, outras da câmera. Quanto mais o fotógrafo entende esse fluxo, mais ele controla o resultado.
         </div>
         <ul class="styled" style="font-size:17px;">
-          <li>Etapas 1 a 4: decisão do <strong>fotógrafo</strong>, ao compor e ao expor a foto.</li>
-          <li>Etapa 5: definida pelo <strong>fabricante</strong>, dentro do algoritmo da câmera.</li>
-          <li>Etapas 6 a 8: mudam conforme o formato. Em <strong>RAW</strong>, ficam adiadas para a edição. Em <strong>JPEG</strong>, são aplicadas e gravadas na hora.</li>
+          <li>Etapas 1 a 4 · decisão do <strong>fotógrafo</strong>, ao compor e escolher a exposição.</li>
+          <li>Etapa 5 · feita pelo <strong>fabricante</strong>, dentro do programa interno da câmera.</li>
+          <li>Etapas 6 a 8 · dependem do formato. Em <strong>RAW</strong> são adiadas para a edição no computador. Em <strong>JPEG</strong> são aplicadas e gravadas na hora.</li>
         </ul>
       </div>
     </div>
@@ -1659,7 +1816,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
       <div class="closing-divider"></div>
       <div class="next-class">
         <span class="next-label">Próxima Aula</span>
-        <span class="next-title">Aula 03: Semiótica I — O Universo dos Signos</span>
+        <span class="next-title">Aula 03: Semiótica I · O Universo dos Signos</span>
       </div>
       <div class="instructor-tag">Prof. Daniel · SENAI · Técnico em Multimídia</div>
     </div>
