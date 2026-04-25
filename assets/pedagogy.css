@@ -29,6 +29,10 @@
 html.p-font-sm { font-size: calc(100% * 0.9); }
 html.p-font-lg { font-size: calc(100% * 1.12); }
 html.p-font-xl { font-size: calc(100% * 1.25); }
+/* Como os slides usam px, escala o conteúdo via zoom para impacto real */
+html.p-font-sm .slide { zoom: 0.9; }
+html.p-font-lg .slide { zoom: 1.12; }
+html.p-font-xl .slide { zoom: 1.25; }
 
 /* ===================================================================== */
 /* TOP BAR · cronômetro + bloco + profundidade + acessibilidade          */
@@ -168,6 +172,13 @@ html.p-depth-3 .slide.active .p-deep-panel {
   opacity: 1;
   pointer-events: auto;
   box-shadow: 18px 0 50px rgba(0,0,0,0.45);
+}
+/* Painel só com conteúdo de nível 3 não abre no nível 2 */
+html.p-depth-2 .slide.active .p-deep-panel.p-deep-min-3 {
+  transform: translateX(-100%);
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: none;
 }
 
 .p-deep-header {
@@ -891,6 +902,11 @@ html.p-depth-2 .slide.active .p-deep-backdrop,
 html.p-depth-3 .slide.active .p-deep-backdrop {
   opacity: 1;
   pointer-events: auto;
+}
+/* Backdrop de painel nível-3-apenas não escurece em depth 2 */
+html.p-depth-2 .slide.active .p-deep-backdrop.p-deep-min-3 {
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* ===================================================================== */

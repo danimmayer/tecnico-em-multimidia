@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Aula 02 · Gabarito do Professor · Formação da Imagem Digital</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 11pt; line-height: 1.5; color: #1a1a1a; background: #fff;
+  }
+  body { padding: 24mm 20mm; max-width: 210mm; margin: 0 auto; }
+
+  .cover {
+    border-bottom: 2px solid #1a1a1a; padding-bottom: 16pt; margin-bottom: 22pt;
+  }
+  .cover .eyebrow { font-size: 9pt; letter-spacing: 0.18em; text-transform: uppercase; color: #8a7a4a; margin-bottom: 6pt; font-weight: 700; }
+  .cover h1 { font-size: 22pt; line-height: 1.15; margin-bottom: 6pt; }
+  .cover .meta { font-size: 10pt; color: #555; }
+
+  h2 {
+    font-size: 14pt; margin-top: 20pt; margin-bottom: 10pt;
+    padding-bottom: 4pt; border-bottom: 1px solid #d0d0d0;
+    color: #1a1a1a;
+  }
+  h3 { font-size: 11.5pt; margin-top: 14pt; margin-bottom: 6pt; color: #1a1a1a; }
+
+  p { margin-bottom: 8pt; }
+
+  ol, ul { margin: 0 0 10pt 20pt; }
+  li { margin-bottom: 4pt; }
+
+  .q-block {
+    border-left: 3px solid #8a7a4a;
+    padding: 8pt 12pt; margin-bottom: 14pt;
+    background: #fafafa;
+    page-break-inside: avoid;
+  }
+  .q-block .q-num { font-size: 9pt; font-weight: 700; color: #8a7a4a; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 4pt; }
+  .q-block .q-text { font-weight: 600; margin-bottom: 6pt; }
+  .q-block .q-opts { font-size: 10pt; color: #555; margin-bottom: 6pt; }
+  .q-block .q-answer { color: #1a6b1a; font-weight: 700; margin-bottom: 4pt; }
+  .q-block .q-calc {
+    font-family: 'SF Mono', Consolas, monospace; font-size: 10pt;
+    background: #f0f0f0; padding: 6pt 10pt; border-radius: 3px; margin-top: 4pt;
+    white-space: pre-wrap;
+  }
+  .q-block .q-note { font-size: 10pt; color: #555; margin-top: 4pt; font-style: italic; }
+
+  .callout {
+    background: #f5eed8; border: 1px solid #e0d4a8;
+    padding: 10pt 14pt; border-radius: 4px; margin: 12pt 0;
+    font-size: 10.5pt;
+  }
+  .callout strong { color: #6b5318; }
+
+  .glossary dt { font-weight: 700; margin-top: 6pt; }
+  .glossary dd { margin-left: 14pt; color: #444; margin-bottom: 4pt; }
+
+  table.ref { width: 100%; border-collapse: collapse; margin: 6pt 0 12pt; font-size: 10pt; }
+  table.ref th, table.ref td { text-align: left; padding: 4pt 8pt; border-bottom: 1px solid #e0e0e0; }
+  table.ref th { background: #f5f5f5; font-weight: 700; }
+
+  .footer {
+    margin-top: 26pt; padding-top: 10pt; border-top: 1px solid #d0d0d0;
+    font-size: 9pt; color: #777; text-align: center;
+  }
+
+  @media print {
+    body { padding: 18mm 16mm; }
+    h2 { page-break-after: avoid; }
+    .q-block { page-break-inside: avoid; }
+  }
+
+  .print-btn {
+    position: fixed; top: 16px; right: 16px;
+    background: #1a1a1a; color: #fff; border: none;
+    padding: 10px 18px; border-radius: 4px; cursor: pointer;
+    font-size: 11pt; font-family: inherit;
+  }
+  .print-btn:hover { background: #333; }
+  @media print { .print-btn { display: none; } }
+</style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">Imprimir / Salvar PDF</button>
+
+<div class="cover">
+  <div class="eyebrow">Gabarito do Professor · Uso restrito em sala</div>
+  <h1>Aula 02 · Formação da Imagem Digital</h1>
+  <div class="meta">UC Fundamentos de Fotografia Digital e de Semiótica · Técnico em Multimídia · SENAI · Prof. Daniel Mayer · 2026</div>
+</div>
+
+<p>Este documento é o material de apoio do professor para as perguntas e exercícios numéricos da Aula 02. Traz respostas, cálculos passo a passo e observações que não aparecem na projeção. Imprima antes da aula.</p>
+
+<h2>1 · Quiz de Resolução (Bloco 2)</h2>
+
+<div class="q-block">
+  <div class="q-num">Pergunta 1</div>
+  <div class="q-text">Uma foto de 4.000 × 3.000 px tem quantos megapixels?</div>
+  <div class="q-opts">Alternativas: 7 MP · 12 MP · 24 MP · 40 MP</div>
+  <div class="q-answer">✓ Resposta: 12 MP</div>
+  <div class="q-calc">4.000 × 3.000 = 12.000.000 pixels
+12.000.000 ÷ 1.000.000 = 12 megapixels</div>
+  <div class="q-note">Reforce que "mega" é sempre "milhão" (10⁶). Serve como revisão leve de potências de 10.</div>
+</div>
+
+<div class="q-block">
+  <div class="q-num">Pergunta 2</div>
+  <div class="q-text">Para imprimir uma foto em A4 (21 × 29,7 cm) com qualidade profissional, qual é o DPI mínimo?</div>
+  <div class="q-opts">Alternativas: 72 · 150 · 300 · 600</div>
+  <div class="q-answer">✓ Resposta: 300 DPI</div>
+  <div class="q-note">72 DPI é padrão de web / outdoor. 150 DPI é impressão doméstica aceitável. 300 DPI é o padrão profissional universal (livro, revista, fotografia). 600 DPI só é necessário em alguma impressão muito específica (gravuras finas), e aumentaria o arquivo sem ganho visível.</div>
+</div>
+
+<div class="q-block">
+  <div class="q-num">Pergunta 3</div>
+  <div class="q-text">Um celular de 50 MP contra uma câmera profissional de 24 MP. Qual entrega melhor qualidade em foto noturna?</div>
+  <div class="q-opts">Alternativas: Celular (50 MP) · Câmera (24 MP) · Igual · Depende do app</div>
+  <div class="q-answer">✓ Resposta: Câmera (24 MP)</div>
+  <div class="q-note">Raciocínio: o sensor da câmera profissional é muito maior (Full Frame ≈ 864 mm² × sensor de celular ≈ 20–50 mm²). Com a mesma quantidade de pixels distribuídos em uma área maior, cada pixel capta mais luz. Em baixa luz, isso supera qualquer vantagem numérica de megapixels.</div>
+</div>
+
+<h2>2 · Matemática da Imagem (Bloco 4)</h2>
+
+<p>Fórmula única: <strong>pixels ÷ DPI = polegadas</strong>. Conversão: <strong>1 polegada = 2,54 cm</strong>.</p>
+
+<div class="q-block">
+  <div class="q-num">Exercício 1 · cabe em A4?</div>
+  <div class="q-text">Foto de 4000 × 3000 px, impressa a 300 DPI. Cabe numa folha A4 (21 × 29,7 cm)?</div>
+  <div class="q-answer">✓ Resposta: Sim, cabe (com folga).</div>
+  <div class="q-calc">Largura:  4000 ÷ 300 = 13,33 polegadas
+           13,33 × 2,54 = 33,87 cm
+
+Altura:   3000 ÷ 300 = 10,00 polegadas
+           10,00 × 2,54 = 25,40 cm
+
+Tamanho impresso: 25,40 × 33,87 cm
+A4 disponível:    21,00 × 29,70 cm
+
+Girando a foto (paisagem), cabe em A4 mantendo 300 DPI,
+precisando de leve recorte na margem maior.</div>
+  <div class="q-note">Aproveite para mostrar que uma foto 4000 × 3000 em 300 DPI é um pouco maior que A4 → ideal para A4 com sangria ou ligeiro recorte. Não é por acaso: a maioria das câmeras de 12 MP foi pensada para impressão A4 nessa densidade.</div>
+</div>
+
+<div class="q-block">
+  <div class="q-num">Exercício 2 · banner outdoor</div>
+  <div class="q-text">Outdoor de 4 × 2 m a 72 DPI. Resolução mínima em megapixels?</div>
+  <div class="q-answer">✓ Resposta: cerca de 64 MP na conta direta (≈ 11.338 × 5.669 px).</div>
+  <div class="q-calc">Largura:  400 cm ÷ 2,54 = 157,48 polegadas
+           157,48 × 72 DPI = 11.338 px
+
+Altura:   200 cm ÷ 2,54 = 78,74 polegadas
+           78,74 × 72 DPI = 5.669 px
+
+Total:    11.338 × 5.669 = 64.273.322 px
+           64.273.322 ÷ 1.000.000 ≈ 64 MP</div>
+  <div class="q-note">Observação importante a mencionar em sala: na prática, gráficas de outdoor trabalham com <strong>25 a 40 DPI</strong>, porque a pessoa olha a 5+ metros de distância e o olho funde os pontos. Repetindo o cálculo com 25 DPI, o arquivo necessário cai para ~8 MP. Uma foto de celular topo de linha consegue fazer.</div>
+</div>
+
+<div class="q-block">
+  <div class="q-num">Exercício 3 · Instagram vs impressão</div>
+  <div class="q-text">A mesma foto para: (a) Instagram (1080 × 1080 px, 72 DPI) e (b) impressão 15 × 15 cm a 300 DPI. Qual resolução exportar?</div>
+  <div class="q-answer">✓ Resposta: Instagram → 1080 × 1080 px. Impressão → 1.772 × 1.772 px.</div>
+  <div class="q-calc">Instagram: os pixels já estão definidos pela plataforma.
+           Exportar em 1080 × 1080 px, sRGB, JPEG.
+
+Impressão: 15 cm ÷ 2,54 = 5,906 polegadas
+           5,906 × 300 DPI = 1.772 px (por lado)
+           Exportar em 1.772 × 1.772 px, Adobe RGB ou sRGB.</div>
+  <div class="q-note">Moral da história: não existe "tamanho único" de exportação. Cada destino pede uma resolução. O original (de 6000 × 4000, por exemplo) nunca é publicado cru; ele é o arquivo-mãe e gera as versões certas para cada destino.</div>
+</div>
+
+<h2>3 · Leitura do EXIF (Bloco 4)</h2>
+
+<p>O slide projeta uma foto com os seguintes metadados. A turma precisa deduzir a cena.</p>
+
+<table class="ref">
+  <tr><th>Campo</th><th>Valor projetado</th></tr>
+  <tr><td>Câmera</td><td>Canon EOS R6 Mark II</td></tr>
+  <tr><td>Lente</td><td>RF 50mm f/1.2L USM</td></tr>
+  <tr><td>Data / hora</td><td>2026-04-20 · 18:42:17</td></tr>
+  <tr><td>ISO</td><td>640</td></tr>
+  <tr><td>Abertura</td><td>f/2.0</td></tr>
+  <tr><td>Velocidade</td><td>1/125 s</td></tr>
+  <tr><td>Balanço de branco</td><td>Personalizado · 3.800 K</td></tr>
+  <tr><td>GPS</td><td>−23.5505, −46.6333</td></tr>
+</table>
+
+<h3>Respostas esperadas</h3>
+<ul>
+  <li><strong>Dia ou noite?</strong> Noite (ou começo de noite). Em 20 de abril, em São Paulo, o sol se põe perto das 17:45. Às 18:42 já está escuro.</li>
+  <li><strong>Câmera na mão ou no tripé?</strong> Na mão. 1/125 s é rápido o suficiente para segurar a câmera sem tremer. Se fosse tripé, a velocidade seria bem mais lenta para capturar mais luz.</li>
+  <li><strong>Em que cidade?</strong> São Paulo. As coordenadas (−23.5505, −46.6333) apontam a região da Praça da Sé / Centro de São Paulo.</li>
+  <li><strong>Que tipo de luz?</strong> Artificial e morna. 3.800 K indica lâmpadas alaranjadas (iluminação de rua, vitrines). O fotógrafo ajustou o balanço de branco para compensar esse tom.</li>
+  <li><strong>Por que ISO 640 e abertura f/2.0?</strong> Pouca luz pede ou abertura grande (f/2.0 deixa passar muita luz) ou ISO alto. A escolha foi um meio-termo: abrir a lente no máximo e subir um pouco o ISO, mantendo a velocidade segura.</li>
+</ul>
+
+<h2>4 · Glossário de Apoio</h2>
+
+<dl class="glossary">
+  <dt>Conversor A/D (Analógico → Digital)</dt>
+  <dd>Circuito que mede a voltagem que sai do sensor e devolve um número. É ele que transforma o sinal contínuo (analógico) em número (digital). Mais luz → mais voltagem → número maior.</dd>
+
+  <dt>Fotossítio (receptor de luz)</dt>
+  <dd>É o "balde" do sensor. Cada fotossítio capta luz e acumula um pouco de carga elétrica. Um sensor de 24 MP tem 24 milhões desses baldes.</dd>
+
+  <dt>Filtro Bayer</dt>
+  <dd>Malha de pequenos filtros coloridos (50% verde, 25% vermelho, 25% azul) colocada sobre os receptores. É o que permite que um sensor, que por natureza só "enxerga" brilho, registre cor.</dd>
+
+  <dt>Demosaicing</dt>
+  <dd>Cálculo que a câmera faz para "completar" as cores de cada pixel. Como cada receptor só vê uma cor pelo Bayer, as outras duas são calculadas com base nos vizinhos.</dd>
+
+  <dt>CMOS / CCD</dt>
+  <dd>Dois tipos de sensor. O CCD era o padrão até 2005, lia os pixels em fila (mais lento, melhor qualidade na época). O CMOS lê todos em paralelo (mais rápido, mais barato) e hoje é 99% do mercado.</dd>
+
+  <dt>Pixel binning</dt>
+  <dd>Técnica dos celulares: agrupa 4 pixels pequenos em 1 pixel "virtual" maior, para captar mais luz. É por isso que um celular anunciado como 50 MP costuma entregar fotos de 12,5 MP. Fica melhor em baixa luz.</dd>
+
+  <dt>DPI e PPI</dt>
+  <dd>DPI = pontos por polegada (impressora). PPI = pixels por polegada (tela). Na prática, o mercado usa só "DPI" para os dois.</dd>
+
+  <dt>Espaço de cor (sRGB, Adobe RGB, ProPhoto)</dt>
+  <dd>É o "catálogo" de cores que o arquivo sabe representar. sRGB é o universal (web, celular, impressão caseira). Adobe RGB é maior, para gráfica. ProPhoto é o maior, só para edição RAW profissional.</dd>
+
+  <dt>CMYK</dt>
+  <dd>Sistema de cores usado na impressão gráfica. As quatro letras são as tintas: Ciano, Magenta, Amarelo (<em>Yellow</em>) e preto (<em>Key</em>). Monitor trabalha em RGB (somando luz); gráfica trabalha em CMYK (somando tintas).</dd>
+
+  <dt>ISO</dt>
+  <dd>Amplificador eletrônico do sensor. ISO baixo (100) = sinal puro, mais qualidade. ISO alto (3200+) = sinal amplificado, com ruído junto. Usar só quando não há alternativa.</dd>
+
+  <dt>Temperatura de cor (Kelvin)</dt>
+  <dd>Medida da cor de uma fonte de luz. Quanto menor o número, mais quente (alaranjado). Quanto maior, mais frio (azulado). Vela ≈ 2.000 K; lâmpada quente ≈ 3.000 K; sol ao meio-dia ≈ 5.500 K; sombra ≈ 7.500 K.</dd>
+
+  <dt>EXIF</dt>
+  <dd>É o conjunto de informações invisíveis que ficam gravadas dentro do arquivo da foto (modelo de câmera, lente, ISO, data, GPS, etc.). Existe em todo JPEG tirado por câmera ou celular.</dd>
+
+  <dt>RAW</dt>
+  <dd>Formato "negativo digital". Salva os números brutos do sensor, sem processar. Arquivo pesado, mas permite corrigir tudo depois (inclusive balanço de branco e exposição) sem perder qualidade.</dd>
+</dl>
+
+<h2>5 · Roteiro rápido da noite (para referência)</h2>
+
+<table class="ref">
+  <tr><th>Horário</th><th>Bloco</th><th>Foco</th></tr>
+  <tr><td>19:00 – 19:30</td><td>Bloco 1</td><td>Chamada. Ponte com a Aula 01. Pergunta-gatilho: "o que o celular faz quando você aperta o botão?"</td></tr>
+  <tr><td>19:30 – 20:30</td><td>Bloco 2</td><td>Sensor, Bayer, pixel, resolução, DPI × PPI. Quiz coletivo ao final.</td></tr>
+  <tr><td>20:30 – 20:50</td><td>Lanche</td><td>20 minutos.</td></tr>
+  <tr><td>20:50 – 21:30</td><td>Bloco 3</td><td>Bits de cor, espaços de cor, balanço de branco, ISO, formatos de arquivo.</td></tr>
+  <tr><td>21:30 – 22:30</td><td>Bloco 4</td><td>Organização de pastas, matemática no quadro, EXIF, pipeline completo, encerramento.</td></tr>
+</table>
+
+<div class="callout">
+  <strong>Dica para revelar as respostas na projeção:</strong> as respostas do quiz (slide 11), dos exercícios de matemática (slide 18) e a leitura do EXIF (slide 19) estão ocultas na projeção normal. Pressione a tecla <strong>2</strong> na apresentação para abrir o painel <em>Expandir</em>, que mostra as respostas completas no lateral. Pressione <strong>1</strong> para voltar a esconder.
+</div>
+
+<div class="footer">
+  Gabarito do Professor · Aula 02 · Formação da Imagem Digital · Técnico em Multimídia · SENAI · Prof. Daniel Mayer · 2026
+</div>
+
+</body>
+</html>

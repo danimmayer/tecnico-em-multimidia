@@ -92,14 +92,20 @@
 
   function slideHasDepth(slide, level) {
     if (!slide) return false;
-    return !!slide.querySelector('[data-depth="' + level + '"]');
+    if (slide.querySelector('[data-depth="' + level + '"]')) return true;
+    // Conteúdo inline (sem sidepanel) também conta como nível 2.
+    if (level === 2 && slide.querySelector('.q-answer')) return true;
+    return false;
   }
 
   function updateDepthIndicator() {
     const active = getActiveSlide();
     const group = $('#pDepthGroup');
     if (!group) return;
-    const has2 = !!(active && active.querySelector('.p-deep-panel [data-depth="2"]'));
+    const has2 = !!(active && (
+      active.querySelector('.p-deep-panel [data-depth="2"]') ||
+      active.querySelector('.q-answer')
+    ));
     const has3 = !!(active && active.querySelector('.p-deep-panel [data-depth="3"]'));
     group.classList.toggle('is-locked', !has2 && !has3);
     $$('.p-depth-btn', group).forEach(btn => {
@@ -1192,7 +1198,18 @@
   function wrapDeepContent() {
     getSlides().forEach(slide => {
       const deepNodes = $$('[data-depth="2"], [data-depth="3"]', slide);
-      if (!deepNodes.length) return;
+      const hasInlineAnswer = !!slide.querySelector('.q-answer');
+
+      // Slides só com .q-answer (sem sidepanel): hint de "Pressione 2".
+      if (!deepNodes.length) {
+        if (hasInlineAnswer) {
+          const hint = document.createElement('div');
+          hint.className = 'p-deep-hint';
+          hint.textContent = 'Pressione 2 para ver as respostas';
+          slide.appendChild(hint);
+        }
+        return;
+      }
 
       // Backdrop que escurece o conteúdo do slide quando o painel está aberto.
       const backdrop = document.createElement('div');
@@ -1217,8 +1234,13 @@
       slide.appendChild(panel);
 
       // Hint visual no slide para indicar que existe aprofundamento
-      const hasTwo = deepNodes.some(n => n.getAttribute('data-depth') === '2');
+      const hasTwo = deepNodes.some(n => n.getAttribute('data-depth') === '2') || hasInlineAnswer;
       const hasThree = deepNodes.some(n => n.getAttribute('data-depth') === '3');
+      // Painel sem conteúdo de nível 2 só abre no nível 3
+      if (!deepNodes.some(n => n.getAttribute('data-depth') === '2')) {
+        panel.classList.add('p-deep-min-3');
+        backdrop.classList.add('p-deep-min-3');
+      }
       const hint = document.createElement('div');
       hint.className = 'p-deep-hint';
       hint.textContent = hasTwo && hasThree ? 'Pressione 2 / 3 para expandir'
@@ -1331,6 +1353,8 @@
     // Nunca agir dentro de modais do host (modal de imagem ou grid)
     if (document.getElementById('imgModal')?.classList.contains('open')) return;
     if (document.getElementById('gridOverlay')?.classList.contains('open')) return;
+    // Não interceptar atalhos com Cmd/Ctrl (deixar o browser tratar zoom, copiar etc.)
+    if (e.metaKey || e.ctrlKey) return;
 
     if (e.key === '1' || e.key === '2' || e.key === '3') {
       const level = Number(e.key);

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fundamentos de Fotografia Digital e de Semiótica · SENAI</title>
-<meta name="description" content="Dashboard da UC de Fundamentos de Fotografia Digital e de Semiótica — 12 aulas, 40 h. Prof. Daniel Mayer.">
+<meta name="description" content="Dashboard da UC de Fundamentos de Fotografia Digital e de Semiótica · 12 aulas, 40 h. Prof. Daniel Mayer.">
 <link rel="stylesheet" href="assets/home.css">
 </head>
 <body>
@@ -44,7 +44,7 @@
         </div>
         <div class="meta-item">
           <span class="meta-label">Horário</span>
-          <span class="meta-value">19:00 — 22:30</span>
+          <span class="meta-value">19:00 às 22:30</span>
         </div>
       </div>
     </section>
@@ -52,7 +52,7 @@
     <section>
       <div class="hub-section-head">
         <h2>Aulas</h2>
-        <span class="count" id="aulaCount">— / 12</span>
+        <span class="count" id="aulaCount">0 / 12</span>
       </div>
       <div class="aula-grid" id="aulaGrid"></div>
     </section>
@@ -75,7 +75,7 @@
       <span class="help-desc">Voltar ao Home do curso</span>
     </div>
     <div class="help-row">
-      <span><kbd>1</kbd> — <kbd>9</kbd></span>
+      <span><kbd>1</kbd> a <kbd>9</kbd></span>
       <span class="help-desc">Abrir aula pelo número</span>
     </div>
     <div class="help-row">
@@ -101,7 +101,7 @@
     {
       num: '01',
       titulo: 'A Imagem Através do Tempo',
-      descricao: 'Panorama histórico da fotografia — da câmara escura à era digital — com ética e semiótica como eixos.',
+      descricao: 'Panorama histórico da fotografia, da câmara escura à era digital, com ética e semiótica como eixos.',
       tags: ['História', 'Ética', 'Semiótica'],
       status: 'pronta',
       url: 'Aula_01_A_Imagem_Atraves_do_Tempo.html'
@@ -112,7 +112,8 @@
       descricao: 'Como o sensor captura luz: pixel, resolução, profundidade de cor, formatos de arquivo e organização do workspace.',
       tags: ['Sensor', 'Pixel', 'Formatos'],
       status: 'pronta',
-      url: 'Aula_02_Formacao_da_Imagem_Digital.html'
+      url: 'Aula_02_Formacao_da_Imagem_Digital.html',
+      gabarito: { url: 'Aula_02_Gabarito_Professor.html', label: 'Gabarito do professor' }
     },
     {
       num: '03',
@@ -145,7 +146,7 @@
     {
       num: '07',
       titulo: 'Luz, Exposição e o Triângulo',
-      descricao: 'ISO, abertura e velocidade — como os três dialogam. Leitura de histograma e controle manual.',
+      descricao: 'ISO, abertura e velocidade: como os três dialogam. Leitura de histograma e controle manual.',
       tags: ['Exposição', 'ISO', 'Triângulo'],
       status: 'em breve'
     },
@@ -198,6 +199,9 @@
       const foot = soon
         ? '<span class="soon-chip">Em breve</span><span class="aula-cta" aria-hidden="true">·</span>'
         : '<span>Pronta · 4 blocos</span><span class="aula-cta" aria-hidden="true">Abrir →</span>';
+      const gabarito = a.gabarito
+        ? '<a class="aula-gabarito" href="' + a.gabarito.url + '" target="_blank" rel="noopener" data-gabarito>' + a.gabarito.label + '</a>'
+        : '';
       return '' +
         '<article class="' + cls + '" ' + (soon ? '' : 'data-url="' + a.url + '"') + ' role="button" tabindex="' + (soon ? '-1' : '0') + '" aria-label="Aula ' + a.num + ': ' + a.titulo + (soon ? ' (em breve)' : '') + '">' +
           '<div class="aula-num"><span class="aula-status" aria-hidden="true"></span>Aula ' + a.num + '</div>' +
@@ -205,12 +209,22 @@
           '<p class="aula-desc">' + a.descricao + '</p>' +
           '<div class="aula-tags">' + tags + '</div>' +
           '<div class="aula-foot">' + foot + '</div>' +
+          gabarito +
         '</article>';
     }).join('');
 
+    grid.querySelectorAll('.aula-gabarito').forEach(link => {
+      link.addEventListener('click', (e) => { e.stopPropagation(); });
+      link.addEventListener('keydown', (e) => { e.stopPropagation(); });
+    });
+
     grid.querySelectorAll('.aula-card:not(.is-soon)').forEach(card => {
-      card.addEventListener('click', () => { window.location.href = card.dataset.url; });
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('[data-gabarito]')) return;
+        window.location.href = card.dataset.url;
+      });
       card.addEventListener('keydown', (e) => {
+        if (e.target.closest('[data-gabarito]')) return;
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.location.href = card.dataset.url; }
       });
     });
