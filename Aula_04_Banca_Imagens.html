@@ -13,7 +13,7 @@ html, body { margin: 0; padding: 0; background: #2a2a2a; font-family: "Segoe UI"
   height: 297mm;
   background: #fff;
   margin: 14px auto;
-  padding: 6mm;
+  padding: 6mm 6mm 14mm;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,6 +28,31 @@ html, body { margin: 0; padding: 0; background: #2a2a2a; font-family: "Segoe UI"
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.banca-footer {
+  position: absolute;
+  left: 10mm;
+  right: 10mm;
+  bottom: 6mm;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 11px;
+  color: #4a4239;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 4mm;
+  border-top: 0.5px solid #b8b1a4;
+}
+.banca-footer .num {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #2a2a2a;
+}
+.banca-footer .meta {
+  text-align: right;
+  color: #6f675d;
 }
 
 .banca-img img {
@@ -91,6 +116,10 @@ html, body { margin: 0; padding: 0; background: #2a2a2a; font-family: "Segoe UI"
       <small>Já está no projeto — se este placeholder aparecer, verifique se o nome do arquivo bate.</small>
     </div>
   </div>
+  <div class="banca-footer">
+    <span class="num">Imagem 01</span>
+    <span class="meta">The Falling Soldier · Robert Capa, 1936</span>
+  </div>
 </section>
 
 <section class="banca-page">
@@ -102,6 +131,10 @@ html, body { margin: 0; padding: 0; background: #2a2a2a; font-family: "Segoe UI"
       <code>imagens/banca/02-anuncio.jpg</code>
       <small>Salve em alta resolução. Print de página de revista funciona bem.</small>
     </div>
+  </div>
+  <div class="banca-footer">
+    <span class="num">Imagem 02</span>
+    <span class="meta">Think Small · Volkswagen / DDB, 1959</span>
   </div>
 </section>
 
@@ -115,6 +148,10 @@ html, body { margin: 0; padding: 0; background: #2a2a2a; font-family: "Segoe UI"
       <small>Site da editora costuma ter PNG/JPG da capa em alta. Foto de banca também serve.</small>
     </div>
   </div>
+  <div class="banca-footer">
+    <span class="num">Imagem 03</span>
+    <span class="meta">Capa de O Cruzeiro nº 1 · 10 de novembro de 1928</span>
+  </div>
 </section>
 
 <section class="banca-page">
@@ -126,6 +163,10 @@ html, body { margin: 0; padding: 0; background: #2a2a2a; font-family: "Segoe UI"
       <code>imagens/banca/04-foto-historica-br.jpg</code>
       <small>Wikimedia Commons é a fonte mais limpa. Filtre por "License: public domain" ou "CC".</small>
     </div>
+  </div>
+  <div class="banca-footer">
+    <span class="num">Imagem 04</span>
+    <span class="meta">Diretas Já · Brasília, 1984</span>
   </div>
 </section>
 
@@ -139,6 +180,10 @@ html, body { margin: 0; padding: 0; background: #2a2a2a; font-family: "Segoe UI"
       <small>Spotify ou Apple Music exportam a capa em alta. Discogs também.</small>
     </div>
   </div>
+  <div class="banca-footer">
+    <span class="num">Imagem 05</span>
+    <span class="meta">Tropicália ou Panis et Circencis · Caetano, Gil, Gal, Os Mutantes, Tom Zé · 1968</span>
+  </div>
 </section>
 
 <section class="banca-page">
@@ -150,6 +195,10 @@ html, body { margin: 0; padding: 0; background: #2a2a2a; font-family: "Segoe UI"
       <code>imagens/banca/06-foto-esportiva.jpg</code>
       <small>Acervo Globo Esporte, Reuters, ou Wikimedia Commons. Procure por "high resolution".</small>
     </div>
+  </div>
+  <div class="banca-footer">
+    <span class="num">Imagem 06</span>
+    <span class="meta">Pelé celebrando o tri · Copa do México, 1970</span>
   </div>
 </section>
 
