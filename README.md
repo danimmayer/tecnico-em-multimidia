@@ -53,12 +53,17 @@ A partir do **Home** (`index.html`):
 ├── uc-fotografia-digital.html                   # Dashboard · 12 aulas da UC
 ├── Aula_01_A_Imagem_Atraves_do_Tempo.html       # Aula 01 · apresentação
 ├── Aula_02_Formacao_da_Imagem_Digital.html      # Aula 02 · apresentação
+├── Aula_03_Semiotica_I_O_Universo_dos_Signos.html
+├── Aula_04_Semiotica_II_Leitura_Semiotica_da_Imagem.html
+├── Aula_04_Ficha_Leitura_Semiotica.html         # Ficha A4 de trabalho em grupo
 ├── assets/
 │   ├── home.css                                 # Design system · dashboards
 │   ├── pedagogy.css                             # Design system · apresentações
 │   ├── pedagogy.js                              # Engine pedagógico (presenter, relatório, depth)
 │   ├── pedagogy-data.js                         # Dados da Aula 01
-│   └── pedagogy-data-aula02.js                  # Dados da Aula 02
+│   ├── pedagogy-data-aula02.js                  # Dados da Aula 02
+│   ├── pedagogy-data-aula03.js                  # Dados da Aula 03
+│   └── pedagogy-data-aula04.js                  # Dados da Aula 04
 └── imagens/                                     # Assets visuais
 ```
 
