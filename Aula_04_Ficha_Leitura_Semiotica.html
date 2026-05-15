@@ -32,9 +32,24 @@ header {
 h1 { font-size: 24px; line-height: 1.1; margin: 0 0 5px; }
 .subtitle { font-size: 12px; text-transform: uppercase; letter-spacing: 0.10em; color: #6f675d; font-weight: 800; }
 .meta { font-size: 11px; text-align: right; color: #5f574f; line-height: 1.35; }
-.fields { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 10px; }
-.field { border: 1px solid #a9a093; min-height: 30px; padding: 5px 7px; font-size: 11px; color: #5e554c; }
-.field span { color: #151515; font-weight: 700; }
+.fields {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.field { border: 1px solid #a9a093; padding: 6px 8px; font-size: 11px; color: #5e554c; }
+.field span { display: block; color: #151515; font-weight: 700; margin-bottom: 4px; }
+.field.row1 { min-height: 32px; }
+.field.integrantes {
+  grid-column: 1 / -1;
+  min-height: 56px;
+}
+.field.integrantes .integrantes-lines {
+  margin-top: 4px;
+  background: repeating-linear-gradient(to bottom, transparent 0, transparent 17px, rgba(0,0,0,0.18) 18px);
+  min-height: 36px;
+}
 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .box {
   border: 1px solid #a9a093;
@@ -42,8 +57,9 @@ h1 { font-size: 24px; line-height: 1.1; margin: 0 0 5px; }
   padding: 8px;
   position: relative;
 }
-.box.large { min-height: 126px; }
-.box.full { grid-column: 1 / -1; min-height: 116px; }
+.box.large { min-height: 122px; }
+.box.full { grid-column: 1 / -1; min-height: 110px; }
+.box.synth { min-height: 178px; }
 .label {
   font-size: 12px;
   font-weight: 850;
@@ -57,8 +73,9 @@ h1 { font-size: 24px; line-height: 1.1; margin: 0 0 5px; }
   background: repeating-linear-gradient(to bottom, transparent 0, transparent 19px, rgba(0,0,0,0.18) 20px);
   min-height: 58px;
 }
-.box.large .lines { min-height: 82px; }
-.box.full .lines { min-height: 72px; }
+.box.large .lines { min-height: 80px; }
+.box.full .lines { min-height: 66px; }
+.box.synth .lines { min-height: 134px; }
 .rubric {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -93,9 +110,12 @@ h1 { font-size: 24px; line-height: 1.1; margin: 0 0 5px; }
     </header>
 
     <div class="fields">
-      <div class="field"><span>Grupo:</span></div>
-      <div class="field"><span>Imagem analisada:</span></div>
-      <div class="field"><span>Integrantes:</span></div>
+      <div class="field row1"><span>Grupo (nº):</span></div>
+      <div class="field row1"><span>Imagem analisada (nº do envelope e título):</span></div>
+      <div class="field integrantes">
+        <span>Integrantes:</span>
+        <div class="integrantes-lines"></div>
+      </div>
     </div>
 
     <div class="grid">
@@ -124,7 +144,7 @@ h1 { font-size: 24px; line-height: 1.1; margin: 0 0 5px; }
         <div class="hint">Rema (sugere uma possibilidade), dicente (afirma uma situação) ou argumento (constrói uma tese)? Aponte a evidência.</div>
         <div class="lines"></div>
       </div>
-      <div class="box full">
+      <div class="box full synth">
         <div class="label">6. Síntese técnica final</div>
         <div class="hint">Escreva 6 a 8 linhas defendendo a leitura do grupo. Use: "A imagem apresenta... Como ícone... Como índice... Como símbolo... Portanto..."</div>
         <div class="lines"></div>
