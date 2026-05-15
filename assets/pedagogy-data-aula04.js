@@ -74,92 +74,92 @@
 
   const NOTES = {
     'Capa': {
-      fala: 'Boa noite. Na aula anterior a gente montou a base: signo, objeto, interpretante, e as primeiras classificações. Hoje a proposta é mais direta: pegar imagem real e fazer leitura com argumento.',
-      dica: 'Abra dizendo que os nomes continuam aparecendo, mas a aula é prática. O objetivo não é decorar Peirce; é olhar uma imagem e conseguir defender uma interpretação.'
+      fala: 'Boa noite. Na aula passada montamos a base: signo, objeto, interpretante. Hoje a proposta é mais direta: pegar imagem real e fazer leitura com argumento.',
+      dica: 'Aula prática. Não é decorar Peirce; é olhar imagem e defender uma interpretação.'
     },
     'Programação da Noite': {
-      fala: 'A noite tem quatro movimentos: revisão curta, relação signo-objeto, relação signo-interpretante e uma banca de leitura. A banca é a parte mais importante porque obriga todo mundo a voltar para a imagem.',
-      dica: 'Use este slide para estabelecer ritmo. Se a turma estiver cansada, mantenha o bloco 2 objetivo e preserve a atividade final.'
+      fala: 'A noite tem quatro movimentos: revisão curta, relação signo-objeto, relação signo-interpretante e a banca de leitura. A banca é a parte mais importante.',
+      dica: 'Avise o ritmo: bloco 2 e 3 são teoria curta; bloco 4 é a banca, e ela não pode ser cortada.'
     },
     'Ponte com a Aula 03': {
-      fala: 'A tríade continua sendo nosso mapa. O signo é o que aparece; o objeto é aquilo a que ele se refere; o interpretante é o efeito de sentido que se forma. Hoje vamos olhar para duas relações dentro dessa tríade.',
-      dica: 'Peça exemplos rápidos: fumaça, placa, foto de perfil, uniforme, logo. Em cada exemplo, pergunte o que aparece, a que se refere e que leitura produz.'
+      fala: 'A tríade continua sendo nosso mapa. O signo é o que aparece; o objeto é aquilo a que ele se refere; o interpretante é o efeito de sentido. Hoje a lente muda: vamos olhar para duas relações dentro dessa tríade.',
+      dica: 'Frase de antecipação: quali, sin e legi olharam para o signo em si; agora olhamos a relação com o objeto e com o leitor. Não é repetição, é troca de lente.'
     },
     'Duas Perguntas da Noite': {
-      fala: 'A primeira pergunta é sobre relação com o objeto: semelhança, rastro ou código. A segunda pergunta é sobre o tipo de efeito: possibilidade, afirmação ou tese.',
-      dica: 'Fale devagar e traduza os termos. Escreva no quadro, se houver: ícone = parece; índice = aponta; símbolo = código. Rema = talvez; dicente = afirma; argumento = convence.'
+      fala: 'Primeira pergunta: como a imagem se liga ao objeto. Semelhança, rastro ou código. Segunda pergunta: que tipo de efeito ela produz. Possibilidade, afirmação ou tese.',
+      dica: 'Traduza no quadro: ícone = parece; índice = aponta; símbolo = código. Rema = talvez; dicente = afirma; argumento = convence.'
     },
     'Signo-Objeto': {
-      fala: 'Ícone, índice e símbolo não são gavetas para decorar. São modos de funcionamento. Uma mesma imagem pode ter os três ao mesmo tempo; a análise precisa dizer qual evidência sustenta cada camada.',
-      dica: 'Faça um exemplo oral com o uniforme do SENAI: ícone se houver foto do uniforme, índice se houver marca de uso, símbolo pela instituição que o uniforme representa.'
+      fala: 'Ícone, índice e símbolo não são gavetas. São modos de funcionamento. Uma mesma imagem tem os três ao mesmo tempo; a análise precisa dizer qual evidência sustenta cada camada.',
+      dica: 'Exemplo oral com o uniforme do SENAI: ícone (parece com), índice (marca de uso, suor), símbolo (instituição que representa).'
     },
     'Ícone': {
       fala: 'Ícone é relação por semelhança. Antes de saber contexto, autoria ou circulação, a gente reconhece rosto, olhar, tecido, cor, postura. Essa é a entrada icônica.',
-      dica: 'Peça para a turma descrever apenas o que reconhece visualmente. Segure contexto histórico por enquanto.'
+      dica: 'Só descrição visual. Segura contexto histórico por enquanto.'
     },
     'Índice': {
-      fala: 'Índice é pista. Não depende de achar bonito ou triste; depende de apontar um rastro, uma presença, uma consequência. Na fotografia isso é forte porque há uma relação com algo que esteve diante da câmera.',
-      dica: 'Se aparecer leitura muito subjetiva, pergunte: qual marca concreta está sustentando isso?'
+      fala: 'Índice é pista. Não depende de achar bonito ou triste; depende de apontar um rastro, uma presença, uma consequência. Na fotografia isso é forte porque há relação com algo que esteve diante da câmera.',
+      dica: 'Se aparecer leitura subjetiva: cadê a marca concreta na imagem?'
     },
     'Símbolo': {
-      fala: 'Símbolo depende de código aprendido. O logotipo da Kodak é um caso limpo: sem rosto, sem cena, sem semelhança visual com nada. Quem reconhece, lê marca, qualidade, indústria fotográfica. Quem nunca viu, não lê.',
-      dica: 'Peça contraexemplos: alguém que não saiba ler aquele código. Traga referências próximas: placa da escola, cor de uniforme, logo de app, emoji, embalagem, time, marca de roupa.'
+      fala: 'Símbolo depende de código aprendido. O logotipo da Kodak é um caso limpo: sem rosto, sem cena, sem semelhança com nada. Quem reconhece lê marca, qualidade, indústria fotográfica. Quem nunca viu, não lê.',
+      dica: 'Contraexemplo: quem aqui não conhece esse logo? Reforce com referências próximas: placa da escola, cor de uniforme, logo de app, emoji, embalagem.'
     },
     'Mini-Diagnóstico': {
-      fala: 'Vamos testar rápido. Primeiro a turma responde sem ver o gabarito; depois a gente pressiona 2 para conferir. A justificativa importa mais que a resposta seca.',
-      dica: 'Use votação por mão levantada. Se houver divergência, peça que os dois lados apontem evidência na frase.'
+      fala: 'Teste rápido. A turma responde sem ver o gabarito; depois pressiono 2. O que importa é a justificativa, não a resposta seca.',
+      dica: 'Mão levantada. Quando discordarem, os dois lados defendem com evidência da frase.'
     },
     'Fotografia como Signo Complexo': {
-      fala: 'Aqui entra a ideia central: fotografia não é só ícone. Ela se parece com algo, aponta para um encontro real com a câmera e, quando circula, pode virar símbolo cultural.',
-      dica: 'Pressione S neste slide para mostrar os hotspots. Se a turma estiver respondendo bem, pressione 2 ou 3 para aprofundar; se estiver cansada, fique no essencial.'
+      fala: 'Aqui está a ideia central: fotografia não é só ícone. Se parece com algo, aponta para um encontro real com a câmera e, quando circula, vira símbolo cultural.',
+      dica: 'Tecla S abre os hotspots. Se a turma engatar, vai para 2 ou 3. Se estiver cansada, fica no essencial.'
     },
     'Signo-Interpretante': {
-      fala: 'Agora a pergunta muda. Não é mais como a imagem se liga ao objeto. É que tipo de leitura ela produz: uma possibilidade, uma afirmação ou um argumento.',
-      dica: 'Retome exemplos da sala: uma foto pode só sugerir clima, pode afirmar uma situação ou pode tentar convencer alguém de uma ideia.'
+      fala: 'Agora a pergunta muda. Não é como a imagem se liga ao objeto. É que tipo de leitura ela produz: possibilidade, afirmação ou argumento.',
+      dica: 'Retome com exemplos: foto que só sugere clima, foto que afirma uma situação, peça que tenta convencer.'
     },
     'Rema': {
-      fala: 'Rema é possibilidade. Quando alguém diz que uma imagem parece fria, tensa, íntima ou artificial, ainda estamos no campo da sugestão. A resposta precisa apontar a qualidade visual que cria essa possibilidade.',
-      dica: 'Corrija linguagem vaga sem cortar o aluno: "boa leitura, mas onde a imagem te dá isso?".'
+      fala: 'Rema é possibilidade. Quando alguém diz que a imagem parece fria, tensa, íntima ou artificial, ainda estamos na sugestão. A resposta forte aponta a qualidade visual que cria essa possibilidade.',
+      dica: 'Corrija sem cortar: boa leitura, mas onde a imagem te dá isso?'
     },
     'Dicente': {
-      fala: 'Dicente se aproxima de uma afirmação. A imagem parece dizer: isto aconteceu, essas pessoas estavam ali, esta situação existiu. Fotografia documental costuma puxar muito para esse lado.',
-      dica: 'Diferencie o que está visível do que depende de legenda ou repertório histórico. Isso melhora a precisão.'
+      fala: 'Dicente se aproxima de uma afirmação. A imagem parece dizer: isto aconteceu, essas pessoas estavam ali, esta situação existiu. Fotografia documental puxa para esse lado.',
+      dica: 'Separa o que está visível do que vem da legenda ou do repertório histórico.'
     },
     'Argumento': {
-      fala: 'Argumento aparece quando os elementos trabalham juntos para conduzir uma conclusão. O anúncio antigo da Kodak organiza marca, ilustração, preço e slogan para defender uma tese: fotografar pode ser fácil. Não estamos só vendo um produto; estamos sendo conduzidos a uma ideia.',
-      dica: 'Pergunte: qual conclusão essa peça quer que eu aceite? Depois volte para slogan, produto, composição, público e promessa. Compare com o slide do símbolo: o logo sozinho é código; a peça inteira é argumento.'
+      fala: 'Argumento aparece quando os elementos trabalham juntos para conduzir uma conclusão. O anúncio antigo da Kodak organiza marca, ilustração, preço e slogan para defender uma tese: fotografar pode ser fácil. Não estamos vendo um produto; estamos sendo conduzidos a uma ideia.',
+      dica: 'Qual conclusão a peça quer que eu aceite? Depois volta para slogan, produto, composição, público, promessa. Compare com o símbolo: o logo sozinho é código; a peça inteira é argumento.'
     },
     'Três Frases Técnicas': {
-      fala: 'Essas frases são modelos de escrita. Elas tiram a análise do campo do "eu acho" e colocam no campo da evidência: cor, luz, enquadramento, gesto, marca, texto.',
-      dica: 'Peça para a turma transformar uma frase vaga em frase técnica. Exemplo: de "passa uma vibe triste" para "a luz baixa e a paleta fria sugerem isolamento".'
+      fala: 'Essas frases são modelos de escrita. Tiram a análise do "eu acho" e colocam na evidência: cor, luz, enquadramento, gesto, marca, texto.',
+      dica: 'Vaga vira técnica em voz alta. "Passa uma vibe triste" vira "a luz baixa e a paleta fria sugerem isolamento".'
     },
     'Leitura Guiada': {
-      fala: 'Agora eu faço uma leitura junto com vocês usando o Cartier-Bresson. Não é para achar a interpretação perfeita; é para mostrar o caminho em quatro passos: o que reconheço, o que isso aponta, que código cultural ajuda a ler e que efeito de leitura aparece.',
-      dica: 'Conduza em sequência: ícone (eu reconheço...), índice (isso aponta para...), símbolo (o código cultural diz...), interpretante (a imagem sugere/afirma/argumenta). Se a turma estiver rápida, peça um aluno para trocar uma das frases por outra evidência visível.'
+      fala: 'Agora eu faço uma leitura junto com vocês, usando o Cartier-Bresson. Não é para achar a interpretação perfeita. É para mostrar o caminho em quatro passos: o que reconheço, o que aponta, que código cultural ajuda a ler, que efeito de leitura aparece.',
+      dica: 'Sequência de quatro: eu reconheço (ícone), isso aponta para (índice), o código diz (símbolo), a imagem sugere/afirma/argumenta (interpretante). Se a turma estiver rápida, alguém troca uma das frases por outra evidência visível.'
     },
     'Método de Leitura': {
-      fala: 'Este é o roteiro da ficha. Ele impede que a análise pule direto para opinião. Primeiro descreve, depois separa ícone, índice, símbolo, interpretante e só então escreve a síntese.',
-      dica: 'Mostre que a ficha não é burocracia. Ela é um apoio para a banca final.'
+      fala: 'Esse é o roteiro da ficha. Ele impede que a análise pule direto para opinião. Primeiro descreve, depois separa ícone, índice, símbolo, interpretante; só então escreve a síntese.',
+      dica: 'A ficha não é burocracia. É a estrutura da defesa na banca.'
     },
     'Banca de Leitura': {
-      fala: 'Agora a turma trabalha em grupos. Cada grupo monta uma leitura e outro grupo testa essa leitura. A regra da banca é simples: a pergunta precisa obrigar o grupo a voltar para a imagem. O bloco tem 40 minutos, então o tempo aperta.',
-      dica: 'Forme grupos de 3 a 5. Conte alto: 3 min para grupos e imagem, 7 min para descrição e ficha, 5 min para tese, 20 min para 4 bancas, 5 min para síntese. Se a turma for grande, escolha 4 grupos para apresentar e recolha as fichas dos demais.'
+      fala: 'Agora a turma trabalha em grupos. Cada grupo monta uma leitura, outro grupo testa. A regra é simples: a pergunta precisa obrigar o grupo a voltar para a imagem. O bloco tem 40 minutos, então o tempo aperta.',
+      dica: '6 grupos de 5 a 6 alunos (já formados na Aula 03). 6 envelopes numerados, uma imagem cada. Cronômetro: 2 min para entregar envelope e ficha; 12 min para descrição e ficha; 3 min para fechar a tese; 18 min para 6 bancas; 5 min para síntese final no quadro.'
     },
     'Ficha de Análise': {
-      fala: 'A ficha organiza o raciocínio. Na apresentação, o grupo não precisa ler tudo; precisa defender a leitura com uma evidência principal.',
-      dica: 'Circule durante a atividade procurando frases soltas. Quando encontrar, pergunte "qual parte da imagem segura essa frase?".'
+      fala: 'A ficha organiza o raciocínio. Na apresentação, o grupo não lê tudo; defende a leitura com uma evidência principal.',
+      dica: 'Circule procurando frases soltas. Quando achar: qual parte da imagem segura essa frase?'
     },
     'Rodada de Banca': {
-      fala: 'Na banca, discordar é parte do jogo. Um grupo defende, outro pergunta, e o primeiro tem direito de ajustar a leitura. O importante é que tudo volte para a imagem. Não precisa convencer todo mundo; precisa sustentar a interpretação com evidência.',
-      dica: 'Controle o tempo com voz alta. Defesa de 90s, pergunta de 30s, resposta de 30s. Se passar disso, a energia cai. Use um cronômetro visível no projetor se a turma tiver dificuldade.'
+      fala: 'Na banca, discordar é parte do jogo. Um grupo defende, outro pergunta, o primeiro pode ajustar a leitura. Tudo volta para a imagem. Não precisa convencer todo mundo; precisa sustentar a interpretação com evidência.',
+      dica: 'Cronômetro alto e visível: 90s defesa, 30s pergunta, 30s resposta. Se passar, a energia cai.'
     },
     'Texto Técnico': {
       fala: 'O produto final é uma síntese curta. A frase precisa mostrar descrição, relação signo-objeto, interpretante e conclusão. Não precisa ser longa; precisa ser defendável.',
-      dica: 'Peça para cada grupo sublinhar a principal evidência visual usada na conclusão.'
+      dica: 'Cada grupo sublinha a evidência visual principal da conclusão.'
     },
     'Encerramento': {
-      fala: 'Hoje a gente transformou a semiótica em ferramenta de leitura. Na próxima aula, voltamos para câmera e técnica, mas agora com uma ideia importante: escolha técnica também produz sentido.',
-      dica: 'Feche com uma pergunta curta para saída: "uma imagem argumenta quando...". Isso ajuda a fixar a ponte para publicidade e produção visual.'
+      fala: 'Hoje transformamos a semiótica em ferramenta de leitura. Na próxima aula voltamos para câmera e técnica, mas com uma ideia que fica: escolha técnica também produz sentido.',
+      dica: 'Pergunta de saída: "uma imagem argumenta quando...". Fixa a ponte para publicidade e produção visual.'
     }
   };
 
