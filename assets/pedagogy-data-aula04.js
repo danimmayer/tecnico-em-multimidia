@@ -58,17 +58,17 @@
       id: 3,
       label: 'Bloco 3',
       inicio: '20:50',
-      fim: '21:30',
+      fim: '21:50',
       titulo: 'Rema, dicente e argumento',
-      descricao: 'Relação signo-interpretante: possibilidade, afirmação e tese. Leitura guiada e escrita técnica.'
+      descricao: 'Relação signo-interpretante: possibilidade, afirmação e tese. Frases técnicas e leitura guiada ao vivo.'
     },
     {
       id: 4,
       label: 'Bloco 4',
-      inicio: '21:30',
+      inicio: '21:50',
       fim: '22:30',
       titulo: 'Banca de leitura',
-      descricao: 'Grupos analisam imagens, defendem uma leitura e respondem a uma pergunta baseada na imagem.'
+      descricao: 'Grupos analisam imagens, defendem uma leitura e respondem a uma pergunta da banca.'
     }
   ];
 
@@ -102,8 +102,8 @@
       dica: 'Se aparecer leitura muito subjetiva, pergunte: qual marca concreta está sustentando isso?'
     },
     'Símbolo': {
-      fala: 'Símbolo depende de código aprendido. Marca, palavra, slogan, cor institucional e formato publicitário funcionam porque a gente aprendeu a ler esses sinais.',
-      dica: 'Traga para perto: placa da escola, cor de uniforme, logo de app, emoji, embalagem, time, marca de roupa.'
+      fala: 'Símbolo depende de código aprendido. O logotipo da Kodak é um caso limpo: sem rosto, sem cena, sem semelhança visual com nada. Quem reconhece, lê marca, qualidade, indústria fotográfica. Quem nunca viu, não lê.',
+      dica: 'Peça contraexemplos: alguém que não saiba ler aquele código. Traga referências próximas: placa da escola, cor de uniforme, logo de app, emoji, embalagem, time, marca de roupa.'
     },
     'Mini-Diagnóstico': {
       fala: 'Vamos testar rápido. Primeiro a turma responde sem ver o gabarito; depois a gente pressiona 2 para conferir. A justificativa importa mais que a resposta seca.',
@@ -126,32 +126,32 @@
       dica: 'Diferencie o que está visível do que depende de legenda ou repertório histórico. Isso melhora a precisão.'
     },
     'Argumento': {
-      fala: 'Argumento aparece quando os elementos trabalham juntos para conduzir uma conclusão. Publicidade é um exemplo claro: a peça mostra, promete e organiza a leitura para convencer.',
-      dica: 'Pergunte: qual conclusão essa peça quer que eu aceite? Depois volte para slogan, produto, composição, público e promessa.'
+      fala: 'Argumento aparece quando os elementos trabalham juntos para conduzir uma conclusão. O anúncio antigo da Kodak organiza marca, ilustração, preço e slogan para defender uma tese: fotografar pode ser fácil. Não estamos só vendo um produto; estamos sendo conduzidos a uma ideia.',
+      dica: 'Pergunte: qual conclusão essa peça quer que eu aceite? Depois volte para slogan, produto, composição, público e promessa. Compare com o slide do símbolo: o logo sozinho é código; a peça inteira é argumento.'
     },
     'Três Frases Técnicas': {
       fala: 'Essas frases são modelos de escrita. Elas tiram a análise do campo do "eu acho" e colocam no campo da evidência: cor, luz, enquadramento, gesto, marca, texto.',
       dica: 'Peça para a turma transformar uma frase vaga em frase técnica. Exemplo: de "passa uma vibe triste" para "a luz baixa e a paleta fria sugerem isolamento".'
     },
     'Leitura Guiada': {
-      fala: 'Agora eu faço uma leitura junto com vocês. Não é para achar a interpretação perfeita; é para mostrar o caminho: descrever, separar evidência e fechar uma leitura.',
-      dica: 'Faça perguntas em sequência. O que aparece? O que é semelhança? O que é rastro? Que leitura a composição sugere?'
+      fala: 'Agora eu faço uma leitura junto com vocês usando o Cartier-Bresson. Não é para achar a interpretação perfeita; é para mostrar o caminho em quatro passos: o que reconheço, o que isso aponta, que código cultural ajuda a ler e que efeito de leitura aparece.',
+      dica: 'Conduza em sequência: ícone (eu reconheço...), índice (isso aponta para...), símbolo (o código cultural diz...), interpretante (a imagem sugere/afirma/argumenta). Se a turma estiver rápida, peça um aluno para trocar uma das frases por outra evidência visível.'
     },
     'Método de Leitura': {
       fala: 'Este é o roteiro da ficha. Ele impede que a análise pule direto para opinião. Primeiro descreve, depois separa ícone, índice, símbolo, interpretante e só então escreve a síntese.',
       dica: 'Mostre que a ficha não é burocracia. Ela é um apoio para a banca final.'
     },
     'Banca de Leitura': {
-      fala: 'Agora a turma trabalha em grupos. Cada grupo monta uma leitura e outro grupo testa essa leitura. A regra da banca é simples: a pergunta precisa obrigar o grupo a voltar para a imagem.',
-      dica: 'Forme grupos de 3 a 5. Se houver muitas pessoas, escolha alguns grupos para apresentar e recolha as fichas dos demais.'
+      fala: 'Agora a turma trabalha em grupos. Cada grupo monta uma leitura e outro grupo testa essa leitura. A regra da banca é simples: a pergunta precisa obrigar o grupo a voltar para a imagem. O bloco tem 40 minutos, então o tempo aperta.',
+      dica: 'Forme grupos de 3 a 5. Conte alto: 3 min para grupos e imagem, 7 min para descrição e ficha, 5 min para tese, 20 min para 4 bancas, 5 min para síntese. Se a turma for grande, escolha 4 grupos para apresentar e recolha as fichas dos demais.'
     },
     'Ficha de Análise': {
       fala: 'A ficha organiza o raciocínio. Na apresentação, o grupo não precisa ler tudo; precisa defender a leitura com uma evidência principal.',
       dica: 'Circule durante a atividade procurando frases soltas. Quando encontrar, pergunte "qual parte da imagem segura essa frase?".'
     },
     'Rodada de Banca': {
-      fala: 'Na banca, discordar é parte do jogo. Um grupo defende, outro pergunta, e o primeiro tem direito de ajustar a leitura. O importante é que tudo volte para a imagem.',
-      dica: 'Controle o tempo. Defesa de 90 segundos, pergunta de 30 segundos, resposta de 30 segundos. Se passar disso, a energia cai.'
+      fala: 'Na banca, discordar é parte do jogo. Um grupo defende, outro pergunta, e o primeiro tem direito de ajustar a leitura. O importante é que tudo volte para a imagem. Não precisa convencer todo mundo; precisa sustentar a interpretação com evidência.',
+      dica: 'Controle o tempo com voz alta. Defesa de 90s, pergunta de 30s, resposta de 30s. Se passar disso, a energia cai. Use um cronômetro visível no projetor se a turma tiver dificuldade.'
     },
     'Texto Técnico': {
       fala: 'O produto final é uma síntese curta. A frase precisa mostrar descrição, relação signo-objeto, interpretante e conclusão. Não precisa ser longa; precisa ser defendável.',
