@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 04 · Banca · Imagens para impressão</title>
+<style>
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #2a2a2a; font-family: "Segoe UI", system-ui, -apple-system, sans-serif; }
+
+.banca-page {
+  width: 210mm;
+  height: 297mm;
+  background: #fff;
+  margin: 14px auto;
+  padding: 6mm 6mm 14mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+  overflow: hidden;
+}
+
+.banca-img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banca-footer {
+  position: absolute;
+  left: 10mm;
+  right: 10mm;
+  bottom: 6mm;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 11px;
+  color: #4a4239;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 4mm;
+  border-top: 0.5px solid #b8b1a4;
+}
+.banca-footer .num {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #2a2a2a;
+}
+.banca-footer .meta {
+  text-align: right;
+  color: #6f675d;
+}
+
+.banca-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.banca-img .placeholder {
+  display: none;
+  width: 78%;
+  max-width: 460px;
+  padding: 28px 32px;
+  border: 1px dashed #b8b1a4;
+  border-radius: 8px;
+  background: #faf7f0;
+  color: #2a2a2a;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.banca-img.is-missing img { display: none; }
+.banca-img.is-missing .placeholder { display: block; }
+.placeholder strong { display: block; font-size: 17px; margin-bottom: 6px; color: #111; }
+.placeholder code {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 3px 8px;
+  background: #efe9d8;
+  border-radius: 3px;
+  font-family: "SF Mono", "Fira Code", Consolas, monospace;
+  font-size: 12.5px;
+  color: #5a4f33;
+}
+.placeholder small { display: block; margin-top: 10px; color: #6b6258; font-size: 11.5px; line-height: 1.45; }
+
+@media print {
+  @page { size: A4 portrait; margin: 0; }
+  html, body { background: #fff; }
+  .banca-page {
+    margin: 0;
+    box-shadow: none;
+    page-break-after: always;
+    break-after: page;
+  }
+  .banca-page:last-child { page-break-after: auto; break-after: auto; }
+  .banca-img.is-missing { /* still prints placeholder so you see what's faltando */ }
+}
+</style>
+</head>
+<body>
+
+<section class="banca-page">
+  <div class="banca-img" data-img="01">
+    <img src="imagens/banca/01-falling-soldier.jpg" alt="Imagem 1">
+    <div class="placeholder">
+      <strong>Imagem 1 · The Falling Soldier (1936) · Robert Capa</strong>
+      Salve o arquivo em
+      <code>imagens/banca/01-falling-soldier.jpg</code>
+      <small>Já está no projeto — se este placeholder aparecer, verifique se o nome do arquivo bate.</small>
+    </div>
+  </div>
+  <div class="banca-footer">
+    <span class="num">Imagem 01</span>
+    <span class="meta">The Falling Soldier · Robert Capa, 1936</span>
+  </div>
+</section>
+
+<section class="banca-page">
+  <div class="banca-img" data-img="02">
+    <img src="imagens/banca/02-anuncio.jpg" alt="Imagem 2">
+    <div class="placeholder">
+      <strong>Imagem 2 · Anúncio publicitário recente com slogan forte</strong>
+      Sugestões: Apple, Nike, Natura, Havaianas, Skol. Marca + slogan + produto + promessa visíveis.
+      <code>imagens/banca/02-anuncio.jpg</code>
+      <small>Salve em alta resolução. Print de página de revista funciona bem.</small>
+    </div>
+  </div>
+  <div class="banca-footer">
+    <span class="num">Imagem 02</span>
+    <span class="meta">Think Small · Volkswagen / DDB, 1959</span>
+  </div>
+</section>
+
+<section class="banca-page">
+  <div class="banca-img" data-img="03">
+    <img src="imagens/banca/03-capa-revista.jpg" alt="Imagem 3">
+    <div class="placeholder">
+      <strong>Imagem 3 · Capa de revista brasileira com tese clara</strong>
+      Sugestões: Veja, Piauí, Carta Capital, Caros Amigos. Capa com manchete forte.
+      <code>imagens/banca/03-capa-revista.jpg</code>
+      <small>Site da editora costuma ter PNG/JPG da capa em alta. Foto de banca também serve.</small>
+    </div>
+  </div>
+  <div class="banca-footer">
+    <span class="num">Imagem 03</span>
+    <span class="meta">Capa de O Cruzeiro nº 1 · 10 de novembro de 1928</span>
+  </div>
+</section>
+
+<section class="banca-page">
+  <div class="banca-img" data-img="04">
+    <img src="imagens/banca/04-foto-historica-br.jpg" alt="Imagem 4">
+    <div class="placeholder">
+      <strong>Imagem 4 · Foto histórica brasileira</strong>
+      Sugestões: Diretas Já, Junho 2013, foto de Claudia Andujar, ou Salgado fora da Serra Pelada.
+      <code>imagens/banca/04-foto-historica-br.jpg</code>
+      <small>Wikimedia Commons é a fonte mais limpa. Filtre por "License: public domain" ou "CC".</small>
+    </div>
+  </div>
+  <div class="banca-footer">
+    <span class="num">Imagem 04</span>
+    <span class="meta">Diretas Já · Brasília, 1984</span>
+  </div>
+</section>
+
+<section class="banca-page">
+  <div class="banca-img" data-img="05">
+    <img src="imagens/banca/05-capa-album.jpg" alt="Imagem 5">
+    <div class="placeholder">
+      <strong>Imagem 5 · Capa de álbum brasileira</strong>
+      Sugestões: Racionais (Sobrevivendo no Inferno), Tim Maia (1977/78), Anitta, Caetano Veloso (Cores Nomes), Tropicália.
+      <code>imagens/banca/05-capa-album.jpg</code>
+      <small>Spotify ou Apple Music exportam a capa em alta. Discogs também.</small>
+    </div>
+  </div>
+  <div class="banca-footer">
+    <span class="num">Imagem 05</span>
+    <span class="meta">Tropicália ou Panis et Circencis · Caetano, Gil, Gal, Os Mutantes, Tom Zé · 1968</span>
+  </div>
+</section>
+
+<section class="banca-page">
+  <div class="banca-img" data-img="06">
+    <img src="imagens/banca/06-foto-esportiva.jpg" alt="Imagem 6">
+    <div class="placeholder">
+      <strong>Imagem 6 · Foto esportiva icônica brasileira</strong>
+      Sugestões: Pelé (1970, Copa do México), Senna (vitória 1991 Brasil), Marta (gol em Copa), Garrincha.
+      <code>imagens/banca/06-foto-esportiva.jpg</code>
+      <small>Acervo Globo Esporte, Reuters, ou Wikimedia Commons. Procure por "high resolution".</small>
+    </div>
+  </div>
+  <div class="banca-footer">
+    <span class="num">Imagem 06</span>
+    <span class="meta">Pelé celebrando o tri · Copa do México, 1970</span>
+  </div>
+</section>
+
+<script>
+document.querySelectorAll('.banca-img img').forEach(function (img) {
+  img.addEventListener('error', function () {
+    img.parentElement.classList.add('is-missing');
+  });
+});
+</script>
+</body>
+</html>

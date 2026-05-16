@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 04 · Ficha de Leitura Semiótica</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #e9e5dc;
+  color: #151515;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 18px auto;
+  background: #fffdf7;
+  padding: 14mm;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+}
+header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 18px;
+  align-items: start;
+  border-bottom: 2px solid #151515;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+}
+h1 { font-size: 24px; line-height: 1.1; margin: 0 0 5px; }
+.subtitle { font-size: 12px; text-transform: uppercase; letter-spacing: 0.10em; color: #6f675d; font-weight: 800; }
+.meta { font-size: 11px; text-align: right; color: #5f574f; line-height: 1.35; }
+.fields {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.field { border: 1px solid #a9a093; padding: 6px 8px; font-size: 11px; color: #5e554c; }
+.field span { display: block; color: #151515; font-weight: 700; margin-bottom: 4px; }
+.field.row1 { min-height: 32px; }
+.field.integrantes {
+  grid-column: 1 / -1;
+  min-height: 56px;
+}
+.field.integrantes .integrantes-lines {
+  margin-top: 4px;
+  background: repeating-linear-gradient(to bottom, transparent 0, transparent 17px, rgba(0,0,0,0.18) 18px);
+  min-height: 36px;
+}
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.box {
+  border: 1px solid #a9a093;
+  min-height: 91px;
+  padding: 8px;
+  position: relative;
+}
+.box.large { min-height: 122px; }
+.box.full { grid-column: 1 / -1; min-height: 110px; }
+.box.synth { min-height: 178px; }
+.label {
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.hint { color: #6f675d; font-size: 11px; line-height: 1.35; }
+.lines {
+  margin-top: 7px;
+  background: repeating-linear-gradient(to bottom, transparent 0, transparent 19px, rgba(0,0,0,0.18) 20px);
+  min-height: 58px;
+}
+.box.large .lines { min-height: 80px; }
+.box.full .lines { min-height: 66px; }
+.box.synth .lines { min-height: 134px; }
+.rubric {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 7px;
+  margin-top: 10px;
+}
+.rubric div {
+  border: 1px solid #a9a093;
+  min-height: 58px;
+  padding: 7px;
+  font-size: 11px;
+  line-height: 1.3;
+}
+.rubric b { display: block; font-size: 12px; margin-bottom: 4px; }
+@media print {
+  @page { size: A4 portrait; margin: 0; }
+  body { background: #fff; }
+  .page { margin: 0; box-shadow: none; width: 210mm; min-height: 297mm; page-break-after: always; }
+}
+</style>
+</head>
+<body>
+<main>
+  <section class="page">
+    <header>
+      <div>
+        <div class="subtitle">Aula 04 · Semiótica II</div>
+        <h1>Ficha de Leitura Semiótica da Imagem</h1>
+        <div class="hint">Trabalho em grupo. Toda interpretação precisa citar uma evidência visual concreta.</div>
+      </div>
+      <div class="meta">SENAI · Técnico em Multimídia<br>Fundamentos de Fotografia Digital e de Semiótica<br>Prof. Daniel Mayer · 2026<br>Celular como apoio</div>
+    </header>
+
+    <div class="fields">
+      <div class="field row1"><span>Grupo (nº):</span></div>
+      <div class="field row1"><span>Imagem analisada (nº do envelope e título):</span></div>
+      <div class="field integrantes">
+        <span>Integrantes:</span>
+        <div class="integrantes-lines"></div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="box full">
+        <div class="label">1. Descrição objetiva</div>
+        <div class="hint">O que aparece na imagem? pessoas, objetos, cenário, texto, cor, luz, composição. Não interprete ainda.</div>
+        <div class="lines"></div>
+      </div>
+      <div class="box large">
+        <div class="label">2. Ícone · semelhança</div>
+        <div class="hint">O que reconhecemos porque se parece visualmente com algo?</div>
+        <div class="lines"></div>
+      </div>
+      <div class="box large">
+        <div class="label">3. Índice · rastro</div>
+        <div class="hint">Que marcas, consequências ou presenças a imagem aponta?</div>
+        <div class="lines"></div>
+      </div>
+      <div class="box large">
+        <div class="label">4. Símbolo · código</div>
+        <div class="hint">Que códigos culturais, palavras, marcas, cores ou convenções aparecem?</div>
+        <div class="lines"></div>
+      </div>
+      <div class="box large">
+        <div class="label">5. Interpretante</div>
+        <div class="hint">Rema (sugere uma possibilidade), dicente (afirma uma situação) ou argumento (constrói uma tese)? Aponte a evidência.</div>
+        <div class="lines"></div>
+      </div>
+      <div class="box full synth">
+        <div class="label">6. Síntese técnica final</div>
+        <div class="hint">Escreva 6 a 8 linhas defendendo a leitura do grupo. Use: "A imagem apresenta... Como ícone... Como índice... Como símbolo... Portanto..."</div>
+        <div class="lines"></div>
+      </div>
+    </div>
+
+    <div class="rubric">
+      <div><b>Descrição</b>Separou observação de interpretação.</div>
+      <div><b>Evidência</b>Apontou elementos visuais concretos.</div>
+      <div><b>Conceito</b>Usou ícone, índice, símbolo, rema/dicente/argumento corretamente.</div>
+      <div><b>Postura</b>Escutou divergências e defendeu leitura sem desrespeitar o grupo.</div>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>

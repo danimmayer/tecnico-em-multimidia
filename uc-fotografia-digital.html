@@ -113,7 +113,9 @@
       tags: ['Sensor', 'Pixel', 'Formatos'],
       status: 'pronta',
       url: 'Aula_02_Formacao_da_Imagem_Digital.html',
-      gabarito: { url: 'Aula_02_Gabarito_Professor.html', label: 'Gabarito do professor' }
+      extras: [
+        { url: 'Aula_02_Gabarito_Professor.html', label: 'Gabarito do professor' }
+      ]
     },
     {
       num: '03',
@@ -128,7 +130,12 @@
       titulo: 'Semiótica II · Leitura Semiótica da Imagem',
       descricao: 'Ícones, índices, símbolos e a tríade rema/dicente/argumento aplicadas a fotografia e publicidade.',
       tags: ['Leitura', 'Publicidade', 'Análise'],
-      status: 'em breve'
+      status: 'pronta',
+      url: 'Aula_04_Semiotica_II_Leitura_Semiotica_da_Imagem.html',
+      extras: [
+        { url: 'Aula_04_Ficha_Leitura_Semiotica.html', label: 'Ficha de trabalho' },
+        { url: 'Aula_04_Banca_Imagens.html', label: 'Imagens da banca (impressão)' }
+      ]
     },
     {
       num: '05',
@@ -200,9 +207,10 @@
       const foot = soon
         ? '<span class="soon-chip">Em breve</span><span class="aula-cta" aria-hidden="true">·</span>'
         : '<span>Pronta · 4 blocos</span><span class="aula-cta" aria-hidden="true">Abrir →</span>';
-      const gabarito = a.gabarito
-        ? '<a class="aula-gabarito" href="' + a.gabarito.url + '" target="_blank" rel="noopener" data-gabarito>' + a.gabarito.label + '</a>'
-        : '';
+      const extras = (a.extras || []).map(x =>
+        '<a class="aula-gabarito" href="' + x.url + '" target="_blank" rel="noopener" data-gabarito>' + x.label + '</a>'
+      ).join('');
+      const extrasWrap = extras ? '<div class="aula-extras">' + extras + '</div>' : '';
       return '' +
         '<article class="' + cls + '" ' + (soon ? '' : 'data-url="' + a.url + '"') + ' role="button" tabindex="' + (soon ? '-1' : '0') + '" aria-label="Aula ' + a.num + ': ' + a.titulo + (soon ? ' (em breve)' : '') + '">' +
           '<div class="aula-num"><span class="aula-status" aria-hidden="true"></span>Aula ' + a.num + '</div>' +
@@ -210,7 +218,7 @@
           '<p class="aula-desc">' + a.descricao + '</p>' +
           '<div class="aula-tags">' + tags + '</div>' +
           '<div class="aula-foot">' + foot + '</div>' +
-          gabarito +
+          extrasWrap +
         '</article>';
     }).join('');
 
