@@ -451,23 +451,32 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 
 .aperture-demo { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: stretch; }
 .ap-card {
-  min-height: 310px; border: 1px solid var(--border); border-radius: 6px; padding: 20px;
-  background: rgba(255,255,255,0.03); display: flex; flex-direction: column; gap: 14px;
+  min-height: 338px; border: 1px solid var(--border); border-radius: 6px; padding: 14px;
+  background: rgba(255,255,255,0.03); display: flex; flex-direction: column; gap: 12px;
 }
-.aperture {
-  height: 132px; display: grid; place-items: center;
-  border-radius: 5px; background: #0b0b0b; border: 1px solid rgba(255,255,255,0.08);
+.dof-photo {
+  height: 154px;
+  border-radius: 5px;
+  background: #0b0b0b;
+  border: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden;
+  position: relative;
 }
-.aperture span {
-  display: block; border-radius: 50%;
-  background: radial-gradient(circle at 40% 35%, rgba(255,255,255,0.22), transparent 22%), var(--accent);
-  box-shadow: 0 0 28px rgba(196,168,108,0.25);
+.dof-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04), inset 0 -52px 54px rgba(0,0,0,0.20);
+  pointer-events: none;
 }
-.aperture.big span { width: 84px; height: 84px; }
-.aperture.mid span { width: 52px; height: 52px; }
-.aperture.small span { width: 24px; height: 24px; }
+.dof-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 .ap-card h3 { color: var(--cream); font-size: 23px; }
-.ap-card p { color: var(--cream-muted); font-size: 16px; line-height: 1.5; }
+.ap-card p { color: var(--cream-muted); font-size: 15px; line-height: 1.45; }
 
 .focus-map { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 28px; align-items: center; }
 .phone-frame {
@@ -1185,9 +1194,9 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
     </div>
     <div class="slide-body">
       <div class="aperture-demo">
-        <div class="ap-card"><div class="aperture big"><span></span></div><h3>f/1.8</h3><p>Mais luz, fundo mais desfocado, foco crítico. Bom para retrato e baixa luz.</p></div>
-        <div class="ap-card"><div class="aperture mid"><span></span></div><h3>f/5.6</h3><p>Equilíbrio entre luz e nitidez. Bom para cenas gerais, produto simples e aula prática.</p></div>
-        <div class="ap-card"><div class="aperture small"><span></span></div><h3>f/16</h3><p>Menos luz, mais profundidade, risco de precisar de velocidade lenta ou ISO alto.</p></div>
+        <div class="ap-card"><div class="dof-photo"><img src="imagens/aula05/profundidade-f18.jpg" alt="Objeto em primeiro plano nítido com fundo de sala muito desfocado"></div><h3>f/1.8</h3><p>Mais luz, fundo some em desfoque forte e o foco fica crítico. Bom para retrato e baixa luz.</p></div>
+        <div class="ap-card"><div class="dof-photo"><img src="imagens/aula05/profundidade-f56.jpg" alt="Objeto nítido com mesa e fundo parcialmente reconhecíveis"></div><h3>f/5.6</h3><p>Equilíbrio: assunto nítido, entorno ainda reconhecível e fundo levemente suavizado.</p></div>
+        <div class="ap-card"><div class="dof-photo"><img src="imagens/aula05/profundidade-f16.jpg" alt="Objeto, mesa e fundo da sala todos mais nítidos"></div><h3>f/16</h3><p>Menos luz e mais profundidade: vários planos ficam legíveis, mas pode exigir velocidade lenta ou ISO alto.</p></div>
       </div>
       <div class="highlight-box" style="margin-top:26px;"><strong>No celular:</strong> o modo retrato pode simular desfoque por software. Use como recurso, mas saiba que não é a mesma coisa que controle óptico de abertura.</div>
       <div class="p-expand is-bonus" data-depth="3"><div class="p-expand-head"><span class="p-expand-tag">Bônus</span><span>Por que f/2 é maior que f/16?</span></div><div class="p-expand-body"><p>O número f é uma razão entre distância focal e diâmetro de abertura. Por isso, quanto menor o número, maior a abertura física relativa.</p></div></div>
