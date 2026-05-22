@@ -283,42 +283,140 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 .wheel-label.l3 { bottom: 8%; left: 50%; transform: translateX(-50%); }
 .wheel-label.l4 { top: 38%; left: -6%; }
 
-.camera-body {
-  width: min(530px, 100%); height: 330px; margin: 0 auto; position: relative;
-  border-radius: 24px 24px 18px 18px;
+.camera-exploded {
+  position: relative;
+  width: min(720px, 100%);
+  margin: -12px auto 0;
+  aspect-ratio: 1672 / 941;
+  overflow: visible;
+}
+.camera-exploded::before {
+  content: '';
+  position: absolute;
+  inset: 12% 8% 7%;
   background:
-    linear-gradient(145deg, rgba(255,255,255,0.08), transparent 32%),
-    linear-gradient(180deg, #242424, #101010);
-  border: 1px solid rgba(255,255,255,0.12);
-  box-shadow: 0 26px 60px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(255,255,255,0.04);
+    radial-gradient(circle at 42% 48%, rgba(196,168,108,0.13), transparent 46%),
+    radial-gradient(circle at 70% 34%, rgba(107,140,168,0.12), transparent 35%);
+  filter: blur(18px);
+  opacity: 0.72;
+  pointer-events: none;
 }
-.camera-body::before {
-  content: ''; position: absolute; left: 42px; top: -34px; width: 170px; height: 60px;
-  border-radius: 12px 12px 0 0; background: #222; border: 1px solid rgba(255,255,255,0.1);
+.camera-exploded img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 24px 30px rgba(0,0,0,0.38));
 }
-.camera-body::after {
-  content: ''; position: absolute; right: 40px; top: 42px; width: 90px; height: 58px;
-  border-radius: 6px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+.camera-callout {
+  --x: 50%;
+  --y: 50%;
+  --line: 64px;
+  --angle: 0deg;
+  --edge-x: 100%;
+  --edge-y: 50%;
+  --dot-x: 64px;
+  --dot-y: 0px;
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  transform: translate(-50%, -50%);
+  min-width: 96px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  background: rgba(18,18,18,0.78);
+  border: 1px solid rgba(196,168,108,0.28);
+  color: var(--cream-muted);
+  font-size: 12px;
+  line-height: 1.22;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.24);
+  z-index: 2;
 }
-.lens {
-  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -43%);
-  width: 180px; height: 180px; border-radius: 50%;
-  background:
-    radial-gradient(circle at 42% 38%, rgba(255,255,255,0.20), transparent 10%),
-    radial-gradient(circle, #090909 0 28%, #242424 29% 42%, #0b0b0b 43% 55%, #2a2a2a 56% 70%, #111 71%);
-  border: 1px solid rgba(196,168,108,0.36);
+.camera-callout::before {
+  content: '';
+  position: absolute;
+  left: var(--edge-x);
+  top: var(--edge-y);
+  width: var(--line);
+  height: 1px;
+  background: rgba(196,168,108,0.72);
+  transform-origin: left center;
+  transform: rotate(var(--angle));
+  pointer-events: none;
 }
-.camera-label {
-  position: absolute; display: flex; align-items: center; gap: 8px;
-  color: var(--cream-muted); font-size: 13px; line-height: 1.25;
+.camera-callout::after {
+  content: '';
+  position: absolute;
+  left: calc(var(--edge-x) + var(--dot-x));
+  top: calc(var(--edge-y) + var(--dot-y));
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 16px rgba(196,168,108,0.5);
+  transform: translate(-50%, -50%);
 }
-.camera-label::before { content: ''; width: 34px; height: 1px; background: rgba(196,168,108,0.55); }
-.camera-label strong { color: var(--accent); font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; }
-.camera-label.sensor { left: 306px; top: 180px; }
-.camera-label.lente { left: 78px; top: 160px; flex-direction: row-reverse; }
-.camera-label.obturador { left: 324px; top: 118px; }
-.camera-label.visor { left: 250px; top: 28px; }
-.camera-label.lcd { right: -18px; top: 76px; }
+.camera-callout strong {
+  display: block;
+  color: var(--accent);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.camera-callout span { display: block; margin-top: 2px; }
+.camera-callout.lente {
+  --x: 14%;
+  --y: 99%;
+  --line: 82px;
+  --angle: -92deg;
+  --edge-x: 50%;
+  --edge-y: 0%;
+  --dot-x: -3px;
+  --dot-y: -82px;
+}
+.camera-callout.sensor {
+  --x: 50%;
+  --y: 91%;
+  --line: 110px;
+  --angle: -90deg;
+  --edge-x: 50%;
+  --edge-y: 0%;
+  --dot-x: 0px;
+  --dot-y: -110px;
+}
+.camera-callout.obturador {
+  --x: 36%;
+  --y: 16%;
+  --line: 82px;
+  --angle: 38deg;
+  --edge-x: 70%;
+  --edge-y: 100%;
+  --dot-x: 65px;
+  --dot-y: 51px;
+}
+.camera-callout.visor {
+  --x: 70%;
+  --y: 5%;
+  --line: 36px;
+  --angle: 90deg;
+  --edge-x: 36%;
+  --edge-y: 100%;
+  --dot-x: 0px;
+  --dot-y: 36px;
+}
+.camera-callout.lcd {
+  --x: 93%;
+  --y: 78%;
+  --line: 98px;
+  --angle: -91deg;
+  --edge-x: 35%;
+  --edge-y: 0%;
+  --dot-x: -2px;
+  --dot-y: -98px;
+}
 
 .sensor-demo { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 28px; align-items: center; }
 .sensor-stack { display: flex; flex-direction: column; gap: 12px; }
@@ -353,23 +451,32 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 
 .aperture-demo { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: stretch; }
 .ap-card {
-  min-height: 310px; border: 1px solid var(--border); border-radius: 6px; padding: 20px;
-  background: rgba(255,255,255,0.03); display: flex; flex-direction: column; gap: 14px;
+  min-height: 338px; border: 1px solid var(--border); border-radius: 6px; padding: 14px;
+  background: rgba(255,255,255,0.03); display: flex; flex-direction: column; gap: 12px;
 }
-.aperture {
-  height: 132px; display: grid; place-items: center;
-  border-radius: 5px; background: #0b0b0b; border: 1px solid rgba(255,255,255,0.08);
+.dof-photo {
+  height: 154px;
+  border-radius: 5px;
+  background: #0b0b0b;
+  border: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden;
+  position: relative;
 }
-.aperture span {
-  display: block; border-radius: 50%;
-  background: radial-gradient(circle at 40% 35%, rgba(255,255,255,0.22), transparent 22%), var(--accent);
-  box-shadow: 0 0 28px rgba(196,168,108,0.25);
+.dof-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04), inset 0 -52px 54px rgba(0,0,0,0.20);
+  pointer-events: none;
 }
-.aperture.big span { width: 84px; height: 84px; }
-.aperture.mid span { width: 52px; height: 52px; }
-.aperture.small span { width: 24px; height: 24px; }
+.dof-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 .ap-card h3 { color: var(--cream); font-size: 23px; }
-.ap-card p { color: var(--cream-muted); font-size: 16px; line-height: 1.5; }
+.ap-card p { color: var(--cream-muted); font-size: 15px; line-height: 1.45; }
 
 .focus-map { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 28px; align-items: center; }
 .phone-frame {
@@ -712,18 +819,52 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
   .scenario, .sensor-row, .tool { grid-template-columns: 1fr; gap: 6px; }
   .t-title { font-size: 34px; }
   .t-title-lg { font-size: 42px; }
-  .camera-body { width: min(320px, 100%); height: 250px; transform: none; margin: 6px auto 18px; }
-  .camera-body::before { left: 42px; top: -24px; width: 132px; height: 48px; }
-  .camera-body::after { right: 24px; top: 34px; width: 64px; height: 44px; }
-  .lens { width: 122px; height: 122px; transform: translate(-50%, -38%); }
-  .camera-label { font-size: 11px; gap: 5px; }
-  .camera-label span { display: none; }
-  .camera-label::before { width: 24px; }
-  .camera-label.lente { left: 42px; top: 128px; }
-  .camera-label.visor { left: 166px; top: 43px; }
-  .camera-label.lcd { right: 44px; top: 78px; }
-  .camera-label.obturador { left: 212px; top: 115px; }
-  .camera-label.sensor { left: 213px; top: 150px; }
+  .camera-exploded {
+    width: min(620px, 100%);
+    margin: 0 auto 18px;
+  }
+  .camera-callout {
+    min-width: auto;
+    padding: 5px 7px;
+    font-size: 0;
+  }
+  .camera-callout strong { font-size: 10px; }
+  .camera-callout span { display: none; }
+  .camera-callout.lente { --x: 18%; --y: 83%; --line: 42px; --angle: -38deg; }
+  .camera-callout.sensor { --x: 54%; --y: 84%; --line: 38px; --angle: -76deg; }
+  .camera-callout.obturador { --x: 36%; --y: 12%; --line: 40px; --angle: 20deg; }
+  .camera-callout.visor { --x: 65%; --y: 12%; --line: 34px; --angle: 22deg; }
+  .camera-callout.lcd { --x: 84%; --y: 82%; --line: 36px; --angle: -116deg; }
+  .camera-callout.lente {
+    --edge-x: 100%;
+    --edge-y: 45%;
+    --dot-x: -16px;
+    --dot-y: -34px;
+  }
+  .camera-callout.sensor {
+    --edge-x: 50%;
+    --edge-y: 0%;
+    --dot-x: -14px;
+    --dot-y: -52px;
+  }
+  .camera-callout.obturador {
+    --edge-x: 70%;
+    --edge-y: 100%;
+    --dot-x: 0px;
+    --dot-y: 33px;
+  }
+  .camera-callout.visor {
+    --edge-x: 36%;
+    --edge-y: 100%;
+    --dot-x: 31px;
+    --dot-y: 13px;
+  }
+  .camera-callout.lcd {
+    --edge-x: 35%;
+    --edge-y: 0%;
+    --dot-x: -1px;
+    --dot-y: -44px;
+  }
   .decision-wheel { width: min(300px, 86vw); margin-top: 6px; }
   .wheel-label { width: 92px; font-size: 12px; }
   .wheel-label.l2 { right: 0; }
@@ -976,13 +1117,13 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
     </div>
     <div class="slide-body">
       <div class="two-col wide-left">
-        <div class="camera-body">
-          <div class="lens"></div>
-          <div class="camera-label lente"><strong>Lente</strong><span>entrada e foco</span></div>
-          <div class="camera-label obturador"><strong>Obturador</strong><span>tempo</span></div>
-          <div class="camera-label sensor"><strong>Sensor</strong><span>captura</span></div>
-          <div class="camera-label visor"><strong>Visor</strong><span>enquadramento</span></div>
-          <div class="camera-label lcd"><strong>LCD</strong><span>revisão</span></div>
+        <div class="camera-exploded" aria-label="Diagrama explodido de câmera digital com lente, obturador, sensor, visor e LCD">
+          <img src="imagens/aula05/camera-explodida-partes.png" alt="">
+          <div class="camera-callout lente"><strong>Lente</strong><span>entrada e foco</span></div>
+          <div class="camera-callout obturador"><strong>Obturador</strong><span>tempo</span></div>
+          <div class="camera-callout sensor"><strong>Sensor</strong><span>captura</span></div>
+          <div class="camera-callout visor"><strong>Visor</strong><span>enquadramento</span></div>
+          <div class="camera-callout lcd"><strong>LCD</strong><span>revisão</span></div>
         </div>
         <div class="stack">
           <div class="highlight-box"><strong>Leitura prática:</strong> a lente desenha, o diafragma dosifica, o obturador mede, o sensor registra e a tela ajuda a conferir.</div>
@@ -1053,9 +1194,9 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
     </div>
     <div class="slide-body">
       <div class="aperture-demo">
-        <div class="ap-card"><div class="aperture big"><span></span></div><h3>f/1.8</h3><p>Mais luz, fundo mais desfocado, foco crítico. Bom para retrato e baixa luz.</p></div>
-        <div class="ap-card"><div class="aperture mid"><span></span></div><h3>f/5.6</h3><p>Equilíbrio entre luz e nitidez. Bom para cenas gerais, produto simples e aula prática.</p></div>
-        <div class="ap-card"><div class="aperture small"><span></span></div><h3>f/16</h3><p>Menos luz, mais profundidade, risco de precisar de velocidade lenta ou ISO alto.</p></div>
+        <div class="ap-card"><div class="dof-photo"><img src="imagens/aula05/profundidade-f18.jpg" alt="Objeto em primeiro plano nítido com fundo de sala muito desfocado"></div><h3>f/1.8</h3><p>Mais luz, fundo some em desfoque forte e o foco fica crítico. Bom para retrato e baixa luz.</p></div>
+        <div class="ap-card"><div class="dof-photo"><img src="imagens/aula05/profundidade-f56.jpg" alt="Objeto nítido com mesa e fundo parcialmente reconhecíveis"></div><h3>f/5.6</h3><p>Equilíbrio: assunto nítido, entorno ainda reconhecível e fundo levemente suavizado.</p></div>
+        <div class="ap-card"><div class="dof-photo"><img src="imagens/aula05/profundidade-f16.jpg" alt="Objeto, mesa e fundo da sala todos mais nítidos"></div><h3>f/16</h3><p>Menos luz e mais profundidade: vários planos ficam legíveis, mas pode exigir velocidade lenta ou ISO alto.</p></div>
       </div>
       <div class="highlight-box" style="margin-top:26px;"><strong>No celular:</strong> o modo retrato pode simular desfoque por software. Use como recurso, mas saiba que não é a mesma coisa que controle óptico de abertura.</div>
       <div class="p-expand is-bonus" data-depth="3"><div class="p-expand-head"><span class="p-expand-tag">Bônus</span><span>Por que f/2 é maior que f/16?</span></div><div class="p-expand-body"><p>O número f é uma razão entre distância focal e diâmetro de abertura. Por isso, quanto menor o número, maior a abertura física relativa.</p></div></div>
