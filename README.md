@@ -56,6 +56,8 @@ A partir do **Home** (`index.html`):
 ├── Aula_03_Semiotica_I_O_Universo_dos_Signos.html
 ├── Aula_04_Semiotica_II_Leitura_Semiotica_da_Imagem.html
 ├── Aula_04_Ficha_Leitura_Semiotica.html         # Ficha A4 de trabalho em grupo
+├── Aula_05_A_Camera_Digital.html                # Aula 05 · apresentação
+├── Aula_06_Linguagem_Fotografica_e_Composicao.html
 ├── assets/
 │   ├── home.css                                 # Design system · dashboards
 │   ├── pedagogy.css                             # Design system · apresentações
@@ -63,7 +65,9 @@ A partir do **Home** (`index.html`):
 │   ├── pedagogy-data.js                         # Dados da Aula 01
 │   ├── pedagogy-data-aula02.js                  # Dados da Aula 02
 │   ├── pedagogy-data-aula03.js                  # Dados da Aula 03
-│   └── pedagogy-data-aula04.js                  # Dados da Aula 04
+│   ├── pedagogy-data-aula04.js                  # Dados da Aula 04
+│   ├── pedagogy-data-aula05.js                  # Dados da Aula 05
+│   └── pedagogy-data-aula06.js                  # Dados da Aula 06
 └── imagens/                                     # Assets visuais
 ```
 
