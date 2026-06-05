@@ -130,6 +130,15 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 }
 .next-label { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); opacity: 0.8; }
 .next-title { font-size: 17px; color: var(--cream); font-weight: 600; }
+.closing-summary { display: flex; flex-direction: column; gap: 10px; text-align: left; max-width: 700px; margin: 0 auto; }
+.summary-point { display: flex; align-items: flex-start; gap: 14px; font-size: 17px; color: var(--cream-muted); line-height: 1.5; }
+.summary-bullet {
+  min-width: 26px; height: 26px; border-radius: 50%;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 600; color: var(--cream-muted); flex-shrink: 0; margin-top: 1px;
+}
+.instructor-tag { font-size: 14px; color: var(--muted); margin-top: 14px; letter-spacing: 0.05em; }
 
 #imgModal {
   display: none; position: fixed; inset: 0; z-index: 9999;
@@ -667,6 +676,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
         <div class="summary-point"><div class="summary-bullet">02</div><div>Histograma é objetivo. Olhe ele antes de julgar a foto "boa ou ruim".</div></div>
         <div class="summary-point"><div class="summary-bullet">03</div><div>Seu celular já tem tudo. O modo manual está aí. Use.</div></div>
       </div>
+      <div class="instructor-tag">Prof. Daniel Mayer · SENAI · Técnico em Multimídia</div>
     </div>
   </div>
 </div>
