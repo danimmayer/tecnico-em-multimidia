@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 500" role="img" aria-labelledby="title desc">
+  <title id="title">Velocidade do obturador</title>
+  <desc id="desc">Comparação entre movimento congelado e movimento borrado.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#232323"/><stop offset="1" stop-color="#141414"/></linearGradient>
+    <filter id="motion"><feGaussianBlur stdDeviation="10 1"/></filter>
+  </defs>
+  <line x1="550" y1="54" x2="550" y2="446" stroke="#fff" stroke-opacity=".1"/>
+  <g transform="translate(76 66)">
+    <text x="0" y="0" fill="#C4A86C" font-family="SF Mono, Consolas, monospace" font-size="24">1/1000s</text>
+    <text x="0" y="38" fill="#F0F0EC" font-family="Segoe UI, system-ui, sans-serif" font-size="26" font-weight="700">congelar</text>
+    <path d="M70 264c65-92 162-126 284-98" fill="none" stroke="#6B8CA8" stroke-width="4" opacity=".35"/>
+    <circle cx="316" cy="142" r="28" fill="#C4A86C"/>
+    <path d="M280 172l-36 78M335 174l42 78M292 232l-54 58M348 231l70 42" stroke="#F0F0EC" stroke-width="12" stroke-linecap="round"/>
+    <path d="M247 110l62 34 50-36" fill="none" stroke="#7CC49A" stroke-width="10" stroke-linecap="round"/>
+    <text x="0" y="344" fill="#C8C4BC" font-family="Segoe UI, system-ui, sans-serif" font-size="18">a forma do gesto fica legível</text>
+  </g>
+  <g transform="translate(626 66)">
+    <text x="0" y="0" fill="#C4A86C" font-family="SF Mono, Consolas, monospace" font-size="24">1/15s</text>
+    <text x="0" y="38" fill="#F0F0EC" font-family="Segoe UI, system-ui, sans-serif" font-size="26" font-weight="700">desenhar tempo</text>
+    <g filter="url(#motion)" opacity=".72">
+      <circle cx="292" cy="142" r="28" fill="#C4A86C"/>
+      <path d="M256 172l-36 78M311 174l42 78M268 232l-54 58M324 231l70 42" stroke="#F0F0EC" stroke-width="12" stroke-linecap="round"/>
+      <path d="M223 110l62 34 50-36" fill="none" stroke="#7CC49A" stroke-width="10" stroke-linecap="round"/>
+    </g>
+    <path d="M74 264c65-92 162-126 284-98" fill="none" stroke="#6B8CA8" stroke-width="5" opacity=".75"/>
+    <path d="M122 300c74-62 184-92 284-84" fill="none" stroke="#C4A86C" stroke-width="3" opacity=".6"/>
+    <text x="0" y="344" fill="#C8C4BC" font-family="Segoe UI, system-ui, sans-serif" font-size="18">o rastro vira parte da narrativa</text>
+  </g>
+</svg>

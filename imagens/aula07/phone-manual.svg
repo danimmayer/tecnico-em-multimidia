@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" role="img" aria-labelledby="title desc">
+  <title id="title">Controles manuais no celular</title>
+  <desc id="desc">Mockup limpo de uma tela de câmera manual com ISO, velocidade, EV e foco.</desc>
+  <rect x="230" y="38" width="260" height="484" rx="34" fill="#0f0f0f" stroke="#C8C4BC" stroke-opacity=".26" stroke-width="3"/>
+  <rect x="252" y="78" width="216" height="310" rx="14" fill="#232323"/>
+  <rect x="278" y="108" width="164" height="114" rx="8" fill="#2b2a26"/>
+  <circle cx="360" cy="165" r="28" fill="#C4A86C" opacity=".9"/>
+  <path d="M292 316h124" stroke="#C4A86C" stroke-width="3"/><path d="M292 294h164" stroke="#6B8CA8" stroke-width="2" opacity=".8"/><path d="M292 338h102" stroke="#7CC49A" stroke-width="2" opacity=".8"/>
+  <g font-family="SF Mono, Consolas, monospace" font-size="17" text-anchor="middle">
+    <g transform="translate(284 432)"><circle r="32" fill="#202020" stroke="#C4A86C"/><text y="-4" fill="#908880">ISO</text><text y="18" fill="#F0F0EC">100</text></g>
+    <g transform="translate(360 432)"><circle r="32" fill="#202020" stroke="#6B8CA8"/><text y="-4" fill="#908880">S</text><text y="18" fill="#F0F0EC">1/60</text></g>
+    <g transform="translate(436 432)"><circle r="32" fill="#202020" stroke="#7CC49A"/><text y="-4" fill="#908880">EV</text><text y="18" fill="#F0F0EC">0.0</text></g>
+  </g>
+  <text x="360" y="500" text-anchor="middle" fill="#C8C4BC" font-family="Segoe UI, system-ui, sans-serif" font-size="20">modo Pro / Manual</text>
+</svg>

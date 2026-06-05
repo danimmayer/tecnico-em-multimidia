@@ -79,18 +79,21 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 /* AULA 07 SPECIFIC */
 .title-slide .slide-inner, .closing-slide .slide-inner { justify-content: center; align-items: center; text-align: center; }
 .title-content, .closing-content { max-width: 900px; width: 100%; padding: 20px; position: relative; z-index: 2; }
-.triangle-hero { width: min(620px, 78vw); margin: 0 auto 28px; border-radius: 8px; overflow: hidden; border: 1px solid rgba(196,168,108,0.25); background: #111; box-shadow: 0 30px 70px rgba(0,0,0,0.4); }
+.triangle-hero { width: min(620px, 78vw); margin: 0 auto 28px; overflow: visible; filter: drop-shadow(0 30px 42px rgba(0,0,0,0.32)); }
 .triangle-hero img { display: block; width: 100%; height: auto; }
 
-.schedule-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-.schedule-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 6px; padding: 18px 20px; }
-.schedule-card .time { font-family: var(--font-mono); font-size: 13px; color: var(--accent); letter-spacing: 0.08em; margin-bottom: 6px; }
-.schedule-card strong { display: block; color: var(--cream); font-size: 18px; margin-bottom: 6px; }
-.schedule-card span { color: var(--cream-muted); font-size: 15px; line-height: 1.4; }
+.schedule-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.schedule-card {
+  min-height: 250px; background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+  border-radius: 6px; padding: 20px; display: flex; flex-direction: column; gap: 12px;
+}
+.schedule-card .time { font-family: var(--font-mono); color: var(--accent); font-size: 15px; letter-spacing: 0.02em; }
+.schedule-card strong { color: var(--cream); font-size: 21px; line-height: 1.2; }
+.schedule-card span { color: var(--cream-muted); font-size: 16px; line-height: 1.45; }
 
 .control-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.control-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 6px; padding: 20px; display: flex; flex-direction: column; gap: 10px; }
-.control-card .icon { width: 42px; height: 42px; border-radius: 6px; background: rgba(196,168,108,0.12); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 6px; }
+.control-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 6px; padding: 22px; display: flex; flex-direction: column; gap: 10px; min-height: 238px; }
+.control-card .icon { font-family: var(--font-mono); color: var(--accent); font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 4px; }
 .control-card h3 { color: var(--cream); font-size: 19px; }
 .control-card p { color: var(--cream-muted); font-size: 15px; line-height: 1.45; }
 
@@ -99,6 +102,33 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 .dof-panel img { width: 100%; display: block; }
 .dof-panel .label { padding: 10px 14px; font-size: 14px; color: var(--cream-muted); background: rgba(0,0,0,0.4); }
 .dof-panel .label strong { color: var(--accent); }
+
+.lesson-visual { min-height: 330px; padding: 0; }
+.lesson-visual.compact { min-height: 340px; }
+.lesson-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.asset-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: visible;
+  filter: drop-shadow(0 18px 30px rgba(0,0,0,0.32));
+}
+.asset-stage img { max-width: 100%; max-height: 100%; }
+.concept-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: stretch; }
+.concept-note {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 18px 20px;
+  background: rgba(255,255,255,0.03);
+}
+.concept-note strong { display: block; color: var(--accent); font-size: 15px; margin-bottom: 6px; }
+.concept-note span { display: block; color: var(--cream-muted); font-size: 16px; line-height: 1.45; }
 
 .math-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .math-card { background: rgba(255,255,255,0.025); border: 1px solid var(--border); border-radius: 6px; padding: 16px; text-align: center; }
@@ -244,11 +274,11 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
   <div class="slide-inner">
     <div class="title-content">
       <div class="triangle-hero">
-        <img class="generated-img" src="imagens/aula07/exposure-triangle-dark.jpg" alt="Triângulo de Exposição">
+        <img class="generated-img" src="imagens/aula07/exposure-triangle.svg" alt="Triângulo de Exposição">
       </div>
       <div class="t-eyebrow">Aula 07 · UC Fundamentos de Fotografia Digital e de Semiótica</div>
       <div class="t-title-lg">Luz, Exposição<br>e o Triângulo</div>
-      <p class="t-subtitle" style="max-width:720px;margin:18px auto 0;">ISO, abertura e velocidade do obturador. Movimento, congelamento e controle manual intencional no seu celular.</p>
+      <p class="t-subtitle" style="max-width:720px;margin:18px auto 0;">ISO, abertura e velocidade como decisões de linguagem: quanto de luz entra, por quanto tempo e com qual efeito visual.</p>
       <div class="closing-divider" style="margin:32px auto 14px;"></div>
       <div class="instructor-tag">Prof. Daniel Mayer · SENAI · Técnico em Multimídia</div>
     </div>
@@ -265,11 +295,11 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
     <div class="slide-body">
       <div class="schedule-grid">
         <div class="schedule-card"><div class="time">19:00–19:30</div><strong>Chamada e introdução</strong><span>A luz como matéria-prima. O que a câmera realmente registra.</span></div>
-        <div class="schedule-card"><div class="time">19:30–20:30</div><strong>O Triângulo de Exposição</strong><span>ISO, abertura (f-stops + DOF), ruído e compensação recíproca.</span></div>
-        <div class="schedule-card"><div class="time">20:50–21:30</div><strong>Velocidade e matemática</strong><span>Obturador, motion blur vs congelamento, stops, EV.</span></div>
-        <div class="schedule-card"><div class="time">21:30–22:30</div><strong>Histograma + prática</strong><span>Leitura de tons. Exercícios cronometrados em modo manual.</span></div>
+        <div class="schedule-card"><div class="time">19:30–20:30</div><strong>Triângulo de Exposição</strong><span>ISO, abertura, profundidade de campo e compensação recíproca.</span></div>
+        <div class="schedule-card"><div class="time">20:50–21:30</div><strong>Tempo e equivalência</strong><span>Obturador, movimento, paradas de luz e escolhas equivalentes.</span></div>
+        <div class="schedule-card"><div class="time">21:30–22:30</div><strong>Histograma e prática</strong><span>Leitura objetiva da exposição e sequência de captura em modo manual.</span></div>
       </div>
-      <div class="highlight-box" style="margin-top:22px;"><strong>Regra da noite:</strong> lanche de 20 min após o Bloco 2. A prática final do Bloco 4 exige tempo de captura, análise e compartilhamento.</div>
+      <div class="highlight-box" style="margin-top:22px;"><strong>Regra da noite:</strong> lanche de 20 min após o Bloco 2. O Bloco 4 precisa de tempo real para captura, análise e apresentação curta.</div>
       <div class="p-expand" data-depth="2"><div class="p-expand-head"><span class="p-expand-tag">Expandir</span><span>Gestão do tempo</span></div><div class="p-expand-body"><p>O intervalo está posicionado para que o bloco de prática (o mais importante) não seja atropelado. Se a turma voltar atrasada do lanche, encurte a explicação do histograma e vá direto para os exercícios.</p></div></div>
     </div>
   </div>
@@ -285,7 +315,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
     <div class="slide-body">
       <div class="two-col">
         <div>
-          <p class="t-subtitle" style="font-size:19px;">Na Aula 06 você decidiu o que entra no retângulo. Hoje decide quanta luz entra, por quanto tempo e com qual sensibilidade — para congelar, borrar, isolar ou estourar de propósito.</p>
+          <p class="t-subtitle" style="font-size:19px;">Na Aula 06 você decidiu o que entra no retângulo. Hoje decide quanta luz entra, por quanto tempo e com qual sensibilidade para congelar, borrar, isolar ou criar silhueta de forma intencional.</p>
           <ul class="styled" style="margin-top:22px;">
             <li class="accent">Mesma luz, três fotos radicalmente diferentes</li>
             <li>Fundo cremoso ou fundo nítido?</li>
@@ -296,7 +326,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
         <div class="card">
           <div class="micro-label">PERGUNTA-CHAVE</div>
           <div style="font-size:21px;line-height:1.35;margin-top:12px;">Se eu pudesse controlar exatamente quanta luz entra e por quanto tempo, que foto eu escolheria fazer?</div>
-          <div style="margin-top:20px;font-size:14px;color:var(--muted);">Essa é a diferença entre apertar o botão e fazer fotografia.</div>
+          <div style="margin-top:20px;font-size:14px;color:var(--muted);">Esse é o ponto em que técnica deixa de ser configuração e passa a ser decisão visual.</div>
         </div>
       </div>
     </div>
@@ -312,12 +342,12 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
     </div>
     <div class="slide-body">
       <div class="highlight-box" style="max-width:820px;">
-        A câmera não "vê" como você. Ela registra fótons durante um tempo, através de um buraco de tamanho variável, amplificados por uma sensibilidade escolhida. O resultado é sempre uma negociação entre esses três fatores.
+        A câmera registra luz durante um intervalo de tempo, através de uma abertura e com uma sensibilidade definida. O resultado nasce da negociação entre esses três fatores.
       </div>
       <div class="three-col" style="margin-top:28px;gap:16px;">
-        <div class="card"><div class="card-title">Quantidade</div><div class="card-body">Quanta luz chega ao sensor. Controlada por abertura + velocidade + ISO.</div></div>
-        <div class="card"><div class="card-title">Qualidade</div><div class="card-body">Dura ou macia, direcional ou difusa. Afeta humor, textura e volume (aula 8).</div></div>
-        <div class="card"><div class="card-title">Cor</div><div class="card-body">Temperatura da luz. Quente, fria, mista. Afeta a "cor verdadeira" (aula 8).</div></div>
+        <div class="card"><div class="card-title">Quantidade</div><div class="card-body">Quanta luz chega ao sensor. É o foco técnico desta aula.</div></div>
+        <div class="card"><div class="card-title">Qualidade</div><div class="card-body">Luz dura ou macia, direcional ou difusa. Prepara a Aula 08.</div></div>
+        <div class="card"><div class="card-title">Cor</div><div class="card-body">Temperatura, mistura de fontes e dominantes. Também entra na Aula 08.</div></div>
       </div>
       <div class="p-expand" data-depth="2" style="margin-top:18px;"><div class="p-expand-head"><span class="p-expand-tag">Expandir</span></div><div class="p-expand-body"><p>O sensor tem alcance dinâmico limitado (geralmente 10–14 stops). O olho humano lida com ~20 stops. Por isso precisamos escolher conscientemente o que sacrificar: sombras ou realces.</p></div></div>
     </div>
@@ -344,7 +374,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
     </div>
     <div class="slide-body">
       <div class="triangle-hero" style="margin-bottom:18px;">
-        <img class="generated-img" src="imagens/aula07/exposure-triangle-dark.jpg" alt="Diagrama do triângulo de exposição">
+        <img class="generated-img" src="imagens/aula07/exposure-triangle.svg" alt="Diagrama do triângulo de exposição">
       </div>
       <div class="two-col">
         <div>
@@ -368,15 +398,8 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
       <div class="t-title">Abertura é escolha de foco, não só de luz.</div>
     </div>
     <div class="slide-body">
-      <div class="dof-compare">
-        <div class="dof-panel img-clickable" data-caption="Profundidade rasa · f/2.8 isola o assunto e derrete o fundo. Priorize abertura quando a história pede separação.">
-          <img src="imagens/aula07/dof-shallow.jpg" alt="Exemplo f/2.8 profundidade rasa">
-          <div class="label"><strong>f/2.8</strong> — Profundidade rasa, fundo cremoso, sujeito isolado</div>
-        </div>
-        <div class="dof-panel img-clickable" data-caption="Profundidade extensa · f/16 mantém primeiro plano e fundo legíveis. Priorize quando o contexto importa.">
-          <img src="imagens/aula07/dof-deep.jpg" alt="Exemplo f/16 profundidade extensa">
-          <div class="label"><strong>f/16</strong> — Quase tudo nítido, contexto completo, "tudo em foco"</div>
-        </div>
+      <div class="asset-stage lesson-visual img-clickable" data-caption="Profundidade de campo · A abertura decide se o fundo vira textura ou continua sendo informação da cena.">
+        <img src="imagens/aula07/dof-comparison.svg" alt="Comparação de profundidade de campo em f/2.8 e f/16">
       </div>
       <div class="p-expand" data-depth="2" style="margin-top:16px;"><div class="p-expand-head"><span class="p-expand-tag">Expandir</span><span>Por que o número é "f/"?</span></div><div class="p-expand-body"><p>O número f é a razão distância focal / diâmetro da abertura. f/2 significa que o diâmetro é metade da distância focal. Quanto menor o número, maior o buraco, mais luz, mais rasa a profundidade.</p></div></div>
     </div>
@@ -388,14 +411,14 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
   <div class="slide-inner">
     <div class="slide-header">
       <div class="t-eyebrow">Sensibilidade tem preço</div>
-      <div class="t-title">ISO alto = mais luz, mais sujeira.</div>
+      <div class="t-title">ISO alto = mais sensibilidade, mais ruído.</div>
     </div>
     <div class="slide-body">
-      <div class="img-frame img-clickable" style="max-height:380px;" data-caption="ISO e ruído · O mesmo sensor perde textura quando a sensibilidade sobe. No celular o limite aparece mais cedo.">
-        <img src="imagens/aula07/iso-noise.jpg" alt="Comparação ISO 100 vs alto ruído" style="object-fit:cover;">
+      <div class="asset-stage lesson-visual img-clickable" data-caption="ISO e ruído · Ao aumentar a sensibilidade, o sinal é amplificado junto com imperfeições de textura, cor e detalhe.">
+        <img src="imagens/aula07/iso-noise.svg" alt="Comparação ISO 100 e ISO 6400">
       </div>
-      <div class="img-caption"><strong>ISO 100 vs ISO 6400</strong> — o mesmo sensor, duas sensibilidades, dois mundos de detalhe.</div>
-      <div class="p-expand" data-depth="2"><div class="p-expand-head"><span class="p-expand-tag">Expandir</span></div><div class="p-expand-body"><p>No celular o ruído aparece mais cedo porque o sensor é menor. Muitos apps de câmera "pro" já têm redução de ruído agressiva que também come textura. Às vezes é melhor subir 1/3 de stop no obturador ou na abertura do que subir ISO.</p></div></div>
+      <div class="img-caption"><strong>ISO 100 vs ISO 6400</strong> — mesmo enquadramento, compromissos diferentes de detalhe e ruído.</div>
+      <div class="p-expand" data-depth="2"><div class="p-expand-head"><span class="p-expand-tag">Expandir</span></div><div class="p-expand-body"><p>No celular o ruído aparece mais cedo porque o sensor é menor. Muitos apps aplicam redução de ruído agressiva, que suaviza textura junto com o granulado. Às vezes é melhor ganhar 1/3 de stop com velocidade ou abertura do que subir ISO.</p></div></div>
     </div>
   </div>
 </div>
@@ -408,10 +431,10 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
       <div class="t-title">Congelar ou deixar o tempo passar?</div>
     </div>
     <div class="slide-body">
-      <div class="img-frame img-clickable" style="max-height:340px;" data-caption="Velocidade do obturador · Congelar ou deixar o tempo passar é decisão narrativa, não só técnica.">
-        <img src="imagens/aula07/shutter-motion.jpg" alt="Efeito velocidade do obturador" style="object-fit:cover;">
+      <div class="asset-stage lesson-visual img-clickable" data-caption="Velocidade do obturador · Congelar ou mostrar o rastro do tempo é decisão de leitura da ação.">
+        <img src="imagens/aula07/shutter-motion.svg" alt="Comparação de velocidade do obturador">
       </div>
-      <div class="img-caption"><strong>1/1000s vs 1/15s</strong> — a mesma ação, duas decisões de tempo completamente diferentes.</div>
+      <div class="img-caption"><strong>1/1000s vs 1/15s</strong> — a mesma ação pode ser forma congelada ou rastro de movimento.</div>
     </div>
   </div>
 </div>
@@ -420,14 +443,23 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 <div class="slide" data-title="Controles no Celular" data-bloco="3" data-competencias="CT-FOTOGRAFAR">
   <div class="slide-inner">
     <div class="slide-header">
-      <div class="t-eyebrow">Onde estão os botões</div>
+      <div class="t-eyebrow">Onde ficam os controles</div>
       <div class="t-title">Seu celular já é uma câmera manual.</div>
     </div>
     <div class="slide-body">
-      <div class="img-frame" style="max-height:380px;max-width:420px;margin:0 auto;">
-        <img src="imagens/aula07/phone-manual-mock.jpg" alt="Mockup de controles manuais no smartphone" style="object-fit:contain;">
+      <div class="two-col wide-right">
+        <div class="stack">
+          <div class="concept-note"><strong>1. Abra o modo manual</strong><span>Procure Pro, Manual ou Profissional. Em alguns aparelhos ele fica dentro do menu “Mais”.</span></div>
+          <div class="concept-note"><strong>2. Trave um parâmetro</strong><span>Escolha o efeito principal: movimento, profundidade ou ruído. Ajuste os outros depois.</span></div>
+          <div class="concept-note"><strong>3. Confira o histograma</strong><span>Se sombras ou realces encostam nas bordas, faça uma nova captura com compensação.</span></div>
+        </div>
+        <div>
+          <div class="asset-stage lesson-visual compact" style="max-width:540px;margin:0 auto;">
+            <img src="imagens/aula07/phone-manual.svg" alt="Mockup de controles manuais no smartphone">
+          </div>
+          <div class="img-caption" style="max-width:560px;margin:12px auto 0;">Quando o app nativo não oferece tudo, Lightroom Mobile ou Open Camera resolvem a prática.</div>
+        </div>
       </div>
-      <div class="img-caption" style="max-width:520px;margin:12px auto 0;">No modo Pro / Manual / P você tem acesso direto a ISO, obturador, abertura (ou simulado) e compensação. O app Lightroom Mobile gratuito também oferece controles completos + histograma ao vivo.</div>
     </div>
   </div>
 </div>
@@ -453,19 +485,19 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
     <div class="slide-body">
       <div class="three-col">
         <div class="control-card">
-          <div class="icon">⌀</div>
-          <h3>Quero fundo derretido</h3>
-          <p>Aproximo, abro o diafragma (f/2 ou menor). Para não estourar, acelero o obturador ou baixo o ISO.</p>
+          <div class="icon">prioridade 01</div>
+          <h3>Quero fundo desfocado</h3>
+          <p>Aproximo, uso a maior abertura disponível. Para preservar os realces, acelero o obturador ou reduzo o ISO.</p>
         </div>
         <div class="control-card">
-          <div class="icon">⟲</div>
+          <div class="icon">prioridade 02</div>
           <h3>Quero água de seda</h3>
-          <p>Coloco o celular apoiado ou uso tripé, fecho o obturador (1/2s ou mais). Para não ficar escuro, abro diafragma ou subo ISO.</p>
+          <p>Apoio o celular e uso velocidade lenta (1/2s ou mais). Depois compenso a luz com ISO ou abertura.</p>
         </div>
         <div class="control-card">
-          <div class="icon">⚡</div>
+          <div class="icon">prioridade 03</div>
           <h3>Quero congelar ação</h3>
-          <p>Velocidade alta (1/500+). Perco luz → abro diafragma ou aceito ISO mais alto (e ruído).</p>
+          <p>Uso velocidade alta (1/500+). Como entra menos luz, compenso com abertura maior ou ISO mais alto.</p>
         </div>
       </div>
       <div class="highlight-box" style="margin-top:22px;">A câmera sempre tenta equilibrar sozinha no modo automático. No manual você decide qual compromisso fazer.</div>
@@ -481,8 +513,8 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
       <div class="t-title">Uma parada = dobrar ou dividir a luz por 2.</div>
     </div>
     <div class="slide-body">
-      <div class="img-frame" style="max-height:260px;margin-bottom:18px;">
-        <img src="imagens/aula07/stops-diagram.jpg" alt="Diagrama de paradas de exposição" style="object-fit:contain;background:#111;">
+      <div class="asset-stage lesson-visual compact" style="margin-bottom:18px;">
+        <img src="imagens/aula07/stops-scale.svg" alt="Escala de paradas de exposição">
       </div>
       <div class="math-grid">
         <div class="math-card"><div class="val">f/5.6 → f/8</div><div class="desc">-1 stop (perde luz)</div></div>
@@ -515,22 +547,22 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 <div class="slide" data-title="EV e Compensação" data-bloco="3" data-competencias="CK-EXPOSICAO,CT-FOTOGRAFAR">
   <div class="slide-inner">
     <div class="slide-header">
-      <div class="t-eyebrow">A câmera mente. Você corrige.</div>
+      <div class="t-eyebrow">O fotômetro mede. Você interpreta.</div>
       <div class="t-title">+1 EV na neve.<br>–1 EV no gato preto.</div>
     </div>
     <div class="slide-body">
       <div class="two-col">
         <div>
           <ul class="styled">
-            <li>Neve / parede branca → câmera subexpõe → use + EV</li>
-            <li>Palco escuro, roupa preta → câmera superexpoe → use – EV</li>
+          <li>Neve / parede branca → câmera subexpõe → use + EV</li>
+          <li>Palco escuro, roupa preta → câmera superexpõe → use – EV</li>
             <li>Contraluz forte → meça no rosto ou use +1</li>
             <li>Cena com muito céu → o céu vira cinza → – EV ou exponha para o céu</li>
           </ul>
         </div>
         <div class="card">
           <div class="micro-label">REGRA PRÁTICA</div>
-          <div style="font-size:18px;margin-top:10px;">Se a foto saiu "cinza quando deveria ser branca" → + EV. Se saiu "cinza quando deveria ser preta" → – EV.</div>
+          <div style="font-size:18px;margin-top:10px;">Se a foto ficou cinza quando a cena deveria ser clara, use + EV. Se ficou cinza quando deveria ser escura, use – EV.</div>
         </div>
       </div>
     </div>
@@ -556,8 +588,8 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
       <div class="t-title">Olhe o gráfico, não só a imagem.</div>
     </div>
     <div class="slide-body">
-      <div class="img-frame img-clickable" style="max-height:320px;" data-caption="Histograma · O gráfico mostra onde os tons se concentram e se há clipping nas sombras ou realces.">
-        <img src="imagens/aula07/histograms.jpg" alt="Exemplos de histogramas" style="object-fit:contain;background:#0a0a0a;">
+      <div class="asset-stage lesson-visual img-clickable" data-caption="Histograma · O gráfico mostra onde os tons se concentram e se há clipping nas sombras ou realces.">
+        <img src="imagens/aula07/histograms.svg" alt="Exemplos de histogramas">
       </div>
       <div class="histo-grid" style="margin-top:16px;">
         <div class="histo-card">
@@ -577,8 +609,8 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 <div class="slide" data-title="Como ver histograma no celular" data-bloco="4" data-competencias="CK-HISTOGRAMA,CT-FOTOGRAFAR">
   <div class="slide-inner">
     <div class="slide-header">
-      <div class="t-eyebrow">Sem app especial não tem como?</div>
-      <div class="t-title">Tem sim. E é de graça.</div>
+      <div class="t-eyebrow">Ferramentas acessíveis</div>
+      <div class="t-title">Histograma também cabe no celular.</div>
     </div>
     <div class="slide-body">
       <div class="three-col">
@@ -587,12 +619,12 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
           <div class="card-body">Ative o histograma no canto superior direito da tela de edição. Funciona até na versão gratuita.</div>
         </div>
         <div class="card">
-          <div class="card-title">App nativo (alguns)</div>
-          <div class="card-body">iPhone no modo Pro (iOS 17+) ou alguns Androids em "mais" > "pro" mostram histograma ao vivo.</div>
+          <div class="card-title">App nativo (quando houver)</div>
+          <div class="card-body">Muitos Androids têm modo Pro. Em outros aparelhos, busque controle de exposição, velocidade e ISO.</div>
         </div>
         <div class="card">
           <div class="card-title">Halide / Camera+ / Open Camera</div>
-          <div class="card-body">Apps pagos ou gratuitos com histograma em tempo real + zebra + focus peaking. Vale testar um.</div>
+          <div class="card-body">Apps com histograma, zebra e foco manual. Open Camera é uma boa opção gratuita no Android.</div>
         </div>
       </div>
       <div class="p-expand" data-depth="2" style="margin-top:16px;"><div class="p-expand-head"><span class="p-expand-tag">Bônus</span><span>Para quem usa Android</span></div><div class="p-expand-body"><p>Open Camera (F-Droid / Play) é completamente grátis, open source e tem histograma + controles manuais completos. Excelente para a prática desta aula.</p></div></div>
@@ -626,7 +658,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
   <div class="slide-inner">
     <div class="slide-header">
       <div class="t-eyebrow">Defesa técnica</div>
-      <div class="t-title">Mostre uma foto.<br>Explique os três botões.</div>
+      <div class="t-title">Mostre uma foto.<br>Explique os três controles.</div>
     </div>
     <div class="slide-body">
       <div class="stack">
@@ -656,7 +688,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
       <div class="three-col" style="gap:16px;">
         <div class="card"><div class="micro-label">NO SEU CADERNO</div><div style="margin-top:10px;font-size:17px;">"Esta semana eu vou fotografar 10 cenas diferentes só variando <strong>velocidade</strong> e ver o que acontece."</div></div>
         <div class="card"><div class="micro-label">OU</div><div style="margin-top:10px;font-size:17px;">"Vou fazer o mesmo com <strong>abertura</strong> em retratos e paisagens."</div></div>
-        <div class="card"><div class="micro-label">OU</div><div style="margin-top:10px;font-size:17px;">"Vou ativar o histograma no meu app favorito e nunca mais ignorar o clipping."</div></div>
+        <div class="card"><div class="micro-label">OU</div><div style="margin-top:10px;font-size:17px;">"Vou ativar o histograma no meu app favorito e observar onde aparece clipping."</div></div>
       </div>
     </div>
   </div>
@@ -668,7 +700,7 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
     <div class="closing-content">
       <div class="closing-tag">AULA 07 · FIM</div>
       <div class="closing-title">Exposição não é regra.<br>É vocabulário.</div>
-      <div class="closing-sub">Quando você domina os três controles, você para de "tirar foto" e começa a escrever com luz. O histograma é seu corretor. A prática de hoje é só o começo.</div>
+      <div class="closing-sub">Quando você domina os três controles, passa a escolher a exposição como linguagem. O histograma ajuda a confirmar se a escolha técnica sustenta a intenção visual.</div>
       <div class="next-class"><span class="next-label">Próxima Aula</span><span class="next-title">Aula 08: Ambiente · Luz Natural e Artificial</span></div>
       <div class="closing-divider"></div>
       <div class="closing-summary">

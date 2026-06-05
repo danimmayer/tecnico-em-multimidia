@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 520" role="img" aria-labelledby="title desc">
+  <title id="title">Leitura de histogramas</title>
+  <desc id="desc">Quatro histogramas: subexposto, equilibrado, superexposto e alto contraste.</desc>
+  <g font-family="Segoe UI, system-ui, sans-serif">
+    <g transform="translate(58 62)">
+      <rect width="236" height="270" rx="10" fill="#202020" stroke="#fff" stroke-opacity=".08"/>
+      <path d="M26 230h188" stroke="#908880"/><path d="M26 230c18-112 50-144 84-154 40-12 68 28 92 72 8 15 12 30 14 82Z" fill="#6B8CA8" opacity=".78"/>
+      <text x="24" y="316" fill="#F0F0EC" font-size="22" font-weight="700">Subexposto</text><text x="24" y="346" fill="#C8C4BC" font-size="16">massa encostada à esquerda</text>
+    </g>
+    <g transform="translate(322 62)">
+      <rect width="236" height="270" rx="10" fill="#202020" stroke="#fff" stroke-opacity=".08"/>
+      <path d="M26 230h188" stroke="#908880"/><path d="M26 230c32-22 48-46 68-74 34-48 78-52 110-16 22 25 33 54 40 90Z" fill="#C4A86C" opacity=".85"/>
+      <text x="24" y="316" fill="#F0F0EC" font-size="22" font-weight="700">Distribuído</text><text x="24" y="346" fill="#C8C4BC" font-size="16">tons sem clipping evidente</text>
+    </g>
+    <g transform="translate(586 62)">
+      <rect width="236" height="270" rx="10" fill="#202020" stroke="#fff" stroke-opacity=".08"/>
+      <path d="M26 230h188" stroke="#908880"/><path d="M26 230c20-24 43-36 72-30 37 8 66-18 88-74 14-36 20-70 28-96v200Z" fill="#D98A8A" opacity=".8"/>
+      <text x="24" y="316" fill="#F0F0EC" font-size="22" font-weight="700">Superexposto</text><text x="24" y="346" fill="#C8C4BC" font-size="16">realces encostam à direita</text>
+    </g>
+    <g transform="translate(850 62)">
+      <rect width="236" height="270" rx="10" fill="#202020" stroke="#fff" stroke-opacity=".08"/>
+      <path d="M26 230h188" stroke="#908880"/><path d="M26 230c4-100 20-156 44-156s36 76 46 156Z" fill="#6B8CA8" opacity=".82"/><path d="M132 230c8-118 28-168 54-166 28 2 36 72 42 166Z" fill="#C4A86C" opacity=".85"/>
+      <text x="24" y="316" fill="#F0F0EC" font-size="22" font-weight="700">Alto contraste</text><text x="24" y="346" fill="#C8C4BC" font-size="16">duas massas distantes</text>
+    </g>
+  </g>
+</svg>

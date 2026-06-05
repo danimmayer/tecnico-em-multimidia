@@ -84,11 +84,11 @@
 
   const NOTES = {
     'Capa': {
-      fala: 'Boa noite. Na aula passada a câmera era ferramenta. Hoje a câmera vira instrumento musical: três botões que, juntos, decidem quanta luz entra e como a foto vai "sentir" o mundo. ISO, abertura, velocidade.',
+      fala: 'Boa noite. Na aula passada discutimos composição: o que entra no quadro e como o olhar circula. Hoje vamos controlar a exposição: quanta luz entra, por quanto tempo e com qual sensibilidade. ISO, abertura e velocidade deixam de ser números soltos e passam a ser decisões de linguagem.',
       dica: 'Comece pedindo que abram o app de câmera do celular e digam: "quem aqui já mexeu em ISO, f/ ou velocidade manualmente?" Muitos nunca. Isso é o ponto de partida.'
     },
     'Programação da Noite': {
-      fala: 'Quatro blocos. Primeiro entendemos que luz não é só claridade, é a matéria com que trabalhamos. No segundo bloco o triângulo entra como o grande equalizador. No terceiro, velocidade vira ferramenta de tempo e movimento, com a matemática dos stops. No último, o histograma vira nossa partitura e fazemos prática pesada no modo manual do celular.',
+      fala: 'Quatro blocos. Primeiro entendemos a luz como matéria-prima. No segundo, o triângulo organiza abertura, velocidade e ISO. No terceiro, velocidade e stops mostram como compensar parâmetros. No último, usamos histograma e modo manual para praticar com sequência de captura, análise e correção.',
       dica: 'Lembre o lanche de 20 min após o Bloco 2. A prática do Bloco 4 precisa de tempo real de captura + revisão. Não corra o bloco 3.'
     },
     'Ponte com a Aula 06': {
@@ -96,15 +96,15 @@
       dica: 'Pergunta rápida: "Alguém já tirou foto de farol à noite e saiu um risco branco?" Isso é obturador longo demais. Conecte com a intenção narrativa da composição.'
     },
     'Chamada Bloco 2': {
-      fala: 'Entramos no coração da noite: o triângulo de exposição. ISO, abertura e velocidade. Três botões, uma negociação.',
+      fala: 'Entramos no centro da aula: o triângulo de exposição. ISO, abertura e velocidade. Três controles, uma decisão de exposição.',
       dica: 'Peça que abram o modo Pro/Manual no celular antes de continuar. Quem não achar, o colega ajuda em 30 segundos.'
     },
     'Chamada Bloco 3': {
-      fala: 'Depois do lanche, velocidade vira ferramenta de tempo e a matemática dos stops entra para você não "chutar" parâmetros.',
+      fala: 'Depois do lanche, a velocidade vira ferramenta de tempo e a matemática dos stops ajuda a ajustar parâmetros com critério.',
       dica: 'Confirme que a turma voltou no horário. Se atrasou, encurte a teoria de EV e vá para a prática.'
     },
     'Chamada Bloco 4': {
-      fala: 'Último bloco: histograma como corretor objetivo e prática pesada em modo manual. É o bloco que não pode ser atropelado.',
+      fala: 'Último bloco: histograma como leitura objetiva e prática em modo manual. É o bloco que precisa de mais tempo de sala.',
       dica: 'Distribua os exercícios por tempo. 12 min captura + 8 min revisão em duplas + 10 min de apresentações no projetor.'
     },
     'Luz como Matéria-Prima': {
@@ -128,7 +128,7 @@
       dica: 'Mostre os dois lados da imagem de motion. Peça que imaginem: foto de filho correndo no parque — congelar ou mostrar movimento? Depende da história que você quer contar.'
     },
     'Os Três Juntos': {
-      fala: 'Não existe "exposição certa" absoluta. Existe a exposição que conta a história que você quer. Se você quer fundo desfocado e congelar o modelo, você abre o diafragma (muita luz), sobe o ISO ou acelera o obturador para não estourar. Escolha criativa primeiro, técnica depois.',
+      fala: 'Não existe exposição correta em sentido absoluto. Existe uma exposição adequada à intenção. Se a prioridade é fundo desfocado e modelo congelado, a abertura e a velocidade vêm primeiro; ISO e compensação entram para sustentar essa escolha.',
       dica: 'Exercício oral rápido: "Quero foto de rua à noite com pessoas nítidas e fundo com rastros de luz de carros. Quais parâmetros priorizo?" (velocidade média-alta + ISO alto + abertura média)'
     },
     'Matemática dos Stops': {
@@ -140,7 +140,7 @@
       dica: 'Circule e veja os cadernos. Não corrija todos; pegue 2-3 exemplos interessantes e mostre no projetor para a turma discutir.'
     },
     'EV e Compensação': {
-      fala: 'O medidor da câmera é burro. Ele acha que o mundo é cinza médio. Neve? Ele subexpõe. Gato preto? Ele superexpoe. Por isso existe a compensação de exposição (+/- EV). Você diz "eu sei que você está errado, câmera, eu quero +1".',
+      fala: 'O fotômetro da câmera interpreta a cena a partir de uma referência média. Em cenas muito claras, tende a escurecer; em cenas muito escuras, tende a clarear. A compensação de exposição serve para o fotógrafo corrigir essa interpretação.',
       dica: 'Mostre foto de neve ou palco escuro. "Se a foto saiu cinza, o que você faz no EV?" Pratique verbalizar: "mais 1 e 1/3 de EV".'
     },
     'Controles no Celular': {
@@ -168,7 +168,7 @@
       dica: 'Recolha 3 respostas no caderno se precisar diagnosticar a turma na próxima aula.'
     },
     'Encerramento': {
-      fala: 'Exposição não é regra. É vocabulário. Quando você domina os três controles, você para de "tirar foto" e começa a "escrever com luz". O histograma é seu corretor ortográfico. A prática de hoje é o começo de uma vida inteira de decisões intencionais.',
+      fala: 'Exposição não é apenas regra técnica. É vocabulário visual. Quando o aluno domina os três controles, passa a escolher como luz, tempo e sensibilidade participam da leitura da imagem. O histograma ajuda a verificar se a decisão funcionou.',
       dica: 'Gancho para Aula 08: agora que controlamos quanta luz entra, vamos falar da luz que já está lá fora — cor, temperatura, hora do dia, luz artificial e modificadores.'
     },
     'Gancho Aula 08': {
