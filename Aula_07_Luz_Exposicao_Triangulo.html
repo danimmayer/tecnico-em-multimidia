@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 07 · Luz, Exposição e o Triângulo de Exposição</title>
+<link rel="icon" href="data:,">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --accent: #C4A86C; --accent-dim: #A08C5A; --accent-bg: rgba(196,168,108,0.08);
+  --dark: #141414; --dark-2: #181818; --dark-card: #1C1C1C; --dark-card-2: #202020;
+  --cream: #F0F0EC; --cream-muted: #C8C4BC; --muted: #908880; --border: rgba(255,255,255,0.08);
+  --font: 'Segoe UI', system-ui, -apple-system, sans-serif; --font-mono: 'SF Mono', 'Fira Code', Consolas, monospace;
+  --blue: #6B8CA8; --green: #7CC49A; --red: #D98A8A; --amber: #E7B66E;
+}
+
+body { font-family: var(--font); background: var(--dark); color: var(--cream); overflow: hidden; height: 100vh; -webkit-font-smoothing: antialiased; }
+
+#progressBar { position: fixed; top: 0; left: 0; height: 2px; background: rgba(255,255,255,0.25); transition: width 0.4s ease; z-index: 1000; pointer-events: none; }
+
+.slide { width: 100vw; height: 100vh; position: absolute; top: 0; left: 0; overflow: hidden; background: radial-gradient(circle at 86% 14%, rgba(107,140,168,0.11), transparent 28%), radial-gradient(circle at 16% 86%, rgba(196,168,108,0.08), transparent 24%), linear-gradient(135deg, #141414 0%, #181715 48%, #101112 100%); opacity: 0; pointer-events: none; transition: opacity 0.35s ease; display: flex; flex-direction: column; }
+.slide.active { opacity: 1; pointer-events: auto; z-index: 1; }
+.slide-inner { flex: 1; display: flex; flex-direction: column; padding: 48px 64px 56px; overflow: hidden; position: relative; }
+
+/* BOTTOM BAR styles for injected UI */
+#bottomBar { position: fixed; bottom: 0; left: 0; right: 0; height: 40px; display: flex; justify-content: space-between; align-items: center; padding: 0 20px 0 24px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 13px; color: var(--muted); letter-spacing: 0.03em; z-index: 900; background: var(--dark); }
+#bottomBar .bar-left { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+#bottomBar .bar-left img { height: 16px; width: auto; opacity: 0.35; filter: grayscale(1) brightness(1.5); }
+#bottomBar .bar-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+#slideCounter { font-size: 13px; color: var(--muted); letter-spacing: 0.1em; font-variant-numeric: tabular-nums; cursor: pointer; padding: 4px 8px; border-radius: 4px; transition: background 0.2s; user-select: none; }
+#slideCounter:hover { background: rgba(255,255,255,0.06); }
+.bar-btn { width: 30px; height: 28px; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; background: rgba(255,255,255,0.03); color: var(--muted); font-size: 14px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s, color 0.2s, transform 0.14s ease; line-height: 1; }
+.bar-btn:hover { background: rgba(255,255,255,0.1); color: var(--cream); }
+.bar-btn:active { transform: scale(0.96); }
+.bar-btn:disabled { opacity: 0.2; cursor: not-allowed; transform: none; }
+
+/* TYPOGRAPHY & LAYOUT */
+.t-eyebrow { font-size: 14px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+.t-title { font-size: 42px; font-weight: 700; line-height: 1.15; color: var(--cream); letter-spacing: -0.01em; text-wrap: balance; }
+.t-title-lg { font-size: 56px; font-weight: 700; line-height: 1.08; color: var(--cream); letter-spacing: -0.02em; text-wrap: balance; }
+.t-subtitle { font-size: 21px; color: var(--cream-muted); margin-top: 8px; line-height: 1.5; text-wrap: pretty; }
+.slide-header { margin-bottom: 24px; flex-shrink: 0; }
+.slide-body { flex: 1; display: flex; flex-direction: column; justify-content: center; overflow: hidden; }
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; height: 100%; }
+.three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.stack { display: flex; flex-direction: column; gap: 14px; }
+.centered { display: flex; align-items: center; justify-content: center; text-align: center; }
+.card { background: rgba(255,255,255,0.035); border: 1px solid var(--border); border-radius: 6px; padding: 24px; }
+.card-title { font-size: 20px; font-weight: 700; color: var(--accent); margin-bottom: 8px; }
+.card-body { font-size: 18px; color: var(--cream-muted); line-height: 1.55; }
+.micro-label { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; color: var(--muted); text-transform: uppercase; }
+ul.styled { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+ul.styled li { position: relative; padding-left: 19px; font-size: 20px; color: var(--cream-muted); line-height: 1.45; }
+ul.styled li::before { content: ''; position: absolute; left: 0; top: 11px; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+ul.styled li.accent { color: var(--cream); font-weight: 500; }
+.highlight-box { background: rgba(255,255,255,0.03); border-left: 2px solid var(--accent); padding: 18px 22px; border-radius: 0 4px 4px 0; font-size: 19px; color: var(--cream-muted); line-height: 1.55; }
+.highlight-box strong { color: var(--accent); }
+
+.img-frame { position: relative; border-radius: 4px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); background: #0a0a0a; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1), 0 18px 42px rgba(0,0,0,0.22); }
+.img-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.img-caption { text-align: center; margin-top: 8px; font-size: 14px; color: var(--muted); line-height: 1.4; }
+.img-caption strong { color: var(--accent); font-size: 15px; display: block; }
+.img-clickable { cursor: pointer; position: relative; }
+.img-clickable::after {
+  content: '+'; position: absolute; bottom: 6px; right: 6px;
+  background: rgba(0,0,0,0.55); color: rgba(255,255,255,0.7);
+  font-size: 14px; font-weight: 700; width: 22px; height: 22px; border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity 0.2s;
+}
+.img-clickable:hover::after { opacity: 1; }
+
+.generated-img { display: block; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 18px 28px rgba(0,0,0,0.28)); }
+.generated-panel { border: 1px solid var(--border); border-radius: 6px; background: rgba(255,255,255,0.026); display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+
+/* AULA 07 SPECIFIC */
+.title-slide .slide-inner, .closing-slide .slide-inner { justify-content: center; align-items: center; text-align: center; }
+.title-content, .closing-content { max-width: 900px; width: 100%; padding: 20px; position: relative; z-index: 2; }
+.triangle-hero { width: min(620px, 78vw); margin: 0 auto 28px; border-radius: 8px; overflow: hidden; border: 1px solid rgba(196,168,108,0.25); background: #111; box-shadow: 0 30px 70px rgba(0,0,0,0.4); }
+.triangle-hero img { display: block; width: 100%; height: auto; }
+
+.schedule-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.schedule-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 6px; padding: 18px 20px; }
+.schedule-card .time { font-family: var(--font-mono); font-size: 13px; color: var(--accent); letter-spacing: 0.08em; margin-bottom: 6px; }
+.schedule-card strong { display: block; color: var(--cream); font-size: 18px; margin-bottom: 6px; }
+.schedule-card span { color: var(--cream-muted); font-size: 15px; line-height: 1.4; }
+
+.control-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.control-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 6px; padding: 20px; display: flex; flex-direction: column; gap: 10px; }
+.control-card .icon { width: 42px; height: 42px; border-radius: 6px; background: rgba(196,168,108,0.12); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 6px; }
+.control-card h3 { color: var(--cream); font-size: 19px; }
+.control-card p { color: var(--cream-muted); font-size: 15px; line-height: 1.45; }
+
+.dof-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.dof-panel { border-radius: 6px; overflow: hidden; border: 1px solid var(--border); background: #0a0a0a; }
+.dof-panel img { width: 100%; display: block; }
+.dof-panel .label { padding: 10px 14px; font-size: 14px; color: var(--cream-muted); background: rgba(0,0,0,0.4); }
+.dof-panel .label strong { color: var(--accent); }
+
+.math-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.math-card { background: rgba(255,255,255,0.025); border: 1px solid var(--border); border-radius: 6px; padding: 16px; text-align: center; }
+.math-card .val { font-family: var(--font-mono); font-size: 22px; color: var(--accent); margin-bottom: 4px; }
+.math-card .desc { font-size: 13px; color: var(--cream-muted); }
+
+.histo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.histo-card { border: 1px solid var(--border); border-radius: 6px; background: rgba(255,255,255,0.025); padding: 14px; }
+.histo-card img { width: 100%; border-radius: 4px; margin-bottom: 10px; }
+.histo-card .title { font-weight: 700; color: var(--accent); margin-bottom: 4px; }
+.histo-card p { font-size: 14px; color: var(--cream-muted); line-height: 1.4; }
+
+.practice-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.practice-item { display: grid; grid-template-columns: 48px 1fr; gap: 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; align-items: start; }
+.practice-item .num { width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgba(196,168,108,0.5); color: var(--accent); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 15px; font-weight: 700; }
+.practice-item strong { color: var(--cream); display: block; font-size: 16px; margin-bottom: 3px; }
+.practice-item span { color: var(--cream-muted); font-size: 14px; line-height: 1.4; }
+
+.call-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(196,168,108,0.12); color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: 0.12em; padding: 4px 12px; border-radius: 999px; margin-bottom: 16px; }
+
+.closing-tag { font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.closing-title { font-size: 2.4rem; font-weight: 700; color: var(--cream); line-height: 1.2; margin-bottom: 14px; letter-spacing: -0.02em; }
+.closing-sub { font-size: 18px; color: var(--cream-muted); line-height: 1.6; max-width: 650px; margin: 0 auto 16px; }
+.closing-divider { width: 50px; height: 2px; background: rgba(176,144,96,0.35); margin: 16px auto; border-radius: 2px; }
+.next-class {
+  display: inline-flex; flex-direction: column; gap: 4px;
+  background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+  border-radius: 4px; padding: 12px 26px; margin-top: 16px;
+}
+.next-label { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); opacity: 0.8; }
+.next-title { font-size: 17px; color: var(--cream); font-weight: 600; }
+
+#imgModal {
+  display: none; position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.92); align-items: center; justify-content: center; padding: 40px;
+}
+#imgModal.open { display: flex; }
+#modalInner { display: flex; align-items: center; gap: 32px; max-width: 92vw; max-height: 86vh; }
+#modalImg { max-height: 82vh; max-width: 60vw; object-fit: contain; border-radius: 4px; flex-shrink: 1; background: #0a0a0a; }
+#modalCaption { color: rgba(255,255,255,0.7); font-size: 16px; text-align: left; width: 340px; max-width: 340px; flex-shrink: 0; line-height: 1.6; }
+#modalCaption .modal-title { font-size: 20px; font-weight: 700; color: var(--cream); margin-bottom: 12px; line-height: 1.3; }
+#modalCaption .modal-analysis { font-size: 15px; color: rgba(255,255,255,0.62); line-height: 1.6; }
+#modalClose {
+  position: fixed; top: 16px; right: 20px; color: rgba(255,255,255,0.45); font-size: 24px; cursor: pointer; z-index: 10000;
+  width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; background: rgba(0,0,0,0.4);
+  transition: color 0.2s, background 0.2s;
+}
+#modalClose:hover { color: #fff; background: rgba(255,255,255,0.1); }
+
+#gridOverlay {
+  display: none; position: fixed; inset: 0; z-index: 8000;
+  background: rgba(10,10,10,0.96); overflow-y: auto; padding: 40px 48px 48px;
+}
+#gridOverlay.open { display: block; }
+#gridOverlay .grid-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; }
+#gridOverlay .grid-title { font-size: 20px; font-weight: 700; color: var(--cream); letter-spacing: -0.01em; }
+#gridOverlay .grid-close {
+  width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.15); border-radius: 4px;
+  background: rgba(255,255,255,0.04); color: var(--muted); font-size: 18px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+#gridOverlay .grid-close:hover { color: var(--cream); background: rgba(255,255,255,0.1); }
+#gridOverlay .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+.grid-thumb {
+  background: var(--dark-card); border: 1px solid var(--border); border-radius: 4px;
+  overflow: hidden; cursor: pointer; transition: border-color 0.2s; aspect-ratio: 16/10; position: relative;
+}
+.grid-thumb:hover, .grid-thumb.current { border-color: var(--accent); }
+.grid-thumb-num { position: absolute; top: 8px; left: 10px; font-family: var(--font-mono); color: var(--accent); font-size: 12px; z-index: 2; }
+.grid-thumb-inner { height: 100%; display: flex; align-items: flex-end; padding: 36px 14px 14px; }
+.grid-thumb-title { font-size: 15px; font-weight: 600; color: var(--cream); line-height: 1.25; }
+
+#helpOverlay {
+  display: none; position: fixed; inset: 0; z-index: 8100;
+  background: rgba(10,10,10,0.88); align-items: center; justify-content: center; padding: 24px;
+}
+#helpOverlay.open { display: flex; }
+.help-box { width: min(520px, 92vw); background: var(--dark-card); border: 1px solid var(--border); border-radius: 6px; padding: 28px; }
+.help-title { font-size: 22px; font-weight: 700; color: var(--cream); margin-bottom: 18px; }
+.help-row { display: flex; justify-content: space-between; gap: 24px; padding: 10px 0; border-top: 1px solid rgba(255,255,255,0.06); }
+.help-key kbd {
+  display: inline-block; min-width: 26px; padding: 3px 6px;
+  border: 1px solid rgba(255,255,255,0.14); border-radius: 4px;
+  color: var(--accent); font-family: var(--font-mono); font-size: 12px; text-align: center;
+  background: rgba(255,255,255,0.04);
+}
+.help-desc { color: var(--cream-muted); font-size: 14px; }
+
+@media (max-width: 1100px) {
+  .slide-inner { padding: 42px 56px 56px; }
+  .schedule-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .slide-inner { padding: 32px 24px 44px; }
+  .t-title { font-size: 34px; }
+  .t-title-lg { font-size: 42px; }
+  .two-col, .dof-compare { grid-template-columns: 1fr; }
+  .control-grid, .math-grid, .histo-grid { grid-template-columns: 1fr; }
+  .practice-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 760px) {
+  body { overflow: auto; height: auto; }
+  .slide { position: relative; min-height: 100vh; height: auto; display: none; }
+  .slide.active { display: flex; overflow-y: auto; overflow-x: hidden; }
+  .slide-inner { padding: 40px 24px 64px; min-height: 100vh; }
+  .slide-body { justify-content: flex-start; overflow: visible; }
+  .three-col { grid-template-columns: 1fr; }
+  #bottomBar { padding: 0 12px; }
+  #modalInner { flex-direction: column; gap: 18px; }
+  #modalImg { max-width: 86vw; max-height: 58vh; }
+  #modalCaption { width: min(86vw, 420px); max-width: 86vw; }
+}
+
+@media print {
+  @page { size: A4 landscape; margin: 0; }
+  html, body { overflow: visible !important; height: auto !important; background: var(--dark) !important; print-color-adjust: exact !important; }
+  .slide { position: relative !important; opacity: 1 !important; pointer-events: auto !important; page-break-after: always; width: 297mm; height: 209mm; overflow: hidden; }
+  .slide:last-child { page-break-after: auto; }
+  #bottomBar, #progressBar, #gridOverlay, #helpOverlay, #imgModal { display: none !important; }
+  .p-expand[data-depth="2"], .p-expand[data-depth="3"] { display: block !important; }
+}
+</style>
+<link rel="stylesheet" href="assets/pedagogy.css">
+</head>
+<body>
+
+<div id="progressBar"></div>
+
+<!-- SLIDE 01 - CAPA -->
+<div class="slide title-slide active" data-title="Capa" data-bloco="1" data-competencias="CK-EXPOSICAO,CK-LUZ">
+  <div class="slide-inner">
+    <div class="title-content">
+      <div class="triangle-hero">
+        <img class="generated-img" src="imagens/aula07/exposure-triangle-dark.jpg" alt="Triângulo de Exposição">
+      </div>
+      <div class="t-eyebrow">Aula 07 · UC Fundamentos de Fotografia Digital e de Semiótica</div>
+      <div class="t-title-lg">Luz, Exposição<br>e o Triângulo</div>
+      <p class="t-subtitle" style="max-width:720px;margin:18px auto 0;">ISO, abertura e velocidade do obturador. Movimento, congelamento e controle manual intencional no seu celular.</p>
+      <div class="closing-divider" style="margin:32px auto 14px;"></div>
+      <div class="instructor-tag">Prof. Daniel Mayer · SENAI · Técnico em Multimídia</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 02 -->
+<div class="slide" data-title="Programação da Noite" data-bloco="1" data-competencias="CK-EXPOSICAO,CS-TEMPO">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">19:00 às 22:30 · celular em modo manual, caderno</div>
+      <div class="t-title">Programação da Noite</div>
+    </div>
+    <div class="slide-body">
+      <div class="schedule-grid">
+        <div class="schedule-card"><div class="time">19:00–19:30</div><strong>Chamada e introdução</strong><span>A luz como matéria-prima. O que a câmera realmente registra.</span></div>
+        <div class="schedule-card"><div class="time">19:30–20:30</div><strong>O Triângulo de Exposição</strong><span>ISO, abertura (f-stops + DOF), ruído e compensação recíproca.</span></div>
+        <div class="schedule-card"><div class="time">20:50–21:30</div><strong>Velocidade e matemática</strong><span>Obturador, motion blur vs congelamento, stops, EV.</span></div>
+        <div class="schedule-card"><div class="time">21:30–22:30</div><strong>Histograma + prática</strong><span>Leitura de tons. Exercícios cronometrados em modo manual.</span></div>
+      </div>
+      <div class="highlight-box" style="margin-top:22px;"><strong>Regra da noite:</strong> lanche de 20 min após o Bloco 2. A prática final do Bloco 4 exige tempo de captura, análise e compartilhamento.</div>
+      <div class="p-expand" data-depth="2"><div class="p-expand-head"><span class="p-expand-tag">Expandir</span><span>Gestão do tempo</span></div><div class="p-expand-body"><p>O intervalo está posicionado para que o bloco de prática (o mais importante) não seja atropelado. Se a turma voltar atrasada do lanche, encurte a explicação do histograma e vá direto para os exercícios.</p></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 03 -->
+<div class="slide" data-title="Ponte com a Aula 06" data-bloco="1" data-competencias="CK-EXPOSICAO,CT-FOTOGRAFAR">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">Da composição para a luz</div>
+      <div class="t-title">Você já organiza o quadro.<br>Agora controla a luz que entra nele.</div>
+    </div>
+    <div class="slide-body">
+      <div class="two-col">
+        <div>
+          <p class="t-subtitle" style="font-size:19px;">Na Aula 06 você decidiu o que entra no retângulo. Hoje decide quanta luz entra, por quanto tempo e com qual sensibilidade — para congelar, borrar, isolar ou estourar de propósito.</p>
+          <ul class="styled" style="margin-top:22px;">
+            <li class="accent">Mesma luz, três fotos radicalmente diferentes</li>
+            <li>Fundo cremoso ou fundo nítido?</li>
+            <li>Movimento congelado ou tempo esticado?</li>
+            <li>Silhueta dramática ou detalhe nas sombras?</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="micro-label">PERGUNTA-CHAVE</div>
+          <div style="font-size:21px;line-height:1.35;margin-top:12px;">Se eu pudesse controlar exatamente quanta luz entra e por quanto tempo, que foto eu escolheria fazer?</div>
+          <div style="margin-top:20px;font-size:14px;color:var(--muted);">Essa é a diferença entre apertar o botão e fazer fotografia.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 04 -->
+<div class="slide" data-title="Luz como Matéria-Prima" data-bloco="1" data-competencias="CK-LUZ,CK-EXPOSICAO">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">Antes de falar de controles</div>
+      <div class="t-title">A luz é a tinta.<br>O sensor é o papel.</div>
+    </div>
+    <div class="slide-body">
+      <div class="highlight-box" style="max-width:820px;">
+        A câmera não "vê" como você. Ela registra fótons durante um tempo, através de um buraco de tamanho variável, amplificados por uma sensibilidade escolhida. O resultado é sempre uma negociação entre esses três fatores.
+      </div>
+      <div class="three-col" style="margin-top:28px;gap:16px;">
+        <div class="card"><div class="card-title">Quantidade</div><div class="card-body">Quanta luz chega ao sensor. Controlada por abertura + velocidade + ISO.</div></div>
+        <div class="card"><div class="card-title">Qualidade</div><div class="card-body">Dura ou macia, direcional ou difusa. Afeta humor, textura e volume (aula 8).</div></div>
+        <div class="card"><div class="card-title">Cor</div><div class="card-body">Temperatura da luz. Quente, fria, mista. Afeta a "cor verdadeira" (aula 8).</div></div>
+      </div>
+      <div class="p-expand" data-depth="2" style="margin-top:18px;"><div class="p-expand-head"><span class="p-expand-tag">Expandir</span></div><div class="p-expand-body"><p>O sensor tem alcance dinâmico limitado (geralmente 10–14 stops). O olho humano lida com ~20 stops. Por isso precisamos escolher conscientemente o que sacrificar: sombras ou realces.</p></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 05 - CHAMADA BLOCO 2 -->
+<div class="slide" data-title="Chamada Bloco 2" data-bloco="2" data-competencias="CK-EXPOSICAO">
+  <div class="slide-inner centered">
+    <div style="text-align:center;">
+      <div class="call-badge">CHAMADA · BLOCO 2</div>
+      <div class="t-title" style="font-size:38px;">O Triângulo de Exposição</div>
+      <p class="t-subtitle" style="max-width:520px;margin:12px auto 0;">ISO · Abertura · Velocidade</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 06 -->
+<div class="slide" data-title="O Triângulo de Exposição" data-bloco="2" data-competencias="CK-EXPOSICAO">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">O coração da aula</div>
+      <div class="t-title">Três controles.<br>Uma única decisão.</div>
+    </div>
+    <div class="slide-body">
+      <div class="triangle-hero" style="margin-bottom:18px;">
+        <img class="generated-img" src="imagens/aula07/exposure-triangle-dark.jpg" alt="Diagrama do triângulo de exposição">
+      </div>
+      <div class="two-col">
+        <div>
+          <p style="font-size:19px;color:var(--cream-muted);">Quando você muda um vértice, precisa compensar nos outros dois para manter (ou intencionalmente alterar) a exposição.</p>
+        </div>
+        <div class="stack">
+          <div class="highlight-box"><strong>Abertura</strong> — quantidade de luz por unidade de tempo + profundidade de campo</div>
+          <div class="highlight-box"><strong>Velocidade</strong> — tempo que o sensor fica exposto + movimento</div>
+          <div class="highlight-box"><strong>ISO</strong> — amplificação do sinal + ruído</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 07 -->
+<div class="slide" data-title="Abertura e Profundidade de Campo" data-bloco="2" data-competencias="CK-EXPOSICAO,CT-FOTOGRAFAR">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">f/1.8 ou f/16?</div>
+      <div class="t-title">Abertura é escolha de foco, não só de luz.</div>
+    </div>
+    <div class="slide-body">
+      <div class="dof-compare">
+        <div class="dof-panel img-clickable" data-caption="Profundidade rasa · f/2.8 isola o assunto e derrete o fundo. Priorize abertura quando a história pede separação.">
+          <img src="imagens/aula07/dof-shallow.jpg" alt="Exemplo f/2.8 profundidade rasa">
+          <div class="label"><strong>f/2.8</strong> — Profundidade rasa, fundo cremoso, sujeito isolado</div>
+        </div>
+        <div class="dof-panel img-clickable" data-caption="Profundidade extensa · f/16 mantém primeiro plano e fundo legíveis. Priorize quando o contexto importa.">
+          <img src="imagens/aula07/dof-deep.jpg" alt="Exemplo f/16 profundidade extensa">
+          <div class="label"><strong>f/16</strong> — Quase tudo nítido, contexto completo, "tudo em foco"</div>
+        </div>
+      </div>
+      <div class="p-expand" data-depth="2" style="margin-top:16px;"><div class="p-expand-head"><span class="p-expand-tag">Expandir</span><span>Por que o número é "f/"?</span></div><div class="p-expand-body"><p>O número f é a razão distância focal / diâmetro da abertura. f/2 significa que o diâmetro é metade da distância focal. Quanto menor o número, maior o buraco, mais luz, mais rasa a profundidade.</p></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 08 -->
+<div class="slide" data-title="ISO e Ruído" data-bloco="2" data-competencias="CK-EXPOSICAO,CT-ANALISE">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">Sensibilidade tem preço</div>
+      <div class="t-title">ISO alto = mais luz, mais sujeira.</div>
+    </div>
+    <div class="slide-body">
+      <div class="img-frame img-clickable" style="max-height:380px;" data-caption="ISO e ruído · O mesmo sensor perde textura quando a sensibilidade sobe. No celular o limite aparece mais cedo.">
+        <img src="imagens/aula07/iso-noise.jpg" alt="Comparação ISO 100 vs alto ruído" style="object-fit:cover;">
+      </div>
+      <div class="img-caption"><strong>ISO 100 vs ISO 6400</strong> — o mesmo sensor, duas sensibilidades, dois mundos de detalhe.</div>
+      <div class="p-expand" data-depth="2"><div class="p-expand-head"><span class="p-expand-tag">Expandir</span></div><div class="p-expand-body"><p>No celular o ruído aparece mais cedo porque o sensor é menor. Muitos apps de câmera "pro" já têm redução de ruído agressiva que também come textura. Às vezes é melhor subir 1/3 de stop no obturador ou na abertura do que subir ISO.</p></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 09 -->
+<div class="slide" data-title="Velocidade do Obturador" data-bloco="3" data-competencias="CK-EXPOSICAO,CT-FOTOGRAFAR">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">Tempo é narrativa</div>
+      <div class="t-title">Congelar ou deixar o tempo passar?</div>
+    </div>
+    <div class="slide-body">
+      <div class="img-frame img-clickable" style="max-height:340px;" data-caption="Velocidade do obturador · Congelar ou deixar o tempo passar é decisão narrativa, não só técnica.">
+        <img src="imagens/aula07/shutter-motion.jpg" alt="Efeito velocidade do obturador" style="object-fit:cover;">
+      </div>
+      <div class="img-caption"><strong>1/1000s vs 1/15s</strong> — a mesma ação, duas decisões de tempo completamente diferentes.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 10 -->
+<div class="slide" data-title="Controles no Celular" data-bloco="3" data-competencias="CT-FOTOGRAFAR">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">Onde estão os botões</div>
+      <div class="t-title">Seu celular já é uma câmera manual.</div>
+    </div>
+    <div class="slide-body">
+      <div class="img-frame" style="max-height:380px;max-width:420px;margin:0 auto;">
+        <img src="imagens/aula07/phone-manual-mock.jpg" alt="Mockup de controles manuais no smartphone" style="object-fit:contain;">
+      </div>
+      <div class="img-caption" style="max-width:520px;margin:12px auto 0;">No modo Pro / Manual / P você tem acesso direto a ISO, obturador, abertura (ou simulado) e compensação. O app Lightroom Mobile gratuito também oferece controles completos + histograma ao vivo.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 11 - CHAMADA BLOCO 3 -->
+<div class="slide" data-title="Chamada Bloco 3" data-bloco="3" data-competencias="CK-EXPOSICAO,CT-MATEMATICA">
+  <div class="slide-inner centered">
+    <div style="text-align:center;">
+      <div class="call-badge">CHAMADA · BLOCO 3</div>
+      <div class="t-title" style="font-size:38px;">Velocidade + Matemática</div>
+      <p class="t-subtitle">Os três controles dançando juntos</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 12 -->
+<div class="slide" data-title="Os Três Juntos" data-bloco="3" data-competencias="CK-EXPOSICAO">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">Não existe parâmetro isolado</div>
+      <div class="t-title">Escolha criativa primeiro.<br>Técnica depois.</div>
+    </div>
+    <div class="slide-body">
+      <div class="three-col">
+        <div class="control-card">
+          <div class="icon">⌀</div>
+          <h3>Quero fundo derretido</h3>
+          <p>Aproximo, abro o diafragma (f/2 ou menor). Para não estourar, acelero o obturador ou baixo o ISO.</p>
+        </div>
+        <div class="control-card">
+          <div class="icon">⟲</div>
+          <h3>Quero água de seda</h3>
+          <p>Coloco o celular apoiado ou uso tripé, fecho o obturador (1/2s ou mais). Para não ficar escuro, abro diafragma ou subo ISO.</p>
+        </div>
+        <div class="control-card">
+          <div class="icon">⚡</div>
+          <h3>Quero congelar ação</h3>
+          <p>Velocidade alta (1/500+). Perco luz → abro diafragma ou aceito ISO mais alto (e ruído).</p>
+        </div>
+      </div>
+      <div class="highlight-box" style="margin-top:22px;">A câmera sempre tenta equilibrar sozinha no modo automático. No manual você decide qual compromisso fazer.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 13 -->
+<div class="slide" data-title="Matemática dos Stops" data-bloco="3" data-competencias="CK-EXPOSICAO,CT-MATEMATICA">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">A linguagem universal</div>
+      <div class="t-title">Uma parada = dobrar ou dividir a luz por 2.</div>
+    </div>
+    <div class="slide-body">
+      <div class="img-frame" style="max-height:260px;margin-bottom:18px;">
+        <img src="imagens/aula07/stops-diagram.jpg" alt="Diagrama de paradas de exposição" style="object-fit:contain;background:#111;">
+      </div>
+      <div class="math-grid">
+        <div class="math-card"><div class="val">f/5.6 → f/8</div><div class="desc">-1 stop (perde luz)</div></div>
+        <div class="math-card"><div class="val">1/60 → 1/30</div><div class="desc">+1 stop (ganha luz)</div></div>
+        <div class="math-card"><div class="val">ISO 100 → 200</div><div class="desc">+1 stop (ganha luz)</div></div>
+      </div>
+      <div class="p-expand" data-depth="2"><div class="p-expand-head"><span class="p-expand-tag">Expandir</span><span>Por que f/2.8 para f/4 não é exatamente 1 stop?</span></div><div class="p-expand-body"><p>Os números de abertura são baseados em raiz quadrada de 2. Cada parada de diafragma multiplica o diâmetro por ≈0.707. Por isso a sequência 1.4, 2, 2.8, 4, 5.6, 8, 11, 16... Cada passo é uma parada cheia.</p></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 13b -->
+<div class="slide" data-title="Exercício de Equivalência" data-bloco="3" data-competencias="CT-MATEMATICA">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">Rápido no caderno</div>
+      <div class="t-title">Dê três caminhos diferentes<br>para a mesma luz.</div>
+    </div>
+    <div class="slide-body">
+      <div class="card" style="max-width:780px;margin:0 auto;">
+        <div style="font-size:18px;">Cena: retrato em sombra com fundo ensolarado. Medição inicial: f/5.6 • 1/125s • ISO 400.</div>
+        <div style="margin-top:18px;font-size:16px;color:var(--cream-muted);">Tarefa: escreva três combinações equivalentes (mesma quantidade de luz) mudando dois parâmetros de cada vez. Depois discuta com o colega qual delas daria o resultado visual que você quer.</div>
+      </div>
+      <div class="p-expand" data-depth="2" style="max-width:780px;margin:18px auto 0;"><div class="p-expand-head"><span class="p-expand-tag">Expandir</span></div><div class="p-expand-body"><p>Exemplos possíveis: f/4 • 1/250s • ISO 400 (abriu 1, fechou velocidade 1). Ou f/8 • 1/125s • ISO 800 (fechou abertura 1, subiu ISO 1). O importante é o raciocínio, não só o número certo.</p></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 14 -->
+<div class="slide" data-title="EV e Compensação" data-bloco="3" data-competencias="CK-EXPOSICAO,CT-FOTOGRAFAR">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">A câmera mente. Você corrige.</div>
+      <div class="t-title">+1 EV na neve.<br>–1 EV no gato preto.</div>
+    </div>
+    <div class="slide-body">
+      <div class="two-col">
+        <div>
+          <ul class="styled">
+            <li>Neve / parede branca → câmera subexpõe → use + EV</li>
+            <li>Palco escuro, roupa preta → câmera superexpoe → use – EV</li>
+            <li>Contraluz forte → meça no rosto ou use +1</li>
+            <li>Cena com muito céu → o céu vira cinza → – EV ou exponha para o céu</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="micro-label">REGRA PRÁTICA</div>
+          <div style="font-size:18px;margin-top:10px;">Se a foto saiu "cinza quando deveria ser branca" → + EV. Se saiu "cinza quando deveria ser preta" → – EV.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 15 - CHAMADA BLOCO 4 -->
+<div class="slide" data-title="Chamada Bloco 4" data-bloco="4" data-competencias="CK-HISTOGRAMA,CT-FOTOGRAFAR">
+  <div class="slide-inner centered">
+    <div style="text-align:center;">
+      <div class="call-badge">CHAMADA · BLOCO 4</div>
+      <div class="t-title" style="font-size:38px;">Histograma + Prática</div>
+      <p class="t-subtitle">Dominando a exposição no seu bolso</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 16 -->
+<div class="slide" data-title="O Histograma" data-bloco="4" data-competencias="CK-HISTOGRAMA">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">O raio-x da foto</div>
+      <div class="t-title">Olhe o gráfico, não só a imagem.</div>
+    </div>
+    <div class="slide-body">
+      <div class="img-frame img-clickable" style="max-height:320px;" data-caption="Histograma · O gráfico mostra onde os tons se concentram e se há clipping nas sombras ou realces.">
+        <img src="imagens/aula07/histograms.jpg" alt="Exemplos de histogramas" style="object-fit:contain;background:#0a0a0a;">
+      </div>
+      <div class="histo-grid" style="margin-top:16px;">
+        <div class="histo-card">
+          <div class="title">Esquerda clipada</div>
+          <p>Sombras sem detalhe. Perdeu informação para sempre. Comum em cenas de alto contraste quando exposto para o céu.</p>
+        </div>
+        <div class="histo-card">
+          <div class="title">Direita clipada</div>
+          <p>Realces estourados (céu branco puro, pele branca sem textura). Também irreversível no JPEG.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 17 -->
+<div class="slide" data-title="Como ver histograma no celular" data-bloco="4" data-competencias="CK-HISTOGRAMA,CT-FOTOGRAFAR">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">Sem app especial não tem como?</div>
+      <div class="t-title">Tem sim. E é de graça.</div>
+    </div>
+    <div class="slide-body">
+      <div class="three-col">
+        <div class="card">
+          <div class="card-title">Lightroom Mobile (grátis)</div>
+          <div class="card-body">Ative o histograma no canto superior direito da tela de edição. Funciona até na versão gratuita.</div>
+        </div>
+        <div class="card">
+          <div class="card-title">App nativo (alguns)</div>
+          <div class="card-body">iPhone no modo Pro (iOS 17+) ou alguns Androids em "mais" > "pro" mostram histograma ao vivo.</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Halide / Camera+ / Open Camera</div>
+          <div class="card-body">Apps pagos ou gratuitos com histograma em tempo real + zebra + focus peaking. Vale testar um.</div>
+        </div>
+      </div>
+      <div class="p-expand" data-depth="2" style="margin-top:16px;"><div class="p-expand-head"><span class="p-expand-tag">Bônus</span><span>Para quem usa Android</span></div><div class="p-expand-body"><p>Open Camera (F-Droid / Play) é completamente grátis, open source e tem histograma + controles manuais completos. Excelente para a prática desta aula.</p></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 18 -->
+<div class="slide" data-title="Prática Dominando a Exposição" data-bloco="4" data-competencias="CK-EXPOSICAO,CT-FOTOGRAFAR,CS-TEMPO">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">Mão na massa · 22 minutos</div>
+      <div class="t-title">Seis exercícios. Um celular. Modo manual.</div>
+    </div>
+    <div class="slide-body">
+      <div class="practice-grid">
+        <div class="practice-item"><div class="num">1</div><div><strong>Exposição intencional</strong><span>Uma cena. Três fotos: deliberadamente sub, "correta", deliberadamente super. Identifique o clipping no histograma.</span></div></div>
+        <div class="practice-item"><div class="num">2</div><div><strong>Congelamento</strong><span>Água caindo de torneira ou pessoa batendo palma. 1/500 ou mais. Mantenha o fundo reconhecível.</span></div></div>
+        <div class="practice-item"><div class="num">3</div><div><strong>Seda</strong><span>Água de torneira ou fonte com 1/4s ou mais (apoie o celular). Compare com a foto de congelamento.</span></div></div>
+        <div class="practice-item"><div class="num">4</div><div><strong>DOF rasa</strong><span>Objeto a 40cm, fundo a 2m+. f/ mais aberto possível. Isole o assunto.</span></div></div>
+        <div class="practice-item"><div class="num">5</div><div><strong>DOF extensa</strong><span>Mesma cena, f/ mais fechado. Tudo nítido do primeiro plano ao fundo.</span></div></div>
+        <div class="practice-item"><div class="num">6</div><div><strong>Compensação</strong><span>Foto contra o céu claro ou janela. Use EV para salvar o rosto ou para fazer silhueta intencional.</span></div></div>
+      </div>
+      <div class="highlight-box" style="margin-top:18px;">Regra: capture, olhe o histograma, ajuste um parâmetro só, capture de novo. Repita até entender o efeito.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 19 -->
+<div class="slide" data-title="Rodada de Prática" data-bloco="4" data-competencias="CK-EXPOSICAO,CT-ANALISE,CS-TEMPO">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">Defesa técnica</div>
+      <div class="t-title">Mostre uma foto.<br>Explique os três botões.</div>
+    </div>
+    <div class="slide-body">
+      <div class="stack">
+        <div class="card">
+          <div class="card-title">O que dizer (30–45 segundos)</div>
+          <ul class="styled">
+            <li>Qual era a minha intenção com essa foto?</li>
+            <li>Qual parâmetro eu priorizei (e por quê)?</li>
+            <li>O que eu sacrifiquei para conseguir isso?</li>
+            <li>O que o histograma me mostrou depois?</li>
+          </ul>
+        </div>
+        <div class="p-expand" data-depth="2"><div class="p-expand-head"><span class="p-expand-tag">Expandir</span><span>Se sobrar tempo</span></div><div class="p-expand-body"><p>Peça que os alunos troquem de celular e tentem "reproduzir" a foto de um colega usando os parâmetros que ele descreveu. Isso revela se a explicação foi clara.</p></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 20 -->
+<div class="slide" data-title="Bilhete de Saída" data-bloco="4" data-competencias="CS-TEMPO">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <div class="t-eyebrow">Antes de ir</div>
+      <div class="t-title">Uma coisa que você vai treinar.</div>
+    </div>
+    <div class="slide-body">
+      <div class="three-col" style="gap:16px;">
+        <div class="card"><div class="micro-label">NO SEU CADERNO</div><div style="margin-top:10px;font-size:17px;">"Esta semana eu vou fotografar 10 cenas diferentes só variando <strong>velocidade</strong> e ver o que acontece."</div></div>
+        <div class="card"><div class="micro-label">OU</div><div style="margin-top:10px;font-size:17px;">"Vou fazer o mesmo com <strong>abertura</strong> em retratos e paisagens."</div></div>
+        <div class="card"><div class="micro-label">OU</div><div style="margin-top:10px;font-size:17px;">"Vou ativar o histograma no meu app favorito e nunca mais ignorar o clipping."</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 21 - ENCERRAMENTO -->
+<div class="slide closing-slide" data-title="Encerramento" data-bloco="4" data-competencias="CK-EXPOSICAO,CK-LUZ">
+  <div class="slide-inner">
+    <div class="closing-content">
+      <div class="closing-tag">AULA 07 · FIM</div>
+      <div class="closing-title">Exposição não é regra.<br>É vocabulário.</div>
+      <div class="closing-sub">Quando você domina os três controles, você para de "tirar foto" e começa a escrever com luz. O histograma é seu corretor. A prática de hoje é só o começo.</div>
+      <div class="next-class"><span class="next-label">Próxima Aula</span><span class="next-title">Aula 08: Ambiente · Luz Natural e Artificial</span></div>
+      <div class="closing-divider"></div>
+      <div class="closing-summary">
+        <div class="summary-point"><div class="summary-bullet">01</div><div>ISO, abertura e velocidade são sempre uma negociação. Escolha o que importa mais para a história.</div></div>
+        <div class="summary-point"><div class="summary-bullet">02</div><div>Histograma é objetivo. Olhe ele antes de julgar a foto "boa ou ruim".</div></div>
+        <div class="summary-point"><div class="summary-bullet">03</div><div>Seu celular já tem tudo. O modo manual está aí. Use.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 22 - GANCHO -->
+<div class="slide" data-title="Gancho Aula 08" data-bloco="4" data-competencias="CK-LUZ">
+  <div class="slide-inner centered">
+    <div style="max-width:720px;text-align:center;">
+      <div class="t-eyebrow">PRÓXIMA NOITE</div>
+      <div class="t-title" style="font-size:36px;">Ambiente · Luz Natural e Artificial</div>
+      <p class="t-subtitle" style="margin-top:18px;">Golden hour, temperatura de cor, esquemas clássicos, modificadores e como a luz já existente conversa com o triângulo que você acabou de dominar.</p>
+      <div style="margin-top:32px;font-size:13px;color:var(--muted);">Traga o celular carregado. Vamos fotografar luz de verdade.</div>
+    </div>
+  </div>
+</div>
+
+<!-- BOTTOM BAR -->
+<div id="bottomBar">
+  <div class="bar-left">
+    <img src="imagens/Logo-novo-SENAI_-sem-slogan_755X325.png" alt="">
+    <span>Fotografia Digital e Semiótica · Aula 07</span>
+  </div>
+  <div class="bar-right">
+    <span id="slideCounter" onclick="toggleGrid()" title="Ver todos os slides (G)">01 / 23</span>
+    <button class="bar-btn" id="prevBtn" onclick="prevSlide()" title="Anterior">&#8592;</button>
+    <button class="bar-btn" id="nextBtn" onclick="nextSlide()" title="Próximo">&#8594;</button>
+    <button class="bar-btn" id="fsBtn" onclick="toggleFullscreen()" title="Tela cheia (F)">&#x26F6;</button>
+    <button class="bar-btn" id="gridBtn" onclick="toggleGrid()" title="Grade de slides (G)">&#9638;</button>
+    <button class="bar-btn" id="pdfBtn" onclick="window.print()" title="Imprimir / Salvar PDF (D)" aria-label="Imprimir ou salvar PDF">&#x2B07;</button>
+    <button class="bar-btn" id="homeBtn" onclick="location.href='uc-fotografia-digital.html'" title="Voltar ao dashboard da UC (H)" aria-label="Home">&#8962;</button>
+  </div>
+</div>
+
+<div id="imgModal">
+  <div id="modalClose" onclick="closeImgModal()">&#10005;</div>
+  <div id="modalInner">
+    <img id="modalImg" src="" alt="">
+    <div id="modalCaption"></div>
+  </div>
+</div>
+
+<div id="gridOverlay">
+  <div class="grid-header">
+    <div class="grid-title">Todos os Slides</div>
+    <div class="grid-close" onclick="toggleGrid()">&#10005;</div>
+  </div>
+  <div class="grid-container" id="gridContainer"></div>
+</div>
+
+<div id="helpOverlay">
+  <div class="help-box">
+    <div class="help-title">Atalhos de Teclado</div>
+    <div class="help-row"><span class="help-key"><kbd>→</kbd> <kbd>Space</kbd></span><span class="help-desc">Próximo slide</span></div>
+    <div class="help-row"><span class="help-key"><kbd>←</kbd> <kbd>Backspace</kbd></span><span class="help-desc">Slide anterior</span></div>
+    <div class="help-row"><span class="help-key"><kbd>Home</kbd></span><span class="help-desc">Primeiro slide</span></div>
+    <div class="help-row"><span class="help-key"><kbd>End</kbd></span><span class="help-desc">Último slide</span></div>
+    <div class="help-row"><span class="help-key"><kbd>G</kbd></span><span class="help-desc">Grade de slides</span></div>
+    <div class="help-row"><span class="help-key"><kbd>F</kbd></span><span class="help-desc">Tela cheia</span></div>
+    <div class="help-row"><span class="help-key"><kbd>H</kbd></span><span class="help-desc">Voltar ao dashboard da UC</span></div>
+    <div class="help-row"><span class="help-key"><kbd>D</kbd></span><span class="help-desc">Imprimir / Salvar PDF</span></div>
+    <div class="help-row"><span class="help-key"><kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd></span><span class="help-desc">Profundidade (Essencial · Expandir · Bônus)</span></div>
+    <div class="help-row"><span class="help-key"><kbd>P</kbd></span><span class="help-desc">Presenter Mode (notas do professor)</span></div>
+    <div class="help-row"><span class="help-key"><kbd>R</kbd></span><span class="help-desc">Relatório da aula</span></div>
+    <div class="help-row"><span class="help-key"><kbd>?</kbd></span><span class="help-desc">Mostrar/esconder ajuda</span></div>
+    <div class="help-row"><span class="help-key"><kbd>Esc</kbd></span><span class="help-desc">Fechar modal / grade / ajuda</span></div>
+  </div>
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  let currentIndex = 0;
+  let gridOpen = false;
+  let helpOpen = false;
+  let modalOpen = false;
+
+  const slides = document.querySelectorAll('.slide');
+  const total = slides.length;
+
+  function goTo(n) {
+    if (n < 0 || n >= total || n === currentIndex) return;
+    slides[currentIndex].classList.remove('active');
+    currentIndex = n;
+    slides[currentIndex].classList.add('active');
+    window.scrollTo(0, 0);
+    slides[currentIndex].scrollTop = 0;
+    updateUI();
+  }
+  function nextSlide() { if (!gridOpen && !helpOpen) goTo(currentIndex + 1); }
+  function prevSlide() { if (!gridOpen && !helpOpen) goTo(currentIndex - 1); }
+
+  function updateUI() {
+    const num = String(currentIndex + 1).padStart(2, '0');
+    document.getElementById('slideCounter').textContent = num + ' / ' + String(total).padStart(2, '0');
+    const pct = total > 1 ? (currentIndex / (total - 1)) * 100 : 100;
+    document.getElementById('progressBar').style.width = pct + '%';
+    document.getElementById('prevBtn').disabled = (currentIndex === 0);
+    document.getElementById('nextBtn').disabled = (currentIndex === total - 1);
+  }
+
+  function toggleFullscreen() {
+    if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(function(){});
+    else document.exitFullscreen();
+  }
+
+  function buildGrid() {
+    var container = document.getElementById('gridContainer');
+    container.innerHTML = '';
+    for (var i = 0; i < total; i++) {
+      var thumb = document.createElement('div');
+      thumb.className = 'grid-thumb' + (i === currentIndex ? ' current' : '');
+      var title = slides[i].getAttribute('data-title') || ('Slide ' + (i + 1));
+      thumb.innerHTML =
+        '<div class="grid-thumb-num">' + String(i + 1).padStart(2, '0') + '</div>' +
+        '<div class="grid-thumb-inner"><div class="grid-thumb-title">' + title + '</div></div>';
+      thumb.setAttribute('data-index', i);
+      thumb.addEventListener('click', function() {
+        var idx = parseInt(this.getAttribute('data-index'));
+        toggleGrid();
+        goTo(idx);
+      });
+      container.appendChild(thumb);
+    }
+  }
+  function toggleGrid() {
+    gridOpen = !gridOpen;
+    var overlay = document.getElementById('gridOverlay');
+    if (gridOpen) { buildGrid(); overlay.classList.add('open'); }
+    else overlay.classList.remove('open');
+  }
+  function toggleHelp() {
+    helpOpen = !helpOpen;
+    var overlay = document.getElementById('helpOverlay');
+    if (helpOpen) overlay.classList.add('open');
+    else overlay.classList.remove('open');
+  }
+
+  function openImgModal(src, caption, bg, padding) {
+    modalOpen = true;
+    var modalImg = document.getElementById('modalImg');
+    modalImg.src = src;
+    modalImg.style.background = bg || '#0a0a0a';
+    modalImg.style.padding = padding || '0';
+    var cap = document.getElementById('modalCaption');
+    if (caption && caption.indexOf(' · ') !== -1) {
+      var parts = caption.split(' · ');
+      cap.innerHTML = '<div class="modal-title">' + parts[0] + '</div>' +
+                      '<div class="modal-analysis">' + parts.slice(1).join(' · ') + '</div>';
+    } else {
+      cap.innerHTML = '<div class="modal-title">' + (caption || '') + '</div>';
+    }
+    document.getElementById('imgModal').classList.add('open');
+  }
+  function closeImgModal() {
+    modalOpen = false;
+    document.getElementById('imgModal').classList.remove('open');
+    var modalImg = document.getElementById('modalImg');
+    modalImg.src = '';
+    modalImg.style.background = '';
+    modalImg.style.padding = '';
+  }
+
+  document.querySelectorAll('.img-clickable').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      e.stopPropagation(); e.preventDefault();
+      var img = el.querySelector('img');
+      if (img) {
+        var caption = el.getAttribute('data-caption') || img.alt || '';
+        openImgModal(img.src, caption);
+      }
+    });
+  });
+
+  document.getElementById('imgModal').addEventListener('click', function(e) {
+    if (e.target === this) closeImgModal();
+  });
+  document.getElementById('modalInner').addEventListener('click', function(e) {
+    e.stopPropagation();
+  });
+
+  window.closeImgModal = closeImgModal;
+
+  document.addEventListener('keydown', function(e) {
+    if (e.target && /INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return;
+    if (e.key === 'Escape') {
+      if (modalOpen) { closeImgModal(); return; }
+      if (gridOpen) { toggleGrid(); return; }
+      if (helpOpen) { toggleHelp(); return; }
+      return;
+    }
+    if (e.key === '?') { e.preventDefault(); toggleHelp(); return; }
+    if (gridOpen || helpOpen || modalOpen) return;
+    switch (e.key) {
+      case 'ArrowRight':
+      case ' ':
+        e.preventDefault(); nextSlide(); break;
+      case 'ArrowLeft':
+      case 'Backspace':
+        e.preventDefault(); prevSlide(); break;
+      case 'Home':
+        e.preventDefault(); goTo(0); break;
+      case 'End':
+        e.preventDefault(); goTo(total - 1); break;
+      case 'f': case 'F':
+        e.preventDefault(); toggleFullscreen(); break;
+      case 'g': case 'G':
+        e.preventDefault(); toggleGrid(); break;
+      case 'h': case 'H':
+        e.preventDefault(); window.location.href = 'uc-fotografia-digital.html'; break;
+      case 'd': case 'D':
+        e.preventDefault(); window.print(); break;
+    }
+  });
+
+  var touchStartX = 0, touchStartY = 0;
+  document.addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }, { passive: true });
+  document.addEventListener('touchend', function(e) {
+    if (gridOpen || helpOpen || modalOpen) return;
+    var dx = e.changedTouches[0].screenX - touchStartX;
+    var dy = e.changedTouches[0].screenY - touchStartY;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+      if (dx < 0) nextSlide();
+      else prevSlide();
+    }
+  }, { passive: true });
+
+  window.nextSlide = nextSlide;
+  window.prevSlide = prevSlide;
+  window.toggleFullscreen = toggleFullscreen;
+  window.toggleGrid = toggleGrid;
+
+  updateUI();
+})();
+</script>
+
+<script src="assets/pedagogy-data-aula07.js"></script>
+<script src="assets/pedagogy.js"></script>
+</body>
+</html>
