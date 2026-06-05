@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 360" role="img" aria-labelledby="title desc">
+  <title id="title">Escala de stops</title>
+  <desc id="desc">Escala mostrando que cada parada dobra ou divide a luz por dois.</desc>
+  <line x1="110" y1="174" x2="990" y2="174" stroke="#C4A86C" stroke-width="4" stroke-linecap="round"/>
+  <g font-family="SF Mono, Consolas, monospace" text-anchor="middle">
+    <g transform="translate(110 174)"><circle r="17" fill="#C4A86C"/><text y="58" fill="#C8C4BC" font-size="22">-2</text><text y="-34" fill="#908880" font-size="16">1/4 luz</text></g>
+    <g transform="translate(330 174)"><circle r="17" fill="#C4A86C"/><text y="58" fill="#C8C4BC" font-size="22">-1</text><text y="-34" fill="#908880" font-size="16">1/2 luz</text></g>
+    <g transform="translate(550 174)"><circle r="23" fill="#F0F0EC"/><text y="66" fill="#F0F0EC" font-size="22">0</text><text y="-40" fill="#F0F0EC" font-size="18">exposição base</text></g>
+    <g transform="translate(770 174)"><circle r="17" fill="#C4A86C"/><text y="58" fill="#C8C4BC" font-size="22">+1</text><text y="-34" fill="#908880" font-size="16">2x luz</text></g>
+    <g transform="translate(990 174)"><circle r="17" fill="#C4A86C"/><text y="58" fill="#C8C4BC" font-size="22">+2</text><text y="-34" fill="#908880" font-size="16">4x luz</text></g>
+  </g>
+  <text x="550" y="308" text-anchor="middle" fill="#C8C4BC" font-family="Segoe UI, system-ui, sans-serif" font-size="24">uma parada muda a luz em 2 vezes</text>
+</svg>

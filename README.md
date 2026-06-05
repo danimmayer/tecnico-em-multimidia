@@ -58,6 +58,7 @@ A partir do **Home** (`index.html`):
 ├── Aula_04_Ficha_Leitura_Semiotica.html         # Ficha A4 de trabalho em grupo
 ├── Aula_05_A_Camera_Digital.html                # Aula 05 · apresentação
 ├── Aula_06_Linguagem_Fotografica_e_Composicao.html
+├── Aula_07_Luz_Exposicao_Triangulo.html         # Aula 07 · apresentação
 ├── assets/
 │   ├── home.css                                 # Design system · dashboards
 │   ├── pedagogy.css                             # Design system · apresentações
@@ -67,7 +68,8 @@ A partir do **Home** (`index.html`):
 │   ├── pedagogy-data-aula03.js                  # Dados da Aula 03
 │   ├── pedagogy-data-aula04.js                  # Dados da Aula 04
 │   ├── pedagogy-data-aula05.js                  # Dados da Aula 05
-│   └── pedagogy-data-aula06.js                  # Dados da Aula 06
+│   ├── pedagogy-data-aula06.js                  # Dados da Aula 06
+│   └── pedagogy-data-aula07.js                  # Dados da Aula 07
 └── imagens/                                     # Assets visuais
 ```
 

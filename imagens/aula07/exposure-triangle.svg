@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-labelledby="title desc">
+  <title id="title">Triângulo de exposição</title>
+  <desc id="desc">Diagrama limpo mostrando abertura, velocidade e ISO como três decisões conectadas.</desc>
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#242424"/>
+      <stop offset="1" stop-color="#151515"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#000" flood-opacity=".35"/>
+    </filter>
+  </defs>
+  <path d="M450 78 118 528h664Z" fill="none" stroke="#C4A86C" stroke-width="5" stroke-linejoin="round" opacity=".9"/>
+  <path d="M450 164 212 486h476Z" fill="none" stroke="#ffffff" stroke-width="1.5" opacity=".13"/>
+  <circle cx="450" cy="78" r="68" fill="#1B1B1B" stroke="#C4A86C" stroke-width="3" filter="url(#shadow)"/>
+  <circle cx="118" cy="528" r="68" fill="#1B1B1B" stroke="#6B8CA8" stroke-width="3" filter="url(#shadow)"/>
+  <circle cx="782" cy="528" r="68" fill="#1B1B1B" stroke="#7CC49A" stroke-width="3" filter="url(#shadow)"/>
+  <text x="450" y="65" text-anchor="middle" fill="#F0F0EC" font-family="Segoe UI, system-ui, sans-serif" font-size="31" font-weight="700">Abertura</text>
+  <text x="450" y="104" text-anchor="middle" fill="#C4A86C" font-family="SF Mono, Consolas, monospace" font-size="23">f/</text>
+  <text x="118" y="517" text-anchor="middle" fill="#F0F0EC" font-family="Segoe UI, system-ui, sans-serif" font-size="31" font-weight="700">Veloc.</text>
+  <text x="118" y="556" text-anchor="middle" fill="#6B8CA8" font-family="SF Mono, Consolas, monospace" font-size="22">1/125s</text>
+  <text x="782" y="517" text-anchor="middle" fill="#F0F0EC" font-family="Segoe UI, system-ui, sans-serif" font-size="31" font-weight="700">ISO</text>
+  <text x="782" y="556" text-anchor="middle" fill="#7CC49A" font-family="SF Mono, Consolas, monospace" font-size="22">100-3200</text>
+  <text x="450" y="322" text-anchor="middle" fill="#F0F0EC" font-family="Segoe UI, system-ui, sans-serif" font-size="38" font-weight="700">Exposição</text>
+  <text x="450" y="362" text-anchor="middle" fill="#C8C4BC" font-family="Segoe UI, system-ui, sans-serif" font-size="22">quantidade de luz + intenção visual</text>
+  <g fill="none" stroke="#C8C4BC" stroke-width="2" opacity=".55">
+    <path d="M387 181C307 253 236 352 164 467"/>
+    <path d="M513 181c80 72 151 171 223 286"/>
+    <path d="M210 526h450"/>
+  </g>
+  <g fill="#908880" font-family="Segoe UI, system-ui, sans-serif" font-size="18">
+    <text x="256" y="293" transform="rotate(-54 256 293)">profundidade</text>
+    <text x="640" y="293" transform="rotate(54 640 293)">ruído</text>
+    <text x="408" y="562">movimento</text>
+  </g>
+</svg>
