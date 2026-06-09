@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">Mapa de luz natural ao longo do dia</title>
+  <desc id="desc">Linha do horizonte com madrugada, amanhecer, meio-dia, golden hour e blue hour.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" x2="1">
+      <stop offset="0" stop-color="#1d3155"/>
+      <stop offset="0.18" stop-color="#e49a61"/>
+      <stop offset="0.5" stop-color="#dceaff"/>
+      <stop offset="0.76" stop-color="#e0a24d"/>
+      <stop offset="1" stop-color="#172a56"/>
+    </linearGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="16"/></filter>
+  </defs>
+  <rect width="1200" height="560" rx="0" fill="#141414"/>
+  <rect x="42" y="54" width="1116" height="332" rx="8" fill="url(#sky)" opacity="0.92"/>
+  <path d="M42 360c130-44 227-22 354-64 127-42 205-88 356-44 118 34 223 43 406-38v172H42z" fill="#191b1a" opacity="0.86"/>
+  <path d="M116 322c155-70 322-106 487-106s332 36 487 106" fill="none" stroke="#f0f0ec" stroke-opacity="0.28" stroke-width="3" stroke-dasharray="8 14"/>
+  <circle cx="603" cy="154" r="45" fill="#fff6c8"/>
+  <circle cx="603" cy="154" r="88" fill="#fff6c8" opacity="0.2" filter="url(#soft)"/>
+  <circle cx="220" cy="300" r="34" fill="#f1a24f"/>
+  <circle cx="980" cy="299" r="34" fill="#e8a65c"/>
+  <g font-family="Segoe UI, system-ui, sans-serif">
+    <g fill="#f0f0ec" font-size="24" font-weight="700">
+      <text x="86" y="438">Madrugada</text>
+      <text x="270" y="438">Amanhecer</text>
+      <text x="553" y="438">Meio-dia</text>
+      <text x="760" y="438">Golden hour</text>
+      <text x="986" y="438">Blue hour</text>
+    </g>
+    <g fill="#c8c4bc" font-size="18">
+      <text x="92" y="470">1700K · azul profundo</text>
+      <text x="280" y="470">3500K · quente</text>
+      <text x="548" y="470">5500K · neutro</text>
+      <text x="770" y="470">2500K · dourado</text>
+      <text x="980" y="470">7000K+ · frio</text>
+    </g>
+  </g>
+  <path d="M219 300V414M603 154V414M980 299V414" stroke="#ffffff" stroke-opacity="0.16" stroke-width="2"/>
+</svg>

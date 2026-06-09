@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
+  <title id="title">Luz dura e luz suave</title>
+  <desc id="desc">Comparação entre sombra de borda definida e sombra com transição gradual.</desc>
+  <defs>
+    <linearGradient id="softShadow" x1="0" x2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0.46"/>
+      <stop offset="0.45" stop-color="#000" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="#141414"/>
+  <g transform="translate(70 70)">
+    <rect width="500" height="400" rx="8" fill="#1b1b1b" stroke="#fff" stroke-opacity="0.08"/>
+    <circle cx="104" cy="92" r="24" fill="#f1d48b"/>
+    <path d="M128 103 342 222" stroke="#f1d48b" stroke-opacity="0.36" stroke-width="4"/>
+    <rect x="126" y="274" width="252" height="44" rx="4" fill="#29251e"/>
+    <rect x="212" y="180" width="92" height="96" rx="8" fill="#c98a56"/>
+    <polygon points="304,276 430,318 304,318" fill="#000" opacity="0.58"/>
+    <text x="42" y="356" fill="#f0f0ec" font-family="Segoe UI, system-ui, sans-serif" font-size="34" font-weight="700">Luz dura</text>
+    <text x="42" y="388" fill="#c8c4bc" font-family="Segoe UI, system-ui, sans-serif" font-size="19">sombra com borda nítida</text>
+  </g>
+  <g transform="translate(630 70)">
+    <rect width="500" height="400" rx="8" fill="#1b1b1b" stroke="#fff" stroke-opacity="0.08"/>
+    <circle cx="122" cy="94" r="52" fill="#f1d48b" opacity="0.95"/>
+    <path d="M166 114 342 222" stroke="#f1d48b" stroke-opacity="0.2" stroke-width="20" stroke-linecap="round"/>
+    <rect x="126" y="274" width="252" height="44" rx="4" fill="#29251e"/>
+    <rect x="212" y="180" width="92" height="96" rx="8" fill="#c98a56"/>
+    <path d="M304 276c42 12 83 25 132 42H304z" fill="url(#softShadow)"/>
+    <text x="42" y="356" fill="#f0f0ec" font-family="Segoe UI, system-ui, sans-serif" font-size="34" font-weight="700">Luz suave</text>
+    <text x="42" y="388" fill="#c8c4bc" font-family="Segoe UI, system-ui, sans-serif" font-size="19">transição gradual de sombra</text>
+  </g>
+</svg>

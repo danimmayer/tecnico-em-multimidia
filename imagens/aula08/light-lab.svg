@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">Laboratório de luz natural e artificial</title>
+  <desc id="desc">Mesa com objeto, janela, ring light e celular mostrando como o ambiente muda a fotografia.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#151515"/>
+      <stop offset="0.52" stop-color="#1d1a16"/>
+      <stop offset="1" stop-color="#101214"/>
+    </linearGradient>
+    <linearGradient id="windowLight" x1="0" x2="1">
+      <stop offset="0" stop-color="#b7d7ff" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#b7d7ff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="warmGlow" cx="0.55" cy="0.45" r="0.52">
+      <stop offset="0" stop-color="#e8bc72" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#e8bc72" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000" flood-opacity="0.38"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg)"/>
+  <path d="M130 92h252v360H130z" fill="#0c0f12" stroke="#ffffff" stroke-opacity="0.12"/>
+  <path d="M154 120h94v140h-94zm110 0h94v140h-94zm-110 158h94v140h-94zm110 0h94v140h-94z" fill="#9fc8ff" opacity="0.17"/>
+  <path d="M382 92 635 614H140L130 92z" fill="url(#windowLight)" opacity="0.78"/>
+  <ellipse cx="569" cy="576" rx="350" ry="54" fill="#000" opacity="0.28"/>
+  <path d="M176 517h760l70 80H105z" fill="#2b2923" stroke="#ffffff" stroke-opacity="0.08"/>
+  <path d="M210 514h704" stroke="#c4a86c" stroke-opacity="0.24"/>
+  <g filter="url(#shadow)">
+    <path d="M498 405c28-18 82-18 110 0 28 18 29 56 0 74-28 18-82 18-110 0-28-18-28-56 0-74z" fill="#c58c55"/>
+    <path d="M486 430c0-38 31-69 69-69s69 31 69 69-31 69-69 69-69-31-69-69z" fill="#d89a61"/>
+    <path d="M517 375c22-19 53-19 76 0" fill="none" stroke="#f1cf8a" stroke-width="12" stroke-linecap="round"/>
+    <path d="M524 432c14 10 48 12 65-2" fill="none" stroke="#603c28" stroke-opacity="0.28" stroke-width="9" stroke-linecap="round"/>
+  </g>
+  <ellipse cx="685" cy="509" rx="164" ry="28" fill="#101010" opacity="0.55" transform="rotate(5 685 509)"/>
+  <g transform="translate(843 145)">
+    <circle cx="126" cy="126" r="96" fill="none" stroke="#f0d28a" stroke-width="26" opacity="0.92"/>
+    <circle cx="126" cy="126" r="52" fill="#141414" stroke="#ffffff" stroke-opacity="0.1"/>
+    <path d="M126 222v220" stroke="#5d5444" stroke-width="12" stroke-linecap="round"/>
+    <path d="M70 470h112" stroke="#5d5444" stroke-width="13" stroke-linecap="round"/>
+    <path d="M126 442 72 532m54-90 54 90" stroke="#5d5444" stroke-width="10" stroke-linecap="round"/>
+  </g>
+  <circle cx="962" cy="272" r="250" fill="url(#warmGlow)"/>
+  <g transform="translate(707 382) rotate(-7)">
+    <rect x="0" y="0" width="86" height="154" rx="13" fill="#0d0f12" stroke="#ffffff" stroke-opacity="0.16"/>
+    <rect x="8" y="13" width="70" height="124" rx="7" fill="#1b211d"/>
+    <circle cx="43" cy="146" r="4" fill="#c4a86c"/>
+    <path d="M18 34h50M18 54h32M18 96h44" stroke="#7cc49a" stroke-width="5" stroke-linecap="round" opacity="0.7"/>
+  </g>
+  <g font-family="Segoe UI, system-ui, sans-serif" font-size="24" fill="#f0f0ec">
+    <text x="132" y="52">janela</text>
+    <text x="895" y="102">ring light</text>
+    <text x="496" y="345">mesmo objeto</text>
+  </g>
+  <g fill="none" stroke-linecap="round">
+    <path d="M382 214c65 23 112 59 140 107" stroke="#b7d7ff" stroke-width="4" opacity="0.45"/>
+    <path d="M870 246c-76 19-142 56-198 110" stroke="#e8bc72" stroke-width="4" opacity="0.52"/>
+  </g>
+</svg>
