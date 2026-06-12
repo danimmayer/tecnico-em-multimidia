@@ -114,16 +114,16 @@
       dica: 'Faça a chamada rapidamente e já peça para deixarem o celular carregado/à mão. A prática-relâmpago de direção usa a lanterna do celular.'
     },
     'Mapa da Luz Natural': {
-      fala: 'A luz natural tem comportamento de tempo. De manhã cedo e no fim da tarde ela vem baixa e mais quente. Ao meio-dia, vem de cima, mais dura e com sombras curtas. Na blue hour, a cena fica azulada e a luz artificial aparece mais no quadro.',
-      dica: 'Mostre que horário não é só agenda; é escolha estética. Relacione com produção: marcar uma foto às 12h ou às 17h muda o trabalho de iluminação.'
+      fala: 'A mesma mesa muda antes de mexermos na câmera. No começo ou fim do dia, a luz baixa aquece e alonga sombras. Perto do meio-dia, a luz fica mais alta, dura e direta. Na blue hour, o ambiente esfria e qualquer fonte artificial aparece mais.',
+      dica: 'Use a imagem como leitura guiada: peça que descrevam primeiro a sombra, depois a cor, depois a sensação. Evite transformar em regra de horário perfeito.'
     },
     'Golden e Blue Hour': {
-      fala: 'Golden hour e blue hour são oportunidades reais, mas não são atalhos automáticos. Golden hour favorece retratos, textura e paisagem porque a luz vem lateral e quente. Blue hour favorece cidade, arquitetura e mistura de luz artificial com céu ainda visível.',
-      dica: 'Evite vender como "hora mágica". Reforce que o aluno precisa observar contraste, direção e cor. Sem intenção, golden hour também vira foto genérica.'
+      fala: 'Golden hour, meio-dia e blue hour pedem decisões diferentes. Golden hour oferece cor quente e lateralidade. Meio-dia pode ser duro, mas funciona para textura, arquitetura e sombra gráfica. Blue hour abre espaço para contraste entre ambiente frio e luz artificial.',
+      dica: 'Reforce que horário não salva foto sozinho. O aluno precisa escolher o que fazer com contraste, direção e cor em cada condição.'
     },
     'Direção da Luz': {
-      fala: 'A direção da luz decide volume. Luz frontal revela detalhe mas pode achatar. Luz lateral mostra textura e forma. Contra-luz cria recorte e pode virar silhueta. Luz zenital costuma fazer sombras fortes de cima para baixo.',
-      dica: 'Faça a prática-relâmpago com uma lanterna de celular e um objeto na mesa. Sem apontar para rosto. O objetivo é enxergar sombra.'
+      fala: 'A sombra entrega de onde a luz veio. Luz frontal revela detalhe e achata volume. Luz lateral mostra textura e forma. Contra-luz cria recorte e pode virar silhueta. Luz zenital concentra sombra embaixo e costuma dramatizar.',
+      dica: 'Faça a prática-relâmpago com uma lanterna de celular e um objeto na mesa. Sem apontar para rosto. Primeiro peça que localizem a sombra; só depois nomeiem a direção.'
     },
     'Luz Dura vs Luz Suave': {
       fala: 'Dureza da luz não é força da luz. É como a sombra termina. Se a borda da sombra é nítida, a luz é dura. Se a transição é gradual, a luz é suave. Uma fonte grande e próxima suaviza; uma fonte pequena ou distante endurece.',
@@ -142,8 +142,8 @@
       dica: 'Não aprofunde demais a física. Use a escala como ferramenta prática: menor número aquece visualmente, maior número esfria visualmente.'
     },
     'Balanço de Branco': {
-      fala: 'Balanço de branco é a forma como a câmera interpreta a cor da luz para tentar deixar um branco realmente branco. O AWB é útil, mas pode variar entre fotos. Em sequência de produto ou exercício técnico, travar ou corrigir o WB ajuda a comparar melhor.',
-      dica: 'Peça que abram editor ou câmera e procurem temperatura/calor, matiz ou balanço de branco. Não precisa que todos tenham o mesmo app.'
+      fala: 'Balanço de branco é a forma como a câmera decide o que deve parecer neutro. O automático é útil, mas pode esfriar uma foto e aquecer a próxima. Em sequência, escolher o branco principal e manter coerência é mais importante que acertar um número decorado.',
+      dica: 'Peça que abram câmera ou editor e procurem temperatura/calor, matiz ou balanço de branco. Não precisa que todos tenham o mesmo app; a lógica é escolher o neutro e comparar.'
     },
     'Luz Artificial Disponível': {
       fala: 'Luz artificial dá repetição. Ring light, lanterna do celular, LED e flash permitem repetir uma condição em outro horário. Cada uma tem compromisso: ring light é fácil, mas pode achatar; lanterna é dura; flash congela; LED contínuo mostra o resultado antes.',
@@ -154,8 +154,8 @@
       dica: 'Reforce organização: nada de cabo atravessado, celular no chão ou ring light instável. A qualidade do set também é competência profissional.'
     },
     'Esquemas Clássicos': {
-      fala: 'Rembrandt, butterfly, split e loop são nomes para posições recorrentes de luz. Eles ajudam a repetir uma configuração e explicar a intenção. Não precisamos decorar como regra rígida; precisamos reconhecer sombra e posição.',
-      dica: 'Prefira demonstrar com objetos de mesa. A lógica de direção fica clara sem transformar o exercício em retrato improvisado.'
+      fala: 'Rembrandt, butterfly, split e loop são nomes para padrões de sombra. Eles ajudam a conversar no set e repetir uma intenção. Não são poses obrigatórias, nem precisam virar retrato; a competência é reconhecer onde a luz está e que sombra ela produz.',
+      dica: 'Use objeto, busto, mochila ou garrafa para demonstrar. Evite colocar aluno como modelo improvisado; isso desvia a aula e expõe colegas sem necessidade.'
     },
     'Luz Mista': {
       fala: 'Luz mista aparece quando janela, teto, tela, ring light e celular entram juntos. Às vezes isso enriquece a imagem. Às vezes cria pele estranha, papel azul ou sombra laranja. A solução começa escolhendo qual fonte manda na foto.',
@@ -174,8 +174,8 @@
       dica: 'Use objetos de mesa e faça rodízio de função: uma pessoa fotografa, outra ilumina, outra anota. Assim todos participam sem desviar o foco técnico.'
     },
     'Ficha Técnica e Edição': {
-      fala: 'Depois da captura, cada grupo escolhe uma foto e faz uma correção curta. Ajustem temperatura, matiz e exposição apenas o suficiente para mostrar a intenção da luz. A edição precisa apoiar a leitura, não apagar a condição de captura.',
-      dica: 'Se os Chromebooks estiverem disponíveis, podem usar editor online ou app instalado. Se não, o editor nativo do celular já serve.'
+      fala: 'Depois da captura, cada grupo escolhe uma foto, não todas. A edição deve provar a leitura da luz: corrigir exposição, temperatura e matiz sem apagar a condição de captura. O antes e depois precisa mostrar decisão, não filtro pronto.',
+      dica: 'Se os Chromebooks estiverem disponíveis, podem usar editor online ou app instalado. Se não, o editor nativo do celular já serve. O importante é comparar antes/depois e explicar a correção.'
     },
     'Plano de Defesa': {
       fala: 'A apresentação é curta: fonte, direção, qualidade e correção. Em 45 segundos, o grupo mostra que entendeu por que aquela foto ficou daquele jeito.',
