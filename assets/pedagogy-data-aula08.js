@@ -137,6 +137,10 @@
       fala: 'Depois do intervalo, a luz ganha cor. A câmera tenta decidir o que é branco; nós vamos aprender quando confiar no automático e quando assumir controle pela temperatura, matiz e fonte principal.',
       dica: 'Se houver aparelhos diferentes, ótimo: os alunos vão ver que cada celular interpreta o branco de um jeito.'
     },
+    'Laboratório de Cor': {
+      fala: 'Antes de explicar Kelvin, vamos criar a necessidade do conceito. Cada grupo usa ring light, celulares, câmera e caderno para comparar como o branco muda conforme fonte, direção e aparelho. A meta é perceber o problema antes de nomear a escala.',
+      dica: 'Mantenha todos sentados nos próprios grupos. Dê tempo fechado: dois minutos para preparar, dez para capturar, cinco para comparar. Circule só para destravar grupos; não deixe virar exploração livre de equipamento.'
+    },
     'Escala Kelvin': {
       fala: 'Kelvin organiza a temperatura de cor. Luz de vela e tungstênio aparece mais quente; luz do dia fica perto de 5500K; sombra e céu aberto aparecem mais frios. O importante é perceber que branco muda conforme a fonte.',
       dica: 'Não aprofunde demais a física. Use a escala como ferramenta prática: menor número aquece visualmente, maior número esfria visualmente.'
