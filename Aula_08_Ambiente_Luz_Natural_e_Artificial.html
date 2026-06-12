@@ -164,15 +164,27 @@ ul.styled li.accent { color: var(--cream); font-weight: 500; }
 .slide[data-title="Programação da Noite"] .slide-body { display: flex; flex-direction: column; justify-content: flex-start; gap: 22px; }
 .slide[data-title="Programação da Noite"] .schedule-grid { flex: 0 1 auto; }
 .slide[data-title="Programação da Noite"] .schedule-card { min-height: 0; }
+.slide[data-title^="Chamada"] .call-badge { font-size: 13px; padding: 6px 14px; margin-bottom: 18px; }
+.slide[data-title^="Chamada"] .t-title { font-size: 56px !important; line-height: 1.02; }
+.slide[data-title^="Chamada"] .t-subtitle { font-size: 22px; max-width: 720px !important; line-height: 1.45; }
+.slide[data-title="Golden e Blue Hour"] .slide-body,
+.slide[data-title="Plano de Defesa"] .slide-body,
+.slide[data-title="Bilhete de Saída"] .slide-body { justify-content: center; padding-top: 0; }
+.slide[data-title="Golden e Blue Hour"] .card { min-height: 176px; padding: 24px 24px; }
+.slide[data-title="Golden e Blue Hour"] .card-title { font-size: 22px; margin-bottom: 12px; }
+.slide[data-title="Golden e Blue Hour"] .card-body { font-size: 18px; line-height: 1.5; }
+.slide[data-title="Plano de Defesa"] .formula-step { min-height: 148px; padding: 22px 20px; }
+.slide[data-title="Plano de Defesa"] .formula-step strong { font-size: 19px; }
+.slide[data-title="Plano de Defesa"] .formula-step span { font-size: 15px; line-height: 1.45; }
+.slide[data-title="Bilhete de Saída"] .card { min-height: 152px; display: flex; flex-direction: column; justify-content: center; }
+.slide[data-title="Bilhete de Saída"] .card div[style] { font-size: 20px !important; line-height: 1.35; }
 .slide[data-title="Prática Luz e Sombra"] .slide-body { justify-content: flex-start; gap: 18px; padding-top: 44px; }
 .slide[data-title="Prática Luz e Sombra"] .practice-grid { height: auto; grid-template-rows: auto; }
 .slide[data-title="Cinco Leituras da Mesma Cena"] .slide-body { justify-content: flex-start; }
 .slide[data-title="Luz Dura vs Luz Suave"] .lesson-visual { height: min(50vh, 380px); }
 .slide[data-title="Ponte com a Aula 07"] .slide-body,
 .slide[data-title="Ambiente é Coautor"] .slide-body,
-.slide[data-title="Janela como Ferramenta"] .slide-body,
-.slide[data-title="Plano de Defesa"] .slide-body,
-.slide[data-title="Bilhete de Saída"] .slide-body { justify-content: flex-start; }
+.slide[data-title="Janela como Ferramenta"] .slide-body { justify-content: flex-start; }
 
 #imgModal { display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.92); align-items: center; justify-content: center; padding: 40px; }
 #imgModal.open { display: flex; }
