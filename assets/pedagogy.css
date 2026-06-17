@@ -95,6 +95,62 @@ html.p-topbar-pin #pTopBar {
 #pBlockLabel { color: var(--p-cream-mut); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
 #pCompCount  { font-size: 11px; color: var(--p-accent); font-weight: 700; }
 
+/* Indicador discreto de ritmo no centro da dock inferior.
+   Espelha o diagnóstico do Presenter sem exigir abrir o painel. */
+#pPaceDot {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--p-bottombar-h) / 2 - 5px);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  z-index: 955;
+  transform: translateX(-50%);
+  pointer-events: auto;
+  background: var(--p-ok);
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,0.42),
+    0 0 0 4px rgba(124,196,154,0.10),
+    0 4px 12px rgba(0,0,0,0.38);
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+#bottomBar #pPaceDot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+}
+#pPaceDot.is-ok {
+  background: var(--p-ok);
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,0.42),
+    0 0 0 5px rgba(124,196,154,0.12),
+    0 4px 12px rgba(0,0,0,0.38);
+}
+#pPaceDot.is-warn {
+  background: var(--p-warn);
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,0.42),
+    0 0 0 5px rgba(231,182,110,0.18),
+    0 4px 12px rgba(0,0,0,0.38);
+}
+#pPaceDot.is-err {
+  background: var(--p-err);
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,0.42),
+    0 0 0 5px rgba(217,138,138,0.20),
+    0 4px 12px rgba(0,0,0,0.38);
+  animation: pPulse 1.2s ease-in-out infinite;
+}
+#pPaceDot:hover {
+  transform: translateX(-50%) scale(1.25);
+}
+#bottomBar #pPaceDot:hover {
+  transform: translate(-50%, -50%) scale(1.25);
+}
+
 /* Depth pill group inside TopBar */
 .p-depth-group {
   display: flex; align-items: center;
@@ -957,15 +1013,14 @@ button:focus-visible, [tabindex]:focus-visible, a:focus-visible {
 
 @media print {
   #pTopBar, #pTopBarEdge, #pPresenter,
-  #pQrModal, #pReport, .p-collect, .p-semiotic-toggle, .p-deep-hint { display: none !important; }
-  .p-deep-panel {
-    position: relative !important; transform: none !important;
-    opacity: 1 !important; width: 100% !important;
-    border: 1px solid #ccc !important;
-    background: #fff !important;
-    color: #222 !important;
-    padding: 16px !important;
+  #pQrModal, #pReport, #pPaceDot, .p-collect, .p-semiotic-toggle, .p-deep-hint { display: none !important; }
+  .p-deep-panel, .p-deep-backdrop,
+  .p-expand[data-depth="2"], .p-expand[data-depth="3"],
+  [data-depth="2"], [data-depth="3"], .q-answer {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
   }
-  [data-depth="2"]:not(.p-deep-panel *),
-  [data-depth="3"]:not(.p-deep-panel *) { display: block !important; }
 }
