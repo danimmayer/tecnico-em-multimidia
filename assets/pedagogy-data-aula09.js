@@ -3,7 +3,7 @@
  * UC: Fundamentos de Fotografia Digital e de Semiótica
  * =======================================================================
  * Aula presencial centrada em fluxo de produção. Usa celular, caderno,
- * Chromebooks/notebooks, ring lights, câmera de apoio e materiais simples.
+ * Chromebooks/notebooks, câmeras, tripés, softbox, ring lights e materiais simples.
  * ======================================================================= */
 (function (global) {
   'use strict';
@@ -99,7 +99,7 @@
   const NOTES = {
     'Capa': {
       fala: 'Boa noite. Hoje a aula é uma produção dirigida. A meta é sair do estudo isolado de câmera, composição e luz para um fluxo completo: briefing, planejamento, captura, seleção, edição leve e apresentação.',
-      dica: 'Abra a aula como prática, não como palestra. Peça celular carregado, caderno e, se disponível, Chromebook ou notebook por grupo.'
+      dica: 'Abra a aula como prática, não como palestra. Peça celular carregado, caderno e, se disponível, câmera, tripé, softbox/ring light e Chromebook ou notebook por grupo.'
     },
     'Programação da Noite': {
       fala: 'A noite tem quatro blocos. Primeiro definimos o desafio. Depois fazemos pré-produção. Após o intervalo, treinamos captura, direção e seleção. No último bloco, cada equipe produz uma sequência curta e apresenta uma decisão visual.',
@@ -134,8 +134,8 @@
       dica: 'Em trios, una produção e registro. Em quartetos, separe. Evite deixar uma pessoa segurando tudo.'
     },
     'Set e Arquivos': {
-      fala: 'Set organizado economiza tempo e evita perda. Antes de fotografar, defina zona de captura, objetos, luz, fundo, circulação e nome da pasta. Organização também é parte da imagem profissional.',
-      dica: '<strong>Checkpoint antes do intervalo:</strong> tema escolhido, papéis definidos, pasta/álbum criado e primeiro quadro planejado. Se isso não estiver pronto, o Bloco 3 vira improviso.'
+      fala: 'Set organizado economiza tempo e evita perda. Antes de fotografar, defina zona de captura, objetos, suporte de câmera, luz, fundo, circulação e nome da pasta. Organização também é parte da imagem profissional.',
+      dica: '<strong>Checkpoint antes do intervalo:</strong> tema escolhido, papéis definidos, tripé/softbox reservado quando necessário, pasta/álbum criado e primeiro quadro planejado. Se isso não estiver pronto, o Bloco 3 vira improviso.'
     },
     'Chamada Bloco 3': {
       fala: 'Depois do intervalo, a ideia sai do papel. Vamos treinar como transformar briefing em variações de quadro e como selecionar sem se apegar a foto fraca.',
@@ -154,8 +154,8 @@
       dica: 'Peça para cada grupo resolver uma distração de fundo antes de continuar a captura.'
     },
     'Luz no Set': {
-      fala: 'A luz precisa sustentar o briefing. Se a proposta é limpa, evite sombra confusa. Se é dramática, sombra pode ser parte da linguagem. Se a cor é importante, controle o balanço de branco e a mistura de fontes.',
-      dica: 'Reforce que ring light, janela e lanterna são ferramentas, não enfeites. A equipe escolhe a fonte principal.'
+      fala: 'A luz precisa sustentar o briefing. Se a proposta é limpa, softbox ou ring light ajudam a suavizar. Se é dramática, uma fonte lateral pode criar sombra legível. Se a comparação antes/depois precisa ser precisa, o tripé mantém o quadro constante.',
+      dica: 'Reforce que softbox, ring light, janela e lanterna são ferramentas, não enfeites. A equipe escolhe a fonte principal e só usa tripé quando estabilidade realmente ajudar.'
     },
     'Contact Sheet': {
       fala: 'A seleção começa olhando as fotos juntas. Contact sheet é uma visão comparativa: padrões aparecem, erros repetidos ficam claros e a equipe decide melhor.',
@@ -174,8 +174,8 @@
       dica: 'Evite temas que exijam figurino, deslocamento grande ou exposição pessoal. Priorize objetos, gestos e materiais disponíveis.'
     },
     'Rodada de Captura': {
-      fala: 'A captura tem limite: cerca de dezoito fotos úteis. Isso força intenção. Façam variação de plano, luz e ponto de vista, mas não fotografem sem decidir o que estão testando.',
-      dica: '<strong>Chamadas de tempo:</strong> avise 15 min, 10 min e 5 min restantes. Se uma equipe estiver parada, peça só plano geral + detalhe para destravar.'
+      fala: 'A captura tem limite: cerca de dezoito fotos úteis. Isso força intenção. Façam variação de plano, luz e ponto de vista, mas não fotografem sem decidir o que estão testando. Tripé e softbox ajudam quando a equipe precisa repetir enquadramento ou controlar sombra.',
+      dica: '<strong>Chamadas de tempo:</strong> avise 15 min, 10 min e 5 min restantes. Se uma equipe estiver parada, peça só plano geral + detalhe; se houver tremor ou luz confusa, ofereça tripé ou softbox como solução rápida.'
     },
     'Curadoria em Equipe': {
       fala: 'Curadoria é escolher e descartar. Primeiro tire o que falhou tecnicamente. Depois compare mensagem, composição e sequência. A melhor foto isolada nem sempre é a melhor para a narrativa.',
