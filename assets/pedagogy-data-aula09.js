@@ -98,7 +98,7 @@
 
   const NOTES = {
     'Capa': {
-      fala: 'Boa noite. Hoje a aula é uma produção dirigida. A meta é sair do estudo isolado de câmera, composição e luz para um fluxo completo: briefing, planejamento, captura, seleção, edição leve e apresentação.',
+      fala: 'Boa noite. Hoje a aula é uma produção dirigida dentro da sala. A meta é integrar câmera, composição e luz em um fluxo completo: briefing, planejamento, captura, seleção, edição leve e apresentação.',
       dica: 'Abra a aula como prática, não como palestra. Peça celular carregado, caderno e, se disponível, câmera, tripé, softbox/ring light e Chromebook ou notebook por grupo.'
     },
     'Programação da Noite': {
@@ -155,7 +155,7 @@
     },
     'Luz no Set': {
       fala: 'A luz precisa sustentar o briefing. Se a proposta é limpa, softbox ou ring light ajudam a suavizar. Se é dramática, uma fonte lateral pode criar sombra legível. Se a comparação antes/depois precisa ser precisa, o tripé mantém o quadro constante.',
-      dica: 'Reforce que softbox, ring light, janela e lanterna são ferramentas, não enfeites. A equipe escolhe a fonte principal e só usa tripé quando estabilidade realmente ajudar.'
+      dica: 'Reforce que softbox, ring light e luzes disponíveis na sala são ferramentas, não enfeites. A equipe escolhe a fonte principal e só usa tripé quando estabilidade realmente ajudar.'
     },
     'Contact Sheet': {
       fala: 'A seleção começa olhando as fotos juntas. Contact sheet é uma visão comparativa: padrões aparecem, erros repetidos ficam claros e a equipe decide melhor.',
@@ -171,7 +171,7 @@
     },
     'Escolha de Briefing': {
       fala: 'Cada equipe escolhe um dos briefings. Eles são pequenos para caber na aula, mas abertos o suficiente para permitir decisão estética.',
-      dica: 'Evite temas que exijam figurino, deslocamento grande ou exposição pessoal. Priorize objetos, gestos e materiais disponíveis.'
+      dica: 'Evite temas que exijam figurino, saída da sala ou exposição pessoal. Priorize objetos, gestos, mesas, parede, luz e materiais disponíveis no ambiente.'
     },
     'Rodada de Captura': {
       fala: 'A captura tem limite: cerca de dezoito fotos úteis. Isso força intenção. Façam variação de plano, luz e ponto de vista, mas não fotografem sem decidir o que estão testando. Tripé e softbox ajudam quando a equipe precisa repetir enquadramento ou controlar sombra.',
@@ -194,7 +194,7 @@
       dica: 'Use o bilhete para medir o que ficou. Peça duas leituras voluntárias se houver tempo.'
     },
     'Encerramento': {
-      fala: 'Hoje o foco foi sair do clique isolado e entrar no fluxo. Produzir imagem é decidir antes, durante e depois da captura. Na próxima aula, essa produção conversa com aplicações gráficas e edição avaliativa.',
+      fala: 'Hoje o foco foi transformar o clique isolado em fluxo de produção dentro da sala. Produzir imagem é decidir antes, durante e depois da captura. Na próxima aula, essa produção conversa com aplicações gráficas e edição avaliativa.',
       dica: 'Reforce o gancho da Aula 10: ferramentas e aplicações gráficas entram melhor quando a imagem já nasce com intenção.'
     }
   };
