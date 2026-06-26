@@ -122,8 +122,8 @@
       dica: '<strong>Tempo sugerido: 5 min.</strong> Circule pedindo apenas a frase "queremos comunicar que...". Se o grupo travar, dê um assunto concreto e siga.'
     },
     'Moodboard Rápido': {
-      fala: 'Moodboard não é colagem bonita para impressionar. É uma ferramenta de alinhamento. Em poucos minutos, ele define cor, luz, enquadramento, textura e o que deve ser evitado.',
-      dica: '<strong>Tempo sugerido: 6 min.</strong> Permita busca rápida. Se a internet atrasar, use as seis pistas do slide como moodboard mínimo e avance.'
+      fala: 'Agora o briefing vira imagem. A frase "queremos comunicar que..." precisa aparecer em decisões visuais: cor, luz, fundo, textura, ação e corte. O moodboard aqui não é pesquisa solta; é tradução do que o grupo acabou de escrever.',
+      dica: '<strong>Tempo sugerido: 6 min.</strong> Peça que cada grupo escolha 2 ou 3 pistas do slide para sustentar o briefing. Se travarem, pergunte: qual pista deixa a mensagem mais clara dentro da sala?'
     },
     'Shot List Mínimo': {
       fala: 'Shot list é a ponte entre ideia e execução. Em vez de entrar no set perguntando o que fazer, a equipe já sabe quais quadros precisa tentar: geral, detalhe, ação, variação de luz e imagem de fechamento.',
