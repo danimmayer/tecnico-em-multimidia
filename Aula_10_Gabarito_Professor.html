@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 10 · Gabarito do Professor · Prova Final da UC</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 11pt; line-height: 1.5; color: #1a1a1a; background: #fff;
+  }
+  body { padding: 24mm 20mm; max-width: 210mm; margin: 0 auto; }
+
+  .cover { border-bottom: 2px solid #1a1a1a; padding-bottom: 16pt; margin-bottom: 18pt; }
+  .cover .eyebrow { font-size: 9pt; letter-spacing: 0.18em; text-transform: uppercase; color: #8a7a4a; margin-bottom: 6pt; font-weight: 700; }
+  .cover h1 { font-size: 22pt; line-height: 1.15; margin-bottom: 6pt; }
+  .cover .meta { font-size: 10pt; color: #555; }
+
+  h2 {
+    font-size: 14pt; margin-top: 20pt; margin-bottom: 10pt;
+    padding-bottom: 4pt; border-bottom: 1px solid #d0d0d0; color: #1a1a1a;
+  }
+  p { margin-bottom: 8pt; }
+
+  /* Tabela-resumo do gabarito */
+  table.key { width: 100%; border-collapse: collapse; margin: 6pt 0 14pt; font-size: 10.5pt; }
+  table.key th, table.key td { text-align: center; padding: 5pt 4pt; border: 1px solid #d8d8d8; }
+  table.key th { background: #f3efe2; color: #6b5318; font-weight: 700; }
+  table.key td.ans { font-weight: 700; color: #1a6b1a; font-family: 'SF Mono', Consolas, monospace; }
+  table.key td.qn { color: #555; font-weight: 600; background: #fafafa; }
+
+  .q-block {
+    border-left: 3px solid #8a7a4a;
+    padding: 8pt 12pt; margin-bottom: 12pt;
+    background: #fafafa;
+    page-break-inside: avoid;
+  }
+  .q-block .q-num { font-size: 9pt; font-weight: 700; color: #8a7a4a; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 4pt; }
+  .q-block .q-text { font-weight: 600; margin-bottom: 6pt; }
+  .q-block .q-answer { color: #1a6b1a; font-weight: 700; margin-bottom: 4pt; }
+  .q-block .q-note { font-size: 10pt; color: #555; margin-top: 4pt; }
+
+  .callout {
+    background: #f5eed8; border: 1px solid #e0d4a8;
+    padding: 10pt 14pt; border-radius: 4px; margin: 12pt 0;
+    font-size: 10.5pt;
+  }
+  .callout strong { color: #6b5318; }
+
+  .footer { margin-top: 26pt; padding-top: 10pt; border-top: 1px solid #d0d0d0; font-size: 9pt; color: #777; text-align: center; }
+
+  .print-btn {
+    position: fixed; top: 16px; right: 16px;
+    background: #1a1a1a; color: #fff; border: none;
+    padding: 10px 18px; border-radius: 4px; cursor: pointer;
+    font-size: 11pt; font-family: inherit;
+  }
+  .print-btn:hover { background: #333; }
+
+  @media print {
+    body { padding: 18mm 16mm; }
+    h2 { page-break-after: avoid; }
+    .q-block { page-break-inside: avoid; }
+    .print-btn { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">Imprimir / Salvar PDF</button>
+
+<div class="cover">
+  <div class="eyebrow">Gabarito do Professor · Uso restrito em sala</div>
+  <h1>Aula 10 · Prova Final da UC</h1>
+  <div class="meta">Fundamentos de Fotografia Digital e de Semiótica · Conteúdo das Aulas 01 a 09 · Técnico em Multimídia · SENAI · Prof. Daniel Mayer · 2026</div>
+</div>
+
+<p>Material de apoio do professor para a correção coletiva (Bloco 4). Traz a resposta correta de cada questão e uma justificativa curta para conduzir a discussão. São 27 questões, três por aula. Imprima antes da aula e não distribua aos alunos.</p>
+
+<h2>1 · Gabarito Rápido</h2>
+
+<table class="key">
+  <tr><th>Q</th><th>01</th><th>02</th><th>03</th><th>04</th><th>05</th><th>06</th><th>07</th><th>08</th><th>09</th></tr>
+  <tr><td class="qn">Resp.</td><td class="ans">C</td><td class="ans">B</td><td class="ans">C</td><td class="ans">B</td><td class="ans">A</td><td class="ans">C</td><td class="ans">D</td><td class="ans">A</td><td class="ans">C</td></tr>
+  <tr><th>Q</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th></tr>
+  <tr><td class="qn">Resp.</td><td class="ans">B</td><td class="ans">C</td><td class="ans">B</td><td class="ans">B</td><td class="ans">C</td><td class="ans">A</td><td class="ans">B</td><td class="ans">C</td><td class="ans">A</td></tr>
+  <tr><th>Q</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th></tr>
+  <tr><td class="qn">Resp.</td><td class="ans">B</td><td class="ans">A</td><td class="ans">C</td><td class="ans">B</td><td class="ans">A</td><td class="ans">C</td><td class="ans">B</td><td class="ans">C</td><td class="ans">A</td></tr>
+</table>
+
+<div class="callout">
+  <strong>Cálculo da nota:</strong> 27 questões valendo o mesmo peso. Para nota de 0 a 10, use <strong>nota = acertos ÷ 2,7</strong> (ex.: 22 acertos ≈ 8,1). Para nota de 0 a 100, use <strong>acertos × 3,7</strong> aproximadamente.
+</div>
+
+<h2>2 · Eixo 1 · História e Ética (Aula 01)</h2>
+
+<div class="q-block">
+  <div class="q-num">Questão 01</div>
+  <div class="q-text">Processo que introduziu o sistema negativo-positivo (múltiplas cópias).</div>
+  <div class="q-answer">✓ Resposta: C — O calótipo, de William Henry Fox Talbot (1841).</div>
+  <div class="q-note">O calótipo criou o negativo em papel, base da reprodução em massa. O daguerreótipo (distrator A) gerava imagem única, sem negativo; a heliografia (B) foi a primeira foto permanente; o autochrome (D) é processo de cor.</div>
+</div>
+
+<div class="q-block">
+  <div class="q-num">Questão 02</div>
+  <div class="q-text">Tempo de exposição da “Vista da Janela em Le Gras” (Niépce, 1826).</div>
+  <div class="q-answer">✓ Resposta: B — Cerca de 8 horas.</div>
+  <div class="q-note">O betume da Judeia endurece lentamente com a luz, exigindo uma exposição de aproximadamente 8 horas.</div>
+</div>
+
+<div class="q-block">
+  <div class="q-num">Questão 03</div>
+  <div class="q-text">Signo que significa por semelhança visual direta com o objeto.</div>
+  <div class="q-answer">✓ Resposta: C — Ícone.</div>
+  <div class="q-note">Ícone = relação por semelhança. Índice (A) é relação física/causal; símbolo (B) é convenção cultural; legi-signo (D) pertence a outra tricotomia (o signo em si mesmo).</div>
+</div>
+
+<h2>3 · Eixo 2 · Formação da Imagem Digital (Aula 02)</h2>
+
+<div class="q-block">
+  <div class="q-num">Questão 04</div>
+  <div class="q-text">Megapixels de uma foto 4.000 × 3.000 px.</div>
+  <div class="q-answer">✓ Resposta: B — 12 MP.</div>
+  <div class="q-note">4.000 × 3.000 = 12.000.000 px ÷ 1.000.000 = 12 MP. Reforce que “mega” é sempre “milhão”.</div>
+</div>
+
+<div class="q-block">
+  <div class="q-num">Questão 05</div>
+  <div class="q-text">Proporção de cores no filtro Bayer.</div>
+  <div class="q-answer">✓ Resposta: A — 50% verde, 25% vermelho e 25% azul.</div>
+  <div class="q-note">Há mais verde porque o olho humano é mais sensível a essa cor. As demais proporções são erros comuns de memória.</div>
+</div>
+
+<div class="q-block">
+  <div class="q-num">Questão 06</div>
+  <div class="q-text">Níveis e cores de uma imagem de 8 bits por canal.</div>
+  <div class="q-answer">✓ Resposta: C — 256 níveis por canal e 16,7 milhões de cores.</div>
+  <div class="q-note">8 bits = 2⁸ = 256 níveis por canal; 256³ ≈ 16,7 milhões de cores. O distrator A (65.536 / 281 trilhões) corresponde a 16 bits (RAW/TIFF).</div>
+</div>
+
+<h2>4 · Eixo 3 · Semiótica (Aulas 03 e 04)</h2>
+
+<div class="q-block">
+  <div class="q-num">Questão 07</div>
+  <div class="q-text">Elemento da tríade que é o efeito de sentido produzido.</div>
+  <div class="q-answer">✓ Resposta: D — O interpretante.</div>
+  <div class="q-note">Atenção ao erro clássico: o interpretante NÃO é a pessoa que interpreta, e sim o efeito mental/de sentido. O objeto (A) é a coisa referida; o representâmen (B) é o signo que aparece.</div>
+</div>
+
+<div class="q-block">
+  <div class="q-num">Questão 08</div>
+  <div class="q-text">Sensação de frio pelos tons azulados, antes de reconhecer o local.</div>
+  <div class="q-answer">✓ Resposta: A — Primeiridade.</div>
+  <div class="q-note">Primeiridade = qualidade sentida antes de qualquer explicação. Secundidade (B) é o encontro com o fato; terceiridade (C) é regra/convenção; legi-signo (D) é de outra tricotomia.</div>
+</div>
+
+<div class="q-block">
+  <div class="q-num">Questão 09</div>
+  <div class="q-text">Ocorrência única e situada (ESTA foto no projetor) na classificação do “signo em si mesmo”.</div>
+  <div class="q-answer">✓ Resposta: C — Sin-signo.</div>
+  <div class="q-note">Sin-signo vem de “singular”: a ocorrência única e concreta. Quali-signo (B) é a qualidade; legi-signo (A) é a regra geral; símbolo (D) é de outra tricotomia (relação signo–objeto).</div>
+</div>
+
+<div class="q-block">
+  <div class="q-num">Questão 10</div>
+  <div class="q-text">A fumaça que indica fogo, segundo a relação signo–objeto.</div>
+  <div class="q-answer">✓ Resposta: B — Índice (rastro que aponta para um acontecimento concreto).</div>
+  <div class="q-note">A fumaça é vestígio físico do fogo. Ícone (A) seria por semelhança; símbolo (C) por convenção; rema (D) pertence à relação signo–interpretante, não signo–objeto.</div>
+</div>
+
+<div class="q-block">
+  <div class="q-num">Questão 11</div>
+  <div class="q-text">Cartaz que reúne signos para convencer o leitor de uma tese.</div>
+  <div class="q-answer">✓ Resposta: C — Argumento.</div>
+  <div class="q-note">O argumento organiza signos para conduzir a uma conclusão, função típica da publicidade. Rema (A) apenas sugere; dicente (B) afirma um fato; índice (D) é relação signo–objeto.</div>
+</div>
+
+<div class="q-block">
+  <div class="q-num">Questão 12</div>
+  <div class="q-text">Leitura semiótica de uma foto pública (ícone/índice/símbolo ao mesmo tempo).</div>
+  <div class="q-answer">✓ Resposta: B — A mesma foto pode operar como ícone, índice e símbolo simultaneamente, com evidência visual para cada camada.</div>
+  <div class="q-note">As tricotomias não são gavetas excludentes. A (exclusão), C (símbolo universal sem repertório) e D (síntese antes da descrição) contrariam o método de leitura da aula.</div>
+</div>
+
+<h2>5 · Eixo 4 · Câmera e Composição (Aulas 05 e 06)</h2>
+
+<div class="q-block">
+  <div class="q-num">Questão 13</div>
+  <div class="q-text">Câmera com corpo de DSLR e zoom longo, sem troca de lente.</div>
+  <div class="q-answer">✓ Resposta: B — Bridge.</div>
+  <div class="q-note">A bridge tem corpo parecido com DSLR e zoom longo fixo (sem troca de lente), boa para natureza e baixo orçamento. Compacta (A) é menor; mirrorless (C) e DSLR (D) trocam lente.</div>
+</div>
+
+<div class="q-block">
+  <div class="q-num">Questão 14</div>
+  <div class="q-text">Ajuste para congelar o movimento de bailarinos no ar.</div>
+  <div class="q-answer">✓ Resposta: C — 1/1000 s (tempo curto de obturador congela o movimento).</div>
+  <div class="q-note">O congelamento depende do obturador, não do diafragma (por isso D está errado). 1/4 s (A) gera rastro; 1/60 s (B) não é “neutro universal”.</div>
+</div>
+
+<div class="q-block">
+  <div class="q-num">Questão 15</div>
+  <div class="q-text">Diafragma e profundidade de campo.</div>
+  <div class="q-answer">✓ Resposta: A — f/1.8 deixa entrar mais luz e tende a desfocar mais o fundo.</div>
+  <div class="q-note">f/16 (B) aumenta a profundidade, não desfoca; quanto MENOR o número f, maior a abertura (C invertido); no celular o desfoque do modo retrato é por software, não óptico (D).</div>
+</div>
+
+<div class="q-block">
+  <div class="q-num">Questão 16</div>
+  <div class="q-text">Câmera baixa apontando para cima, dando presença/poder ao assunto.</div>
+  <div class="q-answer">✓ Resposta: B — Contra-plongée (câmera baixa).</div>
+  <div class="q-note">Contra-plongée dramatiza e sugere força/poder. Plongée (A) é câmera alta; eye-level (C) é a altura do olhar; close-up (D) é tipo de enquadramento, não ponto de vista.</div>
+</div>
+
+<div class="q-block">
+  <div class="q-num">Questão 17</div>
+  <div class="q-text">Natureza da regra dos terços.</div>
+  <div class="q-answer">✓ Resposta: C — Ferramenta de deslocamento, não regra obrigatória; centralizar também é linguagem.</div>
+  <div class="q-note">A aula trata a grade dos terços como apoio, não dogma. A (“sempre fora do centro”), B (uso restrito) e D (“só no software”) são generalizações erradas.</div>
+</div>
+
+<div class="q-block">
+  <div class="q-num">Questão 18</div>
+  <div class="q-text">Proporções para vídeo horizontal e story de tela cheia.</div>
+  <div class="q-answer">✓ Resposta: A — 16:9 (vídeo horizontal) e 9:16 (story vertical).</div>
+  <div class="q-note">16:9 é o horizontal amplo; 9:16 é o vertical de tela cheia. As demais combinações trocam ou confundem as proporções.</div>
+</div>
+
+<h2>6 · Eixo 5 · Exposição e Luz (Aulas 07 e 08)</h2>
+
+<div class="q-block">
+  <div class="q-num">Questão 19</div>
+  <div class="q-text">Abertura para rosto nítido e fundo desfocado.</div>
+  <div class="q-answer">✓ Resposta: B — f/1.8 (abertura grande, profundidade de campo rasa).</div>
+  <div class="q-note">Abertura grande = fundo desfocado. f/16 (A e C) aumenta a profundidade e deixa mais planos nítidos; f/8 (D) não é a “única” opção.</div>
+</div>
+
+<div class="q-block">
+  <div class="q-num">Questão 20</div>
+  <div class="q-text">Compensação recíproca: abrir de f/5.6 para f/4 (+1 stop) mantendo a exposição pela velocidade.</div>
+  <div class="q-answer">✓ Resposta: A — Passar de 1/125 s para 1/250 s (fecha 1 stop no obturador).</div>
+  <div class="q-note">Ganhou 1 stop de luz na abertura → precisa perder 1 stop em outro parâmetro. 1/250 s deixa o sensor exposto por metade do tempo. B (1/60 s) adicionaria luz; C mexe no ISO, não na velocidade; D nega o efeito da abertura.</div>
+</div>
+
+<div class="q-block">
+  <div class="q-num">Questão 21</div>
+  <div class="q-text">Histograma com a montanha encostada na parede direita.</div>
+  <div class="q-answer">✓ Resposta: C — Realces estourados (áreas claras sem textura).</div>
+  <div class="q-note">A direita do histograma é o branco puro. A (sombras) é a parede esquerda; B (centro) e D (ruído de ISO) não se leem na borda direita.</div>
+</div>
+
+<div class="q-block">
+  <div class="q-num">Questão 22</div>
+  <div class="q-text">Direção de luz para valorizar textura e volume.</div>
+  <div class="q-answer">✓ Resposta: B — Luz lateral (desenha volume e evidencia textura).</div>
+  <div class="q-note">A luz frontal (A) achata o volume; a contra-luz (C) cria silhueta; a zenital (D) concentra a sombra embaixo e não distribui uniformemente.</div>
+</div>
+
+<div class="q-block">
+  <div class="q-num">Questão 23</div>
+  <div class="q-text">Temperatura de cor na escala Kelvin.</div>
+  <div class="q-answer">✓ Resposta: A — 3200 K (tungstênio) é visualmente mais quente que 5500 K (luz do dia).</div>
+  <div class="q-note">Menor número em Kelvin = aparência mais quente/alaranjada. B inverte a escala; C inverte (a vela ≈ 2000 K é mais quente que a luz do dia); D confunde cor com intensidade.</div>
+</div>
+
+<div class="q-block">
+  <div class="q-num">Questão 24</div>
+  <div class="q-text">Balanço de branco para uma sequência comparável em cor.</div>
+  <div class="q-answer">✓ Resposta: C — Escolher e travar o branco principal (o AWB pode variar entre as fotos).</div>
+  <div class="q-note">AWB é “opinião da câmera” e muda foto a foto (A errado). O matiz corrige verde/magenta, não azul/laranja (B errado). Variar a temperatura (D) destrói a comparação.</div>
+</div>
+
+<h2>7 · Eixo 6 · Produção de Imagens (Aula 09)</h2>
+
+<div class="q-block">
+  <div class="q-num">Questão 25</div>
+  <div class="q-text">O que é o “hero shot” no shot list mínimo.</div>
+  <div class="q-answer">✓ Resposta: B — A imagem mais forte da sequência, pensada para abrir ou fechar.</div>
+  <div class="q-note">Plano geral (A), detalhe (C) e variação de luz (D) são outros quadros do shot list, não o hero shot.</div>
+</div>
+
+<div class="q-block">
+  <div class="q-num">Questão 26</div>
+  <div class="q-text">Primeiro critério de descarte na curadoria em equipe.</div>
+  <div class="q-answer">✓ Resposta: C — Descartar primeiro o que falhou tecnicamente (foco, corte, distração).</div>
+  <div class="q-note">A curadoria começa pelo técnico; só depois compara mensagem e monta a sequência (A e D vêm depois). Escolher “a mais bonita isolada” (B) ignora a narrativa.</div>
+</div>
+
+<div class="q-block">
+  <div class="q-num">Questão 27</div>
+  <div class="q-text">Papel que move a fonte de luz, ajusta fundo/objetos e controla distrações.</div>
+  <div class="q-answer">✓ Resposta: A — O papel de luz e set.</div>
+  <div class="q-note">Câmera (B) enquadra e registra variações; direção (C) cuida da intenção; registro (D) anota decisões e nomes de arquivos.</div>
+</div>
+
+<h2>8 · Como conduzir a correção coletiva (Bloco 4)</h2>
+<p>Para cada questão: leia o enunciado, peça a resposta da turma, revele o gabarito e explique por que a correta está certa e por que o distrator engana. Priorize as questões mais discutidas — não é obrigatório seguir a ordem. Deixe a turma defender a resposta antes de revelar; é onde o aprendizado acontece.</p>
+
+<div class="callout">
+  <strong>Mapa de reforço:</strong> anote os eixos com mais erros. Eles indicam o que revisar antes da Aula 11 (Projeto Integrador · Ensaio em Trios), em que estes fundamentos voltam na prática.
+</div>
+
+<div class="footer">
+  Gabarito do Professor · Aula 10 · Prova Final da UC · Fundamentos de Fotografia Digital e de Semiótica · Técnico em Multimídia · SENAI · Prof. Daniel Mayer · 2026
+</div>
+
+</body>
+</html>
