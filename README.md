@@ -53,12 +53,17 @@ A partir do **Home** (`index.html`):
 ├── uc-fotografia-digital.html                   # Dashboard · 12 aulas da UC
 ├── Aula_01_A_Imagem_Atraves_do_Tempo.html       # Aula 01 · apresentação
 ├── Aula_02_Formacao_da_Imagem_Digital.html      # Aula 02 · apresentação
+├── Aula_02_Gabarito_Professor.html              # Gabarito do professor (Aula 02)
 ├── Aula_03_Semiotica_I_O_Universo_dos_Signos.html
 ├── Aula_04_Semiotica_II_Leitura_Semiotica_da_Imagem.html
 ├── Aula_04_Ficha_Leitura_Semiotica.html         # Ficha A4 de trabalho em grupo
+├── Aula_04_Banca_Imagens.html                   # Imagens da banca (impressão)
 ├── Aula_05_A_Camera_Digital.html                # Aula 05 · apresentação
 ├── Aula_06_Linguagem_Fotografica_e_Composicao.html
 ├── Aula_07_Luz_Exposicao_Triangulo.html         # Aula 07 · apresentação
+├── Aula_08_Ambiente_Luz_Natural_e_Artificial.html  # Aula 08 · apresentação
+├── Aula_09_Producao_de_Imagens_Pratica_Dirigida.html  # Aula 09 · apresentação
+├── Aula_10_Aplicacoes_Graficas_Edicao_e_Avaliacao.html  # Aula 10 · apresentação
 ├── assets/
 │   ├── home.css                                 # Design system · dashboards
 │   ├── pedagogy.css                             # Design system · apresentações
@@ -69,7 +74,10 @@ A partir do **Home** (`index.html`):
 │   ├── pedagogy-data-aula04.js                  # Dados da Aula 04
 │   ├── pedagogy-data-aula05.js                  # Dados da Aula 05
 │   ├── pedagogy-data-aula06.js                  # Dados da Aula 06
-│   └── pedagogy-data-aula07.js                  # Dados da Aula 07
+│   ├── pedagogy-data-aula07.js                  # Dados da Aula 07
+│   ├── pedagogy-data-aula08.js                  # Dados da Aula 08
+│   ├── pedagogy-data-aula09.js                  # Dados da Aula 09
+│   └── pedagogy-data-aula10.js                  # Dados da Aula 10
 └── imagens/                                     # Assets visuais
 ```
 
