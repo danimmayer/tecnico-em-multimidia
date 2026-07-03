@@ -64,8 +64,6 @@ A partir do **Home** (`index.html`):
 ├── Aula_08_Ambiente_Luz_Natural_e_Artificial.html  # Aula 08 · apresentação
 ├── Aula_09_Producao_de_Imagens_Pratica_Dirigida.html  # Aula 09 · apresentação
 ├── Aula_10_Aplicacoes_Graficas_Edicao_e_Avaliacao.html  # Aula 10 · apresentação
-├── Aula_10_Prova_Multipla_Escolha.html          # Prova final A4 (Aulas 01–09)
-├── Aula_10_Gabarito_Professor.html              # Gabarito da prova final
 ├── assets/
 │   ├── home.css                                 # Design system · dashboards
 │   ├── pedagogy.css                             # Design system · apresentações
