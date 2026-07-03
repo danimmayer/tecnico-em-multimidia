@@ -196,6 +196,14 @@
       chip.setAttribute('title', health.msg || 'No ritmo');
     }
 
+    const pace = $('#pPaceDot');
+    if (pace) {
+      pace.classList.remove('is-ok', 'is-warn', 'is-err');
+      pace.classList.add('is-' + health.level);
+      pace.setAttribute('title', health.msg || 'No ritmo');
+      pace.setAttribute('aria-label', 'Ritmo da aula: ' + (health.msg || 'No ritmo'));
+    }
+
     const comp = $('#pCompCount');
     if (comp) {
       const seen = countSeenCompetencies();
@@ -1423,6 +1431,19 @@
       </div>
     `;
     document.body.appendChild(bar);
+
+    // Indicador discreto de ritmo no centro da dock inferior.
+    // Usa o mesmo diagnóstico do Presenter/TopBar, sem exigir abrir o painel.
+    const paceDot = document.createElement('div');
+    paceDot.id = 'pPaceDot';
+    paceDot.className = 'is-ok';
+    paceDot.setAttribute('role', 'status');
+    paceDot.setAttribute('aria-live', 'polite');
+    paceDot.setAttribute('aria-label', 'Ritmo da aula: No ritmo');
+    paceDot.setAttribute('title', 'No ritmo');
+    const bottomBar = document.getElementById('bottomBar');
+    if (bottomBar) bottomBar.appendChild(paceDot);
+    else document.body.appendChild(paceDot);
 
     // Presenter panel
     const pres = document.createElement('div');
