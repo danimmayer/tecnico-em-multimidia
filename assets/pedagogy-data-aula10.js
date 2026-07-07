@@ -4,9 +4,11 @@
  * =======================================================================
  * Aula de fechamento técnico da UC. Bloco 1 revisa o percurso e mostra a
  * fotografia em cinema, publicidade e design. Bloco 2 demonstra ferramentas
- * gratuitas de edição, formatos de exportação e ética na edição. Blocos 3 e 4
- * aplicam e corrigem a prova de múltipla escolha (Aulas 01 a 09).
- * Recursos: projetor, computadores, prova impressa e gabarito.
+ * gratuitas de edição, formatos de exportação e ética na edição. Bloco 3
+ * aplica a prova de múltipla escolha (Aulas 01 a 10), e o Bloco 4 finaliza
+ * com correção coletiva e encerramento.
+ * Recursos: projetor, computadores do laboratório, celulares, caderno, caneta,
+ * prova impressa e gabarito.
  * ======================================================================= */
 (function (global) {
   'use strict';
@@ -39,7 +41,7 @@
     },
     'CT-AVALIA': {
       tipo: 'tecnica',
-      titulo: 'Sintetizar e aplicar os conteúdos das Aulas 01 a 09 em avaliação individual de múltipla escolha',
+      titulo: 'Sintetizar e aplicar os conteúdos das Aulas 01 a 10 em avaliação individual de múltipla escolha',
       curto: 'Avaliação'
     },
     'CS-INTEGRIDADE': {
@@ -72,29 +74,29 @@
       inicio: '20:30',
       fim: '21:30',
       titulo: 'Prova de múltipla escolha',
-      descricao: 'Avaliação individual cobrindo todo o conteúdo da UC, das Aulas 01 a 09.'
+      descricao: 'Avaliação individual cobrindo todo o conteúdo da UC, das Aulas 01 a 10.'
     },
     {
       id: 4,
       label: 'Bloco 4',
       inicio: '21:30',
-      fim: '22:30',
+      fim: '22:00',
       titulo: 'Finalização e correção coletiva',
-      descricao: 'Conclusão da prova, correção coletiva e discussão das respostas.'
+      descricao: 'Correção coletiva das respostas e encerramento.'
     }
   ];
 
   const NOTES = {
     'Capa': {
-      fala: 'Boa noite. Esta é a última aula técnica da UC. Hoje fechamos o ciclo: vemos onde a fotografia trabalha no mundo real — cinema, publicidade e design — conhecemos ferramentas gratuitas de edição e aplicamos a prova que reúne tudo das Aulas 01 a 09.',
-      dica: 'Abra deixando claro que a noite tem dois climas: exposição rápida nos dois primeiros blocos e avaliação individual nos dois últimos. Peça computadores/celulares carregados para a demonstração de edição e confirme prova impressa e gabarito em mãos.'
+      fala: 'Boa noite. Esta é a última aula técnica da UC. Hoje fechamos o ciclo: vemos onde a fotografia trabalha no mundo real — cinema, publicidade e design — conhecemos ferramentas gratuitas de edição e aplicamos a prova que reúne tudo das Aulas 01 a 10.',
+      dica: 'Abra deixando claro que a noite termina às 22:00: exposição rápida nos dois primeiros blocos, prova individual das 20:30 às 21:30 e correção coletiva no encerramento. Peça computadores/celulares carregados para a demonstração de edição e confirme prova impressa e gabarito em mãos.'
     },
     'Programação da Noite': {
-      fala: 'A noite tem quatro blocos. Primeiro, revisão e aplicações gráficas. Depois do lanche, ferramentas de edição. No terceiro bloco começa a prova de múltipla escolha. No quarto, finalizamos a prova e corrigimos juntos.',
+      fala: 'A noite tem quatro blocos. Primeiro, revisão e aplicações gráficas. Depois do lanche, ferramentas de edição. No terceiro bloco fazemos a prova de múltipla escolha. No quarto, corrigimos juntos e encerramos a aula às 22:00.',
       dica: '<strong>Alvo de condução:</strong> chegar ao slide "Chamada Bloco 3" pontualmente às 20:30 para preservar uma hora cheia de prova. O lanche entra logo após o Bloco 1 (19:30–19:50). Se a edição atrasar, corte demonstração, não tempo de prova.'
     },
     'Revisão Relâmpago': {
-      fala: 'Antes de tudo, uma revisão relâmpago do percurso. Saímos da história e da ética da imagem, passamos pela formação da imagem digital, semiótica, câmera, composição, exposição, luz e produção. A prova de hoje cobre exatamente esse arco.',
+      fala: 'Antes de tudo, uma revisão relâmpago do percurso. Saímos da história e da ética da imagem, passamos pela formação da imagem digital, semiótica, câmera, composição, exposição, luz, produção e aplicações gráficas. A prova de hoje cobre exatamente esse arco das Aulas 01 a 10.',
       dica: 'Conduza em ritmo de quiz oral: aponte cada eixo e peça uma palavra-chave da turma. Não reabra explicação longa; o objetivo é ativar memória antes da prova.'
     },
     'Aplicações Gráficas': {
@@ -134,19 +136,19 @@
       dica: 'Esta é a capacidade socioemocional da aula: integridade e transparência. Traga um caso simples (foto de produto x foto jornalística) e peça à turma onde fica o limite. Prepare o terreno para a integridade na própria prova.'
     },
     'Chamada Bloco 3': {
-      fala: 'Agora começa a avaliação individual. A prova é de múltipla escolha e cobre todo o conteúdo das Aulas 01 a 09. É individual, sem consulta, e vale como fechamento técnico da UC.',
+      fala: 'Agora começa a avaliação individual. A prova é de múltipla escolha e cobre todo o conteúdo das Aulas 01 a 10. É individual, sem consulta, e vale como fechamento técnico da UC.',
       dica: 'Faça a chamada, distribua a prova impressa e o cartão de respostas. Confirme que cada aluno tem caneta. A partir daqui, fale o mínimo: o protagonismo é da prova.'
     },
     'Como Funciona a Prova': {
       fala: 'A prova é individual e sem consulta. Leia cada questão inteira antes de marcar, elimine as alternativas claramente erradas e escolha a melhor resposta. Cada questão tem uma única alternativa correta. Marque com caneta e revise antes de entregar.',
-      dica: 'Combine regras de sala: silêncio, celular guardado, dúvida apenas com o professor. Avise o tempo previsto e que a prova continua no Bloco 4 se necessário. Distribua a versão impressa e o gabarito fica só com você.'
+      dica: 'Combine regras de sala: silêncio, celular guardado, dúvida apenas com o professor. Avise o tempo previsto, reforce que a revisão precisa caber dentro da hora e guarde o Bloco 4 para a correção coletiva. Distribua a versão impressa e o gabarito fica só com você.'
     },
     'O que a Prova Cobre': {
-      fala: 'A prova é equilibrada entre os eixos da UC: história e ética, imagem digital, semiótica, câmera e composição, exposição e luz, e produção. Quem acompanhou as nove aulas tem repertório para responder tudo.',
+      fala: 'A prova é equilibrada entre os eixos da UC: história e ética, imagem digital, semiótica, câmera e composição, exposição e luz, produção e aplicações gráficas. Quem acompanhou as dez aulas tem repertório para responder tudo.',
       dica: 'Mostre o mapa de cobertura para reduzir ansiedade: nenhum tema é surpresa. Se algum aluno faltou a aulas, oriente focar nos eixos que domina e tentar todas as questões.'
     },
     'Foco na Prova': {
-      fala: 'Dois lembretes finais antes de começar: gerencie o tempo, não trave em uma questão difícil — marque, siga e volte depois. E confie no que você praticou nas aulas. Bom trabalho.',
+      fala: 'Dois lembretes finais antes de começar: gerencie o tempo, mire quatro a cinco minutos por item, não trave em uma questão difícil — marque, siga e volte depois. E confie no que você praticou nas aulas. Bom trabalho.',
       dica: 'Reforce a integridade: prova individual mede o que cada um aprendeu e ajuda a planejar o projeto integrador. Dê o sinal de início e circule discretamente pela sala.'
     },
     'Chamada Bloco 4': {
