@@ -75,8 +75,8 @@
       <span class="help-desc">Voltar ao Home do curso</span>
     </div>
     <div class="help-row">
-      <span><kbd>1</kbd> a <kbd>9</kbd></span>
-      <span class="help-desc">Abrir aula pelo número</span>
+      <span><kbd>1</kbd> a <kbd>9</kbd> · <kbd>0</kbd></span>
+      <span class="help-desc">Abrir aulas 01 a 10 pelo número</span>
     </div>
     <div class="help-row">
       <span><kbd>?</kbd></span>
@@ -188,16 +188,18 @@
     {
       num: '11',
       titulo: 'Projeto Integrador · Ensaio em Trios',
-      descricao: 'Desenvolvimento presencial do ensaio fotográfico com análise semiótica. 10 trios + 1 quarteto.',
-      tags: ['Projeto', 'Trios', 'Ensaio'],
-      status: 'em breve'
+      descricao: 'Projeto integrador em trios: briefing, moodboard, captura, curadoria, memorial semiótico e defesa.',
+      tags: ['Projeto', 'Trios', 'Semiótica'],
+      status: 'pronta',
+      url: 'Aula_11_Projeto_Integrador_Ensaio_Fotografico_em_Trios.html'
     },
     {
       num: '12',
-      titulo: 'Apresentações Finais e Encerramento',
+      titulo: 'Apresentações Finais, Recuperação e Encerramento',
       descricao: 'Defesa oral dos ensaios, avaliação por pares, prova de recuperação e encerramento da UC.',
       tags: ['Apresentação', 'Recuperação', 'Encerramento'],
-      status: 'em breve'
+      status: 'pronta',
+      url: 'Aula_12_Apresentacoes_Finais_Recuperacao_e_Encerramento.html'
     }
   ];
 
@@ -248,7 +250,7 @@
   /* ------------------------------------------------------------------ */
   /* HOTKEYS                                                             */
   /* H: Home do curso                                                    */
-  /* 1-9: Abre aula correspondente (se pronta)                           */
+  /* 1-9: Abre aula correspondente; 0 abre Aula 10                        */
   /* ?: Help                                                             */
   /* Esc: fecha help                                                     */
   /* ------------------------------------------------------------------ */
@@ -276,10 +278,14 @@
       window.location.href = 'index.html';
       return;
     }
-    // 1-9 abre aula (01-09)
+    // 1-9 abre aula (01-09); 0 abre Aula 10
     if (/^[1-9]$/.test(e.key)) {
       const num = '0' + e.key;
       const a = AULAS.find(x => x.num === num && x.status === 'pronta');
+      if (a) { e.preventDefault(); window.location.href = a.url; }
+    }
+    if (e.key === '0') {
+      const a = AULAS.find(x => x.num === '10' && x.status === 'pronta');
       if (a) { e.preventDefault(); window.location.href = a.url; }
     }
   });
