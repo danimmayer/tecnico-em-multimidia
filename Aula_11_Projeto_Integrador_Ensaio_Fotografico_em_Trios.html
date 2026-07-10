@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aula 11 · Projeto Integrador: Ensaio Fotográfico em Trios</title>
+<title>Aula 11 · Projeto Integrador: Ensaio Fotográfico em Equipes</title>
 <link rel="icon" href="data:,">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -21,8 +21,7 @@ body { font-family: var(--font); background: var(--dark); color: var(--cream); o
 .slide {
   width: 100vw; height: 100vh; position: absolute; inset: 0; overflow: hidden;
   background:
-    radial-gradient(circle at 82% 18%, rgba(130,169,216,0.12), transparent 30%),
-    radial-gradient(circle at 16% 86%, rgba(124,196,154,0.08), transparent 27%),
+    linear-gradient(110deg, rgba(130,169,216,0.045), transparent 42%),
     linear-gradient(135deg, #141414 0%, #191815 52%, #101112 100%);
   opacity: 0; pointer-events: none; transition: opacity 0.35s ease; display: flex; flex-direction: column;
 }
@@ -271,6 +270,157 @@ body { font-family: var(--font); background: var(--dark); color: var(--cream); o
   font-size: 14px;
   line-height: 1.35;
 }
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.mission-card {
+  min-height: 218px;
+  padding: 20px;
+  border-top: 3px solid var(--accent);
+  background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.022));
+  box-shadow: inset 0 1px rgba(255,255,255,0.08), 0 18px 34px rgba(0,0,0,0.11);
+}
+.mission-card .mission-id {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+.mission-card strong {
+  display: block;
+  color: var(--cream);
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+.mission-card p {
+  color: var(--cream-muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+.mission-card .kit {
+  display: block;
+  margin-top: 14px;
+  color: var(--blue);
+  font-size: 12px;
+  line-height: 1.35;
+}
+.route-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+.route-card {
+  min-width: 0;
+  background: rgba(255,255,255,0.025);
+  box-shadow: 0 20px 38px rgba(0,0,0,0.22);
+}
+.route-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+.route-card .route-copy { padding: 14px 16px 16px; }
+.route-card strong {
+  display: block;
+  color: var(--cream);
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+.route-card span {
+  color: var(--cream-muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+.release-card {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  gap: 24px;
+  align-items: stretch;
+}
+.release-time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+  border: 1px solid rgba(231,182,110,0.26);
+  background: rgba(231,182,110,0.055);
+}
+.release-time .time {
+  font-family: var(--font-mono);
+  color: var(--amber);
+  font-size: 58px;
+  line-height: 1;
+}
+.release-time strong { margin-top: 12px; color: var(--cream); font-size: 19px; }
+.release-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.release-field {
+  min-height: 112px;
+  padding: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.025);
+}
+.release-field .label {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+.release-field strong { display: block; color: var(--cream); font-size: 17px; }
+.release-field span { display: block; color: var(--cream-muted); font-size: 13px; line-height: 1.35; margin-top: 5px; }
+.deadline-band {
+  display: grid;
+  grid-template-columns: 0.55fr 1.45fr;
+  gap: 22px;
+  align-items: center;
+  padding: 22px 26px;
+  border-left: 4px solid var(--red);
+  background: linear-gradient(90deg, rgba(217,138,138,0.13), rgba(255,255,255,0.02));
+}
+.deadline-band .time {
+  font-family: var(--font-mono);
+  font-size: 50px;
+  color: var(--red);
+  line-height: 1;
+}
+.deadline-band strong { display: block; color: var(--cream); font-size: 21px; margin-bottom: 5px; }
+.deadline-band span { color: var(--cream-muted); font-size: 15px; line-height: 1.4; }
+.evaluation-panel {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 26px;
+  align-items: center;
+  min-height: 320px;
+}
+.evaluation-clock {
+  text-align: center;
+  padding: 28px 16px;
+  border-top: 3px solid var(--blue);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.evaluation-clock .time { font-family: var(--font-mono); font-size: 58px; color: var(--blue); }
+.evaluation-clock span { display: block; color: var(--cream-muted); font-size: 16px; margin-top: 8px; }
+.decision-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.decision-card {
+  min-height: 188px;
+  padding: 20px;
+  border-top: 3px solid var(--green);
+  background: rgba(255,255,255,0.035);
+}
+.decision-card.fix { border-top-color: var(--amber); }
+.decision-card strong { display: block; color: var(--cream); font-size: 18px; margin-bottom: 8px; }
+.decision-card span { color: var(--cream-muted); font-size: 14px; line-height: 1.45; }
 .slide[data-title^="Chamada"] .slide-inner { justify-content: center; }
 .slide[data-title^="Chamada"] .t-title { font-size: 58px !important; line-height: 1.12; overflow: visible; }
 
@@ -303,6 +453,19 @@ body { font-family: var(--font); background: var(--dark); color: var(--cream); o
 .help-key kbd { display: inline-block; min-width: 26px; padding: 3px 6px; border: 1px solid rgba(255,255,255,0.14); border-radius: 4px; color: var(--accent); font-family: var(--font-mono); font-size: 12px; text-align: center; background: rgba(255,255,255,0.04); }
 .help-desc { color: var(--cream-muted); font-size: 14px; }
 
+@media (min-width: 761px) and (max-height: 780px) {
+  .slide-inner { padding: 32px 56px 48px; }
+  .slide-header { margin-bottom: 6px; }
+  .slide-body { gap: 15px; }
+  .t-title { font-size: 36px; }
+  .t-title-lg { font-size: 48px; }
+  .t-subtitle { font-size: 17px; }
+  .hero-visual { height: clamp(170px, 31vh, 280px); margin-bottom: 14px; }
+  .route-card img { aspect-ratio: 16 / 8.6; }
+  .route-card .route-copy { padding: 10px 14px 12px; }
+  .highlight-box { padding: 12px 18px; font-size: 16px; }
+}
+
 @media (max-width: 1100px) {
   .slide-inner { padding: 42px 56px 56px; }
   .flow-line, .formula, .timer-grid { grid-template-columns: repeat(3, 1fr); }
@@ -313,9 +476,10 @@ body { font-family: var(--font); background: var(--dark); color: var(--cream); o
   .t-title { font-size: 34px; }
   .t-title-lg { font-size: 42px; }
   .two-col, .two-col.wide-left, .two-col.wide-right, .image-led, .image-led.reverse, .deliverable-board, .formula { grid-template-columns: 1fr; }
-  .three-col, .brief-grid, .check-grid, .ethics-grid { grid-template-columns: 1fr; }
+  .three-col, .brief-grid, .check-grid, .ethics-grid, .mission-grid { grid-template-columns: 1fr; }
   .flow-line, .software-grid, .role-wheel, .timer-grid { grid-template-columns: repeat(2, 1fr); }
   .routine-strip { grid-template-columns: repeat(2, 1fr); }
+  .release-card, .evaluation-panel { grid-template-columns: 1fr; }
 }
 @media (max-width: 760px) {
   body { overflow: auto; height: auto; }
@@ -329,8 +493,8 @@ body { font-family: var(--font); background: var(--dark); color: var(--cream); o
   .t-title { font-size: clamp(28px, 8vw, 34px); line-height: 1.08; }
   .t-title-lg { font-size: clamp(34px, 9vw, 42px); line-height: 1.05; }
   .t-subtitle { font-size: 15px; line-height: 1.36; }
-  .schedule-grid, .deliverable-list, .flow-line, .software-grid, .role-wheel, .timer-grid, .brief-grid, .check-grid, .formula { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
-  .ethics-grid, .three-col { grid-template-columns: 1fr; gap: 8px; }
+  .schedule-grid, .deliverable-list, .flow-line, .software-grid, .role-wheel, .timer-grid, .brief-grid, .check-grid, .formula, .release-fields, .decision-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .ethics-grid, .three-col, .mission-grid, .route-grid { grid-template-columns: 1fr; gap: 8px; }
   .routine-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
   .flow-line[style] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
   .card, .schedule-card, .deliverable-item, .flow-step, .brief-cell, .role-card, .check-card, .software-card, .ethics-card, .timer-card, .formula-step { min-height: 0; padding: 11px 12px; }
@@ -346,8 +510,18 @@ body { font-family: var(--font); background: var(--dark); color: var(--cream); o
   .slide[data-title^="Chamada"] .t-subtitle { max-width: 100% !important; }
   .hero-visual { width: min(300px, 82vw); height: auto; min-height: 0; margin-bottom: 12px; }
   .hero-visual img, .photo-panel img, .photo-panel.contain img { max-height: 190px; }
+  .route-card img { max-height: 170px; }
   .image-led, .image-led.reverse { gap: 14px; }
   .big-number { font-size: 48px; }
+  .mission-card { min-height: 0; padding: 12px; }
+  .mission-card strong { font-size: 15px; }
+  .mission-card p, .mission-card .kit { font-size: 12px; }
+  .release-time { min-height: 150px; }
+  .release-time .time, .evaluation-clock .time { font-size: 42px; }
+  .release-field, .decision-card { min-height: 0; padding: 12px; }
+  .deadline-band { grid-template-columns: 1fr; gap: 8px; padding: 14px 16px; }
+  .deadline-band .time { font-size: 38px; }
+  .evaluation-panel { gap: 12px; min-height: 0; }
   .closing-title { font-size: 1.8rem; }
   .closing-sub { font-size: 14px; line-height: 1.4; }
   .next-class { padding: 9px 14px; margin-top: 8px; }
@@ -367,7 +541,7 @@ body { font-family: var(--font); background: var(--dark); color: var(--cream); o
   .p-expand[data-depth="2"], .p-expand[data-depth="3"] { display: block !important; }
 }
 </style>
-<link rel="stylesheet" href="assets/pedagogy.css?v=aula11-12-1">
+<link rel="stylesheet" href="assets/pedagogy.css?v=aula11-12-2">
 </head>
 <body>
 
@@ -375,21 +549,21 @@ body { font-family: var(--font); background: var(--dark); color: var(--cream); o
 
 <div class="slide title-slide active" data-title="Capa" data-bloco="1" data-competencias="CK-PROJETO,CT-FOTO,CK-SEMIOTICA">
   <div class="slide-inner"><div class="title-content">
-    <div class="hero-visual"><img src="imagens/aula08/set-organizado-luz.png" alt="Set de fotografia organizado com luz, suporte e celular"></div>
+    <div class="hero-visual"><img src="imagens/aula11/equipe-em-producao.jpg" alt="Equipe de cinco estudantes dividindo câmera, direção, luz, registro e arquivos em uma produção fotográfica"></div>
     <div class="t-eyebrow">Aula 11 · UC Fundamentos de Fotografia Digital e de Semiótica</div>
-    <div class="t-title-lg">Projeto Integrador:<br>Ensaio Fotográfico em Trios</div>
-    <p class="t-subtitle" style="max-width:820px;margin:18px auto 0;">Planejar, produzir, selecionar e defender um ensaio curto com intenção visual e análise semiótica.</p>
+    <div class="t-title-lg">Projeto Integrador:<br>Ensaio Fotográfico em Equipes</div>
+    <p class="t-subtitle" style="max-width:820px;margin:18px auto 0;">Uma missão de campo curta: planejar antes, capturar com função e voltar com evidências para defender.</p>
     <div class="closing-divider" style="margin:32px auto 14px;"></div><div class="instructor-tag">Prof. Daniel Mayer · SENAI · Técnico em Multimídia</div>
   </div></div>
 </div>
 
 <div class="slide" data-title="Programação da Noite" data-bloco="1" data-competencias="CS-TEMPO,CS-PROF">
-  <div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">19:00 às 22:30 · celulares, cadernos, notebooks, câmera e ring lights</div><div class="t-title">Programação da Noite</div></div>
+  <div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">19:00 às 22:30 · com avaliação às 21:00</div><div class="t-title">A noite tem uma pausa.<br>O projeto continua com controle.</div></div>
   <div class="slide-body"><div class="schedule-grid">
-    <div class="schedule-card"><div class="time">19:00–19:30</div><strong>Projeto e grupos</strong><span>Chamada, requisitos, critérios e formação dos 10 trios + 1 quarteto.</span></div>
-    <div class="schedule-card"><div class="time">19:30–20:30</div><strong>Briefing e moodboard</strong><span>Lanche no início do bloco; tema, referências, shot list e matriz semiótica.</span></div>
-    <div class="schedule-card"><div class="time">20:30–21:30</div><strong>Produção fotográfica</strong><span>Captura nos espaços permitidos da instituição, com funções e tempo controlados.</span></div>
-    <div class="schedule-card"><div class="time">21:30–22:30</div><strong>Curadoria e memorial</strong><span>Seleção, edição base, análise semiótica e preparação da defesa oral.</span></div>
+    <div class="schedule-card"><div class="time">19:00–19:30</div><strong>Projeto e equipes</strong><span>Chamada, critérios e formação de até 7 equipes, conforme as câmeras disponíveis.</span></div>
+    <div class="schedule-card"><div class="time">19:30–20:30</div><strong>Pré-produção</strong><span>Lanche no início; missão, briefing, referência, shot list e cartão de liberação.</span></div>
+    <div class="schedule-card"><div class="time">20:30–21:30</div><strong>Captura + avaliação</strong><span>Sprint até 20:50, check-in, avaliação 21:00–21:20 e correção curta na volta.</span></div>
+    <div class="schedule-card"><div class="time">21:30–22:30</div><strong>Curadoria e defesa</strong><span>Seleção, edição base, memorial, ensaio da fala e backup.</span></div>
   </div><div class="routine-strip" aria-label="Rotina do projeto"><div class="routine-step"><strong>Definir</strong><span>Tema e intenção visual.</span></div><div class="routine-step"><strong>Produzir</strong><span>Captura com função clara.</span></div><div class="routine-step"><strong>Selecionar</strong><span>Sequência e edição coerente.</span></div><div class="routine-step"><strong>Defender</strong><span>Memorial e fala curta.</span></div></div></div></div>
 </div>
 
@@ -397,51 +571,55 @@ body { font-family: var(--font); background: var(--dark); color: var(--cream); o
   <div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">Produto final para a Aula 12</div><div class="t-title">Um ensaio pequeno,<br>coerente e defendável.</div></div>
   <div class="slide-body"><div class="deliverable-board"><div class="card centered" style="flex-direction:column;"><div class="micro-label">ENTREGA BASE</div><div class="big-number">5</div><div style="font-size:23px;color:var(--cream);line-height:1.3;">imagens finais<br>+ memorial curto</div></div><div class="deliverable-list">
     <div class="deliverable-item"><strong>Sequência visual</strong><span>Cinco imagens em ordem: abrir, desenvolver, fechar.</span></div>
-    <div class="deliverable-item"><strong>Prancha de processo</strong><span>Moodboard, shot list ou contact sheet resumido.</span></div>
-    <div class="deliverable-item"><strong>Memorial semiótico</strong><span>Intenção, técnica, signos e justificativa da curadoria.</span></div>
-    <div class="deliverable-item"><strong>Extensão possível</strong><span>Se sobrar tempo, até 7 imagens sem perder unidade.</span></div>
-  </div></div><div class="highlight-box"><strong>Regra de profundidade:</strong> cada imagem final precisa ter função na sequência, decisão técnica visível e pelo menos uma evidência semiótica defensável.</div></div></div>
+    <div class="deliverable-item"><strong>Prova de processo</strong><span>Foto do briefing + shot list e uma grade de candidatas.</span></div>
+    <div class="deliverable-item"><strong>Memorial curto</strong><span>Tema, intenção, técnica, signos e justificativa da ordem.</span></div>
+    <div class="deliverable-item"><strong>Fala dividida</strong><span>Cada integrante responde por uma parte da defesa.</span></div>
+  </div></div><div class="highlight-box"><strong>Pronto para a Aula 12:</strong> cinco imagens numeradas, um arquivo de processo, memorial em até seis tópicos e backup em dois lugares.</div></div></div>
 </div>
 
-<div class="slide" data-title="Contrato de Trio" data-bloco="1" data-competencias="CS-PROF,CS-TEMPO,CT-FOTO"><div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">Três funções, rodízio real</div><div class="t-title">Todo mundo decide<br>e todo mundo entrega.</div></div><div class="slide-body"><div class="three-col"><div class="role-card"><div class="icon">CAM</div><strong>Câmera</strong><span>Controla enquadramento, foco, exposição e variações.</span></div><div class="role-card"><div class="icon">DIR</div><strong>Direção</strong><span>Garante intenção, tema, postura e decisão de cena.</span></div><div class="role-card"><div class="icon">SET</div><strong>Luz + registro</strong><span>Cuida de fonte, fundo, segurança, arquivos e anotações.</span></div></div><div class="highlight-box"><strong>Rodízio:</strong> a cada nova foto, troquem quem segura a câmera e quem dirige. No quarteto, a quarta pessoa registra processo e controla tempo.</div></div></div></div>
+<div class="slide" data-title="Contrato de Equipe" data-bloco="1" data-competencias="CS-PROF,CS-TEMPO,CT-FOTO"><div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">Quatro funções-base · equipes de tamanho variável</div><div class="t-title">Todo mundo tem função<br>e participa das decisões.</div></div><div class="slide-body"><div class="four-col"><div class="role-card"><div class="icon">CAM</div><strong>Câmera</strong><span>Controla enquadramento, foco, exposição e variações.</span></div><div class="role-card"><div class="icon">DIR</div><strong>Direção</strong><span>Garante intenção, cena, postura e continuidade visual.</span></div><div class="role-card"><div class="icon">LUZ</div><strong>Luz + set</strong><span>Cuida de fonte, fundo, objetos, segurança e circulação.</span></div><div class="role-card"><div class="icon">PROD</div><strong>Produção + tempo</strong><span>Controla shot list, alarme, registro e devolução do equipamento.</span></div></div><div class="highlight-box"><strong>Equipe com cinco ou mais:</strong> separe registro de processo e backup. No meio do sprint, câmera e direção trocam para ampliar a participação.</div></div></div></div>
 
-<div class="slide" data-title="Chamada Bloco 2" data-bloco="2" data-competencias="CK-SEMIOTICA,CT-ANALISE"><div class="slide-inner centered"><div><div class="call-badge">CHAMADA · BLOCO 2</div><div class="t-title" style="font-size:38px;">Briefing, Moodboard<br>e Matriz Semiótica</div><p class="t-subtitle" style="max-width:680px;margin:12px auto 0;">O ensaio nasce no papel antes de sair pela instituição.</p></div></div></div>
+<div class="slide" data-title="Chamada Bloco 2" data-bloco="2" data-competencias="CK-SEMIOTICA,CT-ANALISE"><div class="slide-inner centered"><div><div class="call-badge">CHAMADA · BLOCO 2</div><div class="t-title" style="font-size:38px;">Missão, Briefing<br>e Plano de Captura</div><p class="t-subtitle" style="max-width:680px;margin:12px auto 0;">O lanche abre o bloco. Às 19:50, cada equipe começa a pré-produção.</p></div></div></div>
 
-<div class="slide" data-title="Briefing Semiótico" data-bloco="2" data-competencias="CK-SEMIOTICA,CT-ANALISE,CT-TEXTO"><div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">Seis linhas no caderno</div><div class="t-title">O grupo precisa saber<br>o que quer fazer alguém perceber.</div></div><div class="slide-body"><div class="brief-grid"><div class="brief-cell"><div class="k">01</div><strong>Tema</strong><span>Qual recorte visual cabe hoje?</span></div><div class="brief-cell"><div class="k">02</div><strong>Intenção</strong><span>Queremos comunicar que...</span></div><div class="brief-cell"><div class="k">03</div><strong>Público</strong><span>Quem precisa entender a sequência?</span></div><div class="brief-cell"><div class="k">04</div><strong>Clima</strong><span>Limpo, técnico, afetivo, gráfico, documental.</span></div><div class="brief-cell"><div class="k">05</div><strong>Evidências</strong><span>Que sinais visuais vão provar a leitura?</span></div><div class="brief-cell"><div class="k">06</div><strong>Limites</strong><span>Tempo, espaço, autorização e materiais.</span></div></div><div class="p-expand" data-depth="2"><div class="p-expand-head"><span class="p-expand-tag">Modelo</span><span>Frase central</span></div><div class="p-expand-body"><p>Queremos comunicar que o processo criativo depende de organização, tentativa e escolha. Evidências: caderno, mão em ação, ferramenta, luz de mesa, sequência antes/depois e detalhe de textura.</p></div></div></div></div></div>
+<div class="slide" data-title="Missões de Ensaio" data-bloco="2" data-competencias="CK-PROJETO,CK-APLIC,CK-SEMIOTICA"><div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">Escolha rápida · tema livre continua possível com validação</div><div class="t-title">Três missões para sair<br>do zero sem ficar raso.</div></div><div class="slide-body"><div class="mission-grid"><div class="mission-card"><div class="mission-id">MISSÃO 01 · PROCESSO</div><strong>Como uma ideia ganha forma?</strong><p>Fotografe gesto, ferramenta, tentativa, marca e resultado. Construa uma sequência de transformação.</p><span class="kit">KIT: notebook, mesa digitalizadora, caderno, celular ou câmera.</span></div><div class="mission-card"><div class="mission-id">MISSÃO 02 · LUZ</div><strong>A luz muda o sentido.</strong><p>Use o mesmo assunto com direções de luz diferentes e escolha cinco imagens que sustentem uma leitura.</p><span class="kit">KIT: ring light, janela, objetos, celular ou câmera.</span></div><div class="mission-card"><div class="mission-id">MISSÃO 03 · RASTROS</div><strong>O campus sem retrato direto.</strong><p>Conte uma presença por índices: sombras, marcas, objetos, caminhos, organização e sinais de uso.</p><span class="kit">KIT: celular ou câmera, caderno e área previamente autorizada.</span></div></div><div class="highlight-box"><strong>Recorte é profundidade:</strong> escolha uma pergunta visual que possa ser respondida em cinco imagens, dentro do tempo e da zona permitida.</div></div></div></div>
+
+<div class="slide" data-title="Briefing Semiótico" data-bloco="2" data-competencias="CK-SEMIOTICA,CT-ANALISE,CT-TEXTO"><div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">Quatro respostas · oito minutos</div><div class="t-title">A equipe precisa saber<br>o que vai provar visualmente.</div></div><div class="slide-body"><div class="formula"><div class="formula-step"><div class="step">01</div><strong>Pergunta</strong><span>Que pergunta o ensaio responde?</span></div><div class="formula-step"><div class="step">02</div><strong>Intenção</strong><span>Queremos fazer perceber que...</span></div><div class="formula-step"><div class="step">03</div><strong>Evidências</strong><span>Quais objetos, rastros, gestos e luzes provam?</span></div><div class="formula-step"><div class="step">04</div><strong>Limites</strong><span>Zona, autorização, materiais e retorno.</span></div></div><div class="p-expand" data-depth="2"><div class="p-expand-head"><span class="p-expand-tag">Modelo</span><span>Frase central</span></div><div class="p-expand-body"><p>Pergunta: como uma ideia ganha forma? Queremos mostrar que criar envolve tentativa e escolha. Evidências: rascunho, mão em ação, ferramenta, marca de correção e resultado. Zona: sala. Retorno: 20:50.</p></div></div></div></div></div>
 
 <div class="slide" data-title="Pesquisa e Moodboard" data-bloco="2" data-competencias="CK-APLIC,CT-ANALISE"><div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">Referência não é cópia</div><div class="t-title">Moodboard traduz palavra<br>em decisão visual.</div></div><div class="slide-body"><div class="image-led"><div class="photo-panel contain img-clickable" data-caption="Moodboard de pistas visuais · Use referência para decidir cor, luz, fundo, textura, gesto e corte."><img src="imagens/aula09/moodboard-pistas-visuais.png" alt="Moodboard com pistas visuais de cor, luz, fundo e textura"></div><div class="stack"><div class="highlight-box"><strong>Procure pistas:</strong> cor, luz, textura, gesto, distância, fundo, ritmo e proporção.</div><div class="software-grid"><div class="software-card"><div class="tool">Celular</div><strong>Galeria</strong><span>Prints e referências rápidas organizadas.</span></div><div class="software-card"><div class="tool">Notebook</div><strong>Canva</strong><span>Moodboard simples em uma página.</span></div><div class="software-card"><div class="tool">Caderno</div><strong>Mapa visual</strong><span>Palavras, setas e miniaturas desenhadas.</span></div><div class="software-card"><div class="tool">Critério</div><strong>Não copiar</strong><span>Extrair decisão, não reproduzir imagem.</span></div></div></div></div></div></div></div>
 
-<div class="slide" data-title="Matriz de Signos" data-bloco="2" data-competencias="CK-SEMIOTICA,CT-ANALISE"><div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">Ícone, índice e símbolo no set</div><div class="t-title">A análise semiótica<br>vira lista de captura.</div></div><div class="slide-body"><div class="three-col"><div class="card"><div class="card-title">Ícone</div><div class="card-body">O que a imagem mostra por semelhança? Objeto, gesto, rosto parcial, ferramenta, ambiente.</div></div><div class="card"><div class="card-title">Índice</div><div class="card-body">Que rastro aponta para algo? Sombra, marca, desgaste, reflexo, movimento, bagunça organizada.</div></div><div class="card"><div class="card-title">Símbolo</div><div class="card-body">Que convenção cultural aparece? Cor, uniforme, tecnologia, postura, composição, material escolar.</div></div></div><div class="highlight-box"><strong>Regra:</strong> cada imagem final precisa ter pelo menos uma evidência visual que sustente a interpretação.</div></div></div></div>
+<div class="slide" data-title="Shot List Semiótico" data-bloco="2" data-competencias="CK-SEMIOTICA,CT-FOTO,CS-TEMPO"><div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">Cinco fotos, cinco funções</div><div class="t-title">A teoria entra no set<br>como evidência planejada.</div></div><div class="slide-body"><div class="image-led reverse"><div class="stack"><div class="flow-line"><div class="flow-step"><div class="step">01</div><strong>Abrir</strong><span>Situa espaço, tema e clima.</span></div><div class="flow-step"><div class="step">02</div><strong>Ícone</strong><span>Mostra o assunto com clareza.</span></div><div class="flow-step"><div class="step">03</div><strong>Índice</strong><span>Revela rastro, gesto ou consequência.</span></div><div class="flow-step"><div class="step">04</div><strong>Símbolo</strong><span>Usa código cultural, cor ou postura.</span></div><div class="flow-step"><div class="step">05</div><strong>Fechar</strong><span>Sintetiza a leitura da equipe.</span></div></div><div class="highlight-box"><strong>Capture variações:</strong> cada item da lista recebe pelo menos três tentativas com mudança real de distância, ponto de vista ou luz.</div></div><div class="photo-panel contain img-clickable" data-caption="Shot list semiótico · A sequência transforma ícone, índice e símbolo em fotos que cumprem funções diferentes."><img src="imagens/aula09/shot-list-filmstrip.png" alt="Sequência de cinco imagens planejadas em formato de filmstrip"></div></div></div></div></div>
 
-<div class="slide" data-title="Shot List do Ensaio" data-bloco="2" data-competencias="CT-FOTO,CS-TEMPO"><div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">Antes de sair da sala</div><div class="t-title">Faça uma lista curta<br>de fotos obrigatórias.</div></div><div class="slide-body"><div class="image-led reverse"><div class="stack"><div class="three-col"><div class="card"><div class="card-title">Abrir</div><div class="card-body">Uma imagem que situa tema, espaço e clima.</div></div><div class="card"><div class="card-title">Provar</div><div class="card-body">Três imagens com detalhe, ação, luz ou signo evidente.</div></div><div class="card"><div class="card-title">Fechar</div><div class="card-body">Uma imagem que sintetiza a leitura do grupo.</div></div></div><div class="highlight-box"><strong>Regra prática:</strong> se a foto não ajuda a defender o tema, ela não entra na lista final.</div></div><div class="photo-panel contain img-clickable" data-caption="Shot list em sequência · Liste abertura, evidências e fechamento antes da captura."><img src="imagens/aula09/shot-list-filmstrip.png" alt="Sequência de imagens planejadas em formato de filmstrip"></div></div></div></div></div>
+<div class="slide" data-title="Cartão de Liberação" data-bloco="2" data-competencias="CS-TEMPO,CS-PROF,CT-TEXTO"><div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">Portão de saída · mostrar antes de circular</div><div class="t-title">Quem tem plano sai.<br>Quem não tem, termina o plano.</div></div><div class="slide-body"><div class="release-card"><div class="release-time"><div class="micro-label">RETORNO OBRIGATÓRIO</div><div class="time">20:50</div><strong>Alarme às 20:45</strong></div><div class="release-fields"><div class="release-field"><div class="label">EQUIPE + ZONA</div><strong>Onde estaremos?</strong><span>Sala, perímetro ou ponto autorizado.</span></div><div class="release-field"><div class="label">PERGUNTA</div><strong>O que vamos investigar?</strong><span>Uma frase fotografável.</span></div><div class="release-field"><div class="label">SHOT LIST</div><strong>Quais são as cinco fotos?</strong><span>Abertura, três provas e fechamento.</span></div><div class="release-field"><div class="label">CÂMERA + ARQUIVO</div><strong>Qual equipamento usamos?</strong><span>Registre a câmera e o aparelho que receberá os arquivos.</span></div></div></div><div class="highlight-box"><strong>Procedimento:</strong> fotografe o cartão no celular da equipe, mostre ao professor e não troque de zona sem avisar.</div></div></div></div>
 
-<div class="slide" data-title="Cronograma do Grupo" data-bloco="2" data-competencias="CS-TEMPO,CS-PROF"><div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">Tempo é material de produção</div><div class="t-title">O plano precisa caber<br>na noite de hoje.</div></div><div class="slide-body"><div class="timer-grid"><div class="timer-card"><div class="time">19:30</div><strong>Lanche + referência</strong><span>Guardar ideias visuais enquanto organiza o grupo.</span></div><div class="timer-card"><div class="time">19:50</div><strong>Tema</strong><span>Frase central e função de cada integrante.</span></div><div class="timer-card"><div class="time">20:05</div><strong>Moodboard</strong><span>Pistas visuais e matriz de signos.</span></div><div class="timer-card"><div class="time">20:20</div><strong>Shot list</strong><span>Cinco fotos obrigatórias antes de sair.</span></div><div class="timer-card"><div class="time">20:30</div><strong>Captura</strong><span>Sair com lugar, função e horário de volta definidos.</span></div></div><div class="highlight-box"><strong>Depois:</strong> 20:30–21:30 captura; 21:30–22:30 seleção, memorial, backup e fala da Aula 12.</div></div></div></div>
+<div class="slide" data-title="Chamada Bloco 3" data-bloco="3" data-competencias="CT-FOTO,CS-PROF"><div class="slide-inner centered"><div><div class="call-badge">CHAMADA · BLOCO 3</div><div class="t-title" style="font-size:38px;">Sprint de Captura<br>com Retorno Controlado</div><p class="t-subtitle" style="max-width:720px;margin:12px auto 0;">20 minutos de campo. Alarme 20:45. Todos em sala às 20:50.</p></div></div></div>
 
-<div class="slide" data-title="Chamada Bloco 3" data-bloco="3" data-competencias="CT-FOTO,CS-PROF"><div class="slide-inner centered"><div><div class="call-badge">CHAMADA · BLOCO 3</div><div class="t-title" style="font-size:38px;">Produção Fotográfica<br>nos Espaços Permitidos</div><p class="t-subtitle" style="max-width:720px;margin:12px auto 0;">Capturar com postura profissional, segurança e evidência visual.</p></div></div></div>
+<div class="slide" data-title="Zonas de Produção" data-bloco="3" data-competencias="CT-FOTO,CK-APLIC,CS-TEMPO"><div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">Até 7 equipes · uma câmera identificada por equipe</div><div class="t-title">O material disponível<br>já oferece dois bons sets.</div></div><div class="slide-body"><div class="route-grid"><div class="route-card img-clickable" data-caption="Base em sala · Notebook, mesa digitalizadora, câmera, ring light e caderno permitem fotografar processo, luz e transformação sem deslocamento."><img src="imagens/aula11/base-producao-sala.jpg" alt="Mesa de produção com celular, câmera, notebook, mesa digitalizadora, caderno e ring light"><div class="route-copy"><strong>BASE · sala</strong><span>Processo, objetos, luz controlada e criação digital. Ideal para os materiais do curso.</span></div></div><div class="route-card img-clickable" data-caption="Perímetro controlado · Corredor e áreas próximas oferecem linhas, sombras, texturas e rastros sem espalhar a turma pelo campus."><img src="imagens/aula11/perimetro-corredor.jpg" alt="Estudantes fotografando linhas e sombras em um corredor próximo da sala"><div class="route-copy"><strong>PERÍMETRO · área próxima</strong><span>Linhas, sombras, texturas, caminhos e índices de presença. Sem bloquear circulação.</span></div></div></div><div class="highlight-box"><strong>Campo ampliado:</strong> use outro ponto do campus apenas se estiver autorizado, registrado no cartão e couber no retorno das 20:50.</div></div></div></div>
 
-<div class="slide" data-title="Set Responsável" data-bloco="3" data-competencias="CS-PROF,CT-FOTO"><div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">Postura profissional</div><div class="t-title">Boa foto não justifica<br>situação ruim.</div></div><div class="slide-body"><div class="check-grid"><div class="check-card"><strong>Autorização</strong><span>Combine antes se alguém aparecer reconhecível.</span></div><div class="check-card"><strong>Circulação</strong><span>Não bloqueie porta, corredor ou passagem.</span></div><div class="check-card"><strong>Equipamento</strong><span>Tripé, ring light e cabos estáveis.</span></div><div class="check-card"><strong>Ambiente</strong><span>Use e devolva materiais no lugar.</span></div><div class="check-card"><strong>Tom de direção</strong><span>Oriente com respeito e clareza.</span></div><div class="check-card"><strong>Backup</strong><span>Imagem importante precisa estar salva.</span></div></div><div class="highlight-box"><strong>Alternativa segura:</strong> mãos, objetos, ferramentas, cadernos e gestos de trabalho resolvem a maioria dos temas sem expor ninguém.</div></div></div></div>
+<div class="slide" data-title="Set Responsável" data-bloco="3" data-competencias="CS-PROF,CT-FOTO"><div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">Postura profissional</div><div class="t-title">Boa foto não justifica<br>situação ruim.</div></div><div class="slide-body"><div class="check-grid"><div class="check-card"><strong>Autorização</strong><span>Combine antes se alguém aparecer reconhecível.</span></div><div class="check-card"><strong>Circulação</strong><span>Não bloqueie porta, corredor ou passagem.</span></div><div class="check-card"><strong>Equipamento</strong><span>Câmera identificada, alça segura, ring light e cabos estáveis.</span></div><div class="check-card"><strong>Ambiente</strong><span>Use e devolva materiais no lugar.</span></div><div class="check-card"><strong>Tom de direção</strong><span>Oriente com respeito e clareza.</span></div><div class="check-card"><strong>Backup</strong><span>Imagem importante precisa estar salva.</span></div></div><div class="highlight-box"><strong>Alternativa segura:</strong> mãos, objetos, ferramentas, cadernos e gestos de trabalho resolvem a maioria dos temas sem expor ninguém.</div></div></div></div>
 
-<div class="slide" data-title="Captura pelos Espaços" data-bloco="3" data-competencias="CT-FOTO,CK-PROJETO"><div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">A instituição como repertório visual</div><div class="t-title">Procure luz, textura,<br>gesto e contexto.</div></div><div class="slide-body"><div class="image-led reverse"><div class="stack"><div class="highlight-box"><strong>Assuntos viáveis:</strong> processo criativo, ferramentas, cadernos, câmera, mesa digitalizadora, luz de janela, detalhe de material, organização e contraste.</div><div class="three-col"><div class="card"><div class="card-title">Plano</div><div class="card-body">Mostra o espaço e situa o ensaio.</div></div><div class="card"><div class="card-title">Detalhe</div><div class="card-body">Transforma objeto comum em signo.</div></div><div class="card"><div class="card-title">Ação</div><div class="card-body">Mostra processo sem encenar demais.</div></div></div></div><div class="photo-panel contain img-clickable" data-caption="Composição e camadas · Use espaço, plano e detalhe para construir uma sequência coerente."><img src="imagens/aula06/depth-layers.png" alt="Camadas visuais de composição em fotografia"></div></div></div></div></div>
+<div class="slide" data-title="Sprint de Captura" data-bloco="3" data-competencias="CT-FOTO,CK-SEMIOTICA,CS-TEMPO"><div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">20:30–20:50 · vinte minutos contam</div><div class="t-title">Capture por função,<br>não por ansiedade.</div></div><div class="slide-body"><div class="timer-grid"><div class="timer-card"><div class="time">0–3</div><strong>Montar</strong><span>Limpe fundo, confirme luz e função.</span></div><div class="timer-card"><div class="time">3–12</div><strong>Produzir</strong><span>Três variações por item da lista.</span></div><div class="timer-card"><div class="time">12–15</div><strong>Comparar</strong><span>Abra a grade e encontre lacunas.</span></div><div class="timer-card"><div class="time">15–17</div><strong>Corrigir</strong><span>Refaça apenas o que falta.</span></div><div class="timer-card"><div class="time">17–20</div><strong>Voltar</strong><span>Salve, recolha materiais e retorne.</span></div></div><div class="highlight-box"><strong>Microchecagem técnica:</strong> foco no assunto, luz com detalhe, fundo limpo, variação real e evidência semiótica visível.</div></div></div></div>
 
-<div class="slide" data-title="Direção de Luz e Cena" data-bloco="3" data-competencias="CT-FOTO,CK-SEMIOTICA"><div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">Luz como argumento</div><div class="t-title">A fonte principal<br>também significa.</div></div><div class="slide-body"><div class="image-led"><div class="photo-panel img-clickable" data-caption="Direção de luz · Frontal, lateral, contraluz e luz mista comunicam leituras diferentes."><img src="imagens/aula08/direcao-luz-quatro-condicoes.png" alt="Quatro direções de luz aplicadas ao mesmo assunto"></div><div class="stack"><div class="check-grid"><div class="check-card"><strong>Frontal</strong><span>Clareza, registro, baixa sombra.</span></div><div class="check-card"><strong>Lateral</strong><span>Volume, textura, construção.</span></div><div class="check-card"><strong>Contraluz</strong><span>Silhueta, mistério, forma.</span></div><div class="check-card"><strong>Ring light</strong><span>Controle rápido de sombra em objeto ou rosto.</span></div><div class="check-card"><strong>Janela</strong><span>Naturalidade e direção suave.</span></div><div class="check-card"><strong>Mista</strong><span>Cuidado com cor e dominantes.</span></div></div></div></div></div></div></div>
+<div class="slide" data-title="Check-in 20:50" data-bloco="3" data-competencias="CS-TEMPO,CS-PROF,CT-ANALISE"><div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">Todas as equipes de volta à sala</div><div class="t-title">Retorno não é pausa:<br>é prova de progresso.</div></div><div class="slide-body"><div class="deadline-band"><div class="time">20:50</div><div><strong>Equipe completa, câmera devolvida, oito candidatas na tela.</strong><span>Mostre a grade de imagens e a shot list. Marque quais cinco funções já estão cobertas e prepare o espaço para a avaliação.</span></div></div><div class="check-grid"><div class="check-card"><strong>8 candidatas</strong><span>Variedade suficiente para comparar.</span></div><div class="check-card"><strong>5 funções</strong><span>Abertura, três provas e fechamento.</span></div><div class="check-card"><strong>1 lacuna</strong><span>No máximo uma correção curta após a avaliação.</span></div></div><div class="highlight-box"><strong>20:55:</strong> celulares e materiais conforme a orientação da profissional responsável pela avaliação.</div></div></div></div>
 
-<div class="slide" data-title="Checklist de Qualidade" data-bloco="3" data-competencias="CT-FOTO,CS-TEMPO"><div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">Antes de voltar para a sala</div><div class="t-title">Cheque enquanto ainda<br>dá para refazer.</div></div><div class="slide-body"><div class="formula"><div class="formula-step"><div class="step">01</div><strong>Foco</strong><span>O assunto principal está nítido?</span></div><div class="formula-step"><div class="step">02</div><strong>Exposição</strong><span>Há detalhe em luz e sombra?</span></div><div class="formula-step"><div class="step">03</div><strong>Fundo</strong><span>Algo distrai ou cria ruído?</span></div><div class="formula-step"><div class="step">04</div><strong>Sequência</strong><span>As imagens conversam entre si?</span></div></div><div class="highlight-box"><strong>Se a resposta for não, refaça agora.</strong> Corrigir na curadoria é mais lento e nem sempre resolve.</div></div></div></div>
+<div class="slide" data-title="Avaliação 21:00" data-bloco="3" data-competencias="CS-PROF,CS-TEMPO"><div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">21:00–21:20 · atividade conduzida por outra profissional</div><div class="t-title">Projeto pausado.<br>Atenção inteira à avaliação.</div></div><div class="slide-body"><div class="evaluation-panel"><div class="evaluation-clock"><div class="time">20 min</div><span>Início às 21:00<br>retomada às 21:20</span></div><div class="stack"><div class="card"><div class="card-title">Durante</div><div class="card-body">Siga as instruções da profissional responsável. Não edite, selecione ou compartilhe arquivos do ensaio durante a atividade.</div></div><div class="highlight-box"><strong>Ao terminar:</strong> permaneça na sala. A retomada começa com uma decisão simples: selecionar ou corrigir uma única lacuna.</div></div></div></div></div></div>
 
-<div class="slide" data-title="Chamada Bloco 4" data-bloco="4" data-competencias="CT-ANALISE,CT-TEXTO"><div class="slide-inner centered"><div><div class="call-badge">CHAMADA · BLOCO 4</div><div class="t-title" style="font-size:38px;">Curadoria, Memorial<br>e Defesa Oral</div><p class="t-subtitle" style="max-width:700px;margin:12px auto 0;">Fotografar menos, escolher melhor e preparar a Aula 12.</p></div></div></div>
+<div class="slide" data-title="Retomada 21:20" data-bloco="3" data-competencias="CT-ANALISE,CT-FOTO,CS-TEMPO"><div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">Triagem de dez minutos · sem nova dispersão</div><div class="t-title">Escolha uma rota<br>e avance imediatamente.</div></div><div class="slide-body"><div class="decision-grid"><div class="decision-card"><div class="micro-label">ROTA VERDE</div><strong>As cinco funções estão cobertas.</strong><span>Abra a grade de imagens, favorite oito candidatas e comece a montar a ordem. Não volte a fotografar por insegurança.</span></div><div class="decision-card fix"><div class="micro-label">ROTA ÂMBAR</div><strong>Falta uma foto essencial.</strong><span>Faça uma única correção na sala ou no perímetro imediato, com retorno até 21:30. Tema e zona não mudam.</span></div></div><div class="highlight-box"><strong>Critério:</strong> só existe correção se a equipe consegue nomear a função ausente e a mudança técnica necessária.</div></div></div></div>
+
+<div class="slide" data-title="Chamada Bloco 4" data-bloco="4" data-competencias="CT-ANALISE,CT-TEXTO"><div class="slide-inner centered"><div><div class="call-badge">CHAMADA · BLOCO 4</div><div class="t-title" style="font-size:38px;">Curadoria, Memorial<br>e Defesa Oral</div><p class="t-subtitle" style="max-width:700px;margin:12px auto 0;">21:30: ninguém sai de novo. O ensaio agora vira arquivo, sequência e argumento.</p></div></div></div>
 
 <div class="slide" data-title="Contact Sheet e Seleção" data-bloco="4" data-competencias="CT-ANALISE,CT-FOTO"><div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">Ver tudo junto</div><div class="t-title">A sequência aparece<br>na comparação.</div></div><div class="slide-body"><div class="image-led"><div class="photo-panel contain img-clickable" data-caption="Contact sheet · A seleção comparativa mostra repetição, falha técnica e coerência da sequência."><img src="imagens/aula06/composition-sprint-contact-sheet.png" alt="Contact sheet com imagens selecionadas em sequência"></div><div class="stack"><div class="highlight-box"><strong>Escolha por critério:</strong> foco, luz, fundo, repetição, mensagem, signo e ordem da sequência.</div><div class="software-grid"><div class="software-card"><div class="tool">Galeria</div><strong>Favoritos</strong><span>Marque as candidatas.</span></div><div class="software-card"><div class="tool">Drive</div><strong>Pasta</strong><span>Separe finalistas.</span></div><div class="software-card"><div class="tool">Canva</div><strong>Prancha</strong><span>Monte a sequência.</span></div><div class="software-card"><div class="tool">Caderno</div><strong>Motivo</strong><span>Anote por que entrou.</span></div></div></div></div></div></div></div>
 
-<div class="slide" data-title="Curadoria Final" data-bloco="4" data-competencias="CT-ANALISE,CK-SEMIOTICA"><div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">Montar sentido</div><div class="t-title">A ordem das imagens<br>também comunica.</div></div><div class="slide-body"><div class="three-col"><div class="card"><div class="card-title">Abrir</div><div class="card-body">Imagem que apresenta tema, clima e promessa visual.</div></div><div class="card"><div class="card-title">Desenvolver</div><div class="card-body">Imagens que variam detalhe, ação, luz e signo sem repetir demais.</div></div><div class="card"><div class="card-title">Fechar</div><div class="card-body">Imagem que sintetiza a leitura e sustenta a defesa final.</div></div></div><div class="p-expand" data-depth="2"><div class="p-expand-head"><span class="p-expand-tag">Teste</span><span>Troca de ordem</span></div><div class="p-expand-body"><p>Troque a primeira e a última imagem. Se a leitura enfraquecer, a ordem original provavelmente está funcionando. Se melhorar, reorganize.</p></div></div></div></div></div>
+<div class="slide" data-title="Curadoria Final" data-bloco="4" data-competencias="CT-ANALISE,CK-SEMIOTICA"><div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">Cinco imagens · três passes</div><div class="t-title">Escolher é comparar<br>técnica, sentido e sequência.</div></div><div class="slide-body"><div class="three-col"><div class="card"><div class="card-title">Passe 1 · corte técnico</div><div class="card-body">Retire falha de foco, exposição sem leitura, fundo acidental e repetição.</div></div><div class="card"><div class="card-title">Passe 2 · prova semiótica</div><div class="card-body">Mantenha imagens com evidência visível para sustentar a interpretação.</div></div><div class="card"><div class="card-title">Passe 3 · ordem</div><div class="card-body">Abra, desenvolva e feche sem transformar a sequência em repetição.</div></div></div><div class="p-expand" data-depth="2"><div class="p-expand-head"><span class="p-expand-tag">Teste</span><span>Retire uma imagem</span></div><div class="p-expand-body"><p>Oculte uma foto por vez. Se a sequência não perde informação ou ritmo, a imagem está repetindo função e deve sair.</p></div></div></div></div></div>
 
-<div class="slide" data-title="Memorial Descritivo" data-bloco="4" data-competencias="CT-TEXTO,CT-ANALISE"><div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">Texto técnico curto</div><div class="t-title">Escreva o que a imagem<br>não deve carregar sozinha.</div></div><div class="slide-body"><div class="brief-grid"><div class="brief-cell"><div class="k">TEMA</div><strong>O recorte</strong><span>O que foi fotografado e por quê.</span></div><div class="brief-cell"><div class="k">INTENÇÃO</div><strong>A leitura</strong><span>Que interpretação o grupo busca provocar.</span></div><div class="brief-cell"><div class="k">TÉCNICA</div><strong>Como fez</strong><span>Luz, composição, enquadramento e edição.</span></div><div class="brief-cell"><div class="k">SIGNOS</div><strong>Como significa</strong><span>Ícone, índice, símbolo e evidências.</span></div><div class="brief-cell"><div class="k">CURADORIA</div><strong>Por que estas</strong><span>Critério de seleção e ordem.</span></div><div class="brief-cell"><div class="k">DEFESA</div><strong>Como falar</strong><span>Divisão da apresentação da Aula 12.</span></div></div></div></div></div>
+<div class="slide" data-title="Memorial Descritivo" data-bloco="4" data-competencias="CT-TEXTO,CT-ANALISE"><div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">Seis tópicos · linguagem direta</div><div class="t-title">O memorial registra<br>decisões que podem ser defendidas.</div></div><div class="slide-body"><div class="brief-grid"><div class="brief-cell"><div class="k">PERGUNTA</div><strong>O recorte</strong><span>Que questão visual guiou o ensaio.</span></div><div class="brief-cell"><div class="k">INTENÇÃO</div><strong>A leitura</strong><span>O que a equipe quer fazer perceber.</span></div><div class="brief-cell"><div class="k">TÉCNICA</div><strong>Como fez</strong><span>Luz, composição, enquadramento e captura.</span></div><div class="brief-cell"><div class="k">SIGNOS</div><strong>Onde estão</strong><span>Ícone, índice, símbolo e evidências concretas.</span></div><div class="brief-cell"><div class="k">CURADORIA</div><strong>Por que estas</strong><span>Critério de seleção e ordem final.</span></div><div class="brief-cell"><div class="k">PROCESSO</div><strong>O que mudou</strong><span>Uma decisão corrigida durante a produção.</span></div></div><div class="highlight-box"><strong>Limite útil:</strong> seis tópicos com duas ou três frases cada. O texto apoia a imagem; não tenta substituí-la.</div></div></div></div>
 
 <div class="slide" data-title="Edição Consistente" data-bloco="4" data-competencias="CT-FOTO,CT-ANALISE"><div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">Acabamento visual</div><div class="t-title">As imagens precisam<br>parecer da mesma família.</div></div><div class="slide-body"><div class="image-led reverse"><div class="stack"><div class="flow-line" style="grid-template-columns:repeat(4,1fr);"><div class="flow-step"><div class="step">01</div><strong>Corte</strong><span>Proporção e alinhamento coerentes.</span></div><div class="flow-step"><div class="step">02</div><strong>Luz</strong><span>Exposição com leitura clara.</span></div><div class="flow-step"><div class="step">03</div><strong>Cor</strong><span>Temperatura e contraste consistentes.</span></div><div class="flow-step"><div class="step">04</div><strong>Exportar</strong><span>Arquivos finais em ordem.</span></div></div><div class="highlight-box"><strong>Ferramentas possíveis:</strong> Snapseed, Lightroom Mobile, Photopea, Canva, Slides ou editor nativo do celular.</div></div><div class="photo-panel contain img-clickable" data-caption="Ferramentas de edição · Ajustes simples e consistentes ajudam a unidade visual do ensaio."><img src="imagens/aula06/editing-toolkit.png" alt="Painel com ferramentas básicas de edição fotográfica"></div></div></div></div></div>
 
 <div class="slide" data-title="Preparação da Defesa" data-bloco="4" data-competencias="CT-TEXTO,CS-PROF"><div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">Aula 12 · fala curta</div><div class="t-title">Apresentar é provar<br>decisão visual.</div></div><div class="slide-body"><div class="formula"><div class="formula-step"><div class="step">00–60s</div><strong>Tema</strong><span>Intenção e recorte do ensaio.</span></div><div class="formula-step"><div class="step">1–3 min</div><strong>Sequência</strong><span>Imagens finais e ordem escolhida.</span></div><div class="formula-step"><div class="step">3–4 min</div><strong>Técnica</strong><span>Luz, composição, edição e processo.</span></div><div class="formula-step"><div class="step">4–5 min</div><strong>Semiótica</strong><span>Signos e interpretação defendida.</span></div></div><div class="highlight-box"><strong>Não venda perfeição.</strong> Mostre processo, critério e aprendizagem.</div></div></div></div>
 
-<div class="slide" data-title="Plano B e Entrega" data-bloco="4" data-competencias="CS-TEMPO,CS-PROF"><div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">Tecnologia falha, projeto não</div><div class="t-title">Tenha arquivo, ordem<br>e memorial em dois lugares.</div></div><div class="slide-body"><div class="check-grid"><div class="check-card"><strong>Backup 1</strong><span>Celular com favoritos em ordem.</span></div><div class="check-card"><strong>Backup 2</strong><span>Drive, notebook ou envio para o grupo.</span></div><div class="check-card"><strong>Memorial</strong><span>Texto no caderno ou arquivo editável.</span></div><div class="check-card"><strong>Prancha</strong><span>Canva/Slides ou galeria organizada.</span></div><div class="check-card"><strong>Fala</strong><span>Quem abre, explica técnica e fecha.</span></div><div class="check-card"><strong>Pendência</strong><span>Registrar o que falta antes da Aula 12.</span></div></div></div></div></div>
+<div class="slide" data-title="Plano B e Entrega" data-bloco="4" data-competencias="CS-TEMPO,CS-PROF"><div class="slide-inner"><div class="slide-header"><div class="t-eyebrow">22:20 · check-out de cada equipe</div><div class="t-title">Só termina quando outra pessoa<br>consegue abrir o projeto.</div></div><div class="slide-body"><div class="check-grid"><div class="check-card"><strong>01–05</strong><span>Arquivos finais numerados na ordem.</span></div><div class="check-card"><strong>Processo</strong><span>Briefing/shot list + grade de candidatas.</span></div><div class="check-card"><strong>Memorial</strong><span>Seis tópicos em arquivo ou caderno.</span></div><div class="check-card"><strong>Backup 1</strong><span>Celular ou câmera principal.</span></div><div class="check-card"><strong>Backup 2</strong><span>Drive, notebook ou aparelho do colega.</span></div><div class="check-card"><strong>Defesa</strong><span>Falas divididas entre integrantes e arquivo testado.</span></div></div><div class="highlight-box"><strong>Se a tecnologia falhar na Aula 12:</strong> galeria numerada + memorial no caderno ainda permitem apresentar sem travar a turma.</div></div></div></div>
 
-<div class="slide closing-slide" data-title="Encerramento" data-bloco="4" data-competencias="CK-PROJETO,CT-TEXTO"><div class="slide-inner"><div class="closing-content"><div class="closing-tag">AULA 11 · FIM</div><div class="closing-title">O ensaio já precisa existir<br>antes da apresentação.</div><div class="closing-sub">Hoje o grupo transformou conteúdo técnico em projeto: tema, imagens, sequência, memorial e defesa.</div><div class="next-class"><span class="next-label">Próxima Aula</span><span class="next-title">Aula 12: Apresentações Finais, Recuperação e Encerramento</span></div><div class="closing-divider"></div><div class="three-col" style="text-align:left;margin-top:18px;"><div class="card"><div class="card-title">Produzir</div><div class="card-body">Capturar com funções, tempo e postura profissional.</div></div><div class="card"><div class="card-title">Selecionar</div><div class="card-body">Montar uma sequência que tenha leitura própria.</div></div><div class="card"><div class="card-title">Defender</div><div class="card-body">Explicar técnica e semiótica com evidências visuais.</div></div></div><div class="instructor-tag">Prof. Daniel Mayer · SENAI · Técnico em Multimídia</div></div></div></div>
+<div class="slide closing-slide" data-title="Encerramento" data-bloco="4" data-competencias="CK-PROJETO,CT-TEXTO"><div class="slide-inner"><div class="closing-content"><div class="closing-tag">AULA 11 · CHECK-OUT</div><div class="closing-title">Cinco imagens.<br>Uma intenção comprovável.</div><div class="closing-sub">A missão termina quando a equipe consegue mostrar o processo, justificar a sequência e abrir o arquivo em mais de um aparelho.</div><div class="next-class"><span class="next-label">Próxima Aula</span><span class="next-title">Aula 12: Apresentações Finais, Recuperação e Encerramento</span></div><div class="closing-divider"></div><div class="three-col" style="text-align:left;margin-top:18px;"><div class="card"><div class="card-title">Produzir</div><div class="card-body">Capturar por função dentro de uma zona e um prazo.</div></div><div class="card"><div class="card-title">Selecionar</div><div class="card-body">Cortar repetição e manter evidências visuais.</div></div><div class="card"><div class="card-title">Defender</div><div class="card-body">Apontar na imagem onde técnica e sentido aparecem.</div></div></div><div class="instructor-tag">Prof. Daniel Mayer · SENAI · Técnico em Multimídia</div></div></div></div>
 
 <div id="bottomBar">
   <div class="bar-left">
@@ -449,7 +627,7 @@ body { font-family: var(--font); background: var(--dark); color: var(--cream); o
     <span>Fotografia Digital e Semiótica · Aula 11</span>
   </div>
   <div class="bar-right">
-    <span id="slideCounter" onclick="toggleGrid()" title="Ver todos os slides (G)">01 / 23</span>
+    <span id="slideCounter" onclick="toggleGrid()" title="Ver todos os slides (G)">01 / 25</span>
     <button class="bar-btn" id="prevBtn" onclick="prevSlide()" title="Anterior">&#8592;</button>
     <button class="bar-btn" id="nextBtn" onclick="nextSlide()" title="Próximo">&#8594;</button>
     <button class="bar-btn" id="fsBtn" onclick="toggleFullscreen()" title="Tela cheia (F)">&#x26F6;</button>
@@ -665,7 +843,7 @@ body { font-family: var(--font); background: var(--dark); color: var(--cream); o
 })();
 </script>
 
-<script src="assets/pedagogy-data-aula11.js?v=1"></script>
-<script src="assets/pedagogy.js?v=aula11-12-1"></script>
+<script src="assets/pedagogy-data-aula11.js?v=2"></script>
+<script src="assets/pedagogy.js?v=aula11-12-2"></script>
 </body>
 </html>

@@ -48,123 +48,87 @@
       "id": 1,
       "label": "Bloco 1",
       "inicio": "19:00",
-      "fim": "19:30",
-      "titulo": "Organização e critérios",
-      "descricao": "Chamada, ordem de apresentação dos 11 grupos e reforço dos critérios de avaliação."
+      "fim": "19:23",
+      "titulo": "Conclusão da Aula 11",
+      "descricao": "Retomada do ponto em que a turma parou, fechamento da seleção e preparação dos arquivos."
     },
     {
       "id": 2,
       "label": "Bloco 2",
-      "inicio": "19:30",
-      "fim": "20:30",
-      "titulo": "Apresentações 1 a 6",
-      "descricao": "Primeiros seis grupos: exibição, defesa oral e análise semiótica."
+      "inicio": "19:23",
+      "fim": "20:05",
+      "titulo": "Critérios, equipes 1 a 3 e lanche",
+      "descricao": "Critérios até 19:27, três apresentações de 6 min e lanche das 19:45 às 20:05."
     },
     {
       "id": 3,
       "label": "Bloco 3",
-      "inicio": "20:30",
-      "fim": "21:30",
-      "titulo": "Apresentações 7 a 11",
-      "descricao": "Grupos restantes e feedback por pares."
+      "inicio": "20:05",
+      "fim": "20:37",
+      "titulo": "Equipes 4 a 7 e transição",
+      "descricao": "Quatro apresentações de 6 min e oito minutos para guardar materiais e distribuir a prova."
     },
     {
       "id": 4,
       "label": "Bloco 4",
-      "inicio": "21:30",
-      "fim": "22:30",
-      "titulo": "Recuperação e encerramento",
-      "descricao": "Prova objetiva de recuperação para todos os alunos e encerramento da UC."
+      "inicio": "20:37",
+      "fim": "22:07",
+      "titulo": "Recuperação e correção ao vivo",
+      "descricao": "Prova objetiva até 21:37 e correção automática comentada até 22:07."
     }
   ],
   "NOTES": {
     "Capa": {
-      "fala": "Boa noite. Hoje fechamos a UC: apresentações finais dos ensaios, feedback dos colegas, prova de recuperação e encerramento.",
-      "dica": "Abra com tom organizado. Reforce respeito, tempo e foco no trabalho. Use critérios objetivos e evite ranking público entre grupos."
+      "fala": "Hoje retomamos o trecho final da Aula 11, apresentamos os sete ensaios e fazemos a recuperação com correção ao vivo.",
+      "dica": "Comece pelo deck da Aula 11. Abra esta aula ao finalizar a retomada e preserve os horários de corte: prova às 20:37 e correção às 21:37."
     },
     "Programação da Noite": {
-      "fala": "A noite tem quatro blocos: organizar ordem e critérios, apresentar os seis primeiros grupos, apresentar os cinco restantes com feedback por pares e fechar com recuperação e encerramento.",
-      "dica": "O tempo é apertado. Use cronômetro visível e transições curtas. O objetivo é que todos apresentem e todos façam a recuperação."
+      "fala": "A rota é compacta: retomada até sete e vinte e três, três equipes antes do lanche, quatro depois, prova das oito e trinta e sete às nove e trinta e sete e correção até dez e sete.",
+      "dica": "O lanche é fixo das 19:45 às 20:05. Não use os minutos de prova ou correção como margem para as apresentações."
     },
-    "Acordo de Apresentação": {
-      "fala": "A apresentação final precisa ser respeitosa e objetiva. Quem apresenta mostra processo; quem assiste observa evidências e registra feedback útil.",
-      "dica": "Combine regra de sala: não interromper, não fazer piada com imagem ou pessoa, feedback sempre sobre escolhas visuais e critérios."
+    "Ponte da Aula 11": {
+      "fala": "Temos vinte e três minutos para concluir o essencial: cinco imagens, ordem definida, uma intenção clara, arquivo testado, backup e divisão da fala.",
+      "dica": "Marque 19:18 como aviso final. Às 19:23, interrompa novos ajustes e passe para os critérios, mesmo que alguma equipe ainda queira editar."
     },
-    "Critérios de Avaliação": {
-      "fala": "A avaliação olha quatro dimensões: sequência visual, técnica fotográfica, análise semiótica e postura profissional.",
-      "dica": "Mostre critérios antes do sorteio. Isso reduz ansiedade e torna o feedback mais justo."
-    },
-    "Sorteio e Ordem": {
-      "fala": "A ordem de apresentação organiza a noite e protege o tempo. Cada grupo tem dez minutos totais: arquivo e transição, defesa, pergunta e feedback.",
-      "dica": "Use o mesmo protocolo para todos: 1 min para arquivo e transição, 6 min de defesa, 2 min de pergunta e 1 min de feedback. Se o arquivo falhar, chame o próximo."
+    "Critérios e Tempo": {
+      "fala": "Todas as equipes serão observadas pelos mesmos quatro critérios: sequência, técnica, semiótica e postura. Cada apresentação terá seis minutos.",
+      "dica": "Use cronômetro visível: 4 min de defesa, 1 min de pergunta e 1 min de troca. Não abra uma rodada separada de feedback."
     },
     "Chamada Bloco 2": {
-      "fala": "Começa a primeira rodada de apresentações. A meta é ver seis grupos, com fala curta e análise conectada às imagens.",
-      "dica": "Avise a cada grupo: 1 min para arquivo e transição, 6 min de defesa, 2 min de pergunta e 1 min de feedback. Corte com delicadeza se passar."
+      "fala": "Começa a primeira rodada. As equipes um, dois e três têm seis minutos cada. O lanche começa às sete e quarenta e cinco.",
+      "dica": "A próxima equipe deve manter o arquivo aberto. Encerre a fala aos quatro minutos e finalize a terceira equipe até 19:45."
     },
     "Roteiro de Defesa": {
-      "fala": "A defesa de seis minutos precisa seguir uma linha simples: tema, sequência, técnica, semiótica e conclusão. Se o grupo pula essa ordem, a fala fica confusa.",
-      "dica": "Use este roteiro como régua. Se o grupo travar, pergunte: qual imagem prova melhor a intenção?"
-    },
-    "Semiótica na Defesa": {
-      "fala": "A análise semiótica não é decorar nomes. É mostrar evidências: onde a imagem funciona por semelhança, por rastro e por convenção.",
-      "dica": "Puxe exemplos concretos das imagens apresentadas. Evite transformar em sabatina teórica."
-    },
-    "Feedback de Pares": {
-      "fala": "Feedback por pares precisa ser específico e respeitoso: uma força visual, uma pergunta e uma sugestão possível.",
-      "dica": "Não permita comentários sobre aparência pessoal. O foco é imagem, processo e decisão técnica."
-    },
-    "Controle de Tempo": {
-      "fala": "Tempo também é critério profissional. Seis minutos de defesa com evidência visual valem mais do que uma explicação longa que perde o grupo.",
-      "dica": "Dê sinais discretos: 2 min restantes, 1 min restante e encerrar. Preserve os dez minutos por grupo para garantir a recuperação."
+      "fala": "Em quatro minutos, a equipe apresenta tema, sequência, uma decisão técnica e uma evidência semiótica. A imagem precisa sustentar o que está sendo dito.",
+      "dica": "Se a equipe travar, pergunte apenas qual imagem melhor prova a intenção. Os níveis 2 e 3 trazem perguntas de semiótica e resgate."
     },
     "Chamada Bloco 3": {
-      "fala": "Agora seguimos para os cinco grupos restantes. Quem já apresentou vira banca: observa critérios e oferece feedback útil.",
-      "dica": "Retome o acordo de respeito. A segunda rodada costuma cansar; mantenha o ritmo com transições objetivas."
+      "fala": "Agora seguem as equipes quatro, cinco, seis e sete, com os mesmos seis minutos. Às oito e vinte e nove, as apresentações terminam.",
+      "dica": "Retome pontualmente às 20:05. Não faça síntese coletiva neste bloco; ela foi substituída pela correção ao vivo após a prova."
     },
-    "Segunda Rodada": {
-      "fala": "A segunda rodada precisa ter o mesmo cuidado da primeira. O fato de estar no fim não diminui o trabalho de ninguém.",
-      "dica": "Se o tempo apertar, mantenha apresentação e reduza discussão, não o contrário. Todo grupo precisa defender o ensaio."
-    },
-    "Rubrica de Pares": {
-      "fala": "A ficha de pares ajuda a olhar com critério: clareza da sequência, evidência técnica, leitura semiótica e postura de apresentação.",
-      "dica": "Peça poucas marcações. Uma ficha simples é melhor do que um formulário longo que ninguém preenche com atenção."
-    },
-    "Curadoria Coletiva": {
-      "fala": "Depois das apresentações, a turma consegue perceber padrões: escolhas que funcionaram, problemas recorrentes e soluções de produção.",
-      "dica": "Faça síntese coletiva sem expor grupo específico como erro. Use frases gerais: vimos bons usos de luz lateral, vimos dificuldades com fundo."
+    "Fila de Arquivos": {
+      "fala": "A segunda rodada começa sem procurar arquivo. Enquanto uma equipe apresenta, a próxima já está com a sequência aberta e as demais confirmam seus backups.",
+      "dica": "Se um arquivo falhar, chame imediatamente a equipe seguinte e resolva em paralelo. Não interrompa a fila para procurar mídia."
     },
     "Transição para Recuperação": {
-      "fala": "Fechadas as apresentações, mudamos de modo: silêncio, prova individual e atenção ao cartão-resposta.",
-      "dica": "Recolha ou organize fichas de pares antes de distribuir a recuperação. Trocar de modo ajuda a turma a focar."
+      "fala": "Temos oito minutos para guardar materiais, distribuir prova e cartão, conferir nomes e começar todos juntos às oito e trinta e sete.",
+      "dica": "Separe provas e cartões antes da aula. Use 20:29 como corte absoluto para as apresentações e distribua por fileira."
     },
     "Chamada Bloco 4": {
-      "fala": "Agora começa a recuperação objetiva. Ela retoma conteúdos das Aulas 01 a 10 e será feita por todos os alunos.",
-      "dica": "Explique que é uma retomada de conteúdo com critério comum para todos. Mantenha tom neutro e instruções objetivas."
+      "fala": "Agora começa a recuperação objetiva. O tempo vai das oito e trinta e sete às nove e trinta e sete, com sessenta minutos completos.",
+      "dica": "Anuncie o início e o término exatos. Mantenha tom neutro e não transforme a instrução em revisão de conteúdo."
     },
     "Recuperação: Como Funciona": {
-      "fala": "A recuperação tem dez itens de múltipla escolha, um percurso pelas Aulas 01 a 10. Leia o contexto, elimine alternativas e marque com atenção.",
-      "dica": "Se usar cartão-resposta, reforce itens 1 a 10 e letras A a D. Reserve tempo final para recolher e orientar encerramento."
+      "fala": "A prova é individual e sem consulta. São dez itens, alternativas de A a D e uma única resposta por questão. Marque o cartão com clareza para a leitura automática.",
+      "dica": "Explique somente o procedimento. Para uma marcação corrigida, oriente o aluno conforme o cartão usado pelo aplicativo."
     },
-    "Mapa de Revisão": {
-      "fala": "A prova retoma os eixos: história e ética, imagem digital, semiótica, câmera, composição, exposição, luz, produção, edição e aplicações gráficas.",
-      "dica": "Não dê revisão longa neste momento. O mapa serve para orientar leitura, não para reexplicar o curso inteiro."
-    },
-    "Durante a Prova": {
+    "Prova em Andamento": {
       "fala": "Durante a prova, cada aluno trabalha individualmente. A estratégia é simples: responder as seguras, sinalizar as difíceis e revisar antes de entregar.",
-      "dica": "Circule discretamente. Tire dúvidas apenas de procedimento, não de conteúdo."
+      "dica": "Deixe este slide na tela. Avise quando faltarem 30 e 10 minutos. A prova permanece disponível até 21:37, mesmo que alguns terminem antes."
     },
-    "Encerramento da UC": {
-      "fala": "Ao final, encerramos a UC retomando o percurso: aprender a ver, formar, construir, produzir, editar, analisar e defender imagens.",
-      "dica": "Faça encerramento com foco em processo, responsabilidade e próximos passos."
-    },
-    "Próximos Passos": {
-      "fala": "O que fica para o percurso profissional: repertório visual, técnica básica, ética, organização, análise e capacidade de apresentar escolhas.",
-      "dica": "Conecte com outras UCs e com portfólio, sem prometer domínio total. É fundamento para continuar praticando."
-    },
-    "Fechamento": {
-      "fala": "Obrigado pelo trabalho ao longo da UC. Fotografia não é só apertar botão: é decidir o que a imagem mostra, como mostra e que sentido constrói.",
-      "dica": "Finalize de forma breve. Se houver devolutiva institucional, faça depois da prova e sem abrir discussão longa."
+    "Correção ao Vivo": {
+      "fala": "Agora recolhemos provas e cartões, fazemos a leitura automática e usamos os resultados para corrigir as questões que mais geraram dúvida.",
+      "dica": "Reserve 10 min para recolher e escanear, 15 min para os itens mais errados e 5 min para dúvidas finais. Não exponha resultado individual nem faça ranking."
     }
   },
   "TIMELINE": [],
@@ -175,7 +139,7 @@
     "aula": "Aula 12 — Apresentações Finais, Recuperação e Encerramento",
     "professor": "Prof. Daniel Mayer",
     "turma": "Técnico em Multimídia · SENAI",
-    "duracaoMin": 210
+    "duracaoMin": 187
   }
 };
 })(window);
