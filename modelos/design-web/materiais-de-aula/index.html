@@ -1,0 +1,1157 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Caderno de atividades práticas da unidade curricular Design Web.">
+  <title>Caderno de atividades · Design Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2210%22 fill=%22%2317283a%22/><path d=%22M15 17h14c13 0 20 6 20 15s-7 15-20 15H15V17zm13 22c7 0 11-2 11-7s-4-7-11-7h-3v14h3z%22 fill=%22%23f5c451%22/></svg>">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="masthead">
+    <div class="masthead__rule" aria-hidden="true"></div>
+    <div class="page-width masthead__inner">
+      <div>
+        <p class="course-code">Técnico em Multimídia · Unidade Curricular</p>
+        <h1>Design Web</h1>
+        <p class="subtitle">Caderno de projeto e laboratório</p>
+      </div>
+      <div class="authorship">
+        <span>Material da disciplina</span>
+        <strong>Prof. Daniel Marcos Mayer</strong>
+      </div>
+    </div>
+  </header>
+
+  <nav class="section-nav" aria-label="Materiais disponíveis">
+    <div class="page-width section-nav__track">
+      <a href="#pixel">01 · CSS</a>
+      <a href="#bagunca">02 · Composição</a>
+      <a href="#briefing">03 · Briefing</a>
+      <a href="#arquitetura">04 · Fluxo</a>
+      <a href="#wireframe">05 · Wireframe</a>
+      <a href="#usabilidade">06 · Teste</a>
+      <a href="#metricas">07 · Métricas</a>
+      <a href="#estudos">08 · Estudo</a>
+      <a href="#prova-a">09 · Prova A</a>
+      <a href="#prova-b">10 · Prova B</a>
+      <a href="#gabarito">11 · Gabarito</a>
+      <a href="#rubrica">12 · Rubrica</a>
+      <a href="#recuperacao">13 · Recuperação</a>
+    </div>
+  </nav>
+
+  <main id="conteudo" class="page-width">
+    <section class="safety-note" aria-labelledby="seguranca-title">
+      <div class="safety-note__mark" aria-hidden="true">!</div>
+      <div>
+        <p class="kicker">Acordo de segurança digital</p>
+        <h2 id="seguranca-title">Projeto fictício, dados protegidos</h2>
+        <ul class="safety-grid">
+          <li>Personas e clientes recebem nomes fictícios.</li>
+          <li>Nome completo, foto, telefone, e-mail pessoal, perfil, endereço e localização ficam fora dos projetos.</li>
+          <li>Testes de interface não envolvem aplicativo bancário, carteira digital ou conta pessoal.</li>
+          <li>Analytics e rastreadores não são instalados em contas pessoais. As análises usam dados fictícios ou plataformas institucionais autorizadas.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="lab-note" aria-labelledby="laboratorio-title">
+      <div>
+        <p class="kicker">Laboratório sem login</p>
+        <h2 id="laboratorio-title">Escrever, testar e compartilhar durante a aula</h2>
+        <p>Os serviços abaixo são apoios temporários. A entrega oficial é sempre a pasta local do projeto, com os arquivos <code>index.html</code>, <code>styles.css</code> e, quando necessário, <code>script.js</code>.</p>
+      </div>
+      <div class="lab-note__links">
+        <a href="https://dontpad.com.br/" target="_blank" rel="noopener noreferrer">
+          <strong>DontPad BR</strong>
+          <span>Mural de texto ou código em tempo real</span>
+        </a>
+        <a href="https://livecodes.io/" target="_blank" rel="noopener noreferrer">
+          <strong>LiveCodes</strong>
+          <span>HTML, CSS e JavaScript com prévia ao vivo</span>
+        </a>
+      </div>
+      <p class="lab-note__rule"><strong>Regra de uso:</strong> não inserir nome completo, e-mail, telefone, foto, senha, token ou qualquer dado pessoal. Copiar o resultado para o arquivo local antes de encerrar a aula.</p>
+    </section>
+
+    <section class="workbench" aria-label="Controles do caderno">
+      <div>
+        <label for="materialSelect">Material em foco</label>
+        <select id="materialSelect">
+          <option value="pixel">01 · Cartão Pixel Perfeito</option>
+          <option value="bagunca">02 · Conserte a Bagunça</option>
+          <option value="briefing">03 · Briefing</option>
+          <option value="arquitetura">04 · Sitemap e fluxo</option>
+          <option value="wireframe">05 · Wireframe</option>
+          <option value="usabilidade">06 · Teste de usabilidade</option>
+          <option value="metricas">07 · Relatório de métricas</option>
+          <option value="estudos">08 · Roteiro de estudos</option>
+          <option value="prova-a">09 · Prova A</option>
+          <option value="prova-b">10 · Prova B</option>
+          <option value="gabarito">11 · Gabarito das provas</option>
+          <option value="rubrica">12 · Rubrica do projeto</option>
+          <option value="recuperacao">13 · Recuperação</option>
+        </select>
+      </div>
+      <div class="workbench__actions">
+        <button class="button button--primary" id="printCurrent" type="button">Imprimir material</button>
+        <button class="button" id="printAll" type="button">Imprimir caderno</button>
+        <button class="button button--quiet" id="clearAnswers" type="button">Limpar respostas</button>
+      </div>
+      <p class="save-status" id="saveStatus" role="status">Respostas salvas somente neste navegador.</p>
+      <p class="shared-device-note"><strong>Computador compartilhado:</strong> imprimir ou salvar em PDF, se necessário, e clicar em “Limpar respostas” antes de trocar de estudante ou sair. A limpeza atua apenas no material selecionado.</p>
+    </section>
+
+    <article class="sheet" id="pixel" data-sheet="pixel" aria-labelledby="pixel-title">
+      <header class="sheet__header">
+        <div>
+          <p class="sheet__number">Atividade 01 · CSS e modelo de caixa</p>
+          <h2 id="pixel-title">Cartão Pixel Perfeito</h2>
+          <p>Reprodução de um componente a partir de medidas e regras visuais objetivas.</p>
+        </div>
+        <span class="time-chip">35–50 min</span>
+      </header>
+
+      <div class="activity-brief">
+        <div>
+          <p class="kicker">Desafio</p>
+          <h3>Card da Mostra Jovem de Multimídia</h3>
+          <p>O cartão final terá largura fixa, hierarquia tipográfica, espaçamento regular e um botão claramente identificável. O conteúdo abaixo pode ser copiado para um arquivo HTML.</p>
+        </div>
+        <div class="pixel-card" aria-label="Referência visual do cartão a ser reproduzido">
+          <span class="pixel-card__tag">OFICINA</span>
+          <p class="pixel-card__date">18 JUN · 14H</p>
+          <h4>Cartaz em movimento</h4>
+          <p>Uma introdução à animação de títulos para redes sociais.</p>
+          <span class="pixel-card__button">Reservar vaga</span>
+        </div>
+      </div>
+
+      <div class="two-columns">
+        <section class="panel" aria-labelledby="pixel-html-title">
+          <p class="kicker">Ponto de partida</p>
+          <h3 id="pixel-html-title">HTML do componente</h3>
+          <pre><code>&lt;article class="card-oficina"&gt;
+  &lt;span class="tag"&gt;OFICINA&lt;/span&gt;
+  &lt;p class="data"&gt;18 JUN · 14H&lt;/p&gt;
+  &lt;h2&gt;Cartaz em movimento&lt;/h2&gt;
+  &lt;p&gt;Uma introdução à animação de
+  títulos para redes sociais.&lt;/p&gt;
+  &lt;a href="#"&gt;Reservar vaga&lt;/a&gt;
+&lt;/article&gt;</code></pre>
+        </section>
+
+        <section class="panel" aria-labelledby="pixel-spec-title">
+          <p class="kicker">Especificação</p>
+          <h3 id="pixel-spec-title">Medidas de conferência</h3>
+          <dl class="spec-list">
+            <div><dt>Largura</dt><dd>320 px</dd></div>
+            <div><dt>Espaço interno</dt><dd>24 px</dd></div>
+            <div><dt>Cantos</dt><dd>16 px</dd></div>
+            <div><dt>Borda</dt><dd>2 px · #17324d</dd></div>
+            <div><dt>Fundo</dt><dd>#fffaf0</dd></div>
+            <div><dt>Destaque</dt><dd>#e4572e</dd></div>
+          </dl>
+        </section>
+      </div>
+
+      <fieldset class="worksheet">
+        <legend>Registro de implementação</legend>
+        <div class="form-grid">
+          <label class="field field--full" for="pixel-code">
+            <span>CSS desenvolvido</span>
+            <textarea id="pixel-code" data-save rows="11" spellcheck="false" placeholder=".card-oficina {&#10;  /* estilos */&#10;}"></textarea>
+          </label>
+          <label class="field" for="pixel-difference">
+            <span>Maior diferença encontrada</span>
+            <textarea id="pixel-difference" data-save rows="3"></textarea>
+          </label>
+          <label class="field" for="pixel-fix">
+            <span>Ajuste que resolveu a diferença</span>
+            <textarea id="pixel-fix" data-save rows="3"></textarea>
+          </label>
+        </div>
+        <div class="check-row" aria-label="Lista de conferência">
+          <label><input id="pixel-check-1" data-save type="checkbox"> largura conferida</label>
+          <label><input id="pixel-check-2" data-save type="checkbox"> padding conferido</label>
+          <label><input id="pixel-check-3" data-save type="checkbox"> contraste legível</label>
+          <label><input id="pixel-check-4" data-save type="checkbox"> foco do link visível</label>
+        </div>
+      </fieldset>
+
+      <details class="answer-key">
+        <summary>Referência de conferência</summary>
+        <pre><code>.card-oficina {
+  box-sizing: border-box;
+  width: 320px;
+  padding: 24px;
+  border: 2px solid #17324d;
+  border-radius: 16px;
+  color: #17324d;
+  background: #fffaf0;
+}
+
+.card-oficina a {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: #fff;
+  background: #e4572e;
+  font-weight: 700;
+}</code></pre>
+      </details>
+      <footer class="sheet__footer">Design Web · Prof. Daniel Marcos Mayer</footer>
+    </article>
+
+    <article class="sheet" id="bagunca" data-sheet="bagunca" aria-labelledby="bagunca-title">
+      <header class="sheet__header">
+        <div>
+          <p class="sheet__number">Atividade 02 · Alinhamento e proximidade</p>
+          <h2 id="bagunca-title">Conserte a Bagunça</h2>
+          <p>Diagnóstico visual de uma interface com hierarquia, alinhamento e agrupamento inconsistentes.</p>
+        </div>
+        <span class="time-chip">30–40 min</span>
+      </header>
+
+      <div class="comparison">
+        <figure>
+          <figcaption>Antes · composição desorganizada</figcaption>
+          <div class="messy-card" aria-label="Exemplo propositalmente desorganizado">
+            <span>EVENTO</span>
+            <h3>Noite do Portfólio</h3>
+            <p class="messy-card__where">Auditório central</p>
+            <p class="messy-card__date">22/08 · 19h</p>
+            <span class="mock-button">participar</span>
+          </div>
+        </figure>
+        <figure>
+          <figcaption>Meta · sistema coerente</figcaption>
+          <div class="tidy-card" aria-label="Exemplo organizado por alinhamento e proximidade">
+            <span>EVENTO</span>
+            <h3>Noite do Portfólio</h3>
+            <div>
+              <p>22/08 · 19h</p>
+              <p>Auditório central</p>
+            </div>
+            <span class="mock-button">Participar</span>
+          </div>
+        </figure>
+      </div>
+
+      <fieldset class="worksheet">
+        <legend>Mapa de problemas</legend>
+        <div class="problem-table" role="group" aria-label="Registro de problemas e correções">
+          <div class="problem-table__head"><span>Problema observado</span><span>Princípio afetado</span><span>Correção proposta</span></div>
+          <label><span>1</span><input id="bagunca-p1" data-save aria-label="Problema 1"><input id="bagunca-r1" data-save aria-label="Princípio afetado 1"><input id="bagunca-c1" data-save aria-label="Correção 1"></label>
+          <label><span>2</span><input id="bagunca-p2" data-save aria-label="Problema 2"><input id="bagunca-r2" data-save aria-label="Princípio afetado 2"><input id="bagunca-c2" data-save aria-label="Correção 2"></label>
+          <label><span>3</span><input id="bagunca-p3" data-save aria-label="Problema 3"><input id="bagunca-r3" data-save aria-label="Princípio afetado 3"><input id="bagunca-c3" data-save aria-label="Correção 3"></label>
+          <label><span>4</span><input id="bagunca-p4" data-save aria-label="Problema 4"><input id="bagunca-r4" data-save aria-label="Princípio afetado 4"><input id="bagunca-c4" data-save aria-label="Correção 4"></label>
+        </div>
+        <label class="field field--full" for="bagunca-rule">
+          <span>Regra visual adotada para a nova versão</span>
+          <textarea id="bagunca-rule" data-save rows="3" placeholder="Ex.: todos os textos partem do mesmo eixo à esquerda…"></textarea>
+        </label>
+      </fieldset>
+
+      <details class="answer-key">
+        <summary>Pontos esperados na análise</summary>
+        <ul>
+          <li>Elementos relacionados ficam próximos: data e local formam um único grupo.</li>
+          <li>Um eixo comum à esquerda reduz o movimento dos olhos.</li>
+          <li>O título recebe maior peso; informações auxiliares recebem menor contraste.</li>
+          <li>O botão mantém caixa, alinhamento, capitalização e espaçamento coerentes.</li>
+          <li>Margens externas e intervalos internos seguem uma escala regular.</li>
+        </ul>
+      </details>
+      <footer class="sheet__footer">Design Web · Prof. Daniel Marcos Mayer</footer>
+    </article>
+
+    <article class="sheet" id="briefing" data-sheet="briefing" aria-labelledby="briefing-title">
+      <header class="sheet__header">
+        <div>
+          <p class="sheet__number">Atividade 03 · Descoberta do projeto</p>
+          <h2 id="briefing-title">Briefing de Design Web</h2>
+          <p>Definição do problema antes da escolha de cores, telas ou recursos técnicos.</p>
+        </div>
+        <span class="time-chip">45–60 min</span>
+      </header>
+
+      <aside class="scenario">
+        <p class="kicker">Cenário-base</p>
+        <p><strong>Cliente fictício:</strong> Circuito Aurora, uma mostra estudantil de fotografia, vídeo e design. O site deverá apresentar a programação e orientar inscrições simuladas, sem coletar dados reais.</p>
+      </aside>
+
+      <fieldset class="worksheet">
+        <legend>1. Contexto e objetivo</legend>
+        <div class="form-grid">
+          <label class="field" for="brief-project"><span>Nome do projeto</span><input id="brief-project" data-save value="Circuito Aurora"></label>
+          <label class="field" for="brief-deadline"><span>Prazo acadêmico</span><input id="brief-deadline" data-save placeholder="dd/mm"></label>
+          <label class="field field--full" for="brief-problem"><span>Problema em uma frase</span><textarea id="brief-problem" data-save rows="3" placeholder="O público não consegue…"></textarea></label>
+          <label class="field field--full" for="brief-goal"><span>Resultado esperado</span><textarea id="brief-goal" data-save rows="3" placeholder="Ao final da visita, a pessoa conseguirá…"></textarea></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="worksheet">
+        <legend>2. Público e conteúdo</legend>
+        <div class="privacy-inline"><strong>Persona fictícia:</strong> apenas primeiro nome inventado, faixa etária ampla, contexto e objetivo. Dados identificáveis não fazem parte do exercício.</div>
+        <div class="form-grid">
+          <label class="field" for="brief-persona"><span>Persona</span><input id="brief-persona" data-save placeholder="Ex.: Bia, 15–17 anos"></label>
+          <label class="field" for="brief-context"><span>Contexto de acesso</span><input id="brief-context" data-save placeholder="Ex.: celular, intervalo da escola"></label>
+          <label class="field field--full" for="brief-need"><span>Necessidade principal</span><textarea id="brief-need" data-save rows="3"></textarea></label>
+          <label class="field field--full" for="brief-content"><span>Conteúdos indispensáveis</span><textarea id="brief-content" data-save rows="4" placeholder="Programação, local institucional, critérios de participação…"></textarea></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="worksheet">
+        <legend>3. Direção e critérios de sucesso</legend>
+        <div class="form-grid">
+          <label class="field" for="brief-tone"><span>Três palavras para o tom</span><input id="brief-tone" data-save placeholder="Ex.: jovem, claro, vibrante"></label>
+          <label class="field" for="brief-avoid"><span>O que evitar</span><input id="brief-avoid" data-save placeholder="Ex.: excesso de animações"></label>
+          <label class="field field--full" for="brief-action"><span>Ação principal da interface</span><input id="brief-action" data-save placeholder="Ex.: consultar a programação"></label>
+          <label class="field field--full" for="brief-success"><span>Três sinais de que o projeto funciona</span><textarea id="brief-success" data-save rows="4" placeholder="1. A programação é encontrada em até…&#10;2. …&#10;3. …"></textarea></label>
+        </div>
+      </fieldset>
+      <footer class="sheet__footer">Design Web · Prof. Daniel Marcos Mayer</footer>
+    </article>
+
+    <article class="sheet" id="arquitetura" data-sheet="arquitetura" aria-labelledby="arquitetura-title">
+      <header class="sheet__header">
+        <div>
+          <p class="sheet__number">Atividade 04 · Arquitetura de informação</p>
+          <h2 id="arquitetura-title">Sitemap e fluxo de navegação</h2>
+          <p>Organização do conteúdo e do caminho necessário para concluir uma tarefa.</p>
+        </div>
+        <span class="time-chip">45–60 min</span>
+      </header>
+
+      <section class="panel panel--wide" aria-labelledby="sitemap-title">
+        <p class="kicker">Parte A</p>
+        <h3 id="sitemap-title">Mapa do site</h3>
+        <p>A página inicial resume o projeto e distribui o acesso às áreas principais. Cada nível responde a uma pergunta do público.</p>
+        <div class="site-tree" aria-label="Modelo de mapa do site">
+          <label class="tree-node tree-node--root">Início<input id="map-root" data-save value="Visão geral da mostra" aria-label="Função da página inicial"></label>
+          <div class="tree-branches">
+            <label class="tree-node">Programação<input id="map-1" data-save placeholder="Subpágina ou função"></label>
+            <label class="tree-node">Trabalhos<input id="map-2" data-save placeholder="Subpágina ou função"></label>
+            <label class="tree-node">Como participar<input id="map-3" data-save placeholder="Subpágina ou função"></label>
+            <label class="tree-node">Sobre<input id="map-4" data-save placeholder="Subpágina ou função"></label>
+          </div>
+        </div>
+        <label class="field field--full" for="map-justification">
+          <span>Decisão de agrupamento mais importante</span>
+          <textarea id="map-justification" data-save rows="3"></textarea>
+        </label>
+      </section>
+
+      <section class="panel panel--wide" aria-labelledby="flow-title">
+        <p class="kicker">Parte B</p>
+        <h3 id="flow-title">Fluxo: encontrar uma oficina e simular a reserva</h3>
+        <div class="flow-line" aria-label="Fluxo de páginas">
+          <label><span>1</span><input id="flow-1" data-save value="Início" aria-label="Etapa 1"></label>
+          <i aria-hidden="true">→</i>
+          <label><span>2</span><input id="flow-2" data-save value="Programação" aria-label="Etapa 2"></label>
+          <i aria-hidden="true">→</i>
+          <label><span>3</span><input id="flow-3" data-save placeholder="Etapa" aria-label="Etapa 3"></label>
+          <i aria-hidden="true">→</i>
+          <label><span>4</span><input id="flow-4" data-save placeholder="Etapa" aria-label="Etapa 4"></label>
+        </div>
+        <div class="form-grid">
+          <label class="field" for="flow-decision"><span>Decisão ou bifurcação</span><textarea id="flow-decision" data-save rows="3" placeholder="Ex.: há vagas? Sim / Não"></textarea></label>
+          <label class="field" for="flow-recovery"><span>Saída em caso de erro</span><textarea id="flow-recovery" data-save rows="3" placeholder="Ex.: voltar à programação sem perder filtros"></textarea></label>
+        </div>
+      </section>
+
+      <details class="answer-key">
+        <summary>Fluxo de referência</summary>
+        <p>Início → Programação → Detalhe da oficina → Reserva simulada → Confirmação. Sem vagas: retorno à programação com indicação de atividades relacionadas.</p>
+      </details>
+      <footer class="sheet__footer">Design Web · Prof. Daniel Marcos Mayer</footer>
+    </article>
+
+    <article class="sheet" id="wireframe" data-sheet="wireframe" aria-labelledby="wireframe-title">
+      <header class="sheet__header">
+        <div>
+          <p class="sheet__number">Atividade 05 · Estrutura responsiva</p>
+          <h2 id="wireframe-title">Wireframe de baixa fidelidade</h2>
+          <p>Distribuição do conteúdo antes da definição de cores, imagens e acabamento.</p>
+        </div>
+        <span class="time-chip">60–80 min</span>
+      </header>
+
+      <div class="wireframe-intro">
+        <label><strong>Tarefa principal</strong><input id="wire-task" data-save value="Encontrar uma oficina"></label>
+        <label><strong>Chamada principal</strong><input id="wire-cta" data-save placeholder="Texto do botão"></label>
+        <label><strong>Conteúdo prioritário</strong><input id="wire-priority" data-save placeholder="O que aparece primeiro?"></label>
+      </div>
+
+      <div class="devices">
+        <section class="device device--desktop" aria-labelledby="desktop-title">
+          <div class="device__bar"><i></i><i></i><i></i><span id="desktop-title">Desktop · 1440 px</span></div>
+          <div class="device__canvas">
+            <label class="wire-box wire-box--header">Cabeçalho<input id="wire-desktop-header" data-save aria-label="Conteúdo do cabeçalho desktop"></label>
+            <label class="wire-box wire-box--hero">Mensagem principal<textarea id="wire-desktop-hero" data-save rows="2" aria-label="Mensagem principal desktop"></textarea></label>
+            <div class="wire-grid">
+              <label class="wire-box">Card 1<input id="wire-card-1" data-save aria-label="Card 1"></label>
+              <label class="wire-box">Card 2<input id="wire-card-2" data-save aria-label="Card 2"></label>
+              <label class="wire-box">Card 3<input id="wire-card-3" data-save aria-label="Card 3"></label>
+            </div>
+            <label class="wire-box wire-box--footer">Rodapé<input id="wire-desktop-footer" data-save aria-label="Conteúdo do rodapé desktop"></label>
+          </div>
+        </section>
+
+        <section class="device device--mobile" aria-labelledby="mobile-title">
+          <div class="device__bar"><span id="mobile-title">Mobile · 390 px</span></div>
+          <div class="device__canvas">
+            <label class="wire-box">Topo<input id="wire-mobile-header" data-save aria-label="Conteúdo do topo mobile"></label>
+            <label class="wire-box wire-box--hero">Mensagem<textarea id="wire-mobile-hero" data-save rows="2" aria-label="Mensagem mobile"></textarea></label>
+            <label class="wire-box">Conteúdo 1<input id="wire-mobile-1" data-save aria-label="Conteúdo mobile 1"></label>
+            <label class="wire-box">Conteúdo 2<input id="wire-mobile-2" data-save aria-label="Conteúdo mobile 2"></label>
+            <label class="wire-box">Ação<input id="wire-mobile-action" data-save aria-label="Ação mobile"></label>
+          </div>
+        </section>
+      </div>
+
+      <fieldset class="worksheet">
+        <legend>Anotações de comportamento responsivo</legend>
+        <div class="annotation-grid">
+          <label for="wire-change">O que muda<input id="wire-change" data-save placeholder="Ex.: cards passam para uma coluna"></label>
+          <label for="wire-stays">O que permanece<input id="wire-stays" data-save placeholder="Ex.: ordem de leitura"></label>
+          <label for="wire-hide">O que pode ser reduzido<input id="wire-hide" data-save placeholder="Ex.: texto auxiliar"></label>
+          <label for="wire-access">Acessibilidade prevista<input id="wire-access" data-save placeholder="Ex.: foco e rótulos"></label>
+        </div>
+      </fieldset>
+      <footer class="sheet__footer">Design Web · Prof. Daniel Marcos Mayer</footer>
+    </article>
+
+    <article class="sheet" id="usabilidade" data-sheet="usabilidade" aria-labelledby="usabilidade-title">
+      <header class="sheet__header">
+        <div>
+          <p class="sheet__number">Atividade 06 · Avaliação com pares</p>
+          <h2 id="usabilidade-title">Ficha de teste de usabilidade</h2>
+          <p>Observação do uso da interface sem orientar o caminho nem defender decisões de design.</p>
+        </div>
+        <span class="time-chip">40–60 min</span>
+      </header>
+
+      <aside class="privacy-card">
+        <h3>Protocolo de cuidado</h3>
+        <p>Participantes são identificados apenas como A, B e C. O registro não inclui nome, foto, voz, contato, perfil ou localização. Contas pessoais, aplicativos bancários e carteiras digitais permanecem fechados. Toda informação digitada no protótipo é fictícia.</p>
+      </aside>
+
+      <fieldset class="worksheet">
+        <legend>Preparação</legend>
+        <div class="form-grid">
+          <label class="field" for="test-interface"><span>Interface testada</span><input id="test-interface" data-save></label>
+          <label class="field" for="test-version"><span>Versão / data</span><input id="test-version" data-save></label>
+          <label class="field field--full" for="test-scenario"><span>Cenário lido no início</span><textarea id="test-scenario" data-save rows="3">Imagine que a Mostra Circuito Aurora acontece nesta semana. Encontre uma oficina de seu interesse e faça uma reserva simulada.</textarea></label>
+          <label class="field field--full" for="test-success"><span>Critério de sucesso observável</span><textarea id="test-success" data-save rows="2" placeholder="Ex.: chega à confirmação sem ajuda em até 3 minutos"></textarea></label>
+        </div>
+      </fieldset>
+
+      <div class="table-wrap">
+        <table class="data-table test-table">
+          <caption>Registro de três sessões curtas</caption>
+          <thead>
+            <tr><th scope="col">Participante</th><th scope="col">Concluiu?</th><th scope="col">Tempo</th><th scope="col">Onde hesitou</th><th scope="col">Observação literal, sem identificação</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">A</th>
+              <td><select id="test-a-result" data-save aria-label="Resultado do participante A"><option value=""></option><option>Sim</option><option>Com ajuda</option><option>Não</option></select></td>
+              <td><input id="test-a-time" data-save aria-label="Tempo do participante A"></td>
+              <td><textarea id="test-a-friction" data-save rows="2" aria-label="Hesitação do participante A"></textarea></td>
+              <td><textarea id="test-a-note" data-save rows="2" aria-label="Observação do participante A"></textarea></td>
+            </tr>
+            <tr>
+              <th scope="row">B</th>
+              <td><select id="test-b-result" data-save aria-label="Resultado do participante B"><option value=""></option><option>Sim</option><option>Com ajuda</option><option>Não</option></select></td>
+              <td><input id="test-b-time" data-save aria-label="Tempo do participante B"></td>
+              <td><textarea id="test-b-friction" data-save rows="2" aria-label="Hesitação do participante B"></textarea></td>
+              <td><textarea id="test-b-note" data-save rows="2" aria-label="Observação do participante B"></textarea></td>
+            </tr>
+            <tr>
+              <th scope="row">C</th>
+              <td><select id="test-c-result" data-save aria-label="Resultado do participante C"><option value=""></option><option>Sim</option><option>Com ajuda</option><option>Não</option></select></td>
+              <td><input id="test-c-time" data-save aria-label="Tempo do participante C"></td>
+              <td><textarea id="test-c-friction" data-save rows="2" aria-label="Hesitação do participante C"></textarea></td>
+              <td><textarea id="test-c-note" data-save rows="2" aria-label="Observação do participante C"></textarea></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <fieldset class="worksheet">
+        <legend>Síntese e decisão</legend>
+        <div class="form-grid">
+          <label class="field" for="test-pattern"><span>Padrão observado em duas ou mais sessões</span><textarea id="test-pattern" data-save rows="3"></textarea></label>
+          <label class="field" for="test-change"><span>Alteração prioritária</span><textarea id="test-change" data-save rows="3"></textarea></label>
+          <label class="field field--full" for="test-evidence"><span>Evidência que sustenta a alteração</span><textarea id="test-evidence" data-save rows="3"></textarea></label>
+        </div>
+      </fieldset>
+      <footer class="sheet__footer">Design Web · Prof. Daniel Marcos Mayer</footer>
+    </article>
+
+    <article class="sheet" id="metricas" data-sheet="metricas" aria-labelledby="metricas-title">
+      <header class="sheet__header">
+        <div>
+          <p class="sheet__number">Atividade 07 · Leitura de dados</p>
+          <h2 id="metricas-title">Relatório fictício de métricas</h2>
+          <p>Interpretação de comportamento sem acesso a contas, rastreadores ou informações pessoais.</p>
+        </div>
+        <span class="time-chip">45–55 min</span>
+      </header>
+
+      <div class="report-head">
+        <div><span>Projeto</span><strong>Portal Circuito Aurora</strong></div>
+        <div><span>Período simulado</span><strong>01–30 de maio</strong></div>
+        <div><span>Base</span><strong>1.200 visitas fictícias</strong></div>
+      </div>
+
+      <div class="metric-cards" aria-label="Indicadores principais">
+        <div><span>Conversão final</span><strong>15%</strong><small>180 confirmações</small></div>
+        <div><span>Acesso mobile</span><strong>70%</strong><small>840 visitas</small></div>
+        <div><span>Maior saída</span><strong>57%</strong><small>página de reserva</small></div>
+      </div>
+
+      <div class="two-columns two-columns--report">
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption>Origem das visitas</caption>
+            <thead><tr><th scope="col">Canal</th><th scope="col">Visitas</th><th scope="col">Participação</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Busca</th><td>456</td><td>38%</td></tr>
+              <tr><th scope="row">Direto</th><td>324</td><td>27%</td></tr>
+              <tr><th scope="row">Social</th><td>300</td><td>25%</td></tr>
+              <tr><th scope="row">Referência</th><td>120</td><td>10%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption>Funil da tarefa principal</caption>
+            <thead><tr><th scope="col">Etapa</th><th scope="col">Pessoas</th><th scope="col">% do total</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Visitou a página inicial</th><td>1.200</td><td>100%</td></tr>
+              <tr><th scope="row">Abriu a programação</th><td>780</td><td>65%</td></tr>
+              <tr><th scope="row">Iniciou a reserva</th><td>300</td><td>25%</td></tr>
+              <tr><th scope="row">Concluiu a reserva</th><td>180</td><td>15%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <caption>Comportamento por página</caption>
+          <thead><tr><th scope="col">Página</th><th scope="col">Visualizações</th><th scope="col">Tempo médio</th><th scope="col">Saída</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Início</th><td>1.800</td><td>1min08s</td><td>22%</td></tr>
+            <tr><th scope="row">Programação</th><td>1.100</td><td>2min14s</td><td>31%</td></tr>
+            <tr><th scope="row">Reserva</th><td>420</td><td>1min47s</td><td>57%</td></tr>
+            <tr><th scope="row">Confirmação</th><td>180</td><td>0min42s</td><td>8%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <aside class="privacy-inline"><strong>Fonte didática:</strong> conjunto de dados inventado para esta atividade. Nenhum analytics deverá ser instalado em site ou conta pessoal. Projetos institucionais dependem de autorização e configuração da instituição.</aside>
+
+      <fieldset class="worksheet">
+        <legend>Análise</legend>
+        <ol class="question-list">
+          <li><label for="metric-q1">Em qual passagem do funil ocorre a maior perda proporcional?<textarea id="metric-q1" data-save rows="2"></textarea></label></li>
+          <li><label for="metric-q2">Qual é a taxa de conversão entre início e conclusão da reserva?<textarea id="metric-q2" data-save rows="2"></textarea></label></li>
+          <li><label for="metric-q3">Qual dado sustenta a prioridade de testar telas pequenas?<textarea id="metric-q3" data-save rows="2"></textarea></label></li>
+          <li><label for="metric-q4">Formule uma hipótese para a saída de 57% na página de reserva.<textarea id="metric-q4" data-save rows="2"></textarea></label></li>
+          <li><label for="metric-q5">Indique uma mudança de interface e uma métrica para verificar seu efeito.<textarea id="metric-q5" data-save rows="3"></textarea></label></li>
+        </ol>
+      </fieldset>
+
+      <details class="answer-key">
+        <summary>Referência para correção</summary>
+        <ol>
+          <li>Programação → início da reserva: perda de 480 pessoas, aproximadamente 61,5% das que abriram a programação.</li>
+          <li>180 ÷ 1.200 × 100 = 15%.</li>
+          <li>70% das visitas ocorreram em dispositivos móveis.</li>
+          <li>Hipóteses possíveis: formulário longo, rótulos ambíguos, chamada pouco visível ou falta de retorno após erro. O dado indica o ponto do problema, mas não explica sozinho a causa.</li>
+          <li>Exemplo: reduzir campos e acompanhar a conclusão da reserva, comparando versões em um teste controlado.</li>
+        </ol>
+      </details>
+      <footer class="sheet__footer">Design Web · Prof. Daniel Marcos Mayer</footer>
+    </article>
+
+    <article class="sheet" id="estudos" data-sheet="estudos" aria-labelledby="estudos-title">
+      <header class="sheet__header">
+        <div>
+          <p class="sheet__number">Atividade 08 · Preparação para avaliação</p>
+          <h2 id="estudos-title">Roteiro de estudos</h2>
+          <p>Revisão em quatro ciclos: reconhecer, explicar, aplicar e conferir. Este material prepara para a prova, mas não substitui a avaliação.</p>
+        </div>
+        <span class="time-chip">4 ciclos</span>
+      </header>
+
+      <div class="study-cycles">
+        <section><span>01</span><h3>HTML</h3><p>Semântica, links, imagens, listas, formulários e ordem do conteúdo.</p><label><input id="study-1" data-save type="checkbox"> revisão concluída</label></section>
+        <section><span>02</span><h3>CSS</h3><p>Cascata, seletores, modelo de caixa, Flexbox, Grid e responsividade.</p><label><input id="study-2" data-save type="checkbox"> revisão concluída</label></section>
+        <section><span>03</span><h3>UX e acesso</h3><p>Hierarquia, fluxo, feedback, contraste, foco, rótulos e texto alternativo.</p><label><input id="study-3" data-save type="checkbox"> revisão concluída</label></section>
+        <section><span>04</span><h3>Projeto</h3><p>Briefing, sitemap, wireframe, protótipo, teste, métrica e iteração.</p><label><input id="study-4" data-save type="checkbox"> revisão concluída</label></section>
+      </div>
+
+      <section class="worksheet" aria-labelledby="mini-simulado-title">
+        <p class="kicker">Autoverificação</p>
+        <h3 id="mini-simulado-title">Mini-simulado aberto para estudo</h3>
+        <p>As respostas podem ser consultadas ao final. Por isso, este exercício é uma prática de revisão e não vale como prova.</p>
+        <ol class="question-list">
+          <li><label for="study-q1">Qual elemento HTML representa a navegação principal de uma página?<input id="study-q1" data-save></label></li>
+          <li><label for="study-q2">O que muda entre margin e padding?<textarea id="study-q2" data-save rows="2"></textarea></label></li>
+          <li><label for="study-q3">Qual recurso organiza itens em uma dimensão: Flexbox ou Grid?<input id="study-q3" data-save></label></li>
+          <li><label for="study-q4">Escreva uma media query que atue em telas de até 700 px.<textarea id="study-q4" data-save rows="3" spellcheck="false"></textarea></label></li>
+          <li><label for="study-q5">Por que um campo de formulário necessita de label?<textarea id="study-q5" data-save rows="2"></textarea></label></li>
+          <li><label for="study-q6">Qual é a diferença entre sitemap e fluxo do usuário?<textarea id="study-q6" data-save rows="2"></textarea></label></li>
+          <li><label for="study-q7">Uma taxa de saída alta comprova a causa do problema? Justifique.<textarea id="study-q7" data-save rows="2"></textarea></label></li>
+          <li><label for="study-q8">Indique duas verificações antes de publicar um site.<textarea id="study-q8" data-save rows="2"></textarea></label></li>
+        </ol>
+      </section>
+
+      <details class="answer-key">
+        <summary>Gabarito do mini-simulado</summary>
+        <ol>
+          <li><code>&lt;nav&gt;</code>.</li>
+          <li><code>margin</code> cria espaço externo; <code>padding</code> cria espaço entre conteúdo e borda.</li>
+          <li>Flexbox. Grid organiza linhas e colunas; ambos podem participar de leiautes complexos.</li>
+          <li><code>@media (max-width: 700px) { /* regras */ }</code>.</li>
+          <li>O rótulo identifica a finalidade do campo, amplia a área clicável e apoia tecnologias assistivas.</li>
+          <li>Sitemap mostra a estrutura de páginas; fluxo mostra o caminho para realizar uma tarefa.</li>
+          <li>Não. A métrica localiza um sinal; observação e testes ajudam a investigar a causa.</li>
+          <li>Exemplos: links, responsividade, teclado, contraste, ortografia, imagens, formulário e metadados.</li>
+        </ol>
+      </details>
+      <footer class="sheet__footer">Design Web · Prof. Daniel Marcos Mayer</footer>
+    </article>
+
+    <article class="sheet exam-sheet" id="prova-a" data-sheet="prova-a" aria-labelledby="prova-a-title">
+      <header class="sheet__header">
+        <div>
+          <p class="sheet__number">Atividade 09 · Avaliação individual</p>
+          <h2 id="prova-a-title">Prova A</h2>
+          <p>Fundamentos da Web, HTML, CSS, responsividade, experiência de uso, acessibilidade, publicação e métricas.</p>
+        </div>
+        <span class="time-chip">10 pontos · 45–60 min</span>
+      </header>
+
+      <div class="exam-identification" aria-label="Identificação da prova">
+        <label for="exam-a-student">Estudante ou número de chamada<input id="exam-a-student" autocomplete="off"></label>
+        <label for="exam-a-class">Turma<input id="exam-a-class" autocomplete="off"></label>
+        <label for="exam-a-date">Data<input id="exam-a-date" autocomplete="off"></label>
+      </div>
+
+      <section class="exam-rules" aria-labelledby="prova-a-instrucoes">
+        <div>
+          <p class="kicker">Instruções</p>
+          <h3 id="prova-a-instrucoes">Uma alternativa por questão</h3>
+        </div>
+        <ul>
+          <li>Cada questão vale 1 ponto.</li>
+          <li>Leia todas as alternativas antes de marcar.</li>
+          <li>Em caso de mudança, deixe apenas uma resposta assinalada.</li>
+          <li>A identificação não fica salva no navegador; as alternativas ficam salvas somente no dispositivo em uso.</li>
+          <li>Em computador compartilhado, imprimir ou salvar em PDF e usar “Limpar respostas” antes de trocar de estudante ou sair.</li>
+        </ul>
+      </section>
+
+      <div class="exam-questions">
+        <fieldset class="exam-question">
+          <legend><span>1</span> Ao acessar <code>mostraescolar.com.br</code>, qual alternativa explica corretamente domínio e hospedagem?</legend>
+          <div class="answer-options">
+            <label for="exam-a-q1-a"><input id="exam-a-q1-a" name="exam-a-q1" data-save type="radio"><b>A</b><span>O domínio guarda os arquivos; a hospedagem cria o nome digitado no navegador.</span></label>
+            <label for="exam-a-q1-b"><input id="exam-a-q1-b" name="exam-a-q1" data-save type="radio"><b>B</b><span>O domínio é o endereço; a hospedagem armazena e disponibiliza os arquivos do site.</span></label>
+            <label for="exam-a-q1-c"><input id="exam-a-q1-c" name="exam-a-q1" data-save type="radio"><b>C</b><span>Domínio e hospedagem são dois nomes para o certificado HTTPS.</span></label>
+            <label for="exam-a-q1-d"><input id="exam-a-q1-d" name="exam-a-q1" data-save type="radio"><b>D</b><span>O domínio é o editor de código; a hospedagem é o navegador utilizado.</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="exam-question">
+          <legend><span>2</span> Qual estrutura representa melhor a navegação principal de uma página?</legend>
+          <div class="answer-options">
+            <label for="exam-a-q2-a"><input id="exam-a-q2-a" name="exam-a-q2" data-save type="radio"><b>A</b><span><code>&lt;div&gt;</code> com vários textos sublinhados, sem links.</span></label>
+            <label for="exam-a-q2-b"><input id="exam-a-q2-b" name="exam-a-q2" data-save type="radio"><b>B</b><span><code>&lt;header&gt;</code> com parágrafos usados como botões.</span></label>
+            <label for="exam-a-q2-c"><input id="exam-a-q2-c" name="exam-a-q2" data-save type="radio"><b>C</b><span><code>&lt;nav aria-label="Principal"&gt;</code> contendo uma lista de links.</span></label>
+            <label for="exam-a-q2-d"><input id="exam-a-q2-d" name="exam-a-q2" data-save type="radio"><b>D</b><span><code>&lt;section&gt;</code> com imagens que dependem apenas do clique.</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="exam-question">
+          <legend><span>3</span> Qual regra faz a largura declarada incluir conteúdo, <code>padding</code> e borda?</legend>
+          <div class="answer-options">
+            <label for="exam-a-q3-a"><input id="exam-a-q3-a" name="exam-a-q3" data-save type="radio"><b>A</b><span><code>box-sizing: border-box;</code></span></label>
+            <label for="exam-a-q3-b"><input id="exam-a-q3-b" name="exam-a-q3" data-save type="radio"><b>B</b><span><code>overflow: hidden;</code></span></label>
+            <label for="exam-a-q3-c"><input id="exam-a-q3-c" name="exam-a-q3" data-save type="radio"><b>C</b><span><code>position: absolute;</code></span></label>
+            <label for="exam-a-q3-d"><input id="exam-a-q3-d" name="exam-a-q3" data-save type="radio"><b>D</b><span><code>display: inline;</code></span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="exam-question">
+          <legend><span>4</span> Uma galeria precisa organizar cartões em linhas e colunas. Qual recurso é o ponto de partida mais adequado?</legend>
+          <div class="answer-options">
+            <label for="exam-a-q4-a"><input id="exam-a-q4-a" name="exam-a-q4" data-save type="radio"><b>A</b><span><code>float</code>, porque posiciona cada cartão fora do fluxo.</span></label>
+            <label for="exam-a-q4-b"><input id="exam-a-q4-b" name="exam-a-q4" data-save type="radio"><b>B</b><span><code>position: fixed</code>, porque mantém todos os cartões na tela.</span></label>
+            <label for="exam-a-q4-c"><input id="exam-a-q4-c" name="exam-a-q4" data-save type="radio"><b>C</b><span><code>z-index</code>, porque define linhas e colunas automaticamente.</span></label>
+            <label for="exam-a-q4-d"><input id="exam-a-q4-d" name="exam-a-q4" data-save type="radio"><b>D</b><span>CSS Grid, porque controla as duas dimensões do leiaute.</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="exam-question">
+          <legend><span>5</span> Qual estratégia corresponde a uma implementação <em>mobile first</em>?</legend>
+          <div class="answer-options">
+            <label for="exam-a-q5-a"><input id="exam-a-q5-a" name="exam-a-q5" data-save type="radio"><b>A</b><span>Criar primeiro uma largura fixa de 1280 px e ocultar o excedente no celular.</span></label>
+            <label for="exam-a-q5-b"><input id="exam-a-q5-b" name="exam-a-q5" data-save type="radio"><b>B</b><span>Usar uma coluna nas regras básicas e ampliar para duas em <code>@media (min-width: 48rem)</code>.</span></label>
+            <label for="exam-a-q5-c"><input id="exam-a-q5-c" name="exam-a-q5" data-save type="radio"><b>C</b><span>Reduzir todo o site com <code>transform: scale()</code> em telas pequenas.</span></label>
+            <label for="exam-a-q5-d"><input id="exam-a-q5-d" name="exam-a-q5" data-save type="radio"><b>D</b><span>Manter o mesmo número de colunas em qualquer largura.</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="exam-question">
+          <legend><span>6</span> Em um teste de usabilidade, qual conduta produz evidência mais confiável?</legend>
+          <div class="answer-options">
+            <label for="exam-a-q6-a"><input id="exam-a-q6-a" name="exam-a-q6" data-save type="radio"><b>A</b><span>Explicar cada clique antes que a pessoa tente realizar a tarefa.</span></label>
+            <label for="exam-a-q6-b"><input id="exam-a-q6-b" name="exam-a-q6" data-save type="radio"><b>B</b><span>Perguntar somente se a pessoa achou as cores bonitas.</span></label>
+            <label for="exam-a-q6-c"><input id="exam-a-q6-c" name="exam-a-q6" data-save type="radio"><b>C</b><span>Apresentar uma tarefa neutra, observar sem conduzir e registrar hesitações.</span></label>
+            <label for="exam-a-q6-d"><input id="exam-a-q6-d" name="exam-a-q6" data-save type="radio"><b>D</b><span>Alterar a interface durante a sessão para evitar qualquer dificuldade.</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="exam-question">
+          <legend><span>7</span> Qual solução identifica corretamente um campo de e-mail para diferentes formas de navegação?</legend>
+          <div class="answer-options">
+            <label for="exam-a-q7-a"><input id="exam-a-q7-a" name="exam-a-q7" data-save type="radio"><b>A</b><span><code>&lt;label for="email"&gt;E-mail&lt;/label&gt;</code> associado a <code>&lt;input id="email"&gt;</code>.</span></label>
+            <label for="exam-a-q7-b"><input id="exam-a-q7-b" name="exam-a-q7" data-save type="radio"><b>B</b><span>Usar apenas <code>placeholder="Digite aqui"</code> e retirar o rótulo.</span></label>
+            <label for="exam-a-q7-c"><input id="exam-a-q7-c" name="exam-a-q7" data-save type="radio"><b>C</b><span>Trocar o texto do campo por um ícone sem nome acessível.</span></label>
+            <label for="exam-a-q7-d"><input id="exam-a-q7-d" name="exam-a-q7" data-save type="radio"><b>D</b><span>Identificar o campo apenas pela cor da borda.</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="exam-question">
+          <legend><span>8</span> Qual conjunto de ações é apropriado antes da publicação de um projeto escolar?</legend>
+          <div class="answer-options">
+            <label for="exam-a-q8-a"><input id="exam-a-q8-a" name="exam-a-q8" data-save type="radio"><b>A</b><span>Publicar primeiro e verificar os links somente se alguém reclamar.</span></label>
+            <label for="exam-a-q8-b"><input id="exam-a-q8-b" name="exam-a-q8" data-save type="radio"><b>B</b><span>Inserir contas e senhas pessoais para facilitar a demonstração.</span></label>
+            <label for="exam-a-q8-c"><input id="exam-a-q8-c" name="exam-a-q8" data-save type="radio"><b>C</b><span>Testar apenas no computador em que o site foi criado.</span></label>
+            <label for="exam-a-q8-d"><input id="exam-a-q8-d" name="exam-a-q8" data-save type="radio"><b>D</b><span>Conferir caminhos e links, testar em mais de uma largura e retirar dados pessoais.</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="exam-question">
+          <legend><span>9</span> Um funil registra 1.000 acessos à página inicial, 600 à programação, 150 inícios de inscrição e 90 conclusões. Onde ocorre a maior perda proporcional?</legend>
+          <div class="answer-options">
+            <label for="exam-a-q9-a"><input id="exam-a-q9-a" name="exam-a-q9" data-save type="radio"><b>A</b><span>Da página inicial para a programação: 40%.</span></label>
+            <label for="exam-a-q9-b"><input id="exam-a-q9-b" name="exam-a-q9" data-save type="radio"><b>B</b><span>Da programação para o início da inscrição: 75%.</span></label>
+            <label for="exam-a-q9-c"><input id="exam-a-q9-c" name="exam-a-q9" data-save type="radio"><b>C</b><span>Do início para a conclusão: 60%.</span></label>
+            <label for="exam-a-q9-d"><input id="exam-a-q9-d" name="exam-a-q9" data-save type="radio"><b>D</b><span>Em todas as passagens: a perda proporcional é igual.</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="exam-question">
+          <legend><span>10</span> Uma página apresenta taxa de saída elevada. O que esse dado permite afirmar?</legend>
+          <div class="answer-options">
+            <label for="exam-a-q10-a"><input id="exam-a-q10-a" name="exam-a-q10" data-save type="radio"><b>A</b><span>A cor do botão é, com certeza, a causa do problema.</span></label>
+            <label for="exam-a-q10-b"><input id="exam-a-q10-b" name="exam-a-q10" data-save type="radio"><b>B</b><span>Todos os visitantes rejeitaram o conteúdo pelo mesmo motivo.</span></label>
+            <label for="exam-a-q10-c"><input id="exam-a-q10-c" name="exam-a-q10" data-save type="radio"><b>C</b><span>Existe um sinal a investigar por meio de hipótese, observação e novo teste.</span></label>
+            <label for="exam-a-q10-d"><input id="exam-a-q10-d" name="exam-a-q10" data-save type="radio"><b>D</b><span>O site deve ser republicado sem qualquer alteração.</span></label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="exam-score" aria-label="Registro de pontuação">
+        <span>Acertos</span><strong>_____ / 10</strong>
+        <span>Pontuação</span><strong>_____ / 10</strong>
+      </div>
+      <footer class="sheet__footer">Design Web · Prof. Daniel Marcos Mayer · Prova A</footer>
+    </article>
+
+    <article class="sheet exam-sheet" id="prova-b" data-sheet="prova-b" aria-labelledby="prova-b-title">
+      <header class="sheet__header">
+        <div>
+          <p class="sheet__number">Atividade 10 · Avaliação individual</p>
+          <h2 id="prova-b-title">Prova B</h2>
+          <p>Versão equivalente sobre fundamentos da Web, HTML, CSS, responsividade, experiência de uso, acessibilidade, publicação e métricas.</p>
+        </div>
+        <span class="time-chip">10 pontos · 45–60 min</span>
+      </header>
+
+      <div class="exam-identification" aria-label="Identificação da prova">
+        <label for="exam-b-student">Estudante ou número de chamada<input id="exam-b-student" autocomplete="off"></label>
+        <label for="exam-b-class">Turma<input id="exam-b-class" autocomplete="off"></label>
+        <label for="exam-b-date">Data<input id="exam-b-date" autocomplete="off"></label>
+      </div>
+
+      <section class="exam-rules" aria-labelledby="prova-b-instrucoes">
+        <div>
+          <p class="kicker">Instruções</p>
+          <h3 id="prova-b-instrucoes">Uma alternativa por questão</h3>
+        </div>
+        <ul>
+          <li>Cada questão vale 1 ponto.</li>
+          <li>Leia todas as alternativas antes de marcar.</li>
+          <li>Em caso de mudança, deixe apenas uma resposta assinalada.</li>
+          <li>A identificação não fica salva no navegador; as alternativas ficam salvas somente no dispositivo em uso.</li>
+          <li>Em computador compartilhado, imprimir ou salvar em PDF e usar “Limpar respostas” antes de trocar de estudante ou sair.</li>
+        </ul>
+      </section>
+
+      <div class="exam-questions">
+        <fieldset class="exam-question">
+          <legend><span>1</span> O cadeado de HTTPS aparece no navegador. Qual interpretação é correta?</legend>
+          <div class="answer-options">
+            <label for="exam-b-q1-a"><input id="exam-b-q1-a" name="exam-b-q1" data-save type="radio"><b>A</b><span>O cadeado garante que todo o conteúdo do site é verdadeiro.</span></label>
+            <label for="exam-b-q1-b"><input id="exam-b-q1-b" name="exam-b-q1" data-save type="radio"><b>B</b><span>O cadeado substitui a hospedagem e o domínio.</span></label>
+            <label for="exam-b-q1-c"><input id="exam-b-q1-c" name="exam-b-q1" data-save type="radio"><b>C</b><span>HTTPS protege a comunicação, mas não comprova sozinho a confiabilidade do conteúdo.</span></label>
+            <label for="exam-b-q1-d"><input id="exam-b-q1-d" name="exam-b-q1" data-save type="radio"><b>D</b><span>HTTPS impede qualquer erro de HTML, CSS ou JavaScript.</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="exam-question">
+          <legend><span>2</span> Como tratar o texto alternativo de imagens?</legend>
+          <div class="answer-options">
+            <label for="exam-b-q2-a"><input id="exam-b-q2-a" name="exam-b-q2" data-save type="radio"><b>A</b><span>Descrever de forma breve a informação relevante; em imagem decorativa, usar <code>alt=""</code>.</span></label>
+            <label for="exam-b-q2-b"><input id="exam-b-q2-b" name="exam-b-q2" data-save type="radio"><b>B</b><span>Repetir o nome do arquivo, como <code>IMG_2048.jpg</code>, em todas as imagens.</span></label>
+            <label for="exam-b-q2-c"><input id="exam-b-q2-c" name="exam-b-q2" data-save type="radio"><b>C</b><span>Omitir o atributo <code>alt</code> porque o navegador cria uma descrição completa.</span></label>
+            <label for="exam-b-q2-d"><input id="exam-b-q2-d" name="exam-b-q2" data-save type="radio"><b>D</b><span>Usar a mesma frase longa em imagens informativas e decorativas.</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="exam-question">
+          <legend><span>3</span> Sem <code>!important</code>, um parágrafo com <code>class="aviso"</code> recebe <code>p { color: blue; }</code> e <code>.aviso { color: red; }</code>. Qual cor prevalece?</legend>
+          <div class="answer-options">
+            <label for="exam-b-q3-a"><input id="exam-b-q3-a" name="exam-b-q3" data-save type="radio"><b>A</b><span>Azul, porque o seletor de elemento sempre vence.</span></label>
+            <label for="exam-b-q3-b"><input id="exam-b-q3-b" name="exam-b-q3" data-save type="radio"><b>B</b><span>As duas cores se misturam automaticamente.</span></label>
+            <label for="exam-b-q3-c"><input id="exam-b-q3-c" name="exam-b-q3" data-save type="radio"><b>C</b><span>Nenhuma, porque seletores diferentes anulam a propriedade.</span></label>
+            <label for="exam-b-q3-d"><input id="exam-b-q3-d" name="exam-b-q3" data-save type="radio"><b>D</b><span>Vermelha, porque o seletor de classe é mais específico.</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="exam-question">
+          <legend><span>4</span> Um menu horizontal precisa distribuir itens em uma única direção e alinhar seus conteúdos. Qual recurso atende melhor esse caso?</legend>
+          <div class="answer-options">
+            <label for="exam-b-q4-a"><input id="exam-b-q4-a" name="exam-b-q4" data-save type="radio"><b>A</b><span><code>z-index</code>.</span></label>
+            <label for="exam-b-q4-b"><input id="exam-b-q4-b" name="exam-b-q4" data-save type="radio"><b>B</b><span>Flexbox.</span></label>
+            <label for="exam-b-q4-c"><input id="exam-b-q4-c" name="exam-b-q4" data-save type="radio"><b>C</b><span><code>position: absolute</code> em todos os itens.</span></label>
+            <label for="exam-b-q4-d"><input id="exam-b-q4-d" name="exam-b-q4" data-save type="radio"><b>D</b><span>Uma tabela HTML usada apenas para posicionamento.</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="exam-question">
+          <legend><span>5</span> Qual regra ajuda uma imagem a caber no contêiner sem distorção?</legend>
+          <div class="answer-options">
+            <label for="exam-b-q5-a"><input id="exam-b-q5-a" name="exam-b-q5" data-save type="radio"><b>A</b><span><code>width: 1200px; height: 200px;</code></span></label>
+            <label for="exam-b-q5-b"><input id="exam-b-q5-b" name="exam-b-q5" data-save type="radio"><b>B</b><span><code>min-width: 1000px;</code></span></label>
+            <label for="exam-b-q5-c"><input id="exam-b-q5-c" name="exam-b-q5" data-save type="radio"><b>C</b><span><code>max-width: 100%; height: auto;</code></span></label>
+            <label for="exam-b-q5-d"><input id="exam-b-q5-d" name="exam-b-q5" data-save type="radio"><b>D</b><span><code>overflow: visible;</code></span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="exam-question">
+          <legend><span>6</span> Qual frase diferencia corretamente UX e UI?</legend>
+          <div class="answer-options">
+            <label for="exam-b-q6-a"><input id="exam-b-q6-a" name="exam-b-q6" data-save type="radio"><b>A</b><span>UX envolve a experiência completa de realizar uma tarefa; UI é a camada visível de telas e controles.</span></label>
+            <label for="exam-b-q6-b"><input id="exam-b-q6-b" name="exam-b-q6" data-save type="radio"><b>B</b><span>UX trata apenas das cores; UI trata apenas da hospedagem.</span></label>
+            <label for="exam-b-q6-c"><input id="exam-b-q6-c" name="exam-b-q6" data-save type="radio"><b>C</b><span>UX e UI significam exatamente a mesma coisa em qualquer projeto.</span></label>
+            <label for="exam-b-q6-d"><input id="exam-b-q6-d" name="exam-b-q6" data-save type="radio"><b>D</b><span>UI é o teste com usuários; UX é somente o código CSS.</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="exam-question">
+          <legend><span>7</span> Qual verificação é indispensável para uso por teclado?</legend>
+          <div class="answer-options">
+            <label for="exam-b-q7-a"><input id="exam-b-q7-a" name="exam-b-q7" data-save type="radio"><b>A</b><span>Remover o contorno de foco de todos os elementos.</span></label>
+            <label for="exam-b-q7-b"><input id="exam-b-q7-b" name="exam-b-q7" data-save type="radio"><b>B</b><span>Exigir o uso do mouse para abrir menus e acionar botões.</span></label>
+            <label for="exam-b-q7-c"><input id="exam-b-q7-c" name="exam-b-q7" data-save type="radio"><b>C</b><span>Usar cor como único sinal de seleção.</span></label>
+            <label for="exam-b-q7-d"><input id="exam-b-q7-d" name="exam-b-q7" data-save type="radio"><b>D</b><span>Alcançar e acionar controles em ordem lógica, com foco visível.</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="exam-question">
+          <legend><span>8</span> Qual preparação reduz riscos na publicação de um protótipo escolar?</legend>
+          <div class="answer-options">
+            <label for="exam-b-q8-a"><input id="exam-b-q8-a" name="exam-b-q8" data-save type="radio"><b>A</b><span>Copiar fotos encontradas na internet e incluir perfis reais dos colegas.</span></label>
+            <label for="exam-b-q8-b"><input id="exam-b-q8-b" name="exam-b-q8" data-save type="radio"><b>B</b><span>Usar dados fictícios e imagens autorizadas, além de testar o endereço sem depender de uma conta pessoal.</span></label>
+            <label for="exam-b-q8-c"><input id="exam-b-q8-c" name="exam-b-q8" data-save type="radio"><b>C</b><span>Salvar senha e token diretamente no arquivo JavaScript.</span></label>
+            <label for="exam-b-q8-d"><input id="exam-b-q8-d" name="exam-b-q8" data-save type="radio"><b>D</b><span>Compartilhar somente uma captura, sem manter os arquivos locais.</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="exam-question">
+          <legend><span>9</span> Setenta por cento dos acessos são móveis. A conclusão é 8% no celular e 24% no computador. Qual decisão inicial é mais bem sustentada?</legend>
+          <div class="answer-options">
+            <label for="exam-b-q9-a"><input id="exam-b-q9-a" name="exam-b-q9" data-save type="radio"><b>A</b><span>Excluir a versão para computador, pois ela tem menos acessos.</span></label>
+            <label for="exam-b-q9-b"><input id="exam-b-q9-b" name="exam-b-q9" data-save type="radio"><b>B</b><span>Concluir que a velocidade da internet é a única causa.</span></label>
+            <label for="exam-b-q9-c"><input id="exam-b-q9-c" name="exam-b-q9" data-save type="radio"><b>C</b><span>Priorizar a investigação do fluxo móvel e testar uma hipótese de melhoria.</span></label>
+            <label for="exam-b-q9-d"><input id="exam-b-q9-d" name="exam-b-q9" data-save type="radio"><b>D</b><span>Ignorar a diferença porque as duas taxas são maiores que zero.</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="exam-question">
+          <legend><span>10</span> Qual sequência transforma métricas em uma decisão de projeto verificável?</legend>
+          <div class="answer-options">
+            <label for="exam-b-q10-a"><input id="exam-b-q10-a" name="exam-b-q10" data-save type="radio"><b>A</b><span>Observar o dado, formular uma hipótese, alterar a interface e medir novamente.</span></label>
+            <label for="exam-b-q10-b"><input id="exam-b-q10-b" name="exam-b-q10" data-save type="radio"><b>B</b><span>Escolher uma tendência visual, alterar tudo e não comparar os resultados.</span></label>
+            <label for="exam-b-q10-c"><input id="exam-b-q10-c" name="exam-b-q10" data-save type="radio"><b>C</b><span>Eliminar todos os conteúdos da página com maior saída.</span></label>
+            <label for="exam-b-q10-d"><input id="exam-b-q10-d" name="exam-b-q10" data-save type="radio"><b>D</b><span>Usar uma única opinião como prova de comportamento de todo o público.</span></label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="exam-score" aria-label="Registro de pontuação">
+        <span>Acertos</span><strong>_____ / 10</strong>
+        <span>Pontuação</span><strong>_____ / 10</strong>
+      </div>
+      <footer class="sheet__footer">Design Web · Prof. Daniel Marcos Mayer · Prova B</footer>
+    </article>
+
+    <article class="sheet sheet--wide answer-document" id="gabarito" data-sheet="gabarito" aria-labelledby="gabarito-title">
+      <header class="sheet__header">
+        <div>
+          <p class="sheet__number">Atividade 11 · Correção das avaliações</p>
+          <h2 id="gabarito-title">Gabarito comentado</h2>
+          <p>Documento separado das provas. Cada acerto vale 1 ponto; as justificativas apoiam a devolutiva e o diagnóstico de recuperação.</p>
+        </div>
+        <span class="time-chip">Provas A e B</span>
+      </header>
+
+      <aside class="answer-document__notice">
+        <p class="kicker">Controle de aplicação</p>
+        <h3>Manter separado das cópias de prova</h3>
+        <p>Na impressão de uma avaliação, selecionar apenas “Prova A” ou “Prova B”, usar “Limpar respostas” e então escolher “Imprimir material”. O botão “Imprimir caderno” inclui este gabarito porque reúne o material completo.</p>
+      </aside>
+
+      <div class="answer-columns">
+        <section aria-labelledby="gabarito-a-title">
+          <h3 id="gabarito-a-title">Prova A</h3>
+          <ol class="rationale-list">
+            <li><strong>B · Fundamentos.</strong> Domínio identifica o endereço; hospedagem mantém os arquivos disponíveis na rede.</li>
+            <li><strong>C · HTML.</strong> <code>nav</code> comunica a função de navegação, e o rótulo diferencia essa região.</li>
+            <li><strong>A · CSS.</strong> <code>border-box</code> inclui preenchimento e borda dentro da largura definida.</li>
+            <li><strong>D · CSS.</strong> Grid organiza linhas e colunas; é adequado a uma grade bidimensional de cartões.</li>
+            <li><strong>B · Responsividade.</strong> A base atende telas estreitas e a media query amplia o leiaute progressivamente.</li>
+            <li><strong>C · UX.</strong> A tarefa neutra e a observação sem condução revelam dificuldades reais do fluxo.</li>
+            <li><strong>A · Acessibilidade.</strong> A associação entre <code>label</code> e <code>input</code> dá nome programático ao campo.</li>
+            <li><strong>D · Publicação.</strong> Caminhos, diferentes larguras e proteção de dados integram a revisão prévia.</li>
+            <li><strong>B · Métricas.</strong> A queda de 600 para 150 corresponde a 450 pessoas, ou 75% da etapa.</li>
+            <li><strong>C · Métricas.</strong> A taxa localiza um sinal; a causa ainda precisa ser investigada e testada.</li>
+          </ol>
+        </section>
+
+        <section aria-labelledby="gabarito-b-title">
+          <h3 id="gabarito-b-title">Prova B</h3>
+          <ol class="rationale-list">
+            <li><strong>C · Fundamentos.</strong> HTTPS protege os dados em trânsito, mas não certifica a veracidade de todo o conteúdo.</li>
+            <li><strong>A · HTML e acesso.</strong> A alternativa deve comunicar a informação; imagens apenas decorativas recebem <code>alt=""</code>.</li>
+            <li><strong>D · CSS.</strong> O seletor de classe tem maior especificidade do que o seletor de elemento.</li>
+            <li><strong>B · CSS.</strong> Flexbox distribui e alinha elementos ao longo de uma dimensão.</li>
+            <li><strong>C · Responsividade.</strong> A largura respeita o contêiner e a altura automática preserva a proporção.</li>
+            <li><strong>A · UX/UI.</strong> UX abrange a experiência da tarefa; UI reúne os elementos visíveis de interação.</li>
+            <li><strong>D · Acessibilidade.</strong> Controles precisam ser alcançáveis, acionáveis e identificáveis pelo foco.</li>
+            <li><strong>B · Publicação.</strong> Dados fictícios, mídia autorizada e teste sem conta pessoal reduzem exposição.</li>
+            <li><strong>C · Métricas.</strong> Volume e conversão justificam investigar o fluxo móvel, sem presumir uma causa.</li>
+            <li><strong>A · Métricas.</strong> A nova medição verifica se a alteração apoiada pela hipótese produziu efeito.</li>
+          </ol>
+        </section>
+      </div>
+
+      <section class="correction-map" aria-labelledby="mapa-correcao-title">
+        <div>
+          <p class="kicker">Mapa para devolutiva</p>
+          <h3 id="mapa-correcao-title">Questões por campo de conhecimento</h3>
+        </div>
+        <dl>
+          <div><dt>Fundamentos da Web</dt><dd>A1 · B1</dd></div>
+          <div><dt>HTML e semântica</dt><dd>A2 · B2</dd></div>
+          <div><dt>CSS e leiaute</dt><dd>A3–A4 · B3–B4</dd></div>
+          <div><dt>Responsividade</dt><dd>A5 · B5</dd></div>
+          <div><dt>UX e acessibilidade</dt><dd>A6–A7 · B6–B7</dd></div>
+          <div><dt>Publicação segura</dt><dd>A8 · B8</dd></div>
+          <div><dt>Métricas e decisão</dt><dd>A9–A10 · B9–B10</dd></div>
+        </dl>
+      </section>
+
+      <footer class="sheet__footer">Design Web · Prof. Daniel Marcos Mayer · Gabarito</footer>
+    </article>
+
+    <article class="sheet sheet--wide" id="rubrica" data-sheet="rubrica" aria-labelledby="rubrica-title">
+      <header class="sheet__header">
+        <div>
+          <p class="sheet__number">Atividade 12 · Projeto integrador</p>
+          <h2 id="rubrica-title">Rubrica de avaliação</h2>
+          <p>Critérios transparentes para acompanhar processo, produto e capacidade de justificar decisões.</p>
+        </div>
+        <span class="time-chip">100 pontos</span>
+      </header>
+
+      <div class="rubric-scale">
+        <span><strong>4</strong> consistente</span>
+        <span><strong>3</strong> adequado</span>
+        <span><strong>2</strong> parcial</span>
+        <span><strong>1</strong> inicial</span>
+        <span><strong>0</strong> não apresentado</span>
+      </div>
+
+      <div class="table-wrap">
+        <table class="data-table rubric-table">
+          <caption>Critérios e evidências do projeto</caption>
+          <thead>
+            <tr><th scope="col">Critério</th><th scope="col">Peso</th><th scope="col">4 · consistente</th><th scope="col">3 · adequado</th><th scope="col">2 · parcial</th><th scope="col">1 · inicial</th><th scope="col">Nível</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Briefing e problema</th><td>10</td><td>Problema, público fictício e objetivo mensurável articulados.</td><td>Elementos centrais definidos com pequenas lacunas.</td><td>Definições genéricas ou pouco conectadas.</td><td>Problema ou público sem definição.</td><td><select id="rubric-brief" data-save data-rubric data-weight="10" aria-label="Nível de briefing"><option value="">—</option><option>4</option><option>3</option><option>2</option><option>1</option><option>0</option></select></td></tr>
+            <tr><th scope="row">Arquitetura e fluxo</th><td>10</td><td>Conteúdo agrupado e tarefa principal sem becos sem saída.</td><td>Estrutura compreensível com desvios pontuais.</td><td>Grupos ou caminhos geram dúvida.</td><td>Navegação incompleta ou aleatória.</td><td><select id="rubric-flow" data-save data-rubric data-weight="10" aria-label="Nível de arquitetura"><option value="">—</option><option>4</option><option>3</option><option>2</option><option>1</option><option>0</option></select></td></tr>
+            <tr><th scope="row">Wireframe e hierarquia</th><td>15</td><td>Prioridades claras em desktop e mobile.</td><td>Hierarquia funcional nas telas principais.</td><td>Algumas prioridades competem entre si.</td><td>Elementos sem ordem visual reconhecível.</td><td><select id="rubric-wire" data-save data-rubric data-weight="15" aria-label="Nível de wireframe"><option value="">—</option><option>4</option><option>3</option><option>2</option><option>1</option><option>0</option></select></td></tr>
+            <tr><th scope="row">HTML semântico</th><td>15</td><td>Estrutura válida, lógica e adequada ao conteúdo.</td><td>Semântica correta na maior parte da página.</td><td>Excesso de elementos genéricos ou ordem falha.</td><td>Estrutura compromete leitura e manutenção.</td><td><select id="rubric-html" data-save data-rubric data-weight="15" aria-label="Nível de HTML"><option value="">—</option><option>4</option><option>3</option><option>2</option><option>1</option><option>0</option></select></td></tr>
+            <tr><th scope="row">CSS e responsividade</th><td>20</td><td>Sistema visual coerente, estável e adaptado às larguras.</td><td>Leiaute funcional com ajustes menores.</td><td>Quebras visíveis ou estilos inconsistentes.</td><td>Leiaute funciona em apenas um cenário.</td><td><select id="rubric-css" data-save data-rubric data-weight="20" aria-label="Nível de CSS"><option value="">—</option><option>4</option><option>3</option><option>2</option><option>1</option><option>0</option></select></td></tr>
+            <tr><th scope="row">Acessibilidade</th><td>15</td><td>Teclado, foco, contraste, rótulos e alternativas verificados.</td><td>Requisitos principais atendidos.</td><td>Barreiras pontuais ainda presentes.</td><td>Barreiras impedem parte do uso.</td><td><select id="rubric-access" data-save data-rubric data-weight="15" aria-label="Nível de acessibilidade"><option value="">—</option><option>4</option><option>3</option><option>2</option><option>1</option><option>0</option></select></td></tr>
+            <tr><th scope="row">Teste e iteração</th><td>10</td><td>Evidência do teste conduz a mudança verificável.</td><td>Teste registrado e ajuste coerente.</td><td>Teste incompleto ou ajuste sem evidência.</td><td>Não há relação entre teste e revisão.</td><td><select id="rubric-test" data-save data-rubric data-weight="10" aria-label="Nível de teste"><option value="">—</option><option>4</option><option>3</option><option>2</option><option>1</option><option>0</option></select></td></tr>
+            <tr><th scope="row">Processo e apresentação</th><td>5</td><td>Arquivos organizados e decisões justificadas com clareza.</td><td>Entrega compreensível e organizada.</td><td>Faltam evidências ou clareza na explicação.</td><td>Entrega desorganizada ou incompleta.</td><td><select id="rubric-process" data-save data-rubric data-weight="5" aria-label="Nível de processo"><option value="">—</option><option>4</option><option>3</option><option>2</option><option>1</option><option>0</option></select></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="score-box" aria-live="polite">
+        <span>Pontuação calculada</span>
+        <strong id="rubricScore">— / 100</strong>
+        <small>pontos = nível ÷ 4 × peso</small>
+      </div>
+
+      <fieldset class="worksheet">
+        <legend>Devolutiva</legend>
+        <div class="form-grid">
+          <label class="field" for="rubric-strength"><span>Qualidade mais consistente</span><textarea id="rubric-strength" data-save rows="3"></textarea></label>
+          <label class="field" for="rubric-next"><span>Próximo avanço prioritário</span><textarea id="rubric-next" data-save rows="3"></textarea></label>
+          <label class="field field--full" for="rubric-evidence"><span>Evidência observada</span><textarea id="rubric-evidence" data-save rows="3"></textarea></label>
+        </div>
+      </fieldset>
+      <footer class="sheet__footer">Design Web · Prof. Daniel Marcos Mayer</footer>
+    </article>
+
+    <article class="sheet" id="recuperacao" data-sheet="recuperacao" aria-labelledby="recuperacao-title">
+      <header class="sheet__header">
+        <div>
+          <p class="sheet__number">Atividade 13 · Recuperação da aprendizagem</p>
+          <h2 id="recuperacao-title">Percurso de recuperação</h2>
+          <p>Nova evidência escrita e prática, construída a partir das dificuldades registradas na avaliação.</p>
+        </div>
+        <span class="time-chip">Aula 29 · 5 etapas</span>
+      </header>
+
+      <section class="recovery-policy" aria-labelledby="regra-recuperacao-title">
+        <div>
+          <p class="kicker">Regra de aplicação</p>
+          <h3 id="regra-recuperacao-title">Uma versão inédita e uma evidência prática</h3>
+          <p>Na Aula 26, aplica-se uma das versões da prova. Na Aula 29, quem participa da recuperação responde à versão ainda não utilizada e apresenta a correção prática descrita nesta ficha. O resultado é analisado conforme os critérios institucionais vigentes; este caderno não cria nota mínima nem substitui os registros oficiais.</p>
+        </div>
+        <ol>
+          <li><strong>Diagnóstico:</strong> localizar no gabarito os campos de conhecimento que precisam de nova evidência.</li>
+          <li><strong>Estudo dirigido:</strong> revisar os ciclos correspondentes e refazer questões do mini-simulado.</li>
+          <li><strong>Prova inédita:</strong> responder à versão A ou B que não foi utilizada na primeira aplicação.</li>
+          <li><strong>Aplicação prática:</strong> corrigir e testar a página “Feira Inventário”.</li>
+          <li><strong>Registro:</strong> reunir pontuação, arquivos e justificativa da aprendizagem demonstrada.</li>
+        </ol>
+      </section>
+
+      <fieldset class="worksheet">
+        <legend>Controle das versões e evidências</legend>
+        <div class="form-grid">
+          <label class="field" for="recovery-first-version"><span>Versão da primeira aplicação</span><select id="recovery-first-version" data-save><option value="">Selecionar</option><option>Prova A</option><option>Prova B</option></select></label>
+          <label class="field" for="recovery-new-version"><span>Versão inédita da recuperação</span><select id="recovery-new-version" data-save><option value="">Selecionar</option><option>Prova A</option><option>Prova B</option></select></label>
+          <label class="field" for="recovery-first-score"><span>Pontuação da primeira aplicação</span><input id="recovery-first-score" data-save inputmode="decimal" placeholder="___ / 10"></label>
+          <label class="field" for="recovery-new-score"><span>Pontuação da versão inédita</span><input id="recovery-new-score" data-save inputmode="decimal" placeholder="___ / 10"></label>
+        </div>
+        <p class="form-note">As versões registradas acima devem ser diferentes. O gabarito orienta o diagnóstico, mas permanece separado durante a prova.</p>
+      </fieldset>
+
+      <aside class="scenario">
+        <p class="kicker">Evidência prática de recuperação</p>
+        <h3>Página única · Feira Inventário</h3>
+        <p>Site fictício de uma feira estudantil com apresentação, programação em três cards e chamada para inscrição simulada. O projeto não publica nem solicita dados pessoais.</p>
+      </aside>
+
+      <fieldset class="worksheet">
+        <legend>Diagnóstico inicial</legend>
+        <div class="diagnostic-grid">
+          <label><span>HTML semântico</span><select id="recovery-html" data-save><option value=""></option><option>Consolidado</option><option>Em revisão</option><option>Prioritário</option></select></label>
+          <label><span>Modelo de caixa</span><select id="recovery-box" data-save><option value=""></option><option>Consolidado</option><option>Em revisão</option><option>Prioritário</option></select></label>
+          <label><span>Flexbox / Grid</span><select id="recovery-layout" data-save><option value=""></option><option>Consolidado</option><option>Em revisão</option><option>Prioritário</option></select></label>
+          <label><span>Responsividade</span><select id="recovery-responsive" data-save><option value=""></option><option>Consolidado</option><option>Em revisão</option><option>Prioritário</option></select></label>
+          <label><span>Acessibilidade</span><select id="recovery-access" data-save><option value=""></option><option>Consolidado</option><option>Em revisão</option><option>Prioritário</option></select></label>
+          <label><span>Teste e correção</span><select id="recovery-test" data-save><option value=""></option><option>Consolidado</option><option>Em revisão</option><option>Prioritário</option></select></label>
+        </div>
+        <label class="field field--full" for="recovery-focus"><span>Foco definido a partir do diagnóstico</span><textarea id="recovery-focus" data-save rows="3"></textarea></label>
+      </fieldset>
+
+      <ol class="recovery-path">
+        <li>
+          <div class="recovery-path__number">1</div>
+          <div>
+            <h3>Estrutura</h3>
+            <p><code>header</code>, <code>nav</code>, <code>main</code>, três <code>section</code> ou <code>article</code> e <code>footer</code>. Títulos seguem ordem lógica; imagens recebem alternativa textual.</p>
+            <label><input id="recovery-step-1" data-save type="checkbox"> evidência conferida</label>
+          </div>
+        </li>
+        <li>
+          <div class="recovery-path__number">2</div>
+          <div>
+            <h3>Sistema visual</h3>
+            <p>Variáveis para cores e espaços, modelo de caixa previsível, tipografia legível e cartões organizados por Flexbox ou Grid.</p>
+            <label><input id="recovery-step-2" data-save type="checkbox"> evidência conferida</label>
+          </div>
+        </li>
+        <li>
+          <div class="recovery-path__number">3</div>
+          <div>
+            <h3>Adaptação e acesso</h3>
+            <p>Leiaute verificado em 390 px e 1280 px, navegação por teclado, foco visível, contraste e rótulos de formulário.</p>
+            <label><input id="recovery-step-3" data-save type="checkbox"> evidência conferida</label>
+          </div>
+        </li>
+        <li>
+          <div class="recovery-path__number">4</div>
+          <div>
+            <h3>Teste e reflexão</h3>
+            <p>Uma tarefa testada por colega identificado apenas por letra, uma dificuldade registrada e uma correção demonstrada.</p>
+            <label><input id="recovery-step-4" data-save type="checkbox"> evidência conferida</label>
+          </div>
+        </li>
+      </ol>
+
+      <fieldset class="worksheet">
+        <legend>Registro final da aprendizagem</legend>
+        <div class="form-grid">
+          <label class="field" for="recovery-before"><span>Antes da revisão</span><textarea id="recovery-before" data-save rows="4" placeholder="Dificuldade observada…"></textarea></label>
+          <label class="field" for="recovery-after"><span>Depois da revisão</span><textarea id="recovery-after" data-save rows="4" placeholder="Mudança realizada e resultado…"></textarea></label>
+          <label class="field field--full" for="recovery-learning"><span>Conceito demonstrado com maior segurança</span><textarea id="recovery-learning" data-save rows="3"></textarea></label>
+          <label class="field field--full" for="recovery-decision"><span>Registro conforme os critérios institucionais</span><select id="recovery-decision" data-save><option value="">Selecionar após análise</option><option>Evidência suficiente</option><option>Evidência em complementação</option></select></label>
+        </div>
+      </fieldset>
+
+      <section class="delivery-check" aria-labelledby="delivery-title">
+        <h3 id="delivery-title">Composição da entrega</h3>
+        <label><input id="delivery-html" data-save type="checkbox"> <code>index.html</code></label>
+        <label><input id="delivery-css" data-save type="checkbox"> <code>styles.css</code></label>
+        <label><input id="delivery-screenshot" data-save type="checkbox"> capturas em 390 px e 1280 px</label>
+        <label><input id="delivery-test" data-save type="checkbox"> ficha de teste sem dados pessoais</label>
+        <label><input id="delivery-reflection" data-save type="checkbox"> reflexão “antes e depois”</label>
+      </section>
+      <footer class="sheet__footer">Design Web · Prof. Daniel Marcos Mayer</footer>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-width">
+      <p>Design Web · Técnico em Multimídia</p>
+      <p>Prof. Daniel Marcos Mayer</p>
+    </div>
+  </footer>
+</body>
+</html>

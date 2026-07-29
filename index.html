@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Técnico em Multimídia · SENAI</title>
-<meta name="description" content="Hub de Unidades Curriculares do curso Técnico em Multimídia · SENAI. Prof. Daniel Mayer.">
+<meta name="description" content="Planejamentos e materiais de aula do curso Técnico em Multimídia · SENAI. Prof. Daniel Marcos Mayer.">
+<link rel="icon" href="data:,">
 <link rel="stylesheet" href="assets/home.css">
 </head>
 <body>
@@ -17,7 +18,7 @@
       <span>Técnico em Multimídia</span>
     </div>
     <nav class="crumbs" aria-label="Navegação">
-      <span class="current">Home</span>
+      <span class="current">Início</span>
     </nav>
   </header>
 
@@ -26,11 +27,11 @@
     <section class="hub-hero">
       <div class="eyebrow">Curso Técnico · SENAI</div>
       <h1>Técnico em Multimídia</h1>
-      <p class="lede">Materiais pedagógicos interativos das Unidades Curriculares. Cada apresentação roda no navegador, funciona off-line e foi desenhada para a realidade da sala de aula presencial.</p>
+      <p class="lede">Planejamentos e materiais das Unidades Curriculares que ministro no Técnico em Multimídia. As apresentações funcionam no navegador e permanecem disponíveis sem internet durante as aulas presenciais.</p>
       <div class="meta">
         <div class="meta-item">
           <span class="meta-label">Professor</span>
-          <span class="meta-value">Daniel Mayer</span>
+          <span class="meta-value">Daniel Marcos Mayer</span>
         </div>
         <div class="meta-item">
           <span class="meta-label">Modalidade</span>
@@ -46,7 +47,7 @@
     <section>
       <div class="hub-section-head">
         <h2>Unidades Curriculares</h2>
-        <span class="count" id="ucCount">1 disponível</span>
+        <span class="count" id="ucCount">3 disponíveis</span>
       </div>
       <div class="uc-grid" id="ucGrid"></div>
     </section>
@@ -54,8 +55,8 @@
   </main>
 
   <footer class="hub-footer">
-    <div>© 2026 · SENAI · Material didático · Prof. Daniel Mayer</div>
-    <div class="hint">Atalho: <kbd>H</kbd> volta ao Home · <kbd>?</kbd> mostra ajuda</div>
+    <div>© 2026 · SENAI · Material didático · Prof. Daniel Marcos Mayer</div>
+    <div class="hint">Atalho: <kbd>H</kbd> volta ao início · <kbd>?</kbd> mostra ajuda</div>
   </footer>
 
 </div>
@@ -66,7 +67,7 @@
     <div class="help-title" id="helpTitle">Atalhos de Teclado</div>
     <div class="help-row">
       <span><kbd>H</kbd></span>
-      <span class="help-desc">Voltar ao Home (todas as páginas)</span>
+      <span class="help-desc">Voltar ao início (todas as páginas)</span>
     </div>
     <div class="help-row">
       <span><kbd>?</kbd></span>
@@ -89,15 +90,32 @@
   /* ------------------------------------------------------------------ */
   const UCS = [
     {
-      codigo: 'UC · 01',
+      codigo: 'Unidade Curricular',
       titulo: 'Fundamentos de Fotografia Digital e de Semiótica',
       descricao: 'Da câmera obscura à imagem digital. História, fundamentos técnicos, semiótica peirciana e ética da imagem.',
       cargaHoraria: '40 h',
       aulas: 12,
       status: 'disponivel',
       url: 'uc-fotografia-digital.html'
+    },
+    {
+      codigo: 'Módulo Específico II',
+      titulo: 'Design Web',
+      descricao: 'Fundamentos da web, HTML, CSS, responsividade, interação, acessibilidade, projeto de interface e publicação.',
+      cargaHoraria: '100 h',
+      aulas: 29,
+      status: 'disponivel',
+      url: 'uc-design-web.html'
+    },
+    {
+      codigo: 'Módulo Específico II',
+      titulo: 'Produção Audiovisual',
+      descricao: 'Linguagem audiovisual, roteiro, captação de imagem e som, edição, finalização e mostra dos projetos.',
+      cargaHoraria: '98 h',
+      aulas: 23,
+      status: 'disponivel',
+      url: 'uc-producao-audiovisual.html'
     }
-    // Novas UCs serão adicionadas aqui à medida que forem desenvolvidas.
   ];
 
   function renderUCs() {
@@ -116,26 +134,21 @@
         uc.aulas ? '<span>' + uc.aulas + ' aulas</span>' : ''
       ].filter(Boolean).join('');
       return '' +
-        '<article class="' + cls + '" ' + (soon ? '' : 'data-url="' + uc.url + '"') + ' role="button" tabindex="' + (soon ? '-1' : '0') + '" aria-label="' + uc.titulo + '">' +
+        (soon
+          ? '<article class="' + cls + '" aria-label="' + uc.titulo + '">'
+          : '<a class="' + cls + '" href="' + uc.url + '" aria-label="' + uc.titulo + '">') +
           '<div class="uc-code">' + uc.codigo + '</div>' +
           '<h3 class="uc-title">' + uc.titulo + '</h3>' +
           '<p class="uc-desc">' + uc.descricao + '</p>' +
           '<div class="uc-meta">' + meta + '</div>' +
           cta +
-        '</article>';
+        (soon ? '</article>' : '</a>');
     }).join('');
-
-    grid.querySelectorAll('.uc-card.is-available').forEach(card => {
-      card.addEventListener('click', () => { window.location.href = card.dataset.url; });
-      card.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.location.href = card.dataset.url; }
-      });
-    });
   }
 
   /* ------------------------------------------------------------------ */
   /* HOTKEYS                                                             */
-  /* H: Home (já estamos aqui, mas marca consistência)                   */
+  /* H: Início (já estamos aqui, mas marca consistência)                 */
   /* ?: Help overlay                                                     */
   /* Esc: fecha overlay                                                  */
   /* ------------------------------------------------------------------ */
@@ -160,7 +173,7 @@
       }
     }
     if (e.key === 'h' || e.key === 'H') {
-      // Já estamos no Home; apenas rola ao topo para feedback.
+      // Já estamos no início; apenas rola ao topo para feedback.
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   });
