@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mostra fictícia de projetos do curso Técnico em Multimídia.">
+  <title>Mostra Multimídia</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Mostra Multimídia, página inicial">Mostra Multimídia</a>
+      <nav aria-label="Navegação principal">
+        <ul class="menu">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+      <button class="theme-button" id="themeButton" type="button" aria-pressed="false">
+        Alternar tema
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Técnico em Multimídia</p>
+          <h1>Ideias da escola, histórias para compartilhar.</h1>
+          <p class="hero-text">Uma seleção fictícia de trabalhos que combina fotografia, design, áudio e vídeo produzidos no Técnico em Multimídia.</p>
+          <a class="button" href="#projetos">Ver seleção</a>
+        </div>
+        <div class="hero-placeholder" role="img" aria-label="Composição abstrata em vermelho, creme e grafite representando imagem, som e movimento">
+          Imagem · som · movimento
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projetos" aria-labelledby="projectsTitle">
+      <div class="container">
+        <p class="eyebrow">Portfólio</p>
+        <h2 id="projectsTitle">Projetos em destaque</h2>
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-image" aria-hidden="true"></div>
+            <div class="card-content">
+              <h3>Retratos da oficina</h3>
+              <p>Ensaio fotográfico sobre gestos, ferramentas e pessoas que transformam matéria em projeto.</p>
+              <a href="#contato">Solicitar apresentação <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-image" aria-hidden="true"></div>
+            <div class="card-content">
+              <h3>Mapa cultural do bairro</h3>
+              <p>Interface que reúne espaços, eventos e relatos de quem mantém a cultura local em movimento.</p>
+              <a href="#contato">Solicitar apresentação <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-image" aria-hidden="true"></div>
+            <div class="card-content">
+              <h3>Sons da escola</h3>
+              <p>Minidocumentário construído com vozes, ambientes e ritmos registrados durante uma semana.</p>
+              <a href="#contato">Solicitar apresentação <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-accent" id="contato" aria-labelledby="contactTitle">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">Contato</p>
+          <h2 id="contactTitle">Conheça a mostra</h2>
+          <p>Este formulário demonstra validação e resposta na página. Nenhuma informação é enviada.</p>
+        </div>
+        <form class="contact-form">
+          <label for="name">Nome</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+          <label for="message">Mensagem</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+          <button class="button" type="submit">Preparar mensagem</button>
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Mostra Multimídia · Projeto fictício de aula</p>
+    </div>
+  </footer>
+</body>
+</html>

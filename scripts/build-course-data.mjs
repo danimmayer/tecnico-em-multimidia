@@ -1,0 +1,374 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const [designPath, audiovisualPath] = process.argv.slice(2);
+
+if (!designPath || !audiovisualPath) {
+  console.error('Uso: node scripts/build-course-data.mjs <planejamento-design-web.md> <planejamento-audiovisual.md>');
+  process.exit(1);
+}
+
+const cleanCell = (value = '') => value
+  .replace(/\*\*/g, '')
+  .replace(/<br\s*\/?>/gi, ' ')
+  .replace(/\s+/g, ' ')
+  .trim();
+
+const refinePublicCopy = (value, { slug, lessonNumber }) => {
+  let text = cleanCell(value)
+    .replace(/^Chamada\.\s*/i, '')
+    .replace(/\bstyle\.css\b/g, 'styles.css')
+    .replace(/\bimersão inicial\b/gi, 'introdução')
+    .replace(/\bpré-produção relâmpago\b/gi, 'pré-produção de escopo reduzido')
+    .replace(/\bfechamento leve\b/gi, 'fechamento')
+    .replace(/\bdesafio autoral\b/gi, 'atividade de produção')
+    .replace(/\bencerramento celebrativo\b/gi, 'encerramento com síntese do percurso')
+    .replace(/\baprendendo fazendo\b/gi, 'prática orientada')
+    .replace(/\bolhar inovador\b/gi, 'análise crítica')
+    .replace(/\bKickoff\b/g, 'Início')
+    .replace(/\bkickoff\b/gi, 'início')
+    .replace(/\bCheck-in\b/g, 'Acompanhamento')
+    .replace(/\bcheck-in\b/gi, 'acompanhamento')
+    .replace(/\bapresentação relâmpago\b/gi, 'apresentação breve')
+    .replace(/quiz gamificado "Rodada Final" no celular/gi, 'revisão em equipes com questões projetadas')
+    .replace(/Revisão geral gamificada: quiz em equipes no projetor/g, 'Revisão geral em equipes, com questões no projetor')
+    .replace(/\bquiz gamificado\b/gi, 'revisão com questões')
+    .replace(/\brevisão gamificada\b/gi, 'revisão em equipes')
+    .replace(/\brevisão geral gamificada\b/gi, 'revisão geral em equipes')
+    .replace(/\bdisputando ponto a ponto\b/gi, 'respondendo em rodadas')
+    .replace(/\bmini-docs\b/gi, 'minidocumentários')
+    .replace(/\bmini-doc\b/gi, 'minidocumentário')
+    .replace(/\barquivo master\b/gi, 'arquivo mestre (master)');
+
+  if (slug === 'design-web') {
+    text = text
+      .replace(
+        /Codificação junto com o professor: cada aluno digita/,
+        'Codificação acompanhada no projetor: cada aluno digita'
+      )
+      .replace(/\bfornecido pelo professor\b/gi, 'fornecido para a atividade')
+      .replace(
+        /Conversa de validação com cada grupo: professor confere se o escopo cabe no calendário e ajusta promessas exageradas\./,
+        'Validação do escopo de cada grupo em relação ao calendário, com redução de promessas que não cabem no prazo.'
+      )
+      .replace(
+        /Professor circula validando tela a tela\./,
+        'Revisão tela a tela durante o acompanhamento dos grupos.'
+      )
+      .replace(
+        /encerramento coletivo da UC com fala do professor:/,
+        'encerramento coletivo da UC com síntese do percurso:'
+      )
+      .replace(/painel coletivo "Da ARPANET ao 5G"/g, 'painel coletivo da linha do tempo da web')
+      .replace(/Dinâmica "Bom de Navegar":/g, 'Análise comparativa de navegação:')
+      .replace(/Desafio "Da URL à Tela":/g, 'Síntese visual do caminho da URL à tela:')
+      .replace(/Desafio em duplas "Clone de Capa":/g, 'Exercício de estrutura de página:')
+      .replace(/"Vernissage digital":/g, 'Revisão entre pares dos sites publicados:')
+      .replace(/Oficina guiada "Meu site ganhou vida":/g, 'Prática guiada de interação em JavaScript:')
+      .replace(/Discussão disparadora "Amo e odeio":/g, 'Análise comparativa de experiências digitais:')
+      .replace(/"Redesenho relâmpago":/g, 'Redesenho da etapa mais problemática:')
+      .replace(/"Galeria de rafes":/g, 'Revisão dos esboços:')
+      .replace(/Revisão cruzada "Troca de Contas":/g, 'Revisão cruzada das peças:')
+      .replace(
+        /Revisão da Aula 03 \(primeira página em HTML\) com quiz rápido no celular, em ferramenta gratuita de quiz \(ex\.: Kahoot ou Google Formulários\), sobre doctype, head, body e tags básicas; correção comentada na hora\./,
+        'Revisão da Aula 03 com oito questões projetadas sobre doctype, head, body e tags básicas; as duplas registram as respostas em papel e a correção é comentada na hora.'
+      )
+      .replace(
+        /planilha gratuita, ex\.: Planilhas Google, ou caderno/,
+        'planilha local ou caderno'
+      )
+      .replace(
+        /Comparação de opções gratuitas \(ex\.: GitHub Pages, Netlify\): limites, endereço gerado e facilidade de atualização\./,
+        'Comparação entre o Netlify Drop, que publica uma pasta sem login, e o servidor local, observando endereço gerado, exposição pública e atualização.'
+      )
+      .replace(
+        /Passo a passo guiado no projetor: criação da conta na plataforma gratuita escolhida, envio dos arquivos do mini site e primeira visualização do endereço público de cada aluno\./,
+        'Passo a passo guiado no projetor: conferência da pasta, envio pelo Netlify Drop sem criação de conta e primeira visualização do endereço público de cada aluno.'
+      )
+      .replace(
+        /Publicação parcial em hospedagem gratuita \(ex\.: GitHub Pages ou Netlify\)/,
+        'Publicação parcial pelo Netlify Drop, sem login, ou em hospedagem institucional já preparada,'
+      )
+      .replace(
+        /Tour pela ferramenta gratuita de prototipação \(ex\.: Figma com plano educacional ou Canva\): páginas, frames, biblioteca de elementos e uso de templates como ponto de partida sem copiar a solução pronta\./,
+        'Demonstração no LiveCodes: áreas do projeto, componentes reaproveitáveis e uso do site-base como ponto de partida sem copiar uma solução pronta.'
+      )
+      .replace(
+        /em ferramenta gratuita de design \(ex\.: Figma com plano educacional ou Canva\)/g,
+        'no caderno de materiais ou no LiveCodes, conforme o grau de fidelidade'
+      )
+      .replace(
+        /na ferramenta gratuita de prototipação \(ex\.: Figma com plano educacional ou Canva\)/g,
+        'no caderno de materiais ou no LiveCodes, conforme o grau de fidelidade'
+      )
+      .replace(
+        /ferramenta gratuita de prototipação \(ex\.: Figma com plano educacional ou Canva\)/g,
+        'caderno de materiais ou LiveCodes'
+      )
+      .replace(
+        /softwares de design digital \(ex\.: Canva, GIMP\)/g,
+        'Photopea no navegador, sem login, ou GIMP instalado'
+      )
+      .replace(
+        /smartphones dos alunos para o quiz/,
+        'smartphones dos alunos para testes responsivos'
+      )
+      .replace(/com gamificação na revisão/gi, 'com revisão em equipes')
+      .replace(/Gamificação de aquecimento/gi, 'Revisão breve')
+      .replace(
+        /Desafio "Quem Sou Eu": página pessoal com no mínimo cinco tags diferentes\./,
+        'Exercício com persona fictícia: página de apresentação sem dados pessoais reais, usando no mínimo cinco tags diferentes.'
+      )
+      .replace(
+        /Oficina "Meu Mini Site": transformar a página quem sou eu em um site de três páginas navegáveis/,
+        'Transformação da página da persona fictícia em um site de três páginas navegáveis'
+      )
+      .replace(
+        /Análise guiada de interfaces reais no celular dos alunos \(aplicativo de banco, de transporte e de delivery\), identificando bons e maus exemplos\./,
+        'Análise guiada de capturas preparadas de cadastro, transporte e compra, sempre com dados fictícios e sem abrir aplicativos ou contas pessoais dos estudantes.'
+      )
+      .replace(
+        /Vivência de sensibilização "Navegue sem ver": em duplas, navegar em um site usando apenas o teclado ou o leitor de tela do celular, com relato das dificuldades encontradas por cada dupla\./,
+        'Auditoria de barreiras em uma página de demonstração: navegação por teclado, foco visível, zoom e leitura de tela, sem simular uma deficiência.'
+      )
+      .replace(
+        /já com a ferramenta de análise instalada para coletar dados reais\./,
+        'acompanhada de um painel demonstrativo de métricas.'
+      )
+      .replace(
+        /já com a ferramenta de análise \(ex\.: Google Analytics\) configurada, para coletar dados reais de acesso até a próxima aula\./,
+        'acompanhada de relatório demonstrativo ou conta institucional autorizada; não são instalados rastreadores pessoais nos sites dos estudantes.'
+      )
+      .replace(
+        /Leitura dos primeiros dados reais coletados pela ferramenta de análise \(ex\.: Google Analytics\) desde a publicação parcial: número de acessos, páginas mais vistas e proporção de visitas por celular\./,
+        'Leitura de um conjunto de dados fictício ou institucional autorizado: número de acessos, páginas mais vistas e proporção de visitas por celular.'
+      )
+      .replace(
+        /\bnegócio local real\b/gi,
+        'negócio local fictício'
+      )
+      .replace(
+        /\bprimeiros dados reais da ferramenta de análise\b/gi,
+        'primeiros dados do relatório fictício ou da conta institucional autorizada'
+      )
+      .replace(
+        /\bleitura de métricas reais\b/gi,
+        'leitura de métricas fictícias ou institucionais autorizadas'
+      );
+  }
+
+  if (slug === 'producao-audiovisual') {
+    text = text
+      .replace(/\bimparcialidade\b/gi, 'transparência e equilíbrio na representação')
+      .replace(
+        /elaborar o termo de autorização de uso de imagem que a equipe usará nas gravações da UC/,
+        'analisar o modelo institucional de autorização e registrar separadamente exercício, exibição interna, mostra com convidados e publicação online'
+      )
+      .replace(
+        /cenário impossível \(deserto, espaço, filme famoso\)/,
+        'cenário criado pela equipe ou composto com material licenciado'
+      )
+      .replace(
+        /Buffering e pré-visualização: como o computador processa os dados do projeto, resolução de preview, render de trecho e arquivos intermediários\./,
+        'Pré-visualização no editor: resolução de preview, cache, arquivos proxy e render de trecho. Buffering fica reservado à espera de carregamento durante reprodução em rede.'
+      )
+      .replace(
+        /Edição e tratamento de áudio \(volume, ruído, trilha e mixagem\) e compreensão do processo de buffering e pré-visualização no processamento do projeto\./,
+        'Edição e tratamento de áudio, com distinção entre buffering na reprodução em rede e preview, cache, proxy e render de trecho dentro do editor.'
+      )
+      .replace(
+        /diferença entre container e codec \(MP4, MOV, H\.264, H\.265\)/,
+        'diferença entre contêineres (MP4 e MOV) e codecs (H.264 e H.265)'
+      )
+      .replace(
+        /Cada dupla renderiza o comercial gravado na aula 09 em três versões: vertical 9:16 para redes sociais, alta qualidade para projeção e otimizada para web; conferência das versões no smartphone e no projetor\./,
+        'Cada dupla exporta uma versão para projeção e uma versão otimizada para web. A versão vertical 9:16 só é produzida quando a captação previu área segura para o recorte.'
+      )
+      .replace(
+        /no set a palavra final é do diretor, na ilha é do editor, e o professor só entra como mediador\./,
+        'as decisões seguem os papéis combinados, o roteiro, as evidências e as condições de segurança; divergências são registradas e mediadas.'
+      )
+      .replace(
+        /master em alta qualidade para projeção na mostra e versão com codec e resolução adequados para publicação na internet\./,
+        'arquivo mestre (master) em MP4\/H.264, 1920 × 1080, taxa de quadros igual à captação e áudio AAC 48 kHz; versão para internet somente quando houver autorização específica.'
+      )
+      .replace(
+        /Socialização dos produtos em mostra aberta/,
+        'Socialização dos produtos no escopo autorizado para cada projeto'
+      )
+      .replace(
+        /O professor valida o plano de cada equipe antes de liberar o acesso ao set\./,
+        'Validação do plano de cada equipe antes da liberação do acesso ao set.'
+      )
+      .replace(
+        /o professor circula como produtor executivo, cobrando prazos e postura profissional no set\./,
+        'o acompanhamento concentra-se em prazos, segurança e postura profissional no set.'
+      )
+      .replace(/\bsem correção em tempo real pelo professor\b/gi, 'sem correção imediata')
+      .replace(/\bpara o professor e a turma\b/gi, 'para a turma')
+      .replace(/\bmediação e validação do professor por meio de pitch\b/gi, 'mediação e validação por meio de pitch')
+      .replace(/\bcom mediação do professor quando surgem conflitos na equipe\b/gi, 'com mediação registrada quando surgem conflitos na equipe')
+      .replace(/\bcom o professor circulando como produtor executivo\b/gi, 'com acompanhamento de prazos, segurança e organização do set')
+      .replace(
+        /Professor circula em atendimento grupo a grupo, destravando problemas técnicos e de narrativa\./,
+        'Atendimento grupo a grupo para resolver problemas técnicos e de narrativa.'
+      )
+      .replace(/\batendimento individualizado do professor\b/gi, 'atendimento individualizado')
+      .replace(
+        /Professor atende grupo a grupo com foco no que ainda trava a entrega\./,
+        'Atendimento grupo a grupo com foco nos bloqueios da entrega.'
+      )
+      .replace(
+        /criação de elementos em softwares de Design Digital \(GIMP, Canva\) importados para o projeto/g,
+        'criação de elementos no Photopea, sem login, ou no GIMP instalado; os arquivos exportados são então importados para o projeto'
+      )
+      .replace(/\bEntrega técnica dos arquivos ao professor\b/gi, 'Entrega técnica dos arquivos na pasta definida')
+      .replace(
+        /feedback respeitoso da turma e do professor após cada exibição/,
+        'feedback respeitoso dos pares e devolutiva baseada na rubrica após cada exibição'
+      )
+      .replace(
+        /devolutivas individuais do professor sobre o percurso de cada aluno na UC/,
+        'devolutivas individuais registradas sobre o percurso de cada aluno na UC'
+      )
+      .replace(/Atividade "Filmagem de mentira":/g, 'Sequência fotográfica de validação:')
+      .replace(/Teste cego "O ouvido não perdoa":/g, 'Comparação cega de captação de áudio:')
+      .replace(/oficina "Fala, diretor!":/g, 'ensaio de apresentação:')
+      .replace(/dinâmica "Inovação ou melhoria\?"/g, 'análise de inovação e melhoria');
+  }
+
+  if (slug === 'design-web' && lessonNumber === '28') {
+    text = text.replace(/\buma fala de cinco minutos\b/gi, 'uma defesa de sete minutos');
+  }
+
+  return text;
+};
+
+function parseTableRow(line) {
+  return line
+    .trim()
+    .replace(/^\|/, '')
+    .replace(/\|$/, '')
+    .split('|')
+    .map(cleanCell);
+}
+
+function parseCourse(filePath, config) {
+  const markdown = fs.readFileSync(filePath, 'utf8').replace(/\r\n/g, '\n');
+  const lessonMatches = [...markdown.matchAll(/^# AULA (\d{2}) - (.+)$/gm)];
+
+  const lessons = lessonMatches.map((match, index) => {
+    const sectionStart = match.index + match[0].length;
+    const sectionEnd = index + 1 < lessonMatches.length
+      ? lessonMatches[index + 1].index
+      : markdown.length;
+    const section = markdown.slice(sectionStart, sectionEnd).trim();
+    const lines = section.split('\n');
+    const context = { slug: config.slug, lessonNumber: match[1] };
+    const description = refinePublicCopy(lines.find(line => {
+      const trimmed = line.trim();
+      return trimmed && !trimmed.startsWith('|') && !trimmed.startsWith('**');
+    }) || '', context);
+
+    const objectiveHeaderIndex = lines.findIndex(line => line.includes('Objetivos de Conhecimento'));
+    const objectives = [];
+    const technical = [];
+    const socioemotional = [];
+
+    if (objectiveHeaderIndex >= 0) {
+      for (let cursor = objectiveHeaderIndex + 1; cursor < lines.length; cursor += 1) {
+        const line = lines[cursor].trim();
+        if (!line.startsWith('|')) break;
+        const cells = parseTableRow(line);
+        if (cells[0]) objectives.push(cells[0]);
+        if (cells[1]) technical.push(cells[1]);
+        if (cells[2]) socioemotional.push(cells[2]);
+      }
+    }
+
+    const schedule = [];
+    const scheduleStart = lines.findIndex(line => line.includes('Roteiro da Noite'));
+    if (scheduleStart >= 0) {
+      for (let cursor = scheduleStart + 1; cursor < lines.length; cursor += 1) {
+        const line = lines[cursor].trim();
+        const rowMatch = line.match(/^\|\s*(\d{2}:\d{2}\s*-\s*\d{2}:\d{2})\s*\|\s*(.*?)\s*\|$/);
+        if (rowMatch) {
+          schedule.push({
+            horario: cleanCell(rowMatch[1]),
+            atividade: refinePublicCopy(rowMatch[2], context)
+          });
+        } else if (schedule.length && line && !line.startsWith('|')) {
+          break;
+        }
+      }
+    }
+
+    const field = (label) => {
+      const line = lines.find(value => value.trim().startsWith(`**${label}:**`));
+      return line ? cleanCell(line.replace(`**${label}:**`, '')) : '';
+    };
+
+    if (schedule.length !== 4) {
+      throw new Error(`${config.title} Aula ${match[1]}: esperados 4 blocos, encontrados ${schedule.length}`);
+    }
+
+    return {
+      num: match[1],
+      title: refinePublicCopy(match[2], context),
+      description,
+      objectives: [...new Set(objectives)],
+      technical: [...new Set(technical)],
+      socioemotional: [...new Set(socioemotional)],
+      schedule,
+      methodology: refinePublicCopy(field('Metodologia'), context),
+      resources: refinePublicCopy(field('Recursos'), context),
+      observation: field('Obs.')
+    };
+  });
+
+  if (lessons.length !== config.lessonCount) {
+    throw new Error(`${config.title}: esperadas ${config.lessonCount} aulas, encontradas ${lessons.length}`);
+  }
+
+  return {
+    ...config,
+    lessons
+  };
+}
+
+const courses = {
+  'design-web': parseCourse(designPath, {
+    slug: 'design-web',
+    code: 'UC · Design Web',
+    title: 'Design Web',
+    workload: '100 h',
+    lessonCount: 29,
+    module: 'Módulo Específico II',
+    teacher: 'Daniel Marcos Mayer',
+    period: '2026/2',
+    theme: 'web',
+    description: 'Do primeiro HTML ao site publicado: código, interface, experiência do usuário, acessibilidade e projeto integrador.',
+    sourceLabel: path.basename(designPath)
+  }),
+  'producao-audiovisual': parseCourse(audiovisualPath, {
+    slug: 'producao-audiovisual',
+    code: 'UC · Produção Audiovisual',
+    title: 'Produção Audiovisual',
+    workload: '98 h',
+    lessonCount: 23,
+    module: 'Módulo Específico II',
+    teacher: 'Daniel Marcos Mayer',
+    period: '2026/2',
+    theme: 'av',
+    description: 'Da linguagem audiovisual à mostra final: roteiro, captação, edição, render e trabalho de produtora.',
+    sourceLabel: path.basename(audiovisualPath)
+  })
+};
+
+const output = `/* Arquivo gerado por scripts/build-course-data.mjs. */\nwindow.SENAI_COURSES = ${JSON.stringify(courses, null, 2)};\n`;
+const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
+const projectRoot = path.resolve(scriptDirectory, '..');
+const outputPath = path.join(projectRoot, 'assets/course-data.js');
+fs.writeFileSync(outputPath, output);
+console.log(`Gerado ${outputPath}: ${courses['design-web'].lessons.length + courses['producao-audiovisual'].lessons.length} aulas.`);

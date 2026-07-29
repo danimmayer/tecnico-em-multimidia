@@ -1,141 +1,176 @@
 # Técnico em Multimídia — SENAI
 
-Apresentações interativas em HTML para o curso **Técnico em Multimídia** — SENAI.
-Prof. Daniel Mayer · 2026.
+Planejamentos, apresentações e materiais de aula do **Prof. Daniel Marcos
+Mayer** para o curso Técnico em Multimídia — SENAI, 2026.
 
-## Como rodar
+O início reúne três Unidades Curriculares:
 
-### 1. Baixar o projeto
+- Fundamentos de Fotografia Digital e de Semiótica · 12 aulas;
+- Design Web · 29 aulas · 100 h;
+- Produção Audiovisual · 23 aulas · 98 h.
 
-```bash
-git clone https://github.com/danimmayer/tecnico-em-multimidia.git
-cd tecnico-em-multimidia
-```
+Design Web e Produção Audiovisual usam uma estrutura comum de conceito,
+atividade, evidência e anotações autorais. As anotações ficam ocultas por padrão
+para que nenhuma orientação interna apareça no projetor.
 
-Ou baixe o ZIP: **Code > Download ZIP** no GitHub, extraia e abra a pasta.
+## Execução local
 
-### 2. Abrir o Home
+O projeto funciona off-line. Um servidor local evita limitações do navegador ao
+abrir os arquivos diretamente.
 
-**Opção A — Direto no navegador (mais simples)**
-
-Abra `index.html` com duplo clique. Funciona off-line.
-
-**Opção B — Servidor local com Node.js (recomendado)**
-
-Requer [Node.js](https://nodejs.org/) instalado.
-
-```bash
-cd tecnico-em-multimidia
-npx serve -l 8901
-```
-
-Depois abra no navegador: [http://localhost:8901/](http://localhost:8901/)
-
-**Opção C — Servidor local com Python**
+### Python
 
 ```bash
 cd tecnico-em-multimidia
 python3 -m http.server 8901
 ```
 
-### 3. Navegação
+### Node.js
 
-A partir do **Home** (`index.html`):
-
-- Selecione a **UC** que quer acessar.
-- Dentro da UC, selecione a **Aula**.
-- Tecle **H** em qualquer página para voltar ao Home do curso (do curso no caso do dashboard da UC; da UC no caso das aulas).
-
-## Estrutura
-
+```bash
+cd tecnico-em-multimidia
+npx serve -l 8901
 ```
-├── index.html                                   # Home · grid de UCs do curso
-├── uc-fotografia-digital.html                   # Dashboard · 12 aulas da UC
-├── Aula_01_A_Imagem_Atraves_do_Tempo.html       # Aula 01 · apresentação
-├── Aula_02_Formacao_da_Imagem_Digital.html      # Aula 02 · apresentação
-├── Aula_02_Gabarito_Professor.html              # Gabarito do professor (Aula 02)
+
+Endereço: [http://localhost:8901/](http://localhost:8901/)
+
+## Navegação
+
+1. `index.html` apresenta as Unidades Curriculares.
+2. Cada página `uc-*.html` reúne a sequência de aulas.
+3. Design Web e Produção Audiovisual abrem as apresentações em
+   `aula-kit.html`.
+4. As páginas de Fotografia usam apresentações individuais.
+
+## Estrutura principal
+
+```text
+├── index.html
+├── uc-fotografia-digital.html
+├── uc-design-web.html
+├── uc-producao-audiovisual.html
+├── aula-kit.html
+├── Aula_01_A_Imagem_Atraves_do_Tempo.html
+├── Aula_02_Formacao_da_Imagem_Digital.html
+├── Aula_02_Gabarito_Professor.html
 ├── Aula_03_Semiotica_I_O_Universo_dos_Signos.html
 ├── Aula_04_Semiotica_II_Leitura_Semiotica_da_Imagem.html
-├── Aula_04_Ficha_Leitura_Semiotica.html         # Ficha A4 de trabalho em grupo
-├── Aula_04_Banca_Imagens.html                   # Imagens da banca (impressão)
-├── Aula_05_A_Camera_Digital.html                # Aula 05 · apresentação
+├── Aula_04_Ficha_Leitura_Semiotica.html
+├── Aula_04_Banca_Imagens.html
+├── Aula_05_A_Camera_Digital.html
 ├── Aula_06_Linguagem_Fotografica_e_Composicao.html
-├── Aula_07_Luz_Exposicao_Triangulo.html         # Aula 07 · apresentação
-├── Aula_08_Ambiente_Luz_Natural_e_Artificial.html  # Aula 08 · apresentação
-├── Aula_09_Producao_de_Imagens_Pratica_Dirigida.html  # Aula 09 · apresentação
-├── Aula_10_Aplicacoes_Graficas_Edicao_e_Avaliacao.html  # Aula 10 · apresentação
+├── Aula_07_Luz_Exposicao_Triangulo.html
+├── Aula_08_Ambiente_Luz_Natural_e_Artificial.html
+├── Aula_09_Producao_de_Imagens_Pratica_Dirigida.html
+├── Aula_10_Aplicacoes_Graficas_Edicao_e_Avaliacao.html
+├── Aula_11_Projeto_Integrador_Ensaio_Fotografico_em_Trios.html
+├── Aula_12_Apresentacoes_Finais_Recuperacao_e_Encerramento.html
+├── GUIA_RAPIDO_DESIGN_WEB_E_AUDIOVISUAL.md
 ├── assets/
-│   ├── home.css                                 # Design system · dashboards
-│   ├── pedagogy.css                             # Design system · apresentações
-│   ├── pedagogy.js                              # Engine pedagógico (presenter, relatório, depth)
-│   ├── pedagogy-data.js                         # Dados da Aula 01
-│   ├── pedagogy-data-aula02.js                  # Dados da Aula 02
-│   ├── pedagogy-data-aula03.js                  # Dados da Aula 03
-│   ├── pedagogy-data-aula04.js                  # Dados da Aula 04
-│   ├── pedagogy-data-aula05.js                  # Dados da Aula 05
-│   ├── pedagogy-data-aula06.js                  # Dados da Aula 06
-│   ├── pedagogy-data-aula07.js                  # Dados da Aula 07
-│   ├── pedagogy-data-aula08.js                  # Dados da Aula 08
-│   ├── pedagogy-data-aula09.js                  # Dados da Aula 09
-│   └── pedagogy-data-aula10.js                  # Dados da Aula 10
-└── imagens/                                     # Assets visuais
+│   ├── home.css
+│   ├── course-kit.css
+│   ├── course-data.js
+│   ├── course-support.js
+│   ├── course-hub.js
+│   ├── course-lesson.js
+│   ├── pedagogy.css
+│   ├── pedagogy.js
+│   └── pedagogy-data*.js
+├── modelos/
+│   ├── design-web/
+│   │   ├── site-base/
+│   │   └── materiais-de-aula/
+│   └── producao-audiovisual/
+└── scripts/
+    ├── build-course-data.mjs
+    └── validate-course-kit.mjs
 ```
 
-## Atalhos de teclado
+## Design Web e Produção Audiovisual
 
-### Home e dashboards
-
-| Tecla | Ação |
-|-------|------|
-| `H`   | Voltar ao Home do curso (a partir da UC) |
-| `1` — `9` | Abrir aula pelo número (no dashboard da UC) |
-| `?`   | Mostrar/esconder ajuda |
-| `Esc` | Fechar overlay |
-
-### Nas apresentações
+As apresentações abrem no modo de projeção. A tecla **P** revela ou oculta
+minhas anotações. Essas notas usam primeira pessoa e registram preparação,
+sequência, evidências e alternativas.
 
 | Tecla | Ação |
-|-------|------|
-| `→` `Space` | Próximo slide |
-| `←` `Backspace` | Slide anterior |
-| `Home` | Primeiro slide |
-| `End` | Último slide |
+|---|---|
+| `→` / `←` | Avançar / voltar |
+| `P` | Mostrar ou ocultar anotações |
+| `G` | Abrir o mapa da aula |
+| `D` | Imprimir ou salvar o material projetável |
+| `F` | Entrar ou sair da tela cheia |
+| `H` | Voltar à Unidade Curricular |
+| `/` | Focar a busca no painel da UC |
+
+O PDF das novas UCs preserva apenas o material projetável. As anotações privadas
+não são impressas.
+
+### Laboratório de Design Web sem login
+
+O painel e o caderno de preparação de Design Web reúnem cinco caminhos para a
+aula:
+
+- **DontPad BR** para distribuir avisos, links e trechos de código em tempo real,
+  usando leitura pública e PIN de edição;
+- **LiveCodes** para editar HTML, CSS e JavaScript com o resultado ao lado;
+- **Netlify Drop** para publicar a pasta ou o ZIP sem cadastro;
+- **Photopea** para editar peças visuais no navegador sem conta;
+- **projeto inicial local** como entrega oficial e alternativa sem internet.
+
+Nenhum desses canais recebe dados pessoais, senhas, chaves ou avaliações. A
+rotina completa está em `GUIA_RAPIDO_DESIGN_WEB_E_AUDIOVISUAL.md`.
+
+## Fotografia Digital e Semiótica
+
+As apresentações dessa UC mantêm o sistema próprio:
+
+| Tecla | Ação |
+|---|---|
+| `→` / `←` | Avançar / voltar |
+| `1` · `2` · `3` | Essencial · Expandir · Bônus |
+| `P` | Modo de apresentação com notas |
+| `D` | Imprimir ou salvar PDF |
 | `F` | Tela cheia |
 | `G` | Grade de slides |
-| `H` | Voltar ao dashboard da UC |
-| `D` | Imprimir / Salvar PDF da aula inteira |
-| `I` | Painel de informações (em slides de pesquisa) |
-| `1` · `2` · `3` | Profundidade: Essencial · Expandir · Bônus |
-| `P` | Presenter Mode (notas do professor) |
+| `H` | Voltar à Unidade Curricular |
 | `R` | Relatório da aula |
 | `C` | Alto contraste |
 | `+` / `-` | Escala da fonte |
-| `S` | Análise semiótica (em fotos com hotspots) |
-| `?` | Mostrar/esconder ajuda |
-| `Esc` | Fechar modal / grade / ajuda |
+| `?` | Ajuda |
+| `Esc` | Fechar painel, grade ou ajuda |
 
-## Gerar PDF da aula
+## Dados das aulas
 
-Dentro de qualquer apresentação, tecle **`D`** ou clique no ícone **⬇** na barra inferior. O navegador abre o diálogo de impressão — escolha **"Salvar como PDF"** como destino.
+`assets/course-data.js` é gerado a partir dos dois planejamentos gerais:
 
-O CSS de impressão já ajusta a aula para:
-- Página A4 paisagem, 1 slide por página, sem margens.
-- Todas as caixas **Expandir** e **Bônus** ficam visíveis no PDF (o material impresso traz o conteúdo completo das três profundidades).
-- Barras, modais e overlays interativos ficam ocultos.
-- Cores e fundos são preservados (requer o navegador permitir "imprimir cores e imagens de fundo", ativado por padrão em Chrome e Safari).
+```bash
+node scripts/build-course-data.mjs \
+  /caminho/Planejamento_Geral_UC_Design_Web.md \
+  /caminho/Planejamento_Geral_UC_Producao_Audiovisual.md
+```
 
-Testado em Chrome, Safari, Firefox e Edge. Para melhor resultado, use Chrome ou Edge.
+O gerador preserva os 4 blocos de cada encontro. O validador confere quantidade,
+capacidades, anexos e expressões proibidas na camada pública:
 
-## Padrão pedagógico
+```bash
+node scripts/validate-course-kit.mjs
+```
 
-Cada aula é uma noite presencial (19:00–22:30) dividida em **4 blocos** com chamada no início de cada bloco e lanche de 20 min após o Bloco 2.
+## Organização pedagógica
 
-Slides podem ter **três camadas de profundidade**:
+Cada noite tem quatro blocos. Os planejamentos-fonte registram chamada no início
+de cada bloco e lanche de 20 minutos após o primeiro bloco; esse tempo é
+administrado dentro do roteiro do encontro.
 
-1. **Essencial** — conteúdo que todos veem.
-2. **Expandir** (tecle `2`) — aprofundamento para turmas engajadas.
-3. **Bônus** (tecle `3`) — curiosidades, contexto histórico, conexões.
+Design Web usa persona e dados fictícios nos exercícios publicados. Produção
+Audiovisual separa autorização para exercício, exibição interna, mostra com
+convidados e publicação online.
+
+## Verificação
+
+As novas páginas são validadas em Chromium com Playwright, incluindo navegação,
+modo de projeção, anotações, visualização móvel e impressão.
 
 ## Licença
 
-Material didático — SENAI / Prof. Daniel Mayer.
+Material didático — SENAI / Prof. Daniel Marcos Mayer.

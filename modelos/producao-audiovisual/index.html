@@ -1,0 +1,1845 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Caderno preenchível de planejamento, captação, edição e exibição para a UC Produção Audiovisual."
+    >
+    <title>Caderno de Produção Audiovisual · Prof. Daniel Marcos Mayer</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23151714'/%3E%3Ccircle cx='32' cy='32' r='19' fill='none' stroke='%23d7e94d' stroke-width='8'/%3E%3Cpath d='M32 13a19 19 0 0 1 18 13H32z' fill='%23f45b35'/%3E%3C/svg%3E"
+    >
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="masthead" id="inicio">
+      <div class="masthead__stripe" aria-hidden="true"></div>
+      <div class="masthead__content">
+        <div class="masthead__meta">
+          <p class="eyebrow">Técnico em Multimídia · Produção Audiovisual</p>
+          <p class="edition">Caderno de trabalho · 2026/2</p>
+        </div>
+        <div class="masthead__title">
+          <div>
+            <p class="issue">PA / 01</p>
+            <h1>Caderno de <br><span>Produção Audiovisual</span></h1>
+          </div>
+          <p class="deck">
+            Do recorte da pauta ao arquivo mestre (master): documentos para organizar decisões,
+            responsabilidades e evidências de cada produção.
+          </p>
+        </div>
+        <div class="byline">
+          <span>Autoria e organização</span>
+          <strong>Prof. Daniel Marcos Mayer</strong>
+        </div>
+      </div>
+    </header>
+
+    <div class="workspace">
+      <aside class="sidebar" aria-label="Índice do caderno">
+        <div class="sidebar__inner">
+          <p class="sidebar__label">Índice</p>
+          <nav>
+            <ol>
+              <li><a href="#uso">Como usar</a></li>
+              <li><a href="#fluxo">Fluxo de produção</a></li>
+              <li><a href="#software">Percurso de edição</a></li>
+              <li><a href="#consentimento">Consentimento e imagem</a></li>
+              <li><a href="#pauta">Pauta e recorte</a></li>
+              <li><a href="#roteiro">Roteiro de 1 minuto</a></li>
+              <li><a href="#storyboard">Storyboard</a></li>
+              <li><a href="#planos">Lista de planos</a></li>
+              <li><a href="#filmagem">Plano de filmagem</a></li>
+              <li><a href="#rodizio">Papéis e rodízio</a></li>
+              <li><a href="#seguranca">Segurança do set</a></li>
+              <li><a href="#equipamentos">Retirada e devolução</a></li>
+              <li><a href="#captacao">Captação e cópia de segurança</a></li>
+              <li><a href="#continuidade">Continuidade</a></li>
+              <li><a href="#edicao">Ficha de edição</a></li>
+              <li><a href="#exportacao">Exportação</a></li>
+              <li><a href="#rubrica">Rubrica do projeto</a></li>
+              <li><a href="#prova-a">Prova A</a></li>
+              <li><a href="#gabarito-a">Gabarito A</a></li>
+              <li><a href="#prova-b">Prova B</a></li>
+              <li><a href="#gabarito-b">Gabarito B</a></li>
+              <li><a href="#recuperacao">Recuperação</a></li>
+              <li><a href="#mostra">Ordem da mostra</a></li>
+              <li><a href="#glossario">Glossário</a></li>
+            </ol>
+          </nav>
+          <div class="sidebar__actions">
+            <label class="print-choice">
+              <span>Conteúdo para imprimir</span>
+              <select data-print-mode>
+                <option value="caderno">Fichas de produção</option>
+                <option value="prova-a">Prova A · Aula 18</option>
+                <option value="prova-b">Prova B · Aula 23</option>
+                <option value="gabaritos">Gabaritos A e B</option>
+                <option value="recuperacao">Percurso de recuperação</option>
+              </select>
+            </label>
+            <button class="button button--primary" type="button" data-print>
+              Imprimir seleção
+            </button>
+            <button class="button button--quiet" type="button" data-clear>
+              Limpar preenchimento
+            </button>
+          </div>
+          <p class="save-state" role="status" aria-live="polite" data-save-state>
+            Os campos são salvos somente neste navegador.
+          </p>
+          <p class="shared-device-note">
+            <strong>Computador compartilhado?</strong> Imprima ou exporte o necessário e
+            use “Limpar preenchimento” antes de sair. Não deixe nomes ou dados da turma
+            salvos neste navegador.
+          </p>
+        </div>
+      </aside>
+
+      <main id="conteudo">
+        <section class="chapter chapter--intro" id="uso" aria-labelledby="titulo-uso">
+          <div class="chapter__number" aria-hidden="true">00</div>
+          <div class="chapter__body">
+            <p class="section-kicker">Orientação de uso</p>
+            <h2 id="titulo-uso">Um registro para cada decisão</h2>
+            <div class="intro-grid">
+              <p class="lead">
+                Este caderno acompanha uma produção curta. Cada ficha transforma uma
+                conversa da equipe em decisão verificável: o que será gravado, por quem,
+                em qual ordem, com quais cuidados e em qual formato será entregue.
+              </p>
+              <div class="note note--ink">
+                <strong>Identificação do projeto</strong>
+                <label class="field">
+                  <span>Equipe</span>
+                  <input type="text" name="projeto-equipe" autocomplete="off">
+                </label>
+                <label class="field">
+                  <span>Título provisório</span>
+                  <input type="text" name="projeto-titulo" autocomplete="off">
+                </label>
+                <label class="field">
+                  <span>Turma e período</span>
+                  <input type="text" name="projeto-turma" autocomplete="off">
+                </label>
+              </div>
+            </div>
+            <div class="principles" aria-label="Princípios de trabalho">
+              <article>
+                <span>01</span>
+                <h3>Planejar antes</h3>
+                <p>O plano reduz improvisos que custam tempo, bateria e continuidade.</p>
+              </article>
+              <article>
+                <span>02</span>
+                <h3>Registrar durante</h3>
+                <p>O relatório permite localizar a melhor tomada (take) sem rever tudo.</p>
+              </article>
+              <article>
+                <span>03</span>
+                <h3>Conferir depois</h3>
+                <p>Cópia de segurança (backup), revisão e exportação fecham o trabalho antes da mostra.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter" id="fluxo" aria-labelledby="titulo-fluxo">
+          <div class="chapter__number" aria-hidden="true">01</div>
+          <div class="chapter__body">
+            <p class="section-kicker">Visão geral</p>
+            <h2 id="titulo-fluxo">Fluxo de produção</h2>
+            <ol class="production-flow">
+              <li>
+                <span>Pré</span>
+                <strong>Definir</strong>
+                <p>Pauta, recorte, consentimentos, roteiro, storyboard e plano de filmagem.</p>
+              </li>
+              <li>
+                <span>Set</span>
+                <strong>Captar</strong>
+                <p>Organização, segurança, imagem, luz, som, continuidade e relatório.</p>
+              </li>
+              <li>
+                <span>Pós</span>
+                <strong>Construir</strong>
+                <p>Ingestão, seleção, montagem, tratamento, créditos e imagem fechada (picture lock).</p>
+              </li>
+              <li>
+                <span>Saída</span>
+                <strong>Entregar</strong>
+                <p>Revisão, arquivo mestre (master), cópia de exibição, rubrica e ordem da mostra.</p>
+              </li>
+            </ol>
+            <div class="check-band">
+              <label><input type="checkbox" name="fluxo-pre"> Pré-produção aprovada</label>
+              <label><input type="checkbox" name="fluxo-set"> Captação concluída</label>
+              <label><input type="checkbox" name="fluxo-pos"> Imagem fechada aprovada</label>
+              <label><input type="checkbox" name="fluxo-master"> Arquivo mestre conferido</label>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter" id="software" aria-labelledby="titulo-software">
+          <div class="chapter__number" aria-hidden="true">02</div>
+          <div class="chapter__body">
+            <p class="section-kicker">Percurso técnico</p>
+            <h2 id="titulo-software">DaVinci Resolve como percurso principal</h2>
+            <div class="software-route">
+              <article class="software-route__main">
+                <p class="route-tag">Percurso principal</p>
+                <h3>DaVinci Resolve</h3>
+                <ol>
+                  <li><strong>Media:</strong> importar, conferir e organizar os arquivos.</li>
+                  <li><strong>Edit:</strong> montar imagem, som, textos e transições.</li>
+                  <li><strong>Fairlight:</strong> equilibrar diálogos, ambiência e música.</li>
+                  <li><strong>Color:</strong> corrigir exposição, balanço e coerência visual.</li>
+                  <li><strong>Deliver:</strong> configurar, nomear e exportar o arquivo mestre.</li>
+                </ol>
+              </article>
+              <article class="software-route__alternative">
+                <p class="route-tag">Alternativa de acesso</p>
+                <h3>CapCut</h3>
+                <p>
+                  O CapCut pode ser usado quando a máquina ou o contexto da atividade
+                  impedir o percurso principal. A equivalência é feita pelos
+                  <strong>conceitos</strong>: importar, organizar, selecionar, cortar,
+                  montar, tratar o áudio, inserir grafismos, corrigir a imagem e exportar.
+                </p>
+                <p class="caution">
+                  Os nomes, a posição dos comandos e os recursos disponíveis variam entre
+                  programas e versões. Não há correspondência obrigatória de menus.
+                </p>
+              </article>
+            </div>
+            <div class="concept-strip" aria-label="Sequência conceitual da edição">
+              <span>Importar</span><i aria-hidden="true">→</i>
+              <span>Organizar</span><i aria-hidden="true">→</i>
+              <span>Selecionar</span><i aria-hidden="true">→</i>
+              <span>Montar</span><i aria-hidden="true">→</i>
+              <span>Tratar</span><i aria-hidden="true">→</i>
+              <span>Revisar</span><i aria-hidden="true">→</i>
+              <span>Exportar</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter chapter--warning" id="consentimento" aria-labelledby="titulo-consentimento">
+          <div class="chapter__number" aria-hidden="true">03</div>
+          <div class="chapter__body">
+            <p class="section-kicker">Imagem, voz e participação</p>
+            <h2 id="titulo-consentimento">Verificação de consentimento</h2>
+            <div class="legal-boundary" role="note">
+              <strong>Limite deste documento</strong>
+              <p>
+                Esta seção é um checklist pedagógico de produção. Ela
+                <strong>não é um termo jurídico</strong>, não concede autorização e não
+                substitui o modelo institucional aprovado. A gravação somente avança
+                depois da conferência dos documentos aplicáveis.
+              </p>
+            </div>
+
+            <fieldset class="checklist">
+              <legend>Antes de gravar</legend>
+              <label>
+                <input type="checkbox" name="consent-modelo">
+                O modelo institucional vigente foi localizado e sua versão foi conferida.
+              </label>
+              <label>
+                <input type="checkbox" name="consent-finalidade">
+                A finalidade, a duração do projeto e as pessoas com acesso ao material
+                estão descritas de modo compreensível.
+              </label>
+              <label>
+                <input type="checkbox" name="consent-interno">
+                A autorização para <strong>gravação e uso pedagógico interno</strong> foi
+                tratada separadamente.
+              </label>
+              <label>
+                <input type="checkbox" name="consent-exibicao">
+                A autorização para <strong>exibição em sala ou mostra</strong> foi tratada
+                separadamente.
+              </label>
+              <label>
+                <input type="checkbox" name="consent-convidados">
+                A presença de <strong>convidados externos</strong> na exibição foi informada,
+                quando prevista.
+              </label>
+              <label>
+                <input type="checkbox" name="consent-online">
+                A <strong>publicação online</strong> foi tratada como finalidade própria;
+                não foi presumida a partir da autorização de gravação.
+              </label>
+              <label>
+                <input type="checkbox" name="consent-menor">
+                Para participante menor de idade, consta a autorização do responsável
+                legal conforme o procedimento institucional.
+              </label>
+              <label>
+                <input type="checkbox" name="consent-alternativa">
+                Há alternativa equivalente sem exposição de imagem ou voz: função técnica,
+                mãos/objetos, enquadramento sem rosto, voz sintética autorizada, cartelas
+                ou atuação fora de quadro.
+              </label>
+              <label>
+                <input type="checkbox" name="consent-revogacao">
+                Dúvidas, recusa ou mudança de decisão interrompem o uso da imagem ou voz
+                até nova orientação institucional.
+              </label>
+            </fieldset>
+
+            <div class="form-grid form-grid--2">
+              <label class="field">
+                <span>Local de guarda dos termos institucionais</span>
+                <input type="text" name="consent-local" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Pessoa responsável pela conferência</span>
+                <input type="text" name="consent-responsavel" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Pendências identificadas</span>
+                <textarea name="consent-pendencias" rows="3"></textarea>
+              </label>
+              <label class="field">
+                <span>Alternativa prevista para quem não autorizar</span>
+                <textarea name="consent-alternativa-texto" rows="3"></textarea>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter sheet" id="pauta" aria-labelledby="titulo-pauta">
+          <div class="chapter__number" aria-hidden="true">04</div>
+          <div class="chapter__body">
+            <p class="section-kicker">Ficha 01 · Pré-produção</p>
+            <h2 id="titulo-pauta">Pauta e recorte</h2>
+            <p class="section-summary">
+              A pauta indica o assunto. O recorte define a pergunta específica que cabe no
+              tempo, no acesso e nos recursos disponíveis.
+            </p>
+            <div class="example">
+              <p class="example__label">Exemplo de recorte viável</p>
+              <p>
+                <del>“A história da escola”</del>
+                <strong>“Como o intervalo da noite transforma o pátio em espaço de encontro?”</strong>
+              </p>
+            </div>
+            <div class="form-grid form-grid--2">
+              <label class="field">
+                <span>Tema amplo</span>
+                <input type="text" name="pauta-tema" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Formato</span>
+                <select name="pauta-formato">
+                  <option value="">Selecione</option>
+                  <option>Ficção curta</option>
+                  <option>Mini-documentário</option>
+                  <option>Comercial</option>
+                  <option>Vídeo de canal</option>
+                  <option>Experimental</option>
+                </select>
+              </label>
+              <label class="field field--wide">
+                <span>Recorte em uma frase</span>
+                <textarea name="pauta-recorte" rows="2"></textarea>
+              </label>
+              <label class="field">
+                <span>Pergunta central</span>
+                <textarea name="pauta-pergunta" rows="3"></textarea>
+              </label>
+              <label class="field">
+                <span>Resposta ou transformação esperada</span>
+                <textarea name="pauta-resposta" rows="3"></textarea>
+              </label>
+              <label class="field">
+                <span>Público</span>
+                <input type="text" name="pauta-publico" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Duração final</span>
+                <input type="text" name="pauta-duracao" value="1 minuto" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Locações acessíveis</span>
+                <textarea name="pauta-locacoes" rows="3"></textarea>
+              </label>
+              <label class="field">
+                <span>Personagens, fontes ou objetos</span>
+                <textarea name="pauta-fontes" rows="3"></textarea>
+              </label>
+              <label class="field">
+                <span>Limites: tempo, ruído, luz, acesso</span>
+                <textarea name="pauta-limites" rows="3"></textarea>
+              </label>
+              <label class="field">
+                <span>Evidências que precisam ser captadas</span>
+                <textarea name="pauta-evidencias" rows="3"></textarea>
+              </label>
+            </div>
+            <fieldset class="checklist checklist--compact">
+              <legend>Teste de viabilidade</legend>
+              <label><input type="checkbox" name="pauta-teste-1"> Cabe na duração final.</label>
+              <label><input type="checkbox" name="pauta-teste-2"> Pode ser gravado no período disponível.</label>
+              <label><input type="checkbox" name="pauta-teste-3"> Não depende de acesso ainda não confirmado.</label>
+              <label><input type="checkbox" name="pauta-teste-4"> Tem começo, desenvolvimento e fechamento.</label>
+            </fieldset>
+          </div>
+        </section>
+
+        <section class="chapter sheet" id="roteiro" aria-labelledby="titulo-roteiro">
+          <div class="chapter__number" aria-hidden="true">05</div>
+          <div class="chapter__body">
+            <p class="section-kicker">Ficha 02 · Pré-produção</p>
+            <h2 id="titulo-roteiro">Roteiro de 1 minuto</h2>
+            <p class="section-summary">
+              Sessenta segundos exigem escolhas. A tabela distribui a informação no tempo
+              e separa o que será visto do que será ouvido.
+            </p>
+            <div class="form-grid form-grid--3">
+              <label class="field">
+                <span>Título</span>
+                <input type="text" name="roteiro-titulo" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Versão</span>
+                <input type="text" name="roteiro-versao" value="v01" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Data</span>
+                <input type="date" name="roteiro-data">
+              </label>
+            </div>
+            <div class="table-wrap">
+              <table class="form-table script-table">
+                <caption>Roteiro em duas colunas</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Tempo</th>
+                    <th scope="col">Imagem / ação</th>
+                    <th scope="col">Som / fala / texto</th>
+                    <th scope="col">Função</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">00–05 s</th>
+                    <td><textarea name="roteiro-imagem-1" aria-label="Imagem de 0 a 5 segundos"></textarea></td>
+                    <td><textarea name="roteiro-som-1" aria-label="Som de 0 a 5 segundos"></textarea></td>
+                    <td>Gancho</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">05–15 s</th>
+                    <td><textarea name="roteiro-imagem-2" aria-label="Imagem de 5 a 15 segundos"></textarea></td>
+                    <td><textarea name="roteiro-som-2" aria-label="Som de 5 a 15 segundos"></textarea></td>
+                    <td>Contexto</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">15–35 s</th>
+                    <td><textarea name="roteiro-imagem-3" aria-label="Imagem de 15 a 35 segundos"></textarea></td>
+                    <td><textarea name="roteiro-som-3" aria-label="Som de 15 a 35 segundos"></textarea></td>
+                    <td>Desenvolvimento</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">35–50 s</th>
+                    <td><textarea name="roteiro-imagem-4" aria-label="Imagem de 35 a 50 segundos"></textarea></td>
+                    <td><textarea name="roteiro-som-4" aria-label="Som de 35 a 50 segundos"></textarea></td>
+                    <td>Virada / síntese</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">50–60 s</th>
+                    <td><textarea name="roteiro-imagem-5" aria-label="Imagem de 50 a 60 segundos"></textarea></td>
+                    <td><textarea name="roteiro-som-5" aria-label="Som de 50 a 60 segundos"></textarea></td>
+                    <td>Fechamento</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="timing-check">
+              <label class="field">
+                <span>Tempo da leitura cronometrada</span>
+                <input type="text" name="roteiro-cronometro" placeholder="00:00" autocomplete="off">
+              </label>
+              <label><input type="checkbox" name="roteiro-respiro"> Há pausas e respiros.</label>
+              <label><input type="checkbox" name="roteiro-imagem-informa"> A imagem também informa; a fala não descreve tudo.</label>
+              <label><input type="checkbox" name="roteiro-creditos"> O tempo de cartela e créditos foi considerado.</label>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter sheet" id="storyboard" aria-labelledby="titulo-storyboard">
+          <div class="chapter__number" aria-hidden="true">06</div>
+          <div class="chapter__body">
+            <p class="section-kicker">Ficha 03 · Pré-produção</p>
+            <h2 id="titulo-storyboard">Storyboard</h2>
+            <p class="section-summary">
+              O desenho pode ser simples. O quadro precisa comunicar composição,
+              movimento, ação e relação com o som.
+            </p>
+            <div class="storyboard-grid">
+              <article class="story-card">
+                <header><strong>Quadro 01</strong><input aria-label="Duração do quadro 1" name="story-tempo-1" placeholder="duração"></header>
+                <div class="frame" contenteditable="true" role="textbox" aria-multiline="true" aria-label="Área para descrever o quadro 1 ou desenhar depois da impressão"></div>
+                <label>Ação / movimento<textarea name="story-acao-1"></textarea></label>
+                <label>Som / fala<textarea name="story-som-1"></textarea></label>
+              </article>
+              <article class="story-card">
+                <header><strong>Quadro 02</strong><input aria-label="Duração do quadro 2" name="story-tempo-2" placeholder="duração"></header>
+                <div class="frame" contenteditable="true" role="textbox" aria-multiline="true" aria-label="Área para descrever o quadro 2 ou desenhar depois da impressão"></div>
+                <label>Ação / movimento<textarea name="story-acao-2"></textarea></label>
+                <label>Som / fala<textarea name="story-som-2"></textarea></label>
+              </article>
+              <article class="story-card">
+                <header><strong>Quadro 03</strong><input aria-label="Duração do quadro 3" name="story-tempo-3" placeholder="duração"></header>
+                <div class="frame" contenteditable="true" role="textbox" aria-multiline="true" aria-label="Área para descrever o quadro 3 ou desenhar depois da impressão"></div>
+                <label>Ação / movimento<textarea name="story-acao-3"></textarea></label>
+                <label>Som / fala<textarea name="story-som-3"></textarea></label>
+              </article>
+              <article class="story-card">
+                <header><strong>Quadro 04</strong><input aria-label="Duração do quadro 4" name="story-tempo-4" placeholder="duração"></header>
+                <div class="frame" contenteditable="true" role="textbox" aria-multiline="true" aria-label="Área para descrever o quadro 4 ou desenhar depois da impressão"></div>
+                <label>Ação / movimento<textarea name="story-acao-4"></textarea></label>
+                <label>Som / fala<textarea name="story-som-4"></textarea></label>
+              </article>
+              <article class="story-card">
+                <header><strong>Quadro 05</strong><input aria-label="Duração do quadro 5" name="story-tempo-5" placeholder="duração"></header>
+                <div class="frame" contenteditable="true" role="textbox" aria-multiline="true" aria-label="Área para descrever o quadro 5 ou desenhar depois da impressão"></div>
+                <label>Ação / movimento<textarea name="story-acao-5"></textarea></label>
+                <label>Som / fala<textarea name="story-som-5"></textarea></label>
+              </article>
+              <article class="story-card">
+                <header><strong>Quadro 06</strong><input aria-label="Duração do quadro 6" name="story-tempo-6" placeholder="duração"></header>
+                <div class="frame" contenteditable="true" role="textbox" aria-multiline="true" aria-label="Área para descrever o quadro 6 ou desenhar depois da impressão"></div>
+                <label>Ação / movimento<textarea name="story-acao-6"></textarea></label>
+                <label>Som / fala<textarea name="story-som-6"></textarea></label>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter sheet" id="planos" aria-labelledby="titulo-planos">
+          <div class="chapter__number" aria-hidden="true">07</div>
+          <div class="chapter__body">
+            <p class="section-kicker">Ficha 04 · Pré-produção</p>
+            <h2 id="titulo-planos">Lista de planos</h2>
+            <p class="section-summary">
+              Cada linha descreve um plano necessário. A lista responde “o que falta
+              captar?”; o relatório de captação registrará “o que de fato foi captado?”.
+            </p>
+            <div class="table-wrap">
+              <table class="form-table shot-table">
+                <caption>Planos previstos</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Nº</th>
+                    <th scope="col">Plano / ângulo</th>
+                    <th scope="col">Ação essencial</th>
+                    <th scope="col">Movimento</th>
+                    <th scope="col">Som</th>
+                    <th scope="col">Prioridade</th>
+                  </tr>
+                </thead>
+                <tbody data-shot-rows></tbody>
+              </table>
+            </div>
+            <div class="coverage">
+              <p><strong>Cobertura mínima de segurança</strong></p>
+              <label><input type="checkbox" name="cobertura-geral"> Plano geral para localizar a ação.</label>
+              <label><input type="checkbox" name="cobertura-medio"> Plano médio para acompanhar a ação.</label>
+              <label><input type="checkbox" name="cobertura-detalhe"> Detalhes para ritmo e pontos de corte.</label>
+              <label><input type="checkbox" name="cobertura-reacao"> Reações ou planos de escuta, quando houver diálogo.</label>
+              <label><input type="checkbox" name="cobertura-roomtone"> Som do ambiente sem falas.</label>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter sheet" id="filmagem" aria-labelledby="titulo-filmagem">
+          <div class="chapter__number" aria-hidden="true">08</div>
+          <div class="chapter__body">
+            <p class="section-kicker">Ficha 05 · Pré-produção</p>
+            <h2 id="titulo-filmagem">Plano de filmagem</h2>
+            <p class="section-summary">
+              A ordem de gravação segue a eficiência do set — locação, luz, elenco e
+              equipamento — e não precisa repetir a ordem narrativa.
+            </p>
+            <div class="form-grid form-grid--4">
+              <label class="field">
+                <span>Data</span>
+                <input type="date" name="filmagem-data">
+              </label>
+              <label class="field">
+                <span>Início</span>
+                <input type="time" name="filmagem-inicio">
+              </label>
+              <label class="field">
+                <span>Término</span>
+                <input type="time" name="filmagem-fim">
+              </label>
+              <label class="field">
+                <span>Ponto de encontro</span>
+                <input type="text" name="filmagem-encontro" autocomplete="off">
+              </label>
+              <label class="field field--wide">
+                <span>Locação e autorização de acesso</span>
+                <input type="text" name="filmagem-locacao" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Condição de luz prevista</span>
+                <input type="text" name="filmagem-luz" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Condição de som prevista</span>
+                <input type="text" name="filmagem-som" autocomplete="off">
+              </label>
+            </div>
+            <div class="table-wrap">
+              <table class="form-table">
+                <caption>Ordem de trabalho no set</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Horário</th>
+                    <th scope="col">Planos / cena</th>
+                    <th scope="col">Local</th>
+                    <th scope="col">Pessoas</th>
+                    <th scope="col">Equipamento</th>
+                    <th scope="col">Margem</th>
+                  </tr>
+                </thead>
+                <tbody data-schedule-rows></tbody>
+              </table>
+            </div>
+            <div class="form-grid form-grid--2">
+              <label class="field">
+                <span>Contingência para chuva, ruído, ausência ou falha técnica</span>
+                <textarea name="filmagem-plano-b" rows="4"></textarea>
+              </label>
+              <label class="field">
+                <span>Contato e procedimento em caso de imprevisto</span>
+                <textarea name="filmagem-contato" rows="4"></textarea>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter sheet" id="rodizio" aria-labelledby="titulo-rodizio">
+          <div class="chapter__number" aria-hidden="true">09</div>
+          <div class="chapter__body">
+            <p class="section-kicker">Ficha 06 · Equipe</p>
+            <h2 id="titulo-rodizio">Mapa de papéis e rodízio</h2>
+            <p class="section-summary">
+              Uma função principal organiza a responsabilidade; o rodízio distribui a
+              experiência. Toda decisão permanece coletiva e registrada.
+            </p>
+            <div class="role-cards">
+              <article><strong>Direção</strong><p>Unidade narrativa, decisões de cena e condução do set.</p></article>
+              <article><strong>Produção</strong><p>Tempo, acesso, documentos, pessoas e recursos.</p></article>
+              <article><strong>Câmera e luz</strong><p>Enquadramento, exposição, foco, estabilidade e iluminação.</p></article>
+              <article><strong>Som</strong><p>Posição do microfone, níveis, ruídos e som do ambiente (room tone).</p></article>
+              <article><strong>Continuidade</strong><p>Claquete, takes, posição, objetos, figurino e relatório.</p></article>
+              <article><strong>Edição</strong><p>Organização, montagem, tratamento, revisão e saída.</p></article>
+            </div>
+            <div class="table-wrap">
+              <table class="form-table">
+                <caption>Distribuição por etapa</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Integrante</th>
+                    <th scope="col">Pré-produção</th>
+                    <th scope="col">Captação 1</th>
+                    <th scope="col">Captação 2</th>
+                    <th scope="col">Pós-produção</th>
+                    <th scope="col">Mostra</th>
+                  </tr>
+                </thead>
+                <tbody data-role-rows></tbody>
+              </table>
+            </div>
+            <label class="field">
+              <span>Acordo da equipe para desempate, ausência e substituição</span>
+              <textarea name="rodizio-acordo" rows="4"></textarea>
+            </label>
+          </div>
+        </section>
+
+        <section class="chapter sheet chapter--warning" id="seguranca" aria-labelledby="titulo-seguranca">
+          <div class="chapter__number" aria-hidden="true">10</div>
+          <div class="chapter__body">
+            <p class="section-kicker">Ficha 07 · Antes de ligar a câmera</p>
+            <h2 id="titulo-seguranca">Checklist de segurança do set</h2>
+            <p class="section-summary">
+              Nenhum plano vale um acidente. Uma condição insegura interrompe a atividade
+              até que o risco seja removido ou o plano seja substituído.
+            </p>
+            <div class="safety-grid">
+              <fieldset class="checklist">
+                <legend>Espaço e circulação</legend>
+                <label><input type="checkbox" name="seg-espaco-1"> Saídas e rotas de circulação estão livres.</label>
+                <label><input type="checkbox" name="seg-espaco-2"> Cabos cruzam passagens somente com proteção e sinalização.</label>
+                <label><input type="checkbox" name="seg-espaco-3"> Tripés e pedestais estão abertos, estáveis e visíveis.</label>
+                <label><input type="checkbox" name="seg-espaco-4"> Bolsas e cases ficam fora da área de passagem.</label>
+                <label><input type="checkbox" name="seg-espaco-5"> A locação não exige acesso proibido ou improvisado.</label>
+              </fieldset>
+              <fieldset class="checklist">
+                <legend>Energia, luz e calor</legend>
+                <label><input type="checkbox" name="seg-energia-1"> Tomadas e extensões não apresentam danos visíveis.</label>
+                <label><input type="checkbox" name="seg-energia-2"> Não há sobrecarga ou ligação elétrica improvisada.</label>
+                <label><input type="checkbox" name="seg-energia-3"> Fontes de luz estão firmes e afastadas de líquidos e tecidos.</label>
+                <label><input type="checkbox" name="seg-energia-4"> Equipamentos quentes têm tempo e local para resfriamento.</label>
+                <label><input type="checkbox" name="seg-energia-5"> Mãos secas e equipamento desligado antes de reconectar cabos.</label>
+              </fieldset>
+              <fieldset class="checklist">
+                <legend>Pessoas e ação</legend>
+                <label><input type="checkbox" name="seg-pessoas-1"> A ação foi ensaiada sem equipamento em movimento.</label>
+                <label><input type="checkbox" name="seg-pessoas-2"> Corridas, alturas, trânsito, água, fogo e objetos cortantes foram excluídos.</label>
+                <label><input type="checkbox" name="seg-pessoas-3"> Ninguém opera equipamento sem orientação e autorização.</label>
+                <label><input type="checkbox" name="seg-pessoas-4"> Volume de fones e caixas permite comunicação e não oferece desconforto.</label>
+                <label><input type="checkbox" name="seg-pessoas-5"> Limites pessoais e consentimentos são respeitados durante toda a ação.</label>
+              </fieldset>
+              <fieldset class="checklist">
+                <legend>Ambiente externo</legend>
+                <label><input type="checkbox" name="seg-externo-1"> Clima, piso, circulação de terceiros e iluminação foram avaliados.</label>
+                <label><input type="checkbox" name="seg-externo-2"> Equipamentos estão protegidos de chuva e umidade.</label>
+                <label><input type="checkbox" name="seg-externo-3"> A equipe permanece em área autorizada e acompanhada.</label>
+                <label><input type="checkbox" name="seg-externo-4"> Há comunicação e ponto de encontro definidos.</label>
+                <label><input type="checkbox" name="seg-externo-5"> Existe plano de interrupção e retorno seguro.</label>
+              </fieldset>
+            </div>
+            <div class="risk-record">
+              <label class="field">
+                <span>Risco identificado</span>
+                <textarea name="seg-risco" rows="3"></textarea>
+              </label>
+              <label class="field">
+                <span>Medida adotada ou plano substituto</span>
+                <textarea name="seg-medida" rows="3"></textarea>
+              </label>
+              <label class="field">
+                <span>Responsável pela conferência</span>
+                <input type="text" name="seg-responsavel" autocomplete="off">
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter sheet" id="equipamentos" aria-labelledby="titulo-equipamentos">
+          <div class="chapter__number" aria-hidden="true">11</div>
+          <div class="chapter__body">
+            <p class="section-kicker">Ficha 08 · Patrimônio</p>
+            <h2 id="titulo-equipamentos">Retirada e devolução</h2>
+            <div class="form-grid form-grid--4">
+              <label class="field">
+                <span>Equipe</span>
+                <input type="text" name="equip-equipe" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Data</span>
+                <input type="date" name="equip-data">
+              </label>
+              <label class="field">
+                <span>Hora da retirada</span>
+                <input type="time" name="equip-saida">
+              </label>
+              <label class="field">
+                <span>Previsão de devolução</span>
+                <input type="time" name="equip-previsao">
+              </label>
+            </div>
+            <div class="table-wrap">
+              <table class="form-table">
+                <caption>Conferência de itens</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Item / patrimônio</th>
+                    <th scope="col">Qtd.</th>
+                    <th scope="col">Estado na retirada</th>
+                    <th scope="col">Acessórios</th>
+                    <th scope="col">Estado na devolução</th>
+                    <th scope="col">Conf.</th>
+                  </tr>
+                </thead>
+                <tbody data-equipment-rows></tbody>
+              </table>
+            </div>
+            <div class="form-grid form-grid--2">
+              <label class="field">
+                <span>Ocorrência, dano ou item ausente</span>
+                <textarea name="equip-ocorrencia" rows="3"></textarea>
+              </label>
+              <label class="field">
+                <span>Providência e comunicação realizadas</span>
+                <textarea name="equip-providencia" rows="3"></textarea>
+              </label>
+              <label class="field">
+                <span>Responsável pela retirada</span>
+                <input type="text" name="equip-resp-retirada" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Responsável pela devolução</span>
+                <input type="text" name="equip-resp-devolucao" autocomplete="off">
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter sheet" id="captacao" aria-labelledby="titulo-captacao">
+          <div class="chapter__number" aria-hidden="true">12</div>
+          <div class="chapter__body">
+            <p class="section-kicker">Ficha 09 · Set</p>
+            <h2 id="titulo-captacao">Relatório de captação e cópia de segurança</h2>
+            <div class="form-grid form-grid--4">
+              <label class="field">
+                <span>Projeto</span>
+                <input type="text" name="captacao-projeto" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Cartão / mídia</span>
+                <input type="text" name="captacao-midia" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Data</span>
+                <input type="date" name="captacao-data">
+              </label>
+              <label class="field">
+                <span>Operação</span>
+                <input type="text" name="captacao-operacao" autocomplete="off">
+              </label>
+            </div>
+            <div class="table-wrap">
+              <table class="form-table take-table">
+                <caption>Registro das tomadas</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Cena / plano</th>
+                    <th scope="col">Tomada</th>
+                    <th scope="col">Arquivo</th>
+                    <th scope="col">Imagem</th>
+                    <th scope="col">Som</th>
+                    <th scope="col">Avaliação</th>
+                    <th scope="col">Observação</th>
+                  </tr>
+                </thead>
+                <tbody data-take-rows></tbody>
+              </table>
+            </div>
+            <div class="backup-protocol">
+              <div>
+                <p class="route-tag">Cópia 01 · Trabalho</p>
+                <label class="field">
+                  <span>Pasta / unidade</span>
+                  <input type="text" name="backup-copia-1" autocomplete="off">
+                </label>
+                <label><input type="checkbox" name="backup-copia-1-conf"> Arquivos abrem e têm duração compatível.</label>
+              </div>
+              <div>
+                <p class="route-tag">Cópia 02 · Segurança</p>
+                <label class="field">
+                  <span>Pasta / unidade distinta</span>
+                  <input type="text" name="backup-copia-2" autocomplete="off">
+                </label>
+                <label><input type="checkbox" name="backup-copia-2-conf"> Quantidade e tamanho foram comparados.</label>
+              </div>
+              <div>
+                <p class="route-tag">Liberação da mídia</p>
+                <label><input type="checkbox" name="backup-roomtone"> Som do ambiente e planos de cobertura constam nas cópias.</label>
+                <label><input type="checkbox" name="backup-liberacao"> A mídia só foi liberada após duas cópias verificadas.</label>
+              </div>
+            </div>
+            <div class="form-grid form-grid--3">
+              <label class="field">
+                <span>Total de arquivos</span>
+                <input type="number" name="backup-total" min="0">
+              </label>
+              <label class="field">
+                <span>Tamanho total</span>
+                <input type="text" name="backup-tamanho" placeholder="Ex.: 18,4 GB" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Conferido por</span>
+                <input type="text" name="backup-responsavel" autocomplete="off">
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter sheet" id="continuidade" aria-labelledby="titulo-continuidade">
+          <div class="chapter__number" aria-hidden="true">13</div>
+          <div class="chapter__body">
+            <p class="section-kicker">Ficha 10 · Set</p>
+            <h2 id="titulo-continuidade">Continuidade</h2>
+            <p class="section-summary">
+              O registro preserva relações entre planos gravados em momentos diferentes:
+              posição, direção do olhar, eixo, objetos, figurino, luz e estado da ação.
+            </p>
+            <div class="form-grid form-grid--3">
+              <label class="field">
+                <span>Cena</span>
+                <input type="text" name="cont-cena" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Local</span>
+                <input type="text" name="cont-local" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Responsável pelo registro</span>
+                <input type="text" name="cont-responsavel" autocomplete="off">
+              </label>
+            </div>
+            <div class="continuity-grid">
+              <label class="field">
+                <span>Posição e deslocamento das pessoas</span>
+                <textarea name="cont-pessoas" rows="5"></textarea>
+              </label>
+              <label class="field">
+                <span>Objetos: posição, quantidade e estado</span>
+                <textarea name="cont-objetos" rows="5"></textarea>
+              </label>
+              <label class="field">
+                <span>Figurino, cabelo e maquiagem</span>
+                <textarea name="cont-figurino" rows="5"></textarea>
+              </label>
+              <label class="field">
+                <span>Luz, horário aparente e sombras</span>
+                <textarea name="cont-luz" rows="5"></textarea>
+              </label>
+              <label class="field">
+                <span>Eixo, direção do olhar e mão usada</span>
+                <textarea name="cont-eixo" rows="5"></textarea>
+              </label>
+              <label class="field">
+                <span>Última ação antes do corte / primeira ação seguinte</span>
+                <textarea name="cont-acao" rows="5"></textarea>
+              </label>
+            </div>
+            <label class="field">
+              <span>Referências fotográficas e nomes dos arquivos</span>
+              <textarea name="cont-fotos" rows="3" placeholder="Ex.: CONT_C03_geral.jpg; CONT_C03_objetos.jpg"></textarea>
+            </label>
+          </div>
+        </section>
+
+        <section class="chapter sheet" id="edicao" aria-labelledby="titulo-edicao">
+          <div class="chapter__number" aria-hidden="true">14</div>
+          <div class="chapter__body">
+            <p class="section-kicker">Ficha 11 · Pós-produção</p>
+            <h2 id="titulo-edicao">Ficha de edição</h2>
+            <div class="form-grid form-grid--4">
+              <label class="field">
+                <span>Programa e versão</span>
+                <input type="text" name="edicao-programa" value="DaVinci Resolve" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Responsável</span>
+                <input type="text" name="edicao-responsavel" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Versão do corte</span>
+                <input type="text" name="edicao-versao" value="v01" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Data da revisão</span>
+                <input type="date" name="edicao-data">
+              </label>
+            </div>
+            <div class="edit-stages">
+              <fieldset class="checklist">
+                <legend>1 · Ingestão e organização</legend>
+                <label><input type="checkbox" name="edit-ingest-1"> Projeto criado na pasta correta.</label>
+                <label><input type="checkbox" name="edit-ingest-2"> Mídias copiadas; edição não depende do cartão.</label>
+                <label><input type="checkbox" name="edit-ingest-3"> Pastas ou bins separam vídeo, áudio, música, grafismos e exportações.</label>
+                <label><input type="checkbox" name="edit-ingest-4"> Clipes ruins não foram apagados antes da confirmação da cópia de segurança.</label>
+              </fieldset>
+              <fieldset class="checklist">
+                <legend>2 · Montagem</legend>
+                <label><input type="checkbox" name="edit-cut-1"> Takes selecionados com base no relatório.</label>
+                <label><input type="checkbox" name="edit-cut-2"> Corte bruto apresenta começo, desenvolvimento e fechamento.</label>
+                <label><input type="checkbox" name="edit-cut-3"> Ritmo e duração foram avaliados sem depender de efeitos.</label>
+                <label><input type="checkbox" name="edit-cut-4"> Pickups necessários foram listados antes da finalização.</label>
+              </fieldset>
+              <fieldset class="checklist">
+                <legend>3 · Tratamento</legend>
+                <label><input type="checkbox" name="edit-treat-1"> Diálogos compreensíveis e sem cortes bruscos.</label>
+                <label><input type="checkbox" name="edit-treat-2"> O som do ambiente cobre lacunas; música não encobre falas.</label>
+                <label><input type="checkbox" name="edit-treat-3"> Planos têm exposição e balanço coerentes.</label>
+                <label><input type="checkbox" name="edit-treat-4"> Textos são legíveis e permanecem tempo suficiente.</label>
+              </fieldset>
+              <fieldset class="checklist">
+                <legend>4 · Fechamento</legend>
+                <label><input type="checkbox" name="edit-lock-1"> Créditos, fontes e licenças conferidos.</label>
+                <label><input type="checkbox" name="edit-lock-2"> Consentimentos compatíveis com a forma de exibição.</label>
+                <label><input type="checkbox" name="edit-lock-3"> Imagem fechada registrada antes da exportação final.</label>
+                <label><input type="checkbox" name="edit-lock-4"> Arquivo final assistido do início ao fim.</label>
+              </fieldset>
+            </div>
+            <div class="table-wrap">
+              <table class="form-table">
+                <caption>Notas de revisão</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Timecode</th>
+                    <th scope="col">Problema observado</th>
+                    <th scope="col">Alteração decidida</th>
+                    <th scope="col">Responsável</th>
+                    <th scope="col">Feito</th>
+                  </tr>
+                </thead>
+                <tbody data-edit-rows></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter sheet" id="exportacao" aria-labelledby="titulo-exportacao">
+          <div class="chapter__number" aria-hidden="true">15</div>
+          <div class="chapter__body">
+            <p class="section-kicker">Ficha 12 · Saída</p>
+            <h2 id="titulo-exportacao">Especificação de exportação</h2>
+            <div class="export-spec">
+              <div class="spec-card spec-card--accent">
+                <span>Contêiner</span>
+                <strong>MP4</strong>
+                <small>arquivo .mp4</small>
+              </div>
+              <div class="spec-card">
+                <span>Vídeo</span>
+                <strong>H.264</strong>
+                <small>10–20 Mb/s para 1080p</small>
+              </div>
+              <div class="spec-card">
+                <span>Quadro</span>
+                <strong>1920 × 1080</strong>
+                <small>progressivo · 16:9</small>
+              </div>
+              <div class="spec-card">
+                <span>Taxa</span>
+                <strong>igual à captação</strong>
+                <small>24, 25 ou 30 fps</small>
+              </div>
+              <div class="spec-card">
+                <span>Áudio</span>
+                <strong>AAC · 48 kHz</strong>
+                <small>estéreo · 192–320 kb/s</small>
+              </div>
+            </div>
+            <div class="filename-rule">
+              <p class="route-tag">Padrão de nome</p>
+              <code>UC_PA_EQ##_TITULO_v##_MASTER.mp4</code>
+              <p>Exemplo: <code>UC_PA_EQ03_PATIO_NOTURNO_v04_MASTER.mp4</code></p>
+              <p>
+                Sem espaços, acentos ou “final_final”. O número da versão muda a cada
+                saída relevante; somente a versão aprovada recebe <code>MASTER</code>.
+              </p>
+            </div>
+            <div class="form-grid form-grid--3">
+              <label class="field">
+                <span>Nome exato do arquivo entregue</span>
+                <input type="text" name="export-nome" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Duração final</span>
+                <input type="text" name="export-duracao" placeholder="00:00:00" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Tamanho do arquivo</span>
+                <input type="text" name="export-tamanho" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Resolução</span>
+                <select name="export-resolucao">
+                  <option>1920 × 1080</option>
+                  <option>1280 × 720 — somente se necessário</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>FPS</span>
+                <select name="export-fps">
+                  <option value="">Igual à captação</option>
+                  <option>24 fps</option>
+                  <option>25 fps</option>
+                  <option>30 fps</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Destino da cópia de exibição</span>
+                <input type="text" name="export-destino" autocomplete="off">
+              </label>
+            </div>
+            <fieldset class="checklist checklist--compact">
+              <legend>Controle de qualidade do arquivo mestre</legend>
+              <label><input type="checkbox" name="export-qc-1"> Abre fora do programa de edição.</label>
+              <label><input type="checkbox" name="export-qc-2"> Foi assistido do primeiro ao último quadro.</label>
+              <label><input type="checkbox" name="export-qc-3"> Imagem e som permanecem sincronizados.</label>
+              <label><input type="checkbox" name="export-qc-4"> Não há mídia offline, tela preta acidental ou texto cortado.</label>
+              <label><input type="checkbox" name="export-qc-5"> Créditos e duração estão corretos.</label>
+              <label><input type="checkbox" name="export-qc-6"> Há uma segunda cópia do arquivo mestre.</label>
+            </fieldset>
+          </div>
+        </section>
+
+        <section class="chapter sheet" id="rubrica" aria-labelledby="titulo-rubrica">
+          <div class="chapter__number" aria-hidden="true">16</div>
+          <div class="chapter__body">
+            <p class="section-kicker">Ficha 13 · Avaliação</p>
+            <h2 id="titulo-rubrica">Rubrica do projeto</h2>
+            <p class="section-summary">
+              A pontuação combina evidências do processo e do produto. Cada critério
+              recebe um nível; o valor máximo total é 100 pontos.
+            </p>
+            <div class="table-wrap">
+              <table class="rubric-table">
+                <caption>Critérios e níveis de desempenho</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Critério</th>
+                    <th scope="col">4 · Consistente</th>
+                    <th scope="col">3 · Adequado</th>
+                    <th scope="col">2 · Parcial</th>
+                    <th scope="col">1 · Inicial</th>
+                    <th scope="col">Nota</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Planejamento <small>20 pts</small></th>
+                    <td>Pauta, roteiro, storyboard e plano orientam claramente a produção.</td>
+                    <td>Documentos completos, com pequenos ajustes de precisão.</td>
+                    <td>Há lacunas que geram improviso ou retrabalho.</td>
+                    <td>Documentos insuficientes ou desconectados do resultado.</td>
+                    <td><input type="number" name="rubrica-planejamento" min="0" max="20" aria-label="Nota de planejamento, até 20 pontos"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Linguagem audiovisual <small>20 pts</small></th>
+                    <td>Planos, enquadramentos, montagem e som constroem sentido.</td>
+                    <td>Escolhas compreensíveis e coerentes na maior parte.</td>
+                    <td>Algumas escolhas funcionam; outras parecem aleatórias.</td>
+                    <td>Uso pouco intencional dos recursos de linguagem.</td>
+                    <td><input type="number" name="rubrica-linguagem" min="0" max="20" aria-label="Nota de linguagem audiovisual, até 20 pontos"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Captação <small>20 pts</small></th>
+                    <td>Imagem estável e legível; foco, exposição, luz e som controlados.</td>
+                    <td>Boa captação com falhas pontuais sem comprometer a compreensão.</td>
+                    <td>Falhas recorrentes reduzem clareza ou continuidade.</td>
+                    <td>Problemas técnicos impedem compreender partes importantes.</td>
+                    <td><input type="number" name="rubrica-captacao" min="0" max="20" aria-label="Nota de captação, até 20 pontos"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Edição e finalização <small>20 pts</small></th>
+                    <td>Ritmo, continuidade, áudio, cor, textos e exportação estão revisados.</td>
+                    <td>Montagem coerente com pequenas inconsistências.</td>
+                    <td>Corte compreensível, mas com problemas de ritmo ou acabamento.</td>
+                    <td>Montagem incompleta, confusa ou entregue fora da especificação.</td>
+                    <td><input type="number" name="rubrica-edicao" min="0" max="20" aria-label="Nota de edição, até 20 pontos"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Ética e entrega <small>15 pts</small></th>
+                    <td>Consentimentos, créditos, licenças, arquivos e prazos conferidos.</td>
+                    <td>Requisitos atendidos com correções pontuais.</td>
+                    <td>Faltam registros ou conferências importantes.</td>
+                    <td>Há pendência ética, documental ou de entrega.</td>
+                    <td><input type="number" name="rubrica-etica" min="0" max="15" aria-label="Nota de ética e entrega, até 15 pontos"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Trabalho em equipe <small>5 pts</small></th>
+                    <td>Responsabilidades distribuídas, comunicadas e cumpridas.</td>
+                    <td>Cooperação regular com poucos desequilíbrios.</td>
+                    <td>Participação desigual ou comunicação falha.</td>
+                    <td>Responsabilidades concentradas ou não cumpridas.</td>
+                    <td><input type="number" name="rubrica-equipe" min="0" max="5" aria-label="Nota de trabalho em equipe, até 5 pontos"></td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th scope="row" colspan="5">Total</th>
+                    <td><output data-rubric-total aria-live="polite">0 / 100</output></td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+            <div class="form-grid form-grid--2">
+              <label class="field">
+                <span>Evidência mais consistente</span>
+                <textarea name="rubrica-forca" rows="4"></textarea>
+              </label>
+              <label class="field">
+                <span>Próxima melhoria objetiva</span>
+                <textarea name="rubrica-melhoria" rows="4"></textarea>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter sheet exam-paper" id="prova-a" aria-labelledby="titulo-prova-a" data-exam="a">
+          <div class="chapter__number" aria-hidden="true">17</div>
+          <div class="chapter__body">
+            <p class="section-kicker">Avaliação individual · Aula 18</p>
+            <h2 id="titulo-prova-a">Prova A</h2>
+            <p class="section-summary">
+              Linguagem audiovisual, planejamento, captação, edição, ética e finalização.
+            </p>
+
+            <div class="assessment-heading" aria-label="Identificação da avaliação">
+              <label class="field">
+                <span>Nome</span>
+                <input type="text" name="prova-a-nome" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Turma</span>
+                <input type="text" name="prova-a-turma" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Data</span>
+                <input type="date" name="prova-a-data">
+              </label>
+              <label class="field">
+                <span>Resultado</span>
+                <input type="text" name="prova-a-resultado" aria-label="Resultado da Prova A" autocomplete="off">
+              </label>
+            </div>
+
+            <div class="exam-instructions">
+              <div>
+                <strong>10 questões</strong>
+                <span>1,0 ponto cada</span>
+                <span>45 min sugeridos</span>
+              </div>
+              <p>
+                Assinale uma alternativa por questão. Leia toda a situação antes de
+                marcar a resposta. Na versão impressa, use caneta azul ou preta.
+              </p>
+              <output class="exam-progress" data-exam-progress="a" aria-live="polite">0 de 10 respondidas</output>
+            </div>
+
+            <ol class="exam-list">
+              <li>
+                <fieldset class="exam-question">
+                  <legend>
+                    Antes de gravar um comercial de 30 segundos, qual documento organiza
+                    o que será visto e ouvido ao longo do tempo?
+                  </legend>
+                  <label class="exam-option"><input type="radio" name="prova-a-q01" value="A"><span>A</span> A ordem de exibição da mostra.</label>
+                  <label class="exam-option"><input type="radio" name="prova-a-q01" value="B"><span>B</span> O roteiro em duas colunas, com imagem e som.</label>
+                  <label class="exam-option"><input type="radio" name="prova-a-q01" value="C"><span>C</span> A rubrica de avaliação do projeto.</label>
+                  <label class="exam-option"><input type="radio" name="prova-a-q01" value="D"><span>D</span> O relatório de retirada de equipamentos.</label>
+                </fieldset>
+              </li>
+              <li>
+                <fieldset class="exam-question">
+                  <legend>
+                    Uma sequência mostra o corredor em plano geral, uma estudante em plano
+                    médio e a mão dela abrindo uma porta em plano detalhe. O que a montagem
+                    produz nesse caso?
+                  </legend>
+                  <label class="exam-option"><input type="radio" name="prova-a-q02" value="A"><span>A</span> Elimina a necessidade de continuidade entre os planos.</label>
+                  <label class="exam-option"><input type="radio" name="prova-a-q02" value="B"><span>B</span> Transforma todos os planos em um único enquadramento.</label>
+                  <label class="exam-option"><input type="radio" name="prova-a-q02" value="C"><span>C</span> Constrói a ação do contexto geral até o detalhe importante.</label>
+                  <label class="exam-option"><input type="radio" name="prova-a-q02" value="D"><span>D</span> Corrige automaticamente problemas de foco e exposição.</label>
+                </fieldset>
+              </li>
+              <li>
+                <fieldset class="exam-question">
+                  <legend>
+                    Uma participante menor de idade foi autorizada a aparecer em uma
+                    atividade interna. Depois, a equipe decide publicar o vídeo em uma
+                    rede social. Qual é o procedimento correto?
+                  </legend>
+                  <label class="exam-option"><input type="radio" name="prova-a-q03" value="A"><span>A</span> Publicar, pois a autorização para gravar cobre qualquer uso posterior.</label>
+                  <label class="exam-option"><input type="radio" name="prova-a-q03" value="B"><span>B</span> Publicar sem o nome da participante, mantendo imagem e voz.</label>
+                  <label class="exam-option"><input type="radio" name="prova-a-q03" value="C"><span>C</span> Pedir apenas a concordância verbal da equipe responsável pela edição.</label>
+                  <label class="exam-option"><input type="radio" name="prova-a-q03" value="D"><span>D</span> Interromper a publicação e conferir autorização institucional específica com o responsável legal.</label>
+                </fieldset>
+              </li>
+              <li>
+                <fieldset class="exam-question">
+                  <legend>
+                    Ao cortar uma entrevista, aparece um silêncio artificial entre duas
+                    falas. Qual gravação ajuda a preencher o corte sem mudar a sensação do
+                    local?
+                  </legend>
+                  <label class="exam-option"><input type="radio" name="prova-a-q04" value="A"><span>A</span> Som do ambiente (room tone) captado no mesmo local.</label>
+                  <label class="exam-option"><input type="radio" name="prova-a-q04" value="B"><span>B</span> Música aleatória reproduzida no celular.</label>
+                  <label class="exam-option"><input type="radio" name="prova-a-q04" value="C"><span>C</span> Ruído digital criado ao aumentar o ganho.</label>
+                  <label class="exam-option"><input type="radio" name="prova-a-q04" value="D"><span>D</span> Áudio de outra locação com acústica diferente.</label>
+                </fieldset>
+              </li>
+              <li>
+                <fieldset class="exam-question">
+                  <legend>
+                    Antes de iniciar a montagem, qual procedimento reduz o risco de perder
+                    arquivos e facilita encontrar as melhores tomadas?
+                  </legend>
+                  <label class="exam-option"><input type="radio" name="prova-a-q05" value="A"><span>A</span> Renomear tudo como “vídeo final” e apagar as repetições.</label>
+                  <label class="exam-option"><input type="radio" name="prova-a-q05" value="B"><span>B</span> Verificar cópias, organizar pastas e criar pastas de mídia (bins) coerentes.</label>
+                  <label class="exam-option"><input type="radio" name="prova-a-q05" value="C"><span>C</span> Aplicar efeitos antes de assistir ao material.</label>
+                  <label class="exam-option"><input type="radio" name="prova-a-q05" value="D"><span>D</span> Importar apenas o primeiro arquivo de cada cartão.</label>
+                </fieldset>
+              </li>
+              <li>
+                <fieldset class="exam-question">
+                  <legend>
+                    Um título deve começar transparente e ficar totalmente visível em dois
+                    segundos. Qual recurso permite controlar essa mudança no tempo?
+                  </legend>
+                  <label class="exam-option"><input type="radio" name="prova-a-q06" value="A"><span>A</span> Claquete.</label>
+                  <label class="exam-option"><input type="radio" name="prova-a-q06" value="B"><span>B</span> Balanço de branco.</label>
+                  <label class="exam-option"><input type="radio" name="prova-a-q06" value="C"><span>C</span> Quadros-chave (keyframes).</label>
+                  <label class="exam-option"><input type="radio" name="prova-a-q06" value="D"><span>D</span> Lista de planos.</label>
+                </fieldset>
+              </li>
+              <li>
+                <fieldset class="exam-question">
+                  <legend>
+                    A prévia trava dentro do editor, embora os arquivos estejam no
+                    computador e a internet esteja normal. Qual medida é mais adequada
+                    antes de alterar o vídeo final?
+                  </legend>
+                  <label class="exam-option"><input type="radio" name="prova-a-q07" value="A"><span>A</span> Trocar o roteador, pois toda lentidão é buffering de rede.</label>
+                  <label class="exam-option"><input type="radio" name="prova-a-q07" value="B"><span>B</span> Usar proxy, cache, render de trecho ou reduzir a resolução da prévia.</label>
+                  <label class="exam-option"><input type="radio" name="prova-a-q07" value="C"><span>C</span> Apagar os arquivos originais depois da importação.</label>
+                  <label class="exam-option"><input type="radio" name="prova-a-q07" value="D"><span>D</span> Exportar em formato aleatório até a reprodução melhorar.</label>
+                </fieldset>
+              </li>
+              <li>
+                <fieldset class="exam-question">
+                  <legend>
+                    Na especificação “MP4 com vídeo H.264”, o que representam MP4 e H.264,
+                    respectivamente?
+                  </legend>
+                  <label class="exam-option"><input type="radio" name="prova-a-q08" value="A"><span>A</span> Contêiner e codec de vídeo.</label>
+                  <label class="exam-option"><input type="radio" name="prova-a-q08" value="B"><span>B</span> Resolução e taxa de quadros.</label>
+                  <label class="exam-option"><input type="radio" name="prova-a-q08" value="C"><span>C</span> Codec de áudio e contêiner.</label>
+                  <label class="exam-option"><input type="radio" name="prova-a-q08" value="D"><span>D</span> Programa de edição e plataforma de publicação.</label>
+                </fieldset>
+              </li>
+              <li>
+                <fieldset class="exam-question">
+                  <legend>
+                    Qual alternativa descreve uma legenda acessível para uma cena com fala
+                    e um alarme importante fora de quadro?
+                  </legend>
+                  <label class="exam-option"><input type="radio" name="prova-a-q09" value="A"><span>A</span> Mostra apenas palavras-chave, sem sincronização.</label>
+                  <label class="exam-option"><input type="radio" name="prova-a-q09" value="B"><span>B</span> Repete todo texto visual e ignora os sons.</label>
+                  <label class="exam-option"><input type="radio" name="prova-a-q09" value="C"><span>C</span> Usa letras pequenas para ocupar menos espaço.</label>
+                  <label class="exam-option"><input type="radio" name="prova-a-q09" value="D"><span>D</span> Transcreve a fala, identifica o som relevante e mantém leitura sincronizada.</label>
+                </fieldset>
+              </li>
+              <li>
+                <fieldset class="exam-question">
+                  <legend>
+                    O que significa declarar a imagem fechada (picture lock) em um projeto?
+                  </legend>
+                  <label class="exam-option"><input type="radio" name="prova-a-q10" value="A"><span>A</span> Bloquear o acesso da equipe aos arquivos originais.</label>
+                  <label class="exam-option"><input type="radio" name="prova-a-q10" value="B"><span>B</span> Encerrar a captação mesmo com cenas essenciais ausentes.</label>
+                  <label class="exam-option"><input type="radio" name="prova-a-q10" value="C"><span>C</span> Aprovar ordem e duração dos planos antes do acabamento final.</label>
+                  <label class="exam-option"><input type="radio" name="prova-a-q10" value="D"><span>D</span> Aplicar correção de cor sem revisar a montagem.</label>
+                </fieldset>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="chapter answer-key" id="gabarito-a" aria-labelledby="titulo-gabarito-a">
+          <div class="chapter__number" aria-hidden="true">18</div>
+          <div class="chapter__body">
+            <p class="section-kicker">Correção comentada · Prova A</p>
+            <h2 id="titulo-gabarito-a">Gabarito A</h2>
+            <p class="section-summary">
+              As justificativas retomam o conceito central de cada item e orientam a
+              devolutiva sem transformar a correção em nova exposição longa.
+            </p>
+            <ol class="answer-list">
+              <li><div class="answer-key__head"><span>01 · B</span><strong>Roteiro em duas colunas</strong></div><p>O roteiro distribui imagem e som no tempo; a ordem da mostra e a rubrica têm outras funções.</p></li>
+              <li><div class="answer-key__head"><span>02 · C</span><strong>Contexto, ação e detalhe</strong></div><p>A sequência de escalas orienta o olhar e constrói a ação por montagem.</p></li>
+              <li><div class="answer-key__head"><span>03 · D</span><strong>Finalidades separadas</strong></div><p>Gravação interna e publicação são usos distintos; menor de idade exige o procedimento institucional e a autorização aplicável do responsável.</p></li>
+              <li><div class="answer-key__head"><span>04 · A</span><strong>Som do ambiente</strong></div><p>O registro contínuo do mesmo local preenche cortes mantendo a continuidade sonora.</p></li>
+              <li><div class="answer-key__head"><span>05 · B</span><strong>Cópia e organização</strong></div><p>Cópias verificadas protegem o material; pastas e bins coerentes tornam a seleção rastreável.</p></li>
+              <li><div class="answer-key__head"><span>06 · C</span><strong>Quadros-chave</strong></div><p>Keyframes definem valores diferentes em momentos distintos e produzem a mudança gradual.</p></li>
+              <li><div class="answer-key__head"><span>07 · B</span><strong>Otimização da prévia</strong></div><p>Proxy, cache e render de trecho reduzem a carga de reprodução local; isso não é buffering de rede.</p></li>
+              <li><div class="answer-key__head"><span>08 · A</span><strong>Contêiner e codec</strong></div><p>MP4 organiza as faixas no arquivo; H.264 codifica e comprime o vídeo.</p></li>
+              <li><div class="answer-key__head"><span>09 · D</span><strong>Informação sonora acessível</strong></div><p>A legenda precisa representar fala e sons relevantes com sincronização, contraste e tempo de leitura.</p></li>
+              <li><div class="answer-key__head"><span>10 · C</span><strong>Montagem aprovada</strong></div><p>Depois da imagem fechada, mudanças de duração afetam áudio, cor, grafismos e legendas; por isso a montagem é aprovada primeiro.</p></li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="chapter sheet exam-paper" id="prova-b" aria-labelledby="titulo-prova-b" data-exam="b">
+          <div class="chapter__number" aria-hidden="true">19</div>
+          <div class="chapter__body">
+            <p class="section-kicker">Avaliação individual · Aula 23</p>
+            <h2 id="titulo-prova-b">Prova B</h2>
+            <p class="section-summary">
+              Instrumento equivalente para a recuperação, aplicado após o percurso de
+              correção e estudo orientado.
+            </p>
+
+            <div class="assessment-heading" aria-label="Identificação da avaliação">
+              <label class="field">
+                <span>Nome</span>
+                <input type="text" name="prova-b-nome" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Turma</span>
+                <input type="text" name="prova-b-turma" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Data</span>
+                <input type="date" name="prova-b-data">
+              </label>
+              <label class="field">
+                <span>Resultado</span>
+                <input type="text" name="prova-b-resultado" aria-label="Resultado da Prova B" autocomplete="off">
+              </label>
+            </div>
+
+            <div class="exam-instructions">
+              <div>
+                <strong>10 questões</strong>
+                <span>1,0 ponto cada</span>
+                <span>45 min sugeridos</span>
+              </div>
+              <p>
+                Assinale uma alternativa por questão. As situações são diferentes das da
+                Prova A, mas verificam as mesmas capacidades da Unidade Curricular.
+              </p>
+              <output class="exam-progress" data-exam-progress="b" aria-live="polite">0 de 10 respondidas</output>
+            </div>
+
+            <ol class="exam-list">
+              <li>
+                <fieldset class="exam-question">
+                  <legend>
+                    Uma equipe quer produzir um vídeo de um minuto sobre “toda a história
+                    da escola”. Qual revisão torna a pauta mais viável?
+                  </legend>
+                  <label class="exam-option"><input type="radio" name="prova-b-q01" value="A"><span>A</span> Acrescentar mais períodos históricos sem mudar a duração.</label>
+                  <label class="exam-option"><input type="radio" name="prova-b-q01" value="B"><span>B</span> Definir um recorte observável, como o uso do pátio no intervalo noturno.</label>
+                  <label class="exam-option"><input type="radio" name="prova-b-q01" value="C"><span>C</span> Gravar tudo primeiro e decidir o assunto apenas na edição.</label>
+                  <label class="exam-option"><input type="radio" name="prova-b-q01" value="D"><span>D</span> Substituir a pesquisa por efeitos e transições.</label>
+                </fieldset>
+              </li>
+              <li>
+                <fieldset class="exam-question">
+                  <legend>
+                    Qual alternativa diferencia corretamente storyboard e lista de planos?
+                  </legend>
+                  <label class="exam-option"><input type="radio" name="prova-b-q02" value="A"><span>A</span> O storyboard visualiza a sequência; a lista registra necessidades técnicas de cada plano.</label>
+                  <label class="exam-option"><input type="radio" name="prova-b-q02" value="B"><span>B</span> O storyboard serve apenas para áudio; a lista serve apenas para atores.</label>
+                  <label class="exam-option"><input type="radio" name="prova-b-q02" value="C"><span>C</span> Os dois documentos são iguais e um deles deve ser descartado.</label>
+                  <label class="exam-option"><input type="radio" name="prova-b-q02" value="D"><span>D</span> A lista define a nota; o storyboard substitui o consentimento.</label>
+                </fieldset>
+              </li>
+              <li>
+                <fieldset class="exam-question">
+                  <legend>
+                    Durante a montagem da luz, um cabo atravessa a passagem da equipe. Qual
+                    decisão deve ocorrer antes da gravação?
+                  </legend>
+                  <label class="exam-option"><input type="radio" name="prova-b-q03" value="A"><span>A</span> Manter o cabo e avisar apenas quem opera a câmera.</label>
+                  <label class="exam-option"><input type="radio" name="prova-b-q03" value="B"><span>B</span> Apagar a luz principal para esconder o cabo no quadro.</label>
+                  <label class="exam-option"><input type="radio" name="prova-b-q03" value="C"><span>C</span> Interromper o set, reposicionar ou fixar o cabo e liberar a circulação.</label>
+                  <label class="exam-option"><input type="radio" name="prova-b-q03" value="D"><span>D</span> Gravar rapidamente antes que alguém precise passar.</label>
+                </fieldset>
+              </li>
+              <li>
+                <fieldset class="exam-question">
+                  <legend>
+                    Direção e edição discordam sobre retirar uma cena importante. Qual base
+                    ajuda a resolver a decisão de modo profissional?
+                  </legend>
+                  <label class="exam-option"><input type="radio" name="prova-b-q04" value="A"><span>A</span> A preferência pessoal de quem fala mais alto.</label>
+                  <label class="exam-option"><input type="radio" name="prova-b-q04" value="B"><span>B</span> A função mais popular na equipe.</label>
+                  <label class="exam-option"><input type="radio" name="prova-b-q04" value="C"><span>C</span> A quantidade de efeitos já aplicados à cena.</label>
+                  <label class="exam-option"><input type="radio" name="prova-b-q04" value="D"><span>D</span> A proposta aprovada, o roteiro, as evidências do teste e os limites éticos e de segurança.</label>
+                </fieldset>
+              </li>
+              <li>
+                <fieldset class="exam-question">
+                  <legend>
+                    Em um minidocumentário, retirar uma frase muda o sentido da resposta da
+                    pessoa entrevistada. Qual é a correção adequada?
+                  </legend>
+                  <label class="exam-option"><input type="radio" name="prova-b-q05" value="A"><span>A</span> Manter o corte porque todo documentário deve ser curto.</label>
+                  <label class="exam-option"><input type="radio" name="prova-b-q05" value="B"><span>B</span> Restaurar o contexto necessário e apresentar a fala com transparência.</label>
+                  <label class="exam-option"><input type="radio" name="prova-b-q05" value="C"><span>C</span> Substituir a voz sem informar a alteração.</label>
+                  <label class="exam-option"><input type="radio" name="prova-b-q05" value="D"><span>D</span> Usar música alta para reduzir a atenção à fala.</label>
+                </fieldset>
+              </li>
+              <li>
+                <fieldset class="exam-question">
+                  <legend>
+                    Quando o cartão da câmera pode ser liberado para uma nova gravação?
+                  </legend>
+                  <label class="exam-option"><input type="radio" name="prova-b-q06" value="A"><span>A</span> Depois de duas cópias verificadas, com quantidade, tamanho e abertura de arquivos conferidos.</label>
+                  <label class="exam-option"><input type="radio" name="prova-b-q06" value="B"><span>B</span> Assim que os nomes dos arquivos aparecem no computador.</label>
+                  <label class="exam-option"><input type="radio" name="prova-b-q06" value="C"><span>C</span> Depois de enviar um único clipe por aplicativo de mensagem.</label>
+                  <label class="exam-option"><input type="radio" name="prova-b-q06" value="D"><span>D</span> Antes da cópia, para acelerar a organização.</label>
+                </fieldset>
+              </li>
+              <li>
+                <fieldset class="exam-question">
+                  <legend>
+                    A captação foi planejada apenas em horizontal e um corte vertical
+                    elimina informações essenciais. Qual decisão preserva melhor o projeto?
+                  </legend>
+                  <label class="exam-option"><input type="radio" name="prova-b-q07" value="A"><span>A</span> Cortar mesmo assim, pois toda plataforma exige formato vertical.</label>
+                  <label class="exam-option"><input type="radio" name="prova-b-q07" value="B"><span>B</span> Esticar a imagem horizontal até preencher a tela.</label>
+                  <label class="exam-option"><input type="radio" name="prova-b-q07" value="C"><span>C</span> Reenquadrar apenas se o material permitir; caso contrário, manter o formato previsto ou regravar.</label>
+                  <label class="exam-option"><input type="radio" name="prova-b-q07" value="D"><span>D</span> Cobrir a informação perdida com qualquer imagem disponível.</label>
+                </fieldset>
+              </li>
+              <li>
+                <fieldset class="exam-question">
+                  <legend>
+                    Qual configuração forma uma cópia de exibição Full HD coerente com a
+                    captação e com ampla compatibilidade?
+                  </legend>
+                  <label class="exam-option"><input type="radio" name="prova-b-q08" value="A"><span>A</span> GIF, 640 × 360, sem áudio e taxa de quadros variável.</label>
+                  <label class="exam-option"><input type="radio" name="prova-b-q08" value="B"><span>B</span> MP3, 1920 × 1080, H.264 e áudio mono de 8 kHz.</label>
+                  <label class="exam-option"><input type="radio" name="prova-b-q08" value="C"><span>C</span> MP4, resolução aleatória, taxa de quadros diferente da captação e sem conferência.</label>
+                  <label class="exam-option"><input type="radio" name="prova-b-q08" value="D"><span>D</span> MP4, H.264, 1920 × 1080, mesma taxa de quadros e áudio AAC a 48 kHz.</label>
+                </fieldset>
+              </li>
+              <li>
+                <fieldset class="exam-question">
+                  <legend>
+                    Qual preparação reduz o risco de interrupções durante a mostra?
+                  </legend>
+                  <label class="exam-option"><input type="radio" name="prova-b-q09" value="A"><span>A</span> Abrir os arquivos diretamente de links recebidos na hora.</label>
+                  <label class="exam-option"><input type="radio" name="prova-b-q09" value="B"><span>B</span> Reunir arquivos locais na ordem, abrir cada vídeo, testar som e tela cheia e manter cópia de segurança.</label>
+                  <label class="exam-option"><input type="radio" name="prova-b-q09" value="C"><span>C</span> Deixar notificações ativas para acompanhar mensagens da equipe.</label>
+                  <label class="exam-option"><input type="radio" name="prova-b-q09" value="D"><span>D</span> Testar apenas o primeiro vídeo e presumir que os demais funcionam.</label>
+                </fieldset>
+              </li>
+              <li>
+                <fieldset class="exam-question">
+                  <legend>
+                    Qual percurso caracteriza uma recuperação de aprendizagem adequada?
+                  </legend>
+                  <label class="exam-option"><input type="radio" name="prova-b-q10" value="A"><span>A</span> Repetir imediatamente a mesma prova, sem análise dos erros.</label>
+                  <label class="exam-option"><input type="radio" name="prova-b-q10" value="B"><span>B</span> Acrescentar pontos pela presença, sem nova evidência.</label>
+                  <label class="exam-option"><input type="radio" name="prova-b-q10" value="C"><span>C</span> Diagnosticar lacunas, estudar com foco, produzir correção orientada e apresentar nova evidência equivalente.</label>
+                  <label class="exam-option"><input type="radio" name="prova-b-q10" value="D"><span>D</span> Refazer apenas a parte estética do projeto em grupo.</label>
+                </fieldset>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="chapter answer-key" id="gabarito-b" aria-labelledby="titulo-gabarito-b">
+          <div class="chapter__number" aria-hidden="true">20</div>
+          <div class="chapter__body">
+            <p class="section-kicker">Correção comentada · Prova B</p>
+            <h2 id="titulo-gabarito-b">Gabarito B</h2>
+            <p class="section-summary">
+              A correção verifica as mesmas capacidades da Prova A por situações novas.
+            </p>
+            <ol class="answer-list">
+              <li><div class="answer-key__head"><span>01 · B</span><strong>Recorte viável</strong></div><p>Um assunto observável e delimitado cabe no tempo e nos acessos reais da equipe.</p></li>
+              <li><div class="answer-key__head"><span>02 · A</span><strong>Visualização e especificação</strong></div><p>O storyboard antecipa a sequência visual; a lista de planos registra enquadramento, ação, som e prioridade.</p></li>
+              <li><div class="answer-key__head"><span>03 · C</span><strong>Segurança antes da gravação</strong></div><p>O risco de queda exige interrupção, correção física e nova conferência da circulação.</p></li>
+              <li><div class="answer-key__head"><span>04 · D</span><strong>Critério compartilhado</strong></div><p>Documentos aprovados, evidências e limites éticos orientam a decisão melhor que hierarquia ou preferência pessoal.</p></li>
+              <li><div class="answer-key__head"><span>05 · B</span><strong>Contexto e transparência</strong></div><p>A montagem não deve alterar o sentido da fala; o contexto necessário precisa permanecer identificável.</p></li>
+              <li><div class="answer-key__head"><span>06 · A</span><strong>Duas cópias verificadas</strong></div><p>Ver nomes não comprova integridade. A mídia só é liberada depois de conferir quantidade, tamanho e abertura em duas cópias.</p></li>
+              <li><div class="answer-key__head"><span>07 · C</span><strong>Formato previsto e área segura</strong></div><p>Uma versão vertical depende de composição compatível; esticar ou cortar informação essencial compromete o conteúdo.</p></li>
+              <li><div class="answer-key__head"><span>08 · D</span><strong>Especificação coerente</strong></div><p>MP4/H.264 em 1920 × 1080, mesma taxa de quadros e AAC 48 kHz oferece uma cópia Full HD consistente.</p></li>
+              <li><div class="answer-key__head"><span>09 · B</span><strong>Pré-voo da mostra</strong></div><p>Arquivos locais, ordem conferida, teste completo e cópia de segurança reduzem dependências durante a exibição.</p></li>
+              <li><div class="answer-key__head"><span>10 · C</span><strong>Nova evidência orientada</strong></div><p>Recuperação exige diagnóstico, retomada focada e oportunidade equivalente de demonstrar a capacidade.</p></li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="chapter sheet recovery-sheet" id="recuperacao" aria-labelledby="titulo-recuperacao">
+          <div class="chapter__number" aria-hidden="true">21</div>
+          <div class="chapter__body">
+            <p class="section-kicker">Percurso de recuperação · Aula 23</p>
+            <h2 id="titulo-recuperacao">Corrigir, praticar, demonstrar</h2>
+            <p class="section-summary">
+              A recuperação começa pelo diagnóstico da Prova A e termina com uma nova
+              evidência individual. A Prova B é aplicada somente depois das etapas de
+              retomada registradas abaixo.
+            </p>
+
+            <aside class="recovery-rule" aria-label="Regra da recuperação">
+              <strong>Regra de aplicação</strong>
+              <p>
+                A Prova B não funciona como troca imediata de folha. Antes dela, cada
+                estudante identifica as capacidades ainda não demonstradas, corrige os
+                raciocínios e realiza uma tarefa curta de aplicação. O registro e a
+                composição do resultado seguem os critérios institucionais vigentes.
+              </p>
+            </aside>
+
+            <div class="assessment-heading" aria-label="Identificação do percurso de recuperação">
+              <label class="field">
+                <span>Nome</span>
+                <input type="text" name="recuperacao-nome" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Turma</span>
+                <input type="text" name="recuperacao-turma" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Data de início</span>
+                <input type="date" name="recuperacao-inicio">
+              </label>
+              <label class="field">
+                <span>Data da nova evidência</span>
+                <input type="date" name="recuperacao-evidencia">
+              </label>
+            </div>
+
+            <ol class="recovery-steps">
+              <li>
+                <div class="recovery-step__number" aria-hidden="true">01</div>
+                <div>
+                  <h3>Diagnóstico</h3>
+                  <p>Marque os campos que precisam de retomada a partir da Prova A.</p>
+                  <fieldset class="recovery-focus">
+                    <legend>Capacidades em retomada</legend>
+                    <label><input type="checkbox" name="recuperacao-foco-linguagem"> Linguagem e montagem</label>
+                    <label><input type="checkbox" name="recuperacao-foco-planejamento"> Planejamento e documentos</label>
+                    <label><input type="checkbox" name="recuperacao-foco-etica"> Consentimento e ética</label>
+                    <label><input type="checkbox" name="recuperacao-foco-captacao"> Captação de imagem e som</label>
+                    <label><input type="checkbox" name="recuperacao-foco-edicao"> Edição e organização</label>
+                    <label><input type="checkbox" name="recuperacao-foco-finalizacao"> Finalização e exibição</label>
+                  </fieldset>
+                </div>
+              </li>
+              <li>
+                <div class="recovery-step__number" aria-hidden="true">02</div>
+                <div>
+                  <h3>Correção fundamentada</h3>
+                  <p>
+                    Selecione três itens da Prova A. Registre a resposta correta, o
+                    conceito envolvido e por que a alternativa anterior não se aplica.
+                  </p>
+                  <div class="table-wrap">
+                    <table class="form-table recovery-table">
+                      <caption>Três correções explicadas</caption>
+                      <thead>
+                        <tr>
+                          <th scope="col">Questão</th>
+                          <th scope="col">Conceito correto</th>
+                          <th scope="col">Por que a resposta anterior não se aplica</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr><td><input type="text" name="recuperacao-correcao-1-questao" aria-label="Número da correção 1"></td><td><textarea name="recuperacao-correcao-1-conceito" aria-label="Conceito correto da correção 1"></textarea></td><td><textarea name="recuperacao-correcao-1-analise" aria-label="Análise da resposta anterior 1"></textarea></td></tr>
+                        <tr><td><input type="text" name="recuperacao-correcao-2-questao" aria-label="Número da correção 2"></td><td><textarea name="recuperacao-correcao-2-conceito" aria-label="Conceito correto da correção 2"></textarea></td><td><textarea name="recuperacao-correcao-2-analise" aria-label="Análise da resposta anterior 2"></textarea></td></tr>
+                        <tr><td><input type="text" name="recuperacao-correcao-3-questao" aria-label="Número da correção 3"></td><td><textarea name="recuperacao-correcao-3-conceito" aria-label="Conceito correto da correção 3"></textarea></td><td><textarea name="recuperacao-correcao-3-analise" aria-label="Análise da resposta anterior 3"></textarea></td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="recovery-step__number" aria-hidden="true">03</div>
+                <div>
+                  <h3>Aplicação curta</h3>
+                  <p>
+                    Cenário: minidocumentário fictício de 60 segundos sobre os sons do
+                    ambiente escolar, sem necessidade de expor rosto ou voz.
+                  </p>
+                  <div class="form-grid form-grid--2">
+                    <label class="field"><span>Três planos que constroem a sequência</span><textarea name="recuperacao-aplicacao-planos" rows="4"></textarea></label>
+                    <label class="field"><span>Captação de som e som do ambiente</span><textarea name="recuperacao-aplicacao-som" rows="4"></textarea></label>
+                    <label class="field"><span>Alternativa sem exposição e cuidado ético</span><textarea name="recuperacao-aplicacao-etica" rows="4"></textarea></label>
+                    <label class="field"><span>Procedimento de cópia de segurança</span><textarea name="recuperacao-aplicacao-backup" rows="4"></textarea></label>
+                    <label class="field"><span>Organização da edição</span><textarea name="recuperacao-aplicacao-edicao" rows="4"></textarea></label>
+                    <label class="field"><span>Especificação da cópia de exibição</span><textarea name="recuperacao-aplicacao-exportacao" rows="4"></textarea></label>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="recovery-step__number" aria-hidden="true">04</div>
+                <div>
+                  <h3>Nova evidência individual</h3>
+                  <div class="recovery-evidence">
+                    <label><input type="checkbox" name="recuperacao-etapa-correcao"> Correções fundamentadas concluídas.</label>
+                    <label><input type="checkbox" name="recuperacao-etapa-aplicacao"> Aplicação curta conferida.</label>
+                    <label><input type="checkbox" name="recuperacao-etapa-prova-b"> Prova B realizada individualmente.</label>
+                  </div>
+                  <div class="form-grid form-grid--2">
+                    <label class="field">
+                      <span>Capacidade demonstrada com maior segurança</span>
+                      <textarea name="recuperacao-avanco" rows="4"></textarea>
+                    </label>
+                    <label class="field">
+                      <span>Registro final</span>
+                      <select name="recuperacao-resultado">
+                        <option value="">Não registrado</option>
+                        <option>Capacidade demonstrada</option>
+                        <option>Ainda necessita retomada</option>
+                      </select>
+                    </label>
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="chapter sheet" id="mostra" aria-labelledby="titulo-mostra">
+          <div class="chapter__number" aria-hidden="true">22</div>
+          <div class="chapter__body">
+            <p class="section-kicker">Ficha 14 · Exibição</p>
+            <h2 id="titulo-mostra">Ordem e tempo da mostra</h2>
+            <div class="show-clock" aria-label="Distribuição sugerida de cinco minutos por equipe">
+              <div><strong>01:00</strong><span>exibição</span></div>
+              <div><strong>02:00</strong><span>apresentação</span></div>
+              <div><strong>01:00</strong><span>devolutiva</span></div>
+              <div><strong>01:00</strong><span>troca</span></div>
+              <p><strong>5 minutos</strong> por equipe</p>
+            </div>
+            <div class="form-grid form-grid--3">
+              <label class="field">
+                <span>Data</span>
+                <input type="date" name="mostra-data">
+              </label>
+              <label class="field">
+                <span>Início</span>
+                <input type="time" name="mostra-inicio">
+              </label>
+              <label class="field">
+                <span>Local</span>
+                <input type="text" name="mostra-local" autocomplete="off">
+              </label>
+            </div>
+            <div class="table-wrap">
+              <table class="form-table">
+                <caption>Ordem de exibição</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Ordem</th>
+                    <th scope="col">Horário</th>
+                    <th scope="col">Equipe</th>
+                    <th scope="col">Título</th>
+                    <th scope="col">Duração</th>
+                    <th scope="col">Arquivo conferido</th>
+                  </tr>
+                </thead>
+                <tbody data-show-rows></tbody>
+              </table>
+            </div>
+            <div class="show-preflight">
+              <fieldset class="checklist">
+                <legend>Antes da entrada do público</legend>
+                <label><input type="checkbox" name="mostra-pre-1"> Todos os arquivos estão em uma pasta local única.</label>
+                <label><input type="checkbox" name="mostra-pre-2"> Ordem e nomes coincidem com a tabela.</label>
+                <label><input type="checkbox" name="mostra-pre-3"> Cada vídeo foi aberto no computador de exibição.</label>
+                <label><input type="checkbox" name="mostra-pre-4"> Imagem, áudio e modo de tela cheia foram testados.</label>
+                <label><input type="checkbox" name="mostra-pre-5"> Notificações e protetor de tela estão desativados.</label>
+                <label><input type="checkbox" name="mostra-pre-6"> Há uma cópia de segurança acessível.</label>
+              </fieldset>
+              <fieldset class="checklist">
+                <legend>Funções da mostra</legend>
+                <label class="field"><span>Apresentação</span><input type="text" name="mostra-apresentacao" autocomplete="off"></label>
+                <label class="field"><span>Operação de vídeo</span><input type="text" name="mostra-video" autocomplete="off"></label>
+                <label class="field"><span>Operação de som</span><input type="text" name="mostra-som" autocomplete="off"></label>
+                <label class="field"><span>Controle de tempo</span><input type="text" name="mostra-tempo" autocomplete="off"></label>
+                <label class="field"><span>Recepção e organização</span><input type="text" name="mostra-recepcao" autocomplete="off"></label>
+              </fieldset>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter" id="glossario" aria-labelledby="titulo-glossario">
+          <div class="chapter__number" aria-hidden="true">23</div>
+          <div class="chapter__body">
+            <p class="section-kicker">Vocabulário de trabalho</p>
+            <h2 id="titulo-glossario">Glossário: português primeiro</h2>
+            <p class="section-summary">
+              Os termos em inglês aparecem entre parênteses para facilitar o
+              reconhecimento em programas, manuais e equipes de produção.
+            </p>
+            <dl class="glossary">
+              <div>
+                <dt>Ambiente de gravação <span>(set)</span></dt>
+                <dd>Espaço organizado para captar uma cena, incluindo pessoas, equipamentos e regras de circulação.</dd>
+              </div>
+              <div>
+                <dt>Tomada <span>(take)</span></dt>
+                <dd>Cada tentativa gravada de um mesmo plano ou ação. “Plano 03, tomada 2” identifica uma repetição específica.</dd>
+              </div>
+              <div>
+                <dt>Linha do tempo <span>(timeline)</span></dt>
+                <dd>Área da edição em que vídeo, áudio, texto e grafismos são organizados ao longo da duração.</dd>
+              </div>
+              <div>
+                <dt>Pasta de mídia <span>(bin)</span></dt>
+                <dd>Contêiner de organização dentro do projeto de edição. Não substitui a pasta real no armazenamento.</dd>
+              </div>
+              <div>
+                <dt>Som do ambiente <span>(room tone)</span></dt>
+                <dd>Registro contínuo do local sem falas intencionais, usado para preencher cortes e manter a continuidade sonora.</dd>
+              </div>
+              <div>
+                <dt>Cópia de segurança <span>(backup)</span></dt>
+                <dd>Cópia verificada dos arquivos em outro destino, mantida antes de liberar ou formatar a mídia de origem.</dd>
+              </div>
+              <div>
+                <dt>Legenda de identificação <span>(lower third)</span></dt>
+                <dd>Texto normalmente posicionado no terço inferior para apresentar nome, função, lugar ou contexto.</dd>
+              </div>
+              <div>
+                <dt>Tratamento visual <span>(look)</span></dt>
+                <dd>Conjunto intencional de contraste, cor e textura que dá unidade estética. Vem depois da correção técnica básica.</dd>
+              </div>
+              <div>
+                <dt>Captação complementar <span>(pickup)</span></dt>
+                <dd>Plano ou som gravado depois para corrigir uma falta, melhorar uma transição ou cobrir um corte.</dd>
+              </div>
+              <div>
+                <dt>Imagem fechada <span>(picture lock)</span></dt>
+                <dd>Etapa em que ordem e duração dos planos estão aprovadas; mudanças posteriores afetam áudio, cor e grafismos.</dd>
+              </div>
+              <div>
+                <dt>Arquivo mestre <span>(master)</span></dt>
+                <dd>Versão final de maior qualidade e conferida, da qual podem ser geradas cópias de exibição ou publicação.</dd>
+              </div>
+            </dl>
+          </div>
+        </section>
+
+        <footer class="document-footer">
+          <div>
+            <p class="eyebrow">Produção Audiovisual · Técnico em Multimídia</p>
+            <p>
+              Material de autoria e organização do
+              <strong>Prof. Daniel Marcos Mayer</strong>.
+            </p>
+          </div>
+          <a href="#inicio">Voltar ao início</a>
+        </footer>
+      </main>
+    </div>
+
+    <dialog class="confirm-dialog" data-clear-dialog aria-labelledby="limpar-titulo">
+      <form method="dialog">
+        <p class="section-kicker">Confirmação</p>
+        <h2 id="limpar-titulo">Limpar todos os campos?</h2>
+        <p>
+          O preenchimento salvo neste navegador será removido. O arquivo original não será alterado.
+        </p>
+        <div class="dialog-actions">
+          <button class="button button--quiet" value="cancel">Cancelar</button>
+          <button class="button button--danger" value="confirm">Limpar</button>
+        </div>
+      </form>
+    </dialog>
+
+    <noscript>
+      <p class="noscript-note">
+        As fichas permanecem disponíveis para leitura e impressão. O salvamento automático
+        e o cálculo da rubrica exigem JavaScript.
+      </p>
+    </noscript>
+  </body>
+</html>
