@@ -6,6 +6,14 @@ import vm from 'node:vm';
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(scriptDirectory, '..');
 const fromRoot = (file) => path.join(projectRoot, file);
+const minutesForRange = (range) => {
+  const [start, end] = range.split('-').map((value) => value.trim());
+  const asMinutes = (value) => {
+    const [hours, minutes] = value.split(':').map(Number);
+    return (hours * 60) + minutes;
+  };
+  return asMinutes(end) - asMinutes(start);
+};
 
 const requiredFiles = [
   'index.html',
@@ -80,6 +88,43 @@ for (const [slug, expectedCount] of Object.entries(expected)) {
     ) {
       errors.push(`${slug}: as fases de apoio não cobrem as ${expectedLessonNumbers.length} aulas`);
     }
+
+    const lesson01 = course.lessons.find((lesson) => lesson.num === '01');
+    const lesson01Support = support.lessons?.['01'];
+    if (lesson01Support?.blocks?.length !== lesson01?.schedule.length) {
+      errors.push(`${slug}/01: os quatro blocos precisam de orientação específica`);
+    }
+    if (lesson01Support?.blocks?.some((block) => (block.studentSteps || []).length < 4)) {
+      errors.push(`${slug}/01: bloco com instruções insuficientes para a turma`);
+    }
+    if (lesson01Support?.blocks?.some((block) => (block.teacherSteps || []).length < 4)) {
+      errors.push(`${slug}/01: bloco sem condução docente detalhada`);
+    }
+    lesson01Support?.blocks?.forEach((block, index) => {
+      const plannedMinutes = (block.teacherSteps || []).reduce((total, step) => {
+        const match = step.match(/^(\d+) min\b/);
+        return total + (match ? Number(match[1]) : 0);
+      }, 0);
+      const availableMinutes = minutesForRange(lesson01.schedule[index].horario);
+      if (plannedMinutes !== availableMinutes) {
+        errors.push(`${slug}/01: Bloco ${index + 1} planeja ${plannedMinutes} min para ${availableMinutes} min disponíveis`);
+      }
+    });
+    if ((lesson01Support?.studentSheet?.sections || []).length < 3) {
+      errors.push(`${slug}/01: ficha guiada incompleta`);
+    }
+    if (!lesson01Support?.review?.intro?.includes('Não formam nota')) {
+      errors.push(`${slug}/01: conferência formativa sem limite explícito de pontuação`);
+    }
+    if ((lesson01Support?.check || []).length > 4) {
+      errors.push(`${slug}/01: conferência final excessivamente rígida`);
+    }
+    if (!lesson01Support?.studentSheet?.href?.includes('#leitura-aula-01')) {
+      errors.push(`${slug}/01: link para a ficha preenchível ausente`);
+    }
+    if (!lesson01?.observation?.includes('mesa digitalizadora')) {
+      errors.push(`${slug}/01: margem técnica da mesa digitalizadora ausente`);
+    }
   }
 
   if (slug === 'design-web') {
@@ -114,6 +159,27 @@ for (const [slug, expectedCount] of Object.entries(expected)) {
     if (lesson.schedule.some((block) => /^Chamada\./i.test(block.atividade))) {
       errors.push(`${slug}/${lesson.num}: marcador repetitivo "Chamada." permaneceu na camada pública`);
     }
+
+    const teacherStagePatterns = [
+      [/\bo professor\b/i, '"o professor"'],
+      [/\bDemonstração ao vivo no projetor\b/i, '"Demonstração ao vivo no projetor"'],
+      [/\bDemonstração curta no projetor\b/i, '"Demonstração curta no projetor"'],
+      [/\bsem debate\b/i, '"sem debate"'],
+      [/\bdevolutiva objetiva\b/i, '"devolutiva objetiva"'],
+      [/\bcena clássica\b/i, '"cena clássica"'],
+      [/\bsem material impresso\b/i, '"sem material impresso"'],
+      [/\bjunto com a turma\b/i, '"junto com a turma"'],
+      [/\b[Pp]reencher a ficha\b/, '"Preencher a ficha"'],
+      [/\bficha digital da Aula 02\b/i, '"ficha digital da Aula 02"']
+    ];
+    lesson.schedule.forEach((block, index) => {
+      for (const [pattern, label] of teacherStagePatterns) {
+        if (pattern.test(block.atividade)) {
+          errors.push(`${slug}/${lesson.num} bloco ${index + 1}: camada pública com instrução ao professor (${label}); reescreva na voz do estudante`);
+        }
+      }
+    });
+
     if (!lessonSupport) {
       errors.push(`${slug}/${lesson.num}: apoio docente ausente`);
       continue;
@@ -169,9 +235,6 @@ const designToolFiles = [
   'GUIA_RAPIDO_DESIGN_WEB_E_AUDIOVISUAL.md'
 ];
 const requiredDesignTools = [
-  'https://dontpad.com.br/',
-  'https://livecodes.io/',
-  'https://app.netlify.com/drop',
   'https://www.photopea.com/'
 ];
 
@@ -185,6 +248,72 @@ const courseDataText = fs.readFileSync(fromRoot('assets/course-data.js'), 'utf8'
 for (const loginDependentSuggestion of ['Kahoot', 'Google Formulários', 'Figma', 'Canva', 'GitHub Pages', 'criação da conta']) {
   if (courseDataText.includes(loginDependentSuggestion)) {
     errors.push(`Sugestão dependente de conta permaneceu no planejamento: ${loginDependentSuggestion}`);
+  }
+}
+
+const noCodeStudentPatterns = [
+  /instalar (?:o )?(?:vs code|editor de código)/i,
+  /(?:digite|escreva|copie|vamos escrever|vocês escreverão) (?:o |um |uma )?(?:código|html|css|javascript|sintaxe)/i,
+  /criar (?:os? )?(?:arquivos? )?(?:index\.html|styles\.css|script\.js)/i,
+  /(?:implementar|programar) (?:com |em )?(?:html|css|javascript)/i,
+  /escreva uma media query/i,
+  /(?:display:\s*grid|justify-content|addEventListener)/i
+];
+
+const designCourse = context.window.SENAI_COURSES['design-web'];
+const designLessonOne = designCourse.lessons.find((lesson) => lesson.num === '01');
+const designLessonOneSupport = context.window.SENAI_TEACHING_SUPPORT['design-web']?.lessons?.['01'];
+if (designLessonOne?.title !== 'Primeiro Contato com Design Web') {
+  errors.push('Design Web Aula 01: título introdutório revisado ausente');
+}
+if (!Array.isArray(designLessonOneSupport?.presentationSlides) || designLessonOneSupport.presentationSlides.length < 12) {
+  errors.push('Design Web Aula 01: sequência explicativa deve ter pelo menos 12 slides próprios');
+}
+for (const lesson of designCourse.lessons) {
+  const studentFacingText = JSON.stringify({
+    title: lesson.title,
+    description: lesson.description,
+    schedule: lesson.schedule,
+    methodology: lesson.methodology,
+    resources: lesson.resources
+  });
+  for (const pattern of noCodeStudentPatterns) {
+    if (pattern.test(studentFacingText)) {
+      errors.push(`Design Web Aula ${lesson.num}: prática de programação permaneceu (${pattern})`);
+    }
+  }
+}
+
+const designWorkbookText = fs.readFileSync(
+  fromRoot('modelos/design-web/materiais-de-aula/index.html'),
+  'utf8'
+);
+if (!designWorkbookText.includes('id="aula-01-introducao"')) {
+  errors.push('Design Web Aula 01: ficha introdutória preenchível ausente');
+}
+for (const staleMarker of [
+  'Escreva uma media query',
+  'HTML semântico',
+  'CSS e responsividade',
+  'id="delivery-html"',
+  'id="delivery-css"'
+]) {
+  if (designWorkbookText.includes(staleMarker)) {
+    errors.push(`Design Web: avaliação antiga orientada a código permaneceu (${staleMarker})`);
+  }
+}
+
+const audiovisualWorkbookText = fs.readFileSync(
+  fromRoot('modelos/producao-audiovisual/index.html'),
+  'utf8'
+);
+for (const marker of [
+  'id="leitura-aula-01"',
+  'value="aula-01"',
+  'PA_A01_EQ##_FORMATO_01.mp4'
+]) {
+  if (!audiovisualWorkbookText.includes(marker)) {
+    errors.push(`Produção Audiovisual Aula 01: material ausente (${marker})`);
   }
 }
 

@@ -348,7 +348,7 @@ const courses = {
     teacher: 'Daniel Marcos Mayer',
     period: '2026/2',
     theme: 'web',
-    description: 'Do primeiro HTML ao site publicado: código, interface, experiência do usuário, acessibilidade e projeto integrador.',
+    description: 'Comunicação visual, interfaces, prototipação, mídias sociais, acessibilidade e projeto de presença digital, sem programação discente.',
     sourceLabel: path.basename(designPath)
   }),
   'producao-audiovisual': parseCourse(audiovisualPath, {
@@ -365,6 +365,34 @@ const courses = {
     sourceLabel: path.basename(audiovisualPath)
   })
 };
+
+const audiovisualLesson01 = courses['producao-audiovisual'].lessons
+  .find((lesson) => lesson.num === '01');
+
+Object.assign(audiovisualLesson01, {
+  description: 'Apresentação da UC, combinados de consentimento e primeira leitura da linguagem audiovisual. A noite termina com uma análise guiada, uma comparação entre duas formas de exibição e um vídeo de até 15 segundos gravado em dupla.',
+  schedule: [
+    {
+      horario: '19:00 - 19:30',
+      atividade: 'Acolhida, mapa da UC e contrato de gravação. Cada dupla registra uma expectativa para o curso e a turma fecha três regras: ninguém é obrigado a aparecer, toda gravação tem finalidade definida e material de aula não é publicado sem autorização específica.'
+    },
+    {
+      horario: '19:30 - 20:30',
+      atividade: 'Leitura guiada de três trechos curtos: longa-metragem, curta-metragem e vídeo de canal. A dupla escolhe um trecho e responde: para quem foi feito, o que quer provocar, qual escolha de imagem e de som chama atenção e como é o ritmo. A conclusão usa uma frase-modelo com algo visto ou ouvido no trecho.'
+    },
+    {
+      horario: '20:30 - 21:30',
+      atividade: 'Atividade "Mesmo conteúdo, telas diferentes": comparar duas versões preparadas da mesma mensagem. Preencher um quadro simples sobre tela vertical ou horizontal, duração, enquadramento, texto, som e ritmo; depois registrar três mudanças e explicar por que cada uma ajuda no local em que o vídeo seria exibido.'
+    },
+    {
+      horario: '21:30 - 22:30',
+      atividade: 'Prática "Meu primeiro plano": em dupla, definir onde o vídeo seria exibido, para quem e com qual objetivo; escolher uma ação simples com começo e fim; dividir os papéis; confirmar quem pode aparecer; gravar até 15 segundos somente na área e no momento liberados; assistir, refazer no máximo uma vez, nomear o arquivo e salvar na pasta indicada.'
+    }
+  ],
+  methodology: 'Explicação curta, modelagem ao vivo, fichas guiadas, prática em duplas, devolutiva por critérios e desafio opcional para quem concluir antes.',
+  resources: 'Três trechos curtos e um par de versões da mesma mensagem salvos localmente, ficha da Aula 01 impressa ou digital, projetor, computadores, smartphones e pasta de entrega preparada.',
+  observation: 'Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco. Preservar no Bloco 3 uma margem técnica de até 20 min para organização dos computadores e atividade breve com a mesa digitalizadora. Na gravação, manter duplas fixas, uma área delimitada e deslocamento somente quando chamado; se a margem não for usada, aplicar a extensão no papel.'
+});
 
 const output = `/* Arquivo gerado por scripts/build-course-data.mjs. */\nwindow.SENAI_COURSES = ${JSON.stringify(courses, null, 2)};\n`;
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));

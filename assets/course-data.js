@@ -10,17 +10,17 @@ window.SENAI_COURSES = {
     "teacher": "Daniel Marcos Mayer",
     "period": "2026/2",
     "theme": "web",
-    "description": "Do primeiro HTML ao site publicado: código, interface, experiência do usuário, acessibilidade e projeto integrador.",
+    "description": "Comunicação visual, interfaces, prototipação, mídias sociais, acessibilidade e projeto de presença digital, sem programação discente.",
     "sourceLabel": "Planejamento_Geral_UC_Design_Web.md",
     "lessons": [
       {
         "num": "01",
-        "title": "Boas-vindas ao Design Web",
-        "description": "Apresentação da UC, contrato didático e mergulho na história da internet e na profissão de designer web.",
+        "title": "Primeiro Contato com Design Web",
+        "description": "Uma introdução ao design de experiências digitais: o que é, onde aparece e como perceber se uma interface ajuda ou atrapalha pessoas.",
         "objectives": [
           "Internet: história.",
-          "Posturas profissionais: disciplina, cooperação.",
-          "Ética Pessoal e Profissional: respeito."
+          "Interfaces Web e App: conceitos introdutórios.",
+          "Posturas profissionais: disciplina, cooperação e respeito."
         ],
         "technical": [
           "Analisar usabilidade e navegabilidade do projeto."
@@ -32,29 +32,29 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:30",
-            "atividade": "Acolhida e apresentação da turma. Visão geral da UC de 100 horas: o que vamos construir até o site publicado do projeto final. Contrato didático: combinados de convivência, uso do celular em aula, prazos e critérios de avaliação."
+            "atividade": "Boas-vindas e conversa \"Quantas telas já ajudaram você hoje?\". A turma conhece a proposta da UC, os combinados e a diferença entre usar uma interface e observá-la como designer. Não há apresentação de produto final nem programação."
           },
           {
             "horario": "19:30 - 20:30",
-            "atividade": "Linha do tempo da história da internet: em duplas, cada dupla pesquisa um marco (ARPANET, nascimento da WWW, popularização dos navegadores, banda larga, redes sociais, era mobile) e registra sua parte no painel coletivo da linha do tempo da web."
+            "atividade": "Viagem visual pela história da web: do primeiro site às experiências móveis atuais. Em duplas, ordenar cartões de quatro épocas e associar cada época a uma mudança no modo de acessar, ler, compartilhar ou comprar."
           },
           {
             "horario": "20:30 - 21:30",
-            "atividade": "Panorama da profissão: análise guiada no projetor de portfólios e sites reais (agência, e-commerce, portal de notícias), discutindo o papel do designer web, atuação em agência, empresa e freelancer, e o mercado local e remoto."
+            "atividade": "O que o designer web decide: conteúdo, hierarquia visual, navegação, feedback, adaptação a telas e acessibilidade. Demonstração guiada da mesma tarefa em duas interfaces preparadas."
           },
           {
             "horario": "21:30 - 22:30",
-            "atividade": "Análise comparativa de navegação: em trios, avaliar no celular a navegação de um site bom e um site ruim, anotar três achados (o que funciona, o que atrapalha, o que mudariam) e apresentar em dois minutos para a turma."
+            "atividade": "Desafio \"Primeiro olhar de designer\": em trios, comparar duas interfaces com uma missão clara, registrar três acertos, três problemas e uma melhoria, compartilhar por critérios e concluir com bilhete de saída."
           }
         ],
-        "methodology": "Aula dialogada com dinâmicas de análise em duplas e trios, seguindo o aprender fazendo desde a primeira noite.",
-        "resources": "Laboratório com computadores, projetor e smartphones dos alunos.",
+        "methodology": "Acolhida dialogada, exemplos do cotidiano, linha do tempo visual, demonstração comparativa e desafio guiado em trios.",
+        "resources": "Slides locais, duas interfaces ou capturas preparadas, cartões da linha do tempo, ficha da Aula 01, papel, canetas, projetor e smartphones ou computadores.",
         "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
       },
       {
         "num": "02",
         "title": "Como a Web Funciona",
-        "description": "Fundamentos de internet: domínios, provedores e segurança, base para publicar um site de verdade ao longo da UC.",
+        "description": "Fundamentos de internet: domínios, provedores e segurança para compreender como uma presença digital chega ao público.",
         "objectives": [
           "Internet: domínios, provedores, segurança.",
           "Pesquisa: fontes."
@@ -68,7 +68,7 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:30",
-            "atividade": "Retomada da Aula 01 (história da internet e profissão). Demonstração ao vivo no projetor: o que acontece quando digitamos um endereço no navegador, do clique à tela (navegador, DNS, servidor, resposta)."
+            "atividade": "Retomada da Aula 01 (história da internet e profissão). Observar o caminho de um endereço digitado no navegador até a tela: navegador, DNS, servidor e resposta."
           },
           {
             "horario": "19:30 - 20:30",
@@ -89,10 +89,10 @@ window.SENAI_COURSES = {
       },
       {
         "num": "03",
-        "title": "Primeira Página em HTML",
-        "description": "Primeiro contato com o código: estrutura do documento HTML, editores e navegadores, com cada aluno criando sua própria página.",
+        "title": "Anatomia Visual de uma Página",
+        "description": "Desconstrução visual e lúdica de páginas para reconhecer estrutura, conteúdo e hierarquia sem escrever código.",
         "objectives": [
-          "Criação de código de texto: estrutura do documento, editores, navegadores."
+          "Criação de código de texto: estrutura do documento, elementos, editores e navegadores."
         ],
         "technical": [
           "Aplicar linguagem html (hypertext markup language) para desenvolvimento de design web.",
@@ -104,35 +104,36 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:30",
-            "atividade": "Revisão da Aula 02 (domínios, provedores e segurança). Instalação e configuração do editor de código gratuito (ex.: VS Code): tema, salvamento automático e visualização no navegador. Organização das pastas de trabalho de cada aluno no computador do laboratório."
+            "atividade": "Retomada da Aula 02. Comparar uma página pronta com sua representação técnica e identificar, apenas visualmente, cabeçalho, navegação, conteúdo principal, imagem, botão e rodapé."
           },
           {
             "horario": "19:30 - 20:30",
-            "atividade": "Anatomia do documento HTML: doctype, html, head e body, e o papel de cada parte. Codificação acompanhada no projetor: cada aluno digita sua primeira página do zero e abre no navegador."
+            "atividade": "Dinâmica \"Página em cartões\": grupos recebem cartões impressos com título, texto, imagem, link, botão e seções. A missão é organizar uma página coerente e explicar o que deve aparecer primeiro, sem computador."
           },
           {
             "horario": "20:30 - 21:30",
-            "atividade": "Prática guiada: títulos de h1 a h6, parágrafos e comentários no código. Teste da mesma página em dois navegadores diferentes, observando o que muda e o que permanece."
+            "atividade": "Oficina de hierarquia: o mesmo conjunto de conteúdo é montado em três composições numa ferramenta visual ou em papel. Cada grupo escolhe a versão mais clara para celular e marca título principal, blocos e ação desejada."
           },
           {
             "horario": "21:30 - 22:30",
-            "atividade": "Exercício com persona fictícia: página de apresentação sem dados pessoais reais, usando no mínimo cinco tags diferentes. Socialização rápida: cada aluno abre a página do colega ao lado e destaca um acerto."
+            "atividade": "Entrega da noite: captura ou folha anotada \"Raio-X da página\", com seis partes identificadas e uma justificativa de hierarquia. Galeria rápida e votação da solução mais fácil de entender."
           }
         ],
-        "methodology": "Prática guiada de codificação com desafios individuais progressivos.",
-        "resources": "Laboratório com computadores, editor de código gratuito e projetor.",
+        "methodology": "Demonstração de até 15 minutos, manipulação de cartões, composição visual em grupos e galeria comentada.",
+        "resources": "Páginas de referência preparadas, cartões impressos, papel A3, canetas, projetor e ferramenta visual disponível no laboratório.",
         "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
       },
       {
         "num": "04",
-        "title": "Links, Listas e Imagens",
-        "description": "Construção de um mini site navegável com links, listas e imagens, aliado ao planejamento do tempo de estudo e entregas.",
+        "title": "Conteúdo, Links e Caminhos",
+        "description": "Planejamento de conteúdo e navegação por meio de mapas, cartões e microtextos que orientam o usuário.",
         "objectives": [
-          "Criação de código de texto: tags, links.",
-          "Ferramentas para gestão eficaz do tempo: planejamento, controle de prazos."
+          "Criação de código de texto: tags, links e elementos.",
+          "Ferramentas para gestão eficaz do tempo: planejamento e controle de prazos."
         ],
         "technical": [
-          "Aplicar linguagem html (hypertext markup language) para desenvolvimento de design web."
+          "Aplicar linguagem html (hypertext markup language) para desenvolvimento de design web.",
+          "Analisar usabilidade e navegabilidade do projeto."
         ],
         "socioemotional": [
           "Aplicar os fundamentos da gestão do tempo para controle das atividades sob sua responsabilidade.",
@@ -141,36 +142,36 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:30",
-            "atividade": "Revisão da Aula 03 com oito questões projetadas sobre doctype, head, body e tags básicas; as duplas registram as respostas em papel e a correção é comentada na hora."
+            "atividade": "Retomada do Raio-X da Aula 03. Jogo \"Para onde isso leva?\": a turma associa rótulos de menu e botões a destinos possíveis e identifica nomes vagos, enganosos ou repetidos."
           },
           {
             "horario": "19:30 - 20:30",
-            "atividade": "Links internos e externos (href e target), listas ordenadas e não ordenadas, inserção de imagens (src e alt). Prática guiada: conectar duas páginas entre si e criar um menu simples de links."
+            "atividade": "Mapa de navegação com barbante e cartões: em grupos, organizar início, serviços, galeria, sobre e contato; ligar os caminhos e testar se uma pessoa chega ao objetivo em até três passos."
           },
           {
             "horario": "20:30 - 21:30",
-            "atividade": "Transformação da página da persona fictícia em um site de três páginas navegáveis (início, interesses, contato), com menu repetido em todas e uma lista e uma imagem por página."
+            "atividade": "Oficina de microtexto: escrever títulos, chamadas e botões claros para um negócio fictício. Comparar \"clique aqui\" com ações específicas como \"ver cardápio\" e \"reservar horário\"."
           },
           {
             "horario": "21:30 - 22:30",
-            "atividade": "Gestão do tempo na prática: apresentação do calendário de entregas da UC até o projeto final; cada aluno monta seu cronograma pessoal de prazos (planilha local ou caderno) e finaliza os ajustes do mini site da noite."
+            "atividade": "Montagem visual de três telas conectadas — início, detalhe e contato — em papel ou ferramenta visual. Cada equipe registra o cronograma de melhoria e testa o caminho com outra equipe."
           }
         ],
-        "methodology": "Oficina prática de codificação com revisão em equipes e planejamento individual de prazos.",
-        "resources": "Laboratório com computadores, smartphones dos alunos e projetor.",
+        "methodology": "Jogo de associação, mapa físico de navegação, escrita curta e teste cruzado entre equipes.",
+        "resources": "Cartões, barbante, post-its, papel, canetas, projetor e ferramenta visual disponível.",
         "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
       },
       {
         "num": "05",
-        "title": "HTML Semântico e Mídia",
-        "description": "HTML semântico e inserção de mídia licenciada, com pesquisa de bancos gratuitos e respeito à propriedade intelectual.",
+        "title": "Imagens, Texto e Direitos de Uso",
+        "description": "Curadoria de imagens e produção de conteúdo visual acessível, com autoria, licença e crédito.",
         "objectives": [
-          "Criação de código de texto: elementos.",
-          "Pesquisa: propriedade intelectual, tipos."
+          "Pesquisa: propriedade intelectual, tipos e fontes.",
+          "Criação de código de texto: elementos e alternativas textuais."
         ],
         "technical": [
-          "Aplicar linguagem html (hypertext markup language) para desenvolvimento de design web.",
-          "Selecionar a criação de elementos gráficos para o desenvolvimento de design web, interfaces e redes sociais, tendo vista a propriedade."
+          "Selecionar a criação de elementos gráficos para o desenvolvimento de design web, interfaces e redes sociais, tendo vista a propriedade.",
+          "Identificar padrões, normas e procedimentos para elaboração do projeto de mídias digitais, referentes a propriedade intelectual, acessibilidade, usabilidade e sustentabilidade."
         ],
         "socioemotional": [
           "Reconhecer a pesquisa como fonte de inovação e formação de um espírito empreendedor."
@@ -178,34 +179,36 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:30",
-            "atividade": "Revisão da Aula 04 (links, listas e imagens). Demonstração: por que semântica importa, comparando uma página feita só de divs com uma página semântica em um leitor de tela e discutindo o efeito nos buscadores."
+            "atividade": "Aquecimento \"Pode usar ou não?\": análise de situações com imagem própria, banco gratuito, captura de rede social, domínio público e material com licença. A turma justifica cada decisão."
           },
           {
             "horario": "19:30 - 20:30",
-            "atividade": "Elementos semânticos: header, nav, main, section, article e footer. Prática: reestruturar o mini site de cada aluno com a marcação semântica correta, mantendo a navegação entre as três páginas."
+            "atividade": "Pesquisa orientada em bancos autorizados. Cada dupla escolhe três imagens para uma campanha fictícia e registra autor, fonte, licença e finalidade de uso."
           },
           {
             "horario": "20:30 - 21:30",
-            "atividade": "Pesquisa de mídia com licença livre: tipos de licença (direitos reservados, Creative Commons, domínio público) e bancos gratuitos de imagens, áudio e vídeo (ex.: Unsplash, Pixabay, Pexels). Cada aluno seleciona mídias para o próprio mini site, anotando autor, fonte e licença."
+            "atividade": "Laboratório de texto alternativo: comparar descrições inúteis, excessivas e adequadas. Cada dupla escreve alternativas textuais que comuniquem a função da imagem."
           },
           {
             "horario": "21:30 - 22:30",
-            "atividade": "Prática \"Site com Crédito\": inserir imagens, áudio e vídeo licenciados no mini site com as tags corretas e os créditos no rodapé; conferência em duplas, cada aluno verifica os créditos do colega."
+            "atividade": "Produção de um painel de conteúdo com título, texto curto, imagem, crédito e chamada para ação. Revisão por checklist e exposição dos painéis."
           }
         ],
-        "methodology": "Prática guiada de codificação combinada com pesquisa orientada de acervos livres.",
-        "resources": "Laboratório com computadores, acesso a bancos de imagens gratuitos e projetor.",
+        "methodology": "Estudo de casos, pesquisa guiada, escrita acessível e produção de painel visual.",
+        "resources": "Banco local de imagens, acesso a bancos gratuitos autorizados, ficha de licença, ferramenta visual e projetor.",
         "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
       },
       {
         "num": "06",
-        "title": "CSS: Primeiros Estilos",
-        "description": "Introdução ao CSS: seletores, cascata, cores e tipografia aplicados ao mini site pessoal.",
+        "title": "Identidade Visual para Telas",
+        "description": "Cores, tipografia, contraste e personalidade de marca aplicados a um painel de estilo digital.",
         "objectives": [
-          "Criação de código de texto: folha de estilos em cascata (seletores, cores e tipografia)."
+          "Desenvolvimento do Projeto: equilíbrio visual.",
+          "Criação de código de texto: folha de estilos em cascata como referência de bastidor."
         ],
         "technical": [
-          "Aplicar estilos css (cascading style sheets) para desenvolvimento de design web."
+          "Aplicar estilos css (cascading style sheets) para desenvolvimento de design web.",
+          "Aplicar procedimentos técnicos de diagramação, proximidade e alinhamento."
         ],
         "socioemotional": [
           "Demonstrar no desenvolvimento das atividades sob a sua responsabilidade os princípios de profissionalismo."
@@ -213,32 +216,31 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:30",
-            "atividade": "Revisão do HTML semântico e da incorporação de mídia da Aula 05. Antes e depois: o mesmo HTML do mini site exibido com e sem CSS, discutindo o papel da folha de estilos na separação entre estrutura e apresentação."
+            "atividade": "Comparação \"mesmo conteúdo, três estilos\": observar três aparências prontas da mesma página e identificar o que mudou em cor, tipografia, forma, espaçamento e tom. A referência técnica aparece somente como bastidor."
           },
           {
             "horario": "19:30 - 20:30",
-            "atividade": "Anatomia da regra CSS: seletor, propriedade e valor. Seletores de elemento, classe e id. Como a cascata e a especificidade decidem qual regra vence. Prática guiada: criar o arquivo styles.css, vincular ao mini site e estilizar títulos, parágrafos e cor de fundo."
+            "atividade": "Caça à personalidade: grupos recebem marcas fictícias e escolhem três palavras de personalidade. Selecionam combinações de cor e tipografia compatíveis, justificando o que cada escolha comunica."
           },
           {
             "horario": "20:30 - 21:30",
-            "atividade": "Cores na web: hexadecimal, RGB e nomes de cor; contraste entre texto e fundo. Tipografia: família, tamanho, peso e altura de linha; uso de fontes gratuitas para web (ex.: Google Fonts). Cada aluno define uma paleta de 3 cores e um par de fontes para o projeto pessoal."
+            "atividade": "Produção do style tile: paleta, par tipográfico, botões, cartões, imagens e exemplos de títulos em ferramenta visual. Teste de contraste nas combinações principais."
           },
           {
             "horario": "21:30 - 22:30",
-            "atividade": "Desafio \"Cartão Pixel Perfeito\": reproduzir um cartão de visita digital a partir de uma referência exibida no projetor, aplicando cores, fontes e espaçamentos. Comparação dos resultados no fim do bloco."
+            "atividade": "Batalha de identidade: duas equipes trocam painéis, tentam adivinhar as três palavras de personalidade e devolvem um acerto e uma sugestão."
           }
         ],
-        "methodology": "Prática guiada com desafio de reprodução de referência visual.",
-        "resources": "Laboratório com computadores, editor de código gratuito (ex.: VS Code) e projetor.",
+        "methodology": "Comparação visual, escolha orientada, produção de painel de estilo e crítica entre pares.",
+        "resources": "Referências preparadas, verificador de contraste, Photopea sem login ou software instalado, ficha de style tile e projetor.",
         "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
       },
       {
         "num": "07",
-        "title": "Caixas, Espaço e Alinhamento",
-        "description": "Modelo de caixa e princípios de diagramação, proximidade e alinhamento para dar equilíbrio visual às páginas.",
+        "title": "Espaço, Proximidade e Alinhamento",
+        "description": "Composição gráfica para organizar informação e criar ritmo visual sem depender de comandos técnicos.",
         "objectives": [
-          "Criação de código de texto: folha de estilos em cascata (modelo de caixa e espaçamentos).",
-          "Desenvolvimento do Projeto: equilíbrio visual."
+          "Desenvolvimento do Projeto: equilíbrio visual e leiaute."
         ],
         "technical": [
           "Aplicar procedimentos técnicos de diagramação, proximidade e alinhamento.",
@@ -250,34 +252,34 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:30",
-            "atividade": "Revisão de seletores, cores e tipografia da Aula 06. Inspeção ao vivo: abrir sites reais nas ferramentas de desenvolvedor do navegador e visualizar margens e preenchimentos destacados em cores na tela."
+            "atividade": "Desafio projetado \"Ache a bagunça\": a turma encontra desalinhamentos, espaços inconsistentes e grupos confusos em uma composição propositalmente ruim."
           },
           {
             "horario": "19:30 - 20:30",
-            "atividade": "Modelo de caixa na prática: content, padding, border e margin; o papel do box-sizing. Prática guiada aplicando espaçamentos às seções do mini site, criando respiro entre os blocos de conteúdo."
+            "atividade": "Demonstração com blocos móveis: margem externa, respiro interno, repetição e eixo de alinhamento são visualizados com cartões coloridos, sem fórmulas ou sintaxe."
           },
           {
             "horario": "20:30 - 21:30",
-            "atividade": "Diagramação, proximidade e alinhamento como base do equilíbrio visual. Exercício \"Conserte a Bagunça\": reorganizar um leiaute propositalmente desalinhado fornecido para a atividade, agrupando itens relacionados e alinhando os elementos a um eixo comum."
+            "atividade": "Oficina \"Conserte a bagunça\": duplas reorganizam a peça fornecida em papel ou ferramenta visual usando uma escala pequena, média e grande de espaçamento."
           },
           {
             "horario": "21:30 - 22:30",
-            "atividade": "Revisão em duplas: com um roteiro de verificação (alinhamentos, espaçamentos consistentes, agrupamento por proximidade), um aluno avalia o site do outro e ambos aplicam as correções apontadas."
+            "atividade": "Revisão cruzada com régua visual: cada dupla verifica eixos, proximidade, repetição e legibilidade da composição vizinha; ajustes e registro de antes/depois."
           }
         ],
-        "methodology": "Prática guiada com exercício de correção de leiaute e avaliação por pares.",
-        "resources": "Laboratório com computadores e projetor.",
+        "methodology": "Diagnóstico visual, modelagem com objetos, oficina de composição e revisão por critérios.",
+        "resources": "Peças impressas, cartões, réguas, papel, ferramenta visual disponível e projetor.",
         "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
       },
       {
         "num": "08",
-        "title": "Leiaute com Flexbox e Grid",
-        "description": "Construção de leiautes modernos com flexbox e grid, recriando estruturas de páginas reais.",
+        "title": "Grades e Sistemas Visuais",
+        "description": "Uso de grades, colunas e componentes para criar famílias coerentes de páginas e postagens.",
         "objectives": [
-          "Criação de código de texto: folha de estilos em cascata (flexbox e grid).",
-          "Desenvolvimento do Projeto: leiaute."
+          "Desenvolvimento do Projeto: leiaute, templates e equilíbrio visual."
         ],
         "technical": [
+          "Aplicar procedimentos técnicos de diagramação, proximidade e alinhamento.",
           "Aplicar estilos css (cascading style sheets) para desenvolvimento de design web."
         ],
         "socioemotional": [
@@ -286,36 +288,36 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:30",
-            "atividade": "Revisão do modelo de caixa e dos princípios de alinhamento da Aula 07. Aquecimento com jogo online gratuito de fixação de flexbox (ex.: Flexbox Froggy), com a meta de avançar o máximo de fases em 20 minutos."
+            "atividade": "Aquecimento \"Que grade existe aqui?\": sobreposições transparentes revelam colunas e alinhamentos em portal, streaming, loja e feed de rede social."
           },
           {
             "horario": "19:30 - 20:30",
-            "atividade": "Flexbox: eixo principal e eixo transversal, justify-content, align-items, gap e quebra de linha. Construção guiada de um menu de navegação horizontal e de uma galeria de cartões que se reorganiza conforme o espaço."
+            "atividade": "Montagem física de grade: grupos recebem uma base de 6 ou 12 colunas e cartões de conteúdo. Precisam montar capa, lista de serviços e chamada principal sem romper os eixos."
           },
           {
             "horario": "20:30 - 21:30",
-            "atividade": "Grid: linhas, colunas e áreas nomeadas. Montagem de um leiaute de página completo com cabeçalho, barra lateral, área de conteúdo e rodapé. Critérios práticos: quando usar flexbox e quando usar grid."
+            "atividade": "Sistema de componentes: criar visualmente um botão, um cartão e um cabeçalho; depois repetir os componentes em duas telas e duas peças sociais mantendo consistência."
           },
           {
             "horario": "21:30 - 22:30",
-            "atividade": "Exercício de estrutura de página: recriar a estrutura do leiaute de uma página famosa (portal de notícias, serviço de streaming ou loja virtual) usando flexbox ou grid, apenas com caixas coloridas no lugar do conteúdo."
+            "atividade": "Desafio \"Uma marca, quatro formatos\": adaptar o mesmo sistema para desktop, celular, post quadrado e story. Exposição com justificativa das mudanças."
           }
         ],
-        "methodology": "Revisão breve seguida de prática guiada e desafio colaborativo em duplas.",
-        "resources": "Laboratório com computadores, acesso à internet e projetor.",
+        "methodology": "Leitura de referências, montagem modular, criação de componentes e adaptação multiformato.",
+        "resources": "Grades impressas, acetatos, cartões de conteúdo, ferramenta visual e projetor.",
         "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
       },
       {
         "num": "09",
-        "title": "Site Responsivo na Prática",
-        "description": "Responsividade na prática: media queries e mobile first para o site funcionar em qualquer tela.",
+        "title": "Design Responsivo sem Mistério",
+        "description": "Adaptação visual de conteúdo para celular, tablet e computador com prioridade e legibilidade.",
         "objectives": [
-          "Criação de código de texto: responsividade.",
           "Interfaces Web e App: design responsivo.",
           "Plataformas de Desenvolvimento: dispositivos."
         ],
         "technical": [
-          "Aplicar estilos css (cascading style sheets) para desenvolvimento de design web."
+          "Aplicar estilos css (cascading style sheets) para desenvolvimento de design web.",
+          "Aplicar procedimentos técnicos de diagramação, proximidade e alinhamento."
         ],
         "socioemotional": [
           "Reconhecer a importância da gestão do tempo como fator de impacto na qualidade dos serviços executados."
@@ -323,35 +325,36 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:30",
-            "atividade": "Revisão de flexbox e grid da Aula 08. Teste coletivo: cada aluno abre o próprio mini site no smartphone, usando o servidor local do editor de código pela rede do laboratório, e a turma lista no quadro tudo o que quebra em tela pequena (texto minúsculo, rolagem lateral, imagens estouradas, menu inutilizável)."
+            "atividade": "Comparação guiada do mesmo serviço em celular e computador. A turma marca o que some, muda de ordem, cresce, empilha ou vira menu."
           },
           {
             "horario": "19:30 - 20:30",
-            "atividade": "Media queries e unidades flexíveis (%, rem, vw); a meta tag viewport. Prática guiada: adaptar o leiaute do mini site definindo pontos de quebra para celular e desktop, atacando primeiro os problemas listados no quadro."
+            "atividade": "Jogo \"Mala pequena\": cada grupo recebe conteúdo demais e precisa escolher o essencial para a primeira tela do celular, justificando cada corte e prioridade."
           },
           {
             "horario": "20:30 - 21:30",
-            "atividade": "Abordagem mobile first: por que projetar primeiro para a tela menor. Panorama de dispositivos e tamanhos de tela (celulares, tablets, notebooks, TVs) e o impacto de cada um nas decisões de leiaute."
+            "atividade": "Oficina \"Três telas\": adaptar uma composição pronta para celular, tablet e desktop em papel ou ferramenta visual, preservando identidade e ação principal."
           },
           {
             "horario": "21:30 - 22:30",
-            "atividade": "Oficina \"Três Telas\": deixar o mini site apresentável em celular, tablet e desktop, validando cada ponto de quebra no modo responsivo do navegador e no smartphone. Gestão do tempo com metas parciais a cada 20 minutos."
+            "atividade": "Teste em tamanho real: as telas são abertas no smartphone ou impressas em molduras. Colegas verificam leitura, toque, ordem e ausência de cortes; ajustes finais."
           }
         ],
-        "methodology": "Aprendizagem por problema: diagnosticar falhas reais nos próprios sites e corrigi-las em oficina prática.",
-        "resources": "Laboratório com computadores e smartphones dos alunos para testes.",
+        "methodology": "Comparação, jogo de priorização, adaptação visual e teste em dispositivos reais.",
+        "resources": "Capturas preparadas, molduras impressas, smartphones, ferramenta visual e projetor.",
         "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
       },
       {
         "num": "10",
-        "title": "Site no Ar: Publicação",
-        "description": "Publicação do mini site em hospedagem gratuita, colocando o trabalho de cada aluno no ar para acesso real.",
+        "title": "Do Protótipo ao Link",
+        "description": "Publicação assistida de uma experiência visual pronta, com conferência de conteúdo, segurança e funcionamento.",
         "objectives": [
-          "Internet: hospedagem.",
-          "Desenvolvimento do Projeto: implementação, publicação."
+          "Internet: hospedagem e publicação.",
+          "Desenvolvimento do Projeto: publicação e testes de validação."
         ],
         "technical": [
-          "Aplicar a publicação de website para visualização online de projeto de web."
+          "Aplicar a publicação de website para visualização online de projeto de web.",
+          "Aplicar testes de usabilidade e funcionalidade dos projetos."
         ],
         "socioemotional": [
           "Demonstrar comportamento íntegro, transparente e responsável, nas relações interpessoais e no desenvolvimento das atividades sob sua responsabilidade."
@@ -359,35 +362,36 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:30",
-            "atividade": "Revisão dos ajustes responsivos da Aula 09. Conceito de hospedagem: onde os arquivos do site ficam e como o navegador os encontra. Comparação entre o Netlify Drop, que publica uma pasta sem login, e o servidor local, observando endereço gerado, exposição pública e atualização."
+            "atividade": "Comparação \"arquivo, protótipo e link\": distinguir material local, protótipo compartilhado e página publicada, incluindo exposição pública e cuidado com dados."
           },
           {
             "horario": "19:30 - 20:30",
-            "atividade": "Passo a passo guiado no projetor: conferência da pasta, envio pelo Netlify Drop sem criação de conta e primeira visualização do endereço público de cada aluno."
+            "atividade": "Checklist de prontidão: cada dupla confere nome fictício, créditos, ortografia, links simulados, imagens, versão mobile e ausência de dados pessoais no protótipo."
           },
           {
             "horario": "20:30 - 21:30",
-            "atividade": "Ajustes de implementação: corrigir caminhos de arquivos e nomes com espaços ou acentos, conferir todos os links e imagens, validar a página online em computador e celular antes de divulgar o endereço."
+            "atividade": "Publicação assistida: acompanhar a transformação do material aprovado em link no modelo preparado ou no ambiente institucional, sem editar código."
           },
           {
             "horario": "21:30 - 22:30",
-            "atividade": "Revisão entre pares dos sites publicados: cada aluno acessa pelo celular os sites publicados dos colegas e registra um comentário construtivo por site visitado, assumindo a responsabilidade pelo que escreve e destacando um acerto e uma melhoria."
+            "atividade": "Vernissage digital: os links são testados no computador e no celular. Cada visitante registra uma qualidade e uma melhoria usando linguagem respeitosa."
           }
         ],
-        "methodology": "Prática guiada de publicação com validação entre pares.",
-        "resources": "Laboratório com computadores, internet, smartphones dos alunos e projetor.",
+        "methodology": "Demonstração técnica curta, checklist em duplas, publicação assistida e mostra com feedback.",
+        "resources": "Protótipos da turma, modelo de publicação preparado, ambiente institucional ou ferramenta autorizada, smartphones e projetor.",
         "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
       },
       {
         "num": "11",
-        "title": "Primeiros Passos em JavaScript",
-        "description": "Introdução ao Javascript para dar interatividade às páginas, discutindo a diferença entre inovação e melhoria em projetos web.",
+        "title": "Interações e Feedback da Interface",
+        "description": "Planejamento de cliques, estados e respostas da interface por storyboard e protótipo, sem programação.",
         "objectives": [
-          "Criação de código de texto: introdução ao Javascript.",
+          "Criação de código de texto: introdução ao Javascript como reconhecimento de bastidor.",
           "Inovação: conceito, inovação x melhoria."
         ],
         "technical": [
-          "Identificar possibilidades de atualizações e melhorias de projetos web."
+          "Identificar possibilidades de atualizações e melhorias de projetos web.",
+          "Aplicar conceitos de design de experiência e interação do usuário."
         ],
         "socioemotional": [
           "Aplicar os aspectos de inovação em suas atividades profissionais."
@@ -395,34 +399,36 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:30",
-            "atividade": "Revisão da Aula 10: sites da turma no ar e lições da publicação. Demonstração comparada: o mesmo site estático e com interação. Onde o Javascript entra na tríade da web: HTML dá estrutura, CSS dá aparência, Javascript dá comportamento."
+            "atividade": "Comparação de duas páginas: uma sem resposta e outra com feedback de carregamento, sucesso, erro e confirmação. Decidir o comportamento da interface pelo design; a programação fica apenas como bastidor."
           },
           {
             "horario": "19:30 - 20:30",
-            "atividade": "Introdução prática no editor de código (ex.: VS Code): variáveis, evento de clique e alteração de conteúdo da página. Exercícios curtos: contador de cliques e troca do texto de um parágrafo ao apertar um botão."
+            "atividade": "Jogo \"O que acontece depois?\": grupos recebem ações como tocar, enviar, excluir e favoritar; desenham o estado anterior, a resposta imediata e o resultado final."
           },
           {
             "horario": "20:30 - 21:30",
-            "atividade": "Prática guiada de interação em JavaScript: cada aluno adiciona um botão de modo escuro ou um menu interativo ao mini site publicado na Aula 10 e sobe a atualização para a hospedagem gratuita."
+            "atividade": "Oficina de protótipo: adicionar no mínimo três estados conectados — normal, ação e retorno — usando ferramenta visual. Incluir uma mensagem de erro útil e uma confirmação clara."
           },
           {
             "horario": "21:30 - 22:30",
-            "atividade": "Roda de inovação \"E se o site...\": conceito de inovação e diferença entre inovação e melhoria com exemplos do mercado. Cada aluno mapeia melhorias possíveis no próprio site, classifica cada ideia como inovação ou melhoria e implementa uma delas antes do fim da noite."
+            "atividade": "Feira de interações: colegas executam duas tarefas sem explicação. Cada equipe registra onde faltou feedback e classifica suas ideias como correção, melhoria ou inovação."
           }
         ],
-        "methodology": "Demonstração seguida de oficina prática, encerrando com roda de ideias aplicadas ao próprio projeto.",
-        "resources": "Laboratório com computadores, editor de código gratuito e projetor.",
+        "methodology": "Demonstração de comportamento, storyboard, prototipação visual e teste rápido.",
+        "resources": "Capturas ou páginas de demonstração, cartões de ações e estados, ferramenta de prototipação e smartphones.",
         "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
       },
       {
         "num": "12",
         "title": "UX e UI: O Usuário no Centro",
-        "description": "Fundamentos de UI e UX com análise de interfaces reais e redesenho rápido de telas problemáticas.",
+        "description": "Investigação da experiência do usuário e redesenho de uma jornada por observação, mapa e protótipo visual.",
         "objectives": [
-          "Interfaces Web e App: user interface, experiência do usuário."
+          "Interfaces Web e App: user interface e experiência do usuário.",
+          "Desenvolvimento do Projeto: testes de validação."
         ],
         "technical": [
-          "Aplicar conceitos de design de experiência e interação do usuário."
+          "Aplicar conceitos de design de experiência e interação do usuário.",
+          "Analisar usabilidade e navegabilidade do projeto."
         ],
         "socioemotional": [
           "Demonstrar espírito colaborativo em atividades coletivas."
@@ -430,32 +436,32 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:30",
-            "atividade": "Revisão da Aula 11: o que o Javascript acrescentou aos sites da turma. Análise comparativa de experiências digitais: cada aluno cita um aplicativo que ama e um que odeia usar, com os motivos anotados no quadro para retomada ao longo da noite."
+            "atividade": "Retomada da Aula 11: estados e feedback. Dinâmica \"Amo e odeio\": a turma observa capturas preparadas de interfaces, sem acessar contas pessoais, e identifica um detalhe que ajuda e outro que atrapalha."
           },
           {
             "horario": "19:30 - 20:30",
-            "atividade": "Conceitos de UI e UX: diferença entre interface e experiência, consistência, feedback ao usuário, quantidade de passos para completar uma tarefa. Análise guiada de capturas preparadas de cadastro, transporte e compra, sempre com dados fictícios e sem abrir aplicativos ou contas pessoais dos estudantes."
+            "atividade": "Demonstração dialogada de UI e UX: aparência, consistência, resposta, quantidade de passos e sensação de controle. Duplas classificam exemplos e justificam as decisões."
           },
           {
             "horario": "20:30 - 21:30",
-            "atividade": "Exercício em grupos de 3 a 4: mapear a jornada do usuário em uma tarefa real de um aplicativo conhecido (pedir um lanche, comprar uma passagem de ônibus) e apontar os pontos de atrito em cada etapa."
+            "atividade": "Mapa de jornada: cada equipe acompanha uma tarefa fictícia — encontrar um serviço, comparar opções e pedir contato — marcando ações, dúvidas, emoções e pontos de atrito."
           },
           {
             "horario": "21:30 - 22:30",
-            "atividade": "Redesenho da etapa mais problemática: cada grupo redesenha em papel a tela mais problemática que encontrou na jornada e apresenta a solução em dois minutos para a turma, justificando as escolhas com os conceitos da noite."
+            "atividade": "Clínica de redesign: redesenhar em papel ou ferramenta visual o pior momento da jornada, apresentar em dois minutos e registrar como a mudança facilita a tarefa."
           }
         ],
-        "methodology": "Análise de casos reais e exercício colaborativo de redesenho com apresentação breve.",
-        "resources": "Smartphones dos alunos, papel e canetas, projetor e computadores do laboratório.",
+        "methodology": "Análise de capturas, classificação colaborativa, mapa de jornada e redesign rápido com apresentação.",
+        "resources": "Capturas fictícias preparadas, ficha de jornada, post-its, papel, canetas, ferramenta visual e projetor.",
         "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
       },
       {
         "num": "13",
         "title": "Acessibilidade e Usabilidade",
-        "description": "Acessibilidade e usabilidade como compromisso ético: vivência de sensibilização, auditoria e correção dos próprios sites.",
+        "description": "Acessibilidade e usabilidade como compromisso ético, com auditoria e correção visual do protótipo.",
         "objectives": [
           "Interfaces Web e App: acessibilidade.",
-          "Ética Pessoal e Profissional: empatia, responsabilidade."
+          "Ética Pessoal e Profissional: empatia e responsabilidade."
         ],
         "technical": [
           "Identificar padrões, normas e procedimentos para elaboração do projeto de mídias digitais, referentes a propriedade intelectual, acessibilidade, usabilidade e sustentabilidade.",
@@ -467,23 +473,23 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:30",
-            "atividade": "Revisão da Aula 12: UX, UI e pontos de atrito. Auditoria de barreiras em uma página de demonstração: navegação por teclado, foco visível, zoom e leitura de tela, sem simular uma deficiência."
+            "atividade": "Retomada de UX e UI. Auditoria guiada de uma interface problemática: foco, contraste, tamanho de texto, área de toque, rótulos, legenda e ordem de leitura."
           },
           {
             "horario": "19:30 - 20:30",
-            "atividade": "Diretrizes de acessibilidade: contraste de cores, textos alternativos em imagens, hierarquia de títulos e navegação por teclado. Verificação ao vivo com verificador de contraste (ex.: WebAIM Contrast Checker) e relatório de acessibilidade integrado ao navegador (ex.: Lighthouse)."
+            "atividade": "Estações de acessibilidade: contraste, zoom, navegação por teclado numa página demonstrativa e escrita de texto alternativo. Grupos rodam e registram uma barreira em cada estação."
           },
           {
             "horario": "20:30 - 21:30",
-            "atividade": "Oficina \"Auditoria do meu site\": cada aluno audita o próprio mini site publicado, lista os problemas de acessibilidade encontrados e corrige os principais direto no código, republicando a versão ajustada."
+            "atividade": "Oficina \"Protótipo para mais pessoas\": cada equipe corrige no material visual pelo menos três barreiras e registra capturas de antes e depois."
           },
           {
             "horario": "21:30 - 22:30",
-            "atividade": "Debate ético: para quem projetamos? Responsabilidade e empatia do designer com públicos diversos (pessoas com deficiência, idosos, quem acessa por celular com internet lenta). Registro coletivo dos \"compromissos de acessibilidade da turma\" para valer nos projetos seguintes."
+            "atividade": "Teste cruzado e pacto da turma: outra equipe confere as correções. Fechamento sobre responsabilidade do designer com públicos diversos e conexões lentas."
           }
         ],
-        "methodology": "Vivência de sensibilização seguida de auditoria prática e debate ético.",
-        "resources": "Laboratório com computadores, ferramentas gratuitas de verificação de acessibilidade e projetor.",
+        "methodology": "Auditoria orientada, rotação por estações, correção visual e verificação entre pares.",
+        "resources": "Página de demonstração, verificadores de contraste, fichas de estação, protótipos e projetor.",
         "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
       },
       {
@@ -618,7 +624,7 @@ window.SENAI_COURSES = {
           },
           {
             "horario": "20:30 - 21:30",
-            "atividade": "Produção: wireframe da página inicial do projeto fictício no caderno de materiais ou no LiveCodes, conforme o grau de fidelidade, seguindo o mapa do site definido na arquitetura de informação."
+            "atividade": "Produção: wireframe da página inicial do projeto fictício no caderno de materiais ou em ferramenta visual disponível no laboratório, seguindo o mapa do site definido na arquitetura de informação."
           },
           {
             "horario": "21:30 - 22:30",
@@ -654,7 +660,7 @@ window.SENAI_COURSES = {
           },
           {
             "horario": "20:30 - 21:30",
-            "atividade": "Produção dos wireframes responsivos no caderno de materiais ou no LiveCodes, conforme o grau de fidelidade: versão mobile da página inicial e de uma página interna, mantendo consistência com a versão desktop. Cada grupo controla o tempo por tela para fechar as duas versões na noite."
+            "atividade": "Produção dos wireframes responsivos no caderno de materiais ou em ferramenta visual disponível no laboratório: versão mobile da página inicial e de uma página interna, mantendo consistência com a versão desktop. Cada grupo controla o tempo por tela para fechar as duas versões na noite."
           },
           {
             "horario": "21:30 - 22:30",
@@ -682,7 +688,7 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:30",
-            "atividade": "Revisão da aula anterior: wireframes responsivos ajustados após o teste do corredor. Demonstração no LiveCodes: áreas do projeto, componentes reaproveitáveis e uso do site-base como ponto de partida sem copiar uma solução pronta."
+            "atividade": "Revisão da aula anterior: wireframes responsivos ajustados após o teste do corredor. Tour pela caderno de materiais ou ferramenta visual disponível no laboratório: páginas, frames, biblioteca de elementos e uso de templates como ponto de partida sem copiar a solução pronta."
           },
           {
             "horario": "19:30 - 20:30",
@@ -763,7 +769,7 @@ window.SENAI_COURSES = {
           },
           {
             "horario": "20:30 - 21:30",
-            "atividade": "Produção em grupos de 3 a 4: cada grupo sorteia uma marca fictícia (cafeteria, pet shop, academia, brechó, estúdio de tatuagem) e produz um post de feed e um story nos tamanhos corretos, usando Photopea no navegador, sem login, ou GIMP instalado."
+            "atividade": "Produção em grupos de 3 a 4: cada grupo sorteia uma marca fictícia (cafeteria, pet shop, academia, brechó, estúdio de tatuagem) e produz um post de feed e um story nos tamanhos corretos, usando Photopea sem login ou software de design instalado."
           },
           {
             "horario": "21:30 - 22:30",
@@ -771,7 +777,7 @@ window.SENAI_COURSES = {
           }
         ],
         "methodology": "Análise de referências e produção em grupos com revisão cruzada entre equipes.",
-        "resources": "Laboratório com computadores, Photopea no navegador, sem login, ou GIMP instalado, projetor e smartphones dos alunos.",
+        "resources": "Laboratório com computadores, Photopea sem login ou software de design instalado, projetor e smartphones dos alunos.",
         "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
       },
       {
@@ -813,11 +819,11 @@ window.SENAI_COURSES = {
       },
       {
         "num": "23",
-        "title": "Plataformas e Métricas",
-        "description": "Panorama das plataformas de desenvolvimento web e leitura de métricas com ferramentas de análise, preparando as decisões técnicas do projeto integrador.",
+        "title": "Plataformas e Métricas para Decidir",
+        "description": "Comparação de plataformas e leitura de dados fictícios para escolher soluções e propor melhorias.",
         "objectives": [
-          "Plataformas de Desenvolvimento: definição, categorias, plataformas de desenvolvimento.",
-          "Desenvolvimento do Projeto: ferramentas de análise (Google Analytics)."
+          "Plataformas de Desenvolvimento: definição, categorias e dispositivos.",
+          "Desenvolvimento do Projeto: ferramentas de análise."
         ],
         "technical": [
           "Selecionar software, aplicativos e plugins necessários para a criação dos projetos de design web.",
@@ -829,34 +835,33 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:30",
-            "atividade": "Revisão da Aula 22 (produção audiovisual em estúdio). Mapa das plataformas de desenvolvimento no quadro: construtores de sites, CMS e código próprio, comparando custo, controle sobre o resultado, curva de aprendizado e dependência da ferramenta."
+            "atividade": "Mapa das plataformas: cartões de construtor visual, CMS, protótipo, template preparado e desenvolvimento sob medida. Grupos associam cada opção a custo, prazo, autonomia e manutenção."
           },
           {
             "horario": "19:30 - 20:30",
-            "atividade": "Exploração prática: cada grupo recebe uma categoria (construtor de sites, CMS ou código próprio no editor de código) e monta a mesma página inicial simples nela. Ao final, quadro comparativo coletivo: onde cada categoria brilha e onde ela trava o designer."
+            "atividade": "Jogo \"Qual ferramenta escolher?\": cada equipe recebe três clientes fictícios e recomenda uma categoria de plataforma, defendendo a decisão sem construir em código."
           },
           {
             "horario": "20:30 - 21:30",
-            "atividade": "Ferramentas de análise: conceitos do Google Analytics (sessões, usuários, origem de tráfego, páginas mais vistas, taxa de rejeição, conversão) e leitura guiada de um painel de métricas de exemplo no projetor, traduzindo cada número em uma pergunta sobre o site."
+            "atividade": "Leitura guiada de painel fictício: acessos, origem, páginas vistas, abandono e conversão. Cada número é transformado em pergunta sobre conteúdo e experiência."
           },
           {
             "horario": "21:30 - 22:30",
-            "atividade": "Exercício \"Consultoria de Métricas\": com um relatório impresso de um site fictício, cada grupo propõe três melhorias justificadas pelos dados e apresenta em 2 minutos. Fechamento: o que cada grupo pretende medir no site do projeto integrador que começa na próxima aula."
+            "atividade": "Consultoria de métricas: grupos propõem três melhorias justificadas por dados e apresentam em dois minutos. A turma distingue evidência, hipótese e opinião."
           }
         ],
-        "methodology": "Exploração comparativa em grupos com análise de dados e proposição de melhorias fundamentadas em métricas.",
-        "resources": "Laboratório com computadores, acesso à internet, editor de código (ex.: VS Code), projetor e relatórios de métricas impressos ou em arquivo.",
+        "methodology": "Classificação de ferramentas, estudo de casos, leitura guiada e consultoria em grupos.",
+        "resources": "Cartas de plataformas e clientes, painel fictício impresso ou digital, calculadora e projetor.",
         "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
       },
       {
         "num": "24",
-        "title": "Projeto Integrador: Partida",
-        "description": "Início do projeto integrador em grupos de 3 a 4 alunos: entregáveis, escolha do cliente ou tema, papéis na equipe, briefing, pesquisa e cronograma do site que será publicado.",
+        "title": "Projeto Integrador: Presença Digital",
+        "description": "Início do projeto final de campanha e presença digital multimídia, do briefing ao conjunto de peças e protótipo.",
         "objectives": [
-          "Desenvolvimento do Projeto: briefing, pesquisa, ideação.",
-          "Coordenação de equipe: definição da organização do trabalho e dos níveis de autonomia.",
-          "Trabalho em equipe: divisão de papéis e responsabilidades, compromisso com objetivos e metas.",
-          "Ferramentas para gestão eficaz do tempo: cronogramas, priorização."
+          "Desenvolvimento do Projeto: briefing, pesquisa e ideação.",
+          "Trabalho em equipe: papéis e responsabilidades.",
+          "Ferramentas para gestão eficaz do tempo."
         ],
         "technical": [
           "Identificar padrões, normas e procedimentos para elaboração do projeto de mídias digitais, referentes a propriedade intelectual, acessibilidade, usabilidade e sustentabilidade.",
@@ -869,32 +874,32 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:30",
-            "atividade": "Revisão da Aula 23 (plataformas e métricas). Lançamento do projeto integrador: site completo publicado, do briefing aos testes de usabilidade. Apresentação dos entregáveis por aula, dos critérios de avaliação e formação dos grupos de 3 a 4 alunos."
+            "atividade": "Lançamento do projeto \"Presença Digital\": briefing, moodboard, identidade, protótipo responsivo, post, story, peça audiovisual curta, teste e apresentação. Formação de grupos de 3 a 4."
           },
           {
             "horario": "19:30 - 20:30",
-            "atividade": "Cada grupo define o cliente ou tema do site (negócio local fictício, portfólio coletivo ou causa da comunidade) e distribui papéis: coordenação, design, conteúdo e código, registrando o nível de autonomia de cada integrante (o que decide sozinho, o que decide com o grupo)."
+            "atividade": "Escolha de cliente ou causa fictícia e distribuição de papéis: coordenação, identidade visual, conteúdo e experiência do usuário. Todos participam das decisões; não há função de programação."
           },
           {
             "horario": "20:30 - 21:30",
-            "atividade": "Construção do briefing em formulário padrão: objetivo do site, público, conteúdo obrigatório, tom e restrições, incluindo cuidado com propriedade intelectual de imagens e textos. Pesquisa de referências, concorrentes e material de conteúdo do cliente."
+            "atividade": "Construção do briefing e pesquisa de referências, público, concorrentes, tom, conteúdo e direitos de uso. Definição da mensagem central da campanha."
           },
           {
             "horario": "21:30 - 22:30",
-            "atividade": "Cronograma do projeto: entregas distribuídas nas aulas 25 a 29 com prioridades definidas (o que é essencial, o que é desejável). Validação do escopo de cada grupo em relação ao calendário, com redução de promessas que não cabem no prazo."
+            "atividade": "Cronograma visual das Aulas 25 a 29, com entregas essenciais e opcionais. Validação do escopo e registro de riscos, plano B e pasta de entrega."
           }
         ],
-        "methodology": "Aprendizagem baseada em projetos: grupos assumem um cliente ou tema real e planejam o trabalho como uma equipe profissional.",
-        "resources": "Laboratório com computadores, acesso à internet, formulário de briefing, quadro e projetor.",
+        "methodology": "Aprendizagem baseada em projeto multimídia com escopo visual, papéis claros e entregas incrementais.",
+        "resources": "Formulário de briefing, fichas de papéis, quadro de cronograma, computadores e projetor.",
         "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
       },
       {
         "num": "25",
-        "title": "Projeto: Wireframe ao Protótipo",
-        "description": "Grupos fecham o escopo mínimo do site (página inicial e uma interna), produzem conceito visual, wireframes e protótipo dessas telas, e a noite termina com revisão em equipes para a prova da próxima aula.",
+        "title": "Projeto: Conceito e Protótipo",
+        "description": "Desenvolvimento da identidade, wireframes e protótipo responsivo do projeto final.",
         "objectives": [
-          "Desenvolvimento do Projeto: conceituação, wireframes, prototipação do leiaute das telas.",
-          "Coordenação de equipe: gestão da rotina, tomada de decisão."
+          "Desenvolvimento do Projeto: conceituação, wireframes e prototipação.",
+          "Coordenação de equipe: gestão da rotina e tomada de decisão."
         ],
         "technical": [
           "Identificar estrutura técnica para desenvolvimento de wireframes de interfaces gráficas design web, interfaces e redes sociais.",
@@ -908,38 +913,37 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:30",
-            "atividade": "Revisão da Aula 24 (início do projeto integrador). Acompanhamento de 2 minutos por grupo: o que avançou desde o briefing. Definição do escopo mínimo obrigatório do site: página inicial e uma página interna, com páginas extras apenas se o cronograma comprovar folga."
+            "atividade": "Acompanhamento de dois minutos por grupo e fechamento do escopo: tela inicial e uma tela interna em desktop e mobile, mais peças sociais essenciais."
           },
           {
             "horario": "19:30 - 20:30",
-            "atividade": "Definição do conceito visual do projeto (paleta, tipografia, tom da marca em três palavras) e produção dos wireframes das duas telas do escopo mínimo, no papel ou na ferramenta. Decisões registradas na ata do grupo; divergências resolvidas por votação com justificativa."
+            "atividade": "Definição do conceito visual: paleta, tipografia, linguagem de imagem e três palavras de personalidade. Montagem do style tile do projeto."
           },
           {
             "horario": "20:30 - 21:30",
-            "atividade": "Prototipação do leiaute das telas do escopo mínimo no caderno de materiais ou no LiveCodes, conforme o grau de fidelidade, aplicando grid, proximidade, alinhamento e hierarquia definidos no wireframe. Revisão tela a tela durante o acompanhamento dos grupos."
+            "atividade": "Produção de wireframes e protótipo navegável em ferramenta visual, aplicando grade, hierarquia, proximidade, alinhamento e componentes."
           },
           {
             "horario": "21:30 - 22:30",
-            "atividade": "Revisão para a prova: revisão em equipes com questões projetadas cobrindo fundamentos de internet, HTML, CSS, responsividade, publicação, UX, UI e metodologia de projeto. Entrega do roteiro de estudos para a avaliação da próxima aula (Aula 26)."
+            "atividade": "Clínica de protótipos: cada grupo recebe uma tarefa real para testar em outro projeto e devolve uma observação objetiva antes da avaliação."
           }
         ],
-        "methodology": "Aprendizagem baseada em projetos com escopo mínimo negociado por equipe e revisão em equipes preparatória para a prova.",
-        "resources": "Laboratório com computadores, caderno de materiais ou LiveCodes, smartphones dos alunos para testes responsivos e projetor.",
+        "methodology": "Oficina de projeto com entregas visíveis, clínica entre grupos e decisões registradas.",
+        "resources": "Caderno de materiais, ferramenta visual disponível, smartphones, fichas de teste e projetor.",
         "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
       },
       {
         "num": "26",
-        "title": "Prova e Teste do Protótipo",
-        "description": "Noite de avaliação: prova individual de múltipla escolha, seguida de teste de usabilidade do protótipo do integrador entre grupos e início da implementação em código.",
+        "title": "Avaliação e Clínica de Protótipos",
+        "description": "Avaliação individual sobre decisões de design, seguida de testes e melhoria do protótipo.",
         "objectives": [
-          "Ética Pessoal e Profissional: honestidade, imparcialidade.",
-          "Controle emocional no trabalho: fatores internos e externos.",
-          "Desenvolvimento do Projeto: testes de validação, implementação."
+          "Ética Pessoal e Profissional: honestidade e imparcialidade.",
+          "Desenvolvimento do Projeto: testes de validação e melhoria."
         ],
         "technical": [
           "Aplicar testes de usabilidade e funcionalidade dos projetos.",
           "Analisar usabilidade e navegabilidade do projeto.",
-          "Aplicar linguagem html (hypertext markup language) para desenvolvimento de design web."
+          "Aplicar conceitos de design de experiência e interação do usuário."
         ],
         "socioemotional": [
           "Demonstrar comportamento íntegro, transparente e responsável, nas relações interpessoais e no desenvolvimento das atividades sob sua responsabilidade.",
@@ -948,38 +952,36 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:30",
-            "atividade": "Orientações finais da prova: tempo, formato e critérios. Esclarecimento das últimas dúvidas do roteiro de estudos, com o lembrete de que o protótipo finalizado na Aula 25 (Projeto: Wireframe ao Protótipo) volta à cena logo após a prova. Conversa breve sobre controle da ansiedade em avaliações: fatores internos (preparo, sono, autoconfiança) e externos (tempo, ambiente) que afetam o desempenho."
+            "atividade": "Orientações da avaliação, retomada visual dos critérios e conversa breve sobre ansiedade. A prova exige análise de situações, não memorização de sintaxe."
           },
           {
             "horario": "19:30 - 20:30",
-            "atividade": "PROVA DE MÚLTIPLA ESCOLHA individual sobre o conteúdo da UC: fundamentos de internet, HTML, CSS, responsividade, UX e UI, acessibilidade, metodologia de projeto e publicação."
+            "atividade": "Prova individual de múltipla escolha sobre briefing, composição, identidade, formatos, responsividade visual, UX, acessibilidade, publicação e métricas."
           },
           {
             "horario": "20:30 - 21:30",
-            "atividade": "Teste rápido de usabilidade entre grupos: cada equipe recebe o protótipo do integrador de outra, cumpre três tarefas definidas pelos autores e registra os problemas na ficha de observação, no mesmo formato praticado na Aula 20 (Teste de Usabilidade do Protótipo), antes de qualquer linha de código."
+            "atividade": "Rodada de teste de usabilidade: equipes cumprem três tarefas no protótipo de outro grupo e registram caminho, dificuldade, fala do usuário e gravidade."
           },
           {
             "horario": "21:30 - 22:30",
-            "atividade": "Devolução das fichas e priorização dos ajustes apontados no protótipo com a matriz \"gravidade x esforço\". Início da implementação em HTML das primeiras páginas do escopo mínimo, aproveitando a estrutura semântica já definida no protótipo."
+            "atividade": "Devolução das fichas e priorização pela matriz gravidade x esforço. Cada grupo realiza e registra pelo menos duas melhorias visuais ou de conteúdo."
           }
         ],
-        "methodology": "Avaliação individual seguida de teste de usabilidade entre pares e retomada prática do projeto em ritmo leve.",
-        "resources": "Laboratório com computadores, fichas de observação, smartphones dos alunos e projetor.",
+        "methodology": "Avaliação contextualizada, teste entre pares e melhoria baseada em evidências.",
+        "resources": "Prova impressa, protótipos, fichas de teste, matriz de priorização, smartphones e projetor.",
         "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
       },
       {
         "num": "27",
-        "title": "Projeto: Código e Responsivo",
-        "description": "Implementação do site do integrador em HTML e CSS com responsividade, encerrando com publicação parcial acompanhada de um painel demonstrativo de métricas.",
+        "title": "Projeto: Kit de Campanha",
+        "description": "Produção integrada de peças gráficas e audiovisual curto para a presença digital do projeto.",
         "objectives": [
-          "Desenvolvimento do Projeto: implementação, responsividade, ferramentas de análise (Google Analytics).",
-          "Trabalho em equipe: responsabilidades individuais e coletivas, relações com o líder.",
-          "Controle emocional no trabalho: administração de conflitos."
+          "Desenvolvimento para Mídias sociais: tipos, dimensões, resoluções e customização.",
+          "Trabalho em equipe: responsabilidades individuais e coletivas."
         ],
         "technical": [
-          "Aplicar linguagem html (hypertext markup language) para desenvolvimento de design web.",
-          "Aplicar estilos css (cascading style sheets) para desenvolvimento de design web.",
-          "Aplicar a publicação de website para visualização online de projeto de web."
+          "Selecionar a criação de elementos gráficos para o desenvolvimento de design web, interfaces e redes sociais, tendo vista a propriedade.",
+          "Aplicar procedimentos técnicos de diagramação, proximidade e alinhamento."
         ],
         "socioemotional": [
           "Demonstrar espírito colaborativo em atividades coletivas.",
@@ -988,38 +990,36 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:30",
-            "atividade": "Acompanhamento dos grupos: cada equipe apresenta em 2 minutos o andamento desde a Aula 26 (Prova e Teste do Protótipo), revisa as responsabilidades individuais e coletivas e redistribui tarefas com o líder, se necessário."
+            "atividade": "Acompanhamento do projeto e conferência da identidade aprovada. Distribuição das tarefas da noite com quadro visível de produção."
           },
           {
             "horario": "19:30 - 20:30",
-            "atividade": "Implementação das páginas do escopo mínimo em HTML e CSS no editor de código (ex.: VS Code), seguindo o protótipo ajustado após os testes de usabilidade: estrutura semântica, folha de estilos única e componentes reaproveitados entre páginas."
+            "atividade": "Produção de post de feed e story, respeitando dimensões, área segura, hierarquia, contraste, créditos e consistência com o protótipo."
           },
           {
             "horario": "20:30 - 21:30",
-            "atividade": "Ajustes de responsividade: media queries, imagens flexíveis e navegação em telas pequenas, com testes nos smartphones dos integrantes do grupo em pelo menos dois tamanhos de tela."
+            "atividade": "Produção da peça audiovisual vertical de 15 a 30 segundos ou sequência animada equivalente: roteiro curto, captação ou montagem, texto, legenda e áudio autorizado."
           },
           {
             "horario": "21:30 - 22:30",
-            "atividade": "Publicação parcial pelo Netlify Drop, sem login, ou em hospedagem institucional já preparada, acompanhada de relatório demonstrativo ou conta institucional autorizada; não são instalados rastreadores pessoais nos sites dos estudantes. Mediação dos conflitos de prioridade nas equipes: o que entra na versão publicada e o que fica para a Aula 28."
+            "atividade": "Exportação e controle de qualidade: dimensões, nitidez, ortografia, duração, legenda, nome do arquivo e pasta. Revisão cruzada e ajustes prioritários."
           }
         ],
-        "methodology": "Aprendizagem baseada em projetos com desenvolvimento em equipe, validação contínua em dispositivos reais e coleta antecipada de métricas.",
-        "resources": "Laboratório com computadores, hospedagem gratuita e smartphones dos alunos.",
+        "methodology": "Estúdio de campanha com papéis distribuídos, produção paralela e controle de qualidade por checklist.",
+        "resources": "Photopea ou software instalado, editor audiovisual disponível, câmeras ou smartphones, iluminação, checklist e projetor.",
         "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
       },
       {
         "num": "28",
-        "title": "Projeto: Publicar, Testar, Ensaiar",
-        "description": "Reta final do projeto: leitura dos primeiros dados do relatório fictício ou da conta institucional autorizada, publicação definitiva, testes de validação entre grupos e ensaio da apresentação.",
+        "title": "Projeto: Publicar, Testar e Ensaiar",
+        "description": "Organização da presença digital final, publicação assistida, teste cruzado e preparação da apresentação.",
         "objectives": [
-          "Desenvolvimento do Projeto: publicação, ferramentas de análise (Google Analytics), testes de validação.",
-          "Apresentação aplicada: técnicas de apresentação de projetos.",
-          "Posturas profissionais: produtividade."
+          "Desenvolvimento do Projeto: publicação, métricas e testes de validação.",
+          "Apresentação aplicada: técnicas de apresentação de projetos."
         ],
         "technical": [
           "Aplicar a publicação de website para visualização online de projeto de web.",
           "Aplicar testes de usabilidade e funcionalidade dos projetos.",
-          "Analisar usabilidade e navegabilidade do projeto.",
           "Identificar possibilidades de atualizações e melhorias de projetos web."
         ],
         "socioemotional": [
@@ -1029,29 +1029,29 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:30",
-            "atividade": "Retomada do que ficou pendente da Aula 27 (Projeto: Código e Responsivo). Leitura de um conjunto de dados fictício ou institucional autorizado: número de acessos, páginas mais vistas e proporção de visitas por celular. Checklist final de links, imagens, responsividade e acessibilidade."
+            "atividade": "Checklist final do conjunto: briefing, identidade, protótipo, post, story, audiovisual, créditos, acessibilidade e organização de arquivos."
           },
           {
             "horario": "19:30 - 20:30",
-            "atividade": "Publicação definitiva do site de cada grupo na hospedagem gratuita e testes de validação e usabilidade entre grupos: cada equipe navega no site de outra cumprindo as tarefas principais e registra falhas de link, leiaute quebrado e problemas de navegação."
+            "atividade": "Publicação assistida do protótipo ou página em modelo preparado e ambiente autorizado. As equipes fornecem conteúdo aprovado e validam o resultado; não editam código."
           },
           {
             "horario": "20:30 - 21:30",
-            "atividade": "Correção das melhorias apontadas nos testes dos colegas e refinamento a partir dos dados de acesso observados. Registro do backlog de atualizações e melhorias futuras do site, mesmo as que não entram antes da apresentação."
+            "atividade": "Teste cruzado em computador e celular, com registro de leitura, navegação, cortes, legibilidade e coerência entre as peças. Correções finais e backlog."
           },
           {
             "horario": "21:30 - 22:30",
-            "atividade": "Preparação da apresentação final: roteiro da defesa (problema, briefing, processo, solução, resultados dos testes e métricas), divisão de falas entre os integrantes e ensaio cronometrado de cada grupo, com 7 minutos por equipe."
+            "atividade": "Preparação da defesa de sete minutos: problema, público, conceito, peças, protótipo, teste, melhoria e aprendizado. Divisão de falas e ensaio cronometrado."
           }
         ],
-        "methodology": "Aprendizagem baseada em projetos com leitura de métricas fictícias ou institucionais autorizadas, testes cruzados entre grupos e ensaio orientado de apresentação.",
-        "resources": "Laboratório com computadores, hospedagem gratuita, smartphones dos alunos e projetor.",
+        "methodology": "Checklist, publicação assistida, validação entre grupos e ensaio orientado.",
+        "resources": "Modelo de publicação preparado, ambiente autorizado, protótipos, peças finais, smartphones e projetor.",
         "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
       },
       {
         "num": "29",
-        "title": "Apresentações e Encerramento",
-        "description": "Encerramento da UC: grupos defendem os sites publicados, recuperação para os alunos que não atingiram o desempenho esperado nas avaliações da UC e retrospectiva final com organização do portfólio.",
+        "title": "Mostra de Presença Digital",
+        "description": "Apresentação dos projetos multimídia, recuperação e organização do portfólio de processo.",
         "objectives": [
           "Apresentação aplicada: defesa de soluções de design."
         ],
@@ -1066,23 +1066,23 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:30",
-            "atividade": "Preparação final: teste do projetor e do acesso aos sites publicados, definição da ordem de apresentação dos grupos por sorteio e últimos ajustes nas falas ensaiadas na Aula 28 (Projeto: Publicar, Testar, Ensaiar)."
+            "atividade": "Preparação da mostra: conferência do projetor, links, protótipos, peças e vídeos; ordem de apresentação e organização da banca de colegas."
           },
           {
             "horario": "19:30 - 20:30",
-            "atividade": "Apresentações finais: primeira metade dos grupos defende o site publicado, do briefing à publicação, justificando as decisões de design e mostrando os resultados dos testes. Banca formada pelos colegas faz perguntas ao fim de cada defesa."
+            "atividade": "Apresentações da primeira metade dos grupos: briefing, identidade, kit de campanha, protótipo, teste e melhoria. Perguntas da banca ao final."
           },
           {
             "horario": "20:30 - 21:30",
-            "atividade": "Apresentações da segunda metade dos grupos, votação do projeto destaque da turma e encerramento coletivo da UC com síntese do percurso: a trajetória da primeira página em HTML ao site no ar."
+            "atividade": "Apresentações da segunda metade, votação por critérios — clareza, coerência e inclusão — e síntese coletiva do percurso da UC."
           },
           {
             "horario": "21:30 - 22:30",
-            "atividade": "RECUPERAÇÃO: prova de múltipla escolha aplicada apenas aos alunos que não atingiram o desempenho esperado nas avaliações da UC, enquanto os demais registram a retrospectiva individual da UC (o que aprendi, o que faria diferente, o que levo para a carreira) e organizam o portfólio com o link do projeto publicado."
+            "atividade": "Recuperação contextualizada para quem necessita nova evidência; os demais organizam portfólio com processo, antes/depois, peças, protótipo e reflexão final."
           }
         ],
-        "methodology": "Apresentação e defesa de projetos com avaliação por banca de colegas, seguida de recuperação direcionada em paralelo à retrospectiva e à organização de portfólio.",
-        "resources": "Projetor, computadores do laboratório e sites publicados dos grupos.",
+        "methodology": "Mostra de projetos com defesa, avaliação por critérios, recuperação direcionada e organização de portfólio.",
+        "resources": "Projetor, computadores, protótipos, peças gráficas, vídeos, rubrica e ficha de recuperação.",
         "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
       }
     ]
@@ -1103,7 +1103,7 @@ window.SENAI_COURSES = {
       {
         "num": "01",
         "title": "Boas-vindas ao mundo audiovisual",
-        "description": "Apresentação da UC, construção do contrato didático (incluindo os combinados de consentimento de imagem) e introdução na linguagem audiovisual, conhecendo formatos e plataformas de veiculação.",
+        "description": "Apresentação da UC, combinados de consentimento e primeira leitura da linguagem audiovisual. A noite termina com uma análise guiada, uma comparação entre duas formas de exibição e um vídeo de até 15 segundos gravado em dupla.",
         "objectives": [
           "Linguagem audiovisual: fundamentos de imagem e vídeo digital (longa metragem, curta metragem, canal de internet); plataformas e dispositivos de veiculação (cinema, TV, internet).",
           "Propriedade intelectual: direito de uso de imagem (noções de consentimento e uso interno das imagens gravadas em aula)."
@@ -1117,29 +1117,29 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:30",
-            "atividade": "Acolhida da turma e apresentação da UC: objetivos, formas de avaliação, os três gêneros que vamos produzir (curta, comercial e documentário) e o projeto integrador final. Construção coletiva do contrato didático, incluindo os combinados de consentimento e uso interno das imagens que a turma gravar durante as aulas."
+            "atividade": "Acolhida, mapa da UC e contrato de gravação. Cada dupla registra uma expectativa para o curso e a turma fecha três regras: ninguém é obrigado a aparecer, toda gravação tem finalidade definida e material de aula não é publicado sem autorização específica."
           },
           {
             "horario": "19:30 - 20:30",
-            "atividade": "O que é linguagem audiovisual: longa metragem, curta metragem e canal de internet. Análise de trechos no projetor (abertura de um longa, um curta premiado e um vídeo de canal de internet), identificando complexidade de produção, tamanho da equipe e estilo de cada formato."
+            "atividade": "Leitura guiada de três trechos curtos: longa-metragem, curta-metragem e vídeo de canal. A dupla escolhe um trecho e responde: para quem foi feito, o que quer provocar, qual escolha de imagem e de som chama atenção e como é o ritmo. A conclusão usa uma frase-modelo com algo visto ou ouvido no trecho."
           },
           {
             "horario": "20:30 - 21:30",
-            "atividade": "Plataformas e dispositivos de veiculação (cinema, TV, internet): como o destino muda duração, proporção de tela e ritmo do vídeo. Atividade em duplas \"Mesmo conteúdo, telas diferentes\": comparar a mesma campanha ou trailer publicado na TV e em rede social de vídeo vertical, listando o que mudou e por quê."
+            "atividade": "Atividade \"Mesmo conteúdo, telas diferentes\": comparar duas versões preparadas da mesma mensagem. Preencher um quadro simples sobre tela vertical ou horizontal, duração, enquadramento, texto, som e ritmo; depois registrar três mudanças e explicar por que cada uma ajuda no local em que o vídeo seria exibido."
           },
           {
             "horario": "21:30 - 22:30",
-            "atividade": "Prática \"Meu primeiro plano\": cada dupla grava com o smartphone um plano de 15 segundos pensado para uma plataforma escolhida, respeitando os combinados de consentimento; exibição no projetor e discussão das escolhas de formato, enquadramento e estilo."
+            "atividade": "Prática \"Meu primeiro plano\": em dupla, definir onde o vídeo seria exibido, para quem e com qual objetivo; escolher uma ação simples com começo e fim; dividir os papéis; confirmar quem pode aparecer; gravar até 15 segundos somente na área e no momento liberados; assistir, refazer no máximo uma vez, nomear o arquivo e salvar na pasta indicada."
           }
         ],
-        "methodology": "Aula expositiva dialogada com análise de vídeos no projetor e prática imediata de gravação em duplas.",
-        "resources": "Projetor, computadores do laboratório e smartphones dos alunos.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "Explicação curta, modelagem ao vivo, fichas guiadas, prática em duplas, devolutiva por critérios e desafio opcional para quem concluir antes.",
+        "resources": "Três trechos curtos e um par de versões da mesma mensagem salvos localmente, ficha da Aula 01 impressa ou digital, projetor, computadores, smartphones e pasta de entrega preparada.",
+        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco. Preservar no Bloco 3 uma margem técnica de até 20 min para organização dos computadores e atividade breve com a mesa digitalizadora. Na gravação, manter duplas fixas, uma área delimitada e deslocamento somente quando chamado; se a margem não for usada, aplicar a extensão no papel."
       },
       {
         "num": "02",
         "title": "Planos, enquadramentos e montagem",
-        "description": "Estudo do fundamento estético do filme (planos, enquadramentos e montagem) com prática de gravação de uma micro-história contada em sequência de planos.",
+        "description": "Noite enxuta de escalas e montagem: filmar a mesma ação em três planos, testar se a ordem muda o sentido e entregar uma micro-história em cinco planos — sem take único corrido.",
         "objectives": [
           "Linguagem audiovisual: fundamento estético do filme (montagem, planos, enquadramentos).",
           "Posturas profissionais: criatividade, iniciativa."
@@ -1152,25 +1152,25 @@ window.SENAI_COURSES = {
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Revisão da aula 1 (formatos e plataformas de veiculação). Aquecimento: análise de uma cena clássica no projetor, com a turma contando quantos planos existem na cena e discutindo o que cada enquadramento comunica."
+            "horario": "19:40 - 20:00",
+            "atividade": "Retomada rápida: ontem bastava um plano contínuo; hoje valem escala e ordem. Observar a mesma ação — pegar um objeto e entregar — em geral, médio e detalhe. Formar trios (câmera, ação, organização)."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "Tipos de planos (geral, médio, americano, close, detalhe), ângulos de câmera e enquadramentos; regra dos terços e composição do quadro. Exemplos fotografados na hora com o smartphone, usando os próprios colegas e o laboratório como cenário."
+            "horario": "20:00 - 20:45",
+            "atividade": "Circuito curto no laboratório. Em trios, gravar a mesma ação em três escalas — geral, médio e detalhe — com câmeras, ring lights e smartphones em rodízio. Nomear os clips no aparelho: GERAL, MEDIO, DETALHE. Quem não quiser aparecer usa objeto ou mãos sem identificação."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "Montagem: como a ordem dos cortes constrói sentido (efeito Kuleshov). Exercício \"Montador de mesa\": em grupos, reordenar cenas impressas de uma mesma história para criar significados diferentes e defender a versão escolhida para a turma."
+            "horario": "20:45 - 21:20",
+            "atividade": "Montagem rápida. Reproduzir no celular os três clips na ordem A-B-C e depois C-A-B. Combinar uma frase oral: “Na ordem ___, a história parece ___ porque ___.”"
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "Prática em trios \"História em cinco planos\": gravar com smartphone uma micro-história completa, sem diálogo, contada em cinco planos diferentes; exibição no projetor com leitura da turma sobre o que cada plano comunicou."
+            "horario": "21:20 - 22:07",
+            "atividade": "Prática \"História em cinco planos\": escolher uma premissa projetada; gravar cinco planos de escalas diferentes, sem diálogo e sem take único corrido; assistir uma vez; nomear PA_A02_EQ##_CINCOPLANOS_01.mp4 e salvar na pasta. Sem rodada longa de exibição."
           }
         ],
-        "methodology": "Análise fílmica guiada seguida de exercício prático de gravação em trios, prática orientada.",
-        "resources": "Projetor, smartphones dos alunos e cenas impressas para o exercício de montagem.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "Demo curta, circuito de três escalas, teste de ordem no celular e entrega só em arquivo.",
+        "resources": "Projetor, câmeras do laboratório, ring lights, microfones se disponíveis, smartphones e pasta de entrega preparada.",
+        "observation": "Noite comprimida até 22:07. Sem ficha, impresso ou lanche longo. Chamada no início de cada bloco. Close e exibição coletiva ficam de fora se o tempo apertar."
       },
       {
         "num": "03",
@@ -1196,7 +1196,7 @@ window.SENAI_COURSES = {
           },
           {
             "horario": "19:30 - 20:30",
-            "atividade": "Pré-produção, produção e pós-produção: mapa completo das etapas e entregas de cada fase (roteiro, storyboard, ordem do dia, gravação, decupagem, corte, finalização e exportação), construído no quadro junto com a turma a partir dos exemplos que ela já conhece."
+            "atividade": "Pré-produção, produção e pós-produção: montar no quadro o mapa das etapas e entregas de cada fase (roteiro, storyboard, ordem do dia, gravação, decupagem, corte, finalização e exportação), a partir de exemplos que a turma já conhece."
           },
           {
             "horario": "20:30 - 21:30",

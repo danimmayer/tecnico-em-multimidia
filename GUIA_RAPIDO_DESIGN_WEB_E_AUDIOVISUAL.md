@@ -8,12 +8,17 @@ Organizei cada encontro em quatro movimentos: conceito, demonstração, atividad
 registro. Minha referência não é a quantidade de conteúdo exposto, mas a
 evidência que a turma consegue produzir e explicar ao final da noite.
 
-Em Design Web, trabalho a partir de um exemplo funcional. Altero uma parte por
-vez, salvo, atualizo o navegador e só então libero a repetição em duplas.
+Em Design Web, parto de referências e exemplos prontos. Mostro a decisão visual,
+os critérios e o resultado esperado; então libero uma prática curta em duplas
+ou equipes, sem exigir escrita de programação.
 
 Em Produção Audiovisual, a rotina começa pela intenção do plano, passa por um
 teste curto de imagem e som e termina com conferência, nomeação e cópia dos
 arquivos.
+
+A camada projetada fala com o estudante: o que observar, decidir, produzir e
+entregar. Orientações de condução ficam nas anotações (tecla **P**), não no
+texto público da atividade.
 
 ## Preparação de cada encontro
 
@@ -44,68 +49,48 @@ para depois da entrega mínima funcionar.
 
 ## Design Web
 
-### Fluxo online sem login
+### Fluxo prático sem programação discente
 
-Uso três serviços com funções diferentes. O **DontPad BR** é o mural vivo da
-aula; o **LiveCodes** é a bancada em que HTML, CSS, JavaScript e resultado ficam
-na mesma tela; o **Netlify Drop** publica a pasta pronta. A pasta local permanece
-como entrega e cópia de segurança.
+Antes da aula, abro as referências, a ficha correspondente no caderno de
+materiais, a ferramenta visual e a pasta de entrega. Preparo também cartões,
+capturas ou folhas impressas para que a atividade continue se a internet falhar.
 
-Antes da aula:
+Minha demonstração dura no máximo 15 minutos: comparo alternativas, mostro o
+critério e modelo apenas o primeiro passo. Se HTML, CSS ou JavaScript ajudarem a
+explicar o bastidor, eu mostro um exemplo pronto; a turma reconhece sua função,
+mas não copia sintaxe, não instala editor e não recebe arquivo vazio para
+programar.
 
-1. abro [dontpad.com.br](https://dontpad.com.br/) e crio um endereço longo e
-   pouco previsível, por exemplo `dw-dm-a07-4f2c`;
-2. ativo o modo **Somente leitura** e guardo o PIN de edição;
-3. publico no mural o foco, os trechos de código, o link do exercício e a
-   entrega esperada;
-4. preparo o exemplo em [livecodes.io](https://livecodes.io/) com as abas HTML
-   e CSS visíveis;
-5. nas aulas de publicação, deixo
-   [app.netlify.com/drop](https://app.netlify.com/drop) aberto para arrastar a
-   pasta ou o ZIP sem criar conta;
-6. mantenho `modelos/design-web/site-base/` aberto como alternativa sem
-   internet.
-
-Durante a demonstração, altero uma parte por vez no LiveCodes e deixo no mural
-o código estável que a turma deve copiar. Quando uma atualização simultânea for
-realmente útil, o Broadcast do LiveCodes pode projetar o resultado; por depender
-de um servidor externo, ele não substitui o mural nem a versão local.
-
-No fim do bloco, cada dupla copia ou exporta o trabalho para `index.html`,
-`styles.css` e, quando houver, `script.js`. O link online não vale como única
-entrega.
+No fim de cada bloco, a equipe salva ou fotografa a evidência, confere o
+checklist e registra uma decisão. Publicações são assistidas pelo professor em
+modelo preparado ou ambiente institucional autorizado.
 
 Para peças visuais das aulas 21 e 22, uso
 [Photopea](https://www.photopea.com/) sem login. O arquivo é aberto e processado
 no próprio computador; antes de fechar a aba, salvo a versão editável e a imagem
 exportada na pasta do grupo.
 
-Não publico nesses serviços nomes completos, fotos pessoais, e-mails,
-telefones, localização, avaliações, senhas, tokens ou chaves. Links curtos do
-LiveCodes enviam uma cópia do código ao serviço; para os exemplos de aula,
-prefiro o link longo e uso apenas conteúdo fictício.
+Não publico em ferramentas externas nomes completos, fotos pessoais, e-mails,
+telefones, localização, avaliações, senhas, tokens ou chaves. Clientes, personas
+e dados de métricas são fictícios.
 
-Uma publicação anônima do Netlify Drop é pública e não substitui um repositório
-ou arquivo local. Cada nova versão recebe conferência e o endereço válido é
-atualizado no mural da aula.
+### Aulas 03 a 05 · Anatomia, conteúdo e navegação
 
-### Aulas 03 a 05 · HTML
+O foco é reconhecer a estrutura visual de uma página, organizar caminhos,
+escrever microtextos e selecionar imagens com licença. HTML aparece apenas no
+exemplo preparado do professor.
 
-O foco é o ciclo **editar → salvar → atualizar** e o significado das tags. Para
-publicação, os exercícios usam persona fictícia. Nome completo, foto pessoal,
-telefone, localização e rotina de estudantes não entram no site.
+### Aulas 06 a 10 · Identidade, composição e responsividade
 
-### Aulas 06 a 10 · CSS, responsividade e publicação
+A turma produz painéis de estilo, grades, componentes e versões para celular,
+tablet, computador, post e story. CSS aparece como bastidor da aparência; a
+publicação é assistida e só ocorre após checklist e revisão de dados pessoais.
 
-Uma propriedade muda por vez. Bordas temporárias revelam as caixas do leiaute.
-A publicação só ocorre depois da versão local passar pelo checklist e pela
-revisão de dados pessoais.
+### Aula 11 · Interação e feedback
 
-### Aula 11 · JavaScript
-
-A interação fica restrita a três movimentos: selecionar um elemento, responder
-a um evento e alterar texto, atributo ou classe. O exemplo usa a mesma classe
-`dark-theme` do projeto inicial.
+A turma desenha estados normal, ação, erro, sucesso e confirmação por storyboard
+e protótipo. JavaScript é apenas identificado na demonstração como uma das
+tecnologias capazes de implementar o comportamento planejado.
 
 ### Aulas 12 e 13 · UX e acessibilidade
 
@@ -171,8 +156,8 @@ cópias de segurança substituem qualquer dependência de streaming.
 
 ## Adaptações previstas
 
-- site completo → uma página funcional com navegação;
-- interação múltipla → um controle funcionando e explicável;
+- site completo → protótipo responsivo e conjunto coerente de presença digital;
+- interação programada → estados e caminhos testáveis em protótipo visual;
 - cena complexa → plano estável com som compreensível;
 - edição com efeitos → corte limpo, áudio claro e créditos;
 - publicação externa → servidor local ou pasta validada;
@@ -182,7 +167,7 @@ cópias de segurança substituem qualquer dependência de streaming.
 
 - `uc-design-web.html` · sequência das 29 aulas;
 - `uc-producao-audiovisual.html` · sequência das 23 aulas;
-- `modelos/design-web/site-base/` · projeto inicial dos exercícios;
+- `modelos/design-web/site-base/` · modelo demonstrativo para o professor;
 - `modelos/design-web/materiais-de-aula/` · fichas, provas, gabaritos e rubrica;
 - `modelos/producao-audiovisual/` · fichas, provas, gabaritos e documentos de produção;
 - botão **PDF** · versão projetável da aula, sem as anotações privadas.

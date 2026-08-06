@@ -40,6 +40,8 @@ html {
   min-height: 100%;
   background: var(--ink);
   color-scheme: dark;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -52,7 +54,6 @@ body {
     radial-gradient(circle at 95% 18%, rgba(var(--accent-rgb), 0.07), transparent 24rem),
     var(--ink);
   font-family: var(--body);
-  -webkit-font-smoothing: antialiased;
 }
 
 button, input { font: inherit; }
@@ -790,6 +791,151 @@ body[data-theme="av"] .lesson-topbar { background: rgba(18, 16, 15, 0.9); }
   line-height: 1.52;
 }
 
+.presentation-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.presentation-card {
+  min-height: 142px;
+  background:
+    linear-gradient(145deg, rgba(var(--accent-rgb), 0.075), transparent 72%),
+    var(--panel);
+}
+
+.kit-slide.is-dense-cards .kit-slide-main {
+  justify-content: center;
+  padding-top: clamp(16px, 2.5vh, 24px);
+  padding-bottom: clamp(16px, 2.5vh, 24px);
+}
+
+.kit-slide.is-dense-cards .slide-kicker {
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+
+.kit-slide.is-dense-cards h2 {
+  max-width: none;
+  font-size: clamp(30px, 3.3vw, 46px);
+  line-height: 1;
+}
+
+.kit-slide.is-dense-cards .slide-lede {
+  max-width: none;
+  margin-top: 8px;
+  font-size: clamp(14px, 1.5vw, 18px);
+  line-height: 1.3;
+}
+
+.presentation-card-grid.is-dense {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.presentation-card-grid.is-dense .presentation-card {
+  min-height: 104px;
+  padding: 12px 14px;
+}
+
+.presentation-card-grid.is-dense .card-index { margin-bottom: 6px; font-size: 12px; }
+.presentation-card-grid.is-dense .content-card strong { margin-bottom: 5px; font-size: 15px; }
+.presentation-card-grid.is-dense .content-card p { font-size: 12.5px; line-height: 1.3; }
+
+.kit-slide.is-dense-cards .presentation-prompt {
+  margin-top: 10px;
+  padding: 10px 14px;
+}
+
+.kit-slide.is-dense-cards .presentation-prompt .card-index { display: none; }
+.kit-slide.is-dense-cards .presentation-prompt strong { font-size: clamp(16px, 1.65vw, 21px); }
+
+.projection-mode .kit-slide.is-dense-cards .slide-kicker {
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.projection-mode .kit-slide.is-dense-cards h2 { font-size: clamp(36px, 4vw, 58px); }
+
+.projection-mode .kit-slide.is-dense-cards .slide-lede {
+  margin-top: 12px;
+  font-size: clamp(16px, 1.7vw, 21px);
+  line-height: 1.35;
+}
+
+.projection-mode .presentation-card-grid.is-dense {
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.projection-mode .presentation-card-grid.is-dense .presentation-card {
+  min-height: 128px;
+  padding: 16px 18px;
+}
+
+.projection-mode .presentation-card-grid.is-dense .card-index { margin-bottom: 8px; font-size: 13px; }
+.projection-mode .presentation-card-grid.is-dense .content-card strong { margin-bottom: 6px; font-size: 18px; }
+.projection-mode .presentation-card-grid.is-dense .content-card p { font-size: 14px; line-height: 1.38; }
+
+.projection-mode .kit-slide.is-dense-cards .presentation-prompt {
+  margin-top: 14px;
+  padding: 14px 18px;
+}
+
+.projection-mode .kit-slide.is-dense-cards .presentation-prompt strong { font-size: clamp(20px, 1.8vw, 25px); }
+
+.presentation-bullets {
+  display: grid;
+  gap: 10px;
+  margin: 26px auto 0;
+  padding: 0;
+  list-style: none;
+}
+
+.presentation-bullets li {
+  position: relative;
+  padding: 13px 16px 13px 42px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  color: var(--paper-soft);
+  background: rgba(255, 255, 255, 0.03);
+  font-size: clamp(15px, 1.6vw, 19px);
+  line-height: 1.45;
+}
+
+.presentation-bullets li::before {
+  position: absolute;
+  top: 17px;
+  left: 18px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 5px rgba(var(--accent-rgb), 0.11);
+  content: "";
+}
+
+.presentation-prompt {
+  margin-top: 24px;
+  padding: 18px 22px;
+  border: 1px solid rgba(var(--accent-rgb), 0.42);
+  border-radius: var(--radius);
+  background: rgba(var(--accent-rgb), 0.09);
+}
+
+.presentation-prompt .card-index { margin-bottom: 7px; }
+
+.presentation-prompt strong {
+  display: block;
+  color: var(--paper);
+  font-family: var(--display);
+  font-size: clamp(20px, 2.4vw, 31px);
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
 .card-index {
   display: block;
   margin-bottom: 14px;
@@ -847,6 +993,175 @@ body[data-theme="av"] .lesson-topbar { background: rgba(18, 16, 15, 0.9); }
   color: var(--paper-soft);
   font-size: clamp(18px, 2.1vw, 26px);
   line-height: 1.55;
+}
+
+.block-activity.is-compact {
+  font-size: clamp(15px, 1.55vw, 20px);
+  line-height: 1.45;
+}
+
+.block-title,
+.student-sheet-title {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.block-title {
+  font-size: clamp(36px, 4.2vw, 58px) !important;
+}
+
+.student-sheet-title {
+  font-size: clamp(36px, 4.4vw, 60px) !important;
+}
+
+.review-title {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.review-deliverable {
+  max-width: 900px;
+  margin: 24px 0 0;
+  color: var(--paper-soft);
+  font-size: 18px;
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+.review-deliverable strong {
+  color: var(--paper);
+  font-weight: 650;
+}
+
+.block-directions {
+  margin-top: 20px;
+}
+
+.block-directions .card-index {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.block-step-list,
+.student-sheet-list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: compact-steps;
+}
+
+.block-step-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 26px;
+  border-top: 1px solid var(--line);
+}
+
+.block-step-list li {
+  position: relative;
+  min-height: 46px;
+  padding: 11px 0 10px 34px;
+  border-bottom: 1px solid var(--line);
+  color: var(--paper-soft);
+  font-size: 13px;
+  line-height: 1.38;
+  text-wrap: pretty;
+  counter-increment: compact-steps;
+}
+
+.block-step-list li::before {
+  position: absolute;
+  top: 11px;
+  left: 3px;
+  color: var(--accent);
+  content: counter(compact-steps, decimal-leading-zero);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.student-sheet-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin-top: 24px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.student-sheet-section {
+  padding: 18px 22px 18px 0;
+}
+
+.student-sheet-section + .student-sheet-section {
+  padding-left: 22px;
+  border-left: 1px solid var(--line);
+}
+
+.student-sheet-section .card-index {
+  margin-bottom: 10px;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+.student-sheet-list {
+  gap: 7px;
+}
+
+.student-sheet-list li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--paper-soft);
+  font-size: 13px;
+  line-height: 1.4;
+  text-wrap: pretty;
+}
+
+.student-sheet-list li::before {
+  position: absolute;
+  top: 0.55em;
+  left: 2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  content: "";
+}
+
+.student-resource-link {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  margin-top: 18px;
+  padding: 11px 14px;
+  border: 1px solid rgba(var(--accent-rgb), 0.38);
+  border-radius: 9px;
+  color: var(--accent);
+  background: rgba(var(--accent-rgb), 0.07);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.student-resource-link:hover,
+.student-resource-link:focus-visible {
+  border-color: var(--accent);
+  color: var(--paper);
+  outline: none;
+}
+
+.extension-callout {
+  margin: 14px 0 0;
+  padding: 11px 14px;
+  border-left: 3px solid var(--accent-2);
+  color: var(--paper-soft);
+  background: transparent;
+  font-size: 13px;
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+
+.extension-callout strong {
+  color: var(--paper);
 }
 
 .step-list,
@@ -912,6 +1227,27 @@ body[data-theme="av"] .lesson-topbar { background: rgba(18, 16, 15, 0.9); }
   content: "✓";
   font-size: 20px;
   font-weight: 900;
+}
+
+.formative-check-list {
+  gap: 0 26px;
+  border-top: 1px solid var(--line);
+}
+
+.formative-check-list li {
+  padding: 14px 8px 13px 32px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  text-wrap: pretty;
+}
+
+.formative-check-list li::before {
+  top: 12px;
+  left: 5px;
+  font-size: 17px;
+  font-weight: 600;
 }
 
 .code-stack {
@@ -1034,6 +1370,60 @@ body[data-theme="av"] .deck-bottombar { background: rgba(18, 16, 15, 0.96); }
   font-size: 12px;
   text-align: center;
   font-variant-numeric: tabular-nums;
+}
+
+.deck-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.course-pace-dot {
+  width: 12px;
+  height: 12px;
+  flex: 0 0 12px;
+  border-radius: 50%;
+  background: #7cc49a;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.42),
+    0 0 0 5px rgba(124, 196, 154, 0.12),
+    0 4px 12px rgba(0, 0, 0, 0.38);
+  transition: background 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+}
+
+.course-pace-dot.is-ok {
+  background: #7cc49a;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.42),
+    0 0 0 5px rgba(124, 196, 154, 0.12),
+    0 4px 12px rgba(0, 0, 0, 0.38);
+}
+
+.course-pace-dot.is-warn {
+  background: #e7b66e;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.42),
+    0 0 0 5px rgba(231, 182, 110, 0.18),
+    0 4px 12px rgba(0, 0, 0, 0.38);
+}
+
+.course-pace-dot.is-err {
+  background: #d98a8a;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.42),
+    0 0 0 5px rgba(217, 138, 138, 0.2),
+    0 4px 12px rgba(0, 0, 0, 0.38);
+  animation: coursePacePulse 1.2s ease-in-out infinite;
+}
+
+.course-pace-dot:hover {
+  transform: scale(1.25);
+}
+
+@keyframes coursePacePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
 }
 
 .deck-actions:last-child { justify-content: flex-end; }
@@ -1164,9 +1554,21 @@ body[data-theme="av"] .deck-bottombar { background: rgba(18, 16, 15, 0.96); }
   .cards-2,
   .cards-3,
   .cards-4,
+  .presentation-card-grid,
   .step-list,
   .check-list,
-  .problem-list { grid-template-columns: 1fr; }
+  .problem-list,
+  .block-step-list,
+  .student-sheet-grid { grid-template-columns: 1fr; }
+  .presentation-card-grid.is-dense { grid-template-columns: 1fr; }
+  .student-sheet-section,
+  .student-sheet-section + .student-sheet-section {
+    padding: 16px 0;
+    border-left: 0;
+  }
+  .student-sheet-section + .student-sheet-section {
+    border-top: 1px solid var(--line);
+  }
   .schedule-card {
     min-height: 0;
     overflow: visible;
@@ -1253,11 +1655,22 @@ body[data-theme="av"] .deck-bottombar { background: rgba(18, 16, 15, 0.96); }
   .teacher-note,
   .check-list li,
   .step-list li,
+  .block-step-list li,
+  .student-sheet-list li,
   .problem-list span { color: #333; }
   .content-card,
+  .presentation-bullets li,
+  .presentation-prompt,
   .teacher-note,
   .step-list li,
   .check-list li { border-color: #bbb; background: #fafafa; }
+  .presentation-prompt strong { color: #111; }
+  .block-step-list,
+  .block-step-list li,
+  .student-sheet-grid,
+  .student-sheet-section + .student-sheet-section { border-color: #bbb; }
+  .student-resource-link { color: #08706d; border-color: #777; background: #fff; }
+  .extension-callout { color: #333; background: #fafafa; }
   .code-card { border-color: #777; background: #f7f7f7; box-shadow: none; }
   .code-card-head { color: #333; background: #ececec; border-color: #999; }
   .code-card pre { max-height: none; color: #111; background: #fff; }

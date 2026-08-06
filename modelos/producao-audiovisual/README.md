@@ -33,8 +33,8 @@ Em computador compartilhado, imprima ou exporte o necessário e use **Limpar pre
 
 | Aula | Tema | Fichas e referências do caderno |
 |---:|---|---|
-| 01 | Boas-vindas ao mundo audiovisual | Fluxo de produção; consentimento; glossário |
-| 02 | Planos, enquadramentos e montagem | Glossário; lista de planos |
+| 01 | Boas-vindas ao mundo audiovisual | Ficha guiada da Aula 01; fluxo de produção; consentimento; glossário |
+| 02 | Planos, enquadramentos e montagem | Entrega só em arquivo; glossário |
 | 03 | Etapas da produção audiovisual | Fluxo de produção; mapa de papéis e rodízio |
 | 04 | Roteiro e storyboard na prática | Roteiro de 1 minuto; storyboard |
 | 05 | Direito de imagem, ética e normas | Verificação de consentimento |
