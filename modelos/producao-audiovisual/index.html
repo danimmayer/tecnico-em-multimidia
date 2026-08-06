@@ -49,6 +49,7 @@
           <nav>
             <ol>
               <li><a href="#uso">Como usar</a></li>
+              <li><a href="#leitura-aula-01">Ficha da Aula 01</a></li>
               <li><a href="#fluxo">Fluxo de produção</a></li>
               <li><a href="#software">Percurso de edição</a></li>
               <li><a href="#consentimento">Consentimento e imagem</a></li>
@@ -79,6 +80,7 @@
               <span>Conteúdo para imprimir</span>
               <select data-print-mode>
                 <option value="caderno">Fichas de produção</option>
+                <option value="aula-01">Ficha guiada · Aula 01</option>
                 <option value="prova-a">Prova A · Aula 18</option>
                 <option value="prova-b">Prova B · Aula 23</option>
                 <option value="gabaritos">Gabaritos A e B</option>
@@ -147,6 +149,182 @@
                 <h3>Conferir depois</h3>
                 <p>Cópia de segurança (backup), revisão e exportação fecham o trabalho antes da mostra.</p>
               </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter sheet lesson-starter" id="leitura-aula-01" aria-labelledby="titulo-leitura-aula-01">
+          <div class="chapter__number" aria-hidden="true">A1</div>
+          <div class="chapter__body">
+            <p class="section-kicker">Primeira noite · ficha guiada da dupla</p>
+            <h2 id="titulo-leitura-aula-01">Ver, comparar e gravar</h2>
+            <p class="section-summary">
+              Responda com frases curtas, mas sempre mostre a evidência. Em vez de escrever
+              apenas “é legal” ou “é ruim”, use a estrutura:
+              <strong>“Percebi ___ porque no trecho ___.”</strong>
+            </p>
+
+            <div class="form-grid form-grid--3">
+              <label class="field">
+                <span>Dupla ou código da equipe</span>
+                <input type="text" name="aula01-equipe" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Turma</span>
+                <input type="text" name="aula01-turma" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Data</span>
+                <input type="date" name="aula01-data">
+              </label>
+            </div>
+
+            <div class="example">
+              <p class="example__label">Resposta-modelo</p>
+              <p>
+                <strong>
+                  “Percebi tensão porque o som fica mais intenso e os planos ficam mais
+                  curtos quando a personagem se aproxima da porta.”
+                </strong>
+              </p>
+            </div>
+
+            <p class="section-kicker">Parte 1 · leitura de um trecho</p>
+            <div class="form-grid form-grid--2">
+              <label class="field">
+                <span>Trecho escolhido</span>
+                <select name="aula01-trecho">
+                  <option value="">Selecione</option>
+                  <option>Longa-metragem</option>
+                  <option>Curta-metragem</option>
+                  <option>Vídeo de canal de internet</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Público provável</span>
+                <input type="text" name="aula01-publico" autocomplete="off">
+              </label>
+              <label class="field field--wide">
+                <span>O que o trecho quer comunicar ou provocar?</span>
+                <textarea name="aula01-intencao" rows="2"></textarea>
+              </label>
+              <label class="field">
+                <span>Escolha de imagem + evidência</span>
+                <textarea name="aula01-imagem" rows="3" placeholder="Ex.: enquadramento fechado no rosto durante..."></textarea>
+              </label>
+              <label class="field">
+                <span>Escolha de som + evidência</span>
+                <textarea name="aula01-som" rows="3" placeholder="Ex.: o ambiente fica silencioso quando..."></textarea>
+              </label>
+              <label class="field">
+                <span>Ritmo + evidência</span>
+                <textarea name="aula01-ritmo" rows="3" placeholder="Lento, regular ou acelerado? Onde isso aparece?"></textarea>
+              </label>
+              <label class="field">
+                <span>Conclusão com escolha, evidência e efeito</span>
+                <textarea name="aula01-conclusao" rows="3" placeholder="Percebi ___ porque no trecho ___."></textarea>
+              </label>
+            </div>
+
+            <p class="section-kicker">Parte 2 · mesmo conteúdo, telas diferentes</p>
+            <div class="table-wrap">
+              <table class="form-table">
+                <caption>Compare somente o que pode ser observado nas versões A e B</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Item</th>
+                    <th scope="col">Versão A</th>
+                    <th scope="col">Versão B</th>
+                    <th scope="col">Por que a plataforma pode ter motivado a mudança?</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Proporção e enquadramento</th>
+                    <td><textarea name="aula01-comp-a-formato" aria-label="Versão A: proporção e enquadramento"></textarea></td>
+                    <td><textarea name="aula01-comp-b-formato" aria-label="Versão B: proporção e enquadramento"></textarea></td>
+                    <td><textarea name="aula01-comp-motivo-formato" aria-label="Motivo da mudança de proporção e enquadramento"></textarea></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Duração e ritmo</th>
+                    <td><textarea name="aula01-comp-a-ritmo" aria-label="Versão A: duração e ritmo"></textarea></td>
+                    <td><textarea name="aula01-comp-b-ritmo" aria-label="Versão B: duração e ritmo"></textarea></td>
+                    <td><textarea name="aula01-comp-motivo-ritmo" aria-label="Motivo da mudança de duração e ritmo"></textarea></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Texto e som</th>
+                    <td><textarea name="aula01-comp-a-texto" aria-label="Versão A: texto e som"></textarea></td>
+                    <td><textarea name="aula01-comp-b-texto" aria-label="Versão B: texto e som"></textarea></td>
+                    <td><textarea name="aula01-comp-motivo-texto" aria-label="Motivo da mudança de texto e som"></textarea></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p class="section-kicker">Parte 3 · plano rápido do primeiro vídeo</p>
+            <div class="form-grid form-grid--3">
+              <label class="field">
+                <span>Onde seria exibido?</span>
+                <select name="aula01-plataforma">
+                  <option value="">Selecione</option>
+                  <option>Cinema ou projeção</option>
+                  <option>TV</option>
+                  <option>Internet horizontal</option>
+                  <option>Internet vertical</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Público</span>
+                <input type="text" name="aula01-plano-publico" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>O que queremos comunicar?</span>
+                <input type="text" name="aula01-plano-intencao" autocomplete="off">
+              </label>
+              <label class="field field--wide">
+                <span>Começo, ação e fim em uma frase</span>
+                <textarea name="aula01-plano-acao" rows="2"></textarea>
+              </label>
+              <label class="field">
+                <span>Câmera</span>
+                <input type="text" name="aula01-papel-camera" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Quem organiza ou faz a ação?</span>
+                <input type="text" name="aula01-papel-direcao" autocomplete="off">
+              </label>
+              <label class="field">
+                <span>Quem pode aparecer?</span>
+                <select name="aula01-consentimento">
+                  <option value="">Selecione</option>
+                  <option>Integrantes que aceitaram aparecer</option>
+                  <option>Somente mãos sem identificação</option>
+                  <option>Somente objeto ou espaço</option>
+                  <option>Ação fora de quadro</option>
+                </select>
+              </label>
+              <label class="field field--wide">
+                <span>Nome do arquivo</span>
+                <input type="text" name="aula01-arquivo" value="PA_A01_EQ##_FORMATO_01.mp4" autocomplete="off">
+              </label>
+            </div>
+
+            <fieldset class="checklist checklist--compact">
+              <legend>Conferência antes de entregar</legend>
+              <label><input type="checkbox" name="aula01-check-1"> O vídeo tem até 15 segundos.</label>
+              <label><input type="checkbox" name="aula01-check-2"> O começo, a ação e o fim são compreensíveis.</label>
+              <label><input type="checkbox" name="aula01-check-3"> A imagem está estável e o som foi ouvido.</label>
+              <label><input type="checkbox" name="aula01-check-4"> Ninguém aparece sem concordar.</label>
+              <label><input type="checkbox" name="aula01-check-5"> O arquivo abre e tem o nome correto.</label>
+              <label><input type="checkbox" name="aula01-check-6"> O arquivo está na pasta indicada.</label>
+            </fieldset>
+
+            <div class="note note--ink">
+              <strong>Terminou antes?</strong>
+              <p>
+                Permaneça no lugar e desenhe no papel uma segunda versão para outra tela.
+                Mude enquadramento ou ritmo e explique duas escolhas. Não comece outra gravação.
+              </p>
             </div>
           </div>
         </section>

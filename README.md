@@ -105,17 +105,14 @@ sequência, evidências e alternativas.
 O PDF das novas UCs preserva apenas o material projetável. As anotações privadas
 não são impressas.
 
-### Laboratório de Design Web sem login
+### Laboratório visual de Design Web
 
-O painel e o caderno de preparação de Design Web reúnem cinco caminhos para a
-aula:
-
-- **DontPad BR** para distribuir avisos, links e trechos de código em tempo real,
-  usando leitura pública e PIN de edição;
-- **LiveCodes** para editar HTML, CSS e JavaScript com o resultado ao lado;
-- **Netlify Drop** para publicar a pasta ou o ZIP sem cadastro;
-- **Photopea** para editar peças visuais no navegador sem conta;
-- **projeto inicial local** como entrega oficial e alternativa sem internet.
+O painel e o caderno de preparação de Design Web priorizam referências,
+composição gráfica, prototipação, mídias sociais, testes e apresentação. A turma
+usa o **Photopea** sem login ou software de design instalado e mantém arquivos
+locais como evidência. Um modelo pronto permite ao professor demonstrar
+estrutura, responsividade, interação e publicação sem exigir programação dos
+estudantes.
 
 Nenhum desses canais recebe dados pessoais, senhas, chaves ou avaliações. A
 rotina completa está em `GUIA_RAPIDO_DESIGN_WEB_E_AUDIOVISUAL.md`.

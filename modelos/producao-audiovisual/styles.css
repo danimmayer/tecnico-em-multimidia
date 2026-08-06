@@ -394,6 +394,22 @@ h2 {
   line-height: 0.95;
 }
 
+.lesson-starter h2 {
+  font-size: clamp(2.1rem, 4.5vw, 3.8rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1;
+}
+
+.lesson-starter .chapter__number {
+  font-weight: 700;
+}
+
+.lesson-starter .section-kicker {
+  font-weight: 600;
+  letter-spacing: 0.075em;
+}
+
 h3 {
   margin: 0 0 0.35rem;
   line-height: 1.15;
@@ -1980,10 +1996,12 @@ td textarea {
   body[data-print-mode="prova-a"] .masthead,
   body[data-print-mode="prova-b"] .masthead,
   body[data-print-mode="gabaritos"] .masthead,
-  body[data-print-mode="recuperacao"] .masthead {
+  body[data-print-mode="recuperacao"] .masthead,
+  body[data-print-mode="aula-01"] .masthead {
     display: none !important;
   }
 
+  body[data-print-mode="aula-01"] main > :not(#leitura-aula-01),
   body[data-print-mode="prova-a"] main > :not(#prova-a),
   body[data-print-mode="prova-b"] main > :not(#prova-b),
   body[data-print-mode="gabaritos"] main > :not(#gabarito-a):not(#gabarito-b),
@@ -1991,6 +2009,7 @@ td textarea {
     display: none !important;
   }
 
+  body[data-print-mode="aula-01"] #leitura-aula-01,
   body[data-print-mode="prova-a"] #prova-a,
   body[data-print-mode="prova-b"] #prova-b,
   body[data-print-mode="gabaritos"] #gabarito-a,

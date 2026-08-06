@@ -21,13 +21,18 @@
       ${items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}
     </ul>`;
 
+  const timeToMinutes = (value) => {
+    const [hours, minutes] = String(value).trim().split(':').map(Number);
+    return hours * 60 + minutes;
+  };
+
+  const timeRange = (range) => String(range)
+    .split(/\s*[-–—]\s*/)
+    .map((value) => value.trim());
+
   const minutesBetween = (range) => {
-    const [start, end] = range.split('-').map((value) => value.trim());
-    const toMinutes = (value) => {
-      const [hours, minutes] = value.split(':').map(Number);
-      return hours * 60 + minutes;
-    };
-    return Math.max(1, toMinutes(end) - toMinutes(start));
+    const [start, end] = timeRange(range);
+    return Math.max(1, timeToMinutes(end) - timeToMinutes(start));
   };
 
   const firstPersonVerbs = {
@@ -327,14 +332,59 @@
         <p class="teacher-note">${escapeHtml(rescue)}</p>` : ''}
     </aside>`;
 
-  const slide = ({ title, main, teacher }) => ({
+  const slide = ({ title, main, teacher, block = 1, className = '' }) => ({
     title,
     html: `
-      <section class="kit-slide" data-title="${escapeHtml(title)}" aria-label="${escapeHtml(title)}">
+      <section class="kit-slide${className ? ` ${escapeHtml(className)}` : ''}" data-title="${escapeHtml(title)}" data-block="${block}" aria-label="${escapeHtml(title)}">
         <div class="kit-slide-main">${main}</div>
         ${teacherPanel(teacher)}
       </section>`
   });
+
+  const presentationSlide = (item, index) => {
+    const cards = Array.isArray(item.cards) ? item.cards : [];
+    const bullets = Array.isArray(item.bullets) ? item.bullets : [];
+    const teacher = item.teacher && typeof item.teacher === 'object' ? item.teacher : {};
+    const resource = item.resource && typeof item.resource === 'object' ? item.resource : {};
+    const block = Number.isFinite(Number(item.block)) ? Math.max(1, Number(item.block)) : 1;
+    const title = item.title || item.heading || `Conteúdo ${index + 1}`;
+    const denseCards = item.layout === 'dense-cards';
+
+    return slide({
+      title,
+      block,
+      className: denseCards ? 'is-dense-cards' : '',
+      main: `
+        ${item.kicker ? `<p class="slide-kicker">${escapeHtml(item.kicker)}</p>` : ''}
+        <h2>${escapeHtml(item.heading || title)}</h2>
+        ${item.lede ? `<p class="slide-lede">${escapeHtml(item.lede)}</p>` : ''}
+        ${cards.length ? `
+          <div class="presentation-card-grid${denseCards ? ' is-dense' : ''}">
+            ${cards.map((card) => `
+              <article class="content-card presentation-card">
+                ${card.eyebrow ? `<span class="card-index">${escapeHtml(card.eyebrow)}</span>` : ''}
+                ${card.title ? `<strong>${escapeHtml(card.title)}</strong>` : ''}
+                ${card.text ? `<p>${escapeHtml(card.text)}</p>` : ''}
+              </article>`).join('')}
+          </div>` : ''}
+        ${bullets.length ? listHtml(bullets, 'presentation-bullets') : ''}
+        ${item.prompt ? `
+          <aside class="presentation-prompt">
+            <span class="card-index">${escapeHtml(item.promptLabel || 'Pergunta para a turma')}</span>
+            <strong>${escapeHtml(item.prompt)}</strong>
+          </aside>` : ''}
+        ${resource.href ? `
+          <a class="student-resource-link" href="${escapeHtml(resource.href)}" target="_blank" rel="noopener">
+            ${escapeHtml(resource.label || 'Abrir material da aula')} →
+          </a>` : ''}`,
+      teacher: {
+        speech: teacher.speech || '',
+        steps: Array.isArray(teacher.steps) ? teacher.steps : [],
+        watch: teacher.watch || '',
+        rescue: teacher.rescue || ''
+      }
+    });
+  };
 
   const phaseSupport = Object.values(courseSupport.courseTips.phases || {})
     .find((phase) => phase.lessons && phase.lessons.includes(lesson.num));
@@ -361,6 +411,7 @@
 
   slides.push(slide({
     title: `Aula ${lesson.num} · ${lesson.title}`,
+    block: 1,
     main: `
       <p class="slide-kicker">${escapeHtml(course.title)} · Aula ${lesson.num}</p>
       <h1>${escapeHtml(lesson.title)}</h1>
@@ -383,8 +434,17 @@
     }
   }));
 
+  const presentationSlides = Array.isArray(support.presentationSlides)
+    ? support.presentationSlides.filter((item) => item && typeof item === 'object')
+    : [];
+
+  if (presentationSlides.length) {
+    presentationSlides.forEach((item, index) => slides.push(presentationSlide(item, index)));
+  } else {
+
   slides.push(slide({
     title: 'Mapa da noite',
+    block: 1,
     main: `
       <p class="slide-kicker">Ritmo da aula</p>
       <h2>Quatro blocos, um produto</h2>
@@ -405,6 +465,7 @@
 
   slides.push(slide({
     title: 'Objetivo da aula',
+    block: 1,
     main: `
       <p class="slide-kicker">Conceito central</p>
       <h2>Objetivo da aula</h2>
@@ -433,6 +494,41 @@
     }
   }));
 
+  if (support.studentSheet) {
+    const sheetSections = support.studentSheet.sections || [];
+    slides.push(slide({
+      title: support.studentSheet.title || 'Ficha da aula',
+      block: 1,
+      main: `
+        <p class="slide-kicker">Material da dupla</p>
+        <h2 class="student-sheet-title">${escapeHtml(support.studentSheet.title || 'Ficha da aula')}</h2>
+        <p class="slide-lede">${escapeHtml(support.studentSheet.intro || 'Siga os campos na ordem e registre evidências observáveis.')}</p>
+        <div class="student-sheet-grid">
+          ${sheetSections.map((section) => `
+            <section class="student-sheet-section">
+              <span class="card-index">${escapeHtml(section.title)}</span>
+              ${listHtml(section.items || [], 'student-sheet-list')}
+            </section>`).join('')}
+        </div>
+        ${support.studentSheet.href ? `
+          <a class="student-resource-link" href="${escapeHtml(support.studentSheet.href)}" target="_blank" rel="noopener">
+            ${escapeHtml(support.studentSheet.linkLabel || 'Abrir material preenchível')} →
+          </a>` : ''}
+        ${support.extension ? `
+          <p class="extension-callout"><strong>Terminou antes?</strong> ${escapeHtml(support.extension)}</p>` : ''}`,
+      teacher: {
+        steps: [
+          'Entrego ou abro uma ficha por dupla.',
+          'Preencho o primeiro item no projetor sem completar a atividade pela turma.',
+          'Aponto onde ficará o arquivo ou a folha ao fim da aula.',
+          'Confirmo que respostas curtas precisam trazer evidência.'
+        ],
+        watch: 'A dupla sabe qual trecho analisa, o que deve registrar e onde entregará o arquivo.',
+        rescue: ownVoice(support.fallback)
+      }
+    }));
+  }
+
   lesson.schedule.forEach((block, index) => {
     const duration = minutesBetween(block.horario);
     const introMinutes = duration <= 40 ? 5 : 10;
@@ -443,10 +539,13 @@
     const activity = activityVoice(block.atividade);
     const mode = modeForBlock(activity, blockPlan.mode);
     const modeDetails = blockModes[mode];
+    const blockLabel = blockPlan.label || modeDetails.label;
+    const studentSteps = Array.isArray(blockPlan.studentSteps) ? blockPlan.studentSteps : [];
+    const blockExtension = blockPlan.extension || '';
     const action = blockPlan.action
       || ownVoice(support.demo[index] || 'Retomo o procedimento previsto no roteiro e acompanho a primeira execução.');
     const evidence = blockPlan.evidence || modeDetails.evidence;
-    const objective = coreObjectives[index] || coreObjectives[0] || support.teacherGoal;
+    const objective = blockPlan.focus || coreObjectives[index] || coreObjectives[0] || support.teacherGoal;
     let sequence;
     if (mode === 'assessment') {
       sequence = [
@@ -482,16 +581,25 @@
         `${closeMinutes} min · Interrompo, salvamos o registro e confiro uma evidência.`
       ];
     }
+    if (Array.isArray(blockPlan.teacherSteps) && blockPlan.teacherSteps.length) {
+      sequence = blockPlan.teacherSteps.map(ownVoice);
+    }
 
     slides.push(slide({
       title: `Bloco ${index + 1} · ${block.horario}`,
+      block: index + 1,
       main: `
         <p class="slide-kicker">Bloco ${index + 1} · ${escapeHtml(block.horario)}</p>
-        <h2>${escapeHtml(modeDetails.label)}</h2>
+        <h2${blockPlan.label ? ' class="block-title"' : ''}>${escapeHtml(blockLabel)}</h2>
         <div class="block-focus">
           <div class="block-time">${duration} min</div>
-          <p class="block-activity">${escapeHtml(activity)}</p>
+          <p class="block-activity${studentSteps.length ? ' is-compact' : ''}">${escapeHtml(activity)}</p>
         </div>
+        ${studentSteps.length ? `
+          <div class="block-directions">
+            <span class="card-index">Faça nesta ordem</span>
+            ${listHtml(studentSteps, 'block-step-list')}
+          </div>` : ''}
         <div class="cards-2">
           <article class="content-card">
             <span class="card-index">Foco do bloco</span>
@@ -503,7 +611,9 @@
             <strong>${escapeHtml(evidence)}</strong>
             <p>O registro compõe a entrega prevista para a aula.</p>
           </article>
-        </div>`,
+        </div>
+        ${blockExtension ? `
+          <p class="extension-callout"><strong>Se sobrar tempo:</strong> ${escapeHtml(blockExtension)}</p>` : ''}`,
       teacher: {
         steps: sequence,
         watch: blockPlan.evidence || support.check[index] || evidence,
@@ -514,6 +624,7 @@
 
   slides.push(slide({
     title: 'Procedimento em etapas',
+    block: lesson.schedule.length,
     main: `
       <p class="slide-kicker">Demonstração</p>
       <h2>Procedimento em etapas</h2>
@@ -533,6 +644,7 @@
   if (support.code && support.code.length) {
     slides.push(slide({
       title: 'Exemplo de código',
+      block: lesson.schedule.length,
       main: `
         <p class="slide-kicker">Design Web · referência da aula</p>
         <h2>Exemplo de código</h2>
@@ -559,15 +671,21 @@
     }));
   }
 
+  const review = support.review || {};
+  const reviewTitle = review.title || 'Entrega e critérios de avaliação';
   slides.push(slide({
-    title: 'Entrega e critérios de avaliação',
+    title: reviewTitle,
+    block: lesson.schedule.length,
     main: `
-      <p class="slide-kicker">Como saber se funcionou</p>
-      <h2>Entrega e critérios de avaliação</h2>
-      <p class="slide-lede"><strong>${escapeHtml(support.studentDeliverable)}</strong></p>
-      ${listHtml(support.check, 'check-list')}`,
+      <p class="slide-kicker">${escapeHtml(review.kicker || 'Como saber se funcionou')}</p>
+      <h2${review.title ? ' class="review-title"' : ''}>${escapeHtml(reviewTitle)}</h2>
+      ${review.intro ? `<p class="slide-lede">${escapeHtml(review.intro)}</p>` : ''}
+      ${review.title
+        ? `<p class="review-deliverable"><strong>Entrega:</strong> ${escapeHtml(support.studentDeliverable)}</p>`
+        : `<p class="slide-lede"><strong>${escapeHtml(support.studentDeliverable)}</strong></p>`}
+      ${listHtml(support.check, review.title ? 'check-list formative-check-list' : 'check-list')}`,
     teacher: {
-      steps: [
+      steps: review.teacherSteps || [
         'Projeto os critérios antes do fim da atividade.',
         'Reservo uma autoavaliação breve.',
         'Confiro o arquivo, o registro ou a demonstração correspondente.',
@@ -579,8 +697,11 @@
     }
   }));
 
+  }
+
   slides.push(slide({
     title: 'Fechamento da aula',
+    block: lesson.schedule.length,
     main: `
       <p class="slide-kicker">Bilhete de saída</p>
       <h2>O que ficou pronto hoje?</h2>
@@ -644,7 +765,17 @@
           <button class="deck-btn" id="prevBtn" type="button"><span aria-hidden="true">←</span><span class="button-label">Anterior</span></button>
           ${previousLesson ? `<a class="deck-btn" href="aula-kit.html?uc=${encodeURIComponent(courseSlug)}&aula=${previousLesson.num}" title="Aula anterior">Aula ${previousLesson.num}</a>` : ''}
         </div>
-        <div class="deck-counter" id="deckCounter" aria-live="polite"></div>
+        <div class="deck-center">
+          <span
+            class="course-pace-dot is-ok"
+            id="coursePaceDot"
+            role="status"
+            aria-live="polite"
+            aria-label="Ritmo da aula: No ritmo"
+            title="No ritmo"
+          ></span>
+          <div class="deck-counter" id="deckCounter" aria-live="polite"></div>
+        </div>
         <div class="deck-actions">
           ${nextLesson ? `<a class="deck-btn" href="aula-kit.html?uc=${encodeURIComponent(courseSlug)}&aula=${nextLesson.num}" title="Próxima aula">Aula ${nextLesson.num}</a>` : ''}
           <button class="deck-btn" id="nextBtn" type="button"><span class="button-label">Próximo</span><span aria-hidden="true">→</span></button>
@@ -674,10 +805,87 @@
   const prevButton = document.getElementById('prevBtn');
   const nextButton = document.getElementById('nextBtn');
   const modeButton = document.getElementById('modeBtn');
+  const paceDot = document.getElementById('coursePaceDot');
   const toast = document.getElementById('toast');
+  const scheduleWindows = lesson.schedule.map((block, index) => {
+    const [start, end] = timeRange(block.horario);
+    return {
+      number: index + 1,
+      label: `Bloco ${index + 1}`,
+      start: timeToMinutes(start),
+      end: timeToMinutes(end)
+    };
+  });
   let currentIndex = 0;
   let toastTimer;
   let overviewTrigger = null;
+
+  function currentScheduleWindow(now = new Date()) {
+    const minutes = now.getHours() * 60 + now.getMinutes() + now.getSeconds() / 60;
+    const active = scheduleWindows.find((block) => minutes >= block.start && minutes < block.end);
+    if (active) {
+      return {
+        block: active,
+        progress: (minutes - active.start) / (active.end - active.start),
+        status: 'active'
+      };
+    }
+    if (minutes < scheduleWindows[0].start) {
+      return { block: scheduleWindows[0], progress: 0, status: 'before' };
+    }
+    for (let index = 0; index < scheduleWindows.length - 1; index += 1) {
+      const current = scheduleWindows[index];
+      const next = scheduleWindows[index + 1];
+      if (minutes >= current.end && minutes < next.start) {
+        return {
+          block: next,
+          progress: (minutes - current.end) / Math.max(1, next.start - current.end),
+          status: 'break'
+        };
+      }
+    }
+    return {
+      block: scheduleWindows.at(-1),
+      progress: 1,
+      status: 'after'
+    };
+  }
+
+  function paceHealth() {
+    const activeSlide = slideElements[currentIndex];
+    const slideBlock = Number(activeSlide?.dataset.block || 0);
+    const expected = currentScheduleWindow();
+    if (!slideBlock || !expected) return { level: 'ok', message: 'No ritmo' };
+    if (expected.block.number < slideBlock) {
+      return { level: 'warn', message: `Adiantado · slide é do Bloco ${slideBlock}` };
+    }
+    if (expected.block.number > slideBlock) {
+      return { level: 'err', message: `Atrasado · slide é do Bloco ${slideBlock}` };
+    }
+
+    const slidesInBlock = slideElements.filter((element) => Number(element.dataset.block) === slideBlock);
+    if (slidesInBlock.length <= 1) return { level: 'ok', message: 'No ritmo' };
+    const position = slidesInBlock.indexOf(activeSlide);
+    const expectedProgress = (position + 1) / slidesInBlock.length;
+    const delta = expectedProgress - expected.progress;
+    if (delta > 0.25) {
+      return { level: 'warn', message: 'Adiantado no bloco · há tempo para aprofundar' };
+    }
+    if (delta < -0.25) {
+      return { level: 'warn', message: 'Atrasado no bloco · priorize o essencial' };
+    }
+    return { level: 'ok', message: 'No ritmo' };
+  }
+
+  function renderPace() {
+    if (!paceDot) return;
+    const health = paceHealth();
+    paceDot.classList.remove('is-ok', 'is-warn', 'is-err');
+    paceDot.classList.add(`is-${health.level}`);
+    paceDot.title = health.message;
+    paceDot.setAttribute('aria-label', `Ritmo da aula: ${health.message}`);
+    paceDot.dataset.state = health.level;
+  }
 
   function showToast(message) {
     toast.textContent = message;
@@ -700,6 +908,7 @@
     prevButton.disabled = currentIndex === 0;
     nextButton.disabled = currentIndex === slideElements.length - 1;
     document.title = `${slides[currentIndex].title} · ${course.title}`;
+    renderPace();
   }
 
   function goTo(index) {
@@ -862,4 +1071,5 @@
   });
 
   renderCurrent();
+  window.setInterval(renderPace, 1000);
 })();
