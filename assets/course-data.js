@@ -1175,7 +1175,7 @@ window.SENAI_COURSES = {
       {
         "num": "03",
         "title": "Etapas da produção audiovisual",
-        "description": "Mapeamento das etapas de pré-produção, produção e pós-produção e dos procedimentos dos gêneros curta-metragem, comercial e documentário, com montagem de cronograma de produção em grupos.",
+        "description": "Noite prática de planejamento: organizar pré-produção, produção e pós-produção, adaptar uma ideia aos gêneros curta-metragem, comercial e documentário e entregar um cronograma digital viável de um vídeo de 1 minuto.",
         "objectives": [
           "Ferramentas para gestão eficaz do tempo: planejamento, cronogramas.",
           "Linguagem audiovisual: fundamentos de imagem e vídeo digital aplicados aos gêneros curta metragem, comercial e documentário."
@@ -1191,25 +1191,25 @@ window.SENAI_COURSES = {
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Revisão da aula 2 (planos, enquadramentos e montagem). Desafio de abertura: quanto tempo e quantas pessoas são necessárias para produzir 1 minuto de vídeo profissional? Levantamento de hipóteses da turma registrado no quadro para conferência no fim da noite."
+            "horario": "19:00 - 19:45",
+            "atividade": "Abertura, demonstração curta das três etapas e prática digital \"Fluxo embaralhado\": em equipes de 3 a 4, classificar 15 tarefas em pré-produção, produção ou pós-produção, ordenar dependências e justificar duas decisões na planilha da Aula 03."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "Pré-produção, produção e pós-produção: montar no quadro o mapa das etapas e entregas de cada fase (roteiro, storyboard, ordem do dia, gravação, decupagem, corte, finalização e exportação), a partir de exemplos que a turma já conhece."
+            "horario": "20:05 - 20:32",
+            "atividade": "Prática digital \"Uma ideia, três gêneros\": adaptar o vídeo de 1 minuto \"um objeto esquecido muda de dono\" para curta-metragem, comercial e documentário, registrando finalidade, decisão de imagem e som, necessidade de produção e diferença principal."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "Procedimentos e estilos dos três gêneros da UC: curta-metragem, comercial e documentário. Análise comparativa no projetor de um exemplo de cada gênero, observando equipe envolvida, duração, linguagem e finalidade de cada produção."
+            "horario": "20:32 - 21:25",
+            "atividade": "Prática digital \"Cronograma possível\": escolher um dos três gêneros e preencher as primeiras etapas do cronograma do vídeo de 1 minuto, com tarefa, fase, responsável, duração, dependência e evidência de conclusão."
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "Prática em grupos de 3 a 4 \"Cronograma de 1 minuto\": montar o cronograma de produção de um vídeo de 1 minuto, distribuindo etapas, responsáveis e prazos em planilha ou ferramenta de organização nos computadores; socialização dos cronogramas e comparação com as hipóteses do início da noite."
+            "horario": "21:25 - 22:07",
+            "atividade": "Finalização do cronograma com 10 tarefas e pelo menos duas dependências; auditoria cruzada entre equipes; correção; conferência do painel de conclusão; salvamento como PA_A03_EQ##_CRONOGRAMA.xlsx na pasta AULA_03_ENTREGAS até 22:02; bilhete de saída e encerramento às 22:07."
           }
         ],
-        "methodology": "Construção coletiva de conceitos com análise comparativa de gêneros e prática de planejamento em grupos.",
-        "resources": "Projetor, quadro e computadores do laboratório para pesquisa e montagem dos cronogramas.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "Demonstrações de até 8 minutos e três práticas progressivas na mesma planilha digital, com instrução completa no slide, auditoria entre equipes e entrega no fim da noite.",
+        "resources": "Projetor, computadores do laboratório, planilha digital PA_A03_MODELO_CRONOGRAMA.xlsx e pasta compartilhada AULA_03_ENTREGAS. Não há material para imprimir.",
+        "observation": "Aula das 19:00 às 22:07. Lanche fixo das 19:45 às 20:05. Cada atividade permanece inteira em um único slide; não avance enquanto a turma estiver executando. Chamada apenas na abertura e na retomada após o lanche."
       },
       {
         "num": "04",
