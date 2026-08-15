@@ -31,7 +31,7 @@ const revisedLessons = {
   },
   '03': {
     title: 'Anatomia Visual de uma Página',
-    description: 'Desconstrução visual e lúdica de páginas para reconhecer estrutura, conteúdo e hierarquia sem escrever código.',
+    description: 'Reconhecimento simples da estrutura visual de uma página e criação individual de uma nova página de tema livre, sem escrever código.',
     objectives: ['Criação de código de texto: estrutura do documento, elementos, editores e navegadores.'],
     technical: [
       'Aplicar linguagem html (hypertext markup language) para desenvolvimento de design web.',
@@ -39,13 +39,15 @@ const revisedLessons = {
     ],
     socio: ['Aplicar os princípios de organização no seu posto trabalho.'],
     blocks: [
-      'Revisão da Aula 02. Demonstração curta no projetor: uma página pronta é comparada com sua representação técnica. A turma identifica, apenas visualmente, cabeçalho, navegação, conteúdo principal, imagem, botão e rodapé.',
-      'Dinâmica "Página em cartões": grupos recebem cartões impressos com título, texto, imagem, link, botão e seções. A missão é organizar uma página coerente e explicar o que deve aparecer primeiro, sem computador.',
-      'Oficina de hierarquia: o mesmo conjunto de conteúdo é montado em três composições numa ferramenta visual ou em papel. Cada grupo escolhe a versão mais clara para celular e marca título principal, blocos e ação desejada.',
-      'Entrega da noite: captura ou folha anotada "Raio-X da página", com seis partes identificadas e uma justificativa de hierarquia. Galeria rápida e votação da solução mais fácil de entender.'
+      'Retomar a página Mostra Criativa feita na Aula 01, no caderno ou em ferramenta visual. Em um exemplo projetado, localizar título, informações e botão e relacionar essas partes à estrutura simples de uma página. Em seguida, cada aluno escolhe livremente o tema de uma nova página individual.',
+      'Cada aluno escolhe Excalidraw, diagrams.net ou LibreOffice Draw/Impress e cria uma nova página com o tema que escolheu. Monta título, frase curta, duas ou três informações e um botão.',
+      'Melhorar somente três pontos da nova página: título visto primeiro, informações importantes juntas e botão fácil de encontrar. Sem adicionar outras páginas ou pesquisar imagens.',
+      'Até 21:55, outro aluno observa a página por cinco segundos e responde sobre o que ela é, qual informação aparece primeiro e onde clicaria; depois há ajuste e salvamento individuais. Das 21:55 às 22:07, a turma faz uma síntese rápida das melhorias.'
     ],
-    methodology: 'Demonstração de até 15 minutos, manipulação de cartões, composição visual em grupos e galeria comentada.',
-    resources: 'Páginas de referência preparadas, cartões impressos, papel A3, canetas, projetor e ferramenta visual disponível no laboratório.'
+    times: ['19:00 - 19:45', '20:05 - 20:35', '20:35 - 21:25', '21:25 - 22:07'],
+    methodology: 'Retomada de exemplo projetado, reconhecimento simples da estrutura, produção individual com tema livre, melhoria orientada de três pontos e teste rápido por um colega.',
+    resources: 'Computadores, projetor e uma ferramenta gratuita à escolha: Excalidraw, diagrams.net ou LibreOffice Draw/Impress. Caderno e caneta são o plano B sem internet. Sem impressão e sem pesquisa de imagens.',
+    observation: 'A Aula 02 não aconteceu porque o encontro foi cedido para outra atividade. Esta Aula 03 usa a página Mostra Criativa da Aula 01 como exemplo, mas a nova página tem tema livre. Aula planejada de 19:00 a 22:07, com lanche de 19:45 a 20:05 e chamada no início dos quatro blocos: 19:00, 20:05, 20:35 e 21:25.'
   },
   '04': {
     title: 'Conteúdo, Links e Caminhos',
@@ -57,7 +59,7 @@ const revisedLessons = {
       'Reconhecer a importância da gestão do tempo como fator de impacto na qualidade dos serviços executados.'
     ],
     blocks: [
-      'Retomada do Raio-X da Aula 03. Jogo "Para onde isso leva?": a turma associa rótulos de menu e botões a destinos possíveis e identifica nomes vagos, enganosos ou repetidos.',
+      'Retomada da página individual criada na Aula 03. Jogo "Para onde isso leva?": a turma associa os botões dessas páginas a destinos possíveis e identifica nomes vagos, enganosos ou repetidos.',
       'Mapa de navegação com barbante e cartões: em grupos, organizar início, serviços, galeria, sobre e contato; ligar os caminhos e testar se uma pessoa chega ao objetivo em até três passos.',
       'Oficina de microtexto: escrever títulos, chamadas e botões claros para um negócio fictício. Comparar "clique aqui" com ações específicas como "ver cardápio" e "reservar horário".',
       'Montagem visual de três telas conectadas — início, detalhe e contato — em papel ou ferramenta visual. Cada equipe registra o cronograma de melhoria e testa o caminho com outra equipe.'
@@ -332,9 +334,10 @@ function renderLesson(number, lesson) {
   const rows = Array.from({ length: objectiveRows }, (_, index) =>
     `| ${lesson.objectives[index] || ''} | ${lesson.technical[index] || ''} | ${lesson.socio[index] || ''} |`
   ).join('\n');
+  const defaultTimes = ['19:00 - 19:30', '19:30 - 20:30', '20:30 - 21:30', '21:30 - 22:30'];
+  const times = lesson.times || defaultTimes;
   const schedule = lesson.blocks.map((activity, index) => {
-    const times = ['19:00 - 19:30', '19:30 - 20:30', '20:30 - 21:30', '21:30 - 22:30'];
-    return `| ${times[index]} | Chamada. ${activity} |`;
+    return `| ${times[index] || defaultTimes[index]} | Chamada. ${activity} |`;
   }).join('\n');
 
   return `# AULA ${number} - ${lesson.title}
@@ -357,7 +360,7 @@ ${schedule}
 
 **Recursos:** ${lesson.resources}
 
-**Obs.:** ${commonObservation}
+**Obs.:** ${lesson.observation || commonObservation}
 `;
 }
 
@@ -653,6 +656,7 @@ support['design-web'].courseTips = {
 };
 
 for (const [number, lesson] of Object.entries(revisedLessons)) {
+  if (number === '03') continue;
   support['design-web'].lessons[number] = makeSupport(number, lesson);
 }
 

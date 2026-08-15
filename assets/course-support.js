@@ -1434,35 +1434,202 @@ window.SENAI_TEACHING_SUPPORT = {
         ]
       },
       "03": {
-        "teacherGoal": "Conduzir a Aula 03 para que a turma produza desconstrução visual e lúdica de páginas para reconhecer estrutura, conteúdo e hierarquia sem escrever código.",
-        "plainLanguage": "Desconstrução visual e lúdica de páginas para reconhecer estrutura, conteúdo e hierarquia sem escrever código. O foco é decidir, montar, comparar e testar; os bastidores técnicos aparecem apenas quando ajudam a compreender a função de uma interface.",
-        "say": "Hoje o resultado precisa ficar visível. Primeiro eu mostro o exemplo e os critérios; depois vocês produzem em equipe e conferem a entrega antes de sair.",
+        "previousLessonNumber": "01",
+        "appendDefaultClosing": false,
+        "teacherGoal": "Usar um exemplo projetado da página Mostra Criativa da Aula 01 para reconhecer a estrutura visual de uma página e orientar cada aluno a criar, em uma ferramenta gratuita e simples, uma nova página individual de tema livre.",
+        "plainLanguage": "Hoje cada aluno escolhe qualquer tema e cria sozinho uma página simples na ferramenta gratuita que preferir.",
+        "say": "Na Aula 01 vocês fizeram a página da Mostra Criativa no caderno ou em uma ferramenta visual. Hoje vamos rever um exemplo projetado e cada um criará sozinho outra página, agora com tema livre.",
         "demo": [
-          "Demonstração curta no projetor: uma página pronta é comparada com sua representação técnica. A turma identifica, apenas visualmente, cabeçalho, navegação, conteúdo principal, imagem, botão e rodapé.",
-          "Dinâmica \"Página em cartões\": grupos recebem cartões impressos com título, texto, imagem, link, botão e seções. A missão é organizar uma página coerente e explicar o que deve aparecer primeiro, sem computador.",
-          "Oficina de hierarquia: o mesmo conjunto de conteúdo é montado em três composições numa ferramenta visual ou em papel. Cada grupo escolhe a versão mais clara para celular e marca título principal, blocos e ação desejada."
+          "Projete o exemplo pronto da Mostra Criativa incluído nos slides e localize título, informações e botão.",
+          "Relacione visualmente título a cabeçalho, informações a conteúdo e botão a ação; explique que o editor cria e o navegador exibe a página.",
+          "Abra um desenho vazio na ferramenta mais fácil disponível e escolha com a turma um tema diferente.",
+          "Monte somente título, frase curta, duas informações e um botão.",
+          "Mostre que cada aluno pode escolher outro tema mantendo essa mesma estrutura."
         ],
-        "studentDeliverable": "Entrega da noite: captura ou folha anotada \"Raio-X da página\", com seis partes identificadas e uma justificativa de hierarquia. Galeria rápida e votação da solução mais fácil de entender.",
+        "studentDeliverable": "Uma página individual de tema livre, salva com o código informado pelo professor (por exemplo, dw03-07-pagina) no formato original da ferramenta e em PNG.",
         "check": [
-          "A entrega visual corresponde ao objetivo e pode ser aberta ou apresentada sem explicação adicional.",
-          "O grupo justificou pelo menos duas decisões com critérios da aula.",
-          "Arquivos ou folhas estão nomeados e organizados na pasta de entrega.",
-          "A revisão final retirou dados pessoais e confirmou legibilidade."
+          "O aluno escolheu livremente um tema e criou sozinho somente uma página.",
+          "O título aparece primeiro, duas ou três informações importantes estão juntas e o botão é fácil de encontrar.",
+          "Outro aluno entendeu o tema e encontrou o botão em cinco segundos.",
+          "O arquivo usa o código informado pelo professor e está salvo na pasta da turma, sem nome ou outros dados pessoais."
         ],
-        "fallback": "Se a ferramenta ou a internet falhar, realizar a mesma produção em papel A3 com cartões, canetas e a ficha impressa; fotografar ou guardar a folha como evidência.",
+        "fallback": "Se o aluno travar, ofereça um tema simples. Se internet ou programas falharem, cada aluno desenha a mesma página no próprio caderno, sem folha impressa, e faz o teste de cinco segundos com um colega.",
+        "extension": "Criar uma segunda versão mais estreita, como se fosse para celular, mantendo o mesmo conteúdo.",
         "commonProblems": [
           [
-            "A equipe começa sem decidir o objetivo",
-            "Retomar público, mensagem e ação principal antes de escolher aparência."
+            "O aluno não consegue escolher um tema",
+            "Peço que escolha um entre cinco temas simples: jogo, música, esporte, comida ou portfólio."
           ],
           [
-            "A produção fica bonita, mas pouco clara",
-            "Pedir que outro grupo cumpra uma tarefa e registrar onde ele hesita."
+            "O aluno tenta criar várias páginas",
+            "Peço que termine uma única página antes de começar qualquer variação."
           ],
           [
-            "O tempo termina antes do acabamento",
-            "Fechar primeiro a entrega essencial e deixar variações como extensão opcional."
+            "O aluno termina cedo",
+            "Cria uma versão mais estreita, como para celular, e pede que um colega compare."
           ]
+        ],
+        "presentationSlides": [
+          {
+            "title": "Roteiro simples da noite",
+            "block": 1,
+            "kicker": "Retomada direta da Aula 01",
+            "heading": "Mesma ideia da Aula 01, agora com tema livre",
+            "cards": [
+              { "eyebrow": "Aula 01", "title": "Mostra Criativa", "text": "Uma página com título, informações e botão." },
+              { "eyebrow": "Hoje", "title": "Tema livre", "text": "Cada aluno escolhe sobre o que será sua nova página." },
+              { "eyebrow": "Entrega", "title": "Uma página individual", "text": "Cada aluno faz, testa e salva o próprio arquivo." }
+            ],
+            "promptLabel": "Lanche",
+            "prompt": "19:45–20:05. Fechamento da aula: 21:55–22:07.",
+            "teacher": {
+              "speech": "Explico em uma frase: a Aula 02 foi cedida e hoje retomamos diretamente a página feita na Aula 01.",
+              "steps": ["Faço a chamada do Bloco 1 às 19:00.", "Mostro o exemplo preparado da Aula 01.", "Aponto as três melhorias da noite.", "Indico a pasta da turma e os códigos dos arquivos."],
+              "watch": "A turma entende que a Mostra Criativa é apenas o exemplo e que a produção é individual.",
+              "rescue": "Resumo em uma frase: outra página, qualquer tema, título, informações e botão."
+            }
+          },
+          {
+            "title": "Exemplo preparado",
+            "block": 1,
+            "kicker": "19:10–19:25 · estrutura simples",
+            "heading": "Mostra Criativa · sexta-feira · 19h · auditório",
+            "lede": "Confirmar presença",
+            "cards": [
+              { "eyebrow": "Na tela", "title": "Título", "text": "Mostra o assunto principal. Na estrutura da página, funciona como o cabeçalho." },
+              { "eyebrow": "Na tela", "title": "Informações", "text": "Reúnem data, horário e local. Na estrutura, formam o conteúdo principal." },
+              { "eyebrow": "Na tela", "title": "Botão", "text": "Indica a ação esperada. Pode levar a outra parte ou confirmar uma escolha." }
+            ],
+            "promptLabel": "Bastidor em uma frase",
+            "prompt": "O editor é usado para criar; o navegador é usado para exibir e testar a página.",
+            "teacher": {
+              "speech": "Uso este exemplo pronto, sem depender de como a Aula 01 foi realizada. Relaciono cada parte visível à estrutura de uma página, sem ensinar código.",
+              "steps": ["Leio o título.", "Aponto as informações.", "Aponto o botão.", "Digo a função do editor e do navegador."],
+              "watch": "A turma reconhece título, conteúdo e ação e diferencia editor de navegador.",
+              "rescue": "Repito somente: título apresenta, informações explicam e botão indica a ação."
+            }
+          },
+          {
+            "title": "Antes do lanche",
+            "block": 1,
+            "kicker": "19:25–19:45 · escolha individual",
+            "heading": "Escolham o tema da nova página",
+            "bullets": [
+              "O tema é livre: pode ser algo de que você goste.",
+              "Se travarem, escolham: jogo, música, esporte, comida ou portfólio.",
+              "Escrevam um título que deixe o tema claro.",
+              "Escolham duas ou três informações importantes.",
+              "Escolham um botão: Ver mais, Conhecer, Pedir, Jogar ou Entrar em contato."
+            ],
+            "promptLabel": "Retomada da Aula 01",
+            "prompt": "Cada aluno termina esta etapa com um tema, um título, duas informações e o texto do botão.",
+            "teacher": {
+              "speech": "Uso a Mostra Criativa apenas para relembrar a estrutura e libero a escolha individual do novo tema.",
+              "steps": ["Mostro a página da Aula 01.", "Localizo título, informações e botão.", "Dou cinco minutos para cada aluno escolher o novo tema."],
+              "watch": "Cada aluno decide o tema sem começar a pesquisar referências.",
+              "rescue": "Aponto os cinco temas prontos do slide para encerrar rapidamente a escolha."
+            }
+          },
+          {
+            "title": "Lanche",
+            "block": 1,
+            "pace": "break",
+            "kicker": "19:45–20:05 · intervalo",
+            "heading": "Lanche · retorno às 20:05",
+            "lede": "Na volta, cada aluno criará uma nova página com o tema e a ferramenta que escolheu.",
+            "prompt": "Retorno às 20:05 com o tema individual decidido.",
+            "teacher": {
+              "steps": ["Aviso o horário de retorno.", "Retomo pontualmente às 20:05."],
+              "watch": "A turma sabe o tema da página e qual ferramenta gratuita usará.",
+              "rescue": "Na volta, projeto o slide com título, informações e botão."
+            }
+          },
+          {
+            "title": "Atividade principal",
+            "block": 2,
+            "layout": "dense-cards",
+            "kicker": "20:05–20:35 · criação individual",
+            "heading": "Criem uma página com tema livre",
+            "bullets": [
+              "Individualmente, escolha Excalidraw, diagrams.net ou LibreOffice Draw/Impress e crie UMA página sobre qualquer tema.",
+              "Faça: título, frase curta, duas ou três informações e um botão com ação clara.",
+              "Use texto, formas e no máximo duas cores. Não pesquise imagens e não crie outra página.",
+              "Salve com o código informado pelo professor, por exemplo: dw03-07-pagina.",
+              "Ao terminar esta etapa, confira se todos os quatro elementos estão presentes."
+            ],
+            "promptLabel": "Pronto quando",
+            "prompt": "A página tem título, frase curta, duas ou três informações e um botão.",
+            "resources": [
+              { "href": "https://excalidraw.com/", "label": "Excalidraw · mais fácil" },
+              { "href": "https://app.diagrams.net/", "label": "diagrams.net · sem conta" },
+              { "href": "https://www.libreoffice.org/", "label": "LibreOffice · se instalado" }
+            ],
+            "teacher": {
+              "speech": "Mostro a estrutura pronta e libero a produção individual: título, frase, informações e botão.",
+              "steps": ["Faço a chamada do Bloco 2 às 20:05.", "Reabro o exemplo preparado.", "Confirmo um computador por aluno.", "Aviso quando faltarem 15 e 5 minutos."],
+              "watch": "Cada aluno cria somente uma página e inclui os quatro elementos antes de melhorar o visual.",
+              "rescue": "Se o aluno travar, escolho com ele um dos cinco temas e peço que copie a estrutura do meu exemplo."
+            }
+          },
+          {
+            "title": "Três melhorias",
+            "block": 3,
+            "layout": "dense-cards",
+            "kicker": "20:35–21:25 · melhoria individual",
+            "heading": "Melhorem somente estes três pontos",
+            "bullets": [
+              "1. Faça o título ser visto primeiro: aumente o tamanho ou dê mais espaço ao redor.",
+              "2. Mantenha as duas ou três informações importantes juntas e fáceis de ler.",
+              "3. Destaque o botão e use uma ação clara: Ver mais, Conhecer, Pedir, Jogar ou Entrar em contato.",
+              "Não adicione outra página e não pesquise imagens.",
+              "Se terminar, faça uma versão mais estreita, como para celular, com o mesmo conteúdo."
+            ],
+            "promptLabel": "Pronto quando",
+            "prompt": "Alguém entende o tema, vê a informação principal e encontra o botão em cinco segundos.",
+            "teacher": {
+              "speech": "Faço uma melhoria de cada vez no exemplo: aumento o título, junto as informações e destaco o botão.",
+              "steps": ["Faço a chamada do Bloco 3 às 20:35.", "Demonstro as três melhorias.", "Aviso às 20:45 e às 21:10.", "Atendo primeiro quem ainda não concluiu a estrutura."],
+              "watch": "Cada aluno melhora a própria página sem começar outro arquivo.",
+              "rescue": "Peço que escolha apenas uma das três melhorias, aplique e depois passe à seguinte."
+            }
+          },
+          {
+            "title": "Teste e entrega",
+            "block": 4,
+            "layout": "dense-cards",
+            "kicker": "21:25–21:55 · etapa final",
+            "heading": "Testem por cinco segundos e salvem",
+            "bullets": [
+              "Mostre sua página por cinco segundos para um colega, sem explicar nada.",
+              "O colega responde: sobre o que é a página? qual informação aparece primeiro? onde clicaria?",
+              "Se alguma resposta demorar, peça a página de volta e mude apenas UMA coisa para deixá-la clara.",
+              "Confira se o texto do botão diz claramente o que ele faz.",
+              "Salve com o código informado pelo professor no formato original da ferramenta e em PNG; envie para a pasta da turma."
+            ],
+            "promptLabel": "Pronto quando",
+            "prompt": "O arquivo com seu código está na pasta da turma, abre normalmente e não contém dados pessoais.",
+            "teacher": {
+              "speech": "Organizo pares apenas para o teste, mas cada aluno continua responsável pelo próprio arquivo.",
+              "steps": ["Faço a chamada do Bloco 4 às 21:25.", "Formo os pares de teste.", "Dou 5 minutos para testar.", "Dou 15 minutos para cada aluno melhorar a própria página.", "Confiro os arquivos individuais."],
+              "watch": "Ninguém explica a página antes das três respostas.",
+              "rescue": "Se houver dificuldade para salvar, ajudo o aluno a guardar o arquivo no formato original da ferramenta e em PNG."
+            }
+          },
+          {
+            "title": "Fechamento",
+            "block": 4,
+            "kicker": "21:55–22:07 · encerramento",
+            "heading": "Uma frase por aluno",
+            "lede": "Nós mudamos ___ porque ficou mais fácil ___.",
+            "promptLabel": "Ideia da noite",
+            "prompt": "Cite uma mudança no título, nas informações ou no botão.",
+            "teacher": {
+              "speech": "Faço uma rodada rápida. Cada aluno completa a mesma frase, sem apresentação longa.",
+              "steps": ["Ouço uma frase por aluno.", "Reforço os três pontos.", "Encerro às 22:07."],
+              "watch": "A frase cita uma mudança e um efeito simples.",
+              "rescue": "Com atraso, ouço três alunos e encerro."
+            }
+          }
         ]
       },
       "04": {
@@ -1470,7 +1637,7 @@ window.SENAI_TEACHING_SUPPORT = {
         "plainLanguage": "Planejamento de conteúdo e navegação por meio de mapas, cartões e microtextos que orientam o usuário. O foco é decidir, montar, comparar e testar; os bastidores técnicos aparecem apenas quando ajudam a compreender a função de uma interface.",
         "say": "Hoje o resultado precisa ficar visível. Primeiro eu mostro o exemplo e os critérios; depois vocês produzem em equipe e conferem a entrega antes de sair.",
         "demo": [
-          "Retomada do Raio-X da Aula 03. Jogo \"Para onde isso leva?\": a turma associa rótulos de menu e botões a destinos possíveis e identifica nomes vagos, enganosos ou repetidos.",
+          "Retomada da página individual criada na Aula 03. Jogo \"Para onde isso leva?\": a turma associa os botões dessas páginas a destinos possíveis e identifica nomes vagos, enganosos ou repetidos.",
           "Mapa de navegação com barbante e cartões: em grupos, organizar início, serviços, galeria, sobre e contato; ligar os caminhos e testar se uma pessoa chega ao objetivo em até três passos.",
           "Oficina de microtexto: escrever títulos, chamadas e botões claros para um negócio fictício. Comparar \"clique aqui\" com ações específicas como \"ver cardápio\" e \"reservar horário\"."
         ],

@@ -332,10 +332,10 @@
         <p class="teacher-note">${escapeHtml(rescue)}</p>` : ''}
     </aside>`;
 
-  const slide = ({ title, main, teacher, block = 1, className = '' }) => ({
+  const slide = ({ title, main, teacher, block = 1, className = '', pace = '' }) => ({
     title,
     html: `
-      <section class="kit-slide${className ? ` ${escapeHtml(className)}` : ''}" data-title="${escapeHtml(title)}" data-block="${block}" aria-label="${escapeHtml(title)}">
+      <section class="kit-slide${className ? ` ${escapeHtml(className)}` : ''}" data-title="${escapeHtml(title)}" data-block="${block}" data-pace="${escapeHtml(pace)}" aria-label="${escapeHtml(title)}">
         <div class="kit-slide-main">${main}</div>
         ${teacherPanel(teacher)}
       </section>`
@@ -346,6 +346,9 @@
     const bullets = Array.isArray(item.bullets) ? item.bullets : [];
     const teacher = item.teacher && typeof item.teacher === 'object' ? item.teacher : {};
     const resource = item.resource && typeof item.resource === 'object' ? item.resource : {};
+    const resources = Array.isArray(item.resources)
+      ? item.resources.filter((entry) => entry && typeof entry === 'object' && entry.href)
+      : (resource.href ? [resource] : []);
     const block = Number.isFinite(Number(item.block)) ? Math.max(1, Number(item.block)) : 1;
     const title = item.title || item.heading || `Conteúdo ${index + 1}`;
     const denseCards = item.layout === 'dense-cards';
@@ -353,6 +356,7 @@
     return slide({
       title,
       block,
+      pace: item.pace === 'break' ? 'break' : '',
       className: denseCards ? 'is-dense-cards' : '',
       main: `
         ${item.kicker ? `<p class="slide-kicker">${escapeHtml(item.kicker)}</p>` : ''}
@@ -373,10 +377,13 @@
             <span class="card-index">${escapeHtml(item.promptLabel || 'Pergunta para a turma')}</span>
             <strong>${escapeHtml(item.prompt)}</strong>
           </aside>` : ''}
-        ${resource.href ? `
-          <a class="student-resource-link" href="${escapeHtml(resource.href)}" target="_blank" rel="noopener">
-            ${escapeHtml(resource.label || 'Abrir material da aula')} →
-          </a>` : ''}`,
+        ${resources.length ? `
+          <div class="student-resource-links">
+            ${resources.map((entry) => `
+              <a class="student-resource-link" href="${escapeHtml(entry.href)}" target="_blank" rel="noopener">
+                ${escapeHtml(entry.label || 'Abrir material da aula')} →
+              </a>`).join('')}
+          </div>` : ''}`,
       teacher: {
         speech: teacher.speech || '',
         steps: Array.isArray(teacher.steps) ? teacher.steps : [],
@@ -405,7 +412,9 @@
         ['O tempo ficou curto', 'Preserve a capacidade central, simplifique o acabamento e salve uma versão utilizável.']
       ];
   const nextLesson = course.lessons[course.lessons.findIndex((item) => item.num === lesson.num) + 1];
-  const previousLesson = course.lessons[course.lessons.findIndex((item) => item.num === lesson.num) - 1];
+  const previousLesson = support.previousLessonNumber
+    ? course.lessons.find((item) => item.num === support.previousLessonNumber)
+    : course.lessons[course.lessons.findIndex((item) => item.num === lesson.num) - 1];
 
   const slides = [];
 
@@ -699,7 +708,7 @@
 
   }
 
-  slides.push(slide({
+  if (support.appendDefaultClosing !== false) slides.push(slide({
     title: 'Fechamento da aula',
     block: lesson.schedule.length,
     main: `
@@ -856,6 +865,9 @@
     const slideBlock = Number(activeSlide?.dataset.block || 0);
     const expected = currentScheduleWindow();
     if (!slideBlock || !expected) return { level: 'ok', message: 'No ritmo' };
+    if (activeSlide?.dataset.pace === 'break' && expected.status === 'break') {
+      return { level: 'ok', message: 'Intervalo no horário' };
+    }
     if (expected.block.number < slideBlock) {
       return { level: 'warn', message: `Adiantado · slide é do Bloco ${slideBlock}` };
     }
