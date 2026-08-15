@@ -90,7 +90,7 @@ window.SENAI_COURSES = {
       {
         "num": "03",
         "title": "Anatomia Visual de uma Página",
-        "description": "Desconstrução visual e lúdica de páginas para reconhecer estrutura, conteúdo e hierarquia sem escrever código.",
+        "description": "Reconhecimento simples da estrutura visual de uma página e criação individual de uma nova página de tema livre, sem escrever código.",
         "objectives": [
           "Criação de código de texto: estrutura do documento, elementos, editores e navegadores."
         ],
@@ -104,7 +104,7 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:45",
-            "atividade": "Retomar a página Mostra Criativa feita na Aula 01 no Excalidraw e localizar três partes simples: título, informações e botão. Em seguida, cada aluno escolhe livremente o tema de uma nova página individual."
+            "atividade": "Retomar a página Mostra Criativa feita na Aula 01, no caderno ou em ferramenta visual. Em um exemplo projetado, localizar título, informações e botão e relacionar essas partes à estrutura simples de uma página. Em seguida, cada aluno escolhe livremente o tema de uma nova página individual."
           },
           {
             "horario": "20:05 - 20:35",
@@ -116,12 +116,12 @@ window.SENAI_COURSES = {
           },
           {
             "horario": "21:25 - 22:07",
-            "atividade": "Outro aluno observa a página por cinco segundos e responde sobre o que ela é, qual informação aparece primeiro e onde clicaria. Ajuste final individual, salvamento e mostra rápida."
+            "atividade": "Até 21:55, outro aluno observa a página por cinco segundos e responde sobre o que ela é, qual informação aparece primeiro e onde clicaria; depois há ajuste e salvamento individuais. Das 21:55 às 22:07, a turma faz uma síntese rápida das melhorias."
           }
         ],
         "methodology": "Retomada do exemplo da Aula 01, produção individual com tema livre, melhoria orientada de apenas três pontos, teste simples por um colega e mostra final.",
         "resources": "Computadores, projetor e uma ferramenta gratuita à escolha: Excalidraw, diagrams.net ou LibreOffice Draw/Impress. Sem impressão e sem pesquisa de imagens.",
-        "observation": "A Aula 02 não aconteceu porque o encontro foi cedido para outra atividade. Esta Aula 03 usa a página Mostra Criativa da Aula 01 como exemplo, mas a nova página tem tema livre. Aula planejada de 19:00 a 22:07, com lanche de 19:45 a 20:05."
+        "observation": "A Aula 02 não aconteceu porque o encontro foi cedido para outra atividade. Esta Aula 03 usa a página Mostra Criativa da Aula 01 como exemplo, mas a nova página tem tema livre. Aula planejada de 19:00 a 22:07, com lanche de 19:45 a 20:05 e chamada no início dos quatro blocos: 19:00, 20:05, 20:35 e 21:25."
       },
       {
         "num": "04",
@@ -142,7 +142,7 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:30",
-            "atividade": "Retomada do Raio-X da Aula 03. Jogo \"Para onde isso leva?\": a turma associa rótulos de menu e botões a destinos possíveis e identifica nomes vagos, enganosos ou repetidos."
+            "atividade": "Retomada da página individual criada na Aula 03. Jogo \"Para onde isso leva?\": a turma associa os botões dessas páginas a destinos possíveis e identifica nomes vagos, enganosos ou repetidos."
           },
           {
             "horario": "19:30 - 20:30",

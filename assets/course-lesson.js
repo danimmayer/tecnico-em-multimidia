@@ -707,7 +707,7 @@
 
   }
 
-  slides.push(slide({
+  if (support.appendDefaultClosing !== false) slides.push(slide({
     title: 'Fechamento da aula',
     block: lesson.schedule.length,
     main: `
