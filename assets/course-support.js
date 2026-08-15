@@ -2452,20 +2452,226 @@ window.SENAI_TEACHING_SUPPORT = {
         ]
       },
       "03": {
-        "teacherGoal": "Distinguir pré-produção, produção e pós-produção.",
-        "plainLanguage": "Pré resolve no papel, produção captura e pós organiza/transforma o material.",
-        "say": "Um minuto resolvido no papel economiza muitos minutos no set e horas na edição.",
+        "teacherGoal": "Fazer a turma transformar uma ideia simples em um fluxo e um cronograma digital viáveis, distinguindo as três etapas e as exigências de curta, comercial e documentário.",
+        "plainLanguage": "Pré decide e prepara; produção capta; pós seleciona, monta, finaliza e confere. O cronograma liga cada tarefa à pessoa, ao tempo, à dependência e à evidência de que terminou.",
+        "say": "Hoje vocês não vão filmar: vão impedir que uma filmagem vire improviso. Tudo o que precisam está no slide e na planilha; sigam a ordem e só me chamem depois de conferir o quadro \"terminamos quando\".",
         "demo": [
-          "Entregue tarefas misturadas em cartões.",
-          "A turma classifica nas três etapas.",
-          "Monte um cronograma simples com dependências."
+          "Classifique roteiro, gravação e montagem nas três etapas e explique o motivo.",
+          "Mostre como a mesma premissa muda de finalidade, linguagem e necessidade em curta, comercial e documentário.",
+          "Preencha uma linha-modelo com tarefa, fase, responsável, duração, dependência e evidência.",
+          "Audite uma dependência impossível e corrija a ordem antes de salvar."
         ],
-        "studentDeliverable": "Fluxo de produção e papéis do microcurta.",
+        "studentDeliverable": "Planilha PA_A03_EQ##_CRONOGRAMA.xlsx preenchida nas abas Fluxo, Gêneros e Cronograma, auditada por outra equipe e salva em AULA_03_ENTREGAS até 22:02.",
         "check": [
-          "Tarefas estão na etapa correta.",
-          "Há responsável e prazo."
+          "As 15 tarefas do fluxo estão classificadas e as duas justificativas fazem sentido.",
+          "Curta, comercial e documentário têm finalidade e decisões diferentes.",
+          "O cronograma tem pelo menos 10 tarefas, uma pessoa responsável por linha e duração em minutos.",
+          "Há pelo menos duas dependências coerentes e uma evidência observável para cada tarefa.",
+          "Outra equipe preencheu a auditoria; a equipe corrigiu o que foi marcado.",
+          "O painel indica CONCLUÍDO e o arquivo está nomeado e salvo na pasta correta."
         ],
-        "fallback": "Use um vídeo fictício de 30 segundos como projeto comum."
+        "fallback": "Sem Excel ou LibreOffice, abra a planilha em editor compatível; se um computador falhar, junte duas equipes na mesma máquina e mantenha registros separados por abas duplicadas.",
+        "commonProblems": [
+          [
+            "A equipe pergunta o que fazer antes de ler",
+            "Aponto o slide projetado e peço que uma pessoa leia em voz alta o próximo passo e o quadro de conclusão."
+          ],
+          [
+            "Confundem fase com gênero",
+            "Retomo: toda produção tem pré, produção e pós; curta, comercial e documentário mudam a finalidade e as escolhas dentro dessas fases."
+          ],
+          [
+            "Todos escrevem e ninguém decide",
+            "Reponho os papéis: gestor do tempo, operador da planilha, leitor do slide e auditor; trocam após cada atividade."
+          ],
+          [
+            "Terminou cedo demais",
+            "A equipe executa o Desafio Extra da própria aba: criar plano B para atraso de gravação e ausência de integrante."
+          ]
+        ],
+        "presentationSlides": [
+          {
+            "title": "Mapa da noite",
+            "kicker": "19:00–22:07 · lanche 19:45–20:05",
+            "heading": "Três práticas, uma entrega digital",
+            "lede": "Formem equipes de 3 a 4. Em cada atividade: leiam o slide inteiro, dividam os papéis, preencham a aba indicada e confiram antes de avançar.",
+            "layout": "dense-cards",
+            "block": 1,
+            "cards": [
+              {"eyebrow": "19:00–19:45", "title": "Fluxo embaralhado", "text": "Entender pré, produção, pós e dependências."},
+              {"eyebrow": "19:45–20:05", "title": "Lanche", "text": "Salvem a planilha antes de sair; retorno às 20:05."},
+              {"eyebrow": "20:05–21:25", "title": "Gêneros + cronograma", "text": "Comparar três formatos e iniciar o plano de 1 minuto."},
+              {"eyebrow": "21:25–22:07", "title": "Auditar, corrigir e entregar", "text": "Corrigir, salvar até 22:02 e fechar às 22:07."}
+            ],
+            "promptLabel": "Entrega única",
+            "prompt": "PA_A03_EQ##_CRONOGRAMA.xlsx → pasta AULA_03_ENTREGAS",
+            "teacher": {
+              "steps": ["3 min · Faço a chamada e formo equipes de 3 a 4.", "2 min · Cada equipe escolhe gestor do tempo, operador, leitor e auditor.", "2 min · Abro o modelo e mostro as quatro abas; não explico a atividade seguinte antes da hora."],
+              "watch": "Todos localizaram a planilha e sabem que nenhuma folha será impressa.",
+              "rescue": "Com equipe de três, leitor também faz a auditoria."
+            }
+          },
+          {
+            "title": "Pré, produção e pós",
+            "kicker": "Referência rápida · não é atividade",
+            "heading": "Toda produção atravessa três etapas",
+            "lede": "A etapa responde quando a tarefa acontece. O gênero responde para que o vídeo existe e como ele fala com o público.",
+            "layout": "dense-cards",
+            "block": 1,
+            "cards": [
+              {"eyebrow": "1 · Pré-produção", "title": "Decidir e preparar", "text": "Ideia, público, pesquisa, roteiro, storyboard, equipe, locais, autorizações, plano e cronograma."},
+              {"eyebrow": "2 · Produção", "title": "Captar", "text": "Organizar o set, gravar imagem e som, acompanhar continuidade e registrar cada tomada."},
+              {"eyebrow": "3 · Pós-produção", "title": "Construir e entregar", "text": "Copiar, organizar, selecionar, montar, tratar som e imagem, inserir créditos, exportar e conferir."},
+              {"eyebrow": "Dependência", "title": "O que precisa vir antes?", "text": "Uma tarefa bloqueia outra: não se grava antes de aprovar o roteiro; não se monta antes de copiar o material."}
+            ],
+            "prompt": "Pergunta-guia: o que daria errado se esta tarefa fosse feita cedo ou tarde demais?",
+            "teacher": {
+              "speech": "Pré evita surpresa; produção registra; pós transforma o material em vídeo. Dependência é a seta que diz o que precisa terminar antes.",
+              "steps": ["5 min · Explico as três etapas usando um vídeo de 1 minuto.", "3 min · Classifico ao vivo: roteiro → pré; gravação → produção; montagem → pós.", "2 min · Mostro a dependência roteiro aprovado → gravação."],
+              "watch": "A turma diferencia etapa de gênero antes da primeira prática.",
+              "rescue": "Uso a analogia da festa: organizar antes, realizar durante, selecionar fotos e limpar depois."
+            }
+          },
+          {
+            "title": "Atividade 1 · Fluxo embaralhado",
+            "kicker": "19:17–19:45 · deixe este slide parado",
+            "heading": "Organizem as 15 tarefas do vídeo",
+            "lede": "Abram a aba 1_FLUXO. Não criem novas tarefas: classifiquem e ordenem as que já estão prontas.",
+            "layout": "dense-cards",
+            "block": 1,
+            "cards": [
+              {"eyebrow": "1 · Papéis (2 min)", "title": "Dividam a equipe", "text": "Gestor controla o tempo; operador digita; leitor confere o slide; auditor questiona a ordem. Troquem os papéis depois do lanche."},
+              {"eyebrow": "2 · Classificar (10 min)", "title": "Escolham a etapa", "text": "Para cada tarefa, selecionem PRÉ, PRODUÇÃO ou PÓS e atribuam uma ordem de 1 a 15."},
+              {"eyebrow": "3 · Dependências (8 min)", "title": "Liguem o antes ao depois", "text": "Marquem pelo menos quatro tarefas que dependem de outra. Ex.: gravar depende de roteiro aprovado."},
+              {"eyebrow": "4 · Justificar (5 min)", "title": "Expliquem duas escolhas", "text": "Completem: “___ vem antes de ___ porque ___”. Usem tarefas diferentes nas duas frases."}
+            ],
+            "bullets": ["TERMINAMOS QUANDO: 15 fases preenchidas + ordens de 1 a 15 sem repetir + 4 dependências + 2 justificativas.", "SE SOBRAR TEMPO: identifiquem uma tarefa que pode acontecer em paralelo e expliquem por quê."],
+            "resource": {"href": "outputs/aula-03/PA_A03_MODELO_CRONOGRAMA.xlsx", "label": "Baixar a planilha digital da Aula 03"},
+            "teacher": {
+              "steps": ["2 min · Projeto o slide e confirmo os quatro papéis.", "18 min · Circulo e respondo somente depois que a equipe lê o quadro TERMINAMOS QUANDO.", "5 min · Confiro uma dependência de cada equipe.", "3 min · Todos salvam antes do lanche."],
+              "watch": "Ordens não se repetem; dependência aponta para uma tarefa que realmente precisa terminar antes.",
+              "rescue": "Se a planilha não abrir, uma equipe vizinha duplica a aba 1_FLUXO e identifica os dois grupos."
+            }
+          },
+          {
+            "title": "Lanche",
+            "kicker": "Pausa fixa · 19:45–20:05",
+            "heading": "Salvem agora. Retomamos às 20:05.",
+            "lede": "Antes de sair, confirmem que a aba 1_FLUXO ficou preenchida e que o arquivo continua aberto ou foi salvo na pasta da equipe.",
+            "layout": "dense-cards",
+            "block": 1,
+            "cards": [
+              {"eyebrow": "19:45", "title": "Salvar", "text": "Ctrl/Cmd + S. Ninguém apaga ou renomeia o modelo original."},
+              {"eyebrow": "20:05", "title": "Voltar", "text": "Sentem com a mesma equipe e troquem os papéis antes da Atividade 2."}
+            ],
+            "prompt": "Ao voltar: operador vira leitor; leitor vira gestor; gestor vira auditor; auditor vira operador.",
+            "teacher": {
+              "steps": ["Às 19:43 aviso os dois minutos finais.", "Às 19:45 libero o lanche com os arquivos salvos.", "Às 20:05 faço a segunda chamada e retomo sem revisão longa."],
+              "watch": "Nenhuma equipe perde o preenchimento feito antes do intervalo.",
+              "rescue": "Se alguém voltar tarde, entra no papel de auditor sem reiniciar a explicação."
+            }
+          },
+          {
+            "title": "Atividade 2 · Uma ideia, três gêneros",
+            "kicker": "20:05–20:32 · deixe este slide parado",
+            "heading": "Mudem o projeto sem mudar a premissa",
+            "lede": "Na aba 2_GENEROS, trabalhem com: “um objeto esquecido muda de dono”. Criem uma versão curta, uma comercial e uma documental.",
+            "layout": "dense-cards",
+            "block": 2,
+            "cards": [
+              {"eyebrow": "Curta-metragem", "title": "Contar uma história", "text": "Definam personagem + conflito + desfecho; escolham uma decisão de imagem e uma de som que criem emoção."},
+              {"eyebrow": "Comercial", "title": "Convencer o público", "text": "Definam produto/ideia + benefício + chamada final; escolham imagem e som que tornem a mensagem memorável."},
+              {"eyebrow": "Documentário", "title": "Investigar o real", "text": "Definam pergunta + pessoa/fonte + evidência; escolham imagem e som que ajudem a compreender o tema."},
+              {"eyebrow": "Para os três", "title": "Registrem 4 itens", "text": "Finalidade, decisão de imagem/som, necessidade de produção e a principal diferença em relação aos outros gêneros."}
+            ],
+            "bullets": ["TERMINAMOS QUANDO: as 3 colunas estão completas e nenhuma versão parece cópia da outra.", "SE SOBRAR TEMPO: deem um título diferente a cada versão e justifiquem o mais forte."],
+            "teacher": {
+              "steps": ["4 min · Comparo oralmente as três finalidades; não mostro vídeos longos.", "16 min · As equipes preenchem as três versões.", "4 min · Trocam a planilha com a equipe vizinha e apontam uma versão parecida demais.", "3 min · Corrigem e escolhem o gênero do cronograma."],
+              "watch": "O gênero escolhido muda finalidade e decisões, não só o título.",
+              "rescue": "Se travarem, atribuo gêneros diferentes às equipes e uso a coluna EXEMPLO da planilha como ponto de partida."
+            }
+          },
+          {
+            "title": "Como montar um cronograma possível",
+            "kicker": "20:32–20:40 · demonstração curta",
+            "heading": "Uma linha precisa responder seis perguntas",
+            "lede": "Tarefa vaga não cabe no cronograma. “Fazer o vídeo” vira ações pequenas, responsáveis e verificáveis.",
+            "layout": "dense-cards",
+            "block": 3,
+            "cards": [
+              {"eyebrow": "O quê + fase", "title": "Escrever roteiro · PRÉ", "text": "Use verbo + objeto. Evite “resolver tudo”, “ajudar” ou “fazer o vídeo”."},
+              {"eyebrow": "Quem", "title": "Uma pessoa responsável", "text": "A equipe ajuda, mas um nome acompanha a conclusão da tarefa."},
+              {"eyebrow": "Quanto + antes", "title": "20 min · depende da ideia", "text": "Duração é esforço previsto; dependência é a tarefa que precisa terminar primeiro."},
+              {"eyebrow": "Como provar", "title": "Roteiro aprovado", "text": "A evidência deve ser visível: arquivo salvo, lista conferida, gravação ou exportação assistida."}
+            ],
+            "prompt": "Teste de realidade: se o responsável faltar ou a tarefa atrasar, qual é o plano B?",
+            "teacher": {
+              "steps": ["3 min · Preencho a linha Escrever roteiro sem completar o trabalho da turma.", "3 min · Mostro uma dependência impossível e peço a correção.", "2 min · Aponto as listas suspensas, o painel e a aba 4_CONFERENCIA."],
+              "watch": "A turma entende a diferença entre duração, dependência e evidência.",
+              "rescue": "Uso a sequência mínima: ideia → roteiro → plano → gravação → cópia → montagem → exportação → conferência."
+            }
+          },
+          {
+            "title": "Atividade 3A · Construir o cronograma",
+            "kicker": "20:40–21:25 · deixe este slide parado",
+            "heading": "Planejem um vídeo de 1 minuto do início à entrega",
+            "lede": "Na aba 3_CRONOGRAMA, usem o gênero escolhido na Atividade 2. O vídeo precisa caber em uma diária curta e nos recursos da escola.",
+            "layout": "dense-cards",
+            "block": 3,
+            "cards": [
+              {"eyebrow": "1 · Identificar (3 min)", "title": "Equipe + gênero + objetivo", "text": "Preencham o cabeçalho e mantenham a premissa do objeto esquecido."},
+              {"eyebrow": "2 · Quebrar (15 min)", "title": "No mínimo 10 tarefas", "text": "Incluam pelo menos 4 de pré, 2 de produção e 4 de pós. Uma ação clara por linha."},
+              {"eyebrow": "3 · Distribuir (12 min)", "title": "Responsável + duração", "text": "Uma pessoa por linha e duração em minutos. A soma precisa ser compatível com o projeto."},
+              {"eyebrow": "4 · Conectar (10 min)", "title": "Dependência + evidência", "text": "Marquem pelo menos 2 dependências e escrevam como cada tarefa será conferida."}
+            ],
+            "bullets": ["TERMINAMOS QUANDO: 10 tarefas + 4 PRÉ + 2 PRODUÇÃO + 4 PÓS + todos com responsável, duração e evidência + 2 dependências.", "SE SOBRAR TEMPO: preencham plano B para ausência de integrante e atraso de gravação."],
+            "teacher": {
+              "steps": ["5 min · Confiro cabeçalhos e as duas primeiras tarefas de todas as equipes.", "25 min · Circulo procurando tarefa vaga, pessoa ausente e dependência impossível.", "10 min · Peço que cada equipe use o painel de contagem antes da auditoria.", "5 min · Organizo pares de equipes para a próxima etapa."],
+              "watch": "Nenhuma linha usa “todos” como único responsável; toda tarefa tem uma evidência observável.",
+              "rescue": "Com atraso, forneço as dez tarefas mínimas oralmente, mas a equipe ainda decide fase, pessoa, duração, dependência e evidência."
+            }
+          },
+          {
+            "title": "Atividade 3B · Auditoria cruzada",
+            "kicker": "21:25–21:47 · deixe este slide parado",
+            "heading": "Tentem fazer o cronograma da outra equipe falhar",
+            "lede": "Abram a aba 4_CONFERENCIA do grupo vizinho. Não editem o cronograma deles: marquem a auditoria e escrevam uma correção concreta.",
+            "layout": "dense-cards",
+            "block": 4,
+            "cards": [
+              {"eyebrow": "1 · Cobertura", "title": "As três fases existem?", "text": "Confiram a quantidade mínima e se nenhuma tarefa importante foi pulada."},
+              {"eyebrow": "2 · Ordem", "title": "Dá para executar?", "text": "Procurem tarefa que depende de algo ainda não concluído ou que aparece tarde demais."},
+              {"eyebrow": "3 · Pessoas e tempo", "title": "Cabe na equipe?", "text": "Marquem sobrecarga, responsável ausente, tarefa sem duração ou tempo irreal."},
+              {"eyebrow": "4 · Evidência", "title": "Como saber que terminou?", "text": "Marquem descrições vagas e escrevam ao menos uma correção específica."}
+            ],
+            "bullets": ["TERMINAMOS QUANDO: todos os itens da auditoria estão marcados + há 1 elogio específico + 1 correção concreta + nome da equipe auditora.", "REGRA: critiquem o plano, não as pessoas; devolvam o arquivo sem alterar a aba 3_CRONOGRAMA."],
+            "teacher": {
+              "steps": ["2 min · Troco os arquivos entre pares e projeto este slide.", "12 min · Auditores conferem sem editar o cronograma.", "3 min · Cada auditor explica apenas a correção mais importante.", "5 min · Arquivos voltam às equipes autoras."],
+              "watch": "A correção aponta tarefa e mudança concreta; “está bom” ou “melhorar” não valem.",
+              "rescue": "Se compartilhar arquivo atrasar, a equipe auditora senta ao lado e preenche a aba no mesmo computador."
+            }
+          },
+          {
+            "title": "Atividade 3C · Corrigir e entregar",
+            "kicker": "21:47–22:07 · deixe este slide parado",
+            "heading": "Fechem o plano e salvem até 22:02",
+            "lede": "Voltem à própria planilha. A entrega só está pronta quando o painel confirma os campos, o nome está correto e o arquivo abre na pasta final.",
+            "layout": "dense-cards",
+            "block": 4,
+            "cards": [
+              {"eyebrow": "1 · Corrigir (8 min)", "title": "Respondam à auditoria", "text": "Façam a correção recebida ou justifiquem na aba 4 por que mantiveram a decisão."},
+              {"eyebrow": "2 · Conferir (4 min)", "title": "Painel CONCLUÍDO", "text": "Confiram 10 tarefas, fases mínimas, responsáveis, durações, evidências e dependências."},
+              {"eyebrow": "3 · Nomear (2 min)", "title": "Nome correto", "text": "PA_A03_EQ##_CRONOGRAMA.xlsx. Troquem ## pelo número da equipe; ex.: EQ04."},
+              {"eyebrow": "4 · Entregar (1 min)", "title": "Pasta final", "text": "AULA_03_ENTREGAS. Salvem, fechem e reabram o arquivo; só então levantem a mão."}
+            ],
+            "bullets": ["ATÉ 22:02: arquivo reaberto na pasta AULA_03_ENTREGAS.", "22:02–22:07: respondam no campo final: “A dependência mais importante é ___ porque ___”."],
+            "teacher": {
+              "steps": ["8 min · Acompanho as correções sem reabrir a explicação inteira.", "4 min · Confiro o painel e recuso arquivos com nome incompleto.", "3 min · Responsável salva, fecha e reabre na pasta.", "5 min · Leio duas respostas finais e encerro às 22:07."],
+              "watch": "O arquivo abre, tem o nome correto e o painel não aponta pendência.",
+              "rescue": "Às 21:57, se alguma equipe estiver atrasada, preservo dez tarefas e dependências; retiro apenas o desafio extra."
+            }
+          }
+        ]
       },
       "04": {
         "teacherGoal": "Converter ideia em roteiro filmável e storyboard.",

@@ -1549,6 +1549,12 @@ body[data-theme="av"] .deck-bottombar { background: rgba(18, 16, 15, 0.96); }
   }
   .projection-mode .teacher-panel { display: none; }
   .kit-slide-main { padding: 28px 22px 34px; }
+  .kit-slide.is-dense-cards .kit-slide-main {
+    justify-content: flex-start;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .kit-slide.is-dense-cards .kit-slide-main > * { flex-shrink: 0; }
   .top-actions .tool-btn:not(.mode-btn) { display: none; }
   .lesson-ident .lesson-short { max-width: 45vw; }
   .cards-2,
