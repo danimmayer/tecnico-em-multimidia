@@ -806,7 +806,7 @@ body[data-theme="av"] .lesson-topbar { background: rgba(18, 16, 15, 0.9); }
 }
 
 .kit-slide.is-dense-cards .kit-slide-main {
-  justify-content: center;
+  justify-content: flex-start;
   padding-top: clamp(16px, 2.5vh, 24px);
   padding-bottom: clamp(16px, 2.5vh, 24px);
 }

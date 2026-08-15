@@ -120,7 +120,7 @@ window.SENAI_COURSES = {
           }
         ],
         "methodology": "Retomada do exemplo da Aula 01, produção individual com tema livre, melhoria orientada de apenas três pontos, teste simples por um colega e mostra final.",
-        "resources": "Computadores, projetor e uma ferramenta gratuita à escolha: Excalidraw, diagrams.net ou LibreOffice Draw/Impress. Sem impressão e sem pesquisa de imagens.",
+        "resources": "Computadores, projetor e uma ferramenta gratuita à escolha: Excalidraw, diagrams.net ou LibreOffice Draw/Impress. Caderno e caneta são o plano B sem internet. Sem impressão e sem pesquisa de imagens.",
         "observation": "A Aula 02 não aconteceu porque o encontro foi cedido para outra atividade. Esta Aula 03 usa a página Mostra Criativa da Aula 01 como exemplo, mas a nova página tem tema livre. Aula planejada de 19:00 a 22:07, com lanche de 19:45 a 20:05 e chamada no início dos quatro blocos: 19:00, 20:05, 20:35 e 21:25."
       },
       {

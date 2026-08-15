@@ -1453,7 +1453,7 @@ window.SENAI_TEACHING_SUPPORT = {
           "Outro aluno entendeu o tema e encontrou o botão em cinco segundos.",
           "O arquivo usa o código informado pelo professor e está salvo na pasta da turma, sem nome ou outros dados pessoais."
         ],
-        "fallback": "Se o aluno travar, oferece-se um tema simples e o Excalidraw como opção mais direta. Se uma ferramenta falhar, troca-se para diagrams.net ou LibreOffice; se um computador falhar, dois alunos alternam no mesmo computador mantendo páginas separadas.",
+        "fallback": "Se o aluno travar, ofereça um tema simples. Se internet ou programas falharem, cada aluno desenha a mesma página no próprio caderno, sem folha impressa, e faz o teste de cinco segundos com um colega.",
         "extension": "Criar uma segunda versão mais estreita, como se fosse para celular, mantendo o mesmo conteúdo.",
         "commonProblems": [
           [
@@ -1533,6 +1533,7 @@ window.SENAI_TEACHING_SUPPORT = {
           {
             "title": "Lanche",
             "block": 1,
+            "pace": "break",
             "kicker": "19:45–20:05 · intervalo",
             "heading": "Lanche · retorno às 20:05",
             "lede": "Na volta, cada aluno criará uma nova página com o tema e a ferramenta que escolheu.",

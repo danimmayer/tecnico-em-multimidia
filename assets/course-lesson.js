@@ -332,10 +332,10 @@
         <p class="teacher-note">${escapeHtml(rescue)}</p>` : ''}
     </aside>`;
 
-  const slide = ({ title, main, teacher, block = 1, className = '' }) => ({
+  const slide = ({ title, main, teacher, block = 1, className = '', pace = '' }) => ({
     title,
     html: `
-      <section class="kit-slide${className ? ` ${escapeHtml(className)}` : ''}" data-title="${escapeHtml(title)}" data-block="${block}" aria-label="${escapeHtml(title)}">
+      <section class="kit-slide${className ? ` ${escapeHtml(className)}` : ''}" data-title="${escapeHtml(title)}" data-block="${block}" data-pace="${escapeHtml(pace)}" aria-label="${escapeHtml(title)}">
         <div class="kit-slide-main">${main}</div>
         ${teacherPanel(teacher)}
       </section>`
@@ -356,6 +356,7 @@
     return slide({
       title,
       block,
+      pace: item.pace === 'break' ? 'break' : '',
       className: denseCards ? 'is-dense-cards' : '',
       main: `
         ${item.kicker ? `<p class="slide-kicker">${escapeHtml(item.kicker)}</p>` : ''}
@@ -864,6 +865,9 @@
     const slideBlock = Number(activeSlide?.dataset.block || 0);
     const expected = currentScheduleWindow();
     if (!slideBlock || !expected) return { level: 'ok', message: 'No ritmo' };
+    if (activeSlide?.dataset.pace === 'break' && expected.status === 'break') {
+      return { level: 'ok', message: 'Intervalo no horário' };
+    }
     if (expected.block.number < slideBlock) {
       return { level: 'warn', message: `Adiantado · slide é do Bloco ${slideBlock}` };
     }

@@ -44,8 +44,10 @@ const revisedLessons = {
       'Melhorar somente três pontos da nova página: título visto primeiro, informações importantes juntas e botão fácil de encontrar. Sem adicionar outras páginas ou pesquisar imagens.',
       'Até 21:55, outro aluno observa a página por cinco segundos e responde sobre o que ela é, qual informação aparece primeiro e onde clicaria; depois há ajuste e salvamento individuais. Das 21:55 às 22:07, a turma faz uma síntese rápida das melhorias.'
     ],
+    times: ['19:00 - 19:45', '20:05 - 20:35', '20:35 - 21:25', '21:25 - 22:07'],
     methodology: 'Retomada de exemplo projetado, reconhecimento simples da estrutura, produção individual com tema livre, melhoria orientada de três pontos e teste rápido por um colega.',
-    resources: 'Computadores, projetor e uma ferramenta gratuita à escolha: Excalidraw, diagrams.net ou LibreOffice Draw/Impress. Sem impressão e sem pesquisa de imagens.'
+    resources: 'Computadores, projetor e uma ferramenta gratuita à escolha: Excalidraw, diagrams.net ou LibreOffice Draw/Impress. Caderno e caneta são o plano B sem internet. Sem impressão e sem pesquisa de imagens.',
+    observation: 'A Aula 02 não aconteceu porque o encontro foi cedido para outra atividade. Esta Aula 03 usa a página Mostra Criativa da Aula 01 como exemplo, mas a nova página tem tema livre. Aula planejada de 19:00 a 22:07, com lanche de 19:45 a 20:05 e chamada no início dos quatro blocos: 19:00, 20:05, 20:35 e 21:25.'
   },
   '04': {
     title: 'Conteúdo, Links e Caminhos',
@@ -332,9 +334,10 @@ function renderLesson(number, lesson) {
   const rows = Array.from({ length: objectiveRows }, (_, index) =>
     `| ${lesson.objectives[index] || ''} | ${lesson.technical[index] || ''} | ${lesson.socio[index] || ''} |`
   ).join('\n');
+  const defaultTimes = ['19:00 - 19:30', '19:30 - 20:30', '20:30 - 21:30', '21:30 - 22:30'];
+  const times = lesson.times || defaultTimes;
   const schedule = lesson.blocks.map((activity, index) => {
-    const times = ['19:00 - 19:30', '19:30 - 20:30', '20:30 - 21:30', '21:30 - 22:30'];
-    return `| ${times[index]} | Chamada. ${activity} |`;
+    return `| ${times[index] || defaultTimes[index]} | Chamada. ${activity} |`;
   }).join('\n');
 
   return `# AULA ${number} - ${lesson.title}
@@ -357,7 +360,7 @@ ${schedule}
 
 **Recursos:** ${lesson.resources}
 
-**Obs.:** ${commonObservation}
+**Obs.:** ${lesson.observation || commonObservation}
 `;
 }
 
