@@ -103,25 +103,25 @@ window.SENAI_COURSES = {
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Retomada da Aula 02. Comparar uma página pronta com sua representação técnica e identificar, apenas visualmente, cabeçalho, navegação, conteúdo principal, imagem, botão e rodapé."
+            "horario": "19:00 - 19:45",
+            "atividade": "Retomar a página Mostra Criativa feita na Aula 01 no Excalidraw e localizar três partes simples: título, informações e botão. Em seguida, cada aluno escolhe livremente o tema de uma nova página individual."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "Dinâmica \"Página em cartões\": grupos recebem cartões impressos com título, texto, imagem, link, botão e seções. A missão é organizar uma página coerente e explicar o que deve aparecer primeiro, sem computador."
+            "horario": "20:05 - 20:35",
+            "atividade": "Cada aluno escolhe Excalidraw, diagrams.net ou LibreOffice Draw/Impress e cria uma nova página com o tema que escolheu. Monta título, frase curta, duas ou três informações e um botão."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "Oficina de hierarquia: o mesmo conjunto de conteúdo é montado em três composições numa ferramenta visual ou em papel. Cada grupo escolhe a versão mais clara para celular e marca título principal, blocos e ação desejada."
+            "horario": "20:35 - 21:25",
+            "atividade": "Melhorar somente três pontos da nova página: título visto primeiro, informações importantes juntas e botão fácil de encontrar. Sem adicionar outras páginas ou pesquisar imagens."
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "Entrega da noite: captura ou folha anotada \"Raio-X da página\", com seis partes identificadas e uma justificativa de hierarquia. Galeria rápida e votação da solução mais fácil de entender."
+            "horario": "21:25 - 22:07",
+            "atividade": "Outro aluno observa a página por cinco segundos e responde sobre o que ela é, qual informação aparece primeiro e onde clicaria. Ajuste final individual, salvamento e mostra rápida."
           }
         ],
-        "methodology": "Demonstração de até 15 minutos, manipulação de cartões, composição visual em grupos e galeria comentada.",
-        "resources": "Páginas de referência preparadas, cartões impressos, papel A3, canetas, projetor e ferramenta visual disponível no laboratório.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "Retomada do exemplo da Aula 01, produção individual com tema livre, melhoria orientada de apenas três pontos, teste simples por um colega e mostra final.",
+        "resources": "Computadores, projetor e uma ferramenta gratuita à escolha: Excalidraw, diagrams.net ou LibreOffice Draw/Impress. Sem impressão e sem pesquisa de imagens.",
+        "observation": "A Aula 02 não aconteceu porque o encontro foi cedido para outra atividade. Esta Aula 03 usa a página Mostra Criativa da Aula 01 como exemplo, mas a nova página tem tema livre. Aula planejada de 19:00 a 22:07, com lanche de 19:45 a 20:05."
       },
       {
         "num": "04",

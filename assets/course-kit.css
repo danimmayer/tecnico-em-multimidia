@@ -1142,6 +1142,12 @@ body[data-theme="av"] .lesson-topbar { background: rgba(18, 16, 15, 0.9); }
   font-weight: 650;
 }
 
+.student-resource-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 .student-resource-link:hover,
 .student-resource-link:focus-visible {
   border-color: var(--accent);
