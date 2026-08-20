@@ -2841,20 +2841,217 @@ window.SENAI_TEACHING_SUPPORT = {
         ]
       },
       "04": {
-        "teacherGoal": "Converter ideia em roteiro filmável e storyboard.",
-        "plainLanguage": "Roteiro descreve ação e som; storyboard antecipa enquadramento e continuidade.",
-        "say": "Escrevam o que a câmera pode ver e o microfone pode ouvir.",
+        "teacherGoal": "Fazer cada um dos 7 grupos concluir, somente com o que está projetado, um roteiro e um storyboard simples que correspondam entre si.",
+        "plainLanguage": "Roteiro conta por escrito o que acontece; storyboard mostra a mesma sequência em desenhos.",
+        "say": "Hoje ninguém precisa inventar do zero nem desenhar bem: cada grupo recebe uma história e segue os seis passos projetados.",
         "demo": [
-          "Transforme uma ideia abstrata em ação visível.",
-          "Escreva cabeçalho de cena, ação e fala.",
-          "Desenhe três quadros com plano e movimento."
+          "Mostre a diferença entre o roteiro escrito e o storyboard desenhado usando o mesmo exemplo de seis partes.",
+          "Modele uma cena com título, local, horário e seis linhas de ação.",
+          "Desenhe um quadro com bonecos de palito e identifique plano geral, médio ou detalhe."
         ],
-        "studentDeliverable": "Roteiro de até um minuto e storyboard correspondente.",
+        "studentDeliverable": "Cada grupo mostra duas páginas identificadas: roteiro de seis linhas e storyboard de seis quadros da mesma história.",
         "check": [
-          "É filmável no tempo e recursos disponíveis.",
-          "Storyboard corresponde ao roteiro."
+          "O roteiro tem título, local, horário e seis linhas de ação.",
+          "O storyboard tem seis quadros numerados.",
+          "Cada quadro corresponde à linha de mesmo número do roteiro.",
+          "Cada quadro indica PG, PM ou PD e descreve a ação.",
+          "O grupo colocou sua identificação e mostrou as duas páginas ao professor."
         ],
-        "fallback": "Forneço um roteiro incompleto e peço apenas finalização e storyboard."
+        "fallback": "Se um grupo travar, usa a História A, copia o exemplo projetado e altera apenas o objeto e o lugar.",
+        "commonProblems": [
+          ["O grupo não sabe como começar", "Aponto o passo 1 do slide da atividade: localizar o número do grupo e copiar o cabeçalho."],
+          ["O grupo diz que não sabe desenhar", "Relembro que bonecos de palito, formas e setas são suficientes."],
+          ["Roteiro e storyboard não combinam", "Peço que comparem linha 1 com quadro 1, depois 2 com 2, até chegar ao 6."],
+          ["O tempo ficou curto", "Preservo seis linhas e seis quadros; retiro apenas cor, detalhes decorativos e fala opcional."]
+        ],
+        "presentationSlides": [
+          {
+            "title": "Mapa da noite",
+            "kicker": "19:00–22:07 · lanche 19:45–20:05",
+            "heading": "Duas páginas, uma história simples",
+            "lede": "Formem 7 grupos. Tudo o que precisam copiar, escolher e conferir aparecerá no slide; não é preciso abrir arquivo, site ou ficha.",
+            "layout": "dense-cards",
+            "block": 1,
+            "cards": [
+              {"eyebrow": "19:00–19:45", "title": "Entender pelo exemplo", "text": "Roteiro, storyboard e três planos simples."},
+              {"eyebrow": "19:45–20:05", "title": "Lanche", "text": "Retorno às 20:05 com o mesmo grupo."},
+              {"eyebrow": "20:05–21:35", "title": "Fazer as duas páginas", "text": "Roteiro de 6 linhas + storyboard de 6 quadros."},
+              {"eyebrow": "21:35–22:07", "title": "Conferir e mostrar", "text": "Corrigir pelo checklist e mostrar o caderno."}
+            ],
+            "promptLabel": "Material de cada grupo",
+            "prompt": "Caderno ou duas folhas em branco + lápis ou caneta. Nada para baixar ou imprimir.",
+            "teacher": {
+              "steps": ["3 min · Faço a chamada e confirmo os 7 grupos.", "2 min · Confirmo o material e a entrega de duas páginas por grupo.", "Deixo cada atividade projetada enquanto a turma trabalha."],
+              "watch": "Cada grupo tem onde escrever e sabe que seguirá os passos visíveis.",
+              "rescue": "Sem caderno, o grupo usa duas folhas em branco; não há modelo para distribuir."
+            }
+          },
+          {
+            "title": "Roteiro e storyboard",
+            "kicker": "Referência simples · acompanhe pelo projetor",
+            "heading": "Primeiro escrevemos; depois desenhamos",
+            "lede": "Os dois contam exatamente a mesma história. Cada linha do roteiro vira um quadro do storyboard com o mesmo número.",
+            "layout": "dense-cards",
+            "block": 1,
+            "cards": [
+              {"eyebrow": "Roteiro", "title": "História em palavras", "text": "Diz onde acontece e descreve, na ordem, apenas o que a câmera pode mostrar ou o microfone pode ouvir."},
+              {"eyebrow": "Storyboard", "title": "História em quadros", "text": "Mostra onde a câmera fica, o tamanho do assunto e a ação de cada parte."},
+              {"eyebrow": "Ligação", "title": "1 vira 1; 2 vira 2", "text": "Linha 1 vira quadro 1, linha 2 vira quadro 2 e assim por diante até o 6."},
+              {"eyebrow": "Regra", "title": "Simples e filmável", "text": "Um lugar da escola, até duas pessoas ou somente objetos, uma ação por parte."}
+            ],
+            "teacher": {
+              "speech": "Roteiro é a história escrita. Storyboard é a mesma história desenhada antes da gravação.",
+              "steps": ["3 min · Leio as duas definições.", "2 min · Mostro a ligação 1 com 1 e 2 com 2.", "2 min · Reforço que objetos podem substituir pessoas."],
+              "watch": "A turma entende que não criará duas histórias diferentes.",
+              "rescue": "Uso a comparação: receita escrita e fotos de cada passo."
+            }
+          },
+          {
+            "title": "Exemplo completo",
+            "kicker": "Leia de cima para baixo · não precisa copiar",
+            "heading": "Exemplo: o estojo esquecido",
+            "lede": "Título: O ESTOJO · CENA ÚNICA — SALA — DIA · Sem fala; somente som ambiente.",
+            "layout": "dense-cards",
+            "block": 1,
+            "cards": [
+              {"eyebrow": "1", "title": "Onde estamos", "text": "A sala está vazia e um estojo ficou sobre a mesa."},
+              {"eyebrow": "2", "title": "Quem chega", "text": "Uma pessoa entra, vê o estojo e se aproxima."},
+              {"eyebrow": "3", "title": "Ação", "text": "Ela pega o estojo e procura um nome."},
+              {"eyebrow": "4", "title": "Mudança", "text": "Um cartão com o nome cai de dentro do estojo."},
+              {"eyebrow": "5", "title": "Solução", "text": "A pessoa leva o estojo até a mesa do dono."},
+              {"eyebrow": "6", "title": "Final", "text": "O estojo fica ao lado do caderno com o mesmo nome."}
+            ],
+            "bullets": ["Perceba: cada linha tem uma ação visível e a ordem forma começo, mudança e final.", "Se o seu grupo travar, use este exemplo e mude somente o objeto e o lugar."],
+            "teacher": {
+              "steps": ["4 min · Leio as seis partes sem pedir respostas abertas.", "3 min · Aponto onde estão começo, mudança, solução e final."],
+              "watch": "A turma percebe que a história cabe em uma cena e não exige diálogo.",
+              "rescue": "Leio novamente apenas as linhas 1, 4 e 6 para mostrar começo, mudança e final."
+            }
+          },
+          {
+            "title": "Três planos simples",
+            "kicker": "Referência para os desenhos",
+            "heading": "Use somente PG, PM e PD",
+            "lede": "Não é preciso decorar nomes difíceis. Escolha o plano pelo que o quadro precisa mostrar.",
+            "layout": "dense-cards",
+            "block": 1,
+            "cards": [
+              {"eyebrow": "PG · plano geral", "title": "Mostrar o lugar", "text": "Aparece o espaço inteiro e o assunto menor. Use normalmente no quadro 1."},
+              {"eyebrow": "PM · plano médio", "title": "Mostrar a ação", "text": "Aparecem pessoa ou objeto e o que estão fazendo. Use nos quadros do meio."},
+              {"eyebrow": "PD · plano detalhe", "title": "Mostrar algo importante", "text": "Aparece bem perto uma mão, um nome, um objeto ou uma pista."},
+              {"eyebrow": "Desenho", "title": "Clareza vale mais que beleza", "text": "Bonecos de palito, retângulos, setas e palavras são suficientes."}
+            ],
+            "promptLabel": "Atalho",
+            "prompt": "Se estiver em dúvida: quadro 1 = PG; ações = PM; pista importante = PD.",
+            "teacher": {
+              "steps": ["5 min · Desenho no quadro um retângulo para cada plano.", "3 min · Uso o estojo do exemplo: sala em PG, pessoa pegando em PM, nome em PD."],
+              "watch": "A turma consegue escolher entre lugar, ação e detalhe.",
+              "rescue": "Se a sigla confundir, permito escrever GERAL, MÉDIO ou DETALHE por extenso."
+            }
+          },
+          {
+            "title": "Atividade 1 · Roteiro em seis linhas",
+            "kicker": "20:05–20:50 · deixe este slide parado",
+            "heading": "Cada grupo já tem uma história",
+            "lede": "Uma pessoa escreve, uma lê as instruções e as demais ajudam a completar as seis frases.",
+            "layout": "dense-cards",
+            "block": 2,
+            "cards": [
+              {"eyebrow": "GRUPO 1", "title": "O estojo esquecido", "text": "Alguém encontra um estojo, descobre o dono e o devolve."},
+              {"eyebrow": "GRUPO 2", "title": "O recado errado", "text": "Um recado chega à pessoa errada; ela percebe e corrige a entrega."},
+              {"eyebrow": "GRUPO 3", "title": "A pista no livro", "text": "Um livro cai, revela uma pista e ajuda a localizar quem o perdeu."},
+              {"eyebrow": "GRUPO 4", "title": "As garrafas trocadas", "text": "Duas garrafas iguais são trocadas; os nomes permitem desfazer o engano."},
+              {"eyebrow": "GRUPO 5", "title": "O caderno sem nome", "text": "Um caderno é encontrado; uma anotação indica a turma e ajuda na devolução."},
+              {"eyebrow": "GRUPO 6", "title": "A chave encontrada", "text": "Uma chave aparece no corredor; a etiqueta mostra onde ela deve ser entregue."},
+              {"eyebrow": "GRUPO 7", "title": "O cartaz que caiu", "text": "Um cartaz cai; alguém percebe uma informação faltando, corrige e recoloca."}
+            ],
+            "bullets": ["FAÇAM: escrevam TÍTULO, LOCAL, DIA e SOM; depois completem: 1 No começo… 2 Então… 3 Depois… 4 Mas… 5 Para resolver… 6 No final…", "PRONTO QUANDO: as quatro informações e as seis frases estão preenchidas e mostram ações que a câmera pode gravar."],
+            "teacher": {
+              "steps": ["3 min · Confirmo o número e a história de cada grupo.", "32 min · Circulo; aponto a linha seguinte sem criar a história pelo grupo.", "7 min · Confiro seis linhas numeradas.", "3 min · Peço a troca das funções."],
+              "watch": "Uma ação visível por linha; uma única cena; seis linhas completas.",
+              "rescue": "O grupo usa a História A e adapta o exemplo pronto."
+            }
+          },
+          {
+            "title": "Atividade 2 · Storyboard em seis quadros",
+            "kicker": "20:50–21:35 · deixe este slide parado",
+            "heading": "Transformem cada linha em um quadro",
+            "lede": "Troquem as funções: outra pessoa desenha, outra lê o roteiro e o restante confere. Usem a segunda página.",
+            "layout": "dense-cards",
+            "block": 3,
+            "cards": [
+              {"eyebrow": "1 · Preparar (5 min)", "title": "Página deitada", "text": "Dividam a página em 2 linhas de 3 retângulos. Numerem os quadros de 1 a 6."},
+              {"eyebrow": "2 · Desenhar (20 min)", "title": "Linha 1 vira quadro 1", "text": "Façam o mesmo de 2 com 2 até 6 com 6. Usem bonecos de palito, formas e setas."},
+              {"eyebrow": "3 · Indicar (10 min)", "title": "Plano + ação", "text": "Abaixo de cada quadro escrevam PG, PM ou PD e uma frase curta dizendo o que acontece."},
+              {"eyebrow": "4 · Completar (5 min)", "title": "Som somente se existir", "text": "Escrevam SOM: passos, porta, objeto caindo ou ambiente. Se não houver som importante, escrevam SOM: ambiente."}
+            ],
+            "bullets": ["TERMINAMOS QUANDO: 6 quadros numerados + 6 desenhos + 6 planos + 6 ações curtas.", "REGRA: o desenho precisa ser compreensível, não bonito; não usem cor nem detalhes decorativos."],
+            "teacher": {
+              "steps": ["5 min · Desenho a grade 2 × 3 no quadro.", "30 min · Circulo comparando linha e quadro de mesmo número.", "7 min · Confiro numeração, planos e ações.", "3 min · Organizo a conferência final."],
+              "watch": "Seis quadros legíveis e correspondência direta com as seis linhas.",
+              "rescue": "Se faltar tempo, o grupo desenha somente o assunto principal e usa setas; mantém plano e ação escritos."
+            }
+          },
+          {
+            "title": "Conferência do grupo",
+            "kicker": "21:35–21:47 · marquem no canto da página",
+            "heading": "Façam seis testes de SIM ou NÃO",
+            "lede": "Um integrante lê cada teste e outro aponta a resposta nas duas páginas. Escrevam ✓ quando for SIM e corrijam todo NÃO.",
+            "layout": "dense-cards",
+            "block": 4,
+            "cards": [
+              {"eyebrow": "1 e 2", "title": "Quantidade", "text": "O roteiro tem 6 linhas? O storyboard tem 6 quadros numerados?"},
+              {"eyebrow": "3", "title": "Correspondência", "text": "Linha 1 combina com quadro 1, linha 2 com quadro 2, até 6 com 6?"},
+              {"eyebrow": "4 e 5", "title": "Informação", "text": "Todo quadro tem PG, PM ou PD? Todo quadro tem uma ação curta escrita?"},
+              {"eyebrow": "6", "title": "Possível", "text": "A história acontece em um lugar da escola e pode usar objetos sem obrigar ninguém a aparecer?"}
+            ],
+            "bullets": ["TERMINAMOS QUANDO: há seis ✓ e os nomes dos integrantes estão no alto das páginas.", "Não apresentem para a turma; chamem o professor somente depois de corrigir todos os NÃO."],
+            "teacher": {
+              "steps": ["2 min · Explico que a conferência é mecânica, sem apresentação.", "8 min · Os grupos marcam e corrigem.", "2 min · Confirmo os nomes e os seis sinais."],
+              "watch": "O grupo aponta a evidência, em vez de responder SIM sem conferir.",
+              "rescue": "Faço o grupo comparar apenas os números 1, 3 e 6; depois ele repete o método nos demais."
+            }
+          },
+          {
+            "title": "Corrigir e mostrar",
+            "kicker": "21:47–22:02 · deixe este slide parado",
+            "heading": "Fechem as duas páginas",
+            "lede": "Não passem a limpo. Corrijam no próprio caderno com seta, risco ou palavra acrescentada.",
+            "layout": "dense-cards",
+            "block": 4,
+            "cards": [
+              {"eyebrow": "1 · Corrigir (7 min)", "title": "Resolver os NÃO", "text": "Completem linha, quadro, plano ou ação que estiver faltando."},
+              {"eyebrow": "2 · Identificar (2 min)", "title": "Nomes do grupo + turma", "text": "Escrevam no alto das duas páginas."},
+              {"eyebrow": "3 · Ordenar (1 min)", "title": "Roteiro primeiro", "text": "Deixem a página do roteiro antes da página do storyboard."},
+              {"eyebrow": "4 · Mostrar (5 min)", "title": "Chamem o professor", "text": "Abram nas duas páginas e apontem uma linha e o quadro correspondente."}
+            ],
+            "bullets": ["PRONTO = nomes do grupo + roteiro com 6 linhas + storyboard com 6 quadros + 6 planos + 6 ações + seis ✓.", "Se o professor pedir uma correção, façam no mesmo lugar e mostrem novamente."],
+            "teacher": {
+              "steps": ["7 min · Circulo apenas entre quem ainda corrige.", "5 min · Confiro por amostragem uma linha e o quadro correspondente.", "3 min · Registro os grupos concluídos."],
+              "watch": "As duas páginas estão identificadas e uma amostra confirma a correspondência.",
+              "rescue": "Com fila, confiro primeiro quantidade e nomes; depois escolho um número de 1 a 6 para a amostra."
+            }
+          },
+          {
+            "title": "Fechamento",
+            "kicker": "22:02–22:07 · conclusão individual",
+            "heading": "O planejamento da cena ficou pronto",
+            "lede": "Guardem as duas páginas: elas serão a referência para preparar uma gravação futura, depois dos cuidados de direito de imagem e uso de recursos.",
+            "layout": "dense-cards",
+            "block": 4,
+            "cards": [
+              {"eyebrow": "No caderno", "title": "Complete uma frase", "text": "O storyboard ajuda a gravação porque ___."},
+              {"eyebrow": "Antes de sair", "title": "Guarde as duas páginas", "text": "Não destaque nem entregue; mantenha roteiro e storyboard juntos."},
+              {"eyebrow": "Próxima aula", "title": "Direito de imagem e uso de recursos", "text": "Vamos aprender o que pode ser gravado, usado e exibido com segurança."}
+            ],
+            "teacher": {
+              "steps": ["3 min · Todos completam a frase sem rodada oral.", "2 min · Aviso que as páginas devem permanecer juntas."],
+              "watch": "A turma encerra com as duas páginas guardadas e identificadas.",
+              "rescue": "Frase-modelo: o storyboard ajuda porque mostra antes o que a câmera precisa gravar."
+            }
+          }
+        ],
+        "appendDefaultClosing": false
       },
       "05": {
         "teacherGoal": "Trabalhar direito de imagem, licença e conduta no set.",
