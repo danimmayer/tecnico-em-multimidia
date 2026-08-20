@@ -2969,7 +2969,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "teacher": {
               "steps": ["3 min · Faço a chamada da retomada e confirmo o número e a história de cada grupo.", "32 min · Circulo; aponto a linha seguinte sem criar a história pelo grupo.", "7 min · Confiro seis linhas numeradas.", "3 min · Peço a troca das funções."],
               "watch": "Uma ação visível por linha; uma única cena; seis linhas completas.",
-              "rescue": "O grupo usa o exemplo “O estojo esquecido” e altera somente o objeto e o lugar."
+              "rescue": "O grupo usa o exemplo chamado “O estojo esquecido” e altera somente o objeto e o lugar."
             }
           },
           {
