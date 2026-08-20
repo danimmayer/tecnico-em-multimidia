@@ -2857,7 +2857,7 @@ window.SENAI_TEACHING_SUPPORT = {
           "Cada quadro indica PG, PM ou PD e descreve a ação.",
           "O grupo colocou sua identificação e mostrou as duas páginas ao professor."
         ],
-        "fallback": "Se um grupo travar, usa o exemplo projetado O estojo esquecido e altera apenas o objeto e o lugar.",
+        "fallback": "Se um grupo travar, usa o exemplo projetado chamado “O estojo esquecido” e altera apenas o objeto e o lugar.",
         "commonProblems": [
           ["O grupo não sabe como começar", "Aponto o passo 1 do slide da atividade: localizar o número do grupo e copiar o cabeçalho."],
           ["O grupo diz que não sabe desenhar", "Relembro que bonecos de palito, formas e setas são suficientes."],
@@ -2969,7 +2969,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "teacher": {
               "steps": ["3 min · Faço a chamada da retomada e confirmo o número e a história de cada grupo.", "32 min · Circulo; aponto a linha seguinte sem criar a história pelo grupo.", "7 min · Confiro seis linhas numeradas.", "3 min · Peço a troca das funções."],
               "watch": "Uma ação visível por linha; uma única cena; seis linhas completas.",
-              "rescue": "O grupo usa o exemplo O estojo esquecido e altera somente o objeto e o lugar."
+              "rescue": "O grupo usa o exemplo “O estojo esquecido” e altera somente o objeto e o lugar."
             }
           },
           {
