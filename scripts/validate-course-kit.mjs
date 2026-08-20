@@ -125,6 +125,49 @@ for (const [slug, expectedCount] of Object.entries(expected)) {
     if (!lesson01?.observation?.includes('mesa digitalizadora')) {
       errors.push(`${slug}/01: margem técnica da mesa digitalizadora ausente`);
     }
+
+    const lesson04 = course.lessons.find((lesson) => lesson.num === '04');
+    const lesson04Support = support.lessons?.['04'];
+    const lesson04Slides = lesson04Support?.presentationSlides || [];
+    const lesson04ActivityTitles = [
+      'Atividade 1 · Roteiro em seis linhas',
+      'Atividade 2 · Storyboard em seis quadros',
+      'Conferência do grupo',
+      'Corrigir e mostrar'
+    ];
+    const lesson04Text = JSON.stringify({ lesson: lesson04, support: lesson04Support })
+      .toLocaleLowerCase('pt-BR');
+
+    if (lesson04Slides.length !== 9 || lesson04Support?.appendDefaultClosing !== false) {
+      errors.push(`${slug}/04: a apresentação precisa ter exatamente 10 slides controlados (capa + 9 slides próprios)`);
+    }
+    if (lesson04Slides[4]?.title !== 'Atividade 1 · Roteiro em seis linhas') {
+      errors.push(`${slug}/04: o slide 6 precisa iniciar a prática guiada de roteiro`);
+    }
+    if (lesson04Text.includes('discussão orientada')) {
+      errors.push(`${slug}/04: a aula não pode depender de discussão orientada`);
+    }
+    if (lesson04Support?.studentSheet || lesson04Slides.some((item) => item.resource || item.resources)) {
+      errors.push(`${slug}/04: a aula não pode exigir ficha, link ou material externo`);
+    }
+    if (!lesson04?.resources?.includes('caderno ou folhas em branco')) {
+      errors.push(`${slug}/04: os únicos materiais discentes devem ser caderno ou folhas em branco`);
+    }
+    if (!lesson04?.resources?.includes('Nenhum arquivo, ficha preenchível')) {
+      errors.push(`${slug}/04: a independência de arquivo ou ficha precisa estar explícita`);
+    }
+    for (const activityTitle of lesson04ActivityTitles) {
+      const activitySlide = lesson04Slides.find((item) => item.title === activityTitle);
+      if (!activitySlide || (activitySlide.cards || []).length < 4 || (activitySlide.bullets || []).length < 2) {
+        errors.push(`${slug}/04: ${activityTitle} precisa trazer passos e critérios completos no próprio slide`);
+      }
+    }
+    if ((lesson04Support?.check || []).length < 5) {
+      errors.push(`${slug}/04: conferência final insuficiente`);
+    }
+    if (!fs.readFileSync(fromRoot('scripts/build-course-data.mjs'), 'utf8').includes('const audiovisualLesson04')) {
+      errors.push(`${slug}/04: personalização regenerável ausente do gerador`);
+    }
   }
 
   if (slug === 'design-web') {

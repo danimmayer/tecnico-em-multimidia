@@ -394,6 +394,34 @@ Object.assign(audiovisualLesson01, {
   observation: 'Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco. Preservar no Bloco 3 uma margem técnica de até 20 min para organização dos computadores e atividade breve com a mesa digitalizadora. Na gravação, manter duplas fixas, uma área delimitada e deslocamento somente quando chamado; se a margem não for usada, aplicar a extensão no papel.'
 });
 
+const audiovisualLesson04 = courses['producao-audiovisual'].lessons
+  .find((lesson) => lesson.num === '04');
+
+Object.assign(audiovisualLesson04, {
+  description: 'Aula guiada e simples para transformar uma história de seis acontecimentos em um roteiro de seis linhas e em um storyboard de seis quadros, usando somente as instruções projetadas.',
+  schedule: [
+    {
+      horario: '19:00 - 19:45',
+      atividade: 'Explicação curta com um exemplo completo: diferença entre roteiro e storyboard, estrutura de uma cena e três planos simples (geral, médio e detalhe). A turma acompanha apenas pelo projetor; cada um dos 7 grupos recebe uma história pronta.'
+    },
+    {
+      horario: '20:05 - 20:50',
+      atividade: 'Atividade 1 em 7 grupos: copiar no caderno a estrutura projetada e completar um roteiro de seis linhas. O próprio slide distribui as histórias, define os papéis, apresenta o modelo de escrita e mostra quando o trabalho está pronto.'
+    },
+    {
+      horario: '20:50 - 21:35',
+      atividade: 'Atividade 2 nos mesmos 7 grupos: dividir uma página em seis quadros e transformar cada linha do roteiro em um desenho simples, indicando plano, ação e som. Bonecos de palito, setas e formas simples são aceitos.'
+    },
+    {
+      horario: '21:35 - 22:07',
+      atividade: 'Conferência por checklist projetado, correção e apresentação do caderno ao professor. O grupo conclui quando roteiro e storyboard têm seis partes correspondentes, identificação e uma história que pode ser gravada na escola.'
+    }
+  ],
+  methodology: 'Explicação curta, exemplo resolvido e duas atividades guiadas em 7 grupos. Cada atividade permanece projetada em um único slide com passos, modelo e critério de conclusão; a condução não depende de debate.',
+  resources: 'Projetor, quadro, caderno ou folhas em branco dos alunos e lápis ou caneta. Nenhum arquivo, ficha preenchível ou material preparado precisa ser acessado ou distribuído.',
+  observation: 'Aula das 19:00 às 22:07. Lanche fixo das 19:45 às 20:05. Deixe o slide da atividade parado durante a execução. Chamada apenas na abertura e na retomada; não é necessário exibir vídeo, abrir site, imprimir ou distribuir modelo.'
+});
+
 const output = `/* Arquivo gerado por scripts/build-course-data.mjs. */\nwindow.SENAI_COURSES = ${JSON.stringify(courses, null, 2)};\n`;
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(scriptDirectory, '..');
