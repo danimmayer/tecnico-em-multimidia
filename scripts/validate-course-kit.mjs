@@ -179,11 +179,14 @@ for (const [slug, expectedCount] of Object.entries(expected)) {
       'Corrigir, nomear e devolver'
     ];
 
-    if (lesson05Slides.length !== 10 || lesson05Support?.appendDefaultClosing !== false) {
-      errors.push(`${slug}/05: a apresentação precisa ter exatamente 11 slides controlados (capa + 10 slides próprios)`);
+    if (lesson05Slides.length !== 11 || lesson05Support?.appendDefaultClosing !== false) {
+      errors.push(`${slug}/05: a apresentação precisa ter exatamente 12 slides controlados (capa + 11 slides próprios)`);
     }
-    if (lesson05Slides[5]?.title !== 'Atividade 1 · Ficha de autorização') {
-      errors.push(`${slug}/05: o slide 7 precisa iniciar a prática guiada da ficha de autorização`);
+    if (lesson05Slides[6]?.title !== 'Atividade 1 · Ficha de autorização') {
+      errors.push(`${slug}/05: o slide 8 precisa iniciar a prática guiada da ficha de autorização`);
+    }
+    if (!lesson05Slides.some((item) => item.pace === 'break')) {
+      errors.push(`${slug}/05: o intervalo precisa de slide próprio para não acusar atraso no indicador de ritmo`);
     }
     if (lesson05Support?.studentSheet || lesson05Slides.some((item) => item.resource || item.resources)) {
       errors.push(`${slug}/05: a aula não pode exigir ficha impressa, link ou material externo`);

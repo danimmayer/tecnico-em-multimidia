@@ -3191,6 +3191,21 @@ window.SENAI_TEACHING_SUPPORT = {
             }
           },
           {
+            "title": "Lanche",
+            "block": 1,
+            "pace": "break",
+            "kicker": "19:45–20:05 · intervalo",
+            "heading": "Lanche · retorno às 20:05",
+            "lede": "Na volta, cada grupo preenche a ficha de autorização da própria cena, no caderno, com pesquisa de licença no notebook.",
+            "prompt": "Retorno às 20:05 nos mesmos 7 grupos, com o caderno da Aula 4 em mãos.",
+            "promptLabel": "Combinado do retorno",
+            "teacher": {
+              "steps": ["Aviso o horário de retorno e deixo este slide projetado.", "Retomo pontualmente às 20:05 com a chamada da retomada."],
+              "watch": "A turma volta com o roteiro da Aula 4 aberto e sabe que a gravação ainda não começou.",
+              "rescue": "Se a turma voltar dispersa, projeto o slide da Atividade 1 e leio apenas o critério de conclusão."
+            }
+          },
+          {
             "title": "Atividade 1 · Ficha de autorização",
             "kicker": "20:05–20:50 · deixe este slide parado",
             "heading": "Preencham os oito campos da própria cena",
