@@ -3068,10 +3068,10 @@ window.SENAI_TEACHING_SUPPORT = {
           "A ficha tem as oito perguntas respondidas, com nomes do grupo e turma.",
           "Para que serve, onde vai passar e até quando estão escritos, e o lugar é um dos quatro apresentados.",
           "Música, imagem e fonte têm nome, site, licença e crédito anotados.",
-          "As duas tomadas foram gravadas, assistidas e anotadas com o número do arquivo ao lado do nome PA_A05_G##.",
+          "As duas tomadas foram gravadas, assistidas com a fala audível e anotadas com o número do arquivo ao lado do nome PA_A05_G##.",
           "A câmera e a ring light voltaram conferidas, com cartão e bateria no lugar."
         ],
-        "fallback": "Sem internet, dispenso a pergunta 7 e o grupo escreve em que site livre vai buscar cada item e que anotará licença e crédito na hora de usar. Sem câmera disponível, o grupo grava as duas tomadas no celular de um integrante e anota o nome dos arquivos do mesmo jeito.",
+        "fallback": "Sem internet, dispenso a pergunta 7 e o grupo escreve em que site livre vai buscar cada item e que anotará licença e crédito na hora de usar. Sem câmera, o grupo usa a de outro grupo que já terminou; a tomada A nunca vai para celular pessoal, porque tem rosto, nome e turma. Em último caso o grupo grava no celular apenas a tomada B, sem rosto, e apaga na minha frente depois que eu conferir.",
         "commonProblems": [
           ["O grupo trata a autorização como formalidade", "Peço que escolham um dos quatro lugares e escrevam o até quando; sem essas duas respostas a gravação não é liberada."],
           ["Alguém não quer aparecer no vídeo", "Trato a recusa como decisão válida e mando o grupo responder a pergunta 6 com a versão sem rosto."],
@@ -3155,7 +3155,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 1,
             "cards": [
-              {"eyebrow": "Acessibilidade", "title": "Legenda", "text": "Toda fala vira texto na tela. Se algo importante só aparece na imagem, alguém fala em voz alta ou escreve na tela."},
+              {"eyebrow": "Acessibilidade", "title": "Legenda e descrição", "text": "Toda fala vira texto na tela. E o que só aparece na imagem alguém precisa dizer em voz alta: texto na tela não resolve para quem não enxerga."},
               {"eyebrow": "Usabilidade", "title": "Dá para ler de longe", "text": "Letra grande, faixa escura atrás do texto e tempo na tela para ler a frase duas vezes."},
               {"eyebrow": "Sustentabilidade", "title": "Não jogar trabalho fora", "text": "Aproveitem o que já gravaram, gravem tudo em um lugar só e guardem uma cópia organizada, não cinco espalhadas."},
               {"eyebrow": "Na ficha de hoje", "title": "Duas viram pergunta", "text": "A frase da legenda e a opção para quem não quer aparecer. Essas duas são obrigatórias."}
@@ -3240,10 +3240,10 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 3,
             "cards": [
-              {"eyebrow": "1 · Montar (10 min)", "title": "Câmera e luz no lugar", "text": "Câmera apoiada e parada. Ring light de frente, com o fio rente à parede e fora do caminho de quem passa. A pessoa do peito para cima, no meio da imagem."},
+              {"eyebrow": "1 · Montar (10 min)", "title": "Câmera, luz e teste", "text": "Câmera apoiada e parada, fio rente à parede e fora do caminho. A pessoa do peito para cima, no meio da imagem. Gravem 10 segundos de teste e ouçam antes de valer."},
               {"eyebrow": "2 · Tomada A (12 min)", "title": "A autorização falada", "text": "Quem aceitou aparecer lê o texto de baixo olhando para a câmera. Até 40 segundos."},
               {"eyebrow": "3 · Tomada B (12 min)", "title": "A mesma coisa sem rosto", "text": "15 segundos usando só mãos, objetos ou a sala. É a prova de que dá para fazer sem expor ninguém."},
-              {"eyebrow": "4 · Conferir (11 min)", "title": "Assistir antes de parar", "text": "Vejam as duas na própria câmera, refaçam no máximo uma vez e anotem o número dos arquivos."}
+              {"eyebrow": "4 · Conferir (11 min)", "title": "Assistir antes de parar", "text": "Vejam as duas na câmera e confiram se dá para ouvir a fala. Refaçam no máximo uma vez e anotem o número dos arquivos."}
             ],
             "bullets": [
               "TEXTO DA TOMADA A: \"Eu, (nome), da turma (turma), autorizo o uso da minha imagem no vídeo (título). Ele foi gravado para (para que serve), vai passar em (onde) até (quando). Sei que posso desistir quando eu quiser.\"",
@@ -3251,9 +3251,9 @@ window.SENAI_TEACHING_SUPPORT = {
             ],
             "teacher": {
               "speech": "A tomada B existe para provar uma coisa: sempre há um jeito de contar a cena sem expor quem não quer aparecer.",
-              "steps": ["5 min · Entrego uma câmera e uma ring light por grupo, conferindo cartão, bateria e por onde passa o fio.", "8 min · Modelo a montagem e leio o texto uma vez na frente da turma.", "27 min · Circulo entre os 7 grupos conferindo enquadramento, som e o sim em voz alta.", "5 min · Aviso os cinco minutos finais e mando assistir antes de parar."],
+              "steps": ["5 min · Entrego uma câmera e uma ring light por grupo, conferindo cartão, bateria e por onde passa o fio.", "8 min · Modelo a montagem, faço o teste de 10 segundos e leio o texto uma vez na frente da turma.", "27 min · Circulo entre os 7 grupos conferindo enquadramento, som e o sim em voz alta.", "5 min · Aviso os cinco minutos finais e mando assistir antes de parar."],
               "watch": "Todo grupo tem duas tomadas gravadas, ninguém foi filmado sem concordar e nenhum fio cruza a rota de passagem.",
-              "rescue": "Sem câmera funcionando, o grupo grava as duas tomadas no celular de um integrante e anota o nome dos arquivos do mesmo jeito."
+              "rescue": "Sem câmera funcionando, o grupo espera a câmera de quem já terminou. A tomada A não vai para celular pessoal; no limite, só a tomada B, sem rosto, apagada na minha frente depois da conferência."
             }
           },
           {
@@ -3267,7 +3267,7 @@ window.SENAI_TEACHING_SUPPORT = {
               {"eyebrow": "1 e 2", "title": "Ficha completa", "text": "As oito respostas estão escritas? O lugar onde vai passar e o até quando estão lá?"},
               {"eyebrow": "3", "title": "Música e imagem", "text": "A música, a imagem e a fonte têm nome, site, licença e quem creditar anotados?"},
               {"eyebrow": "4", "title": "Quem não quer aparecer", "text": "A opção sem rosto está escrita na pergunta 6 e gravada na tomada B?"},
-              {"eyebrow": "5", "title": "As duas tomadas", "text": "A fala e a versão sem rosto foram gravadas e assistidas?"},
+              {"eyebrow": "5", "title": "As duas tomadas", "text": "A fala foi gravada e dá para ouvir? A versão sem rosto também está lá?"},
               {"eyebrow": "6", "title": "Nomes", "text": "Nomes do grupo, turma e número dos dois arquivos estão no alto da página?"}
             ],
             "bullets": ["TERMINAMOS QUANDO: são seis ✓ e nenhum NÃO sobrando.", "Não é para apresentar para a turma. Chamem o professor só depois de arrumar tudo."],
