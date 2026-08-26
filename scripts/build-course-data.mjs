@@ -426,7 +426,7 @@ const audiovisualLesson05 = courses['producao-audiovisual'].lessons
   .find((lesson) => lesson.num === '05');
 
 Object.assign(audiovisualLesson05, {
-  description: 'Aula guiada para decidir, antes de qualquer gravação, o que pode ser gravado, usado e exibido: uma ficha de autorização de oito campos e duas tomadas curtas de consentimento feitas com câmera e ring light.',
+  description: 'Aula fechada em si mesma para decidir, antes de qualquer gravação, o que pode ser gravado, usado e exibido: cada grupo recebe uma encomenda de vídeo pelo slide, preenche uma ficha de autorização de oito campos e grava duas tomadas curtas de consentimento com câmera e ring light.',
   schedule: [
     {
       horario: '19:00 - 19:45',
@@ -434,7 +434,7 @@ Object.assign(audiovisualLesson05, {
     },
     {
       horario: '20:05 - 20:50',
-      atividade: 'Atividade 1 em 7 grupos: copiar no caderno a ficha de oito campos projetada e completá-la para a cena que o grupo escreveu na Aula 4. Três campos exigem procurar no notebook uma trilha, uma imagem e uma fonte de uso livre e registrar nome, endereço, licença e crédito de cada uma.'
+      atividade: 'Atividade 1 em 7 grupos: cada grupo recebe pelo slide uma encomenda de vídeo e copia no caderno a ficha de oito campos projetada, completando-a para essa encomenda. Três campos exigem procurar no notebook uma trilha, uma imagem e uma fonte de uso livre e registrar nome, endereço, licença e crédito de cada uma.'
     },
     {
       horario: '20:50 - 21:35',
