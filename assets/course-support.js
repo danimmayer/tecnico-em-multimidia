@@ -2874,7 +2874,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "block": 1,
             "cards": [
               {"eyebrow": "19:00–19:45", "title": "Entender pelo exemplo", "text": "Roteiro, storyboard e três planos simples."},
-              {"eyebrow": "19:45–20:05", "title": "Lanche", "text": "Retorno às 20:05 com o mesmo grupo."},
+              {"eyebrow": "19:45–20:05", "title": "Lanche", "text": "Voltem às 20:05 no mesmo grupo."},
               {"eyebrow": "20:05–21:35", "title": "Fazer as duas páginas", "text": "Roteiro de 6 linhas + storyboard de 6 quadros."},
               {"eyebrow": "21:35–22:07", "title": "Conferir e mostrar", "text": "Corrigir pelo checklist e mostrar o caderno."}
             ],
@@ -3016,7 +3016,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "title": "Corrigir e mostrar",
             "kicker": "21:47–22:02 · deixe este slide parado",
             "heading": "Fechem as duas páginas",
-            "lede": "Não passem a limpo. Corrijam no próprio caderno com seta, risco ou palavra acrescentada.",
+            "lede": "Não passem a limpo. Arrumem no próprio caderno, com seta, risco ou palavra a mais.",
             "layout": "dense-cards",
             "block": 4,
             "cards": [
@@ -3054,44 +3054,44 @@ window.SENAI_TEACHING_SUPPORT = {
         "appendDefaultClosing": false
       },
       "05": {
-        "teacherGoal": "Fazer cada um dos 7 grupos concluir, somente com o que está projetado, a ficha de autorização da encomenda que recebeu e duas tomadas curtas gravadas com câmera e ring light.",
-        "plainLanguage": "Ter acesso a uma imagem, a uma música ou a um colega não significa ter autorização para gravar, usar e publicar.",
+        "teacherGoal": "Fazer cada um dos 7 grupos concluir, somente com o que está projetado, a ficha do pedido de vídeo que recebeu e duas tomadas curtas gravadas com câmera e ring light.",
+        "plainLanguage": "Conseguir uma imagem, uma música ou um colega na frente da câmera não é o mesmo que ter permissão para gravar, usar e publicar.",
         "say": "Hoje ninguém grava o vídeo inteiro: hoje decidimos quem pode aparecer, com qual música, até onde ele chega e por quanto tempo.",
         "demo": [
           "Mostre o mesmo vídeo subindo os quatro destinos: exercício de aula, exibição interna, mostra com convidados e publicação online.",
-          "Preencha na frente da turma os oito campos da ficha usando a encomenda do exemplo.",
+          "Responda na frente da turma as oito perguntas da ficha usando o pedido do exemplo.",
           "Abra um banco de trilhas livres e leia em voz alta a licença e o crédito exigidos.",
           "Grave uma autorização falada de 40 segundos e a mesma ação sem mostrar rosto."
         ],
-        "studentDeliverable": "Cada grupo mostra a ficha de oito campos preenchida no caderno e duas tomadas assistidas na câmera: a autorização falada e a versão sem rosto.",
+        "studentDeliverable": "Cada grupo mostra a ficha de oito perguntas respondida no caderno e duas tomadas assistidas na câmera: a autorização falada e a versão sem rosto.",
         "check": [
-          "A ficha tem os oito campos preenchidos, com nomes do grupo e turma.",
-          "Finalidade, destino e prazo estão escritos, e o destino é um dos quatro apresentados.",
-          "Trilha, imagem e fonte têm nome, endereço e licença anotados.",
+          "A ficha tem as oito perguntas respondidas, com nomes do grupo e turma.",
+          "Para que serve, onde vai passar e até quando estão escritos, e o lugar é um dos quatro apresentados.",
+          "Música, imagem e fonte têm nome, site e licença anotados.",
           "As duas tomadas foram gravadas, assistidas e nomeadas no padrão PA_A05_G##.",
           "A câmera e a ring light voltaram conferidas, com cartão e bateria no lugar."
         ],
         "fallback": "Sem internet, uso a lista de bancos livres projetada e aceito o registro apenas de nome e licença. Sem câmera disponível, o grupo grava as duas tomadas no celular de um integrante e anota o nome dos arquivos do mesmo jeito.",
         "commonProblems": [
-          ["O grupo trata a autorização como formalidade", "Peço que escolham um dos quatro destinos e escrevam o prazo; sem esses dois campos a gravação não é liberada."],
-          ["Alguém não quer aparecer no vídeo", "Registro a recusa como decisão válida e mando o grupo preencher o campo 6 com a alternativa sem rosto."],
+          ["O grupo trata a autorização como formalidade", "Peço que escolham um dos quatro lugares e escrevam o até quando; sem essas duas respostas a gravação não é liberada."],
+          ["Alguém não quer aparecer no vídeo", "Trato a recusa como decisão válida e mando o grupo responder a pergunta 6 com a versão sem rosto."],
           ["A busca por trilha ou fonte livre não avança", "Aponto a lista de bancos projetada e aceito o registro de nome e licença, sem o endereço completo."],
           ["A montagem da câmera consome o bloco", "Deixo a câmera apoiada e parada, sem tripé nem ajuste fino: a tomada precisa ser compreensível, não bonita."],
-          ["O tempo ficou curto", "Preservo os oito campos e a tomada A; a tomada B pode ser gravada no celular do próprio grupo."]
+          ["O tempo ficou curto", "Preservo as oito respostas e a tomada A; a tomada B pode ser gravada no celular do próprio grupo."]
         ],
         "presentationSlides": [
           {
             "title": "Mapa da noite",
             "kicker": "19:00–22:07 · lanche 19:45–20:05",
-            "heading": "Hoje decidimos o que pode ser gravado",
-            "lede": "Formem 7 grupos, um por câmera. A ficha de hoje decide o que poderá ser gravado nas próximas aulas.",
+            "heading": "Hoje vocês decidem o que pode ser gravado",
+            "lede": "Formem 7 grupos, um por câmera. O que vocês escreverem hoje é o que libera as gravações das próximas aulas.",
             "layout": "dense-cards",
             "block": 1,
             "cards": [
-              {"eyebrow": "19:00–19:45", "title": "Entender pelo exemplo", "text": "Direito de imagem, licença de música e imagem e três cuidados com quem assiste."},
+              {"eyebrow": "19:00–19:45", "title": "Ver como funciona", "text": "Quem pode aparecer, que música dá para usar e como deixar o vídeo fácil de entender."},
               {"eyebrow": "19:45–20:05", "title": "Lanche", "text": "Retorno às 20:05 com o mesmo grupo."},
-              {"eyebrow": "20:05–20:50", "title": "Ficha de autorização", "text": "Oito campos no caderno; três exigem pesquisa no notebook."},
-              {"eyebrow": "20:50–22:07", "title": "Gravar, conferir e devolver", "text": "Duas tomadas curtas, checklist e equipamento de volta."}
+              {"eyebrow": "20:05–20:50", "title": "Preencher a ficha", "text": "Oito perguntas no caderno. Três precisam de pesquisa no notebook."},
+              {"eyebrow": "20:50–22:07", "title": "Gravar e devolver", "text": "Duas gravações curtas, conferência e equipamento de volta."}
             ],
             "promptLabel": "Material de cada grupo",
             "prompt": "Caderno e caneta + um notebook com internet. A partir das 20:50, uma câmera e uma ring light por grupo.",
@@ -3104,19 +3104,19 @@ window.SENAI_TEACHING_SUPPORT = {
           {
             "title": "Os quatro destinos",
             "kicker": "Direito de uso de imagem",
-            "heading": "O mesmo vídeo, quatro destinos diferentes",
-            "lede": "Autorização não é um sim genérico: vale para um destino, com uma finalidade e por um prazo. Subir um degrau obriga a perguntar de novo.",
+            "heading": "O mesmo vídeo pode ir para quatro lugares",
+            "lede": "Quando alguém deixa aparecer no vídeo, esse sim vale para um lugar só e por um tempo só. Se o vídeo muda de lugar, pergunta de novo.",
             "layout": "dense-cards",
             "block": 1,
             "cards": [
-              {"eyebrow": "1 · Exercício", "title": "Fica na turma", "text": "Gravação feita só para aprender e apagada depois. Basta avisar antes de gravar e ter o sim de quem aparece."},
-              {"eyebrow": "2 · Exibição interna", "title": "Sala e escola", "text": "Outras turmas assistem. Exige dizer onde e quando o vídeo será exibido."},
-              {"eyebrow": "3 · Mostra com convidados", "title": "Família e visitantes", "text": "Pessoas de fora assistem. Exige autorização escrita no modelo da escola e uma alternativa para quem não quiser aparecer."},
-              {"eyebrow": "4 · Publicação online", "title": "Qualquer pessoa, sem prazo", "text": "Sai do controle da escola. Exige autorização específica para publicar e, no caso de menores, o procedimento com responsável legal."}
+              {"eyebrow": "1 · Exercício", "title": "Fica na turma", "text": "Vocês gravam só para aprender e depois apagam. Basta avisar antes e ter o sim de quem aparece."},
+              {"eyebrow": "2 · Dentro da escola", "title": "Outras turmas veem", "text": "O vídeo passa para gente da escola. Vocês precisam dizer onde e quando ele vai passar."},
+              {"eyebrow": "3 · Mostra com convidados", "title": "Gente de fora vê", "text": "Família e visitantes assistem. Aí precisa de autorização no papel da escola e de uma opção para quem não quer aparecer."},
+              {"eyebrow": "4 · Internet", "title": "Qualquer um vê, para sempre", "text": "A escola perde o controle do vídeo. Precisa de autorização só para isso e, para quem tem menos de 18, com o responsável."}
             ],
             "bullets": [
-              "ANTES DO REC, QUATRO PERGUNTAS: quem aparece? para quê? onde vai ser exibido? até quando fica disponível?",
-              "REGRA: a autorização de um destino não vale para o destino seguinte, e quem disse sim pode desistir depois, sem precisar justificar."
+              "ANTES DE GRAVAR, QUATRO PERGUNTAS: quem aparece? para que serve? onde vai passar? até quando fica no ar?",
+              "REGRA: o sim vale para um lugar só. E quem disse sim pode voltar atrás depois, sem precisar explicar por quê."
             ],
             "teacher": {
               "speech": "Autorizar para a sala não é autorizar para a internet. Cada degrau exige uma pergunta nova.",
@@ -3128,15 +3128,15 @@ window.SENAI_TEACHING_SUPPORT = {
           {
             "title": "Música, imagem e fonte",
             "kicker": "Propriedade intelectual",
-            "heading": "Encontrar não é o mesmo que poder usar",
-            "lede": "Tudo o que entra no vídeo tem dono e licença: a trilha, a foto de fundo, a letra do texto e o vídeo de apoio.",
+            "heading": "Achar na internet não quer dizer que dá para usar",
+            "lede": "Tudo o que entra no vídeo tem dono: a música, a foto do fundo, a letra do texto. A licença é o que diz se vocês podem usar aquilo.",
             "layout": "dense-cards",
             "block": 1,
             "cards": [
-              {"eyebrow": "Música", "title": "Trilha com licença", "text": "Música de serviço de streaming não pode entrar no vídeo. Procurem em bancos de trilhas livres e anotem a licença."},
-              {"eyebrow": "Imagem", "title": "Foto e vídeo de apoio", "text": "Resultado de busca não é banco de imagens. Usem bancos livres ou material gravado pelo próprio grupo."},
-              {"eyebrow": "Fonte", "title": "A letra também tem dono", "text": "Fonte baixada de qualquer site pode ser paga. Prefiram fontes livres e confiram o uso permitido."},
-              {"eyebrow": "O que anotar", "title": "Nome, endereço, licença, crédito", "text": "Sem esses quatro dados registrados, o item fica fora do vídeo."}
+              {"eyebrow": "Música", "title": "A música tem dono", "text": "Música de streaming não pode entrar no vídeo. Peguem em sites de música livre e anotem a licença."},
+              {"eyebrow": "Imagem", "title": "A foto também tem", "text": "Imagem achada em busca não é imagem livre. Usem sites de imagem livre ou o que vocês mesmos gravarem."},
+              {"eyebrow": "Fonte", "title": "Até a letra tem", "text": "Fonte baixada de qualquer site pode ser paga. Usem fontes livres e confiram se pode usar."},
+              {"eyebrow": "O que anotar", "title": "Quatro coisas de cada item", "text": "Nome, site de onde veio, licença e quem precisa ser creditado. Sem isso, o item fica fora do vídeo."}
             ],
             "promptLabel": "Bancos livres para a atividade de hoje",
             "prompt": "Trilhas: freesound.org e incompetech.com · Imagens: pexels.com e openverse.org · Fontes: fonts.google.com",
@@ -3150,15 +3150,15 @@ window.SENAI_TEACHING_SUPPORT = {
           {
             "title": "Quem assiste também precisa entender",
             "kicker": "Acessibilidade, usabilidade e sustentabilidade",
-            "heading": "Três normas que cabem em um vídeo de escola",
-            "lede": "São três decisões que entram na ficha de hoje e valem para o projeto inteiro.",
+            "heading": "Três cuidados com quem vai assistir",
+            "lede": "Dois deles viram pergunta da ficha hoje. Os três valem para qualquer vídeo que vocês fizerem.",
             "layout": "dense-cards",
             "block": 1,
             "cards": [
-              {"eyebrow": "Acessibilidade", "title": "Legenda e descrição", "text": "Toda fala vira legenda. Se uma informação aparece somente na imagem, alguém precisa dizê-la em voz alta ou escrevê-la na tela."},
-              {"eyebrow": "Usabilidade", "title": "Dá para ler de primeira", "text": "Texto grande, fundo contrastante e tempo de tela suficiente para ler a frase duas vezes em voz baixa."},
-              {"eyebrow": "Sustentabilidade", "title": "Menos retrabalho e desperdício", "text": "Reaproveitem material já gravado, gravem em um único local e guardem uma cópia organizada em vez de várias soltas."},
-              {"eyebrow": "Na prática", "title": "Viram dois campos da ficha", "text": "A frase legendada e a alternativa para quem não quer aparecer são obrigatórias na atividade de hoje."}
+              {"eyebrow": "Acessibilidade", "title": "Legenda", "text": "Toda fala vira texto na tela. Se algo importante só aparece na imagem, alguém fala em voz alta ou escreve na tela."},
+              {"eyebrow": "Usabilidade", "title": "Dá para ler de longe", "text": "Letra grande, faixa escura atrás do texto e tempo na tela para ler a frase duas vezes."},
+              {"eyebrow": "Sustentabilidade", "title": "Não jogar trabalho fora", "text": "Aproveitem o que já gravaram, gravem tudo em um lugar só e guardem uma cópia organizada, não cinco espalhadas."},
+              {"eyebrow": "Na ficha de hoje", "title": "Duas viram pergunta", "text": "A frase da legenda e a opção para quem não quer aparecer. Essas duas são obrigatórias."}
             ],
             "teacher": {
               "steps": ["3 min · Leio as três normas com um exemplo curto de cada.", "3 min · Escrevo no quadro uma frase legendada e conto o tempo de leitura.", "2 min · Ligo as três normas aos campos 6 e 8 da ficha."],
@@ -3169,21 +3169,21 @@ window.SENAI_TEACHING_SUPPORT = {
           {
             "title": "Exemplo resolvido",
             "kicker": "Exemplo",
-            "heading": "Uma ficha preenchida do começo ao fim",
-            "lede": "A encomenda do exemplo: um vídeo curto avisando que a aula mudou de sala. Cada grupo fará o mesmo com a encomenda que receber.",
+            "heading": "Uma ficha já preenchida, para vocês verem",
+            "lede": "O pedido foi: gravar um vídeo curto avisando que a aula mudou de sala. Estas são as oito respostas.",
             "layout": "dense-cards",
             "block": 1,
             "cards": [
-              {"eyebrow": "1 · Cena", "title": "A aula mudou de sala", "text": "Aviso de 20 segundos, gravado no corredor, com uma pessoa falando."},
-              {"eyebrow": "2 · Finalidade", "title": "Exercício da UC", "text": "Serve para praticar planejamento; não é peça de divulgação da escola."},
-              {"eyebrow": "3 · Onde exibe", "title": "Exibição interna", "text": "Sala de aula e, no máximo, outra turma do curso."},
-              {"eyebrow": "4 · Prazo", "title": "Até o fim do semestre", "text": "Depois disso o arquivo sai da pasta da turma."},
-              {"eyebrow": "5 · Quem aparece", "title": "Uma pessoa do grupo", "text": "Ela disse sim em voz alta e sabe que pode desistir a qualquer momento."},
-              {"eyebrow": "6 · Alternativa", "title": "Cartaz no lugar do rosto", "text": "Se ninguém quiser aparecer, o aviso é filmado como cartaz, com a voz fora de quadro."},
-              {"eyebrow": "7 · Recursos", "title": "Trilha, imagem e fonte", "text": "Trilha livre com endereço e licença anotados; nenhuma imagem de terceiros; fonte livre."},
-              {"eyebrow": "8 · Legenda", "title": "Uma frase legendada", "text": "\"A aula de hoje é na sala 12.\" — texto claro sobre faixa escura."}
+              {"eyebrow": "1 · Que vídeo é", "title": "Aviso de mudança de sala", "text": "20 segundos, gravados no corredor, com uma pessoa falando."},
+              {"eyebrow": "2 · Para que serve", "title": "É exercício de aula", "text": "Serve para treinar. Não é propaganda da escola."},
+              {"eyebrow": "3 · Onde vai passar", "title": "Só dentro da escola", "text": "Na nossa sala e, no máximo, em outra turma do curso."},
+              {"eyebrow": "4 · Até quando", "title": "Até o fim do semestre", "text": "Depois disso o arquivo é apagado."},
+              {"eyebrow": "5 · Quem aparece", "title": "Uma pessoa do grupo", "text": "Ela disse sim em voz alta e sabe que pode desistir quando quiser."},
+              {"eyebrow": "6 · Quem não quer", "title": "Um cartaz no lugar do rosto", "text": "Se ninguém quiser aparecer, filma o cartaz e a pessoa só fala, fora da imagem."},
+              {"eyebrow": "7 · Música e imagem", "title": "Uma música livre", "text": "Site e licença anotados. Nenhuma foto tirada da internet. Fonte livre."},
+              {"eyebrow": "8 · Legenda", "title": "A frase na tela", "text": "\"A aula de hoje é na sala 12.\" Letra clara sobre faixa escura."}
             ],
-            "bullets": ["Nenhum campo depende de edição: todos são decisões tomadas antes de gravar.", "Grupo travado usa esta ficha como modelo e troca apenas a encomenda, o destino e os recursos."],
+            "bullets": ["Nenhuma resposta depende de edição: tudo é decidido antes de ligar a câmera.", "Grupo travado copia esta ficha e troca só o pedido, o lugar onde vai passar e a música."],
             "teacher": {
               "steps": ["5 min · Leio os oito campos apontando o número de cada um.", "3 min · Destaco os campos 3, 4 e 7, que serão conferidos.", "2 min · Aviso que o campo 6 nunca fica em branco."],
               "watch": "A turma entende que a ficha é curta e que cada campo cabe em uma linha.",
@@ -3196,8 +3196,8 @@ window.SENAI_TEACHING_SUPPORT = {
             "pace": "break",
             "kicker": "19:45–20:05 · intervalo",
             "heading": "Lanche · retorno às 20:05",
-            "lede": "Na volta, cada grupo recebe uma encomenda de vídeo e preenche a ficha de autorização dela, no caderno, com pesquisa de licença no notebook.",
-            "prompt": "Retorno às 20:05 nos mesmos 7 grupos, com caderno e notebook na mesa.",
+            "lede": "Na volta, cada grupo recebe um pedido de vídeo e responde as oito perguntas da ficha no caderno.",
+            "prompt": "Voltem às 20:05 nos mesmos 7 grupos, com caderno e notebook na mesa.",
             "promptLabel": "Combinado do retorno",
             "teacher": {
               "steps": ["Aviso o horário de retorno e deixo este slide projetado.", "Retomo pontualmente às 20:05 com a chamada da retomada."],
@@ -3208,23 +3208,23 @@ window.SENAI_TEACHING_SUPPORT = {
           {
             "title": "Atividade 1 · Ficha de autorização",
             "kicker": "20:05–20:50 · Atividade 1",
-            "heading": "Cada grupo recebe uma encomenda de vídeo",
-            "lede": "A ficha decide o que essa encomenda pode gravar, usar e exibir. O slide anterior mostra os oito campos preenchidos em um exemplo.",
+            "heading": "Cada grupo tem um pedido de vídeo",
+            "lede": "Achem o número do grupo e leiam o pedido. A ficha responde o que esse vídeo pode gravar, que música pode usar e onde pode passar.",
             "layout": "dense-cards",
             "block": 2,
             "cards": [
-              {"eyebrow": "GRUPO 1", "title": "Convite para a mostra", "text": "Chamar famílias e visitantes para a mostra do curso."},
-              {"eyebrow": "GRUPO 2", "title": "Tour da sala", "text": "Mostrar o espaço e os equipamentos para quem vai entrar no curso."},
-              {"eyebrow": "GRUPO 3", "title": "Como devolver o equipamento", "text": "Instrução de cartão, bateria e cabo, só com mãos e objetos."},
-              {"eyebrow": "GRUPO 4", "title": "Por que escolhi o curso", "text": "Uma pessoa do grupo fala para a câmera sobre sua escolha."},
-              {"eyebrow": "GRUPO 5", "title": "Bastidores da montagem", "text": "A equipe montando câmera e luz antes de uma gravação."},
-              {"eyebrow": "GRUPO 6", "title": "Recado sobre as provas", "text": "Mensagem curta da turma para as outras turmas do curso."},
-              {"eyebrow": "GRUPO 7", "title": "Registro do intervalo", "text": "Imagens do pátio, com gente que não foi avisada da gravação."}
+              {"eyebrow": "GRUPO 1", "title": "Convite para a mostra", "text": "Chamar as famílias para a mostra de trabalhos do curso."},
+              {"eyebrow": "GRUPO 2", "title": "Tour da sala", "text": "Mostrar a sala e os equipamentos para quem vai entrar no curso."},
+              {"eyebrow": "GRUPO 3", "title": "Como devolver o equipamento", "text": "Explicar cartão, bateria e cabo, usando só as mãos e os objetos."},
+              {"eyebrow": "GRUPO 4", "title": "Por que escolhi o curso", "text": "Uma pessoa do grupo fala para a câmera sobre a escolha dela."},
+              {"eyebrow": "GRUPO 5", "title": "Bastidores da montagem", "text": "O grupo montando câmera e luz antes de gravar."},
+              {"eyebrow": "GRUPO 6", "title": "Recado sobre as provas", "text": "Um recado curto da turma para as outras turmas."},
+              {"eyebrow": "GRUPO 7", "title": "Imagens do intervalo", "text": "Imagens do pátio, com gente que não foi avisada da gravação."}
             ],
             "bullets": [
-              "OS OITO CAMPOS: 1 cena · 2 finalidade · 3 destino · 4 prazo · 5 quem aparece · 6 alternativa sem rosto · 7 trilha, imagem e fonte com licença · 8 frase legendada.",
-              "FAÇAM: um escreve, um lê os campos, os demais pesquisam a licença no notebook. O campo 6 nunca fica em branco.",
-              "PRONTO QUANDO: oito campos escritos, três licenças anotadas e o grupo identificado no alto da página."
+              "AS OITO PERGUNTAS: 1 que vídeo é · 2 para que serve · 3 onde vai passar · 4 até quando · 5 quem aparece · 6 quem não quer aparecer · 7 música, imagem e fonte com licença · 8 frase da legenda.",
+              "FAÇAM: um escreve, um lê as perguntas, os outros pesquisam a licença no notebook. A pergunta 6 nunca fica em branco.",
+              "PRONTO QUANDO: as oito respostas escritas, três licenças anotadas e os nomes do grupo no alto da página."
             ],
             "teacher": {
               "steps": ["3 min · Faço a chamada da retomada e confirmo o número de cada grupo.", "30 min · Circulo apontando o campo seguinte, sem preencher pelo grupo.", "8 min · Confiro os campos 3, 4 e 7 grupo a grupo.", "4 min · Aviso o tempo e organizo a troca de funções para a gravação."],
@@ -3235,19 +3235,19 @@ window.SENAI_TEACHING_SUPPORT = {
           {
             "title": "Atividade 2 · Autorização gravada",
             "kicker": "20:50–21:35 · Atividade 2",
-            "heading": "Duas tomadas curtas por grupo",
-            "lede": "Troquem as funções: quem escreveu agora opera a câmera. Uma câmera e uma ring light por grupo; a gravação acontece dentro da sala.",
+            "heading": "Duas gravações curtas por grupo",
+            "lede": "Troquem: quem escreveu agora fica na câmera. Uma câmera e uma ring light por grupo. Ninguém sai da sala.",
             "layout": "dense-cards",
             "block": 3,
             "cards": [
-              {"eyebrow": "1 · Montar (10 min)", "title": "Câmera, luz e enquadramento", "text": "Câmera apoiada e parada, ring light de frente, pessoa do peito para cima e centralizada no quadro."},
-              {"eyebrow": "2 · Tomada A (12 min)", "title": "Autorização falada", "text": "Quem aceitou aparecer lê o texto abaixo olhando para a câmera, em até 40 segundos."},
-              {"eyebrow": "3 · Tomada B (12 min)", "title": "A mesma ação sem rosto", "text": "Gravem 15 segundos usando somente mãos, objetos ou o espaço: é a prova de que existe alternativa."},
-              {"eyebrow": "4 · Conferir (11 min)", "title": "Assistir antes de parar", "text": "Assistam as duas tomadas na própria câmera, refaçam no máximo uma vez e anotem o número dos arquivos no caderno."}
+              {"eyebrow": "1 · Montar (10 min)", "title": "Câmera e luz no lugar", "text": "Câmera apoiada e parada. Ring light de frente. A pessoa do peito para cima, no meio da imagem."},
+              {"eyebrow": "2 · Tomada A (12 min)", "title": "A autorização falada", "text": "Quem aceitou aparecer lê o texto de baixo olhando para a câmera. Até 40 segundos."},
+              {"eyebrow": "3 · Tomada B (12 min)", "title": "A mesma coisa sem rosto", "text": "15 segundos usando só mãos, objetos ou a sala. É a prova de que dá para fazer sem expor ninguém."},
+              {"eyebrow": "4 · Conferir (11 min)", "title": "Assistir antes de parar", "text": "Vejam as duas na própria câmera, refaçam no máximo uma vez e anotem o número dos arquivos."}
             ],
             "bullets": [
-              "TEXTO DA TOMADA A: \"Eu, (nome), da turma (turma), autorizo o uso da minha imagem no vídeo (título), gravado como (finalidade), para exibição em (destino), até (prazo). Sei que posso desistir a qualquer momento.\"",
-              "REGRA: ninguém é filmado sem ter dito sim em voz alta. Este é um exercício de aula e não substitui o modelo de autorização da escola."
+              "TEXTO DA TOMADA A: \"Eu, (nome), da turma (turma), autorizo o uso da minha imagem no vídeo (título). Ele foi gravado para (para que serve), vai passar em (onde) até (quando). Sei que posso desistir quando eu quiser.\"",
+              "REGRA: ninguém é filmado sem ter dito sim em voz alta. Isto é exercício de aula e não substitui o papel de autorização da escola."
             ],
             "teacher": {
               "speech": "A tomada B existe para provar uma coisa: sempre há um jeito de contar a cena sem expor quem não quer aparecer.",
@@ -3259,18 +3259,18 @@ window.SENAI_TEACHING_SUPPORT = {
           {
             "title": "Conferência do grupo",
             "kicker": "21:35–21:47",
-            "heading": "Façam seis testes de SIM ou NÃO",
-            "lede": "Um integrante lê cada teste e outro aponta a resposta na ficha ou na tela da câmera. Escrevam ✓ quando for SIM e corrijam todo NÃO.",
+            "heading": "Seis perguntas de SIM ou NÃO",
+            "lede": "Um lê a pergunta, outro procura a resposta na ficha ou na câmera. Marquem ✓ no SIM e arrumem todo NÃO.",
             "layout": "dense-cards",
             "block": 4,
             "cards": [
-              {"eyebrow": "1 e 2", "title": "Ficha completa", "text": "Os oito campos estão preenchidos? O destino é um dos quatro e o prazo está escrito?"},
-              {"eyebrow": "3", "title": "Recursos com licença", "text": "Trilha, imagem e fonte têm nome, endereço e licença anotados?"},
-              {"eyebrow": "4", "title": "Alternativa registrada", "text": "Existe opção para quem não quer aparecer, escrita no campo 6 e gravada na tomada B?"},
-              {"eyebrow": "5", "title": "Duas tomadas", "text": "A autorização falada e a versão sem rosto foram gravadas e assistidas?"},
-              {"eyebrow": "6", "title": "Identificação", "text": "Nomes do grupo, turma e número dos dois arquivos estão no alto da página?"}
+              {"eyebrow": "1 e 2", "title": "Ficha completa", "text": "As oito respostas estão escritas? O lugar onde vai passar e o até quando estão lá?"},
+              {"eyebrow": "3", "title": "Música e imagem", "text": "A música, a imagem e a fonte têm nome, site e licença anotados?"},
+              {"eyebrow": "4", "title": "Quem não quer aparecer", "text": "A opção sem rosto está escrita na pergunta 6 e gravada na tomada B?"},
+              {"eyebrow": "5", "title": "As duas tomadas", "text": "A fala e a versão sem rosto foram gravadas e assistidas?"},
+              {"eyebrow": "6", "title": "Nomes", "text": "Nomes do grupo, turma e número dos dois arquivos estão no alto da página?"}
             ],
-            "bullets": ["TERMINAMOS QUANDO: há seis ✓ e todo NÃO já foi corrigido.", "Não apresentem para a turma; chamem o professor somente depois de corrigir."],
+            "bullets": ["TERMINAMOS QUANDO: são seis ✓ e nenhum NÃO sobrando.", "Não é para apresentar para a turma. Chamem o professor só depois de arrumar tudo."],
             "teacher": {
               "steps": ["2 min · Explico que a conferência é mecânica, sem apresentação.", "8 min · Os grupos marcam e corrigem.", "2 min · Confirmo os nomes e os seis sinais."],
               "watch": "O grupo aponta a evidência, em vez de responder SIM sem conferir.",
@@ -3285,12 +3285,12 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 4,
             "cards": [
-              {"eyebrow": "1 · Corrigir (5 min)", "title": "Resolver os NÃO", "text": "Completem o campo, a licença ou a tomada que estiver faltando."},
-              {"eyebrow": "2 · Nomear (3 min)", "title": "Padrão dos arquivos", "text": "Anotem no caderno: PA_A05_G01_AUTORIZACAO e PA_A05_G01_SEM_ROSTO, trocando 01 pelo número do grupo."},
-              {"eyebrow": "3 · Devolver (5 min)", "title": "Câmera e ring light", "text": "Devolvam com cartão dentro, bateria no lugar e cabo enrolado. Não apaguem nada do cartão."},
-              {"eyebrow": "4 · Mostrar (2 min)", "title": "Chamem o professor", "text": "Abram a ficha e apontem os campos 3, 4 e 7."}
+              {"eyebrow": "1 · Arrumar (5 min)", "title": "O que ficou faltando", "text": "Completem a resposta, a licença ou a tomada que faltou."},
+              {"eyebrow": "2 · Nomear (3 min)", "title": "Nome dos arquivos", "text": "Anotem no caderno: PA_A05_G01_AUTORIZACAO e PA_A05_G01_SEM_ROSTO. Troquem o 01 pelo número do grupo."},
+              {"eyebrow": "3 · Devolver (5 min)", "title": "Câmera e ring light", "text": "Devolvam com o cartão dentro, a bateria no lugar e o cabo enrolado. Não apaguem nada do cartão."},
+              {"eyebrow": "4 · Mostrar (2 min)", "title": "Chamem o professor", "text": "Abram a ficha e mostrem as respostas 3, 4 e 7."}
             ],
-            "bullets": ["PRONTO = ficha com 8 campos + 3 licenças + 6 ✓ + 2 tomadas nomeadas + equipamento devolvido.", "Se o professor pedir uma correção, façam no mesmo lugar e mostrem novamente."],
+            "bullets": ["PRONTO = 8 respostas + 3 licenças + 6 ✓ + 2 tomadas com nome + equipamento devolvido.", "Se o professor pedir para arrumar algo, arrumem ali mesmo e mostrem de novo."],
             "teacher": {
               "steps": ["5 min · Circulo apenas entre quem ainda corrige.", "5 min · Recebo as 7 câmeras e as 7 ring lights, conferindo cartão e bateria.", "3 min · Confiro por amostragem os campos 3, 4 e 7.", "2 min · Registro os grupos concluídos."],
               "watch": "Todo equipamento voltou conferido e nenhuma ficha ficou sem destino e prazo.",
@@ -3300,14 +3300,14 @@ window.SENAI_TEACHING_SUPPORT = {
           {
             "title": "Fechamento",
             "kicker": "22:02–22:07",
-            "heading": "A permissão vem antes da gravação",
-            "lede": "A ficha preenchida hoje é o que libera qualquer gravação daqui em diante: sem finalidade, destino e prazo definidos, a câmera não sai do armário.",
+            "heading": "Primeiro a permissão, depois a câmera",
+            "lede": "Daqui em diante é essa ficha que libera gravação. Sem saber para que serve, onde vai passar e até quando, a câmera não sai do armário.",
             "layout": "dense-cards",
             "block": 4,
             "cards": [
               {"eyebrow": "No caderno", "title": "Complete uma frase", "text": "Antes de gravar alguém, eu preciso combinar ___ e ___."},
-              {"eyebrow": "Antes de sair", "title": "Guarde a ficha", "text": "Ela é a referência de autorização para as gravações das próximas aulas."},
-              {"eyebrow": "Próxima aula", "title": "Câmera na mão", "text": "Apoio, foco, exposição e enquadramento com o equipamento do laboratório."}
+              {"eyebrow": "Antes de sair", "title": "Guarde a ficha", "text": "É ela que autoriza as gravações das próximas aulas."},
+              {"eyebrow": "Próxima aula", "title": "Câmera na mão", "text": "Como segurar, focar e enquadrar com o equipamento do laboratório."}
             ],
             "teacher": {
               "steps": ["3 min · Todos completam a frase sem rodada oral.", "2 min · Aviso que a ficha deve ser guardada, não entregue."],
