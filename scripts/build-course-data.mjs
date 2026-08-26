@@ -422,6 +422,34 @@ Object.assign(audiovisualLesson04, {
   observation: 'Aula das 19:00 às 22:07. Lanche fixo das 19:45 às 20:05. Deixe o slide da atividade parado durante a execução. Chamada apenas na abertura e na retomada; não é necessário exibir vídeo, abrir site, imprimir ou distribuir modelo.'
 });
 
+const audiovisualLesson05 = courses['producao-audiovisual'].lessons
+  .find((lesson) => lesson.num === '05');
+
+Object.assign(audiovisualLesson05, {
+  description: 'Aula guiada para decidir, antes de qualquer gravação, o que pode ser gravado, usado e exibido: uma ficha de autorização de oito campos e duas tomadas curtas de consentimento feitas com câmera e ring light.',
+  schedule: [
+    {
+      horario: '19:00 - 19:45',
+      atividade: 'Explicação curta com um exemplo resolvido: direito de uso de imagem, os quatro destinos possíveis de um vídeo, as licenças de música, imagem e fonte e três cuidados de acessibilidade, usabilidade e sustentabilidade. A turma acompanha apenas pelo projetor e se organiza em 7 grupos, um por câmera.'
+    },
+    {
+      horario: '20:05 - 20:50',
+      atividade: 'Atividade 1 em 7 grupos: copiar no caderno a ficha de oito campos projetada e completá-la para a cena que o grupo escreveu na Aula 4. Três campos exigem procurar no notebook uma trilha, uma imagem e uma fonte de uso livre e registrar nome, endereço, licença e crédito de cada uma.'
+    },
+    {
+      horario: '20:50 - 21:35',
+      atividade: 'Atividade 2 nos mesmos 7 grupos, com uma câmera e uma ring light para cada um: gravar duas tomadas curtas dentro da sala — a autorização falada, lendo o texto projetado com finalidade, local de exibição, prazo e direito de desistir, e a mesma cena sem mostrar o rosto de ninguém.'
+    },
+    {
+      horario: '21:35 - 22:07',
+      atividade: 'Conferência por checklist projetado, correção da ficha, anotação do nome dos dois arquivos, devolução da câmera e da ring light e apresentação do caderno ao professor. O grupo conclui quando a ficha tem os oito campos, as duas tomadas foram assistidas e o equipamento voltou conferido.'
+    }
+  ],
+  methodology: 'Explicação curta, exemplo resolvido e duas atividades guiadas em 7 grupos: uma no caderno com pesquisa de licenças no notebook e outra de gravação curta com câmera e ring light. Cada atividade permanece projetada em um único slide com passos, modelo e critério de conclusão; a condução não depende de debate.',
+  resources: 'Projetor, quadro, caderno ou folhas em branco dos alunos, lápis ou caneta, notebooks dos alunos para a pesquisa de licenças, 7 câmeras com cartão e bateria e 7 ring lights. Nenhuma ficha impressa precisa ser distribuída.',
+  observation: 'Aula das 19:00 às 22:07. Lanche fixo das 19:45 às 20:05. Deixe o slide da atividade parado durante a execução. Chamada apenas na abertura e na retomada. As câmeras e as ring lights saem somente às 20:50 e voltam conferidas até as 22:02. A autorização gravada é exercício de aula e não substitui o modelo institucional da escola.'
+});
+
 const output = `/* Arquivo gerado por scripts/build-course-data.mjs. */\nwindow.SENAI_COURSES = ${JSON.stringify(courses, null, 2)};\n`;
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(scriptDirectory, '..');

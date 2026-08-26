@@ -1249,7 +1249,7 @@ window.SENAI_COURSES = {
       {
         "num": "05",
         "title": "Direito de imagem, ética e normas",
-        "description": "Antes das gravações com os equipamentos do laboratório, a turma aprofunda direito de uso de imagem, propriedade intelectual, ética profissional e normas de acessibilidade, usabilidade e sustentabilidade.",
+        "description": "Aula guiada para decidir, antes de qualquer gravação, o que pode ser gravado, usado e exibido: uma ficha de autorização de oito campos e duas tomadas curtas de consentimento feitas com câmera e ring light.",
         "objectives": [
           "Propriedade intelectual: direito de uso de imagem.",
           "Pesquisa: fontes, propriedade intelectual.",
@@ -1263,25 +1263,25 @@ window.SENAI_COURSES = {
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Revisão da aula 4 (roteiro e storyboard). Estudo de caso: vídeo removido da internet por uso de música e imagens sem licença; discussão sobre as consequências jurídicas e profissionais para quem produziu e publicou."
+            "horario": "19:00 - 19:45",
+            "atividade": "Explicação curta com um exemplo resolvido: direito de uso de imagem, os quatro destinos possíveis de um vídeo, as licenças de música, imagem e fonte e três cuidados de acessibilidade, usabilidade e sustentabilidade. A turma acompanha apenas pelo projetor e se organiza em 7 grupos, um por câmera."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "Direito de uso de imagem e propriedade intelectual: termo de autorização, licenças de música, imagem e fonte (incluindo licenças abertas) e a responsabilidade ética do produtor audiovisual; retomada dos combinados de consentimento firmados na aula 1, agora com respaldo formal."
+            "horario": "20:05 - 20:50",
+            "atividade": "Atividade 1 em 7 grupos: copiar no caderno a ficha de oito campos projetada e completá-la para a cena que o grupo escreveu na Aula 4. Três campos exigem procurar no notebook uma trilha, uma imagem e uma fonte de uso livre e registrar nome, endereço, licença e crédito de cada uma."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "Normas de acessibilidade em vídeo (legendas, audiodescrição), usabilidade e sustentabilidade em projetos de mídias digitais. Pesquisa guiada nos computadores: bancos gratuitos de trilhas, imagens e fontes, e como verificar a confiabilidade e a licença de cada recurso encontrado."
+            "horario": "20:50 - 21:35",
+            "atividade": "Atividade 2 nos mesmos 7 grupos, com uma câmera e uma ring light para cada um: gravar duas tomadas curtas dentro da sala — a autorização falada, lendo o texto projetado com finalidade, local de exibição, prazo e direito de desistir, e a mesma cena sem mostrar o rosto de ninguém."
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "Prática em grupos de 3 a 4: analisar o modelo institucional de autorização e registrar separadamente exercício, exibição interna, mostra com convidados e publicação online e montar uma biblioteca compartilhada de recursos livres (trilhas, imagens, fontes), registrando a licença de cada item."
+            "horario": "21:35 - 22:07",
+            "atividade": "Conferência por checklist projetado, correção da ficha, anotação do nome dos dois arquivos, devolução da câmera e da ring light e apresentação do caderno ao professor. O grupo conclui quando a ficha tem os oito campos, as duas tomadas foram assistidas e o equipamento voltou conferido."
           }
         ],
-        "methodology": "Estudo de caso com discussão ética e prática de pesquisa e produção de documentos que serão usados nas gravações reais.",
-        "resources": "Computadores do laboratório com acesso à internet e projetor.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "Explicação curta, exemplo resolvido e duas atividades guiadas em 7 grupos: uma no caderno com pesquisa de licenças no notebook e outra de gravação curta com câmera e ring light. Cada atividade permanece projetada em um único slide com passos, modelo e critério de conclusão; a condução não depende de debate.",
+        "resources": "Projetor, quadro, caderno ou folhas em branco dos alunos, lápis ou caneta, notebooks dos alunos para a pesquisa de licenças, 7 câmeras com cartão e bateria e 7 ring lights. Nenhuma ficha impressa precisa ser distribuída.",
+        "observation": "Aula das 19:00 às 22:07. Lanche fixo das 19:45 às 20:05. Deixe o slide da atividade parado durante a execução. Chamada apenas na abertura e na retomada. As câmeras e as ring lights saem somente às 20:50 e voltam conferidas até as 22:02. A autorização gravada é exercício de aula e não substitui o modelo institucional da escola."
       },
       {
         "num": "06",

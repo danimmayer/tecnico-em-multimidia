@@ -168,6 +168,44 @@ for (const [slug, expectedCount] of Object.entries(expected)) {
     if (!fs.readFileSync(fromRoot('scripts/build-course-data.mjs'), 'utf8').includes('const audiovisualLesson04')) {
       errors.push(`${slug}/04: personalização regenerável ausente do gerador`);
     }
+
+    const lesson05 = course.lessons.find((lesson) => lesson.num === '05');
+    const lesson05Support = support.lessons?.['05'];
+    const lesson05Slides = lesson05Support?.presentationSlides || [];
+    const lesson05ActivityTitles = [
+      'Atividade 1 · Ficha de autorização',
+      'Atividade 2 · Autorização gravada',
+      'Conferência do grupo',
+      'Corrigir, nomear e devolver'
+    ];
+
+    if (lesson05Slides.length !== 10 || lesson05Support?.appendDefaultClosing !== false) {
+      errors.push(`${slug}/05: a apresentação precisa ter exatamente 11 slides controlados (capa + 10 slides próprios)`);
+    }
+    if (lesson05Slides[5]?.title !== 'Atividade 1 · Ficha de autorização') {
+      errors.push(`${slug}/05: o slide 7 precisa iniciar a prática guiada da ficha de autorização`);
+    }
+    if (lesson05Support?.studentSheet || lesson05Slides.some((item) => item.resource || item.resources)) {
+      errors.push(`${slug}/05: a aula não pode exigir ficha impressa, link ou material externo`);
+    }
+    for (const activityTitle of lesson05ActivityTitles) {
+      const activitySlide = lesson05Slides.find((item) => item.title === activityTitle);
+      if (!activitySlide || (activitySlide.cards || []).length < 4 || (activitySlide.bullets || []).length < 2) {
+        errors.push(`${slug}/05: ${activityTitle} precisa trazer passos e critérios completos no próprio slide`);
+      }
+    }
+    if ((lesson05Support?.check || []).length < 5) {
+      errors.push(`${slug}/05: conferência final insuficiente`);
+    }
+    if (!lesson05?.resources?.includes('7 câmeras') || !lesson05?.resources?.includes('7 ring lights')) {
+      errors.push(`${slug}/05: a divisão em 7 grupos precisa acompanhar as 7 câmeras e as 7 ring lights`);
+    }
+    if (!lesson05?.observation?.includes('não substitui o modelo institucional')) {
+      errors.push(`${slug}/05: o limite pedagógico da autorização gravada precisa estar explícito`);
+    }
+    if (!fs.readFileSync(fromRoot('scripts/build-course-data.mjs'), 'utf8').includes('const audiovisualLesson05')) {
+      errors.push(`${slug}/05: personalização regenerável ausente do gerador`);
+    }
   }
 
   if (slug === 'design-web') {
