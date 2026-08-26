@@ -3084,7 +3084,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "title": "Mapa da noite",
             "kicker": "19:00–22:07 · lanche 19:45–20:05",
             "heading": "Hoje vocês decidem o que pode ser gravado",
-            "lede": "Formem 7 grupos, um por câmera. O que vocês escreverem hoje é o que libera as gravações das próximas aulas.",
+            "lede": "Formem 7 grupos, um por câmera. O que vocês escreverem hoje é o plano que toda gravação daqui em diante precisa ter pronto antes de começar.",
             "layout": "dense-cards",
             "block": 1,
             "cards": [
@@ -3251,7 +3251,7 @@ window.SENAI_TEACHING_SUPPORT = {
             ],
             "teacher": {
               "speech": "A tomada B existe para provar uma coisa: sempre há um jeito de contar a cena sem expor quem não quer aparecer.",
-              "steps": ["5 min · Entrego uma câmera e uma ring light por grupo, conferindo cartão, bateria e por onde passa o fio.", "8 min · Modelo a montagem, faço o teste de 10 segundos e leio o texto uma vez na frente da turma.", "27 min · Circulo entre os 7 grupos conferindo enquadramento, som e o sim em voz alta.", "5 min · Aviso os cinco minutos finais e mando assistir antes de parar."],
+              "steps": ["5 min · Entrego uma câmera e uma ring light por grupo, conferindo cartão, bateria e por onde passa o fio.", "8 min · Enquanto os grupos montam, modelo o enquadramento, faço o teste de 10 segundos e leio o texto uma vez na frente da turma.", "27 min · Circulo entre os 7 grupos conferindo enquadramento, som e o sim em voz alta.", "5 min · Aviso os cinco minutos finais e mando assistir antes de parar."],
               "watch": "Todo grupo tem duas tomadas gravadas, ninguém foi filmado sem concordar e nenhum fio cruza a rota de passagem.",
               "rescue": "Sem câmera funcionando, junto o grupo ao vizinho para dividirem uma câmera, alternando enquanto um monta e o outro grava. A tomada A não vai para celular pessoal; no limite, só a tomada B, sem rosto, apagada na minha frente depois da conferência."
             }
