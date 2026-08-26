@@ -3228,7 +3228,7 @@ window.SENAI_TEACHING_SUPPORT = {
             ],
             "teacher": {
               "steps": ["3 min · Faço a chamada da retomada e confirmo o número de cada grupo.", "30 min · Circulo apontando o campo seguinte, sem preencher pelo grupo.", "8 min · Confiro os campos 3, 4 e 7 grupo a grupo.", "4 min · Aviso o tempo e organizo a troca de funções para a gravação."],
-              "watch": "Destino escolhido, prazo escrito e três licenças anotadas com endereço.",
+              "watch": "Onde vai passar e até quando estão escritos, e as três licenças têm site e crédito anotados.",
               "rescue": "Se a internet cair, a pergunta 7 vira compromisso escrito: o grupo aponta o site livre de cada item e anota licença e crédito quando for usar."
             }
           },
