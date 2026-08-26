@@ -3084,7 +3084,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "title": "Mapa da noite",
             "kicker": "19:00–22:07 · lanche 19:45–20:05",
             "heading": "Hoje decidimos o que pode ser gravado",
-            "lede": "Formem 7 grupos, um por câmera. Tudo o que precisam copiar, procurar e conferir aparece no slide; não é preciso abrir arquivo nem imprimir ficha.",
+            "lede": "Formem 7 grupos, um por câmera. A ficha de hoje decide o que poderá ser gravado nas próximas aulas.",
             "layout": "dense-cards",
             "block": 1,
             "cards": [
@@ -3103,7 +3103,7 @@ window.SENAI_TEACHING_SUPPORT = {
           },
           {
             "title": "Os quatro destinos",
-            "kicker": "Referência simples · acompanhe pelo projetor",
+            "kicker": "Direito de uso de imagem",
             "heading": "O mesmo vídeo, quatro destinos diferentes",
             "lede": "Autorização não é um sim genérico: vale para um destino, com uma finalidade e por um prazo. Subir um degrau obriga a perguntar de novo.",
             "layout": "dense-cards",
@@ -3127,7 +3127,7 @@ window.SENAI_TEACHING_SUPPORT = {
           },
           {
             "title": "Música, imagem e fonte",
-            "kicker": "Propriedade intelectual · acompanhe pelo projetor",
+            "kicker": "Propriedade intelectual",
             "heading": "Encontrar não é o mesmo que poder usar",
             "lede": "Tudo o que entra no vídeo tem dono e licença: a trilha, a foto de fundo, a letra do texto e o vídeo de apoio.",
             "layout": "dense-cards",
@@ -3151,7 +3151,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "title": "Quem assiste também precisa entender",
             "kicker": "Acessibilidade, usabilidade e sustentabilidade",
             "heading": "Três normas que cabem em um vídeo de escola",
-            "lede": "Não são exigências distantes: são três decisões simples que entram na ficha de hoje e valem para o projeto inteiro.",
+            "lede": "São três decisões que entram na ficha de hoje e valem para o projeto inteiro.",
             "layout": "dense-cards",
             "block": 1,
             "cards": [
@@ -3168,9 +3168,9 @@ window.SENAI_TEACHING_SUPPORT = {
           },
           {
             "title": "Exemplo resolvido",
-            "kicker": "Leia de cima para baixo · não precisa copiar agora",
+            "kicker": "Exemplo",
             "heading": "A ficha da cena \"O estojo esquecido\"",
-            "lede": "Os oito campos preenchidos para a cena escrita na aula passada. Cada grupo fará o mesmo com a própria cena.",
+            "lede": "Os oito campos preenchidos para a cena escrita na aula passada. Cada grupo fará o mesmo com a sua.",
             "layout": "dense-cards",
             "block": 1,
             "cards": [
@@ -3183,7 +3183,7 @@ window.SENAI_TEACHING_SUPPORT = {
               {"eyebrow": "7 · Recursos", "title": "Trilha, imagem e fonte", "text": "Trilha livre com endereço e licença anotados; nenhuma imagem de terceiros; fonte livre."},
               {"eyebrow": "8 · Legenda", "title": "Uma frase legendada", "text": "\"O estojo voltou para a mesa certa.\" — texto claro sobre faixa escura."}
             ],
-            "bullets": ["Perceba: nenhum campo depende de edição; todos são decisões tomadas antes de gravar.", "Se o seu grupo travar, use esta ficha como modelo e troque apenas a cena, o destino e os recursos."],
+            "bullets": ["Nenhum campo depende de edição: todos são decisões tomadas antes de gravar.", "Grupo travado usa esta ficha como modelo e troca apenas a cena, o destino e os recursos."],
             "teacher": {
               "steps": ["5 min · Leio os oito campos apontando o número de cada um.", "3 min · Destaco os campos 3, 4 e 7, que serão conferidos.", "2 min · Aviso que o campo 6 nunca fica em branco."],
               "watch": "A turma entende que a ficha é curta e que cada campo cabe em uma linha.",
@@ -3207,7 +3207,7 @@ window.SENAI_TEACHING_SUPPORT = {
           },
           {
             "title": "Atividade 1 · Ficha de autorização",
-            "kicker": "20:05–20:50 · deixe este slide parado",
+            "kicker": "20:05–20:50 · Atividade 1",
             "heading": "Preencham os oito campos da própria cena",
             "lede": "Uma pessoa escreve no caderno, uma lê os campos e as demais pesquisam no notebook. Usem a cena que o grupo escreveu na Aula 4.",
             "layout": "dense-cards",
@@ -3231,7 +3231,7 @@ window.SENAI_TEACHING_SUPPORT = {
           },
           {
             "title": "Atividade 2 · Autorização gravada",
-            "kicker": "20:50–21:35 · deixe este slide parado",
+            "kicker": "20:50–21:35 · Atividade 2",
             "heading": "Duas tomadas curtas por grupo",
             "lede": "Troquem as funções: quem escreveu agora opera a câmera. Uma câmera e uma ring light por grupo; a gravação acontece dentro da sala.",
             "layout": "dense-cards",
@@ -3255,7 +3255,7 @@ window.SENAI_TEACHING_SUPPORT = {
           },
           {
             "title": "Conferência do grupo",
-            "kicker": "21:35–21:47 · marquem no canto da página",
+            "kicker": "21:35–21:47",
             "heading": "Façam seis testes de SIM ou NÃO",
             "lede": "Um integrante lê cada teste e outro aponta a resposta na ficha ou na tela da câmera. Escrevam ✓ quando for SIM e corrijam todo NÃO.",
             "layout": "dense-cards",
@@ -3276,7 +3276,7 @@ window.SENAI_TEACHING_SUPPORT = {
           },
           {
             "title": "Corrigir, nomear e devolver",
-            "kicker": "21:47–22:02 · deixe este slide parado",
+            "kicker": "21:47–22:02",
             "heading": "Fechem a ficha e entreguem o equipamento",
             "lede": "Não passem a limpo. Corrijam no próprio caderno com seta, risco ou palavra acrescentada.",
             "layout": "dense-cards",
@@ -3296,7 +3296,7 @@ window.SENAI_TEACHING_SUPPORT = {
           },
           {
             "title": "Fechamento",
-            "kicker": "22:02–22:07 · conclusão individual",
+            "kicker": "22:02–22:07",
             "heading": "A permissão vem antes da gravação",
             "lede": "Guardem a ficha junto com o roteiro e o storyboard: os três formam o pacote que libera a gravação das próximas aulas.",
             "layout": "dense-cards",
