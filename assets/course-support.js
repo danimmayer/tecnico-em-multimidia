@@ -3090,7 +3090,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "cards": [
               {"eyebrow": "19:00–19:45", "title": "Ver como funciona", "text": "Quem pode aparecer, que música dá para usar e como deixar o vídeo fácil de entender."},
               {"eyebrow": "19:45–20:05", "title": "Lanche", "text": "Retorno às 20:05 com o mesmo grupo."},
-              {"eyebrow": "20:05–20:50", "title": "Preencher a ficha", "text": "Oito perguntas no caderno. Três precisam de pesquisa no notebook."},
+              {"eyebrow": "20:05–20:50", "title": "Preencher a ficha", "text": "Oito perguntas no caderno. Uma delas pede pesquisa de três itens no notebook."},
               {"eyebrow": "20:50–22:07", "title": "Gravar e devolver", "text": "Duas gravações curtas, conferência e equipamento de volta."}
             ],
             "promptLabel": "Material de cada grupo",
@@ -3180,10 +3180,10 @@ window.SENAI_TEACHING_SUPPORT = {
               {"eyebrow": "4 · Até quando", "title": "Até o fim do semestre", "text": "Depois disso o arquivo é apagado."},
               {"eyebrow": "5 · Quem aparece", "title": "Uma pessoa do grupo", "text": "Ela disse sim em voz alta e sabe que pode desistir quando quiser."},
               {"eyebrow": "6 · Quem não quer", "title": "Um cartaz no lugar do rosto", "text": "Se ninguém quiser aparecer, filma o cartaz e o texto é lido por quem aceitou ter a voz gravada."},
-              {"eyebrow": "7 · Música e imagem", "title": "Uma música livre", "text": "Site e licença anotados. Nenhuma foto tirada da internet. Fonte livre."},
+              {"eyebrow": "7 · Música e imagem", "title": "Os quatro dados de cada item", "text": "Música: Kalimba · freesound.org · licença CC0 · sem crédito. Sem foto de terceiros. Fonte: Inter · fonts.google.com · licença aberta."},
               {"eyebrow": "8 · Legenda", "title": "A frase na tela", "text": "\"A aula de hoje é na sala 12.\" Letra clara sobre faixa escura."}
             ],
-            "bullets": ["Nenhuma resposta depende de edição: tudo é decidido antes de ligar a câmera.", "Grupo travado copia esta ficha e troca só o pedido, o lugar onde vai passar e a música."],
+            "bullets": ["Nenhuma resposta depende de edição: tudo é decidido antes de ligar a câmera.", "Grupo travado usa esta ficha como modelo, mas responde as oito com o próprio pedido: quem aparece e quem não quer aparecer mudam em cada um."],
             "teacher": {
               "steps": ["5 min · Leio os oito campos apontando o número de cada um.", "3 min · Destaco os campos 3, 4 e 7, que serão conferidos.", "2 min · Aviso que o campo 6 nunca fica em branco."],
               "watch": "A turma entende que a ficha é curta e que cada campo cabe em uma linha.",
