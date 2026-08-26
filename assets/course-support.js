@@ -3175,11 +3175,11 @@ window.SENAI_TEACHING_SUPPORT = {
             "block": 1,
             "cards": [
               {"eyebrow": "1 · Que vídeo é", "title": "Aviso de mudança de sala", "text": "20 segundos, gravados no corredor, com uma pessoa falando."},
-              {"eyebrow": "2 · Para que serve", "title": "É exercício de aula", "text": "Serve para treinar. Não é propaganda da escola."},
+              {"eyebrow": "2 · Para que serve", "title": "Treinar planejamento", "text": "Serve para a turma praticar. Não é propaganda da escola."},
               {"eyebrow": "3 · Onde vai passar", "title": "Só dentro da escola", "text": "Na nossa sala e, no máximo, em outra turma do curso."},
               {"eyebrow": "4 · Até quando", "title": "Até o fim do semestre", "text": "Depois disso o arquivo é apagado."},
               {"eyebrow": "5 · Quem aparece", "title": "Uma pessoa do grupo", "text": "Ela disse sim em voz alta e sabe que pode desistir quando quiser."},
-              {"eyebrow": "6 · Quem não quer", "title": "Um cartaz no lugar do rosto", "text": "Se ninguém quiser aparecer, filma o cartaz e a pessoa só fala, fora da imagem."},
+              {"eyebrow": "6 · Quem não quer", "title": "Um cartaz no lugar do rosto", "text": "Se ninguém quiser aparecer, filma o cartaz e o texto é lido por quem aceitou ter a voz gravada."},
               {"eyebrow": "7 · Música e imagem", "title": "Uma música livre", "text": "Site e licença anotados. Nenhuma foto tirada da internet. Fonte livre."},
               {"eyebrow": "8 · Legenda", "title": "A frase na tela", "text": "\"A aula de hoje é na sala 12.\" Letra clara sobre faixa escura."}
             ],
@@ -3242,7 +3242,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "cards": [
               {"eyebrow": "1 · Montar (10 min)", "title": "Câmera, luz e teste", "text": "Câmera apoiada e parada, fio rente à parede e fora do caminho. A pessoa do peito para cima, no meio da imagem. Gravem 10 segundos de teste e ouçam antes de valer."},
               {"eyebrow": "2 · Tomada A (12 min)", "title": "A autorização falada", "text": "Quem aceitou aparecer lê o texto de baixo olhando para a câmera. Até 40 segundos."},
-              {"eyebrow": "3 · Tomada B (12 min)", "title": "A mesma coisa sem rosto", "text": "15 segundos usando só mãos, objetos ou a sala. É a prova de que dá para fazer sem expor ninguém."},
+              {"eyebrow": "3 · Tomada B (12 min)", "title": "A mesma coisa sem rosto", "text": "15 segundos com objetos, a sala ou mãos sem tatuagem, anel ou pulseira que identifiquem. Sem falar, porque a voz também reconhece."},
               {"eyebrow": "4 · Conferir (11 min)", "title": "Assistir antes de parar", "text": "Vejam as duas na câmera e confiram se dá para ouvir a fala. Refaçam no máximo uma vez e anotem o número dos arquivos."}
             ],
             "bullets": [
@@ -3292,7 +3292,7 @@ window.SENAI_TEACHING_SUPPORT = {
             ],
             "bullets": ["PRONTO = 8 respostas + 3 licenças + 6 ✓ + 2 tomadas com número e nome + equipamento devolvido.", "Se o professor pedir para arrumar algo, arrumem ali mesmo e mostrem de novo."],
             "teacher": {
-              "steps": ["5 min · Circulo apenas entre quem ainda corrige.", "5 min · Recebo as 7 câmeras e as 7 ring lights, conferindo cartão e bateria, e apago as duas tomadas de cada cartão depois de conferir.", "3 min · Confiro por amostragem os campos 3, 4 e 7.", "2 min · Registro os grupos concluídos."],
+              "steps": ["5 min · Circulo apenas entre quem ainda corrige.", "5 min · Recebo as 7 câmeras e as 7 ring lights, conferindo cartão e bateria, e apago tudo o que foi gravado hoje em cada cartão depois de conferir, incluindo o teste e as repetições.", "3 min · Confiro por amostragem os campos 3, 4 e 7.", "2 min · Registro os grupos concluídos."],
               "watch": "Todo equipamento voltou conferido, nenhuma ficha ficou sem onde e até quando, e nenhum cartão saiu da sala com gravação de rosto.",
               "rescue": "Com fila, recebo primeiro o equipamento e confiro a ficha logo depois, com o grupo ainda na sala."
             }

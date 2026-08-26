@@ -836,15 +836,19 @@ body[data-theme="av"] .lesson-topbar { background: rgba(18, 16, 15, 0.9); }
 }
 
 /* A grade tem quatro colunas. Com dois, três ou seis cartões isso deixava
-   uma coluna vazia à direita; aqui ela se ajusta à quantidade. */
-.presentation-card-grid.is-dense:has(> :last-child:nth-child(2)) {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
+   uma coluna vazia à direita; aqui ela se ajusta à quantidade. Fica acima do
+   ponto de quebra porque essas regras têm especificidade maior que a de tela
+   estreita e manteriam várias colunas no celular. */
+@media (min-width: 821px) {
+  .presentation-card-grid.is-dense:has(> :last-child:nth-child(2)) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 
-.presentation-card-grid.is-dense:has(> :last-child:nth-child(3)),
-.presentation-card-grid.is-dense:has(> :last-child:nth-child(5)),
-.presentation-card-grid.is-dense:has(> :last-child:nth-child(6)) {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  .presentation-card-grid.is-dense:has(> :last-child:nth-child(3)),
+  .presentation-card-grid.is-dense:has(> :last-child:nth-child(5)),
+  .presentation-card-grid.is-dense:has(> :last-child:nth-child(6)) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .presentation-card-grid.is-dense .presentation-card {
