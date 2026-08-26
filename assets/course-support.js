@@ -3068,7 +3068,7 @@ window.SENAI_TEACHING_SUPPORT = {
           "A ficha tem as oito perguntas respondidas, com nomes do grupo e turma.",
           "Para que serve, onde vai passar e até quando estão escritos, e o lugar é um dos quatro apresentados.",
           "Música, imagem e fonte têm nome, site, licença e crédito anotados.",
-          "As duas tomadas foram gravadas, assistidas com a fala audível e anotadas com o número do arquivo ao lado do nome PA_A05_G##.",
+          "As duas tomadas foram gravadas, assistidas com a fala audível e anotadas dentro da faixa de arquivos do dia, com o nome PA_A05_G## ao lado.",
           "A câmera e a ring light voltaram conferidas, com cartão e bateria no lugar."
         ],
         "fallback": "Sem internet, dispenso a pergunta 7 e o grupo escreve em que site livre vai buscar cada item e que anotará licença e crédito na hora de usar. Sem câmera, junto o grupo ao vizinho e os dois dividem uma câmera: as tomadas duram 40 e 15 segundos, então cabem no mesmo bloco alternando, enquanto um grupo monta o outro grava. A tomada A nunca vai para celular pessoal, porque tem rosto, nome e turma. Em último caso o celular grava apenas a tomada B, sem rosto, e o arquivo é apagado na minha frente depois que eu conferir.",
@@ -3268,7 +3268,7 @@ window.SENAI_TEACHING_SUPPORT = {
               {"eyebrow": "3", "title": "Música e imagem", "text": "A música, a imagem e a fonte têm nome, site, licença e quem creditar anotados? Se a internet caiu, vale o site escolhido e o combinado por escrito."},
               {"eyebrow": "4", "title": "Quem não quer aparecer", "text": "A opção sem rosto está escrita na pergunta 6 e gravada na tomada B?"},
               {"eyebrow": "5", "title": "As duas tomadas", "text": "A fala foi gravada e dá para ouvir? A versão sem rosto também está lá?"},
-              {"eyebrow": "6", "title": "Nomes", "text": "Nomes do grupo, turma e número dos dois arquivos estão no alto da página?"}
+              {"eyebrow": "6", "title": "Nomes", "text": "Nomes do grupo, turma, a faixa de arquivos do dia e os dois que valem estão no alto da página?"}
             ],
             "bullets": ["TERMINAMOS QUANDO: são seis ✓ e nenhum NÃO sobrando.", "Não é para apresentar para a turma. Chamem o professor só depois de arrumar tudo."],
             "teacher": {
@@ -3286,7 +3286,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "block": 4,
             "cards": [
               {"eyebrow": "1 · Arrumar (5 min)", "title": "O que ficou faltando", "text": "Completem a resposta, a licença ou a tomada que faltou."},
-              {"eyebrow": "2 · Nomear (3 min)", "title": "Nome dos arquivos", "text": "Anotem o número que a câmera deu a cada arquivo e, ao lado, o nome: PA_A05_G01_AUTORIZACAO e PA_A05_G01_SEM_ROSTO. Troquem o 01 pelo número do grupo."},
+              {"eyebrow": "2 · Nomear (3 min)", "title": "Nome dos arquivos", "text": "Anotem o número do primeiro e do último arquivo que gravaram hoje, teste incluído. Dentro dessa faixa, marquem os dois que valem: PA_A05_G01_AUTORIZACAO e PA_A05_G01_SEM_ROSTO, com o número do grupo no lugar do 01."},
               {"eyebrow": "3 · Devolver (5 min)", "title": "Câmera e ring light", "text": "Devolvam com o cartão dentro, a bateria no lugar e o cabo enrolado. Não apaguem nada: quem apaga é o professor, depois de conferir."},
               {"eyebrow": "4 · Mostrar (2 min)", "title": "Chamem o professor", "text": "Abram a ficha e mostrem as respostas 3, 4 e 7."}
             ],
