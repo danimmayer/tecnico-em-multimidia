@@ -3071,7 +3071,7 @@ window.SENAI_TEACHING_SUPPORT = {
           "As duas tomadas foram gravadas, assistidas com a fala audível e anotadas com o número do arquivo ao lado do nome PA_A05_G##.",
           "A câmera e a ring light voltaram conferidas, com cartão e bateria no lugar."
         ],
-        "fallback": "Sem internet, dispenso a pergunta 7 e o grupo escreve em que site livre vai buscar cada item e que anotará licença e crédito na hora de usar. Sem câmera, o grupo usa a de outro grupo que já terminou; a tomada A nunca vai para celular pessoal, porque tem rosto, nome e turma. Em último caso o grupo grava no celular apenas a tomada B, sem rosto, e apaga na minha frente depois que eu conferir.",
+        "fallback": "Sem internet, dispenso a pergunta 7 e o grupo escreve em que site livre vai buscar cada item e que anotará licença e crédito na hora de usar. Sem câmera, junto o grupo ao vizinho e os dois dividem uma câmera: as tomadas duram 40 e 15 segundos, então cabem no mesmo bloco alternando, enquanto um grupo monta o outro grava. A tomada A nunca vai para celular pessoal, porque tem rosto, nome e turma. Em último caso o celular grava apenas a tomada B, sem rosto, e o arquivo é apagado na minha frente depois que eu conferir.",
         "commonProblems": [
           ["O grupo trata a autorização como formalidade", "Peço que escolham um dos quatro lugares e escrevam o até quando; sem essas duas respostas a gravação não é liberada."],
           ["Alguém não quer aparecer no vídeo", "Trato a recusa como decisão válida e mando o grupo responder a pergunta 6 com a versão sem rosto."],
@@ -3253,7 +3253,7 @@ window.SENAI_TEACHING_SUPPORT = {
               "speech": "A tomada B existe para provar uma coisa: sempre há um jeito de contar a cena sem expor quem não quer aparecer.",
               "steps": ["5 min · Entrego uma câmera e uma ring light por grupo, conferindo cartão, bateria e por onde passa o fio.", "8 min · Modelo a montagem, faço o teste de 10 segundos e leio o texto uma vez na frente da turma.", "27 min · Circulo entre os 7 grupos conferindo enquadramento, som e o sim em voz alta.", "5 min · Aviso os cinco minutos finais e mando assistir antes de parar."],
               "watch": "Todo grupo tem duas tomadas gravadas, ninguém foi filmado sem concordar e nenhum fio cruza a rota de passagem.",
-              "rescue": "Sem câmera funcionando, o grupo espera a câmera de quem já terminou. A tomada A não vai para celular pessoal; no limite, só a tomada B, sem rosto, apagada na minha frente depois da conferência."
+              "rescue": "Sem câmera funcionando, junto o grupo ao vizinho para dividirem uma câmera, alternando enquanto um monta e o outro grava. A tomada A não vai para celular pessoal; no limite, só a tomada B, sem rosto, apagada na minha frente depois da conferência."
             }
           },
           {

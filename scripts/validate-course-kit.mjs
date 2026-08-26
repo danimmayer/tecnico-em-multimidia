@@ -206,8 +206,11 @@ for (const [slug, expectedCount] of Object.entries(expected)) {
     if (!lesson05?.observation?.includes('não substitui o modelo de autorização da escola')) {
       errors.push(`${slug}/05: o limite pedagógico da ficha precisa estar explícito`);
     }
-    if (!lesson05?.observation?.includes('apague os cartões')) {
+    if (!lesson05?.observation?.includes('apague antes do fim da aula')) {
       errors.push(`${slug}/05: a tomada com rosto identificável precisa de prazo de guarda explícito`);
+    }
+    if (!lesson05?.observation?.includes('não formate o cartão')) {
+      errors.push(`${slug}/05: o apagamento precisa poupar material de outras turmas no mesmo cartão`);
     }
     if (!fs.readFileSync(fromRoot('scripts/build-course-data.mjs'), 'utf8').includes('const audiovisualLesson05')) {
       errors.push(`${slug}/05: personalização regenerável ausente do gerador`);
