@@ -447,7 +447,7 @@ Object.assign(audiovisualLesson05, {
   ],
   methodology: 'Explicação curta, exemplo resolvido e duas atividades guiadas em 7 grupos: uma no caderno com pesquisa de licenças no notebook e outra de gravação curta com câmera e ring light. Cada atividade permanece projetada em um único slide com passos, modelo e critério de conclusão; a condução não depende de debate.',
   resources: 'Projetor, quadro, caderno ou folhas em branco dos alunos, lápis ou caneta, notebooks dos alunos para a pesquisa de licenças, 7 câmeras com cartão e bateria e 7 ring lights. Nenhuma ficha impressa precisa ser distribuída.',
-  observation: 'Aula das 19:00 às 22:07. Lanche fixo das 19:45 às 20:05. Deixe o slide da atividade parado durante a execução. Chamada apenas na abertura e na retomada. As câmeras e as ring lights saem somente às 20:50 e voltam conferidas até as 22:02. A autorização gravada é exercício de aula e não substitui o modelo institucional da escola.'
+  observation: 'Aula das 19:00 às 22:07. Lanche fixo das 19:45 às 20:05. Deixe o slide da atividade parado durante a execução. Chamada apenas na abertura e na retomada. As câmeras e as ring lights saem somente às 20:50 e voltam conferidas até as 22:02. As duas tomadas são exercício de aula: depois de conferi-las, apague os cartões antes do fim da aula, porque a tomada A registra rosto, nome e turma. A ficha do caderno é planejamento e não substitui o modelo de autorização da escola.'
 });
 
 const output = `/* Arquivo gerado por scripts/build-course-data.mjs. */\nwindow.SENAI_COURSES = ${JSON.stringify(courses, null, 2)};\n`;

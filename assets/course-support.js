@@ -3287,13 +3287,13 @@ window.SENAI_TEACHING_SUPPORT = {
             "cards": [
               {"eyebrow": "1 · Arrumar (5 min)", "title": "O que ficou faltando", "text": "Completem a resposta, a licença ou a tomada que faltou."},
               {"eyebrow": "2 · Nomear (3 min)", "title": "Nome dos arquivos", "text": "Anotem o número que a câmera deu a cada arquivo e, ao lado, o nome: PA_A05_G01_AUTORIZACAO e PA_A05_G01_SEM_ROSTO. Troquem o 01 pelo número do grupo."},
-              {"eyebrow": "3 · Devolver (5 min)", "title": "Câmera e ring light", "text": "Devolvam com o cartão dentro, a bateria no lugar e o cabo enrolado. Não apaguem nada do cartão."},
+              {"eyebrow": "3 · Devolver (5 min)", "title": "Câmera e ring light", "text": "Devolvam com o cartão dentro, a bateria no lugar e o cabo enrolado. Não apaguem nada: quem apaga é o professor, depois de conferir."},
               {"eyebrow": "4 · Mostrar (2 min)", "title": "Chamem o professor", "text": "Abram a ficha e mostrem as respostas 3, 4 e 7."}
             ],
             "bullets": ["PRONTO = 8 respostas + 3 licenças + 6 ✓ + 2 tomadas com número e nome + equipamento devolvido.", "Se o professor pedir para arrumar algo, arrumem ali mesmo e mostrem de novo."],
             "teacher": {
-              "steps": ["5 min · Circulo apenas entre quem ainda corrige.", "5 min · Recebo as 7 câmeras e as 7 ring lights, conferindo cartão e bateria.", "3 min · Confiro por amostragem os campos 3, 4 e 7.", "2 min · Registro os grupos concluídos."],
-              "watch": "Todo equipamento voltou conferido e nenhuma ficha ficou sem destino e prazo.",
+              "steps": ["5 min · Circulo apenas entre quem ainda corrige.", "5 min · Recebo as 7 câmeras e as 7 ring lights, conferindo cartão e bateria, e apago as duas tomadas de cada cartão depois de conferir.", "3 min · Confiro por amostragem os campos 3, 4 e 7.", "2 min · Registro os grupos concluídos."],
+              "watch": "Todo equipamento voltou conferido, nenhuma ficha ficou sem onde e até quando, e nenhum cartão saiu da sala com gravação de rosto.",
               "rescue": "Com fila, recebo primeiro o equipamento e confiro a ficha logo depois, com o grupo ainda na sala."
             }
           },
@@ -3301,12 +3301,12 @@ window.SENAI_TEACHING_SUPPORT = {
             "title": "Fechamento",
             "kicker": "22:02–22:07",
             "heading": "Primeiro a permissão, depois a câmera",
-            "lede": "Daqui em diante é essa ficha que libera gravação. Sem saber para que serve, onde vai passar e até quando, a câmera não sai do armário.",
+            "lede": "Daqui em diante nenhuma gravação começa sem essas oito respostas decididas. E a autorização de quem aparece é sempre à parte, no documento da escola.",
             "layout": "dense-cards",
             "block": 4,
             "cards": [
               {"eyebrow": "No caderno", "title": "Complete uma frase", "text": "Antes de gravar alguém, eu preciso combinar ___ e ___."},
-              {"eyebrow": "Antes de sair", "title": "Guarde a ficha", "text": "É ela que autoriza as gravações das próximas aulas."},
+              {"eyebrow": "Antes de sair", "title": "Guarde a ficha", "text": "É o plano que diz se o vídeo pode existir. Ela não autoriza ninguém: isso é o papel da escola."},
               {"eyebrow": "Próxima aula", "title": "Câmera na mão", "text": "Como segurar, focar e enquadrar com o equipamento do laboratório."}
             ],
             "teacher": {

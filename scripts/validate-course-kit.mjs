@@ -203,8 +203,11 @@ for (const [slug, expectedCount] of Object.entries(expected)) {
     if (!lesson05?.resources?.includes('7 câmeras') || !lesson05?.resources?.includes('7 ring lights')) {
       errors.push(`${slug}/05: a divisão em 7 grupos precisa acompanhar as 7 câmeras e as 7 ring lights`);
     }
-    if (!lesson05?.observation?.includes('não substitui o modelo institucional')) {
-      errors.push(`${slug}/05: o limite pedagógico da autorização gravada precisa estar explícito`);
+    if (!lesson05?.observation?.includes('não substitui o modelo de autorização da escola')) {
+      errors.push(`${slug}/05: o limite pedagógico da ficha precisa estar explícito`);
+    }
+    if (!lesson05?.observation?.includes('apague os cartões')) {
+      errors.push(`${slug}/05: a tomada com rosto identificável precisa de prazo de guarda explícito`);
     }
     if (!fs.readFileSync(fromRoot('scripts/build-course-data.mjs'), 'utf8').includes('const audiovisualLesson05')) {
       errors.push(`${slug}/05: personalização regenerável ausente do gerador`);
