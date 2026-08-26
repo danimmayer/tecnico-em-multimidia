@@ -3265,7 +3265,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "block": 4,
             "cards": [
               {"eyebrow": "1 e 2", "title": "Ficha completa", "text": "As oito respostas estão escritas? O lugar onde vai passar e o até quando estão lá?"},
-              {"eyebrow": "3", "title": "Música e imagem", "text": "A música, a imagem e a fonte têm nome, site, licença e quem creditar anotados?"},
+              {"eyebrow": "3", "title": "Música e imagem", "text": "A música, a imagem e a fonte têm nome, site, licença e quem creditar anotados? Se a internet caiu, vale o site escolhido e o combinado por escrito."},
               {"eyebrow": "4", "title": "Quem não quer aparecer", "text": "A opção sem rosto está escrita na pergunta 6 e gravada na tomada B?"},
               {"eyebrow": "5", "title": "As duas tomadas", "text": "A fala foi gravada e dá para ouvir? A versão sem rosto também está lá?"},
               {"eyebrow": "6", "title": "Nomes", "text": "Nomes do grupo, turma e número dos dois arquivos estão no alto da página?"}
@@ -3290,7 +3290,7 @@ window.SENAI_TEACHING_SUPPORT = {
               {"eyebrow": "3 · Devolver (5 min)", "title": "Câmera e ring light", "text": "Devolvam com o cartão dentro, a bateria no lugar e o cabo enrolado. Não apaguem nada: quem apaga é o professor, depois de conferir."},
               {"eyebrow": "4 · Mostrar (2 min)", "title": "Chamem o professor", "text": "Abram a ficha e mostrem as respostas 3, 4 e 7."}
             ],
-            "bullets": ["PRONTO = 8 respostas + 3 licenças + 6 ✓ + 2 tomadas com número e nome + equipamento devolvido.", "Se o professor pedir para arrumar algo, arrumem ali mesmo e mostrem de novo."],
+            "bullets": ["PRONTO = 8 respostas + 3 licenças, ou o combinado escrito se a internet caiu + 6 ✓ + 2 tomadas com número e nome + equipamento devolvido.", "Se o professor pedir para arrumar algo, arrumem ali mesmo e mostrem de novo."],
             "teacher": {
               "steps": ["5 min · Circulo apenas entre quem ainda corrige.", "5 min · Recebo as 7 câmeras e as 7 ring lights, conferindo cartão e bateria, e apago tudo o que foi gravado hoje em cada cartão depois de conferir, incluindo o teste e as repetições.", "3 min · Confiro por amostragem os campos 3, 4 e 7.", "2 min · Registro os grupos concluídos."],
               "watch": "Todo equipamento voltou conferido, nenhuma ficha ficou sem onde e até quando, e nenhum cartão saiu da sala com gravação de rosto.",
