@@ -637,7 +637,7 @@ body[data-theme="av"] .lesson-topbar { background: rgba(18, 16, 15, 0.9); }
   display: flex;
   min-width: 0;
   flex-direction: column;
-  justify-content: center;
+  justify-content: safe center;
   padding: clamp(30px, 5vh, 68px) clamp(34px, 5vw, 78px);
   overflow: auto;
 }
@@ -806,7 +806,7 @@ body[data-theme="av"] .lesson-topbar { background: rgba(18, 16, 15, 0.9); }
 }
 
 .kit-slide.is-dense-cards .kit-slide-main {
-  justify-content: flex-start;
+  justify-content: safe center;
   padding-top: clamp(16px, 2.5vh, 24px);
   padding-bottom: clamp(16px, 2.5vh, 24px);
 }
@@ -833,6 +833,18 @@ body[data-theme="av"] .lesson-topbar { background: rgba(18, 16, 15, 0.9); }
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 8px;
   margin-top: 12px;
+}
+
+/* A grade tem quatro colunas. Com dois, três ou seis cartões isso deixava
+   uma coluna vazia à direita; aqui ela se ajusta à quantidade. */
+.presentation-card-grid.is-dense:has(> :last-child:nth-child(2)) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.presentation-card-grid.is-dense:has(> :last-child:nth-child(3)),
+.presentation-card-grid.is-dense:has(> :last-child:nth-child(5)),
+.presentation-card-grid.is-dense:has(> :last-child:nth-child(6)) {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .presentation-card-grid.is-dense .presentation-card {
@@ -908,6 +920,61 @@ body[data-theme="av"] .lesson-topbar { background: rgba(18, 16, 15, 0.9); }
 }
 
 .projection-mode .kit-slide.is-dense-cards .presentation-prompt strong { font-size: clamp(20px, 1.8vw, 25px); }
+
+@media (max-aspect-ratio: 3 / 2) {
+  .projection-mode .kit-slide.is-dense-cards h2 { font-size: clamp(32px, 3.6vw, 50px); }
+
+  .projection-mode .kit-slide.is-dense-cards .slide-lede {
+    margin-top: 10px;
+    line-height: 1.3;
+  }
+
+  .projection-mode .presentation-card-grid.is-dense {
+    gap: 9px;
+    margin-top: 12px;
+  }
+
+  .projection-mode .presentation-card-grid.is-dense .presentation-card {
+    min-height: 0;
+    padding: 12px 14px;
+  }
+
+  .projection-mode .kit-slide.is-dense-cards .presentation-bullets { margin-top: 10px; }
+  .projection-mode .kit-slide.is-dense-cards .presentation-bullets li { padding: 7px 12px 7px 32px; }
+  .projection-mode .kit-slide.is-dense-cards .presentation-bullets li::before { top: 11px; }
+  .projection-mode .kit-slide.is-dense-cards .presentation-prompt { margin-top: 10px; padding: 11px 16px; }
+
+  .projection-mode .presentation-card-grid.is-dense .card-index { margin-bottom: 6px; }
+  .projection-mode .presentation-card-grid.is-dense .content-card strong { margin-bottom: 4px; }
+  .projection-mode .presentation-card-grid.is-dense .content-card p { line-height: 1.32; }
+  .projection-mode .kit-slide.is-dense-cards .presentation-bullets { gap: 5px; }
+
+  /* Mesmo aperto para os slides de layout padrão, que em 4:3 empurravam
+     parte do conteúdo para fora da tela. */
+  .projection-mode .kit-slide h2 { font-size: clamp(34px, 4.4vw, 56px); }
+  .projection-mode .kit-slide .slide-lede { margin-top: 16px; line-height: 1.4; }
+  .projection-mode .kit-slide .cards-2,
+  .projection-mode .kit-slide .cards-3,
+  .projection-mode .kit-slide .cards-4 { gap: 10px; margin-top: 18px; }
+  .projection-mode .kit-slide .content-card { padding: 14px; }
+  .projection-mode .kit-slide .block-focus { gap: 20px; margin-top: 20px; }
+  .projection-mode .kit-slide .block-time { padding: 14px; }
+  .projection-mode .kit-slide .block-directions { margin-top: 14px; }
+  .projection-mode .kit-slide .presentation-bullets { margin-top: 16px; gap: 7px; }
+
+  .projection-mode .kit-slide .block-step-list li {
+    min-height: 0;
+    padding-top: 8px;
+    padding-bottom: 7px;
+  }
+
+  .projection-mode .kit-slide .block-step-list li::before { top: 8px; }
+
+  /* A barra superior quebrava em duas linhas nessa largura e roubava altura
+     de todos os slides. */
+  .tool-btn,
+  .deck-btn { min-height: 36px; padding: 0 10px; }
+}
 
 .presentation-bullets {
   display: grid;
