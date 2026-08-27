@@ -422,6 +422,34 @@ Object.assign(audiovisualLesson04, {
   observation: 'Aula das 19:00 às 22:07. Lanche fixo das 19:45 às 20:05. Deixe o slide da atividade parado durante a execução. Chamada apenas na abertura e na retomada; não é necessário exibir vídeo, abrir site, imprimir ou distribuir modelo.'
 });
 
+const audiovisualLesson05 = courses['producao-audiovisual'].lessons
+  .find((lesson) => lesson.num === '05');
+
+Object.assign(audiovisualLesson05, {
+  description: 'Aula fechada em si mesma para decidir, antes de qualquer gravação, o que pode ser gravado, usado e exibido: cada grupo recebe um pedido de vídeo pelo slide, responde uma ficha de autorização de oito perguntas e grava duas tomadas curtas de consentimento com câmera e ring light.',
+  schedule: [
+    {
+      horario: '19:00 - 19:45',
+      atividade: 'Explicação curta com um exemplo resolvido: direito de uso de imagem, os quatro destinos possíveis de um vídeo, as licenças de música, imagem e fonte e três cuidados de acessibilidade, usabilidade e sustentabilidade. A turma acompanha apenas pelo projetor e se organiza em 7 grupos, um por câmera.'
+    },
+    {
+      horario: '20:05 - 20:50',
+      atividade: 'Atividade 1 em 7 grupos: cada grupo recebe pelo slide um pedido de vídeo e copia no caderno a ficha de oito perguntas projetada, respondendo-a para esse pedido. Uma das perguntas exige procurar no notebook uma música, uma imagem e uma fonte de uso livre e registrar nome, site, licença e crédito de cada uma.'
+    },
+    {
+      horario: '20:50 - 21:35',
+      atividade: 'Atividade 2 nos mesmos 7 grupos, com uma câmera e uma ring light para cada um: gravar duas tomadas curtas dentro da sala — a autorização falada, lendo o texto projetado com finalidade, local de exibição, prazo e direito de desistir, e a mesma cena sem mostrar o rosto de ninguém.'
+    },
+    {
+      horario: '21:35 - 22:07',
+      atividade: 'Conferência por checklist projetado, correção da ficha, anotação do nome dos dois arquivos, devolução da câmera e da ring light e apresentação do caderno ao professor. O grupo conclui quando a ficha tem as oito respostas, as duas tomadas foram assistidas e o equipamento voltou conferido.'
+    }
+  ],
+  methodology: 'Explicação curta, exemplo resolvido e duas atividades guiadas em 7 grupos: uma no caderno com pesquisa de licenças no notebook e outra de gravação curta com câmera e ring light. Cada atividade permanece projetada em um único slide com passos, modelo e critério de conclusão; a condução não depende de debate.',
+  resources: 'Projetor, quadro, caderno ou folhas em branco dos alunos, lápis ou caneta, notebooks dos alunos para a pesquisa de licenças, 7 câmeras com cartão e bateria e 7 ring lights. Nenhuma ficha impressa precisa ser distribuída.',
+  observation: 'Aula das 19:00 às 22:07. Lanche fixo das 19:45 às 20:05. Deixe o slide da atividade parado durante a execução. Chamada apenas na abertura e na retomada. As câmeras e as ring lights saem somente às 20:50 e voltam conferidas até as 22:02. As gravações são exercício de aula: depois de conferi-las, apague antes do fim da aula tudo o que foi gravado hoje, teste e repetições incluídos, localizando os arquivos pela faixa de números que cada grupo anotou, do primeiro ao último do dia; não formate o cartão, que pode conter material de outra turma. A ficha do caderno é planejamento e não substitui o modelo de autorização da escola.'
+});
+
 const output = `/* Arquivo gerado por scripts/build-course-data.mjs. */\nwindow.SENAI_COURSES = ${JSON.stringify(courses, null, 2)};\n`;
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(scriptDirectory, '..');
