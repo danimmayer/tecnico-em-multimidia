@@ -359,6 +359,52 @@ if (designLessonOne?.title !== 'Primeiro Contato com Design Web') {
 if (!Array.isArray(designLessonOneSupport?.presentationSlides) || designLessonOneSupport.presentationSlides.length < 12) {
   errors.push('Design Web Aula 01: sequência explicativa deve ter pelo menos 12 slides próprios');
 }
+
+const designLessonFive = designCourse.lessons.find((lesson) => lesson.num === '05');
+const designLessonFiveSupport = context.window.SENAI_TEACHING_SUPPORT['design-web']?.lessons?.['05'];
+const designLessonFiveSlides = designLessonFiveSupport?.presentationSlides || [];
+const designLessonFiveActivityTitles = [
+  'Atividade 1 · Escolher e anotar',
+  'Atividade 2 · Texto da imagem',
+  'Atividade 3 · Montar o painel',
+  'Conferência da dupla'
+];
+const designLessonFiveText = JSON.stringify({
+  lesson: designLessonFive,
+  support: designLessonFiveSupport
+}).toLocaleLowerCase('pt-BR');
+
+if (designLessonFiveSlides.length !== 11 || designLessonFiveSupport?.appendDefaultClosing !== false) {
+  errors.push('Design Web Aula 05: a apresentação precisa ter exatamente 12 slides controlados (capa + 11 slides próprios)');
+}
+if (!designLessonFiveSlides.some((item) => item.pace === 'break')) {
+  errors.push('Design Web Aula 05: o intervalo precisa de slide próprio');
+}
+if (designLessonFiveSupport?.studentSheet || designLessonFiveSlides.some((item) => item.resource || item.resources)) {
+  errors.push('Design Web Aula 05: a aula não pode exigir ficha, link ou material externo');
+}
+if (!designLessonFive?.resources?.includes('caderno e caneta')) {
+  errors.push('Design Web Aula 05: o material discente precisa ser caderno e caneta');
+}
+if (!designLessonFive?.resources?.includes('Sem impressão')) {
+  errors.push('Design Web Aula 05: a independência de impressão precisa estar explícita');
+}
+for (const activityTitle of designLessonFiveActivityTitles) {
+  const activitySlide = designLessonFiveSlides.find((item) => item.title === activityTitle);
+  if (!activitySlide || (activitySlide.cards || []).length < 4 || (activitySlide.bullets || []).length < 2) {
+    errors.push(`Design Web Aula 05: ${activityTitle} precisa trazer passos e critérios completos no próprio slide`);
+  }
+}
+if ((designLessonFiveSupport?.check || []).length < 5) {
+  errors.push('Design Web Aula 05: conferência final insuficiente');
+}
+if (designLessonFiveText.includes('ficha impressa') || designLessonFiveText.includes('photopea') || designLessonFiveText.includes('http')) {
+  errors.push('Design Web Aula 05: permaneceu dependência de ficha impressa, Photopea ou link externo');
+}
+if (!fs.readFileSync(fromRoot('scripts/rebuild-design-web-no-code.mjs'), 'utf8').includes("support['design-web'].lessons['05'] =")) {
+  errors.push('Design Web Aula 05: personalização regenerável ausente do rebuild');
+}
+
 for (const lesson of designCourse.lessons) {
   const studentFacingText = JSON.stringify({
     title: lesson.title,

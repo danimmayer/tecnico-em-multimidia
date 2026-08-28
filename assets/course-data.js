@@ -161,44 +161,43 @@ window.SENAI_COURSES = {
         "resources": "Cartões, barbante, post-its, papel, canetas, projetor e ferramenta visual disponível.",
         "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
       },
-      {
-        "num": "05",
-        "title": "Imagens, Texto e Direitos de Uso",
-        "description": "Curadoria de imagens e produção de conteúdo visual acessível, com autoria, licença e crédito.",
-        "objectives": [
-          "Pesquisa: propriedade intelectual, tipos e fontes.",
-          "Criação de código de texto: elementos e alternativas textuais."
-        ],
-        "technical": [
-          "Selecionar a criação de elementos gráficos para o desenvolvimento de design web, interfaces e redes sociais, tendo vista a propriedade.",
-          "Identificar padrões, normas e procedimentos para elaboração do projeto de mídias digitais, referentes a propriedade intelectual, acessibilidade, usabilidade e sustentabilidade."
-        ],
-        "socioemotional": [
-          "Reconhecer a pesquisa como fonte de inovação e formação de um espírito empreendedor."
-        ],
-        "schedule": [
-          {
-            "horario": "19:00 - 19:30",
-            "atividade": "Aquecimento \"Pode usar ou não?\": análise de situações com imagem própria, banco gratuito, captura de rede social, domínio público e material com licença. A turma justifica cada decisão."
-          },
-          {
-            "horario": "19:30 - 20:30",
-            "atividade": "Pesquisa orientada em bancos autorizados. Cada dupla escolhe três imagens para uma campanha fictícia e registra autor, fonte, licença e finalidade de uso."
-          },
-          {
-            "horario": "20:30 - 21:30",
-            "atividade": "Laboratório de texto alternativo: comparar descrições inúteis, excessivas e adequadas. Cada dupla escreve alternativas textuais que comuniquem a função da imagem."
-          },
-          {
-            "horario": "21:30 - 22:30",
-            "atividade": "Produção de um painel de conteúdo com título, texto curto, imagem, crédito e chamada para ação. Revisão por checklist e exposição dos painéis."
-          }
-        ],
-        "methodology": "Estudo de casos, pesquisa guiada, escrita acessível e produção de painel visual.",
-        "resources": "Banco local de imagens, acesso a bancos gratuitos autorizados, ficha de licença, ferramenta visual e projetor.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
-      },
-      {
+              {
+          "num": "05",
+          "title": "Imagens, Texto e Direitos de Uso",
+          "description": "Escolher imagens com autorização, escrever o texto que as descreve e montar um painel simples com crédito e chamada para ação.",
+          "objectives": [
+            "Pesquisa: propriedade intelectual, tipos e fontes.",
+            "Criação de código de texto: elementos e alternativas textuais."
+          ],
+          "technical": [
+            "Selecionar a criação de elementos gráficos para o desenvolvimento de design web, interfaces e redes sociais, tendo vista a propriedade.",
+            "Identificar padrões, normas e procedimentos para elaboração do projeto de mídias digitais, referentes a propriedade intelectual, acessibilidade, usabilidade e sustentabilidade."
+          ],
+          "socioemotional": [
+            "Reconhecer a pesquisa como fonte de inovação e formação de um espírito empreendedor."
+          ],
+          "schedule": [
+            {
+              "horario": "19:00 - 19:45",
+              "atividade": "Jogo \"Pode usar ou não?\": a turma decide sobre seis situações de imagem e justifica cada resposta. Em seguida, vê um painel já resolvido com autor, fonte, licença, crédito e texto que descreve a imagem."
+            },
+            {
+              "horario": "20:05 - 20:50",
+              "atividade": "Em duplas, escolher duas imagens do banco projetado para a campanha Café da Esquina e anotar no caderno autor, fonte, licença e para que serve cada uma."
+            },
+            {
+              "horario": "20:50 - 21:30",
+              "atividade": "Escrever o texto que descreve cada imagem escolhida. Comparar com exemplos fracos e adequados projetados e ajustar até a frase dizer o que a imagem comunica."
+            },
+            {
+              "horario": "21:30 - 22:07",
+              "atividade": "Montar no caderno o painel da promoção com título, texto curto, espaço da imagem, crédito e botão. Conferir o checklist projetado, mostrar para outra dupla e concluir com uma frase de saída."
+            }
+          ],
+          "methodology": "Jogo coletivo no projetor, escolha guiada em duplas, escrita do texto da imagem e montagem de painel no caderno.",
+          "resources": "Projetor, caderno e caneta. Todo o material da noite está nos slides: situações, banco de imagens, exemplos e checklist. Sem impressão e sem site externo.",
+          "observation": "Aula planejada de 19:00 a 22:07, com lanche de 19:45 a 20:05 e chamada no início dos quatro blocos: 19:00, 20:05, 20:50 e 21:30. A turma usa só o que está projetado: situações, banco de imagens, exemplos e checklist."
+        },{
         "num": "06",
         "title": "Identidade Visual para Telas",
         "description": "Cores, tipografia, contraste e personalidade de marca aplicados a um painel de estilo digital.",
