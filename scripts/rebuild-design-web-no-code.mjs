@@ -68,24 +68,16 @@ const revisedLessons = {
     resources: 'Cartões, barbante, post-its, papel, canetas, projetor e ferramenta visual disponível.'
   },
   '05': {
-    title: 'Imagens, Texto e Direitos de Uso',
-    description: 'Escolher imagens com autorização, escrever o texto que as descreve e montar um painel simples com crédito e chamada para ação.',
-    objectives: ['Pesquisa: propriedade intelectual, tipos e fontes.', 'Criação de código de texto: elementos e alternativas textuais.'],
-    technical: [
-      'Selecionar a criação de elementos gráficos para o desenvolvimento de design web, interfaces e redes sociais, tendo vista a propriedade.',
-      'Identificar padrões, normas e procedimentos para elaboração do projeto de mídias digitais, referentes a propriedade intelectual, acessibilidade, usabilidade e sustentabilidade.'
-    ],
-    socio: ['Reconhecer a pesquisa como fonte de inovação e formação de um espírito empreendedor.'],
-    blocks: [
-      'Jogo "Pode usar ou não?": a turma decide sobre seis situações de imagem e justifica cada resposta. Em seguida, vê um painel já resolvido com autor, fonte, licença, crédito e texto que descreve a imagem.',
-      'Em duplas, escolher duas imagens do banco projetado para a campanha Café da Esquina e anotar no caderno autor, fonte, licença e para que serve cada uma.',
-      'Escrever o texto que descreve cada imagem escolhida. Comparar com exemplos fracos e adequados projetados e ajustar até a frase dizer o que a imagem comunica.',
-      'Montar no caderno o painel da promoção com título, texto curto, espaço da imagem, crédito e botão. Conferir o checklist projetado, mostrar para outra dupla e concluir com uma frase de saída.'
-    ],
-    times: ['19:00 - 19:45', '20:05 - 20:50', '20:50 - 21:30', '21:30 - 22:07'],
-    methodology: 'Jogo coletivo no projetor, escolha guiada em duplas, escrita do texto da imagem e montagem de painel no caderno.',
-    resources: 'Projetor, caderno e caneta. Todo o material da noite está nos slides: situações, banco de imagens, exemplos e checklist. Sem impressão e sem site externo.',
-    observation: 'Aula planejada de 19:00 a 22:07, com lanche de 19:45 a 20:05 e chamada no início dos quatro blocos: 19:00, 20:05, 20:50 e 21:30. A turma usa só o que está projetado: situações, banco de imagens, exemplos e checklist.'
+    title: "Imagens, Texto e Direitos de Uso",
+    description: "Escolher imagens que podem ser usadas, escrever o texto que as descreve e montar um painel com crédito e botão.",
+    objectives: ["Pesquisa: propriedade intelectual, tipos e fontes.","Criação de código de texto: elementos e alternativas textuais."],
+    technical: ["Selecionar a criação de elementos gráficos para o desenvolvimento de design web, interfaces e redes sociais, tendo vista a propriedade.","Identificar padrões, normas e procedimentos para elaboração do projeto de mídias digitais, referentes a propriedade intelectual, acessibilidade, usabilidade e sustentabilidade."],
+    socio: ["Reconhecer a pesquisa como fonte de inovação e formação de um espírito empreendedor."],
+    blocks: ["Copiar no caderno os quatro dados de uma imagem, jogar Pode usar ou não? com seis situações projetadas e ver o painel pronto do Café da Esquina.","Em duplas, escolher duas imagens permitidas do banco projetado e copiar autor, fonte, licença e para que serve de cada uma.","Escrever uma frase por imagem com o molde objeto + lugar, testar tapando o cartão e ajustar com a dupla vizinha.","Montar o painel no caderno com título, texto, imagem, crédito e botão; conferir o checklist projetado; fechar com uma frase de saída."],
+    times: ["19:00 - 19:45","20:05 - 20:50","20:50 - 21:30","21:30 - 22:07"],
+    methodology: "Tudo no projetor: modelo, jogo, banco, molde, painel e checklist. A turma só copia, decide e escreve no caderno.",
+    resources: "Projetor, caderno e caneta. Todo o material da noite está nos slides: situações, banco de imagens, exemplos e checklist. Sem impressão e sem site externo.",
+    observation: "Design Web apenas. Começa às 19:00, lanche das 19:45 às 20:05 e termina às 22:07. Chamada às 19:00, 20:05, 20:50 e 21:30. Nada impresso e nada de Produção Audiovisual."
   },
   '06': {
     title: 'Identidade Visual para Telas',
@@ -664,45 +656,45 @@ for (const [number, lesson] of Object.entries(revisedLessons)) {
 
 support['design-web'].lessons['05'] = {
   "appendDefaultClosing": false,
-  "teacherGoal": "Conduzir a noite só com o projetor e o caderno, até cada dupla entregar um painel com imagem autorizada, crédito e texto que descreve a imagem.",
-  "plainLanguage": "Toda imagem usada em tela precisa de quatro dados: quem fez, de onde veio, se pode usar e para que serve. Depois disso, escreve-se um texto curto que diga o que a imagem comunica.",
-  "say": "Hoje vocês escolhem imagens do banco projetado, anotam os quatro dados, escrevem o texto da imagem e montam o painel no caderno.",
+  "teacherGoal": "Conduzir a Aula 05 de Design Web só com projetor e caderno, do 19:00 ao 22:07, sem folha impressa e sem misturar Produção Audiovisual.",
+  "plainLanguage": "Uma imagem só entra no painel se a dupla souber quem fez, de onde veio, se pode usar e para que serve. Depois escreve uma frase que diga o que a imagem mostra.",
+  "say": "Hoje é Design Web. Vocês copiam o que está no slide, decidem se a imagem pode ser usada e montam o painel no caderno. Não tem folha para preencher e não tem site para abrir.",
   "demo": [
-    "Leia as seis situações do jogo e peça SIM ou NÃO com justificativa curta.",
-    "Mostre o painel resolvido do Café da Esquina apontando título, imagem, crédito, texto da imagem e botão.",
-    "Modele no quadro os quatro campos: autor, fonte, licença e para que serve.",
-    "Compare um texto fraco com um texto adequado da mesma imagem."
+    "Escrevo no quadro os quatro campos e a turma copia o modelo.",
+    "Leio as seis situações. A turma diz SIM ou NÃO e uma frase do porquê.",
+    "Aponto o painel pronto: título, texto, imagem, crédito e botão.",
+    "Troco “foto bonita” pelo molde objeto + lugar."
   ],
-  "studentDeliverable": "Uma página de caderno por dupla com duas imagens anotadas, o texto que descreve cada uma e o painel da promoção Café da Esquina.",
+  "studentDeliverable": "Uma página de caderno por dupla com duas imagens anotadas, uma frase por imagem e o painel do Café da Esquina.",
   "check": [
-    "As duas imagens têm autor, fonte, licença e para que serve anotados.",
-    "Nenhuma imagem escolhida veio das situações proibidas do jogo.",
-    "Cada imagem tem um texto que descreve o que ela comunica, sem repetir só a palavra “imagem”.",
-    "O painel traz título, texto curto, espaço da imagem, crédito e botão.",
-    "Os nomes da dupla e a turma estão no alto da página, sem dados pessoais desnecessários."
+    "As duas imagens têm autor, fonte, licença e para que serve.",
+    "Os cartões E e F ficaram de fora.",
+    "Cada imagem tem uma frase com objeto e lugar.",
+    "O painel tem título, texto curto, imagem, crédito e botão.",
+    "Nomes da dupla e turma estão no alto da página."
   ],
-  "fallback": "Se o projetor falhar, escrevo no quadro as seis situações, os seis cartões do banco e o checklist. A dupla continua só com caderno e caneta.",
-  "extension": "Se terminar cedo, a dupla cria uma segunda versão do painel em formato estreito, como para celular, com o mesmo conteúdo.",
+  "fallback": "Se o projetor falhar, copio no quadro o modelo dos quatro campos, as seis situações, os seis cartões e o checklist. A dupla segue no caderno.",
+  "extension": "Se a dupla terminar no tempo, refaz o mesmo painel mais estreito, como para celular. Não começa outra tarefa.",
   "commonProblems": [
     [
-      "A dupla quer buscar imagem na internet",
-      "Mantenho o banco projetado e peço que escolham só entre os seis cartões."
+      "A dupla pede folha ou link",
+      "Aponto o slide e peço cópia no caderno."
     ],
     [
-      "A dupla escolhe a situação proibida",
-      "Peço que voltem ao jogo e troquem por um cartão com licença clara."
+      "A dupla quer abrir a internet",
+      "Mantenho o banco projetado. Só valem A, B, C ou D."
     ],
     [
-      "O texto da imagem só diz “foto bonita”",
-      "Pergunto: se a pessoa não vê a imagem, o que ela precisa saber?"
+      "A dupla marca E ou F",
+      "Peço troca na hora por um cartão permitido."
     ],
     [
-      "O painel fica sem crédito",
-      "Aponto o exemplo resolvido e peço a linha Autor · Fonte · Licença embaixo da imagem."
+      "A frase fica “foto bonita”",
+      "Dou o molde: objeto + lugar."
     ],
     [
-      "O tempo aperta",
-      "Preservo as anotações das duas imagens e um painel simples; o acabamento visual fica por último."
+      "A dupla termina cedo",
+      "Peço a versão estreita do mesmo painel."
     ]
   ],
   "presentationSlides": [
@@ -712,48 +704,47 @@ support['design-web'].lessons['05'] = {
       "layout": "dense-cards",
       "kicker": "19:00–22:07 · lanche 19:45–20:05",
       "heading": "Hoje vocês escolhem imagens que podem usar",
-      "lede": "Trabalhem em duplas. Tudo o que precisam está projetado: situações, banco de imagens, exemplos e checklist.",
+      "lede": "Duplas. Caderno aberto. Tudo o que precisam está neste projetor.",
       "cards": [
         {
           "eyebrow": "19:00–19:45",
-          "title": "Ver como funciona",
-          "text": "Jogo Pode usar ou não?, quatro dados da imagem e um painel já resolvido."
+          "title": "Aprender a regra",
+          "text": "Quatro dados, jogo de SIM ou NÃO e um painel já pronto."
         },
         {
           "eyebrow": "19:45–20:05",
           "title": "Lanche",
-          "text": "Retorno às 20:05 na mesma dupla, com caderno aberto."
+          "text": "Volta às 20:05 na mesma dupla."
         },
         {
           "eyebrow": "20:05–20:50",
-          "title": "Escolher e anotar",
-          "text": "Duas imagens do banco projetado, com autor, fonte, licença e para que serve."
+          "title": "Copiar duas imagens",
+          "text": "Escolher A a D e anotar os quatro dados."
         },
         {
           "eyebrow": "20:50–22:07",
-          "title": "Texto e painel",
-          "text": "Escrever o texto da imagem, montar o painel, conferir e mostrar."
+          "title": "Frase, painel e conferência",
+          "text": "Escrever, montar, conferir e fechar às 22:07."
         }
       ],
       "promptLabel": "Material",
-      "prompt": "Caderno e caneta. Sem site externo e sem impressão.",
+      "prompt": "Caderno e caneta. Sem folha impressa e sem site.",
       "teacher": {
         "steps": [
-          "3 min · Faço a chamada e formo as duplas.",
-          "2 min · Aviso que a atividade usa só o banco projetado.",
-          "Deixo cada slide parado enquanto a turma trabalha."
+          "2 min · Faço a chamada das 19:00 e formo as duplas.",
+          "1 min · Leio o mapa e fixo: lanche às 19:45, fim às 22:07."
         ],
-        "watch": "Cada dupla tem caderno e entende que vai usar só o que está projetado.",
-        "rescue": "Se faltar caderno, a dupla divide uma folha em branco ou o bloco de notas do celular, sem dados pessoais."
+        "watch": "Cada aluno está numa dupla com caderno na mesa.",
+        "rescue": "Atrasado entra na dupla mais próxima e copia o mapa em uma linha."
       }
     },
     {
       "title": "Os quatro dados",
       "block": 1,
       "layout": "dense-cards",
-      "kicker": "Regra da noite",
-      "heading": "Toda imagem precisa destes quatro dados",
-      "lede": "Achar uma imagem não é o mesmo que poder usá-la. Antes de colocar no painel, a dupla anota estes quatro campos.",
+      "kicker": "19:03–19:10",
+      "heading": "Copiem este modelo no caderno agora",
+      "lede": "Sem estes quatro campos, a imagem não entra no painel.",
       "cards": [
         {
           "eyebrow": "1",
@@ -768,46 +759,45 @@ support['design-web'].lessons['05'] = {
         {
           "eyebrow": "3",
           "title": "Licença",
-          "text": "O que a licença permite fazer com ela."
+          "text": "O que pode ser feito com ela."
         },
         {
           "eyebrow": "4",
           "title": "Para que serve",
-          "text": "Como essa imagem ajuda a promoção de hoje."
+          "text": "Como ela ajuda a promoção de hoje."
         }
       ],
       "bullets": [
-        "SEM OS QUATRO DADOS, A IMAGEM FICA DE FORA DO PAINEL.",
-        "CRÉDITO: no painel, escrevam Autor · Fonte · Licença embaixo da imagem."
+        "LINHA PARA COPIAR: Imagem ___ · Autor: ___ · Fonte: ___ · Licença: ___ · Serve para: ___.",
+        "Façam duas linhas iguais. Uma para cada imagem de depois do lanche."
       ],
       "teacher": {
-        "speech": "Não abro teoria longa. Escrevo os quatro campos no quadro e uso o exemplo do próximo slide.",
         "steps": [
-          "4 min · Leio os quatro campos com um exemplo curto.",
-          "3 min · Peço que a turma repita a regra: sem os quatro dados, a imagem fica de fora.",
-          "2 min · Adianto que o crédito aparece no painel, embaixo da imagem."
+          "4 min · A turma copia o modelo. Eu escrevo a mesma linha no quadro.",
+          "2 min · Preencho um exemplo em voz alta: Ana Lima, banco da aula, pode usar se escrever o nome, mostrar o café.",
+          "1 min · Uma dupla lê a regra: sem os quatro campos, a imagem fica de fora."
         ],
-        "watch": "A turma separa “gostei da imagem” de “posso usar a imagem”.",
-        "rescue": "Uso a comparação: emprestar um livro. Você precisa saber de quem é e o que pode fazer com ele."
+        "watch": "Todas as duplas têm duas linhas em branco prontas no caderno.",
+        "rescue": "Ditado campo a campo. Quem não tem caderno usa uma folha qualquer da mochila ou o bloco do celular, sem dado pessoal."
       }
     },
     {
       "title": "Pode usar ou não?",
       "block": 1,
       "layout": "dense-cards",
-      "kicker": "19:10–19:30 · jogo coletivo",
-      "heading": "Seis situações. Respondam SIM ou NÃO",
-      "lede": "Leio uma situação. A turma responde em voz alta e justifica em uma frase.",
+      "kicker": "19:10–19:28",
+      "heading": "Seis situações. Digam SIM ou NÃO",
+      "lede": "Eu leio. Vocês respondem. Depois uma frase curta dizendo por quê.",
       "cards": [
         {
           "eyebrow": "1",
-          "title": "Foto que vocês tiraram",
-          "text": "A dupla fotografou o próprio produto fictício. Ninguém de fora aparece na foto."
+          "title": "Foto de vocês",
+          "text": "A dupla fotografou o próprio produto fictício. Ninguém de fora aparece."
         },
         {
           "eyebrow": "2",
-          "title": "Banco com licença clara",
-          "text": "A página mostra o autor e uma licença livre para uso."
+          "title": "Banco com regra clara",
+          "text": "O cartão mostra quem fez e diz que pode usar."
         },
         {
           "eyebrow": "3",
@@ -816,245 +806,82 @@ support['design-web'].lessons['05'] = {
         },
         {
           "eyebrow": "4",
-          "title": "Domínio público / CC0",
-          "text": "A fonte diz que pode usar sem restrição."
+          "title": "Pode usar sem restrição",
+          "text": "A fonte diz que pode usar e pede só para anotar de onde veio."
         },
         {
           "eyebrow": "5",
-          "title": "Imagem com CC BY",
-          "text": "A licença permite usar se o autor for creditado."
+          "title": "Pode usar com o nome",
+          "text": "A regra é usar se o nome de quem fez aparecer no painel."
         },
         {
           "eyebrow": "6",
-          "title": "Resultado de busca sem origem",
-          "text": "A imagem apareceu numa busca qualquer, sem autor nem licença."
+          "title": "Busca sem origem",
+          "text": "A imagem apareceu numa busca qualquer, sem autor e sem regra."
         }
       ],
       "bullets": [
-        "Responda SIM ou NÃO e justifique em uma frase.",
-        "A justificativa precisa citar autorização, licença ou falta de crédito."
+        "Para cada situação: respondam em voz alta e escrevam SIM ou NÃO na margem do caderno.",
+        "A frase do porquê cita autorização, regra de uso ou falta de crédito."
       ],
       "teacher": {
         "steps": [
-          "12 min · Leio uma situação por vez e ouço SIM ou NÃO.",
-          "5 min · Peço uma justificativa curta por situação.",
-          "3 min · Confirmo o gabarito sem reabrir debate longo."
+          "15 min · Faço as seis situações, cerca de 2 minutos e meio cada: leio, ouço e peço a frase.",
+          "3 min · Confirmo as respostas só nas minhas notas e reforço a regra em uma frase."
         ],
-        "watch": "Gabarito: 1 SIM · 2 SIM · 3 NÃO · 4 SIM · 5 SIM · 6 NÃO. A turma justifica com autorização ou licença, não com “está na internet”.",
-        "rescue": "Se a turma travar, eu respondo a primeira situação e peço que a turma faça a segunda."
+        "watch": "Gabarito, só para mim: 1 SIM · 2 SIM · 3 NÃO · 4 SIM · 5 SIM · 6 NÃO. Não projeto isso.",
+        "rescue": "Eu resolvo a 1 em voz alta. A turma faz a 2. Seguimos nesse ritmo."
       }
     },
     {
       "title": "Texto que descreve a imagem",
       "block": 1,
       "layout": "dense-cards",
-      "kicker": "Para quem não vê a imagem",
-      "heading": "O texto diz o que a imagem comunica",
-      "lede": "Esse texto ajuda quem não vê a tela e também deixa claro o papel da imagem no painel.",
+      "kicker": "19:28–19:36",
+      "heading": "A frase diz o que a imagem mostra",
+      "lede": "Molde da noite: objeto + lugar. Sem “foto bonita”.",
       "cards": [
         {
           "eyebrow": "Fraco",
-          "title": "“Imagem” ou “foto bonita”",
-          "text": "Não informa o conteúdo nem a função."
-        },
-        {
-          "eyebrow": "Excessivo",
-          "title": "Descrever cada detalhe",
-          "text": "Conta demais e esconde o que importa."
+          "title": "“Foto bonita”",
+          "text": "Não diz o que aparece."
         },
         {
           "eyebrow": "Adequado",
           "title": "Xícara de café sobre mesa de madeira",
-          "text": "Diz o assunto principal da imagem."
+          "text": "Diz o objeto e o lugar."
         },
         {
-          "eyebrow": "Na prática",
-          "title": "Uma frase objetiva",
-          "text": "Escrevam o que uma pessoa precisa saber se a imagem não aparecer."
+          "eyebrow": "Molde",
+          "title": "objeto + lugar",
+          "text": "Completem em voz alta."
+        },
+        {
+          "eyebrow": "Teste",
+          "title": "Tapar o cartão",
+          "text": "Se a frase ainda explica, está boa."
         }
       ],
-      "promptLabel": "Em uma frase",
-      "prompt": "Esse texto acompanha a imagem para quem não a vê. Hoje vocês só escrevem a frase no caderno.",
+      "bullets": [
+        "Esse texto ajuda quem não vê a imagem.",
+        "Depois do lanche, cada imagem ganha uma frase neste molde."
+      ],
       "teacher": {
-        "speech": "Falo da função: a imagem precisa de um texto que diga o que ela comunica.",
         "steps": [
-          "4 min · Comparo fraco, excessivo e adequado.",
-          "3 min · Peço que a turma melhore uma frase fraca em voz alta.",
-          "2 min · Ligo isso ao painel que virá depois do lanche."
+          "4 min · Comparo fraco e adequado e escrevo objeto + lugar no quadro.",
+          "4 min · A turma troca “foto bonita” por uma frase adequada em coro."
         ],
-        "watch": "A turma entende que o texto descreve o conteúdo útil, não enfeita.",
-        "rescue": "Pergunta-guia: se a imagem sumir, o que ainda precisa estar escrito?"
+        "watch": "A turma consegue repetir o molde sem olhar o slide.",
+        "rescue": "Ofereço a frase pronta e peço só trocar o objeto."
       }
     },
     {
       "title": "Exemplo resolvido",
       "block": 1,
       "layout": "dense-cards",
-      "kicker": "Café da Esquina",
-      "heading": "Um painel já pronto, para vocês copiarem a lógica",
-      "lede": "Campanha da noite: promoção de fim de semana do Café da Esquina. Este exemplo usa uma imagem permitida e traz crédito.",
-      "cards": [
-        {
-          "eyebrow": "Título",
-          "title": "Café da Esquina",
-          "text": "Fim de semana com café e pão quente."
-        },
-        {
-          "eyebrow": "Imagem",
-          "title": "Xícara de café sobre mesa de madeira",
-          "text": "Autor Ana Lima · Fonte Openverse · Licença CC BY 4.0."
-        },
-        {
-          "eyebrow": "Texto da imagem",
-          "title": "Frase adequada",
-          "text": "Xícara de café sobre mesa de madeira."
-        },
-        {
-          "eyebrow": "Botão",
-          "title": "Reservar mesa",
-          "text": "A ação é clara e específica."
-        }
-      ],
-      "bullets": [
-        "A imagem entrou porque tem os quatro dados.",
-        "O crédito ficou visível embaixo da imagem.",
-        "Dupla travada usa este modelo e troca só a imagem e o texto curto."
-      ],
-      "teacher": {
-        "steps": [
-          "5 min · Aponto cada parte do painel.",
-          "3 min · Destaco crédito e texto da imagem.",
-          "2 min · Aviso o lanche e o que acontece na volta."
-        ],
-        "watch": "A turma vê um resultado completo antes de produzir.",
-        "rescue": "Desenho no quadro cinco caixas: título, texto, imagem, crédito e botão."
-      }
-    },
-    {
-      "title": "Lanche",
-      "block": 1,
-      "pace": "break",
-      "kicker": "19:45–20:05 · intervalo",
-      "heading": "Lanche · retorno às 20:05",
-      "lede": "Na volta, cada dupla escolhe duas imagens do banco projetado e anota os quatro dados no caderno.",
-      "promptLabel": "Combinado do retorno",
-      "prompt": "Voltem às 20:05 na mesma dupla, com caderno e caneta na mesa.",
-      "teacher": {
-        "steps": [
-          "Aviso o horário de retorno e deixo este slide projetado.",
-          "Retomo pontualmente às 20:05 com a chamada."
-        ],
-        "watch": "A turma volta na mesma dupla e sabe que a pesquisa na internet continua fora.",
-        "rescue": "Se a turma voltar dispersa, projeto o slide da Atividade 1 e leio só o critério de conclusão."
-      }
-    },
-    {
-      "title": "Atividade 1 · Escolher e anotar",
-      "block": 2,
-      "layout": "dense-cards",
-      "kicker": "20:05–20:50 · banco projetado",
-      "heading": "Escolham duas imagens para o Café da Esquina",
-      "lede": "Usem só os cartões abaixo. Copiem para o caderno os quatro dados de cada imagem escolhida.",
-      "cards": [
-        {
-          "eyebrow": "A · Permitida",
-          "title": "Xícara de café",
-          "text": "Autor Ana Lima · Fonte Openverse · Licença CC BY 4.0 · Serve para mostrar a bebida da promoção."
-        },
-        {
-          "eyebrow": "B · Permitida",
-          "title": "Pão fresco na cesta",
-          "text": "Autor João Reis · Fonte Pexels · Licença livre para uso · Serve para mostrar o acompanhamento."
-        },
-        {
-          "eyebrow": "C · Permitida",
-          "title": "Vitrine iluminada",
-          "text": "Autor acervo público · Fonte Wikimedia · Licença CC0 · Serve para mostrar o ponto de venda."
-        },
-        {
-          "eyebrow": "D · Permitida",
-          "title": "Mesa de madeira vazia",
-          "text": "Autor Marina Costa · Fonte banco livre · Licença livre com crédito · Serve para ambientar o convite."
-        },
-        {
-          "eyebrow": "E · Cuidado",
-          "title": "Pessoa real sem autorização",
-          "text": "Há rosto identificável e não há autorização anotada. NÃO escolher."
-        },
-        {
-          "eyebrow": "F · Proibida",
-          "title": "Print de rede social",
-          "text": "Sem autor, sem licença e sem pedido. NÃO escolher."
-        }
-      ],
-      "bullets": [
-        "FAÇAM: um escreve, o outro confere os quatro dados.",
-        "PROIBIDO: cartões E e F.",
-        "PRONTO QUANDO: duas imagens permitidas estão no caderno com autor, fonte, licença e para que serve."
-      ],
-      "teacher": {
-        "steps": [
-          "3 min · Faço a chamada e confirmo as duplas.",
-          "30 min · Circulo só apontando o próximo campo em branco.",
-          "8 min · Confiro por amostragem se E e F ficaram de fora.",
-          "4 min · Aviso a troca para o texto da imagem."
-        ],
-        "watch": "Nenhuma dupla usa E ou F, e os quatro campos estão preenchidos.",
-        "rescue": "Se a dupla travar, mando escolher A e B e só completar os quatro campos."
-      }
-    },
-    {
-      "title": "Atividade 2 · Texto da imagem",
-      "block": 3,
-      "layout": "dense-cards",
-      "kicker": "20:50–21:30 · uma frase por imagem",
-      "heading": "Escrevam o texto que descreve cada imagem",
-      "lede": "Para cada imagem escolhida, uma frase. A frase diz o que a imagem comunica na promoção.",
-      "cards": [
-        {
-          "eyebrow": "1",
-          "title": "Olhem a imagem escolhida",
-          "text": "Qual é o assunto principal?"
-        },
-        {
-          "eyebrow": "2",
-          "title": "Escrevam uma frase",
-          "text": "Sem começar com “imagem de” se puder evitar."
-        },
-        {
-          "eyebrow": "3",
-          "title": "Testem em voz baixa",
-          "text": "Se a imagem sumir, a frase ainda explica o que era?"
-        },
-        {
-          "eyebrow": "4",
-          "title": "Ajustem",
-          "text": "Tirem detalhe inútil e guardem o que importa para o Café da Esquina."
-        }
-      ],
-      "bullets": [
-        "EXEMPLO FRACO: foto bonita.",
-        "EXEMPLO ADEQUADO: pão fresco na cesta sobre toalha clara.",
-        "PRONTO QUANDO: as duas imagens têm uma frase cada no caderno."
-      ],
-      "teacher": {
-        "steps": [
-          "3 min · Faço a chamada do bloco e releio o exemplo adequado.",
-          "25 min · Circulo pedindo que leiam a frase sem mostrar o cartão.",
-          "8 min · Peço um ajuste rápido nas frases vagas.",
-          "4 min · Aviso a montagem do painel."
-        ],
-        "watch": "A frase descreve conteúdo útil, não opinião.",
-        "rescue": "Dou a estrutura: objeto + lugar. Exemplo: xícara de café sobre mesa de madeira."
-      }
-    },
-    {
-      "title": "Atividade 3 · Montar o painel",
-      "block": 4,
-      "layout": "dense-cards",
-      "kicker": "21:30–21:50 · no caderno",
-      "heading": "Montem o painel da promoção",
-      "lede": "Desenhem cinco partes. Não precisa ser bonito: precisa estar completo e legível.",
+      "kicker": "19:36–19:45",
+      "heading": "Este é o painel pronto. Copiem as cinco caixas",
+      "lede": "Campanha da noite: Café da Esquina. Promoção de fim de semana.",
       "cards": [
         {
           "eyebrow": "1",
@@ -1064,38 +891,199 @@ support['design-web'].lessons['05'] = {
         {
           "eyebrow": "2",
           "title": "Texto curto",
-          "text": "Uma frase da promoção de fim de semana."
+          "text": "Fim de semana com café e pão quente."
         },
         {
           "eyebrow": "3",
-          "title": "Espaço da imagem",
-          "text": "Retângulo com o nome da imagem escolhida."
+          "title": "Imagem",
+          "text": "Xícara de café. Embaixo: Ana Lima · banco da aula · pode usar com o nome."
+        },
+        {
+          "eyebrow": "4",
+          "title": "Botão",
+          "text": "Reservar mesa."
+        }
+      ],
+      "bullets": [
+        "No caderno, desenhem cinco caixas vazias: título, texto, imagem, crédito e botão.",
+        "Lanche às 19:45. Volta às 20:05. Não abram site."
+      ],
+      "teacher": {
+        "steps": [
+          "5 min · Aponto cada parte e a turma desenha as cinco caixas vazias.",
+          "4 min · Aviso o lanche às 19:45 e o que acontece às 20:05."
+        ],
+        "watch": "Antes de sair, cada caderno tem as cinco caixas desenhadas.",
+        "rescue": "Desenho as cinco caixas no quadro e espero a cópia."
+      }
+    },
+    {
+      "title": "Lanche",
+      "block": 1,
+      "pace": "break",
+      "kicker": "19:45–20:05 · intervalo",
+      "heading": "Lanche · retorno às 20:05",
+      "lede": "Na volta, a dupla escolhe duas imagens do banco projetado e preenche as duas linhas do caderno.",
+      "promptLabel": "Combinado",
+      "prompt": "Voltem às 20:05 na mesma dupla, com caderno e caneta na mesa.",
+      "teacher": {
+        "steps": [
+          "Deixo este slide projetado durante o lanche.",
+          "Retomo às 20:05 em ponto com a chamada."
+        ],
+        "watch": "Ninguém começa o banco antes das 20:05.",
+        "rescue": "Turma dispersa: leio só o “pronto quando” da Atividade 1."
+      }
+    },
+    {
+      "title": "Atividade 1 · Escolher e anotar",
+      "block": 2,
+      "layout": "dense-cards",
+      "kicker": "20:05–20:50",
+      "heading": "Escolham duas imagens e copiem os quatro dados",
+      "lede": "Só A, B, C ou D. Um escreve. O outro confere. Tudo está nestes cartões.",
+      "cards": [
+        {
+          "eyebrow": "A · Pode",
+          "title": "Xícara de café",
+          "text": "Autor Ana Lima · Fonte banco da aula · Licença: pode usar se escrever o nome dela · Serve para mostrar a bebida."
+        },
+        {
+          "eyebrow": "B · Pode",
+          "title": "Pão fresco na cesta",
+          "text": "Autor João Reis · Fonte banco da aula · Licença: pode usar sem restrição · Serve para mostrar o acompanhamento."
+        },
+        {
+          "eyebrow": "C · Pode",
+          "title": "Vitrine iluminada",
+          "text": "Autor acervo da aula · Fonte banco da aula · Licença: pode usar sem restrição · Serve para mostrar o ponto de venda."
+        },
+        {
+          "eyebrow": "D · Pode",
+          "title": "Mesa de madeira vazia",
+          "text": "Autor Marina Costa · Fonte banco da aula · Licença: pode usar se escrever o nome dela · Serve para ambientar o convite."
+        },
+        {
+          "eyebrow": "E · Não",
+          "title": "Pessoa real sem autorização",
+          "text": "Tem rosto e não tem autorização. Não escolher."
+        },
+        {
+          "eyebrow": "F · Não",
+          "title": "Print de rede social",
+          "text": "Sem autor, sem regra e sem pedido. Não escolher."
+        }
+      ],
+      "bullets": [
+        "COPIEM nas duas linhas do caderno: letra, autor, fonte, licença e para que serve.",
+        "PRONTO QUANDO: as duas linhas estão cheias e a dupla vizinha ouviu uma delas."
+      ],
+      "teacher": {
+        "steps": [
+          "3 min · Chamada das 20:05. Confirmo duplas e releio: só A a D.",
+          "5 min · Copio a imagem A no quadro, campo a campo, e a turma acompanha.",
+          "12 min · Primeira imagem da dupla. Circulo apontando campo vazio.",
+          "12 min · Segunda imagem da dupla. Quem acabou lê para a vizinha.",
+          "8 min · Troca: cada dupla lê uma linha para a vizinha.",
+          "5 min · Confiro E e F de fora e aviso a troca de bloco."
+        ],
+        "watch": "Nenhuma dupla parada. Quem acabou lê ou revisa a segunda linha.",
+        "rescue": "Dupla travada recebe A e B e só copia o texto do cartão."
+      }
+    },
+    {
+      "title": "Atividade 2 · Texto da imagem",
+      "block": 3,
+      "layout": "dense-cards",
+      "kicker": "20:50–21:30",
+      "heading": "Uma frase por imagem, com o molde do quadro",
+      "lede": "Molde: objeto + lugar. Exemplo: pão fresco na cesta sobre toalha clara.",
+      "cards": [
+        {
+          "eyebrow": "1",
+          "title": "Olhem a imagem",
+          "text": "Digam o objeto em uma palavra."
+        },
+        {
+          "eyebrow": "2",
+          "title": "Completem o molde",
+          "text": "objeto + lugar. Sem “foto bonita”."
+        },
+        {
+          "eyebrow": "3",
+          "title": "Tapem o cartão",
+          "text": "A frase ainda explica o que era?"
+        },
+        {
+          "eyebrow": "4",
+          "title": "Troquem",
+          "text": "A vizinha ouve e diz se entendeu."
+        }
+      ],
+      "bullets": [
+        "FRACO: foto bonita.",
+        "ADEQUADO: xícara de café sobre mesa de madeira.",
+        "PRONTO QUANDO: as duas imagens têm uma frase testada em voz alta."
+      ],
+      "teacher": {
+        "steps": [
+          "3 min · Chamada das 20:50. Reescrevo o molde no quadro.",
+          "5 min · A turma transforma “foto bonita” em frase adequada em coro.",
+          "10 min · Frase da primeira imagem. Circulo pedindo leitura sem mostrar o cartão.",
+          "10 min · Frase da segunda imagem.",
+          "7 min · Troca com a vizinha: ouvir e dizer se entendeu.",
+          "5 min · Ajuste final e aviso do painel."
+        ],
+        "watch": "Quem acaba cedo testa a frase da vizinha. Celular não entra.",
+        "rescue": "Frase para copiar e só trocar o objeto: ___ sobre mesa de madeira."
+      }
+    },
+    {
+      "title": "Atividade 3 · Montar o painel",
+      "block": 4,
+      "layout": "dense-cards",
+      "kicker": "21:30–21:50",
+      "heading": "Preencham as cinco caixas do caderno",
+      "lede": "Não precisa desenhar bem. Precisa estar completo e legível.",
+      "cards": [
+        {
+          "eyebrow": "1",
+          "title": "Título",
+          "text": "Escrevam: Café da Esquina."
+        },
+        {
+          "eyebrow": "2",
+          "title": "Texto curto",
+          "text": "Fim de semana com café e pão quente."
+        },
+        {
+          "eyebrow": "3",
+          "title": "Imagem",
+          "text": "No retângulo: a letra e o nome da imagem escolhida."
         },
         {
           "eyebrow": "4",
           "title": "Crédito",
-          "text": "Autor · Fonte · Licença embaixo da imagem."
+          "text": "Embaixo: Autor · Fonte · Licença, copiados da linha do caderno."
         },
         {
           "eyebrow": "5",
           "title": "Botão",
-          "text": "Ação clara: Reservar mesa, Ver cardápio ou Pedir para viagem."
+          "text": "Escolham um: Reservar mesa · Ver cardápio · Pedir para viagem."
         }
       ],
       "bullets": [
-        "Usem uma das duas imagens anotadas.",
-        "Copiem o crédito completo.",
-        "PRONTO QUANDO: as cinco partes estão na página e outra dupla entende a promoção em cinco segundos."
+        "Usem uma das duas imagens já anotadas.",
+        "PRONTO QUANDO: as cinco caixas estão preenchidas."
       ],
       "teacher": {
         "steps": [
-          "3 min · Faço a chamada e desenho as cinco caixas no quadro.",
-          "12 min · A turma monta o painel.",
-          "5 min · Troca rápida entre duplas vizinhas.",
-          "Avanço para a conferência com o checklist."
+          "3 min · Chamada das 21:30. Mostro as cinco caixas no quadro.",
+          "12 min · Preenchimento caixa a caixa. A cada 2 minutos, avanço uma.",
+          "5 min · Quem terminou confere crédito e botão. Quem não terminou fecha só as cinco partes."
         ],
-        "watch": "O crédito está visível e o botão tem ação específica.",
-        "rescue": "Se a dupla enfeitar demais, peço só as cinco partes do exemplo resolvido."
+        "watch": "Ninguém enfeita antes de completar as cinco caixas.",
+        "rescue": "Ditado do exemplo. A dupla só troca imagem e crédito."
       }
     },
     {
@@ -1103,8 +1091,8 @@ support['design-web'].lessons['05'] = {
       "block": 4,
       "layout": "dense-cards",
       "kicker": "21:50–22:00",
-      "heading": "Cinco perguntas de SIM ou NÃO",
-      "lede": "Um lê a pergunta, o outro procura a resposta no caderno. Marquem SIM só com evidência.",
+      "heading": "Cinco perguntas. Dedo na linha do caderno",
+      "lede": "Um lê. O outro aponta. Só marca SIM se a evidência estiver escrita.",
       "cards": [
         {
           "eyebrow": "1",
@@ -1118,32 +1106,32 @@ support['design-web'].lessons['05'] = {
         },
         {
           "eyebrow": "3",
-          "title": "Texto da imagem",
-          "text": "Cada imagem tem uma frase que descreve o que ela comunica?"
+          "title": "Frase da imagem",
+          "text": "Há uma frase de objeto + lugar para cada uma?"
         },
         {
           "eyebrow": "4",
-          "title": "Painel completo",
-          "text": "Título, texto curto, imagem, crédito e botão estão na página?"
+          "title": "Painel",
+          "text": "Título, texto, imagem, crédito e botão estão lá?"
         },
         {
           "eyebrow": "5",
-          "title": "Identificação",
-          "text": "Nomes da dupla e turma estão no alto, sem dado pessoal extra?"
+          "title": "Nomes",
+          "text": "Nomes da dupla e turma estão no alto?"
         }
       ],
       "bullets": [
-        "TERMINAMOS QUANDO: são cinco SIM.",
-        "Não apresentem para a turma. Chamem só se precisarem de ajuda para corrigir um NÃO."
+        "Cada NÃO vira correção na mesma página, agora.",
+        "Não apresentem para a turma inteira."
       ],
       "teacher": {
         "steps": [
-          "2 min · Explico que a conferência é mecânica.",
-          "6 min · As duplas marcam e corrigem.",
-          "2 min · Confiro por amostragem crédito e texto da imagem."
+          "2 min · Explico: pergunta, dedo na linha, SIM ou correção.",
+          "6 min · As duplas conferem e corrigem.",
+          "2 min · Olho crédito e frase por amostragem."
         ],
-        "watch": "A dupla aponta a linha do caderno, em vez de responder SIM sem olhar.",
-        "rescue": "Peço que conferem só os itens 1, 3 e 4; depois repetem o método nos demais."
+        "watch": "Nenhuma dupla sentada sem olhar o caderno.",
+        "rescue": "Faço as cinco perguntas em voz alta com um caderno modelo."
       }
     },
     {
@@ -1152,30 +1140,30 @@ support['design-web'].lessons['05'] = {
       "layout": "dense-cards",
       "kicker": "22:00–22:07",
       "heading": "Primeiro a permissão, depois a imagem",
-      "lede": "Daqui em diante nenhuma imagem entra no projeto sem os quatro dados e sem o texto que a descreve.",
+      "lede": "A aula termina às 22:07. Completem a frase e guardem a página.",
       "cards": [
         {
-          "eyebrow": "No caderno",
-          "title": "Complete a frase",
+          "eyebrow": "Frase",
+          "title": "No caderno",
           "text": "Antes de usar uma imagem, eu anoto ___ e ___."
         },
         {
-          "eyebrow": "Guarde",
-          "title": "A página da dupla",
-          "text": "Ela é a evidência de hoje. Não precisa entregar arquivo."
+          "eyebrow": "Evidência",
+          "title": "A página de hoje",
+          "text": "Fica com a dupla. Não precisa de arquivo nem de folha extra."
         },
         {
-          "eyebrow": "Próxima aula",
-          "title": "Identidade visual",
-          "text": "Cores, tipografia e personalidade para telas."
+          "eyebrow": "Próxima",
+          "title": "Aula 06",
+          "text": "Identidade visual: cores, letras e personalidade."
         }
       ],
       "teacher": {
         "steps": [
-          "4 min · Todos completam a frase sem rodada longa.",
-          "3 min · Antecipo a Aula 06 em uma frase e encerro."
+          "4 min · Todos completam a frase no caderno.",
+          "3 min · Antecipo a Aula 06 e encerro às 22:07."
         ],
-        "watch": "A turma sai com a página completa e a regra dos quatro dados.",
+        "watch": "A turma sai com a página pronta e sem tarefa para casa.",
         "rescue": "Frase-modelo: Antes de usar uma imagem, eu anoto autor e licença."
       }
     }

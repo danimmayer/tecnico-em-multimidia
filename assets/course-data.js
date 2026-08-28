@@ -161,43 +161,44 @@ window.SENAI_COURSES = {
         "resources": "Cartões, barbante, post-its, papel, canetas, projetor e ferramenta visual disponível.",
         "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
       },
-              {
-          "num": "05",
-          "title": "Imagens, Texto e Direitos de Uso",
-          "description": "Escolher imagens com autorização, escrever o texto que as descreve e montar um painel simples com crédito e chamada para ação.",
-          "objectives": [
-            "Pesquisa: propriedade intelectual, tipos e fontes.",
-            "Criação de código de texto: elementos e alternativas textuais."
-          ],
-          "technical": [
-            "Selecionar a criação de elementos gráficos para o desenvolvimento de design web, interfaces e redes sociais, tendo vista a propriedade.",
-            "Identificar padrões, normas e procedimentos para elaboração do projeto de mídias digitais, referentes a propriedade intelectual, acessibilidade, usabilidade e sustentabilidade."
-          ],
-          "socioemotional": [
-            "Reconhecer a pesquisa como fonte de inovação e formação de um espírito empreendedor."
-          ],
-          "schedule": [
-            {
-              "horario": "19:00 - 19:45",
-              "atividade": "Jogo \"Pode usar ou não?\": a turma decide sobre seis situações de imagem e justifica cada resposta. Em seguida, vê um painel já resolvido com autor, fonte, licença, crédito e texto que descreve a imagem."
-            },
-            {
-              "horario": "20:05 - 20:50",
-              "atividade": "Em duplas, escolher duas imagens do banco projetado para a campanha Café da Esquina e anotar no caderno autor, fonte, licença e para que serve cada uma."
-            },
-            {
-              "horario": "20:50 - 21:30",
-              "atividade": "Escrever o texto que descreve cada imagem escolhida. Comparar com exemplos fracos e adequados projetados e ajustar até a frase dizer o que a imagem comunica."
-            },
-            {
-              "horario": "21:30 - 22:07",
-              "atividade": "Montar no caderno o painel da promoção com título, texto curto, espaço da imagem, crédito e botão. Conferir o checklist projetado, mostrar para outra dupla e concluir com uma frase de saída."
-            }
-          ],
-          "methodology": "Jogo coletivo no projetor, escolha guiada em duplas, escrita do texto da imagem e montagem de painel no caderno.",
-          "resources": "Projetor, caderno e caneta. Todo o material da noite está nos slides: situações, banco de imagens, exemplos e checklist. Sem impressão e sem site externo.",
-          "observation": "Aula planejada de 19:00 a 22:07, com lanche de 19:45 a 20:05 e chamada no início dos quatro blocos: 19:00, 20:05, 20:50 e 21:30. A turma usa só o que está projetado: situações, banco de imagens, exemplos e checklist."
-        },{
+      {
+        "num": "05",
+        "title": "Imagens, Texto e Direitos de Uso",
+        "description": "Escolher imagens que podem ser usadas, escrever o texto que as descreve e montar um painel com crédito e botão.",
+        "objectives": [
+          "Pesquisa: propriedade intelectual, tipos e fontes.",
+          "Criação de código de texto: elementos e alternativas textuais."
+        ],
+        "technical": [
+          "Selecionar a criação de elementos gráficos para o desenvolvimento de design web, interfaces e redes sociais, tendo vista a propriedade.",
+          "Identificar padrões, normas e procedimentos para elaboração do projeto de mídias digitais, referentes a propriedade intelectual, acessibilidade, usabilidade e sustentabilidade."
+        ],
+        "socioemotional": [
+          "Reconhecer a pesquisa como fonte de inovação e formação de um espírito empreendedor."
+        ],
+        "schedule": [
+          {
+            "horario": "19:00 - 19:45",
+            "atividade": "Copiar no caderno os quatro dados de uma imagem, jogar Pode usar ou não? com seis situações projetadas e ver o painel pronto do Café da Esquina."
+          },
+          {
+            "horario": "20:05 - 20:50",
+            "atividade": "Em duplas, escolher duas imagens permitidas do banco projetado e copiar autor, fonte, licença e para que serve de cada uma."
+          },
+          {
+            "horario": "20:50 - 21:30",
+            "atividade": "Escrever uma frase por imagem com o molde objeto + lugar, testar tapando o cartão e ajustar com a dupla vizinha."
+          },
+          {
+            "horario": "21:30 - 22:07",
+            "atividade": "Montar o painel no caderno com título, texto, imagem, crédito e botão; conferir o checklist projetado; fechar com uma frase de saída."
+          }
+        ],
+        "methodology": "Tudo no projetor: modelo, jogo, banco, molde, painel e checklist. A turma só copia, decide e escreve no caderno.",
+        "resources": "Projetor, caderno e caneta. Todo o material da noite está nos slides: situações, banco de imagens, exemplos e checklist. Sem impressão e sem site externo.",
+        "observation": "Design Web apenas. Começa às 19:00, lanche das 19:45 às 20:05 e termina às 22:07. Chamada às 19:00, 20:05, 20:50 e 21:30. Nada impresso e nada de Produção Audiovisual."
+      },
+      {
         "num": "06",
         "title": "Identidade Visual para Telas",
         "description": "Cores, tipografia, contraste e personalidade de marca aplicados a um painel de estilo digital.",

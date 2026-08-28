@@ -405,6 +405,28 @@ if (!fs.readFileSync(fromRoot('scripts/rebuild-design-web-no-code.mjs'), 'utf8')
   errors.push('Design Web Aula 05: personalização regenerável ausente do rebuild');
 }
 
+const designLessonFiveStepMinutes = (slide) => (slide.teacher?.steps || []).reduce((total, step) => {
+  const match = String(step).match(/^(\d+) min\b/);
+  return total + (match ? Number(match[1]) : 0);
+}, 0);
+const designLessonFiveBlockMinutes = { 1: 0, 2: 0, 3: 0, 4: 0 };
+for (const slide of designLessonFiveSlides) {
+  if (slide.pace === 'break') continue;
+  designLessonFiveBlockMinutes[slide.block] += designLessonFiveStepMinutes(slide);
+}
+if (designLessonFiveBlockMinutes[1] !== 45 || designLessonFiveBlockMinutes[2] !== 45 || designLessonFiveBlockMinutes[3] !== 40 || designLessonFiveBlockMinutes[4] !== 37) {
+  errors.push(`Design Web Aula 05: os passos do professor precisam fechar 45+45+40+37 min, vieram ${designLessonFiveBlockMinutes[1]}+${designLessonFiveBlockMinutes[2]}+${designLessonFiveBlockMinutes[3]}+${designLessonFiveBlockMinutes[4]}`);
+}
+if (!designLessonFive?.observation?.includes('19:00') || !designLessonFive?.observation?.includes('19:45') || !designLessonFive?.observation?.includes('22:07')) {
+  errors.push('Design Web Aula 05: o horário 19:00, lanche 19:45 e fim 22:07 precisa estar explícito');
+}
+if (designLessonFiveSlides.some((slide) => /gabarito rápido/i.test(JSON.stringify(slide.cards || []) + JSON.stringify(slide.bullets || []) + (slide.lede || '') + (slide.prompt || '')))) {
+  errors.push('Design Web Aula 05: o gabarito não pode aparecer no slide da turma');
+}
+if (/\bring lights?\b|autorização falada|ficha de autorização/.test(designLessonFiveText)) {
+  errors.push('Design Web Aula 05: material de Produção Audiovisual não pode entrar nesta aula');
+}
+
 for (const lesson of designCourse.lessons) {
   const studentFacingText = JSON.stringify({
     title: lesson.title,
