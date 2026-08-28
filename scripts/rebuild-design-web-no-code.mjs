@@ -802,36 +802,36 @@ support['design-web'].lessons['05'] = {
         {
           "eyebrow": "1",
           "title": "Foto que vocês tiraram",
-          "text": "A dupla fotografou o próprio produto fictício. SIM, se ninguém de fora aparece sem autorização."
+          "text": "A dupla fotografou o próprio produto fictício. Ninguém de fora aparece na foto."
         },
         {
           "eyebrow": "2",
           "title": "Banco com licença clara",
-          "text": "A página mostra autor e licença livre para uso. SIM, anotando os quatro dados."
+          "text": "A página mostra o autor e uma licença livre para uso."
         },
         {
           "eyebrow": "3",
           "title": "Print de rede social",
-          "text": "Copiar a foto de outra pessoa sem pedir. NÃO."
+          "text": "Copiar a foto de outra pessoa sem pedir."
         },
         {
           "eyebrow": "4",
           "title": "Domínio público / CC0",
-          "text": "A fonte diz que pode usar sem restrição. SIM, ainda anotando a fonte."
+          "text": "A fonte diz que pode usar sem restrição."
         },
         {
           "eyebrow": "5",
           "title": "Imagem com CC BY",
-          "text": "Pode usar se creditar o autor. SIM, com crédito visível."
+          "text": "A licença permite usar se o autor for creditado."
         },
         {
           "eyebrow": "6",
           "title": "Resultado de busca sem origem",
-          "text": "A imagem apareceu numa busca qualquer, sem autor nem licença. NÃO."
+          "text": "A imagem apareceu numa busca qualquer, sem autor nem licença."
         }
       ],
       "bullets": [
-        "GABARITO RÁPIDO: 1 SIM · 2 SIM · 3 NÃO · 4 SIM · 5 SIM · 6 NÃO.",
+        "Responda SIM ou NÃO e justifique em uma frase.",
         "A justificativa precisa citar autorização, licença ou falta de crédito."
       ],
       "teacher": {
@@ -840,7 +840,7 @@ support['design-web'].lessons['05'] = {
           "5 min · Peço uma justificativa curta por situação.",
           "3 min · Confirmo o gabarito sem reabrir debate longo."
         ],
-        "watch": "A turma justifica com autorização ou licença, não com “está na internet”.",
+        "watch": "Gabarito: 1 SIM · 2 SIM · 3 NÃO · 4 SIM · 5 SIM · 6 NÃO. A turma justifica com autorização ou licença, não com “está na internet”.",
         "rescue": "Se a turma travar, eu respondo a primeira situação e peço que a turma faça a segunda."
       }
     },
