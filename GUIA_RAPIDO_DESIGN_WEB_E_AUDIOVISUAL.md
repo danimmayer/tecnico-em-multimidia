@@ -77,8 +77,10 @@ e dados de métricas são fictícios.
 ### Aulas 03 a 05 · Anatomia, conteúdo e navegação
 
 O foco é reconhecer a estrutura visual de uma página, organizar caminhos,
-escrever microtextos e selecionar imagens com licença. HTML aparece apenas no
-exemplo preparado do professor.
+escrever microtextos e selecionar imagens com licença. Na Aula 05, a turma
+trabalha só com o projetor e o caderno: escolhe imagens de um banco já
+projetado, anota autor, fonte, licença e finalidade, escreve o texto que
+descreve a imagem e monta um painel com crédito.
 
 ### Aulas 06 a 10 · Identidade, composição e responsividade
 

@@ -359,6 +359,74 @@ if (designLessonOne?.title !== 'Primeiro Contato com Design Web') {
 if (!Array.isArray(designLessonOneSupport?.presentationSlides) || designLessonOneSupport.presentationSlides.length < 12) {
   errors.push('Design Web Aula 01: sequência explicativa deve ter pelo menos 12 slides próprios');
 }
+
+const designLessonFive = designCourse.lessons.find((lesson) => lesson.num === '05');
+const designLessonFiveSupport = context.window.SENAI_TEACHING_SUPPORT['design-web']?.lessons?.['05'];
+const designLessonFiveSlides = designLessonFiveSupport?.presentationSlides || [];
+const designLessonFiveActivityTitles = [
+  'Atividade 1 · Escolher e anotar',
+  'Atividade 2 · Texto da imagem',
+  'Atividade 3 · Montar o painel',
+  'Conferência da dupla'
+];
+const designLessonFiveText = JSON.stringify({
+  lesson: designLessonFive,
+  support: designLessonFiveSupport
+}).toLocaleLowerCase('pt-BR');
+
+if (designLessonFiveSlides.length !== 11 || designLessonFiveSupport?.appendDefaultClosing !== false) {
+  errors.push('Design Web Aula 05: a apresentação precisa ter exatamente 12 slides controlados (capa + 11 slides próprios)');
+}
+if (!designLessonFiveSlides.some((item) => item.pace === 'break')) {
+  errors.push('Design Web Aula 05: o intervalo precisa de slide próprio');
+}
+if (designLessonFiveSupport?.studentSheet || designLessonFiveSlides.some((item) => item.resource || item.resources)) {
+  errors.push('Design Web Aula 05: a aula não pode exigir ficha, link ou material externo');
+}
+if (!designLessonFive?.resources?.includes('caderno e caneta')) {
+  errors.push('Design Web Aula 05: o material discente precisa ser caderno e caneta');
+}
+if (!designLessonFive?.resources?.includes('Sem impressão')) {
+  errors.push('Design Web Aula 05: a independência de impressão precisa estar explícita');
+}
+for (const activityTitle of designLessonFiveActivityTitles) {
+  const activitySlide = designLessonFiveSlides.find((item) => item.title === activityTitle);
+  if (!activitySlide || (activitySlide.cards || []).length < 4 || (activitySlide.bullets || []).length < 2) {
+    errors.push(`Design Web Aula 05: ${activityTitle} precisa trazer passos e critérios completos no próprio slide`);
+  }
+}
+if ((designLessonFiveSupport?.check || []).length < 5) {
+  errors.push('Design Web Aula 05: conferência final insuficiente');
+}
+if (designLessonFiveText.includes('ficha impressa') || designLessonFiveText.includes('photopea') || designLessonFiveText.includes('http')) {
+  errors.push('Design Web Aula 05: permaneceu dependência de ficha impressa, Photopea ou link externo');
+}
+if (!fs.readFileSync(fromRoot('scripts/rebuild-design-web-no-code.mjs'), 'utf8').includes("support['design-web'].lessons['05'] =")) {
+  errors.push('Design Web Aula 05: personalização regenerável ausente do rebuild');
+}
+
+const designLessonFiveStepMinutes = (slide) => (slide.teacher?.steps || []).reduce((total, step) => {
+  const match = String(step).match(/^(\d+) min\b/);
+  return total + (match ? Number(match[1]) : 0);
+}, 0);
+const designLessonFiveBlockMinutes = { 1: 0, 2: 0, 3: 0, 4: 0 };
+for (const slide of designLessonFiveSlides) {
+  if (slide.pace === 'break') continue;
+  designLessonFiveBlockMinutes[slide.block] += designLessonFiveStepMinutes(slide);
+}
+if (designLessonFiveBlockMinutes[1] !== 45 || designLessonFiveBlockMinutes[2] !== 45 || designLessonFiveBlockMinutes[3] !== 40 || designLessonFiveBlockMinutes[4] !== 37) {
+  errors.push(`Design Web Aula 05: os passos do professor precisam fechar 45+45+40+37 min, vieram ${designLessonFiveBlockMinutes[1]}+${designLessonFiveBlockMinutes[2]}+${designLessonFiveBlockMinutes[3]}+${designLessonFiveBlockMinutes[4]}`);
+}
+if (!designLessonFive?.observation?.includes('19:00') || !designLessonFive?.observation?.includes('19:45') || !designLessonFive?.observation?.includes('22:07')) {
+  errors.push('Design Web Aula 05: o horário 19:00, lanche 19:45 e fim 22:07 precisa estar explícito');
+}
+if (designLessonFiveSlides.some((slide) => /gabarito rápido/i.test(JSON.stringify(slide.cards || []) + JSON.stringify(slide.bullets || []) + (slide.lede || '') + (slide.prompt || '')))) {
+  errors.push('Design Web Aula 05: o gabarito não pode aparecer no slide da turma');
+}
+if (/\bring lights?\b|autorização falada|ficha de autorização/.test(designLessonFiveText)) {
+  errors.push('Design Web Aula 05: material de Produção Audiovisual não pode entrar nesta aula');
+}
+
 for (const lesson of designCourse.lessons) {
   const studentFacingText = JSON.stringify({
     title: lesson.title,

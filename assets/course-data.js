@@ -164,7 +164,7 @@ window.SENAI_COURSES = {
       {
         "num": "05",
         "title": "Imagens, Texto e Direitos de Uso",
-        "description": "Curadoria de imagens e produção de conteúdo visual acessível, com autoria, licença e crédito.",
+        "description": "Escolher imagens que podem ser usadas, escrever o texto que as descreve e montar um painel com crédito e botão.",
         "objectives": [
           "Pesquisa: propriedade intelectual, tipos e fontes.",
           "Criação de código de texto: elementos e alternativas textuais."
@@ -178,25 +178,25 @@ window.SENAI_COURSES = {
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Aquecimento \"Pode usar ou não?\": análise de situações com imagem própria, banco gratuito, captura de rede social, domínio público e material com licença. A turma justifica cada decisão."
+            "horario": "19:00 - 19:45",
+            "atividade": "Copiar no caderno os quatro dados de uma imagem, jogar Pode usar ou não? com seis situações projetadas e ver o painel pronto do Café da Esquina."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "Pesquisa orientada em bancos autorizados. Cada dupla escolhe três imagens para uma campanha fictícia e registra autor, fonte, licença e finalidade de uso."
+            "horario": "20:05 - 20:50",
+            "atividade": "Em duplas, escolher duas imagens permitidas do banco projetado e copiar autor, fonte, licença e para que serve de cada uma."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "Laboratório de texto alternativo: comparar descrições inúteis, excessivas e adequadas. Cada dupla escreve alternativas textuais que comuniquem a função da imagem."
+            "horario": "20:50 - 21:30",
+            "atividade": "Escrever uma frase por imagem com o molde objeto + lugar, testar tapando o cartão e ajustar com a dupla vizinha."
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "Produção de um painel de conteúdo com título, texto curto, imagem, crédito e chamada para ação. Revisão por checklist e exposição dos painéis."
+            "horario": "21:30 - 22:07",
+            "atividade": "Montar o painel no caderno com título, texto, imagem, crédito e botão; conferir o checklist projetado; fechar com uma frase de saída."
           }
         ],
-        "methodology": "Estudo de casos, pesquisa guiada, escrita acessível e produção de painel visual.",
-        "resources": "Banco local de imagens, acesso a bancos gratuitos autorizados, ficha de licença, ferramenta visual e projetor.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "Tudo no projetor: modelo, jogo, banco, molde, painel e checklist. A turma só copia, decide e escreve no caderno.",
+        "resources": "Projetor, caderno e caneta. Todo o material da noite está nos slides: situações, banco de imagens, exemplos e checklist. Sem impressão e sem site externo.",
+        "observation": "Design Web apenas. Começa às 19:00, lanche das 19:45 às 20:05 e termina às 22:07. Chamada às 19:00, 20:05, 20:50 e 21:30. Nada impresso e nada de Produção Audiovisual."
       },
       {
         "num": "06",
