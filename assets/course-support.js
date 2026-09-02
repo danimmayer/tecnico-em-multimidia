@@ -3967,7 +3967,7 @@ window.SENAI_TEACHING_SUPPORT = {
               {"eyebrow": "1", "title": "Base", "text": "Câmera apoiada, objeto inteiro e nítido, oito segundos sem mexer. É o padrão de entrega e ela sempre existe."},
               {"eyebrow": "2", "title": "Revelação por foco", "text": "Quadro parado, dois objetos. Começa nítido no da frente e termina nítido no de trás."},
               {"eyebrow": "3", "title": "Revelação por movimento", "text": "Começa colado num detalhe que não dá para nomear. Um movimento só, e o objeto aparece inteiro."},
-              {"eyebrow": "4", "title": "Antes de parar", "text": "Assistam as três na câmera, refaçam no máximo uma e anotem o primeiro e o último número do dia."}
+              {"eyebrow": "4", "title": "Antes de parar", "text": "Quem gravou confere na câmera; o olho novo não olha a sua. Refaçam no máximo uma e anotem o primeiro e o último número."}
             ],
             "bullets": [
               "Fiquem na mesa. O fio não cruza o corredor. Ninguém é filmado.",
@@ -3975,7 +3975,7 @@ window.SENAI_TEACHING_SUPPORT = {
             ],
             "teacher": {
               "speech": "A base é o que o cliente aceita. A revelação é o que faz alguém continuar assistindo.",
-              "steps": ["5 min · Faço a chamada da retomada e entrego uma câmera e uma ring light em cada mesa, conferindo cartão, bateria e fio.", "8 min · Demonstro a revelação por foco e a por movimento numa mesa só, sem chamar a turma para perto.", "30 min · Circulo entre os 7 postos, cobro o olho novo de costas a cada tomada e não libero troca de mesa.", "7 min · Peço que assistam na câmera e anotem a faixa de arquivos."],
+              "steps": ["5 min · Faço a chamada da retomada e entrego uma câmera e uma ring light em cada mesa, conferindo cartão, bateria e fio.", "8 min · Demonstro a revelação por foco e a por movimento numa mesa só, sem chamar a turma para perto.", "30 min · Circulo entre os 7 postos, cobro o olho novo de costas a cada tomada e não libero troca de mesa.", "7 min · Peço que quem gravou confira na câmera e anote a faixa de arquivos, com o olho novo de cada tomada ainda de costas."],
               "watch": "Sete postos sentados, três arquivos por grupo, um olho novo diferente por tomada e nenhum rosto no quadro.",
               "rescue": "Câmera que falhar: o grupo usa o celular apoiado e troca o foco pelo toque na tela. Ring light que falhar: aproximam os objetos da lâmpada da sala. Grupo de três: o olho novo é sempre quem não está operando."
             }
