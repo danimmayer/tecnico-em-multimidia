@@ -3840,6 +3840,7 @@ window.SENAI_TEACHING_SUPPORT = {
               {"eyebrow": "Na mesa", "title": "Três tomadas do objeto", "text": "Uma parada, uma com movimento e uma na mão."},
               {"eyebrow": "No computador", "title": "Aprovar ou recusar", "text": "Assistam o que gravaram e marquem o que passa."}
             ],
+            "promptLabel": "Na mesa",
             "prompt": "Caderno, caneta e um objeto da mesa. A câmera e a ring light ficam no posto; ninguém troca de lugar.",
             "teacher": {
               "steps": ["4 min · Faço a chamada e marco os 7 grupos nas mesas.", "2 min · Confirmo um objeto por mesa e digo que a câmera só sai depois do intervalo.", "Deixo o próximo slide explicar os quatro testes."],
@@ -3933,10 +3934,16 @@ window.SENAI_TEACHING_SUPPORT = {
             "title": "Lanche",
             "block": 1,
             "pace": "break",
+            "layout": "dense-cards",
             "kicker": "Intervalo",
             "heading": "Lanche",
-            "lede": "Na volta, continuam no mesmo grupo, na mesma mesa. A câmera e a ring light chegam até vocês.",
-            "prompt": "Deixem o objeto no posto. Não busquem equipamento no armário.",
+            "lede": "Na volta, continuem no mesmo grupo, na mesma mesa. A câmera e a ring light chegam até vocês.",
+            "cards": [
+              {"eyebrow": "Grupo", "title": "O mesmo de agora", "text": "Não troquem de mesa e não juntem grupos no corredor."},
+              {"eyebrow": "Equipamento", "title": "Chega na volta", "text": "A câmera e a ring light vêm até o posto. Ninguém busca no armário."}
+            ],
+            "promptLabel": "Antes de sair",
+            "prompt": "Deixem o objeto no posto.",
             "teacher": {
               "steps": ["Aviso o retorno e deixo este slide projetado.", "Retomo com a chamada e entrego câmera e ring light mesa a mesa."],
               "watch": "Ninguém se antecipa ao equipamento. Os grupos voltam às mesas marcadas.",
@@ -3980,6 +3987,7 @@ window.SENAI_TEACHING_SUPPORT = {
               {"eyebrow": "Linha 2", "title": "Tomada com movimento", "text": "Passa ou não. Motivo: começou parado? Terminou parado? Um movimento só?"},
               {"eyebrow": "Linha 3", "title": "Tomada na mão", "text": "Passa ou não. Motivo: o que piorou em relação à parada?"}
             ],
+            "promptLabel": "Ao copiar",
             "prompt": "Não inventem o motivo. Escrevam o que viram na tela.",
             "teacher": {
               "steps": ["6 min · Projeto este quadro e espero a cópia do cabeçalho e das três linhas, ainda em branco.", "Sigo para o computador quando a página estiver desenhada."],
@@ -4014,7 +4022,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "title": "Conferência do grupo",
             "kicker": "Antes de chamar",
             "heading": "Quatro perguntas de sim ou não",
-            "lede": "Um lê, outro aponta a prova no caderno ou na tela. Corrijam cada não antes de me chamar.",
+            "lede": "Um lê, outro aponta a prova no caderno ou na tela. Corrijam cada não antes de chamar.",
             "layout": "dense-cards",
             "block": 4,
             "cards": [

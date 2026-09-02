@@ -307,8 +307,11 @@ for (const [slug, expectedCount] of Object.entries(expected)) {
     if (/deixe este slide parado/i.test(lesson06PublicSlideText)) {
       errors.push(`${slug}/06: o slide da turma não pode instruir o professor a manter a projeção`);
     }
-    if (/\b(sou eu|abro a página|olho a parada|na minha mesa)\b/i.test(lesson06PublicSlideText)) {
+    if (/\b(sou eu|abro a página|olho a parada|na minha mesa|me chamar)\b/i.test(lesson06PublicSlideText)) {
       errors.push(`${slug}/06: o slide da turma não pode falar na voz do professor`);
+    }
+    if (lesson06Slides.some((slide) => slide.prompt && !slide.promptLabel)) {
+      errors.push(`${slug}/06: prompt da turma precisa de rótulo próprio, não o padrão do kit`);
     }
     const lesson06StepMinutes = (slide) => (slide.teacher?.steps || []).reduce((total, step) => {
       const match = String(step).match(/^(\d+) min\b/);
