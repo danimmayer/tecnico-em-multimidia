@@ -3810,16 +3810,16 @@ window.SENAI_TEACHING_SUPPORT = {
           "Grave a revelação por foco e a revelação por movimento, cada uma com começo e fim parados.",
           "Abra os arquivos no navegador e peça a alguém que não viu a gravação para dizer o que apareceu."
         ],
-        "studentDeliverable": "Cada grupo mostra o quadro copiado no caderno e três tomadas assistidas no computador: a base parada, a revelação por foco e a revelação por movimento, com o que o olho novo entendeu em cada uma.",
+        "studentDeliverable": "Cada grupo mostra o quadro copiado no caderno e três tomadas assistidas no computador: a base parada, a revelação por foco e a revelação por movimento, com o que o olho novo entendeu em cada revelação.",
         "check": [
-          "O quadro tem grupo, turma, os objetos de cada tomada, quem operou e quem foi o olho novo de cada uma.",
-          "As três tomadas existem, foram assistidas no computador e têm passa ou não com um motivo.",
+          "O quadro tem grupo, turma, os objetos de cada tomada, quem operou e quem foi o olho novo de cada revelação.",
+          "As três tomadas existem e foram assistidas no computador: a base com passa ou não e motivo, as revelações com o palpite do olho novo, o segundo do reconhecimento e passa ou não.",
           "A tomada base está nítida, estável e com o objeto inteiro no quadro.",
           "Pelo menos uma revelação esconde o objeto no primeiro segundo e mostra ele antes do fim.",
           "Ninguém saiu da mesa marcada nem filmou rosto.",
           "A câmera e a ring light voltaram conferidas, com cartão e bateria no lugar."
         ],
-        "fallback": "Sem câmera, o grupo usa o celular apoiado e grava as mesmas três tomadas; a troca de foco vira toque na tela, primeiro no objeto da frente e depois no de trás. Sem ring light, aproximam os objetos da lâmpada da sala. Sem internet ou se o editor pedir cadastro, assistem cada MP4 numa aba do navegador ou no Visualizador de Fotos do Windows. Sem computador, assistem na própria câmera com a tela virada só para o olho novo e mesmo assim preenchem o quadro.",
+        "fallback": "Sem câmera, o grupo usa o celular apoiado e grava as mesmas três tomadas; a troca de foco vira toque na tela, primeiro no objeto da frente e depois no de trás. Sem ring light, aproximam os objetos da lâmpada da sala. Sem internet ou se o editor pedir cadastro, assistem cada MP4 numa aba do navegador ou no Visualizador de Fotos do Windows. Sem computador, assistem na própria câmera com a tela virada só para o olho novo, pausando no segundo 1, e mesmo assim preenchem o quadro.",
         "commonProblems": [
           ["O grupo quer circular ou trocar de mesa", "Devolvo o equipamento ao posto marcado e só atendo quem estiver sentado."],
           ["A revelação entrega o objeto no primeiro segundo", "Peço quadro mais fechado no começo ou foco iniciando no outro objeto; o resto da tomada continua igual."],
@@ -3960,7 +3960,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "title": "Atividade 1 · O plano que revela",
             "kicker": "Na mesa do grupo",
             "heading": "Três tomadas de oito segundos, os mesmos objetos",
-            "lede": "Uma câmera e uma ring light por grupo. A cada tomada, alguém vira de costas para a mesa antes da escolha dos objetos: é o olho novo daquela tomada e não sabe o que foi gravado.",
+            "lede": "Uma câmera e uma ring light por grupo. Nas duas revelações, alguém vira de costas para a mesa antes da escolha dos objetos: é o olho novo daquela tomada e não sabe o que foi gravado.",
             "layout": "dense-cards",
             "block": 2,
             "cards": [
@@ -3971,12 +3971,12 @@ window.SENAI_TEACHING_SUPPORT = {
             ],
             "bullets": [
               "Fiquem na mesa. O fio não cruza o corredor. Ninguém é filmado.",
-              "O grupo termina quando as três tomadas existem, a base está nítida e cada tomada teve um olho novo diferente."
+              "O grupo termina quando as três tomadas existem, a base está nítida e cada revelação teve um olho novo diferente."
             ],
             "teacher": {
               "speech": "A base é o que o cliente aceita. A revelação é o que faz alguém continuar assistindo.",
-              "steps": ["5 min · Faço a chamada da retomada e entrego uma câmera e uma ring light em cada mesa, conferindo cartão, bateria e fio.", "8 min · Demonstro a revelação por foco e a por movimento numa mesa só, sem chamar a turma para perto.", "30 min · Circulo entre os 7 postos, cobro o olho novo de costas para a mesa antes da escolha dos objetos e não libero troca de mesa.", "7 min · Peço que quem gravou confira na câmera e anote a faixa de arquivos, com o olho novo de cada tomada ainda de costas."],
-              "watch": "Sete postos sentados, três arquivos por grupo, um olho novo diferente por tomada e nenhum rosto no quadro.",
+              "steps": ["5 min · Faço a chamada da retomada e entrego uma câmera e uma ring light em cada mesa, conferindo cartão, bateria e fio.", "8 min · Demonstro a revelação por foco e a por movimento numa mesa só, sem chamar a turma para perto.", "30 min · Circulo entre os 7 postos, cobro o olho novo de costas para a mesa antes da escolha dos objetos e não libero troca de mesa.", "7 min · Peço que quem gravou confira na câmera e anote a faixa de arquivos, com o olho novo de cada revelação ainda de costas."],
+              "watch": "Sete postos sentados, três arquivos por grupo, um olho novo diferente por revelação e nenhum rosto no quadro.",
               "rescue": "Câmera que falhar: o grupo usa o celular apoiado e troca o foco pelo toque na tela. Ring light que falhar: aproximam os objetos da lâmpada da sala. Grupo de três: o olho novo é sempre quem não está operando."
             }
           },
@@ -3988,10 +3988,10 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 3,
             "cards": [
-              {"eyebrow": "Alto da página", "title": "Quem e o quê", "text": "Grupo · turma · os objetos de cada tomada · quem operou · quem foi o olho novo de cada uma."},
+              {"eyebrow": "Alto da página", "title": "Quem e o quê", "text": "Grupo · turma · os objetos de cada tomada · quem operou · quem foi o olho novo de cada revelação."},
               {"eyebrow": "Linha 1", "title": "Base", "text": "Passa ou não. Motivo em uma linha: estável, nítida, luz e objeto inteiro no quadro."},
-              {"eyebrow": "Linha 2", "title": "Revelação por foco", "text": "O olho novo achou que era ___ no primeiro segundo e reconheceu no segundo ___."},
-              {"eyebrow": "Linha 3", "title": "Revelação por movimento", "text": "O olho novo achou que era ___ no primeiro segundo e reconheceu no segundo ___."}
+              {"eyebrow": "Linha 2", "title": "Revelação por foco", "text": "O olho novo achou que era ___ no segundo 1 e reconheceu no segundo ___. Passa se reconheceu depois do 1 e antes do 8."},
+              {"eyebrow": "Linha 3", "title": "Revelação por movimento", "text": "O olho novo achou que era ___ no segundo 1 e reconheceu no segundo ___. Passa se reconheceu depois do 1 e antes do 8."}
             ],
             "promptLabel": "Ao copiar",
             "prompt": "Não inventem a resposta do olho novo. Escrevam a frase que a pessoa falou.",
@@ -4005,22 +4005,22 @@ window.SENAI_TEACHING_SUPPORT = {
             "title": "Atividade 2 · O teste do olho novo",
             "kicker": "No computador do posto",
             "heading": "Quem não viu a gravação decide se a revelação funcionou",
-            "lede": "Passem os arquivos para o computador da mesa. Não instalem programa. Cada tomada é assistida uma vez só, e quem fala primeiro é o olho novo dela.",
+            "lede": "Passem os arquivos para o computador da mesa. Não instalem programa. Cada revelação é assistida uma vez só, com uma pausa no segundo 1, e quem fala primeiro é o olho novo dela.",
             "layout": "dense-cards",
             "block": 3,
             "cards": [
               {"eyebrow": "1", "title": "Passar os arquivos", "text": "Cabo ou leitor de cartão. Pasta do grupo. Não apaguem e não formatem o cartão."},
               {"eyebrow": "2", "title": "Assistir uma vez", "text": "Arrastem cada MP4 para uma aba do navegador ou abram no Visualizador de Fotos. Tela cheia, som baixo."},
-              {"eyebrow": "3", "title": "Perguntar na hora certa", "text": "No primeiro segundo: o que você acha que é isso? No fim: em que segundo você reconheceu?"},
+              {"eyebrow": "3", "title": "Perguntar na hora certa", "text": "Pausem no segundo 1: o que você acha que é isso? Soltem. No fim: em que segundo você reconheceu?"},
               {"eyebrow": "4", "title": "Marcar e escolher", "text": "Completem as três linhas e digam qual das três vocês entregariam a um cliente."}
             ],
             "bullets": [
-              "Reconheceu logo no primeiro segundo? A tomada não esconde nada: fechem mais o quadro no começo ou comecem o foco no outro objeto.",
+              "Reconheceu já no segundo 1? A tomada não esconde nada: refaçam com o quadro mais fechado ou o foco no outro objeto e testem com outro olho novo.",
               "Nome ao lado da faixa: PA_A06_G01_BASE, PA_A06_G01_FOCO e PA_A06_G01_MOVIMENTO, com o número do grupo no lugar do 01.",
               "O grupo termina quando as três linhas têm resposta e a base foi assistida no computador."
             ],
             "teacher": {
-              "steps": ["8 min · Ajudo a copiar os arquivos mesa a mesa; não formato cartão.", "24 min · Os grupos assistem e marcam. Cobro que o olho novo fale antes de qualquer explicação de quem gravou.", "7 min · Quem terminou refaz a revelação mais fraca; quem não, fecha o quadro."],
+              "steps": ["8 min · Ajudo a copiar os arquivos mesa a mesa; não formato cartão.", "24 min · Os grupos assistem e marcam. Cobro que o olho novo fale antes de qualquer explicação de quem gravou.", "7 min · Quem terminou refaz a revelação mais fraca, testa com outro olho novo e reescreve a linha; quem não, fecha o quadro."],
               "watch": "Ninguém instala nada e ninguém entrega a resposta antes do olho novo falar.",
               "rescue": "Computador que falhar: assistem na câmera com a tela virada só para o olho novo. Rede que cair: Visualizador de Fotos. Editor que pedir cadastro: três abas no navegador, nesta ordem."
             }
@@ -4035,7 +4035,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "cards": [
               {"eyebrow": "1", "title": "O quadro está completo?", "text": "Grupo, turma, objetos, quem operou, quem foi olho novo e as três linhas preenchidas."},
               {"eyebrow": "2", "title": "A base entrega?", "text": "Estável, nítida, luz certa e objeto inteiro. Se não, o motivo está escrito."},
-              {"eyebrow": "3", "title": "Alguma revelação funcionou?", "text": "O olho novo hesitou ou errou no primeiro segundo e reconheceu o objeto antes do fim."},
+              {"eyebrow": "3", "title": "Alguma revelação funcionou?", "text": "O olho novo errou ou hesitou na pausa do segundo 1 e reconheceu o objeto antes do fim."},
               {"eyebrow": "4", "title": "O posto está em ordem?", "text": "Ninguém foi filmado. O fio não está no caminho. A câmera ainda não foi guardada no armário."}
             ],
             "bullets": [
