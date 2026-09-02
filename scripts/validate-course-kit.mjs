@@ -220,9 +220,9 @@ for (const [slug, expectedCount] of Object.entries(expected)) {
     const lesson06Support = support.lessons?.['06'];
     const lesson06Slides = lesson06Support?.presentationSlides || [];
     const lesson06ActivityTitles = [
+      'Plano do olhar',
       'Atividade 1 · O plano que revela',
-      'Quadro para copiar',
-      'Atividade 2 · O teste do olho novo',
+      'Atividade 2 · O mapa do olhar',
       'Conferência do grupo',
       'Devolver e fechar'
     ];
@@ -245,8 +245,8 @@ for (const [slug, expectedCount] of Object.entries(expected)) {
     if (lesson06Slides.length !== 11 || lesson06Support?.appendDefaultClosing !== false) {
       errors.push(`${slug}/06: a apresentação precisa ter exatamente 12 slides controlados (capa + 11 slides próprios)`);
     }
-    if (lesson06Slides[6]?.title !== 'Atividade 1 · O plano que revela') {
-      errors.push(`${slug}/06: o slide da prática precisa iniciar as três tomadas no posto`);
+    if (lesson06Slides[6]?.title !== 'Plano do olhar' || lesson06Slides[7]?.title !== 'Atividade 1 · O plano que revela') {
+      errors.push(`${slug}/06: a intenção precisa ser registrada antes das três tomadas no posto`);
     }
     if (!lesson06Slides.some((item) => item.pace === 'break')) {
       errors.push(`${slug}/06: o intervalo precisa de slide próprio para não acusar atraso no indicador de ritmo`);
@@ -260,7 +260,7 @@ for (const [slug, expectedCount] of Object.entries(expected)) {
         errors.push(`${slug}/06: ${activityTitle} precisa de quatro cartões no próprio slide`);
       }
     }
-    for (const titled of ['Atividade 1 · O plano que revela', 'Atividade 2 · O teste do olho novo', 'Conferência do grupo']) {
+    for (const titled of ['Atividade 1 · O plano que revela', 'Atividade 2 · O mapa do olhar', 'Conferência do grupo']) {
       const activitySlide = lesson06Slides.find((item) => item.title === titled);
       if (!activitySlide || (activitySlide.bullets || []).length < 2) {
         errors.push(`${slug}/06: ${titled} precisa trazer o critério de conclusão no próprio slide`);
@@ -304,16 +304,38 @@ for (const [slug, expectedCount] of Object.entries(expected)) {
     if (!lesson06PublicText.includes('olho novo')) {
       errors.push(`${slug}/06: o teste de leitura por quem não viu a gravação precisa aparecer para a turma`);
     }
-    for (const required of ['foco', 'revelação', 'oito segundos']) {
+    for (const required of ['foco', 'revelação', 'oito segundos', 'intenção', 'começou', 'terminou']) {
       if (!lesson06PublicText.includes(required)) {
         errors.push(`${slug}/06: falta "${required}" na camada da turma`);
       }
     }
-    if (!(lesson06Support?.check || []).some((item) => /olho novo|revelação/i.test(item))) {
-      errors.push(`${slug}/06: a conferência final precisa cobrar o resultado da revelação`);
+    if (!(lesson06Support?.check || []).some((item) => /olho novo|intenção|leitura/i.test(item))) {
+      errors.push(`${slug}/06: a conferência final precisa comparar intenção e leitura`);
     }
-    if (/\d{1,2}:\d{2}\s*[–-]\s*\d{1,2}:\d{2}/.test(lesson06PublicSlideText)) {
-      errors.push(`${slug}/06: o slide da turma não pode carregar faixa de horário`);
+    const lesson06Map = lesson06Slides.find((item) => item.title === 'Mapa da noite');
+    const lesson06MapText = JSON.stringify(lesson06Map || {});
+    for (const timeRange of ['19:00–19:45', '19:45–20:05', '20:05–20:55', '20:55–22:10']) {
+      if (!lesson06MapText.includes(timeRange)) {
+        errors.push(`${slug}/06: o mapa da noite precisa mostrar a faixa ${timeRange}`);
+      }
+    }
+    const lesson06OtherSlidesText = lesson06Slides
+      .filter((item) => item.title !== 'Mapa da noite')
+      .map((item) => JSON.stringify({
+        title: item.title,
+        kicker: item.kicker,
+        heading: item.heading,
+        lede: item.lede,
+        prompt: item.prompt,
+        bullets: item.bullets,
+        cards: item.cards
+      }))
+      .join('\n');
+    if (/\d{1,2}:\d{2}\s*[–-]\s*\d{1,2}:\d{2}/.test(lesson06OtherSlidesText)) {
+      errors.push(`${slug}/06: as faixas de horário devem ficar concentradas no mapa da noite`);
+    }
+    if (/diz o que entendeu|achou que era|em que segundo reconheceu/i.test(lesson06PublicText)) {
+      errors.push(`${slug}/06: o teste não pode reduzir a leitura a adivinhar o objeto escondido`);
     }
     if (/\d+\s*min\s*·/.test(lesson06PublicSlideText)) {
       errors.push(`${slug}/06: o slide da turma não pode cronometrar a condução`);

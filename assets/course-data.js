@@ -1286,7 +1286,7 @@ window.SENAI_COURSES = {
       {
         "num": "06",
         "title": "Câmera na mão: operação e enquadramento",
-        "description": "Noite de operação no posto fixo: cada um dos 7 grupos usa câmera e ring light para esconder e revelar em oito segundos um objeto da própria mesa, por troca de foco e por movimento, e confere no computador se quem não viu a gravação entende a imagem.",
+        "description": "Noite de operação no posto fixo: cada um dos 7 grupos planeja e grava, com câmera e ring light, dois caminhos do olhar em oito segundos — um por troca de foco e outro por movimento — e compara no computador a intenção escrita antes com a leitura de quem não viu o plano.",
         "objectives": [
           "Captura de vídeos e sons: enquadramento, equipamentos.",
           "Trabalho em equipe: trabalho em grupo, divisão de papéis e responsabilidades."
@@ -1305,20 +1305,20 @@ window.SENAI_COURSES = {
           },
           {
             "horario": "20:05 - 20:55",
-            "atividade": "Atividade 1 nos 7 grupos, cada um na própria mesa: gravar três tomadas de 8 segundos com os mesmos objetos — a base parada, uma revelação por troca de foco e uma revelação por movimento —, revezando quem opera, quem acompanha o quadro e quem fica de costas para a mesa, antes da escolha dos objetos, como olho novo de cada revelação. Ninguém troca de mesa."
+            "atividade": "Atividade 1 nos 7 grupos, cada um na própria mesa: copiar o quadro, anotar antes da gravação onde o olhar deve começar e terminar em cada revelação e gravar três tomadas de 8 segundos — a base parada, uma troca de foco e um movimento —, revezando quem opera e quem fica sem ver o plano como olho novo. Ninguém troca de mesa."
           },
           {
             "horario": "20:55 - 21:40",
-            "atividade": "Atividade 2 na mesma mesa: copiar o quadro projetado, passar os arquivos para o computador, assistir cada tomada uma vez no navegador sem instalar nada, pausar cada revelação no segundo 1 e registrar o que o olho novo achou que era e em que segundo reconheceu o objeto."
+            "atividade": "Atividade 2 na mesma mesa: passar os arquivos para o computador, esconder a intenção, assistir cada revelação uma vez no navegador sem instalar nada e registrar onde o olhar do olho novo começou, em que segundo mudou e onde terminou; depois comparar a leitura com a seta planejada e anotar uma correção concreta quando não coincidirem."
           },
           {
             "horario": "21:40 - 22:10",
-            "atividade": "Conferência pelo checklist projetado, correção do quadro, exibição da revelação ao professor sem dizer qual é o objeto, devolução da câmera e da ring light e apresentação do caderno. O grupo conclui quando as três tomadas foram assistidas, o quadro tem as respostas do olho novo e o equipamento voltou conferido."
+            "atividade": "Conferência pelo checklist projetado, exibição de uma revelação ao professor sem mostrar a intenção, comparação do caminho do olhar relatado com a seta planejada, devolução da câmera e da ring light e apresentação do caderno. O grupo conclui quando as três tomadas foram assistidas, as duas intenções têm leitura e decisão e o equipamento voltou conferido."
           }
         ],
-        "methodology": "Explicação curta, demonstração numa mesa só e duas atividades guiadas em 7 grupos no posto fixo: três tomadas de oito segundos que trabalham quadro, foco e revelação, e teste de leitura feito por um integrante que não viu a gravação. Cada atividade permanece projetada em um único slide com passos e critério de conclusão.",
+        "methodology": "Explicação curta, demonstração numa mesa só e duas atividades guiadas em 7 grupos no posto fixo: planejamento e gravação de três tomadas de oito segundos que trabalham quadro, foco e movimento, seguidos da comparação entre o caminho do olhar pretendido e o percebido por um integrante que não viu o plano. Cada atividade permanece projetada em um único slide com passos e critério de conclusão.",
         "resources": "Projetor, quadro, caderno ou folhas em branco dos alunos, lápis ou caneta, vários objetos por mesa entre os que os próprios alunos já têm, 7 câmeras com cartão e bateria, 7 ring lights e computadores do laboratório com navegador. Nenhum programa precisa ser instalado no Windows. Nenhuma ficha impressa precisa ser distribuída.",
-        "observation": "Aula das 19:00 às 22:10. Lanche fixo das 19:45 às 20:05. Deixe o slide da atividade parado durante a execução. Chamada apenas na abertura e na retomada. Cada grupo permanece na mesa marcada; câmeras e ring lights saem somente às 20:05, vão até a mesa do grupo e voltam conferidas até as 22:05. A função de olho novo muda a cada revelação: quem vai testar vira de costas para a mesa antes da escolha dos objetos, segue assim durante a gravação e só assiste no computador. Depois de conferir, apague no cartão apenas o que foi gravado hoje, teste e repetições incluídos, pela faixa de números anotada; não formate o cartão. Sem editor online ou sem internet, o grupo assiste cada MP4 numa aba do navegador ou no Visualizador de Fotos do Windows."
+        "observation": "Aula das 19:00 às 22:10. Lanche fixo das 19:45 às 20:05. Deixe o slide da atividade parado durante a execução. Chamada apenas na abertura e na retomada. Cada grupo permanece na mesa marcada; câmeras e ring lights saem somente às 20:05, vão até a mesa do grupo e voltam conferidas até as 22:05. A função de olho novo muda a cada revelação: quem vai testar não vê a intenção escrita nem a gravação e só fala depois de assistir no computador; o grupo mostra o plano somente depois de registrar a leitura. Depois de conferir, apague no cartão apenas o que foi gravado hoje, teste e repetições incluídos, pela faixa de números anotada; não formate o cartão. Sem editor online ou sem internet, o grupo assiste cada MP4 numa aba do navegador ou no Visualizador de Fotos do Windows."
       },
       {
         "num": "07",
