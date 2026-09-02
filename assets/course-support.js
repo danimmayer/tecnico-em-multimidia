@@ -3960,7 +3960,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "title": "Atividade 1 · O plano que revela",
             "kicker": "Na mesa do grupo",
             "heading": "Três tomadas de oito segundos, os mesmos objetos",
-            "lede": "Uma câmera e uma ring light por grupo. Nas duas revelações, alguém vira de costas para a mesa antes da escolha dos objetos: é o olho novo daquela tomada e não sabe o que foi gravado.",
+            "lede": "Uma câmera e uma ring light por grupo. Nas duas revelações, alguém vira de costas para a mesa antes da escolha dos objetos: é o olho novo daquela revelação e não sabe o que foi gravado.",
             "layout": "dense-cards",
             "block": 2,
             "cards": [
