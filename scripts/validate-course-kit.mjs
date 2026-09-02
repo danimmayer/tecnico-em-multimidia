@@ -220,9 +220,9 @@ for (const [slug, expectedCount] of Object.entries(expected)) {
     const lesson06Support = support.lessons?.['06'];
     const lesson06Slides = lesson06Support?.presentationSlides || [];
     const lesson06ActivityTitles = [
-      'Atividade 1 · Três tomadas',
+      'Atividade 1 · O plano que revela',
       'Quadro para copiar',
-      'Atividade 2 · Conferir no computador',
+      'Atividade 2 · O teste do olho novo',
       'Conferência do grupo',
       'Devolver e fechar'
     ];
@@ -245,7 +245,7 @@ for (const [slug, expectedCount] of Object.entries(expected)) {
     if (lesson06Slides.length !== 11 || lesson06Support?.appendDefaultClosing !== false) {
       errors.push(`${slug}/06: a apresentação precisa ter exatamente 12 slides controlados (capa + 11 slides próprios)`);
     }
-    if (lesson06Slides[6]?.title !== 'Atividade 1 · Três tomadas') {
+    if (lesson06Slides[6]?.title !== 'Atividade 1 · O plano que revela') {
       errors.push(`${slug}/06: o slide da prática precisa iniciar as três tomadas no posto`);
     }
     if (!lesson06Slides.some((item) => item.pace === 'break')) {
@@ -260,7 +260,7 @@ for (const [slug, expectedCount] of Object.entries(expected)) {
         errors.push(`${slug}/06: ${activityTitle} precisa de quatro cartões no próprio slide`);
       }
     }
-    for (const titled of ['Atividade 1 · Três tomadas', 'Atividade 2 · Conferir no computador', 'Conferência do grupo']) {
+    for (const titled of ['Atividade 1 · O plano que revela', 'Atividade 2 · O teste do olho novo', 'Conferência do grupo']) {
       const activitySlide = lesson06Slides.find((item) => item.title === titled);
       if (!activitySlide || (activitySlide.bullets || []).length < 2) {
         errors.push(`${slug}/06: ${titled} precisa trazer o critério de conclusão no próprio slide`);
@@ -297,6 +297,20 @@ for (const [slug, expectedCount] of Object.entries(expected)) {
       if (lesson06PublicText.includes(forbidden)) {
         errors.push(`${slug}/06: permaneceu "${forbidden}" na camada da turma`);
       }
+    }
+    if (/\b(pátio|quadra|estacionamento|rua|externa|fora da escola)\b/i.test(lesson06PublicText)) {
+      errors.push(`${slug}/06: a noite inteira acontece no laboratório, sem ambiente fora da unidade`);
+    }
+    if (!lesson06PublicText.includes('olho novo')) {
+      errors.push(`${slug}/06: o teste de leitura por quem não viu a gravação precisa aparecer para a turma`);
+    }
+    for (const required of ['foco', 'revelação', 'oito segundos']) {
+      if (!lesson06PublicText.includes(required)) {
+        errors.push(`${slug}/06: falta "${required}" na camada da turma`);
+      }
+    }
+    if (!(lesson06Support?.check || []).some((item) => /olho novo|revelação/i.test(item))) {
+      errors.push(`${slug}/06: a conferência final precisa cobrar o resultado da revelação`);
     }
     if (/\d{1,2}:\d{2}\s*[–-]\s*\d{1,2}:\d{2}/.test(lesson06PublicSlideText)) {
       errors.push(`${slug}/06: o slide da turma não pode carregar faixa de horário`);
