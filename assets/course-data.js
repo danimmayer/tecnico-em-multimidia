@@ -1286,7 +1286,7 @@ window.SENAI_COURSES = {
       {
         "num": "06",
         "title": "Câmera na mão: operação e enquadramento",
-        "description": "Primeira noite de operação dos equipamentos do laboratório: manuseio de câmeras e tripés, ajustes básicos e prática de enquadramentos em circuito de estações.",
+        "description": "Noite de operação no posto fixo: cada um dos 7 grupos liga, apoia e opera uma câmera com ring light, grava três tomadas técnicas do mesmo objeto e confere no computador se a imagem passa nos quatro testes de entrega.",
         "objectives": [
           "Captura de vídeos e sons: enquadramento, equipamentos.",
           "Trabalho em equipe: trabalho em grupo, divisão de papéis e responsabilidades."
@@ -1300,25 +1300,25 @@ window.SENAI_COURSES = {
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Revisão da aula 5 (direito de imagem: o que conferir antes de apertar o REC). Checklist de manuseio, transporte e conservação de câmeras e tripés: alça no pescoço, tampa de lente, troca de bateria e cartão, guarda no case. Combinados de organização do posto de trabalho: cada grupo assina a retirada e responde pela devolução do equipamento."
+            "horario": "19:00 - 19:45",
+            "atividade": "Ver o que uma imagem precisa ter para ser entregue: estabilidade, foco, exposição e enquadramento. Aprender a ligar, apoiar e guardar a câmera, a usar a ring light no posto e a fazer um movimento só, com começo e fim parados."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "Operação de câmera: foco manual e automático, exposição em linguagem prática (ISO, abertura, obturador), balanço de branco e estabilização com tripé (nivelamento, travas, movimentos de pan e tilt). Demonstração no projetor seguida de manuseio guiado em grupos de 3 a 4, cada grupo com uma câmera."
+            "horario": "20:05 - 20:55",
+            "atividade": "Atividade 1 nos 7 grupos, cada um na própria mesa: gravar três tomadas de 8 segundos do mesmo objeto — parada, um movimento e na mão — revezando quem opera, quem acompanha o quadro e quem organiza o posto. Ninguém troca de mesa."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "Circuito \"Planos-alvo\": estações com câmera no tripé, câmera na mão e smartphone. Cada trio sorteia cartões com planos estudados na aula 2 (plano geral, plano médio, close, plongée, contra-plongée) e reproduz cada um, revezando as funções de operador, assistente e diretor a cada estação."
+            "horario": "20:55 - 21:40",
+            "atividade": "Atividade 2 na mesma mesa: copiar o quadro projetado, passar os arquivos para o computador, assistir as três tomadas no navegador ou num editor online sem instalar nada, e marcar o que passa e o que não passa."
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "Descarregamento das capturas nos computadores do laboratório e exibição no projetor: a turma dá feedback sobre enquadramento, foco e estabilidade de cada trio. Fechamento com checklist de devolução e guarda dos equipamentos."
+            "horario": "21:40 - 22:10",
+            "atividade": "Conferência pelo checklist projetado, correção do quadro, devolução da câmera e da ring light e apresentação do caderno. O grupo conclui quando as três tomadas foram assistidas, o quadro tem as quatro respostas e o equipamento voltou conferido."
           }
         ],
-        "methodology": "Prática guiada em circuito de estações com revezamento de papéis e feedback coletivo, prática orientada.",
-        "resources": "Câmeras, tripés, smartphones dos alunos, computadores do laboratório e projetor.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "Explicação curta, demonstração numa mesa só e duas atividades guiadas em 7 grupos no posto fixo: três tomadas técnicas e conferência no computador. Cada atividade permanece projetada em um único slide com passos e critério de conclusão.",
+        "resources": "Projetor, quadro, caderno ou folhas em branco dos alunos, lápis ou caneta, 7 câmeras com cartão e bateria, 7 ring lights e computadores do laboratório com navegador. Nenhum programa precisa ser instalado no Windows. Nenhuma ficha impressa precisa ser distribuída.",
+        "observation": "Aula das 19:00 às 22:10. Lanche fixo das 19:45 às 20:05. Deixe o slide da atividade parado durante a execução. Chamada apenas na abertura e na retomada. Cada grupo permanece na mesa marcada; câmeras e ring lights saem somente às 20:05, vão até a mesa do grupo e voltam conferidas até as 22:05. Depois de conferir, apague no cartão apenas o que foi gravado hoje, teste e repetições incluídos, pela faixa de números anotada; não formate o cartão. Sem editor online ou sem internet, o grupo assiste cada MP4 numa aba do navegador ou no Visualizador de Fotos do Windows."
       },
       {
         "num": "07",

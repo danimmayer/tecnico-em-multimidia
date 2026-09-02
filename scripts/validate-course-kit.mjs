@@ -215,6 +215,124 @@ for (const [slug, expectedCount] of Object.entries(expected)) {
     if (!fs.readFileSync(fromRoot('scripts/build-course-data.mjs'), 'utf8').includes('const audiovisualLesson05')) {
       errors.push(`${slug}/05: personalização regenerável ausente do gerador`);
     }
+
+    const lesson06 = course.lessons.find((lesson) => lesson.num === '06');
+    const lesson06Support = support.lessons?.['06'];
+    const lesson06Slides = lesson06Support?.presentationSlides || [];
+    const lesson06ActivityTitles = [
+      'Atividade 1 · Três tomadas',
+      'Quadro para copiar',
+      'Atividade 2 · Conferir no computador',
+      'Conferência do grupo',
+      'Devolver e fechar'
+    ];
+    const lesson06PublicSlideText = lesson06Slides.map((slide) => [
+      slide.title,
+      slide.kicker,
+      slide.heading,
+      slide.lede,
+      slide.prompt,
+      ...(slide.bullets || []),
+      ...(slide.cards || []).flatMap((card) => [card.eyebrow, card.title, card.text])
+    ].join('\n')).join('\n');
+    const lesson06PublicText = `${JSON.stringify({
+      description: lesson06?.description,
+      schedule: lesson06?.schedule,
+      methodology: lesson06?.methodology,
+      resources: lesson06?.resources
+    })}\n${lesson06PublicSlideText}`.toLocaleLowerCase('pt-BR');
+
+    if (lesson06Slides.length !== 11 || lesson06Support?.appendDefaultClosing !== false) {
+      errors.push(`${slug}/06: a apresentação precisa ter exatamente 12 slides controlados (capa + 11 slides próprios)`);
+    }
+    if (lesson06Slides[6]?.title !== 'Atividade 1 · Três tomadas') {
+      errors.push(`${slug}/06: o slide da prática precisa iniciar as três tomadas no posto`);
+    }
+    if (!lesson06Slides.some((item) => item.pace === 'break')) {
+      errors.push(`${slug}/06: o intervalo precisa de slide próprio para não acusar atraso no indicador de ritmo`);
+    }
+    if (lesson06Support?.studentSheet || lesson06Slides.some((item) => item.resource || item.resources)) {
+      errors.push(`${slug}/06: a aula não pode exigir ficha impressa, link ou material externo`);
+    }
+    for (const activityTitle of lesson06ActivityTitles) {
+      const activitySlide = lesson06Slides.find((item) => item.title === activityTitle);
+      if (!activitySlide || (activitySlide.cards || []).length !== 4) {
+        errors.push(`${slug}/06: ${activityTitle} precisa de quatro cartões no próprio slide`);
+      }
+    }
+    for (const titled of ['Atividade 1 · Três tomadas', 'Atividade 2 · Conferir no computador', 'Conferência do grupo']) {
+      const activitySlide = lesson06Slides.find((item) => item.title === titled);
+      if (!activitySlide || (activitySlide.bullets || []).length < 2) {
+        errors.push(`${slug}/06: ${titled} precisa trazer o critério de conclusão no próprio slide`);
+      }
+    }
+    if (lesson06Slides.some((slide) => (slide.cards || []).length > 4)) {
+      errors.push(`${slug}/06: nenhum slide pode passar de quatro cartões no projetor 5:4`);
+    }
+    if ((lesson06Support?.check || []).length < 5) {
+      errors.push(`${slug}/06: conferência final insuficiente`);
+    }
+    if (!lesson06?.resources?.includes('7 câmeras') || !lesson06?.resources?.includes('7 ring lights')) {
+      errors.push(`${slug}/06: a divisão em 7 grupos precisa acompanhar as 7 câmeras e as 7 ring lights`);
+    }
+    if (!lesson06?.resources?.includes('Nenhum programa precisa ser instalado')) {
+      errors.push(`${slug}/06: a aula não pode depender de instalação no Windows`);
+    }
+    if (!lesson06?.resources?.includes('Nenhuma ficha impressa')) {
+      errors.push(`${slug}/06: a independência de impressão precisa estar explícita`);
+    }
+    if (!lesson06?.observation?.includes('22:10') || !lesson06?.observation?.includes('19:45')) {
+      errors.push(`${slug}/06: o horário 19:00, lanche 19:45 e fim 22:10 precisa estar explícito`);
+    }
+    if (!lesson06?.observation?.includes('permanece na mesa')) {
+      errors.push(`${slug}/06: o posto fixo precisa estar explícito`);
+    }
+    if (!lesson06?.observation?.includes('não formate o cartão')) {
+      errors.push(`${slug}/06: o apagamento precisa poupar material de outras turmas no mesmo cartão`);
+    }
+    if (!lesson06?.observation?.includes('Visualizador de Fotos')) {
+      errors.push(`${slug}/06: a alternativa sem editor online precisa estar explícita`);
+    }
+    for (const forbidden of ['plongée', 'contra-plongée', 'circuito', 'estações', 'cartões com planos']) {
+      if (lesson06PublicText.includes(forbidden)) {
+        errors.push(`${slug}/06: permaneceu "${forbidden}" na camada da turma`);
+      }
+    }
+    if (/\d{1,2}:\d{2}\s*[–-]\s*\d{1,2}:\d{2}/.test(lesson06PublicSlideText)) {
+      errors.push(`${slug}/06: o slide da turma não pode carregar faixa de horário`);
+    }
+    if (/\d+\s*min\s*·/.test(lesson06PublicSlideText)) {
+      errors.push(`${slug}/06: o slide da turma não pode cronometrar a condução`);
+    }
+    if (/deixe este slide parado/i.test(lesson06PublicSlideText)) {
+      errors.push(`${slug}/06: o slide da turma não pode instruir o professor a manter a projeção`);
+    }
+    if (/\b(sou eu|abro a página|olho a parada|na minha mesa|me chamar)\b/i.test(lesson06PublicSlideText)) {
+      errors.push(`${slug}/06: o slide da turma não pode falar na voz do professor`);
+    }
+    if (lesson06Slides.some((slide) => slide.prompt && !slide.promptLabel)) {
+      errors.push(`${slug}/06: prompt da turma precisa de rótulo próprio, não o padrão do kit`);
+    }
+    const lesson06StepMinutes = (slide) => (slide.teacher?.steps || []).reduce((total, step) => {
+      const match = String(step).match(/^(\d+) min\b/);
+      return total + (match ? Number(match[1]) : 0);
+    }, 0);
+    const lesson06BlockMinutes = { 1: 0, 2: 0, 3: 0, 4: 0 };
+    for (const slide of lesson06Slides) {
+      if (slide.pace === 'break') continue;
+      lesson06BlockMinutes[slide.block] += lesson06StepMinutes(slide);
+    }
+    if (
+      lesson06BlockMinutes[1] !== 45
+      || lesson06BlockMinutes[2] !== 50
+      || lesson06BlockMinutes[3] !== 45
+      || lesson06BlockMinutes[4] !== 30
+    ) {
+      errors.push(`${slug}/06: os passos do professor precisam fechar 45+50+45+30 min, vieram ${lesson06BlockMinutes[1]}+${lesson06BlockMinutes[2]}+${lesson06BlockMinutes[3]}+${lesson06BlockMinutes[4]}`);
+    }
+    if (!fs.readFileSync(fromRoot('scripts/build-course-data.mjs'), 'utf8').includes('const audiovisualLesson06')) {
+      errors.push(`${slug}/06: personalização regenerável ausente do gerador`);
+    }
   }
 
   if (slug === 'design-web') {
