@@ -462,7 +462,7 @@ Object.assign(audiovisualLesson06, {
     },
     {
       horario: '20:05 - 20:55',
-      atividade: 'Atividade 1 nos 7 grupos, cada um na própria mesa: gravar três tomadas de 8 segundos com os mesmos objetos — a base parada, uma revelação por troca de foco e uma revelação por movimento —, revezando quem opera, quem acompanha o quadro e quem fica de costas como olho novo daquela tomada. Ninguém troca de mesa.'
+      atividade: 'Atividade 1 nos 7 grupos, cada um na própria mesa: gravar três tomadas de 8 segundos com os mesmos objetos — a base parada, uma revelação por troca de foco e uma revelação por movimento —, revezando quem opera, quem acompanha o quadro e quem fica de costas para a mesa, antes da escolha dos objetos, como olho novo daquela tomada. Ninguém troca de mesa.'
     },
     {
       horario: '20:55 - 21:40',
@@ -474,8 +474,8 @@ Object.assign(audiovisualLesson06, {
     }
   ],
   methodology: 'Explicação curta, demonstração numa mesa só e duas atividades guiadas em 7 grupos no posto fixo: três tomadas de oito segundos que trabalham quadro, foco e revelação, e teste de leitura feito por um integrante que não viu a gravação. Cada atividade permanece projetada em um único slide com passos e critério de conclusão.',
-  resources: 'Projetor, quadro, caderno ou folhas em branco dos alunos, lápis ou caneta, dois objetos por mesa entre os que os próprios alunos já têm, 7 câmeras com cartão e bateria, 7 ring lights e computadores do laboratório com navegador. Nenhum programa precisa ser instalado no Windows. Nenhuma ficha impressa precisa ser distribuída.',
-  observation: 'Aula das 19:00 às 22:10. Lanche fixo das 19:45 às 20:05. Deixe o slide da atividade parado durante a execução. Chamada apenas na abertura e na retomada. Cada grupo permanece na mesa marcada; câmeras e ring lights saem somente às 20:05, vão até a mesa do grupo e voltam conferidas até as 22:05. A função de olho novo muda a cada tomada: quem vai testar fica de costas para a tela durante a gravação e só assiste no computador. Depois de conferir, apague no cartão apenas o que foi gravado hoje, teste e repetições incluídos, pela faixa de números anotada; não formate o cartão. Sem editor online ou sem internet, o grupo assiste cada MP4 numa aba do navegador ou no Visualizador de Fotos do Windows.'
+  resources: 'Projetor, quadro, caderno ou folhas em branco dos alunos, lápis ou caneta, vários objetos por mesa entre os que os próprios alunos já têm, 7 câmeras com cartão e bateria, 7 ring lights e computadores do laboratório com navegador. Nenhum programa precisa ser instalado no Windows. Nenhuma ficha impressa precisa ser distribuída.',
+  observation: 'Aula das 19:00 às 22:10. Lanche fixo das 19:45 às 20:05. Deixe o slide da atividade parado durante a execução. Chamada apenas na abertura e na retomada. Cada grupo permanece na mesa marcada; câmeras e ring lights saem somente às 20:05, vão até a mesa do grupo e voltam conferidas até as 22:05. A função de olho novo muda a cada tomada: quem vai testar vira de costas para a mesa antes da escolha dos objetos, segue assim durante a gravação e só assiste no computador. Depois de conferir, apague no cartão apenas o que foi gravado hoje, teste e repetições incluídos, pela faixa de números anotada; não formate o cartão. Sem editor online ou sem internet, o grupo assiste cada MP4 numa aba do navegador ou no Visualizador de Fotos do Windows.'
 });
 
 const audiovisualLesson07 = courses['producao-audiovisual'].lessons

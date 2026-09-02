@@ -3812,7 +3812,7 @@ window.SENAI_TEACHING_SUPPORT = {
         ],
         "studentDeliverable": "Cada grupo mostra o quadro copiado no caderno e três tomadas assistidas no computador: a base parada, a revelação por foco e a revelação por movimento, com o que o olho novo entendeu em cada uma.",
         "check": [
-          "O quadro tem grupo, turma, os dois objetos, quem operou e quem foi o olho novo de cada tomada.",
+          "O quadro tem grupo, turma, os objetos de cada tomada, quem operou e quem foi o olho novo de cada uma.",
           "As três tomadas existem, foram assistidas no computador e têm passa ou não com um motivo.",
           "A tomada base está nítida, estável e com o objeto inteiro no quadro.",
           "Pelo menos uma revelação esconde o objeto no primeiro segundo e mostra ele antes do fim.",
@@ -3825,7 +3825,7 @@ window.SENAI_TEACHING_SUPPORT = {
           ["A revelação entrega o objeto no primeiro segundo", "Peço quadro mais fechado no começo ou foco iniciando no outro objeto; o resto da tomada continua igual."],
           ["A imagem treme na troca de foco", "Câmera apoiada e só a ponta dos dedos no anel; se continuar tremendo, a revelação sai pelo movimento."],
           ["Alguém aparece sem querer", "Paramos, apagamos essa tomada e voltamos só aos objetos."],
-          ["O olho novo assistiu à gravação", "Troco a função na próxima tomada e registro no quadro que essa linha não teve teste."],
+          ["O olho novo viu a escolha dos objetos ou a gravação", "Troco a função na próxima tomada e registro no quadro que essa linha não teve teste."],
           ["O tempo ficou curto", "Preservo a base assistida e uma revelação com a resposta do olho novo; a terceira tomada fica de fora."]
         ],
         "presentationSlides": [
@@ -3833,7 +3833,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "title": "Mapa da noite",
             "kicker": "Operação de câmera",
             "heading": "Hoje a mesa de vocês vira set",
-            "lede": "Sete grupos, cada um no próprio posto. Escolham dois objetos que já estão na mesa: um perto da câmera e um mais atrás. Ninguém precisa aparecer.",
+            "lede": "Sete grupos, cada um no próprio posto. Deixem na mesa vários objetos de vocês: garrafa, estojo, caderno, chaves. O par de cada tomada é escolhido na hora. Ninguém precisa aparecer.",
             "layout": "dense-cards",
             "block": 1,
             "cards": [
@@ -3843,10 +3843,10 @@ window.SENAI_TEACHING_SUPPORT = {
               {"eyebrow": "No computador", "title": "O teste do olho novo", "text": "Quem não viu a gravação assiste e diz o que entendeu."}
             ],
             "promptLabel": "Na mesa",
-            "prompt": "Caderno, caneta e dois objetos da própria mesa. A câmera e a ring light ficam no posto; ninguém troca de lugar.",
+            "prompt": "Caderno, caneta e os objetos que já estão na mesa. A câmera e a ring light ficam no posto; ninguém troca de lugar.",
             "teacher": {
-              "steps": ["4 min · Faço a chamada e marco os 7 grupos nas mesas.", "2 min · Confirmo dois objetos por mesa e digo que a câmera só sai depois do intervalo.", "Deixo o próximo slide explicar os três controles."],
-              "watch": "Cada grupo está sentado, tem dois objetos na mesa e sabe que não vai circular.",
+              "steps": ["4 min · Faço a chamada e marco os 7 grupos nas mesas.", "2 min · Confirmo pelo menos quatro objetos à vista em cada mesa e digo que a câmera só sai depois do intervalo.", "Deixo o próximo slide explicar os três controles."],
+              "watch": "Cada grupo está sentado, tem vários objetos na mesa e sabe que não vai circular.",
               "rescue": "Grupo incompleto junta-se ao vizinho e divide a câmera na mesma mesa, sem levantar o resto da turma."
             }
           },
@@ -3949,7 +3949,7 @@ window.SENAI_TEACHING_SUPPORT = {
               {"eyebrow": "Equipamento", "title": "Chega na volta", "text": "A câmera e a ring light vêm até o posto. Ninguém busca no armário."}
             ],
             "promptLabel": "Antes de sair",
-            "prompt": "Deixem os dois objetos no posto.",
+            "prompt": "Deixem os objetos no posto.",
             "teacher": {
               "steps": ["Aviso o retorno e deixo este slide projetado.", "Retomo com a chamada e entrego câmera e ring light mesa a mesa."],
               "watch": "Ninguém se antecipa ao equipamento. Os grupos voltam às mesas marcadas.",
@@ -3960,12 +3960,12 @@ window.SENAI_TEACHING_SUPPORT = {
             "title": "Atividade 1 · O plano que revela",
             "kicker": "Na mesa do grupo",
             "heading": "Três tomadas de oito segundos, os mesmos objetos",
-            "lede": "Uma câmera e uma ring light por grupo. A cada tomada, uma pessoa fica de costas para a tela: é o olho novo daquela tomada e não pode ver como ela foi feita.",
+            "lede": "Uma câmera e uma ring light por grupo. A cada tomada, alguém vira de costas para a mesa antes da escolha dos objetos: é o olho novo daquela tomada e não sabe o que foi gravado.",
             "layout": "dense-cards",
             "block": 2,
             "cards": [
               {"eyebrow": "1", "title": "Base", "text": "Câmera apoiada, objeto inteiro e nítido, oito segundos sem mexer. É o padrão de entrega e ela sempre existe."},
-              {"eyebrow": "2", "title": "Revelação por foco", "text": "Quadro parado, dois objetos. Começa nítido no da frente e termina nítido no de trás."},
+              {"eyebrow": "2", "title": "Revelação por foco", "text": "Quadro parado, dois objetos escolhidos na hora. Começa nítido no da frente e termina nítido no de trás."},
               {"eyebrow": "3", "title": "Revelação por movimento", "text": "Começa colado num detalhe que não dá para nomear. Um movimento só, e o objeto aparece inteiro."},
               {"eyebrow": "4", "title": "Antes de parar", "text": "Quem gravou confere na câmera; o olho novo não olha a sua. Refaçam no máximo uma e anotem o primeiro e o último número."}
             ],
@@ -3975,7 +3975,7 @@ window.SENAI_TEACHING_SUPPORT = {
             ],
             "teacher": {
               "speech": "A base é o que o cliente aceita. A revelação é o que faz alguém continuar assistindo.",
-              "steps": ["5 min · Faço a chamada da retomada e entrego uma câmera e uma ring light em cada mesa, conferindo cartão, bateria e fio.", "8 min · Demonstro a revelação por foco e a por movimento numa mesa só, sem chamar a turma para perto.", "30 min · Circulo entre os 7 postos, cobro o olho novo de costas a cada tomada e não libero troca de mesa.", "7 min · Peço que quem gravou confira na câmera e anote a faixa de arquivos, com o olho novo de cada tomada ainda de costas."],
+              "steps": ["5 min · Faço a chamada da retomada e entrego uma câmera e uma ring light em cada mesa, conferindo cartão, bateria e fio.", "8 min · Demonstro a revelação por foco e a por movimento numa mesa só, sem chamar a turma para perto.", "30 min · Circulo entre os 7 postos, cobro o olho novo de costas para a mesa antes da escolha dos objetos e não libero troca de mesa.", "7 min · Peço que quem gravou confira na câmera e anote a faixa de arquivos, com o olho novo de cada tomada ainda de costas."],
               "watch": "Sete postos sentados, três arquivos por grupo, um olho novo diferente por tomada e nenhum rosto no quadro.",
               "rescue": "Câmera que falhar: o grupo usa o celular apoiado e troca o foco pelo toque na tela. Ring light que falhar: aproximam os objetos da lâmpada da sala. Grupo de três: o olho novo é sempre quem não está operando."
             }
@@ -3988,7 +3988,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 3,
             "cards": [
-              {"eyebrow": "Alto da página", "title": "Quem e o quê", "text": "Grupo · turma · os dois objetos · quem operou cada tomada · quem foi o olho novo de cada uma."},
+              {"eyebrow": "Alto da página", "title": "Quem e o quê", "text": "Grupo · turma · os objetos de cada tomada · quem operou · quem foi o olho novo de cada uma."},
               {"eyebrow": "Linha 1", "title": "Base", "text": "Passa ou não. Motivo em uma linha: estável, nítida, luz e objeto inteiro no quadro."},
               {"eyebrow": "Linha 2", "title": "Revelação por foco", "text": "O olho novo achou que era ___ no primeiro segundo e reconheceu no segundo ___."},
               {"eyebrow": "Linha 3", "title": "Revelação por movimento", "text": "O olho novo achou que era ___ no primeiro segundo e reconheceu no segundo ___."}
