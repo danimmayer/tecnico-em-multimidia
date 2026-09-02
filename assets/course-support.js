@@ -3801,139 +3801,138 @@ window.SENAI_TEACHING_SUPPORT = {
         "appendDefaultClosing": false
       },
       "06": {
-        "teacherGoal": "Fazer cada um dos 7 grupos operar a câmera no próprio posto e sair da noite com três tomadas que provam controle de quadro, de foco e de movimento, comparando o caminho do olhar planejado antes da gravação com o caminho percebido por quem não viu o plano.",
-        "plainLanguage": "Quem opera a câmera decide para onde o público olha: o quadro escolhe o que entra, o foco escolhe qual é o assunto e o movimento escolhe o que só aparece depois.",
-        "say": "Hoje ninguém precisa aparecer. Antes de gravar, vocês vão decidir onde o olhar deve começar e onde deve terminar. Depois, alguém que não viu esse plano assiste e marca o caminho que a câmera realmente fez o olhar percorrer.",
+        "teacherGoal": "Fazer os 7 grupos transformar uma frase simples em três vídeos de oito segundos — plano fixo, troca de foco e movimento — e usar a leitura de outro grupo para decidir qual operação comunica melhor.",
+        "plainLanguage": "Quadro mostra as peças da cena. Foco aponta o que importa. Movimento entrega uma informação nova. A técnica só funciona quando o vídeo comunica uma ideia.",
+        "say": "Os grupos já estão formados, as câmeras estão carregadas e os objetos estão prontos. Hoje vocês vão usar isso para dizer uma frase sem fala: três gravações, um teste com outro grupo e uma escolha final.",
         "demo": [
-          "Apoie a câmera na mesa, ligue a ring light à frente dos objetos e mostre o fio rente à parede.",
-          "Trave o foco no objeto da frente e mostre o de trás ficando macio: o assunto é o que está nítido.",
-          "Grave a revelação por foco e a revelação por movimento, cada uma com começo e fim parados.",
-          "Anote uma intenção, como caderno → garrafa, abra o arquivo no navegador e peça a alguém que não viu o plano para dizer onde o olhar começou, quando mudou e onde terminou."
+          "Escreva no quadro: 'O celular atrapalha o estudo'. Monte um caderno e um celular na mesa.",
+          "Mostre a versão FIXO: os dois objetos aparecem juntos e a câmera não se move.",
+          "Mostre a versão FOCO: comece nítido no caderno e troque uma vez para o celular.",
+          "Mostre a versão MOVIMENTO: comece no caderno e revele o celular com um movimento curto.",
+          "Pergunte qual versão deixa a frase mais clara e peça que apontem o que a câmera fez."
         ],
-        "studentDeliverable": "Cada grupo mostra o quadro no caderno e três tomadas assistidas no computador: a base parada e duas revelações, cada uma com a intenção anotada antes de gravar, a leitura do olho novo e uma decisão de passa ou ajusta.",
+        "studentDeliverable": "Cada grupo entrega uma página do caderno com a frase pretendida, os números dos três vídeos, uma leitura de outro grupo para cada versão, a melhor versão marcada e uma correção concreta. Os três vídeos têm oito segundos e usam os mesmos objetos.",
         "check": [
-          "O quadro tem grupo, turma, quem operou, quem foi o olho novo e a intenção de cada revelação anotada antes da gravação.",
-          "As três tomadas existem e foram assistidas no computador: a base com passa ou não e motivo; as revelações com intenção, leitura do olho novo e passa ou ajusta.",
-          "A tomada base está nítida, estável e com o objeto inteiro no quadro.",
-          "Em pelo menos uma revelação, o olhar do observador começou e terminou nos pontos planejados, com uma mudança visível e tecnicamente limpa.",
-          "Ninguém saiu da mesa marcada nem filmou rosto.",
+          "A frase 'Queremos mostrar que...' foi escrita antes das gravações e contém uma relação entre os objetos, não apenas seus nomes.",
+          "Existem três vídeos de oito segundos: FIXO, FOCO e MOVIMENTO, todos sobre a mesma frase.",
+          "Outro grupo assistiu aos três uma vez, sem ver a frase, e escreveu 'Para mim, a cena diz que...' em cada versão.",
+          "O grupo escolheu a leitura mais próxima da frase pretendida e justificou com quadro, foco ou movimento.",
+          "Se houve nova gravação, o caderno diz o que foi corrigido.",
+          "Ninguém foi filmado e o grupo permaneceu no posto combinado.",
           "A câmera e a ring light voltaram conferidas, com cartão e bateria no lugar."
         ],
-        "fallback": "Sem câmera, o grupo usa o celular apoiado e grava as mesmas três tomadas; a troca de foco vira toque na tela, primeiro no objeto da frente e depois no de trás. Sem ring light, aproximam os objetos da lâmpada da sala. Sem internet ou se o editor pedir cadastro, assistem cada MP4 numa aba do navegador ou no Visualizador de Fotos do Windows. Sem computador, assistem na própria câmera com a tela virada só para o olho novo e registram começo, mudança e fim do olhar no mesmo quadro.",
+        "fallback": "Sem câmera, usem um celular apoiado. A versão FOCO usa dois toques na tela; a versão MOVIMENTO usa um deslocamento curto. Sem ring light, aproximem a cena da luz da sala. Sem computador, o visitante assiste na própria câmera. Não é preciso instalar editor nem usar internet.",
         "commonProblems": [
-          ["O grupo quer circular ou trocar de mesa", "Devolvo o equipamento ao posto marcado e só atendo quem estiver sentado."],
-          ["A leitura do olho novo não bate com a intenção", "O grupo escolhe uma correção apenas: limpar o quadro, desacelerar a troca de foco ou encurtar o movimento; depois refaz uma vez."],
-          ["A imagem treme na troca de foco", "Câmera apoiada e só a ponta dos dedos no anel; se continuar tremendo, a revelação sai pelo movimento."],
+          ["A frase só nomeia os objetos", "Peço um verbo: atrapalha, protege, esconde, combina, contrasta ou outro que faça sentido."],
+          ["As três versões ficaram iguais", "Na versão FOCO o quadro não muda; na versão MOVIMENTO o segundo objeto começa fora do quadro."],
+          ["A imagem treme na troca de foco", "Apoiem a câmera e encostem apenas a ponta dos dedos no anel ou na tela."],
+          ["O movimento passa rápido demais", "Marquem começo e fim. Contem dois segundos parados, movam devagar e parem por mais dois."],
           ["Alguém aparece sem querer", "Paramos, apagamos essa tomada e voltamos só aos objetos."],
-          ["O olho novo viu a intenção ou a gravação", "Troco a função na próxima tomada e registro no quadro que essa linha não teve teste."],
-          ["O tempo ficou curto", "Preservo a base assistida e uma revelação com a resposta do olho novo; a terceira tomada fica de fora."]
+          ["O visitante ouviu a frase antes", "Outro colega da mesma mesa assiste sem dica e escreve a própria leitura."],
+          ["O tempo ficou curto", "Mantenho os três vídeos e o teste. A nova gravação vira apenas uma correção escrita."]
         ],
         "presentationSlides": [
           {
             "title": "Mapa da noite",
             "kicker": "Operação de câmera",
-            "heading": "A prática ocupa a maior parte da noite",
-            "lede": "O lanche começa às 19:45, depois dos 45 minutos de preparação. Na volta, ficam 2 h 05 para planejar, gravar, comparar e fechar no próprio posto.",
+            "heading": "Uma ideia, três gravações, uma escolha",
+            "lede": "O lanche começa às 19:45. Antes: demonstração e teste. Depois: 2 h 05 de produção.",
             "layout": "dense-cards",
             "block": 1,
             "cards": [
-              {"eyebrow": "19:00–19:45 · 45 min", "title": "Preparar", "text": "Quadro, foco, movimento e cuidado com o equipamento."},
-              {"eyebrow": "19:45–20:05 · 20 min", "title": "Lanche", "text": "O intervalo acontece cedo. Voltem às 20:05 para a mesma mesa."},
-              {"eyebrow": "20:05–20:55 · 50 min", "title": "Planejar e gravar", "text": "Anotem dois caminhos do olhar e façam as três tomadas."},
-              {"eyebrow": "20:55–22:10 · 75 min", "title": "Comparar e fechar", "text": "O olho novo registra a leitura; o grupo ajusta, confere e devolve o equipamento."}
+              {"eyebrow": "19:00–19:45 · 45 min", "title": "Ver e testar", "text": "Entendam o desafio e experimentem quadro, foco e movimento."},
+              {"eyebrow": "19:45–20:05 · 20 min", "title": "Lanche", "text": "Retorno às 20:05, no mesmo grupo e na mesma mesa."},
+              {"eyebrow": "20:05–20:55 · 50 min", "title": "Planejar e gravar", "text": "Escrevam uma frase e façam três versões da mesma ideia."},
+              {"eyebrow": "20:55–22:10 · 75 min", "title": "Testar e melhorar", "text": "Outro grupo lê as cenas. Vocês escolhem, corrigem e devolvem o equipamento."}
             ],
-            "promptLabel": "Na mesa",
-            "prompt": "Caderno, caneta e os objetos que já estão na mesa. A câmera e a ring light ficam no posto; ninguém troca de lugar.",
+            "promptLabel": "Ponto de partida",
+            "prompt": "Grupos formados. Câmeras carregadas. Objetos separados. Começamos daí.",
             "teacher": {
-              "steps": ["4 min · Faço a chamada e marco os 7 grupos nas mesas.", "2 min · Confirmo pelo menos quatro objetos à vista em cada mesa e digo que a câmera só sai depois do intervalo.", "Deixo o próximo slide explicar os três controles."],
-              "watch": "Cada grupo está sentado, tem vários objetos na mesa e sabe que não vai circular.",
-              "rescue": "Grupo incompleto junta-se ao vizinho e divide a câmera na mesma mesa, sem levantar o resto da turma."
+              "steps": ["3 min · Faço a chamada, confirmo os 7 postos prontos e apresento a sequência da noite."],
+              "watch": "Os grupos permanecem como já foram organizados; câmera carregada e objetos separados não viram nova tarefa.",
+              "rescue": "Se um integrante faltar, o grupo segue menor. Não reorganizo a turma."
             }
           },
           {
-            "title": "Para onde o público olha",
-            "kicker": "Conceito da noite",
-            "heading": "O público olha onde a câmera mandar",
-            "lede": "Ninguém escolhe para onde olhar num vídeo: quem operou já escolheu antes. São três controles e uma ordem.",
+            "title": "O desafio",
+            "kicker": "Missão da noite",
+            "heading": "Contem uma ideia com dois objetos",
+            "lede": "Sem fala, pessoas ou edição. Quem não gravou precisa perceber a relação entre os objetos.",
             "layout": "dense-cards",
             "block": 1,
             "cards": [
-              {"eyebrow": "1", "title": "Quadro: o que entra", "text": "O que fica de fora não existe para quem assiste. Enquadrar já é escolher pelo público."},
-              {"eyebrow": "2", "title": "Foco: qual é o assunto", "text": "Dois objetos na mesma imagem. O olho vai no que está nítido, mesmo que o outro seja maior."},
-              {"eyebrow": "3", "title": "Movimento: o que vem depois", "text": "Um movimento mostra o que estava fora do quadro. Sem corte e sem edição."},
-              {"eyebrow": "4", "title": "Intenção: planejar e comparar", "text": "Antes, escrevam começo → fim. Depois, a tomada passa se o olho novo relata o mesmo caminho."}
+              {"eyebrow": "Antes", "title": "Uma frase", "text": "Escrevam: 'Queremos mostrar que...'. A frase precisa ter um verbo."},
+              {"eyebrow": "Durante", "title": "Três versões", "text": "FIXO, FOCO e MOVIMENTO. Mesma frase, mesmos objetos, oito segundos cada."},
+              {"eyebrow": "Depois", "title": "Leitura sem dica", "text": "Uma pessoa de outro grupo assiste e escreve o que cada cena diz."},
+              {"eyebrow": "Final", "title": "Uma escolha", "text": "Marquem a versão mais clara e expliquem qual operação ajudou."}
             ],
             "teacher": {
-              "speech": "Enquadrar é escolher pelo público. Focar é escolher de novo, dentro do mesmo quadro.",
-              "steps": ["4 min · Mostro os três controles com dois objetos na frente da câmera.", "3 min · Projeto duas imagens e pergunto qual é o assunto de cada uma.", "2 min · Ligo os três controles às três tomadas de hoje."],
-              "watch": "A turma responde qual é o assunto da imagem apontando o nítido, não o maior.",
-              "rescue": "Tapo metade do quadro com a mão e pergunto o que a turma perdeu."
+              "speech": "Objeto é vocabulário. A relação entre os objetos é a frase.",
+              "steps": ["3 min · Leio o desafio inteiro.", "2 min · Dou um exemplo direto: caderno + celular pode dizer 'o celular atrapalha o estudo'."],
+              "watch": "A turma entende que o resultado não é adivinhar os objetos, mas ler uma relação entre eles.",
+              "rescue": "Dou mais dois exemplos: estojo protege o lápis; garrafa vazia interrompe o treino."
             }
           },
           {
-            "title": "Ligar e guardar",
-            "kicker": "Equipamento",
-            "heading": "A câmera sai e volta do mesmo jeito",
-            "lede": "Quem opera responde pelo posto. Alça, tampa, cartão e bateria não se separam da câmera.",
+            "title": "Três versões",
+            "kicker": "Quadro · foco · movimento",
+            "heading": "Mudem a operação, não a ideia",
+            "lede": "Os objetos e a frase são os mesmos. Só muda a maneira de guiar a leitura.",
             "layout": "dense-cards",
             "block": 1,
             "cards": [
-              {"eyebrow": "Mãos", "title": "Alça e tampa", "text": "Alça no pulso ou no corpo. Tampa sai só na mesa e volta antes de guardar."},
-              {"eyebrow": "Memória", "title": "Bateria e cartão", "text": "Os dois entram antes de ligar. Não troquem cartão no meio da tomada."},
-              {"eyebrow": "Posto", "title": "Apoio e fio", "text": "Câmera apoiada na mesa. Ring light à frente dos objetos. Fio rente à parede, fora do caminho."},
-              {"eyebrow": "Volta", "title": "O mesmo estojo", "text": "Desligar, tampa, cabo enrolado, cartão e bateria no lugar. O grupo não apaga e não formata o cartão."}
+              {"eyebrow": "FIXO", "title": "Tudo já está no quadro", "text": "Câmera parada. Os dois objetos aparecem juntos e a composição mostra a relação."},
+              {"eyebrow": "FOCO", "title": "O assunto muda", "text": "O quadro fica parado. Começa nítido em um objeto e termina nítido no outro."},
+              {"eyebrow": "MOVIMENTO", "title": "A informação aparece", "text": "O segundo objeto começa fora do quadro e surge num movimento curto."},
+              {"eyebrow": "REGRA", "title": "Oito segundos", "text": "Dois segundos no começo, movimento ou foco no meio, dois segundos no final."}
             ],
             "teacher": {
-              "steps": ["4 min · Mostro alça, tampa, cartão e bateria numa câmera só.", "3 min · Posiciono a ring light e o fio na mesa da demonstração.", "2 min · Repito que o cartão não se formata e que eu apago o que for de hoje."],
-              "watch": "Ninguém levanta para buscar equipamento. O posto já está combinado.",
-              "rescue": "Se faltar estojo, o grupo devolve na mesa da frente na mesma ordem: câmera, cabo, ring light."
+              "steps": ["4 min · Mostro as três versões sem gravar.", "3 min · Repito a regra dos oito segundos contando em voz alta.", "3 min · Peço que a turma diga o que muda e o que permanece igual."],
+              "watch": "FIXO não se move; FOCO não muda o quadro; MOVIMENTO começa sem mostrar o segundo objeto.",
+              "rescue": "Faço os gestos com as mãos: moldura parada, dedo trocando o foco e moldura deslizando."
             }
           },
           {
-            "title": "Puxar o foco",
-            "kicker": "Operação",
-            "heading": "Trocar de assunto sem cortar e sem mexer o quadro",
-            "lede": "Dois objetos: um perto da câmera, um mais atrás. O quadro fica parado; o nítido é que muda.",
+            "title": "Controle da câmera",
+            "kicker": "Teste de foco e movimento",
+            "heading": "Apoiem, testem e parem",
+            "lede": "A câmera já está carregada. O teste agora é de controle, não de bateria.",
             "layout": "dense-cards",
             "block": 1,
             "cards": [
-              {"eyebrow": "Trave", "title": "Foco automático erra na hora errada", "text": "Toquem no objeto na tela ou girem o anel e travem. Câmera procurando sozinha estraga a revelação."},
-              {"eyebrow": "Comece", "title": "Nítido no da frente", "text": "O objeto perto nítido, o de trás macio. É esse o assunto no primeiro segundo."},
-              {"eyebrow": "Troque", "title": "Devagar, e uma vez só", "text": "A troca leva cerca de dois segundos. Meio segundo parece defeito; ida e volta parece indecisão."},
-              {"eyebrow": "Luz", "title": "A ring light ajuda o foco", "text": "Luz na frente dá contraste e a câmera acerta mais rápido. Se o objeto ficar azulado, afastem a luz."}
-            ],
-            "bullets": [
-              "Sem anel de foco, o toque na tela faz o mesmo: primeiro no objeto da frente, depois no de trás.",
-              "Se a câmera não trocar o foco de jeito nenhum, a revelação sai pelo movimento e a tomada continua valendo."
+              {"eyebrow": "Segurança", "title": "Alça e apoio", "text": "Alça presa. Câmera apoiada. Fio da ring light fora do corredor."},
+              {"eyebrow": "Foco", "title": "Uma troca", "text": "Anel ou toque na tela. Troquem devagar e não voltem para o primeiro objeto."},
+              {"eyebrow": "Movimento", "title": "Uma direção", "text": "Comecem parados, movam devagar e terminem parados."},
+              {"eyebrow": "Arquivo", "title": "Não apaguem", "text": "Anotem os números das tomadas. Ninguém formata o cartão."}
             ],
             "teacher": {
-              "speech": "Puxar o foco é o corte mais barato que existe: troca de assunto sem tirar a câmera do lugar.",
-              "steps": ["5 min · Faço a troca de foco na câmera da demonstração, ida só.", "4 min · Repito errado de propósito: rápido demais e com o foco caçando sozinho.", "2 min · Digo que na atividade vale uma troca por tomada."],
-              "watch": "A turma percebe que o quadro não mudou e mesmo assim o assunto mudou.",
-              "rescue": "Se a câmera não travar o foco, uso o celular apoiado e mostro a mesma troca pelo toque na tela."
+              "speech": "Controle bom quase não aparece. Tremor e pressa aparecem.",
+              "steps": ["5 min · Demonstro alça, apoio, ring light e uma troca de foco.", "5 min · Cada grupo faz um teste curto de foco com os objetos já separados.", "5 min · Cada grupo faz um movimento curto e confere se o começo e o fim ficaram parados.", "2 min · Todos param, desligam e deixam a câmera no centro da mesa."],
+              "watch": "Cada grupo testou os dois controles; ninguém começou a produção final antes da frase.",
+              "rescue": "Sem foco manual, uso dois toques na tela. Sem ring light, aproximo a mesa da luz da sala."
             }
           },
           {
             "title": "Exemplo resolvido",
-            "kicker": "Exemplo",
-            "heading": "Uma conduz o olhar; as outras perdem a intenção",
-            "lede": "Intenção anotada antes: caderno → garrafa. As quatro tomadas usam os mesmos objetos, a mesma câmera, a mesma mesa e a mesma luz.",
+            "kicker": "Caderno + celular",
+            "heading": "Frase: “O celular atrapalha o estudo”",
+            "lede": "As três versões usam a mesma mesa. O que muda é o momento em que o celular ganha importância.",
             "layout": "dense-cards",
             "block": 1,
             "cards": [
-              {"eyebrow": "Passa", "title": "Caderno → garrafa", "text": "O olho novo relata a mesma ordem planejada; a troca de foco é visível, suave e termina estável."},
-              {"eyebrow": "Ajusta", "title": "Garrafa → garrafa", "text": "Ela já domina o quadro no começo. O olhar não parte do caderno como o grupo planejou."},
-              {"eyebrow": "Ajusta", "title": "Caderno → tranco", "text": "A mão balança a câmera na troca. O movimento involuntário rouba a atenção do assunto final."},
-              {"eyebrow": "Ajusta", "title": "Caderno → borda", "text": "O rótulo termina cortado. O olhar chega ao lugar certo, mas o quadro não entrega a informação inteira."}
+              {"eyebrow": "FIXO", "title": "Os dois juntos", "text": "Pode parecer apenas uma mesa com materiais. A relação ainda está fraca."},
+              {"eyebrow": "FOCO", "title": "Caderno, depois celular", "text": "A atenção sai do estudo e vai para o celular. A interrupção fica clara."},
+              {"eyebrow": "MOVIMENTO", "title": "O celular invade a cena", "text": "A câmera parte do caderno e revela o celular por cima dele."},
+              {"eyebrow": "ESCOLHA", "title": "FOCO ou movimento", "text": "A melhor é a que fizer outra pessoa escrever uma frase próxima da intenção."}
             ],
             "bullets": [
-              "Objeto reconhecido não basta: a ordem percebida precisa coincidir com a intenção escrita antes.",
-              "Se não coincidiu, escolham uma correção concreta e refaçam uma vez só."
+              "“Tem um caderno e um celular” não é leitura suficiente. Falta dizer a relação.",
+              "Não existe resposta secreta: vale uma frase diferente que preserve a mesma ideia."
             ],
             "teacher": {
-              "steps": ["5 min · Leio as quatro e aponto o que cada uma perdeu.", "3 min · Pergunto qual das que voltam seria a primeira a refazer.", "2 min · Aviso que o quadro do caderno pede exatamente esse tipo de motivo."],
-              "watch": "O motivo descreve a atenção: começou no lugar errado, mudou cedo demais, o tranco roubou o olhar ou terminou cortado.",
-              "rescue": "Mostro só a que passa e a que entrega cedo, se o tempo apertar."
+              "steps": ["4 min · Leio a frase e mostro como ela muda nas três versões.", "3 min · Pergunto qual versão comunica melhor e por quê.", "3 min · Transformo respostas vagas em termos técnicos: quadro, foco ou movimento."],
+              "watch": "A justificativa liga a leitura à operação da câmera, não ao gosto pessoal.",
+              "rescue": "Se vier 'porque ficou melhor', pergunto: o que apareceu, ficou nítido ou mudou de lugar?"
             }
           },
           {
@@ -3943,130 +3942,132 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "kicker": "Intervalo",
             "heading": "Lanche às 19:45",
-            "lede": "Intervalo de 20 minutos. Às 20:05, continuem no mesmo grupo e na mesma mesa; a câmera e a ring light chegam até vocês.",
+            "lede": "Intervalo de 20 minutos. Às 20:05, voltem ao mesmo grupo e à mesma mesa.",
             "cards": [
-              {"eyebrow": "Grupo", "title": "O mesmo de agora", "text": "Não troquem de mesa e não juntem grupos no corredor."},
-              {"eyebrow": "Equipamento", "title": "Chega na volta", "text": "A câmera e a ring light vêm até o posto. Ninguém busca no armário."}
+              {"eyebrow": "Câmera", "title": "Desligada e com tampa", "text": "Deixem no centro da mesa. O teste já terminou."},
+              {"eyebrow": "Cena", "title": "Objetos no lugar", "text": "Não desmontem. A produção começa na volta."}
             ],
             "promptLabel": "Antes de sair",
-            "prompt": "Deixem os objetos no posto.",
+            "prompt": "Câmera desligada, tampa colocada e fio fora do corredor.",
             "teacher": {
-              "steps": ["Aviso o retorno e deixo este slide projetado.", "Retomo com a chamada e entrego câmera e ring light mesa a mesa."],
-              "watch": "Ninguém se antecipa ao equipamento. Os grupos voltam às mesas marcadas.",
-              "rescue": "Se a turma voltar espalhada, projeto o slide das três tomadas e começo a entrega do equipamento em silêncio, mesa por mesa."
+              "steps": ["Aviso o retorno às 20:05 e confiro se as câmeras ficaram desligadas e com tampa.", "Na volta, faço a chamada e abro direto no plano de uma frase."],
+              "watch": "Nenhuma câmera fica ligada ou com a lente exposta durante o intervalo.",
+              "rescue": "Se alguém desmontou a cena, o grupo remonta com os mesmos dois objetos ao voltar."
             }
           },
           {
-            "title": "Plano do olhar",
+            "title": "Plano de uma frase",
             "kicker": "No caderno · antes de gravar",
-            "heading": "Escrevam a intenção antes de ligar a câmera",
-            "lede": "Uma página por grupo. O olho novo não olha este quadro até terminar a leitura no computador.",
+            "heading": "Completem: “Queremos mostrar que...”",
+            "lede": "Usem dois ou três objetos e uma relação simples. A frase fica coberta durante o teste com o outro grupo.",
             "layout": "dense-cards",
             "block": 2,
             "cards": [
-              {"eyebrow": "Alto da página", "title": "Identificação", "text": "Grupo · turma · quem opera · quem será o olho novo de cada revelação."},
-              {"eyebrow": "Linha 1", "title": "Base", "text": "Depois: passa ou ajusta. Motivo: estabilidade, nitidez, luz e objeto inteiro no quadro."},
-              {"eyebrow": "Linha 2", "title": "Foco", "text": "ANTES: intenção ___ → ___. DEPOIS: meu olhar começou em ___, mudou no segundo ___ e terminou em ___."},
-              {"eyebrow": "Linha 3", "title": "Movimento", "text": "ANTES: intenção ___ → ___. DEPOIS: meu olhar começou em ___, mudou no segundo ___ e terminou em ___."}
+              {"eyebrow": "1", "title": "Escolham a relação", "text": "Um objeto atrapalha, protege, esconde, completa ou contrasta com o outro."},
+              {"eyebrow": "2", "title": "Escrevam a frase", "text": "Exemplo: 'Queremos mostrar que o celular atrapalha o estudo'."},
+              {"eyebrow": "3", "title": "Desenhem as versões", "text": "FIXO: os dois juntos. FOCO: primeiro ___, depois ___. MOVIMENTO: começa em ___ e revela ___."},
+              {"eyebrow": "4", "title": "Distribuam funções", "text": "Direção, câmera, cena e anotação. Troquem a câmera entre as versões."}
             ],
-            "promptLabel": "Agora",
-            "prompt": "Preencham somente as duas INTENÇÕES. Dobrem a página ou virem o caderno antes de o olho novo voltar a olhar para a mesa.",
+            "promptLabel": "Antes de ligar",
+            "prompt": "Mostrem a frase ao professor. Depois, deixem no caderno três linhas: FIXO, FOCO e MOVIMENTO.",
             "teacher": {
-              "steps": ["5 min · Projeto o quadro e espero a cópia das três linhas.", "3 min · Cada grupo preenche as duas intenções com setas; confiro antes de entregar a câmera.", "O olho novo de cada revelação vira de costas antes da intenção ser escolhida."],
-              "watch": "As duas setas existem antes da gravação e ficam escondidas de quem fará a leitura.",
-              "rescue": "Se a seta estiver abstrata, peço nomes concretos: caderno → garrafa; zíper → estojo inteiro."
+              "steps": ["4 min · Projeto o modelo e cada grupo escreve uma frase com verbo.", "4 min · Confiro rapidamente as 7 frases e corto as que apenas listam objetos.", "2 min · Os grupos desenham as três versões e distribuem funções."],
+              "watch": "Há uma frase verificável antes de gravar e as três versões continuam sobre a mesma ideia.",
+              "rescue": "Ofereço três moldes: ___ atrapalha ___; ___ protege ___; ___ esconde ___."
             }
           },
           {
-            "title": "Atividade 1 · O plano que revela",
+            "title": "Atividade 1 · Três versões",
             "kicker": "Na mesa do grupo",
-            "heading": "Três tomadas de oito segundos, os mesmos objetos",
-            "lede": "Uma câmera e uma ring light por grupo. Sigam as duas setas anotadas no caderno. O olho novo de cada revelação continua sem ver o plano nem a gravação.",
+            "heading": "Gravem a mesma frase de três jeitos",
+            "lede": "Oito segundos por vídeo. Não mudem a frase no meio da atividade.",
             "layout": "dense-cards",
             "block": 2,
             "cards": [
-              {"eyebrow": "1", "title": "Base", "text": "Câmera apoiada, objeto inteiro e nítido, oito segundos sem mexer. É o padrão de entrega e ela sempre existe."},
-              {"eyebrow": "2", "title": "Revelação por foco", "text": "Façam o olhar percorrer a seta de FOCO. Quadro parado; começa nítido no primeiro ponto e termina no segundo."},
-              {"eyebrow": "3", "title": "Revelação por movimento", "text": "Façam o olhar percorrer a seta de MOVIMENTO. Um movimento só, com começo e fim parados."},
-              {"eyebrow": "4", "title": "Antes de parar", "text": "Quem gravou confere na câmera; o olho novo não olha a sua. Refaçam no máximo uma e anotem o primeiro e o último número."}
+              {"eyebrow": "1 · FIXO", "title": "Os objetos já contam", "text": "Quadro parado, composição clara e os dois objetos nítidos."},
+              {"eyebrow": "2 · FOCO", "title": "O assunto muda", "text": "Quadro parado. Uma troca de foco, sem ida e volta."},
+              {"eyebrow": "3 · MOVIMENTO", "title": "A cena revela", "text": "Um movimento. Começo e fim parados. O segundo objeto aparece depois."},
+              {"eyebrow": "4 · CONFERIR", "title": "Assistam no grupo", "text": "Som, rosto ou tremor forte? Refaçam agora. Anotem o número de cada arquivo."}
             ],
             "bullets": [
-              "Fiquem na mesa. O fio não cruza o corredor. Ninguém é filmado.",
-              "O grupo termina quando as três tomadas existem, a base está nítida e as duas intenções foram gravadas sem mostrar o plano ao olho novo."
+              "Fiquem na mesa. O fio não cruza o corredor. Ninguém aparece nos vídeos.",
+              "PRONTO = três vídeos assistidos + FIXO, FOCO e MOVIMENTO com o número anotado no caderno."
             ],
             "teacher": {
-              "speech": "A base é o que o cliente aceita. A revelação é o que faz alguém continuar assistindo.",
-              "steps": ["5 min · Faço a chamada da retomada e entrego uma câmera e uma ring light em cada mesa, conferindo cartão, bateria e fio.", "7 min · Demonstro como executar uma seta por foco e outra por movimento numa mesa só.", "25 min · Circulo entre os 7 postos, comparo a execução com a intenção escrita e não libero troca de mesa.", "5 min · Peço que quem gravou confira na câmera e anote a faixa de arquivos, com o olho novo sem ver o plano nem a tomada."],
-              "watch": "Sete postos sentados, três arquivos por grupo, um olho novo diferente por revelação e nenhum rosto no quadro.",
-              "rescue": "Câmera que falhar: o grupo usa o celular apoiado e troca o foco pelo toque na tela. Ring light que falhar: aproximam os objetos da lâmpada da sala. Grupo de três: o olho novo é sempre quem não está operando."
+              "speech": "Não procurem três ideias. Procurem três maneiras de dizer a mesma ideia.",
+              "steps": ["5 min · Retomo os três nomes e autorizo o início após ver a frase de cada grupo.", "25 min · Circulo pelos 7 postos; primeiro cobro estabilidade, depois sentido.", "7 min · Os grupos assistem às próprias tomadas e refazem apenas erro técnico evidente.", "3 min · Confiro os três números anotados em cada mesa."],
+              "watch": "Há três arquivos por grupo; FOCO não move o quadro; MOVIMENTO revela algo que não aparecia no início.",
+              "rescue": "Câmera com falha vira celular apoiado. Se o foco não responder, o grupo usa toque na tela."
             }
           },
           {
-            "title": "Atividade 2 · O mapa do olhar",
-            "kicker": "No computador do posto",
-            "heading": "A câmera cumpriu a intenção sem explicação?",
-            "lede": "Passem os arquivos para o computador e escondam o caderno. Cada revelação é assistida uma vez; quem gravou não explica nada antes de o olho novo terminar a leitura.",
+            "title": "Atividade 2 · Teste de leitura",
+            "kicker": "Outro grupo assiste",
+            "heading": "Que relação apareceu na cena?",
+            "lede": "Cubram a frase do grupo. O visitante assiste aos três vídeos uma vez e escreve a leitura de cada um.",
             "layout": "dense-cards",
             "block": 3,
             "cards": [
-              {"eyebrow": "1", "title": "Passar os arquivos", "text": "Cabo ou leitor de cartão. Pasta do grupo. Não apaguem e não formatem o cartão."},
-              {"eyebrow": "2", "title": "Esconder a intenção", "text": "Caderno virado para baixo. Abram cada MP4 em tela cheia. O operador fica em silêncio."},
-              {"eyebrow": "3", "title": "Registrar o caminho", "text": "O olho novo diz: meu olhar começou em ___, mudou no segundo ___ e terminou em ___. Escrevam exatamente isso."},
-              {"eyebrow": "4", "title": "Comparar e decidir", "text": "Virem o caderno. A leitura bateu com a seta? Marquem PASSA ou AJUSTA e escrevam uma correção concreta."}
+              {"eyebrow": "1", "title": "Cubram a frase", "text": "Deixem visíveis apenas os nomes FIXO, FOCO e MOVIMENTO."},
+              {"eyebrow": "2", "title": "Recebam o visitante", "text": "O professor indica a mesa. Quem gravou não dá pista e não explica os objetos."},
+              {"eyebrow": "3", "title": "Assistam uma vez", "text": "Depois de cada vídeo, o visitante completa: 'Para mim, a cena diz que...'."},
+              {"eyebrow": "4", "title": "Marquem a mais clara", "text": "O visitante coloca uma estrela na versão que comunicou melhor e volta ao grupo."}
             ],
             "bullets": [
-              "Objeto reconhecido não decide o resultado. Passa quando começo e fim percebidos coincidem com a intenção e a mudança não é roubada por tremor ou foco caçando.",
-              "Se não bateu, corrijam apenas quadro, velocidade do foco ou extensão do movimento; refaçam uma vez com outro olho novo.",
-              "Nome ao lado da faixa: PA_A06_G01_BASE, PA_A06_G01_FOCO e PA_A06_G01_MOVIMENTO, com o número do grupo no lugar do 01.",
-              "O grupo termina quando as duas setas têm leitura, decisão e ajuste — ou a palavra nenhum."
+              "Se a resposta só nomear os objetos, perguntem: “O que um tem a ver com o outro?”",
+              "PRONTO = três frases do visitante + uma estrela. Só então mostrem a frase original."
             ],
             "teacher": {
-              "steps": ["8 min · Ajudo a copiar os arquivos mesa a mesa; não formato cartão.", "28 min · Os grupos escondem o plano, assistem e registram começo, mudança e fim antes de qualquer explicação.", "9 min · Quem marcou AJUSTA escolhe uma correção, refaz uma vez com outro olho novo e atualiza a leitura."],
-              "watch": "Ninguém instala nada, o plano fica escondido durante a leitura e toda decisão cita uma evidência da imagem.",
-              "rescue": "Computador que falhar: assistem na câmera com a tela virada só para o olho novo. Rede que cair: Visualizador de Fotos. Editor que pedir cadastro: três abas no navegador, nesta ordem."
+              "steps": ["5 min · Organizo a rota: G1 visita G2, G2 visita G3 e assim por diante; G7 visita G1.", "15 min · Cada visitante assiste aos três vídeos e escreve uma frase por versão, sem ouvir a intenção.", "5 min · Confiro se toda mesa recebeu três leituras e uma estrela."],
+              "watch": "A frase original está coberta; o visitante usa verbo e não recebe explicação antes de escrever.",
+              "rescue": "Sem computador, assistem na câmera. Grupo sem visitante recebe minha leitura."
             }
           },
           {
-            "title": "Conferência do grupo",
-            "kicker": "Antes de chamar",
-            "heading": "Quatro provas antes de chamar",
-            "lede": "Um lê; outro aponta a intenção, a leitura ou o arquivo. Corrijam o que não tiver prova.",
+            "title": "Escolher e ajustar",
+            "kicker": "De volta ao próprio grupo",
+            "heading": "Qual versão disse melhor a frase?",
+            "lede": "Mostrem a frase original. Comparem com as três leituras e tomem uma decisão.",
             "layout": "dense-cards",
-            "block": 4,
+            "block": 3,
             "cards": [
-              {"eyebrow": "1", "title": "A intenção veio antes?", "text": "As duas setas foram escritas antes de gravar e ficaram escondidas durante a leitura."},
-              {"eyebrow": "2", "title": "A base entrega?", "text": "Estável, nítida, luz certa e objeto inteiro. Se não, o motivo está escrito."},
-              {"eyebrow": "3", "title": "Intenção e leitura bateram?", "text": "Em pelo menos uma revelação, começo e fim percebidos são os mesmos da seta planejada."},
-              {"eyebrow": "4", "title": "O posto está em ordem?", "text": "Ninguém foi filmado. O fio não está no caminho. A câmera ainda não foi guardada no armário."}
+              {"eyebrow": "1", "title": "Leiam lado a lado", "text": "Frase do grupo em cima. Três frases do visitante embaixo."},
+              {"eyebrow": "2", "title": "Escolham a vencedora", "text": "É a leitura mais próxima da intenção, mesmo que use palavras diferentes."},
+              {"eyebrow": "3", "title": "Expliquem o motivo", "text": "Completem: 'Funcionou melhor porque o quadro, o foco ou o movimento...'."},
+              {"eyebrow": "4", "title": "Corrijam uma vez", "text": "Se nenhuma ficou clara, mudem uma coisa e gravem só a versão escolhida novamente."}
             ],
             "bullets": [
-              "Não apresentem para a turma. Corrijam na mesa.",
-              "Quando os quatro tiverem prova, chamem e deixem uma revelação rodando — sem mostrar a intenção."
+              "Correção concreta: aproximar objetos, limpar o quadro, desacelerar o foco ou encurtar o movimento.",
+              "PRONTO = melhor versão marcada + motivo técnico + correção feita ou escrita."
             ],
             "teacher": {
-              "speech": "Assisto sem ver a seta e digo onde meu olhar começou, o que provocou a mudança e onde terminou. Só depois comparo com a intenção. Nomear o objeto não decide o resultado.",
-              "steps": ["3 min · Digo que a conferência é na mesa, sem fila na frente.", "8 min · Passo posto a posto, registro meu caminho do olhar e comparo com uma das setas.", "2 min · Confirmo as quatro provas de quem terminou."],
-              "watch": "O grupo aponta a tela ou a linha do caderno. 'Passa' sem intenção e leitura comparáveis não vale.",
-              "rescue": "Peço só a base e as três linhas do quadro; a segunda revelação eles repetem com o mesmo método."
+              "speech": "A melhor técnica não é a mais bonita. É a que deixou a ideia mais clara.",
+              "steps": ["8 min · Os grupos comparam intenção, três leituras e estrela.", "7 min · Cada grupo escreve a justificativa usando um dos três controles.", "5 min · Quem precisa muda uma coisa e refaz apenas a versão escolhida."],
+              "watch": "A justificativa cita uma decisão visível de quadro, foco ou movimento.",
+              "rescue": "Sem tempo para refazer, a correção fica escrita de modo executável."
             }
           },
           {
-            "title": "Devolver e fechar",
-            "kicker": "Encerramento",
-            "heading": "A câmera volta; o quadro fica",
-            "lede": "Não passem a limpo. Corrijam no próprio caderno. O equipamento volta completo.",
+            "title": "Conferir e devolver",
+            "kicker": "Últimos 30 minutos",
+            "heading": "Uma página, três vídeos, uma escolha",
+            "lede": "Confiram na mesa. Depois, devolvam o equipamento completo.",
             "layout": "dense-cards",
             "block": 4,
             "cards": [
-              {"eyebrow": "Caderno", "title": "Mostrem o mapa", "text": "A página aberta, com base, intenções, leituras e decisões. Se faltar evidência, completem ali."},
-              {"eyebrow": "Arquivos", "title": "A faixa do dia", "text": "Primeiro e último número, com os três nomes ao lado. Ninguém apaga e ninguém formata o cartão."},
-              {"eyebrow": "Equipamento", "title": "Câmera e ring light", "text": "Tampa, cartão, bateria e cabo enrolado. Devolvam na mesa da frente, sem fila no armário."},
-              {"eyebrow": "Antes de sair", "title": "Uma frase", "text": "Uma tomada conduz o olhar quando o público começa em ___ e termina em ___ sem precisar de explicação."}
+              {"eyebrow": "Caderno", "title": "Mostrem a página", "text": "Frase original, três leituras, melhor versão e motivo técnico."},
+              {"eyebrow": "Arquivos", "title": "Mostrem os números", "text": "FIXO, FOCO e MOVIMENTO. Incluam a nova versão, se houve."},
+              {"eyebrow": "Equipamento", "title": "Devolvam completo", "text": "Câmera desligada, tampa, cartão, bateria e cabo enrolado. Não formatem o cartão."},
+              {"eyebrow": "Saída", "title": "Fechem a ideia", "text": "Completem: 'Nossa versão mais clara foi ___ porque ___'."}
+            ],
+            "bullets": [
+              "Não precisa apresentar para a turma. A conferência acontece na mesa.",
+              "PRONTO = página conferida + vídeos localizados + câmera e ring light devolvidas."
             ],
             "teacher": {
-              "steps": ["8 min · Recebo equipamento mesa a mesa, confiro cartão e bateria e apago só a faixa de hoje.", "5 min · Olho o quadro: base, duas intenções, duas leituras e as decisões.", "4 min · A frase fica no caderno; não abro rodada oral. Encerro às 22:10."],
-              "watch": "Sete câmeras e sete ring lights na mesa da frente, nenhum cartão formatado e nenhum grupo sem quadro.",
-              "rescue": "Com atraso, recebo primeiro o equipamento e olho o quadro com o grupo ainda sentado."
+              "steps": ["10 min · Confiro mesa a mesa a frase, as três leituras e a escolha técnica.", "15 min · Recebo câmeras e ring lights; confiro cartão, bateria, tampa e cabo. Apago somente a faixa de hoje.", "5 min · Os grupos completam a frase final no caderno. Encerro às 22:10."],
+              "watch": "Sete câmeras e sete ring lights devolvidas; nenhum cartão formatado; toda escolha tem uma justificativa técnica.",
+              "rescue": "Com atraso, recebo primeiro o equipamento. A justificativa final fica escrita, sem rodada oral."
             }
           }
         ],

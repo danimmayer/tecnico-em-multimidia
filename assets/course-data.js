@@ -1286,7 +1286,7 @@ window.SENAI_COURSES = {
       {
         "num": "06",
         "title": "Câmera na mão: operação e enquadramento",
-        "description": "Noite de operação no posto fixo: cada um dos 7 grupos planeja e grava, com câmera e ring light, dois caminhos do olhar em oito segundos — um por troca de foco e outro por movimento — e compara no computador a intenção escrita antes com a leitura de quem não viu o plano.",
+        "description": "Aula prática de operação de câmera. Os 7 grupos já estão formados e os objetos já foram separados. Cada grupo escreve uma frase simples e grava três versões de oito segundos: FIXO, FOCO e MOVIMENTO. Outro grupo assiste sem ver a frase. A melhor versão é escolhida pela clareza.",
         "objectives": [
           "Captura de vídeos e sons: enquadramento, equipamentos.",
           "Trabalho em equipe: trabalho em grupo, divisão de papéis e responsabilidades."
@@ -1301,24 +1301,24 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:45",
-            "atividade": "Ver como quem opera decide para onde o público olha: o que entra no quadro, o que fica nítido e o que só aparece depois. Aprender a ligar, apoiar e guardar a câmera, a usar a ring light no posto, a travar e puxar o foco entre dois objetos e a fazer um movimento só, com começo e fim parados."
+            "atividade": "Apresentar o desafio. Demonstrar uma frase visual em plano fixo, troca de foco e movimento. Em seguida, cada grupo faz um teste curto com a câmera já carregada e os objetos já separados. Não refazer grupos nem procurar materiais."
           },
           {
             "horario": "20:05 - 20:55",
-            "atividade": "Atividade 1 nos 7 grupos, cada um na própria mesa: copiar o quadro, anotar antes da gravação onde o olhar deve começar e terminar em cada revelação e gravar três tomadas de 8 segundos — a base parada, uma troca de foco e um movimento —, revezando quem opera e quem fica sem ver o plano como olho novo. Ninguém troca de mesa."
+            "atividade": "Atividade 1. Cada grupo escreve “Queremos mostrar que...” e completa com uma relação entre os objetos. Depois, grava a mesma ideia em três vídeos de 8 segundos: FIXO, FOCO e MOVIMENTO. O grupo assiste, corrige falhas técnicas e anota o número de cada arquivo."
           },
           {
             "horario": "20:55 - 21:40",
-            "atividade": "Atividade 2 na mesma mesa: passar os arquivos para o computador, esconder a intenção, assistir cada revelação uma vez no navegador sem instalar nada e registrar onde o olhar do olho novo começou, em que segundo mudou e onde terminou; depois comparar a leitura com a seta planejada e anotar uma correção concreta quando não coincidirem."
+            "atividade": "Atividade 2. A frase original fica coberta. Um visitante de outra mesa assiste aos três vídeos uma vez. Ele completa “Para mim, a cena diz que...” em cada versão e marca a mais clara. O grupo compara as respostas, justifica a escolha por quadro, foco ou movimento e faz uma correção."
           },
           {
             "horario": "21:40 - 22:10",
-            "atividade": "Conferência pelo checklist projetado, exibição de uma revelação ao professor sem mostrar a intenção, comparação do caminho do olhar relatado com a seta planejada, devolução da câmera e da ring light e apresentação do caderno. O grupo conclui quando as três tomadas foram assistidas, as duas intenções têm leitura e decisão e o equipamento voltou conferido."
+            "atividade": "Conferência na mesa. Verificar a frase original, as três leituras, a melhor versão, a justificativa técnica e os números dos arquivos. Devolver câmera e ring light completas. Concluir no caderno: “Nossa versão mais clara foi ___ porque ___”."
           }
         ],
-        "methodology": "Explicação curta, demonstração numa mesa só e duas atividades guiadas em 7 grupos no posto fixo: planejamento e gravação de três tomadas de oito segundos que trabalham quadro, foco e movimento, seguidos da comparação entre o caminho do olhar pretendido e o percebido por um integrante que não viu o plano. Cada atividade permanece projetada em um único slide com passos e critério de conclusão.",
-        "resources": "Projetor, quadro, caderno ou folhas em branco dos alunos, lápis ou caneta, vários objetos por mesa entre os que os próprios alunos já têm, 7 câmeras com cartão e bateria, 7 ring lights e computadores do laboratório com navegador. Nenhum programa precisa ser instalado no Windows. Nenhuma ficha impressa precisa ser distribuída.",
-        "observation": "Aula das 19:00 às 22:10. Lanche fixo das 19:45 às 20:05. Deixe o slide da atividade parado durante a execução. Chamada apenas na abertura e na retomada. Cada grupo permanece na mesa marcada; câmeras e ring lights saem somente às 20:05, vão até a mesa do grupo e voltam conferidas até as 22:05. A função de olho novo muda a cada revelação: quem vai testar não vê a intenção escrita nem a gravação e só fala depois de assistir no computador; o grupo mostra o plano somente depois de registrar a leitura. Depois de conferir, apague no cartão apenas o que foi gravado hoje, teste e repetições incluídos, pela faixa de números anotada; não formate o cartão. Sem editor online ou sem internet, o grupo assiste cada MP4 numa aba do navegador ou no Visualizador de Fotos do Windows."
+        "methodology": "Demonstração curta, teste técnico e duas atividades guiadas. Os grupos criam uma frase visual e gravam a mesma ideia com plano fixo, troca de foco e movimento. Outra mesa assiste sem receber dica. A comparação leva a uma escolha técnica e, se necessário, a uma nova gravação.",
+        "resources": "Projetor, quadro, caderno ou folhas em branco, lápis ou caneta e objetos já separados pelos alunos. Há 7 câmeras já carregadas, com cartão e bateria, 7 ring lights e computadores com navegador. Os grupos já estão formados. Nenhum programa precisa ser instalado no Windows. Nenhuma ficha impressa é necessária.",
+        "observation": "Aula das 19:00 às 22:10. Lanche fixo das 19:45 às 20:05. Não refaça os grupos, não reserve tempo para carregar câmeras e não peça novos objetos: essas etapas já foram concluídas. Cada grupo permanece na mesa marcada, exceto o visitante indicado no teste de leitura. A frase original fica coberta até o visitante escrever uma leitura para FIXO, FOCO e MOVIMENTO. Depois de conferir, apague no cartão apenas o que foi gravado hoje, teste e repetições incluídos, pela faixa de números anotada; não formate o cartão. Sem computador, o visitante assiste na própria câmera; a atividade não depende de editor, internet ou instalação."
       },
       {
         "num": "07",

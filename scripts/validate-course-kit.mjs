@@ -220,11 +220,11 @@ for (const [slug, expectedCount] of Object.entries(expected)) {
     const lesson06Support = support.lessons?.['06'];
     const lesson06Slides = lesson06Support?.presentationSlides || [];
     const lesson06ActivityTitles = [
-      'Plano do olhar',
-      'Atividade 1 · O plano que revela',
-      'Atividade 2 · O mapa do olhar',
-      'Conferência do grupo',
-      'Devolver e fechar'
+      'Plano de uma frase',
+      'Atividade 1 · Três versões',
+      'Atividade 2 · Teste de leitura',
+      'Escolher e ajustar',
+      'Conferir e devolver'
     ];
     const lesson06PublicSlideText = lesson06Slides.map((slide) => [
       slide.title,
@@ -245,8 +245,8 @@ for (const [slug, expectedCount] of Object.entries(expected)) {
     if (lesson06Slides.length !== 11 || lesson06Support?.appendDefaultClosing !== false) {
       errors.push(`${slug}/06: a apresentação precisa ter exatamente 12 slides controlados (capa + 11 slides próprios)`);
     }
-    if (lesson06Slides[6]?.title !== 'Plano do olhar' || lesson06Slides[7]?.title !== 'Atividade 1 · O plano que revela') {
-      errors.push(`${slug}/06: a intenção precisa ser registrada antes das três tomadas no posto`);
+    if (lesson06Slides[6]?.title !== 'Plano de uma frase' || lesson06Slides[7]?.title !== 'Atividade 1 · Três versões') {
+      errors.push(`${slug}/06: a frase visual precisa ser registrada antes das três gravações`);
     }
     if (!lesson06Slides.some((item) => item.pace === 'break')) {
       errors.push(`${slug}/06: o intervalo precisa de slide próprio para não acusar atraso no indicador de ritmo`);
@@ -260,7 +260,7 @@ for (const [slug, expectedCount] of Object.entries(expected)) {
         errors.push(`${slug}/06: ${activityTitle} precisa de quatro cartões no próprio slide`);
       }
     }
-    for (const titled of ['Atividade 1 · O plano que revela', 'Atividade 2 · O mapa do olhar', 'Conferência do grupo']) {
+    for (const titled of ['Atividade 1 · Três versões', 'Atividade 2 · Teste de leitura', 'Escolher e ajustar', 'Conferir e devolver']) {
       const activitySlide = lesson06Slides.find((item) => item.title === titled);
       if (!activitySlide || (activitySlide.bullets || []).length < 2) {
         errors.push(`${slug}/06: ${titled} precisa trazer o critério de conclusão no próprio slide`);
@@ -274,6 +274,11 @@ for (const [slug, expectedCount] of Object.entries(expected)) {
     }
     if (!lesson06?.resources?.includes('7 câmeras') || !lesson06?.resources?.includes('7 ring lights')) {
       errors.push(`${slug}/06: a divisão em 7 grupos precisa acompanhar as 7 câmeras e as 7 ring lights`);
+    }
+    for (const readyState of ['grupos já estão formados', 'objetos já separados', 'câmeras já carregadas']) {
+      if (!lesson06?.resources?.includes(readyState)) {
+        errors.push(`${slug}/06: o ponto de partida já resolvido precisa incluir "${readyState}"`);
+      }
     }
     if (!lesson06?.resources?.includes('Nenhum programa precisa ser instalado')) {
       errors.push(`${slug}/06: a aula não pode depender de instalação no Windows`);
@@ -290,8 +295,8 @@ for (const [slug, expectedCount] of Object.entries(expected)) {
     if (!lesson06?.observation?.includes('não formate o cartão')) {
       errors.push(`${slug}/06: o apagamento precisa poupar material de outras turmas no mesmo cartão`);
     }
-    if (!lesson06?.observation?.includes('Visualizador de Fotos')) {
-      errors.push(`${slug}/06: a alternativa sem editor online precisa estar explícita`);
+    if (!lesson06?.observation?.includes('não depende de editor')) {
+      errors.push(`${slug}/06: a independência de editor e internet precisa estar explícita`);
     }
     for (const forbidden of ['plongée', 'contra-plongée', 'circuito', 'estações', 'cartões com planos']) {
       if (lesson06PublicText.includes(forbidden)) {
@@ -301,16 +306,13 @@ for (const [slug, expectedCount] of Object.entries(expected)) {
     if (/\b(pátio|quadra|estacionamento|rua|externa|fora da escola)\b/i.test(lesson06PublicText)) {
       errors.push(`${slug}/06: a noite inteira acontece no laboratório, sem ambiente fora da unidade`);
     }
-    if (!lesson06PublicText.includes('olho novo')) {
-      errors.push(`${slug}/06: o teste de leitura por quem não viu a gravação precisa aparecer para a turma`);
-    }
-    for (const required of ['foco', 'revelação', 'oito segundos', 'intenção', 'começou', 'terminou']) {
+    for (const required of ['frase visual', 'fixo', 'foco', 'movimento', 'para mim, a cena diz que']) {
       if (!lesson06PublicText.includes(required)) {
         errors.push(`${slug}/06: falta "${required}" na camada da turma`);
       }
     }
-    if (!(lesson06Support?.check || []).some((item) => /olho novo|intenção|leitura/i.test(item))) {
-      errors.push(`${slug}/06: a conferência final precisa comparar intenção e leitura`);
+    if (!(lesson06Support?.check || []).some((item) => /leitura|frase pretendida/i.test(item))) {
+      errors.push(`${slug}/06: a conferência final precisa comparar a frase pretendida com a leitura recebida`);
     }
     const lesson06Map = lesson06Slides.find((item) => item.title === 'Mapa da noite');
     const lesson06MapText = JSON.stringify(lesson06Map || {});
@@ -334,8 +336,8 @@ for (const [slug, expectedCount] of Object.entries(expected)) {
     if (/\d{1,2}:\d{2}\s*[–-]\s*\d{1,2}:\d{2}/.test(lesson06OtherSlidesText)) {
       errors.push(`${slug}/06: as faixas de horário devem ficar concentradas no mapa da noite`);
     }
-    if (/diz o que entendeu|achou que era|em que segundo reconheceu/i.test(lesson06PublicText)) {
-      errors.push(`${slug}/06: o teste não pode reduzir a leitura a adivinhar o objeto escondido`);
+    if (/diz o que entendeu|achou que era|em que segundo reconheceu|olho novo|meu olhar começou/i.test(lesson06PublicText)) {
+      errors.push(`${slug}/06: o teste não pode voltar à adivinhação do objeto ou ao antigo "olho novo"`);
     }
     if (/\d+\s*min\s*·/.test(lesson06PublicSlideText)) {
       errors.push(`${slug}/06: o slide da turma não pode cronometrar a condução`);
