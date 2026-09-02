@@ -38,7 +38,7 @@ Em computador compartilhado, imprima ou exporte o necessário e use **Limpar pre
 | 03 | Etapas da produção audiovisual | Planilha digital da Aula 03: fluxo, comparação de gêneros, cronograma e auditoria; sem impressão |
 | 04 | Roteiro e storyboard na prática | Roteiro de 1 minuto; storyboard |
 | 05 | Direito de imagem, ética e normas | Verificação de consentimento |
-| 06 | Câmera na mão: operação e enquadramento | Lista de planos; relatório de captação |
+| 06 | Câmera na mão: operação e enquadramento | Quadro projetado para cópia; sem impressão |
 | 07 | Luz que conta história | Lista de planos; segurança do set; continuidade |
 | 08 | Som limpo e gravação do microcurta | Plano de filmagem; segurança; captação e cópia de segurança |
 | 09 | Set de filmagem: comercial em uma noite | Plano de filmagem; papéis; equipamentos; segurança; continuidade |

@@ -980,6 +980,57 @@ body[data-theme="av"] .lesson-topbar { background: rgba(18, 16, 15, 0.9); }
   .deck-btn { min-height: 36px; padding: 0 10px; }
 }
 
+/* Projetor 4:3 e 5:4: quatro cartões em duas colunas, bloco mais estreito
+   e centralizado, sem coluna vazia nem faixas estreitas demais. */
+@media (max-aspect-ratio: 4 / 3) {
+  .projection-mode .kit-slide-main > * { width: min(100%, 980px); }
+
+  .projection-mode .presentation-card-grid.is-dense:has(> :last-child:nth-child(4)) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .projection-mode .kit-slide.is-dense-cards h2 {
+    font-size: clamp(28px, 3.2vw, 40px);
+  }
+
+  .projection-mode .kit-slide.is-dense-cards .slide-lede {
+    margin-top: 8px;
+    font-size: clamp(15px, 1.55vw, 18px);
+  }
+
+  .projection-mode .presentation-card-grid.is-dense {
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  .projection-mode .presentation-card-grid.is-dense .presentation-card {
+    min-height: 0;
+    padding: 12px 14px;
+  }
+}
+
+@media (max-aspect-ratio: 5 / 4) {
+  .projection-mode .kit-slide-main > * { width: min(100%, 920px); }
+
+  .projection-mode .kit-slide.is-dense-cards h2 {
+    font-size: clamp(26px, 3vw, 36px);
+    line-height: 1.05;
+  }
+
+  .projection-mode .kit-slide.is-dense-cards .slide-lede {
+    margin-top: 6px;
+    line-height: 1.28;
+  }
+
+  .projection-mode .presentation-card-grid.is-dense {
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .projection-mode .kit-slide.is-dense-cards .presentation-bullets { margin-top: 8px; }
+  .projection-mode .kit-slide.is-dense-cards .presentation-prompt { margin-top: 8px; padding: 10px 14px; }
+}
+
 .presentation-bullets {
   display: grid;
   gap: 10px;
