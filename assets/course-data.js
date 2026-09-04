@@ -1286,7 +1286,7 @@ window.SENAI_COURSES = {
       {
         "num": "06",
         "title": "Câmera na mão: operação e enquadramento",
-        "description": "Noite de operação no posto fixo: cada um dos 7 grupos liga, apoia e opera uma câmera com ring light, grava três tomadas técnicas do mesmo objeto e confere no computador se a imagem passa nos quatro testes de entrega.",
+        "description": "Aula prática de operação de câmera. Os 7 grupos já estão formados e os objetos já foram separados. Cada grupo escreve uma frase simples e grava três versões de oito segundos: FIXO, FOCO e MOVIMENTO. Outro grupo assiste sem ver a frase. A melhor versão é escolhida pela clareza.",
         "objectives": [
           "Captura de vídeos e sons: enquadramento, equipamentos.",
           "Trabalho em equipe: trabalho em grupo, divisão de papéis e responsabilidades."
@@ -1301,24 +1301,24 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:45",
-            "atividade": "Ver o que uma imagem precisa ter para ser entregue: estabilidade, foco, exposição e enquadramento. Aprender a ligar, apoiar e guardar a câmera, a usar a ring light no posto e a fazer um movimento só, com começo e fim parados."
+            "atividade": "Apresentar o desafio. Demonstrar uma frase visual em plano fixo, troca de foco e movimento. Em seguida, cada grupo faz um teste curto com a câmera já carregada e os objetos já separados. Não refazer grupos nem procurar materiais."
           },
           {
             "horario": "20:05 - 20:55",
-            "atividade": "Atividade 1 nos 7 grupos, cada um na própria mesa: gravar três tomadas de 8 segundos do mesmo objeto — parada, um movimento e na mão — revezando quem opera, quem acompanha o quadro e quem organiza o posto. Ninguém troca de mesa."
+            "atividade": "Atividade 1. Cada grupo escreve “Queremos mostrar que...” e completa com uma relação entre os objetos. Depois, grava a mesma ideia em três vídeos de 8 segundos: FIXO, FOCO e MOVIMENTO. O grupo assiste, corrige falhas técnicas e anota o número de cada arquivo."
           },
           {
             "horario": "20:55 - 21:40",
-            "atividade": "Atividade 2 na mesma mesa: copiar o quadro projetado, passar os arquivos para o computador, assistir as três tomadas no navegador ou num editor online sem instalar nada, e marcar o que passa e o que não passa."
+            "atividade": "Atividade 2. A frase original fica coberta. Um visitante de outra mesa assiste aos três vídeos uma vez. Ele completa “Para mim, a cena diz que...” em cada versão e marca a mais clara. O grupo compara as respostas, justifica a escolha por quadro, foco ou movimento e faz uma correção."
           },
           {
             "horario": "21:40 - 22:10",
-            "atividade": "Conferência pelo checklist projetado, correção do quadro, devolução da câmera e da ring light e apresentação do caderno. O grupo conclui quando as três tomadas foram assistidas, o quadro tem as quatro respostas e o equipamento voltou conferido."
+            "atividade": "Conferência na mesa. Verificar a frase original, as três leituras, a melhor versão, a justificativa técnica e os números dos arquivos. Devolver câmera e ring light completas. Concluir no caderno: “Nossa versão mais clara foi ___ porque ___”."
           }
         ],
-        "methodology": "Explicação curta, demonstração numa mesa só e duas atividades guiadas em 7 grupos no posto fixo: três tomadas técnicas e conferência no computador. Cada atividade permanece projetada em um único slide com passos e critério de conclusão.",
-        "resources": "Projetor, quadro, caderno ou folhas em branco dos alunos, lápis ou caneta, 7 câmeras com cartão e bateria, 7 ring lights e computadores do laboratório com navegador. Nenhum programa precisa ser instalado no Windows. Nenhuma ficha impressa precisa ser distribuída.",
-        "observation": "Aula das 19:00 às 22:10. Lanche fixo das 19:45 às 20:05. Deixe o slide da atividade parado durante a execução. Chamada apenas na abertura e na retomada. Cada grupo permanece na mesa marcada; câmeras e ring lights saem somente às 20:05, vão até a mesa do grupo e voltam conferidas até as 22:05. Depois de conferir, apague no cartão apenas o que foi gravado hoje, teste e repetições incluídos, pela faixa de números anotada; não formate o cartão. Sem editor online ou sem internet, o grupo assiste cada MP4 numa aba do navegador ou no Visualizador de Fotos do Windows."
+        "methodology": "Demonstração curta, teste técnico e duas atividades guiadas. Os grupos criam uma frase visual e gravam a mesma ideia com plano fixo, troca de foco e movimento. Outra mesa assiste sem receber dica. A comparação leva a uma escolha técnica e, se necessário, a uma nova gravação.",
+        "resources": "Projetor, quadro, caderno ou folhas em branco, lápis ou caneta e objetos já separados pelos alunos. Há 7 câmeras já carregadas, com cartão e bateria, 7 ring lights e computadores com navegador. Os grupos já estão formados. Nenhum programa precisa ser instalado no Windows. Nenhuma ficha impressa é necessária.",
+        "observation": "Aula das 19:00 às 22:10. Lanche fixo das 19:45 às 20:05. Não refaça os grupos, não reserve tempo para carregar câmeras e não peça novos objetos: essas etapas já foram concluídas. Cada grupo permanece na mesa marcada, exceto o visitante indicado no teste de leitura. A frase original fica coberta até o visitante escrever uma leitura para FIXO, FOCO e MOVIMENTO. Depois de conferir, apague no cartão apenas o que foi gravado hoje, teste e repetições incluídos, pela faixa de números anotada; não formate o cartão. Sem computador, o visitante assiste na própria câmera; a atividade não depende de editor, internet ou instalação."
       },
       {
         "num": "07",
@@ -1336,7 +1336,7 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:30",
-            "atividade": "Revisão da aula 6 (operação de câmera e circuito de planos-alvo). Comparação no projetor de cenas gravadas com e sem tratamento de luz: discussão sobre o que a iluminação comunica (clima, hora do dia, emoção) e como afeta a percepção de qualidade do público."
+            "atividade": "Revisão da aula 6 (operação de câmera, foco e revelação). Comparação no projetor de cenas gravadas com e sem tratamento de luz: discussão sobre o que a iluminação comunica (clima, hora do dia, emoção) e como afeta a percepção de qualidade do público."
           },
           {
             "horario": "19:30 - 20:30",
