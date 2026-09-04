@@ -591,7 +591,7 @@ const designLessonSixActivityTitles = [
   'Atividade 2 · Paleta com papéis',
   'Atividade 3 · Letras e teste de leitura',
   'Atividade 4 · Painel de estilo',
-  'Batalha de identidade'
+  'Segunda versão · O que ficou melhor?'
 ];
 const designLessonSixText = JSON.stringify({
   lesson: designLessonSix,
@@ -613,14 +613,24 @@ const designLessonSixPublicText = `${JSON.stringify({
   resources: designLessonSix?.resources
 })}\n${designLessonSixPublicSlideText}`.toLocaleLowerCase('pt-BR');
 
-if (designLessonSixSlides.length !== 12 || designLessonSixSupport?.appendDefaultClosing !== false) {
-  errors.push('Design Web Aula 06: a apresentação precisa ter exatamente 13 slides controlados (capa + 12 slides próprios)');
+if (designLessonSixSlides.length !== 13 || designLessonSixSupport?.appendDefaultClosing !== false) {
+  errors.push('Design Web Aula 06: a apresentação precisa ter exatamente 14 slides controlados (capa + 13 slides próprios)');
 }
 if (!designLessonSixSlides.some((item) => item.pace === 'break')) {
   errors.push('Design Web Aula 06: o intervalo precisa de slide próprio');
 }
-if (designLessonSixSupport?.studentSheet || designLessonSixSlides.some((item) => item.resource || item.resources)) {
-  errors.push('Design Web Aula 06: a aula não pode exigir ficha, link ou material externo');
+if (designLessonSixSupport?.studentSheet) {
+  errors.push('Design Web Aula 06: não deve exigir ficha impressa');
+}
+const designSixLinks = designLessonSixSlides.flatMap(slide => slide.resources || []);
+for (const url of ['https://coolors.co/contrast-checker', 'https://fonts.google.com/', 'https://webaim.org/resources/contrastchecker/']) {
+  if (!designSixLinks.some(link => link.href === url)) errors.push('Design Web Aula 06: ferramenta de revisão ausente: ' + url);
+}
+for (const link of designSixLinks) {
+  if (!link.qr || !fs.existsSync(fromRoot(link.qr))) errors.push('Design Web Aula 06: QR local ausente para ' + link.href);
+}
+if (!designSixLinks.some(link => link.href === 'https://www.photopea.com/')) {
+  errors.push('Design Web Aula 06: falta acesso ao editor online');
 }
 if (!designLessonSix?.resources?.includes('caderno e caneta')) {
   errors.push('Design Web Aula 06: o material discente precisa ser caderno e caneta');
@@ -628,8 +638,8 @@ if (!designLessonSix?.resources?.includes('caderno e caneta')) {
 if (!designLessonSix?.resources?.includes('Sem impressão')) {
   errors.push('Design Web Aula 06: a independência de impressão precisa estar explícita');
 }
-if (!designLessonSix?.resources?.includes('sem programa de design')) {
-  errors.push('Design Web Aula 06: a independência de software de design precisa estar explícita');
+if (!designLessonSix?.resources?.includes('sem instalação') || !designLessonSix?.resources?.includes('gratuito online')) {
+  errors.push('Design Web Aula 06: ferramenta gratuita online e sem instalação deve estar explícita');
 }
 for (const activityTitle of designLessonSixActivityTitles) {
   const activitySlide = designLessonSixSlides.find((item) => item.title === activityTitle);
@@ -643,12 +653,14 @@ if (designLessonSixSlides.some((slide) => (slide.cards || []).length > 4)) {
 if ((designLessonSixSupport?.check || []).length < 5) {
   errors.push('Design Web Aula 06: conferência final insuficiente');
 }
-if (
-  designLessonSixText.includes('ficha impressa')
-  || designLessonSixText.includes('photopea')
-  || designLessonSixText.includes('http')
-) {
-  errors.push('Design Web Aula 06: permaneceu dependência de ficha impressa, Photopea ou link externo');
+if (/sem programa de design|sem site externo|escrito à mão|dupla vizinha/.test(designLessonSixPublicText)) {
+  errors.push('Design Web Aula 06: instrução antiga contradiz a prática digital individual');
+}
+if (/\b(professor|docente|gabarito)\b|faço a chamada|mostro no quadro|circulo cobrando|nas minhas notas/i.test(designLessonSixPublicSlideText)) {
+  errors.push('Design Web Aula 06: orientação docente vazou para a projeção');
+}
+for (const name of ['identidade-v1.png', 'identidade-final.png', 'identidade.psd']) {
+  if (!designLessonSixPublicSlideText.includes(name)) errors.push('Design Web Aula 06: falta entrega ' + name);
 }
 if (!fs.readFileSync(fromRoot('scripts/rebuild-design-web-no-code.mjs'), 'utf8').includes("support['design-web'].lessons['06'] =")) {
   errors.push('Design Web Aula 06: personalização regenerável ausente do rebuild');
@@ -702,7 +714,7 @@ if (/\d+\s*min\s*·/.test(designLessonSixPublicSlideText)) {
 if (designLessonSixSlides.some((slide) => slide.prompt && !slide.promptLabel)) {
   errors.push('Design Web Aula 06: prompt da turma precisa de rótulo próprio, não o padrão do kit');
 }
-for (const required of ['três palavras', 'fundo', 'destaque', 'olho apertado', 'par de letras']) {
+for (const required of ['três palavras', 'fundo', 'destaque', '50%', 'par de letras']) {
   if (!designLessonSixPublicText.includes(required)) {
     errors.push(`Design Web Aula 06: falta "${required}" na camada da turma`);
   }

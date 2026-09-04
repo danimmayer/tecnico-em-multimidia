@@ -201,7 +201,7 @@ window.SENAI_COURSES = {
       {
         "num": "06",
         "title": "Identidade Visual para Telas",
-        "description": "Escolher três palavras de personalidade, montar paleta e par de letras, testar se dá para ler e desenhar o painel de estilo no caderno.",
+        "description": "Criar uma identidade visual no navegador, comparar versões e melhorar cores, letras e leitura numa peça digital.",
         "objectives": [
           "Desenvolvimento do Projeto: equilíbrio visual.",
           "Criação de código de texto: folha de estilos em cascata como referência de bastidor."
@@ -216,23 +216,23 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:45",
-            "atividade": "Comparar a mesma frase em três estilos projetados, copiar no caderno o kit de identidade com quatro campos, julgar quatro combinações de cor no jogo Dá para ler? e ver o kit pronto do Café da Esquina."
+            "atividade": "Comparar estilos e contraste, registrar quatro escolhas e experimentar texto no Photopea, salvando o primeiro PSD."
           },
           {
             "horario": "20:05 - 20:50",
-            "atividade": "Em duplas, escolher uma das quatro marcas projetadas, escrever três palavras de personalidade e montar a paleta com papel de fundo, texto e destaque."
+            "atividade": "Escolher individualmente uma marca e três palavras; aplicar fundo e texto, experimentar uma alteração de cor e salvar."
           },
           {
             "horario": "20:50 - 21:30",
-            "atividade": "Escolher o par de letras do banco projetado, escrever o nome da marca imitando a letra do título e testar o contraste entre a cor do texto e a cor do fundo."
+            "atividade": "Comparar pares de letras, testar a leitura com zoom reduzido, ajustar e exportar a primeira versão."
           },
           {
             "horario": "21:30 - 22:07",
-            "atividade": "Montar o painel de estilo no caderno com marca, palavras, cores, letras, botão e mini-painel; trocar com a dupla vizinha na batalha de identidade; fechar com uma frase de saída."
+            "atividade": "Completar a peça com botão, comparar antes e depois, registrar uma melhoria e salvar PSD e PNG final."
           }
         ],
-        "methodology": "Tudo no projetor: comparação de estilos, kit de quatro campos, jogo de contraste, bancos de marca, cor e letra, painel e checklist. A turma decide, justifica e escreve no caderno.",
-        "resources": "Projetor, caderno e caneta. Todo o material da noite está nos slides: estilos comparados, marcas, paletas, pares de letras e checklist. Sem impressão, sem site externo e sem programa de design.",
+        "methodology": "Demonstrações curtas alternadas com produção individual: escolher, experimentar, comparar e revisar a mesma peça. Desafios de adaptação para quem avança mais rápido.",
+        "resources": "Computador com navegador e internet, projetor, caderno e caneta. Photopea gratuito online, sem instalação. Sem impressão. Exemplos e passos nos slides; caderno como alternativa se o acesso falhar.",
         "observation": "Design Web apenas. Começa às 19:00, lanche das 19:45 às 20:05 e termina às 22:07. Chamada às 19:00, 20:05, 20:50 e 21:30. Nada impresso e nada de Produção Audiovisual."
       },
       {

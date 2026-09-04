@@ -87,10 +87,23 @@ descreve a imagem e monta um painel com crédito.
 A turma produz painéis de estilo, grades, componentes e versões para celular,
 tablet, computador, post e story. CSS aparece como bastidor da aparência; a
 publicação é assistida e só ocorre após checklist e revisão de dados pessoais.
-Na Aula 06, a noite também acontece só com projetor e caderno: a dupla escolhe
-uma marca do banco projetado, escreve três palavras de personalidade, monta a
-paleta com papel de fundo, texto e destaque, escolhe o par de letras, prova a
-leitura com o teste do olho apertado e fecha o painel na batalha de identidade.
+Na Aula 06, cada estudante cria e revisa uma peça no Photopea gratuito online,
+sem impressão ou instalação. A noite alterna comparação, demonstração curta,
+produção e revisão, das 19:00 às 22:07, com intervalo das 19:45 às 20:05.
+A entrega reúne PNG inicial, PNG final e PSD editável. Quem avança mais rápido
+adapta a peça para celular. Se o acesso falhar, o caderno preserva o projeto.
+A projeção fala com a turma; condução, tempos e alternativas ficam nas notas privadas.
+
+A aula oferece links clicáveis e QR codes ampliáveis, gerados localmente, para:
+- [Photopea](https://www.photopea.com/): criar e revisar a peça.
+- [Coolors](https://coolors.co/contrast-checker): comparar as cores de texto e fundo; repetir o teste no botão e após mudar cores.
+- [Google Fonts](https://fonts.google.com/): visualizar o nome da marca em duas fontes; usar no editor uma opção disponível, sem baixar fontes.
+- [WebAIM](https://webaim.org/resources/contrastchecker/): alternativa ao Coolors.
+
+A meta didática é 4,5:1 para os pares de texto e fundo. O número não avalia toda a identidade: alinhamento, espaço e hierarquia continuam na revisão visual. Referência: [WCAG 2.2, contraste mínimo](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html).
+
+Ferramenta: https://www.photopea.com/ · Referência de salvamento:
+https://www.photopea.com/learn/opening-saving (consultadas em 04/09/2026).
 
 ### Aula 11 · Interação e feedback
 

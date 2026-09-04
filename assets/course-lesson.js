@@ -341,6 +341,25 @@
       </section>`
   });
 
+  const isDesignSix = course.slug === 'design-web' && lesson.num === '06';
+  if (isDesignSix) document.body.classList.add('design-six');
+
+  // Fixed teaching samples keep colors and lettering identical on every projector.
+  const designSixVisual = (kind) => {
+    if (!isDesignSix || !kind) return '';
+    const styles = ['serious', 'sweet', 'night'];
+    if (styles.includes(kind)) return `<div class="dw-style dw-style--${kind}"><span>Seu próximo passo</span><b>começa aqui.</b><small>Conheça a marca</small></div>`;
+    const contrast = ['contrast1', 'contrast2', 'contrast3', 'contrast4'];
+    if (contrast.includes(kind)) return `<div class="dw-contrast dw-${kind}">Seu pedido chegou.</div>`;
+    const palettes = {
+      palette1: ['#181818', '#FFFFFF', '#FF9A3C'],
+      palette2: ['#FFF4E6', '#382218', '#D75483'],
+      palette3: ['#F2F4F7', '#142438', '#FFD34E'],
+      palette4: ['#F1FAF5', '#153C2D', '#56B88A']
+    };
+    return palettes[kind] ? `<div class="dw-palette">${palettes[kind].map((color, i) => `<div><i style="background:${color}" aria-hidden="true"></i><span>${['Fundo', 'Texto', 'Destaque'][i]}</span><code>${color}</code></div>`).join('')}</div>` : '';
+  };
+
   const presentationSlide = (item, index) => {
     const cards = Array.isArray(item.cards) ? item.cards : [];
     const bullets = Array.isArray(item.bullets) ? item.bullets : [];
@@ -369,6 +388,7 @@
                 ${card.eyebrow ? `<span class="card-index">${escapeHtml(card.eyebrow)}</span>` : ''}
                 ${card.title ? `<strong>${escapeHtml(card.title)}</strong>` : ''}
                 ${card.text ? `<p>${escapeHtml(card.text)}</p>` : ''}
+                ${designSixVisual(card.visual)}
               </article>`).join('')}
           </div>` : ''}
         ${bullets.length ? listHtml(bullets, 'presentation-bullets') : ''}
@@ -382,7 +402,7 @@
             ${resources.map((entry) => `
               <a class="student-resource-link" href="${escapeHtml(entry.href)}" target="_blank" rel="noopener">
                 ${escapeHtml(entry.label || 'Abrir material da aula')} →
-              </a>`).join('')}
+              </a>${isDesignSix && entry.qr ? `<button type="button" class="student-resource-link qr-open" data-qr="${escapeHtml(entry.qr)}" data-qr-label="${escapeHtml(entry.label)}" data-qr-url="${escapeHtml(entry.href)}" aria-label="QR code: ${escapeHtml(entry.label)}">QR code</button>` : ''}`).join('')}
           </div>` : ''}`,
       teacher: {
         speech: teacher.speech || '',
@@ -1024,7 +1044,28 @@
     }
   });
 
+  if (isDesignSix) {
+    const qrDialog = document.createElement('dialog');
+    qrDialog.className = 'tool-qr-dialog';
+    qrDialog.setAttribute('aria-labelledby', 'toolQrTitle');
+    qrDialog.innerHTML = '<form method="dialog"><button autofocus aria-label="Fechar QR code">Fechar ×</button></form><h2 id="toolQrTitle"></h2><p>Aponte a câmera do celular</p><img width="370" height="370" alt=""><a target="_blank" rel="noopener"></a>';
+    document.body.append(qrDialog);
+    document.addEventListener('click', (event) => {
+      const button = event.target.closest('.qr-open');
+      if (!button) return;
+      qrDialog.querySelector('h2').textContent = button.dataset.qrLabel;
+      const image = qrDialog.querySelector('img');
+      image.src = button.dataset.qr;
+      image.alt = 'QR code para ' + button.dataset.qrLabel;
+      const link = qrDialog.querySelector('a');
+      link.href = button.dataset.qrUrl;
+      link.textContent = button.dataset.qrUrl;
+      qrDialog.showModal();
+    });
+  }
+
   document.addEventListener('keydown', (event) => {
+    if (document.querySelector('.tool-qr-dialog[open]')) return;
     const target = event.target;
     if (target && /INPUT|TEXTAREA|SELECT/.test(target.tagName)) return;
 
