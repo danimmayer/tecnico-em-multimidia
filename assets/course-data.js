@@ -201,7 +201,7 @@ window.SENAI_COURSES = {
       {
         "num": "06",
         "title": "Identidade Visual para Telas",
-        "description": "Cores, tipografia, contraste e personalidade de marca aplicados a um painel de estilo digital.",
+        "description": "Criar uma identidade visual no navegador, comparar versões e melhorar cores, letras e leitura numa peça digital.",
         "objectives": [
           "Desenvolvimento do Projeto: equilíbrio visual.",
           "Criação de código de texto: folha de estilos em cascata como referência de bastidor."
@@ -215,25 +215,25 @@ window.SENAI_COURSES = {
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Comparação \"mesmo conteúdo, três estilos\": observar três aparências prontas da mesma página e identificar o que mudou em cor, tipografia, forma, espaçamento e tom. A referência técnica aparece somente como bastidor."
+            "horario": "19:00 - 19:45",
+            "atividade": "Comparar estilos e contraste, registrar quatro escolhas e experimentar texto no Photopea, salvando o primeiro PSD."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "Caça à personalidade: grupos recebem marcas fictícias e escolhem três palavras de personalidade. Selecionam combinações de cor e tipografia compatíveis, justificando o que cada escolha comunica."
+            "horario": "20:05 - 20:50",
+            "atividade": "Escolher individualmente uma marca e três palavras; aplicar fundo e texto, experimentar uma alteração de cor e salvar."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "Produção do style tile: paleta, par tipográfico, botões, cartões, imagens e exemplos de títulos em ferramenta visual. Teste de contraste nas combinações principais."
+            "horario": "20:50 - 21:30",
+            "atividade": "Comparar pares de letras, testar a leitura com zoom reduzido, ajustar e exportar a primeira versão."
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "Batalha de identidade: duas equipes trocam painéis, tentam adivinhar as três palavras de personalidade e devolvem um acerto e uma sugestão."
+            "horario": "21:30 - 22:07",
+            "atividade": "Completar a peça com botão, comparar antes e depois, registrar uma melhoria e salvar PSD e PNG final."
           }
         ],
-        "methodology": "Comparação visual, escolha orientada, produção de painel de estilo e crítica entre pares.",
-        "resources": "Referências preparadas, verificador de contraste, Photopea sem login ou software instalado, ficha de style tile e projetor.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "Demonstrações curtas alternadas com produção individual: escolher, experimentar, comparar e revisar a mesma peça. Desafios de adaptação para quem avança mais rápido.",
+        "resources": "Computador com navegador e internet, projetor, caderno e caneta. Photopea gratuito online, sem instalação. Sem impressão. Exemplos e passos nos slides; caderno como alternativa se o acesso falhar.",
+        "observation": "Design Web apenas. Começa às 19:00, lanche das 19:45 às 20:05 e termina às 22:07. Chamada às 19:00, 20:05, 20:50 e 21:30. Nada impresso e nada de Produção Audiovisual."
       },
       {
         "num": "07",

@@ -2178,38 +2178,634 @@ window.SENAI_TEACHING_SUPPORT = {
             }
           }
         ]
-      },      "06": {
-        "teacherGoal": "Conduzir a Aula 06 para que a turma produza cores, tipografia, contraste e personalidade de marca aplicados a um painel de estilo digital.",
-        "plainLanguage": "Cores, tipografia, contraste e personalidade de marca aplicados a um painel de estilo digital. O foco é decidir, montar, comparar e testar; os bastidores técnicos aparecem apenas quando ajudam a compreender a função de uma interface.",
-        "say": "Hoje o resultado precisa ficar visível. Primeiro eu mostro o exemplo e os critérios; depois vocês produzem em equipe e conferem a entrega antes de sair.",
+      },
+      "06": {
+        "appendDefaultClosing": false,
+        "teacherGoal": "Uma peça digital revisada por estudante até 22:07, com demonstrações curtas, produção em etapas e salvamento durante a noite.",
+        "plainLanguage": "Identidade visual é repetir cores, letras e formas que combinam com a personalidade da marca. A primeira versão serve para testar; a segunda mostra o que melhorou.",
+        "say": "Hoje uma marca vai ganhar cara de verdade. Vamos criar uma primeira versão, testar a leitura e melhorar a mesma peça.",
         "demo": [
-          "Demonstração curta \"mesmo conteúdo, três estilos\": o professor alterna três aparências prontas e a turma identifica o que mudou em cor, tipografia, forma, espaçamento e tom. A referência técnica aparece somente como bastidor.",
-          "Caça à personalidade: grupos recebem marcas fictícias e escolhem três palavras de personalidade. Selecionam combinações de cor e tipografia compatíveis, justificando o que cada escolha comunica.",
-          "Produção do style tile: paleta, par tipográfico, botões, cartões, imagens e exemplos de títulos em ferramenta visual. Teste de contraste nas combinações principais."
+          "Antes da aula: abrir Photopea, testar texto e retângulo e salvar um PNG no computador do laboratório. Deixar o exemplo pronto em outra aba.",
+          "Mostrar uma mudança de cada vez: nome, cor, tamanho de letra. Intercalar a demonstração com a execução da turma.",
+          "Usar apenas Mover (V), Texto (T) e Retângulo (U). Não abrir recursos de IA, fontes externas ou modelos pagos.",
+          "Salvar a primeira versão antes da revisão e a final antes de encerrar."
         ],
-        "studentDeliverable": "Batalha de identidade: duas equipes trocam painéis, tentam adivinhar as três palavras de personalidade e devolvem um acerto e uma sugestão.",
+        "studentDeliverable": "Por estudante: identidade-v1.png, identidade-final.png e identidade.psd, com marca, três palavras, três cores com papéis, par de letras e uma peça com título, frase e botão. Registro de uma melhoria no caderno.",
         "check": [
-          "A entrega visual corresponde ao objetivo e pode ser aberta ou apresentada sem explicação adicional.",
-          "O grupo justificou pelo menos duas decisões com critérios da aula.",
-          "Arquivos ou folhas estão nomeados e organizados na pasta de entrega.",
-          "A revisão final retirou dados pessoais e confirmou legibilidade."
+          "A marca tem três palavras de personalidade.",
+          "As três cores têm papel: fundo, texto e destaque.",
+          "O par de letras diferencia título e texto.",
+          "Título, frase e botão podem ser lidos na peça reduzida; uma melhoria está registrada.",
+          "Os arquivos identidade-v1.png, identidade-final.png e identidade.psd foram salvos e o PNG final foi reaberto."
         ],
-        "fallback": "Se a ferramenta ou a internet falhar, realizar a mesma produção em papel A3 com cartões, canetas e a ficha impressa; fotografar ou guardar a folha como evidência.",
+        "fallback": "Photopea já carregado pode continuar sem conexão. Se não abriu, manter o mesmo projeto no caderno e anotar cores, letras e alterações; sem impressão. Se faltarem computadores, alternar a operação e preservar uma versão de cada estudante. Não gastar mais de cinco minutos tentando recuperar o acesso.",
+        "extension": "Depois de salvar o essencial, criar uma versão para celular, com a mesma identidade, ou uma segunda peça para a marca. Comparar as duas e justificar a mudança; não antecipar a saída.",
         "commonProblems": [
           [
-            "A equipe começa sem decidir o objetivo",
-            "Retomar público, mensagem e ação principal antes de escolher aparência."
+            "Editor não abre",
+            "Após cinco minutos, seguir o mesmo roteiro no caderno; retomar o digital se o acesso voltar."
           ],
           [
-            "A produção fica bonita, mas pouco clara",
-            "Pedir que outro grupo cumpra uma tarefa e registrar onde ele hesita."
+            "Texto não se move",
+            "Confirmar a edição pelo visto na barra superior e selecionar Mover (V)."
           ],
           [
-            "O tempo termina antes do acabamento",
-            "Fechar primeiro a entrega essencial e deixar variações como extensão opcional."
+            "A cor muda no elemento errado",
+            "Selecionar a camada do retângulo antes de mudar o preenchimento."
+          ],
+          [
+            "Escolha de fonte demora",
+            "Usar DejaVu Sans no texto e DejaVu Serif ou DejaVu Sans Bold no título, se disponíveis; qualquer equivalente já listado serve."
+          ],
+          [
+            "Terminou cedo",
+            "Comparar a versão clara com uma versão escura ou adaptar para celular, preservando as mesmas palavras."
           ]
+        ],
+        "presentationSlides": [
+          {
+            "title": "Mapa da noite",
+            "block": 1,
+            "layout": "dense-cards",
+            "heading": "Sua marca vai ganhar uma cara",
+            "lede": "Escolha, crie, teste e melhore. Uma peça sua, do começo ao fim.",
+            "cards": [
+              {
+                "eyebrow": "19:00–19:45",
+                "title": "Experimentar",
+                "text": "Reconhecer estilos e abrir a primeira peça no editor."
+              },
+              {
+                "eyebrow": "19:45–20:05",
+                "title": "Lanche",
+                "text": "Arquivo salvo. Retorno às 20:05."
+              },
+              {
+                "eyebrow": "20:05–20:50",
+                "title": "Criar",
+                "text": "Escolher a marca e aplicar uma combinação de cores."
+              },
+              {
+                "eyebrow": "20:50–22:07",
+                "title": "Testar e melhorar",
+                "text": "Ajustar letras, revisar a leitura e salvar a versão final."
+              }
+            ],
+            "promptLabel": "Hoje",
+            "prompt": "Trabalho individual · navegador e caderno · sem impressão ou instalação.",
+            "teacher": {
+              "steps": [
+                "2 min · Chamada das 19:00 e conferência de acesso aos computadores.",
+                "1 min · Apresentação do percurso e do intervalo."
+              ],
+              "watch": "Uma produção por estudante.",
+              "rescue": "Computador compartilhado: alternância de operação e arquivos separados."
+            }
+          },
+          {
+            "title": "Mesmo conteúdo, três estilos",
+            "block": 1,
+            "layout": "dense-cards",
+            "heading": "Como o estilo muda a mensagem",
+            "lede": "Qual destas versões combina com uma confeitaria?",
+            "cards": [
+              {
+                "eyebrow": "Estilo 1",
+                "title": "Sério",
+                "text": "Azul escuro, letra com traços finos e mais espaço.",
+                "visual": "serious"
+              },
+              {
+                "eyebrow": "Estilo 2",
+                "title": "Alegre",
+                "text": "Creme, rosa e letras arredondadas.",
+                "visual": "sweet"
+              },
+              {
+                "eyebrow": "Estilo 3",
+                "title": "Noturno",
+                "text": "Fundo escuro, laranja e letras fortes.",
+                "visual": "night"
+              }
+            ],
+            "bullets": [
+              "Cores, letras e formas ajudam a transmitir uma personalidade."
+            ],
+            "promptLabel": "Seu olhar",
+            "prompt": "Escolha uma versão e complete: “Combina porque ___.”",
+            "teacher": {
+              "steps": [
+                "3 min · Mostrar a frase no Photopea: título escuro em fundo claro; depois fundo escuro e título claro.",
+                "3 min · Alterar tamanho e peso do título, mantendo a frase.",
+                "4 min · Ouvir três hipóteses com justificativa visual."
+              ],
+              "watch": "As respostas apontam escolhas concretas.",
+              "rescue": "Comparar apenas claro e escuro, sem transformar preferências em regras universais."
+            }
+          },
+          {
+            "title": "O kit de identidade",
+            "block": 1,
+            "layout": "dense-cards",
+            "heading": "O que faz uma marca ser reconhecida?",
+            "lede": "A identidade é o conjunto de escolhas que faz a marca ser reconhecida.",
+            "cards": [
+              {
+                "eyebrow": "1",
+                "title": "Personalidade",
+                "text": "Três palavras que a marca quer transmitir."
+              },
+              {
+                "eyebrow": "2",
+                "title": "Cores",
+                "text": "Fundo, texto e destaque: cada cor tem uma função."
+              },
+              {
+                "eyebrow": "3",
+                "title": "Letras",
+                "text": "Uma fonte para o título e outra para o texto. Podem ser da mesma família."
+              },
+              {
+                "eyebrow": "4",
+                "title": "Botão",
+                "text": "Uma forma e uma ação: encomendar, ver preços ou agendar."
+              }
+            ],
+            "bullets": [
+              "No caderno: marca · três palavras · cores · letras · botão.",
+              "Você pode mudar de ideia. Registre o que mudou e por quê."
+            ],
+            "teacher": {
+              "steps": [
+                "3 min · Registro dos quatro campos no caderno.",
+                "3 min · Exemplo: Café da Esquina; acolhedor, simples, quente.",
+                "2 min · Cada estudante propõe uma frase de botão para o café."
+              ],
+              "watch": "A linha está registrada; escolhas ainda podem ficar em branco.",
+              "rescue": "Usar o exemplo como ponto de partida, sem exigir cópia de quadros extensos."
+            }
+          },
+          {
+            "title": "Dá para ler?",
+            "block": 1,
+            "layout": "dense-cards",
+            "heading": "Você consegue ler sem esforço?",
+            "lede": "Observe a frase em cada fundo. Qual combinação você mudaria?",
+            "cards": [
+              {
+                "eyebrow": "1",
+                "title": "Claro no escuro",
+                "text": "",
+                "visual": "contrast1"
+              },
+              {
+                "eyebrow": "2",
+                "title": "Cinza no cinza",
+                "text": "",
+                "visual": "contrast2"
+              },
+              {
+                "eyebrow": "3",
+                "title": "Escuro no claro",
+                "text": "",
+                "visual": "contrast3"
+              },
+              {
+                "eyebrow": "4",
+                "title": "Claro no claro",
+                "text": "",
+                "visual": "contrast4"
+              }
+            ],
+            "bullets": [
+              "Anote 1 a 4: manter ou mudar? Justifique uma escolha.",
+              "Ler bem vem antes de escolher sua cor favorita."
+            ],
+            "teacher": {
+              "steps": [
+                "2 min · Observar as quatro combinações projetadas.",
+                "3 min · Votação individual e justificativas.",
+                "2 min · Comparar as justificativas.",
+                "2 min · Síntese e previsão do resultado no verificador."
+              ],
+              "watch": "Referência privada: 1 e 3 tendem a favorecer leitura; 2 e 4 precisam de revisão. A avaliação depende dos tons e do tamanho. Não tratar o teste visual como medição WCAG.",
+              "rescue": "Mostrar apenas as duas combinações produzidas e pedir uma correção possível."
+            }
+          },
+          {
+            "title": "Teste de contraste no navegador",
+            "block": 1,
+            "layout": "dense-cards",
+            "heading": "Teste suas cores antes de aplicar",
+            "lede": "Contraste mede a diferença entre a cor das letras e a cor atrás delas.",
+            "cards": [
+              {
+                "eyebrow": "1",
+                "title": "Copie as cores",
+                "text": "No Coolors: Text color = letras. Background color = fundo. Use os códigos com #."
+              },
+              {
+                "eyebrow": "2",
+                "title": "Leia o resultado",
+                "text": "A meta desta atividade é 4,5:1 ou mais. Um número maior indica mais contraste."
+              },
+              {
+                "eyebrow": "3",
+                "title": "Ajuste e repita",
+                "text": "Abaixo da meta? Afaste os tons: um mais claro, outro mais escuro. Teste de novo."
+              },
+              {
+                "eyebrow": "4",
+                "title": "Guarde a escolha",
+                "text": "Anote os dois códigos e o resultado. Aplique essas mesmas cores no Photopea."
+              }
+            ],
+            "bullets": [
+              "Treino: letras #999999 sobre #D1D1D1. Troque as letras por #181818 e compare.",
+              "Depois, teste as suas cores. Texto sobre foto ou degradê precisa de outra análise."
+            ],
+            "resources": [
+              {
+                "label": "Testar contraste no Coolors",
+                "href": "https://coolors.co/contrast-checker",
+                "qr": "assets/qr/coolors-contrast.png"
+              },
+              {
+                "label": "Alternativa: WebAIM",
+                "href": "https://webaim.org/resources/contrastchecker/",
+                "qr": "assets/qr/webaim-contrast.png"
+              }
+            ],
+            "teacher": {
+              "steps": [
+                "5 min · Dentro do tempo já reservado à leitura: comparar a previsão visual com a razão no verificador."
+              ],
+              "watch": "A meta de 4,5:1 é uma simplificação conservadora para o exercício; não representa uma certificação completa. WCAG AA permite 3:1 para texto grande e tem exceção para logotipos. Referência: https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+              "rescue": "Se Coolors não abrir, usar WebAIM: Foreground é texto e Background é fundo. Evitar funções Pro; o teste manual basta."
+            }
+          },
+          {
+            "title": "Primeiro arquivo",
+            "block": 1,
+            "layout": "dense-cards",
+            "heading": "Seu primeiro arquivo no Photopea",
+            "lede": "Só três ferramentas hoje: texto, mover e retângulo.",
+            "cards": [
+              {
+                "eyebrow": "1",
+                "title": "Abrir",
+                "text": "photopea.com → File → New. Tamanho: 1200 × 800 px. Fundo branco → Create."
+              },
+              {
+                "eyebrow": "2",
+                "title": "Escrever",
+                "text": "Texto (T): clique na tela e digite Café da Esquina. Confirme no visto, lá em cima."
+              },
+              {
+                "eyebrow": "3",
+                "title": "Experimentar",
+                "text": "Mover (V): arraste o nome. Texto (T): selecione as letras para mudar tamanho ou cor."
+              },
+              {
+                "eyebrow": "4",
+                "title": "Guardar",
+                "text": "File → Save as PSD → identidade.psd. Esse arquivo permite continuar editando."
+              }
+            ],
+            "bullets": [
+              "Em português: Arquivo → Novo; Arquivo → Salvar como PSD.",
+              "Pode seguir quando: o nome aparece na tela e o arquivo está salvo."
+            ],
+            "teacher": {
+              "steps": [
+                "2 min · Abertura do editor e criação do documento junto com a turma.",
+                "4 min · Texto, confirmação e movimento: uma ação por vez, seguida de execução.",
+                "3 min · Salvar PSD e conferir o arquivo.",
+                "1 min · Pausa às 19:45; manter a aba aberta."
+              ],
+              "watch": "Editor aberto e um texto editável; aparência ainda livre.",
+              "rescue": "Se houver atraso, encerrar a etapa com título e PSD. Cor e composição entram depois."
+            },
+            "resources": [
+              {
+                "label": "Abrir Photopea",
+                "href": "https://www.photopea.com/",
+                "qr": "assets/qr/photopea.png"
+              }
+            ]
+          },
+          {
+            "title": "Lanche",
+            "block": 1,
+            "pace": "break",
+            "heading": "Lanche · retorno às 20:05",
+            "lede": "Na volta, a peça ganha nome, personalidade e cores.",
+            "promptLabel": "Combinado",
+            "prompt": "Salve o PSD e mantenha a aba do editor aberta.",
+            "teacher": {
+              "steps": [
+                "Intervalo de 19:45 a 20:05.",
+                "Retomada às 20:05 com a chamada."
+              ],
+              "watch": "Arquivos preservados.",
+              "rescue": "Retomar pelo título da atividade seguinte."
+            }
+          },
+          {
+            "title": "Atividade 1 · Marca e três palavras",
+            "block": 2,
+            "layout": "dense-cards",
+            "heading": "Que personalidade sua marca tem?",
+            "lede": "Escolha uma das quatro. Seu projeto continua com ela até o fim da noite.",
+            "cards": [
+              {
+                "eyebrow": "A",
+                "title": "Agulha Fina · tatuagem",
+                "text": "Atende à noite, público jovem. Quer parecer forte e caprichada."
+              },
+              {
+                "eyebrow": "B",
+                "title": "Dona Zizi · bolos caseiros",
+                "text": "Vende por encomenda no bairro. Quer parecer afetiva e caseira."
+              },
+              {
+                "eyebrow": "C",
+                "title": "Roda Livre · bicicletas",
+                "text": "Conserta no mesmo dia. Quer parecer prática e resistente."
+              },
+              {
+                "eyebrow": "D",
+                "title": "Passo Certo · fisioterapia",
+                "text": "Atende idosos e atletas. Quer parecer calma e confiável."
+              }
+            ],
+            "bullets": [
+              "1. No caderno: marca + três palavras sobre o jeito dela. Exemplo: próxima, cuidadosa, alegre.",
+              "2. No editor: nome da marca + uma frase curta sobre o serviço.",
+              "Pode seguir quando: as três palavras combinam com o que a marca oferece."
+            ],
+            "teacher": {
+              "steps": [
+                "3 min · Chamada das 20:05 e retomada do arquivo.",
+                "4 min · Comparar “bonito” com “acolhedor” no exemplo do café.",
+                "8 min · Escolha individual e edição de nome e frase.",
+                "5 min · Leitura da própria proposta e revisão de uma palavra vaga."
+              ],
+              "watch": "Uma marca e três palavras por estudante.",
+              "rescue": "Oferecer Dona Zizi: afetiva, cuidadosa, caseira. Frase: Bolos feitos para compartilhar."
+            }
+          },
+          {
+            "title": "Atividade 2 · Paleta com papéis",
+            "block": 2,
+            "layout": "dense-cards",
+            "heading": "Uma cor para cada função",
+            "lede": "Fundo é a base. Texto precisa aparecer. Destaque chama para a ação.",
+            "cards": [
+              {
+                "eyebrow": "P1",
+                "title": "Noite",
+                "text": "",
+                "visual": "palette1"
+              },
+              {
+                "eyebrow": "P2",
+                "title": "Doce",
+                "text": "",
+                "visual": "palette2"
+              },
+              {
+                "eyebrow": "P3",
+                "title": "Oficina",
+                "text": "",
+                "visual": "palette3"
+              },
+              {
+                "eyebrow": "P4",
+                "title": "Calma",
+                "text": "",
+                "visual": "palette4"
+              }
+            ],
+            "bullets": [
+              "1. Escolha três cores e teste texto + fundo no Coolors: meta de 4,5:1.",
+              "2. No Photopea, crie o fundo com Retângulo (U). Arraste a camada para baixo do texto.",
+              "Salve o PSD e anote os dois códigos e o contraste obtido."
+            ],
+            "teacher": {
+              "steps": [
+                "4 min · Seleção de uma paleta e leitura dos papéis das cores.",
+                "5 min · Demonstrar retângulo no modo Shape, preenchimento por código e ordem das camadas.",
+                "8 min · Aplicação individual de fundo e texto.",
+                "5 min · Testar texto e fundo no Coolors, trocar uma cor se necessário e registrar a razão.",
+                "3 min · Salvar o PSD e conferir quem precisa retomar."
+              ],
+              "watch": "A experimentação tem uma justificativa; o destaque não domina o texto.",
+              "rescue": "Se o fundo cobrir o texto, arrastar a camada do fundo para baixo no painel Layers/Camadas."
+            },
+            "resources": [
+              {
+                "label": "Testar contraste no Coolors",
+                "href": "https://coolors.co/contrast-checker",
+                "qr": "assets/qr/coolors-contrast.png"
+              }
+            ]
+          },
+          {
+            "title": "Atividade 3 · Letras e teste de leitura",
+            "block": 3,
+            "layout": "dense-cards",
+            "heading": "Organize a leitura com títulos e textos",
+            "lede": "Seu par de letras precisa combinar com a marca e facilitar a leitura.",
+            "cards": [
+              {
+                "eyebrow": "1",
+                "title": "Título",
+                "text": "Selecione o nome com Texto (T). Teste tamanho 64 ou maior."
+              },
+              {
+                "eyebrow": "2",
+                "title": "Frase",
+                "text": "Use uma fonte simples e tamanho 28 ou maior."
+              },
+              {
+                "eyebrow": "3",
+                "title": "Comparação",
+                "text": "No Google Fonts, digite sua marca em Preview text. Compare duas fontes e anote a preferida."
+              },
+              {
+                "eyebrow": "4",
+                "title": "Leitura",
+                "text": "Zoom em 50%: leia nome e frase. Ficou difícil? Aumente a letra ou mude a cor."
+              }
+            ],
+            "bullets": [
+              "Busque a fonte no Photopea. Se não aparecer, use uma parecida disponível; no máximo duas.",
+              "Salve identidade-v1.png: File → Export As → PNG → Save.",
+              "Confira a leitura em 50% e salve o PSD. Não precisa baixar fontes."
+            ],
+            "teacher": {
+              "steps": [
+                "3 min · Chamada das 20:50 e retomada das palavras.",
+                "5 min · Demonstrar troca de fonte e tamanho no título, com a edição confirmada.",
+                "10 min · Produção individual do par de letras.",
+                "7 min · Comparar duas fontes no Google Fonts com o nome da marca; aplicar uma disponível no editor.",
+                "7 min · Reduzir o zoom; revisar leitura e registrar o ajuste.",
+                "5 min · Exportar identidade-v1.png e salvar o PSD.",
+                "3 min · Conferir arquivos e recolher dois exemplos de melhoria."
+              ],
+              "watch": "Ninguém precisa desenhar letras nem instalar fontes. Zoom é uma conferência de leitura, não certificação de acessibilidade.",
+              "rescue": "Usar a mesma família: título em negrito e texto regular. Quem avançou adapta a composição para uma tela estreita."
+            },
+            "resources": [
+              {
+                "label": "Comparar letras no Google Fonts",
+                "href": "https://fonts.google.com/",
+                "qr": "assets/qr/google-fonts.png"
+              }
+            ]
+          },
+          {
+            "title": "Atividade 4 · Painel de estilo",
+            "block": 4,
+            "layout": "dense-cards",
+            "heading": "Agora, dê uma ação à sua peça",
+            "lede": "Título, frase e botão. Cada parte tem um trabalho.",
+            "cards": [
+              {
+                "eyebrow": "1",
+                "title": "Nome",
+                "text": "Mostre o nome primeiro. Deixe espaço ao redor."
+              },
+              {
+                "eyebrow": "2",
+                "title": "Frase",
+                "text": "Diga o que a marca oferece em uma frase."
+              },
+              {
+                "eyebrow": "3",
+                "title": "Botão",
+                "text": "Retângulo (U) + Texto (T). Use a cor de destaque e uma ação curta."
+              },
+              {
+                "eyebrow": "4",
+                "title": "Unidade",
+                "text": "Repita as cores e fontes. Hoje o botão é só visual: não precisa funcionar."
+              }
+            ],
+            "bullets": [
+              "Teste no Coolors a cor das letras + a cor do botão: meta de 4,5:1.",
+              "Confira o espaço ao redor e o alinhamento de nome, frase e botão. Salve o PSD."
+            ],
+            "teacher": {
+              "steps": [
+                "3 min · Chamada das 21:30 e retomada de nome, frase e botão.",
+                "4 min · Demonstrar retângulo e texto do botão; texto escuro sobre destaque claro.",
+                "8 min · Produção individual do botão e ajuste dos espaços.",
+                "5 min · Conferência e conclusão da peça essencial."
+              ],
+              "watch": "A peça comunica uma ação; ainda há tempo reservado para revisão e exportação.",
+              "rescue": "Se houver atraso, manter um retângulo simples, título e frase. Quem terminou cria uma variação para celular sem substituir a entrega principal."
+            },
+            "resources": [
+              {
+                "label": "Testar contraste no Coolors",
+                "href": "https://coolors.co/contrast-checker",
+                "qr": "assets/qr/coolors-contrast.png"
+              }
+            ]
+          },
+          {
+            "title": "Segunda versão · O que ficou melhor?",
+            "block": 4,
+            "layout": "dense-cards",
+            "heading": "Uma mudança que faz diferença",
+            "lede": "Compare com a versão 1. O que pode ficar mais claro?",
+            "cards": [
+              {
+                "eyebrow": "1",
+                "title": "Encontre",
+                "text": "Você lê o nome primeiro? Entende a frase? Encontra o botão?"
+              },
+              {
+                "eyebrow": "2",
+                "title": "Escolha",
+                "text": "Escolha um problema: cor, letra ou espaço."
+              },
+              {
+                "eyebrow": "3",
+                "title": "Corrija",
+                "text": "Mudou uma cor? Repita o contraste. Mudou a letra ou o espaço? Confira a peça em 50%."
+              },
+              {
+                "eyebrow": "4",
+                "title": "Registre",
+                "text": "Anote a mudança e o resultado: contraste antes/depois ou o que ficou mais fácil de ler."
+              }
+            ],
+            "bullets": [
+              "Pode seguir quando: a melhora é visível e você consegue explicá-la.",
+              "Terminou? Crie uma versão mais estreita, como uma tela de celular."
+            ],
+            "teacher": {
+              "steps": [
+                "2 min · Apresentação dos três critérios de leitura.",
+                "3 min · Comparação individual com a primeira versão.",
+                "3 min · Aplicação da melhoria e registro.",
+                "2 min · Dois relatos breves de antes e depois."
+              ],
+              "watch": "A revisão modifica uma escolha concreta.",
+              "rescue": "Se não houver PNG inicial, usar o registro das escolhas no caderno como referência."
+            },
+            "resources": [
+              {
+                "label": "Testar contraste no Coolors",
+                "href": "https://coolors.co/contrast-checker",
+                "qr": "assets/qr/coolors-contrast.png"
+              }
+            ]
+          },
+          {
+            "title": "Fechamento",
+            "block": 4,
+            "layout": "dense-cards",
+            "heading": "Antes, depois e o que você aprendeu",
+            "lede": "Guarde a versão editável e as duas imagens.",
+            "cards": [
+              {
+                "eyebrow": "1",
+                "title": "Editável",
+                "text": "File → Save as PSD → identidade.psd. É o arquivo para editar depois."
+              },
+              {
+                "eyebrow": "2",
+                "title": "Imagem final",
+                "text": "File → Export As → PNG → Save → identidade-final.png."
+              },
+              {
+                "eyebrow": "3",
+                "title": "Conferência",
+                "text": "Abra o PNG final. Nome, frase e botão aparecem? Guarde também identidade-v1.png."
+              }
+            ],
+            "teacher": {
+              "steps": [
+                "4 min · Salvar, exportar e reabrir a imagem final; conferir por amostragem.",
+                "3 min · Registro da frase de saída e encerramento às 22:07."
+              ],
+              "watch": "Arquivos na pasta Aula-06; sem publicação obrigatória ou atividade para casa.",
+              "rescue": "Se o sistema acrescentou sufixo ao PSD, identificar o mais recente antes de guardar. Se a prática ocorreu no caderno, conferir o antes e depois na página."
+            },
+            "bullets": [
+              "No caderno: “Minha marca comunica ___; a mudança mais importante foi ___.”",
+              "Próxima aula: espaço, proximidade e alinhamento."
+            ],
+            "promptLabel": "Entrega da noite",
+            "prompt": "PSD + PNG inicial + PNG final · pasta Aula-06 no computador."
+          }
         ]
       },
+
       "07": {
         "teacherGoal": "Conduzir a Aula 07 para que a turma produza composição gráfica para organizar informação e criar ritmo visual sem depender de comandos técnicos.",
         "plainLanguage": "Composição gráfica para organizar informação e criar ritmo visual sem depender de comandos técnicos. O foco é decidir, montar, comparar e testar; os bastidores técnicos aparecem apenas quando ajudam a compreender a função de uma interface.",
