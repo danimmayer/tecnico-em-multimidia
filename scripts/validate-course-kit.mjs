@@ -583,6 +583,134 @@ if (/\bring lights?\b|autorização falada|ficha de autorização/.test(designLe
   errors.push('Design Web Aula 05: material de Produção Audiovisual não pode entrar nesta aula');
 }
 
+const designLessonSix = designCourse.lessons.find((lesson) => lesson.num === '06');
+const designLessonSixSupport = context.window.SENAI_TEACHING_SUPPORT['design-web']?.lessons?.['06'];
+const designLessonSixSlides = designLessonSixSupport?.presentationSlides || [];
+const designLessonSixActivityTitles = [
+  'Atividade 1 · Marca e três palavras',
+  'Atividade 2 · Paleta com papéis',
+  'Atividade 3 · Letras e teste de leitura',
+  'Atividade 4 · Painel de estilo',
+  'Batalha de identidade'
+];
+const designLessonSixText = JSON.stringify({
+  lesson: designLessonSix,
+  support: designLessonSixSupport
+}).toLocaleLowerCase('pt-BR');
+const designLessonSixPublicSlideText = designLessonSixSlides.map((slide) => [
+  slide.title,
+  slide.kicker,
+  slide.heading,
+  slide.lede,
+  slide.prompt,
+  ...(slide.bullets || []),
+  ...(slide.cards || []).flatMap((card) => [card.eyebrow, card.title, card.text])
+].join('\n')).join('\n');
+const designLessonSixPublicText = `${JSON.stringify({
+  description: designLessonSix?.description,
+  schedule: designLessonSix?.schedule,
+  methodology: designLessonSix?.methodology,
+  resources: designLessonSix?.resources
+})}\n${designLessonSixPublicSlideText}`.toLocaleLowerCase('pt-BR');
+
+if (designLessonSixSlides.length !== 12 || designLessonSixSupport?.appendDefaultClosing !== false) {
+  errors.push('Design Web Aula 06: a apresentação precisa ter exatamente 13 slides controlados (capa + 12 slides próprios)');
+}
+if (!designLessonSixSlides.some((item) => item.pace === 'break')) {
+  errors.push('Design Web Aula 06: o intervalo precisa de slide próprio');
+}
+if (designLessonSixSupport?.studentSheet || designLessonSixSlides.some((item) => item.resource || item.resources)) {
+  errors.push('Design Web Aula 06: a aula não pode exigir ficha, link ou material externo');
+}
+if (!designLessonSix?.resources?.includes('caderno e caneta')) {
+  errors.push('Design Web Aula 06: o material discente precisa ser caderno e caneta');
+}
+if (!designLessonSix?.resources?.includes('Sem impressão')) {
+  errors.push('Design Web Aula 06: a independência de impressão precisa estar explícita');
+}
+if (!designLessonSix?.resources?.includes('sem programa de design')) {
+  errors.push('Design Web Aula 06: a independência de software de design precisa estar explícita');
+}
+for (const activityTitle of designLessonSixActivityTitles) {
+  const activitySlide = designLessonSixSlides.find((item) => item.title === activityTitle);
+  if (!activitySlide || (activitySlide.cards || []).length !== 4 || (activitySlide.bullets || []).length < 2) {
+    errors.push(`Design Web Aula 06: ${activityTitle} precisa trazer quatro cartões e os critérios completos no próprio slide`);
+  }
+}
+if (designLessonSixSlides.some((slide) => (slide.cards || []).length > 4)) {
+  errors.push('Design Web Aula 06: nenhum slide pode passar de quatro cartões no projetor 5:4');
+}
+if ((designLessonSixSupport?.check || []).length < 5) {
+  errors.push('Design Web Aula 06: conferência final insuficiente');
+}
+if (
+  designLessonSixText.includes('ficha impressa')
+  || designLessonSixText.includes('photopea')
+  || designLessonSixText.includes('http')
+) {
+  errors.push('Design Web Aula 06: permaneceu dependência de ficha impressa, Photopea ou link externo');
+}
+if (!fs.readFileSync(fromRoot('scripts/rebuild-design-web-no-code.mjs'), 'utf8').includes("support['design-web'].lessons['06'] =")) {
+  errors.push('Design Web Aula 06: personalização regenerável ausente do rebuild');
+}
+
+const designLessonSixStepMinutes = (slide) => (slide.teacher?.steps || []).reduce((total, step) => {
+  const match = String(step).match(/^(\d+) min\b/);
+  return total + (match ? Number(match[1]) : 0);
+}, 0);
+const designLessonSixBlockMinutes = { 1: 0, 2: 0, 3: 0, 4: 0 };
+for (const slide of designLessonSixSlides) {
+  if (slide.pace === 'break') continue;
+  designLessonSixBlockMinutes[slide.block] += designLessonSixStepMinutes(slide);
+}
+if (
+  designLessonSixBlockMinutes[1] !== 45
+  || designLessonSixBlockMinutes[2] !== 45
+  || designLessonSixBlockMinutes[3] !== 40
+  || designLessonSixBlockMinutes[4] !== 37
+) {
+  errors.push(`Design Web Aula 06: os passos do professor precisam fechar 45+45+40+37 min, vieram ${designLessonSixBlockMinutes[1]}+${designLessonSixBlockMinutes[2]}+${designLessonSixBlockMinutes[3]}+${designLessonSixBlockMinutes[4]}`);
+}
+if (
+  !designLessonSix?.observation?.includes('19:00')
+  || !designLessonSix?.observation?.includes('19:45')
+  || !designLessonSix?.observation?.includes('22:07')
+) {
+  errors.push('Design Web Aula 06: o horário 19:00, lanche 19:45 e fim 22:07 precisa estar explícito');
+}
+if (designLessonSixPublicText.includes('gabarito')) {
+  errors.push('Design Web Aula 06: o gabarito do jogo de contraste não pode aparecer no slide da turma');
+}
+const designLessonSixOtherSlidesText = designLessonSixSlides
+  .filter((item) => item.title !== 'Mapa da noite')
+  .map((item) => JSON.stringify({
+    title: item.title,
+    kicker: item.kicker,
+    heading: item.heading,
+    lede: item.lede,
+    prompt: item.prompt,
+    bullets: item.bullets,
+    cards: item.cards
+  }))
+  .join('\n');
+if (/\d{1,2}:\d{2}\s*[–-]\s*\d{1,2}:\d{2}/.test(designLessonSixOtherSlidesText)) {
+  errors.push('Design Web Aula 06: as faixas de horário devem ficar concentradas no mapa da noite');
+}
+if (/\d+\s*min\s*·/.test(designLessonSixPublicSlideText)) {
+  errors.push('Design Web Aula 06: o slide da turma não pode cronometrar a condução');
+}
+if (designLessonSixSlides.some((slide) => slide.prompt && !slide.promptLabel)) {
+  errors.push('Design Web Aula 06: prompt da turma precisa de rótulo próprio, não o padrão do kit');
+}
+for (const required of ['três palavras', 'fundo', 'destaque', 'olho apertado', 'par de letras']) {
+  if (!designLessonSixPublicText.includes(required)) {
+    errors.push(`Design Web Aula 06: falta "${required}" na camada da turma`);
+  }
+}
+if (/\bring lights?\b|autorização falada|ficha de autorização/.test(designLessonSixText)) {
+  errors.push('Design Web Aula 06: material de Produção Audiovisual não pode entrar nesta aula');
+}
+
 for (const lesson of designCourse.lessons) {
   const studentFacingText = JSON.stringify({
     title: lesson.title,

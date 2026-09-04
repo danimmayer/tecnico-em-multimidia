@@ -87,6 +87,10 @@ descreve a imagem e monta um painel com crédito.
 A turma produz painéis de estilo, grades, componentes e versões para celular,
 tablet, computador, post e story. CSS aparece como bastidor da aparência; a
 publicação é assistida e só ocorre após checklist e revisão de dados pessoais.
+Na Aula 06, a noite também acontece só com projetor e caderno: a dupla escolhe
+uma marca do banco projetado, escreve três palavras de personalidade, monta a
+paleta com papel de fundo, texto e destaque, escolhe o par de letras, prova a
+leitura com o teste do olho apertado e fecha o painel na batalha de identidade.
 
 ### Aula 11 · Interação e feedback
 

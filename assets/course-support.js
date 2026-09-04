@@ -2178,36 +2178,538 @@ window.SENAI_TEACHING_SUPPORT = {
             }
           }
         ]
-      },      "06": {
-        "teacherGoal": "Conduzir a Aula 06 para que a turma produza cores, tipografia, contraste e personalidade de marca aplicados a um painel de estilo digital.",
-        "plainLanguage": "Cores, tipografia, contraste e personalidade de marca aplicados a um painel de estilo digital. O foco é decidir, montar, comparar e testar; os bastidores técnicos aparecem apenas quando ajudam a compreender a função de uma interface.",
-        "say": "Hoje o resultado precisa ficar visível. Primeiro eu mostro o exemplo e os critérios; depois vocês produzem em equipe e conferem a entrega antes de sair.",
+      },
+      "06": {
+        "appendDefaultClosing": false,
+        "teacherGoal": "Conduzir a Aula 06 de Design Web só com projetor e caderno, do 19:00 ao 22:07, sem folha impressa e sem programa de design.",
+        "plainLanguage": "Identidade visual é escolher três palavras e repetir as mesmas cores, letras e formas em tudo. A dupla escolhe, prova que dá para ler e monta o painel no caderno.",
+        "say": "Hoje é Design Web. Vocês escolhem uma marca, três palavras, três cores e duas letras, e provam no caderno que dá para ler. Não tem folha para preencher e não tem programa para abrir.",
         "demo": [
-          "Demonstração curta \"mesmo conteúdo, três estilos\": o professor alterna três aparências prontas e a turma identifica o que mudou em cor, tipografia, forma, espaçamento e tom. A referência técnica aparece somente como bastidor.",
-          "Caça à personalidade: grupos recebem marcas fictícias e escolhem três palavras de personalidade. Selecionam combinações de cor e tipografia compatíveis, justificando o que cada escolha comunica.",
-          "Produção do style tile: paleta, par tipográfico, botões, cartões, imagens e exemplos de títulos em ferramenta visual. Teste de contraste nas combinações principais."
+          "Mostro a mesma frase em três estilos e a turma diz o que mudou.",
+          "Escrevo no quadro os quatro campos do kit e a turma copia.",
+          "Leio as quatro combinações de cor. A turma diz SIM ou NÃO e uma frase do porquê.",
+          "Aponto o kit pronto do Café da Esquina: palavras, cores, letras e botão."
         ],
-        "studentDeliverable": "Batalha de identidade: duas equipes trocam painéis, tentam adivinhar as três palavras de personalidade e devolvem um acerto e uma sugestão.",
+        "studentDeliverable": "Uma página de caderno por dupla com marca, três palavras, paleta com papéis, par de letras, botão e mini-painel aplicado.",
         "check": [
-          "A entrega visual corresponde ao objetivo e pode ser aberta ou apresentada sem explicação adicional.",
-          "O grupo justificou pelo menos duas decisões com critérios da aula.",
-          "Arquivos ou folhas estão nomeados e organizados na pasta de entrega.",
-          "A revisão final retirou dados pessoais e confirmou legibilidade."
+          "A marca escolhida tem três palavras de personalidade escritas.",
+          "As três cores estão anotadas com papel: fundo, texto e destaque.",
+          "O par de letras está escrito à mão, com o nome da marca imitando o título.",
+          "O teste do olho apertado foi feito e a troca de cor, se precisou, está anotada.",
+          "O painel tem as seis caixas preenchidas e os nomes da dupla no alto da página."
         ],
-        "fallback": "Se a ferramenta ou a internet falhar, realizar a mesma produção em papel A3 com cartões, canetas e a ficha impressa; fotografar ou guardar a folha como evidência.",
+        "fallback": "Se o projetor falhar, copio no quadro os quatro campos do kit, as quatro marcas, as quatro paletas, os quatro pares de letras e o checklist. A dupla segue no caderno.",
+        "extension": "Se a dupla terminar no tempo, refaz o mini-painel trocando fundo claro por escuro e anota o que precisou mudar para continuar legível. Não começa outra tarefa.",
         "commonProblems": [
           [
-            "A equipe começa sem decidir o objetivo",
-            "Retomar público, mensagem e ação principal antes de escolher aparência."
+            "A dupla pede folha ou link",
+            "Aponto o slide e peço cópia no caderno."
           ],
           [
-            "A produção fica bonita, mas pouco clara",
-            "Pedir que outro grupo cumpra uma tarefa e registrar onde ele hesita."
+            "A dupla quer abrir programa de design",
+            "Mantenho o banco projetado. A escolha é escrita à mão."
           ],
           [
-            "O tempo termina antes do acabamento",
-            "Fechar primeiro a entrega essencial e deixar variações como extensão opcional."
+            "As três palavras viram “bonito, legal, top”",
+            "Peço uma palavra de sentimento e uma de jeito de trabalhar."
+          ],
+          [
+            "A dupla usa a cor de destaque no texto inteiro",
+            "Relembro o papel: destaque só no botão e em detalhe pequeno."
+          ],
+          [
+            "A dupla termina cedo",
+            "Peço a versão do mini-painel com o fundo trocado."
           ]
+        ],
+        "presentationSlides": [
+          {
+            "title": "Mapa da noite",
+            "block": 1,
+            "layout": "dense-cards",
+            "kicker": "Identidade visual",
+            "heading": "Hoje vocês dão personalidade a uma marca",
+            "lede": "Duplas. Caderno aberto. Tudo o que precisam está neste projetor.",
+            "cards": [
+              {
+                "eyebrow": "19:00–19:45",
+                "title": "Aprender o kit",
+                "text": "Três estilos comparados, quatro campos e o jogo do contraste."
+              },
+              {
+                "eyebrow": "19:45–20:05",
+                "title": "Lanche",
+                "text": "Volta às 20:05 na mesma dupla."
+              },
+              {
+                "eyebrow": "20:05–20:50",
+                "title": "Marca e cores",
+                "text": "Escolher a marca, escrever três palavras e montar a paleta."
+              },
+              {
+                "eyebrow": "20:50–22:07",
+                "title": "Letras, painel e batalha",
+                "text": "Testar a leitura, montar o painel e trocar com a dupla vizinha."
+              }
+            ],
+            "promptLabel": "Material",
+            "prompt": "Caderno e caneta. Sem folha impressa e sem programa de design.",
+            "teacher": {
+              "steps": [
+                "2 min · Faço a chamada das 19:00 e formo as duplas.",
+                "1 min · Leio o mapa e fixo: lanche às 19:45, fim às 22:07."
+              ],
+              "watch": "Cada aluno está numa dupla com caderno na mesa.",
+              "rescue": "Atrasado entra na dupla mais próxima e copia o mapa em uma linha."
+            }
+          },
+          {
+            "title": "Mesmo conteúdo, três estilos",
+            "block": 1,
+            "layout": "dense-cards",
+            "kicker": "Comparação",
+            "heading": "A mesma frase muda de dono conforme o estilo",
+            "lede": "O texto é igual nos três. Só mudam cor, letra, forma do canto e espaço.",
+            "cards": [
+              {
+                "eyebrow": "Estilo 1",
+                "title": "Sério",
+                "text": "Fundo claro, letra fina, canto reto, azul escuro. Parece consultório."
+              },
+              {
+                "eyebrow": "Estilo 2",
+                "title": "Alegre",
+                "text": "Fundo creme, letra arredondada, canto redondo, rosa forte. Parece confeitaria."
+              },
+              {
+                "eyebrow": "Estilo 3",
+                "title": "Noturno",
+                "text": "Fundo quase preto, letra grossa maiúscula, canto reto, laranja. Parece estúdio de tatuagem."
+              },
+              {
+                "eyebrow": "Conclusão",
+                "title": "O que mudou",
+                "text": "Cor, letra, forma e espaço. A frase continua exatamente a mesma."
+              }
+            ],
+            "bullets": [
+              "Identidade visual é repetir as mesmas escolhas em todas as telas da marca.",
+              "Quem olha decide em segundos se aquilo é para ele."
+            ],
+            "promptLabel": "Pergunta para a dupla",
+            "prompt": "Qual dos três estilos venderia bolo de aniversário? Digam por quê em uma frase.",
+            "teacher": {
+              "speech": "A aparência não é enfeite: ela diz para quem a marca fala.",
+              "steps": [
+                "5 min · Descrevo os três estilos e a turma aponta o que mudou.",
+                "5 min · Recolho três respostas da pergunta e escrevo no quadro as palavras que aparecerem."
+              ],
+              "watch": "A turma cita cor, letra ou forma, e não “é mais bonito”.",
+              "rescue": "Comparo só o estilo 1 com o estilo 3 e peço uma diferença por vez."
+            }
+          },
+          {
+            "title": "O kit de identidade",
+            "block": 1,
+            "layout": "dense-cards",
+            "kicker": "Modelo para copiar",
+            "heading": "Copiem este kit no caderno agora",
+            "lede": "Quatro campos. Sem eles, o painel de hoje não fecha.",
+            "cards": [
+              {
+                "eyebrow": "1",
+                "title": "Personalidade",
+                "text": "Três palavras que a marca quer transmitir."
+              },
+              {
+                "eyebrow": "2",
+                "title": "Cores",
+                "text": "Três, com papel: fundo, texto e destaque."
+              },
+              {
+                "eyebrow": "3",
+                "title": "Letras",
+                "text": "Duas: uma para o título, uma para o texto."
+              },
+              {
+                "eyebrow": "4",
+                "title": "Botão",
+                "text": "Forma do canto e a frase de ação que ele carrega."
+              }
+            ],
+            "bullets": [
+              "LINHA PARA COPIAR: Marca ___ · Palavras ___, ___, ___ · Fundo ___ · Texto ___ · Destaque ___ · Título ___ · Texto ___ · Botão ___.",
+              "Deixem a linha pronta e em branco. Ela será preenchida depois do lanche."
+            ],
+            "teacher": {
+              "steps": [
+                "4 min · A turma copia a linha. Eu escrevo a mesma linha no quadro.",
+                "2 min · Preencho um exemplo em voz alta com uma padaria fictícia.",
+                "2 min · Uma dupla lê a regra: sem os quatro campos, o painel não fecha."
+              ],
+              "watch": "Todas as duplas têm a linha em branco pronta no caderno.",
+              "rescue": "Ditado campo a campo. Quem não tem caderno usa folha da mochila, sem dado pessoal."
+            }
+          },
+          {
+            "title": "Dá para ler?",
+            "block": 1,
+            "layout": "dense-cards",
+            "kicker": "Jogo do contraste",
+            "heading": "Quatro combinações. Digam SIM ou NÃO",
+            "lede": "Regra da noite: uma cor bem clara com uma cor bem escura. Duas cores médias juntas somem.",
+            "cards": [
+              {
+                "eyebrow": "1",
+                "title": "Quase branco sobre quase preto",
+                "text": "Texto claríssimo em fundo escuríssimo."
+              },
+              {
+                "eyebrow": "2",
+                "title": "Cinza médio sobre cinza claro",
+                "text": "Texto e fundo com tons próximos."
+              },
+              {
+                "eyebrow": "3",
+                "title": "Azul escuro sobre creme",
+                "text": "Texto escuro em fundo bem claro."
+              },
+              {
+                "eyebrow": "4",
+                "title": "Amarelo sobre branco",
+                "text": "Texto claro em fundo claro."
+              }
+            ],
+            "bullets": [
+              "Respondam em voz alta e escrevam SIM ou NÃO na margem do caderno.",
+              "TESTE DO OLHO APERTADO: apertem os olhos; se o texto some, a combinação está fraca."
+            ],
+            "teacher": {
+              "steps": [
+                "11 min · Faço as quatro combinações, cerca de 3 minutos cada: leio, ouço e peço a frase do porquê.",
+                "3 min · Confirmo as respostas só nas minhas notas e reforço a regra em uma frase."
+              ],
+              "watch": "Gabarito, só para mim: 1 SIM · 2 NÃO · 3 SIM · 4 NÃO. Não projeto isso.",
+              "rescue": "Resolvo a 1 em voz alta e a turma faz a 2. Seguimos nesse ritmo."
+            }
+          },
+          {
+            "title": "Exemplo resolvido",
+            "block": 1,
+            "layout": "dense-cards",
+            "kicker": "Café da Esquina",
+            "heading": "Este é o kit pronto. Copiem as seis caixas vazias",
+            "lede": "A marca é a mesma da aula passada. Agora ela ganha personalidade.",
+            "cards": [
+              {
+                "eyebrow": "1",
+                "title": "Palavras",
+                "text": "Acolhedor · simples · quente."
+              },
+              {
+                "eyebrow": "2",
+                "title": "Cores",
+                "text": "Fundo creme claro · texto marrom escuro · destaque laranja."
+              },
+              {
+                "eyebrow": "3",
+                "title": "Letras",
+                "text": "Título em letra grossa arredondada. Texto em letra simples, sem enfeite."
+              },
+              {
+                "eyebrow": "4",
+                "title": "Botão",
+                "text": "Canto redondo, fundo laranja, texto escuro: Reservar mesa."
+              }
+            ],
+            "bullets": [
+              "No caderno, desenhem seis caixas vazias: marca, palavras, cores, letras, botão e mini-painel.",
+              "Lanche às 19:45. Na volta, essas caixas começam a ser preenchidas."
+            ],
+            "teacher": {
+              "steps": [
+                "6 min · Aponto cada parte do kit e a turma desenha as seis caixas vazias.",
+                "4 min · Aviso o lanche às 19:45 e o que acontece às 20:05."
+              ],
+              "watch": "Antes de sair, cada caderno tem as seis caixas desenhadas.",
+              "rescue": "Desenho as seis caixas no quadro e espero a cópia."
+            }
+          },
+          {
+            "title": "Lanche",
+            "block": 1,
+            "pace": "break",
+            "kicker": "Intervalo",
+            "heading": "Lanche · retorno às 20:05",
+            "lede": "Na volta, a dupla escolhe uma marca do banco projetado e escreve três palavras de personalidade.",
+            "promptLabel": "Combinado",
+            "prompt": "Voltem na mesma dupla, com caderno e caneta na mesa.",
+            "teacher": {
+              "steps": [
+                "Deixo este slide projetado durante o lanche.",
+                "Retomo às 20:05 em ponto com a chamada."
+              ],
+              "watch": "Ninguém começa a escolher a marca antes das 20:05.",
+              "rescue": "Turma dispersa: leio só o “pronto quando” da Atividade 1."
+            }
+          },
+          {
+            "title": "Atividade 1 · Marca e três palavras",
+            "block": 2,
+            "layout": "dense-cards",
+            "kicker": "Personalidade",
+            "heading": "Escolham uma marca e digam quem ela é em três palavras",
+            "lede": "Uma marca por dupla. As três palavras mandam em todas as escolhas de hoje.",
+            "cards": [
+              {
+                "eyebrow": "A",
+                "title": "Agulha Fina · tatuagem",
+                "text": "Atende à noite, público jovem. Quer parecer forte e caprichada."
+              },
+              {
+                "eyebrow": "B",
+                "title": "Dona Zizi · bolos caseiros",
+                "text": "Vende por encomenda no bairro. Quer parecer afetiva e caseira."
+              },
+              {
+                "eyebrow": "C",
+                "title": "Roda Livre · bicicletas",
+                "text": "Conserta no mesmo dia. Quer parecer prática e resistente."
+              },
+              {
+                "eyebrow": "D",
+                "title": "Passo Certo · fisioterapia",
+                "text": "Atende idosos e atletas. Quer parecer calma e confiável."
+              }
+            ],
+            "bullets": [
+              "ESCREVAM na linha do caderno: a letra da marca e as três palavras separadas por ponto.",
+              "Uma palavra diz o sentimento; outra diz o jeito de trabalhar; a terceira é livre.",
+              "PRONTO QUANDO: a dupla vizinha ouviu as três palavras e disse se combinam com a marca."
+            ],
+            "teacher": {
+              "steps": [
+                "3 min · Chamada das 20:05. Confirmo as duplas e leio as quatro marcas.",
+                "5 min · Escrevo três palavras para uma marca no quadro e mostro uma palavra fraca sendo trocada.",
+                "7 min · As duplas escolhem e escrevem. Circulo cobrando sentimento e jeito de trabalhar.",
+                "5 min · Troca com a dupla vizinha: ouvir as três palavras e dizer se combinam."
+              ],
+              "watch": "Nenhuma dupla com “bonito, legal, top”. Cada palavra precisa caber na marca escolhida.",
+              "rescue": "Dupla travada recebe duas palavras minhas e só escolhe a terceira."
+            }
+          },
+          {
+            "title": "Atividade 2 · Paleta com papéis",
+            "block": 2,
+            "layout": "dense-cards",
+            "kicker": "Cores",
+            "heading": "Escolham três cores e digam o papel de cada uma",
+            "lede": "Fundo, texto e destaque. O destaque só aparece no botão e em detalhes pequenos.",
+            "cards": [
+              {
+                "eyebrow": "P1 · Noite",
+                "title": "Escura e forte",
+                "text": "Fundo quase preto · texto quase branco · destaque laranja forte."
+              },
+              {
+                "eyebrow": "P2 · Doce",
+                "title": "Clara e afetiva",
+                "text": "Fundo creme · texto marrom escuro · destaque rosa forte."
+              },
+              {
+                "eyebrow": "P3 · Oficina",
+                "title": "Clara e direta",
+                "text": "Fundo cinza bem claro · texto azul quase preto · destaque amarelo forte."
+              },
+              {
+                "eyebrow": "P4 · Calma",
+                "title": "Clara e serena",
+                "text": "Fundo branco esverdeado · texto verde escuro · destaque verde médio."
+              }
+            ],
+            "bullets": [
+              "COPIEM a paleta escolhida com o papel de cada cor e escrevam em uma frase por que ela combina com as três palavras.",
+              "Marquem o tom de cada caixa com a caneta: risco fino para cor clara, risco cruzado para cor escura.",
+              "PRONTO QUANDO: as três cores estão escritas com papel e com a frase de justificativa."
+            ],
+            "teacher": {
+              "steps": [
+                "5 min · Leio as quatro paletas e mostro no quadro o risco fino e o risco cruzado.",
+                "12 min · As duplas escolhem, copiam e riscam as três caixas de cor.",
+                "5 min · Cobro a frase de justificativa ligando cor e palavras.",
+                "3 min · Confiro por amostragem se o destaque ficou fora do texto corrido e aviso a troca de bloco."
+              ],
+              "watch": "Nenhuma dupla usando a cor de destaque como cor de texto.",
+              "rescue": "Dupla indecisa recebe a paleta mais próxima das palavras dela e só escreve a justificativa."
+            }
+          },
+          {
+            "title": "Atividade 3 · Letras e teste de leitura",
+            "block": 3,
+            "layout": "dense-cards",
+            "kicker": "Tipografia",
+            "heading": "Escolham o par de letras e provem que dá para ler",
+            "lede": "Uma letra para o título, uma para o texto. Depois, o teste do olho apertado.",
+            "cards": [
+              {
+                "eyebrow": "L1",
+                "title": "Grossa e reta",
+                "text": "Título em bastão grosso maiúsculo. Texto em letra simples."
+              },
+              {
+                "eyebrow": "L2",
+                "title": "Alta e elegante",
+                "text": "Título com pezinhos e traço fino. Texto em letra simples."
+              },
+              {
+                "eyebrow": "L3",
+                "title": "Redonda e macia",
+                "text": "Título arredondado e cheio. Texto em letra simples."
+              },
+              {
+                "eyebrow": "L4",
+                "title": "Estreita e forte",
+                "text": "Título estreito maiúsculo. Texto em letra simples com pezinhos."
+              }
+            ],
+            "bullets": [
+              "ESCREVAM o nome da marca duas vezes, imitando à mão a letra do título escolhido.",
+              "TESTE: escrevam a frase da marca com a cor de texto sobre a cor de fundo e apertem os olhos. Se sumir, troquem uma das duas cores.",
+              "PRONTO QUANDO: o par está escrito, o teste foi feito e a troca, se precisou, está anotada."
+            ],
+            "teacher": {
+              "steps": [
+                "3 min · Chamada das 20:50. Retomo o par de letras do exemplo.",
+                "6 min · Escrevo o mesmo nome nos quatro estilos no quadro e a turma diz qual combina com cada marca.",
+                "12 min · As duplas escolhem e escrevem o nome duas vezes à mão.",
+                "9 min · Teste do olho apertado em todas as duplas. Circulo pedindo a leitura de longe.",
+                "6 min · Quem precisou trocar de cor anota a troca ao lado da paleta.",
+                "4 min · Amostragem em voz alta: duas duplas contam o que trocaram e por quê."
+              ],
+              "watch": "Cada dupla fez o teste de leitura, não apenas escolheu por gosto.",
+              "rescue": "Escrevo o nome da marca no quadro no estilo escolhido e a dupla copia."
+            }
+          },
+          {
+            "title": "Atividade 4 · Painel de estilo",
+            "block": 4,
+            "layout": "dense-cards",
+            "kicker": "Produção",
+            "heading": "Preencham as seis caixas do painel",
+            "lede": "Não precisa desenhar bem. Precisa estar completo e legível.",
+            "cards": [
+              {
+                "eyebrow": "1",
+                "title": "Marca e palavras",
+                "text": "Nome no alto e as três palavras logo abaixo."
+              },
+              {
+                "eyebrow": "2",
+                "title": "Cores",
+                "text": "As três caixas riscadas, cada uma com o papel escrito ao lado."
+              },
+              {
+                "eyebrow": "3",
+                "title": "Letras e botão",
+                "text": "O par escrito à mão e o botão com canto reto ou redondo."
+              },
+              {
+                "eyebrow": "4",
+                "title": "Mini-painel",
+                "text": "Título, uma frase e o botão, aplicados com as escolhas da dupla."
+              }
+            ],
+            "bullets": [
+              "Frases de ação para o botão: ver preços · encomendar · agendar horário.",
+              "Usem só as cores e as letras já escolhidas. Nada novo entra agora.",
+              "PRONTO QUANDO: as seis caixas estão preenchidas e os nomes da dupla estão no alto da página."
+            ],
+            "teacher": {
+              "steps": [
+                "3 min · Chamada das 21:30. Mostro as seis caixas no quadro.",
+                "12 min · Preenchimento caixa a caixa. A cada 2 minutos, avanço uma.",
+                "5 min · Quem terminou confere botão e mini-painel. Quem não terminou fecha só as seis partes."
+              ],
+              "watch": "Ninguém enfeita antes de completar as seis caixas.",
+              "rescue": "Ditado do exemplo do Café da Esquina. A dupla só troca marca, cores e letras."
+            }
+          },
+          {
+            "title": "Batalha de identidade",
+            "block": 4,
+            "layout": "dense-cards",
+            "kicker": "Conferência entre duplas",
+            "heading": "Troquem os cadernos e adivinhem as três palavras",
+            "lede": "Quem recebe olha só o painel. As palavras ficam tapadas até o fim.",
+            "cards": [
+              {
+                "eyebrow": "1",
+                "title": "Tapem",
+                "text": "Quem entrega cobre com a mão a caixa das três palavras."
+              },
+              {
+                "eyebrow": "2",
+                "title": "Chutem",
+                "text": "Quem recebe escreve três palavras que o painel passa."
+              },
+              {
+                "eyebrow": "3",
+                "title": "Comparem",
+                "text": "Destapem e contem quantas bateram."
+              },
+              {
+                "eyebrow": "4",
+                "title": "Devolvam",
+                "text": "Um acerto e uma sugestão, escritos no rodapé da página."
+              }
+            ],
+            "bullets": [
+              "Duas palavras iguais ou parecidas já mostram que a identidade está clara.",
+              "Cada sugestão recebida vira correção na mesma página, agora."
+            ],
+            "teacher": {
+              "steps": [
+                "2 min · Explico a troca: tapar, chutar, comparar e devolver.",
+                "6 min · As duplas trocam, escrevem e corrigem.",
+                "2 min · Ouço dois pares que acertaram as três palavras e pergunto o que entregou a personalidade."
+              ],
+              "watch": "Nenhuma dupla apenas elogiando: a devolução tem um acerto e uma sugestão escritos.",
+              "rescue": "Faço a batalha com um caderno modelo projetado no quadro e a turma chuta junto."
+            }
+          },
+          {
+            "title": "Fechamento",
+            "block": 4,
+            "layout": "dense-cards",
+            "kicker": "Saída",
+            "heading": "Primeiro as três palavras, depois as cores",
+            "lede": "A aula termina às 22:07. Completem a frase e guardem a página.",
+            "cards": [
+              {
+                "eyebrow": "Frase",
+                "title": "No caderno",
+                "text": "A identidade do meu painel diz ___, ___ e ___ porque ___."
+              },
+              {
+                "eyebrow": "Evidência",
+                "title": "A página de hoje",
+                "text": "Fica com a dupla. Sem arquivo, sem folha extra e sem tarefa para casa."
+              },
+              {
+                "eyebrow": "Próxima",
+                "title": "Aula 07",
+                "text": "Espaço, proximidade e alinhamento: organizar a página sem apertar."
+              }
+            ],
+            "teacher": {
+              "steps": [
+                "4 min · Todos completam a frase no caderno.",
+                "3 min · Antecipo a Aula 07 e encerro às 22:07."
+              ],
+              "watch": "A turma sai com a página pronta e sem tarefa para casa.",
+              "rescue": "Frase-modelo: a identidade do meu painel diz calma porque o fundo é claro e o texto é escuro."
+            }
+          }
         ]
       },
       "07": {
