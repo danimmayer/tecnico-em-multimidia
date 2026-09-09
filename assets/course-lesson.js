@@ -342,7 +342,9 @@
   });
 
   const isDesignSix = course.slug === 'design-web' && lesson.num === '06';
+  const isAvSeven = course.slug === 'producao-audiovisual' && lesson.num === '07';
   if (isDesignSix) document.body.classList.add('design-six');
+  if (isAvSeven) document.body.classList.add('av-seven');
 
   // Fixed teaching samples keep colors and lettering identical on every projector.
   const designSixVisual = (kind) => {
@@ -358,6 +360,13 @@
       palette4: ['#F1FAF5', '#153C2D', '#56B88A']
     };
     return palettes[kind] ? `<div class="dw-palette">${palettes[kind].map((color, i) => `<div><i style="background:${color}" aria-hidden="true"></i><span>${['Fundo', 'Texto', 'Destaque'][i]}</span><code>${color}</code></div>`).join('')}</div>` : '';
+  };
+
+  const avSevenVisual = (kind) => {
+    if (!isAvSeven || !kind) return '';
+    const schemes = new Set(['room', 'front', 'angle', 'fill']);
+    if (!schemes.has(kind)) return '';
+    return `<div class="av7-rig av7-rig--${kind}" aria-hidden="true"><b class="av7-cam"></b><b class="av7-obj"></b><b class="av7-key"></b><b class="av7-fill"></b></div>`;
   };
 
   const presentationSlide = (item, index) => {
@@ -386,6 +395,7 @@
             ${cards.map((card) => `
               <article class="content-card presentation-card">
                 ${card.eyebrow ? `<span class="card-index">${escapeHtml(card.eyebrow)}</span>` : ''}
+                ${avSevenVisual(card.visual)}
                 ${card.title ? `<strong>${escapeHtml(card.title)}</strong>` : ''}
                 ${card.text ? `<p>${escapeHtml(card.text)}</p>` : ''}
                 ${designSixVisual(card.visual)}

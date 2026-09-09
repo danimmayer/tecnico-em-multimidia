@@ -39,7 +39,7 @@ Em computador compartilhado, imprima ou exporte o necessário e use **Limpar pre
 | 04 | Roteiro e storyboard na prática | Roteiro de 1 minuto; storyboard |
 | 05 | Direito de imagem, ética e normas | Verificação de consentimento |
 | 06 | Câmera na mão: operação e enquadramento | Quadro projetado para cópia; sem impressão |
-| 07 | Luz que conta história | Lista de planos; segurança do set; continuidade |
+| 07 | Luz de produto e depoimento | Registro projetado para cópia no caderno; sem impressão; comparação no editor do navegador |
 | 08 | Som limpo e gravação do microcurta | Plano de filmagem; segurança; captação e cópia de segurança |
 | 09 | Set de filmagem: comercial em uma noite | Plano de filmagem; papéis; equipamentos; segurança; continuidade |
 | 10 | Ilha de edição: primeiros cortes | Percurso de edição; ficha de edição; glossário |

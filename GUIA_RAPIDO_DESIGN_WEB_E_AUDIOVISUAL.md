@@ -147,6 +147,12 @@ Antes de cada tomada: lente, estabilidade, foco, exposição, enquadramento e so
 Um teste de dez segundos é ouvido com fone. Cabos, tripés e luminárias ficam fora
 das rotas de circulação.
 
+Na Aula 07, a turma permanece no posto marcado. Há dois pedidos de cliente —
+catálogo de produto e depoimento — com o mesmo objeto. O registro de luz é copiado
+do projetor para o caderno; não há folha impressa. A comparação dos dois vídeos
+acontece no Clipchamp já presente no Windows ou no CapCut do navegador, sem
+instalar programa.
+
 ### Edição
 
 O percurso principal usa **DaVinci Resolve**. O **CapCut** aparece como
