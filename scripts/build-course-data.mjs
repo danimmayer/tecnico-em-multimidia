@@ -481,9 +481,41 @@ Object.assign(audiovisualLesson06, {
 const audiovisualLesson07 = courses['producao-audiovisual'].lessons
   .find((lesson) => lesson.num === '07');
 
-if (audiovisualLesson07?.schedule?.[0]) {
-  audiovisualLesson07.schedule[0].atividade = audiovisualLesson07.schedule[0].atividade
-    .replace('operação de câmera e circuito de planos-alvo', 'operação de câmera, foco e revelação');
+Object.assign(audiovisualLesson07, {
+  title: 'Luz de produto e depoimento',
+  description: 'Aula prática de iluminação no próprio posto. Os 7 grupos já estão formados. Cada grupo atende dois pedidos de cliente com o mesmo objeto: catálogo de produto e depoimento. A comparação acontece no computador da mesa, no editor do navegador, sem visitar outro grupo.',
+  schedule: [
+    {
+      horario: '19:00 - 19:45',
+      atividade: 'Ver no projetor dois pedidos de cliente — catálogo de produto e depoimento. Copiar no caderno o registro de luz projetado. Observar, da própria cadeira, o que muda no objeto da mesa da frente quando a ring light muda de lugar.'
+    },
+    {
+      horario: '20:05 - 21:00',
+      atividade: 'Pedido 1 na própria mesa: iluminar o objeto como catálogo, com a ring light à frente e sombra mínima. Gravar oito segundos, assistir, corrigir se a sombra cobrir o produto e anotar o número do arquivo.'
+    },
+    {
+      horario: '21:00 - 21:40',
+      atividade: 'Pedido 2 na mesma mesa e no mesmo objeto: luz principal a 45° e preenchimento fraco do outro lado. Gravar oito segundos. O assunto precisa ficar mais claro que o fundo. Anotar o arquivo.'
+    },
+    {
+      horario: '21:40 - 22:10',
+      atividade: 'Copiar os dois vídeos para o computador da mesa, colocar PRODUTO e DEPOIMENTO em sequência no editor do navegador, completar a recomendação ao cliente no caderno e devolver câmera e ring light. Encerrar às 22:10.'
+    }
+  ],
+  methodology: 'Demonstração com a luz se movendo na mesa da frente, cópia do registro projetado e dois pedidos de cliente executados no mesmo posto. A comparação acontece no computador da mesa, sem visita a outro grupo.',
+  resources: 'Projetor, quadro, caderno ou folhas em branco, lápis ou caneta e os objetos já separados. Há 7 câmeras já carregadas, com cartão e bateria, 7 ring lights e computadores com navegador. Os grupos já estão formados. Nenhum programa precisa ser instalado no Windows. Nenhuma ficha impressa é necessária. O editor é o Clipchamp já presente no Windows ou o CapCut no navegador.',
+  observation: 'Aula das 19:00 às 22:10. Lanche fixo das 19:45 às 20:05. Não refaça os grupos e não peça novos objetos. Cada grupo permanece na mesa marcada a noite inteira; a ring light só se move sobre o próprio posto. Chamada na abertura e na retomada. Depois de conferir, apague no cartão apenas o que foi gravado hoje, teste e repetições incluídos, pela faixa de números anotada; não formate o cartão. Sem internet, mostrem os dois arquivos na câmera. Sem Clipchamp, usem o CapCut no navegador. Sem os dois, a entrega são os dois arquivos e o caderno.'
+});
+
+const audiovisualLesson08 = courses['producao-audiovisual'].lessons
+  .find((lesson) => lesson.num === '08');
+
+if (audiovisualLesson08?.schedule?.[0]) {
+  audiovisualLesson08.schedule[0].atividade = audiovisualLesson08.schedule[0].atividade
+    .replace(
+      'Revisão da aula 7 (esquema de três pontos e climas de luz).',
+      'Revisão da aula 7 (luz de produto e luz de depoimento).'
+    );
 }
 
 const output = `/* Arquivo gerado por scripts/build-course-data.mjs. */\nwindow.SENAI_COURSES = ${JSON.stringify(courses, null, 2)};\n`;

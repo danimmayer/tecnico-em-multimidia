@@ -25,6 +25,7 @@ const requiredFiles = [
   'assets/course-support.js',
   'assets/course-hub.js',
   'assets/course-lesson.js',
+  'assets/av-seven.css',
   'GUIA_RAPIDO_DESIGN_WEB_E_AUDIOVISUAL.md',
   'modelos/design-web/site-base/index.html',
   'modelos/design-web/site-base/styles.css',
@@ -370,6 +371,195 @@ for (const [slug, expectedCount] of Object.entries(expected)) {
     }
     if (!fs.readFileSync(fromRoot('scripts/build-course-data.mjs'), 'utf8').includes('const audiovisualLesson06')) {
       errors.push(`${slug}/06: personalização regenerável ausente do gerador`);
+    }
+
+    const lesson07 = course.lessons.find((lesson) => lesson.num === '07');
+    const lesson07Support = support.lessons?.['07'];
+    const lesson07Slides = lesson07Support?.presentationSlides || [];
+    const lesson07ActivityTitles = [
+      'Registro no caderno',
+      'Pedido 1 · Luz de produto',
+      'Pedido 2 · Luz de depoimento',
+      'Comparar no navegador',
+      'Conferir e devolver'
+    ];
+    const lesson07PublicSlideText = lesson07Slides.map((slide) => [
+      slide.title,
+      slide.kicker,
+      slide.heading,
+      slide.lede,
+      slide.prompt,
+      ...(slide.bullets || []),
+      ...(slide.cards || []).flatMap((card) => [card.eyebrow, card.title, card.text])
+    ].join('\n')).join('\n');
+    const lesson07PublicText = `${JSON.stringify({
+      title: lesson07?.title,
+      description: lesson07?.description,
+      schedule: lesson07?.schedule,
+      methodology: lesson07?.methodology,
+      resources: lesson07?.resources
+    })}\n${lesson07PublicSlideText}`.toLocaleLowerCase('pt-BR');
+
+    if (lesson07?.title !== 'Luz de produto e depoimento') {
+      errors.push(`${slug}/07: o título precisa ser prático de indústria, não “Luz que conta história”`);
+    }
+    if (lesson07Slides.length !== 10 || lesson07Support?.appendDefaultClosing !== false) {
+      errors.push(`${slug}/07: a apresentação precisa ter exatamente 11 slides controlados (capa + 10 slides próprios)`);
+    }
+    if (lesson07Slides[6]?.title !== 'Pedido 1 · Luz de produto') {
+      errors.push(`${slug}/07: o slide após o lanche precisa abrir o pedido de catálogo`);
+    }
+    if (!lesson07Slides.some((item) => item.pace === 'break')) {
+      errors.push(`${slug}/07: o intervalo precisa de slide próprio para não acusar atraso no indicador de ritmo`);
+    }
+    if (lesson07Support?.studentSheet || lesson07Slides.some((item) => item.resource || item.resources)) {
+      errors.push(`${slug}/07: a aula não pode exigir ficha impressa, link ou material externo`);
+    }
+    for (const activityTitle of lesson07ActivityTitles) {
+      const activitySlide = lesson07Slides.find((item) => item.title === activityTitle);
+      if (!activitySlide || (activitySlide.cards || []).length !== 4) {
+        errors.push(`${slug}/07: ${activityTitle} precisa de quatro cartões no próprio slide`);
+      }
+    }
+    for (const titled of ['Pedido 1 · Luz de produto', 'Pedido 2 · Luz de depoimento', 'Comparar no navegador', 'Conferir e devolver']) {
+      const activitySlide = lesson07Slides.find((item) => item.title === titled);
+      if (!activitySlide || (activitySlide.bullets || []).length < 2) {
+        errors.push(`${slug}/07: ${titled} precisa trazer o critério de conclusão no próprio slide`);
+      }
+    }
+    if (lesson07Slides.some((slide) => (slide.cards || []).length > 4)) {
+      errors.push(`${slug}/07: nenhum slide pode passar de quatro cartões no projetor 5:4`);
+    }
+    if ((lesson07Support?.check || []).length < 5) {
+      errors.push(`${slug}/07: conferência final insuficiente`);
+    }
+    if (!lesson07?.resources?.includes('7 câmeras') || !lesson07?.resources?.includes('7 ring lights')) {
+      errors.push(`${slug}/07: a divisão em 7 grupos precisa acompanhar as 7 câmeras e as 7 ring lights`);
+    }
+    for (const readyState of ['grupos já estão formados', 'objetos já separados', 'câmeras já carregadas']) {
+      if (!lesson07?.resources?.includes(readyState)) {
+        errors.push(`${slug}/07: o ponto de partida já resolvido precisa incluir "${readyState}"`);
+      }
+    }
+    if (!lesson07?.resources?.includes('Nenhum programa precisa ser instalado')) {
+      errors.push(`${slug}/07: a aula não pode depender de instalação no Windows`);
+    }
+    if (!lesson07?.resources?.includes('Nenhuma ficha impressa')) {
+      errors.push(`${slug}/07: a independência de impressão precisa estar explícita`);
+    }
+    if (!lesson07?.resources?.includes('Clipchamp') || !lesson07?.resources?.includes('CapCut')) {
+      errors.push(`${slug}/07: o editor online sem instalação precisa estar explícito`);
+    }
+    if (!lesson07?.observation?.includes('22:10') || !lesson07?.observation?.includes('19:45')) {
+      errors.push(`${slug}/07: o horário 19:00, lanche 19:45 e fim 22:10 precisa estar explícito`);
+    }
+    if (!lesson07?.observation?.includes('permanece na mesa')) {
+      errors.push(`${slug}/07: o posto fixo precisa estar explícito`);
+    }
+    if (!lesson07?.observation?.includes('não formate o cartão')) {
+      errors.push(`${slug}/07: o apagamento precisa poupar material de outras turmas no mesmo cartão`);
+    }
+    if (!lesson07?.observation?.includes('Sem internet')) {
+      errors.push(`${slug}/07: o plano B sem internet precisa estar explícito`);
+    }
+    for (const forbidden of [
+      'softbox',
+      'três pontos',
+      'tres pontos',
+      'contraluz',
+      'clima',
+      'dramática',
+      'dramatica',
+      'conta história',
+      'conta historia',
+      'visitante',
+      'circuito',
+      'estações',
+      'estacoes',
+      'plongée',
+      'influencer',
+      'youtuber',
+      'tiktok'
+    ]) {
+      if (lesson07PublicText.includes(forbidden)) {
+        errors.push(`${slug}/07: permaneceu "${forbidden}" na camada da turma`);
+      }
+    }
+    if (/\b(pátio|quadra|estacionamento|rua|externa|fora da escola)\b/i.test(lesson07PublicText)) {
+      errors.push(`${slug}/07: a noite inteira acontece no laboratório, sem ambiente fora da unidade`);
+    }
+    for (const required of [
+      'catálogo',
+      'depoimento',
+      'ring light',
+      'oito segundos',
+      'produto',
+      'clipchamp',
+      'capcut'
+    ]) {
+      if (!lesson07PublicText.includes(required)) {
+        errors.push(`${slug}/07: falta "${required}" na camada da turma`);
+      }
+    }
+    if (!(lesson07Support?.check || []).some((item) => /recomendação|posi(ç|c)ão da luz/i.test(item))) {
+      errors.push(`${slug}/07: a conferência final precisa cobrar a recomendação com posição da luz`);
+    }
+    const lesson07Map = lesson07Slides.find((item) => item.title === 'Mapa da noite');
+    const lesson07MapText = JSON.stringify(lesson07Map || {});
+    for (const timeRange of ['19:00–19:45', '19:45–20:05', '20:05–21:00', '21:00–22:10']) {
+      if (!lesson07MapText.includes(timeRange)) {
+        errors.push(`${slug}/07: o mapa da noite precisa mostrar a faixa ${timeRange}`);
+      }
+    }
+    const lesson07OtherSlidesText = lesson07Slides
+      .filter((item) => item.title !== 'Mapa da noite')
+      .map((item) => JSON.stringify({
+        title: item.title,
+        kicker: item.kicker,
+        heading: item.heading,
+        lede: item.lede,
+        prompt: item.prompt,
+        bullets: item.bullets,
+        cards: item.cards
+      }))
+      .join('\n');
+    if (/\d{1,2}:\d{2}\s*[–-]\s*\d{1,2}:\d{2}/.test(lesson07OtherSlidesText)) {
+      errors.push(`${slug}/07: as faixas de horário devem ficar concentradas no mapa da noite`);
+    }
+    if (/\d+\s*min\s*·/.test(lesson07PublicSlideText)) {
+      errors.push(`${slug}/07: o slide da turma não pode cronometrar a condução`);
+    }
+    if (/deixe este slide parado/i.test(lesson07PublicSlideText)) {
+      errors.push(`${slug}/07: o slide da turma não pode instruir o professor a manter a projeção`);
+    }
+    if (/\b(sou eu|abro a página|olho a parada|na minha mesa|me chamar)\b/i.test(lesson07PublicSlideText)) {
+      errors.push(`${slug}/07: o slide da turma não pode falar na voz do professor`);
+    }
+    if (lesson07Slides.some((slide) => slide.prompt && !slide.promptLabel)) {
+      errors.push(`${slug}/07: prompt da turma precisa de rótulo próprio, não o padrão do kit`);
+    }
+    if (!fs.existsSync(fromRoot('assets/av-seven.css'))) {
+      errors.push(`${slug}/07: o CSS do projetor 5:4 da aula está ausente`);
+    }
+    const lesson07StepMinutes = (slide) => (slide.teacher?.steps || []).reduce((total, step) => {
+      const match = String(step).match(/^(\d+) min\b/);
+      return total + (match ? Number(match[1]) : 0);
+    }, 0);
+    const lesson07BlockMinutes = { 1: 0, 2: 0, 3: 0, 4: 0 };
+    for (const slide of lesson07Slides) {
+      if (slide.pace === 'break') continue;
+      lesson07BlockMinutes[slide.block] += lesson07StepMinutes(slide);
+    }
+    if (
+      lesson07BlockMinutes[1] !== 45
+      || lesson07BlockMinutes[2] !== 55
+      || lesson07BlockMinutes[3] !== 40
+      || lesson07BlockMinutes[4] !== 30
+    ) {
+      errors.push(`${slug}/07: os passos do professor precisam fechar 45+55+40+30 min, vieram ${lesson07BlockMinutes[1]}+${lesson07BlockMinutes[2]}+${lesson07BlockMinutes[3]}+${lesson07BlockMinutes[4]}`);
+    }
+    if (!fs.readFileSync(fromRoot('scripts/build-course-data.mjs'), 'utf8').includes('const audiovisualLesson07')) {
+      errors.push(`${slug}/07: personalização regenerável ausente do gerador`);
     }
   }
 

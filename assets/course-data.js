@@ -1322,8 +1322,8 @@ window.SENAI_COURSES = {
       },
       {
         "num": "07",
-        "title": "Luz que conta história",
-        "description": "Fundamentos de iluminação para vídeo usando softbox, ring light e luz natural, com montagem de cenários simples e prática de esquemas de luz em equipe.",
+        "title": "Luz de produto e depoimento",
+        "description": "Aula prática de iluminação no próprio posto. Os 7 grupos já estão formados. Cada grupo atende dois pedidos de cliente com o mesmo objeto: catálogo de produto e depoimento. A comparação acontece no computador da mesa, no editor do navegador, sem visitar outro grupo.",
         "objectives": [
           "Captura de vídeos e sons: iluminação, cenários."
         ],
@@ -1335,25 +1335,25 @@ window.SENAI_COURSES = {
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Revisão da aula 6 (operação de câmera, foco e revelação). Comparação no projetor de cenas gravadas com e sem tratamento de luz: discussão sobre o que a iluminação comunica (clima, hora do dia, emoção) e como afeta a percepção de qualidade do público."
+            "horario": "19:00 - 19:45",
+            "atividade": "Ver no projetor dois pedidos de cliente — catálogo de produto e depoimento. Copiar no caderno o registro de luz projetado. Observar, da própria cadeira, o que muda no objeto da mesa da frente quando a ring light muda de lugar."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "Esquema de três pontos (luz principal, preenchimento e contraluz), luz dura e luz difusa, temperatura de cor quente e fria, uso de softbox, ring light e luz natural da janela. Demonstração ao vivo com um aluno voluntário como modelo: o esquema é montado ponto a ponto para a turma ver o efeito de cada luz."
+            "horario": "20:05 - 21:00",
+            "atividade": "Pedido 1 na própria mesa: iluminar o objeto como catálogo, com a ring light à frente e sombra mínima. Gravar oito segundos, assistir, corrigir se a sombra cobrir o produto e anotar o número do arquivo."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "Prática em equipes de 3 a 4: montar um cenário simples de entrevista no laboratório (cadeira, fundo, objetos de cena) e iluminar com softbox e ring light, fotografando o resultado de cada ajuste para registrar a evolução do esquema."
+            "horario": "21:00 - 21:40",
+            "atividade": "Pedido 2 na mesma mesa e no mesmo objeto: luz principal a 45° e preenchimento fraco do outro lado. Gravar oito segundos. O assunto precisa ficar mais claro que o fundo. Anotar o arquivo."
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "Desafio \"Duas luzes, dois climas\": cada equipe grava a mesma cena curta com iluminação dramática (contraste alto, sombras marcadas) e com iluminação comercial (luz suave e uniforme). Análise dos pares no projetor e devolução organizada dos equipamentos."
+            "horario": "21:40 - 22:10",
+            "atividade": "Copiar os dois vídeos para o computador da mesa, colocar PRODUTO e DEPOIMENTO em sequência no editor do navegador, completar a recomendação ao cliente no caderno e devolver câmera e ring light. Encerrar às 22:10."
           }
         ],
-        "methodology": "Demonstração ao vivo seguida de prática experimental em equipes com comparação de resultados.",
-        "resources": "Softbox, ring lights, câmeras, tripés, materiais de cenografia improvisada e projetor.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "Demonstração com a luz se movendo na mesa da frente, cópia do registro projetado e dois pedidos de cliente executados no mesmo posto. A comparação acontece no computador da mesa, sem visita a outro grupo.",
+        "resources": "Projetor, quadro, caderno ou folhas em branco, lápis ou caneta e os objetos já separados. Há 7 câmeras já carregadas, com cartão e bateria, 7 ring lights e computadores com navegador. Os grupos já estão formados. Nenhum programa precisa ser instalado no Windows. Nenhuma ficha impressa é necessária. O editor é o Clipchamp já presente no Windows ou o CapCut no navegador.",
+        "observation": "Aula das 19:00 às 22:10. Lanche fixo das 19:45 às 20:05. Não refaça os grupos e não peça novos objetos. Cada grupo permanece na mesa marcada a noite inteira; a ring light só se move sobre o próprio posto. Chamada na abertura e na retomada. Depois de conferir, apague no cartão apenas o que foi gravado hoje, teste e repetições incluídos, pela faixa de números anotada; não formate o cartão. Sem internet, mostrem os dois arquivos na câmera. Sem Clipchamp, usem o CapCut no navegador. Sem os dois, a entrega são os dois arquivos e o caderno."
       },
       {
         "num": "08",
@@ -1372,7 +1372,7 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:30",
-            "atividade": "Revisão da aula 7 (esquema de três pontos e climas de luz). Comparação cega de captação de áudio: o mesmo vídeo exibido com áudio bem captado e mal captado. Discussão: o público tolera imagem imperfeita, mas não tolera som ruim."
+            "atividade": "Revisão da aula 7 (luz de produto e luz de depoimento). Comparação cega de captação de áudio: o mesmo vídeo exibido com áudio bem captado e mal captado. Discussão: o público tolera imagem imperfeita, mas não tolera som ruim."
           },
           {
             "horario": "19:30 - 20:30",
