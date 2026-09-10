@@ -362,11 +362,33 @@
     return palettes[kind] ? `<div class="dw-palette">${palettes[kind].map((color, i) => `<div><i style="background:${color}" aria-hidden="true"></i><span>${['Fundo', 'Texto', 'Destaque'][i]}</span><code>${color}</code></div>`).join('')}</div>` : '';
   };
 
-  const avSevenVisual = (kind) => {
-    if (!isAvSeven || !kind) return '';
-    const schemes = new Set(['room', 'front', 'angle', 'fill']);
-    if (!schemes.has(kind)) return '';
-    return `<div class="av7-rig av7-rig--${kind}" aria-hidden="true"><b class="av7-cam"></b><b class="av7-obj"></b><b class="av7-key"></b><b class="av7-fill"></b></div>`;
+  const avSevenVisual = (kind, subject) => {
+    if (!isAvSeven || !['front', 'angle', 'fill'].includes(kind)) return '';
+    const frontal = kind === 'front';
+    const subjectLabel = subject === 'person' ? 'PESSOA' : 'OBJETO';
+    const fill = kind === 'fill';
+    const label = frontal
+      ? 'Vista de cima: ring light próxima ao eixo da câmera, iluminando a frente do objeto.'
+      : `Vista de cima: ring light na diagonal, cerca de 45 graus em relação à câmera.${fill ? ' Papel branco no lado oposto devolve luz para a sombra.' : ''}`;
+    // The object-to-camera axis is vertical; the diagonal key is 45 degrees from it.
+    return `<figure class="av7-diagram">
+      <svg viewBox="0 0 360 210" role="img" aria-label="${escapeHtml(subject === 'person' ? label.replaceAll('objeto', 'rosto') : label)}">
+        <path d="M150 75 L150 155" stroke="#81766b" stroke-dasharray="4 5" fill="none"/>
+        <path d="${frontal ? 'M162 143 L126 72 L174 72 Z' : 'M80 145 L131 62 L163 94 Z'}" fill="#ffb45d" opacity=".16"/>
+        <path d="${frontal ? 'M162 134 L152 91' : 'M86 138 L130 94'}" stroke="#ffc477" stroke-width="3"/>
+        ${fill ? '<path d="M153 77 L245 98 L170 85" fill="none" stroke="#cbe6dc" stroke-width="2" stroke-dasharray="5 4"/><path d="M248 68 L248 123" stroke="#eaf3ed" stroke-width="8"/><text x="268" y="88">PAPEL</text><text x="268" y="108">BRANCO</text>' : ''}
+        <circle cx="150" cy="75" r="21" fill="#c78c52"/>
+        ${!frontal ? '<path d="M150 54 A21 21 0 0 1 150 96 Z" fill="' + (fill ? '#8d653e' : '#44372a') + '"/>' : ''}
+        <text x="150" y="35" text-anchor="middle">${subjectLabel}</text>
+        <circle cx="${frontal ? 166 : 80}" cy="${frontal ? 146 : 145}" r="14" fill="none" stroke="#ffc477" stroke-width="5"/>
+        <text x="${frontal ? 195 : 22}" y="${frontal ? 149 : 180}">RING LIGHT</text>
+        <rect x="132" y="162" width="36" height="22" rx="4" fill="#d6d1c9"/>
+        <path d="M143 162 L143 153 L157 153 L157 162" fill="#d6d1c9"/>
+        <text x="150" y="204" text-anchor="middle">CÂMERA</text>
+        ${!frontal ? '<text x="108" y="130" fill="#ffc477">45°</text>' : ''}
+      </svg>
+      <figcaption>Vista de cima · esquema de posição, sem escala</figcaption>
+    </figure>`;
   };
 
   const presentationSlide = (item, index) => {
@@ -395,7 +417,7 @@
             ${cards.map((card) => `
               <article class="content-card presentation-card">
                 ${card.eyebrow ? `<span class="card-index">${escapeHtml(card.eyebrow)}</span>` : ''}
-                ${avSevenVisual(card.visual)}
+                ${avSevenVisual(card.visual, card.subject)}
                 ${card.title ? `<strong>${escapeHtml(card.title)}</strong>` : ''}
                 ${card.text ? `<p>${escapeHtml(card.text)}</p>` : ''}
                 ${designSixVisual(card.visual)}
