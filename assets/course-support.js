@@ -4679,10 +4679,10 @@ window.SENAI_TEACHING_SUPPORT = {
           "Com a principal lateral fixa, acrescento e retiro papel branco do lado em sombra.",
           "A turma aponta o detalhe que mudou e justifica uma escolha."
         ],
-        "studentDeliverable": "Por grupo: um vídeo PRODUTO de oito segundos e um DEPOIMENTO de cerca de oito segundos com um integrante falando, testes comparados e registro com arquivos, ajustes e duas recomendações. Cada integrante escreve uma conclusão. Exportação única PA_A07_EQ##_LUZ.mp4 é opcional.",
+        "studentDeliverable": "Por grupo: um vídeo PRODUTO de oito segundos e um DEPOIMENTO de cerca de oito segundos com um integrante falando (ou objeto sem fala quando ninguém quiser aparecer), testes comparados e registro com arquivos, ajustes e duas recomendações. Cada integrante escreve uma conclusão. Exportação única PA_A07_EQ##_LUZ.mp4 é opcional.",
         "check": [
           "PRODUTO mostra o detalhe escolhido sem sombra ou reflexo encobrindo informação.",
-          "DEPOIMENTO mostra um integrante com foco nos olhos, volume no rosto, detalhe no lado em sombra e fala compreensível; principal lateral e papel refletor.",
+          "DEPOIMENTO com pessoa: olhos em foco, volume no rosto, detalhe na sombra e fala compreensível. Na alternativa com objeto: detalhe em foco, volume e sombra legível, sem exigir rosto ou voz. Ambos usam principal lateral e papel refletor.",
           "Dentro de cada teste A/B, pessoa ou objeto, câmera e enquadramento permanecem iguais; a mudança de enquadramento acontece entre os dois pedidos.",
           "O registro identifica testes, finais, primeiro e último arquivo de hoje e a posição da luz.",
           "A recomendação liga um ajuste a uma evidência; cada integrante registra sua conclusão.",
@@ -4690,7 +4690,7 @@ window.SENAI_TEACHING_SUPPORT = {
           "Os dois finais são reabertos nas cópias; se não houver cópia, o cartão é preservado e identificado.",
           "Sete câmeras e sete ring lights são devolvidas completas; nenhum cartão é formatado."
         ],
-        "fallback": "Sem câmera, celular apoiado. Sem ring light, luminária disponível no posto. Sem papel avulso, página branca do caderno. Sem computador, internet, cabo ou leitor, comparação na câmera e preservação dos originais no cartão identificado. Sem editor, os dois arquivos separados e o registro cumprem a entrega. Quem preferir não aparecer assume câmera, luz ou registro. Se ninguém no grupo quiser aparecer, o objeto pode substituir a pessoa para o exercício de luz.",
+        "fallback": "Sem câmera, celular apoiado. Sem ring light, luminária disponível no posto. Sem papel avulso, página branca do caderno. Sem computador, internet, cabo ou leitor, comparação na câmera e preservação dos originais no cartão identificado. Sem editor, os dois arquivos separados e o registro cumprem a entrega. Quem preferir não aparecer assume câmera, luz ou registro. Se ninguém no grupo quiser aparecer, o objeto pode substituir a pessoa: gravem cerca de oito segundos sem fala, comparem os testes sem/com papel e anotem a alternativa no registro. A entrega DEPOIMENTO é concluída com detalhe em foco, volume, sombra legível e arquivo identificado; não exige rosto nem voz.",
         "commonProblems": [
           [
             "Reflexo encobre o rótulo",
@@ -5161,7 +5161,7 @@ window.SENAI_TEACHING_SUPPORT = {
             },
             "bullets": [
               "Combinem quem aparece e gravem para a atividade da turma. Cada integrante tem uma função.",
-              "PRONTO = pessoa enquadrada + olhos em foco + principal lateral + papel fora do quadro."
+              "PRONTO = pessoa (ou objeto na alternativa) enquadrada + foco + principal lateral + papel fora do quadro."
             ]
           },
           {
@@ -5237,7 +5237,7 @@ window.SENAI_TEACHING_SUPPORT = {
               "rescue": "Se a voz estiver baixa, reduzo conversas próximas e aproximo a câmera, reajustando o enquadramento antes de repetir."
             },
             "promptLabel": "Parem e confiram",
-            "prompt": "PRONTO = fala compreensível + olhos em foco + volume no rosto + arquivo anotado."
+            "prompt": "PRONTO = foco + volume + detalhe na sombra + arquivo anotado; com pessoa, fala compreensível."
           },
           {
             "title": "Comparar os arquivos",
