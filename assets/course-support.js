@@ -4670,468 +4670,691 @@ window.SENAI_TEACHING_SUPPORT = {
         "appendDefaultClosing": false
       },
       "07": {
-        "teacherGoal": "Fazer os 7 grupos iluminar o mesmo objeto para dois pedidos de cliente — catálogo de produto e depoimento — gravar oito segundos de cada um, copiar o registro do quadro e comparar os dois vídeos no computador da mesa.",
-        "plainLanguage": "Luz de catálogo deixa o produto visível, com sombra curta. Luz de depoimento vem de um lado e deixa o assunto mais claro que o fundo. A decisão é posição, distância e o que recebe luz.",
-        "say": "Os grupos já estão formados, as câmeras estão carregadas e os objetos estão na mesa. Hoje a câmera quase não se mexe: quem trabalha é a luz. Dois pedidos, a mesma mesa, sem circular.",
+        "teacherGoal": "Conduzir 7 grupos em dois ciclos de previsão, teste, comparação e ajuste: iluminar um produto e gravar um depoimento real de um integrante, no próprio posto, com funções alternadas.",
+        "plainLanguage": "A direção da luz altera onde a sombra aparece. O papel branco devolve luz ao lado em sombra. A escolha depende do detalhe que o pedido precisa mostrar.",
+        "say": "Antes de mover a luz, prevejam o que vai mudar. Depois apontem a mudança no vídeo.",
         "demo": [
-          "Coloco um objeto na mesa da frente, com a turma sentada.",
-          "Mostro o objeto só com a luz da sala.",
-          "Aproximo a ring light à frente: sombra curta, leitura de catálogo.",
-          "Levo a mesma ring light a 45°: uma sombra desenha o volume.",
-          "Coloco um papel branco do outro lado: o preenchimento clareia a sombra sem apagar o volume."
+          "Mantenho objeto, câmera e ajustes constantes.",
+          "Comparo luz frontal e lateral.",
+          "Com a principal lateral fixa, acrescento e retiro papel branco do lado em sombra.",
+          "A turma aponta o detalhe que mudou e justifica uma escolha."
         ],
-        "studentDeliverable": "Cada grupo entrega uma página do caderno com o registro de luz copiado do quadro, dois vídeos de oito segundos do mesmo objeto (PRODUTO e DEPOIMENTO), os números dos arquivos e uma recomendação ao cliente. Se o editor abrir, os dois clipes vão em um arquivo PA_A07_EQ##_LUZ.mp4.",
+        "studentDeliverable": "Por grupo: um vídeo PRODUTO de oito segundos e um DEPOIMENTO de cerca de oito segundos com um integrante falando (ou objeto sem fala quando ninguém quiser aparecer), testes comparados e registro com arquivos, ajustes e duas recomendações. Cada integrante escreve uma conclusão. Exportação única PA_A07_EQ##_LUZ.mp4 é opcional.",
         "check": [
-          "O registro copiado tem grupo, objeto, dois números de arquivo e a recomendação completa.",
-          "Existe um vídeo de oito segundos de catálogo, com a ring light à frente e sombra mínima no objeto.",
-          "Existe um vídeo de oito segundos de depoimento, com luz a 45° e assunto mais claro que o fundo.",
-          "Os dois pedidos usam o mesmo objeto, a mesma mesa e a mesma câmera.",
-          "A recomendação cita a posição da luz, não apenas que uma imagem “ficou melhor”.",
-          "O grupo permaneceu na mesa; a ring light não saiu do posto.",
-          "A câmera e a ring light voltaram conferidas, com cartão e bateria no lugar; o cartão não foi formatado."
+          "PRODUTO mostra o detalhe escolhido sem sombra ou reflexo encobrindo informação.",
+          "DEPOIMENTO com pessoa: olhos em foco, volume no rosto, detalhe na sombra e fala compreensível. Na alternativa com objeto: detalhe em foco, volume e sombra legível, sem exigir rosto ou voz. Ambos usam principal lateral e papel refletor.",
+          "Dentro de cada teste A/B, pessoa ou objeto, câmera e enquadramento permanecem iguais; a mudança de enquadramento acontece entre os dois pedidos.",
+          "O registro identifica testes, finais, primeiro e último arquivo de hoje e a posição da luz.",
+          "A recomendação liga um ajuste a uma evidência; cada integrante registra sua conclusão.",
+          "As funções se alternam entre os pedidos dentro do próprio grupo e posto.",
+          "Os dois finais são reabertos nas cópias; se não houver cópia, o cartão é preservado e identificado.",
+          "Sete câmeras e sete ring lights são devolvidas completas; nenhum cartão é formatado."
         ],
-        "fallback": "Sem ring light, usem a luminária da mesa ou a janela de um lado só. Sem câmera, usem o celular apoiado. Sem computador ou internet, assistam aos dois vídeos na câmera e escrevam a recomendação. Quem não quiser aparecer ilumina o objeto na altura do rosto. Não é preciso instalar programa no Windows.",
+        "fallback": "Sem câmera, celular apoiado. Sem ring light, luminária disponível no posto. Sem papel avulso, página branca do caderno. Sem computador, internet, cabo ou leitor, comparação na câmera e preservação dos originais no cartão identificado. Sem editor, os dois arquivos separados e o registro cumprem a entrega. Quem preferir não aparecer assume câmera, luz ou registro. Se ninguém no grupo quiser aparecer, o objeto pode substituir a pessoa: gravem cerca de oito segundos sem fala, comparem os testes sem/com papel e anotem a alternativa no registro. A entrega DEPOIMENTO é concluída com detalhe em foco, volume, sombra legível e arquivo identificado; não exige rosto nem voz.",
         "commonProblems": [
           [
-            "A sombra cobre o produto",
-            "Aproximo a ring light e subo um pouco. Peço um teste de dois segundos antes de gravar os oito."
+            "Reflexo encobre o rótulo",
+            "Desloco a luz lateralmente e confiro pelo visor."
           ],
           [
-            "Os dois vídeos ficaram iguais",
-            "No depoimento a luz principal sai do eixo da câmera. O preenchimento fica mais longe ou vira papel branco."
+            "Papel não altera a sombra",
+            "Verifico se recebe luz; ajusto orientação e distância, mantendo a principal fixa."
           ],
           [
-            "Misturaram janela fria e lâmpada amarela",
-            "Apago uma das duas. Fica uma família de cor na cena."
+            "Testes ficam iguais",
+            "Confiro luz ambiente, direção e compensação automática da câmera."
           ],
           [
-            "Alguém levantou para circular",
-            "Volto o grupo à mesa marcada. A ring light anda só sobre o posto."
-          ],
-            [
-              "O fundo compete com o objeto",
-              "Afasto o fundo ou diminuo a luz que chega nele. No depoimento o assunto precisa ser o ponto mais claro."
-            ],
-          [
-            "O editor não abre",
-            "Mantenho os dois arquivos na pasta e no caderno. A recomendação vale sem o arquivo juntado."
+            "Editor pede login",
+            "Comparo no reprodutor local ou na câmera."
           ],
           [
-            "O tempo ficou curto",
-            "Mantenho os dois vídeos e o registro. O arquivo único vira opcional."
+            "Não há como copiar",
+            "Confiro os vídeos na câmera e preservo o cartão identificado para transferência posterior."
           ]
         ],
         "presentationSlides": [
           {
             "title": "Mapa da noite",
-            "kicker": "Iluminação no posto",
-            "heading": "Dois pedidos, a mesma mesa",
-            "lede": "O lanche começa às 19:45. Antes: ver a luz e copiar o registro. Depois: 2 h 05 no próprio posto.",
-            "layout": "dense-cards",
+            "heading": "Do produto ao rosto: duas intenções",
+            "lede": "Vocês vão prever, testar e ajustar a luz para atender dois pedidos.",
+            "kicker": "Mapa da noite",
             "block": 1,
+            "layout": "dense-cards",
             "cards": [
               {
-                "eyebrow": "19:00–19:45 · 45 min",
-                "title": "Ver e copiar",
-                "text": "Dois pedidos de cliente e o registro de luz no caderno."
+                "eyebrow": "19:00–19:45",
+                "title": "Entender e prever",
+                "text": "Observar a luz e preparar o registro."
               },
               {
-                "eyebrow": "19:45–20:05 · 20 min",
+                "eyebrow": "19:45–20:05",
                 "title": "Lanche",
-                "text": "Retorno às 20:05, no mesmo grupo e na mesma mesa."
+                "text": "Retorno ao mesmo grupo e à mesma mesa."
               },
               {
-                "eyebrow": "20:05–21:00 · 55 min",
-                "title": "Pedido 1",
-                "text": "Catálogo: luz à frente, produto legível, oito segundos."
+                "eyebrow": "20:05–21:00",
+                "title": "Produto legível",
+                "text": "Montar, testar, corrigir e gravar."
               },
               {
-                "eyebrow": "21:00–22:10 · 70 min",
-                "title": "Pedido 2 e entrega",
-                "text": "Depoimento, comparação no navegador e devolução."
+                "eyebrow": "21:00–22:10",
+                "title": "Volume e comparação",
+                "text": "Depoimento com um integrante até 21:40; comparar e devolver até 22:10."
               }
             ],
-            "promptLabel": "Ponto de partida",
-            "prompt": "Grupos formados. Câmeras carregadas. Objetos na mesa. Ninguém troca de posto.",
             "teacher": {
               "steps": [
-                "3 min · Faço a chamada, confirmo os 7 postos prontos e apresento os dois pedidos da noite."
+                "3 min · Faço a chamada e confirmo 7 grupos, 7 câmeras carregadas e 7 ring lights. Apresento a entrega: dois vídeos de oito segundos e um registro."
               ],
-              "watch": "Ninguém reorganiza grupo, procura objeto novo ou liga a câmera antes da demonstração.",
-              "rescue": "Se um integrante faltar, o grupo segue menor. Não reorganizo a turma."
-            }
+              "watch": "Os postos e objetos já estão definidos.",
+              "rescue": "Com falta de integrante, mantenho o grupo menor."
+            },
+            "promptLabel": "Parem e confiram",
+            "prompt": "Primeiro, um produto. Depois, um integrante falando. Nos testes de cada pedido, mantenham o enquadramento."
           },
           {
             "title": "Dois pedidos",
-            "kicker": "O cliente pede resultado",
-            "heading": "O mesmo objeto, duas funções",
-            "lede": "Cada pedido tem um uso. A luz segue esse uso, não uma preferência pessoal.",
-            "layout": "dense-cards",
+            "heading": "Qual problema a luz precisa resolver?",
+            "lede": "Um cliente quer mostrar o produto. O outro quer destacar quem fala.",
+            "kicker": "Dois pedidos",
             "block": 1,
+            "layout": "dense-cards",
             "cards": [
               {
-                "eyebrow": "Pedido 1",
-                "title": "Catálogo de produto",
-                "text": "Quem compra precisa ver forma, cor e borda. Sombra curta. Fundo simples."
+                "eyebrow": "Pedido 1 · catálogo",
+                "title": "Mostrar os detalhes",
+                "text": "Forma, cor e rótulo legíveis. Reflexos não podem esconder informação."
               },
               {
-                "eyebrow": "Pedido 2",
-                "title": "Depoimento",
-                "text": "O assunto fica mais claro que o fundo. Luz de um lado. Volume visível."
-              },
-              {
-                "eyebrow": "Regra",
-                "title": "Mesma mesa",
-                "text": "Mesmo objeto, mesma câmera, oito segundos. A luz é que muda."
-              },
-              {
-                "eyebrow": "Fora",
-                "title": "Sem circular",
-                "text": "A ring light anda só sobre o posto. Ninguém filma no corredor."
-              }
-            ],
-            "teacher": {
-              "speech": "Catálogo mostra o objeto. Depoimento separa o assunto do fundo.",
-              "steps": [
-                "4 min · Leio os dois pedidos e mostro um objeto da mesa da frente.",
-                "2 min · Repito a regra: a câmera quase não se mexe; quem muda é a luz."
-              ],
-              "watch": "A turma entende que os dois vídeos servem a usos diferentes, não a gosto pessoal.",
-              "rescue": "Dou o exemplo da garrafa: no catálogo ela precisa aparecer inteira; no depoimento ela “fala” mais clara que o fundo."
-            }
-          },
-          {
-            "title": "Quatro decisões",
-            "kicker": "O que vocês controlam",
-            "heading": "Posição, distância, fundo e cor",
-            "lede": "Quatro ajustes cabem numa mesa. Não é preciso montar estúdio.",
-            "layout": "dense-cards",
-            "block": 1,
-            "cards": [
-              {
-                "eyebrow": "1",
-                "title": "Posição",
-                "text": "Frente: pouco volume. 45°: uma sombra mostra a forma. Atrás: só contorno."
-              },
-              {
-                "eyebrow": "2",
-                "title": "Distância",
-                "text": "Mais perto clareia. Mais longe enfraquece. Testem dois centímetros, não a sala inteira."
-              },
-              {
-                "eyebrow": "3",
-                "title": "Fundo",
-                "text": "Catálogo: fundo limpo. Depoimento: fundo mais escuro que o assunto."
-              },
-              {
-                "eyebrow": "4",
-                "title": "Cor",
-                "text": "Uma família só. Janela fria ou lâmpada da sala. Não as duas na mesma cena."
+                "eyebrow": "Pedido 2 · depoimento",
+                "title": "Dar volume ao assunto",
+                "text": "Um lado mais iluminado e outro com detalhe na sombra. Fundo discreto."
               }
             ],
             "teacher": {
               "steps": [
-                "6 min · Mostro cada decisão no objeto da frente, em linguagem direta.",
-                "4 min · Peço que a turma diga o que muda se a luz andar 20 cm."
+                "2 min · Leio os pedidos e mostro onde observar o objeto.",
+                "2 min · Convido os integrantes a gravarem uns aos outros. Um fala, outro opera a câmera e os demais cuidam da luz e do registro; trocam funções entre os pedidos."
               ],
-              "watch": "As respostas citam posição ou distância, não “melhor” ou “pior”.",
-              "rescue": "Faço o gesto com a lanterna do celular se a ring light da frente falhar."
-            }
+              "watch": "Confirmo a participação de quem aparece e as autorizações da escola já trabalhadas no curso. A gravação é exercício interno, sem publicação automática.",
+              "rescue": "Quem não quiser aparecer participa de câmera, luz ou registro. Uso objeto apenas se ninguém no grupo quiser ser filmado."
+            },
+            "promptLabel": "Parem e confiram",
+            "prompt": "Fala sugerida: “Hoje aprendi que mudar a posição da luz muda a sombra no rosto.”"
           },
           {
-            "title": "A luz se move",
-            "kicker": "Demonstração na mesa da frente",
-            "heading": "Olhem o objeto, não o equipamento",
-            "lede": "Permaneçam sentados. A ring light anda. O objeto mostra o resultado.",
-            "layout": "dense-cards",
+            "title": "O mapa da luz",
+            "heading": "Frente revela. Lado desenha.",
+            "lede": "Vista de cima: a câmera fica parada. A luz muda de posição em relação ao objeto.",
+            "kicker": "O mapa da luz",
             "block": 1,
+            "layout": "dense-cards",
             "cards": [
               {
-                "eyebrow": "A",
-                "title": "Só a sala",
-                "text": "O objeto aparece, mas some no fundo. Falta separá-lo do fundo.",
-                "visual": "room"
-              },
-              {
-                "eyebrow": "B",
-                "title": "Frente · catálogo",
-                "text": "Ring light no eixo da câmera. Sombra curta atrás do objeto.",
+                "eyebrow": "A · luz frontal",
+                "title": "Comecem perto da câmera",
+                "text": "Ponto de partida para iluminar a face do produto. Ajustem se surgir reflexo.",
                 "visual": "front"
               },
               {
-                "eyebrow": "C",
-                "title": "45° · volume",
-                "text": "A luz sai do eixo. Uma sombra desenha a forma.",
+                "eyebrow": "B · luz a cerca de 45°",
+                "title": "Desloquem para a diagonal",
+                "text": "Ponto de partida para criar volume. O ângulo final depende do objeto.",
+                "visual": "angle"
+              }
+            ],
+            "teacher": {
+              "steps": [
+                "4 min · Aponto câmera, objeto e ring light nos diagramas. Mostro a diagonal com a mão sobre a mesa.",
+                "4 min · Peço uma previsão por mesa: qual lado ficará mais escuro? Depois movo a luz."
+              ],
+              "watch": "45° é uma referência lateral, não uma medida obrigatória nem a inclinação para baixo.",
+              "rescue": "Faço a turma localizar primeiro a câmera no desenho e depois a diagonal."
+            },
+            "promptLabel": "Parem e confiram",
+            "prompt": "Antes de mover a luz: apontem onde esperam ver a sombra."
+          },
+          {
+            "title": "Ler o resultado",
+            "heading": "Sombra, brilho e cor dão pistas",
+            "lede": "Escolham o sintoma antes de escolher o ajuste.",
+            "kicker": "Ler o resultado",
+            "block": 1,
+            "layout": "dense-cards",
+            "cards": [
+              {
+                "eyebrow": "Sombra",
+                "title": "O detalhe desapareceu?",
+                "text": "Mudem o lado ou a altura da luz. Observem a face que precisa aparecer."
+              },
+              {
+                "eyebrow": "Reflexo",
+                "title": "Uma mancha cobriu o rótulo?",
+                "text": "Desloquem a luz um pouco para o lado. Confiram pelo visor."
+              },
+              {
+                "eyebrow": "Claridade",
+                "title": "O branco perdeu a textura?",
+                "text": "Reduzam a intensidade. Mantenham câmera e objeto no lugar."
+              },
+              {
+                "eyebrow": "Cor",
+                "title": "O branco ficou azulado ou amarelo?",
+                "text": "Mantenham a cor da ring light e o balanço de branco consistentes."
+              }
+            ],
+            "teacher": {
+              "steps": [
+                "4 min · Mostro uma sombra e um reflexo no objeto; pergunto qual informação cada um esconde.",
+                "4 min · Demonstro um ajuste por vez. Explico: aproximar muda intensidade e tamanho aparente da fonte; não resolve qualquer sombra."
+              ],
+              "watch": "Sombra não é defeito por si só. O problema é perder informação necessária ao pedido. Não prometo que luz frontal elimina sombras.",
+              "rescue": "Se houver mistura de luzes, escolho uma luz dominante no posto. Não apago a iluminação compartilhada de toda a sala."
+            },
+            "promptLabel": "Parem e confiram",
+            "prompt": "Digam: “Não consigo ver ___; vou mudar ___ e observar ___”."
+          },
+          {
+            "title": "A luz se move",
+            "heading": "Prevejam. Observem. Expliquem.",
+            "lede": "O papel branco devolve parte da luz para o lado em sombra.",
+            "kicker": "A luz se move",
+            "block": 1,
+            "layout": "dense-cards",
+            "cards": [
+              {
+                "eyebrow": "Teste A",
+                "title": "Luz lateral, sem papel",
+                "text": "Observem a diferença entre o lado claro e o lado em sombra.",
                 "visual": "angle"
               },
               {
-                "eyebrow": "D",
-                "title": "45° + papel",
-                "text": "Papel branco do outro lado. A sombra clareia e o volume fica.",
+                "eyebrow": "Teste B",
+                "title": "Mesma luz, com papel",
+                "text": "Aproximem o papel do lado escuro, fora do quadro. Comparem o detalhe.",
                 "visual": "fill"
               }
             ],
-            "bullets": [
-              "Se a sombra cobrir a face do produto, a luz está baixa ou longe demais.",
-              "Se o objeto e o fundo tiverem a mesma claridade, o depoimento não separa o assunto."
-            ],
             "teacher": {
-              "speech": "Não adicionem outra luz antes de mover a que já existe.",
               "steps": [
-                "4 min · Mostro o objeto só com a luz da sala.",
-                "4 min · Aproximo a ring light à frente e peço que descrevam a sombra.",
-                "4 min · Levo a ring light a 45° e comparo o volume.",
-                "4 min · Coloco papel branco do outro lado e pergunto o que clareou."
+                "3 min · Mostro luz frontal e lateral; a turma prevê a sombra antes de cada movimento.",
+                "3 min · Mantenho a ring light lateral fixa e acrescento papel branco do lado em sombra.",
+                "3 min · Aproximo e afasto somente o papel. Peço que cada mesa indique o que voltou a aparecer.",
+                "3 min · Retiro o papel para confirmar a diferença e explico que refletir é preencher."
               ],
-              "watch": "Ninguém se levanta. A turma aponta sombra, borda e fundo, não o aparelho.",
-              "rescue": "Sem ring light na frente, uso o celular com a tela branca encostada num caderno."
-            }
+              "watch": "Afastar a única ring light altera a principal; não cria preenchimento. O papel precisa receber e devolver luz. Fonte técnica: https://www.nikon.co.uk/en_GB/learn-and-explore/magazine/tips-and-tricks/simple-lighting-set-ups-for-video",
+              "rescue": "Se a demonstração não for visível do fundo da sala, cada mesa repete o gesto com seu objeto. Sem papel avulso, uso página branca do caderno."
+            },
+            "promptLabel": "Parem e confiram",
+            "prompt": "O que mudou na sombra quando só o papel se moveu?"
           },
           {
             "title": "Registro no caderno",
-            "kicker": "Copiem agora · completem depois",
-            "heading": "Quatro linhas, do quadro para o caderno",
-            "lede": "Não há folha para distribuir. Copiem a estrutura. Os espaços ficam para os dois pedidos.",
-            "layout": "dense-cards",
+            "heading": "Registrem a mudança e a evidência",
+            "lede": "Copiem este modelo. Preencham os espaços durante os testes.",
+            "kicker": "Registro no caderno",
             "block": 1,
+            "layout": "dense-cards",
             "cards": [
               {
-                "eyebrow": "Cabeçalho",
-                "title": "Grupo e objeto",
-                "text": "Grupo ____ · Objeto ____. Usem o que já está na mesa."
+                "eyebrow": "Identificação",
+                "title": "Grupo ___ · objeto ___",
+                "text": "Funções: câmera ___; luz ___; registro ___; quem dá o depoimento ___. Primeiro arquivo de hoje ___; último ___."
               },
               {
-                "eyebrow": "Pedido 1",
-                "title": "PRODUTO",
-                "text": "Ring: frente. Sombra: mínima / média / forte. Arquivo: ____"
+                "eyebrow": "PRODUTO",
+                "title": "Teste ___ → final ___",
+                "text": "Mudamos ___. O detalhe ___ passou a aparecer. Arquivo final ___."
               },
               {
-                "eyebrow": "Pedido 2",
-                "title": "DEPOIMENTO",
-                "text": "Lado: esq. / dir. Preenchimento: ring longe / papel. Fundo mais escuro: sim / não. Arquivo: ____"
+                "eyebrow": "DEPOIMENTO",
+                "title": "Sem papel ___ → com papel ___",
+                "text": "Luz à esq./dir. Papel perto/longe. O lado em sombra ficou ___. Final ___."
               },
               {
-                "eyebrow": "Fecho",
-                "title": "Recomendação",
-                "text": "Para catálogo, a luz ficou ____. Para depoimento, a luz ficou ____."
+                "eyebrow": "Escolha",
+                "title": "Recomendamos ___ porque ___",
+                "text": "Citem uma parte visível da imagem. Cada integrante anota uma conclusão própria."
               }
             ],
-            "promptLabel": "No caderno",
-            "prompt": "Copiem as quatro linhas agora. Durante a gravação, só completem os espaços.",
             "teacher": {
               "steps": [
-                "6 min · Projeto o modelo e a turma copia em silêncio.",
-                "4 min · Confiro se as 7 mesas têm as quatro linhas, ainda em branco nos espaços."
+                "4 min · Deixo o modelo projetado para cópia no caderno do grupo.",
+                "3 min · Distribuo funções entre os integrantes; em grupos maiores, separo observação e registro. As funções trocam no segundo pedido.",
+                "3 min · Confiro as 7 páginas e a identificação do primeiro arquivo de teste antes de qualquer gravação."
               ],
-              "watch": "Há um registro copiado antes do lanche; ninguém espera folha impressa.",
-              "rescue": "Quem atrasou copia as quatro linhas no retorno, antes de ligar a câmera."
-            }
+              "watch": "O registro é observação e decisão, não transcrição de uma resposta pronta.",
+              "rescue": "Com grupo menor, uma pessoa acumula observação e registro."
+            },
+            "promptLabel": "Parem e confiram",
+            "prompt": "PRONTO = modelo copiado + funções combinadas + espaço para os arquivos de teste e finais."
           },
           {
             "title": "Lanche",
-            "block": 1,
-            "pace": "break",
-            "layout": "dense-cards",
-            "kicker": "Intervalo",
             "heading": "Lanche às 19:45",
-            "lede": "Intervalo de 20 minutos. Às 20:05, voltem ao mesmo grupo e à mesma mesa.",
+            "lede": "Voltem às 20:05 ao mesmo grupo e à mesma mesa.",
+            "kicker": "Lanche",
+            "block": 1,
+            "layout": "dense-cards",
             "cards": [
               {
-                "eyebrow": "Câmera",
-                "title": "Desligada e com tampa",
-                "text": "Deixem no centro da mesa. A produção ainda não começou."
+                "eyebrow": "Equipamento",
+                "title": "Desligado e protegido",
+                "text": "Câmera com tampa, longe da borda. Ring light desligada."
               },
               {
-                "eyebrow": "Cena",
-                "title": "Objeto no lugar",
-                "text": "Não desmontem. O pedido 1 usa o mesmo objeto."
+                "eyebrow": "Posto",
+                "title": "Pronto para continuar",
+                "text": "Objeto no lugar, caderno aberto no registro e cabos dentro do posto."
               }
             ],
-            "promptLabel": "Antes de sair",
-            "prompt": "Câmera desligada, tampa colocada e fio da ring light fora do corredor.",
             "teacher": {
               "steps": [
-                "Aviso o retorno às 20:05 e confiro se as câmeras ficaram desligadas e com tampa.",
-                "Na volta, faço a chamada e abro direto no pedido 1."
+                "Anuncio o retorno às 20:05 e confiro os equipamentos antes do intervalo."
               ],
-              "watch": "Nenhuma câmera fica ligada ou com a lente exposta durante o intervalo.",
-              "rescue": "Se alguém desmontou a cena, o grupo remonta com o mesmo objeto ao voltar."
-            }
+              "watch": "Sem cabos atravessando passagem.",
+              "rescue": "Mantenho a cena montada."
+            },
+            "pace": "break"
           },
           {
             "title": "Pedido 1 · Luz de produto",
-            "kicker": "Na mesa do grupo",
-            "heading": "Catálogo: o produto precisa aparecer",
-            "lede": "Câmera parada. Ring light à frente. Oito segundos. Ninguém sai do posto.",
-            "layout": "dense-cards",
+            "heading": "Montem para revelar o produto",
+            "lede": "O objetivo é enxergar detalhes; a posição da luz é o ponto de partida.",
+            "kicker": "Pedido 1 · Luz de produto",
             "block": 2,
+            "layout": "dense-cards",
+            "cards": [
+              {
+                "eyebrow": "1 · cena",
+                "title": "Fixem o enquadramento",
+                "text": "Mesmo objeto e fundo simples. Apoiem a câmera com estabilidade."
+              },
+              {
+                "eyebrow": "2 · luz",
+                "title": "Comecem pela frente",
+                "text": "Ring light perto do eixo da câmera, levemente acima; nada encosta na lente."
+              },
+              {
+                "eyebrow": "3 · câmera",
+                "title": "Confiram pelo visor",
+                "text": "Foco no detalhe importante. Mantenham enquadramento e ajustes nos testes."
+              },
+              {
+                "eyebrow": "4 · equipe",
+                "title": "Cada função participa",
+                "text": "Câmera enquadra; luz ajusta; observação aponta o detalhe; registro anota."
+              }
+            ],
+            "teacher": {
+              "steps": [
+                "3 min · Faço a chamada da retomada e recupero o pedido do cliente.",
+                "7 min · Confiro montagem, estabilidade, foco e um detalhe escolhido em cada mesa."
+              ],
+              "watch": "Cada grupo escolheu um detalhe observável: rótulo, borda ou textura.",
+              "rescue": "Se a câmera falhar, uso celular apoiado. Com automático, espero a imagem estabilizar e registro essa limitação."
+            },
+            "bullets": [
+              "Trabalhem no próprio posto, com o fio fora da passagem.",
+              "PRONTO = enquadramento fixo + detalhe escolhido + foco conferido."
+            ]
+          },
+          {
+            "title": "Teste de produto",
+            "heading": "Gravem pouco. Olhem com atenção.",
+            "lede": "Façam um teste de dois segundos antes do vídeo final.",
+            "kicker": "Teste de produto",
+            "block": 2,
+            "layout": "dense-cards",
             "cards": [
               {
                 "eyebrow": "1",
-                "title": "Montem a luz",
-                "text": "Ring light à frente, um pouco acima da câmera. Fundo limpo."
+                "title": "Prevejam",
+                "text": "Qual detalhe pode desaparecer na sombra ou no reflexo?"
               },
               {
                 "eyebrow": "2",
-                "title": "Teste de dois segundos",
-                "text": "Assistam. Se a sombra cobrir a face do objeto, aproximem ou subam a luz."
+                "title": "Gravem o teste",
+                "text": "Anotem o arquivo e assistam na própria câmera."
               },
               {
                 "eyebrow": "3",
-                "title": "Gravem oito segundos",
-                "text": "Objeto nítido, câmera parada, sem fala. Anotem o número do arquivo."
+                "title": "Apontem a evidência",
+                "text": "Mostrem a parte exata que está legível ou escondida."
               },
               {
                 "eyebrow": "4",
-                "title": "Conferência no grupo",
-                "text": "Marquem a sombra: mínima, média ou forte. Corrijam uma vez se estiver forte."
+                "title": "Escolham um ajuste",
+                "text": "Posição, intensidade ou papel. Mudem apenas um deles por vez."
               }
             ],
-            "bullets": [
-              "Fiquem na mesa. O fio não cruza o corredor. Ninguém precisa aparecer no vídeo.",
-              "PRONTO = um vídeo assistido + sombra mínima ou média + número do arquivo no caderno."
+            "teacher": {
+              "steps": [
+                "3 min · Modelo a frase de previsão com o objeto da frente.",
+                "7 min · Acompanho teste e reprodução nas 7 mesas.",
+                "5 min · Cada grupo aponta uma evidência e escolhe um ajuste."
+              ],
+              "watch": "Ninguém grava repetidamente sem rever o resultado.",
+              "rescue": "Se tudo já estiver legível, proponho deslocar a luz um pouco e prever se o reflexo mudará."
+            },
+            "promptLabel": "Parem e confiram",
+            "prompt": "PRONTO = teste assistido + problema localizado + um ajuste escolhido."
+          },
+          {
+            "title": "Ajustar o produto",
+            "heading": "O ajuste resolveu o problema?",
+            "lede": "Façam um segundo teste e comparem com o primeiro.",
+            "kicker": "Ajustar o produto",
+            "block": 2,
+            "layout": "dense-cards",
+            "cards": [
+              {
+                "eyebrow": "A · informação escura",
+                "title": "Mudem a direção",
+                "text": "Levem a luz para a face que precisa aparecer. Reavaliem a sombra."
+              },
+              {
+                "eyebrow": "B · reflexo no detalhe",
+                "title": "Desloquem a luz",
+                "text": "Movam para o lado em pequenos passos e olhem pelo visor."
+              },
+              {
+                "eyebrow": "C · branco sem detalhe",
+                "title": "Reduzam a intensidade",
+                "text": "Procurem a textura voltar. Evitem mudar vários controles juntos."
+              },
+              {
+                "eyebrow": "D · comparação",
+                "title": "Mantenham ou voltem",
+                "text": "Escolham a versão que atende ao pedido e registrem o motivo."
+              }
             ],
             "teacher": {
-              "speech": "Se o produto desaparece na sombra, a luz ainda não cumpriu o pedido.",
               "steps": [
-                "5 min · Retomo o pedido de catálogo e autorizo o início depois de ver o registro copiado.",
-                "35 min · Circulo pelos 7 postos; cobro posição da luz e sombra no objeto.",
-                "10 min · Os grupos assistem, corrigem uma vez se a sombra for forte e anotam o arquivo.",
-                "5 min · Confiro as 7 mesas: objeto nítido, fundo limpo, número anotado."
+                "4 min · Cada mesa escolhe A, B ou C pelo sintoma real.",
+                "10 min · Acompanho a mudança e o segundo teste.",
+                "6 min · Peço comparação e registro; quem terminou tenta reproduzir a posição escolhida."
               ],
-              "watch": "Há um arquivo por grupo; a ring light está à frente; ninguém circula.",
-              "rescue": "Câmera com falha vira celular apoiado. Sem ring light, a luminária da mesa entra à frente do objeto."
-            }
+              "watch": "Melhoria precisa ser visível no detalhe escolhido.",
+              "rescue": "Se a diferença for pequena, repito a comparação sem mudar foco, câmera ou objeto."
+            },
+            "promptLabel": "Parem e confiram",
+            "prompt": "PRONTO = dois testes comparados + escolha justificada + posição final reproduzível."
+          },
+          {
+            "title": "Produto aprovado",
+            "heading": "Agora, gravem os oito segundos",
+            "lede": "Câmera parada, objeto parado e luz na posição escolhida.",
+            "kicker": "Produto aprovado",
+            "block": 2,
+            "layout": "dense-cards",
+            "cards": [
+              {
+                "eyebrow": "1",
+                "title": "Gravem",
+                "text": "Oito segundos contínuos, sem fala e sem efeitos."
+              },
+              {
+                "eyebrow": "2",
+                "title": "Assistam até o fim",
+                "text": "O detalhe segue nítido? A câmera ficou estável?"
+              },
+              {
+                "eyebrow": "3",
+                "title": "Registrem",
+                "text": "Marquem o número do arquivo final como PRODUTO."
+              },
+              {
+                "eyebrow": "4",
+                "title": "Troquem as funções",
+                "text": "Troquem câmera, luz e registro. Escolham quem dará o depoimento no próprio posto."
+              }
+            ],
+            "teacher": {
+              "steps": [
+                "6 min · Gravação final e reprodução completa.",
+                "4 min · Confiro os 7 arquivos e a troca de funções dentro de cada mesa."
+              ],
+              "watch": "Produto legível, sem reflexo escondendo o detalhe escolhido.",
+              "rescue": "Se faltou nitidez, corrijo foco antes de repetir; não culpo a luz."
+            },
+            "promptLabel": "Parem e confiram",
+            "prompt": "PRONTO = PRODUTO assistido + arquivo anotado + detalhe legível."
           },
           {
             "title": "Pedido 2 · Luz de depoimento",
-            "kicker": "Mesma mesa · mesmo objeto · 40 min",
-            "heading": "O assunto mais claro que o fundo",
-            "lede": "A câmera continua parada. A ring light sai do eixo. O objeto não muda.",
-            "layout": "dense-cards",
+            "heading": "Iluminem quem vai falar",
+            "lede": "Um integrante dá um depoimento curto; os colegas cuidam da câmera, da luz e do registro.",
+            "kicker": "Pedido 2 · Luz de depoimento",
             "block": 3,
+            "layout": "dense-cards",
             "cards": [
               {
                 "eyebrow": "1",
-                "title": "Mudam só a luz",
-                "text": "Levem a ring light a 45°, esquerda ou direita. Não troquem o objeto."
+                "title": "Enquadrem a pessoa",
+                "text": "Pessoa sentada no posto. Câmera na altura dos olhos, do peito para cima; foco nos olhos."
               },
               {
                 "eyebrow": "2",
-                "title": "Preenchimento fraco",
-                "text": "Papel branco do outro lado, ou a ring light mais longe. A sombra não some por completo."
+                "title": "Movam a principal",
+                "text": "Ring light a cerca de 45° ao lado da câmera, levemente acima dos olhos. Ajustem sem desconforto."
               },
               {
                 "eyebrow": "3",
-                "title": "Gravem oito segundos",
-                "text": "Assunto mais claro que o fundo. Sem fala. Anotem o número do arquivo."
+                "title": "Preencham com papel",
+                "text": "Papel branco do lado em sombra, fora do quadro. Observem a bochecha e os olhos."
               },
               {
                 "eyebrow": "4",
-                "title": "Comparem na mesa",
-                "text": "Assistam PRODUTO e DEPOIMENTO. Completem o lado, o preenchimento e o fundo no caderno."
+                "title": "Observem o fundo",
+                "text": "Fundo simples e discreto. Evitem colegas ao fundo e confiram se a fala é compreensível."
               }
             ],
-            "bullets": [
-              "Se os dois vídeos parecerem iguais, a luz ainda está no eixo da câmera.",
-              "PRONTO = segundo vídeo assistido + fundo mais escuro que o assunto + número anotado."
-            ],
             "teacher": {
-              "speech": "No depoimento, o fundo não pode ganhar a mesma luz do assunto.",
               "steps": [
-                "5 min · Mostro a diferença: luz a 45° e preenchimento fraco.",
-                "25 min · Circulo; cobro lado da luz principal e assunto mais claro que o fundo.",
-                "10 min · Os grupos assistem aos dois vídeos na própria mesa e completam o registro."
+                "3 min · Faço a chamada, confirmo as funções e convido um integrante de cada grupo a dar o depoimento.",
+                "7 min · Demonstro enquadramento do peito para cima, foco nos olhos, luz lateral confortável e papel no lado em sombra. Faço um teste de voz."
               ],
-              "watch": "O pedido 2 não regrava o catálogo; a luz saiu do eixo; o grupo não visita outra mesa.",
-              "rescue": "Sem papel branco, um caderno claro do outro lado resolve. Sem volume, afasto o preenchimento."
-            }
+              "watch": "A pessoa permanece sentada no posto e participa por escolha. Principal lateral e papel ajudam a modelar o rosto; fundo mais escuro é uma intenção deste pedido, não uma regra universal.",
+              "rescue": "Se houver reflexo nos óculos, ajusto a posição da luz pelo visor. Quem não quiser aparecer assume outra função. Se ninguém quiser, mantenho a prática de luz com objeto."
+            },
+            "bullets": [
+              "Combinem quem aparece e gravem para a atividade da turma. Cada integrante tem uma função.",
+              "PRONTO = pessoa (ou objeto na alternativa) enquadrada + foco + principal lateral + papel fora do quadro."
+            ]
           },
           {
-            "title": "Comparar no navegador",
-            "kicker": "Computador da mesa · sem instalar",
-            "heading": "PRODUTO e DEPOIMENTO na mesma linha",
-            "lede": "Abram o Clipchamp já presente no Windows ou o CapCut no navegador. Não instalem programa.",
+            "title": "Teste de preenchimento",
+            "heading": "Quanto papel a sombra precisa?",
+            "lede": "A pessoa mantém a posição e a ring light fica fixa. Agora só o papel se move.",
+            "kicker": "Teste de preenchimento",
+            "block": 3,
             "layout": "dense-cards",
-            "block": 4,
             "cards": [
               {
-                "eyebrow": "1",
-                "title": "Copiem os dois arquivos",
-                "text": "Da câmera para a pasta do grupo no computador. Nomes: PRODUTO e DEPOIMENTO."
+                "eyebrow": "A · sem papel",
+                "title": "Gravem dois segundos",
+                "text": "Observem o lado em sombra do rosto. O olho e a bochecha ainda têm detalhe?",
+                "visual": "angle",
+                "subject": "person"
               },
               {
-                "eyebrow": "2",
-                "title": "Abram o editor",
-                "text": "Clipchamp no Windows ou CapCut no navegador. Sem conta nova, se o programa pedir login, pulem para o passo 4."
-              },
-              {
-                "eyebrow": "3",
-                "title": "Um depois do outro",
-                "text": "PRODUTO, depois DEPOIMENTO. Sem efeito. Exportem PA_A07_EQ##_LUZ.mp4."
-              },
-              {
-                "eyebrow": "4",
-                "title": "Plano B",
-                "text": "Sem internet ou sem editor, assistam aos dois na câmera. O caderno vale igual."
+                "eyebrow": "B · com papel",
+                "title": "Gravem outro teste",
+                "text": "Ajustem o papel para recuperar detalhe no rosto. Mantenham pessoa, câmera e luz paradas.",
+                "visual": "fill",
+                "subject": "person"
               }
-            ],
-            "bullets": [
-              "Não é aula de edição: só juntar para comparar. Corte, texto e música ficam para outra noite.",
-              "PRONTO = dois vídeos localizados + recomendação escrita, com ou sem o arquivo único."
             ],
             "teacher": {
               "steps": [
-                "4 min · Mostro copiar da câmera e abrir o Clipchamp ou o CapCut no navegador.",
-                "12 min · Os grupos montam a sequência ou mostram os dois arquivos.",
-                "2 min · Confiro se cada mesa tem os dois vídeos localizados."
+                "4 min · Cada grupo prevê a diferença e grava sem papel.",
+                "8 min · Aproxima e orienta o papel, grava e compara.",
+                "8 min · Escolhe a posição que recupera detalhe e ainda mantém volume; registra os arquivos."
               ],
-              "watch": "Ninguém instala software. Quem travar no login usa a câmera. A recomendação está no caderno.",
-              "rescue": "Sem computador, a comparação é na tela da câmera. Eu não abro conta nem peço instalação."
-            }
+              "watch": "Peço que a pessoa mantenha a posição entre os testes. Confiro se o papel recebe luz e a devolve ao lado em sombra do rosto.",
+              "rescue": "Aproximo e giro o papel, sem encostar na pessoa. Se a sala já preencher a sombra, registro que a diferença ficou pequena."
+            },
+            "promptLabel": "Parem e confiram",
+            "prompt": "PRONTO = testes sem/com papel + detalhe recuperado + um lado ainda mais escuro."
+          },
+          {
+            "title": "Depoimento aprovado",
+            "heading": "Gravem uma fala com luz e volume",
+            "lede": "Cerca de oito segundos. Olhem para a lente e contem uma descoberta da aula.",
+            "kicker": "Depoimento aprovado",
+            "block": 3,
+            "layout": "dense-cards",
+            "cards": [
+              {
+                "eyebrow": "1",
+                "title": "Falem com naturalidade",
+                "text": "“Hoje aprendi que mudar a posição da luz muda a sombra no rosto.” Podem usar suas palavras."
+              },
+              {
+                "eyebrow": "2",
+                "title": "Revejam",
+                "text": "Ouçam a frase inteira. Confiram foco nos olhos e detalhe nos dois lados do rosto."
+              },
+              {
+                "eyebrow": "3",
+                "title": "Compare com o teste",
+                "text": "No mesmo rosto, o papel recuperou detalhe? Escolham a melhor tomada do depoimento."
+              },
+              {
+                "eyebrow": "4",
+                "title": "Identifiquem",
+                "text": "Anotem DEPOIMENTO e o número do arquivo final."
+              }
+            ],
+            "teacher": {
+              "steps": [
+                "6 min · Gravação e reprodução do depoimento completo. Se houver tempo, outro integrante fala e as funções se alternam; escolhem uma tomada final.",
+                "4 min · Confiro foco, detalhe na sombra e fala compreensível. Comparo o rosto nos testes sem/com papel, não diretamente com o objeto."
+              ],
+              "watch": "A entrega principal é uma tomada por grupo; não obrigo todos a aparecer. O conteúdo da fala é simples e o exercício continua centrado em iluminação.",
+              "rescue": "Se a voz estiver baixa, reduzo conversas próximas e aproximo a câmera, reajustando o enquadramento antes de repetir."
+            },
+            "promptLabel": "Parem e confiram",
+            "prompt": "PRONTO = foco + volume + detalhe na sombra + arquivo anotado; com pessoa, fala compreensível."
+          },
+          {
+            "title": "Comparar os arquivos",
+            "heading": "Mostrem a diferença, lado a lado no raciocínio",
+            "lede": "Confiram como cada vídeo atende ao seu pedido: produto legível e pessoa bem iluminada.",
+            "kicker": "Comparar os arquivos",
+            "block": 4,
+            "layout": "dense-cards",
+            "cards": [
+              {
+                "eyebrow": "1",
+                "title": "Copiem com identificação",
+                "text": "Pasta PA_A07_EQ##. Cópias: PRODUTO e DEPOIMENTO; preservem a extensão original."
+              },
+              {
+                "eyebrow": "2",
+                "title": "Abram os dois",
+                "text": "Reproduzam os arquivos copiados até o fim. Confiram nome e conteúdo."
+              },
+              {
+                "eyebrow": "3",
+                "title": "Compare sem editor",
+                "text": "Alternem os vídeos no reprodutor local. Sem computador, usem a câmera."
+              },
+              {
+                "eyebrow": "4 · opcional",
+                "title": "Juntem se já estiver disponível",
+                "text": "Clipchamp ou CapCut: PRODUTO → DEPOIMENTO. Sem login novo nem instalação."
+              }
+            ],
+            "teacher": {
+              "steps": [
+                "2 min · Faço a chamada e demonstro copiar, preservando a extensão dos arquivos.",
+                "7 min · Cada grupo copia e reabre; sem cabo/leitor ou computador, confiro diretamente na câmera.",
+                "3 min · Comparação. Só quem já terminou e tem editor disponível pode exportar PA_A07_EQ##_LUZ.mp4."
+              ],
+              "watch": "Comparo cada final com seu próprio teste. Objeto e rosto têm formas e superfícies diferentes; a comparação entre eles é de intenção e resultado, não uma prova isolada do efeito da luz.",
+              "rescue": "Sem cópia possível, preservo os originais no cartão para transferência posterior; marco a pendência no registro."
+            },
+            "bullets": [
+              "Na pasta, substituam ## pelo número do grupo. Anotem também o último arquivo de hoje.",
+              "PRONTO = dois vídeos localizados e assistidos + caminho ou cartão anotado."
+            ]
+          },
+          {
+            "title": "Recomendação ao cliente",
+            "heading": "Troquem “ficou bonito” por evidência",
+            "lede": "A escolha precisa explicar o que a luz fez na imagem.",
+            "kicker": "Recomendação ao cliente",
+            "block": 4,
+            "layout": "dense-cards",
+            "cards": [
+              {
+                "eyebrow": "Catálogo",
+                "title": "Escolhemos ___ porque ___",
+                "text": "Citem rótulo, borda ou textura visível no arquivo PRODUTO."
+              },
+              {
+                "eyebrow": "Depoimento",
+                "title": "Movemos ___ e observamos ___",
+                "text": "Expliquem o que a luz lateral e o papel fizeram no rosto. Citem olho, bochecha ou sombra."
+              }
+            ],
+            "teacher": {
+              "steps": [
+                "3 min · Cada grupo completa as duas recomendações com o arquivo aberto.",
+                "3 min · Cada integrante registra uma frase própria: o ajuste que fiz e o resultado que observei.",
+                "2 min · Confiro uma explicação por mesa, sem apresentação para toda a turma."
+              ],
+              "watch": "Toda frase liga ajuste a evidência visível.",
+              "rescue": "Pergunto apenas: onde, na imagem, consigo ver o que vocês disseram?"
+            },
+            "promptLabel": "Parem e confiram",
+            "prompt": "PRONTO = duas recomendações do grupo + uma conclusão por integrante."
           },
           {
             "title": "Conferir e devolver",
-            "kicker": "Últimos minutos · 22:10",
-            "heading": "Dois vídeos, um registro, uma frase",
-            "lede": "A conferência é na mesa. Não há apresentação para a turma.",
-            "layout": "dense-cards",
+            "heading": "Fechem a entrega até 22:10",
+            "lede": "Confiram na própria mesa e deixem o equipamento pronto para recolhimento.",
+            "kicker": "Conferir e devolver",
             "block": 4,
+            "layout": "dense-cards",
             "cards": [
               {
-                "eyebrow": "Caderno",
-                "title": "Mostrem a página",
-                "text": "Grupo, objeto, dois arquivos e a recomendação com posição da luz."
+                "eyebrow": "1 · arquivos",
+                "title": "Dois finais identificados",
+                "text": "PRODUTO e DEPOIMENTO assistidos; cópias conferidas ou cartão preservado."
               },
               {
-                "eyebrow": "Arquivos",
-                "title": "Mostrem os números",
-                "text": "PRODUTO e DEPOIMENTO. O arquivo único entra se existir."
+                "eyebrow": "2 · registro",
+                "title": "Decisão com evidência",
+                "text": "Testes, finais, primeiro e último arquivo de hoje e recomendação completos."
               },
               {
-                "eyebrow": "Equipamento",
-                "title": "Devolvam completo",
-                "text": "Câmera desligada, tampa, cartão, bateria e cabo enrolado. Não formatem o cartão."
+                "eyebrow": "3 · equipamento",
+                "title": "Conjunto completo",
+                "text": "Câmera desligada, tampa, cartão e bateria. Ring light desligada, cabo organizado."
               },
               {
-                "eyebrow": "Saída",
-                "title": "Fechem o pedido",
-                "text": "Completem: “Para catálogo, a luz ficou ____. Para depoimento, a luz ficou ____.”"
+                "eyebrow": "4 · saída",
+                "title": "Uma ideia para levar",
+                "text": "“Antes de gravar, vou observar ___ e testar ___.”"
               }
-            ],
-            "bullets": [
-              "A conferência é nesta mesa. Não levem o vídeo para outra.",
-              "PRONTO = página conferida + vídeos localizados + câmera e ring light devolvidas."
             ],
             "teacher": {
               "steps": [
-                "5 min · Confiro mesa a mesa o registro e a recomendação com posição da luz.",
-                "5 min · Recebo câmeras e ring lights; confiro cartão, bateria, tampa e cabo. Apago somente a faixa de hoje.",
-                "2 min · Encerro às 22:10."
+                "4 min · Confiro os 7 registros e os arquivos. Não apago nada sem cópia reaberta e conferida; se faltar cópia, identifico o cartão para guardar.",
+                "4 min · Recolho nos postos as 7 câmeras e 7 ring lights. Confiro tampa, cartão, bateria e cabo. Só após cópia validada, eventual limpeza segue a faixa de hoje registrada, incluindo testes; não formato cartões.",
+                "2 min · Ouço duas conclusões e encerro às 22:10."
               ],
-              "watch": "Sete câmeras e sete ring lights devolvidas; nenhum cartão formatado; toda recomendação cita posição da luz.",
-              "rescue": "Com atraso, recebo primeiro o equipamento. A recomendação fica escrita, sem rodada oral."
-            }
+              "watch": "Sem perda de arquivo: número anotado não substitui cópia conferida. Material de outras turmas é preservado.",
+              "rescue": "Com atraso, priorizo guardar arquivos e recolher equipamentos; exportação opcional é dispensada."
+            },
+            "bullets": [
+              "Não formatem o cartão nem apaguem originais antes da conferência das cópias.",
+              "PRONTO = arquivos preservados + registro conferido + câmera e ring light devolvidas."
+            ]
           }
         ],
         "appendDefaultClosing": false

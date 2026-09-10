@@ -1323,7 +1323,7 @@ window.SENAI_COURSES = {
       {
         "num": "07",
         "title": "Luz de produto e depoimento",
-        "description": "Aula prática de iluminação no próprio posto. Os 7 grupos já estão formados. Cada grupo atende dois pedidos de cliente com o mesmo objeto: catálogo de produto e depoimento. A comparação acontece no computador da mesa, no editor do navegador, sem visitar outro grupo.",
+        "description": "Do produto ao rosto: revelem detalhes para um catálogo e gravem um depoimento curto de um integrante com luz lateral e preenchimento. Prevejam, testem, comparem e ajustem no próprio posto.",
         "objectives": [
           "Captura de vídeos e sons: iluminação, cenários."
         ],
@@ -1336,24 +1336,24 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:45",
-            "atividade": "Ver no projetor dois pedidos de cliente — catálogo de produto e depoimento. Copiar no caderno o registro de luz projetado. Observar, da própria cadeira, o que muda no objeto da mesa da frente quando a ring light muda de lugar."
+            "atividade": "Conhecer os dois pedidos, prever sombras, observar luz frontal e lateral e testar o efeito do papel branco. Copiar o registro de ajustes e arquivos no caderno."
           },
           {
             "horario": "20:05 - 21:00",
-            "atividade": "Pedido 1 na própria mesa: iluminar o objeto como catálogo, com a ring light à frente e sombra mínima. Gravar oito segundos, assistir, corrigir se a sombra cobrir o produto e anotar o número do arquivo."
+            "atividade": "Pedido 1: montar luz de catálogo, gravar um teste, localizar uma dificuldade, mudar um ajuste e comparar. Gravar e conferir PRODUTO: oito segundos com o detalhe escolhido legível."
           },
           {
             "horario": "21:00 - 21:40",
-            "atividade": "Pedido 2 na mesma mesa e no mesmo objeto: luz principal a 45° e preenchimento fraco do outro lado. Gravar oito segundos. O assunto precisa ficar mais claro que o fundo. Anotar o arquivo."
+            "atividade": "Pedido 2: trocar funções no grupo e enquadrar um integrante do peito para cima, com foco nos olhos. Testar luz lateral a cerca de 45°, sem e com papel refletor. Gravar DEPOIMENTO de cerca de oito segundos com fala compreensível e detalhe no rosto."
           },
           {
             "horario": "21:40 - 22:10",
-            "atividade": "Copiar os dois vídeos para o computador da mesa, colocar PRODUTO e DEPOIMENTO em sequência no editor do navegador, completar a recomendação ao cliente no caderno e devolver câmera e ring light. Encerrar às 22:10."
+            "atividade": "Copiar e reabrir PRODUTO e DEPOIMENTO; comparar na própria mesa. Escrever duas recomendações e uma conclusão por integrante. Preservar os arquivos e devolver os equipamentos até 22:10."
           }
         ],
-        "methodology": "Demonstração com a luz se movendo na mesa da frente, cópia do registro projetado e dois pedidos de cliente executados no mesmo posto. A comparação acontece no computador da mesa, sem visita a outro grupo.",
-        "resources": "Projetor, quadro, caderno ou folhas em branco, lápis ou caneta e os objetos já separados. Há 7 câmeras já carregadas, com cartão e bateria, 7 ring lights e computadores com navegador. Os grupos já estão formados. Nenhum programa precisa ser instalado no Windows. Nenhuma ficha impressa é necessária. O editor é o Clipchamp já presente no Windows ou o CapCut no navegador.",
-        "observation": "Aula das 19:00 às 22:10. Lanche fixo das 19:45 às 20:05. Não refaça os grupos e não peça novos objetos. Cada grupo permanece na mesa marcada a noite inteira; a ring light só se move sobre o próprio posto. Chamada na abertura e na retomada. Depois de conferir, apague no cartão apenas o que foi gravado hoje, teste e repetições incluídos, pela faixa de números anotada; não formate o cartão. Sem internet, mostrem os dois arquivos na câmera. Sem Clipchamp, usem o CapCut no navegador. Sem os dois, a entrega são os dois arquivos e o caderno."
+        "methodology": "Dois ciclos de previsão, teste curto, comparação, ajuste e gravação final. Funções alternadas no mesmo grupo, critérios de conclusão projetados e decisões registradas com evidência visível.",
+        "resources": "Projetor, caderno e caneta, papel branco ou página do caderno e objetos já separados. Há 7 câmeras já carregadas, com cartão e bateria, 7 ring lights e computadores. Os grupos já estão formados. Cabo ou leitor disponível para transferência; reprodutor local para comparação. Nenhum programa precisa ser instalado. Nenhuma ficha impressa é necessária. Clipchamp ou CapCut são opcionais, apenas se já disponíveis sem novo login.",
+        "observation": "Aula das 19:00 às 22:10. Lanche fixo das 19:45 às 20:05. Cada grupo permanece na mesa marcada; a ring light se move apenas no próprio posto. Chamada no início dos quatro blocos. Os integrantes gravam uns aos outros no depoimento, com participação voluntária e autorizações da escola conferidas; exercício interno, sem publicação automática. Quem não quiser aparecer assume câmera, luz ou registro. Dentro dos testes de cada pedido, mantenha pessoa ou objeto, câmera e enquadramento; entre produto e depoimento, reenquadre. Se ninguém quiser aparecer, use o objeto como alternativa. Confirme o primeiro e o último arquivo de hoje, incluindo testes. Reabra as cópias antes de qualquer limpeza; não formate o cartão. Sem cópia conferida, preserve os originais no cartão identificado para transferência posterior. Eventual limpeza após cópia validada abrange somente a faixa de hoje. Sem internet ou editor, compare os arquivos no reprodutor local ou na câmera; exportar um arquivo único é opcional."
       },
       {
         "num": "08",

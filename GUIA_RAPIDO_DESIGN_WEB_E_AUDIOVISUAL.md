@@ -147,11 +147,31 @@ Antes de cada tomada: lente, estabilidade, foco, exposição, enquadramento e so
 Um teste de dez segundos é ouvido com fone. Cabos, tripés e luminárias ficam fora
 das rotas de circulação.
 
-Na Aula 07, a turma permanece no posto marcado. Há dois pedidos de cliente —
-catálogo de produto e depoimento — com o mesmo objeto. O registro de luz é copiado
-do projetor para o caderno; não há folha impressa. A comparação dos dois vídeos
-acontece no Clipchamp já presente no Windows ou no CapCut do navegador, sem
-instalar programa.
+Na Aula 07, os 7 grupos permanecem nos postos e mantêm câmera e enquadramento dentro de cada teste. A aula vai das 19:00 às 22:10, com lanche das 19:45 às 20:05.
+Os 18 slides (capa + 17) organizam dois ciclos: prever, testar, comparar,
+ajustar e gravar oito segundos. PRODUTO revela um detalhe escolhido;
+DEPOIMENTO mostra um integrante falando por cerca de oito segundos, enquadrado
+do peito para cima, com foco nos olhos. Os colegas gravam, iluminam e registram.
+A participação diante da câmera é voluntária; quem não quiser aparecer assume
+outra função. Confira as autorizações da escola para o exercício interno.
+Entre os pedidos, reenquadre; compare os testes de luz no mesmo rosto.
+
+O papel branco reflete a luz principal para o lado em sombra. Afastar a única
+ring light não cria preenchimento. A posição de 45° é um ponto de partida;
+a decisão final é conferida no visor. Os diagramas são esquemas de posição,
+não simulações fotométricas. Referência técnica de preparação:
+[Nikon — Simple lighting set-ups for video](https://www.nikon.co.uk/en_GB/learn-and-explore/magazine/tips-and-tricks/simple-lighting-set-ups-for-video).
+
+Antes de ministrar, confira estabilidade dos apoios, papel branco, cabo/leitor
+para cópia e reprodutor local. As funções de câmera, luz e observação/registro
+trocam entre os pedidos. O grupo copia o modelo projetado no caderno e registra
+arquivos, ajustes e evidências; cada integrante escreve uma conclusão própria.
+
+A comparação usa o reprodutor local ou a câmera. Clipchamp/CapCut e exportação
+única são opcionais, somente se já disponíveis, sem instalação ou novo login.
+Reabra as cópias antes de qualquer limpeza. Sem transferência, identifique e
+preserve o cartão para copiar depois; nunca formate nem remova outras aulas.
+O professor recolhe os equipamentos nos postos.
 
 ### Edição
 

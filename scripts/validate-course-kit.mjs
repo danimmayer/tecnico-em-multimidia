@@ -380,7 +380,7 @@ for (const [slug, expectedCount] of Object.entries(expected)) {
       'Registro no caderno',
       'Pedido 1 · Luz de produto',
       'Pedido 2 · Luz de depoimento',
-      'Comparar no navegador',
+      'Comparar os arquivos',
       'Conferir e devolver'
     ];
     const lesson07PublicSlideText = lesson07Slides.map((slide) => [
@@ -403,10 +403,10 @@ for (const [slug, expectedCount] of Object.entries(expected)) {
     if (lesson07?.title !== 'Luz de produto e depoimento') {
       errors.push(`${slug}/07: o título precisa ser prático de indústria, não “Luz que conta história”`);
     }
-    if (lesson07Slides.length !== 10 || lesson07Support?.appendDefaultClosing !== false) {
-      errors.push(`${slug}/07: a apresentação precisa ter exatamente 11 slides controlados (capa + 10 slides próprios)`);
+    if (lesson07Slides.length !== 17 || lesson07Support?.appendDefaultClosing !== false) {
+      errors.push(`${slug}/07: a apresentação precisa ter exatamente 18 slides controlados (capa + 17 slides próprios)`);
     }
-    if (lesson07Slides[6]?.title !== 'Pedido 1 · Luz de produto') {
+    if (lesson07Slides[lesson07Slides.findIndex((slide) => slide.pace === 'break') + 1]?.title !== 'Pedido 1 · Luz de produto') {
       errors.push(`${slug}/07: o slide após o lanche precisa abrir o pedido de catálogo`);
     }
     if (!lesson07Slides.some((item) => item.pace === 'break')) {
@@ -421,7 +421,7 @@ for (const [slug, expectedCount] of Object.entries(expected)) {
         errors.push(`${slug}/07: ${activityTitle} precisa de quatro cartões no próprio slide`);
       }
     }
-    for (const titled of ['Pedido 1 · Luz de produto', 'Pedido 2 · Luz de depoimento', 'Comparar no navegador', 'Conferir e devolver']) {
+    for (const titled of ['Pedido 1 · Luz de produto', 'Pedido 2 · Luz de depoimento', 'Comparar os arquivos', 'Conferir e devolver']) {
       const activitySlide = lesson07Slides.find((item) => item.title === titled);
       if (!activitySlide || (activitySlide.bullets || []).length < 2) {
         errors.push(`${slug}/07: ${titled} precisa trazer o critério de conclusão no próprio slide`);
