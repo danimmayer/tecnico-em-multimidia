@@ -1,3 +1,4 @@
+import { lesson as designWeb07Lesson } from './lessons/design-web-07.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -517,6 +518,8 @@ if (audiovisualLesson08?.schedule?.[0]) {
       'Revisão da aula 7 (luz de produto e luz de depoimento).'
     );
 }
+
+Object.assign(courses['design-web'].lessons.find(lesson => lesson.num === '07'), designWeb07Lesson);
 
 const output = `/* Arquivo gerado por scripts/build-course-data.mjs. */\nwindow.SENAI_COURSES = ${JSON.stringify(courses, null, 2)};\n`;
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));

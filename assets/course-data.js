@@ -238,38 +238,37 @@ window.SENAI_COURSES = {
       {
         "num": "07",
         "title": "Espaço, Proximidade e Alinhamento",
-        "description": "Composição gráfica para organizar informação e criar ritmo visual sem depender de comandos técnicos.",
+        "description": "Organize uma página de serviços industriais para que o cliente encontre o serviço, o horário e o próximo passo.",
         "objectives": [
           "Desenvolvimento do Projeto: equilíbrio visual e leiaute."
         ],
         "technical": [
-          "Aplicar procedimentos técnicos de diagramação, proximidade e alinhamento.",
-          "Aplicar estilos css (cascading style sheets) para desenvolvimento de design web."
+          "Aplicar procedimentos técnicos de diagramação, proximidade e alinhamento."
         ],
         "socioemotional": [
           "Demonstrar no desenvolvimento das atividades sob a sua responsabilidade os princípios de profissionalismo."
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Desafio projetado \"Ache a bagunça\": a turma encontra desalinhamentos, espaços inconsistentes e grupos confusos em uma composição propositalmente ruim."
+            "horario": "19:00 - 19:45",
+            "atividade": "Comparar duas páginas de manutenção industrial, compreender margem, proximidade e alinhamento e experimentar o editor visual local. Salvar o ponto de partida."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "Demonstração com blocos móveis: margem externa, respiro interno, repetição e eixo de alinhamento são visualizados com cartões coloridos, sem fórmulas ou sintaxe."
+            "horario": "20:05 - 20:50",
+            "atividade": "Organizar individualmente a página da empresa fictícia Eixo Manutenção: aproximar informações relacionadas, separar assuntos e repetir um eixo de alinhamento. Salvar a primeira versão."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "Oficina \"Conserte a bagunça\": duplas reorganizam a peça fornecida em papel ou ferramenta visual usando uma escala pequena, média e grande de espaçamento."
+            "horario": "20:50 - 21:30",
+            "atividade": "Atender à alteração do cliente: incluir atendimento aos sábados sem perder o agrupamento dos horários. Testar a leitura, revisar espaços e salvar uma segunda versão."
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "Revisão cruzada com régua visual: cada dupla verifica eixos, proximidade, repetição e legibilidade da composição vizinha; ajustes e registro de antes/depois."
+            "horario": "21:30 - 22:10",
+            "atividade": "Conferir a página por tarefas de leitura, corrigir o que ainda dificulta o uso, exportar e reabrir os arquivos. Justificar uma melhoria e encerrar às 22:10."
           }
         ],
-        "methodology": "Diagnóstico visual, modelagem com objetos, oficina de composição e revisão por critérios.",
-        "resources": "Peças impressas, cartões, réguas, papel, ferramenta visual disponível e projetor.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "Diagnóstico projetado, demonstração visual, edição individual em etapas, alteração de pedido e conferência por critérios. Todos permanecem no posto; respostas coletivas por sinal e falas breves.",
+        "resources": "Computadores com navegador, projetor, quadro, caderno e caneta. Editor visual local gratuito, sem instalação, cadastro ou dependências externas. Sem impressão e sem fichas de preenchimento. Exemplo e editor disponíveis no material da aula; baixar o editor antes do encontro permite uso sem internet.",
+        "observation": "19:00–22:10, com lanche 19:45–20:05. Chamada às 19:00, 20:05, 20:50 e 21:30. Trabalho individual no posto, sem circulação para revisão. Se houver computador compartilhado, alternar o operador a cada etapa e manter uma justificativa por aluno. Sem internet: abrir o editor HTML previamente baixado. Sem computador: desenhar antes e depois no caderno a partir da projeção, com os mesmos critérios. Sem projetor: usar o exemplo do editor nos computadores ou desenhar o modelo no quadro. Câmeras e ring lights não são necessárias nesta aula de diagramação."
       },
       {
         "num": "08",
