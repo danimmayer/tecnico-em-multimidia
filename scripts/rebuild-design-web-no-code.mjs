@@ -1,3 +1,4 @@
+import { planning as designWeb07Planning, support as designWeb07Support } from './lessons/design-web-07.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
@@ -109,21 +110,7 @@ const revisedLessons = {
   "resources": "Computador com navegador e internet, projetor, caderno e caneta. Photopea gratuito online, sem instalação. Sem impressão. Exemplos e passos nos slides; caderno como alternativa se o acesso falhar.",
   "observation": "Design Web apenas. Começa às 19:00, lanche das 19:45 às 20:05 e termina às 22:07. Chamada às 19:00, 20:05, 20:50 e 21:30. Nada impresso e nada de Produção Audiovisual."
 },
-  '07': {
-    title: 'Espaço, Proximidade e Alinhamento',
-    description: 'Composição gráfica para organizar informação e criar ritmo visual sem depender de comandos técnicos.',
-    objectives: ['Desenvolvimento do Projeto: equilíbrio visual e leiaute.'],
-    technical: ['Aplicar procedimentos técnicos de diagramação, proximidade e alinhamento.', 'Aplicar estilos css (cascading style sheets) para desenvolvimento de design web.'],
-    socio: ['Demonstrar no desenvolvimento das atividades sob a sua responsabilidade os princípios de profissionalismo.'],
-    blocks: [
-      'Desafio projetado "Ache a bagunça": a turma encontra desalinhamentos, espaços inconsistentes e grupos confusos em uma composição propositalmente ruim.',
-      'Demonstração com blocos móveis: margem externa, respiro interno, repetição e eixo de alinhamento são visualizados com cartões coloridos, sem fórmulas ou sintaxe.',
-      'Oficina "Conserte a bagunça": duplas reorganizam a peça fornecida em papel ou ferramenta visual usando uma escala pequena, média e grande de espaçamento.',
-      'Revisão cruzada com régua visual: cada dupla verifica eixos, proximidade, repetição e legibilidade da composição vizinha; ajustes e registro de antes/depois.'
-    ],
-    methodology: 'Diagnóstico visual, modelagem com objetos, oficina de composição e revisão por critérios.',
-    resources: 'Peças impressas, cartões, réguas, papel, ferramenta visual disponível e projetor.'
-  },
+  '07': designWeb07Planning,
   '08': {
     title: 'Grades e Sistemas Visuais',
     description: 'Uso de grades, colunas e componentes para criar famílias coerentes de páginas e postagens.',
@@ -2069,6 +2056,8 @@ Object.assign(support['design-web'].lessons['01'], {
     }
   ]
 });
+
+support['design-web'].lessons['07'] = designWeb07Support;
 
 const supportOutput = `/* Anotações de aula do Prof. Daniel Marcos Mayer. */\nwindow.SENAI_TEACHING_SUPPORT = ${JSON.stringify(support, null, 2)};\n`;
 fs.writeFileSync(supportPath, supportOutput);

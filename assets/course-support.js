@@ -2807,35 +2807,525 @@ window.SENAI_TEACHING_SUPPORT = {
       },
 
       "07": {
-        "teacherGoal": "Conduzir a Aula 07 para que a turma produza composição gráfica para organizar informação e criar ritmo visual sem depender de comandos técnicos.",
-        "plainLanguage": "Composição gráfica para organizar informação e criar ritmo visual sem depender de comandos técnicos. O foco é decidir, montar, comparar e testar; os bastidores técnicos aparecem apenas quando ajudam a compreender a função de uma interface.",
-        "say": "Hoje o resultado precisa ficar visível. Primeiro eu mostro o exemplo e os critérios; depois vocês produzem em equipe e conferem a entrega antes de sair.",
+        "appendDefaultClosing": false,
+        "teacherGoal": "Uma página de serviço reorganizada por estudante, com evidência inicial, projeto editável e PNG final reaberto até 22:10.",
+        "routine": [
+          "Antes da aula, abrir a apresentação e baixar o editor em cada computador; testar uma exportação e a reabertura.",
+          "Manter alunos no posto; solicitar atenção antes da demonstração e liberar somente a etapa indicada."
+        ],
+        "onlineRoutine": "O editor não usa serviços externos. Baixar uma cópia do HTML permite abrir o mesmo recurso sem internet, por duplo clique.",
+        "plainLanguage": "Proximidade mostra o que pertence ao mesmo assunto. Alinhamento cria uma referência para os olhos. Espaço separa assuntos e protege a leitura.",
+        "say": "O cliente quer encontrar um serviço e solicitar um orçamento. Vamos organizar as informações para facilitar essas duas ações.",
         "demo": [
-          "Desafio projetado \"Ache a bagunça\": a turma encontra desalinhamentos, espaços inconsistentes e grupos confusos em uma composição propositalmente ruim.",
-          "Demonstração com blocos móveis: margem externa, respiro interno, repetição e eixo de alinhamento são visualizados com cartões coloridos, sem fórmulas ou sintaxe.",
-          "Oficina \"Conserte a bagunça\": duplas reorganizam a peça fornecida em papel ou ferramenta visual usando uma escala pequena, média e grande de espaçamento."
+          "Comparar a página inicial e o exemplo organizado.",
+          "Mover um título e aproximar o texto correspondente.",
+          "Ativar as margens e alinhar o início dos grupos.",
+          "Salvar, exportar e reabrir um arquivo."
         ],
-        "studentDeliverable": "Revisão cruzada com régua visual: cada dupla verifica eixos, proximidade, repetição e legibilidade da composição vizinha; ajustes e registro de antes/depois.",
+        "studentDeliverable": "Pasta Aula-07: layout-inicial.png, layout-v1.png, layout-final.png e projeto.layout. No caderno, uma frase explicando a alteração e seu efeito na leitura. Alternativa: duas composições no caderno com o mesmo conteúdo e critérios.",
         "check": [
-          "A entrega visual corresponde ao objetivo e pode ser aberta ou apresentada sem explicação adicional.",
-          "O grupo justificou pelo menos duas decisões com critérios da aula.",
-          "Arquivos ou folhas estão nomeados e organizados na pasta de entrega.",
-          "A revisão final retirou dados pessoais e confirmou legibilidade."
+          "Serviço, atendimento e botão estão presentes e legíveis.",
+          "Título e detalhe de cada assunto estão próximos; assuntos diferentes têm mais espaço.",
+          "Os grupos seguem um eixo de alinhamento consistente.",
+          "As margens estão livres; não há corte ou sobreposição.",
+          "O atendimento aos sábados aparece junto dos demais horários.",
+          "O PNG final e o projeto editável foram reabertos."
         ],
-        "fallback": "Se a ferramenta ou a internet falhar, realizar a mesma produção em papel A3 com cartões, canetas e a ficha impressa; fotografar ou guardar a folha como evidência.",
+        "fallback": "Abrir a cópia do editor baixada antes da aula. Se o computador falhar, desenhar a composição inicial e a final no caderno a partir dos exemplos projetados; preservar os mesmos textos, alteração de sábado, agrupamento, eixo e margens. Não distribuir fichas.",
+        "extension": "Depois de salvar a entrega, produzir uma segunda composição com os mesmos textos e critérios. Comparar qual permite localizar o horário mais rapidamente e justificar. Permanecer no posto até o encerramento.",
         "commonProblems": [
           [
-            "A equipe começa sem decidir o objetivo",
-            "Retomar público, mensagem e ação principal antes de escolher aparência."
+            "O aluno altera a aparência e não a organização",
+            "Fixar as cores e fontes do editor; pedir que mova primeiro o detalhe para perto do título correspondente."
           ],
           [
-            "A produção fica bonita, mas pouco clara",
-            "Pedir que outro grupo cumpra uma tarefa e registrar onde ele hesita."
+            "O aluno termina cedo",
+            "Pedir uma alternativa de composição e comparação por tarefa; salvar a entrega essencial antes."
           ],
           [
-            "O tempo termina antes do acabamento",
-            "Fechar primeiro a entrega essencial e deixar variações como extensão opcional."
+            "Falta tempo",
+            "Priorizar os três grupos, o horário de sábado e os arquivos. Reservar os últimos 15 minutos para exportação e conferência."
           ]
+        ],
+        "presentationSlides": [
+          {
+            "title": "Mapa da noite",
+            "block": 1,
+            "lede": "Uma página, um pedido realista e uma revisão com critérios.",
+            "layout": "dw7",
+            "cards": [
+              {
+                "title": "Observar e experimentar",
+                "text": "19:00–19:45 · leitura visual e primeiro uso."
+              },
+              {
+                "title": "Organizar a página",
+                "text": "20:05–20:50 · produzir e salvar a versão 1."
+              },
+              {
+                "title": "Atender à mudança",
+                "text": "20:50–21:30 · incluir um novo horário."
+              },
+              {
+                "title": "Conferir e entregar",
+                "text": "21:30–22:10 · revisar, salvar e explicar."
+              }
+            ],
+            "promptLabel": "Pausa",
+            "prompt": "Lanche das 19:45 às 20:05. Encerramento às 22:10.",
+            "teacher": {
+              "speech": "Hoje a cor e a fonte já estão definidas. Nosso trabalho é organizar informação.",
+              "steps": [
+                "3 min · Fazer chamada, apresentar o produto e situar o lanche.",
+                "2 min · Combinar posto fixo, voz baixa e mão levantada para ajuda."
+              ],
+              "watch": "Sem deslocamentos para formar grupos.",
+              "rescue": "Se houver dificuldade, demonstrar uma única mudança e retomar a prática no posto."
+            }
+          },
+          {
+            "title": "O pedido da Eixo Manutenção",
+            "block": 1,
+            "lede": "Uma empresa fictícia precisa de uma página de serviços para clientes de uma fábrica.",
+            "layout": "dw7",
+            "cards": [
+              {
+                "title": "Encontrar o serviço",
+                "text": "Manutenção preventiva de máquinas."
+              },
+              {
+                "title": "Conferir o atendimento",
+                "text": "Segunda a sexta, das 8h às 18h."
+              },
+              {
+                "title": "Dar o próximo passo",
+                "text": "Solicitar orçamento."
+              }
+            ],
+            "promptLabel": "Missão individual",
+            "prompt": "Organize a página com os textos fornecidos. Preserve o conteúdo e trabalhe no seu posto.",
+            "teacher": {
+              "speech": "Leia o pedido. Não é preciso inventar uma empresa nem pesquisar fotos. A composição é um estudo visual: o botão não envia solicitações.",
+              "steps": [
+                "3 min · Ler as três necessidades e relacionar ao trabalho de comunicação para indústria.",
+                "2 min · Pedir que indiquem, por sinal, qual informação procurariam primeiro."
+              ],
+              "watch": "Sem pesquisa paralela ou atividade de programação.",
+              "rescue": "Se houver dificuldade, demonstrar uma única mudança e retomar a prática no posto."
+            }
+          },
+          {
+            "title": "Onde está o horário?",
+            "block": 1,
+            "lede": "Observe em silêncio. Encontre o serviço, o horário e o botão.",
+            "layout": "dw7",
+            "visual": "before",
+            "promptLabel": "Observe",
+            "prompt": "Qual informação parece pertencer ao grupo errado? Responda citando a posição.",
+            "teacher": {
+              "speech": "Mostre apenas a página inicial. Pergunte onde está o horário, sem antecipar a solução.",
+              "steps": [
+                "2 min · Dar tempo de leitura silenciosa.",
+                "3 min · Ouvir três respostas breves.",
+                "2 min · Nomear a dificuldade: distância entre título e detalhe."
+              ],
+              "watch": "A resposta deve citar um elemento, não um julgamento sobre quem criou.",
+              "rescue": "Se houver dificuldade, demonstrar uma única mudança e retomar a prática no posto."
+            }
+          },
+          {
+            "title": "O conteúdo é o mesmo",
+            "block": 1,
+            "lede": "A posição muda a leitura: serviço com seu detalhe, atendimento com seu horário.",
+            "layout": "dw7",
+            "visual": "after",
+            "promptLabel": "Compare",
+            "prompt": "Localize os mesmos três itens. O que ficou mais fácil de encontrar?",
+            "teacher": {
+              "speech": "A comparação mantém cores, fontes e conteúdo. Mudamos a distribuição dos elementos.",
+              "steps": [
+                "2 min · Mostrar a composição organizada.",
+                "2 min · Retomar as três buscas.",
+                "2 min · Relacionar cada ganho a uma mudança de posição."
+              ],
+              "watch": "Não apresentar a composição como única resposta correta.",
+              "rescue": "Se houver dificuldade, demonstrar uma única mudança e retomar a prática no posto."
+            }
+          },
+          {
+            "title": "Três decisões de diagramação",
+            "block": 1,
+            "lede": "Organizar é mostrar o que está junto, o que é diferente e por onde começar.",
+            "layout": "dw7",
+            "cards": [
+              {
+                "title": "Proximidade",
+                "text": "Título e detalhe do mesmo assunto ficam perto."
+              },
+              {
+                "title": "Alinhamento",
+                "text": "Os inícios dos grupos seguem a mesma linha."
+              },
+              {
+                "title": "Espaço",
+                "text": "A distância entre assuntos é maior que dentro de cada grupo."
+              }
+            ],
+            "promptLabel": "Critério",
+            "prompt": "Centralizar tudo não garante organização. Escolha um eixo e repita-o.",
+            "teacher": {
+              "speech": "Aponte os exemplos na página anterior. O eixo é uma referência visual, não uma regra de que todo layout precisa ficar à esquerda.",
+              "steps": [
+                "3 min · Explicar proximidade usando Atendimento e seu horário.",
+                "3 min · Mostrar o eixo comum.",
+                "2 min · Comparar espaço interno e espaço entre assuntos."
+              ],
+              "watch": "Evitar teoria sem apontar onde ela aparece.",
+              "rescue": "Se houver dificuldade, demonstrar uma única mudança e retomar a prática no posto."
+            }
+          },
+          {
+            "title": "Experimente uma mudança",
+            "block": 1,
+            "lede": "Abra o editor da aula. Os textos e a aparência já estão preparados.",
+            "layout": "dw7",
+            "cards": [
+              {
+                "title": "1 · Guarde o início",
+                "text": "Clique em Exportar PNG e salve como layout-inicial.png."
+              },
+              {
+                "title": "2 · Mova um item",
+                "text": "Selecione o horário e arraste para perto de Atendimento."
+              },
+              {
+                "title": "3 · Ajuste com precisão",
+                "text": "Use as setas do teclado. Ative Mostrar margens para conferir as bordas."
+              }
+            ],
+            "resources": [
+              {
+                "href": "modelos/design-web/aula-07/editor.html",
+                "label": "Abrir editor da Aula 07"
+              }
+            ],
+            "promptLabel": "Antes do lanche",
+            "prompt": "Salve projeto.layout em uma pasta Aula-07. Aguarde no posto após concluir.",
+            "teacher": {
+              "speech": "Abra o editor pelo link. Demonstre seleção, arraste, setas, desfazer e salvar. Os números de posição são medidas visuais, não programação.",
+              "steps": [
+                "4 min · Demonstrar exportação inicial e movimento de um texto.",
+                "3 min · Cada estudante experimenta mover e desfazer.",
+                "5 min · Conferir download do PNG e do projeto na pasta Aula-07.",
+                "2 min · Orientar a pausa sem fechar o arquivo."
+              ],
+              "watch": "Conferir onde o navegador guardou os downloads. A capa e a navegação não acrescentam tempo.",
+              "rescue": "Se o link não abrir, usar o HTML baixado. Sem computador, copiar o exemplo inicial no caderno e marcar a mudança."
+            }
+          },
+          {
+            "title": "Intervalo",
+            "block": 1,
+            "lede": "Lanche. Retome no mesmo posto às 20:05.",
+            "layout": "dw7",
+            "pace": "break",
+            "promptLabel": "Antes de sair",
+            "prompt": "Deixe o projeto salvo. Guarde alimentos e bebidas longe dos computadores.",
+            "teacher": {
+              "speech": "O intervalo fica fora dos 170 minutos de atividade.",
+              "steps": [
+                "20 min · Intervalo das 19:45 às 20:05."
+              ],
+              "watch": "Retomar sem reorganizar a sala.",
+              "rescue": "Se houver dificuldade, demonstrar uma única mudança e retomar a prática no posto."
+            }
+          },
+          {
+            "title": "Organize por assunto",
+            "block": 2,
+            "lede": "A página terá três grupos claros: apresentação, serviço e atendimento.",
+            "layout": "dw7",
+            "cards": [
+              {
+                "title": "Apresentação",
+                "text": "EIXO MANUTENÇÃO + Soluções para sua produção."
+              },
+              {
+                "title": "Serviço",
+                "text": "Manutenção preventiva + Inspeção e ajustes de máquinas."
+              },
+              {
+                "title": "Atendimento",
+                "text": "Atendimento + Seg–sex · 8h às 18h."
+              }
+            ],
+            "promptLabel": "Próximo passo",
+            "prompt": "Mantenha “Solicitar orçamento” visível depois das informações. Preserve “Empresa fictícia · exercício de diagramação”.",
+            "teacher": {
+              "speech": "Faça a chamada. Mostre um único par e deixe a turma organizar os demais.",
+              "steps": [
+                "2 min · Fazer chamada e retomar o projeto.",
+                "3 min · Demonstrar a aproximação de um título e detalhe.",
+                "10 min · Organizar os três pares individualmente."
+              ],
+              "watch": "Detalhe precisa estar mais próximo de seu título que do próximo assunto.",
+              "rescue": "Se houver dificuldade, demonstrar uma única mudança e retomar a prática no posto."
+            }
+          },
+          {
+            "title": "Crie um eixo de leitura",
+            "block": 2,
+            "lede": "Ative as margens. Escolha onde os grupos começam e repita essa posição.",
+            "layout": "dw7",
+            "cards": [
+              {
+                "title": "1 · Alinhe os inícios",
+                "text": "Use as guias ou o campo Posição horizontal para repetir a mesma medida."
+              },
+              {
+                "title": "2 · Separe assuntos",
+                "text": "Deixe uma distância maior entre os grupos."
+              },
+              {
+                "title": "3 · Preserve as bordas",
+                "text": "Mantenha textos e botão dentro das margens tracejadas."
+              }
+            ],
+            "promptLabel": "Conferência",
+            "prompt": "As palavras não se sobrepõem. A margem não encosta nas letras. O botão cabe inteiro.",
+            "teacher": {
+              "speech": "Demonstre duas linhas com a mesma posição horizontal. Usar 48 é uma possibilidade, não resposta obrigatória. Não pedir que todos copiem as coordenadas do modelo.",
+              "steps": [
+                "3 min · Demonstrar o campo de posição e as guias.",
+                "10 min · Ajustar os eixos e espaços.",
+                "5 min · Conferir os alunos que sinalizaram dificuldade."
+              ],
+              "watch": "Observar se alinhar virou encostar tudo: manter os espaços entre grupos.",
+              "rescue": "Se houver dificuldade, demonstrar uma única mudança e retomar a prática no posto."
+            }
+          },
+          {
+            "title": "Leia como um cliente",
+            "block": 2,
+            "lede": "Afaste-se um pouco da tela, permanecendo sentado. Procure os três itens.",
+            "layout": "dw7",
+            "bullets": [
+              "Qual serviço é oferecido?",
+              "Quando a empresa atende?",
+              "Onde solicitar orçamento?"
+            ],
+            "promptLabel": "Versão 1",
+            "prompt": "Corrija um ponto que atrasou a leitura. Selecione layout-v1.png em Nome da imagem, exporte e salve projeto.layout.",
+            "teacher": {
+              "speech": "O aluno testa a própria tela. Se necessário, o vizinho observa do próprio lugar e responde sem tocar no projeto; isso é opcional.",
+              "steps": [
+                "3 min · Orientar as três buscas.",
+                "5 min · Corrigir uma dificuldade concreta.",
+                "4 min · Exportar versão 1 e salvar o projeto."
+              ],
+              "watch": "Quem concluiu cria uma alternativa de posição mantendo o conteúdo; ninguém precisa circular.",
+              "rescue": "Se houver dificuldade, demonstrar uma única mudança e retomar a prática no posto."
+            }
+          },
+          {
+            "title": "O cliente mudou um detalhe",
+            "block": 3,
+            "lede": "A empresa também atenderá aos sábados. A página precisa mostrar isso com clareza.",
+            "layout": "dw7",
+            "cards": [
+              {
+                "title": "Novo conteúdo",
+                "text": "Sábado · 8h às 12h"
+              },
+              {
+                "title": "Lugar adequado",
+                "text": "Perto do horário de segunda a sexta."
+              },
+              {
+                "title": "Condição",
+                "text": "Preserve todos os textos, as margens e o botão."
+              }
+            ],
+            "promptLabel": "Alteração solicitada",
+            "prompt": "Clique em Incluir sábado no editor. Organize a nova linha junto do atendimento.",
+            "teacher": {
+              "speech": "Faça chamada e apresente a mudança só agora. O objetivo é testar a organização quando o conteúdo cresce.",
+              "steps": [
+                "2 min · Fazer chamada.",
+                "3 min · Apresentar o novo horário.",
+                "3 min · Demonstrar a inclusão sem resolver a composição."
+              ],
+              "watch": "O botão Incluir sábado acrescenta só uma linha.",
+              "rescue": "Se houver dificuldade, demonstrar uma única mudança e retomar a prática no posto."
+            }
+          },
+          {
+            "title": "Reorganize sem perder a leitura",
+            "block": 3,
+            "lede": "O horário novo precisa caber no mesmo assunto, sem se misturar ao botão.",
+            "layout": "dw7",
+            "cards": [
+              {
+                "title": "1 · Aproxime",
+                "text": "Coloque sábado perto de Seg–sex."
+              },
+              {
+                "title": "2 · Abra espaço",
+                "text": "Desloque o botão se ele estiver perto demais dos horários."
+              },
+              {
+                "title": "3 · Revise o conjunto",
+                "text": "Confira o eixo, as margens e a separação entre assuntos."
+              }
+            ],
+            "promptLabel": "Pronto quando",
+            "prompt": "Os dois horários formam um grupo e o botão continua inteiro, separado e legível.",
+            "teacher": {
+              "speech": "Faça uma demonstração breve de deslocar o botão para criar espaço. Não reduza o tamanho da letra para resolver tudo.",
+              "steps": [
+                "3 min · Mostrar a relação entre conteúdo novo e espaço disponível.",
+                "12 min · Realizar a alteração individual.",
+                "5 min · Conferir o atendimento em cada posto que solicitar apoio."
+              ],
+              "watch": "Se faltar espaço, redistribuir grupos. O exemplo já mostra que o conteúdo cabe.",
+              "rescue": "Se houver dificuldade, demonstrar uma única mudança e retomar a prática no posto."
+            }
+          },
+          {
+            "title": "Teste de leitura do atendimento",
+            "block": 3,
+            "lede": "Olhe para a sua composição sem apontar com o mouse.",
+            "layout": "dw7",
+            "bullets": [
+              "O sábado é encontrado junto dos outros dias?",
+              "Está claro onde o atendimento termina e onde começa a ação?",
+              "Há uma linha comum organizando os grupos?"
+            ],
+            "promptLabel": "Salve a revisão",
+            "prompt": "Ajuste uma distância e salve projeto.layout. Quem terminou cria uma segunda organização para comparar.",
+            "teacher": {
+              "speech": "Peça respostas individuais no próprio projeto. Ouça duas justificativas, sem apresentações na frente da sala.",
+              "steps": [
+                "3 min · Fazer o teste de leitura.",
+                "6 min · Corrigir e salvar.",
+                "3 min · Ouvir duas justificativas relacionadas a proximidade."
+              ],
+              "watch": "Manter a turma no posto.",
+              "rescue": "Se houver dificuldade, demonstrar uma única mudança e retomar a prática no posto."
+            }
+          },
+          {
+            "title": "Conferência de qualidade",
+            "block": 4,
+            "lede": "Confira um critério por vez na sua página.",
+            "layout": "dw7",
+            "cards": [
+              {
+                "title": "Conteúdo completo",
+                "text": "Serviço, dois horários, botão e identificação do exercício."
+              },
+              {
+                "title": "Grupos claros",
+                "text": "Título perto do detalhe; assuntos diferentes separados."
+              },
+              {
+                "title": "Eixo consistente",
+                "text": "Os inícios dos grupos seguem a mesma referência."
+              },
+              {
+                "title": "Acabamento legível",
+                "text": "Sem cortes, sobreposição ou elementos nas margens."
+              }
+            ],
+            "promptLabel": "Ação",
+            "prompt": "Corrija primeiro o que impede a leitura. Depois refine as distâncias.",
+            "teacher": {
+              "speech": "Faça chamada. Peça que apontem os critérios na própria tela. A conferência é do produto, não uma ficha para preencher.",
+              "steps": [
+                "2 min · Fazer chamada.",
+                "3 min · Ler os quatro critérios e demonstrar um erro de sobreposição.",
+                "7 min · Cada estudante confere e identifica o ajuste principal."
+              ],
+              "watch": "O PNG final deve conter o sábado.",
+              "rescue": "Se houver dificuldade, demonstrar uma única mudança e retomar a prática no posto."
+            }
+          },
+          {
+            "title": "Último ajuste",
+            "block": 4,
+            "lede": "Finalize o problema identificado na conferência.",
+            "layout": "dw7",
+            "bullets": [
+              "Mantenha todos os textos do pedido.",
+              "Revise a distância do detalhe para seu título.",
+              "Confira se o espaço entre assuntos é maior."
+            ],
+            "promptLabel": "Se a página já atende aos critérios",
+            "prompt": "Compare sua alternativa com a versão principal. Escolha a que facilita encontrar o horário e explique por quê.",
+            "teacher": {
+              "speech": "Reserve os últimos 15 minutos para arquivos e fechamento. Não abra uma nova atividade obrigatória.",
+              "steps": [
+                "8 min · Corrigir a página ou comparar uma alternativa.",
+                "5 min · Conferir os casos que precisam de apoio antes de exportar."
+              ],
+              "watch": "Às 21:55 iniciar o salvamento, mesmo se a alternativa estiver incompleta.",
+              "rescue": "Se houver dificuldade, demonstrar uma única mudança e retomar a prática no posto."
+            }
+          },
+          {
+            "title": "Salve e reabra",
+            "block": 4,
+            "lede": "A entrega precisa abrir fora do editor e permitir continuar a edição.",
+            "layout": "dw7",
+            "cards": [
+              {
+                "title": "1 · Imagem final",
+                "text": "Nome da imagem: layout-final.png → Exportar PNG."
+              },
+              {
+                "title": "2 · Projeto editável",
+                "text": "Salvar projeto → projeto.layout."
+              },
+              {
+                "title": "3 · Teste os arquivos",
+                "text": "Abra o PNG. Depois use Abrir projeto para reabrir o arquivo salvo."
+              }
+            ],
+            "promptLabel": "Pasta Aula-07",
+            "prompt": "layout-inicial.png + layout-v1.png + layout-final.png + projeto.layout",
+            "teacher": {
+              "speech": "O navegador pode acrescentar números aos nomes. Guarde a versão mais recente como projeto.layout. Peça salvamento antes da reabertura.",
+              "steps": [
+                "3 min · Exportar o PNG final e salvar projeto.",
+                "4 min · Reabrir os dois arquivos e conferir o sábado.",
+                "2 min · Organizar os quatro arquivos na pasta Aula-07."
+              ],
+              "watch": "PNG não permite editar os elementos: o projeto é indispensável.",
+              "rescue": "Se o download falhar, tentar novamente e verificar a pasta Downloads. Persistindo, registrar captura de tela e conclusão no caderno; não afirmar que o editável foi entregue."
+            }
+          },
+          {
+            "title": "A mudança que fez diferença",
+            "block": 4,
+            "lede": "No caderno, complete uma frase com uma mudança que você realizou.",
+            "layout": "dw7",
+            "promptLabel": "Sua justificativa",
+            "prompt": "“Aproximei / alinhei / afastei ___ para facilitar ___.”",
+            "bullets": [
+              "Exemplo: “Aproximei o sábado dos outros dias para facilitar a leitura do atendimento.”",
+              "Mantenha a pasta salva e deixe o posto organizado."
+            ],
+            "teacher": {
+              "speech": "A frase não é ficha. Ouça duas respostas curtas e encerre às 22:10. Retome os três conceitos usando as mudanças citadas.",
+              "steps": [
+                "2 min · Registrar a frase no caderno.",
+                "2 min · Ouvir duas respostas.",
+                "2 min · Organizar os postos e encerrar às 22:10."
+              ],
+              "watch": "Não solicitar apresentações longas ou tarefas extras no encerramento.",
+              "rescue": "Se houver dificuldade, demonstrar uma única mudança e retomar a prática no posto."
+            }
+          }
         ]
       },
       "08": {

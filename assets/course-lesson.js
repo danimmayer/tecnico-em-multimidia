@@ -332,15 +332,17 @@
         <p class="teacher-note">${escapeHtml(rescue)}</p>` : ''}
     </aside>`;
 
-  const slide = ({ title, main, teacher, block = 1, className = '', pace = '' }) => ({
+  const slide = ({ title, main, teacher, block = 1, className = '', pace = '', paceStart = '', paceEnd = '' }) => ({
     title,
     html: `
-      <section class="kit-slide${className ? ` ${escapeHtml(className)}` : ''}" data-title="${escapeHtml(title)}" data-block="${block}" data-pace="${escapeHtml(pace)}" aria-label="${escapeHtml(title)}">
+      <section class="kit-slide${className ? ` ${escapeHtml(className)}` : ''}" data-title="${escapeHtml(title)}" data-block="${block}" data-pace="${escapeHtml(pace)}" data-pace-start="${paceStart}" data-pace-end="${paceEnd}" aria-label="${escapeHtml(title)}">
         <div class="kit-slide-main">${main}</div>
         ${teacherPanel(teacher)}
       </section>`
   });
 
+  const isDesignSeven = course.slug === 'design-web' && lesson.num === '07';
+  if (isDesignSeven) document.body.classList.add('design-seven');
   const isDesignSix = course.slug === 'design-web' && lesson.num === '06';
   const isAvSeven = course.slug === 'producao-audiovisual' && lesson.num === '07';
   if (isDesignSix) document.body.classList.add('design-six');
@@ -391,6 +393,7 @@
     </figure>`;
   };
 
+  const slideMinutesByBlock = {};
   const presentationSlide = (item, index) => {
     const cards = Array.isArray(item.cards) ? item.cards : [];
     const bullets = Array.isArray(item.bullets) ? item.bullets : [];
@@ -402,16 +405,26 @@
     const block = Number.isFinite(Number(item.block)) ? Math.max(1, Number(item.block)) : 1;
     const title = item.title || item.heading || `Conteúdo ${index + 1}`;
     const denseCards = item.layout === 'dense-cards';
+    let paceStart = '', paceEnd = '';
+    if (isDesignSeven) {
+      const [start, end] = timeRange(lesson.schedule[block - 1].horario).map(timeToMinutes);
+      paceStart = item.pace === 'break' ? end : start + (slideMinutesByBlock[block] || 0);
+      const duration = (teacher.steps || []).reduce((sum, step) => sum + Number(String(step).match(/^(\d+) min/)?.[1] || 0), 0);
+      paceEnd = paceStart + duration;
+      if (item.pace !== 'break') slideMinutesByBlock[block] = (slideMinutesByBlock[block] || 0) + duration;
+    }
 
     return slide({
       title,
       block,
       pace: item.pace === 'break' ? 'break' : '',
-      className: denseCards ? 'is-dense-cards' : '',
+      paceStart, paceEnd,
+      className: isDesignSeven ? 'is-dw7' : denseCards ? 'is-dense-cards' : '',
       main: `
         ${item.kicker ? `<p class="slide-kicker">${escapeHtml(item.kicker)}</p>` : ''}
         <h2>${escapeHtml(item.heading || title)}</h2>
         ${item.lede ? `<p class="slide-lede">${escapeHtml(item.lede)}</p>` : ''}
+        ${isDesignSeven && ['before', 'after'].includes(item.visual) ? `<figure class="dw7-example"><img src="modelos/design-web/aula-07/${item.visual}.svg" alt="${item.visual === 'before' ? 'Página inicial com títulos e detalhes distantes entre si' : 'Página com títulos e detalhes agrupados e alinhados'}"></figure>` : ''}
         ${cards.length ? `
           <div class="presentation-card-grid${denseCards ? ' is-dense' : ''}">
             ${cards.map((card) => `
@@ -447,10 +460,10 @@
 
   const phaseSupport = Object.values(courseSupport.courseTips.phases || {})
     .find((phase) => phase.lessons && phase.lessons.includes(lesson.num));
-  const generalRoutine = (phaseSupport?.routine || courseSupport.courseTips.routine).map(ownVoice);
+  const generalRoutine = (support.routine || phaseSupport?.routine || courseSupport.courseTips.routine).map(ownVoice);
   const onlineSupport = (courseSupport.courseTips.onlineRoutines || [])
     .find((item) => item.lessons && item.lessons.includes(lesson.num));
-  const onlineRoutine = onlineSupport?.text
+  const onlineRoutine = support.onlineRoutine ? ownVoice(support.onlineRoutine) : onlineSupport?.text
     ? ownVoice(onlineSupport.text)
     : '';
   const coreObjectives = [...lesson.objectives, ...lesson.technical].filter(Boolean).slice(0, 6);
@@ -916,6 +929,14 @@
     const activeSlide = slideElements[currentIndex];
     const slideBlock = Number(activeSlide?.dataset.block || 0);
     const expected = currentScheduleWindow();
+    if (isDesignSeven && window.SENAI_SLIDE_PACE) {
+      const now = new Date();
+      const start = activeSlide?.dataset.paceStart === '' ? scheduleWindows[0].start : Number(activeSlide?.dataset.paceStart);
+      const end = activeSlide?.dataset.paceEnd === '' ? scheduleWindows[0].start + 5 : Number(activeSlide?.dataset.paceEnd);
+      return window.SENAI_SLIDE_PACE({now: now.getHours() * 60 + now.getMinutes(), start, end,
+        lessonStart: scheduleWindows[0].start, lessonEnd: scheduleWindows.at(-1).end,
+        isBreak: activeSlide?.dataset.pace === 'break', isLast: currentIndex === slideElements.length - 1});
+    }
     if (!slideBlock || !expected) return { level: 'ok', message: 'No ritmo' };
     if (activeSlide?.dataset.pace === 'break' && expected.status === 'break') {
       return { level: 'ok', message: 'Intervalo no horário' };
@@ -956,6 +977,14 @@
     toast.classList.add('is-visible');
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => toast.classList.remove('is-visible'), 1600);
+  }
+
+  if (isDesignSeven && paceDot) {
+    paceDot.tabIndex = 0;
+    paceDot.addEventListener('click', () => showToast(paceDot.title));
+    paceDot.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); event.stopPropagation(); showToast(paceDot.title); }
+    });
   }
 
   function renderCurrent() {

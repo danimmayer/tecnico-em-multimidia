@@ -1,0 +1,113 @@
+export const initialParts = [
+  {id:'brand', text:'EIXO MANUTENÇÃO', x:48,y:48,w:490,h:42,size:34,weight:700},
+  {id:'intro', text:'Soluções para sua produção.',x:370,y:130,w:460,h:32,size:26},
+  {id:'service',text:'Manutenção preventiva',x:90,y:240,w:450,h:36,size:30,weight:700},
+  {id:'detail',text:'Inspeção e ajustes de máquinas.',x:400,y:432,w:500,h:32,size:26},
+  {id:'hours',text:'Atendimento',x:520,y:320,w:270,h:36,size:30,weight:700},
+  {id:'week',text:'Seg–sex · 8h às 18h',x:65,y:370,w:370,h:32,size:26},
+  {id:'action',text:'Solicitar orçamento',x:320,y:525,w:320,h:58,size:26,button:true},
+  {id:'footer',text:'Empresa fictícia · exercício de diagramação',x:48,y:595,w:660,h:26,size:20}
+];
+export const saturday = {id:'saturday',text:'Sábado · 8h às 12h',x:560,y:160,w:350,h:32,size:26};
+export const organizedParts = initialParts.map(part => ({...part, x:48,y:({brand:48,intro:96,service:190,detail:234,hours:326,week:370,action:470,footer:566})[part.id]}));
+export function escapeXml(text) {return String(text).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');}
+export function renderSvg(parts, guides = false) {
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640" role="img" aria-label="Página de serviços Eixo Manutenção"><rect width="960" height="640" fill="#f5f1e9"/>${guides ? '<rect x="40" y="32" width="880" height="576" fill="none" stroke="#668596" stroke-dasharray="8 8"/>' : ''}${parts.map(p => `<g data-part="${p.id}" tabindex="0" role="button" aria-label="Mover ${escapeXml(p.text)}" transform="translate(${p.x} ${p.y})"><rect class="hit" width="${p.w}" height="${p.h}" rx="${p.button ? 5 : 0}" fill="${p.button ? '#174e52' : 'transparent'}"/><text x="${p.button ? p.w/2 : 0}" y="${p.button ? 38 : p.size}" font-family="Arial, sans-serif" font-size="${p.size}" font-weight="${p.weight || 400}" fill="${p.button ? '#fff' : '#163437'}" text-anchor="${p.button ? 'middle' : 'start'}">${escapeXml(p.text)}</text></g>`).join('')}</svg>`;
+}
+function startEditor() {
+  const $ = id => document.getElementById(id);
+  const copy = value => JSON.parse(JSON.stringify(value));
+  let parts = copy(initialParts), selected = 'brand', history = [], drag = null, dirty = false;
+  const board = $('board'), status = $('status');
+  const announce = text => { status.textContent = text; };
+  function draw() {
+    board.innerHTML = renderSvg(parts, $('guides').checked);
+    board.querySelectorAll('[data-part]').forEach(el => el.classList.toggle('selected', el.dataset.part === selected));
+    const part = parts.find(p => p.id === selected);
+    $('choice').innerHTML = parts.map(p => `<option value="${p.id}">${escapeXml(p.text)}</option>`).join('');
+    $('choice').value = selected;
+    $('x').value = part.x; $('y').value = part.y;
+    $('undo').disabled = !history.length;
+    $('saturday').disabled = parts.some(p => p.id === 'saturday');
+  }
+  function remember() {history.push(copy(parts)); if(history.length > 80) history.shift(); dirty = true;}
+  function move(x,y) {
+    const part = parts.find(p => p.id === selected);
+    part.x = Math.round(Math.max(0,Math.min(960-part.w,x)));
+    part.y = Math.round(Math.max(0,Math.min(640-part.h,y)));
+  }
+  function saveBlob(blob,name) {
+    const url = URL.createObjectURL(blob), link = document.createElement('a');
+    link.href = url; link.download = name; link.click();
+    setTimeout(() => URL.revokeObjectURL(url), 30000);
+  }
+  $('choice').addEventListener('change', e => {selected=e.target.value; draw();});
+  for(const field of ['x','y']) $(field).addEventListener('change',()=>{
+    const x=Number($('x').value), y=Number($('y').value);
+    if(!Number.isFinite(x)||!Number.isFinite(y)){draw();return;}
+    remember(); move(x,y);draw();
+  });
+  $('guides').addEventListener('change',draw);
+  board.addEventListener('pointerdown',e=>{
+    const item = e.target.closest('[data-part]'); if(!item)return;
+    selected=item.dataset.part;
+    const part=parts.find(p=>p.id===selected), rect=board.querySelector('svg').getBoundingClientRect();
+    drag={startX:e.clientX,startY:e.clientY,x:part.x,y:part.y,scale:960/rect.width};
+    remember(); board.setPointerCapture(e.pointerId);draw();e.preventDefault();board.focus();
+  });
+  board.addEventListener('pointermove',e=>{if(!drag)return;move(drag.x+(e.clientX-drag.startX)*drag.scale,drag.y+(e.clientY-drag.startY)*drag.scale);draw();});
+  board.addEventListener('pointerup',()=>{drag=null;});
+  board.addEventListener('pointercancel',()=>{drag=null;});
+  board.addEventListener('focusin',e=>{const item=e.target.closest('[data-part]');if(!item)return;selected=item.dataset.part;board.querySelectorAll('[data-part]').forEach(el=>el.classList.toggle('selected',el.dataset.part===selected));$('choice').value=selected;const p=parts.find(p=>p.id===selected);$('x').value=p.x;$('y').value=p.y;});
+  board.addEventListener('keydown',e=>{
+    const delta={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,-1],ArrowDown:[0,1]}[e.key];
+    if(!delta)return;e.preventDefault();remember();const p=parts.find(p=>p.id===selected), step=e.shiftKey?10:1;
+    move(p.x+delta[0]*step,p.y+delta[1]*step);draw();board.focus();
+  });
+  $('undo').addEventListener('click',()=>{if(!history.length)return;parts=history.pop();if(!parts.some(p=>p.id===selected))selected='brand';dirty=true;draw();announce('Última alteração desfeita.');});
+  $('saturday').addEventListener('click',()=>{if(parts.some(p=>p.id==='saturday'))return;remember();parts.push(copy(saturday));selected='saturday';draw();announce('Sábado incluído. Mova a linha para junto do atendimento.');});
+  $('save').addEventListener('click',()=>{saveBlob(new Blob([JSON.stringify({version:1,parts})],{type:'application/json'}),'projeto.layout');dirty=false;announce('Download solicitado: projeto.layout. Confira a pasta Downloads e guarde na pasta Aula-07.');});
+  $('open').addEventListener('change',async e=>{
+    const file=e.target.files[0];if(!file)return;
+    try {
+      if(file.size>20000)throw new Error('large');
+      const data=JSON.parse(await file.text()), allowed=[...initialParts,saturday];
+      if(data.version!==1 || !Array.isArray(data.parts) || ![8,9].includes(data.parts.length))throw new Error('format');
+      const ids=new Set(data.parts.map(p=>p.id));
+      if(ids.size!==data.parts.length || !initialParts.every(p=>ids.has(p.id)))throw new Error('ids');
+      const next=data.parts.map(p=>{const base=allowed.find(a=>a.id===p.id);if(!base || !Number.isFinite(p.x)||!Number.isFinite(p.y)||p.x<0||p.y<0||p.x>960-base.w||p.y>640-base.h)throw new Error('position');return {...base,x:p.x,y:p.y};});
+      if(dirty && !confirm('Há alterações desde o último salvamento. Abrir outro projeto agora?'))return;
+      remember();parts=next;selected='brand';dirty=false;draw();announce('Projeto reaberto. Confira a posição dos elementos e o horário de sábado.');
+    } catch {announce('Não foi possível abrir. Escolha um arquivo projeto.layout salvo neste editor. Sua composição foi preservada.');}
+    finally {e.target.value='';}
+  });
+  $('png').addEventListener('click',()=>{
+    const image=new Image(),url=URL.createObjectURL(new Blob([renderSvg(parts)],{type:'image/svg+xml'}));
+    image.onload=()=>{const canvas=document.createElement('canvas');canvas.width=960;canvas.height=640;canvas.getContext('2d').drawImage(image,0,0);URL.revokeObjectURL(url);canvas.toBlob(blob=>{if(!blob){announce('Falha ao exportar. Salve o projeto e tente novamente.');return;}saveBlob(blob,$('filename').value+'.png');announce('PNG exportado. Abra o arquivo na pasta Downloads para conferir.');},'image/png');};
+    image.onerror=()=>{URL.revokeObjectURL(url);announce('Falha ao exportar. Salve o projeto e tente novamente.');};image.src=url;
+  });
+  $('download').addEventListener('click',()=>{
+    // The static source is embedded at generation time, excluding any student state.
+    saveBlob(new Blob([offlineSource],{type:'text/html;charset=utf-8'}),'editor-aula-07.html');
+    announce('Editor baixado. Abra editor-aula-07.html por duplo clique para trabalhar sem internet. O projeto é salvo separadamente.');
+  });
+  $('example').addEventListener('click',()=>{$('exampleDialog').showModal();});
+  $('closeExample').addEventListener('click',()=>{$('exampleDialog').close();});
+  window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue='';}});
+  draw();
+}
+export function editorHtml() {
+  const html = `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Oficina de diagramação · Aula 07</title><link rel="icon" href="data:,"><style>
+  *{box-sizing:border-box}body{margin:0;background:#e7e9e6;color:#183537;font:16px/1.4 Arial,sans-serif}header{padding:18px 24px;background:#183537;color:white;display:flex;align-items:center;gap:24px;justify-content:space-between}h1{font-size:23px;margin:0}header p{margin:4px 0 0;font-size:15px;color:#d4e7e0}button,select,input,.file{font:inherit;border:1px solid #8b9f98;border-radius:5px;padding:9px;background:white;color:#183537}button,.file{cursor:pointer}button:hover,.file:hover{background:#e6f1eb}button:disabled{opacity:.45;cursor:default}:focus-visible{outline:3px solid #d57a24;outline-offset:3px}.workspace{display:grid;grid-template-columns:minmax(0,1fr) 245px;gap:20px;padding:24px;max-width:1500px;margin:auto}#board{line-height:0;box-shadow:0 8px 25px #17343318;touch-action:none}#board svg{width:100%;height:auto;display:block}#board [data-part]{cursor:move}#board text{pointer-events:none}#board .selected .hit{stroke:#c1601a;stroke-width:2;stroke-dasharray:5 3}.panel{display:flex;flex-direction:column;gap:12px;align-items:stretch}.panel label{display:flex;flex-direction:column;gap:5px;font-size:14px}.panel .toggle{flex-direction:row;align-items:center}.panel h2{font-size:18px;margin:0}.panel p{font-size:14px;margin:0}.file input{max-width:100%;font-size:13px}input[type=number]{width:100%}.tools{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.tools label{display:flex;align-items:center;gap:8px}#status{min-height:50px;margin:14px 0;font-size:16px;font-weight:600}details{padding:12px 0;border-top:1px solid #bac7c1}summary{cursor:pointer;font-weight:600}li{margin:8px 0}dialog{max-width:900px;width:92vw;border:0;border-radius:8px;padding:24px}dialog::backdrop{background:#102528b3}dialog svg{width:100%;height:auto;max-height:65vh}dialog h2{margin:0 0 12px}dialog p{margin:10px 0}#download{white-space:nowrap}@media(max-width:800px){header{align-items:flex-start;flex-wrap:wrap}.workspace{grid-template-columns:1fr;padding:12px}.panel{display:grid;grid-template-columns:1fr 1fr}.panel h2,.panel p{grid-column:1/-1}.tools label{flex-wrap:wrap}}@media print{header,.panel,.tools,details,#status{display:none}.workspace{display:block;padding:0}#board .selected .hit{stroke:none}}
+  </style></head><body><header><div><h1>Oficina de diagramação</h1><p>Design Web · Aula 07 · espaço, proximidade e alinhamento</p></div><button id="download">Baixar editor para uso sem internet</button></header><main class="workspace"><section aria-label="Composição"><div id="board" tabindex="0" aria-label="Área de composição. Selecione um item e use as setas para mover."></div><div class="tools"><label>Nome da imagem <select id="filename"><option value="layout-inicial">layout-inicial.png</option><option value="layout-v1">layout-v1.png</option><option value="layout-final">layout-final.png</option><option value="layout-alternativa">layout-alternativa.png</option></select></label><button id="png">Exportar PNG</button><button id="example">Ver exemplo organizado</button></div><p id="status" role="status" aria-live="polite">Primeiro, exporte layout-inicial.png. Depois organize os elementos.</p><details><summary>Como trabalhar e conferir</summary><ol><li>Crie uma pasta Aula-07. Exporte a imagem inicial antes de mover os textos.</li><li>Selecione um item na página ou na lista. Arraste; as setas movem 1 unidade e Shift + seta move 10.</li><li>Aproxime títulos e detalhes, repita um eixo e deixe mais espaço entre assuntos.</li><li>Quando a aula solicitar, clique em Incluir sábado e organize o novo horário.</li><li>Escolha layout-v1.png ou layout-final.png antes de exportar. Salve também projeto.layout.</li><li>Abra a imagem baixada e reabra o projeto. O PNG não substitui o arquivo editável.</li></ol><p>O botão “Solicitar orçamento” faz parte do estudo visual; não envia pedidos. Empresa e conteúdo fictícios. Os arquivos ficam no computador, sem envio a um servidor.</p></details></section><aside class="panel"><h2>Organizar elementos</h2><label>Elemento selecionado<select id="choice"></select></label><label>Posição horizontal<input id="x" type="number" min="0" max="960" step="1"></label><label>Posição vertical<input id="y" type="number" min="0" max="640" step="1"></label><label class="toggle"><input id="guides" type="checkbox"> Mostrar margens</label><button id="undo">Desfazer</button><button id="saturday">Incluir sábado</button><button id="save">Salvar projeto</button><label class="file">Abrir projeto<input id="open" type="file" accept=".layout,application/json"></label><p>Salvar baixa uma cópia. Confira a pasta Downloads. Guarde a versão mais recente como projeto.layout.</p></aside></main><dialog id="exampleDialog"><h2>Uma organização possível</h2>${renderSvg(organizedParts)}<p>Mesmos textos, cores e fontes. Compare os grupos e seus espaços. Sua página pode ter outra organização que atenda aos critérios.</p><button id="closeExample">Voltar ao projeto</button></dialog><script>
+const initialParts=${JSON.stringify(initialParts)};
+const saturday=${JSON.stringify(saturday)};
+${escapeXml.toString()}
+${renderSvg.toString()}
+const offlineSource=OFFLINE_SOURCE;
+(${startEditor.toString()})();
+</script></body></html>`;
+  // Build the downloadable source without recursively embedding itself.
+  const standalone = html.replace('const offlineSource=OFFLINE_SOURCE;', 'const offlineSource="<!doctype html>"+document.documentElement.outerHTML;');
+  return html.replace('OFFLINE_SOURCE',JSON.stringify(standalone).replaceAll('</script','<\\/script'));
+}
