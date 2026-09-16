@@ -511,13 +511,30 @@ Object.assign(audiovisualLesson07, {
 const audiovisualLesson08 = courses['producao-audiovisual'].lessons
   .find((lesson) => lesson.num === '08');
 
-if (audiovisualLesson08?.schedule?.[0]) {
-  audiovisualLesson08.schedule[0].atividade = audiovisualLesson08.schedule[0].atividade
-    .replace(
-      'Revisão da aula 7 (esquema de três pontos e climas de luz).',
-      'Revisão da aula 7 (luz de produto e luz de depoimento).'
-    );
-}
+Object.assign(audiovisualLesson08, {
+  description: 'O som decide se o vídeo comunica. A turma compara versões de áudio, decide o som de cada cena do storyboard da aula 4 e grava o microcurta em duas rodadas, com claquete verbal, conferência com fone e diária organizada pronta para a edição.',
+  schedule: [
+    {
+      horario: '19:00 - 19:45',
+      atividade: 'Abertura com comparação ao vivo: a mesma frase gravada com o aparelho longe e depois perto da fonte, e a turma aponta qual versão comunica. Cada grupo decide o som de cada cena do storyboard da aula 4 usando a ficha projetada (fala direta, efeito, ambiente ou silêncio) e copia a tabela no caderno.'
+    },
+    {
+      horario: '20:05 - 21:00',
+      atividade: 'Rodada 1 de gravação, cenas com fala: captação perto da fonte e fora do quadro, claquete verbal, dez segundos de teste, cena gravada de uma vez e conferência com fone. Refaz-se somente o que falhou na conferência: fala ininteligível, ruído ou estouro.'
+    },
+    {
+      horario: '21:00 - 21:40',
+      atividade: 'Rodada 2: som de efeito nas cenas sem fala, trinta segundos de som ambiente de cada local usado, tomada de segurança das falas essenciais do começo ao fim e conferência com fone de cada arquivo novo pelo checklist projetado.'
+    },
+    {
+      horario: '21:40 - 22:10',
+      atividade: 'Organização da diária: uma pasta por grupo no computador (PA_A08_EQ01), arquivos nomeados por cena e tomada (C02_T01), cópia conferida pela abertura dos arquivos, checklist projetado do storyboard completo, devolução conferida do equipamento e conclusão registrada no caderno.'
+    }
+  ],
+  methodology: 'Abertura com comparação de áudio ao vivo, decisão de som registrada em ficha projetada e duas rodadas de gravação guiadas pelo mesmo ciclo: posicionar, identificar, gravar e conferir com fone. Cada rodada tem critério de conclusão projetado; a edição fica para a aula 9.',
+  resources: 'Projetor, quadro, caderno e caneta. Há 7 câmeras já carregadas, com cartão e bateria, 7 ring lights, computadores com navegador e cabo ou leitor de cartão para transferência. Fones de ouvido para a conferência de som ou volume baixo, um aparelho por vez. Nenhum programa é instalado no Windows; nenhuma ficha impressa é distribuída.',
+  observation: 'Aula das 19:00 às 22:10. Lanche fixo das 19:45 às 20:05. Chamada no início dos quatro blocos. Cada grupo permanece no próprio posto, com funções fixas por rodada; circula somente quem tem função definida. Durante a gravação, o restante da sala reduz a voz; quem não está gravando confere arquivos no computador. O som é a prioridade da aula: nenhuma cena termina sem conferência de áudio. Copiar antes de apagar qualquer arquivo; não formatar cartão, que pode conter material de outra turma. Sem fone disponível, ouvir em volume baixo, um aparelho por vez, com um integrante confirmando. A edição online no navegador fica para a aula 9.'
+});
 
 Object.assign(courses['design-web'].lessons.find(lesson => lesson.num === '07'), designWeb07Lesson);
 

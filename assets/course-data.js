@@ -1357,7 +1357,7 @@ window.SENAI_COURSES = {
       {
         "num": "08",
         "title": "Som limpo e gravação do microcurta",
-        "description": "Estudo de acústica e captação de áudio, fechando a noite com a gravação do microcurta planejado no storyboard da aula 4, integrando luz, som e enquadramento.",
+        "description": "O som decide se o vídeo comunica. A turma compara versões de áudio, decide o som de cada cena do storyboard da aula 4 e grava o microcurta em duas rodadas, com claquete verbal, conferência com fone e diária organizada pronta para a edição.",
         "objectives": [
           "Captura de vídeos e sons: acústica, equipamentos de captação de áudio."
         ],
@@ -1370,25 +1370,25 @@ window.SENAI_COURSES = {
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Revisão da aula 7 (luz de produto e luz de depoimento). Comparação cega de captação de áudio: o mesmo vídeo exibido com áudio bem captado e mal captado. Discussão: o público tolera imagem imperfeita, mas não tolera som ruim."
+            "horario": "19:00 - 19:45",
+            "atividade": "Abertura com comparação ao vivo: a mesma frase gravada com o aparelho longe e depois perto da fonte, e a turma aponta qual versão comunica. Cada grupo decide o som de cada cena do storyboard da aula 4 usando a ficha projetada (fala direta, efeito, ambiente ou silêncio) e copia a tabela no caderno."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "Acústica do ambiente (reverberação, superfícies duras e macias), ruído de fundo (ar-condicionado, corredor), distância e posição do microfone e captação com o gravador do smartphone. Exercício comparativo: gravar a mesma fala em três condições (microfone perto em sala silenciosa, microfone longe, ambiente ruidoso) e ouvir as diferenças no laboratório."
+            "horario": "20:05 - 21:00",
+            "atividade": "Rodada 1 de gravação, cenas com fala: captação perto da fonte e fora do quadro, claquete verbal, dez segundos de teste, cena gravada de uma vez e conferência com fone. Refaz-se somente o que falhou na conferência: fala ininteligível, ruído ou estouro."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "Gravação do microcurta: as duplas gravam as cenas do storyboard produzido na aula 4 aplicando os procedimentos de curta-metragem: enquadramento planejado, iluminação com softbox ou ring light e captação de som próxima da fonte."
+            "horario": "21:00 - 21:40",
+            "atividade": "Rodada 2: som de efeito nas cenas sem fala, trinta segundos de som ambiente de cada local usado, tomada de segurança das falas essenciais do começo ao fim e conferência com fone de cada arquivo novo pelo checklist projetado."
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "Continuação da gravação das tomadas restantes. Descarregamento organizado do material nos computadores (uma pasta por dupla, arquivos nomeados por cena e take) e conferência final: cada dupla confere se todas as cenas do storyboard foram cobertas antes de encerrar."
+            "horario": "21:40 - 22:10",
+            "atividade": "Organização da diária: uma pasta por grupo no computador (PA_A08_EQ01), arquivos nomeados por cena e tomada (C02_T01), cópia conferida pela abertura dos arquivos, checklist projetado do storyboard completo, devolução conferida do equipamento e conclusão registrada no caderno."
           }
         ],
-        "methodology": "Experimentação comparativa de captação de áudio seguida de gravação prática do microcurta em duplas.",
-        "resources": "Câmeras, tripés, softbox, ring lights, smartphones dos alunos e computadores do laboratório.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "Abertura com comparação de áudio ao vivo, decisão de som registrada em ficha projetada e duas rodadas de gravação guiadas pelo mesmo ciclo: posicionar, identificar, gravar e conferir com fone. Cada rodada tem critério de conclusão projetado; a edição fica para a aula 9.",
+        "resources": "Projetor, quadro, caderno e caneta. Há 7 câmeras já carregadas, com cartão e bateria, 7 ring lights, computadores com navegador e cabo ou leitor de cartão para transferência. Fones de ouvido para a conferência de som ou volume baixo, um aparelho por vez. Nenhum programa é instalado no Windows; nenhuma ficha impressa é distribuída.",
+        "observation": "Aula das 19:00 às 22:10. Lanche fixo das 19:45 às 20:05. Chamada no início dos quatro blocos. Cada grupo permanece no próprio posto, com funções fixas por rodada; circula somente quem tem função definida. Durante a gravação, o restante da sala reduz a voz; quem não está gravando confere arquivos no computador. O som é a prioridade da aula: nenhuma cena termina sem conferência de áudio. Copiar antes de apagar qualquer arquivo; não formatar cartão, que pode conter material de outra turma. Sem fone disponível, ouvir em volume baixo, um aparelho por vez, com um integrante confirmando. A edição online no navegador fica para a aula 9."
       },
       {
         "num": "09",
