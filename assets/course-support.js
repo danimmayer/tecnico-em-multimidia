@@ -1476,15 +1476,32 @@ window.SENAI_TEACHING_SUPPORT = {
             "kicker": "Retomada direta da Aula 01",
             "heading": "Mesma ideia da Aula 01, agora com tema livre",
             "cards": [
-              { "eyebrow": "Aula 01", "title": "Mostra Criativa", "text": "Uma página com título, informações e botão." },
-              { "eyebrow": "Hoje", "title": "Tema livre", "text": "Cada aluno escolhe sobre o que será sua nova página." },
-              { "eyebrow": "Entrega", "title": "Uma página individual", "text": "Cada aluno faz, testa e salva o próprio arquivo." }
+              {
+                "eyebrow": "Aula 01",
+                "title": "Mostra Criativa",
+                "text": "Uma página com título, informações e botão."
+              },
+              {
+                "eyebrow": "Hoje",
+                "title": "Tema livre",
+                "text": "Cada aluno escolhe sobre o que será sua nova página."
+              },
+              {
+                "eyebrow": "Entrega",
+                "title": "Uma página individual",
+                "text": "Cada aluno faz, testa e salva o próprio arquivo."
+              }
             ],
             "promptLabel": "Lanche",
             "prompt": "19:45–20:05. Fechamento da aula: 21:55–22:07.",
             "teacher": {
               "speech": "Explico em uma frase: a Aula 02 foi cedida e hoje retomamos diretamente a página feita na Aula 01.",
-              "steps": ["Faço a chamada do Bloco 1 às 19:00.", "Mostro o exemplo preparado da Aula 01.", "Aponto as três melhorias da noite.", "Indico a pasta da turma e os códigos dos arquivos."],
+              "steps": [
+                "Faço a chamada do Bloco 1 às 19:00.",
+                "Mostro o exemplo preparado da Aula 01.",
+                "Aponto as três melhorias da noite.",
+                "Indico a pasta da turma e os códigos dos arquivos."
+              ],
               "watch": "A turma entende que a Mostra Criativa é apenas o exemplo e que a produção é individual.",
               "rescue": "Resumo em uma frase: outra página, qualquer tema, título, informações e botão."
             }
@@ -1496,15 +1513,32 @@ window.SENAI_TEACHING_SUPPORT = {
             "heading": "Mostra Criativa · sexta-feira · 19h · auditório",
             "lede": "Confirmar presença",
             "cards": [
-              { "eyebrow": "Na tela", "title": "Título", "text": "Mostra o assunto principal. Na estrutura da página, funciona como o cabeçalho." },
-              { "eyebrow": "Na tela", "title": "Informações", "text": "Reúnem data, horário e local. Na estrutura, formam o conteúdo principal." },
-              { "eyebrow": "Na tela", "title": "Botão", "text": "Indica a ação esperada. Pode levar a outra parte ou confirmar uma escolha." }
+              {
+                "eyebrow": "Na tela",
+                "title": "Título",
+                "text": "Mostra o assunto principal. Na estrutura da página, funciona como o cabeçalho."
+              },
+              {
+                "eyebrow": "Na tela",
+                "title": "Informações",
+                "text": "Reúnem data, horário e local. Na estrutura, formam o conteúdo principal."
+              },
+              {
+                "eyebrow": "Na tela",
+                "title": "Botão",
+                "text": "Indica a ação esperada. Pode levar a outra parte ou confirmar uma escolha."
+              }
             ],
             "promptLabel": "Bastidor em uma frase",
             "prompt": "O editor é usado para criar; o navegador é usado para exibir e testar a página.",
             "teacher": {
               "speech": "Uso este exemplo pronto, sem depender de como a Aula 01 foi realizada. Relaciono cada parte visível à estrutura de uma página, sem ensinar código.",
-              "steps": ["Leio o título.", "Aponto as informações.", "Aponto o botão.", "Digo a função do editor e do navegador."],
+              "steps": [
+                "Leio o título.",
+                "Aponto as informações.",
+                "Aponto o botão.",
+                "Digo a função do editor e do navegador."
+              ],
               "watch": "A turma reconhece título, conteúdo e ação e diferencia editor de navegador.",
               "rescue": "Repito somente: título apresenta, informações explicam e botão indica a ação."
             }
@@ -1525,7 +1559,11 @@ window.SENAI_TEACHING_SUPPORT = {
             "prompt": "Cada aluno termina esta etapa com um tema, um título, duas informações e o texto do botão.",
             "teacher": {
               "speech": "Uso a Mostra Criativa apenas para relembrar a estrutura e libero a escolha individual do novo tema.",
-              "steps": ["Mostro a página da Aula 01.", "Localizo título, informações e botão.", "Dou cinco minutos para cada aluno escolher o novo tema."],
+              "steps": [
+                "Mostro a página da Aula 01.",
+                "Localizo título, informações e botão.",
+                "Dou cinco minutos para cada aluno escolher o novo tema."
+              ],
               "watch": "Cada aluno decide o tema sem começar a pesquisar referências.",
               "rescue": "Aponto os cinco temas prontos do slide para encerrar rapidamente a escolha."
             }
@@ -1539,7 +1577,10 @@ window.SENAI_TEACHING_SUPPORT = {
             "lede": "Na volta, cada aluno criará uma nova página com o tema e a ferramenta que escolheu.",
             "prompt": "Retorno às 20:05 com o tema individual decidido.",
             "teacher": {
-              "steps": ["Aviso o horário de retorno.", "Retomo pontualmente às 20:05."],
+              "steps": [
+                "Aviso o horário de retorno.",
+                "Retomo pontualmente às 20:05."
+              ],
               "watch": "A turma sabe o tema da página e qual ferramenta gratuita usará.",
               "rescue": "Na volta, projeto o slide com título, informações e botão."
             }
@@ -1560,13 +1601,27 @@ window.SENAI_TEACHING_SUPPORT = {
             "promptLabel": "Pronto quando",
             "prompt": "A página tem título, frase curta, duas ou três informações e um botão.",
             "resources": [
-              { "href": "https://excalidraw.com/", "label": "Excalidraw · mais fácil" },
-              { "href": "https://app.diagrams.net/", "label": "diagrams.net · sem conta" },
-              { "href": "https://www.libreoffice.org/", "label": "LibreOffice · se instalado" }
+              {
+                "href": "https://excalidraw.com/",
+                "label": "Excalidraw · mais fácil"
+              },
+              {
+                "href": "https://app.diagrams.net/",
+                "label": "diagrams.net · sem conta"
+              },
+              {
+                "href": "https://www.libreoffice.org/",
+                "label": "LibreOffice · se instalado"
+              }
             ],
             "teacher": {
               "speech": "Mostro a estrutura pronta e libero a produção individual: título, frase, informações e botão.",
-              "steps": ["Faço a chamada do Bloco 2 às 20:05.", "Reabro o exemplo preparado.", "Confirmo um computador por aluno.", "Aviso quando faltarem 15 e 5 minutos."],
+              "steps": [
+                "Faço a chamada do Bloco 2 às 20:05.",
+                "Reabro o exemplo preparado.",
+                "Confirmo um computador por aluno.",
+                "Aviso quando faltarem 15 e 5 minutos."
+              ],
               "watch": "Cada aluno cria somente uma página e inclui os quatro elementos antes de melhorar o visual.",
               "rescue": "Se o aluno travar, escolho com ele um dos cinco temas e peço que copie a estrutura do meu exemplo."
             }
@@ -1588,7 +1643,12 @@ window.SENAI_TEACHING_SUPPORT = {
             "prompt": "Alguém entende o tema, vê a informação principal e encontra o botão em cinco segundos.",
             "teacher": {
               "speech": "Faço uma melhoria de cada vez no exemplo: aumento o título, junto as informações e destaco o botão.",
-              "steps": ["Faço a chamada do Bloco 3 às 20:35.", "Demonstro as três melhorias.", "Aviso às 20:45 e às 21:10.", "Atendo primeiro quem ainda não concluiu a estrutura."],
+              "steps": [
+                "Faço a chamada do Bloco 3 às 20:35.",
+                "Demonstro as três melhorias.",
+                "Aviso às 20:45 e às 21:10.",
+                "Atendo primeiro quem ainda não concluiu a estrutura."
+              ],
               "watch": "Cada aluno melhora a própria página sem começar outro arquivo.",
               "rescue": "Peço que escolha apenas uma das três melhorias, aplique e depois passe à seguinte."
             }
@@ -1610,7 +1670,13 @@ window.SENAI_TEACHING_SUPPORT = {
             "prompt": "O arquivo com seu código está na pasta da turma, abre normalmente e não contém dados pessoais.",
             "teacher": {
               "speech": "Organizo pares apenas para o teste, mas cada aluno continua responsável pelo próprio arquivo.",
-              "steps": ["Faço a chamada do Bloco 4 às 21:25.", "Formo os pares de teste.", "Dou 5 minutos para testar.", "Dou 15 minutos para cada aluno melhorar a própria página.", "Confiro os arquivos individuais."],
+              "steps": [
+                "Faço a chamada do Bloco 4 às 21:25.",
+                "Formo os pares de teste.",
+                "Dou 5 minutos para testar.",
+                "Dou 15 minutos para cada aluno melhorar a própria página.",
+                "Confiro os arquivos individuais."
+              ],
               "watch": "Ninguém explica a página antes das três respostas.",
               "rescue": "Se houver dificuldade para salvar, ajudo o aluno a guardar o arquivo no formato original da ferramenta e em PNG."
             }
@@ -1625,7 +1691,11 @@ window.SENAI_TEACHING_SUPPORT = {
             "prompt": "Cite uma mudança no título, nas informações ou no botão.",
             "teacher": {
               "speech": "Faço uma rodada rápida. Cada aluno completa a mesma frase, sem apresentação longa.",
-              "steps": ["Ouço uma frase por aluno.", "Reforço os três pontos.", "Encerro às 22:07."],
+              "steps": [
+                "Ouço uma frase por aluno.",
+                "Reforço os três pontos.",
+                "Encerro às 22:07."
+              ],
               "watch": "A frase cita uma mudança e um efeito simples.",
               "rescue": "Com atraso, ouço três alunos e encerro."
             }
@@ -2805,7 +2875,6 @@ window.SENAI_TEACHING_SUPPORT = {
           }
         ]
       },
-
       "07": {
         "appendDefaultClosing": false,
         "teacherGoal": "Uma página de serviço reorganizada por estudante, com evidência inicial, projeto editável e PNG final reaberto até 22:10.",
@@ -4049,7 +4118,7 @@ window.SENAI_TEACHING_SUPPORT = {
           }
         ]
       },
-            "02": {
+      "02": {
         "teacherGoal": "Fechar a noite comprimida com três escalas filmadas, um teste de ordem e a história em cinco planos, sem ficha nem exibição longa.",
         "plainLanguage": "Na Aula 01, um plano contínuo bastava. Agora o que muda a história é a escala do plano e a ordem dos cortes.",
         "say": "Tempo curto: filmem três escalas, testem a ordem e entreguem cinco planos. Sem folha e sem vernissage.",
@@ -4233,15 +4302,35 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 1,
             "cards": [
-              {"eyebrow": "19:00–19:45", "title": "Fluxo embaralhado", "text": "Entender pré, produção, pós e dependências."},
-              {"eyebrow": "19:45–20:05", "title": "Lanche", "text": "Salvem a planilha antes de sair; retorno às 20:05."},
-              {"eyebrow": "20:05–21:25", "title": "Gêneros + cronograma", "text": "Comparar três formatos e iniciar o plano de 1 minuto."},
-              {"eyebrow": "21:25–22:07", "title": "Auditar, corrigir e entregar", "text": "Corrigir, salvar até 22:02 e fechar às 22:07."}
+              {
+                "eyebrow": "19:00–19:45",
+                "title": "Fluxo embaralhado",
+                "text": "Entender pré, produção, pós e dependências."
+              },
+              {
+                "eyebrow": "19:45–20:05",
+                "title": "Lanche",
+                "text": "Salvem a planilha antes de sair; retorno às 20:05."
+              },
+              {
+                "eyebrow": "20:05–21:25",
+                "title": "Gêneros + cronograma",
+                "text": "Comparar três formatos e iniciar o plano de 1 minuto."
+              },
+              {
+                "eyebrow": "21:25–22:07",
+                "title": "Auditar, corrigir e entregar",
+                "text": "Corrigir, salvar até 22:02 e fechar às 22:07."
+              }
             ],
             "promptLabel": "Entrega única",
             "prompt": "PA_A03_EQ##_CRONOGRAMA.xlsx → pasta AULA_03_ENTREGAS",
             "teacher": {
-              "steps": ["3 min · Faço a chamada e formo equipes de 3 a 4.", "2 min · Cada equipe escolhe gestor do tempo, operador, leitor e auditor.", "2 min · Abro o modelo e mostro as quatro abas; não explico a atividade seguinte antes da hora."],
+              "steps": [
+                "3 min · Faço a chamada e formo equipes de 3 a 4.",
+                "2 min · Cada equipe escolhe gestor do tempo, operador, leitor e auditor.",
+                "2 min · Abro o modelo e mostro as quatro abas; não explico a atividade seguinte antes da hora."
+              ],
               "watch": "Todos localizaram a planilha e sabem que nenhuma folha será impressa.",
               "rescue": "Com equipe de três, leitor também faz a auditoria."
             }
@@ -4254,15 +4343,35 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 1,
             "cards": [
-              {"eyebrow": "1 · Pré-produção", "title": "Decidir e preparar", "text": "Ideia, público, pesquisa, roteiro, storyboard, equipe, locais, autorizações, plano e cronograma."},
-              {"eyebrow": "2 · Produção", "title": "Captar", "text": "Organizar o set, gravar imagem e som, acompanhar continuidade e registrar cada tomada."},
-              {"eyebrow": "3 · Pós-produção", "title": "Construir e entregar", "text": "Copiar, organizar, selecionar, montar, tratar som e imagem, inserir créditos, exportar e conferir."},
-              {"eyebrow": "Dependência", "title": "O que precisa vir antes?", "text": "Uma tarefa bloqueia outra: não se grava antes de aprovar o roteiro; não se monta antes de copiar o material."}
+              {
+                "eyebrow": "1 · Pré-produção",
+                "title": "Decidir e preparar",
+                "text": "Ideia, público, pesquisa, roteiro, storyboard, equipe, locais, autorizações, plano e cronograma."
+              },
+              {
+                "eyebrow": "2 · Produção",
+                "title": "Captar",
+                "text": "Organizar o set, gravar imagem e som, acompanhar continuidade e registrar cada tomada."
+              },
+              {
+                "eyebrow": "3 · Pós-produção",
+                "title": "Construir e entregar",
+                "text": "Copiar, organizar, selecionar, montar, tratar som e imagem, inserir créditos, exportar e conferir."
+              },
+              {
+                "eyebrow": "Dependência",
+                "title": "O que precisa vir antes?",
+                "text": "Uma tarefa bloqueia outra: não se grava antes de aprovar o roteiro; não se monta antes de copiar o material."
+              }
             ],
             "prompt": "Pergunta-guia: o que daria errado se esta tarefa fosse feita cedo ou tarde demais?",
             "teacher": {
               "speech": "Pré evita surpresa; produção registra; pós transforma o material em vídeo. Dependência é a seta que diz o que precisa terminar antes.",
-              "steps": ["5 min · Explico as três etapas usando um vídeo de 1 minuto.", "3 min · Classifico ao vivo: roteiro → pré; gravação → produção; montagem → pós.", "2 min · Mostro a dependência roteiro aprovado → gravação."],
+              "steps": [
+                "5 min · Explico as três etapas usando um vídeo de 1 minuto.",
+                "3 min · Classifico ao vivo: roteiro → pré; gravação → produção; montagem → pós.",
+                "2 min · Mostro a dependência roteiro aprovado → gravação."
+              ],
               "watch": "A turma diferencia etapa de gênero antes da primeira prática.",
               "rescue": "Uso a analogia da festa: organizar antes, realizar durante, selecionar fotos e limpar depois."
             }
@@ -4275,15 +4384,42 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 1,
             "cards": [
-              {"eyebrow": "1 · Papéis (2 min)", "title": "Dividam a equipe", "text": "Gestor controla o tempo; operador digita; leitor confere o slide; auditor questiona a ordem. Troquem os papéis depois do lanche."},
-              {"eyebrow": "2 · Classificar (10 min)", "title": "Escolham a etapa", "text": "Para cada tarefa, selecionem PRÉ, PRODUÇÃO ou PÓS e atribuam uma ordem de 1 a 15."},
-              {"eyebrow": "3 · Dependências (8 min)", "title": "Liguem o antes ao depois", "text": "Marquem pelo menos quatro tarefas que dependem de outra. Ex.: gravar depende de roteiro aprovado."},
-              {"eyebrow": "4 · Justificar (5 min)", "title": "Expliquem duas escolhas", "text": "Completem: “___ vem antes de ___ porque ___”. Usem tarefas diferentes nas duas frases."}
+              {
+                "eyebrow": "1 · Papéis (2 min)",
+                "title": "Dividam a equipe",
+                "text": "Gestor controla o tempo; operador digita; leitor confere o slide; auditor questiona a ordem. Troquem os papéis depois do lanche."
+              },
+              {
+                "eyebrow": "2 · Classificar (10 min)",
+                "title": "Escolham a etapa",
+                "text": "Para cada tarefa, selecionem PRÉ, PRODUÇÃO ou PÓS e atribuam uma ordem de 1 a 15."
+              },
+              {
+                "eyebrow": "3 · Dependências (8 min)",
+                "title": "Liguem o antes ao depois",
+                "text": "Marquem pelo menos quatro tarefas que dependem de outra. Ex.: gravar depende de roteiro aprovado."
+              },
+              {
+                "eyebrow": "4 · Justificar (5 min)",
+                "title": "Expliquem duas escolhas",
+                "text": "Completem: “___ vem antes de ___ porque ___”. Usem tarefas diferentes nas duas frases."
+              }
             ],
-            "bullets": ["TERMINAMOS QUANDO: 15 fases preenchidas + ordens de 1 a 15 sem repetir + 4 dependências + 2 justificativas.", "SE SOBRAR TEMPO: identifiquem uma tarefa que pode acontecer em paralelo e expliquem por quê."],
-            "resource": {"href": "outputs/aula-03/PA_A03_MODELO_CRONOGRAMA.xlsx", "label": "Baixar a planilha digital da Aula 03"},
+            "bullets": [
+              "TERMINAMOS QUANDO: 15 fases preenchidas + ordens de 1 a 15 sem repetir + 4 dependências + 2 justificativas.",
+              "SE SOBRAR TEMPO: identifiquem uma tarefa que pode acontecer em paralelo e expliquem por quê."
+            ],
+            "resource": {
+              "href": "outputs/aula-03/PA_A03_MODELO_CRONOGRAMA.xlsx",
+              "label": "Baixar a planilha digital da Aula 03"
+            },
             "teacher": {
-              "steps": ["2 min · Projeto o slide e confirmo os quatro papéis.", "18 min · Circulo e respondo somente depois que a equipe lê o quadro TERMINAMOS QUANDO.", "5 min · Confiro uma dependência de cada equipe.", "3 min · Todos salvam antes do lanche."],
+              "steps": [
+                "2 min · Projeto o slide e confirmo os quatro papéis.",
+                "18 min · Circulo e respondo somente depois que a equipe lê o quadro TERMINAMOS QUANDO.",
+                "5 min · Confiro uma dependência de cada equipe.",
+                "3 min · Todos salvam antes do lanche."
+              ],
               "watch": "Ordens não se repetem; dependência aponta para uma tarefa que realmente precisa terminar antes.",
               "rescue": "Se a planilha não abrir, uma equipe vizinha duplica a aba 1_FLUXO e identifica os dois grupos."
             }
@@ -4296,12 +4432,24 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 1,
             "cards": [
-              {"eyebrow": "19:45", "title": "Salvar", "text": "Ctrl/Cmd + S. Ninguém apaga ou renomeia o modelo original."},
-              {"eyebrow": "20:05", "title": "Voltar", "text": "Sentem com a mesma equipe e troquem os papéis antes da Atividade 2."}
+              {
+                "eyebrow": "19:45",
+                "title": "Salvar",
+                "text": "Ctrl/Cmd + S. Ninguém apaga ou renomeia o modelo original."
+              },
+              {
+                "eyebrow": "20:05",
+                "title": "Voltar",
+                "text": "Sentem com a mesma equipe e troquem os papéis antes da Atividade 2."
+              }
             ],
             "prompt": "Ao voltar: operador vira leitor; leitor vira gestor; gestor vira auditor; auditor vira operador.",
             "teacher": {
-              "steps": ["Às 19:43 aviso os dois minutos finais.", "Às 19:45 libero o lanche com os arquivos salvos.", "Às 20:05 faço a segunda chamada e retomo sem revisão longa."],
+              "steps": [
+                "Às 19:43 aviso os dois minutos finais.",
+                "Às 19:45 libero o lanche com os arquivos salvos.",
+                "Às 20:05 faço a segunda chamada e retomo sem revisão longa."
+              ],
               "watch": "Nenhuma equipe perde o preenchimento feito antes do intervalo.",
               "rescue": "Se alguém voltar tarde, entra no papel de auditor sem reiniciar a explicação."
             }
@@ -4314,14 +4462,38 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 2,
             "cards": [
-              {"eyebrow": "Curta-metragem", "title": "Contar uma história", "text": "Definam personagem + conflito + desfecho; escolham uma decisão de imagem e uma de som que criem emoção."},
-              {"eyebrow": "Comercial", "title": "Convencer o público", "text": "Definam produto/ideia + benefício + chamada final; escolham imagem e som que tornem a mensagem memorável."},
-              {"eyebrow": "Documentário", "title": "Investigar o real", "text": "Definam pergunta + pessoa/fonte + evidência; escolham imagem e som que ajudem a compreender o tema."},
-              {"eyebrow": "Para os três", "title": "Registrem 4 itens", "text": "Finalidade, decisão de imagem/som, necessidade de produção e a principal diferença em relação aos outros gêneros."}
+              {
+                "eyebrow": "Curta-metragem",
+                "title": "Contar uma história",
+                "text": "Definam personagem + conflito + desfecho; escolham uma decisão de imagem e uma de som que criem emoção."
+              },
+              {
+                "eyebrow": "Comercial",
+                "title": "Convencer o público",
+                "text": "Definam produto/ideia + benefício + chamada final; escolham imagem e som que tornem a mensagem memorável."
+              },
+              {
+                "eyebrow": "Documentário",
+                "title": "Investigar o real",
+                "text": "Definam pergunta + pessoa/fonte + evidência; escolham imagem e som que ajudem a compreender o tema."
+              },
+              {
+                "eyebrow": "Para os três",
+                "title": "Registrem 4 itens",
+                "text": "Finalidade, decisão de imagem/som, necessidade de produção e a principal diferença em relação aos outros gêneros."
+              }
             ],
-            "bullets": ["TERMINAMOS QUANDO: as 3 colunas estão completas e nenhuma versão parece cópia da outra.", "SE SOBRAR TEMPO: deem um título diferente a cada versão e justifiquem o mais forte."],
+            "bullets": [
+              "TERMINAMOS QUANDO: as 3 colunas estão completas e nenhuma versão parece cópia da outra.",
+              "SE SOBRAR TEMPO: deem um título diferente a cada versão e justifiquem o mais forte."
+            ],
             "teacher": {
-              "steps": ["4 min · Comparo oralmente as três finalidades; não mostro vídeos longos.", "16 min · As equipes preenchem as três versões.", "4 min · Trocam a planilha com a equipe vizinha e apontam uma versão parecida demais.", "3 min · Corrigem e escolhem o gênero do cronograma."],
+              "steps": [
+                "4 min · Comparo oralmente as três finalidades; não mostro vídeos longos.",
+                "16 min · As equipes preenchem as três versões.",
+                "4 min · Trocam a planilha com a equipe vizinha e apontam uma versão parecida demais.",
+                "3 min · Corrigem e escolhem o gênero do cronograma."
+              ],
               "watch": "O gênero escolhido muda finalidade e decisões, não só o título.",
               "rescue": "Se travarem, atribuo gêneros diferentes às equipes e uso a coluna EXEMPLO da planilha como ponto de partida."
             }
@@ -4334,14 +4506,34 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 3,
             "cards": [
-              {"eyebrow": "O quê + fase", "title": "Escrever roteiro · PRÉ", "text": "Use verbo + objeto. Evite “resolver tudo”, “ajudar” ou “fazer o vídeo”."},
-              {"eyebrow": "Quem", "title": "Uma pessoa responsável", "text": "A equipe ajuda, mas um nome acompanha a conclusão da tarefa."},
-              {"eyebrow": "Quanto + antes", "title": "20 min · depende da ideia", "text": "Duração é esforço previsto; dependência é a tarefa que precisa terminar primeiro."},
-              {"eyebrow": "Como provar", "title": "Roteiro aprovado", "text": "A evidência deve ser visível: arquivo salvo, lista conferida, gravação ou exportação assistida."}
+              {
+                "eyebrow": "O quê + fase",
+                "title": "Escrever roteiro · PRÉ",
+                "text": "Use verbo + objeto. Evite “resolver tudo”, “ajudar” ou “fazer o vídeo”."
+              },
+              {
+                "eyebrow": "Quem",
+                "title": "Uma pessoa responsável",
+                "text": "A equipe ajuda, mas um nome acompanha a conclusão da tarefa."
+              },
+              {
+                "eyebrow": "Quanto + antes",
+                "title": "20 min · depende da ideia",
+                "text": "Duração é esforço previsto; dependência é a tarefa que precisa terminar primeiro."
+              },
+              {
+                "eyebrow": "Como provar",
+                "title": "Roteiro aprovado",
+                "text": "A evidência deve ser visível: arquivo salvo, lista conferida, gravação ou exportação assistida."
+              }
             ],
             "prompt": "Teste de realidade: se o responsável faltar ou a tarefa atrasar, qual é o plano B?",
             "teacher": {
-              "steps": ["3 min · Preencho a linha Escrever roteiro sem completar o trabalho da turma.", "3 min · Mostro uma dependência impossível e peço a correção.", "2 min · Aponto as listas suspensas, o painel e a aba 4_CONFERENCIA."],
+              "steps": [
+                "3 min · Preencho a linha Escrever roteiro sem completar o trabalho da turma.",
+                "3 min · Mostro uma dependência impossível e peço a correção.",
+                "2 min · Aponto as listas suspensas, o painel e a aba 4_CONFERENCIA."
+              ],
               "watch": "A turma entende a diferença entre duração, dependência e evidência.",
               "rescue": "Uso a sequência mínima: ideia → roteiro → plano → gravação → cópia → montagem → exportação → conferência."
             }
@@ -4354,14 +4546,38 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 3,
             "cards": [
-              {"eyebrow": "1 · Identificar (3 min)", "title": "Equipe + gênero + objetivo", "text": "Preencham o cabeçalho e mantenham a premissa do objeto esquecido."},
-              {"eyebrow": "2 · Quebrar (15 min)", "title": "No mínimo 10 tarefas", "text": "Incluam pelo menos 4 de pré, 2 de produção e 4 de pós. Uma ação clara por linha."},
-              {"eyebrow": "3 · Distribuir (12 min)", "title": "Responsável + duração", "text": "Uma pessoa por linha e duração em minutos. A soma precisa ser compatível com o projeto."},
-              {"eyebrow": "4 · Conectar (10 min)", "title": "Dependência + evidência", "text": "Marquem pelo menos 2 dependências e escrevam como cada tarefa será conferida."}
+              {
+                "eyebrow": "1 · Identificar (3 min)",
+                "title": "Equipe + gênero + objetivo",
+                "text": "Preencham o cabeçalho e mantenham a premissa do objeto esquecido."
+              },
+              {
+                "eyebrow": "2 · Quebrar (15 min)",
+                "title": "No mínimo 10 tarefas",
+                "text": "Incluam pelo menos 4 de pré, 2 de produção e 4 de pós. Uma ação clara por linha."
+              },
+              {
+                "eyebrow": "3 · Distribuir (12 min)",
+                "title": "Responsável + duração",
+                "text": "Uma pessoa por linha e duração em minutos. A soma precisa ser compatível com o projeto."
+              },
+              {
+                "eyebrow": "4 · Conectar (10 min)",
+                "title": "Dependência + evidência",
+                "text": "Marquem pelo menos 2 dependências e escrevam como cada tarefa será conferida."
+              }
             ],
-            "bullets": ["TERMINAMOS QUANDO: 10 tarefas + 4 PRÉ + 2 PRODUÇÃO + 4 PÓS + todos com responsável, duração e evidência + 2 dependências.", "SE SOBRAR TEMPO: preencham plano B para ausência de integrante e atraso de gravação."],
+            "bullets": [
+              "TERMINAMOS QUANDO: 10 tarefas + 4 PRÉ + 2 PRODUÇÃO + 4 PÓS + todos com responsável, duração e evidência + 2 dependências.",
+              "SE SOBRAR TEMPO: preencham plano B para ausência de integrante e atraso de gravação."
+            ],
             "teacher": {
-              "steps": ["5 min · Confiro cabeçalhos e as duas primeiras tarefas de todas as equipes.", "25 min · Circulo procurando tarefa vaga, pessoa ausente e dependência impossível.", "10 min · Peço que cada equipe use o painel de contagem antes da auditoria.", "5 min · Organizo pares de equipes para a próxima etapa."],
+              "steps": [
+                "5 min · Confiro cabeçalhos e as duas primeiras tarefas de todas as equipes.",
+                "25 min · Circulo procurando tarefa vaga, pessoa ausente e dependência impossível.",
+                "10 min · Peço que cada equipe use o painel de contagem antes da auditoria.",
+                "5 min · Organizo pares de equipes para a próxima etapa."
+              ],
               "watch": "Nenhuma linha usa “todos” como único responsável; toda tarefa tem uma evidência observável.",
               "rescue": "Com atraso, forneço as dez tarefas mínimas oralmente, mas a equipe ainda decide fase, pessoa, duração, dependência e evidência."
             }
@@ -4374,14 +4590,38 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 4,
             "cards": [
-              {"eyebrow": "1 · Cobertura", "title": "As três fases existem?", "text": "Confiram a quantidade mínima e se nenhuma tarefa importante foi pulada."},
-              {"eyebrow": "2 · Ordem", "title": "Dá para executar?", "text": "Procurem tarefa que depende de algo ainda não concluído ou que aparece tarde demais."},
-              {"eyebrow": "3 · Pessoas e tempo", "title": "Cabe na equipe?", "text": "Marquem sobrecarga, responsável ausente, tarefa sem duração ou tempo irreal."},
-              {"eyebrow": "4 · Evidência", "title": "Como saber que terminou?", "text": "Marquem descrições vagas e escrevam ao menos uma correção específica."}
+              {
+                "eyebrow": "1 · Cobertura",
+                "title": "As três fases existem?",
+                "text": "Confiram a quantidade mínima e se nenhuma tarefa importante foi pulada."
+              },
+              {
+                "eyebrow": "2 · Ordem",
+                "title": "Dá para executar?",
+                "text": "Procurem tarefa que depende de algo ainda não concluído ou que aparece tarde demais."
+              },
+              {
+                "eyebrow": "3 · Pessoas e tempo",
+                "title": "Cabe na equipe?",
+                "text": "Marquem sobrecarga, responsável ausente, tarefa sem duração ou tempo irreal."
+              },
+              {
+                "eyebrow": "4 · Evidência",
+                "title": "Como saber que terminou?",
+                "text": "Marquem descrições vagas e escrevam ao menos uma correção específica."
+              }
             ],
-            "bullets": ["TERMINAMOS QUANDO: todos os itens da auditoria estão marcados + há 1 elogio específico + 1 correção concreta + nome da equipe auditora.", "REGRA: critiquem o plano, não as pessoas; devolvam o arquivo sem alterar a aba 3_CRONOGRAMA."],
+            "bullets": [
+              "TERMINAMOS QUANDO: todos os itens da auditoria estão marcados + há 1 elogio específico + 1 correção concreta + nome da equipe auditora.",
+              "REGRA: critiquem o plano, não as pessoas; devolvam o arquivo sem alterar a aba 3_CRONOGRAMA."
+            ],
             "teacher": {
-              "steps": ["2 min · Troco os arquivos entre pares e projeto este slide.", "12 min · Auditores conferem sem editar o cronograma.", "3 min · Cada auditor explica apenas a correção mais importante.", "5 min · Arquivos voltam às equipes autoras."],
+              "steps": [
+                "2 min · Troco os arquivos entre pares e projeto este slide.",
+                "12 min · Auditores conferem sem editar o cronograma.",
+                "3 min · Cada auditor explica apenas a correção mais importante.",
+                "5 min · Arquivos voltam às equipes autoras."
+              ],
               "watch": "A correção aponta tarefa e mudança concreta; “está bom” ou “melhorar” não valem.",
               "rescue": "Se compartilhar arquivo atrasar, a equipe auditora senta ao lado e preenche a aba no mesmo computador."
             }
@@ -4394,14 +4634,38 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 4,
             "cards": [
-              {"eyebrow": "1 · Corrigir (8 min)", "title": "Respondam à auditoria", "text": "Façam a correção recebida ou justifiquem na aba 4 por que mantiveram a decisão."},
-              {"eyebrow": "2 · Conferir (4 min)", "title": "Painel CONCLUÍDO", "text": "Confiram 10 tarefas, fases mínimas, responsáveis, durações, evidências e dependências."},
-              {"eyebrow": "3 · Nomear (2 min)", "title": "Nome correto", "text": "PA_A03_EQ##_CRONOGRAMA.xlsx. Troquem ## pelo número da equipe; ex.: EQ04."},
-              {"eyebrow": "4 · Entregar (1 min)", "title": "Pasta final", "text": "AULA_03_ENTREGAS. Salvem, fechem e reabram o arquivo; só então levantem a mão."}
+              {
+                "eyebrow": "1 · Corrigir (8 min)",
+                "title": "Respondam à auditoria",
+                "text": "Façam a correção recebida ou justifiquem na aba 4 por que mantiveram a decisão."
+              },
+              {
+                "eyebrow": "2 · Conferir (4 min)",
+                "title": "Painel CONCLUÍDO",
+                "text": "Confiram 10 tarefas, fases mínimas, responsáveis, durações, evidências e dependências."
+              },
+              {
+                "eyebrow": "3 · Nomear (2 min)",
+                "title": "Nome correto",
+                "text": "PA_A03_EQ##_CRONOGRAMA.xlsx. Troquem ## pelo número da equipe; ex.: EQ04."
+              },
+              {
+                "eyebrow": "4 · Entregar (1 min)",
+                "title": "Pasta final",
+                "text": "AULA_03_ENTREGAS. Salvem, fechem e reabram o arquivo; só então levantem a mão."
+              }
             ],
-            "bullets": ["ATÉ 22:02: arquivo reaberto na pasta AULA_03_ENTREGAS.", "22:02–22:07: respondam no campo final: “A dependência mais importante é ___ porque ___”."],
+            "bullets": [
+              "ATÉ 22:02: arquivo reaberto na pasta AULA_03_ENTREGAS.",
+              "22:02–22:07: respondam no campo final: “A dependência mais importante é ___ porque ___”."
+            ],
             "teacher": {
-              "steps": ["8 min · Acompanho as correções sem reabrir a explicação inteira.", "4 min · Confiro o painel e recuso arquivos com nome incompleto.", "3 min · Responsável salva, fecha e reabre na pasta.", "5 min · Leio duas respostas finais e encerro às 22:07."],
+              "steps": [
+                "8 min · Acompanho as correções sem reabrir a explicação inteira.",
+                "4 min · Confiro o painel e recuso arquivos com nome incompleto.",
+                "3 min · Responsável salva, fecha e reabre na pasta.",
+                "5 min · Leio duas respostas finais e encerro às 22:07."
+              ],
               "watch": "O arquivo abre, tem o nome correto e o painel não aponta pendência.",
               "rescue": "Às 21:57, se alguma equipe estiver atrasada, preservo dez tarefas e dependências; retiro apenas o desafio extra."
             }
@@ -4427,10 +4691,22 @@ window.SENAI_TEACHING_SUPPORT = {
         ],
         "fallback": "Se um grupo travar, usa o exemplo projetado chamado “O estojo esquecido” e altera apenas o objeto e o lugar.",
         "commonProblems": [
-          ["O grupo não sabe como começar", "Aponto o passo 1 do slide da atividade: localizar o número do grupo e copiar o cabeçalho."],
-          ["O grupo diz que não sabe desenhar", "Relembro que bonecos de palito, formas e setas são suficientes."],
-          ["Roteiro e storyboard não combinam", "Peço que comparem linha 1 com quadro 1, depois 2 com 2, até chegar ao 6."],
-          ["O tempo ficou curto", "Preservo seis linhas e seis quadros; retiro apenas cor, detalhes decorativos e fala opcional."]
+          [
+            "O grupo não sabe como começar",
+            "Aponto o passo 1 do slide da atividade: localizar o número do grupo e copiar o cabeçalho."
+          ],
+          [
+            "O grupo diz que não sabe desenhar",
+            "Relembro que bonecos de palito, formas e setas são suficientes."
+          ],
+          [
+            "Roteiro e storyboard não combinam",
+            "Peço que comparem linha 1 com quadro 1, depois 2 com 2, até chegar ao 6."
+          ],
+          [
+            "O tempo ficou curto",
+            "Preservo seis linhas e seis quadros; retiro apenas cor, detalhes decorativos e fala opcional."
+          ]
         ],
         "presentationSlides": [
           {
@@ -4441,15 +4717,35 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 1,
             "cards": [
-              {"eyebrow": "19:00–19:45", "title": "Entender pelo exemplo", "text": "Roteiro, storyboard e três planos simples."},
-              {"eyebrow": "19:45–20:05", "title": "Lanche", "text": "Voltem às 20:05 no mesmo grupo."},
-              {"eyebrow": "20:05–21:35", "title": "Fazer as duas páginas", "text": "Roteiro de 6 linhas + storyboard de 6 quadros."},
-              {"eyebrow": "21:35–22:07", "title": "Conferir e mostrar", "text": "Corrigir pelo checklist e mostrar o caderno."}
+              {
+                "eyebrow": "19:00–19:45",
+                "title": "Entender pelo exemplo",
+                "text": "Roteiro, storyboard e três planos simples."
+              },
+              {
+                "eyebrow": "19:45–20:05",
+                "title": "Lanche",
+                "text": "Voltem às 20:05 no mesmo grupo."
+              },
+              {
+                "eyebrow": "20:05–21:35",
+                "title": "Fazer as duas páginas",
+                "text": "Roteiro de 6 linhas + storyboard de 6 quadros."
+              },
+              {
+                "eyebrow": "21:35–22:07",
+                "title": "Conferir e mostrar",
+                "text": "Corrigir pelo checklist e mostrar o caderno."
+              }
             ],
             "promptLabel": "Material de cada grupo",
             "prompt": "Caderno ou duas folhas em branco + lápis ou caneta. Nada para baixar ou imprimir.",
             "teacher": {
-              "steps": ["3 min · Faço a chamada e confirmo os 7 grupos.", "2 min · Confirmo o material e a entrega de duas páginas por grupo.", "Deixo cada atividade projetada enquanto a turma trabalha."],
+              "steps": [
+                "3 min · Faço a chamada e confirmo os 7 grupos.",
+                "2 min · Confirmo o material e a entrega de duas páginas por grupo.",
+                "Deixo cada atividade projetada enquanto a turma trabalha."
+              ],
               "watch": "Cada grupo tem onde escrever e sabe que seguirá os passos visíveis.",
               "rescue": "Sem caderno, o grupo usa duas folhas em branco; não há modelo para distribuir."
             }
@@ -4462,14 +4758,34 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 1,
             "cards": [
-              {"eyebrow": "Roteiro", "title": "História em palavras", "text": "Diz onde acontece e descreve, na ordem, apenas o que a câmera pode mostrar ou o microfone pode ouvir."},
-              {"eyebrow": "Storyboard", "title": "História em quadros", "text": "Mostra onde a câmera fica, o tamanho do assunto e a ação de cada parte."},
-              {"eyebrow": "Ligação", "title": "1 vira 1; 2 vira 2", "text": "Linha 1 vira quadro 1, linha 2 vira quadro 2 e assim por diante até o 6."},
-              {"eyebrow": "Regra", "title": "Simples e filmável", "text": "Um lugar da escola, até duas pessoas ou somente objetos, uma ação por parte."}
+              {
+                "eyebrow": "Roteiro",
+                "title": "História em palavras",
+                "text": "Diz onde acontece e descreve, na ordem, apenas o que a câmera pode mostrar ou o microfone pode ouvir."
+              },
+              {
+                "eyebrow": "Storyboard",
+                "title": "História em quadros",
+                "text": "Mostra onde a câmera fica, o tamanho do assunto e a ação de cada parte."
+              },
+              {
+                "eyebrow": "Ligação",
+                "title": "1 vira 1; 2 vira 2",
+                "text": "Linha 1 vira quadro 1, linha 2 vira quadro 2 e assim por diante até o 6."
+              },
+              {
+                "eyebrow": "Regra",
+                "title": "Simples e filmável",
+                "text": "Um lugar da escola, até duas pessoas ou somente objetos, uma ação por parte."
+              }
             ],
             "teacher": {
               "speech": "Roteiro é a história escrita. Storyboard é a mesma história desenhada antes da gravação.",
-              "steps": ["3 min · Leio as duas definições.", "2 min · Mostro a ligação 1 com 1 e 2 com 2.", "2 min · Reforço que objetos podem substituir pessoas."],
+              "steps": [
+                "3 min · Leio as duas definições.",
+                "2 min · Mostro a ligação 1 com 1 e 2 com 2.",
+                "2 min · Reforço que objetos podem substituir pessoas."
+              ],
               "watch": "A turma entende que não criará duas histórias diferentes.",
               "rescue": "Uso a comparação: receita escrita e fotos de cada passo."
             }
@@ -4482,16 +4798,46 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 1,
             "cards": [
-              {"eyebrow": "1", "title": "Onde estamos", "text": "A sala está vazia e um estojo ficou sobre a mesa."},
-              {"eyebrow": "2", "title": "Quem chega", "text": "Uma pessoa entra, vê o estojo e se aproxima."},
-              {"eyebrow": "3", "title": "Ação", "text": "Ela pega o estojo e procura um nome."},
-              {"eyebrow": "4", "title": "Mudança", "text": "Um cartão com o nome cai de dentro do estojo."},
-              {"eyebrow": "5", "title": "Solução", "text": "A pessoa leva o estojo até a mesa do dono."},
-              {"eyebrow": "6", "title": "Final", "text": "O estojo fica ao lado do caderno com o mesmo nome."}
+              {
+                "eyebrow": "1",
+                "title": "Onde estamos",
+                "text": "A sala está vazia e um estojo ficou sobre a mesa."
+              },
+              {
+                "eyebrow": "2",
+                "title": "Quem chega",
+                "text": "Uma pessoa entra, vê o estojo e se aproxima."
+              },
+              {
+                "eyebrow": "3",
+                "title": "Ação",
+                "text": "Ela pega o estojo e procura um nome."
+              },
+              {
+                "eyebrow": "4",
+                "title": "Mudança",
+                "text": "Um cartão com o nome cai de dentro do estojo."
+              },
+              {
+                "eyebrow": "5",
+                "title": "Solução",
+                "text": "A pessoa leva o estojo até a mesa do dono."
+              },
+              {
+                "eyebrow": "6",
+                "title": "Final",
+                "text": "O estojo fica ao lado do caderno com o mesmo nome."
+              }
             ],
-            "bullets": ["Perceba: cada linha tem uma ação visível e a ordem forma começo, mudança e final.", "Se o seu grupo travar, use este exemplo e mude somente o objeto e o lugar."],
+            "bullets": [
+              "Perceba: cada linha tem uma ação visível e a ordem forma começo, mudança e final.",
+              "Se o seu grupo travar, use este exemplo e mude somente o objeto e o lugar."
+            ],
             "teacher": {
-              "steps": ["4 min · Leio as seis partes sem pedir respostas abertas.", "3 min · Aponto onde estão começo, mudança, solução e final."],
+              "steps": [
+                "4 min · Leio as seis partes sem pedir respostas abertas.",
+                "3 min · Aponto onde estão começo, mudança, solução e final."
+              ],
               "watch": "A turma percebe que a história cabe em uma cena e não exige diálogo.",
               "rescue": "Leio novamente apenas as linhas 1, 4 e 6 para mostrar começo, mudança e final."
             }
@@ -4504,15 +4850,34 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 1,
             "cards": [
-              {"eyebrow": "PG · plano geral", "title": "Mostrar o lugar", "text": "Aparece o espaço inteiro e o assunto menor. Use normalmente no quadro 1."},
-              {"eyebrow": "PM · plano médio", "title": "Mostrar a ação", "text": "Aparecem pessoa ou objeto e o que estão fazendo. Use nos quadros do meio."},
-              {"eyebrow": "PD · plano detalhe", "title": "Mostrar algo importante", "text": "Aparece bem perto uma mão, um nome, um objeto ou uma pista."},
-              {"eyebrow": "Desenho", "title": "Clareza vale mais que beleza", "text": "Bonecos de palito, retângulos, setas e palavras são suficientes."}
+              {
+                "eyebrow": "PG · plano geral",
+                "title": "Mostrar o lugar",
+                "text": "Aparece o espaço inteiro e o assunto menor. Use normalmente no quadro 1."
+              },
+              {
+                "eyebrow": "PM · plano médio",
+                "title": "Mostrar a ação",
+                "text": "Aparecem pessoa ou objeto e o que estão fazendo. Use nos quadros do meio."
+              },
+              {
+                "eyebrow": "PD · plano detalhe",
+                "title": "Mostrar algo importante",
+                "text": "Aparece bem perto uma mão, um nome, um objeto ou uma pista."
+              },
+              {
+                "eyebrow": "Desenho",
+                "title": "Clareza vale mais que beleza",
+                "text": "Bonecos de palito, retângulos, setas e palavras são suficientes."
+              }
             ],
             "promptLabel": "Atalho",
             "prompt": "Se estiver em dúvida: quadro 1 = PG; ações = PM; pista importante = PD.",
             "teacher": {
-              "steps": ["5 min · Desenho no quadro um retângulo para cada plano.", "3 min · Uso o estojo do exemplo: sala em PG, pessoa pegando em PM, nome em PD."],
+              "steps": [
+                "5 min · Desenho no quadro um retângulo para cada plano.",
+                "3 min · Uso o estojo do exemplo: sala em PG, pessoa pegando em PM, nome em PD."
+              ],
               "watch": "A turma consegue escolher entre lugar, ação e detalhe.",
               "rescue": "Se a sigla confundir, permito escrever GERAL, MÉDIO ou DETALHE por extenso."
             }
@@ -4525,17 +4890,53 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 2,
             "cards": [
-              {"eyebrow": "GRUPO 1", "title": "O estojo esquecido", "text": "Alguém encontra um estojo, descobre o dono e o devolve."},
-              {"eyebrow": "GRUPO 2", "title": "O recado errado", "text": "Um recado chega à pessoa errada; ela percebe e corrige a entrega."},
-              {"eyebrow": "GRUPO 3", "title": "A pista no livro", "text": "Um livro cai, revela uma pista e ajuda a localizar quem o perdeu."},
-              {"eyebrow": "GRUPO 4", "title": "As garrafas trocadas", "text": "Duas garrafas iguais são trocadas; os nomes permitem desfazer o engano."},
-              {"eyebrow": "GRUPO 5", "title": "O caderno sem nome", "text": "Um caderno é encontrado; uma anotação indica a turma e ajuda na devolução."},
-              {"eyebrow": "GRUPO 6", "title": "A chave encontrada", "text": "Uma chave aparece no corredor; a etiqueta mostra onde ela deve ser entregue."},
-              {"eyebrow": "GRUPO 7", "title": "O cartaz que caiu", "text": "Um cartaz cai; alguém percebe uma informação faltando, corrige e recoloca."}
+              {
+                "eyebrow": "GRUPO 1",
+                "title": "O estojo esquecido",
+                "text": "Alguém encontra um estojo, descobre o dono e o devolve."
+              },
+              {
+                "eyebrow": "GRUPO 2",
+                "title": "O recado errado",
+                "text": "Um recado chega à pessoa errada; ela percebe e corrige a entrega."
+              },
+              {
+                "eyebrow": "GRUPO 3",
+                "title": "A pista no livro",
+                "text": "Um livro cai, revela uma pista e ajuda a localizar quem o perdeu."
+              },
+              {
+                "eyebrow": "GRUPO 4",
+                "title": "As garrafas trocadas",
+                "text": "Duas garrafas iguais são trocadas; os nomes permitem desfazer o engano."
+              },
+              {
+                "eyebrow": "GRUPO 5",
+                "title": "O caderno sem nome",
+                "text": "Um caderno é encontrado; uma anotação indica a turma e ajuda na devolução."
+              },
+              {
+                "eyebrow": "GRUPO 6",
+                "title": "A chave encontrada",
+                "text": "Uma chave aparece no corredor; a etiqueta mostra onde ela deve ser entregue."
+              },
+              {
+                "eyebrow": "GRUPO 7",
+                "title": "O cartaz que caiu",
+                "text": "Um cartaz cai; alguém percebe uma informação faltando, corrige e recoloca."
+              }
             ],
-            "bullets": ["FAÇAM: escrevam TÍTULO, LOCAL, DIA e SOM; depois completem: 1 No começo… 2 Então… 3 Depois… 4 Mas… 5 Para resolver… 6 No final…", "PRONTO QUANDO: as quatro informações e as seis frases estão preenchidas e mostram ações que a câmera pode gravar."],
+            "bullets": [
+              "FAÇAM: escrevam TÍTULO, LOCAL, DIA e SOM; depois completem: 1 No começo… 2 Então… 3 Depois… 4 Mas… 5 Para resolver… 6 No final…",
+              "PRONTO QUANDO: as quatro informações e as seis frases estão preenchidas e mostram ações que a câmera pode gravar."
+            ],
             "teacher": {
-              "steps": ["3 min · Faço a chamada da retomada e confirmo o número e a história de cada grupo.", "32 min · Circulo; aponto a linha seguinte sem criar a história pelo grupo.", "7 min · Confiro seis linhas numeradas.", "3 min · Peço a troca das funções."],
+              "steps": [
+                "3 min · Faço a chamada da retomada e confirmo o número e a história de cada grupo.",
+                "32 min · Circulo; aponto a linha seguinte sem criar a história pelo grupo.",
+                "7 min · Confiro seis linhas numeradas.",
+                "3 min · Peço a troca das funções."
+              ],
               "watch": "Uma ação visível por linha; uma única cena; seis linhas completas.",
               "rescue": "O grupo usa o exemplo chamado “O estojo esquecido” e altera somente o objeto e o lugar."
             }
@@ -4548,14 +4949,38 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 3,
             "cards": [
-              {"eyebrow": "1 · Preparar (5 min)", "title": "Página deitada", "text": "Dividam a página em 2 linhas de 3 retângulos. Numerem os quadros de 1 a 6."},
-              {"eyebrow": "2 · Desenhar (20 min)", "title": "Linha 1 vira quadro 1", "text": "Façam o mesmo de 2 com 2 até 6 com 6. Usem bonecos de palito, formas e setas."},
-              {"eyebrow": "3 · Indicar (10 min)", "title": "Plano + ação", "text": "Abaixo de cada quadro escrevam PG, PM ou PD e uma frase curta dizendo o que acontece."},
-              {"eyebrow": "4 · Completar (5 min)", "title": "Som somente se existir", "text": "Escrevam SOM: passos, porta, objeto caindo ou ambiente. Se não houver som importante, escrevam SOM: ambiente."}
+              {
+                "eyebrow": "1 · Preparar (5 min)",
+                "title": "Página deitada",
+                "text": "Dividam a página em 2 linhas de 3 retângulos. Numerem os quadros de 1 a 6."
+              },
+              {
+                "eyebrow": "2 · Desenhar (20 min)",
+                "title": "Linha 1 vira quadro 1",
+                "text": "Façam o mesmo de 2 com 2 até 6 com 6. Usem bonecos de palito, formas e setas."
+              },
+              {
+                "eyebrow": "3 · Indicar (10 min)",
+                "title": "Plano + ação",
+                "text": "Abaixo de cada quadro escrevam PG, PM ou PD e uma frase curta dizendo o que acontece."
+              },
+              {
+                "eyebrow": "4 · Completar (5 min)",
+                "title": "Som somente se existir",
+                "text": "Escrevam SOM: passos, porta, objeto caindo ou ambiente. Se não houver som importante, escrevam SOM: ambiente."
+              }
             ],
-            "bullets": ["TERMINAMOS QUANDO: 6 quadros numerados + 6 desenhos + 6 planos + 6 ações curtas.", "REGRA: o desenho precisa ser compreensível, não bonito; não usem cor nem detalhes decorativos."],
+            "bullets": [
+              "TERMINAMOS QUANDO: 6 quadros numerados + 6 desenhos + 6 planos + 6 ações curtas.",
+              "REGRA: o desenho precisa ser compreensível, não bonito; não usem cor nem detalhes decorativos."
+            ],
             "teacher": {
-              "steps": ["5 min · Desenho a grade 2 × 3 no quadro.", "30 min · Circulo comparando linha e quadro de mesmo número.", "7 min · Confiro numeração, planos e ações.", "3 min · Organizo a conferência final."],
+              "steps": [
+                "5 min · Desenho a grade 2 × 3 no quadro.",
+                "30 min · Circulo comparando linha e quadro de mesmo número.",
+                "7 min · Confiro numeração, planos e ações.",
+                "3 min · Organizo a conferência final."
+              ],
               "watch": "Seis quadros legíveis e correspondência direta com as seis linhas.",
               "rescue": "Se faltar tempo, o grupo desenha somente o assunto principal e usa setas; mantém plano e ação escritos."
             }
@@ -4568,14 +4993,37 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 4,
             "cards": [
-              {"eyebrow": "1 e 2", "title": "Quantidade", "text": "O roteiro tem 6 linhas? O storyboard tem 6 quadros numerados?"},
-              {"eyebrow": "3", "title": "Correspondência", "text": "Linha 1 combina com quadro 1, linha 2 com quadro 2, até 6 com 6?"},
-              {"eyebrow": "4 e 5", "title": "Informação", "text": "Todo quadro tem PG, PM ou PD? Todo quadro tem uma ação curta escrita?"},
-              {"eyebrow": "6", "title": "Possível", "text": "A história acontece em um lugar da escola e pode usar objetos sem obrigar ninguém a aparecer?"}
+              {
+                "eyebrow": "1 e 2",
+                "title": "Quantidade",
+                "text": "O roteiro tem 6 linhas? O storyboard tem 6 quadros numerados?"
+              },
+              {
+                "eyebrow": "3",
+                "title": "Correspondência",
+                "text": "Linha 1 combina com quadro 1, linha 2 com quadro 2, até 6 com 6?"
+              },
+              {
+                "eyebrow": "4 e 5",
+                "title": "Informação",
+                "text": "Todo quadro tem PG, PM ou PD? Todo quadro tem uma ação curta escrita?"
+              },
+              {
+                "eyebrow": "6",
+                "title": "Possível",
+                "text": "A história acontece em um lugar da escola e pode usar objetos sem obrigar ninguém a aparecer?"
+              }
             ],
-            "bullets": ["TERMINAMOS QUANDO: há seis ✓ e os nomes dos integrantes estão no alto das páginas.", "Não apresentem para a turma; chamem o professor somente depois de corrigir todos os NÃO."],
+            "bullets": [
+              "TERMINAMOS QUANDO: há seis ✓ e os nomes dos integrantes estão no alto das páginas.",
+              "Não apresentem para a turma; chamem o professor somente depois de corrigir todos os NÃO."
+            ],
             "teacher": {
-              "steps": ["2 min · Explico que a conferência é mecânica, sem apresentação.", "8 min · Os grupos marcam e corrigem.", "2 min · Confirmo os nomes e os seis sinais."],
+              "steps": [
+                "2 min · Explico que a conferência é mecânica, sem apresentação.",
+                "8 min · Os grupos marcam e corrigem.",
+                "2 min · Confirmo os nomes e os seis sinais."
+              ],
               "watch": "O grupo aponta a evidência, em vez de responder SIM sem conferir.",
               "rescue": "Faço o grupo comparar apenas os números 1, 3 e 6; depois ele repete o método nos demais."
             }
@@ -4588,14 +5036,37 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 4,
             "cards": [
-              {"eyebrow": "1 · Corrigir (7 min)", "title": "Resolver os NÃO", "text": "Completem linha, quadro, plano ou ação que estiver faltando."},
-              {"eyebrow": "2 · Identificar (2 min)", "title": "Nomes do grupo + turma", "text": "Escrevam no alto das duas páginas."},
-              {"eyebrow": "3 · Ordenar (1 min)", "title": "Roteiro primeiro", "text": "Deixem a página do roteiro antes da página do storyboard."},
-              {"eyebrow": "4 · Mostrar (5 min)", "title": "Chamem o professor", "text": "Abram nas duas páginas e apontem uma linha e o quadro correspondente."}
+              {
+                "eyebrow": "1 · Corrigir (7 min)",
+                "title": "Resolver os NÃO",
+                "text": "Completem linha, quadro, plano ou ação que estiver faltando."
+              },
+              {
+                "eyebrow": "2 · Identificar (2 min)",
+                "title": "Nomes do grupo + turma",
+                "text": "Escrevam no alto das duas páginas."
+              },
+              {
+                "eyebrow": "3 · Ordenar (1 min)",
+                "title": "Roteiro primeiro",
+                "text": "Deixem a página do roteiro antes da página do storyboard."
+              },
+              {
+                "eyebrow": "4 · Mostrar (5 min)",
+                "title": "Chamem o professor",
+                "text": "Abram nas duas páginas e apontem uma linha e o quadro correspondente."
+              }
             ],
-            "bullets": ["PRONTO = nomes do grupo + roteiro com 6 linhas + storyboard com 6 quadros + 6 planos + 6 ações + seis ✓.", "Se o professor pedir uma correção, façam no mesmo lugar e mostrem novamente."],
+            "bullets": [
+              "PRONTO = nomes do grupo + roteiro com 6 linhas + storyboard com 6 quadros + 6 planos + 6 ações + seis ✓.",
+              "Se o professor pedir uma correção, façam no mesmo lugar e mostrem novamente."
+            ],
             "teacher": {
-              "steps": ["7 min · Circulo apenas entre quem ainda corrige.", "5 min · Confiro por amostragem uma linha e o quadro correspondente.", "3 min · Registro os grupos concluídos."],
+              "steps": [
+                "7 min · Circulo apenas entre quem ainda corrige.",
+                "5 min · Confiro por amostragem uma linha e o quadro correspondente.",
+                "3 min · Registro os grupos concluídos."
+              ],
               "watch": "As duas páginas estão identificadas e uma amostra confirma a correspondência.",
               "rescue": "Com fila, confiro primeiro quantidade e nomes; depois escolho um número de 1 a 6 para a amostra."
             }
@@ -4608,12 +5079,27 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 4,
             "cards": [
-              {"eyebrow": "No caderno", "title": "Complete uma frase", "text": "O storyboard ajuda a gravação porque ___."},
-              {"eyebrow": "Antes de sair", "title": "Guarde as duas páginas", "text": "Não destaque nem entregue; mantenha roteiro e storyboard juntos."},
-              {"eyebrow": "Próxima aula", "title": "Direito de imagem e uso de recursos", "text": "Vamos aprender o que pode ser gravado, usado e exibido com segurança."}
+              {
+                "eyebrow": "No caderno",
+                "title": "Complete uma frase",
+                "text": "O storyboard ajuda a gravação porque ___."
+              },
+              {
+                "eyebrow": "Antes de sair",
+                "title": "Guarde as duas páginas",
+                "text": "Não destaque nem entregue; mantenha roteiro e storyboard juntos."
+              },
+              {
+                "eyebrow": "Próxima aula",
+                "title": "Direito de imagem e uso de recursos",
+                "text": "Vamos aprender o que pode ser gravado, usado e exibido com segurança."
+              }
             ],
             "teacher": {
-              "steps": ["3 min · Todos completam a frase sem rodada oral.", "2 min · Aviso que as páginas devem permanecer juntas."],
+              "steps": [
+                "3 min · Todos completam a frase sem rodada oral.",
+                "2 min · Aviso que as páginas devem permanecer juntas."
+              ],
               "watch": "A turma encerra com as duas páginas guardadas e identificadas.",
               "rescue": "Frase-modelo: o storyboard ajuda porque mostra antes o que a câmera precisa gravar."
             }
@@ -4641,11 +5127,26 @@ window.SENAI_TEACHING_SUPPORT = {
         ],
         "fallback": "Sem internet, dispenso a pergunta 7 e o grupo escreve em que site livre vai buscar cada item e que anotará licença e crédito na hora de usar. Sem câmera, junto o grupo ao vizinho e os dois dividem uma câmera: as tomadas duram 40 e 15 segundos, então cabem no mesmo bloco alternando, enquanto um grupo monta o outro grava. A tomada A nunca vai para celular pessoal, porque tem rosto, nome e turma. Em último caso o celular grava apenas a tomada B, sem rosto, e o arquivo é apagado na minha frente depois que eu conferir.",
         "commonProblems": [
-          ["O grupo trata a autorização como formalidade", "Peço que escolham um dos quatro lugares e escrevam o até quando; sem essas duas respostas a gravação não é liberada."],
-          ["Alguém não quer aparecer no vídeo", "Trato a recusa como decisão válida e mando o grupo responder a pergunta 6 com a versão sem rosto."],
-          ["A busca por música ou fonte livre não avança", "Aponto a lista de sites projetada e aceito nome, licença e crédito, sem o endereço completo."],
-          ["A montagem da câmera consome o bloco", "Deixo a câmera apoiada e parada, sem tripé nem ajuste fino: a tomada precisa ser compreensível, não bonita."],
-          ["O tempo ficou curto", "Preservo as oito respostas e a tomada A; a tomada B pode ser gravada no celular do próprio grupo."]
+          [
+            "O grupo trata a autorização como formalidade",
+            "Peço que escolham um dos quatro lugares e escrevam o até quando; sem essas duas respostas a gravação não é liberada."
+          ],
+          [
+            "Alguém não quer aparecer no vídeo",
+            "Trato a recusa como decisão válida e mando o grupo responder a pergunta 6 com a versão sem rosto."
+          ],
+          [
+            "A busca por música ou fonte livre não avança",
+            "Aponto a lista de sites projetada e aceito nome, licença e crédito, sem o endereço completo."
+          ],
+          [
+            "A montagem da câmera consome o bloco",
+            "Deixo a câmera apoiada e parada, sem tripé nem ajuste fino: a tomada precisa ser compreensível, não bonita."
+          ],
+          [
+            "O tempo ficou curto",
+            "Preservo as oito respostas e a tomada A; a tomada B pode ser gravada no celular do próprio grupo."
+          ]
         ],
         "presentationSlides": [
           {
@@ -4656,15 +5157,35 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 1,
             "cards": [
-              {"eyebrow": "19:00–19:45", "title": "Ver como funciona", "text": "Quem pode aparecer, que música dá para usar e como deixar o vídeo fácil de entender."},
-              {"eyebrow": "19:45–20:05", "title": "Lanche", "text": "Retorno às 20:05 com o mesmo grupo."},
-              {"eyebrow": "20:05–20:50", "title": "Preencher a ficha", "text": "Oito perguntas no caderno. Uma delas pede pesquisa de três itens no notebook."},
-              {"eyebrow": "20:50–22:07", "title": "Gravar e devolver", "text": "Duas gravações curtas, conferência e equipamento de volta."}
+              {
+                "eyebrow": "19:00–19:45",
+                "title": "Ver como funciona",
+                "text": "Quem pode aparecer, que música dá para usar e como deixar o vídeo fácil de entender."
+              },
+              {
+                "eyebrow": "19:45–20:05",
+                "title": "Lanche",
+                "text": "Retorno às 20:05 com o mesmo grupo."
+              },
+              {
+                "eyebrow": "20:05–20:50",
+                "title": "Preencher a ficha",
+                "text": "Oito perguntas no caderno. Uma delas pede pesquisa de três itens no notebook."
+              },
+              {
+                "eyebrow": "20:50–22:07",
+                "title": "Gravar e devolver",
+                "text": "Duas gravações curtas, conferência e equipamento de volta."
+              }
             ],
             "promptLabel": "Material de cada grupo",
             "prompt": "Caderno e caneta + um notebook com internet. A partir das 20:50, uma câmera e uma ring light por grupo.",
             "teacher": {
-              "steps": ["3 min · Faço a chamada e formo os 7 grupos, um por câmera.", "2 min · Aviso que câmeras e ring lights só saem às 20:50 e que a ficha vem antes.", "Deixo cada atividade projetada enquanto a turma trabalha."],
+              "steps": [
+                "3 min · Faço a chamada e formo os 7 grupos, um por câmera.",
+                "2 min · Aviso que câmeras e ring lights só saem às 20:50 e que a ficha vem antes.",
+                "Deixo cada atividade projetada enquanto a turma trabalha."
+              ],
               "watch": "Cada grupo tem caderno, um notebook aberto e sabe que a gravação começa apenas no terceiro bloco.",
               "rescue": "Se faltar notebook em algum grupo, ele usa o do grupo vizinho por cinco minutos ou copia a lista de bancos projetada."
             }
@@ -4677,10 +5198,26 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 1,
             "cards": [
-              {"eyebrow": "1 · Exercício", "title": "Fica na turma", "text": "Vocês gravam só para aprender e depois apagam. Precisa avisar antes, ter o sim em voz alta e o vídeo não sai da sala."},
-              {"eyebrow": "2 · Dentro da escola", "title": "Outras turmas veem", "text": "O vídeo passa para gente da escola. Vocês precisam dizer onde e quando ele vai passar."},
-              {"eyebrow": "3 · Mostra com convidados", "title": "Gente de fora vê", "text": "Família e visitantes assistem. Aí precisa de autorização no papel da escola e de uma opção para quem não quer aparecer."},
-              {"eyebrow": "4 · Internet", "title": "Qualquer um vê, para sempre", "text": "A escola perde o controle do vídeo. Precisa de autorização só para isso e, para quem tem menos de 18, com o responsável."}
+              {
+                "eyebrow": "1 · Exercício",
+                "title": "Fica na turma",
+                "text": "Vocês gravam só para aprender e depois apagam. Precisa avisar antes, ter o sim em voz alta e o vídeo não sai da sala."
+              },
+              {
+                "eyebrow": "2 · Dentro da escola",
+                "title": "Outras turmas veem",
+                "text": "O vídeo passa para gente da escola. Vocês precisam dizer onde e quando ele vai passar."
+              },
+              {
+                "eyebrow": "3 · Mostra com convidados",
+                "title": "Gente de fora vê",
+                "text": "Família e visitantes assistem. Aí precisa de autorização no papel da escola e de uma opção para quem não quer aparecer."
+              },
+              {
+                "eyebrow": "4 · Internet",
+                "title": "Qualquer um vê, para sempre",
+                "text": "A escola perde o controle do vídeo. Precisa de autorização só para isso e, para quem tem menos de 18, com o responsável."
+              }
             ],
             "bullets": [
               "ANTES DE GRAVAR, QUATRO PERGUNTAS: quem aparece? para que serve? onde vai passar? até quando fica no ar?",
@@ -4688,7 +5225,11 @@ window.SENAI_TEACHING_SUPPORT = {
             ],
             "teacher": {
               "speech": "Autorizar para a sala não é autorizar para a internet. Cada degrau exige uma pergunta nova.",
-              "steps": ["4 min · Leio os quatro destinos com um exemplo de cada.", "3 min · Aplico as quatro perguntas a um vídeo que a turma conhece.", "2 min · Reforço que desistir é direito e não exige justificativa."],
+              "steps": [
+                "4 min · Leio os quatro destinos com um exemplo de cada.",
+                "3 min · Aplico as quatro perguntas a um vídeo que a turma conhece.",
+                "2 min · Reforço que desistir é direito e não exige justificativa."
+              ],
               "watch": "A turma separa exercício de publicação e entende que a autorização tem prazo.",
               "rescue": "Desenho uma escada de quatro degraus no quadro e subo a mesma cena um degrau por vez."
             }
@@ -4701,16 +5242,36 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 1,
             "cards": [
-              {"eyebrow": "Música", "title": "A música tem dono", "text": "Música de streaming não pode entrar no vídeo. Peguem em sites de música livre e anotem a licença."},
-              {"eyebrow": "Imagem", "title": "A foto também tem", "text": "Imagem achada em busca não é imagem livre. Usem sites de imagem livre ou o que vocês mesmos gravarem."},
-              {"eyebrow": "Fonte", "title": "Até a letra tem", "text": "Fonte baixada de qualquer site pode ser paga. Usem fontes livres e confiram se pode usar."},
-              {"eyebrow": "O que anotar", "title": "Quatro coisas de cada item", "text": "Nome, site de onde veio, licença e quem precisa ser creditado. Sem isso, o item fica fora do vídeo."}
+              {
+                "eyebrow": "Música",
+                "title": "A música tem dono",
+                "text": "Música de streaming não pode entrar no vídeo. Peguem em sites de música livre e anotem a licença."
+              },
+              {
+                "eyebrow": "Imagem",
+                "title": "A foto também tem",
+                "text": "Imagem achada em busca não é imagem livre. Usem sites de imagem livre ou o que vocês mesmos gravarem."
+              },
+              {
+                "eyebrow": "Fonte",
+                "title": "Até a letra tem",
+                "text": "Fonte baixada de qualquer site pode ser paga. Usem fontes livres e confiram se pode usar."
+              },
+              {
+                "eyebrow": "O que anotar",
+                "title": "Quatro coisas de cada item",
+                "text": "Nome, site de onde veio, licença e quem precisa ser creditado. Sem isso, o item fica fora do vídeo."
+              }
             ],
             "promptLabel": "Bancos livres para a atividade de hoje",
             "prompt": "Trilhas: freesound.org e incompetech.com · Imagens: pexels.com e openverse.org · Fontes: fonts.google.com",
             "teacher": {
               "speech": "A pergunta não é se dá para baixar. É se a licença permite usar naquele destino.",
-              "steps": ["3 min · Explico licença com a comparação de emprestar e devolver.", "4 min · Abro um banco livre e leio a licença e o crédito exigidos.", "2 min · Mostro onde os quatro dados entram na ficha."],
+              "steps": [
+                "3 min · Explico licença com a comparação de emprestar e devolver.",
+                "4 min · Abro um banco livre e leio a licença e o crédito exigidos.",
+                "2 min · Mostro onde os quatro dados entram na ficha."
+              ],
               "watch": "A turma procura a licença antes de escolher o arquivo, e não depois.",
               "rescue": "Se o site não abrir, uso a lista projetada e explico a licença pelo nome, sem depender da página."
             }
@@ -4723,13 +5284,33 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 1,
             "cards": [
-              {"eyebrow": "Acessibilidade", "title": "Legenda e descrição", "text": "Toda fala vira texto na tela. E o que só aparece na imagem alguém precisa dizer em voz alta: texto na tela não resolve para quem não enxerga."},
-              {"eyebrow": "Usabilidade", "title": "Dá para ler de longe", "text": "Letra grande, faixa escura atrás do texto e tempo na tela para ler a frase duas vezes."},
-              {"eyebrow": "Sustentabilidade", "title": "Não jogar trabalho fora", "text": "Aproveitem o que já gravaram, gravem tudo em um lugar só e guardem uma cópia organizada, não cinco espalhadas."},
-              {"eyebrow": "Na ficha de hoje", "title": "Duas viram pergunta", "text": "A frase da legenda e a opção para quem não quer aparecer. Essas duas são obrigatórias."}
+              {
+                "eyebrow": "Acessibilidade",
+                "title": "Legenda e descrição",
+                "text": "Toda fala vira texto na tela. E o que só aparece na imagem alguém precisa dizer em voz alta: texto na tela não resolve para quem não enxerga."
+              },
+              {
+                "eyebrow": "Usabilidade",
+                "title": "Dá para ler de longe",
+                "text": "Letra grande, faixa escura atrás do texto e tempo na tela para ler a frase duas vezes."
+              },
+              {
+                "eyebrow": "Sustentabilidade",
+                "title": "Não jogar trabalho fora",
+                "text": "Aproveitem o que já gravaram, gravem tudo em um lugar só e guardem uma cópia organizada, não cinco espalhadas."
+              },
+              {
+                "eyebrow": "Na ficha de hoje",
+                "title": "Duas viram pergunta",
+                "text": "A frase da legenda e a opção para quem não quer aparecer. Essas duas são obrigatórias."
+              }
             ],
             "teacher": {
-              "steps": ["3 min · Leio as três normas com um exemplo curto de cada.", "3 min · Escrevo no quadro uma frase legendada e conto o tempo de leitura.", "2 min · Ligo as três normas aos campos 6 e 8 da ficha."],
+              "steps": [
+                "3 min · Leio as três normas com um exemplo curto de cada.",
+                "3 min · Escrevo no quadro uma frase legendada e conto o tempo de leitura.",
+                "2 min · Ligo as três normas aos campos 6 e 8 da ficha."
+              ],
               "watch": "A turma percebe que acessibilidade é decisão de planejamento, não acabamento de edição.",
               "rescue": "Uso a pergunta: se a pessoa assistir sem som, ela ainda entende a cena?"
             }
@@ -4742,18 +5323,57 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 1,
             "cards": [
-              {"eyebrow": "1 · Que vídeo é", "title": "Aviso de mudança de sala", "text": "20 segundos, gravados no corredor, com uma pessoa falando."},
-              {"eyebrow": "2 · Para que serve", "title": "Treinar planejamento", "text": "Serve para a turma praticar. Não é propaganda da escola."},
-              {"eyebrow": "3 · Onde vai passar", "title": "Só dentro da escola", "text": "Na nossa sala e, no máximo, em outra turma do curso."},
-              {"eyebrow": "4 · Até quando", "title": "Até o fim do semestre", "text": "Depois disso o arquivo é apagado."},
-              {"eyebrow": "5 · Quem aparece", "title": "Uma pessoa do grupo", "text": "Ela disse sim em voz alta e sabe que pode desistir quando quiser."},
-              {"eyebrow": "6 · Quem não quer", "title": "Um cartaz no lugar do rosto", "text": "Se ninguém quiser aparecer, filma o cartaz e o texto é lido por quem aceitou ter a voz gravada."},
-              {"eyebrow": "7 · Música e imagem", "title": "Os quatro dados de cada item", "text": "Música: Kalimba · freesound.org · licença CC0 · sem crédito. Sem foto de terceiros. Fonte: Inter · fonts.google.com · licença aberta."},
-              {"eyebrow": "8 · Legenda", "title": "A frase na tela", "text": "\"A aula de hoje é na sala 12.\" Letra clara sobre faixa escura."}
+              {
+                "eyebrow": "1 · Que vídeo é",
+                "title": "Aviso de mudança de sala",
+                "text": "20 segundos, gravados no corredor, com uma pessoa falando."
+              },
+              {
+                "eyebrow": "2 · Para que serve",
+                "title": "Treinar planejamento",
+                "text": "Serve para a turma praticar. Não é propaganda da escola."
+              },
+              {
+                "eyebrow": "3 · Onde vai passar",
+                "title": "Só dentro da escola",
+                "text": "Na nossa sala e, no máximo, em outra turma do curso."
+              },
+              {
+                "eyebrow": "4 · Até quando",
+                "title": "Até o fim do semestre",
+                "text": "Depois disso o arquivo é apagado."
+              },
+              {
+                "eyebrow": "5 · Quem aparece",
+                "title": "Uma pessoa do grupo",
+                "text": "Ela disse sim em voz alta e sabe que pode desistir quando quiser."
+              },
+              {
+                "eyebrow": "6 · Quem não quer",
+                "title": "Um cartaz no lugar do rosto",
+                "text": "Se ninguém quiser aparecer, filma o cartaz e o texto é lido por quem aceitou ter a voz gravada."
+              },
+              {
+                "eyebrow": "7 · Música e imagem",
+                "title": "Os quatro dados de cada item",
+                "text": "Música: Kalimba · freesound.org · licença CC0 · sem crédito. Sem foto de terceiros. Fonte: Inter · fonts.google.com · licença aberta."
+              },
+              {
+                "eyebrow": "8 · Legenda",
+                "title": "A frase na tela",
+                "text": "\"A aula de hoje é na sala 12.\" Letra clara sobre faixa escura."
+              }
             ],
-            "bullets": ["Nenhuma resposta depende de edição: tudo é decidido antes de ligar a câmera.", "Grupo travado usa esta ficha como modelo, mas responde as oito com o próprio pedido: quem aparece e quem não quer aparecer mudam em cada um."],
+            "bullets": [
+              "Nenhuma resposta depende de edição: tudo é decidido antes de ligar a câmera.",
+              "Grupo travado usa esta ficha como modelo, mas responde as oito com o próprio pedido: quem aparece e quem não quer aparecer mudam em cada um."
+            ],
             "teacher": {
-              "steps": ["5 min · Leio os oito campos apontando o número de cada um.", "3 min · Destaco os campos 3, 4 e 7, que serão conferidos.", "2 min · Aviso que o campo 6 nunca fica em branco."],
+              "steps": [
+                "5 min · Leio os oito campos apontando o número de cada um.",
+                "3 min · Destaco os campos 3, 4 e 7, que serão conferidos.",
+                "2 min · Aviso que o campo 6 nunca fica em branco."
+              ],
               "watch": "A turma entende que a ficha é curta e que cada campo cabe em uma linha.",
               "rescue": "Leio apenas os campos 2, 3 e 4 e mostro que eles respondem às quatro perguntas do slide dos destinos."
             }
@@ -4768,7 +5388,10 @@ window.SENAI_TEACHING_SUPPORT = {
             "prompt": "Voltem às 20:05 nos mesmos 7 grupos, com caderno e notebook na mesa.",
             "promptLabel": "Combinado do retorno",
             "teacher": {
-              "steps": ["Aviso o horário de retorno e deixo este slide projetado.", "Retomo pontualmente às 20:05 com a chamada da retomada."],
+              "steps": [
+                "Aviso o horário de retorno e deixo este slide projetado.",
+                "Retomo pontualmente às 20:05 com a chamada da retomada."
+              ],
               "watch": "A turma volta nos mesmos grupos e sabe que a gravação ainda não começou.",
               "rescue": "Se a turma voltar dispersa, projeto o slide da Atividade 1 e leio apenas o critério de conclusão."
             }
@@ -4781,13 +5404,41 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 2,
             "cards": [
-              {"eyebrow": "GRUPO 1", "title": "Convite para a mostra", "text": "Chamar as famílias para a mostra de trabalhos do curso."},
-              {"eyebrow": "GRUPO 2", "title": "Tour da sala", "text": "Mostrar a sala e os equipamentos para quem vai entrar no curso."},
-              {"eyebrow": "GRUPO 3", "title": "Como devolver o equipamento", "text": "Explicar cartão, bateria e cabo, usando só as mãos e os objetos."},
-              {"eyebrow": "GRUPO 4", "title": "Por que escolhi o curso", "text": "Uma pessoa do grupo fala para a câmera sobre a escolha dela."},
-              {"eyebrow": "GRUPO 5", "title": "Bastidores da montagem", "text": "O grupo montando câmera e luz antes de gravar."},
-              {"eyebrow": "GRUPO 6", "title": "Recado sobre as provas", "text": "Um recado curto da turma para as outras turmas."},
-              {"eyebrow": "GRUPO 7", "title": "Imagens do intervalo", "text": "Imagens do pátio, com gente que não foi avisada da gravação."}
+              {
+                "eyebrow": "GRUPO 1",
+                "title": "Convite para a mostra",
+                "text": "Chamar as famílias para a mostra de trabalhos do curso."
+              },
+              {
+                "eyebrow": "GRUPO 2",
+                "title": "Tour da sala",
+                "text": "Mostrar a sala e os equipamentos para quem vai entrar no curso."
+              },
+              {
+                "eyebrow": "GRUPO 3",
+                "title": "Como devolver o equipamento",
+                "text": "Explicar cartão, bateria e cabo, usando só as mãos e os objetos."
+              },
+              {
+                "eyebrow": "GRUPO 4",
+                "title": "Por que escolhi o curso",
+                "text": "Uma pessoa do grupo fala para a câmera sobre a escolha dela."
+              },
+              {
+                "eyebrow": "GRUPO 5",
+                "title": "Bastidores da montagem",
+                "text": "O grupo montando câmera e luz antes de gravar."
+              },
+              {
+                "eyebrow": "GRUPO 6",
+                "title": "Recado sobre as provas",
+                "text": "Um recado curto da turma para as outras turmas."
+              },
+              {
+                "eyebrow": "GRUPO 7",
+                "title": "Imagens do intervalo",
+                "text": "Imagens do pátio, com gente que não foi avisada da gravação."
+              }
             ],
             "bullets": [
               "AS OITO PERGUNTAS: 1 que vídeo é · 2 para que serve · 3 onde vai passar · 4 até quando · 5 quem aparece · 6 quem não quer aparecer · 7 música, imagem e fonte com licença · 8 frase da legenda.",
@@ -4795,7 +5446,12 @@ window.SENAI_TEACHING_SUPPORT = {
               "PRONTO QUANDO: as oito respostas escritas, três licenças anotadas e os nomes do grupo no alto da página."
             ],
             "teacher": {
-              "steps": ["3 min · Faço a chamada da retomada e confirmo o número de cada grupo.", "30 min · Circulo apontando o campo seguinte, sem preencher pelo grupo.", "8 min · Confiro os campos 3, 4 e 7 grupo a grupo.", "4 min · Aviso o tempo e organizo a troca de funções para a gravação."],
+              "steps": [
+                "3 min · Faço a chamada da retomada e confirmo o número de cada grupo.",
+                "30 min · Circulo apontando o campo seguinte, sem preencher pelo grupo.",
+                "8 min · Confiro os campos 3, 4 e 7 grupo a grupo.",
+                "4 min · Aviso o tempo e organizo a troca de funções para a gravação."
+              ],
               "watch": "Onde vai passar e até quando estão escritos, e as três licenças têm site e crédito anotados.",
               "rescue": "Se a internet cair, a pergunta 7 vira compromisso escrito: o grupo aponta o site livre de cada item e anota licença e crédito quando for usar."
             }
@@ -4808,10 +5464,26 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 3,
             "cards": [
-              {"eyebrow": "1 · Montar (10 min)", "title": "Câmera, luz e teste", "text": "Câmera apoiada e parada, fio rente à parede e fora do caminho. A pessoa do peito para cima, no meio da imagem. Gravem 10 segundos de teste e ouçam antes de valer."},
-              {"eyebrow": "2 · Tomada A (12 min)", "title": "A autorização falada", "text": "Quem aceitou aparecer lê o texto de baixo olhando para a câmera. Até 40 segundos."},
-              {"eyebrow": "3 · Tomada B (12 min)", "title": "A mesma coisa sem rosto", "text": "15 segundos com objetos, a sala ou mãos sem tatuagem, anel ou pulseira que identifiquem. Sem falar, porque a voz também reconhece."},
-              {"eyebrow": "4 · Conferir (11 min)", "title": "Assistir antes de parar", "text": "Vejam as duas na câmera e confiram se dá para ouvir a fala. Refaçam no máximo uma vez e anotem o número dos arquivos."}
+              {
+                "eyebrow": "1 · Montar (10 min)",
+                "title": "Câmera, luz e teste",
+                "text": "Câmera apoiada e parada, fio rente à parede e fora do caminho. A pessoa do peito para cima, no meio da imagem. Gravem 10 segundos de teste e ouçam antes de valer."
+              },
+              {
+                "eyebrow": "2 · Tomada A (12 min)",
+                "title": "A autorização falada",
+                "text": "Quem aceitou aparecer lê o texto de baixo olhando para a câmera. Até 40 segundos."
+              },
+              {
+                "eyebrow": "3 · Tomada B (12 min)",
+                "title": "A mesma coisa sem rosto",
+                "text": "15 segundos com objetos, a sala ou mãos sem tatuagem, anel ou pulseira que identifiquem. Sem falar, porque a voz também reconhece."
+              },
+              {
+                "eyebrow": "4 · Conferir (11 min)",
+                "title": "Assistir antes de parar",
+                "text": "Vejam as duas na câmera e confiram se dá para ouvir a fala. Refaçam no máximo uma vez e anotem o número dos arquivos."
+              }
             ],
             "bullets": [
               "TEXTO DA TOMADA A: \"Eu, (nome), da turma (turma), autorizo o uso da minha imagem no vídeo (título). Ele foi gravado para (para que serve), vai passar em (onde) até (quando). Sei que posso desistir quando eu quiser.\"",
@@ -4819,7 +5491,12 @@ window.SENAI_TEACHING_SUPPORT = {
             ],
             "teacher": {
               "speech": "A tomada B existe para provar uma coisa: sempre há um jeito de contar a cena sem expor quem não quer aparecer.",
-              "steps": ["5 min · Entrego uma câmera e uma ring light por grupo, conferindo cartão, bateria e por onde passa o fio.", "8 min · Enquanto os grupos montam, modelo o enquadramento, faço o teste de 10 segundos e leio o texto uma vez na frente da turma.", "27 min · Circulo entre os 7 grupos conferindo enquadramento, som e o sim em voz alta.", "5 min · Aviso os cinco minutos finais e mando assistir antes de parar."],
+              "steps": [
+                "5 min · Entrego uma câmera e uma ring light por grupo, conferindo cartão, bateria e por onde passa o fio.",
+                "8 min · Enquanto os grupos montam, modelo o enquadramento, faço o teste de 10 segundos e leio o texto uma vez na frente da turma.",
+                "27 min · Circulo entre os 7 grupos conferindo enquadramento, som e o sim em voz alta.",
+                "5 min · Aviso os cinco minutos finais e mando assistir antes de parar."
+              ],
               "watch": "Todo grupo tem duas tomadas gravadas, ninguém foi filmado sem concordar e nenhum fio cruza a rota de passagem.",
               "rescue": "Sem câmera funcionando, junto o grupo ao vizinho para dividirem uma câmera, alternando enquanto um monta e o outro grava. A tomada A não vai para celular pessoal; no limite, só a tomada B, sem rosto, apagada na minha frente depois da conferência."
             }
@@ -4832,15 +5509,42 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 4,
             "cards": [
-              {"eyebrow": "1 e 2", "title": "Ficha completa", "text": "As oito respostas estão escritas? O lugar onde vai passar e o até quando estão lá?"},
-              {"eyebrow": "3", "title": "Música e imagem", "text": "A música, a imagem e a fonte têm nome, site, licença e quem creditar anotados? Se a internet caiu, vale o site escolhido e o combinado por escrito."},
-              {"eyebrow": "4", "title": "Quem não quer aparecer", "text": "A opção sem rosto está escrita na pergunta 6 e gravada na tomada B?"},
-              {"eyebrow": "5", "title": "As duas tomadas", "text": "A fala foi gravada e dá para ouvir? A versão sem rosto também está lá?"},
-              {"eyebrow": "6", "title": "Nomes", "text": "Nomes do grupo, turma, a faixa de arquivos do dia e os dois que valem estão no alto da página?"}
+              {
+                "eyebrow": "1 e 2",
+                "title": "Ficha completa",
+                "text": "As oito respostas estão escritas? O lugar onde vai passar e o até quando estão lá?"
+              },
+              {
+                "eyebrow": "3",
+                "title": "Música e imagem",
+                "text": "A música, a imagem e a fonte têm nome, site, licença e quem creditar anotados? Se a internet caiu, vale o site escolhido e o combinado por escrito."
+              },
+              {
+                "eyebrow": "4",
+                "title": "Quem não quer aparecer",
+                "text": "A opção sem rosto está escrita na pergunta 6 e gravada na tomada B?"
+              },
+              {
+                "eyebrow": "5",
+                "title": "As duas tomadas",
+                "text": "A fala foi gravada e dá para ouvir? A versão sem rosto também está lá?"
+              },
+              {
+                "eyebrow": "6",
+                "title": "Nomes",
+                "text": "Nomes do grupo, turma, a faixa de arquivos do dia e os dois que valem estão no alto da página?"
+              }
             ],
-            "bullets": ["TERMINAMOS QUANDO: são seis ✓ e nenhum NÃO sobrando.", "Não é para apresentar para a turma. Chamem o professor só depois de arrumar tudo."],
+            "bullets": [
+              "TERMINAMOS QUANDO: são seis ✓ e nenhum NÃO sobrando.",
+              "Não é para apresentar para a turma. Chamem o professor só depois de arrumar tudo."
+            ],
             "teacher": {
-              "steps": ["2 min · Explico que a conferência é mecânica, sem apresentação.", "8 min · Os grupos marcam e corrigem.", "2 min · Confirmo os nomes e os seis sinais."],
+              "steps": [
+                "2 min · Explico que a conferência é mecânica, sem apresentação.",
+                "8 min · Os grupos marcam e corrigem.",
+                "2 min · Confirmo os nomes e os seis sinais."
+              ],
               "watch": "O grupo aponta a evidência, em vez de responder SIM sem conferir.",
               "rescue": "Faço o grupo conferir apenas os testes 2, 4 e 5; depois ele repete o método nos demais."
             }
@@ -4853,14 +5557,38 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 4,
             "cards": [
-              {"eyebrow": "1 · Arrumar (5 min)", "title": "O que ficou faltando", "text": "Completem a resposta, a licença ou a tomada que faltou."},
-              {"eyebrow": "2 · Nomear (3 min)", "title": "Nome dos arquivos", "text": "Anotem o número do primeiro e do último arquivo que gravaram hoje, teste incluído. Dentro dessa faixa, marquem os dois que valem: PA_A05_G01_AUTORIZACAO e PA_A05_G01_SEM_ROSTO, com o número do grupo no lugar do 01."},
-              {"eyebrow": "3 · Devolver (5 min)", "title": "Câmera e ring light", "text": "Devolvam com o cartão dentro, a bateria no lugar e o cabo enrolado. Não apaguem nada: quem apaga é o professor, depois de conferir."},
-              {"eyebrow": "4 · Mostrar (2 min)", "title": "Chamem o professor", "text": "Abram a ficha e mostrem as respostas 3, 4 e 7."}
+              {
+                "eyebrow": "1 · Arrumar (5 min)",
+                "title": "O que ficou faltando",
+                "text": "Completem a resposta, a licença ou a tomada que faltou."
+              },
+              {
+                "eyebrow": "2 · Nomear (3 min)",
+                "title": "Nome dos arquivos",
+                "text": "Anotem o número do primeiro e do último arquivo que gravaram hoje, teste incluído. Dentro dessa faixa, marquem os dois que valem: PA_A05_G01_AUTORIZACAO e PA_A05_G01_SEM_ROSTO, com o número do grupo no lugar do 01."
+              },
+              {
+                "eyebrow": "3 · Devolver (5 min)",
+                "title": "Câmera e ring light",
+                "text": "Devolvam com o cartão dentro, a bateria no lugar e o cabo enrolado. Não apaguem nada: quem apaga é o professor, depois de conferir."
+              },
+              {
+                "eyebrow": "4 · Mostrar (2 min)",
+                "title": "Chamem o professor",
+                "text": "Abram a ficha e mostrem as respostas 3, 4 e 7."
+              }
             ],
-            "bullets": ["PRONTO = 8 respostas + 3 licenças, ou o combinado escrito se a internet caiu + 6 ✓ + 2 tomadas com número e nome + equipamento devolvido.", "Se o professor pedir para arrumar algo, arrumem ali mesmo e mostrem de novo."],
+            "bullets": [
+              "PRONTO = 8 respostas + 3 licenças, ou o combinado escrito se a internet caiu + 6 ✓ + 2 tomadas com número e nome + equipamento devolvido.",
+              "Se o professor pedir para arrumar algo, arrumem ali mesmo e mostrem de novo."
+            ],
             "teacher": {
-              "steps": ["5 min · Circulo apenas entre quem ainda corrige.", "5 min · Recebo as 7 câmeras e as 7 ring lights, conferindo cartão e bateria, e apago tudo o que foi gravado hoje em cada cartão depois de conferir, incluindo o teste e as repetições.", "3 min · Confiro por amostragem os campos 3, 4 e 7.", "2 min · Registro os grupos concluídos."],
+              "steps": [
+                "5 min · Circulo apenas entre quem ainda corrige.",
+                "5 min · Recebo as 7 câmeras e as 7 ring lights, conferindo cartão e bateria, e apago tudo o que foi gravado hoje em cada cartão depois de conferir, incluindo o teste e as repetições.",
+                "3 min · Confiro por amostragem os campos 3, 4 e 7.",
+                "2 min · Registro os grupos concluídos."
+              ],
               "watch": "Todo equipamento voltou conferido, nenhuma ficha ficou sem onde e até quando, e nenhum cartão saiu da sala com gravação de rosto.",
               "rescue": "Com fila, recebo primeiro o equipamento e confiro a ficha logo depois, com o grupo ainda na sala."
             }
@@ -4873,12 +5601,27 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 4,
             "cards": [
-              {"eyebrow": "No caderno", "title": "Complete uma frase", "text": "Antes de gravar alguém, eu preciso combinar ___ e ___."},
-              {"eyebrow": "Antes de sair", "title": "Guarde a ficha", "text": "É o plano que diz se o vídeo pode existir. Ela não autoriza ninguém: isso é o papel da escola."},
-              {"eyebrow": "Próxima aula", "title": "Câmera na mão", "text": "Como segurar, focar e enquadrar com o equipamento do laboratório."}
+              {
+                "eyebrow": "No caderno",
+                "title": "Complete uma frase",
+                "text": "Antes de gravar alguém, eu preciso combinar ___ e ___."
+              },
+              {
+                "eyebrow": "Antes de sair",
+                "title": "Guarde a ficha",
+                "text": "É o plano que diz se o vídeo pode existir. Ela não autoriza ninguém: isso é o papel da escola."
+              },
+              {
+                "eyebrow": "Próxima aula",
+                "title": "Câmera na mão",
+                "text": "Como segurar, focar e enquadrar com o equipamento do laboratório."
+              }
             ],
             "teacher": {
-              "steps": ["3 min · Todos completam a frase sem rodada oral.", "2 min · Aviso que a ficha deve ser guardada, não entregue."],
+              "steps": [
+                "3 min · Todos completam a frase sem rodada oral.",
+                "2 min · Aviso que a ficha deve ser guardada, não entregue."
+              ],
               "watch": "A turma encerra com a ficha guardada e o equipamento já devolvido.",
               "rescue": "Frase-modelo: antes de gravar alguém, eu preciso combinar a finalidade e onde o vídeo será exibido."
             }
@@ -4909,13 +5652,34 @@ window.SENAI_TEACHING_SUPPORT = {
         ],
         "fallback": "Sem câmera, usem um celular apoiado. A versão FOCO usa dois toques na tela; a versão MOVIMENTO usa um deslocamento curto. Sem ring light, aproximem a cena da luz da sala. Sem computador, o visitante assiste na própria câmera. Não é preciso instalar editor nem usar internet.",
         "commonProblems": [
-          ["A frase só nomeia os objetos", "Peço um verbo: atrapalha, protege, esconde, combina, contrasta ou outro que faça sentido."],
-          ["As três versões ficaram iguais", "Na versão FOCO o quadro não muda; na versão MOVIMENTO o segundo objeto começa fora do quadro."],
-          ["A imagem treme na troca de foco", "Apoiem a câmera e encostem apenas a ponta dos dedos no anel ou na tela."],
-          ["O movimento passa rápido demais", "Marquem começo e fim. Contem dois segundos parados, movam devagar e parem por mais dois."],
-          ["Alguém aparece sem querer", "Paramos, apagamos essa tomada e voltamos só aos objetos."],
-          ["O visitante ouviu a frase antes", "Outro colega da mesma mesa assiste sem dica e escreve a própria leitura."],
-          ["O tempo ficou curto", "Mantenho os três vídeos e o teste. A nova gravação vira apenas uma correção escrita."]
+          [
+            "A frase só nomeia os objetos",
+            "Peço um verbo: atrapalha, protege, esconde, combina, contrasta ou outro que faça sentido."
+          ],
+          [
+            "As três versões ficaram iguais",
+            "Na versão FOCO o quadro não muda; na versão MOVIMENTO o segundo objeto começa fora do quadro."
+          ],
+          [
+            "A imagem treme na troca de foco",
+            "Apoiem a câmera e encostem apenas a ponta dos dedos no anel ou na tela."
+          ],
+          [
+            "O movimento passa rápido demais",
+            "Marquem começo e fim. Contem dois segundos parados, movam devagar e parem por mais dois."
+          ],
+          [
+            "Alguém aparece sem querer",
+            "Paramos, apagamos essa tomada e voltamos só aos objetos."
+          ],
+          [
+            "O visitante ouviu a frase antes",
+            "Outro colega da mesma mesa assiste sem dica e escreve a própria leitura."
+          ],
+          [
+            "O tempo ficou curto",
+            "Mantenho os três vídeos e o teste. A nova gravação vira apenas uma correção escrita."
+          ]
         ],
         "presentationSlides": [
           {
@@ -4926,15 +5690,33 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 1,
             "cards": [
-              {"eyebrow": "19:00–19:45 · 45 min", "title": "Ver e testar", "text": "Entendam o desafio e experimentem quadro, foco e movimento."},
-              {"eyebrow": "19:45–20:05 · 20 min", "title": "Lanche", "text": "Retorno às 20:05, no mesmo grupo e na mesma mesa."},
-              {"eyebrow": "20:05–20:55 · 50 min", "title": "Planejar e gravar", "text": "Escrevam uma frase e façam três versões da mesma ideia."},
-              {"eyebrow": "20:55–22:10 · 75 min", "title": "Testar e melhorar", "text": "Outro grupo lê as cenas. Vocês escolhem, corrigem e devolvem o equipamento."}
+              {
+                "eyebrow": "19:00–19:45 · 45 min",
+                "title": "Ver e testar",
+                "text": "Entendam o desafio e experimentem quadro, foco e movimento."
+              },
+              {
+                "eyebrow": "19:45–20:05 · 20 min",
+                "title": "Lanche",
+                "text": "Retorno às 20:05, no mesmo grupo e na mesma mesa."
+              },
+              {
+                "eyebrow": "20:05–20:55 · 50 min",
+                "title": "Planejar e gravar",
+                "text": "Escrevam uma frase e façam três versões da mesma ideia."
+              },
+              {
+                "eyebrow": "20:55–22:10 · 75 min",
+                "title": "Testar e melhorar",
+                "text": "Outro grupo lê as cenas. Vocês escolhem, corrigem e devolvem o equipamento."
+              }
             ],
             "promptLabel": "Ponto de partida",
             "prompt": "Grupos formados. Câmeras carregadas. Objetos separados. Começamos daí.",
             "teacher": {
-              "steps": ["3 min · Faço a chamada, confirmo os 7 postos prontos e apresento a sequência da noite."],
+              "steps": [
+                "3 min · Faço a chamada, confirmo os 7 postos prontos e apresento a sequência da noite."
+              ],
               "watch": "Os grupos permanecem como já foram organizados; câmera carregada e objetos separados não viram nova tarefa.",
               "rescue": "Se um integrante faltar, o grupo segue menor. Não reorganizo a turma."
             }
@@ -4947,14 +5729,33 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 1,
             "cards": [
-              {"eyebrow": "Antes", "title": "Uma frase", "text": "Escrevam: 'Queremos mostrar que...'. A frase precisa ter um verbo."},
-              {"eyebrow": "Durante", "title": "Três versões", "text": "FIXO, FOCO e MOVIMENTO. Mesma frase, mesmos objetos, oito segundos cada."},
-              {"eyebrow": "Depois", "title": "Leitura sem dica", "text": "Uma pessoa de outro grupo assiste e escreve o que cada cena diz."},
-              {"eyebrow": "Final", "title": "Uma escolha", "text": "Marquem a versão mais clara e expliquem qual operação ajudou."}
+              {
+                "eyebrow": "Antes",
+                "title": "Uma frase",
+                "text": "Escrevam: 'Queremos mostrar que...'. A frase precisa ter um verbo."
+              },
+              {
+                "eyebrow": "Durante",
+                "title": "Três versões",
+                "text": "FIXO, FOCO e MOVIMENTO. Mesma frase, mesmos objetos, oito segundos cada."
+              },
+              {
+                "eyebrow": "Depois",
+                "title": "Leitura sem dica",
+                "text": "Uma pessoa de outro grupo assiste e escreve o que cada cena diz."
+              },
+              {
+                "eyebrow": "Final",
+                "title": "Uma escolha",
+                "text": "Marquem a versão mais clara e expliquem qual operação ajudou."
+              }
             ],
             "teacher": {
               "speech": "Objeto é vocabulário. A relação entre os objetos é a frase.",
-              "steps": ["3 min · Leio o desafio inteiro.", "2 min · Dou um exemplo direto: caderno + celular pode dizer 'o celular atrapalha o estudo'."],
+              "steps": [
+                "3 min · Leio o desafio inteiro.",
+                "2 min · Dou um exemplo direto: caderno + celular pode dizer 'o celular atrapalha o estudo'."
+              ],
               "watch": "A turma entende que o resultado não é adivinhar os objetos, mas ler uma relação entre eles.",
               "rescue": "Dou mais dois exemplos: estojo protege o lápis; garrafa vazia interrompe o treino."
             }
@@ -4967,13 +5768,33 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 1,
             "cards": [
-              {"eyebrow": "FIXO", "title": "Tudo já está no quadro", "text": "Câmera parada. Os dois objetos aparecem juntos e a composição mostra a relação."},
-              {"eyebrow": "FOCO", "title": "O assunto muda", "text": "O quadro fica parado. Começa nítido em um objeto e termina nítido no outro."},
-              {"eyebrow": "MOVIMENTO", "title": "A informação aparece", "text": "O segundo objeto começa fora do quadro e surge num movimento curto."},
-              {"eyebrow": "REGRA", "title": "Oito segundos", "text": "Dois segundos no começo, movimento ou foco no meio, dois segundos no final."}
+              {
+                "eyebrow": "FIXO",
+                "title": "Tudo já está no quadro",
+                "text": "Câmera parada. Os dois objetos aparecem juntos e a composição mostra a relação."
+              },
+              {
+                "eyebrow": "FOCO",
+                "title": "O assunto muda",
+                "text": "O quadro fica parado. Começa nítido em um objeto e termina nítido no outro."
+              },
+              {
+                "eyebrow": "MOVIMENTO",
+                "title": "A informação aparece",
+                "text": "O segundo objeto começa fora do quadro e surge num movimento curto."
+              },
+              {
+                "eyebrow": "REGRA",
+                "title": "Oito segundos",
+                "text": "Dois segundos no começo, movimento ou foco no meio, dois segundos no final."
+              }
             ],
             "teacher": {
-              "steps": ["4 min · Mostro as três versões sem gravar.", "3 min · Repito a regra dos oito segundos contando em voz alta.", "3 min · Peço que a turma diga o que muda e o que permanece igual."],
+              "steps": [
+                "4 min · Mostro as três versões sem gravar.",
+                "3 min · Repito a regra dos oito segundos contando em voz alta.",
+                "3 min · Peço que a turma diga o que muda e o que permanece igual."
+              ],
               "watch": "FIXO não se move; FOCO não muda o quadro; MOVIMENTO começa sem mostrar o segundo objeto.",
               "rescue": "Faço os gestos com as mãos: moldura parada, dedo trocando o foco e moldura deslizando."
             }
@@ -4986,14 +5807,35 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 1,
             "cards": [
-              {"eyebrow": "Segurança", "title": "Alça e apoio", "text": "Alça presa. Câmera apoiada. Fio da ring light fora do corredor."},
-              {"eyebrow": "Foco", "title": "Uma troca", "text": "Anel ou toque na tela. Troquem devagar e não voltem para o primeiro objeto."},
-              {"eyebrow": "Movimento", "title": "Uma direção", "text": "Comecem parados, movam devagar e terminem parados."},
-              {"eyebrow": "Arquivo", "title": "Não apaguem", "text": "Anotem os números das tomadas. Ninguém formata o cartão."}
+              {
+                "eyebrow": "Segurança",
+                "title": "Alça e apoio",
+                "text": "Alça presa. Câmera apoiada. Fio da ring light fora do corredor."
+              },
+              {
+                "eyebrow": "Foco",
+                "title": "Uma troca",
+                "text": "Anel ou toque na tela. Troquem devagar e não voltem para o primeiro objeto."
+              },
+              {
+                "eyebrow": "Movimento",
+                "title": "Uma direção",
+                "text": "Comecem parados, movam devagar e terminem parados."
+              },
+              {
+                "eyebrow": "Arquivo",
+                "title": "Não apaguem",
+                "text": "Anotem os números das tomadas. Ninguém formata o cartão."
+              }
             ],
             "teacher": {
               "speech": "Controle bom quase não aparece. Tremor e pressa aparecem.",
-              "steps": ["5 min · Demonstro alça, apoio, ring light e uma troca de foco.", "5 min · Cada grupo faz um teste curto de foco com os objetos já separados.", "5 min · Cada grupo faz um movimento curto e confere se o começo e o fim ficaram parados.", "2 min · Todos param, desligam e deixam a câmera no centro da mesa."],
+              "steps": [
+                "5 min · Demonstro alça, apoio, ring light e uma troca de foco.",
+                "5 min · Cada grupo faz um teste curto de foco com os objetos já separados.",
+                "5 min · Cada grupo faz um movimento curto e confere se o começo e o fim ficaram parados.",
+                "2 min · Todos param, desligam e deixam a câmera no centro da mesa."
+              ],
               "watch": "Cada grupo testou os dois controles; ninguém começou a produção final antes da frase.",
               "rescue": "Sem foco manual, uso dois toques na tela. Sem ring light, aproximo a mesa da luz da sala."
             }
@@ -5006,17 +5848,37 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 1,
             "cards": [
-              {"eyebrow": "FIXO", "title": "Os dois juntos", "text": "Pode parecer apenas uma mesa com materiais. A relação ainda está fraca."},
-              {"eyebrow": "FOCO", "title": "Caderno, depois celular", "text": "A atenção sai do estudo e vai para o celular. A interrupção fica clara."},
-              {"eyebrow": "MOVIMENTO", "title": "O celular invade a cena", "text": "A câmera parte do caderno e revela o celular por cima dele."},
-              {"eyebrow": "ESCOLHA", "title": "FOCO ou movimento", "text": "A melhor é a que fizer outra pessoa escrever uma frase próxima da intenção."}
+              {
+                "eyebrow": "FIXO",
+                "title": "Os dois juntos",
+                "text": "Pode parecer apenas uma mesa com materiais. A relação ainda está fraca."
+              },
+              {
+                "eyebrow": "FOCO",
+                "title": "Caderno, depois celular",
+                "text": "A atenção sai do estudo e vai para o celular. A interrupção fica clara."
+              },
+              {
+                "eyebrow": "MOVIMENTO",
+                "title": "O celular invade a cena",
+                "text": "A câmera parte do caderno e revela o celular por cima dele."
+              },
+              {
+                "eyebrow": "ESCOLHA",
+                "title": "FOCO ou movimento",
+                "text": "A melhor é a que fizer outra pessoa escrever uma frase próxima da intenção."
+              }
             ],
             "bullets": [
               "“Tem um caderno e um celular” não é leitura suficiente. Falta dizer a relação.",
               "Não existe resposta secreta: vale uma frase diferente que preserve a mesma ideia."
             ],
             "teacher": {
-              "steps": ["4 min · Leio a frase e mostro como ela muda nas três versões.", "3 min · Pergunto qual versão comunica melhor e por quê.", "3 min · Transformo respostas vagas em termos técnicos: quadro, foco ou movimento."],
+              "steps": [
+                "4 min · Leio a frase e mostro como ela muda nas três versões.",
+                "3 min · Pergunto qual versão comunica melhor e por quê.",
+                "3 min · Transformo respostas vagas em termos técnicos: quadro, foco ou movimento."
+              ],
               "watch": "A justificativa liga a leitura à operação da câmera, não ao gosto pessoal.",
               "rescue": "Se vier 'porque ficou melhor', pergunto: o que apareceu, ficou nítido ou mudou de lugar?"
             }
@@ -5030,13 +5892,24 @@ window.SENAI_TEACHING_SUPPORT = {
             "heading": "Lanche às 19:45",
             "lede": "Intervalo de 20 minutos. Às 20:05, voltem ao mesmo grupo e à mesma mesa.",
             "cards": [
-              {"eyebrow": "Câmera", "title": "Desligada e com tampa", "text": "Deixem no centro da mesa. O teste já terminou."},
-              {"eyebrow": "Cena", "title": "Objetos no lugar", "text": "Não desmontem. A produção começa na volta."}
+              {
+                "eyebrow": "Câmera",
+                "title": "Desligada e com tampa",
+                "text": "Deixem no centro da mesa. O teste já terminou."
+              },
+              {
+                "eyebrow": "Cena",
+                "title": "Objetos no lugar",
+                "text": "Não desmontem. A produção começa na volta."
+              }
             ],
             "promptLabel": "Antes de sair",
             "prompt": "Câmera desligada, tampa colocada e fio fora do corredor.",
             "teacher": {
-              "steps": ["Aviso o retorno às 20:05 e confiro se as câmeras ficaram desligadas e com tampa.", "Na volta, faço a chamada e abro direto no plano de uma frase."],
+              "steps": [
+                "Aviso o retorno às 20:05 e confiro se as câmeras ficaram desligadas e com tampa.",
+                "Na volta, faço a chamada e abro direto no plano de uma frase."
+              ],
               "watch": "Nenhuma câmera fica ligada ou com a lente exposta durante o intervalo.",
               "rescue": "Se alguém desmontou a cena, o grupo remonta com os mesmos dois objetos ao voltar."
             }
@@ -5049,15 +5922,35 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 2,
             "cards": [
-              {"eyebrow": "1", "title": "Escolham a relação", "text": "Um objeto atrapalha, protege, esconde, completa ou contrasta com o outro."},
-              {"eyebrow": "2", "title": "Escrevam a frase", "text": "Exemplo: 'Queremos mostrar que o celular atrapalha o estudo'."},
-              {"eyebrow": "3", "title": "Desenhem as versões", "text": "FIXO: os dois juntos. FOCO: primeiro ___, depois ___. MOVIMENTO: começa em ___ e revela ___."},
-              {"eyebrow": "4", "title": "Distribuam funções", "text": "Direção, câmera, cena e anotação. Troquem a câmera entre as versões."}
+              {
+                "eyebrow": "1",
+                "title": "Escolham a relação",
+                "text": "Um objeto atrapalha, protege, esconde, completa ou contrasta com o outro."
+              },
+              {
+                "eyebrow": "2",
+                "title": "Escrevam a frase",
+                "text": "Exemplo: 'Queremos mostrar que o celular atrapalha o estudo'."
+              },
+              {
+                "eyebrow": "3",
+                "title": "Desenhem as versões",
+                "text": "FIXO: os dois juntos. FOCO: primeiro ___, depois ___. MOVIMENTO: começa em ___ e revela ___."
+              },
+              {
+                "eyebrow": "4",
+                "title": "Distribuam funções",
+                "text": "Direção, câmera, cena e anotação. Troquem a câmera entre as versões."
+              }
             ],
             "promptLabel": "Antes de ligar",
             "prompt": "Mostrem a frase ao professor. Depois, deixem no caderno três linhas: FIXO, FOCO e MOVIMENTO.",
             "teacher": {
-              "steps": ["4 min · Projeto o modelo e cada grupo escreve uma frase com verbo.", "4 min · Confiro rapidamente as 7 frases e corto as que apenas listam objetos.", "2 min · Os grupos desenham as três versões e distribuem funções."],
+              "steps": [
+                "4 min · Projeto o modelo e cada grupo escreve uma frase com verbo.",
+                "4 min · Confiro rapidamente as 7 frases e corto as que apenas listam objetos.",
+                "2 min · Os grupos desenham as três versões e distribuem funções."
+              ],
               "watch": "Há uma frase verificável antes de gravar e as três versões continuam sobre a mesma ideia.",
               "rescue": "Ofereço três moldes: ___ atrapalha ___; ___ protege ___; ___ esconde ___."
             }
@@ -5070,10 +5963,26 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 2,
             "cards": [
-              {"eyebrow": "1 · FIXO", "title": "Os objetos já contam", "text": "Quadro parado, composição clara e os dois objetos nítidos."},
-              {"eyebrow": "2 · FOCO", "title": "O assunto muda", "text": "Quadro parado. Uma troca de foco, sem ida e volta."},
-              {"eyebrow": "3 · MOVIMENTO", "title": "A cena revela", "text": "Um movimento. Começo e fim parados. O segundo objeto aparece depois."},
-              {"eyebrow": "4 · CONFERIR", "title": "Assistam no grupo", "text": "Som, rosto ou tremor forte? Refaçam agora. Anotem o número de cada arquivo."}
+              {
+                "eyebrow": "1 · FIXO",
+                "title": "Os objetos já contam",
+                "text": "Quadro parado, composição clara e os dois objetos nítidos."
+              },
+              {
+                "eyebrow": "2 · FOCO",
+                "title": "O assunto muda",
+                "text": "Quadro parado. Uma troca de foco, sem ida e volta."
+              },
+              {
+                "eyebrow": "3 · MOVIMENTO",
+                "title": "A cena revela",
+                "text": "Um movimento. Começo e fim parados. O segundo objeto aparece depois."
+              },
+              {
+                "eyebrow": "4 · CONFERIR",
+                "title": "Assistam no grupo",
+                "text": "Som, rosto ou tremor forte? Refaçam agora. Anotem o número de cada arquivo."
+              }
             ],
             "bullets": [
               "Fiquem na mesa. O fio não cruza o corredor. Ninguém aparece nos vídeos.",
@@ -5081,7 +5990,12 @@ window.SENAI_TEACHING_SUPPORT = {
             ],
             "teacher": {
               "speech": "Não procurem três ideias. Procurem três maneiras de dizer a mesma ideia.",
-              "steps": ["5 min · Retomo os três nomes e autorizo o início após ver a frase de cada grupo.", "25 min · Circulo pelos 7 postos; primeiro cobro estabilidade, depois sentido.", "7 min · Os grupos assistem às próprias tomadas e refazem apenas erro técnico evidente.", "3 min · Confiro os três números anotados em cada mesa."],
+              "steps": [
+                "5 min · Retomo os três nomes e autorizo o início após ver a frase de cada grupo.",
+                "25 min · Circulo pelos 7 postos; primeiro cobro estabilidade, depois sentido.",
+                "7 min · Os grupos assistem às próprias tomadas e refazem apenas erro técnico evidente.",
+                "3 min · Confiro os três números anotados em cada mesa."
+              ],
               "watch": "Há três arquivos por grupo; FOCO não move o quadro; MOVIMENTO revela algo que não aparecia no início.",
               "rescue": "Câmera com falha vira celular apoiado. Se o foco não responder, o grupo usa toque na tela."
             }
@@ -5094,17 +6008,37 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 3,
             "cards": [
-              {"eyebrow": "1", "title": "Cubram a frase", "text": "Deixem visíveis apenas os nomes FIXO, FOCO e MOVIMENTO."},
-              {"eyebrow": "2", "title": "Recebam o visitante", "text": "O professor indica a mesa. Quem gravou não dá pista e não explica os objetos."},
-              {"eyebrow": "3", "title": "Assistam uma vez", "text": "Depois de cada vídeo, o visitante completa: 'Para mim, a cena diz que...'."},
-              {"eyebrow": "4", "title": "Marquem a mais clara", "text": "O visitante coloca uma estrela na versão que comunicou melhor e volta ao grupo."}
+              {
+                "eyebrow": "1",
+                "title": "Cubram a frase",
+                "text": "Deixem visíveis apenas os nomes FIXO, FOCO e MOVIMENTO."
+              },
+              {
+                "eyebrow": "2",
+                "title": "Recebam o visitante",
+                "text": "O professor indica a mesa. Quem gravou não dá pista e não explica os objetos."
+              },
+              {
+                "eyebrow": "3",
+                "title": "Assistam uma vez",
+                "text": "Depois de cada vídeo, o visitante completa: 'Para mim, a cena diz que...'."
+              },
+              {
+                "eyebrow": "4",
+                "title": "Marquem a mais clara",
+                "text": "O visitante coloca uma estrela na versão que comunicou melhor e volta ao grupo."
+              }
             ],
             "bullets": [
               "Se a resposta só nomear os objetos, perguntem: “O que um tem a ver com o outro?”",
               "PRONTO = três frases do visitante + uma estrela. Só então mostrem a frase original."
             ],
             "teacher": {
-              "steps": ["5 min · Organizo a rota: G1 visita G2, G2 visita G3 e assim por diante; G7 visita G1.", "15 min · Cada visitante assiste aos três vídeos e escreve uma frase por versão, sem ouvir a intenção.", "5 min · Confiro se toda mesa recebeu três leituras e uma estrela."],
+              "steps": [
+                "5 min · Organizo a rota: G1 visita G2, G2 visita G3 e assim por diante; G7 visita G1.",
+                "15 min · Cada visitante assiste aos três vídeos e escreve uma frase por versão, sem ouvir a intenção.",
+                "5 min · Confiro se toda mesa recebeu três leituras e uma estrela."
+              ],
               "watch": "A frase original está coberta; o visitante usa verbo e não recebe explicação antes de escrever.",
               "rescue": "Sem computador, assistem na câmera. Grupo sem visitante recebe minha leitura."
             }
@@ -5117,10 +6051,26 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 3,
             "cards": [
-              {"eyebrow": "1", "title": "Leiam lado a lado", "text": "Frase do grupo em cima. Três frases do visitante embaixo."},
-              {"eyebrow": "2", "title": "Escolham a vencedora", "text": "É a leitura mais próxima da intenção, mesmo que use palavras diferentes."},
-              {"eyebrow": "3", "title": "Expliquem o motivo", "text": "Completem: 'Funcionou melhor porque o quadro, o foco ou o movimento...'."},
-              {"eyebrow": "4", "title": "Corrijam uma vez", "text": "Se nenhuma ficou clara, mudem uma coisa e gravem só a versão escolhida novamente."}
+              {
+                "eyebrow": "1",
+                "title": "Leiam lado a lado",
+                "text": "Frase do grupo em cima. Três frases do visitante embaixo."
+              },
+              {
+                "eyebrow": "2",
+                "title": "Escolham a vencedora",
+                "text": "É a leitura mais próxima da intenção, mesmo que use palavras diferentes."
+              },
+              {
+                "eyebrow": "3",
+                "title": "Expliquem o motivo",
+                "text": "Completem: 'Funcionou melhor porque o quadro, o foco ou o movimento...'."
+              },
+              {
+                "eyebrow": "4",
+                "title": "Corrijam uma vez",
+                "text": "Se nenhuma ficou clara, mudem uma coisa e gravem só a versão escolhida novamente."
+              }
             ],
             "bullets": [
               "Correção concreta: aproximar objetos, limpar o quadro, desacelerar o foco ou encurtar o movimento.",
@@ -5128,7 +6078,11 @@ window.SENAI_TEACHING_SUPPORT = {
             ],
             "teacher": {
               "speech": "A melhor técnica não é a mais bonita. É a que deixou a ideia mais clara.",
-              "steps": ["8 min · Os grupos comparam intenção, três leituras e estrela.", "7 min · Cada grupo escreve a justificativa usando um dos três controles.", "5 min · Quem precisa muda uma coisa e refaz apenas a versão escolhida."],
+              "steps": [
+                "8 min · Os grupos comparam intenção, três leituras e estrela.",
+                "7 min · Cada grupo escreve a justificativa usando um dos três controles.",
+                "5 min · Quem precisa muda uma coisa e refaz apenas a versão escolhida."
+              ],
               "watch": "A justificativa cita uma decisão visível de quadro, foco ou movimento.",
               "rescue": "Sem tempo para refazer, a correção fica escrita de modo executável."
             }
@@ -5141,17 +6095,37 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dense-cards",
             "block": 4,
             "cards": [
-              {"eyebrow": "Caderno", "title": "Mostrem a página", "text": "Frase original, três leituras, melhor versão e motivo técnico."},
-              {"eyebrow": "Arquivos", "title": "Mostrem os números", "text": "FIXO, FOCO e MOVIMENTO. Incluam a nova versão, se houve."},
-              {"eyebrow": "Equipamento", "title": "Devolvam completo", "text": "Câmera desligada, tampa, cartão, bateria e cabo enrolado. Não formatem o cartão."},
-              {"eyebrow": "Saída", "title": "Fechem a ideia", "text": "Completem: 'Nossa versão mais clara foi ___ porque ___'."}
+              {
+                "eyebrow": "Caderno",
+                "title": "Mostrem a página",
+                "text": "Frase original, três leituras, melhor versão e motivo técnico."
+              },
+              {
+                "eyebrow": "Arquivos",
+                "title": "Mostrem os números",
+                "text": "FIXO, FOCO e MOVIMENTO. Incluam a nova versão, se houve."
+              },
+              {
+                "eyebrow": "Equipamento",
+                "title": "Devolvam completo",
+                "text": "Câmera desligada, tampa, cartão, bateria e cabo enrolado. Não formatem o cartão."
+              },
+              {
+                "eyebrow": "Saída",
+                "title": "Fechem a ideia",
+                "text": "Completem: 'Nossa versão mais clara foi ___ porque ___'."
+              }
             ],
             "bullets": [
               "Não precisa apresentar para a turma. A conferência acontece na mesa.",
               "PRONTO = página conferida + vídeos localizados + câmera e ring light devolvidas."
             ],
             "teacher": {
-              "steps": ["10 min · Confiro mesa a mesa a frase, as três leituras e a escolha técnica.", "15 min · Recebo câmeras e ring lights; confiro cartão, bateria, tampa e cabo. Apago somente a faixa de hoje.", "5 min · Os grupos completam a frase final no caderno. Encerro às 22:10."],
+              "steps": [
+                "10 min · Confiro mesa a mesa a frase, as três leituras e a escolha técnica.",
+                "15 min · Recebo câmeras e ring lights; confiro cartão, bateria, tampa e cabo. Apago somente a faixa de hoje.",
+                "5 min · Os grupos completam a frase final no caderno. Encerro às 22:10."
+              ],
               "watch": "Sete câmeras e sete ring lights devolvidas; nenhum cartão formatado; toda escolha tem uma justificativa técnica.",
               "rescue": "Com atraso, recebo primeiro o equipamento. A justificativa final fica escrita, sem rodada oral."
             }
@@ -5850,23 +6824,442 @@ window.SENAI_TEACHING_SUPPORT = {
         "appendDefaultClosing": false
       },
       "08": {
-        "teacherGoal": "Captar som compreensível e gravar o microcurta.",
-        "plainLanguage": "O melhor microfone é o que fica próximo da fonte sem entrar no quadro.",
-        "say": "Gravem dez segundos e ouçam antes da cena inteira.",
+        "teacherGoal": "Levar os 7 grupos a decidir o som de cada cena do storyboard e gravar o microcurta com áudio conferido: fala próxima da fonte, claquete verbal, som ambiente e tomada de segurança, terminando com a diária organizada no computador.",
+        "plainLanguage": "O público tolera uma imagem imperfeita, mas abandona o vídeo com som ruim: capte perto da fonte e confira cada tomada com fone.",
+        "say": "Gravem a claquete em voz alta, dez segundos de teste e só então a cena. Ouçam cada tomada antes de desmontar o posto.",
         "demo": [
-          "Compare o microfone perto e longe da fonte.",
-          "Identifique ruídos contínuos e intermitentes do ambiente.",
-          "Faça a claquete e grave trinta segundos de som ambiente, chamado room tone.",
-          "Escute cada tomada com fone antes de desmontar o set."
+          "Grave a mesma fala com o aparelho longe da fonte e depois perto, e toque as duas versões para a turma.",
+          "Identifique em voz alta os ruídos contínuos da sala, como ventilador, projetor ou corredor.",
+          "Faça a claquete verbal antes de cada tomada: microcurta, grupo, cena e tomada.",
+          "Grave trinta segundos de silêncio de cada local usado; é esse som ambiente que a edição usa para emendar."
         ],
-        "studentDeliverable": "Material bruto da diária do microcurta, com som conferido e som ambiente gravado.",
+        "studentDeliverable": "Por grupo: o material bruto do microcurta com todas as cenas do storyboard cobertas, som conferido com fone, som ambiente gravado e a pasta organizada por cena e tomada no computador.",
         "check": [
-          "A fala é compreensível sem elevar demais o volume.",
-          "O som ambiente foi gravado no mesmo local.",
-          "Arquivos foram nomeados e copiados.",
-          "Existe uma tomada de segurança das falas essenciais."
+          "Cada cena do storyboard tem imagem e som conferidos.",
+          "A fala é compreensível sem aumentar demais o volume.",
+          "Todo arquivo começa com a claquete verbal e as falas essenciais têm tomada de segurança.",
+          "A pasta do grupo está no computador, com nomes por cena e tomada, aberta e conferida."
         ],
-        "fallback": "Grave voz separada em local silencioso e use como narração."
+        "fallback": "Sem fone disponível, ouçam em volume baixo, um aparelho por vez, com um integrante confirmando. Com ruído impossível de controlar, grave a fala em outro momento e use como narração.",
+        "commonProblems": [
+          [
+            "Som estoura ou distorce",
+            "Afasto a captação da fonte ou reduzo o volume na origem e refaço a tomada."
+          ],
+          [
+            "A fala não se entende",
+            "Aproximo a captação da fonte, peço fala mais lenta e confiro com fone antes de seguir."
+          ],
+          [
+            "O ruído da sala entra na tomada",
+            "Reduzo a voz do grupo, espero o pico passar e conto com o som ambiente gravado no local."
+          ],
+          [
+            "O grupo perde a conta das tomadas",
+            "Mantenho a claquete verbal em todos os arquivos e o caderno registra a primeira e a última de hoje."
+          ],
+          [
+            "O computador não reconhece o cartão",
+            "Troco o cabo ou o leitor; sem cópia, preservo o cartão identificado e registro os nomes no caderno."
+          ],
+          [
+            "O tempo ficou curto",
+            "Priorizo as falas essenciais e o som ambiente; efeito e segurança entram somente com tempo."
+          ]
+        ],
+        "presentationSlides": [
+          {
+            "title": "Mapa da noite",
+            "heading": "Do storyboard à diária de gravação",
+            "lede": "Hoje o microcurta sai do papel: som decidido, cenas gravadas e arquivos prontos para a edição.",
+            "kicker": "Mapa da noite",
+            "block": 1,
+            "layout": "dense-cards",
+            "cards": [
+              {
+                "eyebrow": "19:00–19:45",
+                "title": "Som primeiro",
+                "text": "Comparar áudio e decidir o som de cada cena do storyboard."
+              },
+              {
+                "eyebrow": "19:45–20:05",
+                "title": "Lanche",
+                "text": "Retorno ao mesmo grupo e à mesma mesa."
+              },
+              {
+                "eyebrow": "20:05–21:40",
+                "title": "Duas rodadas de gravação",
+                "text": "Fala, efeito, ambiente e segurança, com conferência no fone."
+              },
+              {
+                "eyebrow": "21:40–22:10",
+                "title": "Diária organizada",
+                "text": "Pasta por grupo, nomes por cena, conferência e devolução."
+              }
+            ],
+            "teacher": {
+              "steps": [
+                "3 min · Faço a chamada e confirmo 7 grupos, 7 câmeras carregadas, 7 ring lights e os fones. Apresento a entrega: a diária completa do microcurta."
+              ],
+              "watch": "Equipamentos já separados por posto; nenhuma cena grava sem som conferido.",
+              "rescue": "Com falta de integrante, o grupo menor acumula funções; não refaço grupos."
+            },
+            "promptLabel": "Parem e confiram",
+            "prompt": "A entrega de hoje é a diária completa: todas as cenas do storyboard com imagem e som conferidos."
+          },
+          {
+            "title": "Por que o som decide",
+            "heading": "O público perdoa a imagem, não o som",
+            "lede": "Em toda produção, do noticiário ao vídeo de treinamento, o áudio é conferido na hora.",
+            "kicker": "Padrão da indústria",
+            "block": 1,
+            "bullets": [
+              "Quem assiste no celular desiste do vídeo em segundos quando não entende a fala.",
+              "Imagem tremida ainda comunica; fala com ruído não comunica nada.",
+              "Por isso o set profissional confere cada tomada com fone antes de desmontar.",
+              "Regra da aula: nenhuma cena termina sem a conferência de som."
+            ],
+            "teacher": {
+              "steps": [
+                "3 min · Apresento a regra e dou dois exemplos do cotidiano: depoimento de cliente e vídeo de treinamento.",
+                "2 min · Pergunto quem já desistiu de um vídeo por causa do som e conecto à prática de hoje."
+              ],
+              "watch": "Exemplos concretos e próximos da rotina; sem teoria de acústica.",
+              "rescue": "Se a turma não traz exemplos, uso a vinheta de noticiário e o áudio de chamada de vídeo."
+            }
+          },
+          {
+            "title": "Comparação ao vivo",
+            "heading": "Mesma frase, dois sons",
+            "lede": "Vamos provar a regra agora, com a sala como set de teste.",
+            "kicker": "Demonstração",
+            "block": 1,
+            "bullets": [
+              "Gravo a mesma frase com o aparelho longe da fonte e depois perto.",
+              "A turma ouve as duas versões e aponta qual entende sem esforço.",
+              "Registramos a conclusão no quadro: captação perto da fonte.",
+              "Cada grupo repete o teste uma vez no próprio posto antes de gravar."
+            ],
+            "teacher": {
+              "steps": [
+                "5 min · Gravo as duas versões com a câmera do posto 1, sem editar nada.",
+                "4 min · Toco as duas versões pelo aparelho e pergunto qual comunica.",
+                "3 min · Escrevo no quadro a conclusão e a distância aproximada usada."
+              ],
+              "watch": "A comparação acontece ao vivo; nada depende de material preparado.",
+              "rescue": "Sem projetar o aparelho, a turma se aproxima do posto em silêncio, em uma única fila."
+            },
+            "promptLabel": "Pergunta para a turma",
+            "prompt": "Qual das duas versões você aceitaria entregar para um cliente? Por quê?"
+          },
+          {
+            "title": "Decisão de som por cena",
+            "heading": "Cada cena recebe uma decisão",
+            "lede": "Copiem a tabela no caderno e escolham o som de cada cena do storyboard.",
+            "kicker": "Ficha projetada · copiar no caderno",
+            "block": 1,
+            "layout": "dense-cards",
+            "cards": [
+              {
+                "eyebrow": "Opção 1",
+                "title": "FALA DIRETA",
+                "text": "Alguém fala na cena. Captação perto da fonte, fora do quadro."
+              },
+              {
+                "eyebrow": "Opção 2",
+                "title": "EFEITO",
+                "text": "O som faz parte da ação: porta, passos, objeto em uso."
+              },
+              {
+                "eyebrow": "Opção 3",
+                "title": "AMBIENTE",
+                "text": "O local aparece. Grave trinta segundos de silêncio do lugar."
+              },
+              {
+                "eyebrow": "Opção 4",
+                "title": "SILÊNCIO",
+                "text": "Sem som planejado. É uma decisão consciente, não um esquecimento."
+              }
+            ],
+            "teacher": {
+              "steps": [
+                "4 min · Deixo a ficha projetada; cada grupo copia a tabela com número da cena e decisão.",
+                "4 min · Circulo pelos postos conferindo se toda cena tem uma decisão; grupo travado escolhe entre duas opções, sem debater."
+              ],
+              "watch": "A tabela fica no caderno do grupo; não há ficha impressa.",
+              "rescue": "Storyboard incompleto? O grupo decide o som das cenas existentes e completa a lista de cenas primeiro."
+            },
+            "promptLabel": "Parem e confiram",
+            "prompt": "PRONTO QUANDO: tabela copiada, com número da cena e decisão de som em todas as linhas, e nome do grupo no alto da página."
+          },
+          {
+            "title": "Funções no set",
+            "heading": "Quatro funções, posto fixo",
+            "lede": "Dividam as funções antes de ligar a câmera. As funções valem para as duas rodadas.",
+            "kicker": "Organização do grupo",
+            "block": 2,
+            "layout": "dense-cards",
+            "cards": [
+              {
+                "eyebrow": "Função 1",
+                "title": "CÂMERA",
+                "text": "Enquadra e opera. Não troca no meio da cena."
+              },
+              {
+                "eyebrow": "Função 2",
+                "title": "SOM",
+                "text": "Cuida da distância da fonte e confere cada tomada com fone."
+              },
+              {
+                "eyebrow": "Função 3",
+                "title": "DIREÇÃO",
+                "text": "Conduz a cena, faz a claquete verbal e decide refazer ou seguir."
+              },
+              {
+                "eyebrow": "Função 4",
+                "title": "CENA",
+                "text": "Organiza objeto, ring light e continuidade; controla o posto."
+              }
+            ],
+            "teacher": {
+              "steps": [
+                "3 min · Cada grupo registra as funções na tabela do caderno; grupos de cinco separam registro.",
+                "2 min · Reforço as regras do set: mesa fixa, voz baixa durante gravação e equipamento no posto."
+              ],
+              "watch": "Quem não está gravando confere arquivos no computador; ninguém circula sem função.",
+              "rescue": "Grupo de três acumula cena e direção na mesma pessoa."
+            },
+            "promptLabel": "Regra do set",
+            "prompt": "Durante a gravação, a sala reduz a voz. Quem não está gravando tem função definida."
+          },
+          {
+            "title": "Claquete verbal e som ambiente",
+            "heading": "Todo arquivo começa identificável",
+            "lede": "Na indústria, cada tomada se apresenta. A noite inteira usa este padrão.",
+            "kicker": "Padrão de captação",
+            "block": 2,
+            "bullets": [
+              "Claquete verbal antes de cada tomada: “Microcurta, Grupo 3, Cena 2, tomada 1”.",
+              "Dez segundos de teste antes da cena: ouça e ajuste antes de gravar de verdade.",
+              "Trinta segundos de silêncio de cada local usado: é o som ambiente da emenda.",
+              "Esses padrões permitem localizar e corrigir qualquer arquivo na edição."
+            ],
+            "teacher": {
+              "steps": [
+                "3 min · Demonstro uma claquete verbal e uma captação de som ambiente no posto 1.",
+                "2 min · Cada grupo anota no caderno o nome que usará: número do grupo e das cenas."
+              ],
+              "watch": "Sem claquete de papel ou objeto: a identificação é falada, sempre igual.",
+              "rescue": "Grupo que esquece a claquete refaz apenas a identificação, sem gravar a cena de novo."
+            }
+          },
+          {
+            "title": "Rodada 1 · cenas com fala",
+            "heading": "Grave as cenas com fala direta",
+            "lede": "Um ciclo igual em todas as cenas com fala do storyboard.",
+            "kicker": "Bloco de gravação 1",
+            "block": 2,
+            "layout": "dense-cards",
+            "cards": [
+              {
+                "eyebrow": "Passo 1",
+                "title": "POSICIONAR",
+                "text": "Captação perto da fonte, fora do quadro. Ring light ajustada."
+              },
+              {
+                "eyebrow": "Passo 2",
+                "title": "IDENTIFICAR",
+                "text": "Claquete verbal e dez segundos de teste com fone."
+              },
+              {
+                "eyebrow": "Passo 3",
+                "title": "GRAVAR",
+                "text": "A cena inteira de uma vez, sem interromper."
+              },
+              {
+                "eyebrow": "Passo 4",
+                "title": "CONFERIR",
+                "text": "Com fone: fala clara? ruído? estourou? Anote o número do arquivo."
+              }
+            ],
+            "teacher": {
+              "steps": [
+                "2 min · Apresento o ciclo e deixo o slide parado durante toda a rodada.",
+                "40 min · Circulo pelos postos; cada grupo repete o ciclo até fechar as cenas com fala.",
+                "8 min · Paro a sala e confiro o quadro de cenas: quantas faltam."
+              ],
+              "watch": "Refazer é normal; refaça-se apenas o que falhou na conferência, nunca a cena inteira por estética.",
+              "rescue": "Grupo atrasado grava as cenas com fala primeiro; efeito e ambiente ficam para a rodada 2."
+            },
+            "promptLabel": "Parem e confiram",
+            "prompt": "PRONTO QUANDO: todas as cenas com fala gravadas, conferidas com fone e anotadas no caderno."
+          },
+          {
+            "title": "Rodada 2 · efeito, ambiente e segurança",
+            "heading": "Complete o som do microcurta",
+            "lede": "A segunda rodada fecha o que a primeira não cobriu.",
+            "kicker": "Bloco de gravação 2",
+            "block": 3,
+            "layout": "dense-cards",
+            "cards": [
+              {
+                "eyebrow": "Efeito",
+                "title": "Som de ação",
+                "text": "Cenas sem fala ganham o som decidido na ficha: porta, passos, objeto."
+              },
+              {
+                "eyebrow": "Ambiente",
+                "title": "Local usado, som gravado",
+                "text": "Trinta segundos de silêncio de cada local onde houve gravação."
+              },
+              {
+                "eyebrow": "Segurança",
+                "title": "Falas essenciais de novo",
+                "text": "Do começo ao fim, sem parar. É a reserva da edição."
+              },
+              {
+                "eyebrow": "Conferir",
+                "title": "Fone em cada novo arquivo",
+                "text": "Mesmo critério da rodada 1, aplicado a cada arquivo."
+              }
+            ],
+            "teacher": {
+              "steps": [
+                "2 min · Apresento os três fechamentos e deixo o slide parado.",
+                "33 min · Cada grupo conclui efeito, ambiente e segurança; troca de função permitida somente aqui.",
+                "5 min · Confiro em dois grupos, escolhidos por sorteio, se a segurança existe e começa do zero."
+              ],
+              "watch": "O som ambiente é gravado no mesmo local da cena, sem conversa paralela.",
+              "rescue": "Sem tempo, corta-se efeito; nunca se corta segurança das falas essenciais."
+            }
+          },
+          {
+            "title": "O que reprova uma tomada",
+            "heading": "Checklist de áudio",
+            "lede": "Antes de marcar a tomada como pronta, o responsável pelo som responde:",
+            "kicker": "Conferência com fone",
+            "block": 3,
+            "bullets": [
+              "A fala se entende sem aumentar demais o volume?",
+              "Existe ruído contínuo que não é da cena: ventilador, projetor, corredor?",
+              "Algum momento estourou ou distorceu?",
+              "A claquete verbal está no começo do arquivo?",
+              "A cena inteira está no arquivo, sem corte no meio da fala?"
+            ],
+            "teacher": {
+              "steps": [
+                "2 min · Leio o checklist uma vez e peço que o grupo confira em voz alta a tomada mais recente."
+              ],
+              "watch": "A conferência não é tarefa de uma pessoa: o som decide, com apoio da direção.",
+              "rescue": "Dúvida em qualquer item: refaça a tomada; refazer custa menos que descobrir na edição."
+            },
+            "promptLabel": "Parem e confiram",
+            "prompt": "PRONTO: a tomada passou nos cinco itens e o número do arquivo está no caderno."
+          },
+          {
+            "title": "Pasta e nomes",
+            "heading": "A diária organizada no computador",
+            "lede": "Na indústria, o material bruto chega da diária já organizado. Hoje não é diferente.",
+            "kicker": "Transferência",
+            "block": 4,
+            "layout": "dense-cards",
+            "cards": [
+              {
+                "eyebrow": "Pasta",
+                "title": "PA_A08_EQ01",
+                "text": "Uma pasta por grupo no computador, com o número do grupo."
+              },
+              {
+                "eyebrow": "Nome",
+                "title": "C02_T01",
+                "text": "Cena e tomada em cada arquivo, iguais à claquete verbal."
+              },
+              {
+                "eyebrow": "Cópia",
+                "title": "Copiar e abrir",
+                "text": "Cabo ou leitor de cartão. Abra o arquivo copiado antes de apagar qualquer original."
+              },
+              {
+                "eyebrow": "Registro",
+                "title": "Primeiro e último",
+                "text": "Anote no caderno o primeiro e o último arquivo de hoje, testes incluídos."
+              }
+            ],
+            "teacher": {
+              "steps": [
+                "2 min · Apresento o padrão de pasta e nome no projetor.",
+                "12 min · Cada grupo transfere, renomeia e confere a abertura de cada arquivo copiado.",
+                "5 min · Confiro uma pasta escolhida por sorteio antes da liberação do posto."
+              ],
+              "watch": "Nada é apagado sem cópia aberta e conferida; nenhum cartão é formatado.",
+              "rescue": "Sem computador livre, o grupo organiza por faixa de números no caderno e transfere na fila do posto."
+            }
+          },
+          {
+            "title": "Conferência final",
+            "heading": "Checklist do storyboard",
+            "lede": "O posto só desmonta com o checklist completo, cena por cena.",
+            "kicker": "Conferência",
+            "block": 4,
+            "bullets": [
+              "Cada cena do storyboard tem imagem gravada?",
+              "Cada cena tem o som decidido na ficha, gravado e conferido?",
+              "Cada local usado tem trinta segundos de som ambiente?",
+              "As falas essenciais têm tomada de segurança?",
+              "A pasta do grupo está no computador, aberta e conferida?"
+            ],
+            "teacher": {
+              "steps": [
+                "4 min · Cada grupo responde o checklist em voz alta, cena por cena, no próprio posto.",
+                "3 min · Assino a conferência no caderno do grupo; pendência vira tarefa de abertura da aula 9."
+              ],
+              "watch": "Cena sem som é pendência registrada, nunca silêncio esquecido.",
+              "rescue": "Com pendência de gravação, o posto prioriza a cena faltante antes de transferir."
+            }
+          },
+          {
+            "title": "Devolução e fechamento",
+            "heading": "Fechem a diária até 22:10",
+            "lede": "Confiram na própria mesa e deixem o equipamento pronto para recolhimento.",
+            "kicker": "Encerramento",
+            "block": 4,
+            "layout": "dense-cards",
+            "cards": [
+              {
+                "eyebrow": "1 · arquivos",
+                "title": "Pasta conferida",
+                "text": "Cópia aberta e conferida; sem cópia, cartão preservado e identificado."
+              },
+              {
+                "eyebrow": "2 · equipamento",
+                "title": "Conjunto completo",
+                "text": "Câmera desligada, tampa, cartão e bateria. Ring light desligada, cabo organizado."
+              },
+              {
+                "eyebrow": "3 · registro",
+                "title": "Conclusão do grupo",
+                "text": "“Nosso maior problema de som foi ___ e resolvemos com ___.”"
+              },
+              {
+                "eyebrow": "4 · próxima aula",
+                "title": "Aula 9 · Set de filmagem",
+                "text": "A diária de hoje é a matéria-prima da edição do comercial."
+              }
+            ],
+            "teacher": {
+              "steps": [
+                "4 min · Confiro as 7 pastas e os registros. Não apago nada sem cópia reaberta; não formato cartões.",
+                "4 min · Recolho nos postos 7 câmeras e 7 ring lights, conferindo tampa, cartão, bateria e cabo.",
+                "3 min · Ouço duas conclusões, anuncio a aula 9 e encerro às 22:10."
+              ],
+              "watch": "Material de outras turmas é preservado; a limpeza do cartão cobre somente a faixa de hoje.",
+              "rescue": "Com atraso, priorizo guardar arquivos e recolher equipamentos; a conclusão oral substitui a escrita."
+            },
+            "promptLabel": "Bilhete de saída",
+            "prompt": "Cada integrante registra no caderno: “Nosso maior problema de som foi ___ e resolvemos com ___.”"
+          }
+        ],
+        "appendDefaultClosing": false
       },
       "09": {
         "teacherGoal": "Executar um comercial curto com set organizado.",
