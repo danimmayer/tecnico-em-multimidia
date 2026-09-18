@@ -273,7 +273,7 @@ window.SENAI_COURSES = {
       {
         "num": "08",
         "title": "Grades e Sistemas Visuais",
-        "description": "Uso de grades, colunas e componentes para criar famílias coerentes de páginas e postagens.",
+        "description": "Monte a página de uma casa de games numa grade de 12 colunas e crie um post da mesma família visual.",
         "objectives": [
           "Desenvolvimento do Projeto: leiaute, templates e equilíbrio visual."
         ],
@@ -286,25 +286,25 @@ window.SENAI_COURSES = {
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Aquecimento \"Que grade existe aqui?\": sobreposições transparentes revelam colunas e alinhamentos em portal, streaming, loja e feed de rede social."
+            "horario": "19:00 - 19:45",
+            "atividade": "Descobrir as colunas escondidas em telas conhecidas (streaming, loja e rede social), entender coluna, espaço entre colunas e margem, e experimentar a oficina de grade. Salvar o projeto antes do lanche."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "Montagem física de grade: grupos recebem uma base de 6 ou 12 colunas e cartões de conteúdo. Precisam montar capa, lista de serviços e chamada principal sem romper os eixos."
+            "horario": "20:05 - 20:50",
+            "atividade": "Montar individualmente a página da Arena Pixel, casa de games fictícia, numa grade de 12 colunas: cabeçalho, destaque, três cartões de campeonato e botão. Reconhecer componentes que se repetem. Exportar a versão 1."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "Sistema de componentes: criar visualmente um botão, um cartão e um cabeçalho; depois repetir os componentes em duas telas e duas peças sociais mantendo consistência."
+            "horario": "20:50 - 21:30",
+            "atividade": "Atender ao pedido do cliente: incluir um quarto campeonato e reorganizar os cartões com a mesma largura, sem sair da grade. Testar a leitura e exportar a página final."
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "Desafio \"Uma marca, quatro formatos\": adaptar o mesmo sistema para desktop, celular, post quadrado e story. Exposição com justificativa das mudanças."
+            "horario": "21:30 - 22:10",
+            "atividade": "Criar um post quadrado para a mesma marca numa grade de 6 colunas, com os mesmos componentes da página. Comparar as duas peças, salvar, reabrir e escrever uma frase sobre a grade. Encerrar às 22:10."
           }
         ],
-        "methodology": "Leitura de referências, montagem modular, criação de componentes e adaptação multiformato.",
-        "resources": "Grades impressas, acetatos, cartões de conteúdo, ferramenta visual e projetor.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "Descoberta visual com telas projetadas, jogo rápido de contagem de colunas, demonstração curta e produção individual em etapas na oficina de grade, com alteração de pedido do cliente e adaptação para post. Conferência automática da oficina e comparação com o colega do lado, cada um no seu posto.",
+        "resources": "Computadores com navegador, projetor, caderno e caneta. Oficina de grade local e gratuita, sem instalação, cadastro ou dependências externas. Sem impressão e sem fichas. Baixar a oficina antes do encontro permite uso sem internet.",
+        "observation": "19:00–22:10, com lanche 19:45–20:05. Chamada às 19:00, 20:05, 20:50 e 21:30. Trabalho individual no posto; a colaboração acontece na conferência com o colega do lado, sem circulação. Se houver computador compartilhado, alternar o operador a cada etapa e manter uma frase por aluno. Sem internet: abrir a oficina previamente baixada. Sem computador: desenhar no caderno uma faixa de 12 colunas e montar a página e o post com retângulos, seguindo os mesmos critérios. A grade é trabalhada de forma visual; nenhum aluno escreve código. Câmeras e ring lights não são necessárias."
       },
       {
         "num": "09",

@@ -343,6 +343,10 @@
 
   const isDesignSeven = course.slug === 'design-web' && lesson.num === '07';
   if (isDesignSeven) document.body.classList.add('design-seven');
+  const isDesignEight = course.slug === 'design-web' && lesson.num === '08';
+  if (isDesignEight) document.body.classList.add('design-eight');
+  // Aulas 07 and 08 time each slide from the minutes written in the teacher steps.
+  const usesSlidePace = isDesignSeven || isDesignEight;
   const isDesignSix = course.slug === 'design-web' && lesson.num === '06';
   const isAvSeven = course.slug === 'producao-audiovisual' && lesson.num === '07';
   if (isDesignSix) document.body.classList.add('design-six');
@@ -406,7 +410,7 @@
     const title = item.title || item.heading || `Conteúdo ${index + 1}`;
     const denseCards = item.layout === 'dense-cards';
     let paceStart = '', paceEnd = '';
-    if (isDesignSeven) {
+    if (usesSlidePace) {
       const [start, end] = timeRange(lesson.schedule[block - 1].horario).map(timeToMinutes);
       paceStart = item.pace === 'break' ? end : start + (slideMinutesByBlock[block] || 0);
       const duration = (teacher.steps || []).reduce((sum, step) => sum + Number(String(step).match(/^(\d+) min/)?.[1] || 0), 0);
@@ -419,12 +423,13 @@
       block,
       pace: item.pace === 'break' ? 'break' : '',
       paceStart, paceEnd,
-      className: isDesignSeven ? 'is-dw7' : denseCards ? 'is-dense-cards' : '',
+      className: isDesignSeven ? 'is-dw7' : isDesignEight ? 'is-dw8' : denseCards ? 'is-dense-cards' : '',
       main: `
         ${item.kicker ? `<p class="slide-kicker">${escapeHtml(item.kicker)}</p>` : ''}
         <h2>${escapeHtml(item.heading || title)}</h2>
         ${item.lede ? `<p class="slide-lede">${escapeHtml(item.lede)}</p>` : ''}
         ${isDesignSeven && ['before', 'after'].includes(item.visual) ? `<figure class="dw7-example"><img src="modelos/design-web/aula-07/${item.visual}.svg" alt="${item.visual === 'before' ? 'Página inicial com títulos e detalhes distantes entre si' : 'Página com títulos e detalhes agrupados e alinhados'}"></figure>` : ''}
+        ${isDesignEight && item.visual ? `<figure class="dw8-example">${[item.visual].flat().map((name, i) => `<img src="modelos/design-web/aula-08/${escapeHtml(name)}.svg" alt="${escapeHtml([item.visualAlt || []].flat()[i] || '')}">`).join('')}</figure>` : ''}
         ${cards.length ? `
           <div class="presentation-card-grid${denseCards ? ' is-dense' : ''}">
             ${cards.map((card) => `
@@ -929,7 +934,7 @@
     const activeSlide = slideElements[currentIndex];
     const slideBlock = Number(activeSlide?.dataset.block || 0);
     const expected = currentScheduleWindow();
-    if (isDesignSeven && window.SENAI_SLIDE_PACE) {
+    if (usesSlidePace && window.SENAI_SLIDE_PACE) {
       const now = new Date();
       const start = activeSlide?.dataset.paceStart === '' ? scheduleWindows[0].start : Number(activeSlide?.dataset.paceStart);
       const end = activeSlide?.dataset.paceEnd === '' ? scheduleWindows[0].start + 5 : Number(activeSlide?.dataset.paceEnd);
@@ -979,7 +984,7 @@
     toastTimer = setTimeout(() => toast.classList.remove('is-visible'), 1600);
   }
 
-  if (isDesignSeven && paceDot) {
+  if (usesSlidePace && paceDot) {
     paceDot.tabIndex = 0;
     paceDot.addEventListener('click', () => showToast(paceDot.title));
     paceDot.addEventListener('keydown', event => {
