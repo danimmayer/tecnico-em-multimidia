@@ -105,6 +105,16 @@ A meta didática é 4,5:1 para os pares de texto e fundo. O número não avalia 
 Ferramenta: https://www.photopea.com/ · Referência de salvamento:
 https://www.photopea.com/learn/opening-saving (consultadas em 04/09/2026).
 
+Na Aula 08, a turma descobre as colunas escondidas em telas conhecidas e usa a
+oficina de grade local (`modelos/design-web/aula-08/oficina.html`), sem
+instalação nem internet depois de baixada. Cada estudante monta a página da
+Arena Pixel, casa de games fictícia, numa grade de 12 colunas, atende ao pedido
+de um quarto campeonato com quatro cartões iguais e cria um post quadrado da
+mesma família numa grade de 6 colunas. A conferência da própria oficina aponta
+itens fora da grade, fora da margem, sobrepostos ou com larguras diferentes.
+Entrega: três PNGs e `projeto.grade`. Roteiro em
+`modelos/design-web/aula-08/README.md`.
+
 ### Aula 11 · Interação e feedback
 
 A turma desenha estados normal, ação, erro, sucesso e confirmação por storyboard

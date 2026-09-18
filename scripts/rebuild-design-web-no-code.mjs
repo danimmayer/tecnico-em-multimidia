@@ -1,4 +1,5 @@
 import { planning as designWeb07Planning, support as designWeb07Support } from './lessons/design-web-07.mjs';
+import { planning as designWeb08Planning, support as designWeb08Support } from './lessons/design-web-08.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
@@ -111,21 +112,7 @@ const revisedLessons = {
   "observation": "Design Web apenas. Começa às 19:00, lanche das 19:45 às 20:05 e termina às 22:07. Chamada às 19:00, 20:05, 20:50 e 21:30. Nada impresso e nada de Produção Audiovisual."
 },
   '07': designWeb07Planning,
-  '08': {
-    title: 'Grades e Sistemas Visuais',
-    description: 'Uso de grades, colunas e componentes para criar famílias coerentes de páginas e postagens.',
-    objectives: ['Desenvolvimento do Projeto: leiaute, templates e equilíbrio visual.'],
-    technical: ['Aplicar procedimentos técnicos de diagramação, proximidade e alinhamento.', 'Aplicar estilos css (cascading style sheets) para desenvolvimento de design web.'],
-    socio: ['Demonstrar espírito colaborativo em atividades coletivas.'],
-    blocks: [
-      'Aquecimento "Que grade existe aqui?": sobreposições transparentes revelam colunas e alinhamentos em portal, streaming, loja e feed de rede social.',
-      'Montagem física de grade: grupos recebem uma base de 6 ou 12 colunas e cartões de conteúdo. Precisam montar capa, lista de serviços e chamada principal sem romper os eixos.',
-      'Sistema de componentes: criar visualmente um botão, um cartão e um cabeçalho; depois repetir os componentes em duas telas e duas peças sociais mantendo consistência.',
-      'Desafio "Uma marca, quatro formatos": adaptar o mesmo sistema para desktop, celular, post quadrado e story. Exposição com justificativa das mudanças.'
-    ],
-    methodology: 'Leitura de referências, montagem modular, criação de componentes e adaptação multiformato.',
-    resources: 'Grades impressas, acetatos, cartões de conteúdo, ferramenta visual e projetor.'
-  },
+  '08': designWeb08Planning,
   '09': {
     title: 'Design Responsivo sem Mistério',
     description: 'Adaptação visual de conteúdo para celular, tablet e computador com prioridade e legibilidade.',
@@ -2058,6 +2045,7 @@ Object.assign(support['design-web'].lessons['01'], {
 });
 
 support['design-web'].lessons['07'] = designWeb07Support;
+support['design-web'].lessons['08'] = designWeb08Support;
 
 const supportOutput = `/* Anotações de aula do Prof. Daniel Marcos Mayer. */\nwindow.SENAI_TEACHING_SUPPORT = ${JSON.stringify(support, null, 2)};\n`;
 fs.writeFileSync(supportPath, supportOutput);

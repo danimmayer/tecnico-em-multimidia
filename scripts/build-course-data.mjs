@@ -1,4 +1,5 @@
 import { lesson as designWeb07Lesson } from './lessons/design-web-07.mjs';
+import { lesson as designWeb08Lesson } from './lessons/design-web-08.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -537,6 +538,7 @@ Object.assign(audiovisualLesson08, {
 });
 
 Object.assign(courses['design-web'].lessons.find(lesson => lesson.num === '07'), designWeb07Lesson);
+Object.assign(courses['design-web'].lessons.find(lesson => lesson.num === '08'), designWeb08Lesson);
 
 const output = `/* Arquivo gerado por scripts/build-course-data.mjs. */\nwindow.SENAI_COURSES = ${JSON.stringify(courses, null, 2)};\n`;
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
