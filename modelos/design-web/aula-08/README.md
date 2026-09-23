@@ -17,9 +17,9 @@ O ponto ao lado do contador compara o relógio do computador com o horário prev
 | --- | --- |
 | 19:00 às 19:45 | Revelar as colunas em streaming, loja e rede social; coluna, espaço e margem; por que 12; primeiro uso da oficina. |
 | 19:45 às 20:05 | Lanche. Projeto salvo antes da saída. |
-| 20:05 às 20:50 | Montar a página na grade, apresentar componente e sistema visual, exportar `pagina-v1.png`. |
-| 20:50 às 21:30 | Incluir o campeonato novo, deixar quatro cartões iguais de 3 colunas, exportar `pagina-final.png`. |
-| 21:30 às 22:10 | Montar o post na grade de 6 colunas, comparar a família, salvar, reabrir e escrever a frase. |
+| 20:05 às 20:30 | Montar a página na grade, apresentar componente e sistema visual, exportar `pagina-v1.png`. |
+| 20:30 às 20:50 | Incluir o campeonato novo, deixar quatro cartões iguais de 3 colunas, exportar `pagina-final.png`. |
+| 20:50 às 22:10 | Montar o post, criar selo com forma e texto, inserir imagem, personalizar a identidade nas duas peças e testar com o colega. Salvar e reabrir às 21:58. |
 
 A abertura termina às **19:19**: são 19 minutos de descoberta e 26 minutos de demonstração, prática e salvamento antes do lanche. Retome os conceitos durante a prática. Às **21:58**, interrompa a edição: 9 minutos para arquivos e reabertura, seguidos de 3 minutos para a frase e o encerramento.
 
@@ -39,8 +39,8 @@ O quadro **Conferência** avisa o que falta: itens fora da grade, itens passando
 ## Condução e contingências
 
 - Todos permanecem no posto. A colaboração acontece com o colega do lado, que dá palpite do próprio lugar nos testes de leitura e de família.
-- Cores e letras não mudam, de propósito: o desafio da noite é posição e largura.
-- Quem termina cria `pagina-alternativa.png` com outra organização que passe na conferência.
+- A primeira versão prioriza posição e largura; depois, personalizar cores e fontes nas duas peças.
+- Os desafios dos slides 19 a 22 acrescentam 40 minutos de prática e geram `pagina-alternativa.png` e `post-alternativa.png`.
 - Se houver atraso, reduza a conversa de “Peças que se repetem”. Preserve os quatro cartões iguais, o post e a parada obrigatória às 21:58 para salvar e reabrir.
 - Sem internet, use a oficina baixada. Sem computador, o aluno desenha no caderno uma faixa de 12 colunas e monta a página com retângulos; depois, um quadrado de 6 colunas para o post. Os critérios são os mesmos.
 
@@ -49,3 +49,7 @@ Entrega: pasta `Aula-08` com `pagina-v1.png`, `pagina-final.png`, `post-final.pn
 ## Validação da implementação
 
 `node scripts/build-design-web-08.mjs` regenera somente esta aula (dados, slides, oficina e ilustrações). `node scripts/validate-course-kit.mjs` confere a paridade das fontes, os 170 minutos (45 + 45 + 40 + 40), o slide de intervalo, as respostas só nas notas, a ausência de código, impressão e travessão nos slides, a oficina sem dependências externas e os exemplos aprovados pela própria conferência da oficina.
+
+## Personalização
+
+Adicione textos, formas, ícones e imagens PNG, JPG ou WebP. Em **Personalizar item**, escolha fonte, cores e alinhamento à esquerda, centralizado ou à direita. Elementos decorativos se movem livremente, mesmo com o encaixe ligado, e ficam fora da conferência. Setas movem 1 px; Shift + seta move 10 px. Salve o projeto para preservar imagens e estilos.
