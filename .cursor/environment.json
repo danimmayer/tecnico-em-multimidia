@@ -1,0 +1,11 @@
+{
+  "name": "Técnico em Multimídia — SENAI",
+  "install": "node scripts/validate-course-kit.mjs",
+  "terminals": [
+    {
+      "name": "static-server",
+      "command": "python3 -m http.server 8901"
+    }
+  ],
+  "ports": [8901]
+}
