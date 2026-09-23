@@ -345,8 +345,10 @@
   if (isDesignSeven) document.body.classList.add('design-seven');
   const isDesignEight = course.slug === 'design-web' && lesson.num === '08';
   if (isDesignEight) document.body.classList.add('design-eight');
-  // Aulas 07 and 08 time each slide from the minutes written in the teacher steps.
-  const usesSlidePace = isDesignSeven || isDesignEight;
+  const isAvNine = course.slug === 'producao-audiovisual' && lesson.num === '09';
+  if (isAvNine) document.body.classList.add('av-nine');
+  // These lessons time each slide from the minutes written in the teacher steps.
+  const usesSlidePace = isDesignSeven || isDesignEight || isAvNine;
   const isDesignSix = course.slug === 'design-web' && lesson.num === '06';
   const isAvSeven = course.slug === 'producao-audiovisual' && lesson.num === '07';
   if (isDesignSix) document.body.classList.add('design-six');
@@ -397,6 +399,154 @@
     </figure>`;
   };
 
+  // Aula 09: framing sketches, 16:9, drawn with the same strokes on every projector.
+  const avNineFrame = (id) => {
+    const product = '<rect x="68" y="30" width="24" height="44" rx="5"/><rect x="73" y="22" width="14" height="9" rx="2"/>';
+    const drawings = {
+      P1: '<circle cx="80" cy="30" r="11"/><path d="M52 90 C54 60 64 50 80 50 C96 50 106 60 108 90"/><path d="M14 76 H44 M116 76 H146" class="is-soft"/>',
+      P2: `${product}<path d="M20 74 H140" class="is-soft"/>`,
+      P3: '<path d="M18 92 C20 72 34 62 52 60 H108 C126 62 140 72 142 92"/><rect x="44" y="8" width="72" height="52" rx="6"/><path d="M56 14 V54 M68 14 V54 M80 14 V54 M92 14 V54 M104 14 V54" class="is-soft"/>',
+      P4: '<rect x="66" y="20" width="28" height="52" rx="5"/><rect x="72" y="11" width="16" height="10" rx="2"/><path d="M40 92 L52 62 C54 56 60 54 66 56 L94 50 C100 49 102 55 97 58 L94 60 C101 60 102 66 96 68 C102 69 102 75 96 76 C101 78 99 84 93 84 L70 88 L64 92" class="is-hand"/>',
+      P5: `${product}<path d="M20 74 H140" class="is-soft"/><rect x="102" y="34" width="40" height="30" rx="3" class="is-card"/><path d="M109 45 H135 M109 53 H127" class="is-soft"/>`
+    };
+    return `<svg class="av9-frame" viewBox="0 0 160 90" aria-hidden="true" focusable="false"><rect class="av9-frame-edge" x="1" y="1" width="158" height="88" rx="4"/><g>${drawings[id] || ''}</g></svg>`;
+  };
+
+  const avNineVisual = (visual) => {
+    if (!isAvNine || !visual || typeof visual !== 'object') return '';
+    const e = escapeHtml;
+    const planHead = (plan) => `<span class="av9-plan-id">${e(plan.id)}</span><strong>${e(plan.name)}</strong>`;
+    if (visual.type === 'day') {
+      return `<ol class="av9-day">${visual.rows.map((row) => {
+        const [start, end] = timeRange(row.time).map(timeToMinutes);
+        return `<li class="av9-day-row${row.pause ? ' is-pause' : ''}" data-start="${start}" data-end="${end}">
+          <time>${e(row.time)}</time>
+          <div><strong>${e(row.title)}</strong><span>${e(row.text)}</span></div>
+          <span class="av9-day-min">${e(row.minutes)} min</span>
+          <span class="av9-now">Agora</span>
+        </li>`;
+      }).join('')}</ol>`;
+    }
+    if (visual.type === 'flow') {
+      return `<ol class="av9-flow">${visual.steps.map((step, index) => `
+        <li class="${step.later ? 'is-later' : ''}">
+          <span class="av9-flow-num">${index + 1}</span>
+          <strong>${e(step.label)}</strong>
+          <span class="av9-flow-text">${e(step.text)}</span>
+          <span class="av9-mark">${e(step.mark)}</span>
+        </li>`).join('')}</ol>`;
+    }
+    if (visual.type === 'plans') {
+      const total = visual.plans.reduce((sum, plan) => sum + plan.seconds, 0);
+      return `<div class="av9-plans">
+        <ol class="av9-plan-row">${visual.plans.map((plan) => `
+          <li>
+            ${avNineFrame(plan.id)}
+            <div class="av9-plan-head">${planHead(plan)}</div>
+            <span class="av9-plan-meta">${e(plan.frame)}</span>
+            <p>${e(plan.text)}</p>
+          </li>`).join('')}</ol>
+        <div class="av9-timebar" role="img" aria-label="${e(visual.plans.map((plan) => `${plan.id}: ${plan.seconds} segundos`).join(', '))}; total ${total} segundos">
+          ${visual.plans.map((plan) => `<span style="flex:${plan.seconds}">${e(plan.id)} · ${plan.seconds} s</span>`).join('')}
+          <b>${total} s</b>
+        </div>
+      </div>`;
+    }
+    if (visual.type === 'table') {
+      const example = Number(visual.exampleRows || 0);
+      return `<div class="av9-table-wrap is-${e(visual.variant || 'data')}">
+        <table class="av9-table">
+          <thead><tr>${visual.columns.map((column) => `<th scope="col">${e(column)}</th>`).join('')}</tr></thead>
+          <tbody>${visual.rows.map((row, rowIndex) => `<tr${rowIndex < example ? ' class="is-example"' : ''}>${row.map((cell, cellIndex) => cellIndex === 0 && visual.variant === 'brief'
+            ? `<th scope="row">${e(cell)}</th>`
+            : `<td${cell ? '' : ' class="is-blank"'}>${e(cell)}</td>`).join('')}</tr>`).join('')}</tbody>
+        </table>
+        ${example ? '<p class="av9-table-note">Linhas em cinza: exemplo de preenchimento.</p>' : ''}
+        ${visual.footer ? `<p class="av9-table-footer">${visual.footer.map((item) => `<span>${e(item)}</span>`).join('')}</p>` : ''}
+      </div>`;
+    }
+    if (visual.type === 'sets') {
+      return `<div class="av9-sets">${visual.sets.map((set) => `
+        <section class="av9-set">
+          <span class="av9-set-label">${e(set.label)}</span>
+          <strong>${e(set.title)}</strong>
+          <span class="av9-set-when">${e(set.when)}</span>
+          ${set.plans.length ? `<ul class="av9-chips">${set.plans.map((plan) => `<li>${planHead(plan)}</li>`).join('')}</ul>` : '<ul class="av9-chips"><li><span class="av9-plan-id">LOC</span><strong>SLOGAN</strong></li></ul>'}
+          <p>${e(set.note)}</p>
+        </section>`).join('')}</div>`;
+    }
+    if (visual.type === 'roles') {
+      return `<div class="av9-roles">${visual.roles.map((role) => `
+        <article>
+          <strong>${e(role.label)}</strong>
+          <span class="av9-decides">${e(role.decides)}</span>
+          <p>${e(role.text)}</p>
+        </article>`).join('')}</div>`;
+    }
+    if (visual.type === 'checks') {
+      return `<ul class="av9-checks${visual.items.length > 2 ? ' is-four' : ''}">${visual.items.map((item) => `
+        <li><strong>${e(item.label)}</strong><span>${e(item.text)}</span></li>`).join('')}</ul>`;
+    }
+    if (visual.type === 'commands') {
+      return `<div class="av9-commands">
+        <ol>${visual.commands.map((command, index) => `
+          <li>
+            <span class="av9-flow-num">${index + 1}</span>
+            <strong>${e(command.word)}</strong>
+            <span class="av9-who">${e(command.who)}</span>
+            <span class="av9-flow-text">${e(command.text)}</span>
+          </li>`).join('')}</ol>
+        <p class="av9-result"><span class="is-good">BOA</span><span class="is-redo">REFAZER</span>${e(visual.result)}</p>
+      </div>`;
+    }
+    if (visual.type === 'slate') {
+      return `<div class="av9-slate">
+        <figure class="av9-paper" aria-label="Exemplo de claquete de papel: equipe ${e(visual.team)}, plano ${e(visual.plan)}, tomada ${e(visual.take)}">
+          <span class="av9-paper-team">${e(visual.team)}</span>
+          <span class="av9-paper-line"><b>${e(visual.plan)}</b><b>${e(visual.take)}</b></span>
+          <figcaption>Folha do caderno · letras grossas</figcaption>
+        </figure>
+        <ol class="av9-rules">${visual.rules.map((rule) => `<li>${e(rule)}</li>`).join('')}</ol>
+      </div>`;
+    }
+    if (visual.type === 'shoot') {
+      return `<div class="av9-shoot">
+        <ol class="av9-shoot-plans is-${visual.plans.length}">${visual.plans.map((plan) => `
+          <li>
+            ${avNineFrame(plan.id)}
+            <div><div class="av9-plan-head">${planHead(plan)}</div><p>${e(plan.criterion)}</p></div>
+          </li>`).join('')}</ol>
+        ${visual.good ? `<p class="av9-good"><span>Tomada BOA</span>${visual.good.map((item) => `<b>${e(item)}</b>`).join('')}</p>` : ''}
+        ${visual.extra ? `<p class="av9-extra"><span class="av9-plan-id">${e(visual.extra.id)}</span><strong>${e(visual.extra.name)}</strong>${e(visual.extra.text)}</p>` : ''}
+      </div>`;
+    }
+    if (visual.type === 'onair') {
+      return `<div class="av9-onair">
+        <div class="av9-onair-panel">
+          <p class="av9-onair-status" aria-live="polite"><span class="av9-rec" aria-hidden="true"></span><span data-av9-status>Aguardando a primeira equipe</span></p>
+          <div class="av9-teams">${visual.teams.map((team) => `<button type="button" data-av9-team="${e(team)}" aria-pressed="false">${e(team)}</button>`).join('')}</div>
+        </div>
+        <ol class="av9-rules">${visual.rules.map((rule) => `<li>${e(rule)}</li>`).join('')}</ol>
+      </div>`;
+    }
+    if (visual.type === 'folder') {
+      return `<div class="av9-folder">
+        <div class="av9-tree" aria-label="Exemplo de pasta da equipe">
+          <strong>${e(visual.folder)}</strong>
+          <ul>${visual.files.map((file) => `<li>${e(file)}</li>`).join('')}</ul>
+        </div>
+        <ol class="av9-rules">${visual.steps.map((step) => `<li>${e(step)}</li>`).join('')}</ol>
+      </div>`;
+    }
+    if (visual.type === 'dailies') {
+      return `<div class="av9-dailies">
+        <ol class="av9-order">${visual.order.map((id) => `<li>${e(id)}</li>`).join('<li class="av9-arrow" aria-hidden="true">→</li>')}</ol>
+        <ol class="av9-rules">${visual.steps.map((step) => `<li>${e(step)}</li>`).join('')}</ol>
+      </div>`;
+    }
+    return '';
+  };
+
   const slideMinutesByBlock = {};
   const presentationSlide = (item, index) => {
     const cards = Array.isArray(item.cards) ? item.cards : [];
@@ -423,12 +573,13 @@
       block,
       pace: item.pace === 'break' ? 'break' : '',
       paceStart, paceEnd,
-      className: isDesignSeven ? 'is-dw7' : isDesignEight ? 'is-dw8' : denseCards ? 'is-dense-cards' : '',
+      className: isDesignSeven ? 'is-dw7' : isDesignEight ? 'is-dw8' : isAvNine ? `is-av9 is-av9-${item.av9?.type || 'text'}` : denseCards ? 'is-dense-cards' : '',
       main: `
         ${item.kicker ? `<p class="slide-kicker">${escapeHtml(item.kicker)}</p>` : ''}
         <h2>${escapeHtml(item.heading || title)}</h2>
         ${item.lede ? `<p class="slide-lede">${escapeHtml(item.lede)}</p>` : ''}
         ${isDesignSeven && ['before', 'after'].includes(item.visual) ? `<figure class="dw7-example"><img src="modelos/design-web/aula-07/${item.visual}.svg" alt="${item.visual === 'before' ? 'Página inicial com títulos e detalhes distantes entre si' : 'Página com títulos e detalhes agrupados e alinhados'}"></figure>` : ''}
+        ${avNineVisual(item.av9)}
         ${isDesignEight && item.visual ? `<figure class="dw8-example">${[item.visual].flat().map((name, i) => `<img src="modelos/design-web/aula-08/${escapeHtml(name)}.svg" alt="${escapeHtml([item.visualAlt || []].flat()[i] || '')}">`).join('')}</figure>` : ''}
         ${cards.length ? `
           <div class="presentation-card-grid${denseCards ? ' is-dense' : ''}">
@@ -1188,6 +1339,44 @@
       window.location.href = `uc-${courseSlug}.html`;
     }
   });
+
+  if (isAvNine) {
+    // The projected night map marks the block happening now, from the computer clock.
+    const markCurrentBlock = () => {
+      const now = new Date();
+      const minutes = now.getHours() * 60 + now.getMinutes();
+      document.querySelectorAll('.av9-day-row').forEach((row) => {
+        row.classList.toggle('is-now', minutes >= Number(row.dataset.start) && minutes < Number(row.dataset.end));
+      });
+    };
+    markCurrentBlock();
+    window.setInterval(markCurrentBlock, 15000);
+
+    // Voice-over window: one click puts a team on air; the previous team is marked as recorded.
+    document.addEventListener('click', (event) => {
+      const button = event.target.closest('[data-av9-team]');
+      if (!button) return;
+      const panel = button.closest('.av9-onair');
+      const status = panel.querySelector('[data-av9-status]');
+      const wasOnAir = button.classList.contains('is-on-air');
+      panel.querySelectorAll('[data-av9-team].is-on-air').forEach((item) => {
+        item.classList.remove('is-on-air');
+        item.classList.add('is-done');
+        item.setAttribute('aria-pressed', 'false');
+      });
+      if (!wasOnAir) {
+        button.classList.remove('is-done');
+        button.classList.add('is-on-air');
+        button.setAttribute('aria-pressed', 'true');
+      }
+      panel.classList.toggle('is-live', !wasOnAir);
+      const done = panel.querySelectorAll('[data-av9-team].is-done').length;
+      status.textContent = wasOnAir
+        ? `${button.dataset.av9Team} gravada · ${done} de 7 equipes`
+        : `Gravando: ${button.dataset.av9Team} · silêncio na sala`;
+      button.blur();
+    });
+  }
 
   renderCurrent();
   window.setInterval(renderPace, 1000);

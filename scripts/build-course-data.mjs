@@ -1,5 +1,6 @@
 import { lesson as designWeb07Lesson } from './lessons/design-web-07.mjs';
 import { lesson as designWeb08Lesson } from './lessons/design-web-08.mjs';
+import { lesson as audiovisual09Lesson } from './lessons/audiovisual-09.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -513,11 +514,11 @@ const audiovisualLesson08 = courses['producao-audiovisual'].lessons
   .find((lesson) => lesson.num === '08');
 
 Object.assign(audiovisualLesson08, {
-  description: 'O som decide se o vídeo comunica. A turma compara versões de áudio, decide o som de cada cena do storyboard da aula 4 e grava o microcurta em duas rodadas, com claquete verbal, conferência com fone e diária organizada pronta para a edição.',
+  description: 'O som decide se o vídeo comunica. A turma compara versões de áudio, planeja na hora um microcurta de quatro cenas, decide o som de cada cena e grava tudo em duas rodadas, com claquete verbal, conferência com fone e diária organizada pronta para a edição.',
   schedule: [
     {
       horario: '19:00 - 19:45',
-      atividade: 'Abertura com comparação ao vivo: a mesma frase gravada com o aparelho longe e depois perto da fonte, e a turma aponta qual versão comunica. Cada grupo decide o som de cada cena do storyboard da aula 4 usando a ficha projetada (fala direta, efeito, ambiente ou silêncio) e copia a tabela no caderno.'
+      atividade: 'Abertura com comparação ao vivo: a mesma frase gravada com o aparelho longe e depois perto da fonte, e a turma aponta qual versão comunica. Cada grupo escreve no caderno um microcurta de quatro cenas, uma linha por cena, e decide o som de cada cena usando a ficha projetada (fala direta, efeito, ambiente ou silêncio), copiando a tabela no caderno.'
     },
     {
       horario: '20:05 - 21:00',
@@ -529,16 +530,17 @@ Object.assign(audiovisualLesson08, {
     },
     {
       horario: '21:40 - 22:10',
-      atividade: 'Organização da diária: uma pasta por grupo no computador (PA_A08_EQ01), arquivos nomeados por cena e tomada (C02_T01), cópia conferida pela abertura dos arquivos, checklist projetado do storyboard completo, devolução conferida do equipamento e conclusão registrada no caderno.'
+      atividade: 'Organização da diária: uma pasta por grupo no computador (PA_A08_EQ01), arquivos nomeados por cena e tomada (C02_T01), cópia conferida pela abertura dos arquivos, checklist projetado das quatro cenas, devolução conferida do equipamento e conclusão registrada no caderno.'
     }
   ],
-  methodology: 'Abertura com comparação de áudio ao vivo, decisão de som registrada em ficha projetada e duas rodadas de gravação guiadas pelo mesmo ciclo: posicionar, identificar, gravar e conferir com fone. Cada rodada tem critério de conclusão projetado; a edição fica para a aula 9.',
+  methodology: 'Abertura com comparação de áudio ao vivo, decisão de som registrada em ficha projetada e duas rodadas de gravação guiadas pelo mesmo ciclo: posicionar, identificar, gravar e conferir com fone. Cada rodada tem critério de conclusão projetado; nenhuma edição acontece hoje.',
   resources: 'Projetor, quadro, caderno e caneta. Há 7 câmeras já carregadas, com cartão e bateria, 7 ring lights, computadores com navegador e cabo ou leitor de cartão para transferência. Fones de ouvido para a conferência de som ou volume baixo, um aparelho por vez. Nenhum programa é instalado no Windows; nenhuma ficha impressa é distribuída.',
-  observation: 'Aula das 19:00 às 22:10. Lanche fixo das 19:45 às 20:05. Chamada no início dos quatro blocos. Cada grupo permanece no próprio posto, com funções fixas por rodada; circula somente quem tem função definida. Durante a gravação, o restante da sala reduz a voz; quem não está gravando confere arquivos no computador. O som é a prioridade da aula: nenhuma cena termina sem conferência de áudio. Copiar antes de apagar qualquer arquivo; não formatar cartão, que pode conter material de outra turma. Sem fone disponível, ouvir em volume baixo, um aparelho por vez, com um integrante confirmando. A edição online no navegador fica para a aula 9.'
+  observation: 'Aula das 19:00 às 22:10. Lanche fixo das 19:45 às 20:05. Chamada no início dos quatro blocos. Cada grupo permanece no próprio posto, com funções fixas por rodada; circula somente quem tem função definida. Durante a gravação, o restante da sala reduz a voz; quem não está gravando confere arquivos no computador. O som é a prioridade da aula: nenhuma cena termina sem conferência de áudio. Copiar antes de apagar qualquer arquivo; não formatar cartão, que pode conter material de outra turma. Sem fone disponível, ouvir em volume baixo, um aparelho por vez, com um integrante confirmando. Nenhuma edição acontece hoje; o material bruto fica guardado na pasta do grupo.'
 });
 
 Object.assign(courses['design-web'].lessons.find(lesson => lesson.num === '07'), designWeb07Lesson);
 Object.assign(courses['design-web'].lessons.find(lesson => lesson.num === '08'), designWeb08Lesson);
+Object.assign(courses['producao-audiovisual'].lessons.find(lesson => lesson.num === '09'), audiovisual09Lesson);
 
 const output = `/* Arquivo gerado por scripts/build-course-data.mjs. */\nwindow.SENAI_COURSES = ${JSON.stringify(courses, null, 2)};\n`;
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));

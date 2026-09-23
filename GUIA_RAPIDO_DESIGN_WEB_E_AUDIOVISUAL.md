@@ -183,6 +183,20 @@ Reabra as cópias antes de qualquer limpeza. Sem transferência, identifique e
 preserve o cartão para copiar depois; nunca formate nem remova outras aulas.
 O professor recolhe os equipamentos nos postos.
 
+Na Aula 09, cada uma das 7 equipes trabalha como produtora e grava um
+comercial de 30 segundos para um cliente fictício. O briefing projetado define
+produto, marca, público e mensagem; os objetos (garrafa, fone, caderno,
+mochila, caneta, caneca e cabo USB) ficam separados nos postos antes da aula.
+O roteiro tem cinco planos fixos (gancho, produto, detalhe, uso e assinatura)
+e é gravado por ordem de filmagem: set 1 de mesa de produto (P2, P3 e P5),
+set 2 de mãos ou pessoa (P4 e P1) e janela de locução com a sala em silêncio,
+em que o professor acende no slide o número da equipe que grava. Roteiro e
+boletim de câmera são projetados e copiados no caderno; toda tomada começa
+com claquete de papel. O bloco final é o copião: pasta `PA_A09_EQ0X`, arquivos
+`P2_T1`, tomada escolhida marcada no boletim e devolução até 22:10. Os slides
+vêm de `scripts/lessons/audiovisual-09.mjs`; após editá-lo, rode
+`node scripts/build-audiovisual-09.mjs` e `node scripts/validate-course-kit.mjs`.
+
 ### Edição
 
 O percurso principal usa **DaVinci Resolve**. O **CapCut** aparece como
