@@ -6,7 +6,7 @@ Aula individual de grades e sistemas visuais. O aluno descobre as colunas escond
 
 1. Abra `aula-kit.html?uc=design-web&aula=08`. Use tela cheia e confira o enquadramento do projetor.
 2. Abra a oficina pelo slide “Experimente a oficina”. Use “Baixar oficina para uso sem internet” e deixe uma cópia (`oficina-aula-08.html`) nos computadores antes da aula. A oficina é um arquivo único; o projeto é salvo separadamente.
-3. No computador da sala, exporte um PNG, salve e reabra um projeto. Bloqueios de download do laboratório precisam ser verificados nesse computador.
+3. No computador da sala, exporte e abra um PNG; salve `projeto.grade`, reabra-o e confira Página e Post quadrado. Bloqueios de download do laboratório precisam ser verificados nesse computador.
 4. Use **Notas (P)** para consultar fala, minutos, respostas dos desafios e alternativas. Feche as notas antes de projetar.
 
 ## Relógio e indicador inferior
@@ -21,6 +21,8 @@ O ponto ao lado do contador compara o relógio do computador com o horário prev
 | 20:50 às 21:30 | Incluir o campeonato novo, deixar quatro cartões iguais de 3 colunas, exportar `pagina-final.png`. |
 | 21:30 às 22:10 | Montar o post na grade de 6 colunas, comparar a família, salvar, reabrir e escrever a frase. |
 
+A abertura termina às **19:19**: são 19 minutos de descoberta e 26 minutos de demonstração, prática e salvamento antes do lanche. Retome os conceitos durante a prática. Às **21:58**, interrompa a edição: 9 minutos para arquivos e reabertura, seguidos de 3 minutos para a frase e o encerramento.
+
 ## Respostas dos desafios (só nas notas)
 
 - Capa do streaming: 2 das 12 colunas. Produto da loja: 3 das 12. Post no celular: as 4 colunas.
@@ -30,7 +32,7 @@ O ponto ao lado do contador compara o relógio do computador com o horário prev
 
 Selecione o item na página ou na lista. Arraste com o mouse: o item gruda na coluna mais próxima. As setas mudam de coluna (esquerda e direita) ou sobem e descem (Shift anda mais). **Mais estreito** e **Mais largo** mudam quantas colunas o item ocupa; cada componente tem uma largura mínima para o texto caber. **Mostrar colunas** liga e desliga as faixas cor-de-rosa, que não aparecem no PNG.
 
-O quadro **Conferência** avisa o que falta: itens fora da grade, itens passando da margem, itens sobrepostos e, na página, cartões com larguras diferentes. Quando tudo fica em ✓, a peça está pronta para exportar.
+O quadro **Conferência** avisa o que falta: itens fora da grade, itens passando da margem, itens sobrepostos e, na página, cartões com larguras diferentes ou fora da mesma linha e das colunas vizinhas. Depois de incluir o campeonato novo, também exige quatro cartões de 3 colunas. Quando tudo fica em ✓, a peça está pronta para exportar.
 
 **Incluir campeonato novo** acrescenta o cartão Xadrez rápido na página. A aba **Post quadrado** usa uma grade de 6 colunas com os mesmos componentes. Em **Nome da imagem**, escolha o nome antes de clicar **Exportar PNG**. **Salvar projeto** baixa `projeto.grade` com a página e o post; **Abrir projeto** recupera os dois. Arquivo inválido é recusado sem apagar o trabalho aberto.
 
@@ -39,7 +41,7 @@ O quadro **Conferência** avisa o que falta: itens fora da grade, itens passando
 - Todos permanecem no posto. A colaboração acontece com o colega do lado, que dá palpite do próprio lugar nos testes de leitura e de família.
 - Cores e letras não mudam, de propósito: o desafio da noite é posição e largura.
 - Quem termina cria `pagina-alternativa.png` com outra organização que passe na conferência.
-- Se houver atraso, reduza a conversa de “Peças que se repetem”. Preserve os quatro cartões iguais, o post e o salvamento com reabertura.
+- Se houver atraso, reduza a conversa de “Peças que se repetem”. Preserve os quatro cartões iguais, o post e a parada obrigatória às 21:58 para salvar e reabrir.
 - Sem internet, use a oficina baixada. Sem computador, o aluno desenha no caderno uma faixa de 12 colunas e monta a página com retângulos; depois, um quadrado de 6 colunas para o post. Os critérios são os mesmos.
 
 Entrega: pasta `Aula-08` com `pagina-v1.png`, `pagina-final.png`, `post-final.png` e `projeto.grade`; no caderno, a frase “Usei a grade para ___ e isso ajudou ___.”

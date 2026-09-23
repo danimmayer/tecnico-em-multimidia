@@ -16,8 +16,8 @@ for(const s of support.presentationSlides){
   assert.ok(s.teacher?.speech && s.teacher?.watch && s.teacher?.rescue, s.title+' lacks teacher support');
   for(const step of s.teacher.steps){const m=step.match(/^(\d+) min · /);assert.ok(m,'Unscheduled step: '+step);minutes[s.block-1]+=Number(m[1]);}
 }
-assert.deepEqual(minutes,[45,45,40,40]);
-assert.deepEqual(lesson.schedule.map(s=>s.horario),['19:00 - 19:45','20:05 - 20:50','20:50 - 21:30','21:30 - 22:10']);
+assert.deepEqual(minutes,[45,25,20,80]);
+assert.deepEqual(lesson.schedule.map(s=>s.horario),['19:00 - 19:45','20:05 - 20:30','20:30 - 20:50','20:50 - 22:10']);
 assert.equal(support.presentationSlides.filter(s=>s.pace==='break').length,1);
 assert.equal(support.studentSheet,undefined);
 assert.equal(support.appendDefaultClosing,false);
@@ -44,4 +44,20 @@ for(const s of support.presentationSlides.filter(s=>s.visual)){
 const allOk=(fmt,parts)=>checks(fmt,parts).every(c=>c.ok);
 assert.ok(allOk('page',pageExample)&&allOk('page',pageFinalExample)&&allOk('post',postExample),'Examples must pass the oficina checks');
 assert.ok(!allOk('page',pageStart),'Starting page must need work');
+const staggered = structuredClone(pageFinalExample);
+staggered.find(p => p.id === 'chess').y = 488;
+assert.ok(!allOk('page', staggered), 'Final cards on different rows must not pass');
+const gapped = structuredClone(pageFinalExample);
+gapped.filter(p => p.kind === 'card').forEach((p, i) => {p.w = 124; p.x = 48 + i * 222;});
+assert.ok(!allOk('page', gapped), 'Final cards must fill four adjacent spans of three columns');
+const practiceSlide = support.presentationSlides.findIndex(s => s.title === 'Experimente a oficina');
+const openingMinutes = support.presentationSlides.slice(0, practiceSlide).flatMap(s => s.teacher.steps).reduce((sum, step) => sum + Number(step.match(/^(\d+)/)[1]), 0);
+assert.equal(openingMinutes, 19, 'Start the workshop at 19:19');
+assert.ok(support.presentationSlides.find(s => s.title === 'Salve e reabra').lede.includes('21:58'));
+
 console.log('Aula 08: source parity, 170 minutes, answers only in notes, no print/code tasks, offline oficina and illustrations validated.');
+
+assert.equal(support.presentationSlides[14].title, 'Agora o post');
+assert.equal(support.presentationSlides.length, 23);
+const extensionMinutes = support.presentationSlides.slice(17,21).flatMap(s=>s.teacher.steps).reduce((sum,s)=>sum+Number(s.match(/^(\d+)/)[1]),0);
+assert.equal(extensionMinutes,40);
