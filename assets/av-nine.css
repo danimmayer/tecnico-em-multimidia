@@ -41,8 +41,8 @@
   background: var(--accent);
   font: 700 15px/1 var(--mono);
 }
-.av9-plan-head { display: flex; align-items: center; gap: 10px; }
-.av9-plan-head strong { color: var(--paper); font-size: 19px; letter-spacing: .04em; }
+.av9-plan-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; min-width: 0; }
+.av9-plan-head strong { min-width: 0; color: var(--paper); font-size: clamp(16px, 1.7cqi, 19px); letter-spacing: .02em; }
 .av9-flow-num {
   display: inline-grid;
   width: 32px;
@@ -311,7 +311,7 @@
 }
 
 /* Com as notas abertas, o slide perde a coluna das anotações e reorganiza os blocos largos. */
-@container (max-width: 900px) {
+@container (max-width: 840px) {
   .av9-plan-row, .av9-commands ol { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .av9-flow, .av9-sets { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .av9-slate, .av9-onair, .av9-folder { grid-template-columns: 1fr; }
