@@ -1393,7 +1393,7 @@ window.SENAI_COURSES = {
       {
         "num": "09",
         "title": "Set de filmagem: comercial em uma noite",
-        "description": "Simulação de um set profissional: as equipes fazem pré-produção de escopo reduzido e gravam um comercial de 30 segundos com papéis definidos e prazo fechado.",
+        "description": "A turma trabalha como produtora: cada equipe recebe o briefing de um cliente, planeja um comercial de 30 segundos em cinco planos, grava na ordem de filmagem do set com claquete e boletim de câmera e fecha a noite com o copião organizado para a edição.",
         "objectives": [
           "Coordenação de equipe: definição da organização do trabalho e dos níveis de autonomia.",
           "Trabalho em equipe: divisão de papéis e responsabilidades, compromisso com objetivos e metas.",
@@ -1410,25 +1410,25 @@ window.SENAI_COURSES = {
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Revisão da aula 8 (captação de som e gravação do microcurta). Briefing do desafio \"Comercial em uma noite\": cada equipe sorteia um produto fictício (energético, tênis, aplicativo, sabonete) e deve entregar um comercial de 30 segundos até o fim da noite. Definição dos papéis do set em cada equipe (direção, câmera, luz, som e produção) e dos níveis de autonomia de cada função."
+            "horario": "19:00 - 19:45",
+            "atividade": "Pré-produção: conhecer a ordem do dia e o fluxo de uma produtora, receber o briefing do cliente da equipe, copiar no caderno o roteiro de cinco planos projetado e preencher o que aparece em cada plano, escrever o slogan, definir a ordem de filmagem e as funções do set e copiar o boletim de câmera. Roteiro e slogan aprovados antes do lanche."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "pré-produção de escopo reduzido: conceito do comercial, mini-roteiro de 30 segundos, lista de planos e plano de filmagem com prazos por tarefa (quem faz o quê e até que horas). Validação do plano de cada equipe antes da liberação do acesso ao set."
+            "horario": "20:05 - 21:00",
+            "atividade": "Set 1, mesa de produto: aplicar os cinco comandos do set e a claquete de papel, montar a luz de produto uma única vez e gravar os planos 2, 3 e 5 (produto inteiro, detalhe e packshot). Cada tomada é conferida no visor e registrada no boletim como BOA ou REFAZER."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "Gravação do comercial no laboratório com equipamentos completos: câmera no tripé, softbox e ring light, captação de som e cenário com objetos de cena. Cada equipe cumpre seu cronograma; o acompanhamento concentra-se em prazos, segurança e postura profissional no set."
+            "horario": "21:00 - 21:40",
+            "atividade": "Set 2, mãos ou pessoa: reenquadrar uma vez e gravar os planos 4 e 1 (uso e gancho). Janela de locução com a sala em silêncio: cada equipe, na sua vez, grava o slogan com a marca perto da fonte e confere com fone. Conferência do boletim antes de desmontar."
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "Descarregamento e conferência do material bruto (pasta da equipe, arquivos nomeados por take). Retrospectiva rápida de 2 minutos por equipe: o que funcionou na organização do set, onde o tempo se perdeu e o que ajustar na próxima produção."
+            "horario": "21:40 - 22:10",
+            "atividade": "Copião: copiar o material para a pasta da equipe (PA_A09_EQ01), renomear os arquivos pelo boletim (P2_T1), assistir a tomada BOA de cada plano na ordem do roteiro, marcar a tomada escolhida, devolver o equipamento conferido e registrar a frase individual no caderno."
           }
         ],
-        "methodology": "Simulação de ambiente profissional com desafio de produção completo em prazo real, do briefing à conferência do material.",
-        "resources": "Câmeras, tripés, softbox, ring lights, smartphones, objetos de cena e computadores do laboratório.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "Simulação de produtora com briefing de cliente, roteiro de cinco planos, ordem de filmagem por montagem de set, funções com decisões definidas, comandos de set, claquete de papel, boletim de câmera, janela de locução em silêncio e copião ao final. Fichas projetadas para cópia no caderno; critério de pronto em cada etapa.",
+        "resources": "Projetor, quadro, caderno e caneta. Há 7 câmeras já carregadas, com cartão e bateria, 7 ring lights, fones de ouvido e computadores com reprodutor de vídeo e cabo ou leitor de cartão. Os grupos já estão formados e os 7 objetos dos briefings já separados: garrafa, fone de ouvido, caderno, mochila, caneta, caneca e cabo USB. Nenhum programa precisa ser instalado no Windows. Nenhuma ficha impressa: roteiro e boletim são projetados e copiados no caderno. A edição acontece na aula 10, no editor online gratuito.",
+        "observation": "Aula das 19:00 às 22:10. Lanche fixo das 19:45 às 20:05. Chamada no início dos quatro blocos. Cada equipe permanece no próprio posto durante toda a noite; somente o professor circula. Comandos do set em voz baixa; na janela de locução, a sala inteira faz silêncio. Aparecer na câmera é voluntário: mãos em cena resolvem os planos 1 e 4. Exercício interno, sem publicação. Marcas e clientes são fictícios; logotipos reais ficam virados ou cobertos com papel. Copiar antes de apagar qualquer arquivo; não formatar cartão, que pode conter material de outra turma. Sem fone, ouvir em volume baixo, um aparelho por vez. Sem computador livre, a equipe confere as tomadas no visor da câmera e copia na aula 10."
       },
       {
         "num": "10",
