@@ -3398,35 +3398,699 @@ window.SENAI_TEACHING_SUPPORT = {
         ]
       },
       "08": {
-        "teacherGoal": "Conduzir a Aula 08 para que a turma produza uso de grades, colunas e componentes para criar famílias coerentes de páginas e postagens.",
-        "plainLanguage": "Uso de grades, colunas e componentes para criar famílias coerentes de páginas e postagens. O foco é decidir, montar, comparar e testar; os bastidores técnicos aparecem apenas quando ajudam a compreender a função de uma interface.",
-        "say": "Hoje o resultado precisa ficar visível. Primeiro eu mostro o exemplo e os critérios; depois vocês produzem em equipe e conferem a entrega antes de sair.",
+        "appendDefaultClosing": false,
+        "teacherGoal": "Cada estudante entrega a página da Arena Pixel na grade (versão 1 e final com quatro cartões iguais), o post quadrado da mesma família e o projeto editável reaberto até 22:10.",
+        "routine": [
+          "Antes da aula, abrir a apresentação e baixar a oficina em cada computador; no computador da sala, exportar e abrir um PNG, salvar projeto.grade e reabri-lo nas duas abas.",
+          "Manter os alunos no posto; pedir atenção antes de cada demonstração e liberar só a etapa indicada."
+        ],
+        "onlineRoutine": "A oficina não usa serviços externos. Uma cópia baixada do HTML abre o mesmo recurso sem internet, por duplo clique.",
+        "plainLanguage": "Grade é um conjunto de colunas invisíveis que organiza a tela. Componente é uma peça que se repete sempre igual, como um cartão ou um botão. Um conjunto de componentes que combinam forma um sistema visual, e é ele que faz peças diferentes parecerem da mesma marca.",
+        "say": "Toda tela que vocês usam tem colunas escondidas. Hoje vamos encontrar essas colunas e usar uma grade para montar uma página e um post da mesma marca.",
         "demo": [
-          "Aquecimento \"Que grade existe aqui?\": sobreposições transparentes revelam colunas e alinhamentos em portal, streaming, loja e feed de rede social.",
-          "Montagem física de grade: grupos recebem uma base de 6 ou 12 colunas e cartões de conteúdo. Precisam montar capa, lista de serviços e chamada principal sem romper os eixos.",
-          "Sistema de componentes: criar visualmente um botão, um cartão e um cabeçalho; depois repetir os componentes em duas telas e duas peças sociais mantendo consistência."
+          "Revelar as colunas em três telas conhecidas.",
+          "Arrastar um cartão na oficina e mostrar que ele gruda na coluna.",
+          "Mudar a largura de um cartão com Mais estreito e Mais largo.",
+          "Exportar um PNG, salvar e reabrir o projeto."
         ],
-        "studentDeliverable": "Desafio \"Uma marca, quatro formatos\": adaptar o mesmo sistema para desktop, celular, post quadrado e story. Exposição com justificativa das mudanças.",
+        "studentDeliverable": "Pasta Aula-08: pagina-v1.png, pagina-final.png, post-final.png e projeto.grade. Na etapa de personalização: pagina-alternativa.png e post-alternativa.png. No caderno, uma frase sobre o uso da grade. Alternativa: página e post desenhados no caderno sobre uma faixa de 12 colunas.",
         "check": [
-          "A entrega visual corresponde ao objetivo e pode ser aberta ou apresentada sem explicação adicional.",
-          "O grupo justificou pelo menos duas decisões com critérios da aula.",
-          "Arquivos ou folhas estão nomeados e organizados na pasta de entrega.",
-          "A revisão final retirou dados pessoais e confirmou legibilidade."
+          "Todos os itens começam e terminam numa coluna.",
+          "Nada passa da margem; sobreposições decorativas são intencionais e não escondem informações.",
+          "Os quatro cartões da página final têm a mesma largura.",
+          "O post usa a mesma marca, o mesmo cartão e o mesmo botão da página.",
+          "Os PNGs das versões e o projeto editável foram salvos e reabertos."
         ],
-        "fallback": "Se a ferramenta ou a internet falhar, realizar a mesma produção em papel A3 com cartões, canetas e a ficha impressa; fotografar ou guardar a folha como evidência.",
+        "fallback": "Abrir a cópia da oficina baixada antes da aula. Se o computador falhar, desenhar no caderno uma faixa de 12 colunas e montar a página com retângulos (cabeçalho, destaque, quatro cartões e botão); depois, um quadrado de 6 colunas para o post. Os critérios são os mesmos. Não distribuir fichas.",
+        "extension": "Slides 19 a 22: quatro desafios de 40 minutos para a turma que concluiu o teste de leitura às 20:50. 21:18 selo, 21:28 imagem, 21:38 identidade e 21:50 teste com colega. Exportar pagina-alternativa.png e post-alternativa.png sem substituir os PNGs anteriores. Às 21:58, salvar e reabrir. Se houver atraso, reduzir a personalização e preservar os 12 minutos finais.",
         "commonProblems": [
           [
-            "A equipe começa sem decidir o objetivo",
-            "Retomar público, mensagem e ação principal antes de escolher aparência."
+            "O aluno quer trocar cor ou letra",
+            "Na primeira versão, priorizar posição e largura. Nos desafios de personalização, liberar cores e fontes, repetindo as escolhas na página e no post."
           ],
           [
-            "A produção fica bonita, mas pouco clara",
-            "Pedir que outro grupo cumpra uma tarefa e registrar onde ele hesita."
+            "O cartão novo fica maior para destacar",
+            "Perguntar se ele ainda parece irmão dos outros. No sistema, todo campeonato usa o mesmo cartão."
           ],
           [
-            "O tempo termina antes do acabamento",
-            "Fechar primeiro a entrega essencial e deixar variações como extensão opcional."
+            "Falta tempo",
+            "Priorizar a página final com quatro cartões e o post. Às 21:58, interromper a edição: 9 minutos para exportar, salvar, reabrir e organizar; 3 minutos para a frase e o encerramento."
           ]
+        ],
+        "presentationSlides": [
+          {
+            "title": "Mapa da noite",
+            "block": 1,
+            "lede": "Uma casa de games, uma grade de 12 colunas e duas peças da mesma família.",
+            "layout": "dw8",
+            "cards": [
+              {
+                "title": "Descobrir a grade",
+                "text": "19:00 às 19:45 · colunas escondidas em telas que você conhece."
+              },
+              {
+                "title": "Montar a página",
+                "text": "20:05 às 20:30 · tudo encaixado na grade."
+              },
+              {
+                "title": "Atender o cliente",
+                "text": "20:30 às 20:50 · um campeonato novo entra na página."
+              },
+              {
+                "title": "Criar o post",
+                "text": "20:50 às 22:10 · mesma família, outro formato."
+              }
+            ],
+            "promptLabel": "Pausa",
+            "prompt": "Lanche das 19:45 às 20:05. Encerramento às 22:10.",
+            "teacher": {
+              "speech": "Primeiro organizamos as peças prontas na grade. Depois vamos personalizar cores, letras, imagens e formas mantendo a mesma identidade nas duas peças.",
+              "steps": [
+                "3 min · Fazer chamada e apresentar o produto da noite.",
+                "2 min · Combinar posto fixo, voz baixa e mão levantada para pedir ajuda."
+              ],
+              "watch": "Todos no próprio posto, sem formar grupos.",
+              "rescue": "Se alguém travar, demonstrar um único movimento na oficina e devolver o controle ao aluno no posto."
+            }
+          },
+          {
+            "title": "Tem uma grade escondida",
+            "block": 1,
+            "lede": "Três telas que você usa toda semana. Repare no que se repete.",
+            "layout": "dw8",
+            "visual": "telas",
+            "promptLabel": "Observe",
+            "prompt": "O que aparece várias vezes, sempre com o mesmo tamanho, em cada tela?",
+            "visualAlt": [
+              "Esboços de um streaming, de uma loja online e de uma rede social no celular"
+            ],
+            "teacher": {
+              "speech": "Não diga ainda que existe uma grade. Deixe a turma perceber a repetição sozinha.",
+              "steps": [
+                "1 min · Observar as três telas.",
+                "1 min · Ouvir respostas: capas iguais, produtos iguais, posts iguais.",
+                "1 min · Perguntar: por que alguém faria tudo do mesmo tamanho?"
+              ],
+              "watch": "Respostas que citam um elemento concreto: capa, produto, post, botão.",
+              "rescue": "Se alguém travar, demonstrar um único movimento na oficina e devolver o controle ao aluno no posto."
+            }
+          },
+          {
+            "title": "Agora com as colunas",
+            "block": 1,
+            "lede": "As faixas cor-de-rosa são colunas. Quase tudo começa e termina numa delas.",
+            "layout": "dw8",
+            "visual": "telas-grade",
+            "promptLabel": "Desafio rápido",
+            "prompt": "Quantas colunas ocupa uma capa do streaming? E um produto da loja?",
+            "visualAlt": [
+              "Os mesmos esboços com as colunas marcadas em rosa: 12 colunas no streaming e na loja, 4 no celular"
+            ],
+            "teacher": {
+              "speech": "Revele as colunas e peça que contem com o dedo, sem levantar.",
+              "steps": [
+                "1 min · Mostrar as colunas e dar tempo para contar.",
+                "1 min · Ouvir palpites.",
+                "2 min · Conferir: a capa do streaming ocupa 2 das 12 colunas; o produto da loja ocupa 3 das 12; o post do celular ocupa as 4 colunas."
+              ],
+              "watch": "Resposta certa: 2 colunas para a capa e 3 para o produto. Vale explicação informal, desde que a contagem esteja certa.",
+              "rescue": "Se alguém travar, demonstrar um único movimento na oficina e devolver o controle ao aluno no posto."
+            }
+          },
+          {
+            "title": "As linhas invisíveis",
+            "block": 1,
+            "lede": "Grade é o esqueleto da tela: quem usa não vê, mas sente a organização.",
+            "layout": "dw8",
+            "cards": [
+              {
+                "title": "Coluna",
+                "text": "Faixa onde os itens se apoiam. Um item pode ocupar uma ou várias."
+              },
+              {
+                "title": "Espaço entre colunas",
+                "text": "O respiro que impede um item de encostar no outro."
+              },
+              {
+                "title": "Margem",
+                "text": "A borda livre em volta da tela. Nada encosta nela."
+              }
+            ],
+            "promptLabel": "Resumo",
+            "prompt": "Na grade, cada item começa numa coluna e termina numa coluna.",
+            "teacher": {
+              "speech": "Aponte cada termo nas telas do slide anterior. Os nomes em português bastam; não é preciso termo técnico em inglês.",
+              "steps": [
+                "2 min · Explicar coluna e espaço entre colunas voltando às capas do streaming.",
+                "1 min · Mostrar a margem da loja.",
+                "1 min · Pedir que um aluno diga, do lugar, onde começa e onde termina um produto."
+              ],
+              "watch": "A turma usa as palavras coluna, espaço e margem para descrever uma tela.",
+              "rescue": "Se alguém travar, demonstrar um único movimento na oficina e devolver o controle ao aluno no posto."
+            }
+          },
+          {
+            "title": "Por que 12 colunas?",
+            "block": 1,
+            "lede": "12 se divide de vários jeitos. Por isso tantos sites usam essa grade.",
+            "layout": "dw8",
+            "visual": "doze",
+            "promptLabel": "Pense rápido",
+            "prompt": "Se a página tiver quatro cartões lado a lado, quantas colunas cada um ocupa?",
+            "visualAlt": [
+              "Doze colunas divididas em 2 itens de 6, 3 de 4, 4 de 3 e 6 de 2"
+            ],
+            "teacher": {
+              "speech": "Leia o slide como um jogo de divisão, sem conta no quadro.",
+              "steps": [
+                "1 min · Mostrar as quatro divisões.",
+                "2 min · Ouvir a resposta do desafio: 3 colunas, porque 12 dividido por 4 dá 3."
+              ],
+              "watch": "A resposta 3 volta mais tarde, quando o cliente pedir um cartão novo. Não antecipe esse pedido.",
+              "rescue": "Se alguém travar, demonstrar um único movimento na oficina e devolver o controle ao aluno no posto."
+            }
+          },
+          {
+            "title": "Experimente a oficina",
+            "block": 1,
+            "lede": "Abra a oficina da aula. Textos, cores e letras já estão prontos.",
+            "layout": "dw8",
+            "cards": [
+              {
+                "title": "1 · Crie a pasta",
+                "text": "Crie uma pasta Aula-08 para guardar tudo de hoje."
+              },
+              {
+                "title": "2 · Arraste um cartão",
+                "text": "Com Mostrar colunas ligado, arraste um cartão. Ele gruda na coluna mais próxima."
+              },
+              {
+                "title": "3 · Mude a largura",
+                "text": "Use Mais estreito e Mais largo e veja quantas colunas o cartão ocupa."
+              }
+            ],
+            "resources": [
+              {
+                "href": "modelos/design-web/aula-08/oficina.html",
+                "label": "Abrir a oficina de grade"
+              }
+            ],
+            "promptLabel": "Antes do lanche",
+            "prompt": "Clique em Salvar projeto e guarde projeto.grade na pasta Aula-08.",
+            "teacher": {
+              "speech": "Abra a oficina pelo link e mostre arrastar, mudar a largura, usar as setas e desfazer. Ninguém digita número nem código.",
+              "steps": [
+                "4 min · Às 19:19, demonstrar arrastar, mudar a largura e desfazer.",
+                "15 min · Cada aluno experimenta com cartões; retomar coluna, espaço e margem enquanto circula o olhar pelos postos.",
+                "7 min · Salvar projeto.grade, conferir o download na pasta Aula-08 e testar Abrir projeto."
+              ],
+              "watch": "Onde o navegador guardou o arquivo. Resolva agora, não no fim da aula.",
+              "rescue": "Se o link não abrir, usar a cópia baixada antes da aula. Sem computador, desenhar no caderno uma faixa com 12 colunas e marcar três cartões de 4 colunas."
+            }
+          },
+          {
+            "title": "Intervalo",
+            "block": 1,
+            "lede": "Lanche. Retome no mesmo posto às 20:05.",
+            "layout": "dw8",
+            "pace": "break",
+            "promptLabel": "Antes de sair",
+            "prompt": "Deixe o projeto salvo. Comida e bebida longe dos computadores.",
+            "teacher": {
+              "speech": "O intervalo fica fora dos 170 minutos de atividade.",
+              "steps": [
+                "20 min · Intervalo das 19:45 às 20:05."
+              ],
+              "watch": "Retomar sem reorganizar a sala.",
+              "rescue": "Se alguém travar, demonstrar um único movimento na oficina e devolver o controle ao aluno no posto."
+            }
+          },
+          {
+            "title": "O pedido da Arena Pixel",
+            "block": 2,
+            "lede": "Uma casa de games fictícia quer divulgar os campeonatos. A página chegou assim.",
+            "layout": "dw8",
+            "visual": "pagina-inicial",
+            "promptLabel": "Missão individual",
+            "prompt": "Coloque tudo na grade. Não mude textos nem cores: só posição e largura.",
+            "visualAlt": [
+              "Página da Arena Pixel com itens de larguras diferentes e desalinhados"
+            ],
+            "teacher": {
+              "speech": "Faça a chamada. Pergunte o que está estranho antes de abrir a oficina.",
+              "steps": [
+                "2 min · Fazer chamada e retomar o projeto.",
+                "2 min · Apresentar o pedido.",
+                "1 min · Ouvir os problemas: cartões de larguras diferentes, começos desalinhados, cabeçalho e rodapé passando da margem."
+              ],
+              "watch": "As críticas apontam o elemento, não quem fez a página.",
+              "rescue": "Se alguém travar, demonstrar um único movimento na oficina e devolver o controle ao aluno no posto."
+            }
+          },
+          {
+            "title": "Monte na grade",
+            "block": 2,
+            "lede": "Continue na oficina, na aba Página. Encaixe item por item.",
+            "layout": "dw8",
+            "cards": [
+              {
+                "title": "Topo",
+                "text": "Cabeçalho e destaque ocupando a largura toda."
+              },
+              {
+                "title": "Cartões",
+                "text": "Os três lado a lado, com a mesma largura."
+              },
+              {
+                "title": "Ação",
+                "text": "Botão abaixo dos cartões, começando numa coluna."
+              }
+            ],
+            "promptLabel": "Conferência da oficina",
+            "prompt": "O quadro Conferência marca ✓ quando está tudo na grade, dentro da margem, sem sobreposição e com cartões iguais lado a lado.",
+            "teacher": {
+              "speech": "Demonstre só o cabeçalho. O resto é com eles.",
+              "steps": [
+                "2 min · Demonstrar o cabeçalho ocupando as 12 colunas.",
+                "8 min · Montagem individual.",
+                "1 min · Atender quem levantou a mão."
+              ],
+              "watch": "Três cartões de 4 colunas é o caminho mais comum, mas outra solução que passe na conferência também vale.",
+              "rescue": "Se alguém travar, demonstrar um único movimento na oficina e devolver o controle ao aluno no posto."
+            }
+          },
+          {
+            "title": "Peças que se repetem",
+            "block": 2,
+            "lede": "Quando uma peça aparece sempre igual, ela vira componente.",
+            "layout": "dw8",
+            "cards": [
+              {
+                "title": "Cartão",
+                "text": "Todo campeonato usa o mesmo cartão. Muda o texto, o desenho fica."
+              },
+              {
+                "title": "Botão",
+                "text": "Toda ação importante usa o mesmo botão."
+              },
+              {
+                "title": "Cabeçalho",
+                "text": "Toda página da Arena começa igual."
+              }
+            ],
+            "promptLabel": "Sistema visual",
+            "prompt": "Componentes que combinam entre si formam um sistema visual. É ele que dá a várias peças a cara da mesma marca.",
+            "teacher": {
+              "speech": "Volte às capas do streaming: cada capa é um componente repetido.",
+              "steps": [
+                "1 min · Explicar componente usando o cartão da oficina.",
+                "1 min · Pedir exemplos de componentes em apps que a turma usa.",
+                "1 min · Ligar componente e grade: o componente sempre ocupa colunas inteiras."
+              ],
+              "watch": "Exemplos que a turma pode citar: botão de curtir, cartão de produto, miniatura de vídeo.",
+              "rescue": "Se alguém travar, demonstrar um único movimento na oficina e devolver o controle ao aluno no posto."
+            }
+          },
+          {
+            "title": "Versão 1",
+            "block": 2,
+            "lede": "Afaste-se um pouco da tela, sem levantar, e responda para você mesmo.",
+            "layout": "dw8",
+            "bullets": [
+              "Os três cartões parecem irmãos?",
+              "Os começos dos itens formam linhas retas?",
+              "O espaço entre os cartões é igual?"
+            ],
+            "promptLabel": "Salve a versão 1",
+            "prompt": "Com a conferência toda em ✓, escolha pagina-v1.png em Nome da imagem, clique em Exportar PNG e salve projeto.grade.",
+            "teacher": {
+              "speech": "O teste é visual e rápido. Corrigir uma coisa e salvar.",
+              "steps": [
+                "2 min · Fazer o teste de olhar de longe.",
+                "2 min · Corrigir um ponto.",
+                "2 min · Exportar pagina-v1.png e salvar o projeto."
+              ],
+              "watch": "Quem terminou cria uma alternativa com o botão em outra coluna, sem sair da grade.",
+              "rescue": "Se alguém travar, demonstrar um único movimento na oficina e devolver o controle ao aluno no posto."
+            }
+          },
+          {
+            "title": "Chegou um campeonato novo",
+            "block": 3,
+            "lede": "O cliente quer anunciar mais um campeonato na página.",
+            "layout": "dw8",
+            "cards": [
+              {
+                "title": "Novo cartão",
+                "text": "Xadrez rápido · Sábado · 15h"
+              },
+              {
+                "title": "Condição",
+                "text": "Os quatro cartões ficam lado a lado, com a mesma largura."
+              },
+              {
+                "title": "Regra",
+                "text": "Nada sai da grade nem das margens."
+              }
+            ],
+            "promptLabel": "Pedido do cliente",
+            "prompt": "Clique em Incluir campeonato novo. Antes de mexer: quantas colunas cada cartão vai ocupar?",
+            "teacher": {
+              "speech": "Faça a chamada e anuncie o pedido como se fosse o cliente.",
+              "steps": [
+                "2 min · Fazer chamada.",
+                "2 min · Apresentar o pedido.",
+                "1 min · Ouvir palpites. Resposta: 3 colunas cada, porque 12 dividido por 4 dá 3. É o desafio do início da aula."
+              ],
+              "watch": "Quem lembrar do desafio das 12 colunas explica para a turma em uma frase.",
+              "rescue": "Se alguém travar, demonstrar um único movimento na oficina e devolver o controle ao aluno no posto."
+            }
+          },
+          {
+            "title": "Reorganize os cartões",
+            "block": 3,
+            "lede": "O cartão novo precisa caber na mesma linha, sem empurrar nada para fora.",
+            "layout": "dw8",
+            "cards": [
+              {
+                "title": "1 · Estreite",
+                "text": "Deixe os três cartões antigos com 3 colunas."
+              },
+              {
+                "title": "2 · Encaixe",
+                "text": "Coloque o Xadrez rápido na mesma linha dos outros."
+              },
+              {
+                "title": "3 · Confira",
+                "text": "Veja se o botão e o rodapé continuam livres e na grade."
+              }
+            ],
+            "promptLabel": "Pronto quando",
+            "prompt": "Quatro cartões iguais, lado a lado, e a conferência toda em ✓.",
+            "teacher": {
+              "speech": "Mostre só como estreitar um cartão. Não monte a linha inteira.",
+              "steps": [
+                "2 min · Demonstrar Mais estreito em um cartão.",
+                "6 min · Reorganização individual.",
+                "1 min · Atender quem pedir ajuda."
+              ],
+              "watch": "O cartão novo tem o mesmo desenho dos outros. Se alguém tentar deixá-lo maior para destacar, perguntar se ainda parece da mesma família.",
+              "rescue": "Se alguém travar, demonstrar um único movimento na oficina e devolver o controle ao aluno no posto."
+            }
+          },
+          {
+            "title": "Teste de leitura",
+            "block": 3,
+            "lede": "Olhe para a sua página sem apontar com o mouse.",
+            "layout": "dw8",
+            "bullets": [
+              "Qual campeonato acontece no sábado?",
+              "Onde eu clico para participar?",
+              "Algum cartão parece de outra família?"
+            ],
+            "promptLabel": "Versão final da página",
+            "prompt": "Corrija o que atrapalhou. Escolha pagina-final.png, exporte e salve projeto.grade.",
+            "teacher": {
+              "speech": "Cada um testa a própria tela. O colega do lado pode responder do lugar dele, se quiser.",
+              "steps": [
+                "1 min · Fazer as três perguntas.",
+                "2 min · Corrigir.",
+                "3 min · Exportar pagina-final.png e salvar o projeto."
+              ],
+              "watch": "O PNG final tem os quatro cartões.",
+              "rescue": "Se alguém travar, demonstrar um único movimento na oficina e devolver o controle ao aluno no posto."
+            }
+          },
+          {
+            "title": "Agora o post",
+            "block": 4,
+            "lede": "A Arena quer anunciar o xadrez no feed. O post precisa ter a cara da mesma marca.",
+            "layout": "dw8",
+            "cards": [
+              {
+                "title": "Mesma marca",
+                "text": "O nome e o ícone da Arena no topo."
+              },
+              {
+                "title": "Mesmo cartão",
+                "text": "O Xadrez rápido com o mesmo desenho da página."
+              },
+              {
+                "title": "Mesmo botão",
+                "text": "Quero participar, igualzinho."
+              }
+            ],
+            "promptLabel": "Nova grade",
+            "prompt": "Abra a aba Post quadrado. Aqui a grade tem 6 colunas.",
+            "teacher": {
+              "speech": "Faça a chamada. Mostre que o formato mudou e a família não.",
+              "steps": [
+                "2 min · Fazer chamada.",
+                "3 min · Apresentar o post.",
+                "3 min · Abrir a aba e mostrar as 6 colunas."
+              ],
+              "watch": "Primeiro preservar a identidade da página. Depois da comparação, os quatro desafios liberam personalização nas duas peças. Nesta turma, começar o post às 20:50.",
+              "rescue": "Se alguém travar, demonstrar um único movimento na oficina e devolver o controle ao aluno no posto."
+            }
+          },
+          {
+            "title": "Monte o post",
+            "block": 4,
+            "lede": "Os componentes são os mesmos. Só a grade mudou.",
+            "layout": "dw8",
+            "cards": [
+              {
+                "title": "1 · Topo",
+                "text": "Marca no alto, começando na primeira coluna."
+              },
+              {
+                "title": "2 · Meio",
+                "text": "Destaque e cartão encaixados na grade de 6."
+              },
+              {
+                "title": "3 · Ação",
+                "text": "Botão perto do cartão, alinhado com ele."
+              }
+            ],
+            "promptLabel": "Pronto quando",
+            "prompt": "Conferência em ✓. Escolha post-final.png, exporte e salve projeto.grade.",
+            "teacher": {
+              "speech": "Demonstre só a marca. Deixe o resto com eles.",
+              "steps": [
+                "2 min · Demonstrar a marca na primeira coluna.",
+                "12 min · Montagem individual do post."
+              ],
+              "watch": "Botão e cartão lado a lado ou empilhados: os dois jeitos valem se estiverem na grade.",
+              "rescue": "Se alguém travar, demonstrar um único movimento na oficina e devolver o controle ao aluno no posto."
+            }
+          },
+          {
+            "title": "É da mesma família?",
+            "block": 4,
+            "lede": "Página e post lado a lado. Formatos diferentes, mesma marca.",
+            "layout": "dw8",
+            "visual": [
+              "pagina-final-exemplo",
+              "post-exemplo"
+            ],
+            "promptLabel": "Compare com as suas",
+            "prompt": "Mesmas cores, mesmo cartão, mesmo botão e tudo em colunas?",
+            "visualAlt": [
+              "Página da Arena Pixel com quatro cartões iguais encaixados na grade",
+              "Post quadrado da Arena Pixel com marca, destaque, cartão e botão na grade de 6 colunas"
+            ],
+            "teacher": {
+              "speech": "Mostre o exemplo só depois que a turma montou o próprio post.",
+              "steps": [
+                "2 min · Mostrar página e post lado a lado.",
+                "4 min · Cada aluno compara as próprias peças e corrige um detalhe; o colega do lado dá um palpite, do lugar."
+              ],
+              "watch": "O exemplo é uma solução possível, não a única resposta.",
+              "rescue": "Se alguém travar, demonstrar um único movimento na oficina e devolver o controle ao aluno no posto."
+            }
+          },
+          {
+            "title": "Crie um selo de destaque",
+            "block": 4,
+            "lede": "10 minutos · Dê uma informação importante usando forma, texto e ícone.",
+            "layout": "dw8",
+            "cards": [
+              {
+                "title": "1 · Faça a base",
+                "text": "Na aba Post quadrado, adicione uma Forma. Escolha retângulo ou círculo e uma cor de destaque."
+              },
+              {
+                "title": "2 · Escreva por cima",
+                "text": "Adicione Texto: “Inscrições abertas”. Use Trazer à frente para deixá-lo sobre a forma."
+              },
+              {
+                "title": "3 · Dê significado",
+                "text": "Adicione um Ícone, como troféu ou controle. Alinhe o conjunto sem cobrir o horário ou o botão."
+              }
+            ],
+            "promptLabel": "Pronto quando",
+            "prompt": "O selo é legível, cabe nas margens e ajuda a entender o convite. Salve o projeto.",
+            "teacher": {
+              "speech": "21:18–21:28. Demonstrar Forma, Texto e Ícone. Para selecionar algo coberto, usar Item selecionado. A conferência não avalia os elementos decorativos; conferir visualmente.",
+              "steps": [
+                "2 min · Demonstrar a base e as camadas em Posição, tamanho e camadas.",
+                "6 min · Criar o selo e alinhar texto e ícone.",
+                "2 min · Conferir se nada importante ficou escondido e salvar."
+              ],
+              "watch": "Texto precisa caber inteiro. Se necessário, aumentar a altura ou reduzir Escala do texto. Não exigir agrupamento, pois a oficina não agrupa itens.",
+              "rescue": "Usar apenas retângulo e texto. Desfazer recupera uma posição anterior."
+            }
+          },
+          {
+            "title": "Uma imagem que ajuda a comunicar",
+            "block": 4,
+            "lede": "10 minutos · Escolha uma imagem do computador que combine com o campeonato.",
+            "layout": "dw8",
+            "cards": [
+              {
+                "title": "1 · Carregue",
+                "text": "Adicione uma imagem PNG, JPG ou WebP que você já tenha. Escolha algo relacionado a jogos ou xadrez."
+              },
+              {
+                "title": "2 · Enquadre",
+                "text": "Compare Mostrar imagem inteira com Preencher e recortar. Ajuste largura e altura sem perder o assunto principal."
+              },
+              {
+                "title": "3 · Organize",
+                "text": "Reserve um espaço para a imagem. Se ela ficar atrás do texto, use uma forma de cor sólida para garantir a leitura."
+              }
+            ],
+            "promptLabel": "Compare antes e depois",
+            "prompt": "A imagem ajuda a reconhecer o evento? O nome, o dia e o horário continuam fáceis de ler?",
+            "teacher": {
+              "speech": "21:28–21:38. Usar arquivo já disponível, sem transformar a atividade em busca de imagens. Não há remoção de fundo nem edição de foto na oficina.",
+              "steps": [
+                "2 min · Mostrar carregamento e as duas opções de enquadramento.",
+                "6 min · Inserir e ajustar a imagem na composição.",
+                "2 min · Ocultar as colunas, conferir leitura e salvar."
+              ],
+              "watch": "Não esticar rostos ou objetos nem cortar o assunto principal. Evitar imagem ocupando todo o espaço da informação.",
+              "rescue": "Quem não tem imagem cria uma ilustração com duas formas e um ícone; o objetivo continua sendo comunicar o evento."
+            }
+          },
+          {
+            "title": "Sua versão da Arena Pixel",
+            "block": 4,
+            "lede": "12 minutos · Personalize a campanha mantendo página e post na mesma família.",
+            "layout": "dw8",
+            "cards": [
+              {
+                "title": "Cores com função",
+                "text": "Escolha até três cores principais: fundo, texto e destaque. Garanta contraste e repita as escolhas nas duas peças."
+              },
+              {
+                "title": "Letras com hierarquia",
+                "text": "Use até duas fontes. O nome do evento chama atenção; dia, horário e ação continuam claros."
+              },
+              {
+                "title": "Peças que combinam",
+                "text": "Repita cantos, cores e estilo dos cartões e botões. Preserve os quatro campeonatos na página."
+              }
+            ],
+            "promptLabel": "Guarde as duas versões",
+            "prompt": "Exporte pagina-alternativa.png e post-alternativa.png. Preserve os PNGs anteriores e salve projeto.grade.",
+            "teacher": {
+              "speech": "21:38–21:50. A identidade agora pode mudar, mas precisa mudar nas duas abas. Os controles editam o item selecionado; não existe aplicação automática de estilo em todos os itens.",
+              "steps": [
+                "2 min · Escolher as cores e fontes e anotar no caderno.",
+                "7 min · Aplicar na página e no post, repetindo as escolhas nos componentes.",
+                "3 min · Exportar as duas alternativas e salvar o projeto."
+              ],
+              "watch": "Cor de destaque tem função; excesso de fontes não cria hierarquia. Se o texto não cabe, reduzir escala ou ampliar o bloco.",
+              "rescue": "Manter a fonte atual e personalizar só uma cor de destaque nas duas peças."
+            }
+          },
+          {
+            "title": "O colega entendeu em cinco segundos?",
+            "block": 4,
+            "lede": "8 minutos · Mostre o post sem explicar. O colega responde do próprio lugar.",
+            "layout": "dw8",
+            "cards": [
+              {
+                "title": "1 · Mostre e pergunte",
+                "text": "Dê cinco segundos para olhar. Qual é o evento? Quando acontece? Como participar?"
+              },
+              {
+                "title": "2 · Ouça a evidência",
+                "text": "Peça que aponte o que ficou difícil de encontrar. Depois troquem os papéis."
+              },
+              {
+                "title": "3 · Melhore uma coisa",
+                "text": "Ajuste tamanho, contraste, espaço ou posição. Testem de novo e exportem as alternativas atualizadas."
+              }
+            ],
+            "promptLabel": "Conclua com uma decisão",
+            "prompt": "“Mudei ___ porque meu colega não encontrou ___.” Às 21:58, pare a edição e confira os arquivos.",
+            "teacher": {
+              "speech": "21:50–21:58. A conversa é breve, com o colega do lado, sem circulação. Avaliar compreensão, não gosto pessoal. Não exigir que a conferência automática julgue imagens e decorações.",
+              "steps": [
+                "2 min · Um aluno mostra e o outro responde; inverter os papéis.",
+                "4 min · Cada aluno faz uma correção baseada no teste.",
+                "2 min · Reexportar pagina-alternativa.png e post-alternativa.png e salvar."
+              ],
+              "watch": "Uma mudança explicada por um problema de leitura vale mais que muitos enfeites.",
+              "rescue": "Sem colega disponível, esconder a peça por alguns segundos e fazer o teste individualmente; o professor pode conferir do posto."
+            }
+          },
+          {
+            "title": "Salve e reabra",
+            "block": 4,
+            "lede": "21:58: pare a edição. Agora é hora de salvar e conferir os arquivos.",
+            "layout": "dw8",
+            "cards": [
+              {
+                "title": "1 · Imagens",
+                "text": "Versões iniciais e finais; mais pagina-alternativa.png e post-alternativa.png."
+              },
+              {
+                "title": "2 · Projeto",
+                "text": "Salvar projeto → projeto.grade."
+              },
+              {
+                "title": "3 · Teste",
+                "text": "Abra um PNG. Depois use Abrir projeto e confira a página e o post."
+              }
+            ],
+            "promptLabel": "Pasta Aula-08",
+            "prompt": "Confira os cinco PNGs e projeto.grade na pasta Aula-08.",
+            "teacher": {
+              "speech": "O navegador pode colocar números nos nomes repetidos. Guarde a versão mais recente.",
+              "steps": [
+                "4 min · Às 21:58, parar a edição, exportar o que faltar e salvar o projeto.",
+                "4 min · Abrir um PNG e reabrir projeto.grade, conferindo as duas abas.",
+                "1 min · Organizar a pasta Aula-08."
+              ],
+              "watch": "PNG é só imagem: sem projeto.grade não dá para continuar editando.",
+              "rescue": "Se o download falhar, tentar de novo e olhar a pasta Downloads. Persistindo, tirar captura de tela e escrever a conclusão no caderno; não considerar o projeto entregue sem conferir o arquivo."
+            }
+          },
+          {
+            "title": "Uma frase de designer",
+            "block": 4,
+            "lede": "No caderno, complete a frase com algo que você fez hoje.",
+            "layout": "dw8",
+            "promptLabel": "Sua frase",
+            "prompt": "“Usei a grade para ___ e isso ajudou ___.”",
+            "bullets": [
+              "Exemplo: “Usei a grade para deixar os quatro cartões com a mesma largura e isso ajudou a comparar os horários.”",
+              "Pasta salva e posto organizado antes de sair."
+            ],
+            "teacher": {
+              "speech": "Ouça duas frases e feche retomando grade, componente e sistema visual.",
+              "steps": [
+                "1 min · Escrever a frase no caderno.",
+                "1 min · Ouvir duas respostas.",
+                "1 min · Organizar os postos e encerrar às 22:10."
+              ],
+              "watch": "Sem apresentações longas no encerramento.",
+              "rescue": "Se alguém travar, demonstrar um único movimento na oficina e devolver o controle ao aluno no posto."
+            }
+          }
         ]
       },
       "09": {
@@ -6824,7 +7488,7 @@ window.SENAI_TEACHING_SUPPORT = {
         "appendDefaultClosing": false
       },
       "08": {
-        "teacherGoal": "Levar os 7 grupos a decidir o som de cada cena do storyboard e gravar o microcurta com áudio conferido: fala próxima da fonte, claquete verbal, som ambiente e tomada de segurança, terminando com a diária organizada no computador.",
+        "teacherGoal": "Levar os 7 grupos a planejar um microcurta de quatro cenas, decidir o som de cada cena e gravar tudo com áudio conferido: fala próxima da fonte, claquete verbal, som ambiente e tomada de segurança, terminando com a diária organizada no computador.",
         "plainLanguage": "O público tolera uma imagem imperfeita, mas abandona o vídeo com som ruim: capte perto da fonte e confira cada tomada com fone.",
         "say": "Gravem a claquete em voz alta, dez segundos de teste e só então a cena. Ouçam cada tomada antes de desmontar o posto.",
         "demo": [
@@ -6833,9 +7497,9 @@ window.SENAI_TEACHING_SUPPORT = {
           "Faça a claquete verbal antes de cada tomada: microcurta, grupo, cena e tomada.",
           "Grave trinta segundos de silêncio de cada local usado; é esse som ambiente que a edição usa para emendar."
         ],
-        "studentDeliverable": "Por grupo: o material bruto do microcurta com todas as cenas do storyboard cobertas, som conferido com fone, som ambiente gravado e a pasta organizada por cena e tomada no computador.",
+        "studentDeliverable": "Por grupo: o material bruto do microcurta com as quatro cenas cobertas, som conferido com fone, som ambiente gravado e a pasta organizada por cena e tomada no computador.",
         "check": [
-          "Cada cena do storyboard tem imagem e som conferidos.",
+          "Cada uma das quatro cenas tem imagem e som conferidos.",
           "A fala é compreensível sem aumentar demais o volume.",
           "Todo arquivo começa com a claquete verbal e as falas essenciais têm tomada de segurança.",
           "A pasta do grupo está no computador, com nomes por cena e tomada, aberta e conferida."
@@ -6870,7 +7534,7 @@ window.SENAI_TEACHING_SUPPORT = {
         "presentationSlides": [
           {
             "title": "Mapa da noite",
-            "heading": "Do storyboard à diária de gravação",
+            "heading": "Do roteiro de quatro cenas à diária de gravação",
             "lede": "Hoje o microcurta sai do papel: som decidido, cenas gravadas e arquivos prontos para a edição.",
             "kicker": "Mapa da noite",
             "block": 1,
@@ -6879,7 +7543,7 @@ window.SENAI_TEACHING_SUPPORT = {
               {
                 "eyebrow": "19:00–19:45",
                 "title": "Som primeiro",
-                "text": "Comparar áudio e decidir o som de cada cena do storyboard."
+                "text": "Comparar áudio, escrever quatro cenas e decidir o som de cada uma."
               },
               {
                 "eyebrow": "19:45–20:05",
@@ -6905,7 +7569,7 @@ window.SENAI_TEACHING_SUPPORT = {
               "rescue": "Com falta de integrante, o grupo menor acumula funções; não refaço grupos."
             },
             "promptLabel": "Parem e confiram",
-            "prompt": "A entrega de hoje é a diária completa: todas as cenas do storyboard com imagem e som conferidos."
+            "prompt": "A entrega de hoje é a diária completa: as quatro cenas do grupo com imagem e som conferidos."
           },
           {
             "title": "Por que o som decide",
@@ -6953,9 +7617,49 @@ window.SENAI_TEACHING_SUPPORT = {
             "prompt": "Qual das duas versões você aceitaria entregar para um cliente? Por quê?"
           },
           {
+            "title": "Quatro cenas no caderno",
+            "heading": "Um microcurta de quatro cenas",
+            "lede": "Escrevam agora, no caderno, uma linha por cena. É este roteiro que o grupo grava hoje.",
+            "kicker": "Roteiro relâmpago · copiar no caderno",
+            "block": 1,
+            "layout": "dense-cards",
+            "cards": [
+              {
+                "eyebrow": "Cena 1",
+                "title": "CHEGADA",
+                "text": "Alguém entra no lugar. Uma linha: quem chega e onde."
+              },
+              {
+                "eyebrow": "Cena 2",
+                "title": "AÇÃO",
+                "text": "A pessoa faz algo simples com um objeto da mesa."
+              },
+              {
+                "eyebrow": "Cena 3",
+                "title": "PROBLEMA",
+                "text": "Algo dá errado ou surpreende. Pode ter uma fala curta."
+              },
+              {
+                "eyebrow": "Cena 4",
+                "title": "SAÍDA",
+                "text": "A pessoa resolve ou desiste e sai do quadro."
+              }
+            ],
+            "teacher": {
+              "steps": [
+                "2 min · Apresento a estrutura e leio um exemplo pronto: alguém chega, pega o celular, ele não liga, sai para pedir carregador.",
+                "8 min · Cada grupo escreve as quatro linhas no caderno, com o objeto do posto e sem trocar de mesa."
+              ],
+              "watch": "Uma linha por cena, sem diálogo longo; tudo acontece no próprio posto.",
+              "rescue": "Grupo travado copia o exemplo do slide e troca apenas o objeto; a decisão de som vem em seguida."
+            },
+            "promptLabel": "Parem e confiram",
+            "prompt": "PRONTO QUANDO: quatro cenas numeradas no caderno, cada uma com uma linha, e o nome do grupo no alto da página."
+          },
+          {
             "title": "Decisão de som por cena",
             "heading": "Cada cena recebe uma decisão",
-            "lede": "Copiem a tabela no caderno e escolham o som de cada cena do storyboard.",
+            "lede": "Copiem a tabela no caderno e escolham o som de cada uma das quatro cenas.",
             "kicker": "Ficha projetada · copiar no caderno",
             "block": 1,
             "layout": "dense-cards",
@@ -6987,7 +7691,7 @@ window.SENAI_TEACHING_SUPPORT = {
                 "4 min · Circulo pelos postos conferindo se toda cena tem uma decisão; grupo travado escolhe entre duas opções, sem debater."
               ],
               "watch": "A tabela fica no caderno do grupo; não há ficha impressa.",
-              "rescue": "Storyboard incompleto? O grupo decide o som das cenas existentes e completa a lista de cenas primeiro."
+              "rescue": "Grupo sem as quatro cenas escritas? Copia o exemplo do slide anterior e decide o som na sequência."
             },
             "promptLabel": "Parem e confiram",
             "prompt": "PRONTO QUANDO: tabela copiada, com número da cena e decisão de som em todas as linhas, e nome do grupo no alto da página."
@@ -7056,7 +7760,7 @@ window.SENAI_TEACHING_SUPPORT = {
           {
             "title": "Rodada 1 · cenas com fala",
             "heading": "Grave as cenas com fala direta",
-            "lede": "Um ciclo igual em todas as cenas com fala do storyboard.",
+            "lede": "Um ciclo igual em todas as cenas com fala das quatro escritas no caderno.",
             "kicker": "Bloco de gravação 1",
             "block": 2,
             "layout": "dense-cards",
@@ -7197,12 +7901,12 @@ window.SENAI_TEACHING_SUPPORT = {
           },
           {
             "title": "Conferência final",
-            "heading": "Checklist do storyboard",
+            "heading": "Checklist das quatro cenas",
             "lede": "O posto só desmonta com o checklist completo, cena por cena.",
             "kicker": "Conferência",
             "block": 4,
             "bullets": [
-              "Cada cena do storyboard tem imagem gravada?",
+              "Cada uma das quatro cenas tem imagem gravada?",
               "Cada cena tem o som decidido na ficha, gravado e conferido?",
               "Cada local usado tem trinta segundos de som ambiente?",
               "As falas essenciais têm tomada de segurança?",
@@ -7211,7 +7915,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "teacher": {
               "steps": [
                 "4 min · Cada grupo responde o checklist em voz alta, cena por cena, no próprio posto.",
-                "3 min · Assino a conferência no caderno do grupo; pendência vira tarefa de abertura da aula 9."
+                "3 min · Assino a conferência no caderno do grupo; pendência fica registrada como primeira tarefa da próxima gravação."
               ],
               "watch": "Cena sem som é pendência registrada, nunca silêncio esquecido.",
               "rescue": "Com pendência de gravação, o posto prioriza a cena faltante antes de transferir."
@@ -7241,16 +7945,16 @@ window.SENAI_TEACHING_SUPPORT = {
                 "text": "“Nosso maior problema de som foi ___ e resolvemos com ___.”"
               },
               {
-                "eyebrow": "4 · próxima aula",
-                "title": "Aula 9 · Set de filmagem",
-                "text": "A diária de hoje é a matéria-prima da edição do comercial."
+                "eyebrow": "4 · material guardado",
+                "title": "Diária do microcurta",
+                "text": "A pasta de hoje é o material bruto do microcurta e fica guardada no computador para a edição."
               }
             ],
             "teacher": {
               "steps": [
                 "4 min · Confiro as 7 pastas e os registros. Não apago nada sem cópia reaberta; não formato cartões.",
                 "4 min · Recolho nos postos 7 câmeras e 7 ring lights, conferindo tampa, cartão, bateria e cabo.",
-                "3 min · Ouço duas conclusões, anuncio a aula 9 e encerro às 22:10."
+                "3 min · Ouço duas conclusões, anuncio a próxima aula e encerro às 22:10."
               ],
               "watch": "Material de outras turmas é preservado; a limpeza do cartão cobre somente a faixa de hoje.",
               "rescue": "Com atraso, priorizo guardar arquivos e recolher equipamentos; a conclusão oral substitui a escrita."

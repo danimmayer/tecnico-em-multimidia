@@ -273,7 +273,7 @@ window.SENAI_COURSES = {
       {
         "num": "08",
         "title": "Grades e Sistemas Visuais",
-        "description": "Uso de grades, colunas e componentes para criar famílias coerentes de páginas e postagens.",
+        "description": "Monte a página de uma casa de games numa grade de 12 colunas e crie um post da mesma família visual.",
         "objectives": [
           "Desenvolvimento do Projeto: leiaute, templates e equilíbrio visual."
         ],
@@ -286,25 +286,25 @@ window.SENAI_COURSES = {
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Aquecimento \"Que grade existe aqui?\": sobreposições transparentes revelam colunas e alinhamentos em portal, streaming, loja e feed de rede social."
+            "horario": "19:00 - 19:45",
+            "atividade": "Descobrir as colunas escondidas em telas conhecidas (streaming, loja e rede social), entender coluna, espaço entre colunas e margem, e experimentar a oficina de grade. Salvar o projeto antes do lanche."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "Montagem física de grade: grupos recebem uma base de 6 ou 12 colunas e cartões de conteúdo. Precisam montar capa, lista de serviços e chamada principal sem romper os eixos."
+            "horario": "20:05 - 20:30",
+            "atividade": "Montar individualmente a página da Arena Pixel, casa de games fictícia, numa grade de 12 colunas: cabeçalho, destaque, três cartões de campeonato e botão. Reconhecer componentes que se repetem. Exportar a versão 1."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "Sistema de componentes: criar visualmente um botão, um cartão e um cabeçalho; depois repetir os componentes em duas telas e duas peças sociais mantendo consistência."
+            "horario": "20:30 - 20:50",
+            "atividade": "Atender ao pedido do cliente: incluir um quarto campeonato e reorganizar os cartões com a mesma largura, sem sair da grade. Testar a leitura e exportar a página final."
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "Desafio \"Uma marca, quatro formatos\": adaptar o mesmo sistema para desktop, celular, post quadrado e story. Exposição com justificativa das mudanças."
+            "horario": "20:50 - 22:10",
+            "atividade": "Criar um post quadrado numa grade de 6 colunas. Personalizar com selo, texto, ícone e imagem; aplicar a mesma identidade na página e no post; testar a leitura com um colega. Salvar, reabrir e escrever uma frase sobre a grade. Encerrar às 22:10."
           }
         ],
-        "methodology": "Leitura de referências, montagem modular, criação de componentes e adaptação multiformato.",
-        "resources": "Grades impressas, acetatos, cartões de conteúdo, ferramenta visual e projetor.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "Descoberta visual com telas projetadas, jogo rápido de contagem de colunas, demonstração curta e produção individual em etapas na oficina de grade, com alteração de pedido do cliente e adaptação para post. Conferência automática da oficina e comparação com o colega do lado, cada um no seu posto.",
+        "resources": "Computadores com navegador, projetor, caderno e caneta. Oficina de grade local e gratuita, sem instalação, cadastro ou dependências externas. Sem impressão e sem fichas. Baixar a oficina antes do encontro permite uso sem internet.",
+        "observation": "19:00–22:10, com lanche 19:45–20:05. Ritmo adaptado para a turma que chegou ao post às 20:50; os 40 minutos antecipados viram quatro desafios de composição. Manter as chamadas nos horários institucionais. Trabalho individual no posto; a colaboração acontece na conferência com o colega do lado, sem circulação. Se houver computador compartilhado, alternar o operador a cada etapa e manter uma frase por aluno. Sem internet: abrir a oficina previamente baixada. Sem computador: desenhar no caderno uma faixa de 12 colunas e montar a página e o post com retângulos, seguindo os mesmos critérios. A grade é trabalhada de forma visual; nenhum aluno escreve código. Câmeras e ring lights não são necessárias."
       },
       {
         "num": "09",
@@ -1357,7 +1357,7 @@ window.SENAI_COURSES = {
       {
         "num": "08",
         "title": "Som limpo e gravação do microcurta",
-        "description": "O som decide se o vídeo comunica. A turma compara versões de áudio, decide o som de cada cena do storyboard da aula 4 e grava o microcurta em duas rodadas, com claquete verbal, conferência com fone e diária organizada pronta para a edição.",
+        "description": "O som decide se o vídeo comunica. A turma compara versões de áudio, planeja na hora um microcurta de quatro cenas, decide o som de cada cena e grava tudo em duas rodadas, com claquete verbal, conferência com fone e diária organizada pronta para a edição.",
         "objectives": [
           "Captura de vídeos e sons: acústica, equipamentos de captação de áudio."
         ],
@@ -1371,7 +1371,7 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:45",
-            "atividade": "Abertura com comparação ao vivo: a mesma frase gravada com o aparelho longe e depois perto da fonte, e a turma aponta qual versão comunica. Cada grupo decide o som de cada cena do storyboard da aula 4 usando a ficha projetada (fala direta, efeito, ambiente ou silêncio) e copia a tabela no caderno."
+            "atividade": "Abertura com comparação ao vivo: a mesma frase gravada com o aparelho longe e depois perto da fonte, e a turma aponta qual versão comunica. Cada grupo escreve no caderno um microcurta de quatro cenas, uma linha por cena, e decide o som de cada cena usando a ficha projetada (fala direta, efeito, ambiente ou silêncio), copiando a tabela no caderno."
           },
           {
             "horario": "20:05 - 21:00",
@@ -1383,12 +1383,12 @@ window.SENAI_COURSES = {
           },
           {
             "horario": "21:40 - 22:10",
-            "atividade": "Organização da diária: uma pasta por grupo no computador (PA_A08_EQ01), arquivos nomeados por cena e tomada (C02_T01), cópia conferida pela abertura dos arquivos, checklist projetado do storyboard completo, devolução conferida do equipamento e conclusão registrada no caderno."
+            "atividade": "Organização da diária: uma pasta por grupo no computador (PA_A08_EQ01), arquivos nomeados por cena e tomada (C02_T01), cópia conferida pela abertura dos arquivos, checklist projetado das quatro cenas, devolução conferida do equipamento e conclusão registrada no caderno."
           }
         ],
-        "methodology": "Abertura com comparação de áudio ao vivo, decisão de som registrada em ficha projetada e duas rodadas de gravação guiadas pelo mesmo ciclo: posicionar, identificar, gravar e conferir com fone. Cada rodada tem critério de conclusão projetado; a edição fica para a aula 9.",
+        "methodology": "Abertura com comparação de áudio ao vivo, decisão de som registrada em ficha projetada e duas rodadas de gravação guiadas pelo mesmo ciclo: posicionar, identificar, gravar e conferir com fone. Cada rodada tem critério de conclusão projetado; nenhuma edição acontece hoje.",
         "resources": "Projetor, quadro, caderno e caneta. Há 7 câmeras já carregadas, com cartão e bateria, 7 ring lights, computadores com navegador e cabo ou leitor de cartão para transferência. Fones de ouvido para a conferência de som ou volume baixo, um aparelho por vez. Nenhum programa é instalado no Windows; nenhuma ficha impressa é distribuída.",
-        "observation": "Aula das 19:00 às 22:10. Lanche fixo das 19:45 às 20:05. Chamada no início dos quatro blocos. Cada grupo permanece no próprio posto, com funções fixas por rodada; circula somente quem tem função definida. Durante a gravação, o restante da sala reduz a voz; quem não está gravando confere arquivos no computador. O som é a prioridade da aula: nenhuma cena termina sem conferência de áudio. Copiar antes de apagar qualquer arquivo; não formatar cartão, que pode conter material de outra turma. Sem fone disponível, ouvir em volume baixo, um aparelho por vez, com um integrante confirmando. A edição online no navegador fica para a aula 9."
+        "observation": "Aula das 19:00 às 22:10. Lanche fixo das 19:45 às 20:05. Chamada no início dos quatro blocos. Cada grupo permanece no próprio posto, com funções fixas por rodada; circula somente quem tem função definida. Durante a gravação, o restante da sala reduz a voz; quem não está gravando confere arquivos no computador. O som é a prioridade da aula: nenhuma cena termina sem conferência de áudio. Copiar antes de apagar qualquer arquivo; não formatar cartão, que pode conter material de outra turma. Sem fone disponível, ouvir em volume baixo, um aparelho por vez, com um integrante confirmando. Nenhuma edição acontece hoje; o material bruto fica guardado na pasta do grupo."
       },
       {
         "num": "09",
