@@ -1,5 +1,5 @@
 // Aula 09 de Produção Audiovisual: fonte única dos dados públicos e das anotações.
-// Regenerar com: node scripts/build-audiovisual-09.mjs
+// Regenerar com: node scripts/build-audiovisual.mjs
 
 export const briefings = [
   ['EQ01', 'Garrafa', 'AQUALTA', 'Quem passa o dia fora', 'Água gelada até o fim do dia.'],

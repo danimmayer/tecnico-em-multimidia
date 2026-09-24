@@ -195,7 +195,19 @@ boletim de câmera são projetados e copiados no caderno; toda tomada começa
 com claquete de papel. O bloco final é o copião: pasta `PA_A09_EQ0X`, arquivos
 `P2_T1`, tomada escolhida marcada no boletim e devolução até 22:10. Os slides
 vêm de `scripts/lessons/audiovisual-09.mjs`; após editá-lo, rode
-`node scripts/build-audiovisual-09.mjs` e `node scripts/validate-course-kit.mjs`.
+`node scripts/build-audiovisual.mjs` e `node scripts/validate-course-kit.mjs`.
+
+Na Aula 10, cada equipe edita o comercial gravado na aula 9 em um computador,
+no editor online gratuito da escola, sem instalação. A operação do computador
+troca a cada bloco. A noite segue a ordem de uma ilha de edição: pasta do
+projeto (`PA_A10_EQ0X` com `01_BRUTO`, `02_AUDIO`, `03_PROJETO` e
+`04_EXPORT`), decupagem projetada e copiada no caderno, corte bruto em cortes
+secos, locução embaixo do plano 5, total perto de 30 segundos e MP4 1080p
+conferido fora do editor. Antes da turma entrar, teste o acesso ao editor e
+uma exportação curta e deixe cinco clipes de demonstração prontos. Ao final,
+todos saem da conta do editor. Sem internet ou sem acesso, a equipe completa a
+lista de corte no caderno e monta o vídeo no início da aula 11. Os slides vêm
+de `scripts/lessons/audiovisual-10.mjs`.
 
 ### Edição
 
