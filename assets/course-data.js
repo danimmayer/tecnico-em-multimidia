@@ -1433,7 +1433,7 @@ window.SENAI_COURSES = {
       {
         "num": "10",
         "title": "Ilha de edição: primeiros cortes",
-        "description": "Introdução à edição de vídeo não-linear: conhecer os aplicativos, organizar o projeto, importar e decupar o material do comercial e montar o corte bruto.",
+        "description": "O material gravado no set da aula 9 vira vídeo: cada equipe organiza a pasta do projeto, decupa as tomadas escolhidas, monta o corte bruto do comercial de 30 segundos no editor online, posiciona a locução e exporta um MP4 conferido.",
         "objectives": [
           "Edição de vídeos e sons: aplicativos, edição de vídeo não-linear, corte.",
           "Composição e Render: importação, decupagem.",
@@ -1448,25 +1448,25 @@ window.SENAI_COURSES = {
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Revisão da aula 9 (papéis do set e gravação do comercial). Panorama dos softwares de edição de vídeo não-linear do mercado, com opções gratuitas e de plano educacional (DaVinci Resolve, CapCut), e tour pela interface do editor instalado no laboratório: janelas de mídia, visualizador, linha do tempo e painel de efeitos."
+            "horario": "19:00 - 19:45",
+            "atividade": "Organização e decupagem: conhecer o fluxo da edição e as quatro áreas de um editor não linear, dividir as funções da ilha, criar a pasta do projeto (PA_A10_EQ01, com bruto, áudio, projeto e exportação), copiar as tomadas escolhidas na aula 9 e decupar no caderno a entrada e a saída de cada plano, pela tabela projetada."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "Organização profissional de projeto: estrutura de pastas (bruto, áudio, projeto, exportações), importação da mídia e decupagem do material bruto do comercial gravado na aula 9: assistir, marcar e classificar as melhores tomadas de cada cena."
+            "horario": "20:05 - 21:00",
+            "atividade": "Corte bruto: importar o material no editor online, colocar P1 a P5 na ordem do roteiro, aparar claquete e respiro pela decupagem, dividir e apagar sobras e salvar o projeto. Somente cortes secos, sem transições."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "Linha do tempo na prática: exercícios guiados passo a passo de corte, aparar entrada e saída dos clipes, ajuste de ritmo e sincronia entre vídeo e áudio, com todos executando junto com a demonstração no projetor."
+            "horario": "21:00 - 21:40",
+            "atividade": "Som e ritmo: posicionar a locução embaixo do plano 5 na trilha de áudio, equilibrar o volume, conferir com fone do início ao fim e ajustar os planos para o total ficar perto de 30 segundos."
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "Prática livre: cada equipe monta o corte bruto do seu comercial de 30 segundos seguindo a ordem do mini-roteiro e salva o projeto de forma organizada (nome padronizado, mídia vinculada) para continuar nas aulas 11 e 12."
+            "horario": "21:40 - 22:10",
+            "atividade": "Exportação: gerar o MP4 em 1080p com o nome da equipe na pasta de exportação, abrir o arquivo exportado no reprodutor do computador, conferir duração, imagem e som, sair da conta do editor e registrar a frase individual no caderno."
           }
         ],
-        "methodology": "Demonstração guiada no software seguida de prática individual e em equipe com o material gravado pela própria turma.",
-        "resources": "Computadores do laboratório com software de edição de vídeo (opções gratuitas disponíveis) e projetor.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "Demonstração curta no projetor seguida de prática da equipe no próprio computador, em quatro etapas com critério de pronto: organização e decupagem, corte bruto, som e ritmo, exportação conferida. A operação do computador troca a cada bloco para que todos editem. Tabela de decupagem projetada para cópia no caderno.",
+        "resources": "Projetor, quadro, caderno, caneta e fones de ouvido. Um computador por equipe, com navegador, acesso ao editor online gratuito da escola e às pastas PA_A09 da aula 9. Os grupos já estão formados e as pastas da aula 9 já estão nos computadores; cartões identificados ficam disponíveis apenas para cópia de quem não copiou. Cinco clipes curtos de demonstração já gravados pelo professor. Nenhum programa precisa ser instalado no Windows. Nenhuma ficha impressa: a decupagem é projetada e copiada no caderno.",
+        "observation": "Aula das 19:00 às 22:10. Lanche fixo das 19:45 às 20:05. Chamada no início dos quatro blocos. Cada equipe permanece no próprio posto; somente o professor circula. A operação do computador troca a cada bloco. Testar o acesso ao editor e uma exportação curta em um computador antes da turma entrar. Copiar, nunca mover, os arquivos da aula 9; nada é apagado. Ao final, salvar o projeto e sair da conta do editor. Sem internet ou sem acesso ao editor, a equipe faz a lista de corte completa no caderno (plano, arquivo, entrada, saída e locução) e monta o vídeo no início da aula 11. Sem fone, ouvir em volume baixo, um computador por vez."
       },
       {
         "num": "11",

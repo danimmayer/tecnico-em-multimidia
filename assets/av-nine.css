@@ -1,4 +1,4 @@
-/* Aula 09 de Produção Audiovisual: set de filmagem. Projetor 5:4 (1280 × 1024) como referência. */
+/* Aulas 09 (set de filmagem) e 10 (ilha de edição) de Produção Audiovisual. Projetor 5:4 (1280 × 1024) como referência. */
 .av-nine {
   --av9-rec: #ff6b5e;
   --av9-good: #7fe0a3;
@@ -24,9 +24,9 @@
 .av-nine .kit-slide.is-av9 .presentation-prompt .card-index { font-size: 14px; letter-spacing: .1em; margin-bottom: 6px; }
 .av-nine .kit-slide.is-av9 .presentation-prompt strong { font-size: 22px; line-height: 1.35; }
 
-/* Every visual starts at the same distance from the lede. */
-.av-nine .kit-slide-main :where(.av9-day, .av9-flow, .av9-plans, .av9-table-wrap, .av9-sets, .av9-roles, .av9-checks, .av9-commands, .av9-slate, .av9-shoot, .av9-onair, .av9-folder, .av9-dailies) { margin-top: 24px; }
+/* Lists start flush; the rule below then gives every visual the same distance from the lede. */
 .av-nine .kit-slide-main :where(ol, ul) { margin-block: 0; }
+.av-nine .kit-slide-main :where(.av9-day, .av9-flow, .av9-plans, .av9-table-wrap, .av9-sets, .av9-roles, .av9-checks, .av9-commands, .av9-slate, .av9-shoot, .av9-onair, .av9-folder, .av9-dailies, .av9-editor, .av9-tracks) { margin-top: 24px; }
 .av-nine .av9-day, .av-nine .av9-flow, .av-nine .av9-plan-row, .av-nine .av9-chips, .av-nine .av9-checks,
 .av-nine .av9-commands ol, .av-nine .av9-shoot-plans, .av-nine .av9-tree ul, .av-nine .av9-order, .av-nine .av9-rules { padding: 0; list-style: none; }
 
@@ -146,6 +146,8 @@
 .is-copy .av9-table th:nth-child(2):nth-last-child(3) { width: 10%; }
 .is-copy .av9-table th:nth-child(3):nth-last-child(2) { width: 22%; }
 
+.is-data .av9-table th:first-child { width: 36%; }
+.is-data .av9-table tbody td + td { color: var(--paper); font: 700 21px/1.3 var(--mono); }
 .av9-table-wrap.is-copy { padding: 18px 22px 16px; border-radius: 12px; color: var(--av9-paper-ink); background: var(--av9-paper); }
 .is-copy .av9-table thead th { color: var(--av9-paper-ink); border-bottom-color: var(--av9-paper-ink); }
 .is-copy .av9-table tbody td { height: 52px; color: var(--av9-paper-ink); font-weight: 600; border-bottom: 1px solid var(--av9-paper-line); }
@@ -176,7 +178,7 @@
 
 /* Listas de conferência */
 .av9-checks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-.av9-checks li { position: relative; display: grid; gap: 6px; padding: 18px 22px 18px 64px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
+.av9-checks li { position: relative; display: grid; align-content: start; gap: 6px; padding: 18px 22px 18px 64px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
 .av9-checks li::before { content: ""; position: absolute; top: 20px; left: 22px; width: 24px; height: 24px; border: 2px solid var(--accent); border-radius: 5px; }
 .av9-checks strong { color: var(--paper); font: 700 16px/1.3 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
 .av9-checks span { color: var(--paper-soft); font-size: 20px; line-height: 1.35; }
@@ -261,7 +263,7 @@
 .av9-tree { padding: 18px 22px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); font-family: var(--mono); }
 .av9-tree strong { display: flex; align-items: center; gap: 10px; color: var(--accent); font-size: 20px; }
 .av9-tree strong::before { content: ""; width: 26px; height: 19px; border-radius: 3px 3px 4px 4px; background: linear-gradient(var(--accent) 0 5px, transparent 5px), rgba(var(--accent-rgb), .45); clip-path: polygon(0 0, 42% 0, 52% 26%, 100% 26%, 100% 100%, 0 100%); }
-.av9-tree ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 18px; margin-top: 14px; padding-left: 14px; border-left: 2px solid var(--line); }
+.av-nine .av9-tree ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 18px; margin-top: 14px; padding-left: 14px; border-left: 2px solid var(--line); }
 .av9-tree li { color: var(--paper); font-size: 18px; }
 .av9-dailies { display: grid; gap: 24px; }
 .av9-order { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
@@ -269,13 +271,64 @@
 .av9-order li:last-child { border-style: dashed; }
 .av9-order li.av9-arrow { padding: 0; border: 0; color: var(--accent); background: none; font-size: 24px; }
 
+/* Aula 10: tela do editor e linha do tempo */
+.av9-editor { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: center; gap: 28px; }
+.av9-editor-window {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  grid-template-rows: 150px 34px 110px;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  background: #1b1714;
+}
+.av9-area { display: flex; align-items: center; gap: 10px; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); }
+.av9-area strong { color: var(--paper); font: 700 15px/1.2 var(--mono); letter-spacing: .06em; }
+.av9-area-1 { grid-column: 1; grid-row: 1 / 3; align-items: flex-start; }
+.av9-area-2 { grid-column: 2; grid-row: 1; align-items: flex-start; background: #0d0b0a; }
+.av9-area-3 { grid-column: 1 / -1; grid-row: 3; align-items: flex-start; background: repeating-linear-gradient(90deg, transparent 0 58px, rgba(var(--accent-rgb), .22) 58px 118px), var(--panel); }
+.av9-area-4 { grid-column: 2; grid-row: 2; justify-self: end; padding: 4px 12px; border-color: var(--accent); }
+.av9-editor .av9-rules strong { color: var(--accent); font: 700 17px/1.2 var(--mono); letter-spacing: .06em; }
+.av9-tracks { display: grid; gap: 10px; }
+.av9-track { display: grid; grid-template-columns: 96px minmax(0, 1fr); align-items: center; gap: 12px; }
+.av9-track-label { color: var(--accent); font: 700 16px/1.2 var(--mono); text-align: right; }
+.av9-track-lane { display: flex; gap: 4px; min-width: 0; padding: 6px; border: 1px solid var(--line); border-radius: 10px; background: #1b1714; }
+.av9-clip {
+  display: grid;
+  min-width: 0;
+  height: 62px;
+  place-content: center;
+  gap: 2px;
+  padding: 0 4px;
+  border-radius: 6px;
+  color: var(--ink);
+  background: var(--accent);
+  font: 700 17px/1.1 var(--mono);
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.av9-clip small { font: 600 13px/1 var(--mono); opacity: .75; }
+.av9-clip:nth-child(even).is-video { background: #f2c48a; }
+.av9-clip.is-audio { color: var(--ink); background: var(--av9-good); }
+.av9-clip.is-empty { background: transparent; }
+.av9-clip.is-cut {
+  color: var(--paper-soft);
+  background: repeating-linear-gradient(135deg, rgba(255, 107, 94, .28) 0 8px, rgba(255, 107, 94, .1) 8px 16px);
+  outline: 1px dashed rgba(255, 107, 94, .7);
+  outline-offset: -1px;
+}
+.av9-track-caption { margin: 4px 0 0 108px; color: var(--paper-soft); font-size: 19px; line-height: 1.35; }
+.av9-track-caption b { margin-left: 8px; padding: 3px 10px; border-radius: 6px; color: var(--ink); background: var(--accent); font: 700 16px/1.2 var(--mono); }
+
 /* Janela do navegador sem tela cheia: a mesma aula em menos altura. */
 @media (max-height: 880px) and (min-width: 821px) {
   .av-nine .kit-slide.is-av9 .kit-slide-main,
   .av-nine .projection-mode .kit-slide.is-av9 .kit-slide-main { padding-block: 16px; }
   .av-nine .kit-slide.is-av9 h2 { font-size: 40px; }
   .av-nine .kit-slide.is-av9 .slide-lede { font-size: 20px; margin-top: 8px; }
-  .av-nine .kit-slide-main :where(.av9-day, .av9-flow, .av9-plans, .av9-table-wrap, .av9-sets, .av9-roles, .av9-checks, .av9-commands, .av9-slate, .av9-shoot, .av9-onair, .av9-folder, .av9-dailies) { margin-top: 16px; }
+  .av-nine .kit-slide-main :where(.av9-day, .av9-flow, .av9-plans, .av9-table-wrap, .av9-sets, .av9-roles, .av9-checks, .av9-commands, .av9-slate, .av9-shoot, .av9-onair, .av9-folder, .av9-dailies, .av9-editor, .av9-tracks) { margin-top: 16px; }
   .av-nine .kit-slide.is-av9 .presentation-prompt { margin-top: 14px; padding: 12px 18px; }
   .av-nine .kit-slide.is-av9 .presentation-prompt strong { font-size: 20px; }
   .av9-day-row { padding-block: 9px; }
@@ -314,7 +367,7 @@
 @container (max-width: 840px) {
   .av9-plan-row, .av9-commands ol { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .av9-flow, .av9-sets { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .av9-slate, .av9-onair, .av9-folder { grid-template-columns: 1fr; }
+  .av9-slate, .av9-onair, .av9-folder, .av9-editor { grid-template-columns: 1fr; }
   .av9-shoot-plans.is-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .av9-day-row { grid-template-columns: 140px minmax(0, 1fr) auto; }
   .av9-day-min { display: none; }
@@ -328,6 +381,11 @@
   .av9-plan-row, .av9-commands ol, .av9-flow, .av9-sets, .av9-roles, .av9-checks,
   .av9-shoot-plans.is-3, .av9-shoot-plans.is-2, .av9-shoot-plans.is-2 li { grid-template-columns: 1fr; }
   .av9-day-row { grid-template-columns: 1fr; gap: 6px; }
+  .av9-editor { grid-template-columns: 1fr; }
+  .av9-track { grid-template-columns: 1fr; gap: 4px; }
+  .av9-track-label { text-align: left; }
+  .av9-track-caption { margin-left: 0; }
+  .av9-clip { font-size: 13px; }
   .av9-table-wrap { overflow-x: auto; }
   .av9-table { min-width: 760px; }
   .av9-table th, .av9-table td { overflow-wrap: normal; }
@@ -343,7 +401,9 @@
   .av-nine .kit-slide.is-av9 h2 { font-size: 30px; }
   .av-nine .kit-slide.is-av9 .slide-lede { font-size: 15px; color: #333; }
   .av9-day-row, .av9-flow li, .av9-plan-row li, .av9-set, .av9-roles article, .av9-checks li,
-  .av9-commands li, .av9-shoot-plans li, .av9-onair-panel, .av9-tree, .av9-order li { border-color: #999; background: #fff; }
+  .av9-commands li, .av9-shoot-plans li, .av9-onair-panel, .av9-tree, .av9-order li, .av9-area, .av9-track-lane, .av9-editor-window { border-color: #999; background: #fff; }
+  .av9-area strong, .av9-track-caption { color: #111; }
+  .av9-clip { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
   .av9-day-row strong, .av9-flow li strong, .av9-plan-head strong, .av9-set > strong, .av9-chips strong, .av9-roles strong,
   .av9-checks strong, .av9-commands li strong, .av9-rules li, .av9-shoot-plans p, .av9-tree li, .av9-order li, .av9-onair-status { color: #111; }
   .av9-day-row div span, .av9-flow-text, .av9-plan-row p, .av9-set p, .av9-roles p, .av9-checks span, .av9-result, .av9-extra { color: #333; }

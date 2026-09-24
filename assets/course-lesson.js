@@ -345,7 +345,8 @@
   if (isDesignSeven) document.body.classList.add('design-seven');
   const isDesignEight = course.slug === 'design-web' && lesson.num === '08';
   if (isDesignEight) document.body.classList.add('design-eight');
-  const isAvNine = course.slug === 'producao-audiovisual' && lesson.num === '09';
+  // Aulas 09 (set) e 10 (ilha de edição) de Audiovisual share the production visuals of av-nine.css.
+  const isAvNine = course.slug === 'producao-audiovisual' && ['09', '10'].includes(lesson.num);
   if (isAvNine) document.body.classList.add('av-nine');
   // These lessons time each slide from the minutes written in the teacher steps.
   const usesSlidePace = isDesignSeven || isDesignEight || isAvNine;
@@ -461,7 +462,7 @@
             ? `<th scope="row">${e(cell)}</th>`
             : `<td${cell ? '' : ' class="is-blank"'}>${e(cell)}</td>`).join('')}</tr>`).join('')}</tbody>
         </table>
-        ${example ? '<p class="av9-table-note">Linhas em cinza: exemplo de preenchimento.</p>' : ''}
+        ${example ? `<p class="av9-table-note">${example === 1 ? 'Linha em cinza' : 'Linhas em cinza'}: exemplo de preenchimento.</p>` : ''}
         ${visual.footer ? `<p class="av9-table-footer">${visual.footer.map((item) => `<span>${e(item)}</span>`).join('')}</p>` : ''}
       </div>`;
     }
@@ -496,7 +497,7 @@
             <span class="av9-who">${e(command.who)}</span>
             <span class="av9-flow-text">${e(command.text)}</span>
           </li>`).join('')}</ol>
-        <p class="av9-result"><span class="is-good">BOA</span><span class="is-redo">REFAZER</span>${e(visual.result)}</p>
+        <p class="av9-result">${(visual.tags || [{label: 'BOA', kind: 'good'}, {label: 'REFAZER', kind: 'redo'}]).map((tag) => `<span class="is-${e(tag.kind)}">${e(tag.label)}</span>`).join('')}${e(visual.result)}</p>
       </div>`;
     }
     if (visual.type === 'slate') {
@@ -536,6 +537,22 @@
           <ul>${visual.files.map((file) => `<li>${e(file)}</li>`).join('')}</ul>
         </div>
         <ol class="av9-rules">${visual.steps.map((step) => `<li>${e(step)}</li>`).join('')}</ol>
+      </div>`;
+    }
+    if (visual.type === 'editor') {
+      return `<div class="av9-editor">
+        <div class="av9-editor-window" aria-hidden="true">${visual.areas.map((area, index) => `<div class="av9-area av9-area-${index + 1}"><span class="av9-flow-num">${index + 1}</span><strong>${e(area.label)}</strong></div>`).join('')}</div>
+        <ol class="av9-rules">${visual.areas.map((area) => `<li><strong>${e(area.label)}</strong> · ${e(area.text)}</li>`).join('')}</ol>
+      </div>`;
+    }
+    if (visual.type === 'tracks') {
+      const total = Math.max(...visual.tracks.map((track) => track.clips.reduce((sum, clip) => sum + clip.seconds, 0)));
+      return `<div class="av9-tracks">${visual.tracks.map((track) => `
+        <div class="av9-track">
+          <span class="av9-track-label">${e(track.label)}</span>
+          <div class="av9-track-lane">${track.clips.map((clip) => `<span class="av9-clip is-${e(clip.kind || 'video')}" style="flex:${clip.seconds}">${clip.label ? `${e(clip.label)}<small>${clip.seconds} s</small>` : ''}</span>`).join('')}</div>
+        </div>`).join('')}
+        ${visual.caption ? `<p class="av9-track-caption">${e(visual.caption)}${visual.total ? ` <b>${total} s</b>` : ''}</p>` : ''}
       </div>`;
     }
     if (visual.type === 'dailies') {
