@@ -1,6 +1,6 @@
 # Aula 09 · roteiro rápido do professor
 
-Aula individual de design responsivo. O aluno parte da página da Arena Pixel montada na aula 08 e a organiza em mais duas telas: tablet (8 colunas) e celular (4 colunas). São 20 slides (capa + 19). Não há programação, impressão, cadastro ou instalação.
+Aula individual de design responsivo. O aluno parte da página da Arena Pixel montada na aula 08 e monta mais duas telas, tablet (8 colunas) e celular (4 colunas), com os componentes de uma biblioteca lateral. O apoio diminui aos poucos: o tablet tem um rascunho do cliente em blocos; o celular tem só regras. São 20 slides (capa + 19). Não há programação, impressão, cadastro ou instalação.
 
 ## Preparação
 
@@ -26,11 +26,12 @@ Aula individual de design responsivo. O aluno parte da página da Arena Pixel mo
 
 É a oficina de grade da aula 08 com três abas. Todos os recursos de edição continuam: carregar imagens, adicionar texto, forma e ícone, personalizar cores, fontes e cantos, camadas e exportação em PNG.
 
-- **Abrir projeto** aceita o `projeto.grade` da aula 08: a página do aluno vira a tela do computador, e tablet e celular começam apenas encolhidos.
+- **Abrir projeto** aceita o `projeto.grade` da aula 08: a página do aluno vira a tela do computador e abastece a biblioteca com as cores e os textos dele.
+- **Biblioteca**: no tablet e no celular a tela começa vazia. O aluno arrasta cada componente para a tela ou clica nele, e a peça cai no primeiro espaço livre da grade. Peças usadas ficam marcadas; retirar uma peça da tela devolve à biblioteca.
+- **Referência**: no tablet, rascunho do cliente em blocos cinza (ordem e agrupamento, sem medidas). No celular, só as regras. A solução completa aparece apenas nos slides, depois da produção.
 - No celular, a linha tracejada marca o **fim da primeira tela**.
-- **Recomeçar esta tela a partir do computador** refaz o tablet ou o celular a partir da página atual do computador.
-- **Comparar as três telas** mostra as três lado a lado; **Ver exemplo** mostra uma organização possível.
-- A **Conferência** exige grade, margem, nada sobreposto, cartões iguais e os mesmos campeonatos do computador. No celular, exige também destaque e botão na primeira tela e menu curto no cabeçalho.
+- **Esvaziar esta tela** devolve todas as peças à biblioteca; **Comparar as três telas** mostra as três lado a lado.
+- A **Conferência** exige grade, margem, nada sobreposto, cartões iguais, todos os componentes da biblioteca, cabeçalho no topo e rodapé no fim. No tablet, botão depois dos campeonatos; no celular, destaque e botão na primeira tela e menu curto.
 
 A oficina da aula 08 e o site publicado dela não mudam.
 

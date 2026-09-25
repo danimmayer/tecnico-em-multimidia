@@ -22,11 +22,11 @@ export const lesson = {
     },
     {
       horario: '20:05 - 21:00',
-      atividade: 'Organizar a página no tablet, numa grade de 8 colunas: cabeçalho e destaque na largura toda, cartões dois a dois e botão na grade. Testar a leitura, comparar com um exemplo e exportar tablet.png.'
+      atividade: 'Montar a página no tablet a partir da biblioteca de componentes, seguindo o rascunho do cliente, numa grade de 8 colunas: cabeçalho e destaque na largura toda, campeonatos dois a dois, botão depois dos campeonatos e rodapé no fim. Testar a leitura, comparar com um exemplo e exportar tablet.png.'
     },
     {
       horario: '21:00 - 21:40',
-      atividade: 'Organizar a página no celular, numa grade de 4 colunas: tudo empilhado, menu curto no cabeçalho, destaque e botão antes do fim da primeira tela e os quatro campeonatos em seguida. Exportar celular.png.'
+      atividade: 'Montar a página no celular com a biblioteca, sem rascunho, seguindo as regras da tela: tudo empilhado numa grade de 4 colunas, menu curto no cabeçalho, destaque e botão antes do fim da primeira tela e os quatro campeonatos em seguida. Exportar celular.png.'
     },
     {
       horario: '21:40 - 22:10',
@@ -130,7 +130,7 @@ export const support = {
       visual: 'so-encolher', visualAlt: ['A página do computador encolhida no celular, com textos minúsculos, ao lado da versão organizada para o celular'],
       promptLabel: 'Observe', prompt: 'Na versão da esquerda, dá para ler os campeonatos e tocar no botão?',
       teacher: {
-        speech: 'É assim que a página começa nas abas Tablet e Celular da oficina.',
+        speech: 'É o que acontece quando ninguém decide a organização. Na oficina, cada tela é montada com as peças da biblioteca.',
         steps: ['1 min · Comparar as duas versões.', '2 min · Ouvir: letras pequenas demais, botão pequeno, menu cortado.'],
         watch: 'A turma percebe que encolher não é adaptar.', rescue
       }
@@ -152,7 +152,7 @@ export const support = {
       cards: [
         {title: '1 · Crie a pasta', text: 'Crie uma pasta Aula-09 para guardar tudo de hoje.'},
         {title: '2 · Abra o seu projeto', text: 'Clique em Abrir projeto e escolha o projeto.grade da oficina de grade. Sem ele, use a página que já vem pronta.'},
-        {title: '3 · Troque de aba', text: 'Veja a sua página no Computador, no Tablet e no Celular.'}
+        {title: '3 · Troque de aba', text: 'No Computador está a sua página. No Tablet e no Celular, a tela começa vazia, com a biblioteca na lateral.'}
       ],
       resources: [{href: 'modelos/design-web/aula-09/oficina.html', label: 'Abrir a oficina responsiva'}],
       promptLabel: 'Antes do lanche', prompt: 'Clique em Salvar projeto e guarde projeto-responsivo.grade na pasta Aula-09.',
@@ -170,32 +170,32 @@ export const support = {
     },
     {
       title: 'O tablet', block: 2, layout: 'dw8',
-      lede: 'Grade de 8 colunas. A página começa encolhida: organize item por item.',
+      lede: 'Grade de 8 colunas. A tela começa vazia: as peças estão na biblioteca, na lateral.',
       cards: [
-        {title: 'Topo', text: 'Cabeçalho e destaque ocupando as 8 colunas.'},
-        {title: 'Cartões', text: 'Dois por linha, com a mesma largura.'},
-        {title: 'Ação', text: 'Botão abaixo dos cartões, começando numa coluna.'}
+        {title: 'Biblioteca', text: 'Arraste cada componente para a tela ou clique nele.'},
+        {title: 'Rascunho do cliente', text: 'Siga a ordem e o agrupamento do rascunho, acima da biblioteca.'},
+        {title: 'Grade', text: 'Encaixe cada peça nas 8 colunas com Mais estreito e Mais largo.'}
       ],
       promptLabel: 'Missão individual', prompt: 'Abra a aba Tablet. Não mude textos nem cores: só posição e largura.',
       teacher: {
         speech: 'Faça a chamada e demonstre só o cabeçalho. O resto é com eles.',
-        steps: ['2 min · Fazer chamada e retomar o projeto.', '3 min · Apresentar as três partes do tablet.', '3 min · Demonstrar Mais largo no cabeçalho até ocupar as 8 colunas.'],
+        steps: ['2 min · Fazer chamada e retomar o projeto.', '3 min · Apresentar a biblioteca e o rascunho do cliente.', '3 min · Demonstrar arrastar o cabeçalho da biblioteca para a tela e conferir que ocupa as 8 colunas.'],
         watch: 'Cada aluno está na aba Tablet antes de começar.', rescue
       }
     },
     {
       title: 'Monte o tablet', block: 2, layout: 'dw8',
-      lede: 'Continue na aba Tablet até a conferência ficar toda em ✓.',
+      lede: 'Continue na aba Tablet até a biblioteca ficar vazia e a conferência toda em ✓.',
       cards: [
-        {title: '1 · Largura toda', text: 'Cabeçalho e destaque com Mais largo até as 8 colunas.'},
-        {title: '2 · Dois a dois', text: 'Cartões de 4 colunas, dois em cada linha.'},
-        {title: '3 · Botão e rodapé', text: 'Encaixados na grade, abaixo dos cartões.'}
+        {title: '1 · Topo', text: 'Cabeçalho e destaque ocupando as 8 colunas.'},
+        {title: '2 · Campeonatos', text: 'Cartões de 4 colunas, dois em cada linha, como no rascunho.'},
+        {title: '3 · Botão e rodapé', text: 'Botão depois dos campeonatos e rodapé no fim da página.'}
       ],
       promptLabel: 'Pronto quando', prompt: 'Conferência em ✓. Escolha tablet.png, exporte e salve o projeto.',
       teacher: {
         speech: 'Circule o olhar pela sala sem sair da frente; atenda quem levantar a mão.',
         steps: ['30 min · Montagem individual do tablet.', '2 min · Exportar tablet.png e salvar o projeto.'],
-        watch: 'Cartões dois a dois é o caminho mais comum; empilhados em 8 colunas também passam na conferência.', rescue
+        watch: 'O rascunho mostra ordem e agrupamento; tamanhos e espaços são decisão do aluno dentro da grade.', rescue
       }
     },
     {
@@ -222,7 +222,7 @@ export const support = {
     },
     {
       title: 'O celular', block: 3, layout: 'dw8',
-      lede: 'Grade de 4 colunas. A linha tracejada marca o fim da primeira tela.',
+      lede: 'Grade de 4 colunas e sem rascunho: siga as regras ao lado da tela. A linha tracejada marca o fim da primeira tela.',
       cards: [
         {title: 'Empilhe', text: 'Tudo ocupa as 4 colunas, um item embaixo do outro.'},
         {title: 'Encurte', text: 'No cabeçalho, troque o menu comprido por Menu.'},

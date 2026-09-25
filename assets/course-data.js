@@ -328,11 +328,11 @@ window.SENAI_COURSES = {
           },
           {
             "horario": "20:05 - 21:00",
-            "atividade": "Organizar a página no tablet, numa grade de 8 colunas: cabeçalho e destaque na largura toda, cartões dois a dois e botão na grade. Testar a leitura, comparar com um exemplo e exportar tablet.png."
+            "atividade": "Montar a página no tablet a partir da biblioteca de componentes, seguindo o rascunho do cliente, numa grade de 8 colunas: cabeçalho e destaque na largura toda, campeonatos dois a dois, botão depois dos campeonatos e rodapé no fim. Testar a leitura, comparar com um exemplo e exportar tablet.png."
           },
           {
             "horario": "21:00 - 21:40",
-            "atividade": "Organizar a página no celular, numa grade de 4 colunas: tudo empilhado, menu curto no cabeçalho, destaque e botão antes do fim da primeira tela e os quatro campeonatos em seguida. Exportar celular.png."
+            "atividade": "Montar a página no celular com a biblioteca, sem rascunho, seguindo as regras da tela: tudo empilhado numa grade de 4 colunas, menu curto no cabeçalho, destaque e botão antes do fim da primeira tela e os quatro campeonatos em seguida. Exportar celular.png."
           },
           {
             "horario": "21:40 - 22:10",
