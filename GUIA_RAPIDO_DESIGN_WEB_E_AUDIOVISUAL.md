@@ -115,6 +115,14 @@ itens fora da grade, fora da margem, sobrepostos ou com larguras diferentes.
 Entrega: três PNGs e `projeto.grade`. Roteiro em
 `modelos/design-web/aula-08/README.md`.
 
+Na Aula 09, a mesma página da Arena Pixel ganha três telas na oficina
+responsiva (`modelos/design-web/aula-09/oficina.html`): computador com 12
+colunas, tablet com 8 e celular com 4. O aluno abre o `projeto.grade` da aula 08,
+organiza o tablet e o celular, que começam apenas encolhidos, e deixa destaque
+e botão antes do fim da primeira tela do celular. Entrega: `tablet.png`,
+`celular.png` e `projeto-responsivo.grade`. Roteiro em
+`modelos/design-web/aula-09/README.md`.
+
 ### Aula 11 · Interação e feedback
 
 A turma desenha estados normal, ação, erro, sucesso e confirmação por storyboard
