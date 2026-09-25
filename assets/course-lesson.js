@@ -583,7 +583,8 @@
       paceStart = item.pace === 'break' ? end : start + (slideMinutesByBlock[block] || 0);
       const duration = (teacher.steps || []).reduce((sum, step) => sum + Number(String(step).match(/^(\d+) min/)?.[1] || 0), 0);
       paceEnd = paceStart + duration;
-      if (item.pace !== 'break') slideMinutesByBlock[block] = (slideMinutesByBlock[block] || 0) + duration;
+      // Break and optional extra-challenge slides do not push the timing of the slides after them.
+      if (item.pace !== 'break' && item.pace !== 'extra') slideMinutesByBlock[block] = (slideMinutesByBlock[block] || 0) + duration;
     }
 
     return slide({

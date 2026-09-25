@@ -20,6 +20,7 @@ assert.deepEqual(lesson.schedule.map(s => s.horario), ['19:00 - 19:45', '20:05 -
 const minutes = [0, 0, 0, 0];
 for (const s of support.presentationSlides) {
   if (s.pace === 'break') continue;
+  if (s.pace === 'extra') {assert.ok(s.teacher?.speech && s.teacher?.watch && s.teacher?.rescue && /^Desafio extra/.test(s.title), s.title + ' must be a labelled optional challenge'); continue;}
   assert.ok(s.teacher?.speech && s.teacher?.watch && s.teacher?.rescue, s.title + ' lacks teacher support');
   for (const step of s.teacher.steps) {const m = step.match(/^(\d+) min · /); assert.ok(m, 'Unscheduled step: ' + step); minutes[s.block - 1] += Number(m[1]);}
 }

@@ -262,6 +262,77 @@ export const support = {
       }
     },
     {
+      title: 'Desafio extra · Selo do cliente', block: 3, layout: 'dw8', pace: 'extra',
+      lede: 'Para quem terminou tablet e celular. O cliente quer avisar que as inscrições acabam na sexta.',
+      cards: [
+        {title: '1 · Monte o selo', text: 'Forma, Texto “Inscrições até sexta” e o Ícone troféu. Use Trazer à frente para o texto ficar por cima.'},
+        {title: '2 · Nas três telas', text: 'O mesmo selo, com as mesmas cores, no Computador, no Tablet e no Celular.'},
+        {title: '3 · Sem atrapalhar', text: 'No celular, o selo fica na primeira tela sem empurrar o botão para baixo da linha tracejada.'}
+      ],
+      promptLabel: 'Pronto quando', prompt: 'Selo legível nas três telas, conferência em ✓ e celular-alternativa.png exportado.',
+      teacher: {
+        speech: 'Desafio opcional para quem terminou antes. Quem ainda está no celular continua no celular.',
+        steps: ['10 min · Montar o selo e repetir nas três telas.'],
+        watch: 'O selo é decorativo e fica fora da conferência; conferir visualmente que não cobre destaque nem botão.', rescue
+      }
+    },
+    {
+      title: 'Desafio extra · Informação nova', block: 3, layout: 'dw8', pace: 'extra',
+      lede: 'O cliente mandou mais uma informação para a página.',
+      cards: [
+        {title: 'O texto', text: '“Local: Arena Pixel · Rua das Flores, 120 · Entrada gratuita.” Endereço fictício.'},
+        {title: 'Sua decisão', text: 'Adicione um Texto e escolha onde ele entra em cada tela.'},
+        {title: 'A regra', text: 'No celular, a informação nova não ocupa a primeira tela: destaque e botão vêm antes.'}
+      ],
+      promptLabel: 'Justifique no caderno', prompt: '“No celular, coloquei o local ___ porque ___.”',
+      teacher: {
+        speech: 'Não há posição certa única; vale a justificativa pela prioridade.',
+        steps: ['10 min · Incluir o texto nas três telas e escrever a justificativa.'],
+        watch: 'Boas respostas: depois dos campeonatos ou logo antes do rodapé, porque quem quer participar precisa ver o botão primeiro.', rescue
+      }
+    },
+    {
+      title: 'Desafio extra · Imagem ou não?', block: 3, layout: 'dw8', pace: 'extra',
+      lede: 'Uma imagem deixa a página mais atraente, mas ocupa espaço na tela pequena.',
+      cards: [
+        {title: '1 · Carregue', text: 'Carregue uma imagem de jogo ou controle que já esteja no computador.'},
+        {title: '2 · No computador', text: 'Coloque a imagem ao lado do título do destaque, sem cobrir o texto.'},
+        {title: '3 · No celular', text: 'Decida se a imagem entra ou sai. Se entrar, o botão continua na primeira tela.'}
+      ],
+      promptLabel: 'Decisão de designer', prompt: 'A imagem ajuda ou atrapalha no celular? Escreva o motivo no caderno.',
+      teacher: {
+        speech: 'Usar imagem que já esteja no computador; não abrir busca de imagens.',
+        steps: ['10 min · Incluir a imagem e decidir o celular.'],
+        watch: 'As duas decisões valem se a justificativa falar de espaço e prioridade.', rescue
+      }
+    },
+    {
+      title: 'Desafio extra · Novidade primeiro', block: 3, layout: 'dw8', pace: 'extra',
+      lede: 'O cliente quer o Xadrez rápido em primeiro lugar no celular, porque é o campeonato novo.',
+      bullets: ['Leve o Xadrez rápido para o primeiro lugar da lista de campeonatos.', 'Os outros três continuam na página, com a mesma largura.', 'Destaque e botão continuam antes da linha tracejada.'],
+      promptLabel: 'Pronto quando', prompt: 'Conferência em ✓ e a nova ordem exportada como celular-alternativa.png.',
+      teacher: {
+        speech: 'Pedido de cliente muda a ordem, não as regras.',
+        steps: ['8 min · Reorganizar os campeonatos e exportar.'],
+        watch: 'Quem fez o selo antes deve manter o selo no lugar.', rescue
+      }
+    },
+    {
+      title: 'Desafio extra · Versão noturna', block: 3, layout: 'dw8', pace: 'extra',
+      lede: 'Muitos apps têm uma versão escura. Crie a da Arena Pixel.',
+      cards: [
+        {title: 'Fundo', text: 'Em Cor da prancheta, escolha um fundo escuro nas três telas.'},
+        {title: 'Leitura', text: 'Ajuste as cores dos cartões e do rodapé para os textos continuarem fáceis de ler.'},
+        {title: 'Família', text: 'As mesmas cores nas três telas: parece a mesma marca?'}
+      ],
+      promptLabel: 'Guarde as duas versões', prompt: 'Exporte tablet-alternativa.png e celular-alternativa.png sem substituir tablet.png e celular.png.',
+      teacher: {
+        speech: 'Salvar o projeto antes de começar: a versão noturna muda muitas cores.',
+        steps: ['12 min · Criar a versão escura nas três telas e exportar as alternativas.'],
+        watch: 'Contraste: texto claro sobre fundo escuro; o botão continua chamando atenção.', rescue
+      }
+    },
+    {
       title: 'Três telas, uma marca', block: 4, layout: 'dw8',
       lede: 'Clique em Comparar as três telas na oficina.',
       bullets: ['Os textos, as cores e os campeonatos são os mesmos nas três telas?', 'O que mudou foi só a organização?', 'Alguma tela ficou com letras pequenas demais?'],
