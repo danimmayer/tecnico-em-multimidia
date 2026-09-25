@@ -309,7 +309,7 @@ window.SENAI_COURSES = {
       {
         "num": "09",
         "title": "Design Responsivo sem Mistério",
-        "description": "Adaptação visual de conteúdo para celular, tablet e computador com prioridade e legibilidade.",
+        "description": "A página da Arena Pixel ganha três telas: computador, tablet e celular. Cada estudante reorganiza o mesmo conteúdo na grade de cada tela, decide o que aparece primeiro no celular e confere a leitura com um colega.",
         "objectives": [
           "Interfaces Web e App: design responsivo.",
           "Plataformas de Desenvolvimento: dispositivos."
@@ -323,25 +323,25 @@ window.SENAI_COURSES = {
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Comparação guiada do mesmo serviço em celular e computador. A turma marca o que some, muda de ordem, cresce, empilha ou vira menu."
+            "horario": "19:00 - 19:45",
+            "atividade": "Comparar a mesma página no computador, no tablet e no celular: o que empilha, encurta, sobe ou cresce. Descobrir a grade de cada tela (12, 8 e 4 colunas), escolher o que cabe na primeira tela do celular e abrir a oficina responsiva com o projeto da oficina de grade. Salvar antes do lanche."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "Jogo \"Mala pequena\": cada grupo recebe conteúdo demais e precisa escolher o essencial para a primeira tela do celular, justificando cada corte e prioridade."
+            "horario": "20:05 - 21:00",
+            "atividade": "Organizar a página no tablet, numa grade de 8 colunas: cabeçalho e destaque na largura toda, cartões dois a dois e botão na grade. Testar a leitura, comparar com um exemplo e exportar tablet.png."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "Oficina \"Três telas\": adaptar uma composição pronta para celular, tablet e desktop em papel ou ferramenta visual, preservando identidade e ação principal."
+            "horario": "21:00 - 21:40",
+            "atividade": "Organizar a página no celular, numa grade de 4 colunas: tudo empilhado, menu curto no cabeçalho, destaque e botão antes do fim da primeira tela e os quatro campeonatos em seguida. Exportar celular.png."
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "Teste em tamanho real: as telas são abertas no smartphone ou impressas em molduras. Colegas verificam leitura, toque, ordem e ausência de cortes; ajustes finais."
+            "horario": "21:40 - 22:10",
+            "atividade": "Comparar as três telas, testar o celular com o colega do lado em cinco segundos, ajustar, salvar e reabrir o projeto e escrever uma frase sobre a decisão de prioridade. Encerrar às 22:10."
           }
         ],
-        "methodology": "Comparação, jogo de priorização, adaptação visual e teste em dispositivos reais.",
-        "resources": "Capturas preparadas, molduras impressas, smartphones, ferramenta visual e projetor.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "Comparação visual das três telas projetadas, jogo rápido de prioridade para a primeira tela do celular e produção individual na oficina responsiva, uma tela por bloco, com conferência automática, exemplo depois da produção e teste de leitura com o colega do lado, cada um no seu posto.",
+        "resources": "Computadores com navegador, projetor, caderno e caneta. Oficina responsiva local e gratuita, sem instalação, cadastro ou dependências externas, que abre o projeto.grade da aula 08. Sem impressão e sem fichas. Baixar a oficina antes do encontro permite uso sem internet.",
+        "observation": "19:00–22:10, com lanche 19:45–20:05. Chamada no início dos quatro blocos. Trabalho individual no posto; a colaboração acontece no teste com o colega do lado, sem circulação. Quem não tiver o projeto da aula 08 usa a página pronta que a oficina já traz. Se houver computador compartilhado, alternar o operador a cada bloco e manter uma frase por aluno. Sem internet: abrir a oficina previamente baixada. Sem computador: desenhar no caderno um retângulo de tablet com 8 colunas e um de celular com 4 e montar a página com retângulos, seguindo os mesmos critérios. O design responsivo é trabalhado de forma visual; nenhum aluno escreve código."
       },
       {
         "num": "10",

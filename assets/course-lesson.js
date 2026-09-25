@@ -343,7 +343,8 @@
 
   const isDesignSeven = course.slug === 'design-web' && lesson.num === '07';
   if (isDesignSeven) document.body.classList.add('design-seven');
-  const isDesignEight = course.slug === 'design-web' && lesson.num === '08';
+  // Aula 09 reuses the Aula 08 slide layout; each lesson keeps its illustrations in its own folder.
+  const isDesignEight = course.slug === 'design-web' && ['08', '09'].includes(lesson.num);
   if (isDesignEight) document.body.classList.add('design-eight');
   // Aulas 09 (set) e 10 (ilha de edição) de Audiovisual share the production visuals of av-nine.css.
   const isAvNine = course.slug === 'producao-audiovisual' && ['09', '10'].includes(lesson.num);
@@ -597,7 +598,7 @@
         ${item.lede ? `<p class="slide-lede">${escapeHtml(item.lede)}</p>` : ''}
         ${isDesignSeven && ['before', 'after'].includes(item.visual) ? `<figure class="dw7-example"><img src="modelos/design-web/aula-07/${item.visual}.svg" alt="${item.visual === 'before' ? 'Página inicial com títulos e detalhes distantes entre si' : 'Página com títulos e detalhes agrupados e alinhados'}"></figure>` : ''}
         ${avNineVisual(item.av9)}
-        ${isDesignEight && item.visual ? `<figure class="dw8-example">${[item.visual].flat().map((name, i) => `<img src="modelos/design-web/aula-08/${escapeHtml(name)}.svg" alt="${escapeHtml([item.visualAlt || []].flat()[i] || '')}">`).join('')}</figure>` : ''}
+        ${isDesignEight && item.visual ? `<figure class="dw8-example">${[item.visual].flat().map((name, i) => `<img src="modelos/design-web/aula-${lesson.num}/${escapeHtml(name)}.svg" alt="${escapeHtml([item.visualAlt || []].flat()[i] || '')}">`).join('')}</figure>` : ''}
         ${cards.length ? `
           <div class="presentation-card-grid${denseCards ? ' is-dense' : ''}">
             ${cards.map((card) => `
