@@ -4259,7 +4259,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "promptLabel": "Observe",
             "prompt": "Na versão da esquerda, dá para ler os campeonatos e tocar no botão?",
             "teacher": {
-              "speech": "É assim que a página começa nas abas Tablet e Celular da oficina.",
+              "speech": "É o que acontece quando ninguém decide a organização. Na oficina, cada tela é montada com as peças da biblioteca.",
               "steps": [
                 "1 min · Comparar as duas versões.",
                 "2 min · Ouvir: letras pequenas demais, botão pequeno, menu cortado."
@@ -4308,7 +4308,7 @@ window.SENAI_TEACHING_SUPPORT = {
               },
               {
                 "title": "3 · Troque de aba",
-                "text": "Veja a sua página no Computador, no Tablet e no Celular."
+                "text": "No Computador está a sua página. No Tablet e no Celular, a tela começa vazia, com a biblioteca na lateral."
               }
             ],
             "resources": [
@@ -4351,19 +4351,19 @@ window.SENAI_TEACHING_SUPPORT = {
             "title": "O tablet",
             "block": 2,
             "layout": "dw8",
-            "lede": "Grade de 8 colunas. A página começa encolhida: organize item por item.",
+            "lede": "Grade de 8 colunas. A tela começa vazia: as peças estão na biblioteca, na lateral.",
             "cards": [
               {
-                "title": "Topo",
-                "text": "Cabeçalho e destaque ocupando as 8 colunas."
+                "title": "Biblioteca",
+                "text": "Arraste cada componente para a tela ou clique nele."
               },
               {
-                "title": "Cartões",
-                "text": "Dois por linha, com a mesma largura."
+                "title": "Rascunho do cliente",
+                "text": "Siga a ordem e o agrupamento do rascunho, acima da biblioteca."
               },
               {
-                "title": "Ação",
-                "text": "Botão abaixo dos cartões, começando numa coluna."
+                "title": "Grade",
+                "text": "Encaixe cada peça nas 8 colunas com Mais estreito e Mais largo."
               }
             ],
             "promptLabel": "Missão individual",
@@ -4372,8 +4372,8 @@ window.SENAI_TEACHING_SUPPORT = {
               "speech": "Faça a chamada e demonstre só o cabeçalho. O resto é com eles.",
               "steps": [
                 "2 min · Fazer chamada e retomar o projeto.",
-                "3 min · Apresentar as três partes do tablet.",
-                "3 min · Demonstrar Mais largo no cabeçalho até ocupar as 8 colunas."
+                "3 min · Apresentar a biblioteca e o rascunho do cliente.",
+                "3 min · Demonstrar arrastar o cabeçalho da biblioteca para a tela e conferir que ocupa as 8 colunas."
               ],
               "watch": "Cada aluno está na aba Tablet antes de começar.",
               "rescue": "Se alguém travar, demonstrar um único movimento na oficina e devolver o controle ao aluno no posto."
@@ -4383,19 +4383,19 @@ window.SENAI_TEACHING_SUPPORT = {
             "title": "Monte o tablet",
             "block": 2,
             "layout": "dw8",
-            "lede": "Continue na aba Tablet até a conferência ficar toda em ✓.",
+            "lede": "Continue na aba Tablet até a biblioteca ficar vazia e a conferência toda em ✓.",
             "cards": [
               {
-                "title": "1 · Largura toda",
-                "text": "Cabeçalho e destaque com Mais largo até as 8 colunas."
+                "title": "1 · Topo",
+                "text": "Cabeçalho e destaque ocupando as 8 colunas."
               },
               {
-                "title": "2 · Dois a dois",
-                "text": "Cartões de 4 colunas, dois em cada linha."
+                "title": "2 · Campeonatos",
+                "text": "Cartões de 4 colunas, dois em cada linha, como no rascunho."
               },
               {
                 "title": "3 · Botão e rodapé",
-                "text": "Encaixados na grade, abaixo dos cartões."
+                "text": "Botão depois dos campeonatos e rodapé no fim da página."
               }
             ],
             "promptLabel": "Pronto quando",
@@ -4406,7 +4406,7 @@ window.SENAI_TEACHING_SUPPORT = {
                 "30 min · Montagem individual do tablet.",
                 "2 min · Exportar tablet.png e salvar o projeto."
               ],
-              "watch": "Cartões dois a dois é o caminho mais comum; empilhados em 8 colunas também passam na conferência.",
+              "watch": "O rascunho mostra ordem e agrupamento; tamanhos e espaços são decisão do aluno dentro da grade.",
               "rescue": "Se alguém travar, demonstrar um único movimento na oficina e devolver o controle ao aluno no posto."
             }
           },
@@ -4457,7 +4457,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "title": "O celular",
             "block": 3,
             "layout": "dw8",
-            "lede": "Grade de 4 colunas. A linha tracejada marca o fim da primeira tela.",
+            "lede": "Grade de 4 colunas e sem rascunho: siga as regras ao lado da tela. A linha tracejada marca o fim da primeira tela.",
             "cards": [
               {
                 "title": "Empilhe",
