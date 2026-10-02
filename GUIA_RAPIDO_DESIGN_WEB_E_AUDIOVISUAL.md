@@ -123,6 +123,16 @@ e botão antes do fim da primeira tela do celular. Entrega: `tablet.png`,
 `celular.png` e `projeto-responsivo.grade`. Roteiro em
 `modelos/design-web/aula-09/README.md`.
 
+Na Aula 10, a Arena Pixel sai da pasta e ganha um endereço. O aluno revisa a
+própria página nas três telas da oficina responsiva com seis conferências
+(nomes, escrita, dados, imagens, botões e celular) e caça cinco problemas numa
+versão de teste publicada de verdade em
+`https://oficinas-design-web.vercel.app/aula-10/`, que pode ser comparada com
+`/aula-10/corrigida/`. As duas páginas são geradas em
+`modelos/design-web/aula-10/`. Entrega: `computador.png`, `tablet.png`,
+`celular.png`, `projeto-responsivo.grade` e, no caderno, os cinco problemas e o
+endereço, o título e a descrição do link da própria página.
+
 ### Aula 11 · Interação e feedback
 
 A turma desenha estados normal, ação, erro, sucesso e confirmação por storyboard
