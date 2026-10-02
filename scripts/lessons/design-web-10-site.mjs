@@ -17,6 +17,50 @@ const cards = fixed => [
 
 const controller = `<svg viewBox="0 0 120 80" aria-hidden="true"><rect x="8" y="18" width="104" height="48" rx="24" fill="#FFD23F"/><rect x="26" y="36" width="24" height="8" rx="2" fill="#1B1440"/><rect x="34" y="28" width="8" height="24" rx="2" fill="#1B1440"/><circle cx="82" cy="34" r="6" fill="#FF4F7B"/><circle cx="96" cy="46" r="6" fill="#6C4CF5"/></svg>`;
 
+export function hubPage() {
+  const card = (href, tag, title, text) => `<a class="card" href="${href}"><span class="tag">${tag}</span><strong>${title}</strong><span>${text}</span></a>`;
+  return `<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Do protótipo ao link · Oficinas de Design Web</title>
+<link rel="icon" href="data:,">
+<style>
+  :root{--ink:#251e3d;--muted:#655d78;--line:#ddd8e6;--accent:#6141ce;--ground:#f3f1f6;--card:#ffffff}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;background:var(--ground);color:var(--ink);font:16px/1.5 Arial,Helvetica,sans-serif;padding:48px 20px}
+  main{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:24px}
+  h1{margin:0;font-size:28px;letter-spacing:-.4px}
+  p{margin:0;color:var(--muted)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+  a.card{display:flex;flex-direction:column;gap:8px;padding:22px;background:var(--card);border:1px solid var(--line);border-radius:10px;color:inherit;text-decoration:none}
+  a.card:hover,a.card:focus-visible{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px #6141ce33}
+  .tag{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+  .card strong{font-size:20px}
+  small{color:var(--muted);font-size:13px}
+  small a{color:var(--accent)}
+</style>
+</head>
+<body>
+<main>
+  <div>
+    <h1>Do protótipo ao link</h1>
+    <p>A Arena Pixel sai da pasta e ganha um endereço. Siga os cartões na ordem indicada nos slides.</p>
+  </div>
+  <div class="grid">
+    ${card('teste/', '1 · Caçar', 'Página de teste', 'A Arena Pixel publicada sem conferir. Encontre os cinco problemas.')}
+    ${card('../aula-09/', '2 · Revisar', 'Oficina responsiva', 'Abra o seu projeto-responsivo.grade e leve o recado do cliente para as três telas.')}
+    ${card('corrigida/', '3 · Comparar', 'Versão corrigida', 'Abra só depois da caça aos problemas.')}
+    ${card('../aula-08/', '4 · Lançar', 'Oficina de grade', 'Abra o seu projeto.grade e monte, na aba Post, o anúncio do site no ar.')}
+  </div>
+  <small>Empresa e conteúdo fictícios, para estudo. <a href="../">Voltar às oficinas</a></small>
+</main>
+</body>
+</html>
+`;
+}
+
 export function arenaPage({fixed}) {
   const title = fixed ? 'Arena Pixel · Campeonatos' : 'Arena Pixel · Campeonatos (versão de teste)';
   const picture = fixed
