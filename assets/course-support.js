@@ -81,7 +81,7 @@ window.SENAI_TEACHING_SUPPORT = {
           "Manter os alunos no posto; pedir atenção antes de cada demonstração e liberar só a tarefa indicada."
         ],
         "onlineRoutine": "A página de teste e a corrigida estão publicadas no site das oficinas. Sem internet, abrir as cópias da pasta modelos/design-web/aula-10 no computador da sala e projetar.",
-        "plainLanguage": "Publicar é copiar a página pronta para a hospedagem, um computador sempre ligado, e ganhar um endereço que qualquer pessoa abre. Antes disso, tudo o que está na página precisa poder ser público.",
+        "plainLanguage": "Publicar é como tirar um cartaz da mochila e pregar num mural da cidade. A hospedagem é o mural, um computador sempre ligado; o endereço diz onde ele fica. Depois de pregado, qualquer pessoa vê e copia, então tudo o que está na página precisa poder ser público.",
         "say": "Até agora a Arena Pixel só existia na pasta de vocês. Hoje vamos ver o que muda quando ela ganha um endereço que qualquer pessoa abre.",
         "demo": [
           "Abrir o site das oficinas no celular e no computador: mesmo endereço, duas telas.",
@@ -188,27 +188,27 @@ window.SENAI_TEACHING_SUPPORT = {
             "title": "Um endereço para todo mundo",
             "block": 1,
             "layout": "dw8",
-            "lede": "Três palavras explicam como uma página chega ao celular de qualquer pessoa.",
+            "lede": "Publicar uma página é como tirar um cartaz da mochila e pregar num mural da cidade.",
             "cards": [
               {
-                "title": "Endereço",
-                "text": "O nome que a pessoa digita ou toca para chegar à página."
+                "title": "Na mochila",
+                "text": "A página na sua pasta é um cartaz guardado. Só você vê."
               },
               {
-                "title": "Hospedagem",
-                "text": "Um computador sempre ligado que guarda a página e entrega a quem pede."
+                "title": "No mural",
+                "text": "Hospedagem é o mural: um computador sempre ligado que mostra a página a quem pedir."
               },
               {
-                "title": "Publicação",
-                "text": "Copiar a página pronta para a hospedagem. A partir daí, ela tem endereço."
+                "title": "O endereço",
+                "text": "É onde fica o mural. Qualquer pessoa chega, vê, fotografa e copia o cartaz."
               }
             ],
             "promptLabel": "Experimente",
             "prompt": "No celular, digite oficinas-design-web.vercel.app. É o mesmo endereço que abre no computador.",
             "teacher": {
-              "speech": "As oficinas que eles usam estão publicadas assim: uma pasta copiada para a hospedagem ganhou esse endereço.",
+              "speech": "Use o cartaz e o mural. As oficinas que eles usam são um cartaz já pregado: a pasta foi copiada para a hospedagem e ganhou esse endereço.",
               "steps": [
-                "3 min · Explicar as três palavras com o site das oficinas como exemplo.",
+                "3 min · Explicar mochila, mural e endereço com o site das oficinas como exemplo. Fechar com: o que está no mural qualquer um copia, por isso a gente confere antes.",
                 "5 min · Cada aluno abre o endereço no celular e compara com o computador."
               ],
               "watch": "Quem não tiver celular olha o do colega do lado ou estreita a janela do navegador.",
