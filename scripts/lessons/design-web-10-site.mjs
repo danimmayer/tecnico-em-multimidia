@@ -49,9 +49,10 @@ export function hubPage() {
     <p>A Arena Pixel sai da pasta e ganha um endereço. Siga os cartões na ordem indicada nos slides.</p>
   </div>
   <div class="grid">
-    ${card('../aula-09/', '1 · Revisar', 'Oficina responsiva', 'Abra o seu projeto-responsivo.grade e leve o recado do cliente para as três telas.')}
-    ${card('teste/', '2 · Testar', 'Página de teste', 'A Arena Pixel publicada sem conferir. Encontre os cinco problemas.')}
+    ${card('teste/', '1 · Caçar', 'Página de teste', 'A Arena Pixel publicada sem conferir. Encontre os cinco problemas.')}
+    ${card('../aula-09/', '2 · Revisar', 'Oficina responsiva', 'Abra o seu projeto-responsivo.grade e leve o recado do cliente para as três telas.')}
     ${card('corrigida/', '3 · Comparar', 'Versão corrigida', 'Abra só depois da caça aos problemas.')}
+    ${card('../aula-08/', '4 · Lançar', 'Oficina de grade', 'Abra o seu projeto.grade e monte, na aba Post, o anúncio do site no ar.')}
   </div>
   <small>Empresa e conteúdo fictícios, para estudo. <a href="../">Voltar às oficinas</a></small>
 </main>

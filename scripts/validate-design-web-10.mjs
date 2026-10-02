@@ -32,14 +32,14 @@ const publicCopy = support.presentationSlides.map(({teacher, ...s}) => JSON.stri
 assert.ok(!/\bhtml\b|\bcss\b|javascript|código|programa[çr]|ficha|impress|professor|docente|aula \d|aula anterior/i.test(publicCopy.replaceAll('oficina.html', 'oficina')), 'Public slides must stay student-facing, code-free and self-contained');
 assert.ok(!/—/.test(JSON.stringify({lesson, support})), 'No em dash in teaching copy');
 assert.ok(!/código|programa[çr]|\bhtml\b|\bcss\b|javascript/i.test(lesson.description + lesson.schedule.map(s => s.atividade).join(' ')), 'Lesson plan copy must be code-free');
-for (const name of ['computador.png', 'tablet.png', 'celular.png', 'projeto-responsivo.grade', 'Aula-10']) assert.ok(publicCopy.includes(name), name);
+for (const name of ['computador.png', 'tablet.png', 'celular.png', 'projeto-responsivo.grade', 'post-final.png', 'projeto.grade', 'Aula-10']) assert.ok(publicCopy.includes(name), name);
 for (const s of support.presentationSlides.filter(s => /Desafio rápido|Pense rápido|Missão/.test(s.promptLabel || ''))) assert.ok(s.teacher.steps.some(step => /Conferir/.test(step)) || /Revisor|Revise/.test(s.title), s.title + ' needs the answer in the notes');
 assert.equal(problems.length, 5);
 
 // Published pages match the generator; the test page has the five problems and the fixed one none.
 const dir = root + 'modelos/design-web/aula-10/';
 assert.equal(fs.readFileSync(dir + 'index.html', 'utf8'), hubPage());
-for (const href of ['../aula-09/', 'teste/', 'corrigida/']) assert.ok(hubPage().includes(`href="${href}"`), href);
+for (const href of ['../aula-08/', '../aula-09/', 'teste/', 'corrigida/']) assert.ok(hubPage().includes(`href="${href}"`), href);
 const test = fs.readFileSync(dir + 'teste/index.html', 'utf8'), fixed = fs.readFileSync(dir + 'corrigida/index.html', 'utf8');
 assert.equal(test, arenaPage({fixed: false}));
 assert.equal(fixed, arenaPage({fixed: true}));
