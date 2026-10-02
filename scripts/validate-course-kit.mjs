@@ -1,6 +1,7 @@
 import './validate-design-web-07.mjs';
 import './validate-design-web-08.mjs';
 import './validate-design-web-09.mjs';
+import './validate-design-web-10.mjs';
 import './validate-audiovisual.mjs';
 import fs from 'node:fs';
 import path from 'node:path';

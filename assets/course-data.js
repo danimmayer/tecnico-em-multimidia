@@ -346,7 +346,7 @@ window.SENAI_COURSES = {
       {
         "num": "10",
         "title": "Do Protótipo ao Link",
-        "description": "Publicação assistida de uma experiência visual pronta, com conferência de conteúdo, segurança e funcionamento.",
+        "description": "A página da Arena Pixel sai da pasta e ganha um endereço. Cada estudante revisa a própria página antes de ela ir para o público, caça problemas numa versão publicada de verdade, no computador e no celular, e mostra o resultado aos colegas.",
         "objectives": [
           "Internet: hospedagem e publicação.",
           "Desenvolvimento do Projeto: publicação e testes de validação."
@@ -360,25 +360,25 @@ window.SENAI_COURSES = {
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Comparação \"arquivo, protótipo e link\": distinguir material local, protótipo compartilhado e página publicada, incluindo exposição pública e cuidado com dados."
+            "horario": "19:00 - 19:45",
+            "atividade": "Diferenciar arquivo, protótipo e link. Entender endereço, hospedagem e publicação abrindo no celular um link publicado. Jogo \"Pode ir para o link?\" sobre dados pessoais e imagens, as seis conferências antes de publicar e abertura do projeto responsivo na oficina. Salvar antes do lanche."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "Checklist de prontidão: cada dupla confere nome fictício, créditos, ortografia, links simulados, imagens, versão mobile e ausência de dados pessoais no protótipo."
+            "horario": "20:05 - 21:00",
+            "atividade": "Revisar individualmente a própria página da Arena Pixel nas três telas com as seis conferências: nomes, escrita, dados, imagens, botões e celular. Ajustar rodapé e créditos, pedir o olhar do colega do lado e exportar computador.png, tablet.png e celular.png."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "Publicação assistida: acompanhar a transformação do material aprovado em link no modelo preparado ou no ambiente institucional, sem editar código."
+            "horario": "21:00 - 21:40",
+            "atividade": "Abrir no computador e no celular uma versão de teste da Arena Pixel publicada de verdade e caçar os cinco problemas escondidos. Decidir qual corrigir primeiro e comparar com a versão corrigida."
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "Vernissage digital: os links são testados no computador e no celular. Cada visitante registra uma qualidade e uma melhoria usando linguagem respeitosa."
+            "horario": "21:40 - 22:10",
+            "atividade": "Planejar o endereço, o título e a descrição do link da própria página. Mostra das telas com o colega do lado (uma qualidade e uma melhoria), salvar e reabrir o projeto e escrever uma frase sobre o que conferir antes de publicar. Encerrar às 22:10."
           }
         ],
-        "methodology": "Demonstração técnica curta, checklist em duplas, publicação assistida e mostra com feedback.",
-        "resources": "Protótipos da turma, modelo de publicação preparado, ambiente institucional ou ferramenta autorizada, smartphones e projetor.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "Comparação projetada entre arquivo, protótipo e link, jogo rápido de decisão sobre o que pode ser público, revisão individual na oficina responsiva com seis conferências, teste de funcionamento de uma página publicada no computador e no celular e mostra com retorno respeitoso do colega do lado, cada um no seu posto.",
+        "resources": "Computadores com navegador, projetor, celulares dos alunos, caderno e caneta. Oficina responsiva local e gratuita, que abre o projeto-responsivo.grade da aula 09. Página de teste e página corrigida da Arena Pixel publicadas no site das oficinas. Sem impressão e sem fichas.",
+        "observation": "19:00–22:10, com lanche 19:45–20:05. Chamada no início dos quatro blocos. Trabalho individual no posto; a colaboração acontece com o colega do lado, sem circulação. Quem não tiver o projeto da aula 09 usa a página pronta que a oficina já traz. Sem celular: abrir o link no computador e estreitar a janela, ou olhar o celular do colega do lado. Sem internet: abrir a página de teste copiada antes no computador da sala. A publicação é apresentada de forma visual; nenhum aluno escreve código nem cria conta em serviço externo."
       },
       {
         "num": "11",
