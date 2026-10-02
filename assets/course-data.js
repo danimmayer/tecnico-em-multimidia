@@ -365,7 +365,7 @@ window.SENAI_COURSES = {
           },
           {
             "horario": "20:05 - 21:00",
-            "atividade": "Revisar individualmente a própria página da Arena Pixel nas três telas com as seis conferências: nomes, escrita, dados, imagens, botões e celular. Ajustar rodapé e créditos, pedir o olhar do colega do lado e exportar computador.png, tablet.png e celular.png."
+            "atividade": "Atender ao recado do cliente com as seis conferências: corrigir o aviso com erro de escrita, trocar o telefone particular por um contato da empresa e substituir a foto sem autorização por um ícone, nas três telas. Ajustar o rodapé, pedir o olhar do colega do lado e exportar computador.png, tablet.png e celular.png."
           },
           {
             "horario": "21:00 - 21:40",
