@@ -23,7 +23,7 @@ export const lesson = {
     },
     {
       horario: '20:05 - 21:00',
-      atividade: 'Revisar individualmente a própria página da Arena Pixel nas três telas com as seis conferências: nomes, escrita, dados, imagens, botões e celular. Ajustar rodapé e créditos, pedir o olhar do colega do lado e exportar computador.png, tablet.png e celular.png.'
+      atividade: 'Atender ao recado do cliente com as seis conferências: corrigir o aviso com erro de escrita, trocar o telefone particular por um contato da empresa e substituir a foto sem autorização por um ícone, nas três telas. Ajustar o rodapé, pedir o olhar do colega do lado e exportar computador.png, tablet.png e celular.png.'
     },
     {
       horario: '21:00 - 21:40',
@@ -41,17 +41,17 @@ export const lesson = {
 
 export const support = {
   appendDefaultClosing: false,
-  teacherGoal: 'Cada estudante entrega a página da Arena Pixel revisada nas três telas, sem dado pessoal e sem erro de escrita, encontra os cinco problemas da página de teste publicada e anota endereço, título e descrição para o link da própria página até 22:10.',
+  teacherGoal: 'Cada estudante entrega a página da Arena Pixel com o recado do cliente publicado do jeito certo nas três telas, sem dado pessoal e sem erro de escrita, encontra os cinco problemas da página de teste publicada e anota endereço, título e descrição para o link da própria página até 22:10.',
   routine: [
     'Antes da aula, abrir no celular e no computador da sala ' + site + ' e ' + site + 'corrigida/ para confirmar que estão no ar.',
     'Manter os alunos no posto; pedir atenção antes de cada demonstração e liberar só a tarefa indicada.'
   ],
   onlineRoutine: 'A página de teste e a corrigida estão publicadas no site das oficinas. Sem internet, abrir as cópias da pasta modelos/design-web/aula-10 no computador da sala e projetar.',
-  plainLanguage: 'Publicar é copiar a página pronta para a hospedagem, um computador sempre ligado, e ganhar um endereço que qualquer pessoa abre. Antes disso, tudo o que está na página precisa poder ser público.',
+  plainLanguage: 'Publicar é como tirar um cartaz da mochila e pregar num mural da cidade. A hospedagem é o mural, um computador sempre ligado; o endereço diz onde ele fica. Depois de pregado, qualquer pessoa vê e copia, então tudo o que está na página precisa poder ser público.',
   say: 'Até agora a Arena Pixel só existia na pasta de vocês. Hoje vamos ver o que muda quando ela ganha um endereço que qualquer pessoa abre.',
   demo: [
     'Abrir o site das oficinas no celular e no computador: mesmo endereço, duas telas.',
-    'Abrir o projeto responsivo e trocar um texto em Personalizar item.',
+    'Abrir o projeto responsivo, adicionar um Texto e trocar o texto do rodapé em Personalizar item.',
     'Abrir a página de teste e tocar no botão Quero participar.'
   ],
   studentDeliverable: 'Pasta Aula-10: computador.png, tablet.png, celular.png e projeto-responsivo.grade revisados. No caderno: os cinco problemas da página de teste, endereço, título e descrição do link e uma frase sobre o que conferir antes de publicar.',
@@ -63,7 +63,7 @@ export const support = {
     'Os cinco problemas da página de teste anotados no caderno.'
   ],
   fallback: 'Sem internet, abrir as cópias da página de teste e da corrigida no computador da sala e projetar; a caça acontece na tela projetada, com respostas no caderno. Sem o projeto da aula 09, revisar a página pronta da oficina. Não distribuir fichas.',
-  extension: 'Quem terminar antes das 21:30 faz um desafio extra no caderno: a página de "não encontrada" da Arena Pixel ou a prévia do link para mensagens.',
+  extension: 'Quem terminar antes das 21:30 faz um desafio extra no caderno: a página de "não encontrada" da Arena Pixel ou um sexto detalhe a melhorar na página de teste.',
   commonProblems: [
     ['O aluno não tem o projeto da aula 09', 'Usar a página pronta que a oficina já traz. A revisão é a mesma.'],
     ['A página de teste não abre no celular', 'Conferir o endereço digitado, sem espaço e sem www. Se a rede da escola bloquear, usar a tela projetada.'],
@@ -92,28 +92,28 @@ export const support = {
       lede: 'A mesma página pode estar em três situações diferentes.',
       cards: [
         {title: 'Arquivo', text: 'Fica na sua pasta. Só abre quem tem a pasta.'},
-        {title: 'Protótipo', text: 'Uma simulação para testar com poucas pessoas. Ainda não é o site.'},
+        {title: 'Protótipo', text: 'Parece o site e dá para testar, mas ainda não tem endereço.'},
         {title: 'Link', text: 'Um endereço público. Qualquer pessoa abre, em qualquer tela.'}
       ],
-      promptLabel: 'Desafio rápido', prompt: 'O celular.png da sua pasta é arquivo, protótipo ou link? E a oficina que você abre pelo navegador?',
+      promptLabel: 'Desafio rápido', prompt: 'O celular.png da sua pasta é arquivo, protótipo ou link? E a página que você montou na oficina?',
       teacher: {
         speech: 'Deixe a turma classificar antes de responder.',
-        steps: ['2 min · Ler os três cartões.', '2 min · Ouvir palpites.', '4 min · Conferir: celular.png é arquivo, só abre quem tem a pasta. O projeto aberto na oficina para testar com o colega é protótipo. A oficina em oficinas-design-web.vercel.app é link: abre em qualquer computador ou celular.'],
+        steps: ['2 min · Ler os três cartões.', '2 min · Ouvir palpites.', '4 min · Conferir: celular.png é arquivo, só abre quem tem a pasta. A página montada na oficina é protótipo: parece o site, dá para testar, mas só existe no seu computador. Link é o próximo slide: um endereço que abre em qualquer tela.'],
         watch: 'A turma percebe que a diferença é quem consegue ver.', rescue
       }
     },
     {
       title: 'Um endereço para todo mundo', block: 1, layout: 'dw8',
-      lede: 'Três palavras explicam como uma página chega ao celular de qualquer pessoa.',
+      lede: 'Publicar uma página é como tirar um cartaz da mochila e pregar num mural da cidade.',
       cards: [
-        {title: 'Endereço', text: 'O nome que a pessoa digita ou toca para chegar à página.'},
-        {title: 'Hospedagem', text: 'Um computador sempre ligado que guarda a página e entrega a quem pede.'},
-        {title: 'Publicação', text: 'Copiar a página pronta para a hospedagem. A partir daí, ela tem endereço.'}
+        {title: 'Na mochila', text: 'A página na sua pasta é um cartaz guardado. Só você vê.'},
+        {title: 'No mural', text: 'Hospedagem é o mural: um computador sempre ligado que mostra a página a quem pedir.'},
+        {title: 'O endereço', text: 'É onde fica o mural. Qualquer pessoa chega, vê, fotografa e copia o cartaz.'}
       ],
       promptLabel: 'Experimente', prompt: 'No celular, digite oficinas-design-web.vercel.app. É o mesmo endereço que abre no computador.',
       teacher: {
-        speech: 'As oficinas que eles usam estão publicadas assim: uma pasta copiada para a hospedagem ganhou esse endereço.',
-        steps: ['3 min · Explicar as três palavras com o site das oficinas como exemplo.', '5 min · Cada aluno abre o endereço no celular e compara com o computador.'],
+        speech: 'Use o cartaz e o mural. As oficinas que eles usam são um cartaz já pregado: a pasta foi copiada para a hospedagem e ganhou esse endereço.',
+        steps: ['3 min · Explicar mochila, mural e endereço com o site das oficinas como exemplo. Fechar com: o que está no mural qualquer um copia, por isso a gente confere antes.', '5 min · Cada aluno abre o endereço no celular e compara com o computador.'],
         watch: 'Quem não tiver celular olha o do colega do lado ou estreita a janela do navegador.', rescue
       }
     },
@@ -132,7 +132,7 @@ export const support = {
       title: 'Antes de publicar', block: 1, layout: 'dw8',
       lede: 'Seis conferências antes de qualquer página ganhar endereço.',
       cards: [
-        {title: 'Nomes', text: 'Empresa fictícia ou com autorização.'},
+        {title: 'Nome', text: 'Empresa fictícia ou com autorização.'},
         {title: 'Escrita', text: 'Nenhum erro nos textos.'},
         {title: 'Dados', text: 'Nenhum telefone, e-mail ou nome de pessoa real.'},
         {title: 'Imagens', text: 'Próprias ou com crédito de quem fez.'},
@@ -169,48 +169,44 @@ export const support = {
       teacher: {speech: 'O intervalo fica fora dos 170 minutos de atividade.', steps: ['20 min · Intervalo das 19:45 às 20:05.'], watch: 'Retomar sem reorganizar a sala.', rescue}
     },
     {
-      title: 'Revisor da própria página', block: 2, layout: 'dw8',
-      lede: 'Antes de alguém ver, você vê. Leia sua página como se fosse um cliente.',
-      cards: [
-        {title: '1 · Escrita', text: 'Leia cada texto devagar, palavra por palavra.'},
-        {title: '2 · Dados', text: 'Procure telefone, e-mail ou nome de pessoa real.'},
-        {title: '3 · Celular', text: 'Botão na primeira tela e nada espremido.'}
-      ],
-      promptLabel: 'Missão individual', prompt: 'Use as seis conferências nas três abas: Computador, Tablet e Celular.',
+      title: 'O cliente mandou um recado', block: 2, layout: 'dw8',
+      lede: 'Ele quer tudo na página ainda hoje. Leia com as seis conferências na cabeça.',
+      bullets: ['“Coloca na página: Inscrisões abertas até sexta!”', '“Dúvidas, chama o Rafael no (48) 90000-0000.”', '“Usa aquela foto da galera no campeonato do ano passado. Achei na internet.”'],
+      promptLabel: 'Pense rápido', prompt: 'O que entra corrigido e o que não entra?',
       teacher: {
-        speech: 'Faça a chamada e demonstre só a troca de um texto em Personalizar item.',
-        steps: ['2 min · Fazer chamada.', '3 min · Retomar o projeto aberto antes do lanche.', '3 min · Demonstrar a correção de um texto em Personalizar item.'],
-        watch: 'Corrigir texto é edição no painel, não código.', rescue
+        speech: 'Faça a chamada e leia o recado em voz alta. Deixe a turma achar as armadilhas antes de responder.',
+        steps: ['2 min · Fazer chamada e retomar o projeto aberto antes do lanche.', '3 min · Ler o recado e ouvir a turma.', '3 min · Conferir: o aviso entra corrigido, “Inscrições abertas até sexta”. O telefone do Rafael não entra: o contato é da empresa, no rodapé. A foto não entra: mostra pessoas sem autorização e não se sabe de quem é; no lugar, um Ícone troféu.'],
+        watch: 'Cada decisão é justificada por uma das seis conferências.', rescue
       }
     },
     {
-      title: 'Revise as três telas', block: 2, layout: 'dw8',
-      lede: 'Uma aba de cada vez. Corrija, confira e exporte.',
+      title: 'Leve o recado para a página', block: 2, layout: 'dw8',
+      lede: 'Inclua só o que pode ser publicado, nas três telas.',
       cards: [
-        {title: 'Computador', text: 'Corrija e exporte computador.png.'},
-        {title: 'Tablet', text: 'Corrija e exporte tablet.png.'},
-        {title: 'Celular', text: 'Corrija e exporte celular.png.'}
+        {title: '1 · Aviso', text: 'Adicione um Texto “Inscrições abertas até sexta” perto do destaque.'},
+        {title: '2 · Ícone', text: 'No lugar da foto, um Ícone troféu ao lado do aviso.'},
+        {title: '3 · Três telas', text: 'Repita no Tablet e no Celular. No celular, o botão continua antes da linha tracejada.'}
       ],
-      promptLabel: 'Pronto quando', prompt: 'Seis conferências feitas e conferência da oficina em ✓ nas três abas. Salve o projeto.',
+      promptLabel: 'Pronto quando', prompt: 'Conferência da oficina em ✓ nas três abas. Exporte computador.png, tablet.png e celular.png e salve o projeto.',
       teacher: {
-        speech: 'Circule o olhar pela sala sem sair da frente; atenda quem levantar a mão.',
-        steps: ['22 min · Revisão individual das três telas.', '3 min · Exportar os três PNGs e salvar o projeto.'],
-        watch: 'Mudanças pequenas e certeiras; não é hora de redesenhar a página.', rescue
+        speech: 'Demonstre só o primeiro Texto na aba Computador. Circule o olhar pela sala sem sair da frente; atenda quem levantar a mão.',
+        steps: ['20 min · Incluir aviso e ícone nas três telas.', '5 min · Exportar os três PNGs e salvar o projeto.'],
+        watch: 'Texto e ícone ficam fora da conferência da oficina; conferir visualmente que não cobrem destaque nem botão e que a palavra Inscrições está certa.', rescue
       }
     },
     {
       title: 'Rodapé honesto', block: 2, layout: 'dw8',
-      lede: 'O rodapé conta quem fez a página e como falar com a empresa.',
+      lede: 'O contato do recado vai para o rodapé, do jeito certo.',
       cards: [
-        {title: 'Aviso', text: '“Empresa e conteúdo fictícios, para estudo.”'},
-        {title: 'Contato', text: 'Contato da empresa, nunca o telefone de uma pessoa.'},
-        {title: 'Crédito', text: 'Se usou imagem, um Texto pequeno: “Imagem: nome de quem fez”.'}
+        {title: 'Contato', text: 'Selecione o rodapé e, em Personalizar item, escreva: “Dúvidas no balcão da Arena · Empresa fictícia”.'},
+        {title: 'Nunca', text: 'Telefone, e-mail ou nome de pessoa real.'},
+        {title: 'Crédito', text: 'Se usou imagem sua, um Texto pequeno: “Imagem: seu nome”.'}
       ],
       promptLabel: 'Confira nas três telas', prompt: 'Rodapé e créditos iguais no Computador, no Tablet e no Celular.',
       teacher: {
         speech: 'Crédito é sinal de respeito a quem fez a imagem; aviso de ficção evita que alguém procure a Arena Pixel de verdade.',
-        steps: ['2 min · Ler os três cartões.', '8 min · Ajustar rodapé e créditos nas três telas e exportar de novo o que mudou.'],
-        watch: 'Quem não usou imagem só confere o aviso no rodapé.', rescue
+        steps: ['2 min · Ler os três cartões.', '8 min · Trocar o rodapé nas três telas e exportar de novo o que mudou.'],
+        watch: 'O aviso de empresa fictícia continua no rodapé.', rescue
       }
     },
     {
@@ -218,7 +214,7 @@ export const support = {
       lede: 'Quem fez a página não vê os próprios erros. Peça ajuda ao colega do lado.',
       cards: [
         {title: '1 · Mostre', text: 'Vire a tela para o colega do lado, na aba Celular, sem levantar.'},
-        {title: '2 · Ele procura', text: 'Um erro de escrita, um dado pessoal e um item espremido.'},
+        {title: '2 · Ele procura', text: 'Erro de escrita, dado pessoal ou algo cobrindo o botão.'},
         {title: '3 · Corrija', text: 'Ajuste o que ele achou e exporte de novo. Depois troquem.'}
       ],
       promptLabel: 'Combinado', prompt: 'Avalie a página, não a pessoa.',
@@ -232,7 +228,7 @@ export const support = {
       title: 'A Arena Pixel está no ar', block: 3, layout: 'dw8',
       lede: 'Uma versão de teste da página foi publicada de verdade. Abra no computador e no celular.',
       resources: [{href: site, label: 'Abrir a página de teste'}],
-      promptLabel: 'No celular, digite', prompt: 'oficinas-design-web.vercel.app/aula-10',
+      promptLabel: 'No celular', prompt: 'Abra oficinas-design-web.vercel.app e toque em A Arena Pixel no ar.',
       teacher: {
         speech: 'Faça a chamada. Avise que alguém publicou essa versão sem conferir nada.',
         steps: ['2 min · Fazer chamada.', '6 min · Cada aluno abre a página no computador e no celular.'],
@@ -251,7 +247,7 @@ export const support = {
       teacher: {
         speech: 'Não entregue respostas durante a caça; só confirme se o aluno está no lugar certo.',
         steps: ['12 min · Caça individual, com anotação no caderno.', '5 min · Conferir: 1) “Xadres rápido” escrito errado; 2) telefone particular do Rafael no rodapé; 3) Quero participar leva a uma página não encontrada; 4) imagem do destaque não carrega; 5) no celular, os quatro cartões ficam lado a lado, espremidos e cortados.'],
-        watch: 'Quem achar os cinco cedo procura mais um detalhe que poderia melhorar.', rescue
+        watch: 'Menu miúdo e marca quebrada no celular contam dentro do problema 5. Quem achar os cinco cedo vai para o desafio extra.', rescue
       }
     },
     {
@@ -291,18 +287,18 @@ export const support = {
       }
     },
     {
-      title: 'Desafio extra · Prévia do link', block: 3, layout: 'dw8', pace: 'extra',
-      lede: 'Quando alguém manda um link por mensagem, aparece um cartão com imagem, título e descrição.',
+      title: 'Desafio extra · Um sexto detalhe', block: 3, layout: 'dw8', pace: 'extra',
+      lede: 'Além dos cinco problemas, a página de teste ainda pode melhorar.',
       cards: [
-        {title: 'Imagem', text: 'Qual PNG da sua pasta mostra melhor a Arena Pixel?'},
-        {title: 'Título', text: 'Até seis palavras.'},
-        {title: 'Descrição', text: 'Uma frase com o quê, quando e quanto custa.'}
+        {title: 'Toque', text: 'Cada item do menu leva a um lugar diferente?'},
+        {title: 'Olhe', text: 'No celular, a marca cabe numa linha só?'},
+        {title: 'Proponha', text: 'Escreva no caderno como você melhoraria.'}
       ],
-      promptLabel: 'No caderno', prompt: 'Desenhe o cartão como ele apareceria numa conversa.',
+      promptLabel: 'No caderno', prompt: '“Eu melhoraria ___ porque ___.”',
       teacher: {
-        speech: 'É o primeiro contato de muita gente com a página; vale caprichar.',
-        steps: ['10 min · Rascunhar a prévia no caderno.'],
-        watch: 'Título curto e descrição que cabe em duas linhas.', rescue
+        speech: 'Desafio opcional para quem achou os cinco problemas antes.',
+        steps: ['8 min · Procurar e escrever a proposta.'],
+        watch: 'Horários e Campeonatos levam ao mesmo lugar; no celular a marca quebra em duas linhas e o menu fica miúdo.', rescue
       }
     },
     {

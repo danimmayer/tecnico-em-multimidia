@@ -75,17 +75,17 @@ window.SENAI_TEACHING_SUPPORT = {
     "lessons": {
       "10": {
         "appendDefaultClosing": false,
-        "teacherGoal": "Cada estudante entrega a página da Arena Pixel revisada nas três telas, sem dado pessoal e sem erro de escrita, encontra os cinco problemas da página de teste publicada e anota endereço, título e descrição para o link da própria página até 22:10.",
+        "teacherGoal": "Cada estudante entrega a página da Arena Pixel com o recado do cliente publicado do jeito certo nas três telas, sem dado pessoal e sem erro de escrita, encontra os cinco problemas da página de teste publicada e anota endereço, título e descrição para o link da própria página até 22:10.",
         "routine": [
           "Antes da aula, abrir no celular e no computador da sala https://oficinas-design-web.vercel.app/aula-10/ e https://oficinas-design-web.vercel.app/aula-10/corrigida/ para confirmar que estão no ar.",
           "Manter os alunos no posto; pedir atenção antes de cada demonstração e liberar só a tarefa indicada."
         ],
         "onlineRoutine": "A página de teste e a corrigida estão publicadas no site das oficinas. Sem internet, abrir as cópias da pasta modelos/design-web/aula-10 no computador da sala e projetar.",
-        "plainLanguage": "Publicar é copiar a página pronta para a hospedagem, um computador sempre ligado, e ganhar um endereço que qualquer pessoa abre. Antes disso, tudo o que está na página precisa poder ser público.",
+        "plainLanguage": "Publicar é como tirar um cartaz da mochila e pregar num mural da cidade. A hospedagem é o mural, um computador sempre ligado; o endereço diz onde ele fica. Depois de pregado, qualquer pessoa vê e copia, então tudo o que está na página precisa poder ser público.",
         "say": "Até agora a Arena Pixel só existia na pasta de vocês. Hoje vamos ver o que muda quando ela ganha um endereço que qualquer pessoa abre.",
         "demo": [
           "Abrir o site das oficinas no celular e no computador: mesmo endereço, duas telas.",
-          "Abrir o projeto responsivo e trocar um texto em Personalizar item.",
+          "Abrir o projeto responsivo, adicionar um Texto e trocar o texto do rodapé em Personalizar item.",
           "Abrir a página de teste e tocar no botão Quero participar."
         ],
         "studentDeliverable": "Pasta Aula-10: computador.png, tablet.png, celular.png e projeto-responsivo.grade revisados. No caderno: os cinco problemas da página de teste, endereço, título e descrição do link e uma frase sobre o que conferir antes de publicar.",
@@ -97,7 +97,7 @@ window.SENAI_TEACHING_SUPPORT = {
           "Os cinco problemas da página de teste anotados no caderno."
         ],
         "fallback": "Sem internet, abrir as cópias da página de teste e da corrigida no computador da sala e projetar; a caça acontece na tela projetada, com respostas no caderno. Sem o projeto da aula 09, revisar a página pronta da oficina. Não distribuir fichas.",
-        "extension": "Quem terminar antes das 21:30 faz um desafio extra no caderno: a página de \"não encontrada\" da Arena Pixel ou a prévia do link para mensagens.",
+        "extension": "Quem terminar antes das 21:30 faz um desafio extra no caderno: a página de \"não encontrada\" da Arena Pixel ou um sexto detalhe a melhorar na página de teste.",
         "commonProblems": [
           [
             "O aluno não tem o projeto da aula 09",
@@ -164,7 +164,7 @@ window.SENAI_TEACHING_SUPPORT = {
               },
               {
                 "title": "Protótipo",
-                "text": "Uma simulação para testar com poucas pessoas. Ainda não é o site."
+                "text": "Parece o site e dá para testar, mas ainda não tem endereço."
               },
               {
                 "title": "Link",
@@ -172,13 +172,13 @@ window.SENAI_TEACHING_SUPPORT = {
               }
             ],
             "promptLabel": "Desafio rápido",
-            "prompt": "O celular.png da sua pasta é arquivo, protótipo ou link? E a oficina que você abre pelo navegador?",
+            "prompt": "O celular.png da sua pasta é arquivo, protótipo ou link? E a página que você montou na oficina?",
             "teacher": {
               "speech": "Deixe a turma classificar antes de responder.",
               "steps": [
                 "2 min · Ler os três cartões.",
                 "2 min · Ouvir palpites.",
-                "4 min · Conferir: celular.png é arquivo, só abre quem tem a pasta. O projeto aberto na oficina para testar com o colega é protótipo. A oficina em oficinas-design-web.vercel.app é link: abre em qualquer computador ou celular."
+                "4 min · Conferir: celular.png é arquivo, só abre quem tem a pasta. A página montada na oficina é protótipo: parece o site, dá para testar, mas só existe no seu computador. Link é o próximo slide: um endereço que abre em qualquer tela."
               ],
               "watch": "A turma percebe que a diferença é quem consegue ver.",
               "rescue": "Se alguém travar, demonstrar um único movimento e devolver o controle ao aluno no posto."
@@ -188,27 +188,27 @@ window.SENAI_TEACHING_SUPPORT = {
             "title": "Um endereço para todo mundo",
             "block": 1,
             "layout": "dw8",
-            "lede": "Três palavras explicam como uma página chega ao celular de qualquer pessoa.",
+            "lede": "Publicar uma página é como tirar um cartaz da mochila e pregar num mural da cidade.",
             "cards": [
               {
-                "title": "Endereço",
-                "text": "O nome que a pessoa digita ou toca para chegar à página."
+                "title": "Na mochila",
+                "text": "A página na sua pasta é um cartaz guardado. Só você vê."
               },
               {
-                "title": "Hospedagem",
-                "text": "Um computador sempre ligado que guarda a página e entrega a quem pede."
+                "title": "No mural",
+                "text": "Hospedagem é o mural: um computador sempre ligado que mostra a página a quem pedir."
               },
               {
-                "title": "Publicação",
-                "text": "Copiar a página pronta para a hospedagem. A partir daí, ela tem endereço."
+                "title": "O endereço",
+                "text": "É onde fica o mural. Qualquer pessoa chega, vê, fotografa e copia o cartaz."
               }
             ],
             "promptLabel": "Experimente",
             "prompt": "No celular, digite oficinas-design-web.vercel.app. É o mesmo endereço que abre no computador.",
             "teacher": {
-              "speech": "As oficinas que eles usam estão publicadas assim: uma pasta copiada para a hospedagem ganhou esse endereço.",
+              "speech": "Use o cartaz e o mural. As oficinas que eles usam são um cartaz já pregado: a pasta foi copiada para a hospedagem e ganhou esse endereço.",
               "steps": [
-                "3 min · Explicar as três palavras com o site das oficinas como exemplo.",
+                "3 min · Explicar mochila, mural e endereço com o site das oficinas como exemplo. Fechar com: o que está no mural qualquer um copia, por isso a gente confere antes.",
                 "5 min · Cada aluno abre o endereço no celular e compara com o computador."
               ],
               "watch": "Quem não tiver celular olha o do colega do lado ou estreita a janela do navegador.",
@@ -248,7 +248,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "lede": "Seis conferências antes de qualquer página ganhar endereço.",
             "cards": [
               {
-                "title": "Nomes",
+                "title": "Nome",
                 "text": "Empresa fictícia ou com autorização."
               },
               {
@@ -339,65 +339,56 @@ window.SENAI_TEACHING_SUPPORT = {
             }
           },
           {
-            "title": "Revisor da própria página",
+            "title": "O cliente mandou um recado",
             "block": 2,
             "layout": "dw8",
-            "lede": "Antes de alguém ver, você vê. Leia sua página como se fosse um cliente.",
-            "cards": [
-              {
-                "title": "1 · Escrita",
-                "text": "Leia cada texto devagar, palavra por palavra."
-              },
-              {
-                "title": "2 · Dados",
-                "text": "Procure telefone, e-mail ou nome de pessoa real."
-              },
-              {
-                "title": "3 · Celular",
-                "text": "Botão na primeira tela e nada espremido."
-              }
+            "lede": "Ele quer tudo na página ainda hoje. Leia com as seis conferências na cabeça.",
+            "bullets": [
+              "“Coloca na página: Inscrisões abertas até sexta!”",
+              "“Dúvidas, chama o Rafael no (48) 90000-0000.”",
+              "“Usa aquela foto da galera no campeonato do ano passado. Achei na internet.”"
             ],
-            "promptLabel": "Missão individual",
-            "prompt": "Use as seis conferências nas três abas: Computador, Tablet e Celular.",
+            "promptLabel": "Pense rápido",
+            "prompt": "O que entra corrigido e o que não entra?",
             "teacher": {
-              "speech": "Faça a chamada e demonstre só a troca de um texto em Personalizar item.",
+              "speech": "Faça a chamada e leia o recado em voz alta. Deixe a turma achar as armadilhas antes de responder.",
               "steps": [
-                "2 min · Fazer chamada.",
-                "3 min · Retomar o projeto aberto antes do lanche.",
-                "3 min · Demonstrar a correção de um texto em Personalizar item."
+                "2 min · Fazer chamada e retomar o projeto aberto antes do lanche.",
+                "3 min · Ler o recado e ouvir a turma.",
+                "3 min · Conferir: o aviso entra corrigido, “Inscrições abertas até sexta”. O telefone do Rafael não entra: o contato é da empresa, no rodapé. A foto não entra: mostra pessoas sem autorização e não se sabe de quem é; no lugar, um Ícone troféu."
               ],
-              "watch": "Corrigir texto é edição no painel, não código.",
+              "watch": "Cada decisão é justificada por uma das seis conferências.",
               "rescue": "Se alguém travar, demonstrar um único movimento e devolver o controle ao aluno no posto."
             }
           },
           {
-            "title": "Revise as três telas",
+            "title": "Leve o recado para a página",
             "block": 2,
             "layout": "dw8",
-            "lede": "Uma aba de cada vez. Corrija, confira e exporte.",
+            "lede": "Inclua só o que pode ser publicado, nas três telas.",
             "cards": [
               {
-                "title": "Computador",
-                "text": "Corrija e exporte computador.png."
+                "title": "1 · Aviso",
+                "text": "Adicione um Texto “Inscrições abertas até sexta” perto do destaque."
               },
               {
-                "title": "Tablet",
-                "text": "Corrija e exporte tablet.png."
+                "title": "2 · Ícone",
+                "text": "No lugar da foto, um Ícone troféu ao lado do aviso."
               },
               {
-                "title": "Celular",
-                "text": "Corrija e exporte celular.png."
+                "title": "3 · Três telas",
+                "text": "Repita no Tablet e no Celular. No celular, o botão continua antes da linha tracejada."
               }
             ],
             "promptLabel": "Pronto quando",
-            "prompt": "Seis conferências feitas e conferência da oficina em ✓ nas três abas. Salve o projeto.",
+            "prompt": "Conferência da oficina em ✓ nas três abas. Exporte computador.png, tablet.png e celular.png e salve o projeto.",
             "teacher": {
-              "speech": "Circule o olhar pela sala sem sair da frente; atenda quem levantar a mão.",
+              "speech": "Demonstre só o primeiro Texto na aba Computador. Circule o olhar pela sala sem sair da frente; atenda quem levantar a mão.",
               "steps": [
-                "22 min · Revisão individual das três telas.",
-                "3 min · Exportar os três PNGs e salvar o projeto."
+                "20 min · Incluir aviso e ícone nas três telas.",
+                "5 min · Exportar os três PNGs e salvar o projeto."
               ],
-              "watch": "Mudanças pequenas e certeiras; não é hora de redesenhar a página.",
+              "watch": "Texto e ícone ficam fora da conferência da oficina; conferir visualmente que não cobrem destaque nem botão e que a palavra Inscrições está certa.",
               "rescue": "Se alguém travar, demonstrar um único movimento e devolver o controle ao aluno no posto."
             }
           },
@@ -405,19 +396,19 @@ window.SENAI_TEACHING_SUPPORT = {
             "title": "Rodapé honesto",
             "block": 2,
             "layout": "dw8",
-            "lede": "O rodapé conta quem fez a página e como falar com a empresa.",
+            "lede": "O contato do recado vai para o rodapé, do jeito certo.",
             "cards": [
               {
-                "title": "Aviso",
-                "text": "“Empresa e conteúdo fictícios, para estudo.”"
+                "title": "Contato",
+                "text": "Selecione o rodapé e, em Personalizar item, escreva: “Dúvidas no balcão da Arena · Empresa fictícia”."
               },
               {
-                "title": "Contato",
-                "text": "Contato da empresa, nunca o telefone de uma pessoa."
+                "title": "Nunca",
+                "text": "Telefone, e-mail ou nome de pessoa real."
               },
               {
                 "title": "Crédito",
-                "text": "Se usou imagem, um Texto pequeno: “Imagem: nome de quem fez”."
+                "text": "Se usou imagem sua, um Texto pequeno: “Imagem: seu nome”."
               }
             ],
             "promptLabel": "Confira nas três telas",
@@ -426,9 +417,9 @@ window.SENAI_TEACHING_SUPPORT = {
               "speech": "Crédito é sinal de respeito a quem fez a imagem; aviso de ficção evita que alguém procure a Arena Pixel de verdade.",
               "steps": [
                 "2 min · Ler os três cartões.",
-                "8 min · Ajustar rodapé e créditos nas três telas e exportar de novo o que mudou."
+                "8 min · Trocar o rodapé nas três telas e exportar de novo o que mudou."
               ],
-              "watch": "Quem não usou imagem só confere o aviso no rodapé.",
+              "watch": "O aviso de empresa fictícia continua no rodapé.",
               "rescue": "Se alguém travar, demonstrar um único movimento e devolver o controle ao aluno no posto."
             }
           },
@@ -444,7 +435,7 @@ window.SENAI_TEACHING_SUPPORT = {
               },
               {
                 "title": "2 · Ele procura",
-                "text": "Um erro de escrita, um dado pessoal e um item espremido."
+                "text": "Erro de escrita, dado pessoal ou algo cobrindo o botão."
               },
               {
                 "title": "3 · Corrija",
@@ -474,8 +465,8 @@ window.SENAI_TEACHING_SUPPORT = {
                 "label": "Abrir a página de teste"
               }
             ],
-            "promptLabel": "No celular, digite",
-            "prompt": "oficinas-design-web.vercel.app/aula-10",
+            "promptLabel": "No celular",
+            "prompt": "Abra oficinas-design-web.vercel.app e toque em A Arena Pixel no ar.",
             "teacher": {
               "speech": "Faça a chamada. Avise que alguém publicou essa versão sem conferir nada.",
               "steps": [
@@ -513,7 +504,7 @@ window.SENAI_TEACHING_SUPPORT = {
                 "12 min · Caça individual, com anotação no caderno.",
                 "5 min · Conferir: 1) “Xadres rápido” escrito errado; 2) telefone particular do Rafael no rodapé; 3) Quero participar leva a uma página não encontrada; 4) imagem do destaque não carrega; 5) no celular, os quatro cartões ficam lado a lado, espremidos e cortados."
               ],
-              "watch": "Quem achar os cinco cedo procura mais um detalhe que poderia melhorar.",
+              "watch": "Menu miúdo e marca quebrada no celular contam dentro do problema 5. Quem achar os cinco cedo vai para o desafio extra.",
               "rescue": "Se alguém travar, demonstrar um único movimento e devolver o controle ao aluno no posto."
             }
           },
@@ -589,33 +580,33 @@ window.SENAI_TEACHING_SUPPORT = {
             }
           },
           {
-            "title": "Desafio extra · Prévia do link",
+            "title": "Desafio extra · Um sexto detalhe",
             "block": 3,
             "layout": "dw8",
             "pace": "extra",
-            "lede": "Quando alguém manda um link por mensagem, aparece um cartão com imagem, título e descrição.",
+            "lede": "Além dos cinco problemas, a página de teste ainda pode melhorar.",
             "cards": [
               {
-                "title": "Imagem",
-                "text": "Qual PNG da sua pasta mostra melhor a Arena Pixel?"
+                "title": "Toque",
+                "text": "Cada item do menu leva a um lugar diferente?"
               },
               {
-                "title": "Título",
-                "text": "Até seis palavras."
+                "title": "Olhe",
+                "text": "No celular, a marca cabe numa linha só?"
               },
               {
-                "title": "Descrição",
-                "text": "Uma frase com o quê, quando e quanto custa."
+                "title": "Proponha",
+                "text": "Escreva no caderno como você melhoraria."
               }
             ],
             "promptLabel": "No caderno",
-            "prompt": "Desenhe o cartão como ele apareceria numa conversa.",
+            "prompt": "“Eu melhoraria ___ porque ___.”",
             "teacher": {
-              "speech": "É o primeiro contato de muita gente com a página; vale caprichar.",
+              "speech": "Desafio opcional para quem achou os cinco problemas antes.",
               "steps": [
-                "10 min · Rascunhar a prévia no caderno."
+                "8 min · Procurar e escrever a proposta."
               ],
-              "watch": "Título curto e descrição que cabe em duas linhas.",
+              "watch": "Horários e Campeonatos levam ao mesmo lugar; no celular a marca quebra em duas linhas e o menu fica miúdo.",
               "rescue": "Se alguém travar, demonstrar um único movimento e devolver o controle ao aluno no posto."
             }
           },
