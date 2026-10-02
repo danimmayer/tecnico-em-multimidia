@@ -126,9 +126,10 @@ e botão antes do fim da primeira tela do celular. Entrega: `tablet.png`,
 Na Aula 10, a Arena Pixel sai da pasta e ganha um endereço. O aluno revisa a
 própria página nas três telas da oficina responsiva com seis conferências
 (nomes, escrita, dados, imagens, botões e celular) e caça cinco problemas numa
-versão de teste publicada de verdade em
-`https://oficinas-design-web.vercel.app/aula-10/`, que pode ser comparada com
-`/aula-10/corrigida/`. As duas páginas são geradas em
+versão de teste publicada de verdade. A entrada da noite,
+`https://oficinas-design-web.vercel.app/aula-10/`, reúne a oficina responsiva,
+a página de teste (`/aula-10/teste/`) e a versão corrigida
+(`/aula-10/corrigida/`). As três páginas são geradas em
 `modelos/design-web/aula-10/`. Entrega: `computador.png`, `tablet.png`,
 `celular.png`, `projeto-responsivo.grade` e, no caderno, os cinco problemas e o
 endereço, o título e a descrição do link da própria página.

@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 import {fileURLToPath} from 'node:url';
 import {lesson, support} from './lessons/design-web-10.mjs';
-import {arenaPage, problems} from './lessons/design-web-10-site.mjs';
+import {arenaPage, hubPage, problems} from './lessons/design-web-10-site.mjs';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const context = {window: {}};
 for (const file of ['assets/course-data.js', 'assets/course-support.js']) vm.runInNewContext(fs.readFileSync(root + file, 'utf8'), context);
@@ -38,7 +38,9 @@ assert.equal(problems.length, 5);
 
 // Published pages match the generator; the test page has the five problems and the fixed one none.
 const dir = root + 'modelos/design-web/aula-10/';
-const test = fs.readFileSync(dir + 'index.html', 'utf8'), fixed = fs.readFileSync(dir + 'corrigida/index.html', 'utf8');
+assert.equal(fs.readFileSync(dir + 'index.html', 'utf8'), hubPage());
+for (const href of ['../aula-09/', 'teste/', 'corrigida/']) assert.ok(hubPage().includes(`href="${href}"`), href);
+const test = fs.readFileSync(dir + 'teste/index.html', 'utf8'), fixed = fs.readFileSync(dir + 'corrigida/index.html', 'utf8');
 assert.equal(test, arenaPage({fixed: false}));
 assert.equal(fixed, arenaPage({fixed: true}));
 for (const page of [test, fixed]) assert.ok(!/<(?:script|link|img)[^>]*(?:src|href)="https?:/i.test(page) && !/<script/i.test(page), 'Pages must be self-contained and script-free');

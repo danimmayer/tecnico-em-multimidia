@@ -77,7 +77,7 @@ window.SENAI_TEACHING_SUPPORT = {
         "appendDefaultClosing": false,
         "teacherGoal": "Cada estudante entrega a página da Arena Pixel com o recado do cliente publicado do jeito certo nas três telas, sem dado pessoal e sem erro de escrita, encontra os cinco problemas da página de teste publicada e anota endereço, título e descrição para o link da própria página até 22:10.",
         "routine": [
-          "Antes da aula, abrir no celular e no computador da sala https://oficinas-design-web.vercel.app/aula-10/ e https://oficinas-design-web.vercel.app/aula-10/corrigida/ para confirmar que estão no ar.",
+          "Antes da aula, abrir no celular e no computador da sala https://oficinas-design-web.vercel.app/aula-10/, a página de entrada da noite, e conferir os três cartões: oficina responsiva, página de teste e versão corrigida.",
           "Manter os alunos no posto; pedir atenção antes de cada demonstração e liberar só a tarefa indicada."
         ],
         "onlineRoutine": "A página de teste e a corrigida estão publicadas no site das oficinas. Sem internet, abrir as cópias da pasta modelos/design-web/aula-10 no computador da sala e projetar.",
@@ -461,12 +461,12 @@ window.SENAI_TEACHING_SUPPORT = {
             "lede": "Uma versão de teste da página foi publicada de verdade. Abra no computador e no celular.",
             "resources": [
               {
-                "href": "https://oficinas-design-web.vercel.app/aula-10/",
+                "href": "https://oficinas-design-web.vercel.app/aula-10/teste/",
                 "label": "Abrir a página de teste"
               }
             ],
             "promptLabel": "No celular",
-            "prompt": "Abra oficinas-design-web.vercel.app e toque em A Arena Pixel no ar.",
+            "prompt": "Abra oficinas-design-web.vercel.app, toque em Do protótipo ao link e depois em Página de teste.",
             "teacher": {
               "speech": "Faça a chamada. Avise que alguém publicou essa versão sem conferir nada.",
               "steps": [
@@ -537,7 +537,7 @@ window.SENAI_TEACHING_SUPPORT = {
               }
             ],
             "promptLabel": "Compare no celular",
-            "prompt": "oficinas-design-web.vercel.app/aula-10/corrigida. O que mudou?",
+            "prompt": "Volte ao cartão Do protótipo ao link e toque em Versão corrigida. O que mudou?",
             "teacher": {
               "speech": "Peça que comparem as duas versões no celular, lado a lado com o colega se precisar.",
               "steps": [
