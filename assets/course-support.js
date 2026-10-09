@@ -6385,20 +6385,846 @@ window.SENAI_TEACHING_SUPPORT = {
         "appendDefaultClosing": false
       },
       "11": {
-        "teacherGoal": "Aplicar transições e keyframes com propósito.",
-        "plainLanguage": "Corte é padrão; transição sinaliza relação. Keyframe registra mudança ao longo do tempo.",
-        "say": "Se a transição chama mais atenção que a história, provavelmente está sobrando.",
+        "teacherGoal": "Fazer a turma montar e transformar material novo no Shotcut: transições experimentadas, um movimento criado com keyframes e um trailer exportado localmente.",
+        "plainLanguage": "Transição muda a passagem entre duas imagens. Filtro altera a imagem selecionada. Keyframe guarda um valor em um instante; dois instantes diferentes permitem criar movimento.",
+        "say": "Hoje todos começam com cenas novas. Vocês vão escolher o que mostrar, como trocar de cena e para onde o olhar vai.",
         "demo": [
-          "Compare corte, fusão e transição chamativa.",
-          "Anime posição e opacidade com dois keyframes.",
-          "Ajuste duração."
+          "Levo programa Portable e kit já baixados. Antes do lanche, mostro exemplos se houver tempo; posso usar toda a abertura para preparar os postos. Depois, demonstro a prática desde o início.",
+          "Mostro os mesmos dois clipes com corte, fusão e varredura; a turma repete imediatamente.",
+          "Mostro uma foto parada e depois animada, com dois keyframes de tamanho e posição.",
+          "Exporto a linha do tempo e abro o MP4 no reprodutor local."
         ],
-        "studentDeliverable": "Sequência com uma transição justificada e animação simples.",
+        "studentDeliverable": "Um trailer curto, como referência de 15 a 30 segundos, com três clipes do kit e uma foto animada por keyframes. Criar uma fusão no trailer; experimentar a varredura como variação depois que a fusão funcionar. Salvar meu-trailer.mlt e meu-trailer.mp4 na pasta do kit. Mostrar o resultado na própria tela; sem envio pela internet ou relatório.",
         "check": [
-          "Efeito apoia narrativa.",
-          "Movimento começa e termina suavemente."
+          "O estudante montou e aparou três clipes do kit; uma abertura diferente é uma variação possível.",
+          "Uma fusão aparece no trailer e foi conferida na reprodução; varredura é uma variação opcional.",
+          "A foto tem dois keyframes em instantes distintos e movimento visível.",
+          "O enquadramento não revela bordas vazias nem perde o detalhe escolhido.",
+          "O MP4 reproduz do começo ao fim, com imagem e som conferidos.",
+          "O projeto e a exportação estão na pasta do kit; o estudante consegue mostrar o que editou."
         ],
-        "fallback": "Trabalhe apenas opacidade e escala em uma imagem."
+        "fallback": "O Portable já extraído e o kit local evitam downloads simultâneos. Se houver bloqueio ao abrir o Shotcut, solicitar apoio do laboratório e compartilhar um posto funcional com revezamento enquanto isso. O kit independe de material antigo e da internet. Se um posto falhar, compartilhar temporariamente um computador funcional e alternar o mouse, mantendo a prática de edição. Se a prévia travar, reduzir a resolução de prévia e conferir um trecho exportado. Não substituir a edição por preenchimento de fichas.",
+        "extension": "Quem concluir um desafio recebe sua variação imediatamente: encurtar a transição, inverter a varredura, inverter o zoom ou criar um terceiro keyframe. Quem terminar o trailer muda sua abertura com os mesmos clipes e compara a reprodução. As variações acontecem no projeto atual; não exigem arquivos extras nem uploads.",
+        "commonProblems": [
+          [
+            "A preparação do Shotcut Portable ainda não terminou",
+            "Encurto ou pulo os exemplos da abertura para preparar os postos. Depois do lanche, quem precisar compartilha temporariamente um posto funcional; solicito apoio do laboratório para permissões."
+          ],
+          [
+            "Não encontro os arquivos",
+            "Abro a pasta Aula11 copiada para Documentos; não busco material de aulas anteriores."
+          ],
+          [
+            "A transição não aparece",
+            "Sobreponho dois clipes na mesma trilha e verifico se a opção de criar transições na sobreposição está habilitada."
+          ],
+          [
+            "Mudei a transição, mas nada aconteceu",
+            "Seleciono o bloco com X e abro Propriedades; Filtros do clipe não altera o tipo da transição."
+          ],
+          [
+            "A foto fica ampliada o tempo todo",
+            "Ativo keyframes do filtro e confiro dois marcadores em tempos diferentes, com valores diferentes."
+          ],
+          [
+            "A foto pula ou revela uma borda",
+            "Uso interpolação linear no primeiro teste; confiro o enquadramento nos dois extremos e durante o movimento."
+          ],
+          [
+            "O som corta na troca de cena",
+            "Ouço a emenda com fones e aplico fade de áudio curto quando necessário; os clipes já têm som."
+          ],
+          [
+            "Terminei o primeiro corte",
+            "Entrego a próxima variação visual enquanto acompanho os colegas; não encerro a prática no primeiro MP4."
+          ]
+        ],
+        "presentationSlides": [
+          {
+            "title": "Ordem do dia",
+            "kicker": "Aula 11 · Shotcut",
+            "heading": "Uma fruta. Dois personagens. Seu trailer.",
+            "lede": "Cenas novas, edição no computador e escolhas que aparecem na tela.",
+            "block": 1,
+            "av9": {
+              "type": "day",
+              "rows": [
+                {
+                  "time": "19:00–19:45",
+                  "minutes": 45,
+                  "title": "Conhecer as cenas",
+                  "text": "Exemplos e exploração, conforme o tempo disponível."
+                },
+                {
+                  "time": "19:45–20:05",
+                  "minutes": 20,
+                  "title": "Lanche",
+                  "text": "Na volta, começa a montagem.",
+                  "pause": true
+                },
+                {
+                  "time": "20:05–21:00",
+                  "minutes": 55,
+                  "title": "Montar e transformar",
+                  "text": "Três clipes e uma fusão; varredura como variação."
+                },
+                {
+                  "time": "21:00–21:40",
+                  "minutes": 40,
+                  "title": "Fazer a foto se mover",
+                  "text": "Tamanho, posição e keyframes."
+                },
+                {
+                  "time": "21:40–22:10",
+                  "minutes": 30,
+                  "title": "Assistir e melhorar",
+                  "text": "Exportar e mostrar na tela."
+                }
+              ]
+            },
+            "teacher": {
+              "steps": [
+                "3 min · Faço a chamada e apresento o desafio; organizo o revezamento apenas nos postos compartilhados."
+              ],
+              "watch": "A exigência está na montagem e nas transformações, não em aumentar a duração.",
+              "rescue": "Mostro uma cena do kit para tornar o resultado concreto desde a abertura."
+            }
+          },
+          {
+            "title": "Ver o resultado",
+            "kicker": "Uma ideia do que vamos criar",
+            "heading": "Esta foto ganhou movimento",
+            "lede": "O enquadramento se aproxima. Para onde seu olhar vai?",
+            "block": 1,
+            "av9": {
+              "type": "media",
+              "clips": [
+                {
+                  "src": "modelos/producao-audiovisual/aula-11/exemplo-zoom.mp4",
+                  "label": "DA CENA AO DETALHE",
+                  "text": "Uma foto do kit, transformada na edição.",
+                  "poster": "modelos/producao-audiovisual/aula-11/media/foto-fruta.jpg"
+                }
+              ]
+            },
+            "teacher": {
+              "steps": [
+                "10 min · Janela flexível para mostrar a foto e o exemplo, ouvir impressões e acompanhar a preparação dos postos."
+              ],
+              "watch": "Posso encurtar ou pular este momento inteiro para preparar o Shotcut Portable. A demonstração de como fazer será depois do lanche.",
+              "rescue": "Se os postos já funcionam, avanço para a montagem; não alongo a conversa para preencher o tempo."
+            }
+          },
+          {
+            "title": "O que há no pendrive",
+            "kicker": "Pasta Aula11-Pendrive",
+            "heading": "Cada coisa no seu lugar.",
+            "lede": "O programa, a atividade e a projeção já estão separados.",
+            "block": 1,
+            "av9": {
+              "type": "checks",
+              "items": [
+                {
+                  "label": "01-SHOTCUT",
+                  "text": "Pasta Shotcut com o programa Portable já extraído."
+                },
+                {
+                  "label": "02-ALUNO",
+                  "text": "Pasta Aula11: oito clipes, duas fotos, guia PDF e créditos."
+                },
+                {
+                  "label": "03-PROFESSOR",
+                  "text": "Slides offline, exemplos e orientação para a aula."
+                }
+              ]
+            },
+            "resources": [
+              {
+                "href": "modelos/producao-audiovisual/aula-11/index.html",
+                "label": "Ver o kit da aula"
+              },
+              {
+                "href": "modelos/producao-audiovisual/aula-11/Guia-Aula11-Shotcut.pdf",
+                "label": "Abrir guia PDF"
+              }
+            ],
+            "teacher": {
+              "steps": [
+                "10 min · Janela flexível para apresentar o kit e assistir a alguns clipes, enquanto organizo os postos."
+              ],
+              "watch": "Este panorama é dispensável. Copio o kit por pendrive ou rede local quando possível, mas não exijo importação nem projeto pronto antes do lanche. O Shotcut é gratuito e de código aberto.",
+              "rescue": "Se a preparação do Shotcut Portable ocupar o período, pulo este slide. Na volta, mostro a pasta, a importação e o salvamento desde o início."
+            }
+          },
+          {
+            "title": "Conhecer as cenas",
+            "kicker": "Matéria-prima · Caminandes 3",
+            "heading": "Qual cena você colocaria primeiro?",
+            "lede": "Assistam aos clipes. Escolham uma abertura e uma imagem para encerrar.",
+            "block": 1,
+            "av9": {
+              "type": "media",
+              "clips": [
+                {
+                  "src": "modelos/producao-audiovisual/aula-11/media/02-encontro.mp4",
+                  "label": "ENCONTRO",
+                  "text": "Quem aparece primeiro?",
+                  "poster": "modelos/producao-audiovisual/aula-11/media/02-encontro.jpg"
+                },
+                {
+                  "src": "modelos/producao-audiovisual/aula-11/media/04-fruta.mp4",
+                  "label": "FRUTA",
+                  "text": "O que chama a atenção?",
+                  "poster": "modelos/producao-audiovisual/aula-11/media/04-fruta.jpg"
+                },
+                {
+                  "src": "modelos/producao-audiovisual/aula-11/media/03-trem.mp4",
+                  "label": "TREM",
+                  "text": "Qual cena vem depois?",
+                  "poster": "modelos/producao-audiovisual/aula-11/media/03-trem.jpg"
+                }
+              ]
+            },
+            "teacher": {
+              "steps": [
+                "22 min · Janela flexível para explorar o kit nos postos disponíveis. Assim que estiverem prontos, antecipo a primeira montagem e seus desafios."
+              ],
+              "watch": "Posso ceder todo este tempo à preparação do Shotcut Portable. Não há entrega nem escolha obrigatória antes do lanche. Quem perdeu a abertura começa normalmente depois; quem já avançou continua com as variações. Créditos do Blender estão no kit.",
+              "rescue": "Se alguém não souber começar, sugiro encontro → fruta → trem. Não espero o fim da janela para avançar com os postos prontos."
+            }
+          },
+          {
+            "title": "Lanche",
+            "kicker": "Intervalo",
+            "heading": "Lanche até 20:05",
+            "lede": "Na volta, vamos montar a sequência no Shotcut.",
+            "block": 1,
+            "pace": "break",
+            "av9": {
+              "type": "checks",
+              "items": [
+                {
+                  "label": "Na volta",
+                  "text": "Vamos começar pela pasta do kit e montar no Shotcut."
+                },
+                {
+                  "label": "Se já começou",
+                  "text": "Salvar o projeto com Ctrl + S."
+                }
+              ]
+            },
+            "teacher": {
+              "steps": [
+                "20 min · Lanche das 19:45 às 20:05."
+              ],
+              "watch": "Não pressupõe montagem feita antes do lanche.",
+              "rescue": "Identifico os postos ainda sem editor; retomo depois do lanche em computadores funcionais, com revezamento quando necessário."
+            }
+          },
+          {
+            "title": "Copiar e abrir",
+            "kicker": "Guia PDF · página 1",
+            "heading": "Primeiro, copie para o computador.",
+            "lede": "Abra Aula11-Pendrive. O trabalho será feito em Documentos.",
+            "block": 2,
+            "av9": {
+              "type": "commands",
+              "commands": [
+                {
+                  "word": "ATIVIDADE",
+                  "who": "02-ALUNO",
+                  "text": "Copiar a pasta Aula11 inteira para Documentos."
+                },
+                {
+                  "word": "PROGRAMA",
+                  "who": "01-SHOTCUT",
+                  "text": "Copiar a pasta Shotcut inteira, se o posto ainda não tem."
+                },
+                {
+                  "word": "ABRIR",
+                  "who": "Cópia em Documentos",
+                  "text": "Abrir Shotcut → shotcut.exe e Aula11 → Guia-Aula11-Shotcut.pdf."
+                }
+              ],
+              "tags": [
+                {
+                  "label": "SHOTCUT",
+                  "kind": "good"
+                }
+              ],
+              "result": "Espere as cópias terminarem. Depois o pendrive pode seguir para o próximo posto."
+            },
+            "resource": {
+              "href": "modelos/producao-audiovisual/aula-11/Guia-Aula11-Shotcut.pdf",
+              "label": "Abrir guia PDF"
+            },
+            "teacher": {
+              "steps": [
+                "2 min · Faço a chamada e localizo as pastas com a turma.",
+                "4 min · Confiro a cópia local e mostro como abrir o programa e o guia."
+              ],
+              "watch": "Se já fizemos isso antes do lanche, apenas confiro e uso o tempo na montagem. Portable já extraído: não há instalador. Preciso da pasta Shotcut completa, não apenas do executável.",
+              "rescue": "Se o posto bloquear o programa, aciono o laboratório e organizo revezamento temporário. Não abro a atividade diretamente do pendrive."
+            }
+          },
+          {
+            "title": "Primeira montagem",
+            "kicker": "Guia PDF · página 2",
+            "heading": "Três clipes já bastam para começar.",
+            "lede": "Comecem nesta ordem: 02-encontro → 04-fruta → 03-trem.",
+            "block": 2,
+            "av9": {
+              "type": "commands",
+              "commands": [
+                {
+                  "word": "PAINÉIS",
+                  "who": "Barra superior",
+                  "text": "Abrir Lista de reprodução e Linha do tempo."
+                },
+                {
+                  "word": "IMPORTAR",
+                  "who": "Documentos → Aula11",
+                  "text": "Arrastar os três MP4 indicados para a Lista de reprodução."
+                },
+                {
+                  "word": "MONTAR",
+                  "who": "Linha do tempo",
+                  "text": "Levar três clipes para a mesma trilha e aparar pelas bordas."
+                },
+                {
+                  "word": "SALVAR",
+                  "who": "Arquivo → Salvar como",
+                  "text": "Guardar meu-trailer.mlt na pasta Aula11."
+                }
+              ],
+              "tags": [
+                {
+                  "label": "SHOTCUT",
+                  "kind": "good"
+                }
+              ],
+              "result": "Reproduzam a sequência inteira antes de adicionar efeitos."
+            },
+            "promptLabel": "Já começou antes do lanche?",
+            "prompt": "Mude a abertura e compare as duas ordens. Depois escolha onde uma transição pode ajudar.",
+            "teacher": {
+              "steps": [
+                "5 min · Demonstro os painéis, os três arquivos indicados, a montagem, um corte e o salvamento.",
+                "11 min · A turma repete a sequência guiada; acompanho os cortes e a continuidade."
+              ],
+              "watch": "Não dependo da abertura. Defino modo de vídeo HD 720p, 24 fps no projeto de demonstração antes da importação; apoio quem precisar ajustar. Quem começou antes continua pelas variações.",
+              "rescue": "Começo com três clipes inteiros e aparo um de cada vez. Com preparação do Shotcut Portable pendente, uso um posto funcional com revezamento e apoio do laboratório."
+            }
+          },
+          {
+            "title": "Ver a diferença",
+            "kicker": "Três passagens · os mesmos clipes",
+            "heading": "Agora a troca de cena também faz parte da edição",
+            "lede": "Reproduzam os exemplos: troca direta, mistura e uma imagem revelando a outra.",
+            "block": 2,
+            "av9": {
+              "type": "media",
+              "clips": [
+                {
+                  "src": "modelos/producao-audiovisual/aula-11/exemplo-cut.mp4",
+                  "label": "CORTE",
+                  "text": "Uma cena termina; a outra começa.",
+                  "poster": "modelos/producao-audiovisual/aula-11/media/01-gelo.jpg"
+                },
+                {
+                  "src": "modelos/producao-audiovisual/aula-11/exemplo-fade.mp4",
+                  "label": "FUSÃO",
+                  "text": "As duas imagens se misturam.",
+                  "poster": "modelos/producao-audiovisual/aula-11/media/01-gelo.jpg"
+                },
+                {
+                  "src": "modelos/producao-audiovisual/aula-11/exemplo-wipeleft.mp4",
+                  "label": "VARREDURA",
+                  "text": "Uma borda revela a próxima cena.",
+                  "poster": "modelos/producao-audiovisual/aula-11/media/01-gelo.jpg"
+                }
+              ]
+            },
+            "teacher": {
+              "steps": [
+                "5 min · Reproduzo os três exemplos, depois demonstro a sobreposição no Shotcut."
+              ],
+              "watch": "Os exemplos são vídeos locais sem áudio para concentrar a atenção na passagem.",
+              "rescue": "Reproduzo um por vez, ampliando em tela cheia quando necessário."
+            }
+          },
+          {
+            "title": "Fazer a fusão",
+            "kicker": "Guia PDF · página 3",
+            "heading": "Arrastem um clipe sobre o final do outro",
+            "lede": "Arrastem 04-fruta um pouco sobre o final de 02-encontro, na mesma trilha.",
+            "block": 2,
+            "av9": {
+              "type": "commands",
+              "commands": [
+                {
+                  "word": "SOBREPOR",
+                  "who": "Segundo clipe",
+                  "text": "Arrastar um pouco para cima do final do primeiro."
+                },
+                {
+                  "word": "LOCALIZAR",
+                  "who": "Bloco com X",
+                  "text": "A sobreposição criou uma transição."
+                },
+                {
+                  "word": "REPRODUZIR",
+                  "who": "Antes da emenda",
+                  "text": "Assistir até a segunda cena aparecer inteira."
+                },
+                {
+                  "word": "COMPARAR",
+                  "who": "Bordas do X",
+                  "text": "Testar uma fusão curta e outra mais longa."
+                }
+              ],
+              "tags": [
+                {
+                  "label": "SHOTCUT",
+                  "kind": "good"
+                }
+              ],
+              "result": "Comecem com cerca de meio segundo. Depois experimentem dois segundos."
+            },
+            "promptLabel": "Já conseguiu?",
+            "prompt": "Faça a fusão terminar exatamente quando o personagem começa a agir.",
+            "teacher": {
+              "steps": [
+                "13 min · A turma cria e altera a fusão; peço para reproduzir a passagem antes de chamar ajuda."
+              ],
+              "watch": "A sobreposição encurta o total do vídeo. Meço a transição pela duração mostrada no editor, sem exigir precisão de quadros.",
+              "rescue": "Se não houver X, verifico mesma trilha e criação de transições habilitada. Desfaço uma movimentação que crie lacuna."
+            }
+          },
+          {
+            "title": "Transformar em varredura",
+            "kicker": "Variação · depois que a fusão funcionar",
+            "heading": "A mesma emenda pode revelar a próxima cena",
+            "lede": "Selecionem o bloco com X e abram Propriedades.",
+            "block": 2,
+            "av9": {
+              "type": "commands",
+              "commands": [
+                {
+                  "word": "SELECIONAR",
+                  "who": "O bloco com X",
+                  "text": "Clicar na transição, não no clipe ao lado."
+                },
+                {
+                  "word": "TROCAR",
+                  "who": "Propriedades → Vídeo",
+                  "text": "Escolher uma varredura, também chamada Wipe."
+                },
+                {
+                  "word": "TESTAR",
+                  "who": "Direção e duração",
+                  "text": "Reproduzir e experimentar outra direção."
+                }
+              ],
+              "tags": [
+                {
+                  "label": "SHOTCUT",
+                  "kind": "good"
+                }
+              ],
+              "result": "Conservem a opção que combina melhor com o movimento da cena."
+            },
+            "promptLabel": "Já conseguiu?",
+            "prompt": "Faça a borda da varredura acompanhar a direção em que o personagem se move.",
+            "teacher": {
+              "steps": [
+                "7 min · Quem já conseguiu testa a varredura; com os demais, uso este tempo para concluir a fusão. Demonstro a escolha em Propriedades sem exigir que todos façam agora."
+              ],
+              "watch": "A varredura é opcional no primeiro trailer. As traduções variam por versão; identifico a opção por sua prévia. Comparar na tela basta.",
+              "rescue": "Desfaço para voltar à fusão e seleciono novamente o X antes de abrir Propriedades."
+            }
+          },
+          {
+            "title": "Integrar as escolhas",
+            "kicker": "Seu trailer ganha forma",
+            "heading": "Uma passagem bem resolvida vale mais que várias ao acaso",
+            "lede": "Continuem a montagem. Usem ao menos uma das transições que experimentaram.",
+            "block": 2,
+            "av9": {
+              "type": "checks",
+              "items": [
+                {
+                  "label": "Sequência",
+                  "text": "Três clipes escolhidos e aparados."
+                },
+                {
+                  "label": "Passagem",
+                  "text": "Uma fusão ou varredura que vocês ajustaram."
+                },
+                {
+                  "label": "Som",
+                  "text": "Ouvir as emendas com fones; evitar cortes incômodos."
+                },
+                {
+                  "label": "Próxima etapa",
+                  "text": "Escolher onde uma foto pode entrar na montagem."
+                }
+              ]
+            },
+            "promptLabel": "Já conseguiu?",
+            "prompt": "Mude a duração de dois clipes para acelerar o final, preservando o que precisa ser visto.",
+            "teacher": {
+              "steps": [
+                "8 min · A turma integra os testes; circulo e peço que mostrem a transição reproduzindo."
+              ],
+              "watch": "Os clipes têm áudio. Se necessário, demonstro Fade de entrada/saída de áudio curto. Não peço trilha externa nem pesquisa de música.",
+              "rescue": "Com dificuldade, resolvo uma emenda de cada vez; não exijo efeito em todas as passagens."
+            }
+          },
+          {
+            "title": "Um filtro no clipe",
+            "kicker": "Efeito · enquadramento",
+            "heading": "Façam um detalhe ocupar mais espaço",
+            "lede": "Selecionem um clipe. Abram Filtros → + → Tamanho, posição e rotação.",
+            "block": 3,
+            "av9": {
+              "type": "checks",
+              "items": [
+                {
+                  "label": "Aumentar",
+                  "text": "Experimentar Zoom em 125%."
+                },
+                {
+                  "label": "Reposicionar",
+                  "text": "Arrastar a imagem na prévia para destacar um detalhe."
+                },
+                {
+                  "label": "Comparar",
+                  "text": "Desligar e ligar o filtro pelo seu marcador."
+                }
+              ]
+            },
+            "promptLabel": "Perceba",
+            "prompt": "O detalhe fica maior durante o clipe inteiro. Ainda não há animação criada por vocês.",
+            "teacher": {
+              "steps": [
+                "2 min · Faço a chamada e demonstro o filtro, também chamado Size, Position & Rotate.",
+                "3 min · A turma amplia um detalhe e compara o filtro ligado e desligado."
+              ],
+              "watch": "Filtro no clipe selecionado, não na trilha inteira. Evito bordas vazias e mantenho o elemento principal visível.",
+              "rescue": "Se o filtro sumiu da busca, seleciono filtros de vídeo e limpo o texto de pesquisa."
+            }
+          },
+          {
+            "title": "Uma foto pode se mover",
+            "kicker": "Keyframes · ver antes de fazer",
+            "heading": "A imagem está parada. O enquadramento se aproxima.",
+            "lede": "Reproduzam o exemplo. A aproximação foi criada com valores em dois instantes.",
+            "block": 3,
+            "av9": {
+              "type": "media",
+              "clips": [
+                {
+                  "src": "modelos/producao-audiovisual/aula-11/exemplo-zoom.mp4",
+                  "label": "100% → 125%",
+                  "text": "Início aberto; final mais próximo.",
+                  "poster": "modelos/producao-audiovisual/aula-11/media/foto-fruta.jpg"
+                }
+              ]
+            },
+            "teacher": {
+              "steps": [
+                "5 min · Mostro a foto do kit e o exemplo animado; comparo com o filtro fixo que acabamos de usar."
+              ],
+              "watch": "O exemplo ilustra o movimento; em seguida reproduzo a operação ao vivo no Shotcut.",
+              "rescue": "Pauso no começo e no final para tornar a diferença visível."
+            }
+          },
+          {
+            "title": "Criar os keyframes",
+            "kicker": "Guia PDF · página 4",
+            "heading": "Um valor no início. Outro no final.",
+            "lede": "Coloquem foto-fruta.jpg depois dos três clipes e ajustem para cerca de 5 segundos.",
+            "block": 3,
+            "av9": {
+              "type": "commands",
+              "commands": [
+                {
+                  "word": "APLICAR",
+                  "who": "Filtros → +",
+                  "text": "Adicionar Tamanho, posição e rotação à foto."
+                },
+                {
+                  "word": "ATIVAR",
+                  "who": "Botão de keyframes do filtro",
+                  "text": "Abrir os controles de animação de tamanho e posição."
+                },
+                {
+                  "word": "INÍCIO",
+                  "who": "Primeiro quadro da foto",
+                  "text": "Definir Zoom em 100%."
+                },
+                {
+                  "word": "FINAL",
+                  "who": "Último quadro da foto",
+                  "text": "Mover o cursor e definir Zoom em 125%."
+                }
+              ],
+              "tags": [
+                {
+                  "label": "SHOTCUT",
+                  "kind": "good"
+                }
+              ],
+              "result": "Reproduzam desde o início da foto e observem a aproximação."
+            },
+            "teacher": {
+              "steps": [
+                "8 min · Demonstro lentamente, esperando a turma repetir cada ação."
+              ],
+              "watch": "Abro o painel Keyframes/Quadros-chave. Se a versão começar com keyframes simples, uso os avançados. Confiro dois marcadores distintos e interpolação linear.",
+              "rescue": "Não altero duas vezes o mesmo marcador. O cursor final deve estar dentro da foto; confiro a posição no painel antes de mudar o Zoom."
+            }
+          },
+          {
+            "title": "Escolher o destino do olhar",
+            "kicker": "Desafio de movimento",
+            "heading": "Terminem o movimento perto da fruta ou da cesta",
+            "lede": "Primeiro, façam o zoom de 100% para 125% funcionar. Depois ajustem a posição se necessário.",
+            "block": 3,
+            "av9": {
+              "type": "checks",
+              "items": [
+                {
+                  "label": "Começo",
+                  "text": "A imagem inteira apresenta a cena."
+                },
+                {
+                  "label": "Final",
+                  "text": "O detalhe escolhido ganha espaço."
+                },
+                {
+                  "label": "Caminho",
+                  "text": "O movimento acontece sem salto nem bordas vazias."
+                }
+              ]
+            },
+            "promptLabel": "Já conseguiu?",
+            "prompt": "Inverta: comece perto e termine mostrando a cena inteira. Escolha a versão que vai entrar no trailer.",
+            "teacher": {
+              "steps": [
+                "14 min · A turma ajusta o movimento. Peço a cada operador mostrar o painel e reproduzir a foto."
+              ],
+              "watch": "A posição também pode mudar nos keyframes. Para destacar o objeto, pode ser necessário aumentar mais que 125%; avalio pela prévia.",
+              "rescue": "Reduzo o deslocamento se uma borda aparecer. Com dificuldade, mantenho a foto centralizada e crio primeiro apenas o zoom."
+            }
+          },
+          {
+            "title": "Encaixar o movimento",
+            "kicker": "Montagem · foto e vídeo",
+            "heading": "A foto precisa fazer parte da sequência",
+            "lede": "Coloquem a foto animada onde ela ajuda a mostrar o que está acontecendo.",
+            "block": 3,
+            "av9": {
+              "type": "tracks",
+              "tracks": [
+                {
+                  "label": "IDEIA A",
+                  "clips": [
+                    {
+                      "label": "Encontro",
+                      "seconds": 4
+                    },
+                    {
+                      "label": "Foto → perto",
+                      "seconds": 5
+                    },
+                    {
+                      "label": "Ação",
+                      "seconds": 4
+                    }
+                  ]
+                },
+                {
+                  "label": "IDEIA B",
+                  "clips": [
+                    {
+                      "label": "Ação",
+                      "seconds": 4
+                    },
+                    {
+                      "label": "Encontro",
+                      "seconds": 4
+                    },
+                    {
+                      "label": "Foto → longe",
+                      "seconds": 5
+                    }
+                  ]
+                }
+              ],
+              "caption": "Exemplos de encaixe. Sua ordem e seus tempos podem ser diferentes."
+            },
+            "promptLabel": "Reprodução completa",
+            "prompt": "Três clipes, uma transição e uma foto animada. Cerca de 15 a 30 segundos como referência. Assista antes de exportar.",
+            "teacher": {
+              "steps": [
+                "8 min · A turma posiciona a foto, ajusta a duração e salva; apoio a revisão do som."
+              ],
+              "watch": "Foto não tem áudio. Pode ficar em silêncio; se a quebra incomodar, demonstro uma transição curta com a cena vizinha. Duração é referência, não corrida para preencher segundos.",
+              "rescue": "Evito sobrepor a foto após posicionar os keyframes sem conferir o novo começo e final do movimento."
+            }
+          },
+          {
+            "title": "Próximo desafio",
+            "kicker": "Para quem já conseguiu",
+            "heading": "Agora façam o movimento mudar de direção",
+            "lede": "Criem um terceiro keyframe no meio da foto. Experimentem e reproduzam.",
+            "block": 3,
+            "pace": "extra",
+            "av9": {
+              "type": "flow",
+              "steps": [
+                {
+                  "label": "COMEÇO",
+                  "text": "Mostrar a cena aberta.",
+                  "mark": "100%"
+                },
+                {
+                  "label": "MEIO",
+                  "text": "Aproximar o detalhe.",
+                  "mark": "125%"
+                },
+                {
+                  "label": "FINAL",
+                  "text": "Voltar ao enquadramento aberto.",
+                  "mark": "100%"
+                }
+              ]
+            },
+            "promptLabel": "Outra possibilidade",
+            "prompt": "Troque a abertura do trailer para esconder a fruta até mais tarde. Compare as duas montagens usando Desfazer e Refazer.",
+            "teacher": {
+              "steps": [],
+              "watch": "Ofereço durante a prática, assim que alguém termina; não espero toda a turma. A extensão não adiciona tempo ao cronograma.",
+              "rescue": "Se o movimento ficar rápido, aumento a duração da foto e reposiciono os marcadores. Se a variação piorar a montagem, desfaço."
+            }
+          },
+          {
+            "title": "Exportar",
+            "kicker": "Guia PDF · página 5",
+            "heading": "O trailer vira um MP4 no próprio computador",
+            "lede": "Salvem o projeto. Abram Exportar: o vídeo pronto terá extensão .mp4.",
+            "block": 4,
+            "av9": {
+              "type": "table",
+              "variant": "data",
+              "columns": [
+                "No Shotcut",
+                "Usar"
+              ],
+              "rows": [
+                [
+                  "Origem · From",
+                  "Linha do tempo · Timeline"
+                ],
+                [
+                  "Predefinição",
+                  "H.264 High Profile · MP4"
+                ],
+                [
+                  "Imagem",
+                  "1280 × 720 · 24 quadros por segundo"
+                ],
+                [
+                  "Arquivo",
+                  "Aula11/meu-trailer.mp4"
+                ]
+              ]
+            },
+            "promptLabel": "Aguardar",
+            "prompt": "O painel Trabalhos mostra o andamento. Abra o MP4 quando a exportação terminar.",
+            "teacher": {
+              "steps": [
+                "2 min · Faço a chamada e demonstro a exportação.",
+                "8 min · A turma exporta no disco local; acompanho o painel Trabalhos."
+              ],
+              "watch": "Não confundo salvar .mlt com exportar vídeo. Confiro que From está na linha do tempo inteira.",
+              "rescue": "Se a exportação falhar com aceleração de hardware, uso exportação por software no posto validado."
+            }
+          },
+          {
+            "title": "Assistir e corrigir",
+            "kicker": "Último ajuste",
+            "heading": "Encontrem uma coisa que ainda pode melhorar",
+            "lede": "Abram o MP4 no reprodutor do computador e assistam até o fim.",
+            "block": 4,
+            "av9": {
+              "type": "checks",
+              "items": [
+                {
+                  "label": "Passagem",
+                  "text": "Há alguma troca que ficou lenta ou confusa?"
+                },
+                {
+                  "label": "Movimento",
+                  "text": "O zoom mostra o detalhe sem perder o enquadramento?"
+                },
+                {
+                  "label": "Som",
+                  "text": "Alguma emenda corta o áudio de um jeito incômodo?"
+                },
+                {
+                  "label": "Final",
+                  "text": "O vídeo termina onde vocês queriam?"
+                }
+              ]
+            },
+            "promptLabel": "Melhoria visível",
+            "prompt": "Voltem ao Shotcut, ajustem um ponto e exportem novamente. Confiram a nova versão.",
+            "teacher": {
+              "steps": [
+                "12 min · Cada posto assiste, faz um ajuste necessário e confere a nova exportação."
+              ],
+              "watch": "Se o resultado já estiver resolvido, proponho uma alternativa de abertura para comparar, sem obrigar a manter uma mudança pior.",
+              "rescue": "Corrijo primeiro tela preta, borda vazia ou exportação incompleta; evito recomeçar o trailer."
+            }
+          },
+          {
+            "title": "Mostrar o trailer",
+            "kicker": "Resultado na tela",
+            "heading": "Mostrem a passagem e o movimento que criaram",
+            "lede": "Reproduzam o trailer no próprio posto. Apontem a alteração que mais mudou o resultado.",
+            "block": 4,
+            "av9": {
+              "type": "checks",
+              "items": [
+                {
+                  "label": "Vídeo",
+                  "text": "meu-trailer.mp4 pronto para assistir."
+                },
+                {
+                  "label": "Projeto",
+                  "text": "meu-trailer.mlt salvo junto dos clipes."
+                },
+                {
+                  "label": "Pasta",
+                  "text": "Guardar Aula11 inteira, incluindo os créditos."
+                }
+              ]
+            },
+            "promptLabel": "Feito",
+            "prompt": "Vocês montaram a sequência, transformaram uma passagem e criaram movimento com keyframes.",
+            "teacher": {
+              "steps": [
+                "8 min · Circulo pelos postos, vejo trechos e ouço uma observação breve de cada operador."
+              ],
+              "watch": "Sem fila de apresentações nem uploads coletivos. Já observo o trabalho durante a prática para conseguir atender 20 a 30 estudantes.",
+              "rescue": "Se o tempo apertar, peço a transição e a foto animada diretamente na linha do tempo; confiro o MP4 local sem pedir envio."
+            }
+          }
+        ],
+        "appendDefaultClosing": false
       },
       "12": {
         "teacherGoal": "Criar grafismos e máscaras legíveis.",

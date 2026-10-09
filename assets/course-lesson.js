@@ -346,9 +346,10 @@
   // Aulas 09 e 10 reuse the Aula 08 slide layout; each lesson keeps its illustrations in its own folder.
   const isDesignEight = course.slug === 'design-web' && ['08', '09', '10'].includes(lesson.num);
   if (isDesignEight) document.body.classList.add('design-eight');
-  // Aulas 09 (set) e 10 (ilha de edição) de Audiovisual share the production visuals of av-nine.css.
-  const isAvNine = course.slug === 'producao-audiovisual' && ['09', '10'].includes(lesson.num);
+  // Aulas 09 a 11 de Audiovisual share the production visuals of av-nine.css.
+  const isAvNine = course.slug === 'producao-audiovisual' && ['09', '10', '11'].includes(lesson.num);
   if (isAvNine) document.body.classList.add('av-nine');
+  if (isAvNine && lesson.num === '11') document.body.classList.add('av-eleven');
   // These lessons time each slide from the minutes written in the teacher steps.
   const usesSlidePace = isDesignSeven || isDesignEight || isAvNine;
   const isDesignSix = course.slug === 'design-web' && lesson.num === '06';
@@ -418,6 +419,9 @@
     if (!isAvNine || !visual || typeof visual !== 'object') return '';
     const e = escapeHtml;
     const planHead = (plan) => `<span class="av9-plan-id">${e(plan.id)}</span><strong>${e(plan.name)}</strong>`;
+    if (visual.type === 'media') {
+      return `<div class="av11-media${visual.clips.length === 1 ? ' is-single' : ''}">${visual.clips.map(clip => `<figure><video controls playsinline preload="none" poster="${escapeHtml(clip.poster)}" aria-label="${escapeHtml(clip.label)}" width="1280" height="720"><source src="${escapeHtml(clip.src)}" type="video/mp4">Seu navegador não reproduz este vídeo.</video><figcaption><strong>${escapeHtml(clip.label)}</strong><span>${escapeHtml(clip.text)}</span></figcaption></figure>`).join('')}</div>`;
+    }
     if (visual.type === 'day') {
       return `<ol class="av9-day">${visual.rows.map((row) => {
         const [start, end] = timeRange(row.time).map(timeToMinutes);
@@ -1180,6 +1184,7 @@
   }
 
   function goTo(index) {
+    slideElements[currentIndex].querySelectorAll('video').forEach(video => video.pause());
     currentIndex = Math.max(0, Math.min(slideElements.length - 1, index));
     renderCurrent();
   }
@@ -1300,10 +1305,19 @@
     });
   }
 
+  // Native controls remain usable; only one teaching example plays at a time.
+  document.querySelectorAll('.av11-media video').forEach(video => {
+    video.addEventListener('play', () => {
+      document.querySelectorAll('.av11-media video').forEach(other => {
+        if (other !== video) other.pause();
+      });
+    });
+  });
+
   document.addEventListener('keydown', (event) => {
     if (document.querySelector('.tool-qr-dialog[open]')) return;
     const target = event.target;
-    if (target && /INPUT|TEXTAREA|SELECT/.test(target.tagName)) return;
+    if (target && /INPUT|TEXTAREA|SELECT|VIDEO/.test(target.tagName)) return;
 
     if (event.key === 'Escape' && overview.classList.contains('is-open')) {
       event.preventDefault();

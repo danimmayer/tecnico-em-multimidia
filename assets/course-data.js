@@ -1471,7 +1471,7 @@ window.SENAI_COURSES = {
       {
         "num": "11",
         "title": "Transições, efeitos e keyframes",
-        "description": "Aplicação de transições, efeitos e animações por keyframe na linha do tempo, refinando o corte do comercial e iniciando a montagem do microcurta.",
+        "description": "Criar um trailer no Shotcut com um kit novo de animação: experimentar passagens, transformar uma foto em movimento e exportar o resultado no próprio computador.",
         "objectives": [
           "Edição de vídeos e sons: corte, transição e efeitos, keyframe.",
           "Composição e Render: aplicação de efeitos e transições."
@@ -1484,25 +1484,25 @@ window.SENAI_COURSES = {
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Revisão da aula anterior: organização do projeto, decupagem e primeiros cortes na ilha de edição. Análise no projetor de transições em videoclipes e comerciais: quando o corte seco basta, quando a fusão marca passagem de tempo e quando a transição chamativa atrapalha a narrativa."
+            "horario": "19:00 - 19:45",
+            "atividade": "Conhecer as cenas e assistir a exemplos, conforme o tempo disponível. Abertura flexível: pode ceder lugar à preparação do Shotcut Portable. Com os postos prontos, antecipar a montagem."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "Transições e efeitos no software de edição de vídeo não-linear (DaVinci Resolve, CapCut): aplicação na linha do tempo, ajuste de duração e personalização de parâmetros. Exercício guiado \"Mesma cena, três transições\": cada dupla monta a mesma passagem do material da turma com corte seco, fusão e transição de movimento, e compara o efeito narrativo de cada versão."
+            "horario": "20:05 - 21:00",
+            "atividade": "Montar uma sequência curta com três clipes do kit. Criar uma fusão, comparar com a varredura se houver tempo, ajustar uma passagem e escolher onde entrará a foto animada."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "Keyframes: animação de posição, escala, rotação e opacidade para criar movimentos e ênfases na edição. Demonstração de zoom progressivo, entrada de elementos e destaque de detalhe. Exercício \"Foto ganha movimento\": animar uma imagem parada usando keyframes de escala e posição."
+            "horario": "21:00 - 21:40",
+            "atividade": "Comparar um filtro fixo com uma foto animada por keyframes de tamanho e posição. Aproximar um detalhe e encaixar a imagem na sequência; inverter o movimento como variação."
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "Prática em equipes: aplicar transições e animações por keyframe no corte do comercial gravado na aula 9 e iniciar a montagem do microcurta gravado na aula 8, organizando a linha do tempo por cenas conforme o roteiro."
+            "horario": "21:40 - 22:10",
+            "atividade": "Exportar em MP4, assistir no computador, corrigir um ponto visível e mostrar o trailer na própria tela. Guardar o projeto junto do kit."
           }
         ],
-        "methodology": "Análise de referências seguida de exercícios guiados e prática autoral no software de edição.",
-        "resources": "Computadores do laboratório com software de edição de vídeo não-linear e projetor.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "A abertura antes do lanche é flexível: exemplos e exploração das cenas podem ser abreviados ou inteiramente substituídos pela preparação do Shotcut Portable, se necessária. A prática essencial começa depois do lanche, do zero, com demonstrações breves seguidas de edição no próprio posto. Se os computadores estiverem prontos antes, antecipar a prática. A aprendizagem aparece na tela: experimentar, reproduzir, mudar e comparar. Cada estudante edita quando há computador disponível; em postos compartilhados, os integrantes alternam o mouse entre desafios. Quem termina avança para uma variação de montagem ou movimento.",
+        "resources": "Projetor, fones de ouvido, computadores, Shotcut Portable oficial para Windows 11 já extraído na pasta 01-SHOTCUT/Shotcut e pasta 02-ALUNO/Aula11 já pronta para copiar para Documentos no disco local. O Shotcut é gratuito e de código aberto. O kit contém oito clipes de sete segundos e duas fotos de Caminandes 3: Llamigos, com créditos e licença CC BY 3.0. Se necessária, a preparação do Shotcut Portable pode ocupar o primeiro bloco, com apoio do laboratório. Guia-Aula11-Shotcut.pdf para consulta offline. Nenhuma ficha impressa, conta ou upload. Distribuir o programa Portable e o kit por pendrive ou rede local, preferencialmente antes da turma; não solicitar downloads simultâneos aos 20 a 30 alunos.",
+        "observation": "Aula das 19:00 às 22:10; lanche das 19:45 às 20:05 e chamada no início de cada bloco. Os estudantes permanecem nos postos; somente o professor circula. Antes do lanche, exemplos e exploração são opcionais: posso abreviar ou pular toda a abertura para copiar e testar o Shotcut Portable. Os tempos dessa abertura são janelas flexíveis; não preciso preenchê-los. Com os postos prontos, antecipo a prática. Levar Aula11-Pendrive com o Shotcut Portable já extraído. Copiar 01-SHOTCUT/Shotcut e 02-ALUNO/Aula11 para Documentos em cada posto; abrir shotcut.exe somente depois da cópia. Se houver bloqueio, solicitar apoio do laboratório. Preparar, se possível, um computador de demonstração com importação e exportação testadas. Depois do lanche, demonstro desde a pasta do kit até a primeira montagem; nenhuma tarefa anterior é pré-requisito. Se a preparação do Shotcut Portable avançar depois das 20:05, usar temporariamente os postos que já funcionam, com revezamento; manter três clipes, uma transição, uma foto animada e a exportação, deixando as variações como extras. Copiar o kit uma vez para cada posto e editar no disco local, inclusive quando a distribuição usar a rede local. Não depender de arquivos das aulas anteriores. Não reservar tempo para recuperar esses arquivos nem exigir caderno, fichas ou justificativas escritas. Em postos compartilhados, alternar a operação a cada desafio. Observar o teste na tela enquanto circula, sem exigir arquivos separados de comprovação. Um projeto .mlt e um MP4 bastam; manter ambos na pasta do kit, pois o .mlt referencia as mídias. Mostrar o resultado no próprio posto, sem upload coletivo. Manter CREDITOS.txt com o trabalho compartilhado. Títulos e máscaras ficam para a aula 12."
       },
       {
         "num": "12",

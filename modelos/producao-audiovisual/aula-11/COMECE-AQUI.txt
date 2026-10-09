@@ -1,0 +1,18 @@
+AULA 11 — COMECE AQUI
+
+1. No pendrive, copie 02-ALUNO/Aula11 inteira para Documentos.
+   Se recebeu o ZIP pela página da aula, extraia Aula11 em Documentos.
+2. Abra Guia-Aula11-Shotcut.pdf na sua cópia local e siga as páginas 1 a 5.
+3. Se o computador ainda não tem Shotcut, copie 01-SHOTCUT/Shotcut inteira
+   do pendrive para Documentos. Aguarde terminar e abra shotcut.exe.
+
+PRIMEIRO TRAILER
+02-encontro.mp4 → 04-fruta.mp4 → 03-trem.mp4.
+Uma fusão entre os dois primeiros clipes.
+foto-fruta.jpg ao final, com zoom de 100% para 125%.
+Salve meu-trailer.mlt e exporte meu-trailer.mp4 nesta pasta.
+
+Os demais clipes e foto-cesta.jpg ficam disponíveis para suas variações.
+Não precisa recuperar vídeos antigos, criar conta ou enviar pela internet.
+Guarde Aula11 inteira: o projeto .mlt precisa das mídias para reabrir.
+Mantenha CREDITOS.txt junto do trabalho se compartilhar o resultado.
