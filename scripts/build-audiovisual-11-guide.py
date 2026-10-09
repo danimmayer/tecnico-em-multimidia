@@ -5,20 +5,17 @@ from reportlab.lib.colors import HexColor, white
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.platypus import Paragraph
 from reportlab.pdfbase import pdfmetrics
-from reportlab.pdfbase.ttfonts import TTFont
-import os
 
 ROOT = Path(__file__).resolve().parents[1]
 KIT = ROOT / 'modelos/producao-audiovisual/aula-11'
 OUT = KIT / 'Guia-Aula11-Shotcut.pdf'
-font_dir = Path(os.environ.get('AULA11_FONT_DIR', '/System/Library/Fonts/Supplemental'))
-for name, file in [('Body', 'Arial.ttf'), ('Bold', 'Arial Bold.ttf')]:
-    pdfmetrics.registerFont(TTFont(name, str(font_dir / file)))
+for name, face in [('Body', 'Helvetica'), ('Bold', 'Helvetica-Bold')]:
+    pdfmetrics.registerFont(pdfmetrics.Font(name, face, 'WinAnsiEncoding'))
 pdfmetrics.registerFontFamily('Body', normal='Body', bold='Bold')
 W, H = 595.28, 841.89
 M, CW = 44, W-88
 INK, MUTED, ACCENT, PALE = map(HexColor, ['#172725', '#52625e', '#1b725d', '#eaf3ed'])
-c = canvas.Canvas(str(OUT), pagesize=(W,H))
+c = canvas.Canvas(str(OUT), pagesize=(W,H), invariant=1)
 c.setTitle('Aula 11 | Guia prático do Shotcut')
 c.setAuthor('Prof. Daniel Marcos Mayer | SENAI')
 page = 0

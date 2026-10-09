@@ -26,7 +26,11 @@ def build_student_zip():
     assert len(files) == 13 and all(p.is_file() for p in files)
     with zipfile.ZipFile(KIT/'Aula11-Shotcut.zip', 'w', zipfile.ZIP_STORED) as z:
         for path in files:
-            z.write(path, f'Aula11/{path.name}')
+            entry = zipfile.ZipInfo(f'Aula11/{path.name}', date_time=(2026, 1, 1, 0, 0, 0))
+            entry.create_system = 3
+            entry.external_attr = 0o100644 << 16
+            entry.compress_type = zipfile.ZIP_STORED
+            z.writestr(entry, path.read_bytes())
     return files
 
 def write(path, text):
