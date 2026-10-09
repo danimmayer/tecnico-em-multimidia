@@ -38,6 +38,9 @@ def write(path, text):
     path.write_text(text, encoding='utf-8')
 
 def build_pendrive(portable, out, files):
+    out = out.resolve()
+    if out == KIT or KIT in out.parents:
+        raise ValueError('Escolha uma pasta de saída fora da pasta de materiais da aula 11.')
     assert not out.exists(), f'A saída já existe: {out}'
     assert hashlib.sha256(portable.read_bytes()).hexdigest() == PORTABLE_SHA, 'Checksum diferente do oficial'
     with zipfile.ZipFile(portable) as z:

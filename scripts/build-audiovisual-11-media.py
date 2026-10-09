@@ -13,6 +13,10 @@ ROOT = Path(__file__).resolve().parents[1]
 KIT = ROOT / 'modelos/producao-audiovisual/aula-11'
 MEDIA = KIT / 'media'
 SOURCE = Path(sys.argv[1]).resolve()
+SOURCE_SHA256 = '0fa2c62bc28e5f93ce6fed296efce050b22f0d5d57b568b2c2d4d5345685f1e7'
+source_digest = hashlib.sha256(SOURCE.read_bytes()).hexdigest()
+if source_digest != SOURCE_SHA256:
+    raise SystemExit('Vídeo diferente do original Caminandes 3: Llamigos indicado em CREDITOS.txt. Nenhuma mídia foi alterada.')
 MEDIA.mkdir(parents=True, exist_ok=True)
 
 clips = [
@@ -49,7 +53,7 @@ run('-loop', 1, '-i', MEDIA / 'foto-fruta.jpg', '-vf',
     '-movflags', '+faststart', KIT / 'exemplo-zoom.mp4')
 
 manifest = {'source': 'Caminandes 3: Llamigos (2016)',
-            'source_sha256': hashlib.sha256(SOURCE.read_bytes()).hexdigest(),
+            'source_sha256': source_digest,
             'clips': [{'file': f'media/{name}.mp4', 'start': start, 'duration': duration}
                       for name, start, duration in clips]}
 (KIT / 'media-manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')

@@ -71,9 +71,10 @@ y=box('No pendrive: Aula11-Pendrive',
       '02-ALUNO / Aula11 = seus arquivos e este guia<br/>'
       '03-PROFESSOR = slides offline e exemplos para projeção',y)
 y=step(1,'Copie a atividade para o computador.',
-       'No pendrive, abra <b>02-ALUNO</b>. Copie a pasta <b>Aula11</b> inteira para <b>Documentos</b>. Abra a cópia em Documentos.',y)
+       '<b>Pelo pendrive:</b> abra <b>02-ALUNO</b> e copie <b>Aula11</b> inteira para <b>Documentos</b>.<br/>'
+       '<b>Pelo ZIP baixado:</b> clique com o botão direito em <b>Aula11-Shotcut.zip &gt; Extrair tudo</b>. Copie a pasta <b>Aula11</b> extraída para <b>Documentos</b>. Abra essa cópia.',y)
 y=step(2,'Copie o programa se o posto ainda não tem Shotcut.',
-       'No pendrive, abra <b>01-SHOTCUT</b>. Copie a pasta <b>Shotcut</b> inteira para Documentos. Aguarde terminar. Abra <b>Shotcut &gt; shotcut.exe</b> no computador. Não mova só o .exe.',y)
+       'No pendrive, abra <b>01-SHOTCUT</b>. Copie a pasta <b>Shotcut</b> inteira para Documentos. Aguarde terminar. Abra <b>Shotcut &gt; shotcut.exe</b> no computador. Não mova só o .exe. O ZIP da atividade não inclui o programa: se precisar dele, peça o pendrive ao professor.',y)
 y=step(3,'Abra este guia na sua cópia de Aula11.',
        'Abra <b>Guia-Aula11-Shotcut.pdf</b>. Deixe o guia disponível para consultar enquanto edita. O Portable já está extraído; não há instalador para executar.',y)
 y=box('Você deve ver',
