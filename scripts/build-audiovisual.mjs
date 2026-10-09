@@ -3,6 +3,7 @@ import vm from 'node:vm';
 import {fileURLToPath} from 'node:url';
 import * as lesson09 from './lessons/audiovisual-09.mjs';
 import * as lesson10 from './lessons/audiovisual-10.mjs';
+import * as lesson11 from './lessons/audiovisual-11.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const indent = (value, spaces) => JSON.stringify(value, null, 2).split('\n').map(line => ' '.repeat(spaces) + line).join('\n');
@@ -20,7 +21,7 @@ function replaceBlock(file, num, findStart, findEnd, replacement) {
   fs.writeFileSync(root + file, next);
 }
 
-for (const [num, {lesson, support}] of [['09', lesson09], ['10', lesson10]]) {
+for (const [num, {lesson, support}] of [['09', lesson09], ['10', lesson10], ['11', lesson11]]) {
   const dataContext = {window: {}};
   vm.runInNewContext(fs.readFileSync(root + 'assets/course-data.js', 'utf8'), dataContext);
   const merged = Object.assign(dataContext.window.SENAI_COURSES['producao-audiovisual'].lessons.find(item => item.num === num), lesson);
@@ -40,4 +41,4 @@ for (const [num, {lesson, support}] of [['09', lesson09], ['10', lesson10]]) {
     (old) => indent(support, 6).replace(/^ {6}\{/, `      "${num}": {`) + (old.trimEnd().endsWith(',') ? ',\n' : '\n'));
 }
 
-console.log('Aulas 09 e 10 de Produção Audiovisual geradas: dados públicos e slides.');
+console.log('Aulas 09 a 11 de Produção Audiovisual geradas: dados públicos e slides.');

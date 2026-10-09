@@ -1,0 +1,46 @@
+{
+  "source": "Caminandes 3: Llamigos (2016)",
+  "source_sha256": "0fa2c62bc28e5f93ce6fed296efce050b22f0d5d57b568b2c2d4d5345685f1e7",
+  "clips": [
+    {
+      "file": "media/01-gelo.mp4",
+      "start": 5,
+      "duration": 7
+    },
+    {
+      "file": "media/02-encontro.mp4",
+      "start": 20,
+      "duration": 7
+    },
+    {
+      "file": "media/03-trem.mp4",
+      "start": 30,
+      "duration": 7
+    },
+    {
+      "file": "media/04-fruta.mp4",
+      "start": 45,
+      "duration": 7
+    },
+    {
+      "file": "media/05-caverna.mp4",
+      "start": 55,
+      "duration": 7
+    },
+    {
+      "file": "media/06-cesta.mp4",
+      "start": 72,
+      "duration": 7
+    },
+    {
+      "file": "media/07-perseguicao.mp4",
+      "start": 87,
+      "duration": 7
+    },
+    {
+      "file": "media/08-paisagem.mp4",
+      "start": 110,
+      "duration": 7
+    }
+  ]
+}
