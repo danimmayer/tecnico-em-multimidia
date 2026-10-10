@@ -344,7 +344,7 @@
   const isDesignSeven = course.slug === 'design-web' && lesson.num === '07';
   if (isDesignSeven) document.body.classList.add('design-seven');
   // Aulas 09 e 10 reuse the Aula 08 slide layout; each lesson keeps its illustrations in its own folder.
-  const isDesignEight = course.slug === 'design-web' && ['08', '09', '10'].includes(lesson.num);
+  const isDesignEight = course.slug === 'design-web' && ['08', '09', '10', '11'].includes(lesson.num);
   if (isDesignEight) document.body.classList.add('design-eight');
   // Aulas 09 a 11 de Audiovisual share the production visuals of av-nine.css.
   const isAvNine = course.slug === 'producao-audiovisual' && ['09', '10', '11'].includes(lesson.num);

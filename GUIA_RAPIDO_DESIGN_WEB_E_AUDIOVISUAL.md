@@ -137,9 +137,23 @@ no caderno, os cinco problemas, o endereço e uma frase final.
 
 ### Aula 11 · Interação e feedback
 
-A turma desenha estados normal, ação, erro, sucesso e confirmação por storyboard
-e protótipo. JavaScript é apenas identificado na demonstração como uma das
-tecnologias capazes de implementar o comportamento planejado.
+Cada estudante usa a [oficina de interações](https://oficinas-design-web.vercel.app/aula-11/)
+como aquecimento: os seis desafios clicáveis terminam às 20:30 e não são
+repetidos por quem já concluiu. No slide 13, a turma abre o
+[Criador de fluxos](https://oficinas-design-web.vercel.app/aula-11/criador.html): escolhe
+um briefing de reserva de estúdio, empréstimo de equipamento ou pedido de lanche,
+edita cinco telas e liga as rotas do próprio protótipo. A nova exigência revela
+uma opção indisponível; cada estudante adiciona e conecta uma sexta tela de
+alternativa, mantendo a outra opção ativa. Às 21:20, abre diretamente o slide
+16: escolhe tema, nome e raio; cria um formulário que mostra erro vazio e usa
+`{{resposta}}`; configura espera, falha e retry; e faz um speedrun de até oito
+cliques antes de salvar `meu-fluxo.fluxo` e exportar `meu-prototipo.html`. A
+cópia offline `oficina.html` atende ao aquecimento e `criador.html` atende ao
+fluxo, sem login, instalação, código, relatórios, prints ou upload coletivo;
+roteiro de 19:00 a 22:10, intervalo 19:45–20:05, em
+`modelos/design-web/aula-11/README.md`.
+JavaScript é apenas identificado na demonstração como uma das tecnologias capazes
+de implementar o comportamento planejado.
 
 ### Aulas 12 e 13 · UX e acessibilidade
 

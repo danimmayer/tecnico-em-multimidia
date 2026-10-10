@@ -1,3 +1,4 @@
+import { lesson as designWeb11Lesson, support as designWeb11Support } from './lessons/design-web-11.mjs';
 import { planning as designWeb07Planning, support as designWeb07Support } from './lessons/design-web-07.mjs';
 import { planning as designWeb08Planning, support as designWeb08Support } from './lessons/design-web-08.mjs';
 import fs from 'node:fs';
@@ -310,6 +311,13 @@ const revisedLessons = {
     methodology: 'Mostra de projetos com defesa, avaliação por critérios, recuperação direcionada e organização de portfólio.',
     resources: 'Projetor, computadores, protótipos, peças gráficas, vídeos, rubrica e ficha de recuperação.'
   }
+};
+
+revisedLessons['11'] = {
+  ...designWeb11Lesson,
+  socio: designWeb11Lesson.socioemotional,
+  times: designWeb11Lesson.schedule.map(block => block.horario),
+  blocks: designWeb11Lesson.schedule.map(block => block.atividade)
 };
 
 function renderLesson(number, lesson) {
@@ -2046,6 +2054,7 @@ Object.assign(support['design-web'].lessons['01'], {
 
 support['design-web'].lessons['07'] = designWeb07Support;
 support['design-web'].lessons['08'] = designWeb08Support;
+support['design-web'].lessons['11'] = designWeb11Support;
 
 const supportOutput = `/* Anotações de aula do Prof. Daniel Marcos Mayer. */\nwindow.SENAI_TEACHING_SUPPORT = ${JSON.stringify(support, null, 2)};\n`;
 fs.writeFileSync(supportPath, supportOutput);

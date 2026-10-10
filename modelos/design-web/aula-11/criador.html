@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Criador de fluxos — Aula 11</title><link rel="icon" href="data:,">
+<style>
+:root{--ink:#083b39;--cream:#f8f0df;--paper:#fffaf0;--lime:#c8ed58;--muted:#53706c;--line:#c8d3c7;--danger:#9c352a}*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.42 Trebuchet MS,Arial,sans-serif}.top{background:var(--ink);color:#fff;padding:20px max(20px,calc((100% - 1220px)/2));display:flex;justify-content:space-between;gap:20px;align-items:center}.top h1{font:700 26px Georgia,serif;margin:0}.top p{margin:3px 0 0;color:#c9e8dc}.tag{background:var(--lime);color:var(--ink);border-radius:999px;padding:6px 11px;font-weight:bold;font-size:13px}.wrap{max-width:1220px;margin:0 auto;padding:22px 20px 44px}.intro{max-width:770px;margin:0 0 20px}.intro h2{font:700 25px Georgia,serif;margin:0 0 5px}.intro p{margin:0;color:var(--muted)}.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start}.panel{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 5px 0 rgba(8,59,57,.06)}.panel h3{font:700 18px Georgia,serif;margin:0 0 12px}.briefs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.briefs button{min-height:76px;text-align:left;padding:10px}.briefs b{display:block}.nav{display:flex;gap:7px;flex-wrap:wrap;margin:13px 0}.nav button{padding:7px 10px}.nav button.active{background:var(--ink);color:white;border-color:var(--ink)}button,select,input,textarea{font:inherit}button{border:1px solid var(--ink);border-radius:9px;background:#fff;color:var(--ink);font-weight:700;cursor:pointer;padding:9px 12px}button:hover{transform:translateY(-1px);box-shadow:0 2px 0 rgba(8,59,57,.25)}button.primary{background:var(--lime)}button.ghost{border-color:var(--line);color:var(--muted)}button.warn{border-color:var(--danger);color:var(--danger)}label{display:block;font-size:13px;font-weight:bold;margin:11px 0 4px}input,textarea,select{width:100%;border:1px solid #9cad9f;border-radius:8px;background:#fff;padding:9px;color:var(--ink)}textarea{min-height:82px;resize:vertical}.button-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}.button-row label{margin-top:0}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.preview-shell{background:#133f3d;border-radius:14px;padding:14px;color:white}.preview-bar{display:flex;justify-content:space-between;align-items:center;color:#cce5df;font-size:13px;margin-bottom:14px}.phone{background:white;color:var(--ink);border-radius:12px;min-height:340px;padding:25px 20px;display:flex;flex-direction:column}.phone .kicker{color:#5b7c77;font-weight:bold;font-size:13px}.phone h4{font:700 27px Georgia,serif;margin:12px 0 9px;line-height:1.1}.phone p{margin:0 0 18px;color:#48625e}.phone .choices{margin-top:auto;display:grid;gap:8px}.phone .choices button{width:100%;text-align:left}.notice{min-height:25px;margin:10px 0 0;font-size:14px}.notice.bad{color:var(--danger);font-weight:bold}.notice.ok{color:#17604a;font-weight:bold}.audit{border-left:5px solid var(--lime);margin-top:16px;background:#f1f8e7;padding:12px}.audit h4{margin:0 0 5px}.audit ul{margin:5px 0;padding-left:20px}.client{margin-top:18px;background:#fff3df;border:1px solid #e4b96d;padding:13px;border-radius:11px}.client p{margin:4px 0 10px}.screen-add{margin-top:5px}.saved{font-size:13px;color:var(--muted);margin:9px 0 0}.hidden{display:none!important}.prototype .author-only{display:none!important}.prototype .grid{grid-template-columns:minmax(0,1fr);max-width:620px;margin-inline:auto}.prototype .preview-panel{max-width:620px}.prototype .phone{min-height:410px}@media(max-width:780px){.top{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:1fr}.briefs{grid-template-columns:1fr}.button-row{grid-template-columns:1fr}.wrap{padding:16px}.phone{min-height:300px}}
+.grid>*{min-width:0}.phone,.phone h4,.phone p,.phone button,.notice,.audit,.nav button,.preview-bar{min-width:0;overflow-wrap:anywhere}.briefs button.active{background:var(--lime);box-shadow:inset 0 0 0 1px var(--ink)}.prototype .grid{grid-template-columns:minmax(0,1fr);max-width:620px;margin-inline:auto}.prototype .preview-panel{width:100%;max-width:100%}.preview-bar{gap:10px;flex-wrap:wrap}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #258575;outline-offset:3px}.saved.bad{color:var(--danger)}.hint{font-size:12px;color:var(--muted);margin:5px 0 0}.editing-location{font-size:14px;font-weight:700;margin:14px 0 0}
+.extra-controls{margin:14px 0;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.extra-controls summary{cursor:pointer;font-weight:700}.themes{margin:12px 0}.themes button{min-height:42px}.themes button.active{background:var(--lime)}.check{display:flex;align-items:center;gap:8px;font-size:14px;margin:10px 0}.check input{width:18px;height:18px;margin:0;accent-color:var(--ink)}input[type=range]{padding:0;accent-color:var(--ink)}.preview-tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px}.preview-tools button{font-size:13px}.preview-panel{position:sticky;top:16px}.preview-shell{--app-bg:#ffffff;--app-text:#083b39;--app-muted:#48625e;--button-bg:#c8ed58;--button-text:#083b39;--app-radius:12px}.preview-shell[data-theme=arcade]{--app-bg:#172541;--app-text:#f5f5ed;--app-muted:#d2dbea;--button-bg:#e5fd82;--button-text:#172541;background:#09152a}.preview-shell[data-theme=editorial]{--app-bg:#fffdf7;--app-text:#2c2924;--app-muted:#625c52;--button-bg:#2c2924;--button-text:#fffdf7;background:#625c52}.phone{background:var(--app-bg);color:var(--app-text);border-radius:var(--app-radius)}.phone p,.phone .kicker{color:var(--app-muted)}.phone .choices button{border-radius:var(--app-radius);background:var(--button-bg);color:var(--button-text);border-color:var(--button-text)}.phone input{border-radius:var(--app-radius);background:#fff;color:#083b39}.phone input[aria-invalid=true]{border:2px solid #a43b2b}.phone input::placeholder{color:#5c716c;opacity:1}.phone label{color:var(--app-text)}.mobile-preview .phone{max-width:320px;margin:0 auto;width:100%}.phone button:focus-visible,.phone input:focus-visible{outline:3px solid var(--app-text);outline-offset:3px}button:disabled{opacity:.6;cursor:default;transform:none;box-shadow:none}::selection{background:#c8ed58;color:#083b39}@media(max-width:780px){.preview-panel{position:static}.preview-tools{align-items:flex-start}}
+</style></head><body class="">
+<header class="top"><div><h1>Laboratório de fluxo</h1><p>Construa as telas. Depois percorra o caminho como uma pessoa usuária.</p></div><span class="tag">Etapa 2 · fluxo clicável</span></header>
+<main class="wrap"><section class="intro author-only"><h2>Crie um serviço com telas e caminhos próprios.</h2><p>Escolha um contexto, conecte as telas e teste se alguém consegue chegar à conclusão sem ficar preso.</p></section><style>
+.remix{margin:0 0 20px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.remix summary{font-weight:700;font-size:19px;cursor:pointer}.remix summary small{font-weight:400;font-size:14px;color:var(--muted);margin-left:8px}.remix-tabs{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0}.remix-tabs button{font-size:14px}.remix-tabs button.active{background:var(--ink);color:var(--paper)}.remix-heading{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}.remix-heading h3{margin:0;font-size:18px}.remix-duration{font-size:13px;color:var(--muted)}.remix ol{margin:8px 0 10px;padding-left:22px;max-width:86ch}.remix li{margin:4px 0}.remix-proof{font-weight:700;margin:8px 0;max-width:86ch}.remix-tools{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.remix-client{margin:8px 0 0;font-weight:700;color:var(--ink)}.remix-speed{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:12px 0}.remix-speed[hidden],.remix-client[hidden]{display:none}.remix-clock{font-variant-numeric:tabular-nums}.remix button:disabled{opacity:.55;cursor:default;transform:none;box-shadow:none}@media(max-width:780px){.remix summary small{display:block;margin:5px 0 0}.remix-tabs{display:grid;grid-template-columns:1fr 1fr}.remix-tabs button{text-align:left}.remix{padding:14px 0}.remix ol{font-size:15px}}
+</style><details id="remix" class="remix author-only" open><summary>21:20 · Transforme seu fluxo em aplicativo <small>Continue no seu projeto atual.</small></summary><nav class="remix-tabs" aria-label="Missões da rodada final"><button type="button" data-mission="0">1. Aparência</button><button type="button" data-mission="1">2. Formulário</button><button type="button" data-mission="2">3. Rede caiu</button><button type="button" data-mission="3">4. Speedrun</button></nav><div class="remix-heading"><h3 id="remix-title"></h3><span id="remix-duration" class="remix-duration"></span></div><ol id="remix-steps"></ol><p id="remix-proof" class="remix-proof"></p><div id="remix-speed" class="remix-speed" hidden><button id="remix-run" type="button" class="primary">Iniciar rodada de 60 s</button><button id="remix-stop" type="button">Encerrar rodada</button><span id="remix-clock" class="remix-clock" aria-live="polite">Use Recomeçar teste antes de iniciar.</span></div><div class="remix-tools"><button id="remix-draw" class="ghost" type="button">Sortear pessoa para o teste</button><span>Depois das quatro missões, resolva um imprevisto.</span></div><p id="remix-client" class="remix-client" aria-live="polite" hidden></p></details><script>(function initRemix() {
+  document.addEventListener('DOMContentLoaded', () => {
+    if (document.body.classList.contains('prototype')) return;
+    const root = document.querySelector('#remix');
+    if (!root) return;
+    const missions = [
+      {title: 'Dê cara de aplicativo', time: '10 min', steps: ['Dê um nome ao serviço e escolha um dos três estilos.', 'Experimente os cantos dos botões. Compare as opções na prévia.', 'Confira no modo celular: título, campo e ação principal precisam caber.'], proof: 'Mostre a mesma tela com duas aparências e escolha a mais clara.'},
+      {title: 'Faça um formulário funcionar', time: '15 min', steps: ['Selecione a tela Início. Crie um campo com rótulo e marque Obrigatório. Use um apelido fictício.', 'Tente continuar vazio: o erro precisa aparecer na própria tela. Depois preencha e siga.', 'Na revisão ou na conclusão, coloque {{resposta}} no texto. Confira se aparece o que você digitou; acrescente outro campo só se ele ajudar o percurso.'], proof: 'Vazio bloqueia o avanço e orienta; preenchido segue; a conclusão mostra a resposta digitada.'},
+      {title: 'A rede caiu. E agora?', time: '15 min', steps: ['Se precisar, crie a tela 7, Erro, com o botão Tentar de novo voltando à Revisão. A tela 8 fica livre só se fizer falta.', 'Na Revisão, abra Carregamento e falha dos botões. No botão de confirmação, marque Aguardar, mantenha Vai para → Concluído e escolha Erro em Destino se falhar.', 'No Criador, ative Simular falha: confirme e cancele a espera; confirme de novo e aguarde chegar a Erro. Desligue a falha, use Tentar de novo → Revisão, confirme e conclua.'], proof: 'No Criador: carregamento → falha → retorno à Revisão → conclusão. No protótipo exportado, confira a espera e o caminho normal.'},
+      {title: 'Speedrun de usabilidade', time: '5 min', steps: ['Use Recomeçar teste (não apaga as telas) e inicie uma rodada de 60 segundos.', 'Conclua um pedido em até 8 cliques, com revisão da escolha. Veja o contador e o percurso.', 'Se ficar travado, corrija o ponto e repita. Ao terminar, salve o rascunho e exporte.'], proof: 'Conclua, leia a resposta final e mostre o percurso. O relógio mede a rodada, não aprova o trabalho.'}
+    ];
+    let selected = 0, timer = null, deadline = 0;
+    const $ = selector => root.querySelector(selector);
+    function choose(index) {
+      selected = index;
+      for (const [id, step] of [['appearance-controls', 0], ['field-controls', 1], ['wait-controls', 2]]) { const detail = document.getElementById(id); if (detail) detail.open = index === step; }
+      const mission = missions[index];
+      $('#remix-title').textContent = mission.title;
+      $('#remix-duration').textContent = mission.time;
+      $('#remix-steps').replaceChildren(...mission.steps.map(text => {
+        const li = document.createElement('li'); li.textContent = text; return li;
+      }));
+      $('#remix-proof').textContent = mission.proof;
+      root.querySelectorAll('[data-mission]').forEach(button => {
+        const active = Number(button.dataset.mission) === index;
+        button.classList.toggle('active', active);
+        button.setAttribute('aria-pressed', String(active));
+      });
+      $('#remix-speed').hidden = index !== 3;
+    }
+    root.querySelectorAll('[data-mission]').forEach(button => button.addEventListener('click', () => choose(Number(button.dataset.mission))));
+    const scenarios = [
+      'Pessoa com pressa: conclua em até 8 cliques, passando pela revisão.',
+      'Só teclado: percorra o caminho com Tab e Enter. O foco precisa ficar visível.',
+      'Mudou de ideia: troque a opção na revisão e confirme a nova escolha.',
+      'Conexão falhou: encontre uma saída, tente novamente e conclua.',
+      'Toque repetido: durante a espera, tente confirmar de novo. Não pode duplicar a ação.',
+      'Pedido incompleto: envie o campo vazio. Corrija seguindo somente a orientação da tela.'
+    ];
+    let previous = -1;
+    $('#remix-draw').addEventListener('click', () => {
+      let index = Math.floor(Math.random() * (scenarios.length - 1));
+      if (index >= previous && previous >= 0) index++;
+      previous = index;
+      $('#remix-client').textContent = scenarios[index];
+      $('#remix-client').hidden = false;
+    });
+    function stop() { clearInterval(timer); timer = null; $('#remix-run').disabled = false; }
+    function tick() {
+      const remaining = Math.max(0, Math.ceil((deadline - Date.now()) / 1000));
+      const message = remaining ? remaining + ' s restantes' : 'Tempo encerrado. Confira onde chegou e o que precisa melhorar.';
+      if ($('#remix-clock').textContent !== message) $('#remix-clock').textContent = message;
+      if (!remaining) stop();
+    }
+    $('#remix-run').addEventListener('click', () => {
+      stop(); deadline = Date.now() + 60000; $('#remix-run').disabled = true;
+      tick(); timer = setInterval(tick, 250);
+    });
+    $('#remix-stop').addEventListener('click', () => {
+      if (timer) { stop(); $('#remix-clock').textContent = 'Rodada encerrada. Confira os cliques e o percurso na prévia.'; }
+      else $('#remix-clock').textContent = 'Inicie uma rodada para medir o percurso.';
+    });
+    choose(selected);
+  });
+})();</script><div class="grid"><section class="panel author-only"><h3>1. Monte o fluxo</h3><div class="briefs" id="brief"><button data-brief="reserva"><b>Estúdio</b>Reserva de horário</button><button data-brief="emprestimo"><b>Equipamento</b>Empréstimo de câmera</button><button data-brief="lanche"><b>Lanche</b>Pedido no intervalo</button></div><details id="appearance-controls" class="extra-controls"><summary>Aparência do aplicativo</summary><label for="appearance-name">Nome do aplicativo</label><input id="appearance-name" maxlength="48"><div class="briefs themes" id="theme"><button type="button" data-theme="studio">Estúdio</button><button type="button" data-theme="arcade">Arcade</button><button type="button" data-theme="editorial">Editorial</button></div><label for="roundness">Cantos dos botões</label><input id="roundness" type="range" min="0" max="24"></details><div class="nav" id="screen-nav"></div><button class="ghost screen-add" id="add-screen" type="button">+ Adicionar tela</button><p class="hint" id="screen-count"></p><p class="editing-location" id="editing-location" aria-live="polite"></p><label for="flow-title">Título desta tela</label><input id="flow-title" maxlength="90"><label for="flow-body">O que a pessoa precisa entender ou fazer?</label><textarea id="flow-body" maxlength="280"></textarea><p class="hint">Use {{escolha}} para mostrar a escolha; {{resposta}} para mostrar o último campo preenchido.</p><div class="button-row"><div><label for="button-label-0">Botão 1</label><input id="button-label-0" maxlength="70"><label for="button-target-0">Vai para</label><select id="button-target-0"></select></div><div><label for="button-label-1">Botão 2 · opcional</label><input id="button-label-1" maxlength="70"><label for="button-target-1">Vai para</label><select id="button-target-1"></select></div></div><details id="field-controls" class="extra-controls"><summary>Campo de entrada nesta tela</summary><label for="field-label">Rótulo do campo · vazio desativa</label><input id="field-label" maxlength="70" placeholder="Ex.: Seu apelido"><label for="field-placeholder">Dica dentro do campo</label><input id="field-placeholder" maxlength="100" placeholder="Ex.: Digite um apelido fictício"><label class="check"><input id="field-required" type="checkbox"> Preenchimento obrigatório</label></details><details id="wait-controls" class="extra-controls"><summary>Carregamento e falha dos botões</summary><p class="hint">Marque Aguardar no botão que confirma o pedido. Mantenha o destino normal em Vai para; o destino de falha só fica ativo com Aguardar ligado.</p><div class="button-row"><div><label class="check"><input id="button-wait-0" type="checkbox"><span id="button-wait-label-0">Aguardar no botão 1</span></label><label for="button-error-0">Destino se falhar</label><select id="button-error-0" title="Marque Aguardar para ativar este destino"></select></div><div><label class="check"><input id="button-wait-1" type="checkbox"><span id="button-wait-label-1">Aguardar no botão 2</span></label><label for="button-error-1">Destino se falhar</label><select id="button-error-1" title="Marque Aguardar para ativar este destino"></select></div></div></details><div class="client"><strong>Quando seu caminho principal funcionar</strong><p>Receba uma mudança do cliente e adapte seu fluxo.</p><p id="client-request" hidden></p><button id="client-change" type="button">Receber nova exigência</button></div><div class="actions"><button id="check-flow" class="primary" type="button">Conferir conexões</button><button id="save-flow" type="button">Salvar rascunho</button><button id="export-flow" type="button">Exportar protótipo</button><button class="ghost" id="open-flow-button" type="button">Abrir rascunho</button><input id="open-flow" type="file" accept=".fluxo,application/json" hidden></div><p class="saved" id="flow-status" aria-live="polite">Rascunho aberto. Comece pela tela Início.</p></section><section class="panel preview-panel"><h3>2. Teste como uma pessoa usuária</h3><div class="preview-tools author-only"><label class="check"><input id="simulate-failure" type="checkbox"> Simular falha de rede</label><button id="preview-mobile" type="button" aria-pressed="false">Ver em largura de celular</button></div><div class="preview-shell" id="flow-preview"><div class="preview-bar"><span id="preview-location">Início</span><button id="simulate-start" type="button" title="Reinicia o percurso, as respostas e os cliques do teste. Não apaga suas telas.">Recomeçar teste</button></div><div class="phone"><span class="kicker" id="preview-kicker">Fluxo em teste</span><h4 id="preview-title" tabindex="-1"></h4><p id="preview-body"></p><div class="choices" id="preview-buttons"></div></div></div><div class="notice" id="preview-note" aria-live="polite"></div><p class="hint author-only" id="flow-trace">0 cliques · percurso: Início</p><div class="audit author-only" id="audit"><h4>Conexões</h4><p>Ainda não conferido.</p></div></section></div></main>
+<script>const AUTHOR = true;const screenNames=["inicio","escolha","revisao","concluido","ajuda"];const validateFlow=function validateFlow(value) {
+  if (!value || value.version !== 1 || !Array.isArray(value.screens) || value.screens.length < 5 || value.screens.length > 8) throw new Error('Projeto de fluxo inválido.');
+  const ids = new Set();
+  const screens = value.screens.map((screen, index) => {
+    if (!screen || typeof screen.id !== 'string' || !/^[a-z0-9-]{2,24}$/.test(screen.id) || ids.has(screen.id)) throw new Error('Cada tela precisa de um identificador único.');
+    ids.add(screen.id);
+    const text = (field, max) => typeof screen[field] === 'string' && screen[field].trim().length <= max;
+    if (!text('name', 32) || !text('title', 90) || !text('body', 280) || !Array.isArray(screen.buttons) || screen.buttons.length !== 2) throw new Error('Uma tela está incompleta.');
+    const field = screen.field && typeof screen.field === 'object' ? { label: String(screen.field.label || '').slice(0, 70), placeholder: String(screen.field.placeholder || '').slice(0, 100), required: screen.field.required === true } : undefined;
+    return { id: screen.id, name: screen.name.trim() || `Tela ${index + 1}`, title: screen.title.trim(), body: screen.body.trim(), ...(field ? { field } : {}), buttons: screen.buttons.map((button) => ({ label: String(button?.label || '').slice(0, 70), target: String(button?.target || ''), wait: button?.wait === true, errorTarget: String(button?.errorTarget || '') })) };
+  });
+  for (const required of screenNames) {
+    if (!ids.has(required)) throw new Error(`A tela obrigatória “${required}” está ausente.`);
+  }
+  for (const screen of screens) for (const button of screen.buttons) if ((button.target && !ids.has(button.target)) || (button.errorTarget && !ids.has(button.errorTarget))) throw new Error('Há um destino que não existe mais.');
+  const appearance = value.appearance && typeof value.appearance === 'object' ? { name: String(value.appearance.name || '').slice(0, 48), theme: ['studio', 'arcade', 'editorial'].includes(value.appearance.theme) ? value.appearance.theme : 'studio', roundness: Math.max(0, Math.min(24, Number(value.appearance.roundness) || 0)) } : undefined;
+  return { version: 1, brief: ['reserva', 'emprestimo', 'lanche'].includes(value.brief) ? value.brief : 'reserva', clientChange: value.clientChange === true, ...(appearance ? { appearance } : {}), screens };
+};(function flowRuntime(AUTHOR, initial, validate) {
+  const STORAGE = 'senai-design-web-fluxo-v1';
+  const $ = selector => document.querySelector(selector);
+  const all = selector => [...document.querySelectorAll(selector)];
+  const briefs = {
+    reserva: {inicio: ['Reserve seu horário', 'Escolha uma opção para começar sua reserva.'], escolha: ['Qual horário funciona para você?', 'Escolha uma opção. Sua escolha aparecerá na revisão.'], buttons: ['Terça, 14h', 'Quinta, 19h']},
+    emprestimo: {inicio: ['Pegue um equipamento', 'Escolha o que você quer reservar para usar.'], escolha: ['O que você precisa?', 'A escolha aparecerá antes da confirmação.'], buttons: ['Câmera DSLR', 'Tripé com luz']},
+    lanche: {inicio: ['Faça seu pedido', 'Escolha uma opção para o intervalo.'], escolha: ['O que você quer pedir?', 'Revise antes de confirmar o pedido.'], buttons: ['Sanduíche natural', 'Suco com pão de queijo']}
+  };
+  function safe(value) { try { return validate(value); } catch { return null; } }
+  let stored = null;
+  if (AUTHOR) try { stored = JSON.parse(localStorage.getItem(STORAGE) || 'null'); } catch {}
+  let project = safe(window.__FLOW_SEED__) || safe(stored) || safe(initial);
+  const answers = new Map();
+  let active = 'inicio', preview = 'inicio', choice = '', response = '', clicks = 0, trace = ['inicio'], pending = null;
+  function defaults() { project.appearance ||= {name: 'Meu app', theme: 'studio', roundness: 12}; }
+  defaults();
+  const byId = id => project.screens.find(screen => screen.id === id);
+  const current = () => byId(active) || project.screens[0];
+  function status(message, bad = false) {
+    $('#flow-status').textContent = message;
+    $('#flow-status').className = 'saved' + (bad ? ' bad' : '');
+  }
+  function persist(message) {
+    if (AUTHOR) {
+      const heading = document.createElement('h4'); heading.textContent = 'Conexões';
+      const reminder = document.createElement('p'); reminder.textContent = 'Projeto alterado. Confira as conexões novamente.';
+      $('#audit').replaceChildren(heading, reminder);
+    }
+    if (AUTHOR) try { localStorage.setItem(STORAGE, JSON.stringify(project)); } catch {
+      status('O navegador não guardou o rascunho. Use Salvar rascunho para baixar seu trabalho.', true); return;
+    }
+    status(message || 'Alterações guardadas neste navegador. Use Salvar rascunho para baixar o arquivo.');
+  }
+  function note(message = '', kind = '') {
+    $('#preview-note').textContent = message;
+    $('#preview-note').className = 'notice' + (kind ? ' ' + kind : '');
+  }
+  function clearWait() {
+    if (pending) { clearTimeout(pending.timer); note(); }
+    pending = null;
+    $('#flow-preview').setAttribute('aria-busy', 'false');
+  }
+  function text(value) {
+    return String(value || '').replaceAll('{{escolha}}', choice || 'ainda não escolheu uma opção').replaceAll('{{resposta}}', response || 'ainda não respondeu');
+  }
+  function updateTrace() {
+    $('#flow-trace').textContent = clicks + ' cliques · percurso: ' + trace.map(id => byId(id)?.name || id).join(' → ');
+  }
+  function options(select, value) {
+    select.replaceChildren(new Option('Sem destino', ''), ...project.screens.map(screen => new Option(screen.name, screen.id)));
+    select.value = value || '';
+  }
+  function renderNav() {
+    $('#screen-nav').replaceChildren(...project.screens.map(screen => {
+      const button = document.createElement('button'); button.type = 'button'; button.dataset.screen = screen.id;
+      button.textContent = screen.name; button.className = screen.id === active ? 'active' : '';
+      button.setAttribute('aria-pressed', String(screen.id === active));
+      button.onclick = () => { clearWait(); active = preview = screen.id; clicks = 0; trace = [screen.id]; note(); renderEditor(); $('#screen-nav [data-screen="' + screen.id + '"]').focus({preventScroll: true}); };
+      return button;
+    }));
+  }
+  function syncWaitControls() {
+    const screen = current();
+    for (let index = 0; index < 2; index++) {
+      const button = screen.buttons[index], hasLabel = Boolean(button.label.trim());
+      $('#button-wait-label-' + index).textContent = hasLabel ? 'Aguardar ao clicar em “' + button.label + '”' : 'Botão ' + (index + 1) + ' · adicione o texto primeiro';
+      $('#button-wait-' + index).disabled = !hasLabel;
+      $('#button-error-' + index).disabled = !hasLabel || !button.wait;
+    }
+  }
+  function renderEditor() {
+    if (!AUTHOR) return;
+    const screen = current();
+    renderNav();
+    $('#flow-title').value = screen.title; $('#flow-body').value = screen.body;
+    for (let index = 0; index < 2; index++) {
+      const button = screen.buttons[index];
+      $('#button-label-' + index).value = button.label;
+      options($('#button-target-' + index), button.target);
+      $('#button-wait-' + index).checked = button.wait === true;
+      options($('#button-error-' + index), button.errorTarget);
+    }
+    $('#field-label').value = screen.field?.label || '';
+    $('#field-placeholder').value = screen.field?.placeholder || '';
+    $('#field-required').checked = screen.field?.required === true;
+    $('#appearance-name').value = project.appearance.name;
+    $('#roundness').value = project.appearance.roundness;
+    all('[data-theme]').forEach(button => {
+      const selected = button.dataset.theme === project.appearance.theme;
+      button.classList.toggle('active', selected); button.setAttribute('aria-pressed', String(selected));
+    });
+    all('[data-brief]').forEach(button => {
+      const selected = button.dataset.brief === project.brief;
+      button.classList.toggle('active', selected); button.setAttribute('aria-pressed', String(selected));
+    });
+    $('#add-screen').disabled = project.screens.length >= 8;
+    $('#screen-count').textContent = project.screens.length + ' de 8 telas. Início, Escolha, Revisão, Concluído e Ajuda são as cinco telas iniciais.';
+    $('#editing-location').textContent = 'Tela em edição: ' + screen.name;
+    syncWaitControls();
+    $('#client-change').textContent = project.clientChange ? 'Exigência recebida' : 'Receber nova exigência';
+    $('#client-change').disabled = project.clientChange;
+    $('#client-request').hidden = !project.clientChange;
+    $('#client-request').textContent = 'A primeira opção (' + (byId('escolha').buttons[0].label || 'opção 1') + ') ficou indisponível. Adicione uma sexta tela, explique o problema e ofereça outra opção. A segunda opção deve continuar chegando à conclusão.';
+    renderPreview();
+  }
+  function renderPreview() {
+    const screen = byId(preview) || project.screens[0], appearance = project.appearance;
+    $('#flow-preview').dataset.theme = appearance.theme;
+    $('#flow-preview').style.setProperty('--app-radius', appearance.roundness + 'px');
+    $('#preview-kicker').textContent = appearance.name || 'Meu app';
+    $('#preview-location').textContent = screen.name;
+    $('#preview-title').textContent = screen.title || 'Esta tela ainda não tem título';
+    $('#preview-body').textContent = text(screen.body) || 'Escreva o que a pessoa deve entender nesta tela.';
+    const box = $('#preview-buttons'); box.replaceChildren();
+    if (screen.field?.label.trim()) {
+      const label = document.createElement('label'); label.htmlFor = 'preview-field';
+      label.textContent = screen.field.label + (screen.field.required ? ' · obrigatório' : '');
+      const input = document.createElement('input'); input.id = 'preview-field'; input.maxLength = 120;
+      input.placeholder = screen.field.placeholder; input.value = answers.get(screen.id) || ''; input.required = screen.field.required;
+      input.setAttribute('aria-describedby', 'preview-note'); input.disabled = Boolean(pending);
+      input.oninput = () => { response = input.value; answers.set(screen.id, response); input.removeAttribute('aria-invalid'); $('#preview-body').textContent = text(screen.body); if (response.trim()) note(); };
+      box.append(label, input);
+    }
+    screen.buttons.forEach(button => {
+      if (!button.label.trim()) return;
+      const control = document.createElement('button'); control.type = 'button'; control.textContent = button.label;
+      control.disabled = Boolean(pending); control.setAttribute('aria-busy', String(Boolean(pending && pending.button === button))); control.onclick = () => follow(screen, button); box.append(control);
+    });
+    if (pending) {
+      const cancel = document.createElement('button'); cancel.type = 'button'; cancel.id = 'cancel-wait'; cancel.textContent = 'Cancelar espera';
+      cancel.onclick = () => { clicks++; clearWait(); note('Espera cancelada. Você continua nesta tela e pode tentar de novo.', 'ok'); renderPreview(); };
+      box.append(cancel);
+    }
+    if (!box.children.length) { const empty = document.createElement('span'); empty.textContent = 'Sem ação disponível nesta tela.'; box.append(empty); }
+    $('#flow-preview').setAttribute('aria-busy', String(Boolean(pending)));
+    updateTrace();
+  }
+  function navigate(target, message = '', kind = '') {
+    clearWait(); active = preview = target;
+    if (target === 'inicio') { choice = ''; response = ''; answers.clear(); }
+    trace.push(target); note(message, kind);
+    if (AUTHOR) renderEditor(); else renderPreview();
+    $('#preview-title').focus({preventScroll: true});
+  }
+  function follow(screen, button) {
+    if (pending) return;
+    clicks++; updateTrace();
+    const input = $('#preview-field');
+    if (input) { response = input.value; answers.set(screen.id, response); }
+    if (input && screen.field.required && !response.trim()) {
+      note('Preencha ' + screen.field.label + ' para continuar.', 'bad'); input.setAttribute('aria-invalid', 'true'); input.focus(); return;
+    }
+    if (!button.target || !byId(button.target)) {
+      note('Esta escolha não leva a lugar nenhum ainda. Defina o destino dela no editor.', 'bad'); return;
+    }
+    const simulateFailure = AUTHOR && $('#simulate-failure').checked;
+    const finish = () => {
+      if (button.wait && simulateFailure) {
+        if (button.errorTarget && byId(button.errorTarget)) navigate(button.errorTarget, 'Falha simulada: percorra sua rota de recuperação.', 'bad');
+        else { clearWait(); note('A conexão falhou. Tente novamente ou configure uma tela de recuperação.', 'bad'); renderPreview(); }
+        return;
+      }
+      if (screen.id === 'escolha') choice = button.label;
+      navigate(button.target);
+    };
+    if (!button.wait) { finish(); return; }
+    const token = {timer: null, button}; pending = token;
+    note('Aguardando resposta da rede…'); renderPreview();
+    token.timer = setTimeout(() => { if (pending !== token) return; clearWait(); finish(); }, 1200);
+  }
+  function restart() {
+    clearWait(); active = preview = 'inicio'; choice = response = ''; answers.clear(); clicks = 0; trace = ['inicio'];
+    note('Teste reiniciado. Suas telas e edições continuam guardadas.', 'ok'); if (AUTHOR) renderEditor(); else renderPreview();
+    $('#preview-title').focus({preventScroll: true});
+  }
+  function audit() {
+    const seen = new Set();
+    const edges = screen => screen.buttons.filter(button => button.label.trim()).flatMap(button => [button.target, ...(button.wait && button.errorTarget ? [button.errorTarget] : [])]).filter(id => byId(id));
+    const walk = id => { if (seen.has(id)) return; seen.add(id); edges(byId(id)).forEach(walk); }; walk('inicio');
+    const reaches = new Set(['concluido']); let changed = true;
+    while (changed) { changed = false; for (const screen of project.screens) if (!reaches.has(screen.id) && edges(screen).some(id => reaches.has(id))) { reaches.add(screen.id); changed = true; } }
+    const missing = [];
+    project.screens.forEach(screen => screen.buttons.forEach((button, index) => { if (button.label.trim() && !byId(button.target)) missing.push(screen.name + ' · botão ' + (index + 1)); }));
+    const unreachable = project.screens.filter(screen => !seen.has(screen.id)).map(screen => screen.name);
+    const dead = project.screens.filter(screen => seen.has(screen.id) && !reaches.has(screen.id)).map(screen => screen.name);
+    const items = [];
+    if (missing.length) items.push('Falta destino: ' + missing.join(', ') + '.');
+    if (unreachable.length) items.push('Não dá para chegar em: ' + unreachable.join(', ') + '.');
+    if (!seen.has('concluido')) items.push('Ainda não há caminho do início até Concluído.');
+    if (dead.length) items.push('Beco sem saída: ' + dead.join(', ') + '.');
+    const good = !items.length;
+    if (good) items.push('Há um caminho até Concluído e todas as ações visíveis têm destino.');
+    const heading = document.createElement('h4'); heading.textContent = 'Conexões';
+    const list = document.createElement('ul'); items.forEach(text => { const item = document.createElement('li'); item.textContent = text; list.append(item); });
+    $('#audit').replaceChildren(heading, list);
+    status(good ? 'Conexões conferidas. Agora percorra o fluxo no simulador.' : 'Confira os pontos indicados antes de testar.', !good);
+  }
+  function download(blob, name) {
+    const link = document.createElement('a'), url = URL.createObjectURL(blob); link.href = url; link.download = name; link.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+  function bind() {
+    if (!AUTHOR) return;
+    const write = change => event => { clearWait(); change(event); persist(); syncWaitControls(); $('#editing-location').textContent = 'Tela em edição: ' + current().name; renderPreview(); };
+    $('#flow-title').oninput = write(event => {
+      const screen = current(); screen.title = event.target.value;
+      if (screen.id.startsWith('tela-')) { screen.name = screen.title.trim().slice(0, 32) || 'Tela ' + screen.id.slice(5); renderNav(); for (let index = 0; index < 2; index++) { options($('#button-target-' + index), screen.buttons[index].target); options($('#button-error-' + index), screen.buttons[index].errorTarget); } }
+    });
+    $('#flow-body').oninput = write(event => current().body = event.target.value);
+    for (let index = 0; index < 2; index++) {
+      $('#button-label-' + index).oninput = write(event => current().buttons[index].label = event.target.value);
+      $('#button-target-' + index).onchange = write(event => current().buttons[index].target = event.target.value);
+      $('#button-wait-' + index).onchange = write(event => current().buttons[index].wait = event.target.checked);
+      $('#button-error-' + index).onchange = write(event => current().buttons[index].errorTarget = event.target.value);
+    }
+    const field = () => current().field ||= {label: '', placeholder: '', required: false};
+    $('#field-label').oninput = write(event => field().label = event.target.value);
+    $('#field-placeholder').oninput = write(event => field().placeholder = event.target.value);
+    $('#field-required').onchange = write(event => field().required = event.target.checked);
+    $('#appearance-name').oninput = write(event => project.appearance.name = event.target.value);
+    $('#roundness').oninput = write(event => project.appearance.roundness = Number(event.target.value));
+    $('#theme').onclick = event => { const button = event.target.closest('[data-theme]'); if (!button) return; clearWait(); project.appearance.theme = button.dataset.theme; persist(); renderEditor(); };
+    $('#preview-mobile').onclick = () => { const on = $('#flow-preview').classList.toggle('mobile-preview'); $('#preview-mobile').setAttribute('aria-pressed', String(on)); };
+    $('#brief').onclick = event => {
+      const button = event.target.closest('[data-brief]'); if (!button || button.dataset.brief === project.brief) return;
+      clearWait(); const old = briefs[project.brief], next = briefs[button.dataset.brief];
+      for (const id of ['inicio', 'escolha']) { const screen = byId(id); if (screen.title === old[id][0]) screen.title = next[id][0]; if (screen.body === old[id][1]) screen.body = next[id][1]; }
+      byId('escolha').buttons.forEach((action, index) => { if (action.label === old.buttons[index]) action.label = next.buttons[index]; });
+      project.brief = button.dataset.brief; persist('Contexto trocado. Seus textos personalizados foram preservados.'); renderEditor();
+    };
+    $('#add-screen').onclick = () => {
+      if (project.screens.length >= 8) return; clearWait(); let number = project.screens.length + 1; while (byId('tela-' + number)) number++;
+      const id = 'tela-' + number;
+      project.screens.push({id, name: 'Tela ' + number, title: 'Nova etapa', body: 'Explique o que acontece aqui.', buttons: [{label: 'Continuar', target: '', wait: false, errorTarget: ''}, {label: '', target: '', wait: false, errorTarget: ''}]});
+      active = preview = id; clicks = 0; trace = [id]; persist('Tela adicionada. Conecte alguém até ela e para fora dela.'); renderEditor();
+    };
+    $('#client-change').onclick = () => { project.clientChange = true; persist('Exigência recebida: crie uma tela de alternativa para a primeira opção.'); renderEditor(); };
+    $('#check-flow').onclick = audit;
+    $('#save-flow').onclick = () => { download(new Blob([JSON.stringify(project, null, 2)], {type: 'application/json'}), 'meu-fluxo.fluxo'); status('Arquivo salvo. Ele preserva as telas e conexões.'); };
+    $('#open-flow-button').onclick = () => $('#open-flow').click();
+    $('#open-flow').onchange = async event => {
+      const file = event.target.files[0]; if (!file) return;
+      try { const next = safe(JSON.parse(await file.text())); if (!next) throw Error(); clearWait(); project = next; defaults(); restart(); persist('Rascunho aberto.'); }
+      catch { status('Não consegui abrir esse arquivo de fluxo. Seu projeto atual continua aberto.', true); }
+      event.target.value = '';
+    };
+    $('#export-flow').onclick = () => {
+      const seed = JSON.stringify(project).replace(/</g, () => String.fromCharCode(92) + 'u003c');
+      const documentCopy = document.documentElement.cloneNode(true); documentCopy.querySelector('body').classList.add('prototype');
+      let source = '<!doctype html>' + documentCopy.outerHTML.replace('const AUTHOR = true;', 'const AUTHOR = false;');
+      source = source.replace('<script>const AUTHOR = false;', () => '<script>window.__FLOW_SEED__=' + seed + ';const AUTHOR = false;');
+      download(new Blob([source], {type: 'text/html'}), 'meu-prototipo.html'); status('Protótipo exportado. Abra o HTML e teste sem o editor.');
+    };
+  }
+  $('#simulate-start').onclick = restart;
+  if (!AUTHOR) document.body.classList.add('prototype');
+  bind(); if (AUTHOR) renderEditor(); else renderPreview();
+})(AUTHOR,{"version":1,"brief":"reserva","clientChange":false,"screens":[{"id":"inicio","name":"Início","title":"Reserve seu horário","body":"Escolha uma opção para começar sua reserva.","buttons":[{"label":"Ver horários","target":"escolha"},{"label":"","target":""}]},{"id":"escolha","name":"Escolha","title":"Qual horário funciona para você?","body":"Escolha uma opção. Sua escolha aparecerá na revisão.","buttons":[{"label":"Terça, 14h","target":""},{"label":"Quinta, 19h","target":""}]},{"id":"revisao","name":"Revisão","title":"Confira antes de confirmar","body":"Você escolheu: {{escolha}}.","buttons":[{"label":"Confirmar reserva","target":""},{"label":"Trocar horário","target":"escolha"}]},{"id":"concluido","name":"Concluído","title":"Reserva enviada","body":"Tudo certo: {{escolha}} foi solicitado.","buttons":[{"label":"Fazer nova reserva","target":"inicio"},{"label":"","target":""}]},{"id":"ajuda","name":"Ajuda","title":"Precisa de ajuda?","body":"Explique aqui o que a pessoa pode fazer quando ficar em dúvida.","buttons":[{"label":"Voltar ao início","target":"inicio"},{"label":"","target":""}]}]},validateFlow);</script></body></html>

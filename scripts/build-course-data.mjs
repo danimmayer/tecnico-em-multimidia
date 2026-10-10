@@ -1,3 +1,4 @@
+import { lesson as designWeb11Lesson } from './lessons/design-web-11.mjs';
 import { lesson as designWeb07Lesson } from './lessons/design-web-07.mjs';
 import { lesson as designWeb08Lesson } from './lessons/design-web-08.mjs';
 import { lesson as designWeb09Lesson } from './lessons/design-web-09.mjs';
@@ -546,6 +547,7 @@ Object.assign(courses['design-web'].lessons.find(lesson => lesson.num === '07'),
 Object.assign(courses['design-web'].lessons.find(lesson => lesson.num === '08'), designWeb08Lesson);
 Object.assign(courses['design-web'].lessons.find(lesson => lesson.num === '09'), designWeb09Lesson);
 Object.assign(courses['design-web'].lessons.find(lesson => lesson.num === '10'), designWeb10Lesson);
+Object.assign(courses['design-web'].lessons.find(lesson => lesson.num === '11'), designWeb11Lesson);
 Object.assign(courses['producao-audiovisual'].lessons.find(lesson => lesson.num === '09'), audiovisual09Lesson);
 Object.assign(courses['producao-audiovisual'].lessons.find(lesson => lesson.num === '10'), audiovisual10Lesson);
 Object.assign(courses['producao-audiovisual'].lessons.find(lesson => lesson.num === '11'), audiovisual11Lesson);
