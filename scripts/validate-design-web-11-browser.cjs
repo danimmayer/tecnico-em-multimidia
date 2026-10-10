@@ -1,0 +1,57 @@
+// Run against a served workshop. PLAYWRIGHT_MODULE may point to a shared installation.
+const {chromium} = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
+const assert = require('node:assert/strict');
+(async () => {
+  const browser = await chromium.launch({channel: process.env.BROWSER_CHANNEL || 'chrome', headless: true});
+  try {
+    const page = await browser.newPage();
+    const errors = [];
+    page.on('pageerror', error => errors.push(error.message));
+    await page.goto(process.env.WORKSHOP_URL || 'http://127.0.0.1:8923/modelos/design-web/aula-11/oficina.html');
+    const state = value => page.waitForFunction(value => document.querySelector('#interaction').dataset.state === value, value, {timeout: 5000});
+    await page.locator('#challenge-menu > summary').click();
+    await page.locator('[data-mission="loading"]').click();
+    await page.locator('#see-mine').click();
+    await state('loading');
+    await state('success');
+    assert.match(await page.locator('#test-path').innerText(), /Início → Carregando → Sucesso/);
+    await page.locator('#challenge-menu > summary').click();
+    await page.locator('[data-mission="empty"]').click();
+    await page.locator('#interaction button').click();
+    assert.equal(await page.evaluate(() => document.activeElement.id), 'championship');
+    await page.locator('#full-flow').click();
+    await page.locator('#championship').selectOption('Corrida virtual');
+    await page.locator('#interaction button').click();
+    await page.locator('#edit-empty').fill('Escolha um campeonato antes de continuar.');
+    await state('success');
+    assert.match(await page.locator('#interaction').innerText(), /Corrida virtual/);
+    assert.equal(await page.evaluate(() => document.activeElement.id), 'edit-empty', 'Completion must not steal focus while editing');
+    await page.locator('#challenge-menu > summary').click();
+    await page.locator('[data-mission="error"]').click();
+    await page.locator('#see-mine').click();
+    await state('loading');
+    await state('error');
+    await page.getByRole('button', {name: 'Tentar novamente', exact: true}).click();
+    await state('success');
+    assert.match(await page.locator('#interaction').innerText(), /Xadrez rápido/);
+    await page.getByRole('button', {name: 'Cancelar inscrição', exact: true}).click();
+    await page.getByRole('button', {name: 'Manter inscrição', exact: true}).click();
+    await state('success');
+    await page.getByRole('button', {name: 'Cancelar inscrição', exact: true}).click();
+    await page.getByRole('button', {name: 'Confirmar cancelamento', exact: true}).click();
+    await state('cancelled');
+    await page.getByRole('button', {name: 'Nova inscrição', exact: true}).click();
+    await state('idle');
+    assert.equal(await page.locator('#championship').inputValue(), '');
+    await page.locator('#challenge-menu > summary').click();
+    await page.locator('[data-mission="cancelled"]').click();
+    await page.locator('.peer > summary').click();
+    assert.notEqual(await page.locator('.peer').getAttribute('open'), null);
+    await page.locator('#peer-start').click();
+    await state('idle');
+    await page.reload();
+    assert.equal(await page.locator('#edit-empty').inputValue(), 'Escolha um campeonato antes de continuar.');
+    assert.deepEqual(errors, []);
+    console.log('PASS: timed outcomes, repeated validation, editing during submission, retry, cancellation, peer handoff and draft recovery');
+  } finally { await browser.close(); }
+})().catch(error => { console.error(error); process.exitCode = 1; });

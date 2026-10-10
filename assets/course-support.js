@@ -782,35 +782,612 @@ window.SENAI_TEACHING_SUPPORT = {
         ]
       },
       "11": {
-        "teacherGoal": "Conduzir a Aula 11 para que a turma produza planejamento de cliques, estados e respostas da interface por storyboard e protótipo, sem programação.",
-        "plainLanguage": "Planejamento de cliques, estados e respostas da interface por storyboard e protótipo, sem programação. O foco é decidir, montar, comparar e testar; os bastidores técnicos aparecem apenas quando ajudam a compreender a função de uma interface.",
-        "say": "Hoje veremos que uma interface precisa responder às ações. Vocês vão desenhar essas respostas no protótipo; ninguém precisará programá-las.",
+        "appendDefaultClosing": false,
+        "teacherGoal": "Cada estudante usa os seis desafios como aquecimento e, a partir de 20:30, cria um fluxo clicável próprio, adapta-o a um novo requisito, testa com o colega, cria uma tela de formulário e uma recuperação de falha e exporta uma versão que funciona fora do editor.",
+        "routine": [
+          "Antes da aula, abro a oficina pública e o criador de fluxos no computador da sala; mantenho as cópias locais como alternativa sem rede.",
+          "Faço chamada no início dos quatro blocos; cada estudante trabalha no próprio posto e troca apenas com o colega ao lado.",
+          "Até 20:30, os seis desafios já feitos valem como aquecimento: não pedir repetição, nova frase ou novo contador. No slide 12 anuncio a troca; no slide 13 todos abrem o criador.",
+          "De 20:30 a 21:15, projeto cinco telas e uma mudança de requisito. Às 21:20, a turma abre diretamente o slide 16: aparência, formulário, falha e speedrun substituem a repetição do teste entre colegas. Das 22:05 às 22:10, apenas organização.",
+          "Não transformar o teste em relatório: somente observação oral curta. Quem termina cedo reduz cliques no speedrun e torna a recuperação de falha útil, sem criar decoração solta."
+        ],
+        "onlineRoutine": "Abro https://oficinas-design-web.vercel.app/aula-11/ para o aquecimento e, às 20:30, https://oficinas-design-web.vercel.app/aula-11/criador.html. O fluxo exportado funciona offline.",
+        "plainLanguage": "Feedback é a resposta da tela: recebi seu toque, estou trabalhando, deu certo ou algo precisa mudar. Cor sozinha não conta a história.",
+        "say": "Quando você aperta um botão e nada muda, toca de novo? Hoje vamos desenhar respostas que tiram essa dúvida.",
         "demo": [
-          "Demonstração comparativa: uma página sem resposta e outra com feedback de carregamento, sucesso, erro e confirmação. O professor explica que comportamentos podem ser programados, mas a turma trabalhará a decisão de design.",
-          "Jogo \"O que acontece depois?\": grupos recebem ações como tocar, enviar, excluir e favoritar; desenham o estado anterior, a resposta imediata e o resultado final.",
-          "Oficina de protótipo: adicionar no mínimo três estados conectados — normal, ação e retorno — usando ferramenta visual. Incluir uma mensagem de erro útil e uma confirmação clara."
+          "Comparo Sem resposta e Com resposta na oficina.",
+          "Às 20:30 escolho um briefing no criador, ligo Início → Escolha → Revisão → Concluído e testo.",
+          "Revelo que uma opção ficou indisponível, crio uma tela de alternativa distinta da Ajuda e testo as duas saídas.",
+          "No slide 16, escolho aparência, ligo o formulário na tela Início e simulo uma falha no Criador; depois exporto para percorrer a espera e o caminho normal com teclado."
         ],
-        "studentDeliverable": "Feira de interações: colegas executam duas tarefas sem explicação. Cada equipe registra onde faltou feedback e classifica suas ideias como correção, melhoria ou inovação.",
+        "studentDeliverable": "Pasta Aula-11 com `meu-fluxo.fluxo` e `meu-prototipo.html` do criador. O fluxo tem cinco telas conectadas, uma sexta tela de alternativa criada após a mudança de requisito e um teste com colega. As seis mensagens anteriores permanecem como aquecimento, sem nova entrega.",
         "check": [
-          "A entrega visual corresponde ao objetivo e pode ser aberta ou apresentada sem explicação adicional.",
-          "O grupo justificou pelo menos duas decisões com critérios da aula.",
-          "Arquivos ou folhas estão nomeados e organizados na pasta de entrega.",
-          "A revisão final retirou dados pessoais e confirmou legibilidade."
+          "Briefing escolhido: reserva de estúdio, empréstimo de equipamento ou pedido de lanche.",
+          "Cinco telas editadas e conectadas: início, escolha, revisão, concluído e ajuda.",
+          "Caminho principal chega ao resultado e nenhuma tela usada fica sem saída.",
+          "A mudança de requisito cria uma sexta tela de alternativa; a outra opção continua funcionando.",
+          "Tema, nome e raio dão uma aparência coerente ao aplicativo.",
+          "Um formulário obrigatório mostra erro na própria tela quando vazio e leva a resposta para a mensagem seguinte.",
+          "No Criador, uma falha simulada chega à tela Erro e o botão Tentar de novo volta à Revisão; Cancelar espera mantém a pessoa na tela. A rota pode usar a sétima tela.",
+          "Arquivo do fluxo reabre editável; o protótipo exportado funciona sem rede e por teclado, com espera e caminho normal."
         ],
-        "fallback": "Se a ferramenta ou a internet falhar, realizar a mesma produção em papel A3 com cartões, canetas e a ficha impressa; fotografar ou guardar a folha como evidência.",
+        "fallback": "Sem internet, abro a cópia local do criador. Sem computador, cada estudante desenha no caderno cinco caixas — início, escolha, revisão, concluído e ajuda — liga-as com setas e acrescenta uma sexta caixa de alternativa após a mudança de requisito. O colega percorre as setas sem receber dicas.",
+        "extension": "Quem chegar ao critério entra no speedrun e tenta resolver o próprio fluxo em até oito cliques. Compara o percurso antes/depois, reduz uma rota desnecessária ou melhora a recuperação de falha; não volta a editar as seis mensagens. O Criador comporta de cinco a oito telas: seis para alternativa, sete para erro e a oitava só se ajudar.",
         "commonProblems": [
           [
-            "A equipe começa sem decidir o objetivo",
-            "Retomar público, mensagem e ação principal antes de escolher aparência."
+            "Aluno terminou os seis desafios e quer parar",
+            "No slide 13, abre o criador, escolhe um briefing e começa as cinco telas. Os desafios não precisam ser refeitos."
           ],
           [
-            "A produção fica bonita, mas pouco clara",
-            "Pedir que outro grupo cumpra uma tarefa e registrar onde ele hesita."
+            "Teste não revelou dificuldade",
+            "Peço que o colega escolha a rota sem pistas e observo apenas onde a pessoa hesita. Não mando inventar problema."
           ],
           [
-            "O tempo termina antes do acabamento",
-            "Fechar primeiro a entrega essencial e deixar variações como extensão opcional."
+            "Mensagem diz apenas “Erro”",
+            "Peço problema + orientação: “Escolha um campeonato para continuar”."
+          ],
+          [
+            "O estudante acha que fez uma reserva real",
+            "Aponto o aviso de simulação; nenhuma vaga, equipamento ou pedido real é enviado."
+          ],
+          [
+            "O colega recebe instruções durante o teste",
+            "Peço silêncio a quem criou a tela e observo onde a pessoa hesita."
+          ],
+          [
+            "O navegador não guarda o rascunho",
+            "Uso Salvar rascunho e reabro `meu-fluxo.fluxo`; o rascunho não substitui a entrega."
           ]
+        ],
+        "presentationSlides": [
+          {
+            "title": "A tela precisa responder",
+            "block": 1,
+            "layout": "dw8",
+            "lede": "Você tocou. Aconteceu alguma coisa?",
+            "cards": [
+              {
+                "title": "Hoje",
+                "text": "Uma inscrição fictícia na Arena Pixel."
+              },
+              {
+                "title": "Entrega",
+                "text": "Um protótipo que conversa com quem usa."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Conte uma situação em que você tocou duas vezes por falta de resposta.",
+            "teacher": {
+              "speech": "Faço a chamada e ouço dois exemplos. Retomo a página e o botão da Arena Pixel.",
+              "steps": [
+                "5 min · Chamada, dois relatos e apresentação da entrega."
+              ],
+              "watch": "Observo se a resposta informa o que aconteceu e permite continuar sem ajuda.",
+              "rescue": "Demonstro uma ação no projetor e devolvo o controle ao estudante. Sem arquivo anterior, uso o exemplo pronto."
+            }
+          },
+          {
+            "title": "O mesmo toque, duas experiências",
+            "block": 1,
+            "layout": "dw8",
+            "lede": "Abra a oficina. Compare os dois botões da demonstração.",
+            "cards": [
+              {
+                "title": "Sem resposta",
+                "text": "Toque e observe a dúvida."
+              },
+              {
+                "title": "Com resposta",
+                "text": "Toque e acompanhe o que muda."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Qual versão evita que você toque de novo? O que ela mostra?",
+            "teacher": {
+              "speech": "Confiro: a segunda responde imediatamente, informa a espera e depois o resultado. Explico que JavaScript pode realizar essas respostas; hoje a turma toma as decisões de design.",
+              "steps": [
+                "10 min · Demonstro os dois botões, libero a comparação e confiro as respostas."
+              ],
+              "watch": "Observo se a resposta informa o que aconteceu e permite continuar sem ajuda.",
+              "rescue": "Demonstro uma ação no projetor e devolvo o controle ao estudante. Sem arquivo anterior, uso o exemplo pronto."
+            },
+            "resources": [
+              {
+                "href": "https://oficinas-design-web.vercel.app/aula-11/",
+                "label": "Abrir a oficina de interações"
+              }
+            ]
+          },
+          {
+            "title": "Ação → resposta → próximo passo",
+            "block": 1,
+            "layout": "dw8",
+            "lede": "Uma boa resposta reduz a dúvida e mostra como continuar.",
+            "cards": [
+              {
+                "title": "Ação",
+                "text": "Enviar uma inscrição."
+              },
+              {
+                "title": "Resposta",
+                "text": "Enviando sua inscrição…"
+              },
+              {
+                "title": "Próximo passo",
+                "text": "Inscrição confirmada. Veja o campeonato escolhido."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Se falhar, o que precisa aparecer no lugar de “Não deu”?",
+            "teacher": {
+              "speech": "Confiro: explicar o problema sem culpar e oferecer uma ação possível. Não prometer que os dados foram salvos se não foram.",
+              "steps": [
+                "8 min · Relaciono as três partes e comparo duas mensagens de erro."
+              ],
+              "watch": "Observo se a resposta informa o que aconteceu e permite continuar sem ajuda.",
+              "rescue": "Demonstro uma ação no projetor e devolvo o controle ao estudante. Sem arquivo anterior, uso o exemplo pronto."
+            }
+          },
+          {
+            "title": "Investigue antes de editar",
+            "block": 1,
+            "layout": "dw8",
+            "lede": "O fluxo funciona. As mensagens deixam dúvidas: encontre três.",
+            "cards": [
+              {
+                "title": "1 · Campo vazio",
+                "text": "Tente enviar sem escolher um campeonato."
+              },
+              {
+                "title": "2 · Sucesso",
+                "text": "Escolha Xadrez rápido e envie."
+              },
+              {
+                "title": "3 · Cancelamento",
+                "text": "Abra Cancelar inscrição. Primeiro volte; depois confirme."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Em Investigar e decidir, registre: mensagem → dúvida → consequência.",
+            "teacher": {
+              "speech": "Confiro três problemas diferentes. Exemplos: “Aguarde” não explica a espera; “Pronto” não confirma o resultado; “Tem certeza?” não explica o que será desfeito. Mostro falha de conexão e nova tentativa. O comportamento funciona de propósito: o problema está no texto.",
+              "steps": [
+                "15 min · 2 min: modelo um diagnóstico; 8 min: exploração individual; 5 min: três registros e conferência."
+              ],
+              "watch": "Observo se a resposta informa o que aconteceu e permite continuar sem ajuda.",
+              "rescue": "Demonstro uma ação no projetor e devolvo o controle ao estudante. Sem arquivo anterior, uso o exemplo pronto."
+            },
+            "resources": [
+              {
+                "href": "https://oficinas-design-web.vercel.app/aula-11/",
+                "label": "Abrir a oficina de interações"
+              }
+            ]
+          },
+          {
+            "title": "Guarde o ponto de partida",
+            "block": 1,
+            "layout": "dw8",
+            "lede": "Crie a pasta Aula-11. Ela vai guardar sua entrega.",
+            "cards": [
+              {
+                "title": "Salvar versão inicial",
+                "text": "Baixe projeto-inicial.interacao. Preserve o diagnóstico."
+              },
+              {
+                "title": "Antes de sair",
+                "text": "Confira o arquivo. Retomada às 20:05."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "O exemplo pronto funciona mesmo sem seus arquivos antigos.",
+            "teacher": {
+              "speech": "Mostro o download e a pasta real. Confiro três problemas registrados. Não sobrescrever projeto-inicial.interacao ao salvar a versão final; o rascunho é apenas apoio.",
+              "steps": [
+                "7 min · Criação da pasta, primeiro salvamento e conferência."
+              ],
+              "watch": "Observo se a resposta informa o que aconteceu e permite continuar sem ajuda.",
+              "rescue": "Demonstro uma ação no projetor e devolvo o controle ao estudante. Sem arquivo anterior, uso o exemplo pronto."
+            }
+          },
+          {
+            "title": "Intervalo",
+            "block": 1,
+            "layout": "dw8",
+            "lede": "Lanche das 19:45 às 20:05.",
+            "cards": [],
+            "promptLabel": "Sua vez",
+            "prompt": "Retorne ao mesmo posto com o projeto salvo.",
+            "teacher": {
+              "speech": "O intervalo fica fora dos 170 minutos de atividade.",
+              "steps": [
+                "20 min · Intervalo."
+              ],
+              "watch": "Observo se a resposta informa o que aconteceu e permite continuar sem ajuda.",
+              "rescue": "Demonstro uma ação no projetor e devolvo o controle ao estudante. Sem arquivo anterior, uso o exemplo pronto."
+            },
+            "pace": "break"
+          },
+          {
+            "title": "Retomada: só conclua o que falta",
+            "block": 2,
+            "layout": "dw8",
+            "lede": "Os seis desafios são aquecimento. Quem terminou não repete.",
+            "cards": [
+              {
+                "title": "Falta um?",
+                "text": "Abra somente a cena que ainda não foi testada."
+              },
+              {
+                "title": "Terminou?",
+                "text": "Salve e prepare a nova aba do criador."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Não abra outro contador nem reescreva uma frase pronta.",
+            "teacher": {
+              "speech": "Faço chamada e confirmo que esta parte fecha o aquecimento. Demonstro uma cena apenas para quem ainda precisa; quem já fez os seis preserva seu trabalho.",
+              "steps": [
+                "5 min · 2 min: chamada; 3 min: concluir apenas pendências."
+              ],
+              "watch": "Observo se a resposta informa o que aconteceu e permite continuar sem ajuda.",
+              "rescue": "Demonstro uma ação no projetor e devolvo o controle ao estudante. Sem arquivo anterior, uso o exemplo pronto."
+            },
+            "resources": [
+              {
+                "href": "https://oficinas-design-web.vercel.app/aula-11/",
+                "label": "Abrir a oficina de interações"
+              }
+            ]
+          },
+          {
+            "title": "Acompanhe a inscrição acontecer",
+            "block": 2,
+            "layout": "dw8",
+            "lede": "Se faltar uma cena, teste o caminho completo uma vez.",
+            "cards": [
+              {
+                "title": "Espera",
+                "text": "Veja o envio acontecer."
+              },
+              {
+                "title": "Sucesso",
+                "text": "Confira se o resultado aparece."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Terminou os seis? Salve. Não crie outra versão agora.",
+            "teacher": {
+              "speech": "Não há nova rodada de textos. A turma usa estes minutos para fechar pendências reais e salvar, sem perder tempo repetindo o que já está concluído.",
+              "steps": [
+                "5 min · 5 min: pendência, percurso ou salvamento."
+              ],
+              "watch": "Observo se a resposta informa o que aconteceu e permite continuar sem ajuda.",
+              "rescue": "Demonstro uma ação no projetor e devolvo o controle ao estudante. Sem arquivo anterior, uso o exemplo pronto."
+            }
+          },
+          {
+            "title": "Faça o erro ajudar a pessoa",
+            "block": 2,
+            "layout": "dw8",
+            "lede": "Use este tempo apenas se ainda falta testar uma recuperação.",
+            "cards": [
+              {
+                "title": "Falha",
+                "text": "Tente novamente sem perder a escolha."
+              },
+              {
+                "title": "Cancelamento",
+                "text": "Mantenha ou confirme e comece de novo."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Quem concluiu pode abrir a pasta e conferir o salvamento.",
+            "teacher": {
+              "speech": "Oriento pontualmente quem está em uma cena incompleta. O restante não ganha tarefa extra de escrita.",
+              "steps": [
+                "5 min · 5 min: pendências individuais."
+              ],
+              "watch": "Observo se a resposta informa o que aconteceu e permite continuar sem ajuda.",
+              "rescue": "Demonstro uma ação no projetor e devolvo o controle ao estudante. Sem arquivo anterior, uso o exemplo pronto."
+            }
+          },
+          {
+            "title": "Feche o aquecimento",
+            "block": 2,
+            "layout": "dw8",
+            "lede": "Salve o que já fez. A próxima atividade é outra criação.",
+            "cards": [
+              {
+                "title": "Guardar",
+                "text": "Mantenha seu projeto anterior."
+              },
+              {
+                "title": "Preparar",
+                "text": "Deixe uma nova aba livre para o criador."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Às 20:30, pare nos seis desafios mesmo que tenha terminado antes.",
+            "teacher": {
+              "speech": "Aviso que o próximo trabalho não é sobre melhorar as mesmas frases. Ele usa escolhas, rotas e uma mudança de requisito.",
+              "steps": [
+                "5 min · 3 min: salvar; 2 min: preparar a nova aba."
+              ],
+              "watch": "Observo se a resposta informa o que aconteceu e permite continuar sem ajuda.",
+              "rescue": "Demonstro uma ação no projetor e devolvo o controle ao estudante. Sem arquivo anterior, uso o exemplo pronto."
+            }
+          },
+          {
+            "title": "Seis desafios, aquecimento concluído",
+            "block": 2,
+            "layout": "dw8",
+            "lede": "Não conte de novo. Não refaça. Agora você vai criar telas e conexões próprias.",
+            "cards": [
+              {
+                "title": "O que fica",
+                "text": "Seu projeto de interações continua salvo."
+              },
+              {
+                "title": "O que muda",
+                "text": "No próximo slide, abre o Criador de fluxos."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Se já terminou, salve seu projeto e prepare uma nova aba para o criador.",
+            "teacher": {
+              "speech": "Faço a transição visual: as seis mensagens foram uma prática de observar resposta; a próxima etapa usa o mesmo cuidado em um fluxo criado do zero.",
+              "steps": [
+                "5 min · 5 min: síntese curta e preparação para o slide 13."
+              ],
+              "watch": "Observo se a resposta informa o que aconteceu e permite continuar sem ajuda.",
+              "rescue": "Demonstro uma ação no projetor e devolvo o controle ao estudante. Sem arquivo anterior, uso o exemplo pronto."
+            }
+          },
+          {
+            "title": "20:30 · Agora crie um fluxo seu",
+            "block": 3,
+            "layout": "dw8",
+            "lede": "Abra o Criador de fluxos, escolha um briefing e construa o caminho principal.",
+            "cards": [
+              {
+                "title": "Escolha um briefing",
+                "text": "Reserva de estúdio, empréstimo de equipamento ou pedido de lanche."
+              },
+              {
+                "title": "Cinco telas",
+                "text": "Início → Escolha → Revisão → Concluído; Ajuda entra quando a pessoa precisa."
+              },
+              {
+                "title": "Ligue e teste",
+                "text": "Cada botão leva a uma tela. A escolha aparece na revisão e na conclusão."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Em 25 minutos, faça o caminho principal funcionar antes de enfeitar qualquer tela.",
+            "teacher": {
+              "speech": "No projetor digo em 10 segundos: “Abram o Criador, escolham um briefing e façam o caminho funcionar.” Mostro somente a primeira conexão. Libero imediatamente: cada estudante decide títulos, textos, botões e destinos. Confirmo que o criador permite até oito telas. Não é para refazer os seis desafios, nem escrever código.",
+              "steps": [
+                "25 min · 3 min: mostrar o briefing e a primeira conexão; 17 min: criação individual das cinco telas; 5 min: testar início até concluído."
+              ],
+              "watch": "Observo se a resposta informa o que aconteceu e permite continuar sem ajuda.",
+              "rescue": "Demonstro uma ação no projetor e devolvo o controle ao estudante. Sem arquivo anterior, uso o exemplo pronto."
+            },
+            "resources": [
+              {
+                "href": "https://oficinas-design-web.vercel.app/aula-11/criador.html",
+                "label": "Abrir o criador de fluxos"
+              }
+            ]
+          },
+          {
+            "title": "Mudança do cliente: uma opção ficou indisponível",
+            "block": 3,
+            "layout": "dw8",
+            "lede": "Clique em Receber nova exigência. Sem apagar o caminho que funciona, adicione e conecte uma sexta tela de alternativa.",
+            "cards": [
+              {
+                "title": "Revele",
+                "text": "O pedido mostra qual opção não pode mais ser escolhida."
+              },
+              {
+                "title": "Crie e ligue",
+                "text": "Use + Adicionar tela; conecte a opção indisponível à alternativa e a alternativa de volta à Escolha."
+              },
+              {
+                "title": "Teste os dois lados",
+                "text": "A opção disponível ainda conclui; a indisponível encontra ajuda."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Mostre dois percursos: opção disponível → concluído; opção indisponível → alternativa → escolha.",
+            "teacher": {
+              "speech": "Anuncio a mudança depois de o caminho principal existir. O pedido só revela a situação: cada estudante cria a sexta tela e define as conexões. Não aceito trocar apenas texto de botão. Quem precisar pode adicionar até oito telas, mas seis bem conectadas bastam.",
+              "steps": [
+                "20 min · 2 min: revelar a mudança; 13 min: criar alternativa e rotas; 5 min: testar os dois percursos."
+              ],
+              "watch": "Observo se a resposta informa o que aconteceu e permite continuar sem ajuda.",
+              "rescue": "Demonstro uma ação no projetor e devolvo o controle ao estudante. Sem arquivo anterior, uso o exemplo pronto."
+            }
+          },
+          {
+            "title": "Feche o teste com o colega",
+            "block": 4,
+            "layout": "dw8",
+            "lede": "Uma observação oral basta. Corrija a rota se ele parou.",
+            "cards": [
+              {
+                "title": "Conseguiu",
+                "text": "Siga para o slide 16."
+              },
+              {
+                "title": "Parou",
+                "text": "Ajuste botão, destino ou tela e teste uma vez."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Não abra relatório nem repita toda a troca.",
+            "teacher": {
+              "speech": "Fecho a atividade de colega em cinco minutos. Quem já tem a rota validada abre diretamente o slide 16 às 21:20.",
+              "steps": [
+                "5 min · 2 min: terminar a segunda tentativa; 3 min: ajuste pontual."
+              ],
+              "watch": "Observo se a resposta informa o que aconteceu e permite continuar sem ajuda.",
+              "rescue": "Demonstro uma ação no projetor e devolvo o controle ao estudante. Sem arquivo anterior, uso o exemplo pronto."
+            }
+          },
+          {
+            "title": "21:20 · Dê cara de app",
+            "block": 4,
+            "layout": "dw8",
+            "lede": "No Criador, abra a missão 1. Antes de atualizar a página, use Salvar rascunho; depois escolha tema, nome e raio.",
+            "cards": [
+              {
+                "title": "Tema",
+                "text": "Studio, Arcade ou Editorial."
+              },
+              {
+                "title": "Nome",
+                "text": "Dê um nome que combine com seu briefing."
+              },
+              {
+                "title": "Raio",
+                "text": "Ajuste os cantos e veja o resultado na prévia."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Escolha e veja a tela mudar. Não redesenhe todas as telas.",
+            "teacher": {
+              "speech": "Peço Salvar rascunho antes da atualização. Mostro uma escolha em poucos segundos e libero. A aparência deve servir ao fluxo: mesma cara nas telas, sem trocar conteúdo ou rotas agora.",
+              "steps": [
+                "10 min · 2 min: salvar e demonstrar; 8 min: escolha individual e conferência na prévia."
+              ],
+              "watch": "Observo se a resposta informa o que aconteceu e permite continuar sem ajuda.",
+              "rescue": "Demonstro uma ação no projetor e devolvo o controle ao estudante. Sem arquivo anterior, uso o exemplo pronto."
+            },
+            "resources": [
+              {
+                "href": "https://oficinas-design-web.vercel.app/aula-11/criador.html",
+                "label": "Abrir o criador de fluxos"
+              }
+            ]
+          },
+          {
+            "title": "21:30 · Formulário que funciona",
+            "block": 4,
+            "layout": "dw8",
+            "lede": "Abra a missão 2. Selecione Início, crie um campo e ligue a resposta ao próximo passo.",
+            "cards": [
+              {
+                "title": "Campo",
+                "text": "Defina rótulo, dica e se é obrigatório. Um campo basta."
+              },
+              {
+                "title": "Vazio",
+                "text": "Envie sem responder e veja o erro na própria tela."
+              },
+              {
+                "title": "Preenchido",
+                "text": "Envie com resposta e mostre `{{resposta}}` na mensagem seguinte."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Teste vazio e preenchido. A mesma tela precisa explicar como continuar.",
+            "teacher": {
+              "speech": "Demonstro somente Início vazio → erro em linha → preenchido → resposta na tela seguinte. O vazio bloqueia o avanço. Uso uma resposta fictícia e libero; a tela 7 fica para a falha, se precisar.",
+              "steps": [
+                "15 min · 3 min: demonstração; 9 min: construir e ligar; 3 min: testar vazio e preenchido."
+              ],
+              "watch": "Observo se a resposta informa o que aconteceu e permite continuar sem ajuda.",
+              "rescue": "Demonstro uma ação no projetor e devolvo o controle ao estudante. Sem arquivo anterior, uso o exemplo pronto."
+            }
+          },
+          {
+            "title": "21:45 · A rede caiu",
+            "block": 4,
+            "layout": "dw8",
+            "lede": "Abra a missão 3. Na Revisão, abra Carregamento e falha dos botões e configure o botão de confirmação.",
+            "cards": [
+              {
+                "title": "Aguardar",
+                "text": "Marque Aguardar no botão de confirmação: ele mostra que está trabalhando por um instante."
+              },
+              {
+                "title": "Falha",
+                "text": "Mantenha Vai para → Concluído e escolha Erro em Destino se falhar."
+              },
+              {
+                "title": "Recuperar",
+                "text": "Na tela Erro, Tentar de novo volta à Revisão; Cancelar espera mantém a pessoa na tela."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "No Criador, mostre falha e rede ok. Se criar tela Erro, conecte Tentar de novo à Revisão.",
+            "teacher": {
+              "speech": "No painel Carregamento e falha dos botões, marco Aguardar no botão de confirmação, preservo o Vai para normal e escolho a rota Erro para a falha. No Criador, ativo Simular falha, confirmo e cancelo a espera; confirmo de novo e aguardo chegar a Erro. Desligo a falha, uso Tentar de novo para voltar à Revisão, confirmo e concluo. A tela 7 pode explicar o erro; a tela 8 só entra se for necessária. O protótipo exportado demonstra espera e caminho normal, não a simulação de falha.",
+              "steps": [
+                "15 min · 3 min: demonstrar falha; 8 min: configurar; 4 min: falha, cancelar, retry e rede ok."
+              ],
+              "watch": "Observo se a resposta informa o que aconteceu e permite continuar sem ajuda.",
+              "rescue": "Demonstro uma ação no projetor e devolvo o controle ao estudante. Sem arquivo anterior, uso o exemplo pronto."
+            }
+          },
+          {
+            "title": "22:00 · Speedrun e salvar",
+            "block": 4,
+            "layout": "dw8",
+            "lede": "Abra a missão 4: resolva seu fluxo em até oito cliques. Depois salve.",
+            "cards": [
+              {
+                "title": "Rodada",
+                "text": "Faça o caminho até a confirmação."
+              },
+              {
+                "title": "Compare",
+                "text": "Veja quantos cliques usou antes e depois."
+              },
+              {
+                "title": "Guardar",
+                "text": "Salvar rascunho e Exportar protótipo."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Se passou de oito, corte um desvio ou deixe o botão mais direto e tente outra vez.",
+            "teacher": {
+              "speech": "Recomeçar teste limpa apenas a rodada: não apaga telas nem textos. O contador mostra o percurso para comparar tentativas, não dá nota. Quem já conseguiu usa Tab e Enter no protótipo exportado para conferir o foco.",
+              "steps": [
+                "5 min · 3 min: speedrun e ajuste; 2 min: salvar e exportar."
+              ],
+              "watch": "Observo se a resposta informa o que aconteceu e permite continuar sem ajuda.",
+              "rescue": "Demonstro uma ação no projetor e devolvo o controle ao estudante. Sem arquivo anterior, uso o exemplo pronto."
+            }
+          },
+          {
+            "title": "22:05 · Guarde e organize",
+            "block": 4,
+            "layout": "dw8",
+            "lede": "Confira os dois arquivos e deixe o posto pronto para sair.",
+            "cards": [
+              {
+                "title": "Pasta Aula-11",
+                "text": "meu-fluxo.fluxo e meu-prototipo.html."
+              },
+              {
+                "title": "Fechamento",
+                "text": "Tema, formulário, recuperação e rota final funcionam."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Mostre uma rota concreta se eu passar no seu posto.",
+            "teacher": {
+              "speech": "Não estendo a oficina com outra tarefa. Confiro uma rota por tela, dois arquivos e organização; conecto a melhoria ao próximo encontro sobre experiência de uso.",
+              "steps": [
+                "5 min · 5 min: arquivos, organização e saída."
+              ],
+              "watch": "Observo se a resposta informa o que aconteceu e permite continuar sem ajuda.",
+              "rescue": "Demonstro uma ação no projetor e devolvo o controle ao estudante. Sem arquivo anterior, uso o exemplo pronto."
+            }
+          }
         ]
       },
       "12": {

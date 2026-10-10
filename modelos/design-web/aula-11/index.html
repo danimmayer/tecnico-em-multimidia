@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Oficina de interações · Arena Pixel</title><link rel="icon" href="data:,"><style>
+:root{--ink:#172b30;--paper:#f4f1e8;--green:#c8ef73;--line:#b8c3b7;--muted:#47605a}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 'Trebuchet MS',sans-serif}header{padding:14px 4vw;background:var(--ink);color:var(--paper);display:flex;justify-content:space-between;align-items:center;gap:20px}header h1{font:700 25px/1.2 Georgia,serif;margin:0}.brandline{font-size:13px;margin:0 0 3px}header strong{color:var(--green)}a{color:inherit;text-underline-offset:4px}main{max-width:1280px;margin:auto;padding:24px 4vw}h2,h3,p{margin:0 0 12px}h2{font:700 25px/1.2 Georgia,serif}h3{font-size:19px;line-height:1.3}.start h2{font-size:25px}.start p{color:var(--muted)}#mission-nav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin:20px 0 24px}button,.file-button{font:700 15px/1.35 'Trebuchet MS',sans-serif;min-height:44px;border:1px solid var(--ink);border-radius:5px;padding:10px 14px;background:var(--ink);color:white;cursor:pointer}button:hover{background:#31514a}button:disabled{opacity:.65;cursor:wait}.secondary,.file-button{background:transparent;color:var(--ink)}.secondary:hover,.file-button:hover{background:#e3e8d9}#mission-nav button{font-size:13px;padding:9px 6px;background:transparent;color:var(--ink)}#mission-nav button[aria-pressed=true]{background:var(--ink);color:white;text-decoration:underline;text-underline-offset:4px}#mission-nav button[data-changed=true]::after{content:' •'}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,summary:focus-visible,.file-button:focus-within{outline:3px solid #3466c9;outline-offset:3px}.task-heading{display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin-bottom:22px;border-bottom:1px solid var(--line);padding-bottom:12px}.task-heading h2{font-size:22px;margin:0}#mission-progress{font-size:13px;color:var(--muted);margin:0}.workspace{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}.guided h3:not(:first-child){margin-top:26px}.guided .original{font-size:15px;margin:14px 0 24px;color:var(--muted)}.original q{color:var(--ink);font-weight:bold}.guided>p{max-width:62ch}label{display:block;font-size:15px;font-weight:bold;margin-bottom:14px}input,textarea,select{display:block;width:100%;font:inherit;padding:10px;border:1px solid #80958a;border-radius:4px;background:#fffef9;color:var(--ink);margin-top:6px}textarea{resize:vertical;caret-color:var(--ink)}input{caret-color:var(--ink)}input::placeholder,textarea::placeholder{color:var(--muted);opacity:1}#guided-field textarea{min-height:96px}#guided-field label{font-size:14px}#guided-field textarea{font-size:17px}.compare-actions{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 10px}.hint,#comparison-note{font-size:13px;color:var(--muted)}details{border-top:1px solid var(--line);padding:18px 0}summary{cursor:pointer;font-weight:bold;font-size:19px}details[open]>summary{margin-bottom:16px}#mission-hint{padding:12px 0;border:0}#mission-hint summary{font-size:14px}#mission-example{font-size:15px}.preview-column>h3{margin-bottom:16px}.preview{background:#132a2d;color:#f8f8ed;padding:22px;border-radius:12px}.preview-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}.brand{font-weight:bold;font-size:12px;letter-spacing:.08em;color:var(--green)}.state{background:#2c4948;padding:4px 8px;border-radius:4px;font-size:12px}.preview h2{font:700 26px/1.15 Georgia,serif}.preview p,.preview h2,.preview strong{overflow-wrap:anywhere}.preview #intro{font-size:14px}#comparison-label{font-size:11px;color:#c5d8cd}.preview label{font-size:14px}.preview button{display:block;width:100%;margin-top:12px;background:var(--green);color:#132a2d;border-color:var(--green)}.preview button:hover{background:#d7f69f}.preview button.secondary{background:transparent;color:#f8f8ed;border-color:#82998f}.preview button.secondary:hover{background:#294548}.preview button:focus-visible{outline-color:white}.preview small{display:block;font-size:11px;color:#c5d8cd;margin-top:18px}.preview [role=alert]{font-weight:bold;color:#ffe0b1}.preview select{margin-bottom:12px}.preview progress{display:block;width:100%;height:8px;margin:18px 0;accent-color:var(--green)}#interaction:focus{outline:2px solid var(--green);outline-offset:5px}.preview-controls{margin-top:14px}#preview-caption{font-size:14px;margin-bottom:8px}#test-path{font-size:12px;color:var(--muted)}.tools{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:14px}.tools button{font-size:13px}.tools label{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:normal;margin:0}.tools input{width:18px;height:18px;margin:0}.mission-footer{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:28px;padding:20px 0;border-top:1px solid var(--line)}.mission-footer p{margin:0;font-size:14px;color:var(--muted)}.finish{margin-top:28px}.finish>h2{font-size:22px}.finish>#full-flow{margin-bottom:20px}.finish>details{max-width:850px}.finish>details:first-of-type{margin-top:4px}.finish label{margin-top:16px}.advanced>details{margin-left:16px}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.file-button{position:relative;display:inline-flex;align-items:center;margin:0!important}.file-button input{position:absolute;inset:0;opacity:0;width:100%;cursor:pointer}.status{font-size:14px;color:var(--muted)}#pending{padding-left:22px}#peer-start{margin:8px 0 14px}footer{padding:20px 4vw;font-size:12px;border-top:1px solid var(--line);color:var(--muted)}::selection{background:var(--green);color:var(--ink)}.prototype .author-only,.prototype .editor{display:none}.prototype .workspace{display:block;max-width:540px;margin:auto}.prototype main{max-width:800px}.prototype header{justify-content:center}.prototype header a{display:none}[hidden]{display:none!important}@media(max-width:740px){header{padding:12px 5vw}header h1{font-size:21px}header a{font-size:12px;max-width:90px}main{padding:20px 5vw}.start h2{font-size:23px}#mission-nav{grid-template-columns:repeat(3,minmax(0,1fr));margin:16px 0 20px}.task-heading{display:block;margin-bottom:22px}.task-heading h2{font-size:20px}.task-heading p{margin-top:8px}.workspace{display:flex;flex-direction:column;gap:24px}.guided,.preview-column{width:100%}.preview{padding:20px}.mission-footer{align-items:flex-start}.mission-footer p{max-width:50%}.compare-actions button{flex:1 1 40%}.toolbar>*{flex:1 1 40%}}@media print{header a,.author-only,.editor,.tools{display:none}.workspace{display:block}}
+.next-stage{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 0;margin:0 0 18px;border-bottom:1px solid var(--line)}.next-stage p{font-size:14px;margin:4px 0 0}.next-stage a{flex-shrink:0;text-decoration:none}.next-stage strong{font-size:17px}@media(max-width:740px){.next-stage{display:block}.next-stage a{margin-top:12px!important}}
+#challenge-menu{border:0;padding:4px 0 18px}#challenge-menu>summary{font-size:14px;font-weight:normal;text-decoration:underline;text-underline-offset:4px}#challenge-menu #mission-nav{margin:12px 0 0}#first-guide{max-width:55ch}#first-guide button{margin:6px 8px 0 0}#first-guide .secondary{border:0;font-size:13px}.practice{margin-top:16px;border-top:1px solid var(--line);padding-top:14px;font-size:14px}.practice>strong{font-size:13px}.practice p{margin:4px 0 8px}.practice ol{padding-left:20px;margin:8px 0}.practice li{margin:4px 0}.practice li[data-done=true]{color:#34532a;font-weight:bold}#practice-result{font-size:13px;color:var(--muted)}#practice-result[data-complete=true]{font-weight:bold;color:#34532a}#mission-nav button[data-tested=true]{border-bottom:3px solid #4f7421}.preview-controls{margin-top:10px}#preview-caption{font-size:13px}.start{margin-bottom:12px}
+</style></head><body>
+<header><div><p class="brandline"><strong>Arena Pixel</strong> / Laboratório de Design Web</p><h1>A tela responde.</h1></div><a href="../">Voltar às oficinas ↗</a></header>
+<main><section class="author-only start"><h2>Uma situação por vez: leia, escreva e teste.</h2><p>Ajude alguém a se inscrever, corrigir erros e cancelar sem dúvida. O primeiro desafio mostra como.</p></section>
+<section class="author-only next-stage"><div><strong>Já fez os seis desafios?</strong><p>Siga para a etapa 2: crie as telas e conecte os botões de um serviço próprio.</p></div><a class="file-button" href="criador.html">Criar meu fluxo →</a></section>
+<details class="author-only" id="challenge-menu"><summary>Ir para outro desafio</summary><nav id="mission-nav" aria-label="Seis desafios"></nav></details>
+<div class="author-only task-heading"><h2 id="mission-title"></h2><p id="mission-progress" role="status"></p></div>
+<div class="workspace">
+<section class="editor guided" aria-label="Editar mensagem">
+<h3 id="scenario-heading">1. Entenda o problema</h3><p id="mission-scene"></p><p class="original">Mensagem original: <q id="original-message"></q></p>
+<div id="first-guide"><p>Na Arena Pixel, clique em <strong>Continuar</strong> com a escolha vazia. O que falta na mensagem para você saber como continuar?</p><button id="guide-try">Experimentar na tela</button><button id="skip-guide" class="secondary">Já entendi: quero editar</button></div><div id="writing-controls"><h3>2. Escreva uma mensagem melhor</h3><p id="mission-instruction"></p><div id="guided-field"></div>
+<div class="compare-actions"><button id="see-mine">Testar minha frase</button><button id="see-before" class="secondary">Ver mensagem confusa</button></div>
+<p id="comparison-note" class="hint"></p><details id="mission-hint"><summary>Preciso de um exemplo</summary><p id="mission-example"></p></details></div>
+</section>
+<section class="preview-column" aria-label="Prévia clicável"><h3 class="author-only" id="preview-heading">3. Faça a tarefa nesta tela</h3>
+<div class="preview"><div class="preview-top"><span class="brand">ARENA PIXEL</span><span class="state" id="state-label">Início</span></div><p id="comparison-label" class="author-only"></p><h2 id="preview-title"></h2><p id="intro"></p><div id="interaction" aria-live="polite" aria-atomic="true"></div><small>Simulação: nenhuma inscrição real é enviada.</small></div>
+<div class="author-only practice"><strong>Sua tarefa</strong><p id="mission-goal"></p><ol id="goal-steps"></ol><p id="practice-result" role="status"></p></div><div class="author-only preview-controls"><p id="preview-caption" role="status"></p><p id="test-path"></p></div>
+<div class="tools"><button id="restart" class="secondary">Recomeçar teste</button><label><input id="failure" type="checkbox">Simular falha no próximo envio</label></div></section>
+</div>
+<div class="author-only mission-footer"><p id="next-help">Execute a tarefa antes de seguir.</p><button id="next-mission">Próximo desafio</button></div>
+<section class="author-only finish"><h2>Guarde o aquecimento e continue</h2><p>Seis desafios concluídos? <a href="criador.html">Entre no criador de fluxos</a>. Seus textos continuam salvos aqui.</p><button id="full-flow" class="secondary">Testar inscrição inteira</button><details class="peer"><summary>Terminei os seis: testar com o colega</summary><p>Abra o protótipo exportado para o colega: ele verá só a inscrição, sem as orientações da oficina. Peça para se inscrever, manter a inscrição e depois cancelar. Observe sem apontar botões. Registre onde houve dúvida, revise a frase e repita.</p><p>Os caminhos executados confirmam os cliques. A clareza da mensagem será verificada com o colega.</p><button id="peer-start">Começar teste com colega</button><div id="peer-fields"></div></details>
+<details><summary>Salvar e conferir a entrega</summary><p>Salve os dois arquivos e abra o protótipo baixado para clicar nele.</p><div class="toolbar"><button id="save">Salvar projeto</button><button id="export">Exportar protótipo</button><label class="file-button">Abrir projeto<input id="open" type="file" accept=".interacao,application/json" aria-label="Abrir projeto"></label><button id="storyboard" class="secondary">Exportar storyboard</button><button id="save-initial" class="secondary">Salvar versão inicial</button></div><p class="status" id="file-status" role="status">O trabalho anterior é recuperado neste navegador. Salve também em arquivo.</p></details><details class="advanced"><summary>Mais opções (opcional)</summary>
+<details><summary>Registros adicionais (opcional)</summary><p>Explore a prévia antes de editar. Preserve o ponto de partida em projeto-inicial.interacao.</p><label>Três problemas e suas consequências<textarea id="review-diagnosis" maxlength="600" rows="4" placeholder="Mensagem → dúvida que causa → consequência para quem usa."></textarea></label><label>Duas opções para o erro de conexão e minha escolha<textarea id="review-alternatives" maxlength="600" rows="4" placeholder="Opção A: … Opção B: … Escolho … porque …"></textarea></label></details><details><summary>Todos os textos e personalização (opcional)</summary><p>Use frases curtas. Explique o que aconteceu e qual é o próximo passo.</p><div id="message-fields"></div></details><details><summary>Aprofundar a revisão (opcional)</summary><p>O colega executa as duas tarefas sem ajuda. Registre a ação observada, sem nomes.</p><label>Tarefa 1 · Inscrever-se em Xadrez rápido<textarea id="review-task1" maxlength="600" rows="3"></textarea></label><label>Tarefa 2 · Manter a inscrição e depois cancelá-la<textarea id="review-task2" maxlength="600" rows="3"></textarea></label><label>Antes e depois: mensagem que revisei<textarea id="review-change" maxlength="600" rows="3"></textarea></label><label>Segundo teste: tarefa repetida e resultado observado<textarea id="review-retest" maxlength="600" rows="3" placeholder="Repetimos a tarefa … A pessoa … Ainda falta …"></textarea></label><label>Como classifico a mudança<select id="review-classification"><option value="correção">Correção</option><option value="melhoria">Melhoria</option><option value="proposta de inovação">Proposta de inovação</option></select></label><label>Por que escolhi essa classificação?<textarea id="review-reason" maxlength="600" rows="3"></textarea></label></details><details><summary>Conferir os caminhos e as pendências</summary><p>Faça estes testes na sua versão final:</p><ol><li>Envio vazio: consigo entender o que selecionar?</li><li>Falha de conexão: tentar de novo mantém o campeonato?</li><li>Manter inscrição: ela continua confirmada?</li><li>Confirmar cancelamento: posso iniciar outra inscrição?</li><li>Sem mouse: vejo o foco e concluo o caminho?</li></ol><label>O que testei, o resultado e o que precisei ajustar<textarea id="review-robustness" maxlength="600" rows="4"></textarea></label><button id="check" class="secondary">Conferir pendências</button><p id="check-result" class="hint" tabindex="-1" role="status">A conferência aponta campos vazios e mensagens iniciais. A clareza depende do teste com uma pessoa.</p><ul id="pending"></ul></details><details><summary>Terminei: aprofundar</summary><p>Salve a entrega antes de continuar. Escolha um desafio e registre a comparação no campo de conferência.</p><ol><li>Escreva o erro de conexão em até 90 caracteres, preservando problema e próximo passo. Repita o teste.</li><li>Teste outra opção de campeonato, cancele e comece de novo. Verifique se aparece alguma escolha antiga.</li><li>Crie uma alternativa de tom mais acolhedor para a confirmação, sem esconder a consequência. Compare com a versão anterior.</li></ol></details><details><summary>Comparação: por que um botão precisa responder</summary><button id="demo-silent" class="secondary">Sem resposta</button><button id="demo-feedback">Com resposta</button><span id="demo-result" role="status">Aguardando seu toque.</span></details></details></section>
+</main><footer>Design Web · Aula 11 · SENAI · Prof. Daniel Marcos Mayer. Funciona sem internet e sem conta.</footer>
+<script id="bootstrap">(function runWorkshop(seed, prototypeMode, validateProject, transition, reviewReadiness, practiceComplete) {
+  const cleanDocument = document.documentElement.cloneNode(true);
+  const $ = selector => document.querySelector(selector);
+  let project = structuredClone(seed), state = 'idle', chosen = '', timer, demoTimer;
+  let activeMission = 'empty', showBefore = false, path = [], activeRun = null, firstObserved = false;
+  const missions = [
+    ['empty', 'Falta escolher', 'A pessoa tocou em Continuar sem escolher nada.', 'Diga o que ela precisa escolher para conseguir continuar.', 'Escolha um campeonato para continuar.'],
+    ['loading', 'Está enviando', 'A inscrição leva um instante para ser enviada.', 'Explique o que está sendo enviado. A pessoa precisa clicar outra vez?', 'Enviando sua inscrição…'],
+    ['error', 'A conexão falhou', 'O envio falhou, mas o campeonato continua escolhido.', 'Explique a falha e convide a tentar novamente.', 'Não conseguimos enviar. Tente novamente; sua escolha foi mantida.'],
+    ['success', 'Deu certo', 'A inscrição foi concluída.', 'Confirme o que deu certo. Pronto sozinho não explica o resultado.', 'Sua inscrição está confirmada. Confira o campeonato abaixo.'],
+    ['confirm', 'Quer cancelar?', 'A pessoa pode manter a inscrição ou desistir dela.', 'Explique o que será desfeito antes de pedir a confirmação.', 'Cancelar esta inscrição? Ao confirmar, você deixa de participar.'],
+    ['cancelled', 'Cancelou', 'A pessoa confirmou o cancelamento.', 'Explique o resultado e como começar outra inscrição.', 'Inscrição cancelada. Use Nova inscrição para começar de novo.']
+  ];
+  const originalMessages = {loading:'Aguarde.',empty:'Falta algo.',error:'Não deu certo.',success:'Pronto!',confirm:'Tem certeza?',cancelled:'Feito.'};
+  const goals = {
+    empty: ['Conseguir se inscrever depois de esquecer a escolha.', ['Ver o aviso de escolha vazia', 'Escolher um campeonato e concluir a inscrição'], 'Sua frase diz exatamente o que escolher para continuar?'],
+    loading: ['Saber que o envio começou e acompanhar o resultado.', ['Iniciar o envio', 'Aguardar a confirmação, sem clicar de novo'], 'Sua frase explica o que está sendo enviado?'],
+    error: ['Recuperar o envio sem escolher tudo outra vez.', ['Ver a falha de conexão', 'Tentar novamente e confirmar a mesma escolha'], 'Sua frase explica a falha e indica como tentar novamente?'],
+    success: ['Reconhecer a confirmação e encontrar como desistir.', ['Concluir a inscrição', 'Abrir o cancelamento'], 'Sua frase deixa claro que a inscrição foi confirmada?'],
+    confirm: ['Experimentar as duas decisões antes de cancelar.', ['Manter a inscrição', 'Abrir de novo e confirmar o cancelamento'], 'Sua frase explica o que será perdido ao confirmar?'],
+    cancelled: ['Começar outra inscrição sem carregar a escolha anterior.', ['Cancelar e abrir Nova inscrição', 'Escolher outro campeonato e concluir'], 'Sua frase confirma o cancelamento e indica como recomeçar?']
+  };
+  const storageKey = 'senai-design-web-interacao-v1';
+  const labels = {title: 'Título', intro: 'Orientação inicial', action: 'Texto do botão', loading: 'Carregamento', empty: 'Erro: falta escolher', error: 'Erro: conexão', success: 'Sucesso', confirm: 'Confirmar cancelamento', cancelled: 'Cancelamento concluído'};
+  document.body.classList.toggle('prototype', prototypeMode);
+  function announce(text) { $('#file-status').textContent = text; }
+  function persist() {
+    if (prototypeMode) return;
+    $('#pending').replaceChildren();
+    $('#check-result').textContent = 'Projeto alterado. Use Conferir pendências após a revisão.';
+    try { localStorage.setItem(storageKey, JSON.stringify(project)); announce('Rascunho neste navegador. Use Salvar projeto para guardar um arquivo.'); }
+    catch { announce('Rascunho indisponível. Use Salvar projeto antes de fechar.'); }
+  }
+  function download(name, body, type) {
+    const url = URL.createObjectURL(new Blob([body], {type}));
+    const link = document.createElement('a'); link.href = url; link.download = name; link.click();
+    setTimeout(() => URL.revokeObjectURL(url), 10000);
+    announce('Download solicitado: ' + name + '. Confira na pasta de downloads.');
+  }
+  function exportable() {
+    try { return validateProject(project); }
+    catch (error) { announce(error.message + ' Revise os campos antes de exportar.'); return null; }
+  }
+  const stateNames = {idle: 'Início', empty: 'Escolha necessária', loading: 'Carregando', error: 'Falha de conexão', success: 'Sucesso', confirm: 'Confirmação', cancelled: 'Cancelado'};
+  const nextActions = {
+    idle: 'Escolha um campeonato e clique no botão para enviar.',
+    empty: 'Agora escolha um campeonato e tente continuar. O aviso deve ajudar a pessoa a corrigir o problema.',
+    loading: 'Envio em andamento. Aguarde: a tela muda automaticamente em dois segundos.',
+    error: 'Clique em Tentar novamente. A escolha foi mantida e a próxima tentativa pode concluir.',
+    success: 'A inscrição foi concluída. Experimente Cancelar inscrição para abrir a confirmação.',
+    confirm: 'Experimente Manter inscrição. Depois abra o cancelamento novamente e confirme.',
+    cancelled: 'O cancelamento terminou. Clique em Nova inscrição para voltar ao início.'
+  };
+  function revealPreview() {
+    $('.preview-column').scrollIntoView({block: 'nearest', behavior: 'instant'});
+  }
+  function reset() { activeRun = null; showBefore = false; clearTimeout(timer); state = 'idle'; chosen = ''; path = [stateNames.idle]; $('#failure').checked = false; render(true); }
+  function startLoading() {
+    const failure = $('#failure').checked; $('#failure').checked = false;
+    clearTimeout(timer);
+    timer = setTimeout(() => go(failure ? 'reject' : 'resolve', false), 2000);
+  }
+  function go(event, moveFocus = true) {
+    const next = transition(state, event);
+    if (state === next && event !== 'empty') return;
+    state = next;
+    if (!prototypeMode && activeMission === 'empty' && event === 'empty') firstObserved = true;
+    if (!prototypeMode && activeRun && !showBefore && activeRun.message === project.messages[activeRun.mission]) {
+      activeRun.events.push(event);
+      activeRun.events = activeRun.events.slice(-32);
+      if (activeRun.mission === 'cancelled' && event === 'resolve') activeRun.differentChoice = chosen !== 'Xadrez rápido';
+      project.practice[activeRun.mission] = {message: activeRun.message, events: [...activeRun.events], differentChoice: activeRun.differentChoice};
+      persist();
+    }
+    path.push(stateNames[state]); path = path.slice(-6);
+    render(moveFocus);
+    updateMissionProgress();
+    if (state === 'loading') startLoading();
+  }
+  function render(moveFocus = false) {
+    const messages = showBefore ? {...project.messages, ...originalMessages} : project.messages;
+    $('#preview-title').textContent = messages.title;
+    if ($('#comparison-label')) $('#comparison-label').textContent = showBefore ? 'ANTES · mensagens confusas' : 'MINHA VERSÃO · teste clicando';
+    $('#intro').textContent = project.messages.intro;
+    $('#state-label').textContent = stateNames[state];
+    $('#preview-caption').textContent = nextActions[state];
+    $('#test-path').textContent = 'O que aconteceu: ' + (path.length ? path.join(' → ') : stateNames[state]);
+    const unchanged = project.messages[activeMission].trim() === originalMessages[activeMission];
+    $('#comparison-note').textContent = showBefore ? 'Você está testando a mensagem original. Depois escreva sua versão e clique em Testar minha frase.' : unchanged ? 'Esta frase ainda é a original. Escreva uma versão diferente no campo do desafio para comparar.' : 'Sua frase está aplicada. Use os botões da tela para verificar se o próximo passo fica claro.';
+    const box = $('#interaction'); box.replaceChildren(); box.dataset.state = state;
+    function text(content, tag = 'p') { const node = document.createElement(tag); node.textContent = content; box.append(node); return node; }
+    function button(label, action, secondary = false) { const node = document.createElement('button'); node.type = 'button'; node.textContent = label; if (secondary) node.className = 'secondary'; node.addEventListener('click', action); box.append(node); return node; }
+    if (['idle', 'empty'].includes(state)) {
+      const label = document.createElement('label'); label.htmlFor = 'championship'; label.textContent = 'Campeonato'; box.append(label);
+      const select = document.createElement('select'); select.id = 'championship';
+      for (const value of ['', 'Xadrez rápido', 'Corrida virtual', 'Desafio de estratégia']) { const option = document.createElement('option'); option.value = value; option.textContent = value || 'Escolha uma opção'; select.append(option); }
+      select.value = chosen; select.addEventListener('change', () => { chosen = select.value; }); box.append(select);
+      if (state === 'empty') { const error = text(messages.empty); error.id = 'choice-error'; error.setAttribute('role', 'alert'); select.setAttribute('aria-invalid', 'true'); select.setAttribute('aria-describedby', error.id); }
+      button(project.messages.action, () => go(chosen ? 'submit' : 'empty'));
+      // Repeated empty submissions still retain focus and the visible guidance.
+      if (state === 'empty' && moveFocus) select.focus();
+    } else {
+      const message = text(messages[state]); message.id = 'state-message';
+      if (chosen && state !== 'cancelled') text('Campeonato: ' + chosen, 'strong');
+      if (state === 'loading') { box.setAttribute('aria-busy', 'true'); const progress = document.createElement('progress'); progress.setAttribute('aria-label', 'Enviando inscrição'); box.append(progress); const wait = button('Enviando…', () => {}); wait.disabled = true; }
+      if (state === 'error') button('Tentar novamente', () => go('retry'));
+      if (state === 'success') button('Cancelar inscrição', () => go('cancel'), true);
+      if (state === 'confirm') { button('Manter inscrição', () => go('keep')); button('Confirmar cancelamento', () => go('confirm'), true); }
+      if (state === 'cancelled') button('Nova inscrição', () => { chosen = ''; go('restart'); });
+    }
+    if (state !== 'loading') box.removeAttribute('aria-busy');
+    updateGuidance();
+    if (moveFocus && state !== 'empty') { box.tabIndex = -1; box.focus(); }
+  }
+  function fillEditor() {
+    $('#message-fields').replaceChildren();
+    $('#guided-field').replaceChildren();
+    for (const [key, labelText] of Object.entries(labels)) {
+      const label = document.createElement('label'); label.textContent = labelText;
+      const input = document.createElement(key === 'action' || key === 'title' ? 'input' : 'textarea');
+      input.id = 'edit-' + key; input.maxLength = key === 'action' ? 36 : 180; input.value = project.messages[key]; input.rows = 2;
+      input.addEventListener('input', () => { project.messages[key] = input.value; delete project.practice[key]; if (activeRun?.mission === key) activeRun = null; showBefore = false; persist(); render(); updateMissionProgress(); }); label.append(input); $('#message-fields').append(label);
+    }
+    for (const key of Object.keys(project.review)) $('#review-' + key).value = project.review[key];
+    selectMission(activeMission);
+  }
+  function updateGuidance() {
+    if (prototypeMode) return;
+    const changed = project.messages[activeMission].trim() && project.messages[activeMission].trim() !== originalMessages[activeMission];
+    const first = activeMission === 'empty' && !changed && !firstObserved;
+    $('#first-guide').hidden = !first;
+    $('#writing-controls').hidden = first;
+    $('#preview-caption').hidden = first || !!(changed && practiceComplete(project, activeMission));
+    $('#scenario-heading').textContent = first ? 'Primeiro: provoque o problema' : '1. Entenda o problema';
+    $('#preview-heading').textContent = first ? 'Clique em Continuar sem escolher' : '3. Faça a tarefa nesta tela';
+    const record = project.practice[activeMission];
+    const done = changed && practiceComplete(project, activeMission);
+    $('#practice-result').textContent = done ? 'Caminho executado. Compare agora: ' + goals[activeMission][2] : activeRun?.mission === activeMission ? 'Teste em andamento. Complete a tarefa na tela da Arena Pixel.' : changed ? 'Mensagem escrita. Clique em Testar minha frase e execute a tarefa.' : first ? 'Clique no botão da Arena Pixel e observe o aviso.' : 'Escreva sua versão antes de testar o caminho.';
+    $('#practice-result').dataset.complete = String(!!done);
+    $('#mission-goal').textContent = goals[activeMission][0];
+    $('#goal-steps').replaceChildren();
+    const events = record?.message === project.messages[activeMission] ? record.events : [];
+    const checkpoints = {empty: [events.includes('empty'), done], loading: [events.includes('submit'), done], error: [events.includes('reject'), done], success: [events.includes('resolve'), done], confirm: [events.includes('keep'), done], cancelled: [events.includes('restart'), done]};
+    goals[activeMission][1].forEach((text, index) => { const li = document.createElement('li'); li.textContent = (checkpoints[activeMission][index] ? 'Feito: ' : '') + text; li.dataset.done = String(!!checkpoints[activeMission][index]); $('#goal-steps').append(li); });
+    $('#next-help').textContent = done ? 'Caminho executado. Confira a clareza da frase e siga para o próximo desafio.' : 'Você pode avançar e voltar depois. Este caminho ainda não foi testado com sua frase.';
+  }
+  function updateMissionProgress() {
+    if (prototypeMode) return;
+    const changed = missions.filter(([key]) => project.messages[key].trim() && project.messages[key].trim() !== originalMessages[key]).length;
+    const tested = missions.filter(([key]) => project.messages[key].trim() !== originalMessages[key] && practiceComplete(project, key)).length;
+    $('#mission-progress').textContent = changed + ' de 6 mensagens escritas · ' + tested + ' de 6 caminhos executados';
+    for (const button of document.querySelectorAll('[data-mission]')) {
+      const key = button.dataset.mission;
+      button.setAttribute('aria-pressed', String(key === activeMission));
+      button.dataset.changed = String(project.messages[key].trim() !== originalMessages[key] && !!project.messages[key].trim());
+      button.dataset.tested = String(practiceComplete(project, key));
+    }
+    updateGuidance();
+  }
+  function showMission(before = false) {
+    clearTimeout(timer); activeRun = null; showBefore = before; state = activeMission;
+    if (activeMission === 'empty' && !firstObserved && project.messages.empty === originalMessages.empty) state = 'idle';
+    chosen = activeMission === 'empty' || activeMission === 'cancelled' ? '' : 'Xadrez rápido';
+    path = [stateNames[state]];
+    $('#failure').checked = false; render();
+    if (state === 'loading') startLoading();
+  }
+  function testMission(before = false) {
+    clearTimeout(timer); showBefore = before;
+    const message = project.messages[activeMission];
+    activeRun = !before && message.trim() && message.trim() !== originalMessages[activeMission] ? {mission: activeMission, message, events: [], differentChoice: false} : null;
+    chosen = activeMission === 'empty' ? '' : 'Xadrez rápido';
+    $('#failure').checked = activeMission === 'error';
+    state = ({empty: 'idle', loading: 'idle', error: 'idle', success: 'idle', confirm: 'success', cancelled: 'confirm'})[activeMission];
+    path = [stateNames[state]];
+    go(({empty: 'empty', loading: 'submit', error: 'submit', success: 'submit', confirm: 'cancel', cancelled: 'confirm'})[activeMission]);
+    revealPreview();
+  }
+  function selectMission(key) {
+    activeMission = key;
+    $('#challenge-menu').open = false;
+    const mission = missions.find(item => item[0] === key);
+    const previous = $('#guided-field').firstElementChild;
+    if (previous) $('#message-fields').append(previous);
+    $('#guided-field').append($('#edit-' + key).parentElement);
+    $('#mission-title').textContent = 'Desafio ' + (missions.indexOf(mission) + 1) + ' de 6 · ' + mission[1];
+    $('#original-message').textContent = originalMessages[key];
+    $('#mission-scene').textContent = mission[2];
+    $('#mission-instruction').textContent = mission[3];
+    $('#mission-example').textContent = 'Exemplo: ' + mission[4] + ' Escreva sua própria versão.';
+    $('#mission-hint').open = false;
+    $('#next-mission').textContent = key === 'cancelled' ? 'Criar meu fluxo →' : 'Próximo desafio';
+    updateMissionProgress(); showMission();
+  }
+  function escapeXml(text) { return text.replace(/[&<>"']/g, char => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&apos;'})[char]); }
+  function wrapped(text, max = 75) {
+    const measure = document.createElement('canvas').getContext('2d');
+    measure.font = '20px sans-serif';
+    const lines = []; let line = '';
+    for (const word of text.trim().split(/\s+/)) {
+      const candidate = line ? line + ' ' + word : word;
+      if (candidate.length <= max && measure.measureText(candidate).width <= 900) { line = candidate; continue; }
+      if (line) lines.push(line);
+      line = '';
+      for (const char of word) {
+        if (line.length >= max || measure.measureText(line + char).width > 900) { lines.push(line); line = ''; }
+        line += char;
+      }
+    }
+    if (line) lines.push(line);
+    return lines;
+  }
+  function storyboard() {
+    if (!exportable()) return;
+    const items = [
+      ['Início', project.messages.intro, 'Escolha + enviar → Carregamento; vazio → Erro de escolha'],
+      ['Carregamento', project.messages.loading, 'Envio concluído → Sucesso; falha → Erro de conexão'],
+      ['Erro de escolha', project.messages.empty, 'Escolher campeonato + enviar → Carregamento'],
+      ['Erro de conexão', project.messages.error, 'Tentar novamente → Carregamento (mantém escolha)'],
+      ['Sucesso', project.messages.success, 'Cancelar inscrição → Confirmação'],
+      ['Confirmação', project.messages.confirm, 'Manter → Sucesso; confirmar → Cancelado'],
+      ['Cancelado', project.messages.cancelled, 'Nova inscrição → Início']
+    ];
+    const rows = []; let y = 110;
+    const add = (content, size = 20, color = '#172b30') => { rows.push(`<text x="40" y="${y}" font-family="sans-serif" font-size="${size}" fill="${color}">${escapeXml(content)}</text>`); y += size + 10; };
+    for (const [title, content, path] of items) { add(title, 25); for (const line of wrapped(content, 75)) add(line); for (const line of wrapped(path, 75)) add(line, 17, '#36594d'); y += 25; }
+    add('Teste e revisão', 28);
+    for (const [key, title] of Object.entries({diagnosis: 'Diagnóstico inicial', alternatives: 'Alternativas e escolha', task1: 'Tarefa 1', task2: 'Tarefa 2', change: 'Antes e depois', retest: 'Segundo teste', classification: 'Classificação', reason: 'Justificativa', robustness: 'Conferência dos caminhos e teclado'})) { add(title, 22); for (const line of wrapped(project.review[key] || 'Ainda não registrado.', 75)) add(line, 18); y += 16; }
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="${y + 40}" viewBox="0 0 1000 ${y + 40}"><rect width="100%" height="100%" fill="#f4f1e8"/><text x="40" y="52" font-family="sans-serif" font-size="30" fill="#172b30">Arena Pixel · Storyboard da interação</text>${rows.join('')}</svg>`;
+    download('storyboard.svg', svg, 'image/svg+xml');
+  }
+  if (!prototypeMode) {
+    try { const saved = localStorage.getItem(storageKey); if (saved) { project = validateProject(JSON.parse(saved)); announce('Rascunho recuperado. Confira e salve seu projeto em arquivo.'); } }
+    catch { announce('Não foi possível recuperar o rascunho. O exemplo pronto está disponível.'); }
+    for (const [index, mission] of missions.entries()) {
+      const button = document.createElement('button'); button.className = 'secondary'; button.dataset.mission = mission[0]; button.textContent = (index + 1) + ' · ' + mission[1];
+      button.addEventListener('click', () => selectMission(mission[0])); $('#mission-nav').append(button);
+    }
+    $('#skip-guide').addEventListener('click', () => { firstObserved = true; showMission(); $('#edit-empty').focus(); });
+    $('#guide-try').addEventListener('click', () => { reset(); revealPreview(); });
+    $('#see-before').addEventListener('click', () => testMission(true));
+    $('#see-mine').addEventListener('click', () => testMission(false));
+    $('#full-flow').addEventListener('click', () => { reset(); revealPreview(); });
+    $('#next-mission').addEventListener('click', () => { const i = missions.findIndex(item => item[0] === activeMission);
+      if (i < missions.length - 1) { selectMission(missions[i + 1][0]); $('#guided-field textarea').focus(); }
+      else { window.location.href = 'criador.html'; }
+     });
+    for (const key of ['task1','task2']) $('#peer-fields').append($('#review-' + key).parentElement);
+    fillEditor();
+    for (const key of Object.keys(project.review)) $('#review-' + key).addEventListener('input', event => { project.review[key] = event.target.value; persist(); });
+    $('#save-initial').addEventListener('click', () => { const data = exportable(); if (data) download('projeto-inicial.interacao', JSON.stringify(data, null, 2), 'application/json'); });
+    $('#check').addEventListener('click', () => {
+      const pending = reviewReadiness(project, practiceComplete); const list = $('#pending'); list.replaceChildren();
+      for (const item of pending) { const li = document.createElement('li'); li.textContent = item; list.append(li); }
+      $('#check-result').textContent = pending.length ? pending.length + ' pontos ainda precisam de registro ou revisão.' : 'Seis mensagens escritas, seis caminhos executados e dois testes com colega registrados. Salve o projeto e o protótipo. O teste com o colega é que mostra se ficou claro.';
+      $('#check-result').focus();
+    });
+    $('#save').addEventListener('click', () => { const data = exportable(); if (data) download('projeto.interacao', JSON.stringify(data, null, 2), 'application/json'); });
+    $('#open').addEventListener('change', async event => {
+      const file = event.target.files[0]; if (!file) return;
+      try { if (file.size > 30000) throw new Error('Arquivo grande demais para este projeto.'); const next = validateProject(JSON.parse(await file.text())); project = next; fillEditor(); reset(); persist(); announce('Projeto aberto: ' + file.name); }
+      catch (error) { announce('Projeto não aberto. ' + error.message + ' Seu trabalho foi preservado.'); }
+      event.target.value = '';
+    });
+    $('#storyboard').addEventListener('click', storyboard);
+    $('#export').addEventListener('click', () => {
+      const data = exportable(); if (!data) return;
+      const html = cleanDocument.cloneNode(true); html.querySelector('body').classList.add('prototype');
+      html.querySelector('title').textContent = 'Protótipo · Arena Pixel';
+      const safe = JSON.stringify(data).replace(/</g, '\\u003c');
+      html.querySelector('#bootstrap').textContent = '(' + runWorkshop.toString() + ')(' + safe + ',true,' + validateProject.toString() + ',' + transition.toString() + ',' + reviewReadiness.toString() + ',' + practiceComplete.toString() + ');';
+      download('prototipo.html', '<!doctype html>\n' + html.outerHTML, 'text/html');
+    });
+    $('#demo-silent').addEventListener('click', () => { $('#demo-result').textContent = 'Você clicou, mas este botão não informa se a inscrição aconteceu. Essa dúvida é o problema que estamos corrigindo.'; });
+    $('#demo-feedback').addEventListener('click', () => { const btn = $('#demo-feedback'); btn.disabled = true; $('#demo-result').textContent = 'Enviando sua inscrição…'; clearTimeout(demoTimer); demoTimer = setTimeout(() => { $('#demo-result').textContent = 'Inscrição de demonstração confirmada.'; btn.disabled = false; }, 1600); });
+  }
+  if (!prototypeMode) $('#peer-start').addEventListener('click', () => { reset(); revealPreview(); });
+  $('#restart').addEventListener('click', reset);
+  render();
+})({"format":"senai-interacao","version":1,"messages":{"title":"Campeonatos da Arena Pixel","intro":"Escolha seu campeonato para participar.","action":"Continuar","loading":"Aguarde.","empty":"Falta algo.","error":"Não deu certo.","success":"Pronto!","confirm":"Tem certeza?","cancelled":"Feito."},"practice":{},"review":{"diagnosis":"","alternatives":"","retest":"","robustness":"","task1":"","task2":"","change":"","classification":"melhoria","reason":""}},false,function validateProject(value) {
+  if (!value || value.format !== 'senai-interacao' || value.version !== 1) throw new Error('Escolha um projeto.interacao desta oficina.');
+  const result = {format: value.format, version: 1, messages: {}, review: {}, practice: {}};
+  const messageKeys = ['title', 'intro', 'action', 'loading', 'empty', 'error', 'success', 'confirm', 'cancelled'];
+  for (const key of messageKeys) {
+    const text = value.messages?.[key];
+    const limit = key === 'action' ? 36 : 180;
+    if (typeof text !== 'string' || !text.trim() || text.length > limit) throw new Error('Há mensagem vazia ou longa demais no projeto.');
+    result.messages[key] = text;
+  }
+  for (const key of ['diagnosis', 'alternatives', 'retest', 'robustness', 'task1', 'task2', 'change', 'reason']) {
+    // Accept projects saved before the guided review fields were introduced.
+    const text = value.review?.[key] ?? (['diagnosis', 'alternatives', 'retest', 'robustness'].includes(key) ? '' : undefined);
+    if (typeof text !== 'string' || text.length > 600) throw new Error('Registro de teste inválido.');
+    result.review[key] = text;
+  }
+  if (!['correção', 'melhoria', 'proposta de inovação'].includes(value.review?.classification)) throw new Error('Classificação inválida.');
+  result.review.classification = value.review.classification;
+  for (const key of ['empty', 'loading', 'error', 'success', 'confirm', 'cancelled']) {
+    const record = value.practice?.[key];
+    if (!record) continue;
+    const allowed = ['empty', 'submit', 'resolve', 'reject', 'retry', 'cancel', 'keep', 'confirm', 'restart'];
+    if (typeof record.message !== 'string' || record.message.length > 180 || !Array.isArray(record.events) || record.events.length > 32 || record.events.some(event => !allowed.includes(event))) throw new Error('Registro de interação inválido.');
+    result.practice[key] = {message: record.message, events: [...record.events], differentChoice: record.differentChoice === true};
+  }
+  return result;
+},function transition(state, event) {
+  const routes = {
+    idle: {empty: 'empty', submit: 'loading'}, empty: {empty: 'empty', submit: 'loading'},
+    loading: {resolve: 'success', reject: 'error'}, error: {retry: 'loading'},
+    success: {cancel: 'confirm'}, confirm: {keep: 'success', confirm: 'cancelled'},
+    cancelled: {restart: 'idle'}
+  };
+  return routes[state]?.[event] || state;
+},function reviewReadiness(project, isComplete = practiceComplete) {
+  const weak = {loading: 'Aguarde.', empty: 'Falta algo.', error: 'Não deu certo.', success: 'Pronto!', confirm: 'Tem certeza?', cancelled: 'Feito.'};
+  const pending = [];
+  for (const [key, text] of Object.entries(weak)) if (!project.messages[key]?.trim() || project.messages[key].trim() === text) pending.push('Revisar: ' + ({loading: 'espera', empty: 'escolha vazia', error: 'conexão', success: 'sucesso', confirm: 'confirmação', cancelled: 'cancelamento'})[key]);
+  for (const key of Object.keys(weak)) if (!isComplete(project, key)) pending.push('Executar o caminho: ' + ({loading: 'espera', empty: 'escolha vazia', error: 'conexão', success: 'sucesso', confirm: 'confirmação', cancelled: 'nova inscrição'})[key]);
+  for (const [key, label] of Object.entries({task1: 'Teste: conseguir se inscrever', task2: 'Teste: manter e cancelar a inscrição'})) if (!project.review[key]?.trim()) pending.push(label);
+  return pending;
+},function practiceComplete(project, key) {
+  const required = {
+    empty: ['empty', 'submit', 'resolve'], loading: ['submit', 'resolve'],
+    error: ['submit', 'reject', 'retry', 'resolve'], success: ['submit', 'resolve', 'cancel'],
+    confirm: ['cancel', 'keep', 'cancel', 'confirm'], cancelled: ['confirm', 'restart', 'submit', 'resolve']
+  };
+  const record = project.practice?.[key];
+  if (!record || record.message !== project.messages[key] || !record.message.trim() || !required[key]) return false;
+  let position = 0;
+  for (const event of record.events) if (event === required[key][position]) position++;
+  return position === required[key].length && (key !== 'cancelled' || record.differentChoice);
+});</script></body></html>

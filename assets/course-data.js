@@ -383,7 +383,7 @@ window.SENAI_COURSES = {
       {
         "num": "11",
         "title": "Interações e Feedback da Interface",
-        "description": "Planejamento de cliques, estados e respostas da interface por storyboard e protótipo, sem programação.",
+        "description": "A Arena Pixel responde ao visitante. Os seis desafios de mensagem viram aquecimento; depois cada estudante cria, testa e adapta um fluxo clicável próprio para uma situação de atendimento.",
         "objectives": [
           "Criação de código de texto: introdução ao Javascript como reconhecimento de bastidor.",
           "Inovação: conceito, inovação x melhoria."
@@ -397,25 +397,25 @@ window.SENAI_COURSES = {
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Comparação de duas páginas: uma sem resposta e outra com feedback de carregamento, sucesso, erro e confirmação. Decidir o comportamento da interface pelo design; a programação fica apenas como bastidor."
+            "horario": "19:00 - 19:45",
+            "atividade": "Comparar uma interface sem resposta com outra que orienta. Identificar ação, resposta e próximo passo; testar inscrição, erro e cancelamento. Registrar três problemas e salvar a versão inicial antes do lanche."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "Jogo \"O que acontece depois?\": grupos recebem ações como tocar, enviar, excluir e favoritar; desenham o estado anterior, a resposta imediata e o resultado final."
+            "horario": "20:05 - 20:30",
+            "atividade": "Retomar e concluir os seis desafios de mensagem como aquecimento. Quem já concluiu não repete: salva e prepara a troca para a nova oficina."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "Oficina de protótipo: adicionar no mínimo três estados conectados — normal, ação e retorno — usando ferramenta visual. Incluir uma mensagem de erro útil e uma confirmação clara."
+            "horario": "20:30 - 21:15",
+            "atividade": "Criar um fluxo clicável individual a partir de um briefing: escolher uma situação, construir cinco telas conectadas e testar o caminho principal. Depois responder a uma mudança de requisito criando uma alternativa."
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "Feira de interações: colegas executam duas tarefas sem explicação. Cada equipe registra onde faltou feedback e classifica suas ideias como correção, melhoria ou inovação."
+            "horario": "21:15 - 22:10",
+            "atividade": "Fechar o teste com o colega; dar aparência ao aplicativo; criar um formulário ligado; simular carregamento e falha; fazer um speedrun, salvar e organizar o posto."
           }
         ],
-        "methodology": "Demonstração de comportamento, storyboard, prototipação visual e teste rápido.",
-        "resources": "Capturas ou páginas de demonstração, cartões de ações e estados, ferramenta de prototipação e smartphones.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "Aquecimento curto de mensagens, prototipação visual individual por briefing, teste silencioso com o colega e revisão baseada no percurso observado.",
+        "resources": "Computador com navegador, projetor, oficina de interações e criador de fluxos na Vercel, com cópias locais para uso sem rede. Caderno e caneta como alternativa. Sem login, instalação ou impressão.",
+        "observation": "19:00–22:10, intervalo 19:45–20:05. Os seis desafios são aquecimento e não geram nova contagem. Às 20:30 a turma abre o criador de fluxos. Trabalho individual no posto, com colaboração do colega do lado. Situações simuladas, sem dados pessoais ou envio pela rede; o estudante decide telas, rotas e respostas visuais."
       },
       {
         "num": "12",
