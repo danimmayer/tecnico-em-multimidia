@@ -92,7 +92,8 @@ Mesma versão da aula 11: se o posto já tem essa pasta em Documentos, não é p
         else:
             course['lessons'] = {'12': course['lessons']['12']}
         write(slides / 'assets' / filename, f'window.{var} = ' + json.dumps({'producao-audiovisual': course}, ensure_ascii=False) + ';\n')
-    shutil.copytree(KIT, slides / 'modelos/producao-audiovisual/aula-12', ignore=shutil.ignore_patterns('Aula12-Shotcut.zip'))
+    # Copia o kit inteiro, inclusive o ZIP para o qual a página do kit aponta.
+    shutil.copytree(KIT, slides / 'modelos/producao-audiovisual/aula-12')
     route = 'aula-kit.html?uc=producao-audiovisual&amp;aula=12'
     landing = f'''<!doctype html><html lang="pt-BR"><meta charset="utf-8"><title>Aula 12 offline</title><style>body{{font:22px system-ui;margin:60px;line-height:1.7}}a{{color:#9a4f0f}}</style><h1>Aula 12 · Grafismos, textos e máscaras</h1><p><a href="{route}">Abrir os slides</a></p><p><a href="modelos/producao-audiovisual/aula-12/Guia-Aula12-Shotcut.pdf">Abrir o guia PDF</a></p><p>Use as setas para avançar. O material funciona sem internet.</p></html>'''
     for name in ['index.html', 'uc-producao-audiovisual.html']:
