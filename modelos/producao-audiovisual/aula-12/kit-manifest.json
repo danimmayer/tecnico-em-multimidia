@@ -1,0 +1,35 @@
+{
+  "source": "Caminandes 3: Llamigos (2016) · mídias da aula 11",
+  "student_media": [
+    "08-paisagem.mp4",
+    "02-encontro.mp4",
+    "04-fruta.mp4",
+    "foto-fruta.jpg",
+    "foto-cesta.jpg"
+  ],
+  "graphics": [
+    "faixa-inferior.png",
+    "grade-guia.png",
+    "picto-coracao.png",
+    "picto-floco.png",
+    "picto-fruta.png"
+  ],
+  "examples": {
+    "exemplo-abertura.mp4": 17.21,
+    "exemplo-mascara.mp4": 5.0
+  },
+  "screens": [
+    "assinatura.jpg",
+    "cena-encontro.jpg",
+    "cena-foto.jpg",
+    "cena-paisagem.jpg",
+    "colisao.jpg",
+    "faixa.jpg",
+    "guia-sobre-cena.jpg",
+    "legenda.jpg",
+    "mascara-com.jpg",
+    "mascara-sem.jpg",
+    "titulo-alinhado.jpg",
+    "titulo-solto.jpg"
+  ]
+}

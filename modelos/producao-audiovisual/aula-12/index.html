@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kit local · Aula 12 · Shotcut</title>
+  <style>
+    :root { color-scheme: dark; font-family: system-ui, sans-serif; color: #f5efe2; background: #10202b; }
+    * { box-sizing: border-box; }
+    body { max-width: 1100px; margin: auto; padding: 40px 28px 60px; }
+    a { color: #f7b866; text-underline-offset: .2em; }
+    .eyebrow { color: #f7b866; font-size: .8rem; letter-spacing: .15em; text-transform: uppercase; }
+    h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); line-height: 1.05; max-width: 850px; margin: 20px 0; }
+    .intro { max-width: 700px; font-size: 1.2rem; line-height: 1.6; color: #d0dae0; }
+    .download { display: inline-block; background: #f09230; color: #1a1206; padding: 15px 22px; border-radius: 8px; font-weight: 750; text-decoration: none; margin: 12px 0; }
+    .prep { padding: 20px 24px; margin: 25px 0 40px; background: #172c3a; border-left: 3px solid #f09230; line-height: 1.65; }
+    h2 { margin-top: 36px; font-size: 1.6rem; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px 16px; }
+    .grid.is-five { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    figure { margin: 0; min-width: 0; }
+    img { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 6px; }
+    .checker img { background: repeating-conic-gradient(#2a3d4a 0 25%, #1d2e3a 0 50%) 0 0 / 18px 18px; }
+    figcaption { margin-top: 10px; line-height: 1.5; }
+    figcaption span { display: block; color: #b5c4cc; font-size: .9rem; }
+    ol { line-height: 1.8; padding-left: 22px; }
+    footer { margin-top: 42px; border-top: 1px solid #2f4757; padding-top: 20px; font-size: .9rem; line-height: 1.6; color: #b5c4cc; }
+    @media (max-width: 760px) { .grid, .grid.is-five { grid-template-columns: repeat(2, minmax(0, 1fr)); } body { padding: 25px 16px; } }
+  </style>
+</head>
+<body>
+  <a href="../../../aula-kit.html?uc=producao-audiovisual&amp;aula=12">← Voltar à aula 12</a>
+  <p class="eyebrow">Produção audiovisual · Grafismos, textos e máscaras</p>
+  <h1>Cenas prontas.<br>A identidade é sua.</h1>
+  <p class="intro">Três clipes, duas fotos de <em>Caminandes 3: Llamigos</em> e cinco grafismos com fundo transparente para criar título, faixa com nome, legenda, texto por trás do personagem e assinatura no Shotcut.</p>
+  <a class="download" href="Aula12-Shotcut.zip" download>Baixar atividade do aluno · mídias + grafismos + PDF</a>
+  <p><a href="Guia-Aula12-Shotcut.pdf">Abrir guia PDF · cinco etapas ilustradas</a></p>
+  <div class="prep"><strong>No pendrive: Aula12-Pendrive</strong><br>
+  <strong>01-SHOTCUT / Shotcut</strong> — programa Portable já extraído.<br>
+  <strong>02-ALUNO / Aula12</strong> — clipes, fotos, grafismos, guia e créditos.<br>
+  <strong>03-PROFESSOR</strong> — slides offline e exemplos.<br><br>
+  Copie <strong>Aula12</strong> de 02-ALUNO para <strong>Documentos</strong>. Se o posto ainda não tem Shotcut, copie também a pasta <strong>Shotcut</strong> inteira e abra <strong>shotcut.exe</strong> após terminar a cópia. O ZIP desta página contém a atividade do aluno; o programa está separado no pendrive.</div>
+
+  <h2>O que vamos criar</h2>
+  <div class="grid">
+    <figure><a href="exemplo-abertura.mp4"><img src="telas/titulo-alinhado.jpg" alt="Título alinhado à margem sobre a paisagem" width="1280" height="720"></a><figcaption>Abertura de exemplo<span>MP4 · 17 s · sem áudio</span></figcaption></figure>
+    <figure><a href="telas/faixa.jpg"><img src="telas/faixa.jpg" alt="Faixa com o nome de Oti ao lado do pinguim" width="1280" height="720"></a><figcaption>Faixa com nome<span>Perto de quem aparece</span></figcaption></figure>
+    <figure><a href="exemplo-mascara.mp4"><img src="telas/mascara-com.jpg" alt="Palavra LLAMIGOS passando por trás da cabeça da lhama" width="1280" height="720"></a><figcaption>Texto por trás<span>MP4 · 5 s · máscara elíptica</span></figcaption></figure>
+  </div>
+
+  <h2>Cenas · mesmas mídias da aula 11</h2>
+  <div class="grid">
+    <figure><img src="telas/cena-paisagem.jpg" alt="Penhasco nevado sobre o mar" width="1280" height="720"><figcaption>08-paisagem.mp4<span>Título no céu</span></figcaption></figure>
+    <figure><img src="telas/cena-encontro.jpg" alt="Lhama e pinguim na neve" width="1280" height="720"><figcaption>02-encontro.mp4<span>Faixa e legenda</span></figcaption></figure>
+    <figure><img src="telas/cena-foto.jpg" alt="Lhama equilibrando a fruta na língua" width="1280" height="720"><figcaption>foto-fruta.jpg<span>Texto por trás</span></figcaption></figure>
+  </div>
+
+  <h2>Grafismos · PNG 1280 × 720 com transparência</h2>
+  <div class="grid is-five checker">
+    <figure><a href="grafismos/grade-guia.png"><img src="grafismos/grade-guia.png" alt="Guia de margens em linhas azuis" width="1280" height="720"></a><figcaption>grade-guia.png<span>Ocultar antes de exportar</span></figcaption></figure>
+    <figure><a href="grafismos/faixa-inferior.png"><img src="grafismos/faixa-inferior.png" alt="Faixa escura com barra laranja no canto inferior direito" width="1280" height="720"></a><figcaption>faixa-inferior.png<span>Nome em cima, em V3</span></figcaption></figure>
+    <figure><a href="grafismos/picto-fruta.png"><img src="grafismos/picto-fruta.png" alt="Pictograma de fruta" width="1280" height="720"></a><figcaption>picto-fruta.png<span>Assinatura</span></figcaption></figure>
+    <figure><a href="grafismos/picto-floco.png"><img src="grafismos/picto-floco.png" alt="Pictograma de floco de neve" width="1280" height="720"></a><figcaption>picto-floco.png<span>Assinatura</span></figcaption></figure>
+    <figure><a href="grafismos/picto-coracao.png"><img src="grafismos/picto-coracao.png" alt="Pictograma de coração" width="1280" height="720"></a><figcaption>picto-coracao.png<span>Assinatura</span></figcaption></figure>
+  </div>
+
+  <h2>Começar no Shotcut</h2>
+  <ol>
+    <li>Abra <strong>Guia-Aula12-Shotcut.pdf</strong> na cópia de Aula12 em Documentos.</li>
+    <li>Monte em V1: <strong>08-paisagem → 02-encontro → foto-fruta.jpg</strong>. Coloque <strong>grade-guia.png</strong> em V4, sobre tudo.</li>
+    <li>Crie o título alinhado à margem, a faixa com o nome de Oti e uma legenda.</li>
+    <li>Empilhe foto, palavra e foto de novo; recorte a cópia de cima com <strong>Máscara: forma simples</strong>.</li>
+    <li>Termine com a assinatura e os créditos, oculte V4 e exporte <strong>minha-abertura.mp4</strong>.</li>
+  </ol>
+  <p class="intro">Guarde a pasta inteira: o projeto precisa das mídias e dos grafismos para abrir novamente.</p>
+  <footer><em>Caminandes 3: Llamigos</em> (2016), Blender Foundation / Blender Institute. Cópia utilizada sob CC BY 3.0. Material recortado e reduzido para uso didático; grafismos de criação própria. <a href="CREDITOS.txt">Créditos, fonte e licença</a>. Mantenha os créditos na assinatura da sua abertura.</footer>
+</body>
+</html>

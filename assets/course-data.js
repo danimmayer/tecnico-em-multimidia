@@ -1507,7 +1507,7 @@ window.SENAI_COURSES = {
       {
         "num": "12",
         "title": "Grafismos, textos e máscaras",
-        "description": "Criação de elementos gráficos, títulos, legendas e máscaras na edição, aplicando princípios de proximidade e alinhamento e buscando soluções visuais inovadoras.",
+        "description": "Dar identidade a uma abertura no Shotcut com cenas prontas: título alinhado, faixa com nome, legenda legível, texto por trás do personagem e assinatura com créditos, tudo exportado no próprio computador.",
         "objectives": [
           "Edição de vídeos e sons: criação de elementos gráficos, máscaras, composição com sequência de imagem.",
           "Inovação: conceito, visão inovadora."
@@ -1523,25 +1523,25 @@ window.SENAI_COURSES = {
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Revisão da aula anterior: transições e animações por keyframe. Painel de referências no projetor: aberturas de séries, lower thirds de telejornal e identidade visual de canais de internet. Discussão: o que diferencia uma solução visual inovadora de uma cópia de tendência."
+            "horario": "19:00 - 19:45",
+            "atividade": "Comparar títulos soltos e alinhados, reconhecer a função de cada texto na tela e escolher onde ele cabe em cada cena. Abertura flexível: pode ceder lugar à preparação do Shotcut Portable. Com os postos prontos, antecipar a montagem."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "Criação de títulos, lower thirds e legendas no software de edição, aplicando proximidade, alinhamento e hierarquia visual. Seleção de formas, grafismos, pictogramas e textos: comparação entre os recursos gráficos do próprio editor e a criação de elementos no Photopea, sem login, ou no GIMP instalado; os arquivos exportados são então importados para o projeto."
+            "horario": "20:05 - 21:00",
+            "atividade": "Organizar a linha do tempo em camadas, criar um título alinhado à margem, uma faixa com o nome do personagem e uma legenda que não disputa espaço com outros textos."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "Máscaras e composição com sequência de imagens: recortes, revelações e sobreposições criativas. Exercício guiado \"Texto por trás\": usar máscara para fazer o título passar atrás de uma pessoa ou objeto da cena."
+            "horario": "21:00 - 21:40",
+            "atividade": "Empilhar a mesma foto em duas trilhas e recortar a de cima com uma máscara elíptica para a palavra passar por trás do personagem; quem avançar faz a palavra atravessar a cena com keyframes."
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "Prática \"Identidade do comercial\": cada equipe cria título animado, legenda acessível e assinatura final para o comercial gravado na aula 9, partindo de pesquisa rápida de referências e buscando uma solução visual própria."
+            "horario": "21:40 - 22:10",
+            "atividade": "Criar a assinatura final com pictograma e créditos, ocultar o guia, exportar em MP4, assistir, corrigir um ponto visível e mostrar a abertura na própria tela."
           }
         ],
-        "methodology": "Pesquisa de referências e oficina prática de criação gráfica no software de edição, com atividade de produção.",
-        "resources": "Computadores do laboratório com softwares de edição e Design Digital, biblioteca de recursos livres da turma e projetor.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "A abertura antes do lanche é flexível: comparação de exemplos e leitura das cenas podem ser abreviadas ou inteiramente substituídas pela preparação do Shotcut Portable, se necessária. A prática essencial começa depois do lanche, do zero, com demonstrações breves seguidas de edição no próprio posto. A aprendizagem aparece na tela: posicionar, alinhar, agrupar, recortar e comparar. Cada estudante edita quando há computador disponível; em postos compartilhados, os integrantes alternam o mouse entre desafios. Quem termina avança para uma variação de movimento ou de identidade visual.",
+        "resources": "Projetor, fones de ouvido, computadores, Shotcut Portable oficial para Windows 11 já extraído na pasta 01-SHOTCUT/Shotcut e pasta 02-ALUNO/Aula12 já pronta para copiar para Documentos no disco local. O Shotcut é gratuito e de código aberto. O kit contém três clipes e duas fotos de Caminandes 3: Llamigos, com créditos e licença CC BY 3.0, e cinco grafismos PNG com transparência: guia de margens, faixa inferior e três pictogramas. Se necessária, a preparação do Shotcut Portable pode ocupar o primeiro bloco, com apoio do laboratório. Guia-Aula12-Shotcut.pdf para consulta offline. Nenhuma ficha impressa, conta ou upload. Distribuir o programa Portable e o kit por pendrive ou rede local, preferencialmente antes da turma; não solicitar downloads simultâneos aos 20 a 30 alunos.",
+        "observation": "Aula das 19:00 às 22:10; lanche das 19:45 às 20:05 e chamada no início de cada bloco. Os estudantes permanecem nos postos; somente o professor circula. Antes do lanche, comparação e leitura das cenas são opcionais: posso abreviar ou pular toda a abertura para copiar e testar o Shotcut Portable. Com os postos prontos, antecipo a prática. Levar Aula12-Pendrive com o Shotcut Portable já extraído; se o Shotcut da aula 11 ainda estiver em Documentos, basta copiar 02-ALUNO/Aula12. Preparar, se possível, um computador de demonstração com texto, máscara e exportação testados. Depois do lanche, demonstro desde a pasta do kit; nenhuma tarefa anterior é pré-requisito e não depender de arquivos das aulas anteriores, inclusive do trailer da aula 11. Se a preparação do Shotcut Portable avançar depois das 20:05, usar temporariamente os postos que já funcionam, com revezamento; manter título, faixa, máscara, um texto final com os créditos e a exportação, deixando legenda, pictograma e variações como extras. Copiar o kit uma vez para cada posto e editar no disco local. Não exigir caderno, fichas ou justificativas escritas. Observar o teste na tela enquanto circula. Um projeto .mlt e um MP4 bastam; manter ambos na pasta do kit, pois o .mlt referencia as mídias e os grafismos. Mostrar o resultado no próprio posto, sem upload coletivo. A assinatura final leva os créditos CC BY; manter CREDITOS.txt com o trabalho compartilhado. Chroma key e correção de cor ficam para a aula 13."
       },
       {
         "num": "13",
