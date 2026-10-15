@@ -44,7 +44,7 @@ Em computador compartilhado, imprima ou exporte o necessário e use **Limpar pre
 | 09 | Set de filmagem: comercial em uma noite | Plano de filmagem; papéis; equipamentos; segurança; continuidade |
 | 10 | Ilha de edição: primeiros cortes | Percurso de edição; ficha de edição; glossário |
 | 11 | Transições, efeitos e keyframes | Ficha de edição |
-| 12 | Grafismos, textos e máscaras | Kit local `aula-12/` com cenas, grafismos PNG e guia do Shotcut; legenda de identificação no glossário |
+| 12 | Grafismos, textos e máscaras | Kit leve `aula-12/Aula12-Canva.zip` com três cenas e uma foto para o Canva; pedidos revelados nos slides; legenda de identificação no glossário |
 | 13 | Chroma key e correção de cor | Ficha de edição; tratamento visual no glossário |
 | 14 | Áudio na pós-produção e buffering | Ficha de edição; som do ambiente no glossário |
 | 15 | Blocagem e bibliotecas de composição | Ficha de edição; organização por pastas de mídia |
