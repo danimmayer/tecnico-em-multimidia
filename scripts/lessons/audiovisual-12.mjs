@@ -207,12 +207,12 @@ export const support = {
       av9: commands([
         ['PÁGINA', 'Adicionar página', 'No fim do vídeo, cerca de 4 segundos, fundo #14213D.'],
         ['TÍTULO', 'Texto centralizado', 'A ÚLTIMA FRUTA.'],
-        ['CRÉDITOS', 'Texto menor', 'Remontagem: seu nome. Imagens: Caminandes 3 · CC BY.'],
+        ['CRÉDITOS', 'Texto menor', 'Remontagem: seu nome. Imagens: Caminandes 3: Llamigos, Blender Foundation, editadas. Licença CC BY 3.0.'],
         ['AGRUPAR', 'Perto e centralizado', 'Título e créditos formam um bloco só.']
       ], `Acrescente um ícone ou PNG transparente, sem cobrir os créditos.`),
       resource: {href: base + 'telas/assinatura.jpg', label: 'Ver assinatura de exemplo'},
-      promptLabel: 'Pronto quando', prompt: 'Título e créditos centralizados e agrupados. Os créditos são parte da licença das imagens.',
-      teacher: teacher(['3 min · Mostro a assinatura de exemplo e explico a licença CC BY.', '12 min · A turma cria a assinatura; confiro os créditos.'], 'Caminandes 3: Llamigos está sob CC BY 3.0: atribuição obrigatória.', 'Se faltar tempo, fica só título e créditos.')
+      promptLabel: 'Pronto quando', prompt: 'Título e créditos centralizados e agrupados, com o endereço da licença: creativecommons.org/licenses/by/3.0',
+      teacher: teacher(['3 min · Mostro a assinatura de exemplo e explico a licença CC BY.', '12 min · A turma cria a assinatura; confiro os créditos.'], 'Caminandes 3: Llamigos está sob CC BY 3.0: o crédito precisa de obra, autor, licença com o endereço e aviso de que as imagens foram editadas, porque o MP4 pode circular sem a pasta do kit.', 'Se faltar tempo, fica só título e créditos.')
     },
     {
       title: 'Exportar a versão 1', kicker: 'Primeira entrega', heading: 'Baixem a abertura em MP4',

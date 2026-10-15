@@ -8418,7 +8418,7 @@ window.SENAI_TEACHING_SUPPORT = {
                 {
                   "word": "CRÉDITOS",
                   "who": "Texto menor",
-                  "text": "Remontagem: seu nome. Imagens: Caminandes 3 · CC BY."
+                  "text": "Remontagem: seu nome. Imagens: Caminandes 3: Llamigos, Blender Foundation, editadas. Licença CC BY 3.0."
                 },
                 {
                   "word": "AGRUPAR",
@@ -8439,13 +8439,13 @@ window.SENAI_TEACHING_SUPPORT = {
               "label": "Ver assinatura de exemplo"
             },
             "promptLabel": "Pronto quando",
-            "prompt": "Título e créditos centralizados e agrupados. Os créditos são parte da licença das imagens.",
+            "prompt": "Título e créditos centralizados e agrupados, com o endereço da licença: creativecommons.org/licenses/by/3.0",
             "teacher": {
               "steps": [
                 "3 min · Mostro a assinatura de exemplo e explico a licença CC BY.",
                 "12 min · A turma cria a assinatura; confiro os créditos."
               ],
-              "watch": "Caminandes 3: Llamigos está sob CC BY 3.0: atribuição obrigatória.",
+              "watch": "Caminandes 3: Llamigos está sob CC BY 3.0: o crédito precisa de obra, autor, licença com o endereço e aviso de que as imagens foram editadas, porque o MP4 pode circular sem a pasta do kit.",
               "rescue": "Se faltar tempo, fica só título e créditos."
             }
           },
