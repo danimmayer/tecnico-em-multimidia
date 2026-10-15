@@ -238,7 +238,9 @@ def end_card(picto='picto-fruta.png'):
     d = ImageDraw.Draw(image)
     d.text((W // 2, 322), TITLE, font=font('black', 72), fill=WHITE, anchor='ma')
     d.text((W // 2, 430), 'Remontagem: Turma de Multimídia · SENAI 2026', font=font('bold', 28), fill=WHITE, anchor='ma')
-    d.text((W // 2, 474), 'Imagens: Caminandes 3: Llamigos · Blender Foundation · CC BY 3.0', font=font('regular', 24), fill=(200, 214, 222), anchor='ma')
+    # Crédito completo: o MP4 pode circular sem CREDITOS.txt.
+    d.text((W // 2, 474), 'Imagens: Caminandes 3: Llamigos, Blender Foundation, editadas · CC BY 3.0', font=font('regular', 24), fill=(200, 214, 222), anchor='ma')
+    d.text((W // 2, 510), 'creativecommons.org/licenses/by/3.0', font=font('regular', 24), fill=(200, 214, 222), anchor='ma')
     return image
 
 
