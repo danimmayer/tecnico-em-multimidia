@@ -1507,7 +1507,7 @@ window.SENAI_COURSES = {
       {
         "num": "12",
         "title": "Grafismos, textos e máscaras",
-        "description": "Dar identidade a uma abertura no Shotcut com cenas prontas: título alinhado, faixa com nome, legenda legível, texto por trás do personagem e assinatura com créditos, tudo exportado no próprio computador.",
+        "description": "Uma abertura com identidade feita no Canva a partir de cenas prontas: título alinhado, faixa com nome, legenda legível, movimento, assinatura com créditos e uma versão para celular, entregues em MP4.",
         "objectives": [
           "Edição de vídeos e sons: criação de elementos gráficos, máscaras, composição com sequência de imagem.",
           "Inovação: conceito, visão inovadora."
@@ -1524,24 +1524,24 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:45",
-            "atividade": "Comparar títulos soltos e alinhados, reconhecer a função de cada texto na tela e escolher onde ele cabe em cada cena. Abertura flexível: pode ceder lugar à preparação do Shotcut Portable. Com os postos prontos, antecipar a montagem."
+            "atividade": "Ver uma abertura pronta, comparar títulos soltos e alinhados, decidir onde cada texto cabe nas cenas, preparar o vídeo no Canva com as cenas do kit e atender ao primeiro pedido do cliente: o título."
           },
           {
             "horario": "20:05 - 21:00",
-            "atividade": "Organizar a linha do tempo em camadas, criar um título alinhado à margem, uma faixa com o nome do personagem e uma legenda que não disputa espaço com outros textos."
+            "atividade": "Atender aos pedidos seguintes do cliente, um de cada vez: faixa com o nome do personagem, legenda legível e cores e fonte da marca aplicadas em todos os textos."
           },
           {
             "horario": "21:00 - 21:40",
-            "atividade": "Empilhar a mesma foto em duas trilhas e recortar a de cima com uma máscara elíptica para a palavra passar por trás do personagem; quem avançar faz a palavra atravessar a cena com keyframes."
+            "atividade": "Dar movimento aos textos com animações de entrada no mesmo estilo, criar a assinatura final com os créditos das imagens e exportar a primeira versão em MP4."
           },
           {
             "horario": "21:40 - 22:10",
-            "atividade": "Criar a assinatura final com pictograma e créditos, ocultar o guia, exportar em MP4, assistir, corrigir um ponto visível e mostrar a abertura na própria tela."
+            "atividade": "Criar a versão vertical para celular, reposicionando todos os textos, testar a leitura com o colega do lado em cinco segundos e exportar a segunda versão."
           }
         ],
-        "methodology": "A abertura antes do lanche é flexível: comparação de exemplos e leitura das cenas podem ser abreviadas ou inteiramente substituídas pela preparação do Shotcut Portable, se necessária. A prática essencial começa depois do lanche, do zero, com demonstrações breves seguidas de edição no próprio posto. A aprendizagem aparece na tela: posicionar, alinhar, agrupar, recortar e comparar. Cada estudante edita quando há computador disponível; em postos compartilhados, os integrantes alternam o mouse entre desafios. Quem termina avança para uma variação de movimento ou de identidade visual.",
-        "resources": "Projetor, fones de ouvido, computadores, Shotcut Portable oficial para Windows 11 já extraído na pasta 01-SHOTCUT/Shotcut e pasta 02-ALUNO/Aula12 já pronta para copiar para Documentos no disco local. O Shotcut é gratuito e de código aberto. O kit contém três clipes e duas fotos de Caminandes 3: Llamigos, com créditos e licença CC BY 3.0, e cinco grafismos PNG com transparência: guia de margens, faixa inferior e três pictogramas. Se necessária, a preparação do Shotcut Portable pode ocupar o primeiro bloco, com apoio do laboratório. Guia-Aula12-Shotcut.pdf para consulta offline. Nenhuma ficha impressa, conta ou upload. Distribuir o programa Portable e o kit por pendrive ou rede local, preferencialmente antes da turma; não solicitar downloads simultâneos aos 20 a 30 alunos.",
-        "observation": "Aula das 19:00 às 22:10; lanche das 19:45 às 20:05 e chamada no início de cada bloco. Os estudantes permanecem nos postos; somente o professor circula. Antes do lanche, comparação e leitura das cenas são opcionais: posso abreviar ou pular toda a abertura para copiar e testar o Shotcut Portable. Com os postos prontos, antecipo a prática. Levar Aula12-Pendrive com o Shotcut Portable já extraído; se o Shotcut da aula 11 ainda estiver em Documentos, basta copiar 02-ALUNO/Aula12. Preparar, se possível, um computador de demonstração com texto, máscara e exportação testados. Depois do lanche, demonstro desde a pasta do kit; nenhuma tarefa anterior é pré-requisito e não depender de arquivos das aulas anteriores, inclusive do trailer da aula 11. Se a preparação do Shotcut Portable avançar depois das 20:05, usar temporariamente os postos que já funcionam, com revezamento; manter título, faixa, máscara, um texto final com os créditos e a exportação, deixando legenda, pictograma e variações como extras. Copiar o kit uma vez para cada posto e editar no disco local. Não exigir caderno, fichas ou justificativas escritas. Observar o teste na tela enquanto circula. Um projeto .mlt e um MP4 bastam; manter ambos na pasta do kit, pois o .mlt referencia as mídias e os grafismos. Mostrar o resultado no próprio posto, sem upload coletivo. A assinatura final leva os créditos CC BY; manter CREDITOS.txt com o trabalho compartilhado. Chroma key e correção de cor ficam para a aula 13."
+        "methodology": "Produção individual no Canva guiada por pedidos de um cliente fictício, revelados um de cada vez pelos slides. Cada pedido tem demonstração curta, prática no posto, critério de pronto e melhorias para quem termina antes dentro da mesma peça. Comparações projetadas antes da prática; teste de leitura com o colega do lado no fim.",
+        "resources": "Projetor, fones de ouvido e computadores com navegador e acesso ao Canva. Kit leve Aula12-Canva.zip, com cerca de 2 MB: três cenas curtas de Caminandes 3: Llamigos e uma foto, com créditos e licença CC BY 3.0. Ícones extras podem vir de PNG transparentes. Nenhum programa precisa ser instalado. Nenhuma ficha impressa.",
+        "observation": "Aula das 19:00 às 22:10; lanche das 19:45 às 20:05 e chamada no início de cada bloco. Os estudantes permanecem nos postos; somente o professor circula. Os pedidos aparecem um de cada vez: quem termina um pedido faz as melhorias do próprio slide e espera o próximo, sem avançar sozinho. Distribuir o Aula12-Canva.zip antes da prática, por pendrive, rede local ou mensagem da turma; ele é pequeno e sobe rápido ao Canva. Se o Canva ficar fora do ar, os estudantes desenham no caderno a posição de cada texto nas três cenas e a versão para celular. As imagens são CC BY: os créditos ficam na assinatura final."
       },
       {
         "num": "13",

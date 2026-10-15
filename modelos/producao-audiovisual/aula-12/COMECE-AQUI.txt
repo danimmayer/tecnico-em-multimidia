@@ -1,21 +1,11 @@
-AULA 12 — COMECE AQUI
+AULA 12 · COMECE AQUI
 
-1. No pendrive, copie 02-ALUNO/Aula12 inteira para Documentos.
-   Se recebeu o ZIP pela página da aula, extraia Aula12 em Documentos.
-2. Abra Guia-Aula12-Shotcut.pdf na sua cópia local e siga as páginas 1 a 5.
-3. Se o computador ainda não tem Shotcut, copie 01-SHOTCUT/Shotcut inteira
-   do pendrive para Documentos. Aguarde terminar e abra shotcut.exe.
+1. Entre no Canva pelo navegador.
+2. Clique em Criar design → Vídeo (1920 × 1080).
+3. Abra Uploads → Enviar arquivos e escolha os três MP4 e a foto desta pasta:
+   08-paisagem.mp4, 02-encontro.mp4, 04-fruta.mp4 e foto-fruta.jpg.
+4. Espere o envio terminar antes de começar.
+5. Salve o projeto com o nome "Aula 12 · seu nome".
+6. Os pedidos do cliente aparecem nos slides, um de cada vez.
 
-ABERTURA COM IDENTIDADE
-V1: 08-paisagem.mp4 → 02-encontro.mp4 → foto-fruta.jpg → tela de cor.
-V2 e V3: título, faixa com o nome de Oti, legenda, palavra por trás de Koro
-e assinatura com créditos.
-V4: grafismos/grade-guia.png sobre tudo. Oculte essa trilha antes de exportar.
-Salve minha-abertura.mlt e exporte minha-abertura.mp4 nesta pasta.
-
-A pasta grafismos tem PNG de 1280 x 720 com fundo transparente:
-grade-guia.png, faixa-inferior.png e três pictogramas.
-04-fruta.mp4 e foto-cesta.jpg ficam disponíveis para suas variações.
-Não precisa recuperar vídeos antigos, criar conta ou enviar pela internet.
-Guarde Aula12 inteira: o projeto .mlt precisa das mídias para reabrir.
-Mantenha os créditos na assinatura e CREDITOS.txt junto do trabalho.
+Mantenha os créditos de CREDITOS.txt junto do trabalho.

@@ -243,18 +243,18 @@ todos saem da conta do editor. Sem internet ou sem acesso, a equipe completa a
 lista de corte no caderno e monta o vídeo no início da aula 11. Os slides vêm
 de `scripts/lessons/audiovisual-10.mjs`.
 
-Na Aula 12, cada estudante usa o Shotcut Portable da aula 11 e o kit local
-`modelos/producao-audiovisual/aula-12/` (as mesmas cenas de *Caminandes 3*,
-CC BY 3.0, mais cinco grafismos PNG transparentes de 1280 × 720). A linha do
-tempo é organizada por função: cenas em V1, grafismos e textos em V2 e V3 e
-`grade-guia.png` em V4, ocultada antes de exportar. A noite produz uma abertura
-com título alinhado à margem, faixa com o nome de Oti, legenda que não disputa
-espaço com a faixa, uma palavra por trás de Koro com **Máscara: forma
-simples** na cópia de cima da foto e assinatura com os créditos exigidos pela
-licença. O ZIP do aluno e o guia PDF de cinco páginas são gerados por
-`scripts/build-audiovisual-12-media.py`, `build-audiovisual-12-guide.py` e
-`build-audiovisual-12-package.py` (este último também monta o pendrive com
-`--portable` e `--output`). Os slides vêm de `scripts/lessons/audiovisual-12.mjs`.
+Na Aula 12, cada estudante monta uma abertura no Canva, no navegador, com o
+kit leve `Aula12-Canva.zip` (cerca de 2 MB: três cenas CC BY de Caminandes 3 e
+uma foto), que sobe rápido mesmo com a turma toda enviando junto. A noite é
+organizada em pedidos de um cliente fictício, revelados um de cada vez pelos
+slides: título alinhado, faixa com o nome de Oti, legenda legível, cores da
+marca, movimento, assinatura com créditos e versão vertical para celular.
+Cada pedido tem um critério de pronto e melhorias para quem termina antes,
+dentro da mesma peça; ninguém adianta o próximo pedido. Só recursos da conta
+gratuita do Canva são usados (sem redimensionar, sem remover fundo). O ZIP é
+gerado por `scripts/build-audiovisual-12-package.py`; as telas de comparação,
+por `build-audiovisual-12-media.py`. Os slides vêm de
+`scripts/lessons/audiovisual-12.mjs`.
 
 ### Edição
 

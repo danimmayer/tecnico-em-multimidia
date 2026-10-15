@@ -1,7 +1,10 @@
 // Fonte regenerável da Aula 12. Gerar com node scripts/build-audiovisual.mjs.
+// A prática acontece no Canva, no navegador, com um kit leve de cenas CC BY.
+// Os pedidos do cliente aparecem um de cada vez: a turma não adianta o que ainda não viu,
+// e cada pedido traz melhorias para quem termina antes, dentro da mesma peça.
 export const lesson = {
   title: 'Grafismos, textos e máscaras',
-  description: 'Dar identidade a uma abertura no Shotcut com cenas prontas: título alinhado, faixa com nome, legenda legível, texto por trás do personagem e assinatura com créditos, tudo exportado no próprio computador.',
+  description: 'Uma abertura com identidade feita no Canva a partir de cenas prontas: título alinhado, faixa com nome, legenda legível, movimento, assinatura com créditos e uma versão para celular, entregues em MP4.',
   objectives: ['Edição de vídeos e sons: criação de elementos gráficos, máscaras, composição com sequência de imagem.', 'Inovação: conceito, visão inovadora.'],
   technical: [
     'Identificar tipos e características de plataformas utilizados no processo de criação de elementos de gráficos para imagens, animações, áudio e vídeo.',
@@ -10,73 +13,75 @@ export const lesson = {
   ],
   socioemotional: ['Aplicar os aspectos de inovação em suas atividades profissionais.', 'Reconhecer a pesquisa como fonte de inovação e formação de um espírito empreendedor.'],
   schedule: [
-    {horario: '19:00 - 19:45', atividade: 'Comparar títulos soltos e alinhados, reconhecer a função de cada texto na tela e escolher onde ele cabe em cada cena. Abertura flexível: pode ceder lugar à preparação do Shotcut Portable. Com os postos prontos, antecipar a montagem.'},
-    {horario: '20:05 - 21:00', atividade: 'Organizar a linha do tempo em camadas, criar um título alinhado à margem, uma faixa com o nome do personagem e uma legenda que não disputa espaço com outros textos.'},
-    {horario: '21:00 - 21:40', atividade: 'Empilhar a mesma foto em duas trilhas e recortar a de cima com uma máscara elíptica para a palavra passar por trás do personagem; quem avançar faz a palavra atravessar a cena com keyframes.'},
-    {horario: '21:40 - 22:10', atividade: 'Criar a assinatura final com pictograma e créditos, ocultar o guia, exportar em MP4, assistir, corrigir um ponto visível e mostrar a abertura na própria tela.'}
+    {horario: '19:00 - 19:45', atividade: 'Ver uma abertura pronta, comparar títulos soltos e alinhados, decidir onde cada texto cabe nas cenas, preparar o vídeo no Canva com as cenas do kit e atender ao primeiro pedido do cliente: o título.'},
+    {horario: '20:05 - 21:00', atividade: 'Atender aos pedidos seguintes do cliente, um de cada vez: faixa com o nome do personagem, legenda legível e cores e fonte da marca aplicadas em todos os textos.'},
+    {horario: '21:00 - 21:40', atividade: 'Dar movimento aos textos com animações de entrada no mesmo estilo, criar a assinatura final com os créditos das imagens e exportar a primeira versão em MP4.'},
+    {horario: '21:40 - 22:10', atividade: 'Criar a versão vertical para celular, reposicionando todos os textos, testar a leitura com o colega do lado em cinco segundos e exportar a segunda versão.'}
   ],
-  methodology: 'A abertura antes do lanche é flexível: comparação de exemplos e leitura das cenas podem ser abreviadas ou inteiramente substituídas pela preparação do Shotcut Portable, se necessária. A prática essencial começa depois do lanche, do zero, com demonstrações breves seguidas de edição no próprio posto. A aprendizagem aparece na tela: posicionar, alinhar, agrupar, recortar e comparar. Cada estudante edita quando há computador disponível; em postos compartilhados, os integrantes alternam o mouse entre desafios. Quem termina avança para uma variação de movimento ou de identidade visual.',
-  resources: 'Projetor, fones de ouvido, computadores, Shotcut Portable oficial para Windows 11 já extraído na pasta 01-SHOTCUT/Shotcut e pasta 02-ALUNO/Aula12 já pronta para copiar para Documentos no disco local. O Shotcut é gratuito e de código aberto. O kit contém três clipes e duas fotos de Caminandes 3: Llamigos, com créditos e licença CC BY 3.0, e cinco grafismos PNG com transparência: guia de margens, faixa inferior e três pictogramas. Se necessária, a preparação do Shotcut Portable pode ocupar o primeiro bloco, com apoio do laboratório. Guia-Aula12-Shotcut.pdf para consulta offline. Nenhuma ficha impressa, conta ou upload. Distribuir o programa Portable e o kit por pendrive ou rede local, preferencialmente antes da turma; não solicitar downloads simultâneos aos 20 a 30 alunos.',
-  observation: 'Aula das 19:00 às 22:10; lanche das 19:45 às 20:05 e chamada no início de cada bloco. Os estudantes permanecem nos postos; somente o professor circula. Antes do lanche, comparação e leitura das cenas são opcionais: posso abreviar ou pular toda a abertura para copiar e testar o Shotcut Portable. Com os postos prontos, antecipo a prática. Levar Aula12-Pendrive com o Shotcut Portable já extraído; se o Shotcut da aula 11 ainda estiver em Documentos, basta copiar 02-ALUNO/Aula12. Preparar, se possível, um computador de demonstração com texto, máscara e exportação testados. Depois do lanche, demonstro desde a pasta do kit; nenhuma tarefa anterior é pré-requisito e não depender de arquivos das aulas anteriores, inclusive do trailer da aula 11. Se a preparação do Shotcut Portable avançar depois das 20:05, usar temporariamente os postos que já funcionam, com revezamento; manter título, faixa, máscara, um texto final com os créditos e a exportação, deixando legenda, pictograma e variações como extras. Copiar o kit uma vez para cada posto e editar no disco local. Não exigir caderno, fichas ou justificativas escritas. Observar o teste na tela enquanto circula. Um projeto .mlt e um MP4 bastam; manter ambos na pasta do kit, pois o .mlt referencia as mídias e os grafismos. Mostrar o resultado no próprio posto, sem upload coletivo. A assinatura final leva os créditos CC BY; manter CREDITOS.txt com o trabalho compartilhado. Chroma key e correção de cor ficam para a aula 13.'
+  methodology: 'Produção individual no Canva guiada por pedidos de um cliente fictício, revelados um de cada vez pelos slides. Cada pedido tem demonstração curta, prática no posto, critério de pronto e melhorias para quem termina antes dentro da mesma peça. Comparações projetadas antes da prática; teste de leitura com o colega do lado no fim.',
+  resources: 'Projetor, fones de ouvido e computadores com navegador e acesso ao Canva. Kit leve Aula12-Canva.zip, com cerca de 2 MB: três cenas curtas de Caminandes 3: Llamigos e uma foto, com créditos e licença CC BY 3.0. Ícones extras podem vir de PNG transparentes. Nenhum programa precisa ser instalado. Nenhuma ficha impressa.',
+  observation: 'Aula das 19:00 às 22:10; lanche das 19:45 às 20:05 e chamada no início de cada bloco. Os estudantes permanecem nos postos; somente o professor circula. Os pedidos aparecem um de cada vez: quem termina um pedido faz as melhorias do próprio slide e espera o próximo, sem avançar sozinho. Distribuir o Aula12-Canva.zip antes da prática, por pendrive, rede local ou mensagem da turma; ele é pequeno e sobe rápido ao Canva. Se o Canva ficar fora do ar, os estudantes desenham no caderno a posição de cada texto nas três cenas e a versão para celular. As imagens são CC BY: os créditos ficam na assinatura final.'
 };
+
 const base = 'modelos/producao-audiovisual/aula-12/';
 const checks = items => ({type: 'checks', items: items.map(([label, text]) => ({label, text}))});
-const commands = (items, result) => ({type: 'commands', commands: items.map(([word, who, text]) => ({word, who, text})), tags: [{label: 'SHOTCUT', kind: 'good'}], result});
+const commands = (items, result) => ({type: 'commands', commands: items.map(([word, who, text]) => ({word, who, text})), tags: [{label: 'TERMINOU ANTES?', kind: 'good'}], result});
 const teacher = (steps, watch, rescue) => ({steps, watch, rescue});
 const media = clips => ({type: 'media', clips: clips.map(([file, label, text, poster]) => ({src: base + file, label, text, poster: base + poster}))});
 const stills = images => ({type: 'stills', images: images.map(([file, label, text]) => ({src: base + file, label, text}))});
 
 export const support = {
-  teacherGoal: 'Fazer a turma compor texto e grafismo sobre o vídeo com intenção: título alinhado à margem, nome perto de quem aparece, legenda legível, uma palavra recortada por máscara e uma assinatura com créditos, exportados localmente.',
-  plainLanguage: 'Alinhar é fazer elementos compartilharem uma mesma borda. Agrupar por proximidade é deixar perto o que pertence junto. Uma máscara esconde parte de uma camada; o que fica escondido deixa aparecer a trilha de baixo.',
-  say: 'Hoje o vídeo ganha nome e voz escrita. Cada texto tem um trabalho: apresentar, identificar, traduzir o som ou assinar. Vocês decidem onde ele fica e o que ele não pode cobrir.',
+  teacherGoal: 'Cada estudante entrega no Canva uma abertura com título alinhado, faixa com nome, legenda legível, animações no mesmo estilo e assinatura com créditos, mais uma versão vertical para celular, exportadas em MP4 até 22:10.',
+  plainLanguage: 'Alinhar é fazer elementos compartilharem uma mesma borda. Agrupar por proximidade é deixar perto o que pertence junto. Cada texto da tela tem um trabalho: apresentar, identificar, traduzir o som ou assinar.',
+  say: 'Hoje vocês são o estúdio e eu sou o cliente. Os pedidos chegam um de cada vez. Quem terminar antes melhora o que já fez; ninguém fica parado e ninguém pula pedido.',
   demo: [
-    'Levo programa Portable e kit já baixados. Antes do lanche, comparo exemplos se houver tempo; posso usar toda a abertura para preparar os postos. Depois, demonstro a prática desde o início.',
-    'Mostro o título solto e o alinhado na mesma cena e pergunto qual se lê primeiro.',
-    'Crio no Shotcut um texto, alinho à margem do guia e faço a entrada suave pelo canto do clipe.',
-    'Empilho a mesma foto em duas trilhas, coloco a palavra no meio e recorto a foto de cima com a elipse.',
-    'Oculto o guia, exporto e abro o MP4 no reprodutor local.'
+    'Mostro a abertura de exemplo e o título solto ao lado do alinhado.',
+    'No Canva, crio um vídeo, envio as cenas do kit e coloco cada cena como fundo de uma página.',
+    'Demonstro um texto alinhado pela guia rosa, uma faixa agrupada e uma legenda com fundo.',
+    'Aplico a mesma animação de entrada nos textos e exporto em MP4.',
+    'Crio a versão vertical e mostro como copiar e reposicionar os textos.'
   ],
-  studentDeliverable: 'Uma abertura curta, como referência de 15 a 25 segundos, montada com as cenas do kit: título alinhado na paisagem, faixa com o nome de Oti, uma legenda, uma palavra por trás de Koro e uma assinatura com créditos. Salvar minha-abertura.mlt e minha-abertura.mp4 na pasta Aula12. Mostrar o resultado na própria tela; sem envio pela internet ou relatório.',
+  studentDeliverable: 'Duas versões em MP4 baixadas do Canva: abertura horizontal (1920 × 1080) e versão para celular (1080 × 1920), com título, faixa com nome, legenda, animações e assinatura com os créditos das imagens. Mostrar na própria tela, sem envio pela internet.',
   check: [
-    'O título está dentro da margem do texto e alinhado a uma borda do guia.',
-    'Nome e descrição da faixa compartilham a mesma borda e ficam perto de Oti, sem cobrir rosto ou ação.',
-    'A legenda está no centro inferior, com fundo ou contorno, e não aparece junto da faixa.',
-    'A palavra passa por trás da cabeça de Koro: a foto de cima tem a máscara e a palavra está na trilha do meio.',
-    'A assinatura final identifica quem fez e mantém os créditos de Caminandes 3 com a licença CC BY.',
-    'O guia está oculto no MP4, que reproduz do começo ao fim; projeto e vídeo estão na pasta Aula12.'
+    'O título está alinhado a uma borda, dentro da margem, com subtítulo perto dele.',
+    'A faixa apresenta Oti perto dele, sem cobrir o rosto, com nome e descrição alinhados.',
+    'A legenda está no centro inferior, com fundo, e não aparece junto da faixa.',
+    'Os textos usam as mesmas cores, fonte e estilo de animação.',
+    'A assinatura final traz quem fez e os créditos de Caminandes 3 com a licença CC BY.',
+    'As duas versões foram exportadas em MP4 e reproduzem do começo ao fim.'
   ],
-  fallback: 'O Portable já extraído e o kit local evitam downloads simultâneos. Se houver bloqueio ao abrir o Shotcut, solicitar apoio do laboratório e compartilhar um posto funcional com revezamento enquanto isso. O kit independe de material antigo e da internet. Se o diálogo de texto da versão instalada for diferente, crio Abrir outro → Cor transparente e aplico o filtro Texto: simples ao clipe. Se a prévia travar, reduzo a resolução de prévia e confiro um trecho exportado. Não substituir a edição por preenchimento de fichas.',
-  extension: 'Quem concluir um desafio recebe sua variação imediatamente: animar a palavra atravessando a cabeça com dois keyframes de posição, trocar o pictograma da assinatura, criar a faixa de Koro do lado oposto ou testar Texto: rico para dar tamanhos diferentes ao nome e à descrição. As variações acontecem no projeto atual; não exigem arquivos extras nem uploads.',
+  fallback: 'Se o envio das cenas demorar, cada estudante sobe primeiro só a paisagem e começa o título; as outras cenas sobem durante a prática. Se o Canva ficar fora do ar, desenhar no caderno a posição de cada texto nas três cenas e na versão para celular, com os mesmos critérios.',
+  extension: 'Cada pedido traz no próprio slide duas melhorias para quem termina antes. Quem concluir tudo usa o banco de melhorias: faixa de Koro do lado oposto, versão quadrada para o feed ou um pictograma na assinatura.',
   commonProblems: [
-    ['A preparação do Shotcut Portable ainda não terminou', 'Encurto ou pulo a comparação da abertura para preparar os postos. Depois do lanche, quem precisar compartilha temporariamente um posto funcional; solicito apoio do laboratório para permissões.'],
-    ['O texto não aparece na prévia', 'Confiro se o clipe de texto está em uma trilha acima do vídeo e se o fundo do texto está transparente. A trilha de cima cobre a de baixo.'],
-    ['O PNG apareceu com fundo preto', 'Confiro se arrastei o arquivo .png do kit, não uma captura de tela. Na trilha V1 não há nada embaixo; o grafismo vai para V2 ou acima.'],
-    ['A faixa ou o guia some depois de 4 segundos', 'Imagens entram com duração padrão. Puxo a borda direita do clipe até o fim da cena.'],
-    ['A palavra ficou na frente da cabeça', 'Confiro a ordem: foto em V1, palavra em V2 e a mesma foto com máscara em V3. A máscara vai na foto de cima, não na palavra.'],
-    ['A máscara cortou um pedaço do céu sobre as letras', 'Diminuo a elipse ou giro a forma; uma forma simples não acompanha reentrâncias. Posso subir a palavra para que ela cruze só o alto da cabeça.'],
-    ['O guia apareceu no vídeo exportado', 'Clico no olho da trilha V4 para ocultar e exporto de novo.'],
-    ['Terminei antes', 'Entrego a próxima variação de identidade ou movimento enquanto acompanho os colegas; não encerro a prática no primeiro MP4.']
+    ['A turma quer avançar sozinha', 'Lembro que o próximo pedido vem do cliente. Quem terminou faz as melhorias do slide atual e confere com a lista de pronto.'],
+    ['O envio das cenas está lento', 'Peço para enviar uma cena de cada vez, começando pela paisagem. O kit inteiro tem cerca de 2 MB.'],
+    ['A cena não ocupa a tela inteira', 'Clique com o botão direito no vídeo e escolha Definir vídeo como plano de fundo.'],
+    ['A faixa e o nome se separam ao mover', 'Selecione os dois com Shift e agrupe com Ctrl + G.'],
+    ['A legenda some na neve', 'Em Efeitos, ativar Fundo no texto, com cor escura.'],
+    ['Faltou tempo para a versão vertical', 'Priorizo título e assinatura na vertical; faixa e legenda entram se houver tempo.'],
+    ['O recurso escolhido é do plano pago', 'Troco por um parecido da conta gratuita; animações, fontes e formas gratuitas resolvem todos os pedidos.'],
+    ['O Canva pede para redimensionar', 'Redimensionar é pago. Crio um design novo de celular e copio os textos com Ctrl + C e Ctrl + V.']
   ],
   presentationSlides: [
     {
-      title: 'Ordem do dia', kicker: 'Aula 12 · Shotcut', heading: 'Seu vídeo ganha nome, legenda e assinatura.',
-      lede: 'Cenas prontas. Vocês decidem onde cada texto fica e o que ele não pode cobrir.', block: 1,
+      title: 'Ordem do dia', kicker: 'Aula 12 · Canva', heading: 'Hoje vocês são o estúdio. Eu sou o cliente.',
+      lede: 'Os pedidos chegam um de cada vez. Cada pedido tem um ponto de pronto.', block: 1,
       av9: {type: 'day', rows: [
-        {time: '19:00–19:45', minutes: 45, title: 'Ler textos na tela', text: 'Alinhamento, proximidade e espaço livre.'},
-        {time: '19:45–20:05', minutes: 20, title: 'Lanche', text: 'Na volta, começa a montagem.', pause: true},
-        {time: '20:05–21:00', minutes: 55, title: 'Título, faixa e legenda', text: 'Camadas e margens no Shotcut.'},
-        {time: '21:00–21:40', minutes: 40, title: 'Texto por trás', text: 'Uma máscara recorta a camada de cima.'},
-        {time: '21:40–22:10', minutes: 30, title: 'Assinar e exportar', text: 'Créditos, MP4 e mostra na tela.'}
+        {time: '19:00–19:45', minutes: 45, title: 'Preparar e primeiro pedido', text: 'Exemplo, cenas no Canva e título.'},
+        {time: '19:45–20:05', minutes: 20, title: 'Lanche', text: 'Projeto salvo antes de sair.', pause: true},
+        {time: '20:05–21:00', minutes: 55, title: 'Pedidos do cliente', text: 'Um de cada vez.'},
+        {time: '21:00–21:40', minutes: 40, title: 'Movimento e assinatura', text: 'Primeira versão em MP4.'},
+        {time: '21:40–22:10', minutes: 30, title: 'Versão para celular', text: 'Segunda versão em MP4.'}
       ]},
-      teacher: teacher(['3 min · Faço a chamada e apresento o desafio; organizo o revezamento apenas nos postos compartilhados.'], 'A exigência está nas decisões de posição e de camada, não na quantidade de efeitos.', 'Mostro o exemplo pronto logo em seguida para tornar o resultado concreto.')
+      promptLabel: 'Regra da noite', prompt: 'Terminou antes? Melhore o que já fez. O próximo pedido só chega pelo slide.',
+      teacher: teacher(['3 min · Faço a chamada e explico a regra dos pedidos.'], 'A turma entende que não há como adiantar o que ainda não apareceu.', 'Se alguém perguntar o que vem depois, respondo que o cliente ainda não pediu.')
     },
     {
-      title: 'Ver o resultado', kicker: 'Uma ideia do que vamos criar', heading: 'Quatro textos. Cada um com um trabalho.',
-      lede: 'Assistam e contem quantos textos aparecem. Qual deles passa por trás de alguém?', block: 1,
-      av9: media([['exemplo-abertura.mp4', 'ABERTURA', 'Título, faixa, legenda, texto por trás e assinatura.', 'telas/titulo-alinhado.jpg']]),
-      promptLabel: 'Repare', prompt: 'Nenhum texto cobre um rosto. Onde o vídeo deixou espaço para as palavras?',
-      teacher: teacher(['7 min · Janela flexível para reproduzir o exemplo duas vezes e ouvir o que a turma percebeu, enquanto acompanho a preparação dos postos.'], 'O exemplo é silencioso para concentrar a atenção nos textos. Posso encurtar ou pular este momento para preparar o Shotcut Portable.', 'Se os postos já funcionam, avanço para a montagem; não alongo a conversa para preencher o tempo.')
+      title: 'Ver o resultado', kicker: 'Uma ideia do que vamos criar', heading: 'Uma abertura em que cada texto tem um trabalho',
+      lede: 'Assistam e contem quantos textos aparecem. Onde o vídeo deixou espaço para as palavras?', block: 1,
+      av9: media([['exemplo-abertura.mp4', 'EXEMPLO', 'Título, faixa com nome, legenda e assinatura.', 'telas/titulo-alinhado.jpg']]),
+      promptLabel: 'Repare', prompt: 'Nenhum texto cobre um rosto.',
+      teacher: teacher(['4 min · Reproduzo o exemplo duas vezes e ouço o que a turma percebeu.'], 'O exemplo é silencioso para concentrar a atenção nos textos.', 'Se ninguém responder, pauso no título e pergunto onde ele está.')
     },
     {
       title: 'Alinhar e agrupar', kicker: 'Mesma cena · mesmas palavras', heading: 'Qual título vocês leem primeiro?',
@@ -86,218 +91,183 @@ export const support = {
         ['telas/titulo-alinhado.jpg', 'ALINHADO', 'As duas linhas começam na mesma borda e ficam juntas.']
       ]),
       promptLabel: 'Pensem', prompt: 'O que pertence junto fica perto. O que fica perto parece um bloco só.',
-      teacher: teacher(['10 min · Janela flexível: comparo as duas versões, peço que a turma aponte a borda comum e a distância entre as linhas, e relaciono com faixas de telejornal e aberturas de série que eles conhecem.'], 'Proximidade agrupa; alinhamento cria uma borda invisível que o olho segue. A versão solta também corta o subtítulo na borda da tela.', 'Se a conversa travar, cubro uma das versões com a mão e peço que leiam a outra em voz alta.')
+      teacher: teacher(['6 min · Comparo as duas versões, peço que apontem a borda comum e relaciono com faixas de telejornal.'], 'Proximidade agrupa; alinhamento cria uma borda invisível que o olho segue.', 'Se a conversa travar, cubro uma das versões com a mão e peço que leiam a outra.')
     },
     {
-      title: 'Quatro textos, quatro funções', kicker: 'Antes de digitar', heading: 'Cada texto tem um lugar e um tempo',
-      lede: 'Hoje vocês vão criar os quatro. Decidam a função antes do estilo.', block: 1,
+      title: 'Cada texto tem um trabalho', kicker: 'Antes de digitar', heading: 'Cada texto tem um lugar e um tempo',
+      lede: 'Quatro tipos de texto vão aparecer nos pedidos de hoje.', block: 1,
       av9: {type: 'table', variant: 'data', columns: ['Texto', 'Trabalho', 'Lugar', 'Na tela'], rows: [
         ['Título', 'Apresentar o vídeo.', 'Área livre, dentro da margem.', 'Tempo de ler duas vezes.'],
         ['Faixa com nome', 'Identificar quem aparece.', 'Perto da pessoa, sem cobrir o rosto.', 'Enquanto ela está em cena.'],
-        ['Legenda', 'Escrever o que se ouve.', 'Centro inferior, no máximo duas linhas.', 'Pelo menos dois segundos.'],
+        ['Legenda', 'Escrever o que se ouve.', 'Centro inferior, até duas linhas.', 'Pelo menos dois segundos.'],
         ['Assinatura', 'Dizer quem fez e de onde vêm as imagens.', 'Centro, com espaço em volta.', 'No final.']
       ]},
-      teacher: teacher(['8 min · Leio uma linha por vez e peço um exemplo de cada função em um vídeo que a turma conhece.'], 'Legenda acessível também descreve sons entre colchetes, como [vento forte] ou [risada]. A assinatura cumpre a licença CC BY das imagens.', 'Se o tempo apertar, fico apenas com título e faixa; legenda e assinatura retornam na prática.')
+      teacher: teacher(['5 min · Leio uma linha por vez e peço um exemplo de cada tipo em vídeos que a turma conhece.'], 'Legenda acessível também descreve sons entre colchetes, como [vento forte].', 'Se o tempo apertar, leio só título e faixa; os outros aparecem nos pedidos.')
     },
     {
-      title: 'O que há no pendrive', kicker: 'Pasta Aula12-Pendrive', heading: 'Cada coisa no seu lugar.',
-      lede: 'O programa, a atividade e a projeção já estão separados.', block: 1,
-      av9: checks([
-        ['01-SHOTCUT', 'Pasta Shotcut com o programa Portable já extraído.'],
-        ['02-ALUNO', 'Pasta Aula12: três clipes, duas fotos, grafismos, guia PDF e créditos.'],
-        ['03-PROFESSOR', 'Slides offline e exemplos para projeção.']
-      ]),
-      resources: [{href: base + 'index.html', label: 'Ver o kit da aula'}, {href: base + 'Guia-Aula12-Shotcut.pdf', label: 'Abrir guia PDF'}],
-      teacher: teacher(['10 min · Janela flexível para apresentar o kit e os grafismos PNG enquanto organizo os postos.'], 'Este panorama é dispensável. Copio o kit por pendrive ou rede local quando possível. Se o Shotcut da aula 11 ainda está em Documentos, basta copiar Aula12. O Shotcut é gratuito e de código aberto.', 'Se a preparação do Shotcut Portable ocupar o período, pulo este slide. Na volta, mostro a pasta e a importação desde o início.')
-    },
-    {
-      title: 'Onde cabe o texto?', kicker: 'Ler as cenas do kit', heading: 'Procurem o espaço livre em cada imagem',
-      lede: 'Céu, mar e neve lisa recebem texto. Rostos e ações precisam ficar livres.', block: 1,
+      title: 'Onde cabe o texto?', kicker: 'As cenas de hoje', heading: 'Procurem o espaço livre em cada imagem',
+      lede: 'Céu, mar e neve lisa recebem texto. Rostos e ações ficam livres.', block: 1,
       av9: stills([
         ['telas/cena-paisagem.jpg', 'PAISAGEM', 'Onde entra o título?'],
         ['telas/cena-encontro.jpg', 'ENCONTRO', 'Onde o nome de Oti fica perto dele?'],
-        ['telas/cena-foto.jpg', 'FOTO', 'Que parte da cabeça pode passar na frente da palavra?']
+        ['telas/cena-foto.jpg', 'FRUTA', 'Onde cabe a legenda?']
       ]),
-      teacher: teacher(['7 min · Janela flexível: a turma aponta as áreas livres de cada cena; antecipo a primeira montagem assim que os postos estiverem prontos.'], 'Não há resposta única. Na paisagem, o céu à esquerda; no encontro, a neve à direita de Oti; na foto, o céu acima da cabeça.', 'Se ninguém arriscar, aponto o céu da paisagem e peço que achem um espaço parecido nas outras duas.')
+      teacher: teacher(['5 min · A turma aponta as áreas livres de cada cena.'], 'Não há resposta única: céu à esquerda na paisagem, neve à direita de Oti no encontro.', 'Se ninguém arriscar, aponto o céu da paisagem e peço um espaço parecido nas outras.')
     },
     {
-      title: 'Lanche', kicker: 'Intervalo', heading: 'Lanche até 20:05', lede: 'Na volta, vamos montar as camadas no Shotcut.', block: 1, pace: 'break',
-      av9: checks([['Na volta', 'Vamos começar pela pasta Aula12 em Documentos.'], ['Se já começou', 'Salvar o projeto com Ctrl + S.']]),
-      teacher: teacher(['20 min · Lanche das 19:45 às 20:05.'], 'Não pressupõe montagem feita antes do lanche.', 'Identifico os postos ainda sem editor; retomo depois do lanche em computadores funcionais, com revezamento quando necessário.')
+      title: 'Preparar o Canva', kicker: 'Antes do primeiro pedido', heading: 'As cenas entram no Canva',
+      lede: 'Abram a pasta Aula12-Canva no computador.', block: 1,
+      av9: {type: 'commands', commands: [
+        {word: 'CRIAR', who: 'Canva', text: 'Criar design → Vídeo (1920 × 1080).'},
+        {word: 'ENVIAR', who: 'Uploads', text: 'Enviar os três vídeos e a foto da pasta Aula12-Canva.'},
+        {word: 'CENAS', who: 'Uma por página', text: 'Paisagem, encontro e fruta, cada uma como fundo da página.'},
+        {word: 'SALVAR', who: 'Nome do projeto', text: 'Aula 12 · seu nome.'}
+      ], tags: [{label: 'FUNDO', kind: 'good'}], result: 'Botão direito no vídeo → Definir vídeo como plano de fundo.'},
+      resources: [{href: base + 'index.html', label: 'Ver o kit da aula'}],
+      teacher: teacher(['2 min · Mostro onde está o kit e crio o vídeo no Canva.', '10 min · A turma envia as cenas e monta as três páginas; atendo primeiro quem ainda não entrou no Canva.'], 'O kit tem cerca de 2 MB. Se o envio estiver lento, cada um começa pela paisagem.', 'Quem não conseguir entrar no Canva acompanha um colega do lado até o acesso voltar, sem trocar de lugar.')
     },
     {
-      title: 'Copiar e abrir', kicker: 'Guia PDF · página 1', heading: 'Primeiro, copie para o computador.',
-      lede: 'Abra Aula12-Pendrive. O trabalho será feito em Documentos.', block: 2,
+      title: 'Pedido 1 · Título', kicker: 'Pedido do cliente', heading: 'Um título na paisagem: A última fruta',
+      lede: 'Subtítulo: Um trailer com Koro e Oti.', block: 1,
       av9: commands([
-        ['ATIVIDADE', '02-ALUNO', 'Copiar a pasta Aula12 inteira para Documentos.'],
-        ['PROGRAMA', '01-SHOTCUT', 'Copiar a pasta Shotcut inteira, se o posto ainda não tem.'],
-        ['ABRIR', 'Cópia em Documentos', 'Abrir Shotcut → shotcut.exe e Aula12 → Guia-Aula12-Shotcut.pdf.']
-      ], 'Espere as cópias terminarem. Depois o pendrive pode seguir para o próximo posto.'),
-      resource: {href: base + 'Guia-Aula12-Shotcut.pdf', label: 'Abrir guia PDF'},
-      teacher: teacher(['2 min · Faço a chamada e localizo as pastas com a turma.', '4 min · Confiro a cópia local e mostro como abrir o programa e o guia.'], 'Se já fizemos isso antes do lanche, apenas confiro e uso o tempo na montagem. Preciso da pasta Shotcut completa, não apenas do executável.', 'Se o posto bloquear o programa, aciono o laboratório e organizo revezamento temporário. Não abro a atividade diretamente do pendrive.')
+        ['TEXTO', 'Texto → Adicionar um título', 'Digitar A ÚLTIMA FRUTA na página da paisagem.'],
+        ['SUBTÍTULO', 'Novo texto menor', 'Um trailer com Koro e Oti, logo abaixo do título.'],
+        ['ALINHAR', 'Guia rosa', 'As duas linhas começam na mesma borda, no céu.'],
+        ['MARGEM', 'Longe da borda', 'Nada encosta na beira da tela.']
+      ], `Teste outra fonte para o título e compare qual se lê melhor de longe.`),
+      promptLabel: 'Pronto quando', prompt: 'Título e subtítulo alinhados na mesma borda, dentro da margem, sem cobrir Koro.',
+      teacher: teacher(['2 min · Demonstro o título, o subtítulo e a guia rosa de alinhamento.', '8 min · A turma cria o título e salva o projeto antes do lanche.'], 'A guia rosa aparece quando a borda de um texto encontra a de outro.', 'Se alguém já terminou, peço uma segunda fonte para comparar, sem passar para a faixa.')
     },
     {
-      title: 'Uma trilha para cada função', kicker: 'Mapa da linha do tempo', heading: 'O que está em cima cobre o que está embaixo',
-      lede: 'O vídeo fica em V1. Grafismos e textos sobem para as trilhas de cima.', block: 2,
-      av9: {type: 'tracks', tracks: [
-        {label: 'V4 GUIA', clips: [{label: 'grade-guia.png', seconds: 16, kind: 'guide'}]},
-        {label: 'V3', clips: [{seconds: 4, kind: 'empty'}, {label: 'Nome', seconds: 3, kind: 'graphic'}, {label: 'Legenda', seconds: 2, kind: 'graphic'}, {label: 'Foto + máscara', seconds: 4, kind: 'graphic'}, {label: 'Texto', seconds: 3, kind: 'graphic'}]},
-        {label: 'V2', clips: [{label: 'Título', seconds: 4, kind: 'graphic'}, {label: 'Faixa', seconds: 3, kind: 'graphic'}, {seconds: 2, kind: 'empty'}, {label: 'Palavra', seconds: 4, kind: 'graphic'}, {label: 'Pictograma', seconds: 3, kind: 'graphic'}]},
-        {label: 'V1 CENA', clips: [{label: 'Paisagem', seconds: 4}, {label: 'Encontro', seconds: 5}, {label: 'Foto', seconds: 4}, {label: 'Cor', seconds: 3}]}
-      ], caption: 'Exemplo de organização. Os tempos podem ser diferentes.'},
-      teacher: teacher(['4 min · Mostro o mapa e, no Shotcut, crio três trilhas de vídeo com Ctrl + I; a turma confere que V1 fica embaixo.'], 'O guia fica na trilha mais alta e será ocultado antes de exportar. Imagens PNG com transparência só mostram o desenho; o resto deixa ver as trilhas de baixo.', 'Se alguém criar trilha de áudio, desfaço com Ctrl + Z e uso o menu da linha do tempo → Adicionar trilha de vídeo.')
+      title: 'Lanche', kicker: 'Intervalo', heading: 'Lanche até 20:05', lede: 'O projeto fica salvo no Canva. Na volta, chega o próximo pedido.', block: 1, pace: 'break',
+      av9: checks([['Projeto', 'Salvo com o nome Aula 12 · seu nome.'], ['Na volta', 'Mesma página, mesmo posto.']]),
+      teacher: teacher(['20 min · Lanche das 19:45 às 20:05.'], 'Comida e bebida longe dos computadores.', 'Quem ainda não fez o título faz no começo do pedido 2.')
     },
     {
-      title: 'Montar a base', kicker: 'Guia PDF · página 1', heading: 'Cenas em V1. Guia em V4.',
-      lede: 'Comecem nesta ordem: 08-paisagem → 02-encontro → foto-fruta.jpg.', block: 2,
+      title: 'Pedido 2 · Faixa com nome', kicker: 'Pedido do cliente', heading: 'Apresentem Oti na cena do encontro',
+      lede: 'Nome: OTI. Descrição: pinguim-de-magalhães.', block: 2,
       av9: commands([
-        ['IMPORTAR', 'Documentos → Aula12', 'Arrastar os dois MP4, foto-fruta.jpg e os PNG de grafismos para a Lista de reprodução.'],
-        ['CENAS', 'Trilha V1', 'Colocar as três cenas lado a lado e aparar a foto para cerca de 4 segundos.'],
-        ['GUIA', 'Trilha V4', 'Levar grade-guia.png e puxar sua borda até o fim da última cena.'],
-        ['SALVAR', 'Arquivo → Salvar como', 'Guardar minha-abertura.mlt na pasta Aula12.']
-      ], 'As linhas azuis do guia mostram a margem do texto em todas as cenas.'),
-      teacher: teacher(['3 min · Demonstro a importação, a ordem das cenas e o guia esticado sobre tudo.', '7 min · A turma repete; confiro V1 completa e o guia na trilha mais alta.'], 'Defino modo de vídeo HD 720p, 24 fps no projeto de demonstração antes da importação. A imagem entra com duração padrão; o guia precisa ser esticado.', 'Se o guia ficar em V1 por engano, arrasto o clipe para V4. Quem começou antes testa outra ordem das cenas.')
+        ['FAIXA', 'Elementos → Formas', 'Um retângulo escuro na parte de baixo, perto de Oti.'],
+        ['TEXTO', 'Dois textos', 'OTI maior e pinguim-de-magalhães menor, dentro da faixa.'],
+        ['ALINHAR', 'Mesma borda', 'Nome e descrição começam na mesma linha vertical.'],
+        ['AGRUPAR', 'Shift + clique → Ctrl + G', 'Faixa e textos viram um bloco só.']
+      ], `Acrescente uma barra fina colorida na ponta da faixa e confira se o rosto de Oti continua livre.`),
+      promptLabel: 'Pronto quando', prompt: 'Faixa perto de Oti, sem cobrir o rosto, com nome e descrição alinhados e agrupados.',
+      teacher: teacher(['2 min · Faço a chamada e apresento o pedido.', '3 min · Demonstro o retângulo, os dois textos e o agrupamento.', '15 min · A turma monta a faixa; circulo pedindo que mostrem a borda comum.'], 'Agrupar evita que a faixa e o texto se separem ao mover.', 'Se a faixa cobrir Oti, diminuo a faixa antes de mover o texto.')
     },
     {
-      title: 'Criar o título', kicker: 'Guia PDF · página 2', heading: 'O título encosta na margem. Não no meio do nada.',
-      lede: 'Criem um texto sobre a paisagem e alinhem sua borda esquerda à linha azul.', block: 2,
-      av9: commands([
-        ['TEXTO', 'Abrir outro → Texto', 'Escolher Simples, digitar o título e abrir. Arrastar a prévia para V2, sobre a paisagem.'],
-        ['ESTILO', 'Filtros → Texto: simples', 'Fonte Arial Black, alinhamento à esquerda, contorno escuro fino.'],
-        ['POSIÇÃO', 'Retângulo na prévia', 'Encostar a borda esquerda na margem do guia, no céu.'],
-        ['ENTRADA', 'Canto superior do clipe', 'Puxar o círculo do canto para criar uma entrada suave.']
-      ], 'Reproduzam desde o início. O título precisa ficar tempo suficiente para ser lido duas vezes.'),
-      promptLabel: 'Já conseguiu?', prompt: 'Acrescentem uma segunda linha menor, começando na mesma borda e bem perto do título.',
-      teacher: teacher(['4 min · Demonstro o texto, a fonte, o alinhamento e a borda encostada na linha azul.', '9 min · A turma cria o próprio título; circulo pedindo que apontem a borda comum.'], 'Os nomes variam com a versão: Abrir outro (Open Other), Texto (Text), Texto: simples (Text: Simple). A entrada suave usa a alça de fade do clipe; os keyframes da aula 11 também servem.', 'Se o diálogo for diferente, uso Abrir outro → Cor, transparente, e aplico Texto: simples. Se o texto sumir, confiro se está em V2, acima da cena.')
-    },
-    {
-      title: 'Faixa com nome', kicker: 'Guia PDF · página 3', heading: 'O nome fica perto de quem aparece',
-      lede: 'Sobre 02-encontro, a faixa apresenta Oti sem cobrir o rosto dele.', block: 2,
-      av9: commands([
-        ['FAIXA', 'grafismos → V2', 'Levar faixa-inferior.png para V2, sobre o encontro, por cerca de 3 segundos.'],
-        ['NOME', 'Novo texto → V3', 'Digitar OTI, Enter, pinguim-de-magalhães. Arial, alinhado à esquerda.'],
-        ['ALINHAR', 'Barra laranja', 'As duas linhas começam logo depois da barra, dentro da faixa.'],
-        ['DURAÇÃO', 'Bordas dos clipes', 'Faixa e nome entram e saem juntos.']
-      ], 'Confiram em tela cheia: o nome se lê sem disputar com o personagem.'),
-      promptLabel: 'Já conseguiu?', prompt: 'Façam a faixa entrar suave pelo canto do clipe e confiram se o nome acompanha.',
-      teacher: teacher(['4 min · Demonstro a faixa PNG em V2 e o nome em V3, com Enter entre as linhas.', '10 min · A turma posiciona; peço que mostrem a borda comum e a distância até Oti.'], 'Texto: simples usa um tamanho para todas as linhas; a hierarquia vem das maiúsculas no nome. Texto: rico permite tamanhos diferentes e fica como variação.', 'Se o nome ficar fora da faixa, reduzo o tamanho da fonte antes de mover o retângulo. Se a faixa cobrir a ação, encurto sua duração.')
-    },
-    {
-      title: 'Legenda que se lê', kicker: 'Guia PDF · página 3', heading: 'Um texto de cada vez na parte de baixo',
-      lede: 'Ouçam o encontro com fones. Escrevam entre colchetes o som principal, ou uma frase curta.', block: 2,
+      title: 'Pedido 3 · Legenda', kicker: 'Pedido do cliente', heading: 'Uma legenda que se lê na neve',
+      lede: 'Ouçam o encontro com fones e escrevam o som principal entre colchetes ou uma frase curta.', block: 2,
       av9: stills([
         ['telas/colisao.jpg', 'DISPUTA', 'Legenda e faixa no mesmo lugar, ao mesmo tempo.'],
-        ['telas/legenda.jpg', 'LEGÍVEL', 'Centro inferior, fundo escuro, depois que a faixa sai.']
+        ['telas/legenda.jpg', 'LEGÍVEL', 'Centro inferior, fundo escuro, sem disputar com a faixa.']
       ]),
-      promptLabel: 'Na tela', prompt: 'Novo texto em V3, depois do nome. Centralizado, fundo escuro, no máximo duas linhas e pelo menos dois segundos.',
-      teacher: teacher(['8 min · Mostro a disputa e a solução; a turma cria a legenda e confere se ela não encontra a faixa.'], 'A cor de fundo do Texto: simples aceita transparência; um preto semitransparente garante contraste na neve. Descrição de som entre colchetes é recurso de acessibilidade.', 'Se a legenda colidir com a faixa, separo no tempo: a legenda começa quando o nome sai.')
+      promptLabel: 'Pronto quando', prompt: 'Legenda centralizada embaixo, com fundo escuro em Efeitos → Fundo, até duas linhas, sem encostar na faixa. Terminou antes? Escreva uma legenda também para a cena da fruta.',
+      teacher: teacher(['3 min · Mostro a disputa e a solução, e onde fica Efeitos → Fundo no texto.', '12 min · A turma cria a legenda; quem terminar escreve uma segunda legenda para a cena da fruta.'], 'Descrição de som entre colchetes é recurso de acessibilidade.', 'Se a legenda colidir com a faixa, subo a faixa ou separo os dois no tempo.')
     },
     {
-      title: 'Texto por trás', kicker: 'Máscara · ver antes de fazer', heading: 'A palavra está atrás da cabeça.',
-      lede: 'Reproduzam o exemplo. Nada foi recortado à mão: há duas cópias da mesma foto.', block: 3,
-      av9: media([['exemplo-mascara.mp4', 'LLAMIGOS', 'A palavra atravessa por trás de Koro.', 'telas/mascara-com.jpg']]),
-      teacher: teacher(['2 min · Faço a chamada.', '3 min · Reproduzo o exemplo e pergunto como a palavra pode estar atrás de algo que está dentro da mesma foto.'], 'O exemplo mostra a variação com movimento; a prática essencial usa a palavra parada.', 'Pauso quando as letras somem atrás da cabeça para tornar o efeito visível.')
-    },
-    {
-      title: 'Um sanduíche de camadas', kicker: 'Como o efeito funciona', heading: 'Foto, palavra e foto de novo',
-      lede: 'A cópia de cima mostra só a cabeça. Fora da elipse, ela fica transparente.', block: 3,
-      av9: {type: 'tracks', tracks: [
-        {label: 'V3', clips: [{label: 'foto-fruta + máscara elíptica', seconds: 4, kind: 'graphic'}]},
-        {label: 'V2', clips: [{label: 'Palavra grande', seconds: 4, kind: 'graphic'}]},
-        {label: 'V1', clips: [{label: 'foto-fruta inteira', seconds: 4}]}
-      ], caption: 'As três camadas começam e terminam no mesmo instante.'},
-      teacher: teacher(['4 min · Explico as três camadas desenhando a ordem no ar com a mão e relaciono com recortar uma foto e colar por cima.'], 'Sem a máscara, a foto de cima cobriria tudo. Com a máscara, só a cabeça cobre a palavra.', 'Se a ideia não ficar clara, mostro mascara-sem.jpg e mascara-com.jpg no próximo passo.')
-    },
-    {
-      title: 'Empilhar as camadas', kicker: 'Guia PDF · página 4', heading: 'A mesma foto, duas vezes',
-      lede: 'A foto já está em V1. Agora a palavra e a cópia sobem para V2 e V3.', block: 3,
-      av9: commands([
-        ['PALAVRA', 'Novo texto → V2', 'Uma palavra curta em Arial Black, bem grande, no céu acima da cabeça.'],
-        ['CÓPIA', 'foto-fruta.jpg → V3', 'Arrastar a mesma foto da Lista de reprodução para V3, acima da foto de V1.'],
-        ['ALINHAR', 'Início e fim', 'As três camadas começam e terminam juntas.'],
-        ['CONFERIR', 'Prévia', 'Agora a palavra some: a cópia cobre tudo.']
-      ], 'Parece que deu errado, e está certo. O próximo passo recorta a cópia.'),
-      teacher: teacher(['3 min · Demonstro a palavra em V2 e a cópia exata em V3, usando o ímã da linha do tempo.', '7 min · A turma empilha; confiro início e fim alinhados.'], 'A parte de baixo das letras deve cruzar o alto da cabeça. Uma palavra curta e grossa funciona melhor.', 'Se a palavra continuar visível, a cópia não está acima: confiro se está em V3 e cobre o mesmo intervalo.')
-    },
-    {
-      title: 'Recortar com a máscara', kicker: 'Guia PDF · página 4', heading: 'A elipse escolhe o que fica na frente',
-      lede: 'Selecionem a cópia em V3. Abram Filtros → + → Máscara: forma simples.', block: 3,
-      av9: commands([
-        ['FORMA', 'Máscara: forma simples', 'Escolher Elipse (Mask: Simple Shape → Ellipse).'],
-        ['AJUSTAR', 'Retângulo na prévia', 'Mover e redimensionar até a elipse envolver a cabeça.'],
-        ['GIRAR', 'Rotação', 'Inclinar a elipse para acompanhar a cabeça.'],
-        ['SUAVIZAR', 'Suavidade', 'Um valor baixo esconde a borda do recorte.']
-      ], 'A palavra aparece no céu e some atrás da cabeça.'),
-      promptLabel: 'Já conseguiu?', prompt: 'Movam a palavra um pouco para cima ou para baixo e encontrem a altura em que o efeito fica mais claro.',
-      teacher: teacher(['4 min · Demonstro o filtro, a elipse, a rotação e a suavidade.', '9 min · A turma ajusta; circulo pedindo que mostrem a prévia com a palavra cruzando a cabeça.'], 'Valores de referência no exemplo: elipse girada cerca de 18 graus, cobrindo da orelha ao focinho. Cada posto pode chegar a valores diferentes.', 'Se a elipse cortar o céu sobre as letras, diminuo a forma ou subo a palavra; uma forma simples não acompanha reentrâncias.')
-    },
-    {
-      title: 'Conferir o recorte', kicker: 'Antes e depois da máscara', heading: 'A palavra está por trás ou por cima?',
-      lede: 'Comparem com o exemplo. Depois confiram a borda da elipse em tela cheia.', block: 3,
-      av9: stills([
-        ['telas/mascara-sem.jpg', 'POR CIMA', 'Palavra cobre a cabeça: falta a cópia com máscara em V3.'],
-        ['telas/mascara-com.jpg', 'POR TRÁS', 'A cópia recortada devolve a cabeça para a frente.']
-      ]),
-      promptLabel: 'Melhoria visível', prompt: 'Procurem uma faixa de céu cortando as letras. Ajustem a elipse até ela quase desaparecer.',
-      teacher: teacher(['8 min · Cada posto compara com o exemplo e faz um ajuste fino; peço que liguem e desliguem o filtro para ver a diferença.'], 'Um pequeno corte perto da orelha é esperado com uma elipse. O critério é a leitura da palavra.', 'Se a palavra ficar ilegível, reduzo o trecho escondido: menos letras atrás da cabeça.')
-    },
-    {
-      title: 'Próximo desafio', kicker: 'Para quem já conseguiu', heading: 'Agora a palavra atravessa a cena',
-      lede: 'Usem keyframes de posição no texto de V2, como na aula 11.', block: 3, pace: 'extra',
-      av9: {type: 'flow', steps: [
-        {label: 'INÍCIO', text: 'Palavra à esquerda, já no céu.', mark: 'Keyframe 1'},
-        {label: 'MEIO', text: 'Letras passam por trás da cabeça.', mark: 'Automático'},
-        {label: 'FINAL', text: 'Palavra à direita, inteira.', mark: 'Keyframe 2'}
+      title: 'Pedido 4 · Cores da marca', kicker: 'Pedido do cliente', heading: 'O cliente mandou a identidade da marca',
+      lede: 'Todos os textos e a faixa passam a usar estas cores e uma só família de fonte.', block: 2,
+      av9: {type: 'table', variant: 'data', columns: ['Uso', 'Cor'], rows: [
+        ['Título e nome', 'Branco · #FFFFFF'],
+        ['Faixa e fundo da legenda', 'Azul-noite · #14213D'],
+        ['Destaque', 'Laranja · #FCA311'],
+        ['Fonte', 'Uma só família em todos os textos']
       ]},
-      promptLabel: 'Outra possibilidade', prompt: 'Criem a faixa de Koro do lado oposto da tela e comparem as duas faixas.',
-      teacher: teacher([], 'Ofereço durante a prática, assim que alguém termina; não espero toda a turma. A extensão não adiciona tempo ao cronograma.', 'Se o movimento ficar rápido, aumento a duração das três camadas e reposiciono os marcadores.')
+      promptLabel: 'Pronto quando', prompt: 'Título, faixa e legenda com as cores da marca e a mesma fonte. Terminou antes? Use o laranja só em um detalhe por cena.',
+      teacher: teacher(['2 min · Leio o pedido como cliente.', '13 min · A turma aplica as cores digitando o código no seletor de cor do Canva.'], 'Repetir cor e fonte é o que faz as peças parecerem da mesma marca. Sugerir fontes da conta gratuita.', 'Se alguém não achar o código de cor, mostro no projetor onde digitar o #.')
     },
     {
-      title: 'Assinatura final', kicker: 'Guia PDF · página 5', heading: 'Quem fez. De onde vêm as imagens.',
-      lede: 'Uma tela de cor no fim, com pictograma, título e créditos agrupados no centro.', block: 4,
+      title: 'Conferência do cliente', kicker: 'Antes do próximo pedido', heading: 'O cliente olha a tela de longe',
+      lede: 'Afastem-se um pouco, sem levantar, e confiram.', block: 2,
+      av9: checks([
+        ['Título', 'Alinhado e dentro da margem?'],
+        ['Faixa', 'Perto de Oti, sem cobrir o rosto?'],
+        ['Legenda', 'Lê-se na neve, longe da faixa?'],
+        ['Marca', 'Mesmas cores e fonte em tudo?']
+      ]),
+      promptLabel: 'Corrijam um ponto', prompt: 'Escolham o item mais fraco e ajustem agora.',
+      teacher: teacher(['5 min · Cada um confere os quatro itens e corrige um.'], 'A conferência fecha o bloco antes do movimento.', 'Quem estiver atrasado usa esses minutos para terminar a legenda.')
+    },
+    {
+      title: 'Pedido 5 · Movimento', kicker: 'Pedido do cliente', heading: 'Os textos entram em cena',
+      lede: 'O cliente quer movimento, mas no mesmo estilo em todos os textos.', block: 3,
       av9: commands([
-        ['FUNDO', 'Abrir outro → Cor', 'Azul-escuro, cerca de 4 segundos, no fim de V1.'],
-        ['PICTOGRAMA', 'grafismos → V2', 'Escolher fruta, floco ou coração.'],
-        ['CRÉDITOS', 'Novo texto → V3', 'Título, Remontagem: seu nome e Imagens: Caminandes 3 · CC BY.'],
-        ['AGRUPAR', 'Centralizado', 'Pictograma, título e créditos formam um único bloco.']
-      ], 'Os créditos são parte da licença das imagens. Eles não podem ficar de fora.'),
+        ['ANIMAR', 'Selecionar o texto → Animar', 'Escolher uma animação de entrada simples.'],
+        ['MESMO ESTILO', 'Título, faixa e legenda', 'A mesma animação nos três.'],
+        ['TEMPO', 'Botão direito → Mostrar tempo', 'A legenda entra depois que a faixa sai.'],
+        ['ASSISTIR', 'Reproduzir', 'Cada texto fica tempo de ser lido duas vezes.']
+      ], `Teste uma animação de saída e compare com a versão sem saída.`),
+      promptLabel: 'Pronto quando', prompt: 'Três textos com a mesma animação de entrada e tempo de leitura.',
+      teacher: teacher(['2 min · Faço a chamada e apresento o pedido.', '3 min · Demonstro Animar e Mostrar tempo.', '15 min · A turma anima os textos; peço que mostrem o tempo de leitura.'], 'Uma animação só em todos os textos é decisão de identidade. Indicar só animações da conta gratuita; nem todos têm o plano pago.', 'Se a animação ficar rápida demais, aumento o tempo do texto na página.')
+    },
+    {
+      title: 'Pedido 6 · Assinatura', kicker: 'Pedido do cliente', heading: 'Quem fez. De onde vêm as imagens.',
+      lede: 'Uma página nova no fim, com fundo azul-noite e tudo agrupado no centro.', block: 3,
+      av9: commands([
+        ['PÁGINA', 'Adicionar página', 'No fim do vídeo, cerca de 4 segundos, fundo #14213D.'],
+        ['TÍTULO', 'Texto centralizado', 'A ÚLTIMA FRUTA.'],
+        ['CRÉDITOS', 'Texto menor', 'Remontagem: seu nome. Imagens: Caminandes 3 · CC BY.'],
+        ['AGRUPAR', 'Perto e centralizado', 'Título e créditos formam um bloco só.']
+      ], `Acrescente um ícone ou PNG transparente, sem cobrir os créditos.`),
       resource: {href: base + 'telas/assinatura.jpg', label: 'Ver assinatura de exemplo'},
-      teacher: teacher(['2 min · Faço a chamada e mostro a assinatura de exemplo.', '8 min · A turma cria a própria assinatura; confiro créditos e proximidade.'], 'Caminandes 3: Llamigos está sob CC BY 3.0: atribuição é obrigatória. A escolha de pictograma e cores é a parte autoral.', 'Se faltar tempo, mantenho só título e créditos; o pictograma vira variação.')
+      promptLabel: 'Pronto quando', prompt: 'Título e créditos centralizados e agrupados. Os créditos são parte da licença das imagens.',
+      teacher: teacher(['3 min · Mostro a assinatura de exemplo e explico a licença CC BY.', '12 min · A turma cria a assinatura; confiro os créditos.'], 'Caminandes 3: Llamigos está sob CC BY 3.0: atribuição obrigatória.', 'Se faltar tempo, fica só título e créditos.')
     },
     {
-      title: 'Exportar', kicker: 'Guia PDF · página 5', heading: 'Ocultem o guia. Depois exportem.',
-      lede: 'Cliquem no olho da trilha V4. Salvem o projeto e abram Exportar.', block: 4,
-      av9: {type: 'table', variant: 'data', columns: ['No Shotcut', 'Usar'], rows: [
-        ['Trilha V4', 'Oculta · o guia não aparece no vídeo'],
-        ['Origem · From', 'Linha do tempo · Timeline'],
-        ['Predefinição', 'H.264 High Profile · MP4 · 1280 × 720'],
-        ['Arquivo', 'Aula12/minha-abertura.mp4']
-      ]},
-      promptLabel: 'Aguardar', prompt: 'O painel Trabalhos mostra o andamento. Abram o MP4 quando a exportação terminar.',
-      teacher: teacher(['8 min · Demonstro o guia oculto e a exportação; a turma exporta no disco local enquanto acompanho o painel Trabalhos.'], 'Esquecer o guia é o erro mais comum. Confiro também se From está na linha do tempo inteira.', 'Se a exportação falhar com aceleração de hardware, uso exportação por software no posto validado.')
-    },
-    {
-      title: 'Assistir e corrigir', kicker: 'Último ajuste', heading: 'Encontrem uma coisa que ainda pode melhorar',
-      lede: 'Abram o MP4 no reprodutor do computador e assistam até o fim.', block: 4,
+      title: 'Exportar a versão 1', kicker: 'Primeira entrega', heading: 'Baixem a abertura em MP4',
+      lede: 'Compartilhar → Baixar → Vídeo MP4.', block: 3,
       av9: checks([
-        ['Margem', 'Algum texto encosta na borda da tela?'],
-        ['Proximidade', 'O nome está perto de Oti e a legenda longe da faixa?'],
-        ['Máscara', 'A palavra passa por trás da cabeça?'],
-        ['Créditos', 'A assinatura cita Caminandes 3 e a licença?']
+        ['Formato', 'Vídeo MP4.'],
+        ['Nome', 'abertura-horizontal.'],
+        ['Conferir', 'Abrir o arquivo baixado e assistir até o fim.']
       ]),
-      promptLabel: 'Melhoria visível', prompt: 'Voltem ao Shotcut, ajustem um ponto e exportem novamente.',
-      teacher: teacher(['6 min · Cada posto assiste, faz um ajuste necessário e confere a nova exportação.'], 'Se o resultado já estiver resolvido, proponho trocar a fonte ou o pictograma para comparar, sem obrigar a manter uma mudança pior.', 'Corrijo primeiro guia aparente, texto cortado ou créditos ausentes; evito recomeçar a abertura.')
+      promptLabel: 'Enquanto baixa', prompt: 'Não fechem a aba do Canva até o download terminar.',
+      teacher: teacher(['5 min · A turma exporta e abre o MP4 baixado.'], 'O download pode levar alguns minutos; a aba precisa ficar aberta.', 'Se o download falhar, tento de novo em 720p.')
     },
     {
-      title: 'Mostrar a abertura', kicker: 'Resultado na tela', heading: 'Mostrem a decisão que mais mudou o resultado',
-      lede: 'Reproduzam a abertura no próprio posto. Apontem uma margem, um grupo e a máscara.', block: 4,
+      title: 'Pedido 7 · Versão para celular', kicker: 'Pedido do cliente', heading: 'Agora a abertura precisa caber no celular',
+      lede: 'Vídeo vertical, 1080 × 1920. Os mesmos textos, reorganizados.', block: 4,
+      av9: commands([
+        ['CRIAR', 'Novo design', 'Vídeo para celular, 1080 × 1920.'],
+        ['CENAS', 'Uploads', 'As mesmas cenas como fundo; ajustar o enquadramento.'],
+        ['COPIAR', 'Ctrl + C → Ctrl + V', 'Trazer título, faixa, legenda e assinatura.'],
+        ['REPOSICIONAR', 'Dentro da margem', 'Tudo legível, longe das bordas de cima e de baixo.']
+      ], `Confira se a legenda não ficou atrás dos botões da tela do celular, perto da borda de baixo.`),
+      promptLabel: 'Pronto quando', prompt: 'Título, faixa, legenda e assinatura reposicionados no formato vertical, sem cobrir rostos.',
+      teacher: teacher(['2 min · Faço a chamada e apresento o pedido.', '3 min · Demonstro o novo design e a cópia dos textos.', '17 min · A turma reposiciona tudo na vertical.'], 'No celular, as bordas de cima e de baixo ficam cobertas pela interface. Redimensionar é recurso pago: criar um design novo e copiar os textos.', 'Sem tempo para tudo, priorizo título e assinatura.')
+    },
+    {
+      title: 'Teste de cinco segundos', kicker: 'Colega do lado', heading: 'O colega entende em cinco segundos?',
+      lede: 'Mostrem a versão vertical sem explicar. O colega responde do próprio lugar.', block: 4,
       av9: checks([
-        ['Vídeo', 'minha-abertura.mp4 pronto para assistir.'],
-        ['Projeto', 'minha-abertura.mlt salvo junto das mídias.'],
-        ['Pasta', 'Guardar Aula12 inteira, incluindo grafismos e créditos.']
+        ['Pergunta 1', 'Qual é o nome do vídeo?'],
+        ['Pergunta 2', 'Quem é o personagem apresentado?'],
+        ['Ajuste', 'Corrija o que o colega não encontrou e baixe o MP4 vertical.']
       ]),
-      promptLabel: 'Feito', prompt: 'Vocês alinharam, agruparam e recortaram camadas para dar identidade ao vídeo.',
-      teacher: teacher(['6 min · Circulo pelos postos, vejo trechos e ouço uma observação breve de cada operador.'], 'Sem fila de apresentações nem uploads coletivos. Já observo o trabalho durante a prática para conseguir atender 20 a 30 estudantes.', 'Se o tempo apertar, peço a faixa e a máscara diretamente na linha do tempo; confiro o MP4 local sem pedir envio.')
+      promptLabel: 'Segunda entrega', prompt: 'Baixem a versão vertical em MP4 com o nome abertura-celular.',
+      teacher: teacher(['5 min · Teste em duplas vizinhas, ajuste e exportação.'], 'A pergunta é se encontrou, não se gostou.', 'Quem estiver sem colega ao lado testa comigo.')
+    },
+    {
+      title: 'Banco de melhorias', kicker: 'Para quem concluiu tudo', heading: 'Ainda há tempo? O cliente aceita extras.',
+      lede: 'Escolham um. Cada extra é uma nova versão, sem apagar as entregas.', block: 4, pace: 'extra',
+      av9: checks([
+        ['Faixa de Koro', 'Apresentar Koro do lado oposto da tela, no mesmo estilo.'],
+        ['Versão para o feed', 'Uma versão quadrada, 1080 × 1080.'],
+        ['Pictograma', 'Um ícone ou PNG transparente na assinatura, na cor de destaque.']
+      ]),
+      teacher: teacher([], 'Mostro para quem concluiu tudo, a qualquer momento do bloco. Os extras não alteram o horário das outras etapas.', 'Se ninguém concluiu, pulo este slide.')
+    },
+    {
+      title: 'Encerramento', kicker: 'Duas entregas', heading: 'Duas versões, uma marca',
+      lede: 'Mostrem as duas versões na própria tela.', block: 4,
+      av9: checks([
+        ['Horizontal', 'abertura-horizontal.mp4 baixado e assistido.'],
+        ['Celular', 'abertura-celular.mp4 baixado e assistido.'],
+        ['Canva', 'Projeto salvo com o seu nome.']
+      ]),
+      promptLabel: 'Feito', prompt: 'Vocês alinharam, agruparam, animaram e adaptaram a mesma abertura para dois formatos.',
+      teacher: teacher(['3 min · Vejo trechos nos postos, ouço uma observação e encerro às 22:10.'], 'Sem fila de apresentações nem envio coletivo.', 'Se o tempo apertar, confiro só se os dois MP4 existem.')
     }
   ],
   appendDefaultClosing: false

@@ -218,7 +218,7 @@ def behind_text(offset=0):
 
 
 def head_mask():
-    """Elipse suavizada, como Máscara: forma simples com suavidade no Shotcut."""
+    """Elipse suavizada, como uma máscara de forma com borda suave."""
     mask = Image.new('L', (W, H), 0)
     cx, cy, rx, ry = MASK_ELLIPSE
     ImageDraw.Draw(mask).ellipse([cx - rx, cy - ry, cx + rx, cy + ry], fill=255)
@@ -322,16 +322,19 @@ def build():
 
     frames = {'exemplo-abertura.mp4': encode(opening_frames(), 'exemplo-abertura.mp4'),
               'exemplo-mascara.mp4': encode(mask_frames(), 'exemplo-mascara.mp4')}
-    manifest = {
+    # Preserva a seção student_kit, escrita por scripts/build-audiovisual-12-package.py.
+    previous = KIT / 'kit-manifest.json'
+    manifest = json.loads(previous.read_text(encoding='utf-8')) if previous.is_file() else {}
+    manifest |= {
         'source': 'Caminandes 3: Llamigos (2016) · mídias da aula 11',
-        'student_media': ['08-paisagem.mp4', '02-encontro.mp4', '04-fruta.mp4', 'foto-fruta.jpg', 'foto-cesta.jpg'],
+        'student_media': ['08-paisagem.mp4', '02-encontro.mp4', '04-fruta.mp4', 'foto-fruta.jpg'],
         'graphics': sorted(path.name for path in ART.glob('*.png')),
         'examples': {name: round(count / FPS, 2) for name, count in frames.items()},
         'screens': sorted(shots),
     }
     (KIT / 'kit-manifest.json').write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
     print(f'Aula 12: {len(manifest["graphics"])} grafismos, {len(shots)} telas e {len(frames)} exemplos.')
-    print('Depois gere o guia PDF e execute scripts/build-audiovisual-12-package.py.')
+    print('Depois execute scripts/build-audiovisual-12-package.py para gerar o ZIP do aluno.')
 
 
 if __name__ == '__main__':

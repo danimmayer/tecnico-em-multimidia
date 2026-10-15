@@ -4,8 +4,7 @@
     "08-paisagem.mp4",
     "02-encontro.mp4",
     "04-fruta.mp4",
-    "foto-fruta.jpg",
-    "foto-cesta.jpg"
+    "foto-fruta.jpg"
   ],
   "graphics": [
     "faixa-inferior.png",
@@ -31,5 +30,43 @@
     "mascara-sem.jpg",
     "titulo-alinhado.jpg",
     "titulo-solto.jpg"
-  ]
+  ],
+  "student_kit": {
+    "zip": "Aula12-Canva.zip",
+    "folder": "Aula12-Canva",
+    "bytes": 2213549,
+    "md5": "7c32241f5f620e23d8aadedf23a44edf",
+    "files": [
+      {
+        "name": "COMECE-AQUI.txt",
+        "bytes": 479,
+        "md5": "0383584633be980f3cf45a266ba7b4d3"
+      },
+      {
+        "name": "08-paisagem.mp4",
+        "bytes": 658333,
+        "md5": "dba0b86bc016b6888af28fa5ee0d7db9"
+      },
+      {
+        "name": "02-encontro.mp4",
+        "bytes": 648107,
+        "md5": "fd1f65d5342e710cf3b836ce97172368"
+      },
+      {
+        "name": "04-fruta.mp4",
+        "bytes": 839243,
+        "md5": "38987e23295463e6282596accbd9d8a2"
+      },
+      {
+        "name": "foto-fruta.jpg",
+        "bytes": 65408,
+        "md5": "7a39d2803afdd9456398880cf02aa478"
+      },
+      {
+        "name": "CREDITOS.txt",
+        "bytes": 1179,
+        "md5": "b874bb7f92297392efdfa7b410b99ce6"
+      }
+    ]
+  }
 }
