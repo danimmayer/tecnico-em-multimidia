@@ -232,9 +232,29 @@ def behind_frame(base, offset=0, masked=True, opacity=1.0):
     return image
 
 
-def end_card(picto='picto-fruta.png'):
+# Recorte da foto na moldura circular: o mesmo gesto do pedido 6 no Canva.
+FRAME = (W // 2, 196, 96)  # centro x, centro y, raio
+FRAME_FOCUS = (760, 420)  # focinho e fruta, em coordenadas da foto 1280 × 720
+
+
+def framed_photo():
+    cx, cy, r = FRAME
+    fx, fy = FRAME_FOCUS
+    side = 2 * r
+    crop = photo().crop((fx - 240, fy - 240, fx + 240, fy + 240)).resize((side, side), Image.LANCZOS)
+    scale = 4
+    mask = Image.new('L', (side * scale, side * scale), 0)
+    ImageDraw.Draw(mask).ellipse([0, 0, side * scale - 1, side * scale - 1], fill=255)
+    layer = canvas()
+    layer.paste(crop, (cx - r, cy - r), mask.resize((side, side), Image.LANCZOS))
+    ring = Image.new('RGBA', (W * scale, H * scale), (0, 0, 0, 0))
+    ImageDraw.Draw(ring).ellipse([(cx - r) * scale, (cy - r) * scale, (cx + r) * scale, (cy + r) * scale], outline=WHITE, width=4 * scale)
+    return Image.alpha_composite(layer, ring.resize((W, H), Image.LANCZOS))
+
+
+def end_card():
     image = Image.new('RGBA', (W, H), NAVY + (255,))
-    image = Image.alpha_composite(image, Image.open(ART / picto))
+    image = Image.alpha_composite(image, framed_photo())
     d = ImageDraw.Draw(image)
     d.text((W // 2, 322), TITLE, font=font('black', 72), fill=WHITE, anchor='ma')
     d.text((W // 2, 430), 'Remontagem: Turma de Multimídia · SENAI 2026', font=font('bold', 28), fill=WHITE, anchor='ma')

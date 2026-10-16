@@ -8409,12 +8409,12 @@ window.SENAI_TEACHING_SUPPORT = {
                 {
                   "word": "CARTÃO",
                   "who": "Final da linha do tempo",
-                  "text": "Adicionar foto-fruta.jpg depois dos vídeos e estender a duração para ler os créditos duas vezes. Fundo #14213D."
+                  "text": "Botão + depois dos vídeos → clipe em branco. Cor #14213D e duração para ler os créditos duas vezes."
                 },
                 {
                   "word": "MÁSCARA",
                   "who": "Elementos → Molduras → círculo",
-                  "text": "Arrastar foto-fruta.jpg para dentro da moldura. Duplo clique para reposicionar a fruta no recorte. Deixar espaço para os créditos."
+                  "text": "Sobre o cartão, arrastar foto-fruta.jpg dos Uploads para dentro da moldura. Duplo clique para reposicionar a fruta no recorte."
                 },
                 {
                   "word": "TÍTULO",
@@ -8443,7 +8443,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "prompt": "Foto recortada pela moldura, título e créditos legíveis, com o endereço da licença: creativecommons.org/licenses/by/3.0",
             "teacher": {
               "steps": [
-                "4 min · Demonstro o cartão no fim da trilha, a foto dentro de uma moldura gratuita e os créditos.",
+                "4 min · Demonstro o clipe em branco no fim da trilha, a foto dentro de uma moldura gratuita por cima e os créditos.",
                 "11 min · A turma ajusta o recorte e cria a assinatura; confiro leitura e créditos."
               ],
               "watch": "Caminandes 3: Llamigos está sob CC BY 3.0: o crédito precisa de obra, autor, licença com o endereço e aviso de que as imagens foram editadas, porque o MP4 pode circular sem a pasta do kit.",

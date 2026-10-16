@@ -206,14 +206,14 @@ export const support = {
       title: 'Pedido 6 · Máscara e assinatura', kicker: 'Pedido do cliente', heading: 'Quem fez. De onde vêm as imagens.',
       lede: 'Um cartão no fim: foto dentro de uma moldura, título e créditos sobre fundo azul-noite.', block: 3,
       av9: commands([
-        ['CARTÃO', 'Final da linha do tempo', 'Adicionar foto-fruta.jpg depois dos vídeos e estender a duração para ler os créditos duas vezes. Fundo #14213D.'],
-        ['MÁSCARA', 'Elementos → Molduras → círculo', 'Arrastar foto-fruta.jpg para dentro da moldura. Duplo clique para reposicionar a fruta no recorte. Deixar espaço para os créditos.'],
+        ['CARTÃO', 'Final da linha do tempo', 'Botão + depois dos vídeos → clipe em branco. Cor #14213D e duração para ler os créditos duas vezes.'],
+        ['MÁSCARA', 'Elementos → Molduras → círculo', 'Sobre o cartão, arrastar foto-fruta.jpg dos Uploads para dentro da moldura. Duplo clique para reposicionar a fruta no recorte.'],
         ['TÍTULO', 'Texto centralizado', 'A ÚLTIMA FRUTA, logo acima dos créditos: os dois formam um bloco só.'],
         ['CRÉDITOS', 'Texto menor', 'Remontagem: seu nome. Imagens: Caminandes 3: Llamigos, Blender Foundation, editadas. Licença CC BY 3.0.']
       ], `Acrescente um ícone ou PNG transparente, sem cobrir os créditos.`),
       resource: {href: base + 'telas/assinatura.jpg', label: 'Ver assinatura de exemplo'},
       promptLabel: 'Pronto quando', prompt: 'Foto recortada pela moldura, título e créditos legíveis, com o endereço da licença: creativecommons.org/licenses/by/3.0',
-      teacher: teacher(['4 min · Demonstro o cartão no fim da trilha, a foto dentro de uma moldura gratuita e os créditos.', '11 min · A turma ajusta o recorte e cria a assinatura; confiro leitura e créditos.'], 'Caminandes 3: Llamigos está sob CC BY 3.0: o crédito precisa de obra, autor, licença com o endereço e aviso de que as imagens foram editadas, porque o MP4 pode circular sem a pasta do kit.', 'Uso uma moldura circular simples. Explico: a máscara mostra só a parte da imagem dentro da forma; reposicionar muda o recorte sem apagar a foto. Não usamos remoção de fundo. Antes da aula testo o editor de linha do tempo na conta da escola.')
+      teacher: teacher(['4 min · Demonstro o clipe em branco no fim da trilha, a foto dentro de uma moldura gratuita por cima e os créditos.', '11 min · A turma ajusta o recorte e cria a assinatura; confiro leitura e créditos.'], 'Caminandes 3: Llamigos está sob CC BY 3.0: o crédito precisa de obra, autor, licença com o endereço e aviso de que as imagens foram editadas, porque o MP4 pode circular sem a pasta do kit.', 'Uso uma moldura circular simples. Explico: a máscara mostra só a parte da imagem dentro da forma; reposicionar muda o recorte sem apagar a foto. Não usamos remoção de fundo. Antes da aula testo o editor de linha do tempo na conta da escola.')
     },
     {
       title: 'Exportar a versão 1', kicker: 'Primeira entrega', heading: 'Baixem a abertura em MP4',
