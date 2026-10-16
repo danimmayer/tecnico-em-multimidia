@@ -4,7 +4,7 @@
 // e cada pedido traz melhorias para quem termina antes, dentro da mesma peça.
 export const lesson = {
   title: 'Grafismos, textos e máscaras',
-  description: 'Uma abertura com identidade feita no Canva a partir de cenas prontas: título alinhado, faixa com nome, legenda legível, movimento, assinatura com créditos e uma versão para celular, entregues em MP4.',
+  description: 'Uma abertura com identidade feita no Canva a partir de cenas prontas: título alinhado, faixa com nome, legenda legível, movimento, assinatura com foto recortada em moldura, créditos e uma versão para celular, entregues em MP4.',
   objectives: ['Edição de vídeos e sons: criação de elementos gráficos, máscaras, composição com sequência de imagem.', 'Inovação: conceito, visão inovadora.'],
   technical: [
     'Identificar tipos e características de plataformas utilizados no processo de criação de elementos de gráficos para imagens, animações, áudio e vídeo.',
@@ -15,7 +15,7 @@ export const lesson = {
   schedule: [
     {horario: '19:00 - 19:45', atividade: 'Ver uma abertura pronta, comparar títulos soltos e alinhados, decidir onde cada texto cabe nas cenas, preparar o vídeo no Canva com as cenas do kit e atender ao primeiro pedido do cliente: o título.'},
     {horario: '20:05 - 21:00', atividade: 'Atender aos pedidos seguintes do cliente, um de cada vez: faixa com o nome do personagem, legenda legível e cores e fonte da marca aplicadas em todos os textos.'},
-    {horario: '21:00 - 21:40', atividade: 'Dar movimento aos textos com animações de entrada no mesmo estilo, criar a assinatura final com os créditos das imagens e exportar a primeira versão em MP4.'},
+    {horario: '21:00 - 21:40', atividade: 'Dar movimento aos textos com animações de entrada no mesmo estilo, criar uma máscara simples com moldura e a assinatura final com os créditos das imagens e exportar a primeira versão em MP4.'},
     {horario: '21:40 - 22:10', atividade: 'Criar a versão vertical para celular, reposicionando todos os textos, testar a leitura com o colega do lado em cinco segundos e exportar a segunda versão.'}
   ],
   methodology: 'Produção individual no Canva guiada por pedidos de um cliente fictício, revelados um de cada vez pelos slides. Cada pedido tem demonstração curta, prática no posto, critério de pronto e melhorias para quem termina antes dentro da mesma peça. Comparações projetadas antes da prática; teste de leitura com o colega do lado no fim.',
@@ -36,7 +36,7 @@ export const support = {
   say: 'Hoje vocês são o estúdio e eu sou o cliente. Os pedidos chegam um de cada vez. Quem terminar antes melhora o que já fez; ninguém fica parado e ninguém pula pedido.',
   demo: [
     'Mostro a abertura de exemplo e o título solto ao lado do alinhado.',
-    'No Canva, crio um vídeo, envio as cenas do kit e coloco cada cena como fundo de uma página.',
+    'No Canva, crio um vídeo, envio as cenas do kit e arrasto paisagem, encontro e fruta para a trilha principal, em sequência.',
     'Demonstro um texto alinhado pela guia rosa, uma faixa agrupada e uma legenda com fundo.',
     'Aplico a mesma animação de entrada nos textos e exporto em MP4.',
     'Crio a versão vertical e mostro como copiar e reposicionar os textos.'
@@ -48,6 +48,7 @@ export const support = {
     'A legenda está no centro inferior, com fundo, e não aparece junto da faixa.',
     'Os textos usam as mesmas cores, fonte e estilo de animação.',
     'A assinatura final traz quem fez e os créditos de Caminandes 3 com a licença CC BY.',
+    'A foto fica dentro de uma moldura; o recorte foi ajustado sem apagar a imagem.',
     'As duas versões foram exportadas em MP4 e reproduzem do começo ao fim.'
   ],
   fallback: 'Se o envio das cenas demorar, cada estudante sobe primeiro só a paisagem e começa o título; as outras cenas sobem durante a prática. Se o Canva ficar fora do ar, desenhar no caderno a posição de cada texto nas três cenas e na versão para celular, com os mesmos critérios.',
@@ -120,17 +121,17 @@ export const support = {
       av9: {type: 'commands', commands: [
         {word: 'CRIAR', who: 'Canva', text: 'Criar design → Vídeo (1920 × 1080).'},
         {word: 'ENVIAR', who: 'Uploads', text: 'Enviar os três vídeos e a foto da pasta Aula12-Canva.'},
-        {word: 'CENAS', who: 'Uma por página', text: 'Paisagem, encontro e fruta, cada uma como fundo da página.'},
+        {word: 'CENAS', who: 'Linha do tempo', text: 'Arrastar paisagem, encontro e fruta para a trilha principal, uma depois da outra.'},
         {word: 'SALVAR', who: 'Nome do projeto', text: 'Aula 12 · seu nome.'}
-      ], tags: [{label: 'FUNDO', kind: 'good'}], result: 'Botão direito no vídeo → Definir vídeo como plano de fundo.'},
+      ], tags: [{label: 'FUNDO', kind: 'good'}], result: 'Arraste cada vídeo até preencher a tela. Reproduza para conferir as três cenas em sequência.'},
       resources: [{href: base + 'index.html', label: 'Ver o kit da aula'}],
-      teacher: teacher(['2 min · Mostro onde está o kit e crio o vídeo no Canva.', '10 min · A turma envia as cenas e monta as três páginas; atendo primeiro quem ainda não entrou no Canva.'], 'O kit tem cerca de 2 MB. Se o envio estiver lento, cada um começa pela paisagem.', 'Quem não conseguir entrar no Canva acompanha um colega do lado até o acesso voltar, sem trocar de lugar.')
+      teacher: teacher(['2 min · Mostro onde está o kit e crio o vídeo no Canva.', '10 min · A turma envia as cenas e monta a sequência na trilha principal; atendo primeiro quem ainda não entrou no Canva.'], 'O kit tem cerca de 2 MB. Se o envio estiver lento, cada um começa pela paisagem.', 'Quem não conseguir entrar no Canva acompanha um colega do lado até o acesso voltar, sem trocar de lugar.')
     },
     {
       title: 'Pedido 1 · Título', kicker: 'Pedido do cliente', heading: 'Um título na paisagem: A última fruta',
       lede: 'Subtítulo: Um trailer com Koro e Oti.', block: 1,
       av9: commands([
-        ['TEXTO', 'Texto → Adicionar um título', 'Digitar A ÚLTIMA FRUTA na página da paisagem.'],
+        ['TEXTO', 'Texto → Adicionar um título', 'Digitar A ÚLTIMA FRUTA sobre a cena da paisagem.'],
         ['SUBTÍTULO', 'Novo texto menor', 'Um trailer com Koro e Oti, logo abaixo do título.'],
         ['ALINHAR', 'Guia rosa', 'As duas linhas começam na mesma borda, no céu.'],
         ['MARGEM', 'Longe da borda', 'Nada encosta na beira da tela.']
@@ -195,24 +196,25 @@ export const support = {
       av9: commands([
         ['ANIMAR', 'Selecionar o texto → Animar', 'Escolher uma animação de entrada simples.'],
         ['MESMO ESTILO', 'Título, faixa e legenda', 'A mesma animação nos três.'],
-        ['TEMPO', 'Botão direito → Mostrar tempo', 'A legenda entra depois que a faixa sai.'],
+        ['TEMPO', 'Linha do tempo', 'Selecionar a camada do texto e arrastar as pontas da faixa de duração: a legenda entra depois que a faixa sai.'],
         ['ASSISTIR', 'Reproduzir', 'Cada texto fica tempo de ser lido duas vezes.']
       ], `Teste uma animação de saída e compare com a versão sem saída.`),
       promptLabel: 'Pronto quando', prompt: 'Três textos com a mesma animação de entrada e tempo de leitura.',
-      teacher: teacher(['2 min · Faço a chamada e apresento o pedido.', '3 min · Demonstro Animar e Mostrar tempo.', '15 min · A turma anima os textos; peço que mostrem o tempo de leitura.'], 'Uma animação só em todos os textos é decisão de identidade. Indicar só animações da conta gratuita; nem todos têm o plano pago.', 'Se a animação ficar rápida demais, aumento o tempo do texto na página.')
+      teacher: teacher(['2 min · Faço a chamada e apresento o pedido.', '3 min · Demonstro Animar e as faixas de duração na linha do tempo.', '15 min · A turma anima os textos; peço que mostrem o tempo de leitura.'], 'Uma animação só em todos os textos é decisão de identidade. Indicar só animações da conta gratuita; nem todos têm o plano pago.', 'Se a animação ficar rápida demais, alongo a faixa do texto na linha do tempo.')
     },
     {
-      title: 'Pedido 6 · Assinatura', kicker: 'Pedido do cliente', heading: 'Quem fez. De onde vêm as imagens.',
-      lede: 'Uma página nova no fim, com fundo azul-noite e tudo agrupado no centro.', block: 3,
+      title: 'Pedido 6 · Máscara e assinatura', kicker: 'Pedido do cliente', heading: 'Quem fez. De onde vêm as imagens.',
+      lede: 'Um cartão no fim: foto dentro de uma moldura, título e créditos sobre fundo azul-noite.', block: 3,
       av9: commands([
-        ['PÁGINA', 'Adicionar página', 'No fim do vídeo, cerca de 4 segundos, fundo #14213D.'],
+        ['CARTÃO', 'Final da linha do tempo', 'Adicionar foto-fruta.jpg depois dos vídeos e estender a duração para ler os créditos duas vezes. Fundo #14213D.'],
+        ['MÁSCARA', 'Elementos → Molduras → círculo', 'Arrastar foto-fruta.jpg para dentro da moldura. Duplo clique para reposicionar a fruta no recorte. Deixar espaço para os créditos.'],
         ['TÍTULO', 'Texto centralizado', 'A ÚLTIMA FRUTA.'],
         ['CRÉDITOS', 'Texto menor', 'Remontagem: seu nome. Imagens: Caminandes 3: Llamigos, Blender Foundation, editadas. Licença CC BY 3.0.'],
         ['AGRUPAR', 'Perto e centralizado', 'Título e créditos formam um bloco só.']
       ], `Acrescente um ícone ou PNG transparente, sem cobrir os créditos.`),
       resource: {href: base + 'telas/assinatura.jpg', label: 'Ver assinatura de exemplo'},
-      promptLabel: 'Pronto quando', prompt: 'Título e créditos centralizados e agrupados, com o endereço da licença: creativecommons.org/licenses/by/3.0',
-      teacher: teacher(['3 min · Mostro a assinatura de exemplo e explico a licença CC BY.', '12 min · A turma cria a assinatura; confiro os créditos.'], 'Caminandes 3: Llamigos está sob CC BY 3.0: o crédito precisa de obra, autor, licença com o endereço e aviso de que as imagens foram editadas, porque o MP4 pode circular sem a pasta do kit.', 'Se faltar tempo, fica só título e créditos.')
+      promptLabel: 'Pronto quando', prompt: 'Foto recortada pela moldura, título e créditos legíveis, com o endereço da licença: creativecommons.org/licenses/by/3.0',
+      teacher: teacher(['4 min · Demonstro o cartão no fim da trilha, a foto dentro de uma moldura gratuita e os créditos.', '11 min · A turma ajusta o recorte e cria a assinatura; confiro leitura e créditos.'], 'Caminandes 3: Llamigos está sob CC BY 3.0: o crédito precisa de obra, autor, licença com o endereço e aviso de que as imagens foram editadas, porque o MP4 pode circular sem a pasta do kit.', 'Uso uma moldura circular simples. Explico: a máscara mostra só a parte da imagem dentro da forma; reposicionar muda o recorte sem apagar a foto. Não usamos remoção de fundo. Antes da aula testo o editor de linha do tempo na conta da escola.')
     },
     {
       title: 'Exportar a versão 1', kicker: 'Primeira entrega', heading: 'Baixem a abertura em MP4',

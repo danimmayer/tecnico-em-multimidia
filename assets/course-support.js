@@ -7809,7 +7809,7 @@ window.SENAI_TEACHING_SUPPORT = {
         "say": "Hoje vocês são o estúdio e eu sou o cliente. Os pedidos chegam um de cada vez. Quem terminar antes melhora o que já fez; ninguém fica parado e ninguém pula pedido.",
         "demo": [
           "Mostro a abertura de exemplo e o título solto ao lado do alinhado.",
-          "No Canva, crio um vídeo, envio as cenas do kit e coloco cada cena como fundo de uma página.",
+          "No Canva, crio um vídeo, envio as cenas do kit e arrasto paisagem, encontro e fruta para a trilha principal, em sequência.",
           "Demonstro um texto alinhado pela guia rosa, uma faixa agrupada e uma legenda com fundo.",
           "Aplico a mesma animação de entrada nos textos e exporto em MP4.",
           "Crio a versão vertical e mostro como copiar e reposicionar os textos."
@@ -7821,6 +7821,7 @@ window.SENAI_TEACHING_SUPPORT = {
           "A legenda está no centro inferior, com fundo, e não aparece junto da faixa.",
           "Os textos usam as mesmas cores, fonte e estilo de animação.",
           "A assinatura final traz quem fez e os créditos de Caminandes 3 com a licença CC BY.",
+          "A foto fica dentro de uma moldura; o recorte foi ajustado sem apagar a imagem.",
           "As duas versões foram exportadas em MP4 e reproduzem do começo ao fim."
         ],
         "fallback": "Se o envio das cenas demorar, cada estudante sobe primeiro só a paisagem e começa o título; as outras cenas sobem durante a prática. Se o Canva ficar fora do ar, desenhar no caderno a posição de cada texto nas três cenas e na versão para celular, com os mesmos critérios.",
@@ -8075,8 +8076,8 @@ window.SENAI_TEACHING_SUPPORT = {
                 },
                 {
                   "word": "CENAS",
-                  "who": "Uma por página",
-                  "text": "Paisagem, encontro e fruta, cada uma como fundo da página."
+                  "who": "Linha do tempo",
+                  "text": "Arrastar paisagem, encontro e fruta para a trilha principal, uma depois da outra."
                 },
                 {
                   "word": "SALVAR",
@@ -8090,7 +8091,7 @@ window.SENAI_TEACHING_SUPPORT = {
                   "kind": "good"
                 }
               ],
-              "result": "Botão direito no vídeo → Definir vídeo como plano de fundo."
+              "result": "Arraste cada vídeo até preencher a tela. Reproduza para conferir as três cenas em sequência."
             },
             "resources": [
               {
@@ -8101,7 +8102,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "teacher": {
               "steps": [
                 "2 min · Mostro onde está o kit e crio o vídeo no Canva.",
-                "10 min · A turma envia as cenas e monta as três páginas; atendo primeiro quem ainda não entrou no Canva."
+                "10 min · A turma envia as cenas e monta a sequência na trilha principal; atendo primeiro quem ainda não entrou no Canva."
               ],
               "watch": "O kit tem cerca de 2 MB. Se o envio estiver lento, cada um começa pela paisagem.",
               "rescue": "Quem não conseguir entrar no Canva acompanha um colega do lado até o acesso voltar, sem trocar de lugar."
@@ -8119,7 +8120,7 @@ window.SENAI_TEACHING_SUPPORT = {
                 {
                   "word": "TEXTO",
                   "who": "Texto → Adicionar um título",
-                  "text": "Digitar A ÚLTIMA FRUTA na página da paisagem."
+                  "text": "Digitar A ÚLTIMA FRUTA sobre a cena da paisagem."
                 },
                 {
                   "word": "SUBTÍTULO",
@@ -8367,8 +8368,8 @@ window.SENAI_TEACHING_SUPPORT = {
                 },
                 {
                   "word": "TEMPO",
-                  "who": "Botão direito → Mostrar tempo",
-                  "text": "A legenda entra depois que a faixa sai."
+                  "who": "Linha do tempo",
+                  "text": "Selecionar a camada do texto e arrastar as pontas da faixa de duração: a legenda entra depois que a faixa sai."
                 },
                 {
                   "word": "ASSISTIR",
@@ -8389,26 +8390,31 @@ window.SENAI_TEACHING_SUPPORT = {
             "teacher": {
               "steps": [
                 "2 min · Faço a chamada e apresento o pedido.",
-                "3 min · Demonstro Animar e Mostrar tempo.",
+                "3 min · Demonstro Animar e as faixas de duração na linha do tempo.",
                 "15 min · A turma anima os textos; peço que mostrem o tempo de leitura."
               ],
               "watch": "Uma animação só em todos os textos é decisão de identidade. Indicar só animações da conta gratuita; nem todos têm o plano pago.",
-              "rescue": "Se a animação ficar rápida demais, aumento o tempo do texto na página."
+              "rescue": "Se a animação ficar rápida demais, alongo a faixa do texto na linha do tempo."
             }
           },
           {
-            "title": "Pedido 6 · Assinatura",
+            "title": "Pedido 6 · Máscara e assinatura",
             "kicker": "Pedido do cliente",
             "heading": "Quem fez. De onde vêm as imagens.",
-            "lede": "Uma página nova no fim, com fundo azul-noite e tudo agrupado no centro.",
+            "lede": "Um cartão no fim: foto dentro de uma moldura, título e créditos sobre fundo azul-noite.",
             "block": 3,
             "av9": {
               "type": "commands",
               "commands": [
                 {
-                  "word": "PÁGINA",
-                  "who": "Adicionar página",
-                  "text": "No fim do vídeo, cerca de 4 segundos, fundo #14213D."
+                  "word": "CARTÃO",
+                  "who": "Final da linha do tempo",
+                  "text": "Adicionar foto-fruta.jpg depois dos vídeos e estender a duração para ler os créditos duas vezes. Fundo #14213D."
+                },
+                {
+                  "word": "MÁSCARA",
+                  "who": "Elementos → Molduras → círculo",
+                  "text": "Arrastar foto-fruta.jpg para dentro da moldura. Duplo clique para reposicionar a fruta no recorte. Deixar espaço para os créditos."
                 },
                 {
                   "word": "TÍTULO",
@@ -8439,14 +8445,14 @@ window.SENAI_TEACHING_SUPPORT = {
               "label": "Ver assinatura de exemplo"
             },
             "promptLabel": "Pronto quando",
-            "prompt": "Título e créditos centralizados e agrupados, com o endereço da licença: creativecommons.org/licenses/by/3.0",
+            "prompt": "Foto recortada pela moldura, título e créditos legíveis, com o endereço da licença: creativecommons.org/licenses/by/3.0",
             "teacher": {
               "steps": [
-                "3 min · Mostro a assinatura de exemplo e explico a licença CC BY.",
-                "12 min · A turma cria a assinatura; confiro os créditos."
+                "4 min · Demonstro o cartão no fim da trilha, a foto dentro de uma moldura gratuita e os créditos.",
+                "11 min · A turma ajusta o recorte e cria a assinatura; confiro leitura e créditos."
               ],
               "watch": "Caminandes 3: Llamigos está sob CC BY 3.0: o crédito precisa de obra, autor, licença com o endereço e aviso de que as imagens foram editadas, porque o MP4 pode circular sem a pasta do kit.",
-              "rescue": "Se faltar tempo, fica só título e créditos."
+              "rescue": "Uso uma moldura circular simples. Explico: a máscara mostra só a parte da imagem dentro da forma; reposicionar muda o recorte sem apagar a foto. Não usamos remoção de fundo. Antes da aula testo o editor de linha do tempo na conta da escola."
             }
           },
           {

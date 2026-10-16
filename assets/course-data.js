@@ -1507,7 +1507,7 @@ window.SENAI_COURSES = {
       {
         "num": "12",
         "title": "Grafismos, textos e máscaras",
-        "description": "Uma abertura com identidade feita no Canva a partir de cenas prontas: título alinhado, faixa com nome, legenda legível, movimento, assinatura com créditos e uma versão para celular, entregues em MP4.",
+        "description": "Uma abertura com identidade feita no Canva a partir de cenas prontas: título alinhado, faixa com nome, legenda legível, movimento, assinatura com foto recortada em moldura, créditos e uma versão para celular, entregues em MP4.",
         "objectives": [
           "Edição de vídeos e sons: criação de elementos gráficos, máscaras, composição com sequência de imagem.",
           "Inovação: conceito, visão inovadora."
@@ -1532,7 +1532,7 @@ window.SENAI_COURSES = {
           },
           {
             "horario": "21:00 - 21:40",
-            "atividade": "Dar movimento aos textos com animações de entrada no mesmo estilo, criar a assinatura final com os créditos das imagens e exportar a primeira versão em MP4."
+            "atividade": "Dar movimento aos textos com animações de entrada no mesmo estilo, criar uma máscara simples com moldura e a assinatura final com os créditos das imagens e exportar a primeira versão em MP4."
           },
           {
             "horario": "21:40 - 22:10",
