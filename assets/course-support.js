@@ -7837,7 +7837,7 @@ window.SENAI_TEACHING_SUPPORT = {
           ],
           [
             "A cena não ocupa a tela inteira",
-            "Clique com o botão direito no vídeo e escolha Definir vídeo como plano de fundo."
+            "Seleciono o vídeo na prévia e arrasto os cantos até preencher a tela; reproduzo para conferir."
           ],
           [
             "A faixa e o nome se separam ao mover",
@@ -8173,7 +8173,7 @@ window.SENAI_TEACHING_SUPPORT = {
                 },
                 {
                   "label": "Na volta",
-                  "text": "Mesma página, mesmo posto."
+                  "text": "Mesmo projeto, mesmo posto."
                 }
               ]
             },
@@ -8419,17 +8419,12 @@ window.SENAI_TEACHING_SUPPORT = {
                 {
                   "word": "TÍTULO",
                   "who": "Texto centralizado",
-                  "text": "A ÚLTIMA FRUTA."
+                  "text": "A ÚLTIMA FRUTA, logo acima dos créditos: os dois formam um bloco só."
                 },
                 {
                   "word": "CRÉDITOS",
                   "who": "Texto menor",
                   "text": "Remontagem: seu nome. Imagens: Caminandes 3: Llamigos, Blender Foundation, editadas. Licença CC BY 3.0."
-                },
-                {
-                  "word": "AGRUPAR",
-                  "who": "Perto e centralizado",
-                  "text": "Título e créditos formam um bloco só."
                 }
               ],
               "tags": [
