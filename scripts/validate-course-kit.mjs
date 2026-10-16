@@ -687,8 +687,12 @@ for (const toolUrl of requiredDesignTools) {
 }
 
 const courseDataText = fs.readFileSync(fromRoot('assets/course-data.js'), 'utf8');
+// Aula 12 of Produção Audiovisual uses Canva on purpose: the class already has accounts and the lab cannot install software.
+const audiovisualCanvaLesson = context.window.SENAI_COURSES['producao-audiovisual'].lessons.find((lesson) => lesson.num === '12');
+const courseDataWithoutCanvaLesson = JSON.stringify(context.window.SENAI_COURSES, (key, value) => (value === audiovisualCanvaLesson ? undefined : value));
 for (const loginDependentSuggestion of ['Kahoot', 'Google Formulários', 'Figma', 'Canva', 'GitHub Pages', 'criação da conta']) {
-  if (courseDataText.includes(loginDependentSuggestion)) {
+  const planningText = loginDependentSuggestion === 'Canva' ? courseDataWithoutCanvaLesson : courseDataText;
+  if (planningText.includes(loginDependentSuggestion)) {
     errors.push(`Sugestão dependente de conta permaneceu no planejamento: ${loginDependentSuggestion}`);
   }
 }

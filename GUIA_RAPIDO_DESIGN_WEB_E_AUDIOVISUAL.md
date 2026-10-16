@@ -243,6 +243,20 @@ todos saem da conta do editor. Sem internet ou sem acesso, a equipe completa a
 lista de corte no caderno e monta o vídeo no início da aula 11. Os slides vêm
 de `scripts/lessons/audiovisual-10.mjs`.
 
+Na Aula 12, cada estudante monta uma abertura no Canva, no navegador, com o
+kit leve `Aula12-Canva.zip` (cerca de 2 MB: três cenas CC BY de Caminandes 3 e
+uma foto), que sobe rápido mesmo com a turma toda enviando junto. A noite é
+organizada em pedidos de um cliente fictício, revelados um de cada vez pelos
+slides: título alinhado, faixa com o nome de Oti, legenda legível, cores da
+marca, movimento, foto recortada por uma moldura (a máscara da aula),
+assinatura com créditos e versão vertical para celular.
+Cada pedido tem um critério de pronto e melhorias para quem termina antes,
+dentro da mesma peça; ninguém adianta o próximo pedido. Só recursos da conta
+gratuita do Canva são usados (sem redimensionar, sem remover fundo). O ZIP é
+gerado por `scripts/build-audiovisual-12-package.py`; as telas de comparação,
+por `build-audiovisual-12-media.py`. Os slides vêm de
+`scripts/lessons/audiovisual-12.mjs`.
+
 ### Edição
 
 O percurso principal usa **DaVinci Resolve**. O **CapCut** aparece como

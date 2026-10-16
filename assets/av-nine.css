@@ -1,4 +1,4 @@
-/* Aulas 09 a 11 de Produção Audiovisual. Projetor 5:4 (1280 × 1024) como referência. */
+/* Aulas 09 a 12 de Produção Audiovisual. Projetor 5:4 (1280 × 1024) como referência. */
 .av-nine {
   --av9-rec: #ff6b5e;
   --av9-good: #7fe0a3;
@@ -113,6 +113,9 @@
 .av11-media figcaption { display: grid; gap: 8px; margin-top: 14px; color: var(--paper-soft); font-size: 20px; line-height: 1.35; }
 .av11-media figcaption strong { color: var(--accent); font-size: 25px; }
 .av11-media.is-single { grid-template-columns: 1fr; max-width: 720px !important; }
+/* Aula 12: quadros parados para comparar posição de texto e camadas. */
+.av11-media.is-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.av11-media img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 8px; background: #000; }
 .av11-media.is-single figcaption { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 20px; }
 @media (max-height: 880px) and (min-width: 701px) {
   .av11-media.is-single { max-width: 540px !important; }
@@ -161,8 +164,9 @@
 .is-copy .av9-table th:nth-child(2):nth-last-child(3) { width: 10%; }
 .is-copy .av9-table th:nth-child(3):nth-last-child(2) { width: 22%; }
 
-.is-data .av9-table th:first-child { width: 36%; }
-.is-data .av9-table tbody td + td { color: var(--paper); font: 700 21px/1.3 var(--mono); }
+/* Two-column settings tables (item → value) highlight the value; wider tables keep body text. */
+.is-data .av9-table th:first-child:nth-last-child(2) { width: 36%; }
+.is-data .av9-table tbody td:nth-child(2):last-child { color: var(--paper); font: 700 21px/1.3 var(--mono); }
 .av9-table-wrap.is-copy { padding: 18px 22px 16px; border-radius: 12px; color: var(--av9-paper-ink); background: var(--av9-paper); }
 .is-copy .av9-table thead th { color: var(--av9-paper-ink); border-bottom-color: var(--av9-paper-ink); }
 .is-copy .av9-table tbody td { height: 52px; color: var(--av9-paper-ink); font-weight: 600; border-bottom: 1px solid var(--av9-paper-line); }
@@ -329,6 +333,8 @@
 .av9-clip:nth-child(even).is-video { background: #f2c48a; }
 .av9-clip.is-audio { color: var(--ink); background: var(--av9-good); }
 .av9-clip.is-empty { background: transparent; }
+.av9-clip.is-graphic { color: var(--ink); background: #9fd3f2; }
+.av9-clip.is-guide { color: var(--paper); background: transparent; border: 2px dashed #36e0ff; }
 .av9-clip.is-cut {
   color: var(--paper-soft);
   background: repeating-linear-gradient(135deg, rgba(255, 107, 94, .28) 0 8px, rgba(255, 107, 94, .1) 8px 16px);

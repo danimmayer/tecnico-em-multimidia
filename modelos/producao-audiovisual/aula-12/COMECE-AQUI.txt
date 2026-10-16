@@ -1,0 +1,11 @@
+AULA 12 · COMECE AQUI
+
+1. Entre no Canva pelo navegador.
+2. Clique em Criar design → Vídeo (1920 × 1080).
+3. Abra Uploads → Enviar arquivos e escolha os três MP4 e a foto desta pasta:
+   08-paisagem.mp4, 02-encontro.mp4, 04-fruta.mp4 e foto-fruta.jpg.
+4. Espere o envio terminar antes de começar.
+5. Salve o projeto com o nome "Aula 12 · seu nome".
+6. Os pedidos do cliente aparecem nos slides, um de cada vez.
+
+Mantenha os créditos de CREDITOS.txt junto do trabalho.

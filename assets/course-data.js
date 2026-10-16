@@ -1507,7 +1507,7 @@ window.SENAI_COURSES = {
       {
         "num": "12",
         "title": "Grafismos, textos e máscaras",
-        "description": "Criação de elementos gráficos, títulos, legendas e máscaras na edição, aplicando princípios de proximidade e alinhamento e buscando soluções visuais inovadoras.",
+        "description": "Uma abertura com identidade feita no Canva a partir de cenas prontas: título alinhado, faixa com nome, legenda legível, movimento, assinatura com foto recortada em moldura, créditos e uma versão para celular, entregues em MP4.",
         "objectives": [
           "Edição de vídeos e sons: criação de elementos gráficos, máscaras, composição com sequência de imagem.",
           "Inovação: conceito, visão inovadora."
@@ -1523,25 +1523,25 @@ window.SENAI_COURSES = {
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Revisão da aula anterior: transições e animações por keyframe. Painel de referências no projetor: aberturas de séries, lower thirds de telejornal e identidade visual de canais de internet. Discussão: o que diferencia uma solução visual inovadora de uma cópia de tendência."
+            "horario": "19:00 - 19:45",
+            "atividade": "Ver uma abertura pronta, comparar títulos soltos e alinhados, decidir onde cada texto cabe nas cenas, preparar o vídeo no Canva com as cenas do kit e atender ao primeiro pedido do cliente: o título."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "Criação de títulos, lower thirds e legendas no software de edição, aplicando proximidade, alinhamento e hierarquia visual. Seleção de formas, grafismos, pictogramas e textos: comparação entre os recursos gráficos do próprio editor e a criação de elementos no Photopea, sem login, ou no GIMP instalado; os arquivos exportados são então importados para o projeto."
+            "horario": "20:05 - 21:00",
+            "atividade": "Atender aos pedidos seguintes do cliente, um de cada vez: faixa com o nome do personagem, legenda legível e cores e fonte da marca aplicadas em todos os textos."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "Máscaras e composição com sequência de imagens: recortes, revelações e sobreposições criativas. Exercício guiado \"Texto por trás\": usar máscara para fazer o título passar atrás de uma pessoa ou objeto da cena."
+            "horario": "21:00 - 21:40",
+            "atividade": "Dar movimento aos textos com animações de entrada no mesmo estilo, criar uma máscara simples com moldura e a assinatura final com os créditos das imagens e exportar a primeira versão em MP4."
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "Prática \"Identidade do comercial\": cada equipe cria título animado, legenda acessível e assinatura final para o comercial gravado na aula 9, partindo de pesquisa rápida de referências e buscando uma solução visual própria."
+            "horario": "21:40 - 22:10",
+            "atividade": "Criar a versão vertical para celular, reposicionando todos os textos, testar a leitura com o colega do lado em cinco segundos e exportar a segunda versão."
           }
         ],
-        "methodology": "Pesquisa de referências e oficina prática de criação gráfica no software de edição, com atividade de produção.",
-        "resources": "Computadores do laboratório com softwares de edição e Design Digital, biblioteca de recursos livres da turma e projetor.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "Produção individual no Canva guiada por pedidos de um cliente fictício, revelados um de cada vez pelos slides. Cada pedido tem demonstração curta, prática no posto, critério de pronto e melhorias para quem termina antes dentro da mesma peça. Comparações projetadas antes da prática; teste de leitura com o colega do lado no fim.",
+        "resources": "Projetor, fones de ouvido e computadores com navegador e acesso ao Canva. Kit leve Aula12-Canva.zip, com cerca de 2 MB: três cenas curtas de Caminandes 3: Llamigos e uma foto, com créditos e licença CC BY 3.0. Ícones extras podem vir de PNG transparentes. Nenhum programa precisa ser instalado. Nenhuma ficha impressa.",
+        "observation": "Aula das 19:00 às 22:10; lanche das 19:45 às 20:05 e chamada no início de cada bloco. Os estudantes permanecem nos postos; somente o professor circula. Os pedidos aparecem um de cada vez: quem termina um pedido faz as melhorias do próprio slide e espera o próximo, sem avançar sozinho. Distribuir o Aula12-Canva.zip antes da prática, por pendrive, rede local ou mensagem da turma; ele é pequeno e sobe rápido ao Canva. Se o Canva ficar fora do ar, os estudantes desenham no caderno a posição de cada texto nas três cenas e a versão para celular. As imagens são CC BY: os créditos ficam na assinatura final."
       },
       {
         "num": "13",
