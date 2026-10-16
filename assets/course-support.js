@@ -1391,35 +1391,593 @@ window.SENAI_TEACHING_SUPPORT = {
         ]
       },
       "12": {
-        "teacherGoal": "Conduzir a Aula 12 para que a turma produza investigação da experiência do usuário e redesenho de uma jornada por observação, mapa e protótipo visual.",
-        "plainLanguage": "Investigação da experiência do usuário e redesenho de uma jornada por observação, mapa e protótipo visual. O foco é decidir, montar, comparar e testar; os bastidores técnicos aparecem apenas quando ajudam a compreender a função de uma interface.",
-        "say": "Hoje o resultado precisa ficar visível. Primeiro eu mostro o exemplo e os critérios; depois vocês produzem em equipe e conferem a entrega antes de sair.",
+        "appendDefaultClosing": false,
+        "teacherGoal": "Cada estudante observa uma tarefa realista, completa uma jornada guiada, escolhe uma hipótese, modifica uma interface pronta e revisa a decisão após uma tentativa com colega. A evidência fica no projeto .ux e no protótipo HTML.",
+        "routine": [
+          "Antes da turma entrar, testo o endereço público e deixo index.html da oficina salvo como cópia local. Testo abrir e salvar um projeto.",
+          "Faço chamada às 19:00, 20:05, 21:00 e 21:40. Modelo um passo por vez e circulo primeiro por quem ainda não começou.",
+          "Compartilho com a turma somente a oficina; mantenho a apresentação de condução no projetor. As chaves ficam nas notas P e são reveladas apenas na hora. Elas organizam o ritmo didático, não são autenticação: o material estático e os projetos não são um sistema de controle de acesso.",
+          "19:00 etapa 1 aberta; 19:25 etapa 2; 20:10 etapa 3; 20:40 etapa 4; 21:00 etapa 5; 21:40 etapa 6. Sem depender do relógio do computador do aluno.",
+          "Não mostro o mapa completo, gabarito ou futuros pedidos à turma. Quem termina faz a extensão da etapa atual. Posso liberar a próxima etapa mesmo com pendência: o estudante volta à anterior sem perder o trabalho.",
+          "Não recolho dados pessoais. No teste uso Lia e horários fictícios. Não há reserva, pagamento ou envio de informações."
+        ],
+        "plainLanguage": "UI são os elementos que a pessoa vê e usa. UX é a experiência de realizar uma tarefa com eles. Uma mesma decisão pode afetar as duas.",
+        "say": "Uma tela bonita ajuda a fazer o que você precisa? Hoje vamos observar isso numa reserva de estúdio.",
         "demo": [
-          "Retomada da Aula 11: estados e feedback. Dinâmica \"Amo e odeio\": a turma observa capturas preparadas de interfaces, sem acessar contas pessoais, e identifica um detalhe que ajuda e outro que atrapalha.",
-          "Demonstração dialogada de UI e UX: aparência, consistência, resposta, quantidade de passos e sensação de controle. Duplas classificam exemplos e justificam as decisões.",
-          "Mapa de jornada: cada equipe acompanha uma tarefa fictícia — encontrar um serviço, comparar opções e pedir contato — marcando ações, dúvidas, emoções e pontos de atrito."
+          "Faço a reserva na inicial, sem explicar todos os problemas.",
+          "Mostro um momento da jornada, sem preencher os outros quatro.",
+          "Edito só o texto do botão e testo. As demais decisões ficam com cada estudante.",
+          "Peço que o colega tente sem receber dicas. Registro uma observação curta; não invento uma dificuldade se ele conseguiu."
         ],
-        "studentDeliverable": "Clínica de redesign: redesenhar em papel ou ferramenta visual o pior momento da jornada, apresentar em dois minutos e registrar como a mudança facilita a tarefa.",
+        "studentDeliverable": "Pasta Aula-12 com aula-12.ux (jornada, hipótese, escolhas, tentativas e observação curta) e meu-prototipo-ux.html. Reabrir os dois arquivos no fim. Sem impressão, ficha, print ou upload coletivo.",
         "check": [
-          "A entrega visual corresponde ao objetivo e pode ser aberta ou apresentada sem explicação adicional.",
-          "O grupo justificou pelo menos duas decisões com critérios da aula.",
-          "Arquivos ou folhas estão nomeados e organizados na pasta de entrega.",
-          "A revisão final retirou dados pessoais e confirmou legibilidade."
+          "Inicial e referência experimentadas até a confirmação.",
+          "Dois atritos ligados a pistas de uma tela.",
+          "Jornada de cinco momentos com ação, dúvida e emoção justificada oralmente.",
+          "Uma hipótese com mudança e previsão.",
+          "Própria versão conclui uma reserva e permite corrigir o horário.",
+          "Uma tentativa com colega registrada sem generalizar o resultado.",
+          "Projeto reabre editável e protótipo funciona fora da oficina."
         ],
-        "fallback": "Se a ferramenta ou a internet falhar, realizar a mesma produção em papel A3 com cartões, canetas e a ficha impressa; fotografar ou guardar a folha como evidência.",
+        "fallback": "Sem internet, abro index.html da oficina localmente; as atividades e chaves funcionam no Chromium. Se o navegador não permitir a chave em arquivo local, uso servidor local da escola. Sem computador, o estudante acompanha o colega do lado e assume a operação no próximo bloco; as decisões são explicadas oralmente no projetor. Não há material para imprimir.",
+        "extension": "Cada etapa tem uma extensão própria. Na criação, revelo o pedido de 14h indisponível; na validação, outro horário e teclado. Quem termina não abre outra etapa nem refaz trabalho pronto.",
         "commonProblems": [
           [
-            "A equipe começa sem decidir o objetivo",
-            "Retomar público, mensagem e ação principal antes de escolher aparência."
+            "Concluiu e quer avançar",
+            "Aponto a extensão da etapa; a próxima chave ainda não foi revelada."
           ],
           [
-            "A produção fica bonita, mas pouco clara",
-            "Pedir que outro grupo cumpra uma tarefa e registrar onde ele hesita."
+            "Não tem projeto da aula 11",
+            "A oficina já traz uma interface inicial pronta."
           ],
           [
-            "O tempo termina antes do acabamento",
-            "Fechar primeiro a entrega essencial e deixar variações como extensão opcional."
+            "Troca só a cor",
+            "Peço uma decisão que mude informação, ação ou caminho para a tarefa de Lia."
+          ],
+          [
+            "A emoção parece resposta certa",
+            "Peço a pista que sustenta a escolha; emoções podem variar."
+          ],
+          [
+            "Poucos cliques, mas falta informação",
+            "Confiro horário, duração, preço e correção antes da confirmação. Contagem não dá nota."
+          ],
+          [
+            "O rascunho não foi salvo",
+            "Baixo o .ux; a oficina avisa quando o armazenamento do navegador não está disponível."
           ]
+        ],
+        "presentationSlides": [
+          {
+            "title": "Uma tela bonita basta?",
+            "block": 1,
+            "layout": "dw8",
+            "lede": "Lia quer reservar um estúdio por 30 minutos, sábado às 14h.",
+            "cards": [
+              {
+                "title": "A tarefa",
+                "text": "Saber o preço antes de confirmar."
+              },
+              {
+                "title": "Hoje",
+                "text": "Observar, decidir e experimentar."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Conte um detalhe que já ajudou você a usar uma tela.",
+            "teacher": {
+              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
+              "steps": [
+                "5 min · Faço chamada e ouço dois relatos. Não antecipo a lista de tarefas."
+              ],
+              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
+              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
+            }
+          },
+          {
+            "title": "A mesma tarefa em duas interfaces",
+            "block": 1,
+            "layout": "dw8",
+            "lede": "Abra a oficina. A primeira etapa já está disponível.",
+            "cards": [
+              {
+                "title": "Inicial",
+                "text": "Faça uma reserva até a confirmação."
+              },
+              {
+                "title": "Referência",
+                "text": "Repita a tarefa e compare."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "O que você soube antes de confirmar em cada versão?",
+            "teacher": {
+              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
+              "steps": [
+                "5 min · Demonstro apenas a primeira ação. Na oficina não peço conta ou dado real."
+              ],
+              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
+              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
+            },
+            "resources": [
+              {
+                "href": "https://oficinas-design-web.vercel.app/aula-12/",
+                "label": "Abrir a oficina de UX"
+              }
+            ]
+          },
+          {
+            "title": "Experimente antes de opinar",
+            "block": 1,
+            "layout": "dw8",
+            "lede": "Faça as duas reservas. Observe o que a tela pede e o que ela informa.",
+            "cards": [
+              {
+                "title": "Tarefa",
+                "text": "Sábado, 14h, 30 minutos."
+              },
+              {
+                "title": "Pistas",
+                "text": "Botões, preço, caminhos e confirmação."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Terminou? Repita com 15h e compare as informações.",
+            "teacher": {
+              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
+              "steps": [
+                "15 min · 5 min: apoio inicial; 7 min: duas tentativas; 3 min: comparação oral. UI envolve elementos e aparência; UX envolve realizar a tarefa. Não trato como categorias excludentes."
+              ],
+              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
+              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
+            }
+          },
+          {
+            "title": "Onde a dúvida aparece?",
+            "block": 1,
+            "layout": "dw8",
+            "lede": "Observe uma tela, uma dúvida e sua consequência.",
+            "cards": [
+              {
+                "title": "Tela",
+                "text": "O que apareceu?"
+              },
+              {
+                "title": "Dúvida",
+                "text": "O que Lia não soube?"
+              },
+              {
+                "title": "Efeito",
+                "text": "O que ela precisou fazer?"
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Escolha duas pistas na oficina.",
+            "teacher": {
+              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
+              "steps": [
+                "5 min · Libero etapa 2 com LIA-5832. Mostro um exemplo e deixo a turma escolher os outros. A chave está só nesta nota."
+              ],
+              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
+              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
+            }
+          },
+          {
+            "title": "Confira a pista na tela",
+            "block": 1,
+            "layout": "dw8",
+            "lede": "Volte à inicial para conferir as dúvidas escolhidas.",
+            "cards": [
+              {
+                "title": "Evidência",
+                "text": "A tela realmente deixa essa dúvida?"
+              },
+              {
+                "title": "Preferência",
+                "text": "Gostar de outra cor não explica sozinho uma dificuldade."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Terminou? Teste a hipótese com outro horário.",
+            "teacher": {
+              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
+              "steps": [
+                "10 min · Circulo e peço que apontem a tela que sustenta cada escolha. Registro não depende de escrita longa."
+              ],
+              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
+              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
+            }
+          },
+          {
+            "title": "Guarde antes do lanche",
+            "block": 1,
+            "layout": "dw8",
+            "lede": "Use Salvar projeto e confira o arquivo baixado.",
+            "cards": [
+              {
+                "title": "Arquivo",
+                "text": "aula-12.ux"
+              },
+              {
+                "title": "Retorno",
+                "text": "20:05 no mesmo posto."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Não feche o trabalho antes de conferir o arquivo.",
+            "teacher": {
+              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
+              "steps": [
+                "5 min · Confiro o download e priorizo quem ainda não conseguiu iniciar."
+              ],
+              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
+              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
+            }
+          },
+          {
+            "title": "Intervalo",
+            "block": 1,
+            "layout": "dw8",
+            "lede": "Lanche das 19:45 às 20:05.",
+            "cards": [],
+            "promptLabel": "Sua vez",
+            "prompt": "Volte ao mesmo posto.",
+            "teacher": {
+              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
+              "steps": [
+                "20 min · Intervalo fora dos 170 minutos de atividade."
+              ],
+              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
+              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
+            },
+            "pace": "break"
+          },
+          {
+            "title": "Retome a tarefa de Lia",
+            "block": 2,
+            "layout": "dw8",
+            "lede": "Qual informação ela precisa para decidir a reserva?",
+            "cards": [
+              {
+                "title": "Duração",
+                "text": "30 minutos."
+              },
+              {
+                "title": "Horário",
+                "text": "Sábado às 14h."
+              },
+              {
+                "title": "Preço",
+                "text": "Antes da confirmação."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Abra seu projeto se precisar.",
+            "teacher": {
+              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
+              "steps": [
+                "5 min · Faço chamada e abro um projeto salvo. Não repito as duas reservas."
+              ],
+              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
+              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
+            }
+          },
+          {
+            "title": "Uma jornada, cinco momentos",
+            "block": 2,
+            "layout": "dw8",
+            "lede": "Em cada momento, observe ação, dúvida e emoção.",
+            "cards": [
+              {
+                "title": "Ação",
+                "text": "O que a pessoa faz."
+              },
+              {
+                "title": "Dúvida",
+                "text": "O que precisa saber."
+              },
+              {
+                "title": "Emoção",
+                "text": "Uma interpretação apoiada na tela."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Complete só o primeiro momento junto da demonstração.",
+            "teacher": {
+              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
+              "steps": [
+                "5 min · Libero etapa 3 com ROTA-2947. Modelo Encontrar sem revelar os outros quatro."
+              ],
+              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
+              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
+            }
+          },
+          {
+            "title": "Monte e compare a jornada",
+            "block": 2,
+            "layout": "dw8",
+            "lede": "Preencha os cinco momentos com as opções da oficina.",
+            "cards": [
+              {
+                "title": "Percurso",
+                "text": "Encontrar → comparar → escolher → revisar → concluir."
+              },
+              {
+                "title": "Conversa",
+                "text": "Explique uma emoção ao colega com uma pista da tela."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Terminou? Compare outra emoção possível no mesmo momento.",
+            "teacher": {
+              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
+              "steps": [
+                "25 min · 15 min: completar; 5 min: pistas e apoio; 5 min: comparação oral. As opções mantêm a dificuldade facilitada; peço raciocínio, não cópia."
+              ],
+              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
+              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
+            }
+          },
+          {
+            "title": "Uma mudança que podemos testar",
+            "block": 2,
+            "layout": "dw8",
+            "lede": "Escolha o maior atrito e faça uma previsão.",
+            "cards": [
+              {
+                "title": "Mudança",
+                "text": "O que vou alterar?"
+              },
+              {
+                "title": "Previsão",
+                "text": "O que espero observar?"
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Se eu mostrar… a pessoa poderá…",
+            "teacher": {
+              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
+              "steps": [
+                "5 min · Libero etapa 4 com FOCO-8613. Demonstro a estrutura da frase; não escrevo a resposta completa."
+              ],
+              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
+              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
+            }
+          },
+          {
+            "title": "Escolha e explique",
+            "block": 2,
+            "layout": "dw8",
+            "lede": "Uma hipótese basta para começar.",
+            "cards": [
+              {
+                "title": "Foco",
+                "text": "Uma dúvida da tarefa de Lia."
+              },
+              {
+                "title": "Teste",
+                "text": "Uma ação que o colega poderá tentar."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Terminou? Compare oralmente uma segunda hipótese.",
+            "teacher": {
+              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
+              "steps": [
+                "15 min · 10 min: escolha e previsão; 5 min: conferência individual. Não exijo melhorar todos os itens nem escrever relatório."
+              ],
+              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
+              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
+            }
+          },
+          {
+            "title": "Mude uma decisão por vez",
+            "block": 3,
+            "layout": "dw8",
+            "lede": "A interface já está pronta. Suas decisões mudam a experiência.",
+            "cards": [
+              {
+                "title": "Editar",
+                "text": "Texto, informação ou caminho."
+              },
+              {
+                "title": "Experimentar",
+                "text": "Faça a reserva na própria versão."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "O que você vai mudar primeiro?",
+            "teacher": {
+              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
+              "steps": [
+                "5 min · Faço chamada. Libero etapa 5 com TELA-4729. Mostro somente a edição do texto do botão."
+              ],
+              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
+              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
+            }
+          },
+          {
+            "title": "Sua versão precisa funcionar",
+            "block": 3,
+            "layout": "dw8",
+            "lede": "Edite e teste na prévia.",
+            "cards": [
+              {
+                "title": "Informação",
+                "text": "O preço aparece quando ajuda a decidir?"
+              },
+              {
+                "title": "Controle",
+                "text": "É possível conferir e corrigir o horário?"
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Terminou? Compare uma escolha antes e depois, sem mudar tudo junto.",
+            "teacher": {
+              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
+              "steps": [
+                "20 min · 3 min: exemplo; 12 min: edição e testes; 5 min: conferência. Não exijo código nem página em branco. A referência é comparador, não gabarito obrigatório."
+              ],
+              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
+              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
+            }
+          },
+          {
+            "title": "Novo pedido: 14h esgotou",
+            "block": 3,
+            "layout": "dw8",
+            "lede": "Abra Pedido extra desta etapa e ative a indisponibilidade.",
+            "cards": [
+              {
+                "title": "Aviso",
+                "text": "A reserva ainda não foi enviada."
+              },
+              {
+                "title": "Alternativa",
+                "text": "Há uma sessão às 15h, pelo mesmo valor."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Teste 14h e depois uma alternativa.",
+            "teacher": {
+              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
+              "steps": [
+                "10 min · Revelo só agora o pedido extra. Quem ainda está no mínimo pode concluir a versão sem esgotamento antes de testar a mudança."
+              ],
+              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
+              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
+            }
+          },
+          {
+            "title": "Prepare o teste",
+            "block": 3,
+            "layout": "dw8",
+            "lede": "Deixe a própria versão pronta e salve o projeto.",
+            "cards": [
+              {
+                "title": "Tarefa",
+                "text": "O colega precisa saber só o objetivo de Lia."
+              },
+              {
+                "title": "Postura",
+                "text": "Quem criou observa sem dar dicas."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Guarde antes de trocar a operação com o colega do lado.",
+            "teacher": {
+              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
+              "steps": [
+                "5 min · Fecho a criação e preparo a troca sem deslocamento de alunos."
+              ],
+              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
+              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
+            }
+          },
+          {
+            "title": "Agora observe o colega",
+            "block": 4,
+            "layout": "dw8",
+            "lede": "Leia a tarefa. Deixe que ele escolha o caminho.",
+            "cards": [
+              {
+                "title": "Ajuda",
+                "text": "Se precisar dar uma dica, registre isso."
+              },
+              {
+                "title": "Respeito",
+                "text": "A dificuldade informa sobre a tela, não sobre a pessoa."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Não explique onde clicar.",
+            "teacher": {
+              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
+              "steps": [
+                "5 min · Faço chamada. Libero etapa 6 com TESTE-6358. Demonstro como iniciar uma tentativa nova."
+              ],
+              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
+              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
+            }
+          },
+          {
+            "title": "Teste e revise uma decisão",
+            "block": 4,
+            "layout": "dw8",
+            "lede": "Registre o resultado e uma ação observada. Ajuste e teste de novo.",
+            "cards": [
+              {
+                "title": "Observação",
+                "text": "O que ele fez, sem adivinhar o que pensou."
+              },
+              {
+                "title": "Revisão",
+                "text": "O que mudou ou foi mantido com motivo."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Terminou? Teste outro horário usando Tab e Enter.",
+            "teacher": {
+              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
+              "steps": [
+                "15 min · 5 min: tentativa; 5 min: observação e ajuste; 5 min: repetir. Uma tentativa não comprova usabilidade geral; tempo inclui leitura e pausas. Não peço que inventem um problema."
+              ],
+              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
+              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
+            }
+          },
+          {
+            "title": "Salve e reabra",
+            "block": 4,
+            "layout": "dw8",
+            "lede": "Os dois arquivos ficam na pasta Aula-12.",
+            "cards": [
+              {
+                "title": "Editável",
+                "text": "aula-12.ux"
+              },
+              {
+                "title": "Clicável",
+                "text": "meu-prototipo-ux.html"
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Reabra o .ux e faça uma reserva no HTML baixado.",
+            "teacher": {
+              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
+              "steps": [
+                "5 min · Confiro os dois formatos. O HTML exporta só a interface, sem hipóteses, jornada ou etapas futuras."
+              ],
+              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
+              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
+            }
+          },
+          {
+            "title": "Uma decisão e sua pista",
+            "block": 4,
+            "layout": "dw8",
+            "lede": "Mostre a mudança que ajudou Lia a reservar.",
+            "cards": [
+              {
+                "title": "Explique",
+                "text": "Mudei… porque observei…"
+              },
+              {
+                "title": "Guarde",
+                "text": "Arquivos conferidos e posto organizado."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Uma frase oral e uma tela bastam.",
+            "teacher": {
+              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
+              "steps": [
+                "5 min · Fecho às 22:10. Relaciono a próxima aula a barreiras de acesso sem antecipar tarefas."
+              ],
+              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
+              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
+            }
+          }
         ]
       },
       "13": {

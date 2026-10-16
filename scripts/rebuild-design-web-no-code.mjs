@@ -1,3 +1,4 @@
+import {lesson as designWeb12Lesson, support as designWeb12Support} from './lessons/design-web-12.mjs';
 import { lesson as designWeb11Lesson, support as designWeb11Support } from './lessons/design-web-11.mjs';
 import { planning as designWeb07Planning, support as designWeb07Support } from './lessons/design-web-07.mjs';
 import { planning as designWeb08Planning, support as designWeb08Support } from './lessons/design-web-08.mjs';
@@ -319,6 +320,8 @@ revisedLessons['11'] = {
   times: designWeb11Lesson.schedule.map(block => block.horario),
   blocks: designWeb11Lesson.schedule.map(block => block.atividade)
 };
+
+revisedLessons['12'] = { ...designWeb12Lesson, socio: designWeb12Lesson.socioemotional, times: designWeb12Lesson.schedule.map(b => b.horario), blocks: designWeb12Lesson.schedule.map(b => b.atividade) };
 
 function renderLesson(number, lesson) {
   const objectiveRows = Math.max(lesson.objectives.length, lesson.technical.length, lesson.socio.length);
@@ -2055,6 +2058,7 @@ Object.assign(support['design-web'].lessons['01'], {
 support['design-web'].lessons['07'] = designWeb07Support;
 support['design-web'].lessons['08'] = designWeb08Support;
 support['design-web'].lessons['11'] = designWeb11Support;
+support['design-web'].lessons['12'] = designWeb12Support;
 
 const supportOutput = `/* Anotações de aula do Prof. Daniel Marcos Mayer. */\nwindow.SENAI_TEACHING_SUPPORT = ${JSON.stringify(support, null, 2)};\n`;
 fs.writeFileSync(supportPath, supportOutput);
