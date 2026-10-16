@@ -155,6 +155,12 @@ roteiro de 19:00 a 22:10, intervalo 19:45–20:05, em
 JavaScript é apenas identificado na demonstração como uma das tecnologias capazes
 de implementar o comportamento planejado.
 
+### Aula 12 · UX e UI
+
+A oficina de UX (`modelos/design-web/aula-12/index.html`) traz uma reserva fictícia de estúdio, duas interfaces para comparar e uma estrutura pronta para editar. A noite vai de 19:00 a 22:10, com intervalo de 19:45 a 20:05. São seis etapas liberadas por chaves nas notas P: experimentar, investigar, mapear a jornada, escolher uma hipótese, redesenhar e testar com colega. Registrar uma etapa não abre a próxima; quem termina faz uma melhoria dentro da etapa atual. As chaves organizam o ritmo, sem promessa de controle de acesso.
+
+A dificuldade é facilitada por escolhas guiadas, demonstração de um passo e uma mudança por vez, sem programação ou arquivo vazio. A entrega é `aula-12.ux` e `meu-prototipo-ux.html`, reabertos no fim. A oficina funciona como arquivo local no Chromium, não pede conta e não envia dados. Sem material para imprimir. Gerar com `node scripts/build-design-web-12.mjs`; roteiro em `modelos/design-web/aula-12/README.md`. O endereço previsto de publicação é `https://oficinas-design-web.vercel.app/aula-12/`; conferir o deploy antes da aula.
+
 ### Aulas 12 e 13 · UX e acessibilidade
 
 As análises usam telas preparadas e dados fictícios; aplicativos bancários,

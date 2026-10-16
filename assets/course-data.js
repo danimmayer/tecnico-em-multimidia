@@ -420,7 +420,7 @@ window.SENAI_COURSES = {
       {
         "num": "12",
         "title": "UX e UI: O Usuário no Centro",
-        "description": "Investigação da experiência do usuário e redesenho de uma jornada por observação, mapa e protótipo visual.",
+        "description": "Uma reserva fictícia de estúdio para experimentar interfaces, observar dúvidas, mapear a jornada e testar uma melhoria visual.",
         "objectives": [
           "Interfaces Web e App: user interface e experiência do usuário.",
           "Desenvolvimento do Projeto: testes de validação."
@@ -434,25 +434,25 @@ window.SENAI_COURSES = {
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Retomada da Aula 11: estados e feedback. Dinâmica \"Amo e odeio\": a turma observa capturas preparadas de interfaces, sem acessar contas pessoais, e identifica um detalhe que ajuda e outro que atrapalha."
+            "horario": "19:00 - 19:45",
+            "atividade": "Experimentar duas interfaces da mesma reserva fictícia. Comparar aparência e realização da tarefa; observar duas dúvidas e conferir as pistas na tela."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "Demonstração dialogada de UI e UX: aparência, consistência, resposta, quantidade de passos e sensação de controle. Duplas classificam exemplos e justificam as decisões."
+            "horario": "20:05 - 21:00",
+            "atividade": "Retomar a tarefa de Lia, construir uma jornada guiada de cinco momentos e escolher uma mudança com uma previsão observável."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "Mapa de jornada: cada equipe acompanha uma tarefa fictícia — encontrar um serviço, comparar opções e pedir contato — marcando ações, dúvidas, emoções e pontos de atrito."
+            "horario": "21:00 - 21:40",
+            "atividade": "Redesenhar a interface pronta por escolhas visuais e textuais, testar a própria versão e responder a uma mudança de disponibilidade."
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "Clínica de redesign: redesenhar em papel ou ferramenta visual o pior momento da jornada, apresentar em dois minutos e registrar como a mudança facilita a tarefa."
+            "horario": "21:40 - 22:10",
+            "atividade": "Observar uma tentativa do colega, revisar uma decisão e salvar o projeto editável e o protótipo HTML para reabrir."
           }
         ],
-        "methodology": "Análise de capturas, classificação colaborativa, mapa de jornada e redesign rápido com apresentação.",
-        "resources": "Capturas fictícias preparadas, ficha de jornada, post-its, papel, canetas, ferramenta visual e projetor.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "Demonstrações de até cinco minutos, prática individual guiada por seis etapas com liberação pelo professor, extensão dentro da etapa atual e teste silencioso com o colega do lado.",
+        "resources": "Computador com navegador, projetor e oficina de UX, com cópia local sem dependências de rede. Sem login, instalação, programação discente ou material para imprimir.",
+        "observation": "19:00–22:10, intervalo 19:45–20:05. 170 minutos de atividade. Chamada no começo dos quatro blocos. Somente o professor circula; cada estudante trabalha no posto. Tarefa, persona, marca, preços e confirmação são fictícios. As etapas usam chaves de condução: concluir não libera a próxima. Não depender do arquivo da aula 11. Sem contas pessoais, impressões, relatórios extensos ou dados reais."
       },
       {
         "num": "13",
