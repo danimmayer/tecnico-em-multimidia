@@ -56,7 +56,7 @@ export const support = {
   commonProblems: [
     ['A turma quer avançar sozinha', 'Lembro que o próximo pedido vem do cliente. Quem terminou faz as melhorias do slide atual e confere com a lista de pronto.'],
     ['O envio das cenas está lento', 'Peço para enviar uma cena de cada vez, começando pela paisagem. O kit inteiro tem cerca de 2 MB.'],
-    ['A cena não ocupa a tela inteira', 'Clique com o botão direito no vídeo e escolha Definir vídeo como plano de fundo.'],
+    ['A cena não ocupa a tela inteira', 'Seleciono o vídeo na prévia e arrasto os cantos até preencher a tela; reproduzo para conferir.'],
     ['A faixa e o nome se separam ao mover', 'Selecione os dois com Shift e agrupe com Ctrl + G.'],
     ['A legenda some na neve', 'Em Efeitos, ativar Fundo no texto, com cor escura.'],
     ['Faltou tempo para a versão vertical', 'Priorizo título e assinatura na vertical; faixa e legenda entram se houver tempo.'],
@@ -141,7 +141,7 @@ export const support = {
     },
     {
       title: 'Lanche', kicker: 'Intervalo', heading: 'Lanche até 20:05', lede: 'O projeto fica salvo no Canva. Na volta, chega o próximo pedido.', block: 1, pace: 'break',
-      av9: checks([['Projeto', 'Salvo com o nome Aula 12 · seu nome.'], ['Na volta', 'Mesma página, mesmo posto.']]),
+      av9: checks([['Projeto', 'Salvo com o nome Aula 12 · seu nome.'], ['Na volta', 'Mesmo projeto, mesmo posto.']]),
       teacher: teacher(['20 min · Lanche das 19:45 às 20:05.'], 'Comida e bebida longe dos computadores.', 'Quem ainda não fez o título faz no começo do pedido 2.')
     },
     {
@@ -206,15 +206,14 @@ export const support = {
       title: 'Pedido 6 · Máscara e assinatura', kicker: 'Pedido do cliente', heading: 'Quem fez. De onde vêm as imagens.',
       lede: 'Um cartão no fim: foto dentro de uma moldura, título e créditos sobre fundo azul-noite.', block: 3,
       av9: commands([
-        ['CARTÃO', 'Final da linha do tempo', 'Adicionar foto-fruta.jpg depois dos vídeos e estender a duração para ler os créditos duas vezes. Fundo #14213D.'],
-        ['MÁSCARA', 'Elementos → Molduras → círculo', 'Arrastar foto-fruta.jpg para dentro da moldura. Duplo clique para reposicionar a fruta no recorte. Deixar espaço para os créditos.'],
-        ['TÍTULO', 'Texto centralizado', 'A ÚLTIMA FRUTA.'],
-        ['CRÉDITOS', 'Texto menor', 'Remontagem: seu nome. Imagens: Caminandes 3: Llamigos, Blender Foundation, editadas. Licença CC BY 3.0.'],
-        ['AGRUPAR', 'Perto e centralizado', 'Título e créditos formam um bloco só.']
+        ['CARTÃO', 'Final da linha do tempo', 'Botão + depois dos vídeos → clipe em branco. Cor #14213D e duração para ler os créditos duas vezes.'],
+        ['MÁSCARA', 'Elementos → Molduras → círculo', 'Sobre o cartão, arrastar foto-fruta.jpg dos Uploads para dentro da moldura. Duplo clique para reposicionar a fruta no recorte.'],
+        ['TÍTULO', 'Texto centralizado', 'A ÚLTIMA FRUTA, logo acima dos créditos: os dois formam um bloco só.'],
+        ['CRÉDITOS', 'Texto menor', 'Remontagem: seu nome. Imagens: Caminandes 3: Llamigos, Blender Foundation, editadas. Licença CC BY 3.0.']
       ], `Acrescente um ícone ou PNG transparente, sem cobrir os créditos.`),
       resource: {href: base + 'telas/assinatura.jpg', label: 'Ver assinatura de exemplo'},
       promptLabel: 'Pronto quando', prompt: 'Foto recortada pela moldura, título e créditos legíveis, com o endereço da licença: creativecommons.org/licenses/by/3.0',
-      teacher: teacher(['4 min · Demonstro o cartão no fim da trilha, a foto dentro de uma moldura gratuita e os créditos.', '11 min · A turma ajusta o recorte e cria a assinatura; confiro leitura e créditos.'], 'Caminandes 3: Llamigos está sob CC BY 3.0: o crédito precisa de obra, autor, licença com o endereço e aviso de que as imagens foram editadas, porque o MP4 pode circular sem a pasta do kit.', 'Uso uma moldura circular simples. Explico: a máscara mostra só a parte da imagem dentro da forma; reposicionar muda o recorte sem apagar a foto. Não usamos remoção de fundo. Antes da aula testo o editor de linha do tempo na conta da escola.')
+      teacher: teacher(['4 min · Demonstro o clipe em branco no fim da trilha, a foto dentro de uma moldura gratuita por cima e os créditos.', '11 min · A turma ajusta o recorte e cria a assinatura; confiro leitura e créditos.'], 'Caminandes 3: Llamigos está sob CC BY 3.0: o crédito precisa de obra, autor, licença com o endereço e aviso de que as imagens foram editadas, porque o MP4 pode circular sem a pasta do kit.', 'Uso uma moldura circular simples. Explico: a máscara mostra só a parte da imagem dentro da forma; reposicionar muda o recorte sem apagar a foto. Não usamos remoção de fundo. Antes da aula testo o editor de linha do tempo na conta da escola.')
     },
     {
       title: 'Exportar a versão 1', kicker: 'Primeira entrega', heading: 'Baixem a abertura em MP4',

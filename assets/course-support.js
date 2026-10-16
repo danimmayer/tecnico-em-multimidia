@@ -8395,7 +8395,7 @@ window.SENAI_TEACHING_SUPPORT = {
           ],
           [
             "A cena não ocupa a tela inteira",
-            "Clique com o botão direito no vídeo e escolha Definir vídeo como plano de fundo."
+            "Seleciono o vídeo na prévia e arrasto os cantos até preencher a tela; reproduzo para conferir."
           ],
           [
             "A faixa e o nome se separam ao mover",
@@ -8731,7 +8731,7 @@ window.SENAI_TEACHING_SUPPORT = {
                 },
                 {
                   "label": "Na volta",
-                  "text": "Mesma página, mesmo posto."
+                  "text": "Mesmo projeto, mesmo posto."
                 }
               ]
             },
@@ -8967,27 +8967,22 @@ window.SENAI_TEACHING_SUPPORT = {
                 {
                   "word": "CARTÃO",
                   "who": "Final da linha do tempo",
-                  "text": "Adicionar foto-fruta.jpg depois dos vídeos e estender a duração para ler os créditos duas vezes. Fundo #14213D."
+                  "text": "Botão + depois dos vídeos → clipe em branco. Cor #14213D e duração para ler os créditos duas vezes."
                 },
                 {
                   "word": "MÁSCARA",
                   "who": "Elementos → Molduras → círculo",
-                  "text": "Arrastar foto-fruta.jpg para dentro da moldura. Duplo clique para reposicionar a fruta no recorte. Deixar espaço para os créditos."
+                  "text": "Sobre o cartão, arrastar foto-fruta.jpg dos Uploads para dentro da moldura. Duplo clique para reposicionar a fruta no recorte."
                 },
                 {
                   "word": "TÍTULO",
                   "who": "Texto centralizado",
-                  "text": "A ÚLTIMA FRUTA."
+                  "text": "A ÚLTIMA FRUTA, logo acima dos créditos: os dois formam um bloco só."
                 },
                 {
                   "word": "CRÉDITOS",
                   "who": "Texto menor",
                   "text": "Remontagem: seu nome. Imagens: Caminandes 3: Llamigos, Blender Foundation, editadas. Licença CC BY 3.0."
-                },
-                {
-                  "word": "AGRUPAR",
-                  "who": "Perto e centralizado",
-                  "text": "Título e créditos formam um bloco só."
                 }
               ],
               "tags": [
@@ -9006,7 +9001,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "prompt": "Foto recortada pela moldura, título e créditos legíveis, com o endereço da licença: creativecommons.org/licenses/by/3.0",
             "teacher": {
               "steps": [
-                "4 min · Demonstro o cartão no fim da trilha, a foto dentro de uma moldura gratuita e os créditos.",
+                "4 min · Demonstro o clipe em branco no fim da trilha, a foto dentro de uma moldura gratuita por cima e os créditos.",
                 "11 min · A turma ajusta o recorte e cria a assinatura; confiro leitura e créditos."
               ],
               "watch": "Caminandes 3: Llamigos está sob CC BY 3.0: o crédito precisa de obra, autor, licença com o endereço e aviso de que as imagens foram editadas, porque o MP4 pode circular sem a pasta do kit.",

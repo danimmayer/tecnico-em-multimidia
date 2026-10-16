@@ -254,7 +254,8 @@ kit leve `Aula12-Canva.zip` (cerca de 2 MB: três cenas CC BY de Caminandes 3 e
 uma foto), que sobe rápido mesmo com a turma toda enviando junto. A noite é
 organizada em pedidos de um cliente fictício, revelados um de cada vez pelos
 slides: título alinhado, faixa com o nome de Oti, legenda legível, cores da
-marca, movimento, assinatura com créditos e versão vertical para celular.
+marca, movimento, foto recortada por uma moldura (a máscara da aula),
+assinatura com créditos e versão vertical para celular.
 Cada pedido tem um critério de pronto e melhorias para quem termina antes,
 dentro da mesma peça; ninguém adianta o próximo pedido. Só recursos da conta
 gratuita do Canva são usados (sem redimensionar, sem remover fundo). O ZIP é
