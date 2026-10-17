@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Oficina de UX para a Aula 12 de Design Web.">
+  <title>Oficina · Aula 12 · Plantão UX</title>
+  <link rel="stylesheet" href="laboratorio.css?v=20261016-plantao-2">
+  <script src="laboratorio.js?v=20261016-plantao-2" defer></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="course-line"><span>SENAI · Design Web · Aula 12</span><span>Dados e cenários fictícios</span></div>
+      <div class="masthead-title">
+        <div>
+          <p class="eyebrow">oficina de decisões</p>
+          <h1>Plantão UX<span>.</span></h1>
+          <p class="manifesto">Investigue. Decida. Sustente.</p>
+          <p class="header-note"><strong>Atividade dos alunos:</strong> percorra os quatro desafios, registre evidências e decisões e exporte a entrega ao final.</p>
+        </div>
+        <p class="header-note">Uma noite para transformar indícios em escolhas de interface — sem adivinhar o usuário.</p>
+      </div>
+      <div class="utility-bar">
+        <label>Dupla ou apelido
+          <input id="team" type="text" maxlength="65" autocomplete="off" placeholder="Ex.: Lu + Caio" aria-describedby="team-help">
+        </label>
+        <span id="team-help" class="visually-hidden">Identifique a dupla apenas para organizar a entrega local.</span>
+        <p id="save-status" role="status" aria-live="polite">Pronto para começar. Nada sai deste navegador.</p>
+        <div class="utility-actions">
+          <button type="button" id="export" class="button primary">Exportar entrega</button>
+          <a class="kit-link" href="kit-aula-12.zip" download>Baixar kit offline</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="phase-rail" aria-label="Fases da oficina">
+    <div class="phase-rail-inner">
+      <button type="button" data-phase="1" aria-current="step"><span class="phase-num">01</span><span>Investigar</span><small>20:10–20:35</small></button>
+      <button type="button" data-phase="2"><span class="phase-num">02</span><span>Descobrir</span><small>20:35–21:05</small></button>
+      <button type="button" data-phase="3"><span class="phase-num">03</span><span>Priorizar</span><small>21:05–21:35</small></button>
+      <button type="button" data-phase="4"><span class="phase-num">04</span><span>Responder</span><small>21:35–22:10</small></button>
+    </div>
+  </nav>
+
+  <main id="workspace" tabindex="-1">
+    <noscript><p class="noscript">Esta oficina precisa de JavaScript para apresentar os cenários e salvar suas decisões.</p></noscript>
+  </main>
+
+  <footer class="site-footer">
+    <p><strong>Versão de hoje:</strong> 20:10–22:10 · Quatro desafios em 120 min. Extensões opcionais.</p>
+    <a href="guia-docente.html">Abrir guia docente</a>
+  </footer>
+</body>
+</html>

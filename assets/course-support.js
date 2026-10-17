@@ -1392,590 +1392,548 @@ window.SENAI_TEACHING_SUPPORT = {
       },
       "12": {
         "appendDefaultClosing": false,
-        "teacherGoal": "Cada estudante observa uma tarefa realista, completa uma jornada guiada, escolhe uma hipótese, modifica uma interface pronta e revisa a decisão após uma tentativa com colega. A evidência fica no projeto .ux e no protótipo HTML.",
+        "teacherGoal": "Ao fim da noite, cada estudante ou dupla terá quatro registros de decisão: três reparos de microtexto, dois dossiês investigados, Plano A e Plano B preservados e um aviso operacional exportado.",
         "routine": [
-          "Antes da turma entrar, testo o endereço público e deixo index.html da oficina salvo como cópia local. Testo abrir e salvar um projeto.",
-          "Faço chamada às 19:00, 20:05, 21:00 e 21:40. Modelo um passo por vez e circulo primeiro por quem ainda não começou.",
-          "Compartilho com a turma somente a oficina; mantenho a apresentação de condução no projetor. As chaves ficam nas notas P e são reveladas apenas na hora. Elas organizam o ritmo didático, não são autenticação: o material estático e os projetos não são um sistema de controle de acesso.",
-          "19:00 etapa 1 aberta; 19:25 etapa 2; 20:10 etapa 3; 20:40 etapa 4; 21:00 etapa 5; 21:40 etapa 6. Sem depender do relógio do computador do aluno.",
-          "Não mostro o mapa completo, gabarito ou futuros pedidos à turma. Quem termina faz a extensão da etapa atual. Posso liberar a próxima etapa mesmo com pendência: o estudante volta à anterior sem perder o trabalho.",
-          "Não recolho dados pessoais. No teste uso Lia e horários fictícios. Não há reserva, pagamento ou envio de informações."
+          "Antes da aula, abra a oficina da Aula 12 na Vercel e teste a exportação HTML. Deixe esta apresentação na plataforma no projetor. Mantenha o kit offline extraído como reserva para falta de internet.",
+          "Liberar apenas a fase indicada. A cada virada de bloco, pedir que os campos da fase estejam preenchidos antes de avançar."
         ],
-        "plainLanguage": "UI são os elementos que a pessoa vê e usa. UX é a experiência de realizar uma tarefa com eles. Uma mesma decisão pode afetar as duas.",
-        "say": "Uma tela bonita ajuda a fazer o que você precisa? Hoje vamos observar isso numa reserva de estúdio.",
+        "onlineRoutine": "A oficina dos estudantes está na Vercel; esta apresentação fica na plataforma. Se a internet cair, extraia o kit offline e abra desafio.html por duplo clique. O navegador pode bloquear localStorage em alguns computadores; isso só impede retomar após fechar a página, e a exportação final continua disponível.",
+        "plainLanguage": "UX é escolher informações e ações para que uma pessoa entenda o que acontece e consiga decidir. Nesta noite, nenhuma melhoria vale só porque parece bonita: cada uma precisa responder a uma evidência.",
+        "say": "A apresentação fica no projetor, na plataforma. A oficina fica aberta nos computadores dos estudantes, na Vercel. Hoje não vamos desenhar três telas nem encenar estados: vamos agir como uma equipe que descobre um problema, reúne evidência, escolhe o que cabe e escreve uma resposta que alguém consegue usar.",
         "demo": [
-          "Faço a reserva na inicial, sem explicar todos os problemas.",
-          "Mostro um momento da jornada, sem preencher os outros quatro.",
-          "Edito só o texto do botão e testo. As demais decisões ficam com cada estudante.",
-          "Peço que o colega tente sem receber dicas. Registro uma observação curta; não invento uma dificuldade se ele conseguiu."
+          "Abrir a Fase 1 da oficina na Vercel, concluir um dos fluxos e mostrar os campos “Evidência” e “Reparo”.",
+          "Mostrar que a hipótese vem antes das três perguntas do dossiê.",
+          "Marcar duas melhorias no orçamento e explicar a diferença entre Plano A e Plano B.",
+          "Editar um campo do aviso e conferir a prévia antes de exportar."
         ],
-        "studentDeliverable": "Pasta Aula-12 com aula-12.ux (jornada, hipótese, escolhas, tentativas e observação curta) e meu-prototipo-ux.html. Reabrir os dois arquivos no fim. Sem impressão, ficha, print ou upload coletivo.",
+        "studentDeliverable": "Arquivo HTML exportado pela oficina e registros salvos nele: três evidências e microtextos, dois dossiês com hipótese revisada, Plano A e Plano B com justificativas e um aviso da Virada Criativa. A exportação pode ser parcial, com pendências assinaladas. Sem computador: quatro páginas no caderno, seguindo o modelo do guia docente.",
         "check": [
-          "Inicial e referência experimentadas até a confirmação.",
-          "Dois atritos ligados a pistas de uma tela.",
-          "Jornada de cinco momentos com ação, dúvida e emoção justificada oralmente.",
-          "Uma hipótese com mudança e previsão.",
-          "Própria versão conclui uma reserva e permite corrigir o horário.",
-          "Uma tentativa com colega registrada sem generalizar o resultado.",
-          "Projeto reabre editável e protótipo funciona fora da oficina."
+          "Cada fluxo da Fase 1 contém um ponto observado e um microtexto que informa antes da ação.",
+          "Ana e Ravi têm três perguntas selecionadas, hipótese inicial, revisão após a contradição e uma próxima pesquisa.",
+          "Plano A usa até 10 créditos; Plano B usa até 6 e não apaga o Plano A.",
+          "O aviso informa a mudança, o que a pessoa deve fazer, onde obter apoio e coleta somente o mínimo necessário.",
+          "A entrega HTML foi exportada e aberta para conferência."
         ],
-        "fallback": "Sem internet, abro index.html da oficina localmente; as atividades e chaves funcionam no Chromium. Se o navegador não permitir a chave em arquivo local, uso servidor local da escola. Sem computador, o estudante acompanha o colega do lado e assume a operação no próximo bloco; as decisões são explicadas oralmente no projetor. Não há material para imprimir.",
-        "extension": "Cada etapa tem uma extensão própria. Na criação, revelo o pedido de 14h indisponível; na validação, outro horário e teclado. Quem termina não abre outra etapa nem refaz trabalho pronto.",
+        "fallback": "Sem internet, abrir o kit offline. Sem computadores para a turma, projetar os cenários da oficina e usar os modelos do guia docente. Para cada fase, os estudantes registram no caderno a mesma evidência, decisão e justificativa. O professor fotografa ou recolhe a página somente se isso já fizer parte da rotina da turma; não há ficha impressa obrigatória.",
+        "extension": "Depois de exportar, a dupla revisa outro cenário da Virada Criativa ou escreve uma crítica argumentada da própria mensagem: aponta o fato, a ação ou o apoio que ainda pode exigir adivinhação e propõe uma correção. Não iniciar uma nova tela nem uma apresentação.",
         "commonProblems": [
           [
-            "Concluiu e quer avançar",
-            "Aponto a extensão da etapa; a próxima chave ainda não foi revelada."
+            "A dupla escolhe uma melhoria sem evidência",
+            "Pedir que cite uma fala do dossiê, um custo visível ou uma condição da situação antes de marcar a opção."
           ],
           [
-            "Não tem projeto da aula 11",
-            "A oficina já traz uma interface inicial pronta."
+            "A turma tenta encontrar a resposta “certa”",
+            "Lembrar que a oficina mostra consequências e limites, não uma nota automática; exigir justificativa curta."
           ],
           [
-            "Troca só a cor",
-            "Peço uma decisão que mude informação, ação ou caminho para a tarefa de Lia."
-          ],
-          [
-            "A emoção parece resposta certa",
-            "Peço a pista que sustenta a escolha; emoções podem variar."
-          ],
-          [
-            "Poucos cliques, mas falta informação",
-            "Confiro horário, duração, preço e correção antes da confirmação. Contagem não dá nota."
-          ],
-          [
-            "O rascunho não foi salvo",
-            "Baixo o .ux; a oficina avisa quando o armazenamento do navegador não está disponível."
+            "O tempo aperta no fim",
+            "Preservar os quatro registros essenciais e exportar às 22:04; o desafio extra é sempre opcional."
           ]
         ],
         "presentationSlides": [
           {
-            "title": "Uma tela bonita basta?",
             "block": 1,
-            "layout": "dw8",
-            "lede": "Lia quer reservar um estúdio por 30 minutos, sábado às 14h.",
+            "title": "Plantão UX: quatro decisões em duas horas",
+            "heading": "Plantão UX: quatro decisões em duas horas",
+            "time": "20:10 - 20:13",
+            "lede": "Versão condensada após a interrupção: preserve as quatro entregas, sem apresentação longa.",
             "cards": [
               {
-                "title": "A tarefa",
-                "text": "Saber o preço antes de confirmar."
+                "title": "1 · Investigar",
+                "text": "Três escolhas enganosas e três reparos de microtexto."
               },
               {
-                "title": "Hoje",
-                "text": "Observar, decidir e experimentar."
+                "title": "2 · Descobrir",
+                "text": "Duas pessoas, perguntas limitadas e hipótese revisada."
+              },
+              {
+                "title": "3 · Priorizar",
+                "text": "Orçamento de 10, depois 6 créditos."
+              },
+              {
+                "title": "4 · Responder",
+                "text": "Um aviso operacional que alguém consegue usar."
               }
             ],
-            "promptLabel": "Sua vez",
-            "prompt": "Conte um detalhe que já ajudou você a usar uma tela.",
+            "promptLabel": "Combinado",
+            "prompt": "Abra a oficina da Aula 12 na Vercel, escolha um apelido de dupla se desejar e mantenha os dados fictícios.",
             "teacher": {
-              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
+              "speech": "A apresentação fica no projetor, na plataforma; cada bloco deixa campos concretos preenchidos na oficina da Vercel. Não vamos repetir o exercício de três estados da Aula 11.",
               "steps": [
-                "5 min · Faço chamada e ouço dois relatos. Não antecipo a lista de tarefas."
+                "3 min · Chamada, objetivo e abertura da oficina."
               ],
-              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
-              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
+              "watch": "Toda pessoa deve saber quais campos precisa preencher.",
+              "rescue": "Retome a tarefa menor indicada no slide e preserve a evidência já registrada."
             }
           },
           {
-            "title": "A mesma tarefa em duas interfaces",
             "block": 1,
-            "layout": "dw8",
-            "lede": "Abra a oficina. A primeira etapa já está disponível.",
+            "title": "Fase 1 · encontre a escolha enganosa",
+            "heading": "Fase 1 · encontre a escolha enganosa",
+            "time": "20:13 - 20:15",
+            "lede": "Não basta dizer que uma interface é ruim. Aponte o momento, a informação ausente e o texto que precisa mudar.",
             "cards": [
               {
-                "title": "Inicial",
-                "text": "Faça uma reserva até a confirmação."
+                "title": "Oficina",
+                "text": "R$ 20 aparece primeiro; o suporte opcional de R$ 8 vem marcado."
               },
               {
-                "title": "Referência",
-                "text": "Repita a tarefa e compare."
+                "title": "Newsletter",
+                "text": "A caixa de newsletter vem marcada junto do botão “Sim, quero continuar”."
+              },
+              {
+                "title": "Festival",
+                "text": "“Último lugar por 00:30” contrasta com painel de 8 vagas disponíveis."
               }
             ],
-            "promptLabel": "Sua vez",
-            "prompt": "O que você soube antes de confirmar em cada versão?",
-            "teacher": {
-              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
-              "steps": [
-                "5 min · Demonstro apenas a primeira ação. Na oficina não peço conta ou dado real."
-              ],
-              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
-              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-12/?fase=1",
+              "label": "Abrir oficina da Aula 12"
             },
-            "resources": [
-              {
-                "href": "https://oficinas-design-web.vercel.app/aula-12/",
-                "label": "Abrir a oficina de UX"
-              }
-            ]
-          },
-          {
-            "title": "Experimente antes de opinar",
-            "block": 1,
-            "layout": "dw8",
-            "lede": "Faça as duas reservas. Observe o que a tela pede e o que ela informa.",
-            "cards": [
-              {
-                "title": "Tarefa",
-                "text": "Sábado, 14h, 30 minutos."
-              },
-              {
-                "title": "Pistas",
-                "text": "Botões, preço, caminhos e confirmação."
-              }
-            ],
-            "promptLabel": "Sua vez",
-            "prompt": "Terminou? Repita com 15h e compare as informações.",
+            "promptLabel": "Regra",
+            "prompt": "Conclua cada fluxo inteiro e preencha “Evidência” e “Reparo”.",
             "teacher": {
-              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
+              "speech": "Não basta dizer que uma interface é ruim. Aponte o momento, a informação ausente e o texto que precisa mudar.",
               "steps": [
-                "15 min · 5 min: apoio inicial; 7 min: duas tentativas; 3 min: comparação oral. UI envolve elementos e aparência; UX envolve realizar a tarefa. Não trato como categorias excludentes."
+                "2 min · Demonstrar um clique e os dois campos de registro."
               ],
-              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
-              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
+              "watch": "A turma descreve fatos observáveis, não adjetivos soltos.",
+              "rescue": "Retome a tarefa menor indicada no slide e preserve a evidência já registrada."
             }
           },
           {
-            "title": "Onde a dúvida aparece?",
             "block": 1,
-            "layout": "dw8",
-            "lede": "Observe uma tela, uma dúvida e sua consequência.",
-            "cards": [
-              {
-                "title": "Tela",
-                "text": "O que apareceu?"
-              },
-              {
-                "title": "Dúvida",
-                "text": "O que Lia não soube?"
-              },
-              {
-                "title": "Efeito",
-                "text": "O que ela precisou fazer?"
-              }
-            ],
-            "promptLabel": "Sua vez",
-            "prompt": "Escolha duas pistas na oficina.",
+            "title": "Caso 1 · Oficina",
+            "heading": "Caso 1 · Oficina",
+            "time": "20:15 - 20:20",
+            "lede": "Investigue o preço total e o suporte opcional marcado. Depois escreva um microtexto que deixe a escolha livre e compreensível antes de confirmar.",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-12/?fase=1",
+              "label": "Abrir oficina · Fase 1 · Oficina"
+            },
+            "promptLabel": "Evidência mínima",
+            "prompt": "Valor anunciado, custo adicional e onde a pessoa percebeu a mudança.",
             "teacher": {
-              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
+              "speech": "Investigue o preço total e o suporte opcional marcado. Depois escreva um microtexto que deixe a escolha livre e compreensível antes de confirmar.",
               "steps": [
-                "5 min · Libero etapa 2 com LIA-5832. Mostro um exemplo e deixo a turma escolher os outros. A chave está só nesta nota."
+                "5 min · Investigar, registrar e reparar."
               ],
-              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
-              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
+              "watch": "O reparo precisa mencionar R$ 8 e que o suporte é opcional.",
+              "rescue": "Retome a tarefa menor indicada no slide e preserve a evidência já registrada."
             }
           },
           {
-            "title": "Confira a pista na tela",
             "block": 1,
-            "layout": "dw8",
-            "lede": "Volte à inicial para conferir as dúvidas escolhidas.",
+            "title": "Caso 2 · Newsletter",
+            "heading": "Caso 2 · Newsletter",
+            "time": "20:20 - 20:25",
+            "lede": "Descubra por que o botão “Sim, quero continuar” não explica que a newsletter vem marcada. Separe acesso de inscrição.",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-12/?fase=1",
+              "label": "Abrir oficina · Fase 1 · Newsletter"
+            },
+            "promptLabel": "Evidência mínima",
+            "prompt": "Qual ação a pessoa pensa estar autorizando? O que “Prefiro ficar por fora” precisa preservar?",
+            "teacher": {
+              "speech": "Descubra por que o botão “Sim, quero continuar” não explica que a newsletter vem marcada. Separe acesso de inscrição.",
+              "steps": [
+                "5 min · Investigar, registrar e reparar."
+              ],
+              "watch": "Evitar esconder a assinatura em letra menor.",
+              "rescue": "Retome a tarefa menor indicada no slide e preserve a evidência já registrada."
+            }
+          },
+          {
+            "block": 1,
+            "title": "Caso 3 · Festival",
+            "heading": "Caso 3 · Festival",
+            "time": "20:25 - 20:30",
+            "lede": "Localize a urgência artificial: o contador fala em último lugar, mas o painel informa 40 de capacidade, 32 ocupados e 8 disponíveis.",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-12/?fase=1",
+              "label": "Abrir oficina · Fase 1 · Festival"
+            },
+            "promptLabel": "Evidência mínima",
+            "prompt": "Que informação contradiz a urgência? Reescreva a chamada sem criar escassez falsa.",
+            "teacher": {
+              "speech": "Localize a urgência artificial: o contador fala em último lugar, mas o painel informa 40 de capacidade, 32 ocupados e 8 disponíveis.",
+              "steps": [
+                "5 min · Investigar, registrar e reparar."
+              ],
+              "watch": "A proposta não pode prometer “últimas vagas” sem base.",
+              "rescue": "Retome a tarefa menor indicada no slide e preserve a evidência já registrada."
+            }
+          },
+          {
+            "block": 1,
+            "title": "Cheque os três registros",
+            "heading": "Cheque os três registros",
+            "time": "20:30 - 20:35",
+            "lede": "Confira se cada caso tem uma evidência concreta e um reparo de microtexto.",
+            "cards": [
+              {
+                "title": "Clareza",
+                "text": "Preço, assinatura ou urgência vêm antes da confirmação."
+              },
+              {
+                "title": "Escolha",
+                "text": "O texto permite recusar uma opção sem punição."
+              },
+              {
+                "title": "Precisão",
+                "text": "Nada inventa urgência ou benefício."
+              }
+            ],
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-12/?fase=1",
+              "label": "Abrir oficina da Aula 12"
+            },
+            "promptLabel": "Antes de avançar",
+            "prompt": "Complete os campos que faltam; não há marca geral de três casos concluídos.",
+            "teacher": {
+              "speech": "Confira se cada caso tem uma evidência concreta e um reparo de microtexto.",
+              "steps": [
+                "5 min · Revisar e completar registros."
+              ],
+              "watch": "Não transformar a revisão em discussão aberta longa.",
+              "rescue": "Retome a tarefa menor indicada no slide e preserve a evidência já registrada."
+            }
+          },
+          {
+            "block": 2,
+            "title": "Fase 2 · antes da solução, formule hipótese",
+            "heading": "Fase 2 · antes da solução, formule hipótese",
+            "time": "20:35 - 20:38",
+            "lede": "Dossiês não são personas decorativas. Primeiro registre um palpite; depois cada caso permite somente três perguntas.",
+            "cards": [
+              {
+                "title": "Ana",
+                "text": "Trabalha até 18:30, depende de ônibus e quer voltar antes das 22h."
+              },
+              {
+                "title": "Ravi",
+                "text": "Usa zoom de 200%, procura rota sem degraus e QR sozinho não resolve."
+              }
+            ],
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-12/?fase=2",
+              "label": "Abrir oficina da Aula 12"
+            },
+            "promptLabel": "Sequência",
+            "prompt": "Hipótese inicial → três perguntas → contradição → revisão → próxima pesquisa.",
+            "teacher": {
+              "speech": "Dossiês não são personas decorativas. Primeiro registre um palpite; depois cada caso permite somente três perguntas.",
+              "steps": [
+                "3 min · Chamada, hipótese e demonstração da contagem."
+              ],
+              "watch": "A escolha de pergunta deve reduzir uma incerteza real.",
+              "rescue": "Retome a tarefa menor indicada no slide e preserve a evidência já registrada."
+            }
+          },
+          {
+            "block": 2,
+            "title": "Dossiê Ana · o problema não é “falta de interesse”",
+            "heading": "Dossiê Ana · o problema não é “falta de interesse”",
+            "time": "20:38 - 20:49",
+            "lede": "Ana termina o trabalho às 18:30, usa ônibus e precisa voltar antes das 22h. Descubra o que a informação de horário precisa permitir.",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-12/?fase=2",
+              "label": "Abrir oficina · Fase 2 · Dossiê Ana"
+            },
+            "promptLabel": "Entrega do dossiê",
+            "prompt": "Hipótese, três perguntas, revisão após a contradição, evidência e próxima pesquisa.",
+            "teacher": {
+              "speech": "Ana termina o trabalho às 18:30, usa ônibus e precisa voltar antes das 22h. Descubra o que a informação de horário precisa permitir.",
+              "steps": [
+                "11 min · Investigar, revisar e registrar."
+              ],
+              "watch": "A hipótese deve falar de horário e deslocamento, não de gosto pessoal.",
+              "rescue": "Retome a tarefa menor indicada no slide e preserve a evidência já registrada."
+            }
+          },
+          {
+            "block": 2,
+            "title": "Dossiê Ravi · acesso não cabe num QR",
+            "heading": "Dossiê Ravi · acesso não cabe num QR",
+            "time": "20:49 - 21:00",
+            "lede": "Ravi usa zoom de 200%, precisa de rota sem degraus e encontra uma comunicação que entrega só um QR. Investigue a barreira antes de propor formato.",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-12/?fase=2",
+              "label": "Abrir oficina · Fase 2 · Dossiê Ravi"
+            },
+            "promptLabel": "Entrega do dossiê",
+            "prompt": "Hipótese, três perguntas, revisão após a contradição, evidência e próxima pesquisa.",
+            "teacher": {
+              "speech": "Ravi usa zoom de 200%, precisa de rota sem degraus e encontra uma comunicação que entrega só um QR. Investigue a barreira antes de propor formato.",
+              "steps": [
+                "11 min · Investigar, revisar e registrar."
+              ],
+              "watch": "Não trate zoom como defeito da pessoa; observe conteúdo e caminho.",
+              "rescue": "Retome a tarefa menor indicada no slide e preserve a evidência já registrada."
+            }
+          },
+          {
+            "block": 2,
+            "title": "Síntese: o que a evidência muda?",
+            "heading": "Síntese: o que a evidência muda?",
+            "time": "21:00 - 21:05",
+            "lede": "Compare as duas revisões. Uma necessidade descrita com contexto leva a uma próxima pesquisa concreta.",
             "cards": [
               {
                 "title": "Evidência",
-                "text": "A tela realmente deixa essa dúvida?"
+                "text": "Uma fala, condição ou dado do dossiê."
               },
               {
-                "title": "Preferência",
-                "text": "Gostar de outra cor não explica sozinho uma dificuldade."
-              }
-            ],
-            "promptLabel": "Sua vez",
-            "prompt": "Terminou? Teste a hipótese com outro horário.",
-            "teacher": {
-              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
-              "steps": [
-                "10 min · Circulo e peço que apontem a tela que sustenta cada escolha. Registro não depende de escrita longa."
-              ],
-              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
-              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
-            }
-          },
-          {
-            "title": "Guarde antes do lanche",
-            "block": 1,
-            "layout": "dw8",
-            "lede": "Use Salvar projeto e confira o arquivo baixado.",
-            "cards": [
-              {
-                "title": "Arquivo",
-                "text": "aula-12.ux"
+                "title": "Hipótese",
+                "text": "Uma explicação provisória do problema."
               },
               {
-                "title": "Retorno",
-                "text": "20:05 no mesmo posto."
+                "title": "Próxima pesquisa",
+                "text": "O que ainda precisa ser descoberto antes da decisão."
               }
             ],
-            "promptLabel": "Sua vez",
-            "prompt": "Não feche o trabalho antes de conferir o arquivo.",
-            "teacher": {
-              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
-              "steps": [
-                "5 min · Confiro o download e priorizo quem ainda não conseguiu iniciar."
-              ],
-              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
-              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
-            }
-          },
-          {
-            "title": "Intervalo",
-            "block": 1,
-            "layout": "dw8",
-            "lede": "Lanche das 19:45 às 20:05.",
-            "cards": [],
-            "promptLabel": "Sua vez",
-            "prompt": "Volte ao mesmo posto.",
-            "teacher": {
-              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
-              "steps": [
-                "20 min · Intervalo fora dos 170 minutos de atividade."
-              ],
-              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
-              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-12/?fase=2",
+              "label": "Abrir oficina da Aula 12"
             },
-            "pace": "break"
-          },
-          {
-            "title": "Retome a tarefa de Lia",
-            "block": 2,
-            "layout": "dw8",
-            "lede": "Qual informação ela precisa para decidir a reserva?",
-            "cards": [
-              {
-                "title": "Duração",
-                "text": "30 minutos."
-              },
-              {
-                "title": "Horário",
-                "text": "Sábado às 14h."
-              },
-              {
-                "title": "Preço",
-                "text": "Antes da confirmação."
-              }
-            ],
-            "promptLabel": "Sua vez",
-            "prompt": "Abra seu projeto se precisar.",
+            "promptLabel": "Fechamento do bloco",
+            "prompt": "Complete os dois dossiês antes de avançar; quem terminou relê o próprio registro, sem resolver o caso alheio.",
             "teacher": {
-              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
+              "speech": "Compare as duas revisões. Uma necessidade descrita com contexto leva a uma próxima pesquisa concreta.",
               "steps": [
-                "5 min · Faço chamada e abro um projeto salvo. Não repito as duas reservas."
+                "5 min · Conferir os dois dossiês e sintetizar."
               ],
-              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
-              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
+              "watch": "Cada caso tem uma contradição; a revisão é obrigatória.",
+              "rescue": "Retome a tarefa menor indicada no slide e preserve a evidência já registrada."
             }
           },
           {
-            "title": "Uma jornada, cinco momentos",
-            "block": 2,
-            "layout": "dw8",
-            "lede": "Em cada momento, observe ação, dúvida e emoção.",
+            "block": 3,
+            "title": "Fase 3 · dez créditos não resolvem tudo",
+            "heading": "Fase 3 · dez créditos não resolvem tudo",
+            "time": "21:05 - 21:14",
+            "lede": "Uma equipe não entrega todas as melhorias de uma vez. Escolha o que cabe, salve o Plano A e deixe claro o motivo.",
             "cards": [
               {
-                "title": "Ação",
-                "text": "O que a pessoa faz."
+                "title": "10 créditos",
+                "text": "Primeiro orçamento: selecionar melhorias de custo 1 a 4."
               },
               {
-                "title": "Dúvida",
-                "text": "O que precisa saber."
+                "title": "Plano A",
+                "text": "Fica preservado como retrato da decisão inicial."
               },
               {
-                "title": "Emoção",
-                "text": "Uma interpretação apoiada na tela."
+                "title": "6 créditos",
+                "text": "O choque reduz orçamento e muda a prioridade."
               }
             ],
-            "promptLabel": "Sua vez",
-            "prompt": "Complete só o primeiro momento junto da demonstração.",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-12/?fase=3",
+              "label": "Abrir oficina da Aula 12"
+            },
+            "promptLabel": "Regra",
+            "prompt": "Não existe combinação perfeita: use os dossiês e o impacto de cada item para justificar.",
             "teacher": {
-              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
+              "speech": "Uma equipe não entrega todas as melhorias de uma vez. Escolha o que cabe, salve o Plano A e deixe claro o motivo.",
               "steps": [
-                "5 min · Libero etapa 3 com ROTA-2947. Modelo Encontrar sem revelar os outros quatro."
+                "9 min · Montar Plano A."
               ],
-              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
-              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
+              "watch": "O contador não pode passar de 10.",
+              "rescue": "Retome a tarefa menor indicada no slide e preserve a evidência já registrada."
             }
           },
           {
-            "title": "Monte e compare a jornada",
-            "block": 2,
-            "layout": "dw8",
-            "lede": "Preencha os cinco momentos com as opções da oficina.",
-            "cards": [
-              {
-                "title": "Percurso",
-                "text": "Encontrar → comparar → escolher → revisar → concluir."
-              },
-              {
-                "title": "Conversa",
-                "text": "Explique uma emoção ao colega com uma pista da tela."
-              }
-            ],
-            "promptLabel": "Sua vez",
-            "prompt": "Terminou? Compare outra emoção possível no mesmo momento.",
+            "block": 3,
+            "title": "Plano A · escolha e registre",
+            "heading": "Plano A · escolha e registre",
+            "time": "21:14 - 21:17",
+            "lede": "Com 10 créditos, selecione melhorias com impactos diferentes. Escreva por que a combinação atende à evidência reunida.",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-12/?fase=3",
+              "label": "Abrir oficina · Fase 3 · Plano A"
+            },
+            "promptLabel": "Guardar",
+            "prompt": "Salve o Plano A antes de acionar o choque. Ele não será apagado.",
             "teacher": {
-              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
+              "speech": "Com 10 créditos, selecione melhorias com impactos diferentes. Escreva por que a combinação atende à evidência reunida.",
               "steps": [
-                "25 min · 15 min: completar; 5 min: pistas e apoio; 5 min: comparação oral. As opções mantêm a dificuldade facilitada; peço raciocínio, não cópia."
+                "3 min · Salvar Plano A e justificar."
               ],
-              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
-              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
+              "watch": "A justificativa deve citar Ana, Ravi ou um fluxo da Fase 1.",
+              "rescue": "Retome a tarefa menor indicada no slide e preserve a evidência já registrada."
             }
           },
           {
-            "title": "Uma mudança que podemos testar",
-            "block": 2,
-            "layout": "dw8",
-            "lede": "Escolha o maior atrito e faça uma previsão.",
+            "block": 3,
+            "title": "Choque: agora são seis créditos",
+            "heading": "Choque: agora são seis créditos",
+            "time": "21:17 - 21:29",
+            "lede": "A restrição mudou. Replaneje sem fingir que a primeira escolha nunca existiu; explique o que foi preservado e o que ficou para depois.",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-12/?fase=3",
+              "label": "Abrir oficina · Fase 3 · Aplicar choque e montar Plano B"
+            },
+            "promptLabel": "Plano B",
+            "prompt": "Use até 6 créditos. A oficina mantém Plano A para comparação.",
+            "teacher": {
+              "speech": "A restrição mudou. Replaneje sem fingir que a primeira escolha nunca existiu; explique o que foi preservado e o que ficou para depois.",
+              "steps": [
+                "12 min · Acionar choque, montar e justificar Plano B."
+              ],
+              "watch": "A turma não deve apagar o Plano A para “acertar” de novo.",
+              "rescue": "Retome a tarefa menor indicada no slide e preserve a evidência já registrada."
+            }
+          },
+          {
+            "block": 3,
+            "title": "Justifique a troca",
+            "heading": "Justifique a troca",
+            "time": "21:29 - 21:35",
+            "lede": "A decisão vira projeto quando a equipe explica sua prioridade e sua renúncia.",
+            "cards": [
+              {
+                "title": "Preservei",
+                "text": "O que continua porque protege uma necessidade crítica."
+              },
+              {
+                "title": "Adiei",
+                "text": "O que ficou para depois e por quê."
+              },
+              {
+                "title": "Condição",
+                "text": "O limite real: 6 créditos."
+              }
+            ],
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-12/?fase=3",
+              "label": "Abrir oficina da Aula 12"
+            },
+            "promptLabel": "Cheque",
+            "prompt": "Plano A até 10; Plano B até 6; duas justificativas completas.",
+            "teacher": {
+              "speech": "A decisão vira projeto quando a equipe explica sua prioridade e sua renúncia.",
+              "steps": [
+                "6 min · Completar justificativas e conferir limites."
+              ],
+              "watch": "Não confundir “mais bonito” com impacto maior.",
+              "rescue": "Retome a tarefa menor indicada no slide e preserve a evidência já registrada."
+            }
+          },
+          {
+            "block": 4,
+            "title": "Fase 4 · a informação mudou. E agora?",
+            "heading": "Fase 4 · a informação mudou. E agora?",
+            "time": "21:35 - 21:38",
+            "lede": "A Virada Criativa precisa avisar uma mudança sem criar mais incerteza. Escolha uma situação e trabalhe numa única mensagem operacional.",
+            "cards": [
+              {
+                "title": "Chuva",
+                "text": "Local mudou."
+              },
+              {
+                "title": "Lotação",
+                "text": "Sessão cheia, com lista de espera."
+              },
+              {
+                "title": "Energia",
+                "text": "Programação adiada."
+              }
+            ],
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-12/?fase=4",
+              "label": "Abrir oficina da Aula 12"
+            },
+            "promptLabel": "Campos de trabalho",
+            "prompt": "Título, fatos, botão, apoio e coleta mínima. A prévia mostra o que a pessoa verá.",
+            "teacher": {
+              "speech": "A Virada Criativa precisa avisar uma mudança sem criar mais incerteza. Escolha uma situação e trabalhe numa única mensagem operacional.",
+              "steps": [
+                "3 min · Escolher situação e mostrar prévia."
+              ],
+              "watch": "Cada dupla trabalha em somente uma situação.",
+              "rescue": "Retome a tarefa menor indicada no slide e preserve a evidência já registrada."
+            }
+          },
+          {
+            "block": 4,
+            "title": "Escreva uma resposta utilizável",
+            "heading": "Escreva uma resposta utilizável",
+            "time": "21:38 - 21:53",
+            "lede": "Quem lê precisa saber o que mudou, o que fazer agora e onde buscar ajuda. Use apenas dados necessários.",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-12/?fase=4",
+              "label": "Abrir oficina · Fase 4 · editar aviso"
+            },
+            "promptLabel": "15 minutos",
+            "prompt": "Edite todos os campos e confira a prévia depois de cada mudança importante.",
+            "teacher": {
+              "speech": "Quem lê precisa saber o que mudou, o que fazer agora e onde buscar ajuda. Use apenas dados necessários.",
+              "steps": [
+                "15 min · Produzir e revisar na prévia."
+              ],
+              "watch": "O botão deve nomear a ação; apoio precisa ter um caminho concreto.",
+              "rescue": "Retome a tarefa menor indicada no slide e preserve a evidência já registrada."
+            }
+          },
+          {
+            "block": 4,
+            "title": "Conferência editorial",
+            "heading": "Conferência editorial",
+            "time": "21:53 - 22:00",
+            "lede": "Leia como alguém que recebeu a notícia tarde, no celular e sem contexto anterior.",
             "cards": [
               {
                 "title": "Mudança",
-                "text": "O que vou alterar?"
+                "text": "O fato e o momento aparecem sem rodeio."
               },
               {
-                "title": "Previsão",
-                "text": "O que espero observar?"
+                "title": "Ação",
+                "text": "O botão diz o que fazer em seguida."
+              },
+              {
+                "title": "Apoio",
+                "text": "Há forma de pedir ajuda sem repetir informações."
+              },
+              {
+                "title": "Mínimo",
+                "text": "Não se pede dado que não ajuda a ação."
               }
             ],
-            "promptLabel": "Sua vez",
-            "prompt": "Se eu mostrar… a pessoa poderá…",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-12/?fase=4",
+              "label": "Abrir oficina da Aula 12"
+            },
+            "promptLabel": "Corrija uma vez",
+            "prompt": "Ajuste o primeiro ponto que ainda exige adivinhação.",
             "teacher": {
-              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
+              "speech": "Leia como alguém que recebeu a notícia tarde, no celular e sem contexto anterior.",
               "steps": [
-                "5 min · Libero etapa 4 com FOCO-8613. Demonstro a estrutura da frase; não escrevo a resposta completa."
+                "7 min · Conferir e corrigir."
               ],
-              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
-              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
+              "watch": "A conferência é da mensagem, não uma repetição de teste de colega.",
+              "rescue": "Retome a tarefa menor indicada no slide e preserve a evidência já registrada."
             }
           },
           {
-            "title": "Escolha e explique",
-            "block": 2,
-            "layout": "dw8",
-            "lede": "Uma hipótese basta para começar.",
-            "cards": [
-              {
-                "title": "Foco",
-                "text": "Uma dúvida da tarefa de Lia."
-              },
-              {
-                "title": "Teste",
-                "text": "Uma ação que o colega poderá tentar."
-              }
-            ],
-            "promptLabel": "Sua vez",
-            "prompt": "Terminou? Compare oralmente uma segunda hipótese.",
-            "teacher": {
-              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
-              "steps": [
-                "15 min · 10 min: escolha e previsão; 5 min: conferência individual. Não exijo melhorar todos os itens nem escrever relatório."
-              ],
-              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
-              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
-            }
-          },
-          {
-            "title": "Mude uma decisão por vez",
-            "block": 3,
-            "layout": "dw8",
-            "lede": "A interface já está pronta. Suas decisões mudam a experiência.",
-            "cards": [
-              {
-                "title": "Editar",
-                "text": "Texto, informação ou caminho."
-              },
-              {
-                "title": "Experimentar",
-                "text": "Faça a reserva na própria versão."
-              }
-            ],
-            "promptLabel": "Sua vez",
-            "prompt": "O que você vai mudar primeiro?",
-            "teacher": {
-              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
-              "steps": [
-                "5 min · Faço chamada. Libero etapa 5 com TELA-4729. Mostro somente a edição do texto do botão."
-              ],
-              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
-              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
-            }
-          },
-          {
-            "title": "Sua versão precisa funcionar",
-            "block": 3,
-            "layout": "dw8",
-            "lede": "Edite e teste na prévia.",
-            "cards": [
-              {
-                "title": "Informação",
-                "text": "O preço aparece quando ajuda a decidir?"
-              },
-              {
-                "title": "Controle",
-                "text": "É possível conferir e corrigir o horário?"
-              }
-            ],
-            "promptLabel": "Sua vez",
-            "prompt": "Terminou? Compare uma escolha antes e depois, sem mudar tudo junto.",
-            "teacher": {
-              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
-              "steps": [
-                "20 min · 3 min: exemplo; 12 min: edição e testes; 5 min: conferência. Não exijo código nem página em branco. A referência é comparador, não gabarito obrigatório."
-              ],
-              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
-              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
-            }
-          },
-          {
-            "title": "Novo pedido: 14h esgotou",
-            "block": 3,
-            "layout": "dw8",
-            "lede": "Abra Pedido extra desta etapa e ative a indisponibilidade.",
-            "cards": [
-              {
-                "title": "Aviso",
-                "text": "A reserva ainda não foi enviada."
-              },
-              {
-                "title": "Alternativa",
-                "text": "Há uma sessão às 15h, pelo mesmo valor."
-              }
-            ],
-            "promptLabel": "Sua vez",
-            "prompt": "Teste 14h e depois uma alternativa.",
-            "teacher": {
-              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
-              "steps": [
-                "10 min · Revelo só agora o pedido extra. Quem ainda está no mínimo pode concluir a versão sem esgotamento antes de testar a mudança."
-              ],
-              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
-              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
-            }
-          },
-          {
-            "title": "Prepare o teste",
-            "block": 3,
-            "layout": "dw8",
-            "lede": "Deixe a própria versão pronta e salve o projeto.",
-            "cards": [
-              {
-                "title": "Tarefa",
-                "text": "O colega precisa saber só o objetivo de Lia."
-              },
-              {
-                "title": "Postura",
-                "text": "Quem criou observa sem dar dicas."
-              }
-            ],
-            "promptLabel": "Sua vez",
-            "prompt": "Guarde antes de trocar a operação com o colega do lado.",
-            "teacher": {
-              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
-              "steps": [
-                "5 min · Fecho a criação e preparo a troca sem deslocamento de alunos."
-              ],
-              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
-              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
-            }
-          },
-          {
-            "title": "Agora observe o colega",
             "block": 4,
-            "layout": "dw8",
-            "lede": "Leia a tarefa. Deixe que ele escolha o caminho.",
-            "cards": [
-              {
-                "title": "Ajuda",
-                "text": "Se precisar dar uma dica, registre isso."
-              },
-              {
-                "title": "Respeito",
-                "text": "A dificuldade informa sobre a tela, não sobre a pessoa."
-              }
-            ],
-            "promptLabel": "Sua vez",
-            "prompt": "Não explique onde clicar.",
+            "title": "Exportação e desafio extra",
+            "heading": "Exportação e desafio extra",
+            "time": "22:00 - 22:10",
+            "lede": "Exporte a entrega. O desafio extra cabe apenas até 22:04 e somente com os quatro blocos essenciais registrados.",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-12/?fase=4",
+              "label": "Abrir oficina · Fase 4 · exportar entrega"
+            },
+            "promptLabel": "Entrega até 22:10",
+            "prompt": "Clique em Exportar entrega. Abra o arquivo gerado e confira se os quatro blocos aparecem.",
             "teacher": {
-              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
+              "speech": "Exporte a entrega. O desafio extra cabe apenas até 22:04 e somente com os quatro blocos essenciais registrados.",
               "steps": [
-                "5 min · Faço chamada. Libero etapa 6 com TESTE-6358. Demonstro como iniciar uma tentativa nova."
+                "4 min · Desafio extra opcional ou refinamento.",
+                "6 min · Exportar e abrir o HTML."
               ],
-              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
-              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
-            }
-          },
-          {
-            "title": "Teste e revise uma decisão",
-            "block": 4,
-            "layout": "dw8",
-            "lede": "Registre o resultado e uma ação observada. Ajuste e teste de novo.",
-            "cards": [
-              {
-                "title": "Observação",
-                "text": "O que ele fez, sem adivinhar o que pensou."
-              },
-              {
-                "title": "Revisão",
-                "text": "O que mudou ou foi mantido com motivo."
-              }
-            ],
-            "promptLabel": "Sua vez",
-            "prompt": "Terminou? Teste outro horário usando Tab e Enter.",
-            "teacher": {
-              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
-              "steps": [
-                "15 min · 5 min: tentativa; 5 min: observação e ajuste; 5 min: repetir. Uma tentativa não comprova usabilidade geral; tempo inclui leitura e pausas. Não peço que inventem um problema."
-              ],
-              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
-              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
-            }
-          },
-          {
-            "title": "Salve e reabra",
-            "block": 4,
-            "layout": "dw8",
-            "lede": "Os dois arquivos ficam na pasta Aula-12.",
-            "cards": [
-              {
-                "title": "Editável",
-                "text": "aula-12.ux"
-              },
-              {
-                "title": "Clicável",
-                "text": "meu-prototipo-ux.html"
-              }
-            ],
-            "promptLabel": "Sua vez",
-            "prompt": "Reabra o .ux e faça uma reserva no HTML baixado.",
-            "teacher": {
-              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
-              "steps": [
-                "5 min · Confiro os dois formatos. O HTML exporta só a interface, sem hipóteses, jornada ou etapas futuras."
-              ],
-              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
-              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
-            }
-          },
-          {
-            "title": "Uma decisão e sua pista",
-            "block": 4,
-            "layout": "dw8",
-            "lede": "Mostre a mudança que ajudou Lia a reservar.",
-            "cards": [
-              {
-                "title": "Explique",
-                "text": "Mudei… porque observei…"
-              },
-              {
-                "title": "Guarde",
-                "text": "Arquivos conferidos e posto organizado."
-              }
-            ],
-            "promptLabel": "Sua vez",
-            "prompt": "Uma frase oral e uma tela bastam.",
-            "teacher": {
-              "speech": "Mostro apenas a etapa atual. As decisões são do estudante; a estrutura já está pronta.",
-              "steps": [
-                "5 min · Fecho às 22:10. Relaciono a próxima aula a barreiras de acesso sem antecipar tarefas."
-              ],
-              "watch": "Confiro uma ação concreta na tela antes de pedir acabamento.",
-              "rescue": "Demonstro o primeiro passo no projetor e devolvo o controle ao estudante. A cópia local da oficina funciona sem rede."
+              "watch": "Prioridade: exportar às 22:04. Não abrir nova atividade depois desse horário.",
+              "rescue": "Se o download falhar, use imprimir/salvar página conforme o navegador e registre no caderno as quatro decisões; não inventar evidência de exportação."
             }
           }
         ]
