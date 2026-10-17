@@ -1,41 +1,38 @@
-# Aula 12 · UX e UI
+# Aula 12 · Plantão UX
 
-Fonte da aula: `scripts/lessons/design-web-12.mjs`. Oficina: `scripts/lessons/design-web-12-workshop/`, separada em conteúdo, estado/validação, protótipo, interface e estilos. O gerador produz um único `index.html` autônomo para funcionar em HTTPS ou como arquivo local no Chromium, sem bibliotecas, fontes externas ou chamadas de rede.
+A apresentação do professor fica na plataforma, em `aula-kit.html?uc=design-web&aula=12`. A oficina dos estudantes fica em <https://oficinas-design-web.vercel.app/aula-12/>. Os links da projeção abrem a fase correspondente na oficina publicada.
 
 ## Condução
 
-19:00–22:10, intervalo 19:45–20:05; 170 minutos de prática e explicações. Chamada no início dos quatro blocos. Sem programação discente, instalação, conta, dados pessoais, ficha, impressão ou upload coletivo. A persona Lia, a marca e a reserva são fictícias.
+Roteiro condensado após a interrupção: **20:10–22:10**, 120 minutos, sem novo intervalo. São 19 slides (capa e 18 slides de atividade), com notas do professor e tempos por slide.
 
-1. 19:00–19:25: experimentar inicial e referência; a etapa 1 já está aberta.
-2. 19:25–19:45: localizar duas dúvidas e conferir as pistas; salvar antes do lanche.
-3. 20:05–20:10: retomada; 20:10–20:40: jornada guiada de cinco momentos.
-4. 20:40–21:00: escolher atrito, mudança e previsão.
-5. 21:00–21:40: editar a interface pronta, testar e receber o pedido de 14h esgotado.
-6. 21:40–22:10: observar colega, registrar uma pista, revisar, salvar e reabrir.
+| Horário | Desafio | Registro |
+| --- | --- | --- |
+| 20:10–20:35 | Investigar três fluxos fictícios | Evidência e reparo de microtexto para preço, assinatura e urgência |
+| 20:35–21:05 | Descobrir necessidades de Ana e Ravi | Hipótese inicial, três perguntas por pessoa, contradição, revisão e próxima pesquisa |
+| 21:05–21:35 | Priorizar sob restrição | Plano A até 10 créditos; Plano B até 6, sem apagar o primeiro |
+| 21:35–22:10 | Responder a um imprevisto da Virada Criativa | Aviso com fato, ação, apoio e coleta mínima; exportação conferida |
 
-Compartilhar com os estudantes somente o endereço da oficina; a apresentação de condução fica com o professor. As cinco chaves aparecem **nas notas P dos slides correspondentes**, nunca em instruções públicas da oficina. Revelar uma por vez. Concluir uma etapa não libera a seguinte; não há liberação automática por horário. É possível voltar às etapas já liberadas sem perder o trabalho. Quem conclui usa a extensão da etapa atual.
+As quatro fases ficam acessíveis; conduzir uma de cada vez. Os links `?fase=1` a `?fase=4` permitem abrir diretamente o desafio. Em dupla, alternar quem opera. Quem termina pode revisar outro cenário ou aprimorar a própria justificativa. O desafio extra final é opcional e termina às 22:04, reservando seis minutos para exportar e conferir.
 
-As chaves são um recurso didático em material estático, sem promessa de controle de acesso. Não armazenar avaliações, credenciais ou dados sensíveis. Abrir um projeto preserva as etapas liberadas no arquivo; não é um mecanismo de fiscalização.
+A aula trabalha decisões com evidência e restrições, sem repetir a criação de um fluxo de três telas ou o teste entre colegas da Aula 11. Todos os cenários, nomes, preços e falas são fictícios. Não há login, pesquisa real ou envio de respostas.
 
-A estrutura vem pronta e a própria versão começa com os problemas da inicial. Os estudantes decidem texto, informação antecipada, caminho, resumo e aparência. A correção do horário preserva a escolha. A indisponibilidade mantém uma alternativa de mesmo preço. Uma mudança na interface exige uma nova tentativa antes de registrar a criação como pronta.
+## Entrega e uso offline
 
-## Entrega e recuperação
+**Exportar entrega** baixa um HTML autônomo com todos os registros e as pendências que ainda existirem. O rascunho é salvo neste navegador quando o armazenamento está disponível; o arquivo exportado é a cópia para guardar. Não há sincronização entre computadores nem importação do HTML para continuar a atividade.
 
-`aula-12.ux` guarda jornada, hipótese, decisões e tentativas. `meu-prototipo-ux.html` guarda só a interface clicável, sem jornada, respostas ou chaves. Ambos reabrem sem a oficina publicada. O rascunho no navegador é apoio, não substitui o arquivo. Um aviso orienta salvar se o armazenamento local estiver indisponível.
+Sem internet, baixar e extrair `kit-aula-12.zip` inteiro e abrir `index.html`. `desafio.html` é uma entrada equivalente, mantida por compatibilidade. CSS e JavaScript estão na mesma pasta; não há bibliotecas ou fontes remotas. Se o navegador bloquear o armazenamento local, ainda é possível trabalhar e exportar sem fechar a página. O `guia-docente.html` contém roteiro, rubrica e alternativa no caderno.
 
-A contagem registra ações nos botões, incluindo voltar/cancelar; o tempo inclui pausas e leitura. Comparações são indícios de uma tarefa, não nota nem prova de usabilidade geral. As emoções da jornada precisam de justificativa oral, sem simulação de deficiência.
+## Fontes e verificação
 
-Sem internet, abrir `index.html` local. Se a política do navegador bloquear Web Crypto em arquivos locais, usar o servidor local da escola. Sem computador, operar em dupla no mesmo posto, alternando quem controla; as decisões são discutidas oralmente no projetor.
-
-## Gerar e verificar
+`scripts/lessons/design-web-12.mjs` é a fonte do planejamento e da projeção. Os arquivos HTML, CSS e JS desta pasta são as fontes da oficina. O gerador atualiza somente a Aula 12 nos dados da plataforma, sincroniza as duas entradas e empacota o kit offline. As outras aulas são preservadas.
 
 ```sh
 node scripts/build-design-web-12.mjs
 node scripts/validate-design-web-12.mjs
-python3 -m http.server 8901
-node scripts/validate-design-web-12-browser.cjs
+node scripts/validate-course-kit.mjs
 ```
 
-O teste de navegador usa Chromium instalado (`CHROMIUM_PATH` pode substituir `/usr/bin/chromium`). `WORKSHOP_URL` pode apontar para outra cópia servida.
+O teste `scripts/validate-design-web-12-browser.cjs` cobre o uso da oficina em Chromium; `WORKSHOP_URL` e `CHROMIUM_PATH` permitem escolher a cópia servida e o navegador instalado.
 
-Destino previsto: `https://oficinas-design-web.vercel.app/aula-12/`. A publicação depende do projeto Vercel existente; preservar todas as rotas anteriores. O script `scripts/prepare-design-web-deploy.mjs` prepara uma pasta com as oficinas existentes e a nova aula, sem publicar sozinho.
+Para preparar a publicação, executar `node scripts/prepare-design-web-deploy.mjs <pasta-de-saida>` e publicar essa pasta no projeto Vercel existente `oficinas-design-web`. A preparação inclui a raiz e as oficinas anteriores, junto com todos os arquivos da Aula 12. Ela não publica sozinha.

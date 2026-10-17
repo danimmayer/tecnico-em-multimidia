@@ -419,8 +419,8 @@ window.SENAI_COURSES = {
       },
       {
         "num": "12",
-        "title": "UX e UI: O Usuário no Centro",
-        "description": "Uma reserva fictícia de estúdio para experimentar interfaces, observar dúvidas, mapear a jornada e testar uma melhoria visual.",
+        "title": "Plantão UX: decisões que protegem pessoas",
+        "description": "Investigue escolhas enganosas, descubra necessidades reais, priorize melhorias sob restrição e responda a um imprevisto com uma comunicação clara.",
         "objectives": [
           "Interfaces Web e App: user interface e experiência do usuário.",
           "Desenvolvimento do Projeto: testes de validação."
@@ -434,25 +434,25 @@ window.SENAI_COURSES = {
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:45",
-            "atividade": "Experimentar duas interfaces da mesma reserva fictícia. Comparar aparência e realização da tarefa; observar duas dúvidas e conferir as pistas na tela."
+            "horario": "20:10 - 20:35",
+            "atividade": "Investigar três fluxos fictícios com escolhas enganosas, registrar evidências e reescrever microtextos que expliquem preço, assinatura e urgência antes da ação."
           },
           {
-            "horario": "20:05 - 21:00",
-            "atividade": "Retomar a tarefa de Lia, construir uma jornada guiada de cinco momentos e escolher uma mudança com uma previsão observável."
+            "horario": "20:35 - 21:05",
+            "atividade": "Abrir dois dossiês de pessoas fictícias, escolher perguntas com limite de investigação, revisar a hipótese diante de uma contradição e definir a próxima pesquisa."
           },
           {
-            "horario": "21:00 - 21:40",
-            "atividade": "Redesenhar a interface pronta por escolhas visuais e textuais, testar a própria versão e responder a uma mudança de disponibilidade."
+            "horario": "21:05 - 21:35",
+            "atividade": "Priorizar melhorias com orçamento de 10 créditos, salvar o Plano A, responder a um corte para 6 créditos e justificar o Plano B sem apagar o primeiro plano."
           },
           {
-            "horario": "21:40 - 22:10",
-            "atividade": "Observar uma tentativa do colega, revisar uma decisão e salvar o projeto editável e o protótipo HTML para reabrir."
+            "horario": "21:35 - 22:10",
+            "atividade": "Responder a um aviso operacional da Virada Criativa: editar uma mensagem útil para uma situação realista, conferir a prévia, enfrentar um desafio extra e exportar a entrega."
           }
         ],
-        "methodology": "Demonstrações de até cinco minutos, prática individual guiada por seis etapas com liberação pelo professor, extensão dentro da etapa atual e teste silencioso com o colega do lado.",
-        "resources": "Computador com navegador, projetor e oficina de UX, com cópia local sem dependências de rede. Sem login, instalação, programação discente ou material para imprimir.",
-        "observation": "19:00–22:10, intervalo 19:45–20:05. 170 minutos de atividade. Chamada no começo dos quatro blocos. Somente o professor circula; cada estudante trabalha no posto. Tarefa, persona, marca, preços e confirmação são fictícios. As etapas usam chaves de condução: concluir não libera a próxima. Não depender do arquivo da aula 11. Sem contas pessoais, impressões, relatórios extensos ou dados reais."
+        "methodology": "Quatro desafios locais, individuais ou em duplas no mesmo posto, com evidência concreta a cada bloco. Há explicações curtas, investigação, decisão sob restrição e produção de um aviso funcional; não há fluxo de três telas, rodada de estados nem teste entre colegas.",
+        "resources": "Computadores com navegador e acesso à oficina da Aula 12 na Vercel, projetor com a apresentação na plataforma, quadro, caderno e caneta. O kit offline é reserva para falta de internet. A oficina não exige login, dados pessoais ou instalação. Cada estudante usa apenas dados fictícios do desafio.",
+        "observation": "Versão condensada após interrupção: aula das 20:10 às 22:10, sem novo intervalo, com 120 minutos de atividade. Chamada às 20:10, 20:35, 21:05 e 21:35. Preservar as quatro entregas essenciais. Em dupla, alternar quem opera a cada dossiê e registrar uma justificativa de cada pessoa. A oficina na Vercel salva progresso no navegador quando disponível; a exportação continua funcionando sem esse salvamento. Sem internet, usar o kit offline ou a alternativa indicada no guia docente e guardar as decisões no caderno. Dados e situações são fictícios."
       },
       {
         "num": "13",

@@ -1,0 +1,14 @@
+PLANTÃO UX · DESIGN WEB · AULA 12
+
+1. Extraia o ZIP inteiro para uma pasta.
+2. Abra index.html no navegador. O arquivo desafio.html continua disponível para compatibilidade. Não precisa instalar nem criar conta.
+3. Trabalhe com dados fictícios, individualmente ou em dupla no mesmo computador.
+4. Use Exportar entrega para baixar o registro. Abra o HTML baixado para conferir.
+
+O progresso fica neste navegador e neste computador, quando o salvamento local estiver disponível. Exporte uma cópia antes de fechar. O kit não sincroniza entre computadores.
+
+Roteiro de hoje: 20h10–22h10, após o intervalo já realizado.
+Investigar 25 min · Descobrir 30 min · Priorizar 30 min · Responder 35 min.
+Guia do professor: guia-docente.html.
+
+Na versão publicada, a oficina abre em https://oficinas-design-web.vercel.app/aula-12/.
