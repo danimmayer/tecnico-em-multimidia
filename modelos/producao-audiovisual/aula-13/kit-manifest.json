@@ -1,0 +1,67 @@
+{
+  "zip": "Aula13-Shotcut.zip",
+  "bytes": 1223393,
+  "files": [
+    {
+      "name": "COMECE-AQUI.txt",
+      "bytes": 2491,
+      "sha256": "56b4aadbd7700ce58e74d315a7dec99e73fd7526e3e17cc1678fa4e6812a5c16"
+    },
+    {
+      "name": "AJUDA.html",
+      "bytes": 11067,
+      "sha256": "e42d77949e2ef525e3640c4e5bb9d127792d75adc21278c1b857075a7a9d9040"
+    },
+    {
+      "name": "CREDITOS.txt",
+      "bytes": 1341,
+      "sha256": "0d4f11c486d41b63a4c5dacf1c1a61063f9a9a221b0a7b3453c24564f799a15a"
+    },
+    {
+      "name": "personagem-verde.mp4",
+      "bytes": 11427,
+      "sha256": "abb5ff7d23748b1585fb4dc79760bc4a22d57803a43627792dd500ee3e81ccb2",
+      "duration": 6.0,
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1"
+    },
+    {
+      "name": "personagem-cracha.mp4",
+      "bytes": 11606,
+      "sha256": "c2b0c221e143e399cd6136a5bfed298e123913b56cd12a9444504a05a8df8f1c",
+      "duration": 6.0,
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1"
+    },
+    {
+      "name": "cenario-estudio.png",
+      "bytes": 4538,
+      "sha256": "08c02a9102d883a95e4b4df70d6ee279a0dcc0ebadb1b133645533dd81c1e487"
+    },
+    {
+      "name": "cenario-noite.png",
+      "bytes": 4524,
+      "sha256": "ca35ed514f86251a38b674881e996898534303a26ce2985eced77db945973f88"
+    },
+    {
+      "name": "cor-referencia.mp4",
+      "bytes": 595805,
+      "sha256": "c0dba2ff17d7b436dd5653c1aae6a31eefffa0abb9529ba2560b25e9796ad37d",
+      "duration": 6.0,
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1"
+    },
+    {
+      "name": "cor-alterada.mp4",
+      "bytes": 579322,
+      "sha256": "4ec20fcb863f85e7591a5a5bc3d86d040a994fd26062f2e5110a4f10c106b3fd",
+      "duration": 6.0,
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1"
+    }
+  ]
+}

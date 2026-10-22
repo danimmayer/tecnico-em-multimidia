@@ -1,0 +1,44 @@
+AULA 13 · CHROMA KEY E CORREÇÃO DE COR · SHOTCUT
+
+1. Extraia a pasta Aula13-Shotcut para Documentos no disco local.
+2. Abra o Shotcut já disponível no laboratório. Não abra arquivos dentro do ZIP.
+3. Crie cenario.mlt dentro desta pasta. Modo de vídeo: HD 720p, 24 fps.
+4. Coloque cenario-estudio.png na V1, com duração de seis segundos.
+5. Adicione uma trilha de vídeo V2. Coloque personagem-verde.mp4 nela, em zero.
+6. Aguarde os pedidos projetados. Ao terminar, melhore o pedido atual.
+
+PARA CONTINUAR SEM ESPERAR AJUDA
+Abra AJUDA.html desta pasta no navegador e deixe ao lado do Shotcut.
+Use a seção do pedido atual: os passos, o critério de pronto e as soluções
+ficam juntos. Clique no sintoma que aparece na sua tela para abrir a solução.
+Depois de testar, compare com o colega do lado se precisar.
+Se continuar bloqueado, mostre ao professor onde parou e o que tentou.
+Programa que não abre ou arquivos ausentes: peça apoio imediatamente.
+Não precisa ficar repetindo uma tentativa que não funcionou.
+
+CONSULTA · COMPOSIÇÃO
+Selecione o clipe da V2 → Filtros → + → Vídeo → Chroma Key: Simple.
+Em Key color, use o conta-gotas no verde. Ajuste Distance aos poucos.
+O cenário da V1 deve aparecer sem apagar mãos, olhos ou corpo.
+Se aparecer preto, confira V1, visibilidade e alinhamento das trilhas.
+personagem-cracha.mp4 é usado na demonstração do projetor.
+Para a entrega principal, use personagem-verde.mp4, sem crachá.
+Salve cenario.mlt. Exporte cenario.mp4, com seis segundos.
+
+CONSULTA · COR
+Novo projeto cor.mlt, na mesma pasta.
+V1: cor-referencia.mp4 (6 s) seguido de cor-alterada.mp4 (6 s).
+Selecione só o segundo clipe e ajuste Brightness, White Balance e Saturation.
+Compare a neve e o personagem com a referência, que permanece sem filtros.
+Os filtros podem estar traduzidos; busque brilho, balanço de branco e saturação.
+Preserve detalhes claros; não existe um valor numérico universal.
+Salve cor.mlt. Para experimentar um estilo, use Salvar como → cor-estilo.mlt.
+Exporte a versão corrigida cor.mlt como cor.mp4, com doze segundos.
+
+EXPORTAR E GUARDAR
+Exportar a linha do tempo completa: MP4/H.264, 1280 × 720, 24 fps.
+Aguarde a fila Trabalhos terminar. Abra os dois MP4 fora do editor.
+Os arquivos são silenciosos por escolha didática.
+Mantenha mídias, projetos, MP4 e CREDITOS.txt juntos.
+O projeto .mlt não contém as mídias. Copie a pasta inteira para transportar.
+Não precisa de conta, upload ou ficha impressa.

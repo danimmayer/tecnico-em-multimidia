@@ -6,6 +6,8 @@ import * as lesson09 from './lessons/audiovisual-09.mjs';
 import * as lesson10 from './lessons/audiovisual-10.mjs';
 import * as lesson11 from './lessons/audiovisual-11.mjs';
 import * as lesson12 from './lessons/audiovisual-12.mjs';
+import * as lesson13 from './lessons/audiovisual-13.mjs';
+import {createHash} from 'node:crypto';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const read = (file) => fs.readFileSync(root + file, 'utf8');
@@ -173,13 +175,69 @@ for (const name of [...manifest12.student_media, 'COMECE-AQUI.txt', 'CREDITOS.tx
 }
 
 // Renderer, stylesheet and generators are wired.
-assert.ok(read('assets/course-lesson.js').includes("course.slug === 'producao-audiovisual' && ['09', '10', '11', '12'].includes(lesson.num)"));
+assert.ok(read('assets/course-lesson.js').includes("course.slug === 'producao-audiovisual' && ['09', '10', '11', '12', '13'].includes(lesson.num)"));
 assert.ok(read('assets/course-lesson.js').includes("visual.type === 'stills'"), 'renderizador sem quadros parados');
 assert.ok(read('assets/av-nine.css').includes('.av9-clip.is-graphic'), 'CSS sem camada de grafismo');
 assert.ok(read('aula-kit.html').includes('assets/av-nine.css'), 'aula-kit.html sem o CSS das aulas 09 e 10');
 assert.ok(read('assets/av-nine.css').includes('@media (max-height: 880px)'), 'CSS sem ajuste de altura');
-for (const module of ['./lessons/audiovisual-09.mjs', './lessons/audiovisual-10.mjs', './lessons/audiovisual-11.mjs', './lessons/audiovisual-12.mjs']) {
+for (const module of ['./lessons/audiovisual-09.mjs', './lessons/audiovisual-10.mjs', './lessons/audiovisual-11.mjs', './lessons/audiovisual-12.mjs', './lessons/audiovisual-13.mjs']) {
   assert.ok(read('scripts/build-course-data.mjs').includes(module), `gerador geral sem ${module}`);
 }
 
-console.log('Aulas 09 a 12 AV: paridade dos dados, 170 minutos (45 + 55 + 40 + 30), lanche, sem impressão, kit local da aula 11, kit leve da aula 12 no Canva, pedidos, linguagem e visuais validados.');
+const slides13 = checkLesson('13', lesson13, {
+  slideCount: 21, localKit: true,
+  resources: ['Shotcut', 'Aula13-Shotcut.zip', 'CC BY', 'disco local'],
+  observation: ['um de cada vez', 'créditos', 'Não depender de projetos anteriores'],
+  minTypes: 6
+});
+const kit13 = 'modelos/producao-audiovisual/aula-13/';
+for (const slide of slides13) {
+  for (const file of [slide.resource?.href, ...(slide.resources || []).map(item => item.href), ...(slide.av9.images || []).map(item => item.src)].filter(Boolean)) {
+    assert.ok(file.startsWith(kit13) && !file.includes('..'), `Aula 13: recurso fora do kit: ${file}`);
+    assert.ok(fs.statSync(root + file.split('#')[0]).size > 0, `Aula 13: recurso ausente: ${file}`);
+    if (file.includes('#')) assert.ok(read(file.split('#')[0]).includes(`id="${file.split('#')[1]}"`), `Aula 13: destino de ajuda ausente: ${file}`);
+  }
+}
+for (const slide of slides13.filter(slide => /^Pedido \d/.test(slide.title))) {
+  assert.equal(slide.promptLabel, 'Pronto quando');
+  assert.ok(slide.av9.result && slide.av9.tags.some(tag => tag.label === 'TERMINOU ANTES?'));
+  assert.ok(slide.resources.some(item => item.href.includes('AJUDA.html#')), `${slide.title}: precisa de ajuda acessível ao estudante`);
+}
+assert.ok(slides13.findIndex(slide => slide.title === 'Primeira transformação') < slides13.findIndex(slide => slide.pace === 'break'), 'Aula 13: a primeira composição deve acontecer antes do lanche');
+const help13 = read(kit13 + 'AJUDA.html');
+assert.ok(!/(?:src|href)="(?:https?:|\/\/)/.test(help13), 'Aula 13: ajuda do estudante deve funcionar sem internet');
+for (const section of ['preparo', 'camadas', 'recorte', 'compor', 'cor', 'estilo', 'exportar']) {
+  assert.ok(help13.includes(`id="${section}"`));
+}
+const manifest13 = JSON.parse(read(kit13 + 'kit-manifest.json'));
+assert.deepEqual(manifest13.files.map(item => item.name).sort(), ['COMECE-AQUI.txt', 'AJUDA.html', 'CREDITOS.txt', 'personagem-verde.mp4', 'personagem-cracha.mp4', 'cenario-estudio.png', 'cenario-noite.png', 'cor-referencia.mp4', 'cor-alterada.mp4'].sort());
+const zip13 = fs.readFileSync(root + kit13 + manifest13.zip);
+assert.equal(zip13.length, manifest13.bytes);
+assert.ok(zip13.length < 5 * 1024 * 1024, 'Aula 13: kit excessivamente grande');
+// Read the actual stored ZIP entries and compare payloads, not just the manifest.
+const entries13 = new Map();
+for (let cursor = 0; zip13.readUInt32LE(cursor) === 0x04034b50;) {
+  assert.equal(zip13.readUInt16LE(cursor + 8), 0, 'Aula 13: ZIP deve usar armazenamento sem compressão');
+  const size = zip13.readUInt32LE(cursor + 18);
+  const nameLength = zip13.readUInt16LE(cursor + 26);
+  const start = cursor + 30 + nameLength + zip13.readUInt16LE(cursor + 28);
+  const name = zip13.toString('utf8', cursor + 30, cursor + 30 + nameLength);
+  entries13.set(name, zip13.subarray(start, start + size));
+  cursor = start + size;
+}
+assert.equal(entries13.size, 9);
+for (const item of manifest13.files) {
+  const data = fs.readFileSync(root + kit13 + item.name);
+  assert.equal(data.length, item.bytes);
+  assert.equal(createHash('sha256').update(data).digest('hex'), item.sha256);
+  assert.deepEqual(entries13.get('Aula13-Shotcut/' + item.name), data, `Aula 13: ZIP diverge da mídia ${item.name}`);
+  if (item.name.endsWith('.mp4')) {
+    assert.equal(item.duration, 6);
+    assert.equal(item.fps, '24/1');
+    assert.equal(item.width, 1280);
+    assert.equal(item.height, 720);
+  }
+}
+assert.ok(read(kit13 + 'CREDITOS.txt').includes('creativecommons.org/licenses/by/3.0/'));
+assert.ok(read(kit13 + 'index.html').includes('Aula13-Shotcut.zip'));
+console.log('Aulas 09 a 13 AV: paridade dos dados, 170 minutos (45 + 55 + 40 + 30), lanche, kits locais, integridade do ZIP da aula 13, pedidos, linguagem e visuais validados.');

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Travou? · Ajuda da aula 13</title>
+  <style>
+    :root{font-family:system-ui,sans-serif;color:#203246;background:#f5f3ec;line-height:1.65}
+    *{box-sizing:border-box}body{max-width:850px;margin:auto;padding:24px 20px 60px}
+    h1{font-size:clamp(2rem,5vw,3rem);line-height:1.15}h2{line-height:1.25}
+    a{color:#175681;text-underline-offset:.2em}nav{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0}
+    nav a{background:#fff;border:1px solid #bdc8cb;border-radius:6px;padding:8px 12px}
+    section{background:white;border:1px solid #d1d9d8;border-radius:10px;padding:20px;margin:18px 0;scroll-margin-top:16px}
+    details{border-top:1px solid #d1d9d8;padding:12px 0}summary{cursor:pointer;font-weight:700}
+    .ready{border-left:4px solid #238071;padding:10px 14px;background:#eaf5ef}
+    li{margin:6px 0}code{font-size:.95em;overflow-wrap:anywhere}footer{margin-top:24px}
+    a:focus-visible,summary:focus-visible{outline:3px solid #ca7211;outline-offset:4px}
+  </style>
+</head>
+<body>
+  <p>PRODUÇÃO AUDIOVISUAL · AULA 13</p>
+  <h1>Travou? Encontre o que aparece na sua tela.</h1>
+  <p>Use só a seção do pedido atual. Teste a solução e confira o resultado. A página funciona sem internet e pode ficar aberta ao lado do Shotcut.</p>
+  <nav aria-label="Etapas da prática">
+    <a href="#preparo">Começar</a><a href="#camadas">Duas trilhas</a><a href="#recorte">Tirar o verde</a><a href="#compor">Criar a cena</a><a href="#cor">Corrigir a cor</a><a href="#estilo">Criar um estilo</a><a href="#exportar">Baixar MP4</a>
+  </nav>
+  <section id="preparo">
+    <h2>Começar</h2>
+    <ol>
+      <li>No gerenciador de arquivos, extraia <code>Aula13-Shotcut.zip</code> para Documentos. Entre na pasta extraída.</li>
+      <li>Abra o Shotcut disponível no computador. Crie um projeto chamado <code>cenario</code> dentro dessa pasta.</li>
+      <li>Em Configurações → Modo de vídeo, escolha HD 720p, 24 fps. Não precisa mudar outros ajustes.</li>
+      <li>Abra Exibir → Lista de reprodução. Arraste os arquivos da pasta para essa lista.</li>
+    </ol>
+    <p class="ready">Pronto: o projeto está salvo como <code>cenario.mlt</code> e os arquivos aparecem na lista.</p>
+    <details><summary>Não vejo a linha do tempo, os filtros ou as propriedades.</summary><p>No menu Exibir, ative o painel que está faltando: Linha do tempo, Filtros ou Propriedades.</p></details>
+    <details><summary>Não abre o programa ou não há arquivos na pasta.</summary><p>Avise o professor: isso é um bloqueio do posto. Não precisa insistir sozinho nem baixar outro programa.</p></details>
+  </section>
+  <section id="camadas">
+    <h2>Duas trilhas</h2>
+    <ol>
+      <li>Arraste <code>cenario-estudio.png</code> da lista para a linha do tempo. A primeira trilha é V1.</li>
+      <li>Selecione a imagem na linha do tempo. Abra Propriedades e ajuste a duração para <code>00:00:06:00</code> (seis segundos a 24 fps).</li>
+      <li>No menu da linha do tempo, escolha Operações de trilha → Adicionar trilha de vídeo. A nova trilha acima é V2.</li>
+      <li>Arraste <code>personagem-verde.mp4</code> para V2. Alinhe o início com o início da imagem, em zero.</li>
+    </ol>
+    <p class="ready">Pronto: cenário em V1, personagem em V2, os dois começam juntos e duram seis segundos.</p>
+    <details><summary>Só aparece verde. Fiz errado?</summary><p>Nesta etapa, está certo: o vídeo de cima ainda cobre o cenário. A retirada do verde acontece no pedido seguinte.</p></details>
+    <details><summary>Um arquivo ficou depois do outro.</summary><p>Arraste o personagem para a trilha acima, V2, e volte seu começo para zero. Os arquivos devem ficar um sobre o outro, em trilhas diferentes.</p></details>
+  </section>
+  <section id="recorte">
+    <h2>Tirar o verde</h2>
+    <ol>
+      <li>Clique no personagem na V2. Abra Filtros → + → Vídeo e busque <strong>Chroma Key: Simple</strong> ou chroma.</li>
+      <li>Em Key color (cor), ative o conta-gotas e clique no verde do fundo, longe do corpo.</li>
+      <li>Ajuste Distance (distância) aos poucos. Pare quando o fundo sair e o corpo continuar inteiro.</li>
+      <li>Reproduza o vídeo. Salve com Ctrl + S.</li>
+    </ol>
+    <p class="ready">Pronto: o cenário aparece atrás do personagem inteiro.</p>
+    <details><summary>O verde virou preto.</summary><p>Veja se existe um cenário na V1, se a trilha está visível e se ele começa junto com o personagem. Coloque o cursor num ponto em que os dois clipes estejam presentes.</p></details>
+    <details><summary>O personagem desapareceu ou ficou furado.</summary><p>Reduza Distance. Use o conta-gotas novamente no verde, sem clicar no corpo. Para a composição principal, use <code>personagem-verde.mp4</code>.</p></details>
+    <details><summary>O filtro não aparece ou não muda nada.</summary><p>Selecione o clipe da V2 na linha do tempo antes de abrir Filtros. Confira se o filtro está ativado. Os nomes podem estar em português ou inglês.</p></details>
+  </section>
+  <section id="compor">
+    <h2>Criar a cena: apresentador ou gigante</h2>
+    <ol>
+      <li>Para preservar a versão atual, use Arquivo → Salvar como → <code>cenario-opcao2.mlt</code>.</li>
+      <li>Para trocar o fundo, retire apenas a imagem da V1 e coloque <code>cenario-noite.png</code> no mesmo lugar. Duração: seis segundos.</li>
+      <li>Selecione o personagem na V2. Em Filtros → + → Vídeo, procure <strong>Size, Position &amp; Rotate</strong> (Tamanho, posição e rotação).</li>
+      <li>Com esse filtro selecionado, ajuste tamanho e posição na prévia. Preserve as proporções. Teste apresentador menor no estúdio ou gigante sobre os prédios.</li>
+      <li>Mostre ao colega: ele percebe sua intenção? Depois de escolher, salve a opção final como <code>cenario.mlt</code>.</li>
+    </ol>
+    <p class="ready">Pronto: duas opções salvas, cada uma com uma decisão visual diferente.</p>
+    <details><summary>O personagem ficou esticado.</summary><p>Desfaça a última alteração com Ctrl + Z e mantenha a proporção ao redimensionar no filtro. Evite mudar largura e altura separadamente.</p></details>
+    <details><summary>Quero colocar um título. Como faço?</summary><p>Selecione o cenário na V1, vá a Filtros → + → Vídeo → Text: Simple (Texto: simples). Digite uma chamada curta e ajuste a posição para ficar longe do personagem. Reproduza para conferir a leitura.</p></details>
+    <details><summary>Apareceu preto no final.</summary><p>O cenário acabou antes do personagem. Ajuste a duração da imagem e alinhe as pontas. A composição deve terminar em seis segundos.</p></details>
+  </section>
+  <section id="cor">
+    <h2>Corrigir a cor</h2>
+    <ol>
+      <li>Salve a composição. Crie outro projeto, <code>cor.mlt</code>, na mesma pasta.</li>
+      <li>Na V1, coloque <code>cor-referencia.mp4</code> e depois <code>cor-alterada.mp4</code>, sem sobrepor. São doze segundos no total.</li>
+      <li>Selecione só o segundo clipe. Em Filtros → + → Vídeo, procure <strong>Brightness</strong> (Brilho). Aproxime a luminosidade da referência sem apagar o detalhe da neve.</li>
+      <li>Adicione <strong>White Balance</strong> (Balanço de branco). Ajuste a cor comparando com a neve do primeiro clipe. Se necessário, use <strong>Saturation</strong> (Saturação) para aproximar a intensidade das cores.</li>
+      <li>Reproduza a passagem. Desligue e ligue os filtros para comparar. Salve <code>cor.mlt</code>.</li>
+    </ol>
+    <p class="ready">Pronto: os dois planos ficam próximos em brilho e cor. Não precisam ficar idênticos.</p>
+    <details><summary>O primeiro clipe mudou também.</summary><p>Você pode ter aplicado filtros na trilha inteira. Desfaça essa aplicação. Clique no segundo clipe, não no cabeçalho V1, e aplique nele.</p></details>
+    <details><summary>A neve virou uma mancha branca.</summary><p>Diminua o brilho até enxergar os detalhes novamente. Use o primeiro clipe como referência.</p></details>
+    <details><summary>Ficou pior e não sei qual ajuste causou.</summary><p>Desative um filtro por vez na lista de Filtros. Comece novamente pelo brilho e só depois ajuste a cor. Não precisa adicionar mais filtros.</p></details>
+  </section>
+  <section id="estilo">
+    <h2>Criar um estilo sem perder a correção</h2>
+    <ol>
+      <li>Com <code>cor.mlt</code> salvo, use Arquivo → Salvar como → <code>cor-estilo.mlt</code>.</li>
+      <li>Escolha uma intenção: frio de inverno, lembrança desbotada ou anúncio com cor intensa.</li>
+      <li>Use os filtros que já experimentou: balanço de branco para esfriar; saturação para reduzir ou intensificar a cor. Faça pequenas mudanças nos dois clipes.</li>
+      <li>Mostre ao colega sem dizer a intenção. O que ele reconhece? Ajuste uma decisão e salve a cópia.</li>
+    </ol>
+    <p class="ready">Pronto: <code>cor.mlt</code> preserva a correção e <code>cor-estilo.mlt</code> guarda a experiência.</p>
+    <details><summary>Qual versão preciso exportar?</summary><p>A entrega obrigatória é <code>cor.mlt</code>, a versão corrigida, exportada como <code>cor.mp4</code>. O estilo é uma experiência adicional.</p></details>
+  </section>
+  <section id="exportar">
+    <h2>Baixar os MP4</h2>
+    <ol>
+      <li>Abra <code>cenario.mlt</code>. Clique em Exportar e use o perfil Padrão preparado para a aula.</li>
+      <li>Confira a fonte: <strong>Linha do tempo</strong>. Clique em Exportar arquivo, escolha a pasta do kit e salve como <code>cenario.mp4</code>.</li>
+      <li>Espere a fila Trabalhos indicar conclusão. Depois abra <code>cor.mlt</code> e repita como <code>cor.mp4</code>.</li>
+      <li>Abra os MP4 no reprodutor do computador. Cenário: seis segundos. Cor: doze segundos. Assista até o fim.</li>
+    </ol>
+    <p class="ready">Pronto: dois MP4 reproduzem fora do editor. Mantenha mídias, projetos e <code>CREDITOS.txt</code> na pasta.</p>
+    <details><summary>Não existe MP4, só .mlt.</summary><p>Salvar projeto cria o arquivo editável. Para o vídeo, use Exportar → Exportar arquivo e espere o trabalho terminar.</p></details>
+    <details><summary>Saiu só um clipe ou apenas o fundo verde.</summary><p>Na exportação, escolha Linha do tempo como fonte, em vez de Fonte/Lista de reprodução. Exporte novamente.</p></details>
+    <details><summary>Está sem som.</summary><p>Está certo: os clipes do kit são silenciosos.</p></details>
+    <details><summary>O perfil foi alterado.</summary><p>O formato usado nesta aula é MP4/H.264, 1280 × 720, 24 fps. Se não conseguir recuperar o perfil mostrado, peça apoio sem mudar opções ao acaso.</p></details>
+  </section>
+  <footer>Se a solução não funcionar, compare com o colega ou mostre ao professor onde parou e o que tentou. Não precisa ficar preso na mesma tentativa. Em posto compartilhado, alternem quem opera a cada desafio.</footer>
+</body>
+</html>

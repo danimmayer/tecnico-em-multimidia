@@ -1546,7 +1546,7 @@ window.SENAI_COURSES = {
       {
         "num": "13",
         "title": "Chroma key e correção de cor",
-        "description": "Gravação com fundo verde em estações rotativas e prática de recorte de chroma key, correção e tratamento de cor no material da turma.",
+        "description": "Trocar o fundo de um personagem no Shotcut, preservar suas bordas e aproximar a cor de dois planos. Uma oficina com mídia pronta, comparação antes e depois e entrega local em MP4.",
         "objectives": [
           "Edição de vídeos e sons: chroma key, efeitos e tratamento de vídeo."
         ],
@@ -1558,25 +1558,25 @@ window.SENAI_COURSES = {
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Revisão da aula anterior: grafismos, títulos e máscaras. Bastidores no projetor: cenas de filmes e quadros de previsão do tempo antes e depois do chroma key. O que faz um fundo verde funcionar: luz uniforme, distância entre pessoa e fundo, recorte limpo. Montagem coletiva das estações de gravação."
+            "horario": "19:00 - 19:45",
+            "atividade": "Ver a troca de fundo acontecer, abrir o kit e conseguir a primeira composição antes do lanche."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "Gravação em chroma key em 2 ou 3 estações simultâneas com fundos verdes de tecido ou TNT (providenciados antes da aula), iluminados com softbox e ring light, usando câmeras e tripés do laboratório. Enquanto aguardam a vez na estação, as duplas praticam correção de cor no material do comercial nos computadores."
+            "horario": "20:05 - 21:00",
+            "atividade": "Transformar o personagem em apresentador ou gigante, descobrir por que um crachá desaparece e criar duas versões com cenários e enquadramentos diferentes."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "No software de edição: recorte do chroma key, ajuste de bordas e de vazamento de verde, e correção de cor para integrar a pessoa ao novo fundo (temperatura, contraste e saturação combinando com o cenário)."
+            "horario": "21:00 - 21:40",
+            "atividade": "Comparar dois planos, corrigir brilho e dominante de cor e criar uma versão com tratamento visual intencional."
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "Desafio prático \"Cenário impossível\": cada dupla insere o colega em um cenário criado pela equipe ou composto com material licenciado com cor tratada. Exibição dos resultados mais convincentes no projetor e análise coletiva do que funcionou."
+            "horario": "21:40 - 22:10",
+            "atividade": "Exportar composição e comparação de cor, assistir fora do editor e corrigir um problema apontado pelo colega do lado."
           }
         ],
-        "methodology": "Prática completa de captação e pós-produção de chroma key na mesma noite, em estações rotativas com atividade paralela de correção de cor.",
-        "resources": "Fundos verdes de tecido ou TNT (baixo custo, providenciar antes da aula), softbox, ring lights, câmeras, tripés e computadores com software de edição.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "Oficina individual com demonstrações de até dois minutos, imediatamente seguidas de prática. A primeira troca de fundo aparece no projetor nos cinco minutos iniciais e cada estudante tenta sua primeira composição antes do lanche. Os pedidos são revelados um de cada vez. Cada pedido tem critério de pronto e uma variação visual para quem termina antes. As janelas longas são divididas em pequenas rodadas: criar, mostrar ao vizinho e mudar uma decisão; não passar todo o tempo refinando um filtro. Em postos compartilhados, alternar a operação a cada pedido. A evidência aparece na tela e nos arquivos locais, sem fichas.",
+        "resources": "Projetor, computadores com Shotcut já disponível, fones de ouvido e kit Aula13-Shotcut.zip copiado para o disco local. Editor gratuito e de código aberto; sem conta e sem upload. O kit contém dois clipes sintéticos de chroma, dois cenários próprios e dois planos de Caminandes 3 com créditos CC BY 3.0. Nenhuma ficha impressa.",
+        "observation": "Aula das 19:00 às 22:10, com lanche das 19:45 às 20:05 e chamada no início de cada bloco. A turma permanece nos postos; somente o professor circula. Preparar o Shotcut e distribuir o ZIP antes da aula por rede local ou pendrive; testar importação, duas trilhas e exportação no computador do laboratório. Não depender de projetos anteriores, tecido verde ou novas gravações. Os exemplos sintéticos isolam o funcionamento da chave; não representam a dificuldade de cabelo, sombras e reflexos de uma captação real. Os pedidos chegam um de cada vez; quem termina melhora o pedido atual. Não esperar todos atingirem perfeição para revelar uma variação: avançar quando a maioria tiver o resultado básico e ajudar os demais nos postos. Demonstrações de até dois minutos; evitar explicações sobre parâmetros antes de uma necessidade visível. Não buscar recorte perfeito no exemplo sintético. A captação entra só como resposta a um problema; o crachá é uma surpresa rápida no projetor, sem exigir troca de clipe em todos os postos. Manter a pasta com mídias, projetos .mlt, MP4 e créditos. Nenhum envio coletivo. Se um posto falhar, trabalhar com o colega do lado; se o editor ficar indisponível em toda a sala, usar as comparações prontas e registrar no caderno a ordem das camadas e os ajustes propostos, retomando a exportação no próximo encontro."
       },
       {
         "num": "14",
@@ -1972,3 +1972,4 @@ window.SENAI_COURSES = {
     ]
   }
 };
+
