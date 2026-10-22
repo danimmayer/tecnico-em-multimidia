@@ -351,6 +351,7 @@
   if (isAvNine) document.body.classList.add('av-nine');
   // Aulas 11 a 13 use local kits and share the wider command grid.
   if (isAvNine && ['11', '12', '13'].includes(lesson.num)) document.body.classList.add('av-eleven');
+  if (isAvNine && lesson.num === '13') document.body.classList.add('av-thirteen');
   // These lessons time each slide from the minutes written in the teacher steps.
   const usesSlidePace = isDesignSeven || isDesignEight || isAvNine;
   const isDesignSix = course.slug === 'design-web' && lesson.num === '06';

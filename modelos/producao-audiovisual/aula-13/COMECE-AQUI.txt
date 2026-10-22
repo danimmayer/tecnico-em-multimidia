@@ -1,44 +1,27 @@
-AULA 13 · CHROMA KEY E CORREÇÃO DE COR · SHOTCUT
+AULA 13 · CANVA FREE + PHOTOPEA
 
-1. Extraia a pasta Aula13-Shotcut para Documentos no disco local.
-2. Abra o Shotcut já disponível no laboratório. Não abra arquivos dentro do ZIP.
-3. Crie cenario.mlt dentro desta pasta. Modo de vídeo: HD 720p, 24 fps.
-4. Coloque cenario-estudio.png na V1, com duração de seis segundos.
-5. Adicione uma trilha de vídeo V2. Coloque personagem-verde.mp4 nela, em zero.
-6. Aguarde os pedidos projetados. Ao terminar, melhore o pedido atual.
+Canva: conta gratuita e internet. Photopea: navegador, sem login.
+Sem assinatura, teste Pro, IA ou cartão.
 
-PARA CONTINUAR SEM ESPERAR AJUDA
-Abra AJUDA.html desta pasta no navegador e deixe ao lado do Shotcut.
-Use a seção do pedido atual: os passos, o critério de pronto e as soluções
-ficam juntos. Clique no sintoma que aparece na sua tela para abrir a solução.
-Depois de testar, compare com o colega do lado se precisar.
-Se continuar bloqueado, mostre ao professor onde parou e o que tentou.
-Programa que não abre ou arquivos ausentes: peça apoio imediatamente.
-Não precisa ficar repetindo uma tentativa que não funcionou.
+Preparar a oficina
+Extraia Aula13-Canva-Free.zip no disco local. Abra o Canva Free com sua conta e crie um vídeo horizontal em branco, 16:9. Nomeie Aula13-Cenario. O Canva exige login; o Photopea não exige. Não ative teste Pro nem informe cartão. Os nomes de menus podem variar conforme idioma e versão.
 
-CONSULTA · COMPOSIÇÃO
-Selecione o clipe da V2 → Filtros → + → Vídeo → Chroma Key: Simple.
-Em Key color, use o conta-gotas no verde. Ajuste Distance aos poucos.
-O cenário da V1 deve aparecer sem apagar mãos, olhos ou corpo.
-Se aparecer preto, confira V1, visibilidade e alinhamento das trilhas.
-personagem-cracha.mp4 é usado na demonstração do projetor.
-Para a entrega principal, use personagem-verde.mp4, sem crachá.
-Salve cenario.mlt. Exporte cenario.mp4, com seis segundos.
+Recortar no Photopea sem login
+Abra photopea.com e clique Start using Photopea se aparecer. File → Open: personagem-verde.png. No painel Layers, desbloqueie a camada se houver cadeado. Na ferramenta Magic Wand (Varinha Mágica), deixe Contiguous ativo e comece com tolerância baixa, por exemplo 20. Clique no verde externo e pressione Delete. O fundo deve virar quadriculado. Se sumir parte do personagem, desfaça e reduza a tolerância. Se sobrar verde, aumente um pouco. Use Select → Deselect e File → Export As → PNG. Salve personagem-recortado.png. Não salve JPG: ele perde transparência. Se houver bloqueio, use o PNG pronto do kit e retome o recorte depois. Não use removedor por IA.
 
-CONSULTA · COR
-Novo projeto cor.mlt, na mesma pasta.
-V1: cor-referencia.mp4 (6 s) seguido de cor-alterada.mp4 (6 s).
-Selecione só o segundo clipe e ajuste Brightness, White Balance e Saturation.
-Compare a neve e o personagem com a referência, que permanece sem filtros.
-Os filtros podem estar traduzidos; busque brilho, balanço de branco e saturação.
-Preserve detalhes claros; não existe um valor numérico universal.
-Salve cor.mlt. Para experimentar um estilo, use Salvar como → cor-estilo.mlt.
-Exporte a versão corrigida cor.mlt como cor.mp4, com doze segundos.
+Compor no Canva Free
+Em Uploads → Enviar arquivos, escolha o cenário e seu PNG recortado. Preencha a página com o cenário e coloque o PNG por cima. Em Posição → Camadas, confira cenário atrás e personagem na frente. Ajuste a duração da página para seis segundos pelo controle de duração da página ou linha do tempo. Se o personagem vier como fundo, desfaça e insira como elemento. Se o fundo ficar branco, reveja a exportação PNG no Photopea.
 
-EXPORTAR E GUARDAR
-Exportar a linha do tempo completa: MP4/H.264, 1280 × 720, 24 fps.
-Aguarde a fila Trabalhos terminar. Abra os dois MP4 fora do editor.
-Os arquivos são silenciosos por escolha didática.
-Mantenha mídias, projetos, MP4 e CREDITOS.txt juntos.
-O projeto .mlt não contém as mídias. Copie a pasta inteira para transportar.
-Não precisa de conta, upload ou ficha impressa.
+Criar duas opções
+Duplique a página. Substitua o cenário, ajuste escala pelas alças dos cantos e mude a posição do personagem. Insira um título curto por Texto, com fonte gratuita e contraste legível. Evite itens com coroa. Cada página dura seis segundos. O colega deve reconhecer a ideia sem ouvir sua explicação. Preserve as duas páginas e escolha uma para exportar.
+
+Aproximar imagens de referência
+Crie outro vídeo chamado Aula13-Cor. Envie telas/cor-referencia.jpg e telas/cor-alterada.jpg, uma imagem por página de seis segundos. Selecione só a imagem da segunda página. Abra Editar foto / Editar imagem → Ajustar. Compare brilho, temperatura e saturação, mudando um controle por vez. Preserve o detalhe da neve e mantenha a referência sem ajustes. Se os nomes forem diferentes, localize os ajustes da imagem selecionada. Não aplique a todas as páginas. São imagens estáticas extraídas de um vídeo; não é correção de um clipe em movimento.
+
+Preservar antes de experimentar
+Confirme o salvamento do design Aula13-Cor. Pelo menu Arquivo ou menu do design na página inicial, crie uma cópia e renomeie Aula13-Cor-Estilo. Confirme os nomes antes de editar. Na cópia, use os mesmos ajustes de imagem para propor uma aparência intencional nas duas páginas. A entrega principal usa a versão corrigida, não a experiência de estilo.
+
+Baixar e conferir
+No Canva: Compartilhar → Baixar → Vídeo MP4. No design de cenário, selecione apenas a página escolhida: seis segundos. No design de cor corrigida, selecione as duas páginas: doze segundos. Baixe como cenario.mp4 e cor.mp4 e abra no player do computador. Se pedir pagamento, cancele e remova itens Pro, fontes ou recursos com coroa; use só os arquivos do kit e texto gratuito. Se não salvar, confira internet e o indicador de salvamento. Guarde os créditos com os MP4 e inclua atribuição ao compartilhar. Os designs editáveis ficam na conta; o MP4 não contém o projeto. Confirme o salvamento antes de sair da conta no computador compartilhado.
+
+Chroma key de vídeo é conceito demonstrado. A prática de recorte usa imagem estática.

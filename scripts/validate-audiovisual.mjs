@@ -186,9 +186,9 @@ for (const module of ['./lessons/audiovisual-09.mjs', './lessons/audiovisual-10.
 
 const slides13 = checkLesson('13', lesson13, {
   slideCount: 21, localKit: true,
-  resources: ['Shotcut', 'Aula13-Shotcut.zip', 'CC BY', 'disco local'],
+  resources: ['Canva', 'Photopea sem login', 'Aula13-Canva-Free.zip', 'CC BY', 'disco local'],
   observation: ['um de cada vez', 'créditos', 'Não depender de projetos anteriores'],
-  minTypes: 6
+  minTypes: 5
 });
 const kit13 = 'modelos/producao-audiovisual/aula-13/';
 for (const slide of slides13) {
@@ -205,12 +205,17 @@ for (const slide of slides13.filter(slide => /^Pedido \d/.test(slide.title))) {
 }
 assert.ok(slides13.findIndex(slide => slide.title === 'Primeira transformação') < slides13.findIndex(slide => slide.pace === 'break'), 'Aula 13: a primeira composição deve acontecer antes do lanche');
 const help13 = read(kit13 + 'AJUDA.html');
-assert.ok(!/(?:src|href)="(?:https?:|\/\/)/.test(help13), 'Aula 13: ajuda do estudante deve funcionar sem internet');
+assert.ok(!/src="(?:https?:|\/\/)/.test(help13), 'Aula 13: ajuda sem dependências remotas');
+assert.ok(help13.includes('https://www.photopea.com/') && help13.includes('https://www.canva.com/'));
+assert.ok(!/Shotcut|\.mlt|Distance|White Balance/.test(JSON.stringify(lesson13)), 'Aula 13: sem instruções do editor anterior');
+assert.ok(lesson13.lesson.observation.includes('imagem estática') && lesson13.lesson.observation.includes('O Canva exige conta'));
+assert.ok(help13.includes('Magic Wand') && help13.includes('Contiguous') && help13.includes('Export As → PNG'));
+assert.ok(!fs.existsSync(root + kit13 + 'Aula13-Shotcut.zip'), 'Aula 13: não distribuir kit antigo');
 for (const section of ['preparo', 'camadas', 'recorte', 'compor', 'cor', 'estilo', 'exportar']) {
   assert.ok(help13.includes(`id="${section}"`));
 }
 const manifest13 = JSON.parse(read(kit13 + 'kit-manifest.json'));
-assert.deepEqual(manifest13.files.map(item => item.name).sort(), ['COMECE-AQUI.txt', 'AJUDA.html', 'CREDITOS.txt', 'personagem-verde.mp4', 'personagem-cracha.mp4', 'cenario-estudio.png', 'cenario-noite.png', 'cor-referencia.mp4', 'cor-alterada.mp4'].sort());
+assert.deepEqual(manifest13.files.map(item => item.name).sort(), ['COMECE-AQUI.txt', 'AJUDA.html', 'CREDITOS.txt', 'personagem-verde.mp4', 'personagem-cracha.mp4', 'cenario-estudio.png', 'cenario-noite.png', 'cor-referencia.mp4', 'cor-alterada.mp4', 'personagem-verde.png', 'personagem-cracha.png', 'personagem-recortado.png', 'telas/cor-referencia.jpg', 'telas/cor-alterada.jpg'].sort());
 const zip13 = fs.readFileSync(root + kit13 + manifest13.zip);
 assert.equal(zip13.length, manifest13.bytes);
 assert.ok(zip13.length < 5 * 1024 * 1024, 'Aula 13: kit excessivamente grande');
@@ -225,12 +230,12 @@ for (let cursor = 0; zip13.readUInt32LE(cursor) === 0x04034b50;) {
   entries13.set(name, zip13.subarray(start, start + size));
   cursor = start + size;
 }
-assert.equal(entries13.size, 9);
+assert.equal(entries13.size, 14);
 for (const item of manifest13.files) {
   const data = fs.readFileSync(root + kit13 + item.name);
   assert.equal(data.length, item.bytes);
   assert.equal(createHash('sha256').update(data).digest('hex'), item.sha256);
-  assert.deepEqual(entries13.get('Aula13-Shotcut/' + item.name), data, `Aula 13: ZIP diverge da mídia ${item.name}`);
+  assert.deepEqual(entries13.get('Aula13-Canva-Free/' + item.name), data, `Aula 13: ZIP diverge da mídia ${item.name}`);
   if (item.name.endsWith('.mp4')) {
     assert.equal(item.duration, 6);
     assert.equal(item.fps, '24/1');
@@ -239,5 +244,5 @@ for (const item of manifest13.files) {
   }
 }
 assert.ok(read(kit13 + 'CREDITOS.txt').includes('creativecommons.org/licenses/by/3.0/'));
-assert.ok(read(kit13 + 'index.html').includes('Aula13-Shotcut.zip'));
+assert.ok(read(kit13 + 'index.html').includes('Aula13-Canva-Free.zip'));
 console.log('Aulas 09 a 13 AV: paridade dos dados, 170 minutos (45 + 55 + 40 + 30), lanche, kits locais, integridade do ZIP da aula 13, pedidos, linguagem e visuais validados.');

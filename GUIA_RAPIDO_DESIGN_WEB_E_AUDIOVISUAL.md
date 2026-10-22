@@ -263,44 +263,30 @@ gerado por `scripts/build-audiovisual-12-package.py`; as telas de comparação,
 por `build-audiovisual-12-media.py`. Os slides vêm de
 `scripts/lessons/audiovisual-12.mjs`.
 
-Na Aula 13, a oficina volta ao **Shotcut** já preparado no laboratório. Antes
-da turma chegar, distribua `modelos/producao-audiovisual/aula-13/Aula13-Shotcut.zip`
-(cerca de 1,2 MB), extraia no disco local e teste duas trilhas e uma exportação.
-Não depende do projeto da aula 12 nem de tecido verde ou nova captação.
-O personagem geométrico sintético permite isolar a chave; o clipe com crachá
-verde demonstra por que a mesma cor no sujeito também desaparece. Isso não
-substitui os cuidados com cabelo, sombras e reflexos de uma captação real.
+Na Aula 13, use **Canva Free** para compor e exportar e **Photopea**
+(https://www.photopea.com/) como apoio gratuito e sem login. O Canva exige
+conta gratuita. Recorte `personagem-verde.png` no Photopea com Varinha Mágica,
+apague o verde e exporte PNG com transparência. Não usar IA ou teste Pro.
+O removedor de fundo de vídeo do Canva é Pro: a prática é seleção por cor em
+imagem estática; chroma key em vídeo permanece como conceito demonstrado.
 
-Os pedidos são revelados um de cada vez. Cada um tem critério de pronto e
-melhoria para quem termina antes. As entregas são `cenario.mlt` e
-`cenario.mp4` (6 s), `cor.mlt` e `cor.mp4` (12 s: referência seguida da cópia
-corrigida). O tratamento de estilo fica em uma cópia separada. Projetos,
-mídias e `CREDITOS.txt` permanecem juntos; o `.mlt` referencia os arquivos.
-Confira os MP4 fora do editor e a retomada dos projetos na própria pasta.
-Sem editor em toda a sala, faça análise das comparações locais e registre
-as decisões no caderno; a produção e exportação ficam pendentes para retomada.
+Distribua `modelos/producao-audiovisual/aula-13/Aula13-Canva-Free.zip`.
+Inclui originais, PNG recortado de contingência, cenários, imagens para cor,
+exemplos em vídeo, ajuda e créditos. Os ajustes de cor são nas imagens JPG,
+sem depender de controles de vídeo. Canva e Photopea usam internet; a ajuda
+pode ser lida sem conexão. Sem acesso à web, a prática fica pendente.
 
-O primeiro resultado aparece no projetor nos cinco minutos iniciais e a turma
-faz sua primeira composição antes do lanche. As demonstrações duram até dois
-minutos; as janelas de prática têm rodadas de criar, comparar com o vizinho e
-mudar uma decisão. A captação é consulta opcional e a surpresa do crachá é
-rápida, apenas no projetor. A turma cria apresentador ou gigante, compara dois
-cenários e experimenta uma intenção visual com os filtros que já usou.
+Pedidos um de cada vez, demonstrações curtas e melhorias para quem termina
+antes. A primeira composição acontece antes do lanche. Entregas:
+`cenario.mp4` (6 s), `cor.mp4` (12 s), PNG e créditos no disco; dois designs
+salvos na conta. O estilo fica numa cópia. Conferir MP4 no player e salvamento
+antes de sair da conta em computador compartilhado.
 
-Para autonomia, cada posto abre `AJUDA.html` da pasta do ZIP ao lado do
-Shotcut. A página tem passos, critérios de pronto e soluções por sintoma,
-sem internet. Os pedidos nos slides apontam para a seção correspondente.
-Estimule ler o pedido, testar a solução e comparar com o colega; ajude quando
-o bloqueio persistir, sem transformar essa sequência em condição para atender.
-Problemas de acesso, programa ou arquivos ausentes recebem apoio imediato.
-O professor circula e observa decisões, em vez de precisar autorizar cada etapa.
-
-Os 21 slides próprios e as notas vêm de `scripts/lessons/audiovisual-13.mjs`.
-O kit é regenerado com `python3 scripts/build-audiovisual-13-kit.py`
-(Python 3, FFmpeg e FFprobe; sem bibliotecas Python extras). Depois rode
+Os 21 slides próprios vêm de `scripts/lessons/audiovisual-13.mjs`.
+Regenerar: `python3 scripts/build-audiovisual-13-kit.py`,
 `node scripts/build-audiovisual.mjs` e `node scripts/validate-course-kit.mjs`.
-A noite fecha 170 minutos de atividade, das 19:00 às 22:10, com lanche
-das 19:45 às 20:05; somente o professor circula.
+170 minutos de atividade, das 19:00 às 22:10, com lanche 19:45–20:05;
+somente o professor circula.
 
 ### Edição
 

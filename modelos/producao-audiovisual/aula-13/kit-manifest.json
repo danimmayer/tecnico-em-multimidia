@@ -1,21 +1,21 @@
 {
-  "zip": "Aula13-Shotcut.zip",
-  "bytes": 1223393,
+  "zip": "Aula13-Canva-Free.zip",
+  "bytes": 1317858,
   "files": [
     {
       "name": "COMECE-AQUI.txt",
-      "bytes": 2491,
-      "sha256": "56b4aadbd7700ce58e74d315a7dec99e73fd7526e3e17cc1678fa4e6812a5c16"
+      "bytes": 3760,
+      "sha256": "86b8236de6e88da631c1d90ac18f90519c3b6123b9b6f60fd5c34187978cae7a"
     },
     {
       "name": "AJUDA.html",
-      "bytes": 11067,
-      "sha256": "e42d77949e2ef525e3640c4e5bb9d127792d75adc21278c1b857075a7a9d9040"
+      "bytes": 5433,
+      "sha256": "1106794a96772c2e9a57491d9ea099071dfb2704a38bb6a765eb9ffd240f3182"
     },
     {
       "name": "CREDITOS.txt",
-      "bytes": 1341,
-      "sha256": "0d4f11c486d41b63a4c5dacf1c1a61063f9a9a221b0a7b3453c24564f799a15a"
+      "bytes": 1484,
+      "sha256": "7542df16d11378e51dbecd28dbc723554aee8190f25d27370b27a281413ca1ba"
     },
     {
       "name": "personagem-verde.mp4",
@@ -62,6 +62,31 @@
       "width": 1280,
       "height": 720,
       "fps": "24/1"
+    },
+    {
+      "name": "personagem-verde.png",
+      "bytes": 4644,
+      "sha256": "f7877911f882eb97653de05b6ef75215dcbdc50e423499d373d8b2bbc5fe35c6"
+    },
+    {
+      "name": "personagem-cracha.png",
+      "bytes": 4666,
+      "sha256": "f1491f32708defdcffe9d01d6221d0bf9225b8a0fbac2edbcbba90be14f8fb50"
+    },
+    {
+      "name": "personagem-recortado.png",
+      "bytes": 5657,
+      "sha256": "b73fc7c99e3cdabea328d7c53170df2ef68e85a4bc87eb8d4c0fd6107c5509ee"
+    },
+    {
+      "name": "telas/cor-referencia.jpg",
+      "bytes": 42371,
+      "sha256": "114f21882182a12cecd3e7cdc0281e5e62df160d80edb072c134702a166a1904"
+    },
+    {
+      "name": "telas/cor-alterada.jpg",
+      "bytes": 40513,
+      "sha256": "b29bb55b0dbc99c21d44b57c6407940d3b568beb91f3f271d38abe27b82f6746"
     }
   ]
 }

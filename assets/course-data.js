@@ -1545,13 +1545,13 @@ window.SENAI_COURSES = {
       },
       {
         "num": "13",
-        "title": "Chroma key e correção de cor",
-        "description": "Trocar o fundo de um personagem no Shotcut, preservar suas bordas e aproximar a cor de dois planos. Uma oficina com mídia pronta, comparação antes e depois e entrega local em MP4.",
+        "title": "Composição e cor no Canva Free",
+        "description": "Recortar um personagem por cor no Photopea, compor uma cena no Canva Free e aproximar a cor de duas imagens. Exportar vídeos curtos sem recursos pagos.",
         "objectives": [
           "Edição de vídeos e sons: chroma key, efeitos e tratamento de vídeo."
         ],
         "technical": [
-          "Aplicar ajustes de cor, chroma key, efeitos visuais e sonoros."
+          "Compreender chroma key por comparação; praticar seleção por cor em imagem, composição em camadas e correção de cor."
         ],
         "socioemotional": [
           "Demonstrar no desenvolvimento das atividades sob a sua responsabilidade os princípios de profissionalismo."
@@ -1559,24 +1559,24 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:45",
-            "atividade": "Ver a troca de fundo acontecer, abrir o kit e conseguir a primeira composição antes do lanche."
+            "atividade": "Recortar o personagem no Photopea e criar a primeira composição no Canva Free."
           },
           {
             "horario": "20:05 - 21:00",
-            "atividade": "Transformar o personagem em apresentador ou gigante, descobrir por que um crachá desaparece e criar duas versões com cenários e enquadramentos diferentes."
+            "atividade": "Criar duas versões da cena com enquadramento, título e hierarquia diferentes."
           },
           {
             "horario": "21:00 - 21:40",
-            "atividade": "Comparar dois planos, corrigir brilho e dominante de cor e criar uma versão com tratamento visual intencional."
+            "atividade": "Corrigir a cor de uma imagem e comparar correção com tratamento."
           },
           {
             "horario": "21:40 - 22:10",
-            "atividade": "Exportar composição e comparação de cor, assistir fora do editor e corrigir um problema apontado pelo colega do lado."
+            "atividade": "Baixar dois MP4, assistir fora do navegador e conferir créditos."
           }
         ],
-        "methodology": "Oficina individual com demonstrações de até dois minutos, imediatamente seguidas de prática. A primeira troca de fundo aparece no projetor nos cinco minutos iniciais e cada estudante tenta sua primeira composição antes do lanche. Os pedidos são revelados um de cada vez. Cada pedido tem critério de pronto e uma variação visual para quem termina antes. As janelas longas são divididas em pequenas rodadas: criar, mostrar ao vizinho e mudar uma decisão; não passar todo o tempo refinando um filtro. Em postos compartilhados, alternar a operação a cada pedido. A evidência aparece na tela e nos arquivos locais, sem fichas.",
-        "resources": "Projetor, computadores com Shotcut já disponível, fones de ouvido e kit Aula13-Shotcut.zip copiado para o disco local. Editor gratuito e de código aberto; sem conta e sem upload. O kit contém dois clipes sintéticos de chroma, dois cenários próprios e dois planos de Caminandes 3 com créditos CC BY 3.0. Nenhuma ficha impressa.",
-        "observation": "Aula das 19:00 às 22:10, com lanche das 19:45 às 20:05 e chamada no início de cada bloco. A turma permanece nos postos; somente o professor circula. Preparar o Shotcut e distribuir o ZIP antes da aula por rede local ou pendrive; testar importação, duas trilhas e exportação no computador do laboratório. Não depender de projetos anteriores, tecido verde ou novas gravações. Os exemplos sintéticos isolam o funcionamento da chave; não representam a dificuldade de cabelo, sombras e reflexos de uma captação real. Os pedidos chegam um de cada vez; quem termina melhora o pedido atual. Não esperar todos atingirem perfeição para revelar uma variação: avançar quando a maioria tiver o resultado básico e ajudar os demais nos postos. Demonstrações de até dois minutos; evitar explicações sobre parâmetros antes de uma necessidade visível. Não buscar recorte perfeito no exemplo sintético. A captação entra só como resposta a um problema; o crachá é uma surpresa rápida no projetor, sem exigir troca de clipe em todos os postos. Manter a pasta com mídias, projetos .mlt, MP4 e créditos. Nenhum envio coletivo. Se um posto falhar, trabalhar com o colega do lado; se o editor ficar indisponível em toda a sala, usar as comparações prontas e registrar no caderno a ordem das camadas e os ajustes propostos, retomando a exportação no próximo encontro."
+        "methodology": "Oficina individual com pedidos revelados um de cada vez e demonstrações de até dois minutos. Cada pedido tem resultado verificável e uma variação para quem termina antes. Em postos compartilhados, alternar a operação. A turma permanece nos postos e mostra a tela ao colega do lado.",
+        "resources": "Projetor, computadores com internet e navegador, fones de ouvido, conta gratuita do Canva e Photopea sem login. Kit Aula13-Canva-Free.zip no disco local com PNGs próprios, comparações CC BY e ajuda de consulta. Nenhuma ficha impressa.",
+        "observation": "Aula das 19:00 às 22:10, com lanche das 19:45 às 20:05 e chamada no início de cada bloco; somente o professor circula. Não depender de projetos anteriores. Preparar acesso à conta gratuita do Canva e testar upload e download no laboratório. Pedidos um de cada vez. O Canva exige conta; somente o Photopea dispensa login. Não solicitar assinatura, cartão, teste Pro ou ferramentas de IA. Remoção de fundo de vídeo é Pro: chroma key em vídeo é conceito demonstrado por comparações prontas, não competência prática concluída nesta aula. A prática de recorte ocorre numa imagem estática via Varinha Mágica no Photopea, exportada como PNG com transparência. Usar o PNG já recortado se houver bloqueio e registrar a etapa pendente. Ajustes de cor são feitos nas imagens do kit, sem depender de controles de vídeo. Guardar dois designs na conta, PNG, MP4 e créditos no disco local. Conferir salvamento antes de sair da conta em computador compartilhado. Sem internet em toda a sala, analisar os exemplos locais e registrar decisões; retomar a produção e exportação depois, sem contar análise como entrega prática."
       },
       {
         "num": "14",

@@ -68,6 +68,9 @@ def build():
             run('-loop', 1, '-framerate', 24, '-i', tmp / f'{source}.ppm', '-t', 6,
                 '-vf', "drawbox=x=292:y=111:w=56:h=12:color=0x14213d:t=fill:enable='between(mod(t,2),1.8,1.95)',scale=1280:720:flags=neighbor",
                 '-c:v', 'libx264', '-crf', 18, '-pix_fmt', 'yuv420p', '-an', '-movflags', '+faststart', KIT / target)
+        run('-i', tmp / 'personagem.ppm', '-vf', 'scale=1280:720:flags=neighbor', '-frames:v', 1, KIT / 'personagem-verde.png')
+        run('-i', tmp / 'cracha.ppm', '-vf', 'scale=1280:720:flags=neighbor', '-frames:v', 1, KIT / 'personagem-cracha.png')
+        run('-i', tmp / 'personagem.ppm', '-vf', 'format=rgba,colorkey=0x00dc00:0.01:0,scale=1280:720:flags=neighbor', '-frames:v', 1, KIT / 'personagem-recortado.png')
     run('-i', SOURCE, '-t', 6, '-vf', 'fps=24,scale=1280:720', '-an', '-c:v', 'libx264', '-crf', 22,
         '-pix_fmt', 'yuv420p', '-movflags', '+faststart', KIT / 'cor-referencia.mp4')
     run('-i', KIT / 'cor-referencia.mp4', '-vf', 'eq=brightness=-0.06:saturation=0.72,colorbalance=bs=0.12:bm=0.08',
@@ -81,14 +84,15 @@ def build():
     for name in ['referencia', 'alterada']:
         run('-ss', 1, '-i', KIT / f'cor-{name}.mp4', '-frames:v', 1, KIT / f'telas/cor-{name}.jpg')
     files = ['COMECE-AQUI.txt', 'AJUDA.html', 'CREDITOS.txt', 'personagem-verde.mp4', 'personagem-cracha.mp4',
-             'cenario-estudio.png', 'cenario-noite.png', 'cor-referencia.mp4', 'cor-alterada.mp4']
+             'cenario-estudio.png', 'cenario-noite.png', 'cor-referencia.mp4', 'cor-alterada.mp4', 'personagem-verde.png', 'personagem-cracha.png',
+             'personagem-recortado.png', 'telas/cor-referencia.jpg', 'telas/cor-alterada.jpg']
     for file in files:
         assert (KIT / file).stat().st_size > 0, file
-    archive = KIT / 'Aula13-Shotcut.zip'
+    archive = KIT / 'Aula13-Canva-Free.zip'
     partial = archive.with_suffix('.zip.tmp')
     with zipfile.ZipFile(partial, 'w', zipfile.ZIP_STORED) as z:
         for file in files:
-            entry = zipfile.ZipInfo(f'Aula13-Shotcut/{file}', (2026, 1, 1, 0, 0, 0))
+            entry = zipfile.ZipInfo(f'Aula13-Canva-Free/{file}', (2026, 1, 1, 0, 0, 0))
             entry.create_system = 3
             entry.external_attr = 0o100644 << 16
             z.writestr(entry, (KIT / file).read_bytes())
@@ -106,7 +110,7 @@ def build():
             assert item['duration'] == 6 and item['fps'] == '24/1'
         manifest['files'].append(item)
     (KIT / 'kit-manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    print(f'Kit aula 13: {archive.stat().st_size / 1e6:.2f} MB; 4 MP4 de 6 s, 2 PNG, instruções e créditos.')
+    print(f'Kit aula 13: {archive.stat().st_size / 1e6:.2f} MB; 4 MP4 de 6 s, 5 PNG, imagens de cor, instruções e créditos.')
 
 
 if __name__ == '__main__':

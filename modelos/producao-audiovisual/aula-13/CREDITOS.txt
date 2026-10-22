@@ -1,14 +1,15 @@
 AULA 13 · ORIGEM DAS MÍDIAS
 
 Personagens geométricos e cenários (personagem-verde.mp4,
-personagem-cracha.mp4, cenario-estudio.png, cenario-noite.png):
+personagem-cracha.mp4, personagem-verde.png, personagem-cracha.png,
+personagem-recortado.png, cenario-estudio.png, cenario-noite.png):
 material didático original produzido para este repositório SENAI /
 Prof. Daniel Marcos Mayer. Desenhos sintéticos, não são pessoas filmadas.
 Gerador: scripts/build-audiovisual-13-kit.py.
 Os exemplos de composição foram produzidos com FFmpeg; são ilustrações
-do resultado, não capturas da interface do Shotcut.
+do resultado, não capturas da interface dos editores.
 
-cor-referencia.mp4 e cor-alterada.mp4:
+cor-referencia.mp4, cor-alterada.mp4 e imagens telas/cor-*.jpg:
 Caminandes 3: Llamigos (2016), Blender Foundation / Blender Institute.
 Direção: Pablo Vazquez.
 Projeto: https://studio.blender.org/projects/caminandes-3/
@@ -20,8 +21,8 @@ Adaptações didáticas: excerto de seis segundos a partir do clipe 02-encontro
 da aula 11, sem áudio, em 720p/24 fps; segunda cópia com brilho, saturação
 e balanço de cor alterados. Não há endosso dos autores.
 Ao compartilhar o resultado, manter estes créditos e indicar a remontagem
-e os ajustes de chroma e cor realizados.
+e os ajustes de composição e cor realizados.
 
 CONSULTA TÉCNICA DO PROFESSOR
-https://forum.shotcut.org/pub/chroma-key-simple
-https://shotcut.org/features/
+https://www.photopea.com/tuts/remove-background-from-photo/
+https://www.canva.com/features/video-background-remover/
