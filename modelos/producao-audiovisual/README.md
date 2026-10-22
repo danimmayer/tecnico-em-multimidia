@@ -45,7 +45,7 @@ Em computador compartilhado, imprima ou exporte o necessário e use **Limpar pre
 | 10 | Ilha de edição: primeiros cortes | Percurso de edição; ficha de edição; glossário |
 | 11 | Transições, efeitos e keyframes | Ficha de edição |
 | 12 | Grafismos, textos e máscaras | Kit leve `aula-12/Aula12-Canva.zip` com três cenas e uma foto para o Canva; pedidos revelados nos slides; legenda de identificação no glossário |
-| 13 | Chroma key e correção de cor | Ficha de edição; tratamento visual no glossário |
+| 13 | Composição e cor no Canva Free | [Kit Canva Free + Photopea](aula-13/index.html): recorte por cor em imagem, composição, correção, consulta e créditos; Photopea sem login |
 | 14 | Áudio na pós-produção e buffering | Ficha de edição; som do ambiente no glossário |
 | 15 | Blocagem e bibliotecas de composição | Ficha de edição; organização por pastas de mídia |
 | 16 | Render e estreia do microcurta | Especificação de exportação; rubrica; ordem da mostra |
@@ -66,3 +66,4 @@ Em computador compartilhado, imprima ou exporte o necessário e use **Limpar pre
 ## Limite da seção de consentimento
 
 A seção correspondente funciona somente como checklist pedagógico. Ela não é um termo jurídico e não substitui o modelo institucional vigente. Gravação interna, exibição, presença de convidados e publicação online aparecem separadas de propósito. Participantes menores de idade exigem o procedimento institucional com responsável legal, e sempre deve existir uma alternativa sem exposição de imagem ou voz.
+
