@@ -116,27 +116,27 @@ ${R} [data-part].is-picked{outline:4px solid #b42318!important;outline-offset:2p
 ${order}`;
   }
 
-  function demoHTML(f) {
+  function demoHTML(f, scope = 'vc') {
     const control = (cls, part, label, name, type = 'button') => f.realButtons
       ? `<button type="${type}" class="${cls}" data-part="${part}"${name ? ` aria-label="${name}"` : ''}>${label}</button>`
       : `<span class="${cls}" data-part="${part}" data-fake="botão">${label}</span>`;
     const caps = f.captions.split('\n').map(line => line.trim()).filter(Boolean);
     const transcript = caps.map(esc).join('<br>');
     const alt = value => value.trim() ? ` alt="${esc(value.trim())}"` : '';
-    const field = (id, part, label) => `${f.labels ? `<label for="vc-${id}">${label}${f.required ? ' (obrigatório)' : ''}</label>` : ''}<input id="vc-${id}" name="${id}" data-part="${part}" autocomplete="off"${f.labels ? '' : ` placeholder="${label}${f.required ? ' (obrigatório)' : '*'}"`}${f.errorText ? ` aria-describedby="vc-${id}-erro"` : ''}>${f.errorText ? `<p class="vc-error" id="vc-${id}-erro" hidden>⚠ Escreva ${id === 'nome' ? 'um nome' : 'um e-mail'} para continuar.</p>` : ''}`;
+    const field = (id, part, label) => `${f.labels ? `<label for="${scope}-${id}">${label}${f.required ? ' (obrigatório)' : ''}</label>` : ''}<input id="${scope}-${id}" name="${id}" data-part="${part}" autocomplete="off"${f.labels ? '' : ` placeholder="${label}${f.required ? ' (obrigatório)' : '*'}"`}${f.errorText ? ` aria-describedby="${scope}-${id}-erro"` : ''}>${f.errorText ? `<p class="vc-error" id="${scope}-${id}-erro" hidden>⚠ Escreva ${id === 'nome' ? 'um nome' : 'um e-mail'} para continuar.</p>` : ''}`;
     const video = f.weight.video === 'removed'
       ? (caps.length ? `<section class="vc-transcript" data-section="video" data-part="video" data-media="transcricao"><h2>Convite da curadoria</h2><p>${transcript}</p></section>` : '<div data-section="video" hidden></div>')
       : `<section class="vc-videobox" data-section="video"><div class="vc-video" data-part="video" data-autoplay="${f.autoplay}" data-captions="${caps.length > 0}">${f.weight.video === 'click' ? control('vc-play', 'play', '▶ Assistir ao convite da curadoria · 0:24') : `<p class="vc-screen">${f.autoplay ? '▶ Reproduzindo automaticamente · convite da curadoria · 0:24' : '▶ Convite da curadoria · 0:24 · pausado'}</p>`}${caps.length ? `<p class="vc-cap" aria-hidden="true">${esc(caps[0])}</p>` : ''}</div>${caps.length ? `<details class="vc-tr"><summary>Transcrição do convite</summary><p>${transcript}</p></details>` : ''}</section>`;
     const sections = {
       banner: `<div class="vc-banner" data-section="banner"><p>Novidade: oficina extra de serigrafia no domingo!</p>${control('vc-close', 'close', '✕', 'Fechar aviso')}</div>`,
-      header: `<header class="vc-header" data-section="header"><span class="vc-logo" data-part="logo">VIRADA CRIATIVA</span><nav class="vc-nav" data-part="nav" aria-label="Menu"><a href="#programacao">Programação</a><a href="#chegar">Como chegar</a><a href="#contato">Contato</a></nav></header>`,
+      header: `<header class="vc-header" data-section="header"><span class="vc-logo" data-part="logo">VIRADA CRIATIVA</span><nav class="vc-nav" data-part="nav" aria-label="Menu"><a href="#programacao">Programação</a><a href="#${scope}-chegar">Como chegar</a><a href="#${scope}-contato">Contato</a></nav></header>`,
       hero: f.weight.hero === 'removed' ? '<div data-section="hero" hidden></div>' : `<figure class="vc-hero" data-section="hero"><img data-part="hero" src="${IMG.hero}"${alt(f.altHero)} data-file="capa-virada-final2.jpg" width="640" height="260"></figure>`,
       info: `<div class="vc-infobox" data-section="info"><h1 class="vc-title" data-part="title">Criar para todo mundo</h1><p class="vc-info" data-part="info"><span>Sábado, 25/10</span> · <span>20h</span> · <span>Galpão 2</span> · <span>entrada gratuita</span> · <span>intérprete de Libras</span></p></div>`,
       video,
-      route: `<section class="vc-route" data-section="route" data-part="route" id="chegar"><h2>Como chegar</h2>${f.weight.map === 'removed' ? '' : `<img src="${IMG.map}"${alt(f.altMap)} data-file="mapa-rota.png" width="640" height="220">`}${f.routeText ? '<p class="vc-routetext">Até 20h: entrada pela Rua das Oficinas, 24. Depois das 20h: Rua Norte, 80, entrada sem degraus, com campainha e equipe de apoio.</p>' : ''}<a href="#mapa" class="vc-maplink">Ver mapa</a></section>`,
+      route: `<section class="vc-route" data-section="route" data-part="route" id="${scope}-chegar"><h2>Como chegar</h2>${f.weight.map === 'removed' ? '' : `<img src="${IMG.map}"${alt(f.altMap)} data-file="mapa-rota.png" width="640" height="220">`}${f.routeText ? '<p class="vc-routetext">Até 20h: entrada pela Rua das Oficinas, 24. Depois das 20h: Rua Norte, 80, entrada sem degraus, com campainha e equipe de apoio.</p>' : ''}<a href="#mapa" class="vc-maplink">Ver mapa</a></section>`,
       form: `<form class="vc-form" data-section="form" data-part="form" novalidate data-error="${f.errorText ? 'text' : 'color'}"><h2>Inscreva-se</h2>${field('nome', 'field-name', 'Nome')}${field('email', 'field-email', 'E-mail')}${control('vc-submit', 'submit', 'Inscrever', '', 'submit')}<p class="vc-msg" role="status"></p></form>`,
       ornament: `<img class="vc-ornament" data-section="ornament" data-part="ornament" src="${IMG.ornament}" alt="${f.ornamentDecorative ? '' : 'ornamento-final-v3.png'}" width="120" height="24">`,
-      footer: `<footer class="vc-footer" data-section="footer" data-part="footer" id="contato"><p>Virada Criativa · organização fictícia para estudo · contato@virada.exemplo</p><p>${f.weight.carousel === 'on' ? 'Apoio: ◀ Coletivo Tinta ▶' : 'Apoio: Coletivo Tinta · Rádio Bairro · Ateliê Norte'}</p></footer>`
+      footer: `<footer class="vc-footer" data-section="footer" data-part="footer" id="${scope}-contato"><p>Virada Criativa · organização fictícia para estudo · contato@virada.exemplo</p><p>${f.weight.carousel === 'on' ? 'Apoio: ◀ Coletivo Tinta ▶' : 'Apoio: Coletivo Tinta · Rádio Bairro · Ateliê Norte'}</p></footer>`
     };
     return `<div class="vc-page">${(f.order || BAD_DOM).map(id => sections[id]).join('')}</div>`;
   }
@@ -895,7 +895,7 @@ ${order}`;
     const s = state, missing = pending(), team = s.team.trim(), dash = '<em>Não registrado.</em>';
     const text = value => value && value.trim() ? esc(value.trim()) : dash;
     const c = s.stations.contrast, adjusted = PAIRS.map((_, i) => i).filter(i => c.adjust[i]);
-    const snapshot = (f, cls) => `<style>${demoCSS(f, `.${cls}`)}</style><div class="${cls}">${demoHTML(f)}</div>`;
+    const snapshot = (f, cls) => `<style>${demoCSS(f, `.${cls}`)}</style><div class="${cls}">${demoHTML(f, cls)}</div>`;
     const html = `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Entrega · Rota acessível · ${esc(team || 'Aula 13')}</title><style>
 body{margin:0;background:#f7f5ef;color:#0b1f33;font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
 .r-main{max-width:960px;margin:auto;padding:36px 24px 64px}.r-kicker{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0057b8}

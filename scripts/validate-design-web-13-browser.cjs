@@ -166,6 +166,9 @@ const demo=(page,kind)=>page.locator(`[data-demo="${kind}"]`);
   const html=await fs.readFile(await download.path(),'utf8');
   for(const heading of ['01 / Auditoria','02 / Estações','03 / Correções','04 / Teste cruzado e pacto','Os registros essenciais estão preenchidos']) assert.match(html,new RegExp(heading));
   assert.match(html,/class="snap-antes"/); assert.match(html,/class="snap-depois"/);
+  const ids=[...html.matchAll(/\sid="([^"]+)"/g)].map(m=>m[1]);
+  assert.equal(new Set(ids).size,ids.length,'exportação não repete ids entre Antes e Depois');
+  assert.match(html,/<label for="snap-depois-nome">/,'rótulo do Depois aponta para o campo do Depois');
   assert.ok(!/(?:src|href)="https?:|url\(https?:|https?:\/\//.test(html),'exportação é autônoma');
   assert.match(download.suggestedFilename(),/^aula-13-rota-acessivel-lu-caio-\d{6}\.html$/);
 
