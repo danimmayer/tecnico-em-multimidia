@@ -13,6 +13,13 @@ Noite completa: **19:00–22:10**, intervalo 19:45–20:05, 170 minutos de ativi
 | 20:50–21:35 | Protótipo para mais pessoas | Três ou mais correções justificadas, plano de 1 MB, antes e depois |
 | 21:35–22:10 | Teste cruzado e pacto | Quatro tarefas sem dicas, um ajuste e três compromissos |
 
+### Autonomia e ritmo
+
+- **Missão:** cada parada mostra uma lista que se completa sozinha, com o próximo passo marcado. O botão “Estou travado” libera três dicas e, depois, manda perguntar à dupla do lado (“3 antes de mim”).
+- **Horário:** as paradas e estações abrem no horário do roteiro, e a faixa de relógio leva cada dupla até a etapa da vez. Fora da janela 18:30–22:40, tudo fica aberto. Se os relógios dos computadores estiverem errados, o professor diz a palavra da parada: `rampa`, `legenda` ou `pacto` (também nas notas dos slides). Para conferir um horário, use `?hora=20:14`.
+- **Quem termina antes:** a missão cumprida libera um desafio extra conferido pela própria oficina (caça aos nove critérios, um desafio por estação, página sem barreiras e até 0,6 MB, teste perfeito). A próxima parada continua fechada.
+- **Aquecimento:** oito cartões “barreira ou não?” com resposta imediata abrem a Parada 1.
+
 A página de demonstração tem barreiras intencionais e vive num Shadow DOM, com estilos e foco isolados da oficina. As medições são feitas no próprio DOM: razão de contraste pela fórmula de luminância das WCAG, tamanho de letra e de alvo, foco ao receber Tab, texto alternativo, rótulos, ordem de leitura e mídia. A “leitura linear” é uma aproximação didática do que um leitor de tela anuncia. Nenhuma atividade simula deficiência.
 
 Na Parada 3, cada correção altera a versão **Depois** de verdade (botões reais, rótulos, ordem do DOM, legendas, textos alternativos) e só conta com justificativa. O choque de conexão lenta exige caber em 1 MB sem perder informação: retirar o vídeo exige transcrição; retirar o mapa exige rota em texto.

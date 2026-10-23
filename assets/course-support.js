@@ -1943,8 +1943,9 @@ window.SENAI_TEACHING_SUPPORT = {
         "teacherGoal": "Ao fim da noite, cada dupla terá exportado um HTML com cinco barreiras medidas, quatro registros de estação, pelo menos três correções justificadas com antes e depois, o plano de dados para conexão lenta, o resultado do teste cruzado e o pacto assinado com o apelido da dupla.",
         "routine": [
           "Antes da aula, abro a oficina da Aula 13 na Vercel, faço uma exportação de teste e confiro se cada posto tem teclado funcionando. Deixo o kit offline extraído como reserva.",
-          "Faço chamada às 19:00, 20:05, 20:50 e 21:35. Projeto só a parada da vez; as quatro paradas ficam abertas, mas cada bloco termina com o registro da parada preenchido.",
-          "Nas estações, cronometro 10 minutos e anuncio a troca. Quem terminou antes faz a extensão da própria estação, sem avançar para a seguinte.",
+          "Faço chamada às 19:00, 20:05, 20:50 e 21:35. Cada parada abre sozinha no horário: Parada 2 às 20:05, Parada 3 às 20:50 e Parada 4 às 21:35; as estações abrem às 20:05, 20:20, 20:30 e 20:40. Se os relógios dos computadores estiverem errados, digo a palavra da parada: rampa, legenda ou pacto.",
+          "A faixa de relógio mostra a cada dupla onde a turma deveria estar e leva até lá. Quem cumpre a missão antes do horário recebe o desafio extra da própria parada, sem avançar.",
+          "Combino no primeiro slide a regra “3 antes de mim”: antes de me chamar, a dupla lê a missão, usa “Estou travado” e pergunta à dupla do lado. Atendo primeiro quem fez os três passos.",
           "Reforço desde o início: medimos barreiras do produto, não limitações de pessoas. Não proponho vendas nos olhos, óculos embaçados nem imitação de deficiência."
         ],
         "onlineRoutine": "Os estudantes usam https://oficinas-design-web.vercel.app/aula-13/ e os links diretos ?fase=1 a ?fase=4; esta apresentação fica na plataforma. Se a internet cair, extraio o kit offline e abro index.html por duplo clique. Se o navegador bloquear o armazenamento local, a dupla trabalha sem fechar a página e exporta no fim.",
@@ -1966,7 +1967,7 @@ window.SENAI_TEACHING_SUPPORT = {
           "O pacto tem três compromissos e uma frase própria; a entrega HTML foi exportada e aberta."
         ],
         "fallback": "Sem internet, abrir o kit offline. Sem computador para a dupla, projetar a página de demonstração e as estações e registrar no caderno: barreira, medição lida no projetor, quem é afetado e a correção proposta em esboço de antes e depois. O teste cruzado vira leitura do esboço por outra dupla, que tenta cumprir as quatro tarefas apontando no papel.",
-        "extension": "Quem termina cedo audita a própria oficina com as mesmas ferramentas — teclado, zoom e contraste — e registra uma barreira encontrada ou a evidência de que o critério foi cumprido. Na Parada 3, tenta caber em 0,6 MB sem retirar informação.",
+        "extension": "O desafio extra aparece sozinho quando a missão termina e é conferido pela própria oficina: caça aos nove critérios na Parada 1, um desafio por estação na Parada 2, página sem barreiras na leitura linear e até 0,6 MB na Parada 3, teste perfeito na Parada 4. A próxima parada continua fechada até o horário.",
         "commonProblems": [
           [
             "A dupla registra “está feio” como barreira",
@@ -1983,6 +1984,18 @@ window.SENAI_TEACHING_SUPPORT = {
           [
             "O Tab não faz nada",
             "Peço um clique dentro da página de demonstração antes de pressionar Tab; em notebooks, confiro se a tecla não está presa a outra função."
+          ],
+          [
+            "A dupla terminou antes do horário",
+            "Aponto o desafio extra na missão. A oficina confere sozinha; não preciso inventar tarefa nem liberar a próxima parada."
+          ],
+          [
+            "O relógio do computador está errado",
+            "Digo a palavra da parada (rampa, legenda ou pacto); a dupla digita na tela de “abre às”."
+          ],
+          [
+            "Muitas mãos levantadas ao mesmo tempo",
+            "Lembro o “3 antes de mim”: missão, “Estou travado”, dupla do lado. Atendo quem já passou pelos três."
           ],
           [
             "O tempo aperta no fim",
@@ -2007,14 +2020,14 @@ window.SENAI_TEACHING_SUPPORT = {
                 "text": "Um HTML exportado com antes, depois e o pacto da turma."
               }
             ],
-            "promptLabel": "Sua vez",
-            "prompt": "Abra a oficina da Aula 13, escreva o apelido da dupla e combine quem opera primeiro.",
+            "promptLabel": "3 antes de mim",
+            "prompt": "Antes de chamar o professor: leiam a missão, usem “Estou travado” e perguntem à dupla do lado.",
             "resource": {
               "href": "https://oficinas-design-web.vercel.app/aula-13/?fase=1",
               "label": "Abrir oficina da Aula 13"
             },
             "teacher": {
-              "speech": "Faço a chamada e retomo Ana e Ravi, da Aula 12: necessidades reais apareceram nos dossiês. Hoje a página chega com barreiras de propósito para serem encontradas.",
+              "speech": "Faço a chamada e retomo Ana e Ravi, da Aula 12. Combino o “3 antes de mim” e mostro onde ficam a missão e o botão “Estou travado”. As paradas abrem sozinhas no horário.",
               "steps": [
                 "5 min · Chamada, retomada da Aula 12 e abertura da oficina."
               ],
@@ -2024,31 +2037,31 @@ window.SENAI_TEACHING_SUPPORT = {
           },
           {
             "block": 1,
-            "title": "A barreira está no projeto",
-            "heading": "A barreira está no projeto",
+            "title": "Aquecimento: barreira ou não?",
+            "heading": "Aquecimento: barreira ou não?",
             "time": "19:05 - 19:10",
             "layout": "dw8",
-            "lede": "Uma pessoa não “tem dificuldade com o site”: o site é que criou um obstáculo. E o que foi projetado pode ser corrigido.",
+            "lede": "Oito cartões na oficina. Cada resposta mostra na hora por que é ou não é barreira.",
             "cards": [
               {
-                "title": "Acessibilidade",
-                "text": "Perceber, entender e operar a página, com ou sem deficiência."
+                "title": "A barreira está no projeto",
+                "text": "O site criou o obstáculo; quem projeta pode corrigir."
               },
               {
-                "title": "Usabilidade",
-                "text": "Cumprir a tarefa com eficácia, sem esforço desnecessário."
-              },
-              {
-                "title": "Responsabilidade",
-                "text": "Lei Brasileira de Inclusão (Lei 13.146/2015) e WCAG: referências para quem projeta."
+                "title": "Referências",
+                "text": "Lei Brasileira de Inclusão (Lei 13.146/2015) e WCAG."
               }
             ],
-            "promptLabel": "Pense",
-            "prompt": "Que tarefa a página da Virada precisa permitir a qualquer visitante?",
+            "promptLabel": "Depois dos cartões",
+            "prompt": "Qual cartão pegou a turma de surpresa?",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-13/?fase=1",
+              "label": "Abrir oficina · Aquecimento"
+            },
             "teacher": {
-              "speech": "Apresento o modelo de barreira: o problema está no ambiente. Cito a Lei Brasileira de Inclusão e as diretrizes WCAG como referências, sem transformar a aula em leitura de norma. Deixo claro que ninguém vai imitar deficiência.",
+              "speech": "Três minutos de cartões e dois de conversa. O cartão da ilustração decorativa costuma surpreender: texto alternativo vazio é correto quando a imagem só enfeita. Fecho com a ideia de que a barreira está no projeto e que ninguém vai imitar deficiência.",
               "steps": [
-                "5 min · Conceito curto e pergunta para a turma: descobrir horário, local e se inscrever."
+                "5 min · Cartões em dupla e conversa sobre o cartão mais surpreendente."
               ],
               "watch": "A turma fala do produto (“o texto está apagado”), não da pessoa (“ele não enxerga direito”).",
               "rescue": "Volto ao último registro salvo, demonstro só o próximo passo no projetor e devolvo o controle à dupla."
@@ -2175,8 +2188,8 @@ window.SENAI_TEACHING_SUPPORT = {
             "lede": "Confira o contador de barreiras e exporte uma cópia parcial. O trabalho continua neste navegador.",
             "cards": [
               {
-                "title": "Contador",
-                "text": "5 de 5 barreiras registradas."
+                "title": "Missão",
+                "text": "Exportar uma cópia fecha a Parada 1."
               },
               {
                 "title": "Retorno",
@@ -2184,7 +2197,7 @@ window.SENAI_TEACHING_SUPPORT = {
               }
             ],
             "promptLabel": "Antes de sair",
-            "prompt": "Exporte a entrega parcial e não feche a aba da oficina.",
+            "prompt": "Exporte a cópia e não feche a aba da oficina.",
             "resource": {
               "href": "https://oficinas-design-web.vercel.app/aula-13/?fase=1",
               "label": "Abrir oficina da Aula 13"
@@ -2249,7 +2262,7 @@ window.SENAI_TEACHING_SUPPORT = {
               "label": "Abrir oficina · Parada 2 · Estações"
             },
             "teacher": {
-              "speech": "Faço a chamada e explico a rotação. Quem termina antes faz a extensão da própria estação; não avança.",
+              "speech": "Faço a chamada e explico a rotação: cada estação abre no horário e a faixa de relógio leva até ela. Quem termina antes faz o desafio da própria estação. Se os relógios dos computadores estiverem errados, a palavra que abre esta parada é RAMPA.",
               "steps": [
                 "5 min · Chamada e regras da rotação."
               ],
@@ -2417,7 +2430,7 @@ window.SENAI_TEACHING_SUPPORT = {
               "label": "Abrir oficina · Parada 3 · Correções"
             },
             "teacher": {
-              "speech": "Faço a chamada e demonstro uma correção com justificativa. Mostro a alternância entre Antes e Depois.",
+              "speech": "Faço a chamada e demonstro uma correção com justificativa. Mostro a alternância entre Antes e Depois. O comunicado de conexão lenta abre sozinho às 21:15. Se os relógios estiverem errados, a palavra desta parada é LEGENDA.",
               "steps": [
                 "5 min · Chamada e demonstração de uma correção."
               ],
@@ -2517,7 +2530,7 @@ window.SENAI_TEACHING_SUPPORT = {
               "steps": [
                 "10 min · Comparação e frase-síntese."
               ],
-              "watch": "Contador de correções em três ou mais e justificativas preenchidas.",
+              "watch": "Missão da Parada 3 completa; quem terminou está no desafio “Página sem barreiras”.",
               "rescue": "Volto ao último registro salvo, demonstro só o próximo passo no projetor e devolvo o controle à dupla."
             }
           },
@@ -2545,7 +2558,7 @@ window.SENAI_TEACHING_SUPPORT = {
               "label": "Abrir oficina · Parada 4 · Teste cruzado"
             },
             "teacher": {
-              "speech": "Faço a chamada e organizo as trocas de posto em pares de duplas vizinhas.",
+              "speech": "Faço a chamada e organizo as trocas de posto em pares de duplas vizinhas. Se os relógios estiverem errados, a palavra desta parada é PACTO.",
               "steps": [
                 "3 min · Chamada e troca de postos."
               ],
