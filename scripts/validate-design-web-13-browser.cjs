@@ -12,10 +12,18 @@ const demo=(page,kind)=>page.locator(`[data-demo="${kind}"]`);
   const context=await browser.newContext({viewport:{width:1366,height:900},acceptDownloads:true});
   const page=await context.newPage(); const errors=[];
   page.on('pageerror',error=>errors.push(error.message));
-  await page.goto(url,{waitUntil:'networkidle'});
+  // Outside class hours every parada is open; the clock rules are checked in a separate page below.
+  const openUrl=url+(url.includes('?')?'&':'?')+'hora=15:00';
+  await page.goto(openUrl,{waitUntil:'networkidle'});
   assert.match(await page.locator('.masthead h1').innerText(),/Rota acessível/);
+  assert.equal(await page.locator('#clockbar').isHidden(),true,'fora do horário não há faixa de relógio');
   assert.equal(await page.locator('.phase-rail [data-phase]').count(),4);
   await fill(page.locator('#team'),'Lu + Caio');
+
+  // Aquecimento: oito cartões com retorno imediato entram na missão.
+  for(let i=0;i<8;i++) { await page.locator(`[data-warm="${i%2?'nao':'sim'}"]`).click(); assert.match(await page.locator('.warm-result').innerText(),/É barreira|Não é barreira/); await page.locator('[data-warm-next]').click(); }
+  assert.match(await page.locator('.warm-done').innerText(),/certos/);
+  assert.match(await page.locator('#mission').innerText(),/Aquecimento \(8\/8\)/);
 
   // Parada 1: the inspector measures the real demo DOM; five distinct barriers are recorded.
   await demo(page,'audit').locator('[data-part="info"]').click();
@@ -29,7 +37,7 @@ const demo=(page,kind)=>page.locator(`[data-demo="${kind}"]`);
    await fill(page.locator('#who'),`Quem visita perde a tarefa por causa de ${part}.`);
    await page.locator('#add-finding').click();
   }
-  assert.match(await page.locator('.counter').innerText(),/6 de 5/);
+  assert.match(await page.locator('#mission').innerText(),/Barreiras registradas \(5\/5\)/);
   assert.match(await page.locator('.findings').innerText(),/Não recebe foco pelo teclado/,'medição de foco guardada com o registro');
   await page.locator('[data-tool="inspect"]').click();
   await page.locator('[data-tool="linear"]').click();
@@ -39,7 +47,15 @@ const demo=(page,kind)=>page.locator(`[data-demo="${kind}"]`);
   await demo(page,'audit').locator('.vc-nav a').first().focus();
   await page.keyboard.press('Tab');
   assert.match(await page.locator('#trail-audit').innerText(),/1 Tab/);
-  assert.match(await page.locator('#tools-count').innerText(),/2 de 4/);
+  assert.match(await page.locator('#mission').innerText(),/Ferramentas usadas \(2\/2\)/);
+  // Dicas em níveis: cada clique revela mais uma, até mandar perguntar à dupla do lado.
+  for(let i=0;i<4;i++) await page.locator('#stuck').click();
+  assert.equal(await page.locator('.stuck-list li').count(),4); assert.equal(await page.locator('#stuck').count(),0);
+  assert.equal(await page.locator('.extra').count(),0,'desafio extra só aparece com a missão cumprida');
+  await Promise.all([page.waitForEvent('download'),page.locator('#export').click()]);
+  assert.match(await page.locator('#mission .mission-count').innerText(),/4\/4/);
+  assert.match(await page.locator('.extra').innerText(),/Caça completa/,'missão cumprida libera o desafio extra');
+  assert.equal(await page.locator('.phase-rail [data-phase="1"]').evaluate(el=>el.classList.contains('is-done')),true,'parada concluída ganha selo na linha');
   // Tools must not rebuild the page: an error shown before "Sem cor" stays visible after it.
   await demo(page,'audit').locator('[data-part="submit"]').click();
   await page.locator('[data-tool="gray"]').click();
@@ -56,6 +72,7 @@ const demo=(page,kind)=>page.locator(`[data-demo="${kind}"]`);
   await page.locator('#light').fill('10');
   assert.ok(parseFloat((await page.locator('#ratio-now').innerText()).replace(',','.'))>=4.5,'texto escuro sobre o amarelo passa de 4,5:1');
   await fill(page.locator('[data-field="stations.contrast.note"]'),'Botão: 1,8:1 para mais de 10:1 mantendo o amarelo.');
+  assert.match(await page.locator('.extra').innerText(),/Pares acima de 4,5:1 \(2\/4\)/,'estação concluída mostra o desafio da própria estação');
   await page.locator('[data-go="station-2"]').click();
   await page.locator('#zoom-level').fill('200');
   assert.match(await page.locator('#zoom-cut').innerText(),/Fora da tela: .*Libras/);
@@ -75,6 +92,9 @@ const demo=(page,kind)=>page.locator(`[data-demo="${kind}"]`);
   await page.keyboard.press('Shift+Tab'); await page.keyboard.press('Space');
   await page.keyboard.press('Tab'); await page.keyboard.press('Enter');
   assert.match(await page.locator('#kbd-summary').innerText(),/Botões reais\s+5 Tabs · concluiu/i,'atalho, caixa marcada e botão real permitem concluir só com teclado');
+  await page.locator('#kbd-start').click();
+  await page.keyboard.press('Tab'); await page.keyboard.press('Enter'); await page.keyboard.press('Tab'); await page.keyboard.press('Space'); await page.keyboard.press('Tab'); await page.keyboard.press('Enter');
+  assert.match(await page.locator('#kbd-summary').innerText(),/Botões reais\s+3 Tabs · concluiu/i,'nova tentativa melhor substitui a contagem');
   await fill(page.locator('[data-field="stations.keyboard.note"]'),'Original não alcança o botão; com botões reais foram 3 Tabs.');
   await page.locator('[data-go="station-4"]').click();
   for(const [i,fn,text] of [[0,'complexa','Mapa da rota até o Galpão 2'],[1,'informativa','Rampa com corrimão na entrada sem degraus'],[2,'decorativa',''],[3,'funcional','Buscar na programação']]) {
@@ -84,6 +104,7 @@ const demo=(page,kind)=>page.locator(`[data-demo="${kind}"]`);
   assert.match(await page.locator('#alt-say-2').innerText(),/ignorada/);
   await fill(page.locator('[data-field="stations.alt.note"]'),'O mapa precisa de rota em texto.');
   assert.equal(await page.locator('[data-station] .mark.ok').count(),4,'quatro estações registradas');
+  assert.match(await page.locator('#mission').innerText(),/sem pistas de revisão \(4\/4\)/i,'mapa complexo bem descrito completa o desafio da estação 4');
 
   // Parada 3: corrections change the real "Depois" page; the slow-connection shock is enforced.
   await page.locator('[data-go="3"]').click();
@@ -118,7 +139,7 @@ const demo=(page,kind)=>page.locator(`[data-demo="${kind}"]`);
   await d.locator('[data-fix="routeText"]').check();
   await d.locator('[data-fix="ornamentDecorative"]').check();
   await fill(d.locator('[data-field="fixNotes.alt"]'),'A rota sem degraus fica em texto.');
-  assert.match(await page.locator('#fix-count').innerText(),/8 de 3/);
+  assert.match(await page.locator('#mission').innerText(),/Correções justificadas \(3\/3\)/);
   const after=demo(page,'after');
   assert.equal(await after.locator('button[data-part="submit"]').count(),1,'Depois usa botão real');
   assert.equal(await after.locator('label[for="vc-nome"]').count(),1,'Depois tem rótulo visível');
@@ -139,7 +160,9 @@ const demo=(page,kind)=>page.locator(`[data-demo="${kind}"]`);
   assert.match(await page.locator('#weight-out').innerText(),/Informação perdida/,'retirar vídeo sem transcrição perde informação');
   await fill(page.locator('[data-fix="captions"]'),'Sábado, 20h, no Galpão 2.\nEntrada gratuita, com Libras.\nDepois das 20h, entre pela Rua Norte, 80.');
   await fill(page.locator('[data-field="shock.note"]'),'Transcrição no lugar do vídeo e rota em texto no lugar do mapa.');
+  assert.equal(await page.locator('.extra').count(),0,'desafio da Parada 3 espera a missão');
   await fill(page.locator('[data-field="compare"]'),'O botão real com foco visível permite a inscrição.');
+  assert.match(await page.locator('.extra').innerText(),/Página sem barreiras/);
   await page.locator('[data-view="lado"]').click();
   assert.equal(await page.locator('.compare.lado > figure').count(),2);
   await demo(page,'after').locator('button[data-part="submit"]').click();
@@ -170,6 +193,9 @@ const demo=(page,kind)=>page.locator(`[data-demo="${kind}"]`);
   assert.equal(new Set(ids).size,ids.length,'exportação não repete ids entre Antes e Depois');
   assert.match(html,/<label for="snap-depois-nome">/,'rótulo do Depois aponta para o campo do Depois');
   assert.ok(!/(?:src|href)="https?:|url\(https?:|https?:\/\//.test(html),'exportação é autônoma');
+  assert.match(await page.locator('#mission .mission-count').innerText(),/5\/5/,'entrega final fecha a missão da Parada 4');
+  assert.match(html,/✓ Parada 1/,'selos entram na entrega');
+  assert.match(html,/✓ Parada 4/,'a própria exportação final conta no selo');
   assert.match(download.suggestedFilename(),/^aula-13-rota-acessivel-lu-caio-\d{6}\.html$/);
 
   await page.reload({waitUntil:'networkidle'});
@@ -180,9 +206,38 @@ const demo=(page,kind)=>page.locator(`[data-demo="${kind}"]`);
 
   // Narrow screens: no horizontal page scroll at 320 px.
   const phone=await browser.newPage({viewport:{width:320,height:740}});
-  await phone.goto(url+'?fase=3',{waitUntil:'networkidle'});
+  await phone.goto(openUrl+'&fase=3',{waitUntil:'networkidle'});
   assert.ok(await phone.evaluate(()=>document.documentElement.scrollWidth<=322),'sem rolagem horizontal em 320 px');
   await phone.close();
+  // Relógio da aula: estações e paradas abrem no horário; a palavra do professor libera se o relógio errar.
+  const timedContext=await browser.newContext({viewport:{width:1366,height:900}});
+  const timed=await timedContext.newPage(); timed.on('pageerror',error=>errors.push(error.message));
+  const at=hour=>url+(url.includes('?')?'&':'?')+'hora='+hour;
+  await timed.goto(at('20:14')+'&fase=2&estacao=2',{waitUntil:'networkidle'});
+  assert.match(await timed.locator('#clockbar').innerText(),/20:14[\s\S]*Estação 1 · Contraste[\s\S]*6 min/);
+  assert.match(await timed.locator('.locked').innerText(),/Estação 2 · Zoom 200%[\s\S]*Abre às 20:20/,'estação seguinte espera o horário');
+  await timed.locator('[data-jump]').click();
+  assert.equal(await timed.locator('#pair-select').count(),1,'“Ir para lá” leva à estação da vez');
+  assert.match(await timed.locator('.phase-rail [data-phase="3"]').innerText(),/abre às 20:50/);
+  await timed.locator('.phase-rail [data-phase="3"]').click();
+  assert.match(await timed.locator('.locked').innerText(),/Parada 3[\s\S]*20:50/);
+  await timed.locator('#key-input').fill('rampa?'); await timed.locator('#key-ok').click();
+  assert.match(await timed.locator('#key-status').innerText(),/não reconhecida/);
+  await timed.locator('#key-input').fill('Legenda'); await timed.locator('#key-input').press('Enter');
+  assert.equal(await timed.locator('#fix-contraste').count(),1,'palavra do professor libera a parada');
+  assert.equal(await timed.locator('#shock').count(),1,'com a palavra, o comunicado também abre');
+  await timed.goto(at('19:50')+'&fase=1',{waitUntil:'networkidle'});
+  assert.match(await timed.locator('#clockbar').innerText(),/Intervalo/); assert.equal(await timed.locator('[data-jump]').count(),0);
+  await timedContext.close();
+  // Comunicado da conexão lenta abre sozinho às 21:15 para quem já está na Parada 3.
+  const live=await browser.newPage({viewport:{width:1366,height:900}}); live.on('pageerror',error=>errors.push(error.message));
+  const today=new Date(); today.setHours(21,14,30,0);
+  await live.clock.install({time:today});
+  await live.goto(url+(url.includes('?')?'&':'?')+'fase=3',{waitUntil:'networkidle'});
+  assert.match(await live.locator('.shock-closed.is-locked').innerText(),/21:15/);
+  await live.clock.runFor(41000);
+  assert.equal(await live.locator('#shock').count(),1,'comunicado abre sem recarregar');
+  await live.close();
   assert.deepEqual(errors,[]);
   console.log('Aula 13 browser: auditoria medida, quatro estações, correções no Depois, choque de dados, teste cruzado, pacto, exportação, persistência, offline e 320 px validados.');
  } finally { await browser.close(); }

@@ -172,7 +172,7 @@ ${order}`;
     }
     return lines;
   }
-  const linearHTML = root => `<ol class="linear">${linearRead(root).map(line => `<li class="${line.warn ? 'warn' : line.quiet ? 'quiet' : ''}">${line.warn ? '<span class="tag">barreira</span> ' : ''}${esc(line.text)}</li>`).join('')}</ol><p class="fine">Aproximação didática: leitores de tela reais variam conforme o programa e as configurações.</p>`;
+  const linearHTML = root => `<ol class="linear">${linearRead(root).map(line => `<li class="${line.warn ? 'warn' : line.quiet ? 'quiet' : ''}">${line.warn ? '<span class="tag">barreira</span> ' : ''}${esc(line.text)}</li>`).join('')}</ol>`;
 
   /* ---------- Medições do inspetor ---------- */
   const CRITERIA = [
@@ -311,11 +311,11 @@ ${order}`;
   ];
 
   /* ---------- Estado e normalização do que foi salvo ---------- */
-  const initial = () => ({version:1, phase:1, team:'', station:1, view:'depois',
+  const initial = () => ({version:1, phase:1, team:'', station:1, view:'depois', warmup:Array(8).fill(''), exports:0, exportedFinal:false, keys:[],
     audit:{findings:[], tools:{keyboard:false, zoom:false, gray:false, linear:false}},
     stations:{
       contrast:{pair:0, adjust:PAIRS.map(() => null), note:''},
-      zoom:{level:100, fluid:false, cut200:null, note:''},
+      zoom:{level:100, fluid:false, cut200:null, ok400:false, note:''},
       keyboard:{variant:0, runs:[{tabs:0, done:false, tried:false}, {tabs:0, done:false, tried:false}], note:''},
       alt:{items:ALT_ITEMS.map(() => ({fn:'', text:''})), note:''}
     },
@@ -332,13 +332,16 @@ ${order}`;
     const clean = initial(), s = obj(saved);
     clean.phase = int(s.phase, 1, 4, 1); clean.team = str(s.team); clean.station = int(s.station, 1, 4, 1);
     clean.view = pick(s.view, ['antes', 'depois', 'lado'], 'depois');
+    if (Array.isArray(s.warmup)) clean.warmup = clean.warmup.map((_, i) => pick(s.warmup[i], ['sim', 'nao'], ''));
+    clean.exports = int(s.exports, 0, 999, 0); clean.exportedFinal = bool(s.exportedFinal);
+    if (Array.isArray(s.keys)) clean.keys = [...new Set(s.keys.filter(k => [2, 3, 4].includes(k)))];
     const audit = obj(s.audit), tools = obj(audit.tools);
     if (Array.isArray(audit.findings)) clean.audit.findings = audit.findings.filter(item => item && PARTS[item.part] && CRITERIA.some(([id]) => id === item.crit)).slice(0, 30).map(item => ({part:item.part, crit:item.crit, fact:str(item.fact), who:str(item.who)}));
     for (const key of Object.keys(clean.audit.tools)) clean.audit.tools[key] = bool(tools[key]);
     const st = obj(s.stations), c = obj(st.contrast), z = obj(st.zoom), k = obj(st.keyboard), a = obj(st.alt);
     clean.stations.contrast.pair = int(c.pair, 0, PAIRS.length - 1, 0); clean.stations.contrast.note = str(c.note);
     if (Array.isArray(c.adjust)) clean.stations.contrast.adjust = PAIRS.map((_, i) => { const item = obj(c.adjust[i]); return item.mode ? {mode:pick(item.mode, ['fg', 'bg'], 'fg'), light:Math.max(0, Math.min(100, Number(item.light) || 0))} : null; });
-    clean.stations.zoom = {level:int(z.level, 100, 400, 100), fluid:bool(z.fluid), cut200:Array.isArray(z.cut200) ? z.cut200.filter(item => typeof item === 'string').slice(0, 8) : null, note:str(z.note)};
+    clean.stations.zoom = {level:int(z.level, 100, 400, 100), fluid:bool(z.fluid), cut200:Array.isArray(z.cut200) ? z.cut200.filter(item => typeof item === 'string').slice(0, 8) : null, ok400:bool(z.ok400), note:str(z.note)};
     clean.stations.keyboard.variant = int(k.variant, 0, 1, 0); clean.stations.keyboard.note = str(k.note);
     if (Array.isArray(k.runs)) clean.stations.keyboard.runs = [0, 1].map(i => { const run = obj(k.runs[i]); return {tabs:int(run.tabs, 0, 999, 0), done:bool(run.done), tried:bool(run.tried)}; });
     if (Array.isArray(a.items)) clean.stations.alt.items = ALT_ITEMS.map((_, i) => { const item = obj(a.items[i]); return {fn:pick(item.fn, ALT_FUNCTIONS.map(([id]) => id), ''), text:str(item.text)}; });
@@ -370,12 +373,13 @@ ${order}`;
   if (phaseParam >= 1 && phaseParam <= 4) state.phase = phaseParam;
   if (stationParam >= 1 && stationParam <= 4) state.station = stationParam;
   // Ferramentas e rastros não são salvos: valem só para a tentativa aberta.
-  const ui = {inspect:true, zoom:false, gray:false, linear:false, picked:null, trail:[], tabs:0, zoom3:false, linear3:false, zoom4:false, trail4:[], kbdTrail:[], kbdTabs:0, kbdMsg:''};
+  const ui = {inspect:true, zoom:false, gray:false, linear:false, picked:null, trail:[], tabs:0, zoom3:false, linear3:false, zoom4:false, trail4:[], kbdTrail:[], kbdTabs:0, kbdMsg:'', hints:{}, warmCard:null, lockedView:false};
 
   function save() {
     try { localStorage.setItem(KEY, JSON.stringify(state)); storageOK = true; }
     catch { storageOK = false; }
-    $('save-status').textContent = storageOK ? 'Salvo neste navegador.' : 'Salvamento local bloqueado: exporte antes de fechar.';
+    $('save-status').textContent = storageOK ? 'Salvo neste navegador.' : 'Salvamento bloqueado: exporte antes de fechar.';
+    refreshMission();
   }
 
   /* ---------- Cálculos de progresso ---------- */
@@ -483,41 +487,164 @@ ${order}`;
   }
   function renderTrail(id, trail, tabs) {
     const box = $(id); if (!box) return;
-    box.innerHTML = trail.length ? `<p class="fine">${tabs} ${tabs === 1 ? 'Tab' : 'Tabs'} pressionados · últimos destinos do foco:</p><ol>${trail.slice(-10).map(item => `<li>${esc(item)}</li>`).join('')}</ol>` : '<p class="fine">Clique no topo da página de demonstração e pressione Tab. O rastro aparece aqui.</p>';
+    box.innerHTML = trail.length ? `<p class="trail-title">Rastro do teclado · ${tabs} ${tabs === 1 ? 'Tab' : 'Tabs'}</p><ol>${trail.slice(-10).map(item => `<li>${esc(item)}</li>`).join('')}</ol>` : '';
+  }
+
+  /* ---------- Relógio da aula: cada parada abre no seu horário ---------- */
+  const at = (h, m) => h * 60 + m;
+  const SCHEDULE = [
+    {from:at(19, 0), to:at(19, 45), phase:1, label:'Parada 1 · Auditar'},
+    {from:at(19, 45), to:at(20, 5), phase:0, label:'Intervalo'},
+    {from:at(20, 5), to:at(20, 20), phase:2, station:1, label:'Estação 1 · Contraste'},
+    {from:at(20, 20), to:at(20, 30), phase:2, station:2, label:'Estação 2 · Zoom 200%'},
+    {from:at(20, 30), to:at(20, 40), phase:2, station:3, label:'Estação 3 · Só teclado'},
+    {from:at(20, 40), to:at(20, 50), phase:2, station:4, label:'Estação 4 · Texto alternativo'},
+    {from:at(20, 50), to:at(21, 35), phase:3, label:'Parada 3 · Corrigir'},
+    {from:at(21, 35), to:at(22, 10), phase:4, label:'Parada 4 · Testar e pactuar'}
+  ];
+  // Fora da janela da aula (preparação, revisão em casa) tudo fica aberto.
+  const CLASS_WINDOW = [at(18, 30), at(22, 40)];
+  const OPENS = {phase:{2:at(20, 5), 3:at(20, 50), 4:at(21, 35)}, station:{1:at(20, 5), 2:at(20, 20), 3:at(20, 30), 4:at(20, 40)}, shock:at(21, 15)};
+  // Palavras ditas pelo professor quando os relógios dos computadores estão errados.
+  const KEYS = {2:'rampa', 3:'legenda', 4:'pacto'};
+  const hourParam = /^\d{1,2}:\d{2}$/.test(params.get('hora') || '') ? params.get('hora') : '';
+  const nowMin = () => { if (hourParam) { const [h, m] = hourParam.split(':').map(Number); return at(h, m); } const d = new Date(); return at(d.getHours(), d.getMinutes()); };
+  const clock = min => `${String(Math.floor(min / 60)).padStart(2, '0')}:${String(min % 60).padStart(2, '0')}`;
+  const inClass = () => nowMin() >= CLASS_WINDOW[0] && nowMin() < CLASS_WINDOW[1];
+  const keyFrom = p => state.keys.some(k => k >= p);
+  const phaseOpen = p => p === 1 || !inClass() || keyFrom(p) || nowMin() >= OPENS.phase[p];
+  const stationOpen = s => phaseOpen(2) && (!inClass() || keyFrom(2) || nowMin() >= OPENS.station[s]);
+  const shockOpen = () => !inClass() || keyFrom(3) || nowMin() >= OPENS.shock;
+  function updateClock() {
+    const bar = $('clockbar'); if (!bar) return;
+    const n = nowMin(), slot = inClass() && SCHEDULE.find(s => n >= s.from && n < s.to);
+    if (!slot) { bar.hidden = true; return; }
+    const here = slot.phase === state.phase && (!slot.station || slot.station === state.station);
+    bar.hidden = false;
+    bar.innerHTML = `<div class="clockbar-inner"><span class="clock-now">${clock(n)}</span><span>Agora: <strong>${slot.label}</strong> · até ${clock(slot.to)} <span class="clock-left">(${slot.to - n} min)</span></span>${slot.phase && !here ? `<button type="button" class="button" data-jump="${slot.phase}:${slot.station || ''}">Ir para lá</button>` : ''}</div>`;
+  }
+
+  /* ---------- Aquecimento: barreira ou não? ---------- */
+  const WARMUP = [
+    ['O botão “Enviar” é cinza-claro sobre fundo branco.', true, 'Contraste baixo: muita gente não enxerga o botão.'],
+    ['O vídeo tem legenda e transcrição.', false, 'Quem não pode ouvir acompanha a fala.'],
+    ['O campo diz “Digite aqui”, e a dica some quando você começa a escrever.', true, 'Sem rótulo, a pessoa esquece o que o campo pede.'],
+    ['Ao apertar Tab, um contorno azul mostra onde você está.', false, 'Foco visível: quem usa teclado sabe onde está.'],
+    ['O erro do formulário aparece só como uma borda vermelha.', true, 'Cor sozinha não explica o erro.'],
+    ['Uma ilustração decorativa tem texto alternativo vazio.', false, 'Imagem decorativa pode ficar em silêncio sem atrapalhar a leitura.'],
+    ['Com zoom de 200%, o texto quebra a linha e nada some.', false, 'O layout se reorganiza e ninguém perde informação.'],
+    ['No celular, o ícone de apagar tem 12 px.', true, 'Alvo pequeno: difícil acertar com o dedo.']
+  ];
+  const warmAnswered = () => state.warmup.filter(Boolean).length;
+  const warmRight = () => state.warmup.filter((answer, i) => answer && (answer === 'sim') === WARMUP[i][1]).length;
+  function warmupHTML() {
+    const pending = state.warmup.findIndex(answer => !answer), i = ui.warmCard ?? pending;
+    if (i < 0) return `<div class="warm-done"><strong>Aquecimento</strong><span>${warmRight()} de ${WARMUP.length} certos</span></div>`;
+    const [text, barrier, why] = WARMUP[i], answer = state.warmup[i];
+    return `<p class="warm-step">Aquecimento · ${i + 1} de ${WARMUP.length}</p><p class="warm-text">${esc(text)}</p>${answer
+      ? `<p class="warm-result ${(answer === 'sim') === barrier ? 'right' : 'wrong'}"><strong>${(answer === 'sim') === barrier ? 'Isso.' : 'Não exatamente.'} ${barrier ? 'É barreira.' : 'Não é barreira.'}</strong> ${esc(why)}</p><button type="button" class="button primary" data-warm-next>${pending < 0 ? 'Fechar aquecimento' : 'Próximo cartão →'}</button>`
+      : `<div class="warm-actions"><button type="button" class="button" data-warm="sim">É barreira</button><button type="button" class="button" data-warm="nao">Não é barreira</button></div>`}`;
+  }
+  const renderWarmup = () => { const box = $('warmup'); if (box) box.innerHTML = warmupHTML(); };
+
+  /* ---------- Missão, dicas e desafio extra de cada parada ---------- */
+  const STATION_NAMES = ['Contraste', 'Zoom 200%', 'Só teclado', 'Texto alternativo'];
+  const progress = (label, n, need) => ({label:`${label} (${Math.min(n, need)}/${need})`, done:n >= need});
+  let afterCache = {key:'', warns:0};
+  function afterBarriers() {
+    const key = JSON.stringify(state.fixes); if (afterCache.key === key) return afterCache.warns;
+    const host = document.createElement('div'); host.style.display = 'none'; document.body.append(host);
+    const root = host.attachShadow({mode:'open'}); root.innerHTML = demoHTML(state.fixes, 'medida');
+    const warns = linearRead(root).filter(line => line.warn).length; host.remove();
+    afterCache = {key, warns}; return warns;
+  }
+  const altClean = i => { const item = state.stations.alt.items[i]; return item.fn === ALT_ITEMS[i].expected && !altIssues(i).length; };
+  function mission(p) {
+    if (p === 1) return {items:[progress('Aquecimento', warmAnswered(), WARMUP.length), progress('Barreiras registradas', distinctFindings(), MIN_FINDINGS), progress('Ferramentas usadas', toolsUsed(), 2), {label:'Exportar uma cópia', done:state.exports > 0}],
+      extra:{title:'Caça completa', goals:[progress('Critérios diferentes encontrados', new Set(state.audit.findings.map(item => item.crit)).size, CRITERIA.length), progress('Ferramentas usadas', toolsUsed(), 4)]}};
+    if (p === 2) {
+      const s = state.stations, extras = [
+        progress('Pares acima de 4,5:1', PAIRS.filter((_, i) => contrastResult(i).after >= 4.5).length, PAIRS.length),
+        {label:'Zoom 400%, layout fluido e nada cortado', done:s.zoom.ok400},
+        {label:'Botões reais em até 3 Tabs, com o atalho', done:s.keyboard.runs[1].done && s.keyboard.runs[1].tabs <= 3},
+        progress('Imagens sem pistas de revisão', ALT_ITEMS.filter((_, i) => altClean(i)).length, ALT_ITEMS.length)];
+      return {items:STATION_NAMES.map((name, i) => ({label:`Estação ${i + 1} · ${name}`, done:stationDone(i + 1)})), extra:{title:`Estação ${state.station} · desafio`, goals:[extras[state.station - 1]]}, extraReady:stationDone(state.station)};
+    }
+    if (p === 3) return {items:[progress('Correções justificadas', appliedGroups().length, MIN_FIXES), {label:shockOpen() ? 'Página com até 1 MB, sem perder informação' : `Conexão lenta (abre às ${clock(OPENS.shock)})`, done:state.shock.open && weightOK(state.fixes) && !!state.shock.note.trim()}, {label:'Frase: a mudança que mais protege', done:!!state.compare.trim()}],
+      extra:{title:'Página sem barreiras', goals:[{label:`Leitura linear do Depois sem barreiras (${afterBarriers()} restantes)`, done:afterBarriers() === 0}, {label:'Até 0,6 MB sem perder informação', done:weightOK(state.fixes) && weightTotal(state.fixes) <= 0.6 + 1e-9}]}};
+    const t = state.test;
+    return {items:[{label:'Apelido de quem testa', done:!!t.tester.trim()}, progress('Tarefas testadas', t.results.filter(r => r.status).length, TASKS.length), {label:'Ajuste depois do teste', done:!!t.adjust.trim()}, {label:'Pacto: 3 compromissos e uma frase', done:state.pact.picks.length === 3 && !!state.pact.own.trim()}, {label:'Exportar a entrega final', done:state.exportedFinal}],
+      extra:{title:'Teste perfeito', goals:[progress('Tarefas “Consegui sem ajuda”', t.results.filter(r => r.status === 'sem-ajuda').length, TASKS.length), {label:`Leitura linear do Depois sem barreiras (${afterBarriers()} restantes)`, done:afterBarriers() === 0}]}};
+  }
+  const phaseDone = p => mission(p).items.every(item => item.done);
+  const HINTS = {
+    1:['Ligue Inspecionar e clique no texto cinza de data e local. Escolha o critério que aparece com ✕ na ficha.', 'Um elemento pode ter mais de uma barreira. O ✕ do aviso tem três: mude só o critério e registre de novo.', 'Desligue Inspecionar, clique no topo da página e aperte Tab algumas vezes. O rastro mostra aonde o foco nunca chega.'],
+    e1:['Escolha “Botão Inscrever”, marque “Cor do texto” e arraste a luminosidade para a esquerda.', 'O valor “Agora” precisa chegar a 4,5:1. O amarelo do fundo pode continuar.', 'No registro: o par, o antes, o agora e quem passa a ler melhor.'],
+    e2:['Leve a ampliação a 200% com o layout fixo e leia o que ficou fora da tela.', 'Marque “Layout fluido” e veja o texto quebrar a linha.', 'No registro: o que sumiu, quem amplia a tela e o que resolveu.'],
+    e3:['Clique em “Começar pelo teclado” e use só Tab. Observe onde o foco para.', 'Na versão original o botão Confirmar nunca recebe foco. Troque para “Botões reais” e repita.', 'Espaço marca a caixa, Enter confirma e Shift+Tab volta um passo.'],
+    e4:['Escolha a função antes de escrever. O ornamento só enfeita.', 'No botão com lupa, descreva a ação, não o desenho.', 'O mapa tem rota e horários: resuma no texto alternativo e coloque a rota escrita na página.'],
+    3:['Abra um painel marcado “na sua auditoria” e mude uma opção. A prévia Depois muda na hora.', 'A correção só conta com a frase de quem ganha: “quem usa teclado consegue se inscrever”.', 'Na conexão lenta, troque o vídeo por “carregar só ao tocar” e o mapa por “mapa leve”.'],
+    4:['Quem testa lê a tarefa e tenta sozinho. Quem criou só observa.', 'Na tarefa 2, clique em “Começar pelo teclado” e use Tab até o botão Inscrever. O registro aparece sozinho.', 'Na volta, escolham uma observação do teste, ajustem na Parada 3 e escrevam o que mudou.']
+  };
+  const hintKey = () => state.phase === 2 ? `e${state.station}` : state.phase;
+  const goalList = goals => `<ul class="goal-list">${goals.map(goal => `<li class="${goal.done ? 'done' : ''}"><span class="tick" aria-hidden="true">${goal.done ? '✓' : ''}</span>${esc(goal.label)}${goal.done ? '<span class="visually-hidden"> (feito)</span>' : ''}</li>`).join('')}</ul>`;
+  function missionHTML() {
+    const m = mission(state.phase), done = m.items.filter(item => item.done).length, total = m.items.length;
+    const next = m.items.findIndex(item => !item.done), key = hintKey(), level = ui.hints[key] || 0, hints = HINTS[key];
+    const showExtra = state.phase === 2 ? m.extraReady : next < 0;
+    return `<div class="mission-head"><h3 id="mission-title">Missão</h3><span class="mission-count">${done}/${total}</span></div>
+      <div class="meter" aria-hidden="true"><span style="width:${Math.round(done / total * 100)}%"></span></div>
+      <ul class="mission-list">${m.items.map((item, i) => `<li class="${item.done ? 'done' : i === next ? 'next' : ''}"><span class="tick" aria-hidden="true">${item.done ? '✓' : i === next ? '→' : ''}</span>${esc(item.label)}${item.done ? '<span class="visually-hidden"> (feito)</span>' : ''}</li>`).join('')}</ul>
+      ${showExtra ? `<div class="extra"><h4>${esc(m.extra.title)}</h4>${goalList(m.extra.goals)}</div>` : ''}
+      ${level ? `<ol class="stuck-list">${hints.slice(0, level).map(text => `<li>${esc(text)}</li>`).join('')}${level > hints.length ? '<li>Perguntem à dupla do lado. Depois, levantem a mão.</li>' : ''}</ol>` : ''}
+      ${level <= hints.length ? `<button type="button" class="text-button" id="stuck">${level ? 'Outra dica' : 'Estou travado'}</button>` : ''}`;
+  }
+  function refreshMission() {
+    const box = $('mission'); if (box) box.innerHTML = missionHTML();
+    updateRail();
+  }
+  function updateRail() {
+    document.querySelectorAll('.phase-rail [data-phase]').forEach(button => {
+      const p = Number(button.dataset.phase), open = phaseOpen(p), done = open && phaseDone(p);
+      button.classList.toggle('is-done', done); button.classList.toggle('is-locked', !open);
+      button.querySelector('.stop').textContent = done ? '✓' : p;
+      const stateLabel = button.querySelector('.rail-state'); if (stateLabel) stateLabel.textContent = done ? ' (concluída)' : open ? '' : ' (fechada)';
+      const slots = SCHEDULE.filter(s => s.phase === p);
+      button.querySelector('small').textContent = open ? `${clock(slots[0].from)}–${clock(slots.at(-1).to)}` : `abre às ${clock(OPENS.phase[p])}`;
+    });
   }
 
   /* ---------- Componentes de interface ---------- */
-  const field = (path, label, value, hint = '', rows = 3) => `<label class="field">${label}<textarea data-field="${path}" rows="${rows}" maxlength="1200">${esc(value)}</textarea>${hint ? `<span class="hint">${hint}</span>` : ''}</label>`;
-  const top = (n, title, text, deliverable) => `<section class="stage-top"><div class="stage-copy"><p class="eyebrow">Parada ${n} de 4</p><h2 id="stage-title" tabindex="-1">${title}</h2><p>${text}</p></div><aside class="stage-meta"><strong>Entrega desta parada</strong><p>${deliverable}</p><small>Em dupla: alternem quem opera e quem confere.</small></aside></section>`;
-  const nextStep = (text, phase, label) => `<div class="next"><p>${text}</p><button type="button" class="button primary" data-go="${phase}">${label}</button></div>`;
-  const stretch = (title, text) => `<details class="stretch"><summary>Terminou com critério? ${title}</summary><p>${text}</p></details>`;
-  const counter = (value, min, label) => `<p class="counter ${value >= min ? 'done' : ''}"><strong>${Math.min(value, 99)} de ${min}</strong> ${label}${value >= min ? ' <span class="mark ok">✓ mínimo atingido</span>' : ''}</p>`;
+  const field = (path, label, value, placeholder = '', rows = 3) => `<label class="field">${label}<textarea data-field="${path}" rows="${rows}" maxlength="1200"${placeholder ? ` placeholder="${placeholder}"` : ''}>${esc(value)}</textarea></label>`;
+  const top = (n, title, text) => `<section class="stage-top"><div class="stage-copy"><p class="eyebrow">Parada ${n}</p><h2 id="stage-title" tabindex="-1">${title}</h2><p>${text}</p></div><aside class="mission" id="mission" aria-labelledby="mission-title">${missionHTML()}</aside></section>`;
+  const nextButton = (target, label) => `<div class="next"><button type="button" class="button primary" data-go="${target}">${label}</button></div>`;
   const toolButton = (tool, label, pressed) => `<button type="button" class="tool" data-tool="${tool}" aria-pressed="${pressed}">${label}</button>`;
+  const keyForm = () => `<div class="key-form"><label for="key-input">Palavra do professor</label><input id="key-input" type="text" autocomplete="off" maxlength="30"><button type="button" class="button" id="key-ok">Liberar</button><p id="key-status" role="status"></p></div>`;
+  function lockedHTML(title, opensAt, back, backLabel) {
+    return `<section class="locked"><h2 id="stage-title" tabindex="-1">${title}</h2><p class="locked-time">Abre às <strong>${clock(opensAt)}</strong></p><button type="button" class="button primary" data-go="${back}">${backLabel}</button>${keyForm()}</section>`;
+  }
 
   /* ---------- Parada 1 · Auditoria ---------- */
   function renderAudit() {
     const findings = state.audit.findings;
-    return top(1, 'Encontre as barreiras.', 'A página da conversa “Criar para todo mundo” foi publicada com barreiras de propósito. Inspecione os elementos, leia a medição e registre o que impede alguém de cumprir a tarefa. Barreira é do projeto, não da pessoa.', `${MIN_FINDINGS} barreiras diferentes, cada uma com critério, medição e pessoa afetada.`) +
-      `<div class="split"><section class="desk" aria-labelledby="audit-demo-title"><p class="section-label" id="audit-demo-title">Página de demonstração · barreiras intencionais</p>
-        <div class="toolbar" role="group" aria-label="Ferramentas do auditor">${toolButton('inspect', 'Inspecionar', ui.inspect)}${toolButton('zoom', 'Zoom 200%', ui.zoom)}${toolButton('gray', 'Sem cor', ui.gray)}${toolButton('linear', 'Leitura linear', ui.linear)}</div>
-        <p class="fine" id="tool-help">${ui.inspect ? 'Inspecionar ligado: clicar escolhe um elemento para medir. Desligue para usar a página normalmente.' : 'Inspecionar desligado: a página funciona como para um visitante.'}</p>
-        <div class="browser-frame"><div class="browser-bar"><span>virada.exemplo/conversa</span><span>Simulação</span></div><div class="demo-host" data-demo="audit"></div></div>
-        <div class="tool-panels"><div id="trail-audit" class="trail" aria-live="polite"></div><button type="button" class="text-button" id="clear-trail">Limpar rastro do teclado</button><div id="linear-audit" class="linear-box"></div></div>
-        <p class="fine">Ferramentas usadas: <strong id="tools-count">${toolsUsed()} de 4</strong>. Use pelo menos duas antes de fechar a auditoria.</p>
+    return top(1, 'Encontre as barreiras.', 'A página da conversa “Criar para todo mundo” foi publicada com barreiras de propósito. Meça cada uma e diga quem ela atrapalha.') +
+      `<section class="warmup" id="warmup" aria-label="Aquecimento">${warmupHTML()}</section>
+      <div class="split"><section class="desk" aria-labelledby="audit-demo-title"><p class="section-label" id="audit-demo-title">Página da Virada Criativa</p>
+        <div class="toolbar" role="group" aria-label="Ferramentas">${toolButton('inspect', 'Inspecionar', ui.inspect)}${toolButton('zoom', 'Zoom 200%', ui.zoom)}${toolButton('gray', 'Sem cor', ui.gray)}${toolButton('linear', 'Leitura linear', ui.linear)}</div>
+        <div class="browser-frame"><div class="browser-bar"><span>virada.exemplo/conversa</span><span id="mode-label">${ui.inspect ? 'Modo inspeção' : 'Modo visitante'}</span></div><div class="demo-host" data-demo="audit"></div></div>
+        <div class="tool-panels"><div id="trail-audit" class="trail" aria-live="polite"></div><div id="linear-audit" class="linear-box"></div></div>
       </section>
       <section class="desk" aria-labelledby="audit-form-title"><p class="section-label" id="audit-form-title">Ficha de auditoria</p>
-        <label class="field">Elemento inspecionado<select id="part-select"><option value="">Clique na página ou escolha aqui</option>${Object.entries(PARTS).map(([id, part]) => `<option value="${id}" ${ui.picked === id ? 'selected' : ''}>${part.name}</option>`).join('')}</select></label>
+        <label class="field">Elemento<select id="part-select"><option value="">Clique na página ou escolha aqui</option>${Object.entries(PARTS).map(([id, part]) => `<option value="${id}" ${ui.picked === id ? 'selected' : ''}>${part.name}</option>`).join('')}</select></label>
         <div id="inspector" class="inspector" aria-live="polite">${inspectorHTML()}</div>
-        <label class="field">Critério da barreira<select id="crit-select"><option value="">Escolha o critério</option>${CRITERIA.map(([id, name]) => `<option value="${id}">${name}</option>`).join('')}</select></label>
+        <label class="field">Critério<select id="crit-select"><option value="">Escolha o critério</option>${CRITERIA.map(([id, name]) => `<option value="${id}">${name}</option>`).join('')}</select></label>
         <p id="crit-hint" class="hint" hidden></p>
-        <label class="field">Quem pode ser afetado e em qual tarefa?<textarea id="who" rows="3" maxlength="600" placeholder="Ex.: quem tem baixa visão não consegue ler o horário da conversa."></textarea><span class="hint">Descreva a tarefa que fica difícil. Fale do produto, não de limitações da pessoa.</span></label>
+        <label class="field">Quem é afetado e em qual tarefa?<textarea id="who" rows="3" maxlength="600" placeholder="Quem tem baixa visão não consegue ler o horário da conversa."></textarea></label>
         <button type="button" class="button primary" id="add-finding">Registrar barreira</button>
         <p id="finding-status" class="status-line" role="status"></p>
-        ${counter(distinctFindings(), MIN_FINDINGS, 'barreiras registradas')}
-        <ol class="findings">${findings.map((item, i) => `<li><strong>${esc(PARTS[item.part].name)} · ${esc(critName(item.crit))}</strong><span>${esc(item.fact)}</span><span>${esc(item.who)}</span><button type="button" class="text-button" data-remove-finding="${i}">Remover registro ${i + 1}</button></li>`).join('')}</ol>
+        <ol class="findings">${findings.map((item, i) => `<li><strong>${esc(PARTS[item.part].name)} · ${esc(critName(item.crit))}</strong><span>${esc(item.fact)}</span><span>${esc(item.who)}</span><button type="button" class="text-button" data-remove-finding="${i}" aria-label="Remover ${esc(PARTS[item.part].name)} · ${esc(critName(item.crit))}">Remover</button></li>`).join('')}</ol>
       </section></div>` +
-      stretch('Audite esta oficina.', 'Use Tab, o zoom do navegador (Ctrl e +) e a leitura dos rótulos nesta própria oficina. Ela tenta cumprir o que ensina. Encontrou uma barreira? Registre-a no caderno com a mesma estrutura: critério, evidência e quem é afetado.') +
-      nextStep('Às 19:45, exporte uma cópia parcial. Na volta, as quatro estações começam juntas.', '2', 'Ir para as estações →');
+      (phaseOpen(2) ? nextButton('2', 'Ir para as estações →') : '');
   }
   function inspectorHTML() {
     if (!ui.picked) return '<p class="evidence-empty">Escolha um elemento para ver a medição.</p>';
@@ -543,18 +670,19 @@ ${order}`;
       : related.every(fact => fact.pass === true) ? 'A medição indica que este critério está atendido neste elemento. Confira outro critério ou outro elemento.'
       : 'A medição deste critério aparece na ficha e será guardada com o registro.';
   }
-  function updateTools() { const count = $('tools-count'); if (count) count.textContent = `${toolsUsed()} de 4`; }
+  const updateTools = () => refreshMission();
 
   /* ---------- Parada 2 · Estações ---------- */
-  const STATION_NAMES = ['Contraste', 'Zoom 200%', 'Só teclado', 'Texto alternativo'];
-  const stationLabel = n => `${n} · ${STATION_NAMES[n - 1]}${stationDone(n) ? ' <span class="mark ok">✓<span class="visually-hidden"> registrada</span></span>' : ''}`;
-  function refreshStationTabs() { document.querySelectorAll('[data-station]').forEach(button => { button.innerHTML = stationLabel(Number(button.dataset.station)); }); }
+  const stationLabel = n => `${n} · ${STATION_NAMES[n - 1]}${stationDone(n) ? ' <span class="mark ok">✓<span class="visually-hidden"> registrada</span></span>' : ''}${stationOpen(n) ? '' : '<span class="visually-hidden"> (fechada)</span>'}`;
+  function refreshStationTabs() { document.querySelectorAll('[data-station]').forEach(button => { const n = Number(button.dataset.station); button.innerHTML = stationLabel(n); button.classList.toggle('is-locked', !stationOpen(n)); }); }
   function renderStations() {
-    const n = state.station;
-    return top(2, 'Quatro estações, uma barreira em cada.', 'As estações rodam pelo relógio: 10 minutos cada. Meça, experimente uma alternativa e registre. Ao sinal, todas as duplas avançam juntas.', 'Um registro por estação: o que foi medido, quem é afetado e o que mudaria.') +
-      `<div class="toolbar tabs" role="group" aria-label="Estações">${STATION_NAMES.map((_, i) => `<button type="button" data-station="${i + 1}" aria-pressed="${n === i + 1}">${stationLabel(i + 1)}</button>`).join('')}</div>` +
-      [renderContrast, renderZoom, renderKeyboard, renderAlt][n - 1]() +
-      nextStep(n < 4 ? 'Ao sinal, avancem para a próxima estação. Quem terminou antes faz a extensão desta estação.' : 'Às 20:50 começa a correção do protótipo.', n < 4 ? `station-${n + 1}` : '3', n < 4 ? `Ir para a estação ${n + 1} →` : 'Corrigir o protótipo →');
+    const n = state.station, open = stationOpen(n), current = [4, 3, 2, 1].find(stationOpen) || 1;
+    ui.lockedView = !open;
+    return top(2, 'Quatro estações, uma barreira em cada.', 'Dez minutos por estação. Meça, experimente uma alternativa e registre.') +
+      `<div class="toolbar tabs" role="group" aria-label="Estações">${STATION_NAMES.map((_, i) => `<button type="button" data-station="${i + 1}" aria-pressed="${n === i + 1}" class="${stationOpen(i + 1) ? '' : 'is-locked'}">${stationLabel(i + 1)}</button>`).join('')}</div>` +
+      (open ? [renderContrast, renderZoom, renderKeyboard, renderAlt][n - 1]() : lockedHTML(`Estação ${n} · ${STATION_NAMES[n - 1]}`, OPENS.station[n], `station-${current}`, `Voltar à estação ${current}`)) +
+      (open && n < 4 && stationOpen(n + 1) ? nextButton(`station-${n + 1}`, `Ir para a estação ${n + 1} →`) : '') +
+      (open && n === 4 && phaseOpen(3) ? nextButton('3', 'Corrigir o protótipo →') : '');
   }
   function pairColors(i) {
     const pair = PAIRS[i], adj = state.stations.contrast.adjust[i];
@@ -568,44 +696,38 @@ ${order}`;
   }
   function renderContrast() {
     const c = state.stations.contrast, i = c.pair, adj = c.adjust[i] || {mode:'fg', light:rgbToHsl(hexToRgb(PAIRS[i].fg))[2]};
-    return `<div class="split"><section class="desk"><p class="section-label">Estação 1 · contraste</p>
+    return `<div class="split"><section class="desk"><p class="section-label">Estação 1 · Contraste</p>
       <label class="field">Par de cores da página<select id="pair-select">${PAIRS.map((pair, n) => `<option value="${n}" ${n === i ? 'selected' : ''}>${pair.name}</option>`).join('')}</select></label>
-      <fieldset class="choice"><legend>O que ajustar</legend><label><input type="radio" name="c-mode" value="fg" ${adj.mode === 'fg' ? 'checked' : ''}> Cor do texto</label><label><input type="radio" name="c-mode" value="bg" ${adj.mode === 'bg' ? 'checked' : ''}> Cor do fundo</label></fieldset>
-      <label class="field">Luminosidade da cor escolhida<input type="range" id="light" min="0" max="100" step="1" value="${Math.round(adj.light)}"></label>
+      <fieldset class="choice"><legend>Ajustar</legend><label><input type="radio" name="c-mode" value="fg" ${adj.mode === 'fg' ? 'checked' : ''}> Cor do texto</label><label><input type="radio" name="c-mode" value="bg" ${adj.mode === 'bg' ? 'checked' : ''}> Cor do fundo</label></fieldset>
+      <label class="field">Luminosidade<input type="range" id="light" min="0" max="100" step="1" value="${Math.round(adj.light)}"></label>
       <div id="contrast-out">${contrastOut(i)}</div></section>
-      <section class="desk"><p class="section-label">Registro da estação</p>
-      <p>A razão de contraste compara a luminância das duas cores, de 1:1 a 21:1. Texto comum precisa de pelo menos <strong>4,5:1</strong>; texto grande, de <strong>3:1</strong> (WCAG 2.2, nível AA).</p>
-      <p class="hint">Dica de marca: o amarelo do botão pode continuar no fundo. Ajuste o texto.</p>
-      <div class="evidence-form">${field('stations.contrast.note', 'Barreira registrada nesta estação', c.note, 'Par de cores, razão antes e depois e quem ganha com a mudança.')}</div></section></div>` +
-      stretch('Mais um par.', 'Ajuste um segundo par sem trocar a identidade da marca. Compare: qual mudança foi mais discreta e qual foi mais eficaz?');
+      <section class="desk"><p class="section-label">Registro</p>
+      <div class="evidence-form">${field('stations.contrast.note', 'Barreira encontrada nesta estação', c.note, 'Botão Inscrever: de 1,8:1 para 10:1. Quem tem baixa visão encontra o botão.')}</div></section></div>`;
   }
   function contrastOut(i) {
     const {pair, now, before, after} = contrastResult(i), ok = after >= 4.5, large = after >= 3;
     return `<div class="contrast-sample" style="color:${now.fg};background:${now.bg}"><span style="font-weight:${pair.bold ? 800 : 400}">${esc(pair.sample)}</span></div>
       <dl class="ratio"><div><dt>Antes</dt><dd>${fmtRatio(before)}</dd></div><div><dt>Agora</dt><dd><output id="ratio-now">${fmtRatio(after)}</output></dd></div></dl>
-      <ul class="checks"><li>${ok ? '<span class="mark ok">✓ atende</span>' : '<span class="mark no">✕ não atende</span>'} Texto comum (4,5:1)</li><li>${large ? '<span class="mark ok">✓ atende</span>' : '<span class="mark no">✕ não atende</span>'} Texto grande (3:1)</li></ul>
-      <p class="fine">Texto ${now.fg.toUpperCase()} sobre fundo ${now.bg.toUpperCase()}.</p>`;
+      <ul class="checks"><li>${ok ? '<span class="mark ok">✓</span>' : '<span class="mark no">✕</span>'} Texto comum · mínimo 4,5:1</li><li>${large ? '<span class="mark ok">✓</span>' : '<span class="mark no">✕</span>'} Texto grande · mínimo 3:1</li></ul>`;
   }
   function renderZoom() {
     const z = state.stations.zoom;
-    return `<div class="split"><section class="desk"><p class="section-label">Estação 2 · zoom e reorganização</p>
-      <label class="field">Ampliação: <output id="zoom-label">${z.level}%</output><input type="range" id="zoom-level" min="100" max="400" step="50" value="${z.level}" aria-describedby="zoom-help"></label>
-      <p class="fine" id="zoom-help">A janela abaixo representa a tela de quem amplia a página.</p>
-      <label class="check"><input type="checkbox" id="zoom-fluid" ${z.fluid ? 'checked' : ''}> Layout fluido (sem largura fixa)</label>
+    return `<div class="split"><section class="desk"><p class="section-label">Estação 2 · Zoom</p>
+      <label class="field">Ampliação <output id="zoom-label">${z.level}%</output><input type="range" id="zoom-level" min="100" max="400" step="50" value="${z.level}"></label>
+      <label class="check"><input type="checkbox" id="zoom-fluid" ${z.fluid ? 'checked' : ''}> Layout fluido</label>
       <div class="zoom-frame" id="zoom-frame"><div class="zoom-card ${z.fluid ? 'fluid' : 'fixed'}" style="zoom:${z.level / 100}"><strong>Criar para todo mundo</strong><p class="zoom-info"><span>Sábado, 25/10</span> · <span>20h</span> · <span>Galpão 2</span> · <span>entrada gratuita</span> · <span>intérprete de Libras</span></p></div></div>
       <p id="zoom-cut" class="status-line" role="status"></p></section>
-      <section class="desk"><p class="section-label">Registro da estação</p>
-      <p>Quem amplia a página, como Ravi com zoom de 200%, precisa que o texto se reorganize. Com largura fixa e sem quebra de linha, o que passa da borda é cortado.</p>
-      <p class="fine">Medição a 200% com largura fixa: <strong id="cut200">${z.cut200 === null ? 'ainda não medida' : z.cut200.length ? esc(z.cut200.join(', ')) : 'nada cortado'}</strong></p>
-      <div class="evidence-form">${field('stations.zoom.note', 'Barreira registrada nesta estação', z.note, 'O que ficou fora da tela com a largura fixa, quem perde essa informação e o que mudou com o layout fluido.')}</div></section></div>` +
-      stretch('Vá até 400%.', 'Com 400%, a tela equivale a 320 px de largura, como num celular pequeno. Compare os dois layouts e anote qual informação aparece primeiro.');
+      <section class="desk"><p class="section-label">Registro</p>
+      <dl class="ratio"><div><dt>Cortado a 200%, layout fixo</dt><dd id="cut200">${z.cut200 === null ? '—' : z.cut200.length ? esc(z.cut200.join(', ')) : 'nada'}</dd></div></dl>
+      <div class="evidence-form">${field('stations.zoom.note', 'Barreira encontrada nesta estação', z.note, 'Com 200%, “entrada gratuita” e “Libras” saem da tela. Quem amplia perde a informação.')}</div></section></div>`;
   }
   function measureZoom() {
     const frame = $('zoom-frame'); if (!frame) return;
     const box = frame.getBoundingClientRect(), z = state.stations.zoom;
     const cut = [...frame.querySelectorAll('.zoom-info span')].filter(span => { const r = span.getBoundingClientRect(); return r.right > box.right + 1 || r.width === 0; }).map(span => span.textContent);
-    $('zoom-cut').textContent = cut.length ? `Fora da tela: ${cut.join(', ')}.` : 'Todo o texto está visível nesta ampliação.';
-    if (z.level === 200 && !z.fluid && JSON.stringify(z.cut200) !== JSON.stringify(cut)) { z.cut200 = cut; save(); const out = $('cut200'); if (out) out.textContent = cut.length ? cut.join(', ') : 'nada cortado'; }
+    $('zoom-cut').textContent = cut.length ? `Fora da tela: ${cut.join(', ')}.` : 'Todo o texto está visível.';
+    if (z.level === 200 && !z.fluid && JSON.stringify(z.cut200) !== JSON.stringify(cut)) { z.cut200 = cut; save(); const out = $('cut200'); if (out) out.textContent = cut.length ? cut.join(', ') : 'nada'; }
+    if (z.level === 400 && z.fluid && !cut.length && !z.ok400) { z.ok400 = true; save(); }
   }
   const KBD_CSS = `.kb{all:initial;display:grid;gap:10px;padding:16px;font:15px/1.4 Arial,sans-serif;color:#1b1b1b;background:#ffffff}.kb *{box-sizing:border-box}.kb p,.kb h3{margin:0}.kb h3{font-size:18px;color:#10213a}.kb nav{display:flex;gap:10px;flex-wrap:wrap}.kb a{color:#0057b8}.kb .kb-brand{font-weight:900;letter-spacing:.08em;color:#b42318;font-size:12px}.kb .kb-check,.kb label{display:flex;gap:8px;align-items:center}.kb .kb-btn,.kb button{justify-self:start;min-height:40px;padding:0 16px;font:inherit;font-weight:800;color:#10213a;background:#f2b705;border:0;border-radius:4px;display:inline-flex;align-items:center;cursor:pointer}.kb .kb-msg{font-weight:700;color:#10213a}.kb.bad a:focus,.kb.bad [tabindex]:focus{outline:none}.kb.good a:focus,.kb.good button:focus,.kb.good input:focus,.kb.good [tabindex]:focus{outline:3px solid #0057b8;outline-offset:3px}.kb .skip{position:absolute;left:-999px}.kb .skip:focus{position:static}`;
   const kbdHTML = good => good
@@ -613,17 +735,16 @@ ${order}`;
     : `<div class="kb bad" tabindex="-1" data-start><p class="kb-brand">VIRADA · INSCRIÇÃO RÁPIDA</p><nav><a href="#a">Programação</a><a href="#b">Como chegar</a><a href="#c">Contato</a></nav><h3>Conversa “Criar para todo mundo” · 20h</h3><div class="kb-check" data-fake-check>☐ Quero receber a confirmação por e-mail</div><div class="kb-btn" data-fake-confirm>Confirmar inscrição</div><a href="#d">Política de privacidade</a><p class="kb-msg" role="status"></p></div>`;
   function renderKeyboard() {
     const k = state.stations.keyboard, v = k.variant;
-    return `<div class="split"><section class="desk"><p class="section-label">Estação 3 · só teclado</p>
-      <div class="toolbar tabs" role="group" aria-label="Versão da página">${['Versão original', 'Versão com botões reais'].map((label, i) => `<button type="button" data-kbd-variant="${i}" aria-pressed="${v === i}">${label}</button>`).join('')}</div>
-      <p><strong>Tarefa:</strong> marque a confirmação por e-mail e confirme a inscrição. Tab avança, Shift+Tab volta, Espaço marca e Enter aciona.</p>
+    return `<div class="split"><section class="desk"><p class="section-label">Estação 3 · Só teclado</p>
+      <div class="toolbar tabs" role="group" aria-label="Versão da página">${['Versão original', 'Botões reais'].map((label, i) => `<button type="button" data-kbd-variant="${i}" aria-pressed="${v === i}">${label}</button>`).join('')}</div>
+      <p class="task-line"><strong>Tarefa:</strong> marcar a confirmação por e-mail e confirmar a inscrição, sem mouse.</p>
+      <p class="keys"><kbd>Tab</kbd> avança <kbd>Shift</kbd>+<kbd>Tab</kbd> volta <kbd>Espaço</kbd> marca <kbd>Enter</kbd> aciona</p>
       <button type="button" class="button" id="kbd-start">Começar pelo teclado</button>
       <div class="browser-frame"><div class="browser-bar"><span>virada.exemplo/inscricao-rapida</span><span>${v ? 'Botões reais' : 'Original'}</span></div><div class="kbd-host" id="kbd-host"></div></div>
       <div id="kbd-trail" class="trail" aria-live="polite"></div></section>
-      <section class="desk"><p class="section-label">Registro da estação</p>
+      <section class="desk"><p class="section-label">Registro</p>
       <dl class="ratio" id="kbd-summary">${k.runs.map((run, i) => `<div><dt>${i ? 'Botões reais' : 'Original'}</dt><dd>${run.tried ? `${run.tabs} Tabs · ${run.done ? 'concluiu' : 'não concluiu'}` : 'não testada'}</dd></div>`).join('')}</dl>
-      <p>Muita gente navega por teclado ou por dispositivos que funcionam como ele. Um “botão” feito de caixa de texto não recebe foco; sem contorno de foco, ninguém sabe onde está.</p>
-      <div class="evidence-form">${field('stations.keyboard.note', 'Barreira registrada nesta estação', k.note, 'Onde o teclado travou, quantos Tabs foram usados e o que resolveu.')}</div></section></div>` +
-      stretch('Encurte o caminho.', 'Na versão com botões reais, use o link “Pular para a inscrição” logo no primeiro Tab. Quantos Tabs vocês economizaram?');
+      <div class="evidence-form">${field('stations.keyboard.note', 'Barreira encontrada nesta estação', k.note, 'Na original, o botão Confirmar nunca recebe foco. Com botões reais, foram 3 Tabs.')}</div></section></div>`;
   }
   function mountKeyboard() {
     const host = $('kbd-host'); if (!host) return;
@@ -636,7 +757,7 @@ ${order}`;
     const run = () => k.runs[k.variant];
     const finish = () => {
       if (!root.querySelector('input[type="checkbox"]').checked) { msg().textContent = 'Ainda falta marcar “Quero receber a confirmação por e-mail”. Volte com Shift+Tab e use Espaço.'; return; }
-      if (!run().done) { run().done = true; run().tabs = ui.kbdTabs; save(); } msg().textContent = `Inscrição simulada confirmada pelo teclado em ${ui.kbdTabs} Tabs.`; refreshKeyboardSummary(); };
+      if (!run().done || ui.kbdTabs < run().tabs) { run().done = true; run().tabs = ui.kbdTabs; save(); } msg().textContent = `Inscrição simulada confirmada pelo teclado em ${ui.kbdTabs} Tabs.`; refreshKeyboardSummary(); };
     root.addEventListener('keydown', event => {
       if (event.key === 'Tab') { ui.kbdTabs++; run().tried = true; if (!run().done) run().tabs = ui.kbdTabs; save(); refreshKeyboardSummary(); }
     });
@@ -658,7 +779,7 @@ ${order}`;
     const list = $('kbd-summary'); if (!list) return;
     list.innerHTML = state.stations.keyboard.runs.map((run, i) => `<div><dt>${i ? 'Botões reais' : 'Original'}</dt><dd>${run.tried ? `${run.tabs} Tabs · ${run.done ? 'concluiu' : 'não concluiu'}` : 'não testada'}</dd></div>`).join('');
   }
-  function altHints(i) {
+  function altIssues(i) {
     const item = state.stations.alt.items[i], meta = ALT_ITEMS[i], text = item.text.trim(), hints = [];
     if (!item.fn) return ['Escolha primeiro a função da imagem.'];
     if (item.fn === 'decorativa' && text) hints.push('Imagem decorativa: deixe o texto vazio para não poluir a leitura.');
@@ -666,21 +787,22 @@ ${order}`;
     if (/^(imagem|foto|figura|ilustra)/i.test(norm(text))) hints.push('Não precisa começar por “imagem de”: o leitor já anuncia que é imagem.');
     if (/\.(png|jpe?g|svg)/i.test(text)) hints.push('Nome de arquivo não descreve a imagem.');
     if (text.length > 150) hints.push('Texto longo: resuma aqui e coloque a informação completa em texto na página.');
-    if (item.fn === 'complexa') hints.push('Imagem complexa: o texto alternativo resume; a rota completa precisa estar escrita na página.');
     if (item.fn !== meta.expected) hints.push(`Reveja a função: ${meta.context}`);
-    return hints.length ? hints : ['Sem pistas de revisão. Leia em voz alta: o texto cumpre a função da imagem?'];
+    return hints;
+  }
+  function altHints(i) {
+    const issues = altIssues(i), complex = state.stations.alt.items[i].fn === 'complexa' ? ['Imagem complexa: o texto alternativo resume; a rota completa precisa estar escrita na página.'] : [];
+    return issues.length ? [...issues, ...complex] : ['Sem pistas de revisão. Leia em voz alta: o texto cumpre a função da imagem?', ...complex];
   }
   const altSay = i => { const item = state.stations.alt.items[i], text = item.text.trim(); return item.fn === 'decorativa' ? '(imagem ignorada pela leitura)' : text ? `${item.fn === 'funcional' ? 'Botão' : 'Imagem'}: ${text}` : 'Imagem sem descrição'; };
   function renderAlt() {
     const a = state.stations.alt;
-    return `<div class="alt-grid">${ALT_ITEMS.map((meta, i) => `<article class="alt-card"><div class="alt-figure"><img src="${meta.img}" alt="" width="${meta.w}" height="${meta.h}"></div><h3>${i + 1} · ${meta.name}</h3><p class="fine">${meta.context}</p>
+    return `<div class="alt-grid">${ALT_ITEMS.map((meta, i) => `<article class="alt-card"><div class="alt-figure"><img src="${meta.img}" alt="" width="${meta.w}" height="${meta.h}"></div><h3>${i + 1} · ${meta.name}</h3><p class="context">${meta.context}</p>
       <label class="field">Função<select data-alt-fn="${i}"><option value="">Escolha</option>${ALT_FUNCTIONS.map(([id, name]) => `<option value="${id}" ${a.items[i].fn === id ? 'selected' : ''}>${name}</option>`).join('')}</select></label>
       <label class="field">Texto alternativo<textarea data-alt-text="${i}" rows="2" maxlength="300">${esc(a.items[i].text)}</textarea></label>
       <p class="say" id="alt-say-${i}"><span>Leitura:</span> ${esc(altSay(i))}</p><ul class="alt-hints" id="alt-hints-${i}">${altHints(i).map(hint => `<li>${esc(hint)}</li>`).join('')}</ul></article>`).join('')}</div>
-      <section class="desk"><p class="section-label">Registro da estação</p><div class="evidence-form">${field('stations.alt.note', 'Barreira registrada nesta estação', a.note, 'Qual imagem era mais difícil de descrever, por quê e quem dependia dela.')}</div></section>` +
-      stretch('Descreva para outro contexto.', 'A mesma foto da entrada pode ter outro texto alternativo numa página sobre arquitetura. Escreva a versão alternativa e explique a diferença.');
+      <section class="desk"><p class="section-label">Registro</p><div class="evidence-form">${field('stations.alt.note', 'Barreira encontrada nesta estação', a.note, 'O mapa era a mais difícil: sem a rota escrita, quem usa leitor de tela não sabe por onde entrar.')}</div></section>`;
   }
-
   /* ---------- Parada 3 · Correções ---------- */
   const ratioFor = key => fmtRatio(contrast(hexToRgb(state.fixes[key]), hexToRgb(COLOR_BG[key])));
   const select = (key, options, value) => `<select data-fix="${key}">${options.map(([v, label]) => `<option value="${v}" ${String(v) === String(value) ? 'selected' : ''}>${label}</option>`).join('')}</select>`;
@@ -702,9 +824,9 @@ ${order}`;
   }
   function captionHint() {
     const lines = state.fixes.captions.split('\n').map(line => line.trim()).filter(Boolean);
-    if (!lines.length) return 'Divida a fala em trechos curtos. Até cerca de 40 caracteres por linha facilita a leitura.';
+    if (!lines.length) return 'Trechos curtos: até cerca de 40 caracteres por linha.';
     const long = lines.filter(line => line.length > 42).length;
-    return `${lines.length} ${lines.length === 1 ? 'legenda' : 'legendas'}${long ? ` · ${long} com mais de 42 caracteres: considere dividir` : ' · tamanho de linha confortável'}. A transcrição completa aparece abaixo do vídeo.`;
+    return `${lines.length} ${lines.length === 1 ? 'legenda' : 'legendas'}${long ? ` · ${long} com mais de 42 caracteres: considere dividir` : ' · tamanho de linha confortável'}.`;
   }
   function groupStatus(group) {
     const applied = group.applied(state.fixes), noted = state.fixNotes[group.id].trim().length > 0;
@@ -712,47 +834,44 @@ ${order}`;
   }
   function renderFixes() {
     const v = state.view, found = new Set(state.audit.findings.map(item => item.crit));
-    return top(3, 'Protótipo para mais pessoas.', 'Corrija no editor visual, sem código. Comece pelo que impede a tarefa: horário, rota e inscrição. A marca pode continuar; a barreira, não.', `${MIN_FIXES} correções ou mais, cada uma com justificativa, comparadas antes e depois.`) +
-      `<div class="split fixes-split"><section class="desk"><p class="section-label">Painéis de correção</p>
-        <div id="fix-count" class="counter-wrap">${counter(appliedGroups().length, MIN_FIXES, 'correções justificadas')}</div>
-        ${GROUPS.map(group => `<details class="fix" id="fix-${group.id}" ${found.has(group.crit) ? 'open' : ''}><summary><span>${group.title}</span>${found.has(group.crit) ? '<small>na sua auditoria</small>' : ''}<span class="fix-status" id="status-${group.id}">${groupStatus(group)}</span></summary><div class="fix-body">${groupControls(group.id)}${field(`fixNotes.${group.id}`, 'Quem ganha com esta correção, em qual tarefa?', state.fixNotes[group.id], '', 2)}</div></details>`).join('')}
+    return top(3, 'Protótipo para mais pessoas.', 'Corrija sem escrever código. Comece pelo que impede a inscrição, o horário e a rota.') +
+      `<div class="split fixes-split"><section class="desk"><p class="section-label">Correções</p>
+        ${GROUPS.map(group => `<details class="fix" id="fix-${group.id}" ${found.has(group.crit) ? 'open' : ''}><summary><span>${group.title}</span>${found.has(group.crit) ? '<small>na sua auditoria</small>' : ''}<span class="fix-status" id="status-${group.id}">${groupStatus(group)}</span></summary><div class="fix-body">${groupControls(group.id)}${field(`fixNotes.${group.id}`, 'Quem ganha com esta correção?', state.fixNotes[group.id], 'Quem usa teclado consegue se inscrever.', 2)}</div></details>`).join('')}
         ${renderShock()}
-        <div class="evidence-form">${field('compare', 'Em uma frase: qual mudança mais protege o visitante?', state.compare, 'Compare Antes e Depois. A exportação guarda as duas páginas.', 2)}</div>
+        <div class="evidence-form">${field('compare', 'A mudança que mais protege o visitante', state.compare, '', 2)}</div>
       </section>
       <section class="desk preview-desk"><p class="section-label">Prévia</p>
         <div class="toolbar tabs" role="group" aria-label="Versão exibida">${[['antes', 'Antes'], ['depois', 'Depois'], ['lado', 'Lado a lado']].map(([id, label]) => `<button type="button" data-view="${id}" aria-pressed="${v === id}">${label}</button>`).join('')}</div>
-        <div class="toolbar" role="group" aria-label="Conferência da versão Depois">${toolButton('zoom3', 'Zoom 200% no Depois', ui.zoom3)}${toolButton('linear3', 'Leitura linear do Depois', ui.linear3)}</div>
+        <div class="toolbar" role="group" aria-label="Conferir a versão Depois">${toolButton('zoom3', 'Zoom 200%', ui.zoom3)}${toolButton('linear3', 'Leitura linear', ui.linear3)}</div>
         <div class="compare ${v}">${v !== 'depois' ? '<figure><figcaption>Antes</figcaption><div class="browser-frame"><div class="demo-host" data-demo="before"></div></div></figure>' : ''}${v !== 'antes' ? '<figure><figcaption>Depois</figcaption><div class="browser-frame"><div class="demo-host" data-demo="after"></div></div></figure>' : ''}</div>
         <div id="linear-after" class="linear-box"></div>
       </section></div>` +
-      stretch('Caiba em 0,6 MB.', 'Sem retirar informação, chegue a 0,6 MB ou menos no painel de conexão lenta. Explique qual troca economizou mais dados.') +
-      nextStep('Às 21:35, troquem de posto com a dupla vizinha para o teste cruzado.', '4', 'Ir para o teste cruzado →');
+      (phaseOpen(4) ? nextButton('4', 'Ir para o teste cruzado →') : '');
   }
   function weightHTML() {
     const f = state.fixes, total = weightTotal(f), warnings = weightWarnings(f), ok = weightOK(f);
-    return `<div class="weight ${total > WEIGHT_LIMIT ? 'over' : ''}" role="status"><output>${fmtMB(total)}</output><p>de ${fmtMB(WEIGHT_LIMIT)} permitido<br>≈ ${loadSeconds(total)} s para carregar a ${SLOW_KBPS} kbps</p></div>
+    return `<div class="weight ${total > WEIGHT_LIMIT ? 'over' : ''}" role="status"><output>${fmtMB(total)}</output><p>limite ${fmtMB(WEIGHT_LIMIT)}<br>≈ ${loadSeconds(total)} s a ${SLOW_KBPS} kbps</p></div>
       <div class="bar" aria-hidden="true"><span style="width:${Math.min(100, total / 6 * 100)}%"></span><i style="left:${WEIGHT_LIMIT / 6 * 100}%"></i></div>
       ${warnings.map(text => `<p class="result warn"><strong>Informação perdida.</strong> ${esc(text)}</p>`).join('')}
-      ${f.weight.hero === 'removed' ? '<p class="fine">A capa repetia título, data e local, que continuam no texto da página.</p>' : ''}
       <p class="status-line">${ok ? '<span class="mark ok">✓ cabe no limite sem perder informação</span>' : '<span class="mark no">✕ ainda não cabe ou perde informação</span>'}</p>`;
   }
   function renderShock() {
     const f = state.fixes;
-    if (!state.shock.open) return '<div class="shock-closed"><p><strong>Comunicado às 21:15.</strong> Recomendado depois de três correções.</p><button type="button" class="button" id="shock">Abrir comunicado: conexão lenta →</button></div>';
-    return `<section class="shock" aria-labelledby="shock-title"><h3 id="shock-title">Choque · conexão lenta no ponto de ônibus</h3><p>Ana abre a página no celular, no ponto de ônibus, com o pacote de dados no fim. A página pesa ${fmtMB(weightTotal(BAD()))}. O novo limite é ${fmtMB(WEIGHT_LIMIT)}, sem tirar informação de quem visita.</p>
+    if (!state.shock.open) return shockOpen()
+      ? '<div class="shock-closed"><p><strong>Novo comunicado</strong></p><button type="button" class="button" id="shock">Abrir comunicado →</button></div>'
+      : `<div class="shock-closed is-locked"><p><strong>Novo comunicado às ${clock(OPENS.shock)}</strong></p></div>`;
+    return `<section class="shock" aria-labelledby="shock-title"><h3 id="shock-title">Conexão lenta no ponto de ônibus</h3><p>Ana abre a página no celular com o pacote de dados no fim. A página pesa ${fmtMB(weightTotal(BAD()))}; o limite agora é ${fmtMB(WEIGHT_LIMIT)}, sem tirar informação de quem visita.</p>
       ${WEIGHT.map(item => `<label class="field">${item.label}<select data-weight="${item.id}">${item.options.map(([id, label, mb]) => `<option value="${id}" ${f.weight[item.id] === id ? 'selected' : ''}>${label} · ${fmtMB(mb)}</option>`).join('')}</select></label>`).join('')}
-      <p class="fine">HTML e estilos: ${fmtMB(BASE_WEIGHT)}. Estimativa didática para comparar decisões, não uma medição de rede.</p>
       <div id="weight-out">${weightHTML()}</div>
-      ${field('shock.note', 'Por que esse plano? O que vocês trocaram e o que preservaram?', state.shock.note, 'Páginas leves alcançam quem tem pacote limitado e gastam menos energia.', 2)}</section>`;
+      ${field('shock.note', 'O que vocês trocaram e o que preservaram?', state.shock.note, '', 2)}</section>`;
   }
   function refreshFixes(rerenderGroup) {
     for (const group of GROUPS) { const el = $(`status-${group.id}`); if (el) el.innerHTML = groupStatus(group); }
-    const count = $('fix-count'); if (count) count.innerHTML = counter(appliedGroups().length, MIN_FIXES, 'correções justificadas');
     for (const key of Object.keys(COLOR_BG)) { const el = document.querySelector(`[data-ratio="${key}"]`); if (el) el.textContent = `Contraste atual: ${ratioFor(key)}`; }
     const hint = $('caption-hint'); if (hint) hint.textContent = captionHint();
     const weight = $('weight-out'); if (weight) weight.innerHTML = weightHTML();
-    if (rerenderGroup) { const body = document.querySelector(`#fix-${rerenderGroup} .fix-body`); if (body) body.innerHTML = groupControls(rerenderGroup) + field(`fixNotes.${rerenderGroup}`, 'Quem ganha com esta correção, em qual tarefa?', state.fixNotes[rerenderGroup], '', 2); }
-    mountDemos();
+    if (rerenderGroup) { const body = document.querySelector(`#fix-${rerenderGroup} .fix-body`); if (body) body.innerHTML = groupControls(rerenderGroup) + field(`fixNotes.${rerenderGroup}`, 'Quem ganha com esta correção?', state.fixNotes[rerenderGroup], 'Quem usa teclado consegue se inscrever.', 2); }
+    mountDemos(); refreshMission();
   }
 
   /* ---------- Parada 4 · Teste cruzado e pacto ---------- */
@@ -765,33 +884,40 @@ ${order}`;
   function updateEvidence() { for (const i of [1, 3]) { const el = $(`evidence-${i}`); if (el) el.textContent = evidenceHTML(i); } }
   function renderTest() {
     const t = state.test, p = state.pact;
-    return top(4, 'Teste cruzado e pacto.', 'Outra dupla usa a página corrigida, sem dicas. Quem criou observa em silêncio. Depois, ajuste um ponto observado e firme o pacto da turma.', 'Quatro tarefas testadas, um ajuste ligado ao teste e o pacto com três compromissos.') +
-      `<div class="split"><section class="desk"><p class="section-label">Página corrigida · versão Depois</p>
+    return top(4, 'Teste cruzado e pacto.', 'Outra dupla usa a página corrigida. Quem criou observa em silêncio.') +
+      `<div class="split"><section class="desk"><p class="section-label">Página corrigida</p>
         <div class="toolbar" role="group" aria-label="Ferramentas do teste">${toolButton('zoom4', 'Zoom 200%', ui.zoom4)}<button type="button" class="tool" id="test-start">Começar pelo teclado</button></div>
-        <div class="browser-frame"><div class="browser-bar"><span>virada.exemplo/conversa</span><span>Versão corrigida</span></div><div class="demo-host" data-demo="test"></div></div>
+        <div class="browser-frame"><div class="browser-bar"><span>virada.exemplo/conversa</span><span>Depois</span></div><div class="demo-host" data-demo="test"></div></div>
         <div id="trail-test" class="trail" aria-live="polite"></div></section>
       <section class="desk"><p class="section-label">Ficha de quem testa</p>
         <label class="field">Apelido da dupla que testa<input type="text" data-field="test.tester" maxlength="65" value="${esc(t.tester)}" autocomplete="off"></label>
-        <ol class="tasks">${TASKS.map((task, i) => `<li><fieldset><legend>${i + 1}. ${task.title}</legend><p class="fine">${task.hint}</p>${[1, 3].includes(i) ? `<p class="fine evidence" id="evidence-${i}">${evidenceHTML(i)}</p>` : ''}<div class="radios">${STATUS.map(([id, label]) => `<label><input type="radio" name="task-${i}" data-task="${i}" value="${id}" ${t.results[i].status === id ? 'checked' : ''}> ${label}</label>`).join('')}</div>${field(`test.results.${i}.note`, 'Observação de quem testou', t.results[i].note, '', 2)}</fieldset></li>`).join('')}</ol>
-        <div class="evidence-form">${field('test.adjust', 'De volta ao posto: qual observação motivou o ajuste e o que vocês mudaram?', t.adjust, 'Se o teste não revelou problema, registre a evidência de sucesso em vez de inventar uma falha.')}<button type="button" class="button" data-go="3">Voltar às correções para ajustar</button></div>
+        <ol class="tasks">${TASKS.map((task, i) => `<li><fieldset><legend>${i + 1}. ${task.title}</legend>${[1, 3].includes(i) ? `<p class="evidence" id="evidence-${i}">${evidenceHTML(i)}</p>` : ''}<div class="radios">${STATUS.map(([id, label]) => `<label><input type="radio" name="task-${i}" data-task="${i}" value="${id}" ${t.results[i].status === id ? 'checked' : ''}> ${label}</label>`).join('')}</div>${field(`test.results.${i}.note`, 'O que aconteceu', t.results[i].note, '', 2)}</fieldset></li>`).join('')}</ol>
+        <div class="evidence-form">${field('test.adjust', 'De volta ao posto: o que o teste mostrou e o que vocês ajustaram?', t.adjust)}<button type="button" class="button" data-go="3">Voltar às correções</button></div>
       </section></div>
-      <section class="pact" aria-labelledby="pact-title"><h3 id="pact-title">Pacto da turma</h3><p>Quem projeta decide quem consegue entrar. Escolham três compromissos para os próximos projetos.</p>
-        <fieldset class="pact-grid"><legend class="visually-hidden">Compromissos, escolha três</legend>${PACT.map(([id, text]) => `<label class="pact-card"><input type="checkbox" data-pact="${id}" ${p.picks.includes(id) ? 'checked' : ''} ${!p.picks.includes(id) && p.picks.length >= 3 ? 'disabled' : ''}> <span>${text}</span></label>`).join('')}</fieldset>
-        <p class="fine" id="pact-count" role="status">${p.picks.length} de 3 compromissos escolhidos.</p>
-        ${field('pact.own', 'Frase da dupla para o pacto', p.own, 'Pense em públicos diversos e em conexões lentas. Uma ação concreta, na primeira pessoa do plural.', 2)}
-      </section>` +
-      stretch('Teste com outra configuração.', 'Repitam uma tarefa com o texto do navegador ampliado (Ctrl e +) em vez do Zoom 200% da oficina. O resultado foi o mesmo?') +
-      '<div class="next"><p>Às 22:05, exportem. Abram o HTML baixado e confiram as quatro partes e as páginas antes e depois.</p><button type="button" class="button primary" data-export>Exportar entrega da noite ↗</button></div>';
+      <section class="pact" aria-labelledby="pact-title"><h3 id="pact-title">Pacto da turma</h3>
+        <fieldset class="pact-grid"><legend>Escolham três compromissos</legend>${PACT.map(([id, text]) => `<label class="pact-card"><input type="checkbox" data-pact="${id}" ${p.picks.includes(id) ? 'checked' : ''} ${!p.picks.includes(id) && p.picks.length >= 3 ? 'disabled' : ''}> <span>${text}</span></label>`).join('')}</fieldset>
+        <p class="pact-count" id="pact-count" role="status">${p.picks.length}/3</p>
+        ${field('pact.own', 'Frase da dupla', p.own, 'Vamos testar cada página com teclado e conexão lenta antes de publicar.', 2)}
+      </section>
+      <div class="next"><button type="button" class="button primary" data-export>Exportar entrega ↗</button></div>`;
   }
 
   /* ---------- Renderização geral e eventos ---------- */
   function render(focusId) {
     document.querySelectorAll('.phase-rail [data-phase]').forEach(button => button.dataset.phase === String(state.phase) ? button.setAttribute('aria-current', 'step') : button.removeAttribute('aria-current'));
-    $('workspace').innerHTML = [renderAudit, renderStations, renderFixes, renderTest][state.phase - 1]();
+    ui.lockedView = false;
+    if (phaseOpen(state.phase)) $('workspace').innerHTML = [renderAudit, renderStations, renderFixes, renderTest][state.phase - 1]();
+    else {
+      const back = [4, 3, 2].find(phaseOpen) || 1;
+      ui.lockedView = true;
+      $('workspace').innerHTML = lockedHTML(`Parada ${state.phase}`, OPENS.phase[state.phase], String(back), `Voltar à Parada ${back}`);
+    }
+    updateRail(); updateClock();
     mountDemos();
+    if (ui.lockedView) { if (focusId) $(focusId)?.focus(); return; }
     if (state.phase === 1) { renderTrail('trail-audit', ui.trail, ui.tabs); if (ui.picked) $('inspector').innerHTML = inspectorHTML(); }
-    if (state.phase === 2 && state.station === 2) measureZoom();
-    if (state.phase === 2 && state.station === 3) mountKeyboard();
+    if (state.phase === 2 && state.station === 2 && stationOpen(2)) measureZoom();
+    if (state.phase === 2 && state.station === 3 && stationOpen(3)) mountKeyboard();
     if (state.phase === 4) renderTrail('trail-test', ui.trail4, state.test.kbdTabs);
     if (focusId) $(focusId)?.focus();
   }
@@ -839,12 +965,22 @@ ${order}`;
   document.addEventListener('click', event => {
     const button = event.target.closest('button'); if (!button) return;
     if (button.closest('.phase-rail') && button.dataset.phase) { go(button.dataset.phase); return; }
+    if (button.dataset.jump) { const [phase, station] = button.dataset.jump.split(':'); if (station) state.station = Number(station); go(phase); return; }
+    if (button.dataset.warm) { const i = state.warmup.findIndex(answer => !answer); if (i >= 0) { state.warmup[i] = button.dataset.warm; ui.warmCard = i; save(); renderWarmup(); document.querySelector('[data-warm-next]')?.focus(); } return; }
+    if (button.hasAttribute('data-warm-next')) { ui.warmCard = null; renderWarmup(); (document.querySelector('[data-warm]') || $('part-select'))?.focus(); return; }
+    if (button.id === 'stuck') { const key = hintKey(); ui.hints[key] = (ui.hints[key] || 0) + 1; refreshMission(); ($('stuck') || document.querySelector('.stuck-list li:last-child'))?.focus?.(); return; }
+    if (button.id === 'key-ok') {
+      const word = norm($('key-input').value.trim()), found = Object.entries(KEYS).find(([, value]) => value === word);
+      if (!found) { $('key-status').textContent = 'Palavra não reconhecida.'; $('key-input').focus(); return; }
+      if (!state.keys.includes(Number(found[0]))) state.keys.push(Number(found[0]));
+      save(); render(); $('stage-title')?.focus({preventScroll:true}); return;
+    }
     if (button.dataset.go) { if (button.dataset.go.startsWith('station-')) { state.station = Number(button.dataset.go.slice(8)); save(); render(); setUrl(); $('stage-title')?.focus({preventScroll:true}); return; } go(button.dataset.go); return; }
     if (button.dataset.station) { state.station = Number(button.dataset.station); save(); render(); setUrl(); document.querySelector(`[data-station="${state.station}"]`)?.focus(); return; }
     if (button.dataset.tool) {
       const tool = button.dataset.tool; ui[tool] = !ui[tool];
       if (['zoom', 'gray', 'linear'].includes(tool) && ui[tool] && !state.audit.tools[tool]) { state.audit.tools[tool] = true; save(); }
-      if (tool === 'inspect') { const help = $('tool-help'); if (help) help.textContent = ui.inspect ? 'Inspecionar ligado: clicar escolhe um elemento para medir. Desligue para usar a página normalmente.' : 'Inspecionar desligado: a página funciona como para um visitante.'; }
+      if (tool === 'inspect') { const label = $('mode-label'); if (label) label.textContent = ui.inspect ? 'Modo inspeção' : 'Modo visitante'; }
       button.setAttribute('aria-pressed', String(ui[tool])); applyTools(); updateTools();
       if (tool === 'zoom' && ui.picked) $('inspector').innerHTML = inspectorHTML();
       return;
@@ -876,6 +1012,7 @@ ${order}`;
     if (button.id === 'shock') { state.shock.open = true; save(); render(); $('shock-title')?.setAttribute('tabindex', '-1'); $('shock-title')?.focus(); return; }
     if (button.id === 'export' || button.hasAttribute('data-export')) exportReport();
   });
+  document.addEventListener('keydown', event => { if (event.key === 'Enter' && event.target.id === 'key-input') { event.preventDefault(); $('key-ok').click(); } });
   $('team').value = state.team;
   $('team').addEventListener('input', event => { state.team = event.target.value; save(); });
 
@@ -892,6 +1029,7 @@ ${order}`;
     return list;
   }
   function exportReport() {
+    state.exports++; if (state.phase === 4) state.exportedFinal = true;
     const s = state, missing = pending(), team = s.team.trim(), dash = '<em>Não registrado.</em>';
     const text = value => value && value.trim() ? esc(value.trim()) : dash;
     const c = s.stations.contrast, adjusted = PAIRS.map((_, i) => i).filter(i => c.adjust[i]);
@@ -903,11 +1041,12 @@ body{margin:0;background:#f7f5ef;color:#0b1f33;font:17px/1.6 system-ui,-apple-sy
 .r-note{padding:14px 16px;border-left:6px solid ${missing.length ? '#b42318' : '#0f7b3f'};background:#ffffff}.r-list{padding-left:22px}.r-list li{margin:8px 0}
 .r-table{width:100%;border-collapse:collapse;background:#ffffff}.r-table th,.r-table td{padding:10px;border:1px solid #c9ccd1;text-align:left;vertical-align:top}.r-table th{background:#e8eef6}
 .r-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;align-items:start}.r-shot{border:2px solid #0b1f33;background:#ffffff;max-width:560px}.r-shot-title{margin:0;padding:6px 10px;color:#ffffff;background:#0b1f33;font-weight:800}
-.r-small{font-size:14px;color:#4a5868}p{white-space:pre-line}@media print{.r-shot{break-inside:avoid}}</style></head><body><main class="r-main">
+.r-small{font-size:14px;color:#4a5868}.r-seals{display:flex;flex-wrap:wrap;gap:8px}.r-seals span{padding:4px 10px;border:2px solid #c9ccd1;font-weight:800}.r-seals .on{border-color:#0f7b3f;color:#0f7b3f}p{white-space:pre-line}@media print{.r-shot{break-inside:avoid}}</style></head><body><main class="r-main">
 <p class="r-kicker">SENAI · Design Web · Aula 13</p><h1 class="r-h1">Rota acessível.</h1>
 <p><strong>${esc(team || 'Identificação não preenchida')}</strong><br>Exportado em ${esc(new Date().toLocaleString('pt-BR'))}</p>
+<p class="r-seals">${[1, 2, 3, 4].map(p => `<span class="${phaseDone(p) ? 'on' : ''}">${phaseDone(p) ? '✓' : '○'} Parada ${p}</span>`).join('')}</p>
 <p class="r-note">${missing.length ? `Registro parcial. Pendências: ${esc(missing.join('; '))}.` : 'Os registros essenciais estão preenchidos. A qualidade das decisões é avaliada pelos critérios da aula.'}</p>
-<h2 class="r-h2">01 / Auditoria</h2>${s.audit.findings.length ? `<table class="r-table"><thead><tr><th>Elemento e critério</th><th>Medição</th><th>Quem é afetado e em qual tarefa</th></tr></thead><tbody>${s.audit.findings.map(item => `<tr><td><strong>${esc(PARTS[item.part].name)}</strong><br>${esc(critName(item.crit))}</td><td>${esc(item.fact)}</td><td>${esc(item.who)}</td></tr>`).join('')}</tbody></table>` : `<p>${dash}</p>`}
+<h2 class="r-h2">01 / Auditoria</h2><p class="r-small">Aquecimento: ${warmRight()} de ${WARMUP.length} certos.</p>${s.audit.findings.length ? `<table class="r-table"><thead><tr><th>Elemento e critério</th><th>Medição</th><th>Quem é afetado e em qual tarefa</th></tr></thead><tbody>${s.audit.findings.map(item => `<tr><td><strong>${esc(PARTS[item.part].name)}</strong><br>${esc(critName(item.crit))}</td><td>${esc(item.fact)}</td><td>${esc(item.who)}</td></tr>`).join('')}</tbody></table>` : `<p>${dash}</p>`}
 <p class="r-small">Ferramentas usadas: ${Object.entries(s.audit.tools).filter(([, used]) => used).map(([id]) => ({keyboard:'teclado', zoom:'zoom 200%', gray:'sem cor', linear:'leitura linear'}[id])).join(', ') || 'nenhuma registrada'}.</p>
 <h2 class="r-h2">02 / Estações</h2>
 <h3 class="r-h3">1 · Contraste</h3>${adjusted.length ? `<ul class="r-list">${adjusted.map(i => { const r = contrastResult(i); return `<li>${esc(r.pair.name)}: ${fmtRatio(r.before)} → ${fmtRatio(r.after)} (texto ${r.now.fg.toUpperCase()} sobre ${r.now.bg.toUpperCase()})</li>`; }).join('')}</ul>` : '<p>Nenhum par ajustado.</p>'}<p>${text(c.note)}</p>
@@ -922,13 +1061,20 @@ body{margin:0;background:#f7f5ef;color:#0b1f33;font:17px/1.6 system-ui,-apple-sy
 <table class="r-table"><thead><tr><th>Tarefa</th><th>Resultado</th><th>Observação</th></tr></thead><tbody>${TASKS.map((task, i) => `<tr><td>${esc(task.title)}${i === 1 || i === 3 ? `<br><span class="r-small">${esc(evidenceHTML(i))}</span>` : ''}</td><td>${esc((STATUS.find(([id]) => id === s.test.results[i].status) || ['', 'não marcado'])[1])}</td><td>${text(s.test.results[i].note)}</td></tr>`).join('')}</tbody></table>
 <h3 class="r-h3">Ajuste após o teste</h3><p>${text(s.test.adjust)}</p>
 <h3 class="r-h3">Pacto da dupla</h3><ul class="r-list">${s.pact.picks.map(id => `<li>${esc(PACT.find(([key]) => key === id)[1])}</li>`).join('') || '<li>Nenhum compromisso escolhido.</li>'}</ul><p>${text(s.pact.own)}</p>
-<p class="r-small">Página, pessoas e dados fictícios. As medições comparam a página de demonstração com referências das WCAG 2.2; a leitura linear é uma aproximação didática. Este arquivo abre sem internet.</p></main></body></html>`;
+<p class="r-small">Página, pessoas e dados fictícios.</p></main></body></html>`;
     const blob = new Blob([html], {type:'text/html;charset=utf-8'}), url = URL.createObjectURL(blob), link = document.createElement('a');
     const slug = norm(team || 'dupla').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 45) || 'dupla';
     link.href = url; link.download = `aula-13-rota-acessivel-${slug}-${new Date().toTimeString().slice(0, 8).replace(/:/g, '')}.html`;
     document.body.append(link); link.click(); link.remove(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+    save();
     $('save-status').textContent = missing.length ? 'Entrega parcial exportada.' : 'Entrega exportada.';
   }
 
   render(); save(); setUrl();
+  setInterval(() => {
+    updateClock(); updateRail();
+    if (ui.lockedView && phaseOpen(state.phase) && (state.phase !== 2 || stationOpen(state.station))) render();
+    else if (state.phase === 2) refreshStationTabs();
+    else if (state.phase === 3 && shockOpen()) { const waiting = document.querySelector('.shock-closed.is-locked'); if (waiting) waiting.outerHTML = renderShock(); }
+  }, 20000);
 })();

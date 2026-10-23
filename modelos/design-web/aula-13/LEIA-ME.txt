@@ -5,6 +5,8 @@ ROTA ACESSÍVEL · DESIGN WEB · AULA 13
 3. Trabalhe em dupla no mesmo computador, com dados fictícios. Alternem quem opera.
 4. Use Exportar entrega para baixar o registro. Abra o HTML baixado para conferir.
 
+As paradas abrem no horário da aula. Fora desse horário, tudo fica aberto.
+
 O progresso fica neste navegador e neste computador, quando o salvamento local estiver disponível. Exporte uma cópia antes de fechar. O kit não sincroniza entre computadores.
 
 Roteiro de hoje: 19h00–22h10, intervalo 19h45–20h05.

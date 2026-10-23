@@ -71,6 +71,18 @@ const css=read(path.join(workshop,'oficina.css'));
 const token=name=>css.match(new RegExp(`--${name}:(#[0-9a-f]{6})`))[1];
 for(const [fg,bg] of [['ink','paper'],['muted','paper'],['route','chalk'],['alert','chalk'],['ok','chalk'],['ink','signal']]) assert.ok(ratio(token(fg),token(bg))>=4.5,`a própria oficina falha em contraste: ${fg} sobre ${bg}`);
 
+// Paradas abrem no horário do planejamento e as palavras do professor estão nas notas.
+const keys=Object.fromEntries([...js.match(/const KEYS = \{([^}]+)\}/)[1].matchAll(/(\d):'([a-z]+)'/g)].map(m=>[m[1],m[2]]));
+assert.deepEqual(Object.keys(keys),['2','3','4'],'uma palavra para cada parada fechada');
+const notes=JSON.stringify(support);
+for(const [phase,word] of Object.entries(keys)) {
+  assert.match(notes,new RegExp(word.toUpperCase()),`palavra da Parada ${phase} ausente das notas`);
+  const opener=support.presentationSlides.find(item=>item.block===Number(phase)&&item.pace!=='break');
+  assert.match(opener.teacher.speech,new RegExp(word.toUpperCase()),`palavra da Parada ${phase} fora do primeiro slide da parada`);
+}
+const opens=js.match(/phase:\{2:at\((\d+), (\d+)\), 3:at\((\d+), (\d+)\), 4:at\((\d+), (\d+)\)\}/).slice(1).map(Number);
+assert.deepEqual([[opens[0],opens[1]],[opens[2],opens[3]],[opens[4],opens[5]]].map(([h,m])=>h*60+m),schedule.slice(1).map(([start])=>start),'aberturas das paradas iguais ao planejamento');
+for(const label of ['Missão','Estou travado','Palavra do professor','Desafio','Aquecimento']) assert.ok(js.includes(label)||js.includes(label.toLowerCase()),`oficina sem ${label}`);
 const zip=path.join(workshop,'kit-aula-13.zip');
 const listed=execFileSync('unzip',['-Z1',zip],{encoding:'utf8'}).trim().split('\n').sort();
 assert.deepEqual(listed,[...files].sort(),'ZIP deve conter exatamente os arquivos offline');
