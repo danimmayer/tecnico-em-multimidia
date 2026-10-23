@@ -92,6 +92,9 @@ const demo=(page,kind)=>page.locator(`[data-demo="${kind}"]`);
   await page.keyboard.press('Shift+Tab'); await page.keyboard.press('Space');
   await page.keyboard.press('Tab'); await page.keyboard.press('Enter');
   assert.match(await page.locator('#kbd-summary').innerText(),/Botões reais\s+5 Tabs · concluiu/i,'atalho, caixa marcada e botão real permitem concluir só com teclado');
+  await page.locator('#kbd-start').click();
+  await page.keyboard.press('Tab'); await page.keyboard.press('Enter'); await page.keyboard.press('Tab'); await page.keyboard.press('Space'); await page.keyboard.press('Tab'); await page.keyboard.press('Enter');
+  assert.match(await page.locator('#kbd-summary').innerText(),/Botões reais\s+3 Tabs · concluiu/i,'nova tentativa melhor substitui a contagem');
   await fill(page.locator('[data-field="stations.keyboard.note"]'),'Original não alcança o botão; com botões reais foram 3 Tabs.');
   await page.locator('[data-go="station-4"]').click();
   for(const [i,fn,text] of [[0,'complexa','Mapa da rota até o Galpão 2'],[1,'informativa','Rampa com corrimão na entrada sem degraus'],[2,'decorativa',''],[3,'funcional','Buscar na programação']]) {
@@ -101,6 +104,7 @@ const demo=(page,kind)=>page.locator(`[data-demo="${kind}"]`);
   assert.match(await page.locator('#alt-say-2').innerText(),/ignorada/);
   await fill(page.locator('[data-field="stations.alt.note"]'),'O mapa precisa de rota em texto.');
   assert.equal(await page.locator('[data-station] .mark.ok').count(),4,'quatro estações registradas');
+  assert.match(await page.locator('#mission').innerText(),/sem pistas de revisão \(4\/4\)/i,'mapa complexo bem descrito completa o desafio da estação 4');
 
   // Parada 3: corrections change the real "Depois" page; the slow-connection shock is enforced.
   await page.locator('[data-go="3"]').click();
@@ -191,6 +195,7 @@ const demo=(page,kind)=>page.locator(`[data-demo="${kind}"]`);
   assert.ok(!/(?:src|href)="https?:|url\(https?:|https?:\/\//.test(html),'exportação é autônoma');
   assert.match(await page.locator('#mission .mission-count').innerText(),/5\/5/,'entrega final fecha a missão da Parada 4');
   assert.match(html,/✓ Parada 1/,'selos entram na entrega');
+  assert.match(html,/✓ Parada 4/,'a própria exportação final conta no selo');
   assert.match(download.suggestedFilename(),/^aula-13-rota-acessivel-lu-caio-\d{6}\.html$/);
 
   await page.reload({waitUntil:'networkidle'});
@@ -224,6 +229,15 @@ const demo=(page,kind)=>page.locator(`[data-demo="${kind}"]`);
   await timed.goto(at('19:50')+'&fase=1',{waitUntil:'networkidle'});
   assert.match(await timed.locator('#clockbar').innerText(),/Intervalo/); assert.equal(await timed.locator('[data-jump]').count(),0);
   await timedContext.close();
+  // Comunicado da conexão lenta abre sozinho às 21:15 para quem já está na Parada 3.
+  const live=await browser.newPage({viewport:{width:1366,height:900}}); live.on('pageerror',error=>errors.push(error.message));
+  const today=new Date(); today.setHours(21,14,30,0);
+  await live.clock.install({time:today});
+  await live.goto(url+(url.includes('?')?'&':'?')+'fase=3',{waitUntil:'networkidle'});
+  assert.match(await live.locator('.shock-closed.is-locked').innerText(),/21:15/);
+  await live.clock.runFor(41000);
+  assert.equal(await live.locator('#shock').count(),1,'comunicado abre sem recarregar');
+  await live.close();
   assert.deepEqual(errors,[]);
   console.log('Aula 13 browser: auditoria medida, quatro estações, correções no Depois, choque de dados, teste cruzado, pacto, exportação, persistência, offline e 320 px validados.');
  } finally { await browser.close(); }

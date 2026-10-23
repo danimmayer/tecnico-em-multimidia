@@ -558,7 +558,7 @@ ${order}`;
     const warns = linearRead(root).filter(line => line.warn).length; host.remove();
     afterCache = {key, warns}; return warns;
   }
-  const altClean = i => { const item = state.stations.alt.items[i]; return item.fn === ALT_ITEMS[i].expected && altHints(i).length === 1 && altHints(i)[0].startsWith('Sem pistas'); };
+  const altClean = i => { const item = state.stations.alt.items[i]; return item.fn === ALT_ITEMS[i].expected && !altIssues(i).length; };
   function mission(p) {
     if (p === 1) return {items:[progress('Aquecimento', warmAnswered(), WARMUP.length), progress('Barreiras registradas', distinctFindings(), MIN_FINDINGS), progress('Ferramentas usadas', toolsUsed(), 2), {label:'Exportar uma cópia', done:state.exports > 0}],
       extra:{title:'Caça completa', goals:[progress('Critérios diferentes encontrados', new Set(state.audit.findings.map(item => item.crit)).size, CRITERIA.length), progress('Ferramentas usadas', toolsUsed(), 4)]}};
@@ -757,7 +757,7 @@ ${order}`;
     const run = () => k.runs[k.variant];
     const finish = () => {
       if (!root.querySelector('input[type="checkbox"]').checked) { msg().textContent = 'Ainda falta marcar “Quero receber a confirmação por e-mail”. Volte com Shift+Tab e use Espaço.'; return; }
-      if (!run().done) { run().done = true; run().tabs = ui.kbdTabs; save(); } msg().textContent = `Inscrição simulada confirmada pelo teclado em ${ui.kbdTabs} Tabs.`; refreshKeyboardSummary(); };
+      if (!run().done || ui.kbdTabs < run().tabs) { run().done = true; run().tabs = ui.kbdTabs; save(); } msg().textContent = `Inscrição simulada confirmada pelo teclado em ${ui.kbdTabs} Tabs.`; refreshKeyboardSummary(); };
     root.addEventListener('keydown', event => {
       if (event.key === 'Tab') { ui.kbdTabs++; run().tried = true; if (!run().done) run().tabs = ui.kbdTabs; save(); refreshKeyboardSummary(); }
     });
@@ -779,7 +779,7 @@ ${order}`;
     const list = $('kbd-summary'); if (!list) return;
     list.innerHTML = state.stations.keyboard.runs.map((run, i) => `<div><dt>${i ? 'Botões reais' : 'Original'}</dt><dd>${run.tried ? `${run.tabs} Tabs · ${run.done ? 'concluiu' : 'não concluiu'}` : 'não testada'}</dd></div>`).join('');
   }
-  function altHints(i) {
+  function altIssues(i) {
     const item = state.stations.alt.items[i], meta = ALT_ITEMS[i], text = item.text.trim(), hints = [];
     if (!item.fn) return ['Escolha primeiro a função da imagem.'];
     if (item.fn === 'decorativa' && text) hints.push('Imagem decorativa: deixe o texto vazio para não poluir a leitura.');
@@ -787,9 +787,12 @@ ${order}`;
     if (/^(imagem|foto|figura|ilustra)/i.test(norm(text))) hints.push('Não precisa começar por “imagem de”: o leitor já anuncia que é imagem.');
     if (/\.(png|jpe?g|svg)/i.test(text)) hints.push('Nome de arquivo não descreve a imagem.');
     if (text.length > 150) hints.push('Texto longo: resuma aqui e coloque a informação completa em texto na página.');
-    if (item.fn === 'complexa') hints.push('Imagem complexa: o texto alternativo resume; a rota completa precisa estar escrita na página.');
     if (item.fn !== meta.expected) hints.push(`Reveja a função: ${meta.context}`);
-    return hints.length ? hints : ['Sem pistas de revisão. Leia em voz alta: o texto cumpre a função da imagem?'];
+    return hints;
+  }
+  function altHints(i) {
+    const issues = altIssues(i), complex = state.stations.alt.items[i].fn === 'complexa' ? ['Imagem complexa: o texto alternativo resume; a rota completa precisa estar escrita na página.'] : [];
+    return issues.length ? [...issues, ...complex] : ['Sem pistas de revisão. Leia em voz alta: o texto cumpre a função da imagem?', ...complex];
   }
   const altSay = i => { const item = state.stations.alt.items[i], text = item.text.trim(); return item.fn === 'decorativa' ? '(imagem ignorada pela leitura)' : text ? `${item.fn === 'funcional' ? 'Botão' : 'Imagem'}: ${text}` : 'Imagem sem descrição'; };
   function renderAlt() {
@@ -1026,6 +1029,7 @@ ${order}`;
     return list;
   }
   function exportReport() {
+    state.exports++; if (state.phase === 4) state.exportedFinal = true;
     const s = state, missing = pending(), team = s.team.trim(), dash = '<em>Não registrado.</em>';
     const text = value => value && value.trim() ? esc(value.trim()) : dash;
     const c = s.stations.contrast, adjusted = PAIRS.map((_, i) => i).filter(i => c.adjust[i]);
@@ -1062,7 +1066,7 @@ body{margin:0;background:#f7f5ef;color:#0b1f33;font:17px/1.6 system-ui,-apple-sy
     const slug = norm(team || 'dupla').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 45) || 'dupla';
     link.href = url; link.download = `aula-13-rota-acessivel-${slug}-${new Date().toTimeString().slice(0, 8).replace(/:/g, '')}.html`;
     document.body.append(link); link.click(); link.remove(); setTimeout(() => URL.revokeObjectURL(url), 1000);
-    state.exports++; if (state.phase === 4) state.exportedFinal = true; save();
+    save();
     $('save-status').textContent = missing.length ? 'Entrega parcial exportada.' : 'Entrega exportada.';
   }
 
@@ -1071,5 +1075,6 @@ body{margin:0;background:#f7f5ef;color:#0b1f33;font:17px/1.6 system-ui,-apple-sy
     updateClock(); updateRail();
     if (ui.lockedView && phaseOpen(state.phase) && (state.phase !== 2 || stationOpen(state.station))) render();
     else if (state.phase === 2) refreshStationTabs();
+    else if (state.phase === 3 && shockOpen()) { const waiting = document.querySelector('.shock-closed.is-locked'); if (waiting) waiting.outerHTML = renderShock(); }
   }, 20000);
 })();
