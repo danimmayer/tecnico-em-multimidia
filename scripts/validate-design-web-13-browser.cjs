@@ -143,6 +143,10 @@ const demo=(page,kind)=>page.locator(`[data-demo="${kind}"]`);
   await page.locator('#test-start').click();
   for(let i=0;i<12&&!(await page.locator('#evidence-1').innerText()).includes('chegou');i++) await page.keyboard.press('Tab');
   assert.match(await page.locator('#evidence-1').innerText(),/chegou ao botão Inscrever/);
+  await page.locator('#test-start').click();
+  assert.match(await page.locator('#evidence-1').innerText(),/ainda não chegou/,'nova tentativa zera a evidência anterior');
+  for(let i=0;i<12&&!(await page.locator('#evidence-1').innerText()).includes('chegou ao');i++) await page.keyboard.press('Tab');
+  assert.match(await page.locator('#evidence-1').innerText(),/chegou ao botão Inscrever/);
   await demo(page,'test').locator('button[data-part="submit"]').click();
   assert.match(await page.locator('#evidence-3').innerText(),/texto junto ao campo/);
   for(let i=0;i<4;i++) { await page.locator(`[data-task="${i}"][value="sem-ajuda"]`).check(); await fill(page.locator(`[data-field="test.results.${i}.note"]`),`Observação ${i+1}`); }
