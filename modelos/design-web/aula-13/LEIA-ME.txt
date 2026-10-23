@@ -11,6 +11,5 @@ O progresso fica neste navegador e neste computador, quando o salvamento local e
 
 Roteiro de hoje: 19h00–22h10, intervalo 19h45–20h05.
 Auditar 45 min · Estações 45 min · Corrigir 45 min · Testar e pactuar 35 min.
-Guia do professor: guia-docente.html.
 
 Na versão publicada, a oficina abre em https://oficinas-design-web.vercel.app/aula-13/.

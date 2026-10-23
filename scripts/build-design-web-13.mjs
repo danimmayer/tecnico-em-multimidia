@@ -8,7 +8,7 @@ import {lesson,support} from './lessons/design-web-13.mjs';
 
 const root=fileURLToPath(new URL('../',import.meta.url));
 const output=path.join(root,'modelos/design-web/aula-13');
-const assets=['index.html','oficina.css','oficina.js','guia-docente.html','LEIA-ME.txt'];
+const assets=['index.html','oficina.css','oficina.js','LEIA-ME.txt'];
 const read=file=>fs.readFileSync(file,'utf8');
 
 function updateGlobal(file, global, mutate) {
@@ -33,7 +33,7 @@ updateGlobal(path.join(root,'assets/course-support.js'),'SENAI_TEACHING_SUPPORT'
   data['design-web'].lessons['13']=support;
 });
 
-for(const asset of assets) {
+for(const asset of [...assets,'guia-docente.html']) {
   if(!fs.existsSync(path.join(output,asset))) throw new Error(`Arquivo da oficina ausente: ${asset}`);
 }
 

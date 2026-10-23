@@ -30,7 +30,9 @@ Todos os cenários, nomes, endereços e falas são fictícios e retomam a Virada
 
 **Exportar entrega** baixa um HTML autônomo com auditoria, estações, correções, plano de dados, as páginas Antes e Depois incorporadas, teste cruzado e pacto, com as pendências que ainda existirem. O rascunho é salvo neste navegador quando o armazenamento está disponível; o arquivo exportado é a cópia para guardar.
 
-Sem internet, baixar e extrair `kit-aula-13.zip` inteiro e abrir `index.html`. CSS, JavaScript e imagens (SVG embutido) estão na mesma pasta; não há bibliotecas ou fontes remotas. O `guia-docente.html` contém roteiro, barreiras plantadas, rubrica e alternativa no caderno.
+Sem internet, baixar e extrair `kit-aula-13.zip` inteiro e abrir `index.html`. CSS, JavaScript e imagens (SVG embutido) estão na mesma pasta; não há bibliotecas ou fontes remotas.
+
+O `guia-docente.html` (roteiro, barreiras plantadas, palavras das paradas, rubrica e alternativa no caderno) é só do professor: fica no repositório, não entra no kit nem na publicação. Abrir pelo servidor local, em `http://localhost:8901/modelos/design-web/aula-13/guia-docente.html`.
 
 ## Fontes e verificação
 

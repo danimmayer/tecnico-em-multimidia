@@ -49,7 +49,7 @@ assert.ok(!/simul(?:e|ar) (?:uma )?defici|venda nos olhos/i.test(JSON.stringify(
 assert.match(lesson.methodology,/ninguém simula uma deficiência/);
 
 // Workshop files: offline, self-contained, syntax-valid and consistent with the planted barriers.
-const files=['index.html','oficina.css','oficina.js','guia-docente.html','LEIA-ME.txt'];
+const files=['index.html','oficina.css','oficina.js','LEIA-ME.txt'];
 const index=read(path.join(workshop,'index.html'));
 for(const phase of [1,2,3,4]) assert.match(index,new RegExp(`data-phase="${phase}"`));
 assert.ok(!/<(?:script|link)[^>]+(?:src|href)="https?:/i.test(index),'oficina não pode depender de rede');
@@ -92,6 +92,15 @@ try {
   for(const file of files) assert.equal(read(path.join(workshop,file)),read(path.join(extracted,file)),`ZIP fora de sincronia: ${file}`);
 } finally { fs.rmSync(extracted,{recursive:true,force:true}); }
 
+// Guias docentes ficam fora do que a turma alcança: links, kits e publicação.
+for(const page of ['aula-12/index.html','aula-12/desafio.html','aula-13/index.html']) assert.ok(!/guia-docente/.test(read(path.join(root,'modelos/design-web',page))),`${page} não pode apontar para o guia docente`);
+for(const kit of ['aula-12/kit-aula-12.zip','aula-13/kit-aula-13.zip']) assert.ok(!/guia-docente/.test(execFileSync('unzip',['-Z1',path.join(root,'modelos/design-web',kit)],{encoding:'utf8'})),`${kit} não pode levar o guia docente`);
+const published=fs.mkdtempSync(path.join(os.tmpdir(),'design-web-deploy-'));
+try {
+  execFileSync('node',[path.join(root,'scripts/prepare-design-web-deploy.mjs'),published]);
+  assert.ok(fs.existsSync(path.join(published,'aula-13/index.html')),'publicação sem a oficina da Aula 13');
+  assert.ok(!fs.readdirSync(published,{recursive:true}).some(file=>/guia-docente/.test(String(file))),'guia docente não pode ser publicado');
+} finally { fs.rmSync(published,{recursive:true,force:true}); }
 for(const script of ['scripts/build-course-data.mjs','scripts/rebuild-design-web-no-code.mjs']) assert.match(read(path.join(root,script)),/\.\/lessons\/design-web-13\.mjs/,'gerador principal sem Aula 13');
 assert.match(read(path.join(root,'assets/course-lesson.js')),/'12', '13'\]\.includes\(lesson\.num\)/,'Aula 13 precisa usar o layout e o ritmo por slide');
 assert.match(read(path.join(root,'modelos/design-web/oficinas/index.html')),/href="aula-13\/"/,'página inicial das oficinas sem Aula 13');
