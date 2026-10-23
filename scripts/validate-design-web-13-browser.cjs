@@ -44,6 +44,8 @@ const demo=(page,kind)=>page.locator(`[data-demo="${kind}"]`);
   // Parada 2: contrast formula, reflow measurement, keyboard-only completion and alt text.
   await page.locator('[data-go="2"]').click();
   await page.locator('[data-station="1"]').click();
+  await page.locator('#pair-select').selectOption('3');
+  assert.match(await page.locator('.ratio div').first().innerText(),/4,8:1/,'par do link mede as cores reais da página de demonstração');
   await page.locator('#pair-select').selectOption('1');
   await page.locator('#light').fill('10');
   assert.ok(parseFloat((await page.locator('#ratio-now').innerText()).replace(',','.'))>=4.5,'texto escuro sobre o amarelo passa de 4,5:1');
@@ -62,9 +64,11 @@ const demo=(page,kind)=>page.locator(`[data-demo="${kind}"]`);
   await page.locator('[data-kbd-variant="1"]').click();
   await page.locator('#kbd-start').click();
   await page.keyboard.press('Tab'); await page.keyboard.press('Enter');
-  await page.keyboard.press('Tab'); await page.keyboard.press('Space');
+  await page.keyboard.press('Tab'); await page.keyboard.press('Tab'); await page.keyboard.press('Enter');
+  assert.match(await page.locator('#kbd-summary').innerText(),/Botões reais\s+\d+ Tabs · não concluiu/i,'confirmar sem marcar a caixa não conclui a tarefa');
+  await page.keyboard.press('Shift+Tab'); await page.keyboard.press('Space');
   await page.keyboard.press('Tab'); await page.keyboard.press('Enter');
-  assert.match(await page.locator('#kbd-summary').innerText(),/Botões reais\s+3 Tabs · concluiu/i,'atalho e botão real permitem concluir só com teclado');
+  assert.match(await page.locator('#kbd-summary').innerText(),/Botões reais\s+5 Tabs · concluiu/i,'atalho, caixa marcada e botão real permitem concluir só com teclado');
   await fill(page.locator('[data-field="stations.keyboard.note"]'),'Original não alcança o botão; com botões reais foram 3 Tabs.');
   await page.locator('[data-go="station-4"]').click();
   for(const [i,fn,text] of [[0,'complexa','Mapa da rota até o Galpão 2'],[1,'informativa','Rampa com corrimão na entrada sem degraus'],[2,'decorativa',''],[3,'funcional','Buscar na programação']]) {

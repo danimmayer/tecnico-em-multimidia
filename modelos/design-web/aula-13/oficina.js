@@ -51,15 +51,17 @@
   const VISUAL = ['banner', 'header', 'hero', 'info', 'video', 'route', 'form', 'ornament', 'footer'];
   const SECTION_NAMES = {banner:'Aviso no topo', header:'Cabeçalho e menu', hero:'Imagem de capa', info:'Título, data e local', video:'Vídeo da curadoria', route:'Como chegar', form:'Formulário de inscrição', ornament:'Ornamento', footer:'Rodapé'};
   const SCRIPT = ['Oi! Eu sou a Bia, da curadoria da Virada Criativa.', 'No sábado, às 20h, a conversa “Criar para todo mundo” acontece no Galpão 2.', 'A entrada é gratuita e tem intérprete de Libras.', 'Depois das 20h, entre pela Rua Norte, 80: a entrada é sem degraus.'];
-  const BAD = () => ({infoColor:'#a3a3a3', buttonText:'#ffffff', footerColor:'#6b7280', realButtons:false, focus:'none', textSize:11, fluid:false, target:16,
+  // Cores da página original: a estação de contraste mede exatamente estes pares.
+  const PAGE = {info:'#a3a3a3', infoBg:'#ffffff', button:'#ffffff', buttonBg:'#f2b705', footer:'#6b7280', footerBg:'#1f2937', link:'#c2410c', linkBg:'#fff7ed'};
+  const BAD = () => ({infoColor:PAGE.info, buttonText:PAGE.button, footerColor:PAGE.footer, realButtons:false, focus:'none', textSize:11, fluid:false, target:16,
     labels:false, required:false, errorText:false, captions:'', autoplay:true, order:null, altHero:'', altMap:'', ornamentDecorative:false, routeText:false,
     weight:{video:'full', hero:'original', map:'image', fonts:'web', carousel:'on'}});
   const COLOR_OPTIONS = {
-    infoColor:[['#a3a3a3', 'Cinza-claro original'], ['#767676', 'Cinza médio'], ['#3d4756', 'Grafite']],
-    buttonText:[['#ffffff', 'Branco original'], ['#10213a', 'Azul-escuro da marca']],
-    footerColor:[['#6b7280', 'Cinza original'], ['#9aa3af', 'Cinza-claro'], ['#e5e7eb', 'Quase branco']]
+    infoColor:[[PAGE.info, 'Cinza-claro original'], ['#767676', 'Cinza médio'], ['#3d4756', 'Grafite']],
+    buttonText:[[PAGE.button, 'Branco original'], ['#10213a', 'Azul-escuro da marca']],
+    footerColor:[[PAGE.footer, 'Cinza original'], ['#9aa3af', 'Cinza-claro'], ['#e5e7eb', 'Quase branco']]
   };
-  const COLOR_BG = {infoColor:'#ffffff', buttonText:'#f2b705', footerColor:'#1f2937'};
+  const COLOR_BG = {infoColor:PAGE.infoBg, buttonText:PAGE.buttonBg, footerColor:PAGE.footerBg};
 
   function demoCSS(f, R) {
     const font = f.weight.fonts === 'web' ? '"Display Fantasia","Trebuchet MS",sans-serif' : 'system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif';
@@ -95,17 +97,17 @@ ${R} .vc-tr summary{min-height:${Math.max(t, 24)}px;cursor:pointer;font-weight:7
 ${R} .vc-transcript{padding:0 14px}
 ${R} .vc-route{padding:0 14px}
 ${R} .vc-routetext{margin:8px 0;padding:8px 10px;border-left:4px solid #0057b8;background:#eef4fb}
-${R} .vc-maplink{display:inline-flex;align-items:center;min-height:${t}px;margin-top:6px;color:#c2410c;background:#fff7ed;padding:0 ${roomy ? 10 : 2}px}
+${R} .vc-maplink{display:inline-flex;align-items:center;min-height:${t}px;margin-top:6px;color:${PAGE.link};background:${PAGE.linkBg};padding:0 ${roomy ? 10 : 2}px}
 ${R} .vc-form{display:grid;gap:8px;margin:0 14px;padding:14px;background:#fff7e0;border-radius:6px}
 ${R} .vc-form label{font-weight:700;color:#10213a}
 ${R} .vc-form input{font:inherit;width:100%;min-height:${Math.max(t, 32)}px;padding:6px 8px;color:#1b1b1b;background:#ffffff;border:1px solid #c9c9c9;border-radius:4px}
 ${R} .vc-form input::placeholder{color:#9b9b9b}
 ${R} .vc-form input.is-error{border:2px solid #d92d20}
 ${R} .vc-error{color:#b42318;font-weight:700}
-${R} .vc-submit{display:inline-flex;justify-content:center;align-items:center;justify-self:start;min-height:${Math.max(t, 32)}px;padding:0 18px;color:${f.buttonText};background:#f2b705;border:0;border-radius:4px;font-weight:800;cursor:pointer}
+${R} .vc-submit{display:inline-flex;justify-content:center;align-items:center;justify-self:start;min-height:${Math.max(t, 32)}px;padding:0 18px;color:${f.buttonText};background:${PAGE.buttonBg};border:0;border-radius:4px;font-weight:800;cursor:pointer}
 ${R} .vc-msg{font-weight:700;color:#10213a}
 ${R} .vc-ornament{display:block;width:120px;height:auto;margin:0 auto}
-${R} .vc-footer{display:grid;gap:4px;padding:12px 14px;color:${f.footerColor};background:#1f2937;font-size:${Math.max(10, f.textSize - 1)}px}
+${R} .vc-footer{display:grid;gap:4px;padding:12px 14px;color:${f.footerColor};background:${PAGE.footerBg};font-size:${Math.max(10, f.textSize - 1)}px}
 ${R} a:focus,${R} button:focus,${R} input:focus,${R} summary:focus,${R} [tabindex]:focus{${focus}}
 ${R}.is-zoom{zoom:2}
 ${R}.is-inspecting [data-part]{cursor:help}
@@ -264,10 +266,10 @@ ${order}`;
 
   /* ---------- Conteúdo das estações, correções, teste e pacto ---------- */
   const PAIRS = [
-    {name:'Data, horário e local', fg:'#a3a3a3', bg:'#ffffff', sample:'Sábado, 25/10 · 20h · Galpão 2'},
-    {name:'Botão Inscrever', fg:'#ffffff', bg:'#f2b705', sample:'Inscrever', bold:true},
-    {name:'Rodapé', fg:'#6b7280', bg:'#1f2937', sample:'Virada Criativa · contato'},
-    {name:'Link Ver mapa', fg:'#f97316', bg:'#fff7ed', sample:'Ver mapa'}
+    {name:'Data, horário e local', fg:PAGE.info, bg:PAGE.infoBg, sample:'Sábado, 25/10 · 20h · Galpão 2'},
+    {name:'Botão Inscrever', fg:PAGE.button, bg:PAGE.buttonBg, sample:'Inscrever', bold:true},
+    {name:'Rodapé', fg:PAGE.footer, bg:PAGE.footerBg, sample:'Virada Criativa · contato'},
+    {name:'Link Ver mapa', fg:PAGE.link, bg:PAGE.linkBg, sample:'Ver mapa'}
   ];
   const ALT_ITEMS = [
     {name:'Mapa da rota', img:IMG.map, w:640, h:220, expected:'complexa', context:'Aparece em “Como chegar”, sem nenhum texto ao lado.'},
@@ -277,7 +279,7 @@ ${order}`;
   ];
   const ALT_FUNCTIONS = [['informativa', 'Informativa'], ['decorativa', 'Decorativa'], ['funcional', 'Funcional (botão ou link)'], ['complexa', 'Complexa (mapa, gráfico)']];
   const GROUPS = [
-    {id:'contraste', title:'Contraste', crit:'contraste', applied:f => f.infoColor !== '#a3a3a3' || f.buttonText !== '#ffffff' || f.footerColor !== '#6b7280'},
+    {id:'contraste', title:'Contraste', crit:'contraste', applied:f => f.infoColor !== PAGE.info || f.buttonText !== PAGE.button || f.footerColor !== PAGE.footer},
     {id:'foco', title:'Foco e teclado', crit:'foco', applied:f => f.realButtons || f.focus !== 'none'},
     {id:'texto', title:'Texto e ampliação', crit:'texto', applied:f => f.textSize > 11 || f.fluid},
     {id:'toque', title:'Área de toque', crit:'toque', applied:f => f.target > 16},
@@ -620,9 +622,11 @@ ${order}`;
     host.dataset.bound = '1';
     const msg = () => root.querySelector('.kb-msg');
     const run = () => k.runs[k.variant];
-    const finish = () => { if (!run().done) { run().done = true; run().tabs = ui.kbdTabs; save(); } msg().textContent = `Inscrição simulada confirmada pelo teclado em ${ui.kbdTabs} Tabs.`; refreshKeyboardSummary(); };
+    const finish = () => {
+      if (!root.querySelector('input[type="checkbox"]').checked) { msg().textContent = 'Ainda falta marcar “Quero receber a confirmação por e-mail”. Volte com Shift+Tab e use Espaço.'; return; }
+      if (!run().done) { run().done = true; run().tabs = ui.kbdTabs; save(); } msg().textContent = `Inscrição simulada confirmada pelo teclado em ${ui.kbdTabs} Tabs.`; refreshKeyboardSummary(); };
     root.addEventListener('keydown', event => {
-      if (event.key === 'Tab') { ui.kbdTabs++; run().tried = true; if (!run().done) run().tabs = ui.kbdTabs; save(); }
+      if (event.key === 'Tab') { ui.kbdTabs++; run().tried = true; if (!run().done) run().tabs = ui.kbdTabs; save(); refreshKeyboardSummary(); }
     });
     root.addEventListener('click', event => {
       const link = event.target.closest('a');
