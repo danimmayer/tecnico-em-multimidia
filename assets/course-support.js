@@ -1939,35 +1939,756 @@ window.SENAI_TEACHING_SUPPORT = {
         ]
       },
       "13": {
-        "teacherGoal": "Conduzir a Aula 13 para que a turma produza acessibilidade e usabilidade como compromisso ético, com auditoria e correção visual do protótipo.",
-        "plainLanguage": "Acessibilidade e usabilidade como compromisso ético, com auditoria e correção visual do protótipo. O foco é decidir, montar, comparar e testar; os bastidores técnicos aparecem apenas quando ajudam a compreender a função de uma interface.",
-        "say": "Hoje o resultado precisa ficar visível. Primeiro eu mostro o exemplo e os critérios; depois vocês produzem em equipe e conferem a entrega antes de sair.",
+        "appendDefaultClosing": false,
+        "teacherGoal": "Ao fim da noite, cada dupla terá exportado um HTML com cinco barreiras medidas, quatro registros de estação, pelo menos três correções justificadas com antes e depois, o plano de dados para conexão lenta, o resultado do teste cruzado e o pacto assinado com o apelido da dupla.",
+        "routine": [
+          "Antes da aula, abro a oficina da Aula 13 na Vercel, faço uma exportação de teste e confiro se cada posto tem teclado funcionando. Deixo o kit offline extraído como reserva.",
+          "Faço chamada às 19:00, 20:05, 20:50 e 21:35. Projeto só a parada da vez; as quatro paradas ficam abertas, mas cada bloco termina com o registro da parada preenchido.",
+          "Nas estações, cronometro 10 minutos e anuncio a troca. Quem terminou antes faz a extensão da própria estação, sem avançar para a seguinte.",
+          "Reforço desde o início: medimos barreiras do produto, não limitações de pessoas. Não proponho vendas nos olhos, óculos embaçados nem imitação de deficiência."
+        ],
+        "onlineRoutine": "Os estudantes usam https://oficinas-design-web.vercel.app/aula-13/ e os links diretos ?fase=1 a ?fase=4; esta apresentação fica na plataforma. Se a internet cair, extraio o kit offline e abro index.html por duplo clique. Se o navegador bloquear o armazenamento local, a dupla trabalha sem fechar a página e exporta no fim.",
+        "plainLanguage": "Acessibilidade é tirar do caminho as barreiras que impedem alguém de perceber, entender e usar uma página. Usabilidade é conseguir cumprir a tarefa com eficácia, sem esforço desnecessário. Quando uma página falha, a falha é do projeto — e quem projeta pode corrigir.",
+        "say": "Lembram do Ravi, que usa zoom de 200% e procurava uma entrada sem degraus? Hoje a página da Virada Criativa chega com barreiras de propósito. Nosso trabalho é encontrar cada uma com uma medição, corrigir sem apagar a marca e provar, com outra dupla testando, que a página ficou melhor para mais pessoas.",
         "demo": [
-          "Retomada de UX e UI. Auditoria guiada de uma interface problemática: foco, contraste, tamanho de texto, área de toque, rótulos, legenda e ordem de leitura.",
-          "Estações de acessibilidade: contraste, zoom, navegação por teclado numa página demonstrativa e escrita de texto alternativo. Grupos rodam e registram uma barreira em cada estação.",
-          "Oficina \"Protótipo para mais pessoas\": cada equipe corrige no material visual pelo menos três barreiras e registra capturas de antes e depois."
+          "Na Parada 1, ligo Inspecionar, clico no texto de data e local e leio a medição: contraste 2,5:1 e letra de 11 px. Registro o critério e quem é afetado.",
+          "Pressiono Tab na página de demonstração e mostro que o foco some e que o botão Inscrever nunca é alcançado.",
+          "Na estação de contraste, movo o controle até passar de 4,5:1 mantendo o amarelo da marca no botão.",
+          "Na Parada 3, aplico uma correção, escrevo quem ganha com ela e alterno entre Antes e Depois."
         ],
-        "studentDeliverable": "Teste cruzado e pacto da turma: outra equipe confere as correções. Fechamento sobre responsabilidade do designer com públicos diversos e conexões lentas.",
+        "studentDeliverable": "Arquivo HTML exportado pela oficina com: cinco barreiras auditadas com medição e pessoa afetada; quatro registros de estação; três ou mais correções justificadas, com as versões antes e depois incorporadas; o plano de dados para conexão lenta; as quatro tarefas do teste cruzado; o ajuste feito e o pacto. A exportação parcial aponta as pendências. Sem computador: quatro páginas no caderno, conforme o guia docente.",
         "check": [
-          "A entrega visual corresponde ao objetivo e pode ser aberta ou apresentada sem explicação adicional.",
-          "O grupo justificou pelo menos duas decisões com critérios da aula.",
-          "Arquivos ou folhas estão nomeados e organizados na pasta de entrega.",
-          "A revisão final retirou dados pessoais e confirmou legibilidade."
+          "Cinco barreiras diferentes, cada uma com critério, medição da ferramenta e quem pode ser afetado em qual tarefa.",
+          "As quatro estações têm um registro próprio: par de cores e razão de contraste, conteúdo cortado no zoom, percurso do teclado e textos alternativos por função.",
+          "Pelo menos três correções aplicadas, cada uma com justificativa, e a página corrigida comparada com a original.",
+          "A página corrigida pesa até 1 MB sem perder informação e a dupla explica a escolha.",
+          "Outra dupla realizou as quatro tarefas sem dicas; houve um ajuste ligado ao que foi observado.",
+          "O pacto tem três compromissos e uma frase própria; a entrega HTML foi exportada e aberta."
         ],
-        "fallback": "Se a ferramenta ou a internet falhar, realizar a mesma produção em papel A3 com cartões, canetas e a ficha impressa; fotografar ou guardar a folha como evidência.",
+        "fallback": "Sem internet, abrir o kit offline. Sem computador para a dupla, projetar a página de demonstração e as estações e registrar no caderno: barreira, medição lida no projetor, quem é afetado e a correção proposta em esboço de antes e depois. O teste cruzado vira leitura do esboço por outra dupla, que tenta cumprir as quatro tarefas apontando no papel.",
+        "extension": "Quem termina cedo audita a própria oficina com as mesmas ferramentas — teclado, zoom e contraste — e registra uma barreira encontrada ou a evidência de que o critério foi cumprido. Na Parada 3, tenta caber em 0,6 MB sem retirar informação.",
         "commonProblems": [
           [
-            "A equipe começa sem decidir o objetivo",
-            "Retomar público, mensagem e ação principal antes de escolher aparência."
+            "A dupla registra “está feio” como barreira",
+            "Peço o critério, a medição e a tarefa que fica difícil: “contraste 2,5:1 no horário; quem tem baixa visão não lê a hora da conversa”."
           ],
           [
-            "A produção fica bonita, mas pouco clara",
-            "Pedir que outro grupo cumpra uma tarefa e registrar onde ele hesita."
+            "Alguém propõe imitar uma deficiência para “sentir na pele”",
+            "Explico que a atividade avalia o produto. Usamos teclado, zoom e medições porque são formas reais de uso, sem transformar pessoas em fantasia."
           ],
           [
-            "O tempo termina antes do acabamento",
-            "Fechar primeiro a entrega essencial e deixar variações como extensão opcional."
+            "A correção apaga a identidade visual",
+            "Lembro que o amarelo da marca pode continuar no fundo do botão; muda-se o texto para azul-escuro e a razão passa de 10:1."
+          ],
+          [
+            "O Tab não faz nada",
+            "Peço um clique dentro da página de demonstração antes de pressionar Tab; em notebooks, confiro se a tecla não está presa a outra função."
+          ],
+          [
+            "O tempo aperta no fim",
+            "Preservo três correções, as quatro tarefas do teste e o pacto. Às 22:05 todos exportam; a extensão é sempre opcional."
           ]
+        ],
+        "presentationSlides": [
+          {
+            "block": 1,
+            "title": "Uma página para mais pessoas",
+            "heading": "Uma página para mais pessoas",
+            "time": "19:00 - 19:05",
+            "layout": "dw8",
+            "lede": "A Virada Criativa publicou a página da conversa “Criar para todo mundo”. Ela é bonita. Mas quem consegue usar?",
+            "cards": [
+              {
+                "title": "Hoje",
+                "text": "Auditar, medir, corrigir e testar a página fictícia da Virada."
+              },
+              {
+                "title": "Entrega",
+                "text": "Um HTML exportado com antes, depois e o pacto da turma."
+              }
+            ],
+            "promptLabel": "Sua vez",
+            "prompt": "Abra a oficina da Aula 13, escreva o apelido da dupla e combine quem opera primeiro.",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-13/?fase=1",
+              "label": "Abrir oficina da Aula 13"
+            },
+            "teacher": {
+              "speech": "Faço a chamada e retomo Ana e Ravi, da Aula 12: necessidades reais apareceram nos dossiês. Hoje a página chega com barreiras de propósito para serem encontradas.",
+              "steps": [
+                "5 min · Chamada, retomada da Aula 12 e abertura da oficina."
+              ],
+              "watch": "Todas as duplas com a oficina aberta e o apelido preenchido, sem nomes completos.",
+              "rescue": "Volto ao último registro salvo, demonstro só o próximo passo no projetor e devolvo o controle à dupla."
+            }
+          },
+          {
+            "block": 1,
+            "title": "A barreira está no projeto",
+            "heading": "A barreira está no projeto",
+            "time": "19:05 - 19:10",
+            "layout": "dw8",
+            "lede": "Uma pessoa não “tem dificuldade com o site”: o site é que criou um obstáculo. E o que foi projetado pode ser corrigido.",
+            "cards": [
+              {
+                "title": "Acessibilidade",
+                "text": "Perceber, entender e operar a página, com ou sem deficiência."
+              },
+              {
+                "title": "Usabilidade",
+                "text": "Cumprir a tarefa com eficácia, sem esforço desnecessário."
+              },
+              {
+                "title": "Responsabilidade",
+                "text": "Lei Brasileira de Inclusão (Lei 13.146/2015) e WCAG: referências para quem projeta."
+              }
+            ],
+            "promptLabel": "Pense",
+            "prompt": "Que tarefa a página da Virada precisa permitir a qualquer visitante?",
+            "teacher": {
+              "speech": "Apresento o modelo de barreira: o problema está no ambiente. Cito a Lei Brasileira de Inclusão e as diretrizes WCAG como referências, sem transformar a aula em leitura de norma. Deixo claro que ninguém vai imitar deficiência.",
+              "steps": [
+                "5 min · Conceito curto e pergunta para a turma: descobrir horário, local e se inscrever."
+              ],
+              "watch": "A turma fala do produto (“o texto está apagado”), não da pessoa (“ele não enxerga direito”).",
+              "rescue": "Volto ao último registro salvo, demonstro só o próximo passo no projetor e devolvo o controle à dupla."
+            }
+          },
+          {
+            "block": 1,
+            "title": "Sete pontos de auditoria",
+            "heading": "Sete pontos de auditoria",
+            "time": "19:10 - 19:15",
+            "layout": "dw8",
+            "lede": "Uma auditoria começa por pontos que podem ser verificados. Gosto pessoal não entra na ficha.",
+            "cards": [
+              {
+                "title": "Foco e contraste",
+                "text": "Dá para ver onde o teclado está? O texto se destaca do fundo?"
+              },
+              {
+                "title": "Texto e toque",
+                "text": "A letra pode ser lida e ampliada? O alvo cabe um dedo?"
+              },
+              {
+                "title": "Rótulos e legenda",
+                "text": "Cada campo diz o que pede? O vídeo pode ser entendido sem som?"
+              },
+              {
+                "title": "Ordem de leitura",
+                "text": "A sequência lida faz sentido igual à sequência vista?"
+              }
+            ],
+            "promptLabel": "Demonstração",
+            "prompt": "Inspecionar → clicar no elemento → ler a medição → escolher o critério → escrever quem é afetado.",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-13/?fase=1",
+              "label": "Abrir oficina da Aula 13"
+            },
+            "teacher": {
+              "speech": "Demonstro um registro completo no texto de data e local: contraste 2,5:1 e letra de 11 px. Mostro que a medição vem da ferramenta e que a dupla escreve quem é afetado em qual tarefa.",
+              "steps": [
+                "5 min · Demonstração de um registro completo, sem resolver os outros."
+              ],
+              "watch": "O registro de exemplo fica no projetor; as duplas não copiam o mesmo elemento como primeira barreira.",
+              "rescue": "Volto ao último registro salvo, demonstro só o próximo passo no projetor e devolvo o controle à dupla."
+            }
+          },
+          {
+            "block": 1,
+            "title": "Parada 1 · audite a página da Virada",
+            "heading": "Parada 1 · audite a página da Virada",
+            "time": "19:15 - 19:30",
+            "layout": "dw8",
+            "lede": "Inspecione elementos da página e registre ao menos cinco barreiras diferentes. Cada registro tem critério, medição e pessoa afetada.",
+            "cards": [
+              {
+                "title": "Mínimo",
+                "text": "Cinco barreiras com critérios ou elementos diferentes."
+              },
+              {
+                "title": "Evidência",
+                "text": "A medição aparece sozinha; vocês explicam o efeito na tarefa."
+              }
+            ],
+            "promptLabel": "Regra",
+            "prompt": "Se a medição indicar que o critério foi cumprido, procure outra barreira no mesmo elemento ou outro elemento.",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-13/?fase=1",
+              "label": "Abrir oficina · Parada 1 · Auditoria"
+            },
+            "teacher": {
+              "speech": "Circulo primeiro por quem ainda não registrou nada. Peço que alternem quem opera a cada barreira.",
+              "steps": [
+                "15 min · Auditoria em duplas, com troca de operador a cada registro."
+              ],
+              "watch": "Registros do tipo “quem tem baixa visão não lê o horário da conversa”, ligados a uma tarefa concreta.",
+              "rescue": "Volto ao último registro salvo, demonstro só o próximo passo no projetor e devolvo o controle à dupla."
+            }
+          },
+          {
+            "block": 1,
+            "title": "Confirme com as ferramentas",
+            "heading": "Confirme com as ferramentas",
+            "time": "19:30 - 19:40",
+            "layout": "dw8",
+            "lede": "Quatro ferramentas confirmam o que os olhos sugerem. Use pelo menos duas antes de fechar a auditoria.",
+            "cards": [
+              {
+                "title": "Teclado",
+                "text": "Clique na página e pressione Tab. O rastro mostra por onde o foco passou."
+              },
+              {
+                "title": "Zoom 200%",
+                "text": "A página ampliada perde algum trecho?"
+              },
+              {
+                "title": "Sem cor",
+                "text": "O aviso de erro continua visível sem a cor?"
+              },
+              {
+                "title": "Leitura linear",
+                "text": "A ordem lida faz sentido? Imagens e campos têm nome?"
+              }
+            ],
+            "promptLabel": "Pergunta",
+            "prompt": "Qual ferramenta revelou uma barreira que vocês não tinham visto?",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-13/?fase=1",
+              "label": "Abrir oficina · Parada 1 · Ferramentas"
+            },
+            "teacher": {
+              "speech": "Explico que a leitura linear é uma aproximação didática do que um leitor de tela anuncia; leitores reais variam. Sem cor serve para conferir se a informação depende só da cor, não para imitar como alguém enxerga.",
+              "steps": [
+                "10 min · Uso de duas ferramentas e complemento dos registros."
+              ],
+              "watch": "O rastro de teclado mostra que o botão Inscrever nunca recebe foco; a leitura linear começa pelo formulário.",
+              "rescue": "Volto ao último registro salvo, demonstro só o próximo passo no projetor e devolvo o controle à dupla."
+            }
+          },
+          {
+            "block": 1,
+            "title": "Salve antes do lanche",
+            "heading": "Salve antes do lanche",
+            "time": "19:40 - 19:45",
+            "layout": "dw8",
+            "lede": "Confira o contador de barreiras e exporte uma cópia parcial. O trabalho continua neste navegador.",
+            "cards": [
+              {
+                "title": "Contador",
+                "text": "5 de 5 barreiras registradas."
+              },
+              {
+                "title": "Retorno",
+                "text": "20:05, no mesmo posto e com a mesma dupla."
+              }
+            ],
+            "promptLabel": "Antes de sair",
+            "prompt": "Exporte a entrega parcial e não feche a aba da oficina.",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-13/?fase=1",
+              "label": "Abrir oficina da Aula 13"
+            },
+            "teacher": {
+              "speech": "Peço a exportação parcial como segurança. Quem não chegou a cinco registra ao menos três e completa na volta.",
+              "steps": [
+                "5 min · Conferência do contador e exportação parcial."
+              ],
+              "watch": "Arquivo baixado em cada posto antes do intervalo.",
+              "rescue": "Volto ao último registro salvo, demonstro só o próximo passo no projetor e devolvo o controle à dupla."
+            }
+          },
+          {
+            "block": 1,
+            "title": "Intervalo",
+            "heading": "Intervalo",
+            "time": "19:45 - 20:05",
+            "layout": "dw8",
+            "lede": "Lanche das 19:45 às 20:05. Na volta, as quatro estações começam juntas.",
+            "promptLabel": "Retorno",
+            "prompt": "20:05 · mesmo posto · Estação 1, contraste.",
+            "teacher": {
+              "speech": "Intervalo fora do tempo de atividade. Deixo o slide da estação 1 pronto para a volta.",
+              "steps": [
+                "20 min · Intervalo."
+              ],
+              "watch": "Abas da oficina abertas nos postos.",
+              "rescue": "Volto ao último registro salvo, demonstro só o próximo passo no projetor e devolvo o controle à dupla."
+            },
+            "pace": "break"
+          },
+          {
+            "block": 2,
+            "title": "Quatro estações, uma barreira em cada",
+            "heading": "Quatro estações, uma barreira em cada",
+            "time": "20:05 - 20:10",
+            "layout": "dw8",
+            "lede": "As estações rodam pelo relógio: 10 minutos cada. Ao sinal, todas as duplas avançam juntas.",
+            "cards": [
+              {
+                "title": "1 · Contraste",
+                "text": "Medir e ajustar um par de cores."
+              },
+              {
+                "title": "2 · Zoom",
+                "text": "Ampliar até 200% e ver o que se perde."
+              },
+              {
+                "title": "3 · Teclado",
+                "text": "Inscrever-se sem usar o mouse."
+              },
+              {
+                "title": "4 · Texto alternativo",
+                "text": "Descrever imagens pela função que cumprem."
+              }
+            ],
+            "promptLabel": "Combinado",
+            "prompt": "Cada estação termina com um registro: o que vocês mediram, quem é afetado e o que mudaria.",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-13/?fase=2",
+              "label": "Abrir oficina · Parada 2 · Estações"
+            },
+            "teacher": {
+              "speech": "Faço a chamada e explico a rotação. Quem termina antes faz a extensão da própria estação; não avança.",
+              "steps": [
+                "5 min · Chamada e regras da rotação."
+              ],
+              "watch": "Todas as duplas na Estação 1 ao mesmo tempo.",
+              "rescue": "Volto ao último registro salvo, demonstro só o próximo passo no projetor e devolvo o controle à dupla."
+            }
+          },
+          {
+            "block": 2,
+            "title": "Estação 1 · Contraste",
+            "heading": "Estação 1 · Contraste",
+            "time": "20:10 - 20:20",
+            "layout": "dw8",
+            "lede": "Escolha um par de cores da página e ajuste até passar de 4,5:1 para texto comum. A cor da marca pode ficar.",
+            "cards": [
+              {
+                "title": "Mínimo AA",
+                "text": "4,5:1 para texto comum; 3:1 para texto grande."
+              },
+              {
+                "title": "Dica de marca",
+                "text": "O amarelo do botão pode continuar no fundo; mude o texto."
+              }
+            ],
+            "promptLabel": "Registro",
+            "prompt": "Par de cores, razão antes e depois e quem ganha com a mudança.",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-13/?fase=2&estacao=1",
+              "label": "Abrir oficina · Estação 1 · Contraste"
+            },
+            "teacher": {
+              "speech": "Mostro que a razão é calculada pela fórmula de luminância das WCAG. O número orienta; a leitura confirma.",
+              "steps": [
+                "10 min · Medir, ajustar e registrar um par."
+              ],
+              "watch": "A dupla não troca todas as cores da marca por preto e branco sem necessidade.",
+              "rescue": "Volto ao último registro salvo, demonstro só o próximo passo no projetor e devolvo o controle à dupla."
+            }
+          },
+          {
+            "block": 2,
+            "title": "Estação 2 · Zoom 200%",
+            "heading": "Estação 2 · Zoom 200%",
+            "time": "20:20 - 20:30",
+            "layout": "dw8",
+            "lede": "Amplie o cartão de informações. Num layout de largura fixa, palavras somem da tela. Descubra quais.",
+            "cards": [
+              {
+                "title": "Ampliar",
+                "text": "Leve o controle a 200% e depois a 400%."
+              },
+              {
+                "title": "Comparar",
+                "text": "Ative o layout fluido e veja se o texto se reorganiza."
+              }
+            ],
+            "promptLabel": "Registro",
+            "prompt": "O que ficou fora da tela com a largura fixa e o que mudou com o layout fluido?",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-13/?fase=2&estacao=2",
+              "label": "Abrir oficina · Estação 2 · Zoom"
+            },
+            "teacher": {
+              "speech": "Retomo Ravi: com zoom de 200%, ele perdia o começo das frases. A medição lista as informações cortadas.",
+              "steps": [
+                "10 min · Ampliar, comparar layouts e registrar."
+              ],
+              "watch": "A dupla nomeia o que desaparece na largura fixa — em geral “entrada gratuita” e “intérprete de Libras”, o fim da linha.",
+              "rescue": "Volto ao último registro salvo, demonstro só o próximo passo no projetor e devolvo o controle à dupla."
+            }
+          },
+          {
+            "block": 2,
+            "title": "Estação 3 · Só teclado",
+            "heading": "Estação 3 · Só teclado",
+            "time": "20:30 - 20:40",
+            "layout": "dw8",
+            "lede": "Inscreva-se na conversa sem tocar no mouse. Tab avança, Shift+Tab volta, Enter ou Espaço acionam.",
+            "cards": [
+              {
+                "title": "Versão original",
+                "text": "Conte as tentativas e veja onde o foco se perde."
+              },
+              {
+                "title": "Versão com botões reais",
+                "text": "Repita e compare o número de Tabs."
+              }
+            ],
+            "promptLabel": "Registro",
+            "prompt": "Onde o teclado travou, quantos Tabs foram usados e o que resolveu?",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-13/?fase=2&estacao=3",
+              "label": "Abrir oficina · Estação 3 · Teclado"
+            },
+            "teacher": {
+              "speech": "Explico que muita gente navega por teclado ou por dispositivos que funcionam como ele. Um “botão” feito de caixa sem função de botão não é alcançado.",
+              "steps": [
+                "10 min · Duas tentativas por teclado e registro."
+              ],
+              "watch": "O mouse fica parado; quem opera troca na segunda tentativa.",
+              "rescue": "Volto ao último registro salvo, demonstro só o próximo passo no projetor e devolvo o controle à dupla."
+            }
+          },
+          {
+            "block": 2,
+            "title": "Estação 4 · Texto alternativo",
+            "heading": "Estação 4 · Texto alternativo",
+            "time": "20:40 - 20:50",
+            "layout": "dw8",
+            "lede": "Quatro imagens, quatro funções. Escolha a função antes de escrever: informativa, decorativa, funcional ou complexa.",
+            "cards": [
+              {
+                "title": "Informativa",
+                "text": "Diga o que importa na imagem, sem “imagem de”."
+              },
+              {
+                "title": "Decorativa",
+                "text": "Fica vazia para não atrapalhar a leitura."
+              },
+              {
+                "title": "Funcional",
+                "text": "Descreva a ação do botão, não o desenho."
+              },
+              {
+                "title": "Complexa",
+                "text": "Resumo curto e a informação completa em texto ao lado."
+              }
+            ],
+            "promptLabel": "Registro",
+            "prompt": "Qual imagem era mais difícil de descrever e por quê?",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-13/?fase=2&estacao=4",
+              "label": "Abrir oficina · Estação 4 · Texto alternativo"
+            },
+            "teacher": {
+              "speech": "Mostro que o mapa da rota não cabe num texto alternativo curto: precisa de um texto equivalente na página. O ornamento fica vazio.",
+              "steps": [
+                "10 min · Quatro descrições e registro da estação."
+              ],
+              "watch": "Textos que começam com “imagem de” ou repetem o nome do arquivo são revistos.",
+              "rescue": "Volto ao último registro salvo, demonstro só o próximo passo no projetor e devolvo o controle à dupla."
+            }
+          },
+          {
+            "block": 3,
+            "title": "Parada 3 · Protótipo para mais pessoas",
+            "heading": "Parada 3 · Protótipo para mais pessoas",
+            "time": "20:50 - 20:55",
+            "layout": "dw8",
+            "lede": "Agora a dupla corrige. Escolha pelo menos três barreiras da auditoria e corrija no editor visual, sem escrever código.",
+            "cards": [
+              {
+                "title": "Prioridade",
+                "text": "Comece pelo que impede a tarefa: inscrição, horário e rota."
+              },
+              {
+                "title": "Justificativa",
+                "text": "Cada correção diz quem ganha com ela."
+              }
+            ],
+            "promptLabel": "Regra",
+            "prompt": "Uma correção só conta quando tem justificativa.",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-13/?fase=3",
+              "label": "Abrir oficina · Parada 3 · Correções"
+            },
+            "teacher": {
+              "speech": "Faço a chamada e demonstro uma correção com justificativa. Mostro a alternância entre Antes e Depois.",
+              "steps": [
+                "5 min · Chamada e demonstração de uma correção."
+              ],
+              "watch": "As duplas escolhem pelo impacto na tarefa, não pela correção mais fácil.",
+              "rescue": "Volto ao último registro salvo, demonstro só o próximo passo no projetor e devolvo o controle à dupla."
+            }
+          },
+          {
+            "block": 3,
+            "title": "Corrija sem apagar a marca",
+            "heading": "Corrija sem apagar a marca",
+            "time": "20:55 - 21:15",
+            "layout": "dw8",
+            "lede": "Contraste, foco, texto, toque, rótulos, legenda, ordem, imagens e cor do erro: cada painel tem uma decisão e uma justificativa.",
+            "cards": [
+              {
+                "title": "Marca",
+                "text": "Amarelo, azul e a fonte de títulos podem continuar."
+              },
+              {
+                "title": "Conferência",
+                "text": "Use Tab e Zoom 200% na versão Depois para checar o efeito."
+              }
+            ],
+            "promptLabel": "Meta",
+            "prompt": "Três correções no mínimo; cinco se a dupla estiver no ritmo.",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-13/?fase=3",
+              "label": "Abrir oficina · Parada 3 · Corrigir"
+            },
+            "teacher": {
+              "speech": "Circulo pelos postos perguntando: quem ganha com essa correção e em qual tarefa? Na legenda, lembro do intérprete de Libras citado na fala da curadoria.",
+              "steps": [
+                "20 min · Correções e justificativas em dupla."
+              ],
+              "watch": "Correções conferidas na própria página Depois, com teclado e zoom.",
+              "rescue": "Volto ao último registro salvo, demonstro só o próximo passo no projetor e devolvo o controle à dupla."
+            }
+          },
+          {
+            "block": 3,
+            "title": "Choque: conexão lenta no ponto de ônibus",
+            "heading": "Choque: conexão lenta no ponto de ônibus",
+            "time": "21:15 - 21:25",
+            "layout": "dw8",
+            "lede": "Ana abre a página no celular, no ponto de ônibus, com pacote de dados no fim. A página pesa 6 MB. O limite agora é 1 MB.",
+            "cards": [
+              {
+                "title": "Corte",
+                "text": "Até 1 MB, sem perder informação para quem visita."
+              },
+              {
+                "title": "Tempo",
+                "text": "A oficina estima o carregamento a 400 kbps."
+              }
+            ],
+            "promptLabel": "Decisão",
+            "prompt": "O que vocês tiram, trocam ou adiam? A informação continua disponível?",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-13/?fase=3",
+              "label": "Abrir oficina · Parada 3 · Conexão lenta"
+            },
+            "teacher": {
+              "speech": "Explico que conexão lenta e pacote limitado também são barreiras, e que páginas leves gastam menos energia e dados. Remover o vídeo sem transcrição tira informação: a oficina avisa.",
+              "steps": [
+                "10 min · Abrir o choque, escolher otimizações e justificar."
+              ],
+              "watch": "Ninguém atinge 1 MB apagando a fala da curadoria sem oferecer a transcrição.",
+              "rescue": "Volto ao último registro salvo, demonstro só o próximo passo no projetor e devolvo o controle à dupla."
+            }
+          },
+          {
+            "block": 3,
+            "title": "Antes e depois",
+            "heading": "Antes e depois",
+            "time": "21:25 - 21:35",
+            "layout": "dw8",
+            "lede": "Compare as duas versões lado a lado. A exportação guarda as duas páginas para quem avaliar.",
+            "cards": [
+              {
+                "title": "Antes",
+                "text": "A página original, com as barreiras."
+              },
+              {
+                "title": "Depois",
+                "text": "A página com as correções da dupla."
+              }
+            ],
+            "promptLabel": "Registro",
+            "prompt": "Em uma frase: qual mudança mais protege o visitante?",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-13/?fase=3",
+              "label": "Abrir oficina · Parada 3 · Comparar"
+            },
+            "teacher": {
+              "speech": "Peço que leiam a comparação em voz baixa para a dupla e escrevam a frase-síntese.",
+              "steps": [
+                "10 min · Comparação e frase-síntese."
+              ],
+              "watch": "Contador de correções em três ou mais e justificativas preenchidas.",
+              "rescue": "Volto ao último registro salvo, demonstro só o próximo passo no projetor e devolvo o controle à dupla."
+            }
+          },
+          {
+            "block": 4,
+            "title": "Parada 4 · teste cruzado",
+            "heading": "Parada 4 · teste cruzado",
+            "time": "21:35 - 21:38",
+            "layout": "dw8",
+            "lede": "Troquem de posto com a dupla vizinha. Quem testa usa a página corrigida; quem criou observa em silêncio.",
+            "cards": [
+              {
+                "title": "Quem testa",
+                "text": "Lê a tarefa, tenta e marca o resultado."
+              },
+              {
+                "title": "Quem criou",
+                "text": "Não explica, não aponta, não toca no teclado."
+              }
+            ],
+            "promptLabel": "Combinado",
+            "prompt": "Teste a página, não a pessoa. O resultado mostra onde a página ainda falha.",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-13/?fase=4",
+              "label": "Abrir oficina · Parada 4 · Teste cruzado"
+            },
+            "teacher": {
+              "speech": "Faço a chamada e organizo as trocas de posto em pares de duplas vizinhas.",
+              "steps": [
+                "3 min · Chamada e troca de postos."
+              ],
+              "watch": "Cada posto com uma dupla testadora e a dupla autora observando.",
+              "rescue": "Volto ao último registro salvo, demonstro só o próximo passo no projetor e devolvo o controle à dupla."
+            }
+          },
+          {
+            "block": 4,
+            "title": "Quatro tarefas, sem dicas",
+            "heading": "Quatro tarefas, sem dicas",
+            "time": "21:38 - 21:50",
+            "layout": "dw8",
+            "lede": "Horário e local, botão Inscrever pelo teclado, rota sem degraus com zoom 200% e erro do formulário vazio.",
+            "cards": [
+              {
+                "title": "Consegui sem ajuda",
+                "text": "A página deu conta."
+              },
+              {
+                "title": "Consegui com hesitação",
+                "text": "Anote onde parou."
+              },
+              {
+                "title": "Não consegui",
+                "text": "Anote o que faltou."
+              }
+            ],
+            "promptLabel": "Registro",
+            "prompt": "Uma observação por tarefa, escrita por quem testou.",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-13/?fase=4",
+              "label": "Abrir oficina · Parada 4 · Tarefas"
+            },
+            "teacher": {
+              "speech": "Observo se as duplas autoras ficam em silêncio. O rastro do teclado registra sozinho se o foco chegou ao botão.",
+              "steps": [
+                "12 min · Quatro tarefas e observações da dupla testadora."
+              ],
+              "watch": "Nenhuma dupla autora explicando a página durante o teste.",
+              "rescue": "Volto ao último registro salvo, demonstro só o próximo passo no projetor e devolvo o controle à dupla."
+            }
+          },
+          {
+            "block": 4,
+            "title": "Devolva e ajuste uma coisa",
+            "heading": "Devolva e ajuste uma coisa",
+            "time": "21:50 - 21:57",
+            "layout": "dw8",
+            "lede": "Voltem aos postos. Leiam o que a outra dupla observou e ajustem um ponto na Parada 3.",
+            "cards": [
+              {
+                "title": "Ler",
+                "text": "Onde a outra dupla hesitou ou não conseguiu?"
+              },
+              {
+                "title": "Ajustar",
+                "text": "Uma mudança ligada a uma observação, registrada aqui."
+              }
+            ],
+            "promptLabel": "Regra",
+            "prompt": "O ajuste responde a uma observação do teste, não a uma ideia nova.",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-13/?fase=4",
+              "label": "Abrir oficina · Parada 4 · Ajuste"
+            },
+            "teacher": {
+              "speech": "Se o teste não revelou problema, peço que registrem a evidência de sucesso em vez de inventar uma falha.",
+              "steps": [
+                "7 min · Retorno aos postos e um ajuste."
+              ],
+              "watch": "Ajuste ligado a uma tarefa observada.",
+              "rescue": "Volto ao último registro salvo, demonstro só o próximo passo no projetor e devolvo o controle à dupla."
+            }
+          },
+          {
+            "block": 4,
+            "title": "Pacto da turma",
+            "heading": "Pacto da turma",
+            "time": "21:57 - 22:05",
+            "layout": "dw8",
+            "lede": "Quem projeta decide quem consegue entrar. Escolham três compromissos e escrevam uma frase própria.",
+            "cards": [
+              {
+                "title": "Públicos diversos",
+                "text": "Pessoas com deficiência, idosas, com pressa, com pouca familiaridade digital."
+              },
+              {
+                "title": "Conexões lentas",
+                "text": "Páginas leves alcançam quem tem pacote limitado e gastam menos energia."
+              },
+              {
+                "title": "Ofício",
+                "text": "Acessibilidade entra no projeto desde o rascunho, não no fim."
+              }
+            ],
+            "promptLabel": "Fechamento",
+            "prompt": "Três duplas leem a própria frase do pacto em voz alta.",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-13/?fase=4",
+              "label": "Abrir oficina · Parada 4 · Pacto"
+            },
+            "teacher": {
+              "speech": "Faço o fechamento sobre responsabilidade do designer com públicos diversos e conexões lentas. Convido três duplas a ler a frase; respeito quem preferir não ler.",
+              "steps": [
+                "8 min · Pacto, leitura de três frases e fechamento."
+              ],
+              "watch": "Frases ligadas a ações concretas de projeto, não a promessas genéricas.",
+              "rescue": "Volto ao último registro salvo, demonstro só o próximo passo no projetor e devolvo o controle à dupla."
+            }
+          },
+          {
+            "block": 4,
+            "title": "Exportar e organizar",
+            "heading": "Exportar e organizar",
+            "time": "22:05 - 22:10",
+            "layout": "dw8",
+            "lede": "Exporte a entrega da noite e abra o arquivo baixado. Confira as quatro partes e as páginas antes e depois.",
+            "cards": [
+              {
+                "title": "Entrega",
+                "text": "aula-13-rota-acessivel-<dupla>.html"
+              },
+              {
+                "title": "Próxima aula",
+                "text": "Briefing e pesquisa: a acessibilidade entra no projeto desde o começo."
+              }
+            ],
+            "promptLabel": "Até 22:10",
+            "prompt": "Exportar, abrir, conferir e organizar o posto.",
+            "resource": {
+              "href": "https://oficinas-design-web.vercel.app/aula-13/?fase=4",
+              "label": "Abrir oficina · Parada 4 · Exportar"
+            },
+            "teacher": {
+              "speech": "Confiro a exportação nos postos e antecipo que, na Aula 14, acessibilidade será requisito do briefing.",
+              "steps": [
+                "5 min · Exportação e organização do posto."
+              ],
+              "watch": "Arquivo aberto em cada posto antes de sair.",
+              "rescue": "Se o download falhar, uso imprimir ou salvar a página conforme o navegador e registro no caderno as quatro partes; não invento evidência de exportação."
+            }
+          }
         ]
       },
       "14": {

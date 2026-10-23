@@ -456,8 +456,8 @@ window.SENAI_COURSES = {
       },
       {
         "num": "13",
-        "title": "Acessibilidade e Usabilidade",
-        "description": "Acessibilidade e usabilidade como compromisso ético, com auditoria e correção visual do protótipo.",
+        "title": "Rota Acessível: acessibilidade e usabilidade",
+        "description": "Audite uma página com barreiras, meça contraste, ampliação, teclado e texto alternativo, corrija o protótipo para mais pessoas e confirme as correções com outra dupla.",
         "objectives": [
           "Interfaces Web e App: acessibilidade.",
           "Ética Pessoal e Profissional: empatia e responsabilidade."
@@ -471,25 +471,25 @@ window.SENAI_COURSES = {
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Retomada de UX e UI. Auditoria guiada de uma interface problemática: foco, contraste, tamanho de texto, área de toque, rótulos, legenda e ordem de leitura."
+            "horario": "19:00 - 19:45",
+            "atividade": "Auditar a página fictícia da Virada Criativa com sete pontos — foco, contraste, tamanho de texto, área de toque, rótulos, legenda e ordem de leitura — e registrar ao menos cinco barreiras com a medição que as comprova e quem é afetado."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "Estações de acessibilidade: contraste, zoom, navegação por teclado numa página demonstrativa e escrita de texto alternativo. Grupos rodam e registram uma barreira em cada estação."
+            "horario": "20:05 - 20:50",
+            "atividade": "Percorrer quatro estações de 10 minutos: contraste, ampliação a 200%, navegação só por teclado e texto alternativo. Em cada estação, medir, experimentar uma alternativa e registrar uma barreira."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "Oficina \"Protótipo para mais pessoas\": cada equipe corrige no material visual pelo menos três barreiras e registra capturas de antes e depois."
+            "horario": "20:50 - 21:35",
+            "atividade": "Oficina \"Protótipo para mais pessoas\": corrigir no editor visual pelo menos três barreiras, responder ao corte de dados para conexão lenta e comparar antes e depois com justificativa."
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "Teste cruzado e pacto da turma: outra equipe confere as correções. Fechamento sobre responsabilidade do designer com públicos diversos e conexões lentas."
+            "horario": "21:35 - 22:10",
+            "atividade": "Teste cruzado: outra dupla realiza quatro tarefas na versão corrigida sem receber dicas. Ajustar um ponto observado, firmar o pacto da turma sobre públicos diversos e conexões lentas e exportar a entrega."
           }
         ],
-        "methodology": "Auditoria orientada, rotação por estações, correção visual e verificação entre pares.",
-        "resources": "Página de demonstração, verificadores de contraste, fichas de estação, protótipos e projetor.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "Auditoria orientada por medições, rotação por quatro estações no próprio posto, correção visual sem programação e verificação entre pares com tarefas observáveis. As barreiras são analisadas no produto; ninguém simula uma deficiência.",
+        "resources": "Computadores com navegador e a oficina da Aula 13 na Vercel, com kit offline como reserva; projetor com a apresentação na plataforma; teclado em cada posto; caderno e caneta. Sem login, instalação, impressão ou dados pessoais.",
+        "observation": "19:00–22:10, intervalo 19:45–20:05. Chamada às 19:00, 20:05, 20:50 e 21:35. Duplas no mesmo posto, alternando quem opera. As estações rodam pelo tempo: ao sinal, todas as duplas avançam para a próxima. Página, pessoas e dados são fictícios; os verificadores medem a página de demonstração e não avaliam pessoas. A oficina salva o progresso no navegador quando disponível; exportar antes de fechar. Sem internet, usar o kit offline; sem computador, seguir a alternativa em caderno do guia docente."
       },
       {
         "num": "14",
