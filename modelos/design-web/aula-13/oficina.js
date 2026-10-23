@@ -414,6 +414,18 @@ ${order}`;
     const linear = $('linear-audit'); if (linear) linear.innerHTML = ui.linear ? linearHTML(document.querySelector('[data-demo="audit"]').shadowRoot) : '';
     const linear3 = $('linear-after'); if (linear3) linear3.innerHTML = ui.linear3 && document.querySelector('[data-demo="after"]') ? linearHTML(document.querySelector('[data-demo="after"]').shadowRoot) : '';
   }
+  // Ferramentas mudam só classes e painéis: a página demonstrada mantém erros, textos digitados e banners fechados.
+  function applyTools() {
+    const zoomFor = {audit:ui.zoom, after:ui.zoom3, test:ui.zoom4};
+    for (const host of document.querySelectorAll('[data-demo]')) {
+      const kind = host.dataset.demo, page = host.shadowRoot && host.shadowRoot.querySelector('.vc'); if (!page) continue;
+      page.classList.toggle('is-zoom', !!zoomFor[kind]);
+      if (kind === 'audit') { page.classList.toggle('is-inspecting', ui.inspect); host.classList.toggle('is-gray', ui.gray); if (!ui.inspect) page.querySelectorAll('.is-hover').forEach(el => el.classList.remove('is-hover')); }
+    }
+    const audit = document.querySelector('[data-demo="audit"]'), after = document.querySelector('[data-demo="after"]');
+    const linear = $('linear-audit'); if (linear) linear.innerHTML = ui.linear && audit ? linearHTML(audit.shadowRoot) : '';
+    const linear3 = $('linear-after'); if (linear3) linear3.innerHTML = ui.linear3 && after ? linearHTML(after.shadowRoot) : '';
+  }
   const describe = el => {
     if (!el) return '';
     if (el.dataset.start !== undefined || el.classList.contains('vc')) return 'Início da página';
@@ -465,7 +477,7 @@ ${order}`;
   }
   function submitDemo(form, kind) {
     const inputs = [...form.querySelectorAll('input')], empty = inputs.filter(input => !input.value.trim()), byText = form.dataset.error === 'text';
-    inputs.forEach(input => { const isEmpty = !input.value.trim(); input.classList.toggle('is-error', isEmpty); input.toggleAttribute('aria-invalid', isEmpty); const msg = input.id && form.querySelector(`#${input.id}-erro`); if (msg) msg.hidden = !isEmpty; });
+    inputs.forEach(input => { const isEmpty = !input.value.trim(); input.classList.toggle('is-error', isEmpty); if (isEmpty) input.setAttribute('aria-invalid', 'true'); else input.removeAttribute('aria-invalid'); const msg = input.id && form.querySelector(`#${input.id}-erro`); if (msg) msg.hidden = !isEmpty; });
     form.querySelector('.vc-msg').textContent = empty.length ? (byText ? 'Revise os campos indicados.' : '') : 'Inscrição simulada registrada. Nada foi enviado.';
     if (kind === 'test' && empty.length) { state.test.errorSeen = byText ? 'text' : 'color'; save(); updateEvidence(); }
   }
@@ -833,7 +845,7 @@ ${order}`;
       const tool = button.dataset.tool; ui[tool] = !ui[tool];
       if (['zoom', 'gray', 'linear'].includes(tool) && ui[tool] && !state.audit.tools[tool]) { state.audit.tools[tool] = true; save(); }
       if (tool === 'inspect') { const help = $('tool-help'); if (help) help.textContent = ui.inspect ? 'Inspecionar ligado: clicar escolhe um elemento para medir. Desligue para usar a página normalmente.' : 'Inspecionar desligado: a página funciona como para um visitante.'; }
-      button.setAttribute('aria-pressed', String(ui[tool])); mountDemos(); updateTools();
+      button.setAttribute('aria-pressed', String(ui[tool])); applyTools(); updateTools();
       if (tool === 'zoom' && ui.picked) $('inspector').innerHTML = inspectorHTML();
       return;
     }
