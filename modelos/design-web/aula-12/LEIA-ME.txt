@@ -9,6 +9,5 @@ O progresso fica neste navegador e neste computador, quando o salvamento local e
 
 Roteiro de hoje: 20h10–22h10, após o intervalo já realizado.
 Investigar 25 min · Descobrir 30 min · Priorizar 30 min · Responder 35 min.
-Guia do professor: guia-docente.html.
 
 Na versão publicada, a oficina abre em https://oficinas-design-web.vercel.app/aula-12/.

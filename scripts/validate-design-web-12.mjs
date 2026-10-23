@@ -33,7 +33,7 @@ for(const item of support.presentationSlides) {
 }
 assert.match(support.say,/Vercel/);assert.match(support.say,/plataforma/);
 
-const files=['index.html','desafio.html','laboratorio.css','laboratorio.js','guia-docente.html','LEIA-ME.txt'];
+const files=['index.html','desafio.html','laboratorio.css','laboratorio.js','LEIA-ME.txt'];
 const index=read(path.join(workshop,'index.html'));
 assert.equal(index,read(path.join(workshop,'desafio.html')),'index.html e desafio.html devem ser idênticos');
 assert.match(index,/Plantão UX/);assert.match(index,/data-phase="1"/);assert.match(index,/data-phase="4"/);
@@ -43,7 +43,7 @@ new Function(js); // syntax only, runtime uses DOM.
 for(const fragment of ['picks.length<3','planA','shock','6 créditos','exportReport','localStorage']) assert.match(js,new RegExp(fragment.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')));
 const zip=path.join(workshop,'kit-aula-12.zip');
 const listed=execFileSync('unzip',['-Z1',zip],{encoding:'utf8'}).trim().split('\n').sort();
-assert.deepEqual(listed,[...files].sort(),'ZIP deve conter exatamente os seis arquivos offline');
+assert.deepEqual(listed,[...files].sort(),'ZIP deve conter exatamente os arquivos offline da turma');
 const extracted=fs.mkdtempSync(path.join(os.tmpdir(),'design-web-12-validate-'));
 try {
   execFileSync('unzip',['-qq',zip,'-d',extracted]);
