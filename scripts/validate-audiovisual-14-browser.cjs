@@ -77,13 +77,14 @@ const manifest = JSON.parse(fs.readFileSync(path.join(kit, 'kit-manifest.json'),
     await page.click('#play');
     const ambience = await page.locator('[data-lane="ambiencia"]').boundingBox();
     await page.mouse.click(ambience.x + ambience.width * 19 / 30, ambience.y + ambience.height / 2);
+    const peakBefore = await page.locator('#peak').innerText();
     await page.click('#ab');
     await page.click('#play');
     await page.waitForTimeout(5000);
     await page.click('#play');
     assert.equal(await page.locator('#clip').getAttribute('class'), 'led', 'A/B toca a mesa inicial sem acender Estourou');
-    assert.match(await page.locator('#peak').innerText(), /−∞/, 'A/B não conta no pico da mixagem');
     await page.click('#ab');
+    assert.equal(await page.locator('#peak').innerText(), peakBefore, 'A/B não muda nem apaga o pico da mixagem do estudante');
     await page.click('#rewind');
 
     // Controls persist and redraw; the playhead moves with the video.

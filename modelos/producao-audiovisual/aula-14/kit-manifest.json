@@ -1,6 +1,6 @@
 {
   "zip": "Aula14-Som.zip",
-  "bytes": 7325925,
+  "bytes": 7326036,
   "duration": 30.0,
   "falas": [
     {
@@ -65,8 +65,8 @@
     },
     {
       "name": "mesa.html",
-      "bytes": 46514,
-      "sha256": "db755f929a4ae4f988836089c8282f331b8f42ef0dc4cd1f1e5a570696eb9586"
+      "bytes": 46625,
+      "sha256": "339637304df7bd4da22200ded442b28db68708fa87554eab4c5bbaf50790b49e"
     },
     {
       "name": "sons.js",

@@ -626,8 +626,6 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
     abButton.addEventListener('click', () => {
       abMode = !abMode;
       abButton.setAttribute('aria-pressed', String(abMode));
-      // A mesa inicial estoura de propósito: o pico dela não entra na leitura da sua mixagem.
-      maxPeak = 0; clipped = false; renderPeak();
       $('abBanner').classList.toggle('on', abMode);
       restartIfPlaying();
     });
@@ -706,6 +704,7 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
         const levels = graph.meters.map(peakOf);
         levels.forEach((level, index) => drawMeter(index, level));
         const top = Math.max(...levels);
+        // A mesa inicial estoura de propósito: durante o A/B o pico da mixagem do estudante fica como estava.
         if (!abMode && top > maxPeak) { maxPeak = top; renderPeak(); }
         if (!abMode && top >= gain(-0.1) && !clipped) { clipped = true; renderPeak(); }
         for (const channel of CHANNELS) {
@@ -738,13 +737,15 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
     }
     async function exportMix() {
       const button = $('export'), result = $('exportResult'), name = $('exportName').value;
+      // Uma cópia dos ajustes: o arquivo e os avisos descrevem o mesmo estado, mesmo se o estudante mexer durante o render.
+      const used = clone(settings);
       button.disabled = true;
       result.className = 'result';
       result.textContent = 'Processando a mixagem…';
       const began = performance.now();
       try {
         const offline = new OfflineAudioContext(2, Math.round(DUR * 48000), 48000);
-        buildGraph(offline, settings, buffers, 0, 0, false);
+        buildGraph(offline, used, buffers, 0, 0, false);
         const rendered = await offline.startRendering();
         const seconds = (performance.now() - began) / 1000;
         let peak = 0;
@@ -758,11 +759,11 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
         setTimeout(() => URL.revokeObjectURL(link.href), 60000);
         const db = toDb(peak);
         const ok = zone(db) !== 'bad';
-        const solos = CHANNELS.filter((c) => settings[c.id].solo).map((c) => c.name);
-        const mutes = CHANNELS.filter((c) => settings[c.id].mute).map((c) => c.name);
+        const solos = CHANNELS.filter((c) => used[c.id].solo).map((c) => c.name);
+        const mutes = CHANNELS.filter((c) => used[c.id].mute).map((c) => c.name);
         const warnings = [];
         if (solos.length) warnings.push(`S ligado em ${solos.join(', ')}: o arquivo tem só ${solos.length > 1 ? 'esses canais' : 'esse canal'}.`);
-        if (name === 'sem-voz' && !settings.voz.mute) warnings.push('sem-voz.wav saiu com a VOZ: ligue o M da VOZ e exporte de novo.');
+        if (name === 'sem-voz' && !used.voz.mute) warnings.push('sem-voz.wav saiu com a VOZ: ligue o M da VOZ e exporte de novo.');
         if (name !== 'sem-voz' && mutes.length) warnings.push(`M ligado em ${mutes.join(', ')}: ${mutes.length > 1 ? 'esses canais ficaram' : 'esse canal ficou'} fora do arquivo.`);
         result.className = `result ${ok && !warnings.length ? 'ok' : 'bad'}`;
         result.textContent = `${name}.wav · ${DUR.toFixed(0)} s processados em ${seconds.toFixed(1).replace('.', ',')} s · pico ${fmtDb(db).replace(' dB', ' dBFS')}`
