@@ -10782,23 +10782,1130 @@ window.SENAI_TEACHING_SUPPORT = {
         "appendDefaultClosing": false
       },
       "14": {
-        "teacherGoal": "Equilibrar voz, música e efeitos e distinguir reprodução em rede de processamento dentro do editor.",
-        "plainLanguage": "Mixagem cria prioridade. Buffering é a espera para carregar uma reprodução em rede; dentro do editor, travamentos de pré-visualização são tratados com resolução de preview, cache, arquivos proxy ou renderização de trecho.",
-        "say": "A voz é a referência. Música e efeitos entram ao redor dela.",
+        "teacherGoal": "Cada estudante entrega até 22:10 a mixagem do trailer em dois arquivos (final e sem voz), com falas niveladas, ruído tratado, trilha abaixo da voz e pico até −1 dBFS, e um diagnóstico que separa buffering de resolução de preview, cache, proxy e render de trecho.",
+        "plainLanguage": "Mixar é decidir quem fala primeiro. A voz é a referência; música, ambiência e efeitos entram em volta dela. Buffering é a espera para carregar uma reprodução que vem pela rede; dentro do editor, travamentos de pré-visualização se resolvem com resolução de preview, cache, proxy ou render de trecho.",
+        "say": "Hoje vocês são o estúdio de som e eu sou o cliente. O trailer está pronto na imagem, mas ninguém entende a locução. Os pedidos chegam um de cada vez.",
         "demo": [
-          "Ajuste o ganho da voz sem distorção.",
-          "Abaixe a música durante a fala.",
-          "Crie entradas e saídas graduais, chamadas fade.",
-          "Compare buffering de um vídeo online com cache, proxy e render de trecho dentro do editor."
+          "Toco a cena na mesa e uso solo em cada canal: voz, trilha, ambiência e efeitos.",
+          "Mostro o medidor no vermelho e baixo a trilha até a voz ficar clara e o pico sair do vermelho.",
+          "Subo a fala 3 e mostro que o ruído sobe junto; ligo o passa-alta em 120 Hz e corto os vãos.",
+          "Ligo o abaixamento da trilha durante a voz e as entradas e saídas graduais; mostro a mudança no desenho da linha do tempo.",
+          "Exporto um WAV e abro no player do computador.",
+          "No Laboratório de espera, provoco travadas com 1 Mbps em 1080p e resolvo com qualidade automática."
         ],
-        "studentDeliverable": "Cena mixada sem distorção e quadro comparativo entre buffering, cache, proxy e render de trecho.",
+        "studentDeliverable": "mix-v1.wav, mix-final.wav e sem-voz.wav exportados pela Mesa de som, com pico em −1 dBFS ou abaixo, e diagnostico-aula14.txt baixado do Laboratório de espera, com testes de rede e as oito situações do editor. Tudo na pasta Aula14-Som, mostrado na própria tela.",
         "check": [
-          "A fala permanece clara.",
-          "Entradas e saídas de áudio não cortam abruptamente.",
-          "Buffering não foi confundido com cache ou proxy.",
-          "A equipe sabe escolher uma solução para pré-visualização travada."
+          "As quatro falas se entendem sem esforço e parecem gravadas na mesma distância do microfone.",
+          "O zumbido grave some entre as falas e diminui durante elas, sem deixar a voz fina.",
+          "A trilha abaixa durante a voz, volta nos intervalos e começa e termina de forma gradual.",
+          "O pico do arquivo exportado fica em −1 dBFS ou abaixo e o medidor não acende Estourou.",
+          "A versão sem voz mantém trilha, ambiência e efeitos com o mesmo equilíbrio.",
+          "O registro de rede mostra uma configuração com travadas e outra sem travadas.",
+          "O diagnóstico usa buffering só para reprodução em rede e escolhe resolução de preview, cache, proxy ou render de trecho para o editor."
         ],
-        "fallback": "Use apenas voz e uma trilha local curta."
+        "fallback": "Sem fones para todos, trabalho em duplas com um fone por vez e alternância a cada pedido. Se algum computador não abrir a mesa, a dupla do lado opera e o estudante decide e registra os valores no caderno. Se a caixa de som do projetor falhar, faço a escuta crítica com a turma usando os próprios fones, um canal em solo por vez.",
+        "extension": "Cada pedido traz no slide uma melhoria para quem termina antes. Quem conclui tudo usa o banco de melhorias: comparar o passa-alta de 80 e 160 Hz, testar o abaixamento de −18 dB, exportar uma versão só com voz e ambiência ou testar rede instável no laboratório.",
+        "commonProblems": [
+          [
+            "A mesa fica em Carregando",
+            "Confiro se o ZIP foi extraído e se mesa.html, sons.js e cena.mp4 estão na mesma pasta. Atualizo a página."
+          ],
+          [
+            "Não sai som",
+            "Confiro fone, volume do computador e se algum canal ficou em M ou outro em S."
+          ],
+          [
+            "A turma sobe o volume do computador em vez de mexer na mesa",
+            "Peço volume do computador confortável e fixo; todos os ajustes acontecem na mesa, para o arquivo exportado sair certo."
+          ],
+          [
+            "O pico continua vermelho",
+            "Baixo primeiro a trilha, que é a camada mais forte; só depois mexo na saída. Zero o pico e ouço a cena inteira."
+          ],
+          [
+            "A voz ficou fina",
+            "O passa-alta está em 160 Hz. Volto para 120 ou 80 Hz e comparo em solo."
+          ],
+          [
+            "A música sumiu",
+            "O abaixamento está em −18 dB com a trilha já baixa. Subo o volume do canal da trilha e uso −12 dB."
+          ],
+          [
+            "O WAV não aparece",
+            "Procuro na pasta Downloads e movo para a pasta Aula14-Som."
+          ],
+          [
+            "Confundem buffering com travamento do editor",
+            "Pergunto de onde vem o vídeo: se vem pela rede, é buffering; se o computador está processando, é preview, cache, proxy ou render."
+          ]
+        ],
+        "presentationSlides": [
+          {
+            "title": "Ordem do dia",
+            "kicker": "Aula 14 · Som na pós-produção",
+            "heading": "A imagem está pronta. O som, ainda não.",
+            "lede": "Hoje vocês são o estúdio de som. Os pedidos do cliente chegam um de cada vez.",
+            "block": 1,
+            "av9": {
+              "type": "day",
+              "rows": [
+                {
+                  "time": "19:00–19:45",
+                  "minutes": 45,
+                  "title": "Escutar e equilibrar",
+                  "text": "Quatro camadas e a voz na frente."
+                },
+                {
+                  "time": "19:45–20:05",
+                  "minutes": 20,
+                  "title": "Lanche",
+                  "text": "Ajustes guardados na mesa.",
+                  "pause": true
+                },
+                {
+                  "time": "20:05–21:00",
+                  "minutes": 55,
+                  "title": "Tratar o som",
+                  "text": "Falas, ruído e espaço para a voz."
+                },
+                {
+                  "time": "21:00–21:40",
+                  "minutes": 40,
+                  "title": "Esperas",
+                  "text": "Buffering na rede e prévia no editor."
+                },
+                {
+                  "time": "21:40–22:10",
+                  "minutes": 30,
+                  "title": "Entregar",
+                  "text": "Mixagem final e versão sem voz."
+                }
+              ]
+            },
+            "promptLabel": "Regra da noite",
+            "prompt": "Terminou antes? Faça a melhoria do slide. O próximo pedido só chega pelo slide.",
+            "teacher": {
+              "steps": [
+                "3 min · Faço a chamada, apresento o cliente e a regra dos pedidos."
+              ],
+              "watch": "A turma entende que a imagem não muda hoje: todo o trabalho é de som.",
+              "rescue": "Se alguém perguntar o que vem depois, respondo que o cliente ainda não pediu."
+            }
+          },
+          {
+            "title": "Quatro camadas",
+            "kicker": "Escuta crítica",
+            "heading": "Uma cena, quatro camadas de som",
+            "lede": "Escutem com e sem cada camada. O que muda na história quando uma delas some?",
+            "block": 1,
+            "av9": {
+              "type": "tracks",
+              "tracks": [
+                {
+                  "label": "VOZ",
+                  "clips": [
+                    {
+                      "kind": "empty",
+                      "seconds": 1
+                    },
+                    {
+                      "kind": "audio",
+                      "label": "F1",
+                      "seconds": 4
+                    },
+                    {
+                      "kind": "empty",
+                      "seconds": 3
+                    },
+                    {
+                      "kind": "audio",
+                      "label": "F2",
+                      "seconds": 3
+                    },
+                    {
+                      "kind": "empty",
+                      "seconds": 3
+                    },
+                    {
+                      "kind": "audio",
+                      "label": "F3",
+                      "seconds": 3
+                    },
+                    {
+                      "kind": "empty",
+                      "seconds": 9
+                    },
+                    {
+                      "kind": "audio",
+                      "label": "F4",
+                      "seconds": 4
+                    }
+                  ]
+                },
+                {
+                  "label": "TRILHA",
+                  "clips": [
+                    {
+                      "kind": "graphic",
+                      "label": "Música",
+                      "seconds": 30
+                    }
+                  ]
+                },
+                {
+                  "label": "AMBIÊNCIA",
+                  "clips": [
+                    {
+                      "kind": "guide",
+                      "label": "Mar",
+                      "seconds": 8
+                    },
+                    {
+                      "kind": "guide",
+                      "label": "Vento na neve",
+                      "seconds": 22
+                    }
+                  ]
+                },
+                {
+                  "label": "EFEITOS",
+                  "clips": [
+                    {
+                      "kind": "empty",
+                      "seconds": 7
+                    },
+                    {
+                      "kind": "video",
+                      "label": "Passos",
+                      "seconds": 4
+                    },
+                    {
+                      "kind": "empty",
+                      "seconds": 1
+                    },
+                    {
+                      "kind": "video",
+                      "label": "Surpresa",
+                      "seconds": 3
+                    },
+                    {
+                      "kind": "empty",
+                      "seconds": 4
+                    },
+                    {
+                      "kind": "video",
+                      "label": "Perseguição",
+                      "seconds": 6
+                    },
+                    {
+                      "kind": "video",
+                      "label": "Impacto",
+                      "seconds": 5
+                    }
+                  ]
+                }
+              ],
+              "caption": "A última fruta: trailer de",
+              "total": true
+            },
+            "resources": [
+              {
+                "href": "modelos/producao-audiovisual/aula-14/mesa.html",
+                "label": "Abrir a mesa de som"
+              }
+            ],
+            "teacher": {
+              "steps": [
+                "8 min · Toco a cena inteira na mesa, depois cada canal em solo e, por fim, tudo menos um canal. A turma diz o que perdeu a cada vez."
+              ],
+              "watch": "Busco quatro funções: a voz conta, a trilha dá ritmo e emoção, a ambiência diz onde estamos, os efeitos confirmam as ações.",
+              "rescue": "Se a caixa do projetor estiver fraca, peço os fones e indico o canal em solo para todos ouvirem juntos."
+            }
+          },
+          {
+            "title": "Cada camada tem um trabalho",
+            "kicker": "Antes de mexer",
+            "heading": "Cada camada tem um trabalho",
+            "lede": "Na mixagem, a voz é a referência. As outras camadas entram em volta dela.",
+            "block": 1,
+            "av9": {
+              "type": "table",
+              "variant": "data",
+              "columns": [
+                "Camada",
+                "Trabalho",
+                "Na cena",
+                "Se faltar"
+              ],
+              "rows": [
+                [
+                  "Voz",
+                  "Contar a história.",
+                  "Quatro falas do narrador.",
+                  "Ninguém entende o trailer."
+                ],
+                [
+                  "Trilha",
+                  "Dar ritmo e emoção.",
+                  "Música do começo ao fim.",
+                  "A cena fica parada."
+                ],
+                [
+                  "Ambiência",
+                  "Dizer onde estamos.",
+                  "Mar distante e vento na neve.",
+                  "O lugar parece vazio."
+                ],
+                [
+                  "Efeitos",
+                  "Confirmar as ações.",
+                  "Passos, surpresa e impacto.",
+                  "A ação perde força."
+                ]
+              ]
+            },
+            "teacher": {
+              "steps": [
+                "5 min · Leio uma linha por vez e peço um exemplo de cada camada em filmes que a turma conhece."
+              ],
+              "watch": "Ambiência é diferente de ruído: é escolhida e combina com o lugar; ruído é o que entrou sem querer.",
+              "rescue": "Se o tempo apertar, fico só na voz e na trilha; ambiência e efeitos aparecem nos pedidos."
+            }
+          },
+          {
+            "title": "O ponto de chegada",
+            "kicker": "Uma ideia do que vamos criar",
+            "heading": "A mesma cena, mixada",
+            "lede": "Escutem: em algum momento a música disputa com a voz?",
+            "block": 1,
+            "av9": {
+              "type": "media",
+              "clips": [
+                {
+                  "src": "modelos/producao-audiovisual/aula-14/exemplo-mixado.mp4",
+                  "label": "EXEMPLO",
+                  "text": "Voz clara, música atrás dela, começo e fim graduais.",
+                  "poster": "modelos/producao-audiovisual/aula-14/telas/cena.jpg"
+                }
+              ]
+            },
+            "promptLabel": "Repare",
+            "prompt": "A música desce sozinha quando alguém fala e volta nos intervalos.",
+            "teacher": {
+              "steps": [
+                "3 min · Toco o exemplo uma vez e comparo com a mesa inicial que acabamos de ouvir."
+              ],
+              "watch": "Não detalho os valores: cada estudante encontra os seus ao longo dos pedidos.",
+              "rescue": "Se o vídeo não tocar, uso a mesa no estado inicial e conto o que vai mudar."
+            }
+          },
+          {
+            "title": "Preparar a mesa",
+            "kicker": "Antes do primeiro pedido",
+            "heading": "A mesa abre direto do disco",
+            "lede": "Sem internet, sem conta e sem instalar nada.",
+            "block": 1,
+            "av9": {
+              "type": "commands",
+              "commands": [
+                {
+                  "word": "EXTRAIR",
+                  "who": "Aula14-Som.zip",
+                  "text": "Extrair no disco local, não abrir de dentro do ZIP."
+                },
+                {
+                  "word": "ABRIR",
+                  "who": "mesa.html",
+                  "text": "Dois cliques; Chrome, Edge ou Firefox."
+                },
+                {
+                  "word": "FONE",
+                  "who": "Volume do computador",
+                  "text": "Confortável e fixo. Daqui em diante, quem ajusta é a mesa."
+                },
+                {
+                  "word": "TOCAR",
+                  "who": "Espaço ou botão Tocar",
+                  "text": "Usar M e S para ouvir cada canal."
+                }
+              ],
+              "tags": [
+                {
+                  "label": "PRONTO",
+                  "kind": "good"
+                }
+              ],
+              "result": "A cena toca com som e o medidor da saída se mexe."
+            },
+            "resources": [
+              {
+                "href": "modelos/producao-audiovisual/aula-14/index.html",
+                "label": "Ver o kit da aula"
+              },
+              {
+                "href": "modelos/producao-audiovisual/aula-14/AJUDA.html#preparo",
+                "label": "Abrir passos e soluções"
+              }
+            ],
+            "teacher": {
+              "steps": [
+                "6 min · Mostro onde está o kit e abro a mesa direto da pasta; atendo primeiro quem ainda não ouviu som."
+              ],
+              "watch": "Volume do computador fixo é condição para comparar ajustes; quem mexe nele mascara o problema.",
+              "rescue": "Se um posto não abrir, a dupla do lado opera e o estudante decide os ajustes."
+            }
+          },
+          {
+            "title": "Ler o medidor",
+            "kicker": "Saída da mesa",
+            "heading": "O vermelho avisa distorção",
+            "lede": "O medidor mostra o pico do som que sai da mesa, em dBFS. Zero é o teto do arquivo.",
+            "block": 1,
+            "av9": {
+              "type": "checks",
+              "items": [
+                {
+                  "label": "Verde",
+                  "text": "Abaixo de −6 dBFS: há folga."
+                },
+                {
+                  "label": "Amarelo",
+                  "text": "Entre −6 e −1 dBFS: forte, sem distorcer. Lugar dos trechos mais altos."
+                },
+                {
+                  "label": "Vermelho",
+                  "text": "Acima de −1 dBFS: risco de distorção no arquivo."
+                },
+                {
+                  "label": "Estourou",
+                  "text": "Acende quando a soma passa do teto. Zerar o pico e ouvir de novo."
+                }
+              ]
+            },
+            "teacher": {
+              "steps": [
+                "4 min · Toco a mesa inicial até acender Estourou e explico que a soma das camadas passou do teto."
+              ],
+              "watch": "Mais alto não é melhor: acima do teto o som se deforma e não há como recuperar no arquivo.",
+              "rescue": "Se ninguém viu o vermelho, toco o trecho da perseguição, onde a soma é maior."
+            }
+          },
+          {
+            "title": "Pedido 1 · A voz na frente",
+            "kicker": "Pedido do cliente",
+            "heading": "Ninguém entende o narrador",
+            "lede": "Equilibrar os quatro canais com o volume de cada um. A voz é a referência.",
+            "block": 1,
+            "av9": {
+              "type": "commands",
+              "commands": [
+                {
+                  "word": "OUVIR",
+                  "who": "S na VOZ",
+                  "text": "Entender o que o narrador diz, sem música."
+                },
+                {
+                  "word": "ABAIXAR",
+                  "who": "Volume da TRILHA",
+                  "text": "Descer até cada palavra se entender com tudo tocando."
+                },
+                {
+                  "word": "DOSAR",
+                  "who": "AMBIÊNCIA e EFEITOS",
+                  "text": "Presentes, sem chamar mais atenção que a voz."
+                },
+                {
+                  "word": "CONFERIR",
+                  "who": "Zerar pico",
+                  "text": "Tocar a cena inteira e olhar o pico máximo."
+                }
+              ],
+              "tags": [
+                {
+                  "label": "TERMINOU ANTES?",
+                  "kind": "good"
+                }
+              ],
+              "result": "Use A/B para comparar com a mesa inicial e descreva em uma frase o que mudou."
+            },
+            "promptLabel": "Pronto quando",
+            "prompt": "As falas 1, 2 e 4 se entendem com tudo tocando e o pico máximo fica abaixo de −1 dBFS.",
+            "resources": [
+              {
+                "href": "modelos/producao-audiovisual/aula-14/AJUDA.html#medidor",
+                "label": "Abrir passos e soluções"
+              }
+            ],
+            "teacher": {
+              "steps": [
+                "2 min · Demonstro o solo na voz e a descida da trilha, sem dizer um valor.",
+                "14 min · A turma equilibra os canais; circulo conferindo o pico máximo e peço que salvem antes do lanche."
+              ],
+              "watch": "A fala 3 continua fraca: é o próximo pedido. Não deixo ninguém resolver isso subindo o canal inteiro da voz.",
+              "rescue": "Se alguém só abaixa a saída, peço que olhe a fala no desenho: ela continua escondida atrás da música."
+            }
+          },
+          {
+            "title": "Lanche",
+            "kicker": "Aula 14 · Som na pós-produção",
+            "heading": "Lanche até 20:05",
+            "lede": "A mesa guarda os ajustes neste navegador. Não fechem a pasta do kit.",
+            "block": 1,
+            "av9": {
+              "type": "checks",
+              "items": [
+                {
+                  "label": "Guardar",
+                  "text": "Deixar a mesa aberta ou anotar os volumes no caderno."
+                },
+                {
+                  "label": "Voltar",
+                  "text": "Mesmo posto, mesma mesa, mesmo fone."
+                }
+              ]
+            },
+            "pace": "break",
+            "teacher": {
+              "steps": [
+                "20 min · Lanche. Confiro que nenhuma mesa ficou em solo esquecido."
+              ],
+              "watch": "Os ajustes ficam no armazenamento do navegador; o que vale como entrega é o WAV exportado.",
+              "rescue": "Se algum computador reiniciar, o estudante refaz o pedido 1 com os valores anotados."
+            }
+          },
+          {
+            "title": "Pedido 2 · Falas no mesmo volume",
+            "kicker": "Pedido do cliente",
+            "heading": "A fala 3 parece vir de longe",
+            "lede": "Ela foi gravada longe do microfone. Igualar as quatro falas no volume de cada fala.",
+            "block": 2,
+            "av9": {
+              "type": "commands",
+              "commands": [
+                {
+                  "word": "COMPARAR",
+                  "who": "Clique em F2 e depois em F3",
+                  "text": "Ouvir uma em seguida da outra."
+                },
+                {
+                  "word": "SUBIR",
+                  "who": "Volume de cada fala · F3",
+                  "text": "De 2 em 2 dB, até parecer a mesma distância."
+                },
+                {
+                  "word": "VER",
+                  "who": "Desenho da voz",
+                  "text": "Comparar a altura de F3 com as outras falas."
+                },
+                {
+                  "word": "OUVIR",
+                  "who": "Fundo da fala 3",
+                  "text": "O que mais subiu junto com ela?"
+                }
+              ],
+              "tags": [
+                {
+                  "label": "TERMINOU ANTES?",
+                  "kind": "good"
+                }
+              ],
+              "result": "Ajuste F1, F2 e F4 em até 1 dB para soarem ainda mais iguais."
+            },
+            "promptLabel": "Pronto quando",
+            "prompt": "As quatro falas parecem ditas na mesma distância e nenhuma assusta ou some.",
+            "resources": [
+              {
+                "href": "modelos/producao-audiovisual/aula-14/AJUDA.html#falas",
+                "label": "Abrir passos e soluções"
+              }
+            ],
+            "teacher": {
+              "steps": [
+                "2 min · Mostro F2 e F3 em sequência e subo F3 até soar parecida.",
+                "10 min · Prática; circulo perguntando o que subiu junto com a fala 3."
+              ],
+              "watch": "Ao subir F3, o ronco do carro e o zumbido sobem juntos. Uso isso para abrir o próximo slide.",
+              "rescue": "Quem passar de +12 dB e ainda não ouvir bem provavelmente está com a trilha alta: volto ao pedido 1."
+            }
+          },
+          {
+            "title": "Onde está o ruído",
+            "kicker": "Espectrograma da voz",
+            "heading": "O ruído aparece no desenho",
+            "lede": "O tempo corre para a direita; o grave fica embaixo. Quanto mais claro, mais forte.",
+            "block": 2,
+            "av9": {
+              "type": "stills",
+              "images": [
+                {
+                  "src": "modelos/producao-audiovisual/aula-14/telas/voz-antes.jpg",
+                  "label": "ANTES",
+                  "text": "Faixa grave do começo ao fim: zumbido do ar-condicionado e ronco da rua, também entre as falas."
+                },
+                {
+                  "src": "modelos/producao-audiovisual/aula-14/telas/voz-depois.jpg",
+                  "label": "DEPOIS",
+                  "text": "Grave filtrado e silêncio entre as falas. A voz continua inteira."
+                }
+              ]
+            },
+            "promptLabel": "Pensem",
+            "prompt": "Qual parte do ruído só existe porque ninguém fechou a janela na gravação?",
+            "teacher": {
+              "steps": [
+                "6 min · Aponto a faixa grave contínua, os vãos e o reforço durante a fala 3, onde passa o carro."
+              ],
+              "watch": "O que a edição faz bem: tirar grave e silenciar vãos. O que não faz: limpar chiado misturado à fala. Retomo a aula 8: som limpo se resolve na gravação.",
+              "rescue": "Se a imagem parecer abstrata, toco a voz em solo e aponto o trecho no espectrograma ao mesmo tempo."
+            }
+          },
+          {
+            "title": "Pedido 3 · Limpar a voz",
+            "kicker": "Pedido do cliente",
+            "heading": "Tirem o ar-condicionado e a rua",
+            "lede": "Tratar só o canal da VOZ, em solo, e depois conferir com tudo tocando.",
+            "block": 2,
+            "av9": {
+              "type": "commands",
+              "commands": [
+                {
+                  "word": "FILTRAR",
+                  "who": "Passa-alta",
+                  "text": "Comparar 80, 120 e 160 Hz. Escolher o menor que tira o ronco."
+                },
+                {
+                  "word": "CORTAR",
+                  "who": "Cortar os vãos",
+                  "text": "Silenciar a voz entre as falas."
+                },
+                {
+                  "word": "REALÇAR",
+                  "who": "Presença da voz",
+                  "text": "+3 dB para as consoantes ficarem nítidas."
+                },
+                {
+                  "word": "CONFERIR",
+                  "who": "Tirar o solo",
+                  "text": "Ouvir a cena inteira com todos os canais."
+                }
+              ],
+              "tags": [
+                {
+                  "label": "TERMINOU ANTES?",
+                  "kind": "good"
+                }
+              ],
+              "result": "Em solo, compare +3 e +6 dB de presença e explique quando a voz fica áspera."
+            },
+            "promptLabel": "Pronto quando",
+            "prompt": "Entre as falas não há zumbido e a voz não ficou fina nem áspera.",
+            "resources": [
+              {
+                "href": "modelos/producao-audiovisual/aula-14/AJUDA.html#ruido",
+                "label": "Abrir passos e soluções"
+              }
+            ],
+            "teacher": {
+              "steps": [
+                "2 min · Demonstro o passa-alta nas três posições, em solo, e o corte dos vãos.",
+                "13 min · Prática; circulo pedindo que cada um justifique a frequência escolhida."
+              ],
+              "watch": "120 Hz é o meio-termo para esta voz. 160 Hz já afina o narrador; 80 Hz deixa parte do ronco do carro.",
+              "rescue": "Se alguém não ouvir diferença, peço volume confortável mais alto no fone, toco a fala 3 em solo e alterno Desligado e 120 Hz."
+            }
+          },
+          {
+            "title": "Pedido 4 · Espaço para a voz",
+            "kicker": "Pedido do cliente",
+            "heading": "Quero a música forte, mas atrás da voz",
+            "lede": "A trilha veio cortada de uma música maior: começa e termina de repente.",
+            "block": 2,
+            "av9": {
+              "type": "commands",
+              "commands": [
+                {
+                  "word": "ABAIXAR",
+                  "who": "Abaixar a trilha durante a voz",
+                  "text": "Comparar −6, −12 e −18 dB."
+                },
+                {
+                  "word": "SUBIR",
+                  "who": "Volume da TRILHA",
+                  "text": "Agora a música pode voltar a crescer nos intervalos."
+                },
+                {
+                  "word": "ENTRAR",
+                  "who": "Entrada gradual (2 s)",
+                  "text": "A música nasce em vez de começar no meio."
+                },
+                {
+                  "word": "SAIR",
+                  "who": "Saída gradual (3 s)",
+                  "text": "Termina junto com a assinatura."
+                }
+              ],
+              "tags": [
+                {
+                  "label": "TERMINOU ANTES?",
+                  "kind": "good"
+                }
+              ],
+              "result": "Veja o desenho da trilha descer em cada fala e conte quantas vezes a música respira."
+            },
+            "promptLabel": "Pronto quando",
+            "prompt": "A música desce em cada fala, volta nos intervalos e começa e termina sem susto.",
+            "resources": [
+              {
+                "href": "modelos/producao-audiovisual/aula-14/AJUDA.html#espaco",
+                "label": "Abrir passos e soluções"
+              }
+            ],
+            "teacher": {
+              "steps": [
+                "2 min · Ligo o abaixamento em −12 dB e mostro o desenho da trilha mudando; ligo as duas transições.",
+                "12 min · Prática; circulo conferindo pico máximo de novo, porque a trilha pode ter subido."
+              ],
+              "watch": "Esse abaixamento automático se chama ducking nos editores; aqui ele segue as falas já marcadas.",
+              "rescue": "Se o pico voltar ao vermelho, a trilha subiu demais: desço o canal até sair do vermelho."
+            }
+          },
+          {
+            "title": "Exportar a primeira versão",
+            "kicker": "Antes de seguir",
+            "heading": "mix-v1.wav no disco",
+            "lede": "A mesa processa os 30 segundos sem tocar e baixa um WAV.",
+            "block": 2,
+            "av9": {
+              "type": "checks",
+              "items": [
+                {
+                  "label": "Nome",
+                  "text": "Exportar a mixagem como mix-v1.wav."
+                },
+                {
+                  "label": "Pico",
+                  "text": "O resultado precisa mostrar −1 dBFS ou abaixo."
+                },
+                {
+                  "label": "Ouvir",
+                  "text": "Abrir o WAV no player do computador, com fone, até o final."
+                },
+                {
+                  "label": "Guardar",
+                  "text": "Mover o arquivo de Downloads para a pasta Aula14-Som."
+                }
+              ]
+            },
+            "resources": [
+              {
+                "href": "modelos/producao-audiovisual/aula-14/AJUDA.html#exportar",
+                "label": "Abrir passos e soluções"
+              }
+            ],
+            "teacher": {
+              "steps": [
+                "8 min · Demonstro a exportação e a leitura do resultado; a turma exporta e confere fora da mesa."
+              ],
+              "watch": "Reparo no tempo de processamento mostrado pela mesa: 30 s de som em poucos segundos. Uso isso para abrir o bloco das esperas.",
+              "rescue": "Se o resultado vier vermelho, baixo a saída em 2 dB e exporto de novo com o mesmo nome."
+            }
+          },
+          {
+            "title": "Buffering",
+            "kicker": "Vídeo pela rede",
+            "heading": "O vídeo para quando a reserva acaba",
+            "lede": "O player baixa alguns segundos antes de mostrar. Essa reserva é o buffer.",
+            "block": 3,
+            "av9": {
+              "type": "flow",
+              "steps": [
+                {
+                  "label": "SERVIDOR",
+                  "text": "Guarda o vídeo publicado.",
+                  "mark": "Origem"
+                },
+                {
+                  "label": "REDE",
+                  "text": "Entrega uma quantidade de dados por segundo.",
+                  "mark": "Mbps"
+                },
+                {
+                  "label": "RESERVA",
+                  "text": "Segundos baixados antes de mostrar.",
+                  "mark": "Buffer"
+                },
+                {
+                  "label": "REPRODUÇÃO",
+                  "text": "Consome a reserva. Se ela zera, o vídeo para.",
+                  "mark": "Carregando"
+                }
+              ]
+            },
+            "promptLabel": "Pensem",
+            "prompt": "Se o vídeo consome mais dados por segundo do que a rede entrega, o que acontece com a reserva?",
+            "teacher": {
+              "steps": [
+                "5 min · Explico o fluxo com o exemplo de um vídeo da mostra assistido no celular, longe do roteador."
+              ],
+              "watch": "Buffering é a espera de uma reprodução em rede. Não uso a palavra para travamentos dentro do editor.",
+              "rescue": "Se a turma confundir com a velocidade do computador, pergunto de onde o vídeo está vindo."
+            }
+          },
+          {
+            "title": "Pedido 5 · Provocar e resolver",
+            "kicker": "Pedido do cliente",
+            "heading": "O trailer trava no celular do cliente",
+            "lede": "No Laboratório de espera, provocar o problema e depois resolvê-lo com a mesma rede.",
+            "block": 3,
+            "av9": {
+              "type": "commands",
+              "commands": [
+                {
+                  "word": "ABRIR",
+                  "who": "buffering.html",
+                  "text": "Na mesma pasta do kit, sem internet."
+                },
+                {
+                  "word": "PROVOCAR",
+                  "who": "3 Mbps e 1080p",
+                  "text": "Assistir do início e contar as travadas."
+                },
+                {
+                  "word": "RESOLVER",
+                  "who": "Mesma rede, outra qualidade",
+                  "text": "Testar 720p e depois Automática."
+                },
+                {
+                  "word": "REGISTRAR",
+                  "who": "Testes que você fez",
+                  "text": "Dois testes na lista: com e sem travada."
+                }
+              ],
+              "tags": [
+                {
+                  "label": "TERMINOU ANTES?",
+                  "kind": "good"
+                }
+              ],
+              "result": "Ligue Rede instável e descubra qual qualidade ainda assiste sem travar."
+            },
+            "promptLabel": "Pronto quando",
+            "prompt": "A lista mostra um teste com travadas e outro sem, na mesma conexão.",
+            "resources": [
+              {
+                "href": "modelos/producao-audiovisual/aula-14/buffering.html",
+                "label": "Abrir o laboratório de espera"
+              },
+              {
+                "href": "modelos/producao-audiovisual/aula-14/AJUDA.html#buffering",
+                "label": "Abrir passos e soluções"
+              }
+            ],
+            "teacher": {
+              "steps": [
+                "2 min · Mostro 1 Mbps em 1080p travando, com a simulação 4× ligada.",
+                "10 min · Prática; circulo pedindo a regra com as palavras de cada um."
+              ],
+              "watch": "Regra que busco: a qualidade precisa consumir menos Mbps do que a rede entrega. A automática escolhe por isso.",
+              "rescue": "Se a espera cansar, lembro o Simular 4× mais rápido e o Parar e registrar."
+            }
+          },
+          {
+            "title": "No editor não é buffering",
+            "kicker": "Pré-visualização",
+            "heading": "Travou no editor? Quatro saídas",
+            "lede": "No editor, o vídeo não vem pela rede: o computador processa cada quadro.",
+            "block": 3,
+            "av9": {
+              "type": "table",
+              "variant": "data",
+              "columns": [
+                "Recurso",
+                "O que faz",
+                "Quando usar"
+              ],
+              "rows": [
+                [
+                  "Resolução de preview",
+                  "Mostra a prévia menor, em 1/2 ou 1/4.",
+                  "Conferir ritmo, não detalhe."
+                ],
+                [
+                  "Cache",
+                  "Guarda no disco o que já foi processado.",
+                  "Trecho que roda liso na segunda vez."
+                ],
+                [
+                  "Proxy",
+                  "Cópia leve do original para editar.",
+                  "Arquivos pesados, como 4K."
+                ],
+                [
+                  "Render de trecho",
+                  "Processa antes só o trecho pesado.",
+                  "Trecho com muitos efeitos."
+                ]
+              ]
+            },
+            "teacher": {
+              "steps": [
+                "6 min · Leio cada linha e relaciono com a mesa: o WAV foi processado sem tocar, como um render."
+              ],
+              "watch": "Nenhuma dessas ferramentas muda o arquivo final; elas só aliviam a prévia. Proxy e cache ocupam disco.",
+              "rescue": "Se faltar tempo, fico em proxy e render de trecho, que aparecem mais nos editores do laboratório."
+            }
+          },
+          {
+            "title": "Pedido 6 · Diagnóstico",
+            "kicker": "Pedido do cliente",
+            "heading": "A equipe perdeu a noite esperando",
+            "lede": "Responder às oito situações do Laboratório de espera e baixar o diagnóstico.",
+            "block": 3,
+            "av9": {
+              "type": "commands",
+              "commands": [
+                {
+                  "word": "LER",
+                  "who": "Situação",
+                  "text": "De onde vem o vídeo: rede ou computador?"
+                },
+                {
+                  "word": "ESCOLHER",
+                  "who": "Uma das cinco respostas",
+                  "text": "Buffering, resolução de preview, cache, proxy ou render de trecho."
+                },
+                {
+                  "word": "CONFERIR",
+                  "who": "Explicação",
+                  "text": "Errou? Releia as definições e tente outra."
+                },
+                {
+                  "word": "BAIXAR",
+                  "who": "Diagnóstico (TXT)",
+                  "text": "Guardar diagnostico-aula14.txt na pasta do kit."
+                }
+              ],
+              "tags": [
+                {
+                  "label": "TERMINOU ANTES?",
+                  "kind": "good"
+                }
+              ],
+              "result": "Escreva no caderno uma situação nova e peça ao colega do lado para resolver."
+            },
+            "promptLabel": "Pronto quando",
+            "prompt": "As oito situações respondidas e o diagnóstico salvo na pasta.",
+            "resources": [
+              {
+                "href": "modelos/producao-audiovisual/aula-14/AJUDA.html#editor",
+                "label": "Abrir passos e soluções"
+              }
+            ],
+            "teacher": {
+              "steps": [
+                "2 min · Resolvo a primeira situação em voz alta, perguntando de onde vem o vídeo.",
+                "10 min · Prática; circulo olhando o placar de primeira tentativa."
+              ],
+              "watch": "O placar conta só a primeira resposta: serve para eu ver quem ainda confunde, não para nota.",
+              "rescue": "Quem errar mais da metade refaz comigo as situações 1 e 2, que separam rede e computador."
+            }
+          },
+          {
+            "title": "Planejar a espera",
+            "kicker": "Tempo de trabalho",
+            "heading": "Esperar faz parte. Esperar à toa, não.",
+            "lede": "Exportar, gerar proxy e renderizar levam tempo. A equipe planeja o que fazer enquanto isso.",
+            "block": 3,
+            "av9": {
+              "type": "checks",
+              "items": [
+                {
+                  "label": "Antes",
+                  "text": "Ouvir a cena inteira uma vez. Exportar o mesmo erro duas vezes gasta tempo."
+                },
+                {
+                  "label": "Durante",
+                  "text": "Conferir nomes de arquivo, créditos e a próxima tarefa da fila."
+                },
+                {
+                  "label": "Depois",
+                  "text": "Ouvir o arquivo exportado fora do editor, até o final."
+                },
+                {
+                  "label": "Na equipe",
+                  "text": "Proxy e render pesado começam cedo, enquanto alguém revisa outra parte."
+                }
+              ]
+            },
+            "teacher": {
+              "steps": [
+                "5 min · Pergunto quanto tempo a turma acha que leva para exportar o microcurta em 1080p e monto a fila de tarefas no quadro."
+              ],
+              "watch": "Ligo com a aula 16, de render: quem planeja a fila não perde a estreia esperando a barra de progresso.",
+              "rescue": "Se o bloco atrasar, faço só a pergunta do Antes e sigo."
+            }
+          },
+          {
+            "title": "Pedido 7 · Duas entregas",
+            "kicker": "Pedido do cliente",
+            "heading": "Vamos dublar o trailer em outro idioma",
+            "lede": "O cliente quer a mixagem final e uma versão sem voz, com o mesmo equilíbrio.",
+            "block": 4,
+            "av9": {
+              "type": "commands",
+              "commands": [
+                {
+                  "word": "REVISAR",
+                  "who": "Cena inteira",
+                  "text": "Uma última escuta antes de exportar."
+                },
+                {
+                  "word": "FINAL",
+                  "who": "mix-final.wav",
+                  "text": "Todas as camadas, pico em −1 dBFS ou abaixo."
+                },
+                {
+                  "word": "SEM VOZ",
+                  "who": "M na VOZ",
+                  "text": "Exportar sem-voz.wav e depois desligar o M."
+                },
+                {
+                  "word": "OUVIR",
+                  "who": "Player do computador",
+                  "text": "Os dois arquivos até o final, com fone."
+                }
+              ],
+              "tags": [
+                {
+                  "label": "TERMINOU ANTES?",
+                  "kind": "good"
+                }
+              ],
+              "result": "Explique por que separar as camadas facilita uma versão em outro idioma."
+            },
+            "promptLabel": "Pronto quando",
+            "prompt": "mix-final.wav e sem-voz.wav na pasta Aula14-Som, ouvidos até o final.",
+            "resources": [
+              {
+                "href": "modelos/producao-audiovisual/aula-14/AJUDA.html#versoes",
+                "label": "Abrir passos e soluções"
+              }
+            ],
+            "teacher": {
+              "steps": [
+                "2 min · Mostro que a versão sem voz é só um M antes de exportar.",
+                "10 min · Prática e conferência dos dois arquivos no player do computador."
+              ],
+              "watch": "Versão sem voz, com música e efeitos, é entrega comum em produções que serão dubladas.",
+              "rescue": "Se faltar tempo, priorizo mix-final.wav; a versão sem voz entra no banco de melhorias."
+            }
+          },
+          {
+            "title": "Escuta cruzada",
+            "kicker": "Com o colega do lado",
+            "heading": "Troquem de fone, não de lugar",
+            "lede": "Cada um ouve o mix-final.wav do colega e aponta um ponto verificável.",
+            "block": 4,
+            "av9": {
+              "type": "checks",
+              "items": [
+                {
+                  "label": "Voz",
+                  "text": "Todas as palavras se entendem?"
+                },
+                {
+                  "label": "Ruído",
+                  "text": "Há zumbido entre as falas?"
+                },
+                {
+                  "label": "Música",
+                  "text": "Ela cobre alguma fala ou some demais?"
+                },
+                {
+                  "label": "Começo e fim",
+                  "text": "Algo começa ou termina de repente?"
+                }
+              ]
+            },
+            "teacher": {
+              "steps": [
+                "8 min · Escuta cruzada em duplas; quem receber um apontamento corrige e exporta de novo com o mesmo nome."
+              ],
+              "watch": "Peço apontamentos verificáveis, com o momento da cena: “na fala 3 a música cobre a palavra amigo”.",
+              "rescue": "Se o fone não puder ser trocado, o colega ouve pela mesa do vizinho, sem trocar de posto."
+            }
+          },
+          {
+            "title": "Banco de melhorias",
+            "kicker": "Para quem concluiu tudo",
+            "heading": "Um teste a mais, sem perder a entrega",
+            "lede": "Os arquivos finais continuam guardados. Testem e comparem.",
+            "block": 4,
+            "av9": {
+              "type": "checks",
+              "items": [
+                {
+                  "label": "Voz",
+                  "text": "Comparar passa-alta em 80 e 160 Hz e explicar a diferença."
+                },
+                {
+                  "label": "Trilha",
+                  "text": "Testar abaixamento de −18 dB e decidir se a música ainda conta algo."
+                },
+                {
+                  "label": "Versão",
+                  "text": "Exportar só voz e ambiência, como um podcast da cena."
+                },
+                {
+                  "label": "Rede",
+                  "text": "Rede instável a 3 Mbps: qual qualidade assiste sem travar?"
+                }
+              ]
+            },
+            "pace": "extra",
+            "teacher": {
+              "steps": [],
+              "watch": "Ofereço assim que alguém termina o pedido 7; não espero a turma.",
+              "rescue": "Se a melhoria piorar o som, A/B mostra a mesa inicial e Voltar à mesa inicial recomeça; os WAV entregues não mudam."
+            }
+          },
+          {
+            "title": "Encerramento",
+            "kicker": "Aula 14 · Som na pós-produção",
+            "heading": "O trailer agora se ouve",
+            "lede": "Na pasta Aula14-Som: três WAV, o diagnóstico e os créditos.",
+            "block": 4,
+            "av9": {
+              "type": "checks",
+              "items": [
+                {
+                  "label": "Mixagem",
+                  "text": "mix-v1.wav, mix-final.wav e sem-voz.wav, pico em −1 dBFS ou abaixo."
+                },
+                {
+                  "label": "Diagnóstico",
+                  "text": "diagnostico-aula14.txt com testes de rede e as oito situações."
+                },
+                {
+                  "label": "Explicar",
+                  "text": "Por que a voz é a referência da mixagem?"
+                },
+                {
+                  "label": "Próxima aula",
+                  "text": "Organizar a composição em blocos: o som entra como bloco também."
+                }
+              ]
+            },
+            "teacher": {
+              "steps": [
+                "10 min · Confiro nas telas os arquivos e o pico; três estudantes respondem por que a voz é a referência e qual a diferença entre buffering e proxy."
+              ],
+              "watch": "Encerro ligando com as aulas 15 e 16: blocagem e render da mostra.",
+              "rescue": "Quem não terminou guarda os ajustes da mesa e exporta o que tiver; o diagnóstico pode ser concluído no começo da próxima aula."
+            }
+          }
+        ],
+        "appendDefaultClosing": false
       },
       "15": {
         "teacherGoal": "Organizar a composição, a biblioteca e a vinheta da mostra.",

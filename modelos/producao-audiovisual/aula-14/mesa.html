@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mesa de som · Aula 14</title>
+<style>
+:root {
+  --bg: #10202b; --panel: #172c3a; --panel-2: #1d3647; --line: #2c4a5e; --text: #f5efe2; --muted: #a9bcc7;
+  --accent: #f7b866; --ok: #6fd39b; --warn: #f2d15c; --bad: #ff6b5e;
+  --voz: #7fd1ae; --trilha: #8fc8f0; --ambiencia: #c3a6f0; --efeitos: #f29e8a;
+}
+* { box-sizing: border-box; }
+html { color-scheme: dark; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+button, select, input { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; padding: 12px 20px; background: #0b1820; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 5; }
+.bar h1 { margin: 0 auto 0 0; font-size: 19px; letter-spacing: .01em; }
+.bar h1 span { color: var(--muted); font-weight: 500; }
+.btn { border: 1px solid var(--line); background: var(--panel-2); border-radius: 8px; padding: 8px 14px; min-height: 40px; }
+.btn:hover { border-color: var(--accent); }
+.btn.primary { background: var(--accent); color: #10202b; border-color: var(--accent); font-weight: 700; min-width: 112px; }
+.btn[aria-pressed="true"] { background: #3b2a12; border-color: var(--accent); color: var(--accent); }
+.time { font: 600 18px/1 ui-monospace, "Cascadia Mono", monospace; min-width: 136px; text-align: center; }
+a { color: var(--accent); }
+main { max-width: 1320px; margin: 0 auto; padding: 18px 20px 40px; display: grid; gap: 18px; }
+.top { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(300px, 1fr); gap: 18px; }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; min-width: 0; }
+.panel h2 { margin: 0 0 10px; font-size: 15px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; border-radius: 8px; }
+.banner { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; background: #3b2a12; color: var(--accent); font-weight: 600; }
+.banner.on { display: block; }
+.status { min-height: 1.4em; color: var(--muted); }
+.master { display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 16px; align-items: stretch; }
+.meter { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; height: 250px; padding: 4px; background: #0b1820; border-radius: 8px; }
+.meter canvas { width: 100%; height: 100%; display: block; }
+.peak { font: 700 26px/1.1 ui-monospace, monospace; }
+.peak.ok { color: var(--ok); } .peak.warn { color: var(--warn); } .peak.bad { color: var(--bad); }
+.led { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: var(--muted); }
+.led::before { content: ""; width: 14px; height: 14px; border-radius: 50%; background: #34444f; }
+.led.on { color: var(--bad); }
+.led.on::before { background: var(--bad); box-shadow: 0 0 12px var(--bad); }
+.legend { display: grid; gap: 4px; margin: 10px 0; font-size: 14px; color: var(--muted); }
+.legend b { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; }
+.field { display: grid; gap: 4px; margin: 10px 0; }
+.field label, .field .label { font-size: 14px; color: var(--muted); }
+.row { display: flex; align-items: center; gap: 10px; }
+input[type="range"] { width: 100%; accent-color: var(--accent); min-height: 28px; }
+.value { font: 600 14px/1 ui-monospace, monospace; min-width: 70px; text-align: right; }
+.timeline { position: relative; }
+.ruler { position: relative; height: 34px; margin-left: 110px; }
+.ruler span { position: absolute; top: 0; bottom: 0; border-left: 1px solid var(--line); padding: 4px 6px; font-size: 13px; color: var(--muted); overflow: hidden; white-space: nowrap; }
+.lane { display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 10px; align-items: center; margin-top: 6px; }
+.lane-name { font-weight: 700; font-size: 14px; }
+.lane-wave { position: relative; height: 62px; background: #0b1820; border-radius: 6px; cursor: pointer; overflow: hidden; }
+.lane-wave canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.fala { position: absolute; top: 0; bottom: 0; border: 1px dashed rgba(127, 209, 174, .6); border-radius: 4px; background: rgba(127, 209, 174, .07); font: 700 12px/1 ui-monospace, monospace; color: var(--voz); padding: 3px; text-align: left; vertical-align: top; cursor: pointer; }
+.fala span { position: absolute; top: 3px; left: 3px; z-index: 1; padding: 2px 5px; border-radius: 4px; background: #0b1820; }
+.playhead { position: absolute; top: 0; bottom: 0; width: 2px; background: var(--accent); pointer-events: none; left: 110px; box-shadow: 0 0 8px rgba(247, 184, 102, .7); }
+.hint { margin: 8px 0 0 110px; font-size: 13px; color: var(--muted); }
+.strips { display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr)); gap: 14px; }
+.strip { border-top: 4px solid var(--c); }
+.strip header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.strip header h2 { margin: 0 auto 0 0; color: var(--text); font-size: 17px; letter-spacing: .04em; }
+.ms { width: 40px; min-height: 36px; border-radius: 6px; border: 1px solid var(--line); background: var(--panel-2); font-weight: 800; }
+.ms.mute[aria-pressed="true"] { background: var(--bad); color: #10202b; border-color: var(--bad); }
+.ms.solo[aria-pressed="true"] { background: var(--warn); color: #10202b; border-color: var(--warn); }
+.chan-meter { height: 8px; border-radius: 4px; background: #0b1820; overflow: hidden; margin-bottom: 6px; }
+.chan-meter i { display: block; height: 100%; width: 0; background: var(--c); transition: width .05s linear; }
+.seg { display: flex; flex-wrap: wrap; gap: 4px; border: 0; padding: 0; margin: 0; }
+.seg legend { font-size: 14px; color: var(--muted); padding: 0; margin-bottom: 4px; }
+.seg label { position: relative; }
+.seg input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.seg span { display: inline-block; padding: 6px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel-2); font-size: 14px; }
+.seg input:checked + span { background: var(--c, var(--accent)); color: #10202b; border-color: transparent; font-weight: 700; }
+.seg input:focus-visible + span { outline: 3px solid var(--accent); outline-offset: 2px; }
+.switch { display: flex; align-items: center; gap: 10px; margin: 10px 0; cursor: pointer; font-size: 15px; }
+.switch input { width: 20px; height: 20px; accent-color: var(--c, var(--accent)); }
+.falas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px 14px; }
+.export { display: grid; gap: 8px; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+select { background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; padding: 8px; min-height: 40px; }
+.result { font-weight: 600; }
+.result.ok { color: var(--ok); } .result.bad { color: var(--bad); }
+.loading { padding: 40px; text-align: center; color: var(--muted); }
+@media (max-width: 1100px) { .strips { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 860px) {
+  .top { grid-template-columns: 1fr; }
+  .strips { grid-template-columns: 1fr; }
+  .ruler, .hint { margin-left: 0; }
+  .lane { grid-template-columns: 1fr; gap: 4px; }
+  .playhead { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .chan-meter i { transition: none; } }
+</style>
+</head>
+<body>
+<div class="bar">
+  <h1>Mesa de som <span>· A última fruta · 30 s</span></h1>
+  <button class="btn primary" id="play" type="button" disabled>▶ Tocar</button>
+  <button class="btn" id="rewind" type="button" disabled>⏮ Início</button>
+  <span class="time" id="time" aria-live="off">00:00,0 / 00:30</span>
+  <button class="btn" id="ab" type="button" aria-pressed="false" disabled title="Ouvir como a mesa começou, sem desfazer seus ajustes">A/B: mesa inicial</button>
+  <a class="btn" href="AJUDA.html#mesa" target="_blank" rel="noopener">Ajuda</a>
+</div>
+<main id="app">
+  <p class="loading" id="loading">Carregando as quatro camadas de som…</p>
+</main>
+<script src="sons.js"></script>
+<script>
+(() => {
+  'use strict';
+  const DATA = window.AULA14_SONS;
+  const app = document.getElementById('app');
+  const loading = document.getElementById('loading');
+  if (!DATA || !(window.AudioContext || window.webkitAudioContext) || !window.OfflineAudioContext) {
+    loading.textContent = 'Não foi possível abrir a mesa. Confirme que sons.js está na mesma pasta e use um navegador atualizado (Chrome, Edge ou Firefox).';
+    return;
+  }
+  const DUR = DATA.duration;
+  const RATE = 200; // pontos de automação por segundo
+  const CHANNELS = [
+    {id: 'voz', name: 'VOZ', color: 'var(--voz)', hex: '#7fd1ae'},
+    {id: 'trilha', name: 'TRILHA', color: 'var(--trilha)', hex: '#8fc8f0'},
+    {id: 'ambiencia', name: 'AMBIÊNCIA', color: 'var(--ambiencia)', hex: '#c3a6f0'},
+    {id: 'efeitos', name: 'EFEITOS', color: 'var(--efeitos)', hex: '#f29e8a'}
+  ];
+  const DEFAULTS = {
+    voz: {db: 0, mute: false, solo: false, falas: DATA.falas.map(() => 0), hp: 0, pres: 0, vaos: false},
+    trilha: {db: 0, mute: false, solo: false, duck: 0, fadeIn: false, fadeOut: false},
+    ambiencia: {db: 0, mute: false, solo: false},
+    efeitos: {db: 0, mute: false, solo: false},
+    master: {db: 0}
+  };
+  const STORE = 'aula14-mesa-v1';
+  const clone = (value) => JSON.parse(JSON.stringify(value));
+  let settings = clone(DEFAULTS);
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORE) || 'null');
+    if (saved && saved.voz && saved.voz.falas?.length === DATA.falas.length) settings = Object.assign(clone(DEFAULTS), saved);
+  } catch (error) { /* armazenamento indisponível: começa da mesa inicial */ }
+  const save = () => { try { localStorage.setItem(STORE, JSON.stringify(settings)); } catch (error) { /* sem armazenamento */ } };
+
+  const gain = (db) => Math.pow(10, db / 20);
+  const toDb = (value) => value > 0 ? 20 * Math.log10(value) : -Infinity;
+  const fmtDb = (value) => Number.isFinite(value) ? `${value > 0 ? '+' : value < 0 ? '−' : ''}${Math.abs(value).toFixed(1).replace('.', ',')} dB` : '−∞ dB';
+  const fmtTime = (seconds) => {
+    const s = Math.max(0, seconds);
+    return `${String(Math.floor(s / 60)).padStart(2, '0')}:${(s % 60).toFixed(1).padStart(4, '0').replace('.', ',')}`;
+  };
+
+  // ---------- Automação: mesma lógica do gerador do kit ----------
+  const POINTS = Math.round(DUR * RATE) + 1;
+  const smooth = (values, width) => {
+    if (width < 2) return values;
+    const out = new Float32Array(values.length);
+    const half = Math.floor(width / 2);
+    let sum = 0;
+    const at = (i) => values[Math.min(values.length - 1, Math.max(0, i))];
+    for (let i = -half; i < width - half; i++) sum += at(i);
+    for (let i = 0; i < values.length; i++) {
+      out[i] = sum / width;
+      sum += at(i + width - half) - at(i - half);
+    }
+    return out;
+  };
+  const voiceEnvelope = (s) => {
+    const values = new Float32Array(POINTS).fill(s.vaos ? 0 : 1);
+    DATA.falas.forEach((fala, index) => {
+      for (let i = Math.round(fala.start * RATE); i < Math.round(fala.end * RATE); i++) values[i] = gain(s.falas[index]);
+    });
+    return smooth(values, Math.round(0.06 * RATE));
+  };
+  const musicEnvelope = (s) => {
+    let values = new Float32Array(POINTS).fill(1);
+    if (s.duck) {
+      DATA.falas.forEach((fala) => {
+        for (let i = Math.max(0, Math.round((fala.start - 0.3) * RATE)); i < Math.min(POINTS, Math.round((fala.end + 0.4) * RATE)); i++) values[i] = gain(s.duck);
+      });
+      values = smooth(values, Math.round(0.25 * RATE));
+    }
+    for (let i = 0; i < POINTS; i++) {
+      const t = i / RATE;
+      if (s.fadeIn) values[i] *= Math.min(1, t / 2);
+      if (s.fadeOut) values[i] *= Math.min(1, Math.max(0, (DUR - t) / 3));
+    }
+    return values;
+  };
+  const envelopes = (s) => ({voz: voiceEnvelope(s.voz), trilha: musicEnvelope(s.trilha)});
+  const audible = (s, id) => !s[id].mute && (!CHANNELS.some((c) => s[c.id].solo) || s[id].solo);
+
+  // ---------- Grafo de áudio: usado na reprodução e na exportação ----------
+  function buildGraph(ctx, s, buffers, offset, when, withMeters) {
+    const env = envelopes(s);
+    const master = ctx.createGain();
+    master.gain.value = gain(s.master.db);
+    master.connect(ctx.destination);
+    const nodes = {master, sources: [], channels: {}};
+    const length = DUR - offset;
+    for (const channel of CHANNELS) {
+      const id = channel.id;
+      const source = ctx.createBufferSource();
+      source.buffer = buffers[id];
+      const automation = ctx.createGain();
+      source.connect(automation);
+      let last = automation;
+      const node = {source, automation};
+      if (env[id]) {
+        const start = Math.min(POINTS - 2, Math.floor(offset * RATE));
+        automation.gain.value = env[id][start];
+        automation.gain.setValueCurveAtTime(env[id].slice(start), when, Math.max(0.01, length));
+      }
+      if (id === 'voz') {
+        node.hp = [0.5412, 1.3066].map((q) => {
+          const filter = ctx.createBiquadFilter();
+          filter.type = 'highpass';
+          filter.Q.value = q;
+          filter.frequency.value = s.voz.hp || 10;
+          last.connect(filter);
+          last = filter;
+          return filter;
+        });
+        node.pres = ctx.createBiquadFilter();
+        node.pres.type = 'peaking';
+        node.pres.frequency.value = 3000;
+        node.pres.Q.value = 1;
+        node.pres.gain.value = s.voz.pres;
+        last.connect(node.pres);
+        last = node.pres;
+      }
+      node.fader = ctx.createGain();
+      node.fader.gain.value = gain(s[id].db);
+      node.ms = ctx.createGain();
+      node.ms.gain.value = audible(s, id) ? 1 : 0;
+      last.connect(node.fader);
+      node.fader.connect(node.ms);
+      node.ms.connect(master);
+      if (withMeters) {
+        node.meter = ctx.createAnalyser();
+        node.meter.fftSize = 1024;
+        node.ms.connect(node.meter);
+      }
+      source.start(when, offset, length);
+      nodes.sources.push(source);
+      nodes.channels[id] = node;
+    }
+    if (withMeters) {
+      const splitter = ctx.createChannelSplitter(2);
+      master.connect(splitter);
+      nodes.meters = [0, 1].map((index) => {
+        const analyser = ctx.createAnalyser();
+        analyser.fftSize = 2048;
+        splitter.connect(analyser, index);
+        return analyser;
+      });
+    }
+    return nodes;
+  }
+
+  // ---------- Carregar as camadas ----------
+  const decodeBase64 = (url) => {
+    const binary = atob(url.slice(url.indexOf(',') + 1));
+    const bytes = new Uint8Array(binary.length);
+    for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+    return bytes.buffer;
+  };
+  const decoder = new OfflineAudioContext(2, 48000, 48000);
+  const decode = (buffer) => new Promise((resolve, reject) => {
+    const result = decoder.decodeAudioData(buffer, resolve, reject);
+    if (result && result.then) result.then(resolve, reject);
+  });
+  Promise.all(CHANNELS.map((channel) => decode(decodeBase64(DATA.stems[channel.id]))))
+    .then((decoded) => start(Object.fromEntries(CHANNELS.map((channel, index) => [channel.id, decoded[index]]))))
+    .catch(() => { loading.textContent = 'Não foi possível decodificar o som. Use Chrome, Edge ou Firefox atualizados.'; });
+
+  function start(buffers) {
+    loading.remove();
+    app.insertAdjacentHTML('beforeend', `
+      <section class="top">
+        <div class="panel">
+          <video id="video" src="cena.mp4" muted playsinline preload="auto" aria-label="Cena A última fruta, sem som; o som sai da mesa"></video>
+          <p class="banner" id="abBanner">A · Você está ouvindo a mesa inicial. Clique em A/B para voltar aos seus ajustes.</p>
+          <p class="status" id="status" aria-live="polite">Dica: espaço toca e pausa. Clique na linha do tempo para ir a um trecho.</p>
+        </div>
+        <div class="panel">
+          <h2>Saída (master)</h2>
+          <div class="master">
+            <div class="meter" role="img" aria-label="Medidor de pico da saída, esquerda e direita"><canvas id="meterL"></canvas><canvas id="meterR"></canvas></div>
+            <div>
+              <div class="label">Pico máximo desde o início</div>
+              <div class="peak ok" id="peak" aria-live="polite">−∞ dBFS</div>
+              <p><span class="led" id="clip">Estourou</span></p>
+              <button class="btn" id="resetPeak" type="button">Zerar pico</button>
+              <div class="legend">
+                <span><b style="background:var(--ok)"></b>Verde: abaixo de −6 dBFS</span>
+                <span><b style="background:var(--warn)"></b>Amarelo: entre −6 e −1 dBFS</span>
+                <span><b style="background:var(--bad)"></b>Vermelho: acima de −1 dBFS, risco de distorção</span>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="masterDb">Volume da saída</label>
+            <div class="row"><input id="masterDb" type="range" min="-24" max="6" step="0.5"><span class="value" id="masterDbValue"></span></div>
+          </div>
+          <div class="export">
+            <label for="exportName">Exportar a mixagem como</label>
+            <div class="row">
+              <select id="exportName">
+                <option value="mix-v1">mix-v1.wav</option>
+                <option value="mix-final">mix-final.wav</option>
+                <option value="sem-voz">sem-voz.wav</option>
+              </select>
+              <button class="btn primary" id="export" type="button">Baixar WAV</button>
+            </div>
+            <p class="result" id="exportResult" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+      <section class="panel timeline" id="timeline" aria-label="Linha do tempo">
+        <h2>Linha do tempo · o desenho mostra o volume depois dos seus ajustes</h2>
+        <div class="ruler" id="ruler"></div>
+        ${CHANNELS.map((channel) => `
+          <div class="lane">
+            <span class="lane-name" style="color:${channel.color}">${channel.name}</span>
+            <div class="lane-wave" data-lane="${channel.id}"><canvas></canvas></div>
+          </div>`).join('')}
+        <div class="playhead" id="playhead" aria-hidden="true"></div>
+        <p class="hint">Escala em dB. Contorno claro: gravação original. Cor cheia: o que sai pela mesa. Clique em uma fala para ouvi-la.</p>
+      </section>
+      <section class="strips" aria-label="Canais da mesa">
+        ${CHANNELS.map((channel) => strip(channel)).join('')}
+      </section>`);
+
+    const $ = (id) => document.getElementById(id);
+    const video = $('video');
+    const playButton = document.getElementById('play');
+    const rewindButton = document.getElementById('rewind');
+    const abButton = document.getElementById('ab');
+    const timeLabel = document.getElementById('time');
+    const status = $('status');
+    let ctx = null, graph = null, playing = false, startedAt = 0, position = 0, abMode = false;
+    let maxPeak = 0, clipped = false;
+
+    // Régua com os planos da cena e falas sobre a trilha de voz.
+    $('ruler').innerHTML = DATA.clips.map((clip) => `<span style="left:${clip.start / DUR * 100}%;width:${(clip.end - clip.start) / DUR * 100}%">${clip.label}</span>`).join('');
+    const voiceLane = document.querySelector('[data-lane="voz"]');
+    DATA.falas.forEach((fala) => voiceLane.insertAdjacentHTML('beforeend',
+      `<button type="button" class="fala" data-fala="${fala.id}" style="left:${fala.start / DUR * 100}%;width:${(fala.end - fala.start) / DUR * 100}%" title="${fala.text}" aria-label="Ouvir ${fala.id}: ${fala.text}"><span>${fala.id}</span></button>`));
+
+    // Picos do áudio original, uma coluna por pixel, calculados uma vez.
+    const peaksCache = {};
+    const rawPeaks = (id, width) => {
+      const key = `${id}:${width}`;
+      if (peaksCache[key]) return peaksCache[key];
+      const buffer = buffers[id];
+      const data = [0, 1].map((c) => buffer.getChannelData(Math.min(c, buffer.numberOfChannels - 1)));
+      const per = Math.max(1, Math.floor(Math.min(buffer.length, DUR * buffer.sampleRate) / width));
+      const peaks = new Float32Array(width);
+      for (let x = 0; x < width; x++) {
+        let max = 0;
+        for (let i = x * per, end = i + per; i < end; i += 4) {
+          const value = Math.max(Math.abs(data[0][i] || 0), Math.abs(data[1][i] || 0));
+          if (value > max) max = value;
+        }
+        peaks[x] = max;
+      }
+      return (peaksCache[key] = peaks);
+    };
+    const drawWaves = () => {
+      const s = settings;
+      const env = envelopes(s);
+      for (const channel of CHANNELS) {
+        const canvas = document.querySelector(`[data-lane="${channel.id}"] canvas`);
+        const width = Math.max(100, Math.round(canvas.clientWidth));
+        const height = Math.round(canvas.clientHeight);
+        const ratio = window.devicePixelRatio || 1;
+        canvas.width = width * ratio;
+        canvas.height = height * ratio;
+        const g = canvas.getContext('2d');
+        g.scale(ratio, ratio);
+        const peaks = rawPeaks(channel.id, width);
+        const fader = audible(s, channel.id) ? gain(s[channel.id].db) * gain(s.master.db) : 0;
+        const mid = height / 2;
+        // Escala em dB (−60 a 0): ruído baixo e vãos ficam visíveis.
+        const scale = (value) => Math.max(0, Math.min(1, (toDb(value) + 60) / 60)) * mid;
+        g.fillStyle = 'rgba(245, 239, 226, .16)';
+        for (let x = 0; x < width; x++) {
+          const h = scale(peaks[x]);
+          g.fillRect(x, mid - h, 1, h * 2 || 1);
+        }
+        for (let x = 0; x < width; x++) {
+          const point = env[channel.id] ? env[channel.id][Math.min(POINTS - 1, Math.round(x / width * DUR * RATE))] : 1;
+          const level = peaks[x] * point * fader;
+          const h = scale(level);
+          g.fillStyle = level > gain(-1) ? '#ff6b5e' : channel.hex;
+          g.fillRect(x, mid - h, 1, h * 2 || 1);
+        }
+      }
+    };
+
+    // ---------- Controles ----------
+    const bindRange = (input, read, write, format) => {
+      const output = $(`${input.id}Value`);
+      input.value = read();
+      output.textContent = format(read());
+      input.addEventListener('input', () => {
+        write(Number(input.value));
+        output.textContent = format(Number(input.value));
+        save();
+        applyLive();
+        drawWaves();
+      });
+      input.addEventListener('dblclick', () => { input.value = 0; input.dispatchEvent(new Event('input')); input.dispatchEvent(new Event('change')); });
+    };
+    bindRange($('masterDb'), () => settings.master.db, (v) => { settings.master.db = v; }, fmtDb);
+    for (const channel of CHANNELS) {
+      const id = channel.id;
+      bindRange($(`${id}Db`), () => settings[id].db, (v) => { settings[id].db = v; }, fmtDb);
+      for (const kind of ['mute', 'solo']) {
+        const button = $(`${id}-${kind}`);
+        button.setAttribute('aria-pressed', String(settings[id][kind]));
+        button.addEventListener('click', () => {
+          settings[id][kind] = !settings[id][kind];
+          button.setAttribute('aria-pressed', String(settings[id][kind]));
+          save();
+          applyLive();
+          drawWaves();
+        });
+      }
+    }
+    DATA.falas.forEach((fala, index) => {
+      const input = $(`fala${index}`);
+      bindRange(input, () => settings.voz.falas[index], (v) => { settings.voz.falas[index] = v; }, fmtDb);
+      input.addEventListener('change', restartIfPlaying);
+    });
+    const bindChoice = (name, read, write, live) => {
+      document.querySelectorAll(`input[name="${name}"]`).forEach((radio) => {
+        radio.checked = String(read()) === radio.value;
+        radio.addEventListener('change', () => {
+          write(Number(radio.value));
+          save();
+          drawWaves();
+          live ? applyLive() : restartIfPlaying();
+        });
+      });
+    };
+    bindChoice('hp', () => settings.voz.hp, (v) => { settings.voz.hp = v; }, true);
+    bindChoice('pres', () => settings.voz.pres, (v) => { settings.voz.pres = v; }, true);
+    bindChoice('duck', () => settings.trilha.duck, (v) => { settings.trilha.duck = v; }, false);
+    const bindSwitch = (id, read, write) => {
+      const box = $(id);
+      box.checked = read();
+      box.addEventListener('change', () => { write(box.checked); save(); drawWaves(); restartIfPlaying(); });
+    };
+    bindSwitch('vaos', () => settings.voz.vaos, (v) => { settings.voz.vaos = v; });
+    bindSwitch('fadeIn', () => settings.trilha.fadeIn, (v) => { settings.trilha.fadeIn = v; });
+    bindSwitch('fadeOut', () => settings.trilha.fadeOut, (v) => { settings.trilha.fadeOut = v; });
+    $('resetMesa').addEventListener('click', () => {
+      if (!window.confirm('Voltar todos os controles para a mesa inicial? Seus ajustes serão perdidos.')) return;
+      settings = clone(DEFAULTS);
+      save();
+      window.location.reload();
+    });
+
+    // Ajustes que não mudam a automação valem na hora, sem reiniciar o som.
+    const current = () => abMode ? DEFAULTS : settings;
+    function applyLive() {
+      if (!graph || !ctx) return;
+      const s = current();
+      const now = ctx.currentTime;
+      graph.master.gain.setTargetAtTime(gain(s.master.db), now, 0.02);
+      for (const channel of CHANNELS) {
+        const node = graph.channels[channel.id];
+        node.fader.gain.setTargetAtTime(gain(s[channel.id].db), now, 0.02);
+        node.ms.gain.setTargetAtTime(audible(s, channel.id) ? 1 : 0, now, 0.01);
+      }
+      const voice = graph.channels.voz;
+      voice.hp.forEach((filter) => filter.frequency.setTargetAtTime(s.voz.hp || 10, now, 0.02));
+      voice.pres.gain.setTargetAtTime(s.voz.pres, now, 0.02);
+    }
+
+    // ---------- Transporte ----------
+    const now = () => playing ? Math.min(DUR, ctx.currentTime - startedAt) : position;
+    function stopGraph() {
+      if (!graph) return;
+      graph.sources.forEach((source) => { try { source.stop(); } catch (error) { /* já parou */ } });
+      graph.master.disconnect();
+      graph = null;
+    }
+    function play(from = position) {
+      if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();
+      ctx.resume();
+      stopGraph();
+      position = from >= DUR - 0.05 ? 0 : from;
+      const when = ctx.currentTime + 0.06;
+      graph = buildGraph(ctx, current(), buffers, position, when, true);
+      startedAt = when - position;
+      playing = true;
+      video.currentTime = position;
+      video.play().catch(() => {});
+      playButton.textContent = '❚❚ Pausar';
+    }
+    function pause() {
+      position = now();
+      playing = false;
+      stopGraph();
+      video.pause();
+      playButton.textContent = '▶ Tocar';
+    }
+    function seek(to) {
+      const target = Math.max(0, Math.min(DUR - 0.05, to));
+      if (playing) play(target);
+      else { position = target; video.currentTime = target; }
+    }
+    function restartIfPlaying() { if (playing) play(now()); }
+    playButton.addEventListener('click', () => playing ? pause() : play());
+    rewindButton.addEventListener('click', () => seek(0));
+    abButton.addEventListener('click', () => {
+      abMode = !abMode;
+      abButton.setAttribute('aria-pressed', String(abMode));
+      $('abBanner').classList.toggle('on', abMode);
+      restartIfPlaying();
+    });
+    [playButton, rewindButton, abButton].forEach((button) => { button.disabled = false; });
+    document.querySelectorAll('.lane-wave').forEach((lane) => lane.addEventListener('click', (event) => {
+      const fala = event.target.closest('.fala');
+      if (fala) { seek(DATA.falas.find((item) => item.id === fala.dataset.fala).start); if (!playing) play(); return; }
+      const box = lane.getBoundingClientRect();
+      seek((event.clientX - box.left) / box.width * DUR);
+    }));
+    document.addEventListener('keydown', (event) => {
+      if (event.target.closest('input, select, textarea, button, a')) return;
+      if (event.code === 'Space') { event.preventDefault(); playing ? pause() : play(); }
+      if (event.code === 'Home') { event.preventDefault(); seek(0); }
+    });
+    $('resetPeak').addEventListener('click', () => { maxPeak = 0; clipped = false; renderPeak(); });
+
+    // ---------- Medidores ----------
+    const sample = new Float32Array(2048);
+    const peakOf = (analyser) => {
+      analyser.getFloatTimeDomainData(sample);
+      let max = 0;
+      for (let i = 0; i < analyser.fftSize; i++) { const v = Math.abs(sample[i]); if (v > max) max = v; }
+      return max;
+    };
+    const zone = (db) => db > -1 ? 'bad' : db > -6 ? 'warn' : 'ok';
+    function renderPeak() {
+      const db = toDb(maxPeak);
+      const el = $('peak');
+      el.textContent = Number.isFinite(db) ? `${db > 0 ? '+' : '−'}${Math.abs(db).toFixed(1).replace('.', ',')} dBFS` : '−∞ dBFS';
+      el.className = `peak ${zone(db)}`;
+      $('clip').classList.toggle('on', clipped);
+    }
+    const meterCanvases = [$('meterL'), $('meterR')];
+    const meterHold = [0, 0];
+    function drawMeter(index, level) {
+      const canvas = meterCanvases[index];
+      const width = canvas.clientWidth, height = canvas.clientHeight, ratio = window.devicePixelRatio || 1;
+      if (canvas.width !== width * ratio) { canvas.width = width * ratio; canvas.height = height * ratio; }
+      const g = canvas.getContext('2d');
+      g.setTransform(ratio, 0, 0, ratio, 0, 0);
+      g.clearRect(0, 0, width, height);
+      const y = (db) => height * (1 - (Math.max(-48, Math.min(3, db)) + 48) / 51);
+      const db = toDb(level);
+      meterHold[index] = Math.max(meterHold[index] - 0.4, Number.isFinite(db) ? db : -60);
+      g.fillStyle = '#26404f';
+      g.fillRect(0, 0, width, height);
+      [[-48, -6, '#6fd39b'], [-6, -1, '#f2d15c'], [-1, 3, '#ff6b5e']].forEach(([from, to, color]) => {
+        const top = Math.max(y(to), y(Math.min(db, to)));
+        if (db > from) { g.fillStyle = color; g.fillRect(0, top, width, y(from) - top); }
+      });
+      g.fillStyle = '#f5efe2';
+      g.fillRect(0, y(meterHold[index]) - 1, width, 2);
+      g.fillStyle = 'rgba(245,239,226,.55)';
+      g.font = '10px ui-monospace, monospace';
+      [0, -6, -12, -24, -48].forEach((mark) => { g.fillRect(0, y(mark), 6, 1); if (index === 0) g.fillText(String(mark), 8, Math.max(10, y(mark) + 4)); });
+    }
+
+    function frame() {
+      const t = now();
+      if (playing && t >= DUR - 0.01) { pause(); position = DUR; }
+      timeLabel.textContent = `${fmtTime(t)} / 00:30`;
+      const lane = document.querySelector('.lane-wave');
+      const box = lane.getBoundingClientRect(), timeline = $('timeline').getBoundingClientRect();
+      $('playhead').style.left = `${box.left - timeline.left + t / DUR * box.width}px`;
+      if (playing && graph) {
+        if (Math.abs(video.currentTime - t) > 0.2 && !video.seeking) video.currentTime = t;
+        const levels = graph.meters.map(peakOf);
+        levels.forEach((level, index) => drawMeter(index, level));
+        const top = Math.max(...levels);
+        if (top > maxPeak) { maxPeak = top; renderPeak(); }
+        if (top >= gain(-0.1) && !clipped) { clipped = true; renderPeak(); }
+        for (const channel of CHANNELS) {
+          const level = toDb(peakOf(graph.channels[channel.id].meter));
+          document.querySelector(`#${channel.id}-level i`).style.width = `${Math.max(0, Math.min(100, (level + 48) / 51 * 100))}%`;
+        }
+      } else {
+        drawMeter(0, 0); drawMeter(1, 0);
+      }
+      requestAnimationFrame(frame);
+    }
+
+    // ---------- Exportar: o render processa os 30 s sem tocar ----------
+    function encodeWav(buffer) {
+      const channels = 2, length = buffer.length, data = new DataView(new ArrayBuffer(44 + length * channels * 2));
+      const text = (offset, value) => [...value].forEach((char, i) => data.setUint8(offset + i, char.charCodeAt(0)));
+      text(0, 'RIFF'); data.setUint32(4, 36 + length * channels * 2, true); text(8, 'WAVE'); text(12, 'fmt ');
+      data.setUint32(16, 16, true); data.setUint16(20, 1, true); data.setUint16(22, channels, true);
+      data.setUint32(24, buffer.sampleRate, true); data.setUint32(28, buffer.sampleRate * channels * 2, true);
+      data.setUint16(32, channels * 2, true); data.setUint16(34, 16, true); text(36, 'data'); data.setUint32(40, length * channels * 2, true);
+      const left = buffer.getChannelData(0), right = buffer.getChannelData(1);
+      for (let i = 0, offset = 44; i < length; i++) {
+        for (const value of [left[i], right[i]]) {
+          const clampedValue = Math.max(-1, Math.min(1, value));
+          data.setInt16(offset, clampedValue < 0 ? clampedValue * 0x8000 : clampedValue * 0x7fff, true);
+          offset += 2;
+        }
+      }
+      return new Blob([data], {type: 'audio/wav'});
+    }
+    async function exportMix() {
+      const button = $('export'), result = $('exportResult'), name = $('exportName').value;
+      button.disabled = true;
+      result.className = 'result';
+      result.textContent = 'Processando a mixagem…';
+      const began = performance.now();
+      try {
+        const offline = new OfflineAudioContext(2, Math.round(DUR * 48000), 48000);
+        buildGraph(offline, settings, buffers, 0, 0, false);
+        const rendered = await offline.startRendering();
+        const seconds = (performance.now() - began) / 1000;
+        let peak = 0;
+        for (const channel of [0, 1]) for (const value of rendered.getChannelData(channel)) { const v = Math.abs(value); if (v > peak) peak = v; }
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(encodeWav(rendered));
+        link.download = `${name}.wav`;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        setTimeout(() => URL.revokeObjectURL(link.href), 60000);
+        const db = toDb(peak);
+        const ok = db <= -1;
+        result.className = `result ${ok ? 'ok' : 'bad'}`;
+        result.textContent = `${name}.wav · ${DUR.toFixed(0)} s processados em ${seconds.toFixed(1).replace('.', ',')} s · pico ${fmtDb(db).replace(' dB', ' dBFS')}${ok ? ' · dentro do limite.' : ' · acima de −1 dBFS: abaixe a saída e exporte de novo.'}`;
+        status.textContent = 'Abra o arquivo baixado no player do computador e ouça até o final, com fone.';
+      } catch (error) {
+        result.className = 'result bad';
+        result.textContent = 'A exportação falhou. Atualize a página e tente de novo.';
+      }
+      button.disabled = false;
+    }
+    $('export').addEventListener('click', exportMix);
+
+    video.addEventListener('error', () => { status.textContent = 'O vídeo cena.mp4 não abriu. O som funciona mesmo assim; confira se o arquivo está na mesma pasta.'; });
+    window.addEventListener('resize', drawWaves);
+    renderPeak();
+    drawWaves();
+    requestAnimationFrame(frame);
+    window.AULA14_MESA = {settings: () => clone(settings), render: async (s) => {
+      const offline = new OfflineAudioContext(2, Math.round(DUR * 48000), 48000);
+      buildGraph(offline, s, buffers, 0, 0, false);
+      return offline.startRendering();
+    }};
+  }
+
+  function strip(channel) {
+    const id = channel.id;
+    const radios = (name, options, legend) => `<fieldset class="seg"><legend>${legend}</legend>${options.map(([value, label]) =>
+      `<label><input type="radio" name="${name}" value="${value}"><span>${label}</span></label>`).join('')}</fieldset>`;
+    const extra = {
+      voz: `
+        <div class="field"><span class="label">Volume de cada fala</span>
+          <div class="falas">${DATA.falas.map((fala, index) => `
+            <div class="row"><label for="fala${index}" title="${fala.text}">${fala.id}</label><input id="fala${index}" type="range" min="-6" max="12" step="1"><span class="value" id="fala${index}Value"></span></div>`).join('')}
+          </div></div>
+        ${radios('hp', [[0, 'Desligado'], [80, '80 Hz'], [120, '120 Hz'], [160, '160 Hz']], 'Filtro passa-alta: tira o grave abaixo de')}
+        <div class="field">${radios('pres', [[0, '0 dB'], [3, '+3 dB'], [6, '+6 dB']], 'Presença da voz (3 kHz)')}</div>
+        <label class="switch"><input type="checkbox" id="vaos"> Cortar os vãos entre as falas</label>`,
+      trilha: `
+        ${radios('duck', [[0, 'Desligado'], [-6, '−6 dB'], [-12, '−12 dB'], [-18, '−18 dB']], 'Abaixar a trilha durante a voz')}
+        <label class="switch"><input type="checkbox" id="fadeIn"> Entrada gradual (2 s)</label>
+        <label class="switch"><input type="checkbox" id="fadeOut"> Saída gradual (3 s)</label>`,
+      ambiencia: '<p class="status">Mar distante e vento na neve. Situa o lugar sem chamar atenção.</p>',
+      efeitos: '<p class="status">Passos, brilho, surpresa, deslocamentos e impacto final.</p>'
+    }[id];
+    return `<section class="panel strip" style="--c:${channel.color}" aria-label="Canal ${channel.name}">
+      <header><h2>${channel.name}</h2>
+        <button type="button" class="ms mute" id="${id}-mute" aria-label="Mudo ${channel.name}" title="Mudo">M</button>
+        <button type="button" class="ms solo" id="${id}-solo" aria-label="Solo ${channel.name}" title="Solo: ouvir só este canal">S</button>
+      </header>
+      <div class="chan-meter" id="${id}-level" aria-hidden="true"><i></i></div>
+      <div class="field"><label for="${id}Db">Volume do canal</label>
+        <div class="row"><input id="${id}Db" type="range" min="-40" max="12" step="0.5"><span class="value" id="${id}DbValue"></span></div>
+      </div>
+      ${extra}
+      ${id === 'efeitos' ? '<button class="btn" id="resetMesa" type="button">Voltar à mesa inicial</button>' : ''}
+    </section>`;
+  }
+})();
+</script>
+</body>
+</html>

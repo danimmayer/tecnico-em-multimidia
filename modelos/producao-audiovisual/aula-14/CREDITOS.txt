@@ -1,0 +1,26 @@
+AULA 14 · ORIGEM DAS MÍDIAS
+
+Imagens de cena.mp4 e exemplo-mixado.mp4:
+Caminandes 3: Llamigos (2016), Blender Foundation / Blender Institute.
+Direção: Pablo Vazquez.
+Projeto: https://studio.blender.org/projects/caminandes-3/
+Fonte da cópia utilizada:
+https://commons.wikimedia.org/wiki/File:Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm
+Licença: Creative Commons Atribuição 3.0 Não Adaptada.
+https://creativecommons.org/licenses/by/3.0/
+Adaptações didáticas: quatro excertos dos clipes da aula 11 remontados em
+30 s, sem o som original, com cartela final. Não há endosso dos autores.
+
+Locução (trilhas/voz.mp3): texto original SENAI / Prof. Daniel Marcos Mayer,
+sintetizado com Piper (código MIT, https://github.com/rhasspy/piper) e a voz
+pt_BR faber, treinada com dados CC0. Zumbido, ronco de rua e chiado foram
+acrescentados de propósito para a prática.
+
+Trilha, ambiência e efeitos (trilhas/trilha.mp3, ambiencia.mp3, efeitos.mp3):
+síntese original SENAI / Prof. Daniel Marcos Mayer, sem gravação de terceiros.
+Gerador: scripts/build-audiovisual-14-kit.py.
+
+Mesa de som e Laboratório de espera: material didático original.
+
+Ao compartilhar a mixagem com a imagem, manter estes créditos e indicar
+a remontagem e a nova trilha sonora.

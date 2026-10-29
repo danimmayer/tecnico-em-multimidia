@@ -46,7 +46,7 @@ Em computador compartilhado, imprima ou exporte o necessário e use **Limpar pre
 | 11 | Transições, efeitos e keyframes | Ficha de edição |
 | 12 | Grafismos, textos e máscaras | Kit leve `aula-12/Aula12-Canva.zip` com três cenas e uma foto para o Canva; pedidos revelados nos slides; legenda de identificação no glossário |
 | 13 | Composição e cor no Canva Free | [Kit Canva Free + Photopea](aula-13/index.html): recorte por cor em imagem, composição, correção, consulta e créditos; Photopea sem login |
-| 14 | Áudio na pós-produção e buffering | Ficha de edição; som do ambiente no glossário |
+| 14 | Áudio na pós-produção e buffering | [Kit Mesa de som](aula-14/index.html): mixagem de voz, trilha, ambiência e efeitos no navegador, sem internet e sem conta; Laboratório de espera para buffering, preview, cache, proxy e render de trecho |
 | 15 | Blocagem e bibliotecas de composição | Ficha de edição; organização por pastas de mídia |
 | 16 | Render e estreia do microcurta | Especificação de exportação; rubrica; ordem da mostra |
 | 17 | Documentário: da pauta à gravação | Pauta e recorte; consentimento; roteiro; lista de planos; captação |

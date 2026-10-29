@@ -346,12 +346,13 @@
   // Aulas 09 a 13 reuse the Aula 08 slide layout; each lesson keeps its illustrations in its own folder.
   const isDesignEight = course.slug === 'design-web' && ['08', '09', '10', '11', '12', '13'].includes(lesson.num);
   if (isDesignEight) document.body.classList.add('design-eight');
-  // Aulas 09 a 13 de Audiovisual share the production visuals of av-nine.css.
-  const isAvNine = course.slug === 'producao-audiovisual' && ['09', '10', '11', '12', '13'].includes(lesson.num);
+  // Aulas 09 a 14 de Audiovisual share the production visuals of av-nine.css.
+  const isAvNine = course.slug === 'producao-audiovisual' && ['09', '10', '11', '12', '13', '14'].includes(lesson.num);
   if (isAvNine) document.body.classList.add('av-nine');
-  // Aulas 11 a 13 use local kits and share the wider command grid.
-  if (isAvNine && ['11', '12', '13'].includes(lesson.num)) document.body.classList.add('av-eleven');
-  if (isAvNine && lesson.num === '13') document.body.classList.add('av-thirteen');
+  // Aulas 11 a 14 use local kits and share the wider command grid.
+  if (isAvNine && ['11', '12', '13', '14'].includes(lesson.num)) document.body.classList.add('av-eleven');
+  // Four-step requests keep two balanced columns on the narrow panel.
+  if (isAvNine && ['13', '14'].includes(lesson.num)) document.body.classList.add('av-thirteen');
   // These lessons time each slide from the minutes written in the teacher steps.
   const usesSlidePace = isDesignSeven || isDesignEight || isAvNine;
   const isDesignSix = course.slug === 'design-web' && lesson.num === '06';

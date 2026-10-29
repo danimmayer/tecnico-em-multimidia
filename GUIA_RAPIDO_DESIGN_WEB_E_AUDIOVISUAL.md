@@ -296,6 +296,34 @@ Regenerar: `python3 scripts/build-audiovisual-13-kit.py`,
 170 minutos de atividade, das 19:00 às 22:10, com lanche 19:45–20:05;
 somente o professor circula.
 
+Na Aula 14, a mixagem acontece na **Mesa de som** do kit
+(`modelos/producao-audiovisual/aula-14/mesa.html`): roda no navegador, sem
+internet, sem conta e sem instalação, aberta direto da pasta extraída de
+`Aula14-Som.zip`. O trailer *A última fruta* (30 s, imagens CC BY de
+Caminandes 3) chega com quatro camadas: voz, trilha, ambiência e efeitos.
+A mesa inicial estoura (+2 dBFS), a música cobre a locução, a fala 3 está
+10 dB abaixo e a voz tem zumbido de 60 Hz e ronco de rua. Sete pedidos, um
+de cada vez: voz na frente, falas niveladas, passa-alta e corte dos vãos,
+trilha abaixo da voz com entradas e saídas graduais, buffering provocado e
+resolvido, diagnóstico do editor e duas entregas.
+
+Mixagem de referência para minhas conferências: falas 0/0/+10/0 dB,
+passa-alta 120 Hz, presença +3 dB, vãos cortados, trilha −9 dB com
+abaixamento de −12 dB e as duas transições, ambiência −4 dB, efeitos −3 dB,
+saída −2 dB. Resultado perto de −23 LUFS, com pico perto de −4,5 dBFS; está em
+`exemplo-mixado.mp4`. Entregas: `mix-v1.wav`, `mix-final.wav`, `sem-voz.wav`
+(pico até −1 dBFS) e `diagnostico-aula14.txt` do **Laboratório de espera**
+(`buffering.html`), que separa buffering na rede de resolução de preview,
+cache, proxy e render de trecho no editor. Sem fone para todos, duplas com
+um fone por vez.
+
+Os 22 slides próprios vêm de `scripts/lessons/audiovisual-14.mjs`.
+Regenerar mídias exige numpy, ffmpeg e Piper com a voz pt_BR faber:
+`python3 scripts/build-audiovisual-14-kit.py --piper … --voz …`. Depois de
+editar só as páginas ou os TXT do kit, use `--so-pacote`. Em seguida,
+`node scripts/build-audiovisual.mjs`, `node scripts/validate-audiovisual.mjs`
+e `node scripts/validate-audiovisual-14-browser.cjs`.
+
 ### Edição
 
 O percurso principal usa **DaVinci Resolve**. O **CapCut** aparece como

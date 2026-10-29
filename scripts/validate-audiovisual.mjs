@@ -7,6 +7,7 @@ import * as lesson10 from './lessons/audiovisual-10.mjs';
 import * as lesson11 from './lessons/audiovisual-11.mjs';
 import * as lesson12 from './lessons/audiovisual-12.mjs';
 import * as lesson13 from './lessons/audiovisual-13.mjs';
+import * as lesson14 from './lessons/audiovisual-14.mjs';
 import {createHash} from 'node:crypto';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
@@ -175,12 +176,12 @@ for (const name of [...manifest12.student_media, 'COMECE-AQUI.txt', 'CREDITOS.tx
 }
 
 // Renderer, stylesheet and generators are wired.
-assert.ok(read('assets/course-lesson.js').includes("course.slug === 'producao-audiovisual' && ['09', '10', '11', '12', '13'].includes(lesson.num)"));
+assert.ok(read('assets/course-lesson.js').includes("course.slug === 'producao-audiovisual' && ['09', '10', '11', '12', '13', '14'].includes(lesson.num)"));
 assert.ok(read('assets/course-lesson.js').includes("visual.type === 'stills'"), 'renderizador sem quadros parados');
 assert.ok(read('assets/av-nine.css').includes('.av9-clip.is-graphic'), 'CSS sem camada de grafismo');
 assert.ok(read('aula-kit.html').includes('assets/av-nine.css'), 'aula-kit.html sem o CSS das aulas 09 e 10');
 assert.ok(read('assets/av-nine.css').includes('@media (max-height: 880px)'), 'CSS sem ajuste de altura');
-for (const module of ['./lessons/audiovisual-09.mjs', './lessons/audiovisual-10.mjs', './lessons/audiovisual-11.mjs', './lessons/audiovisual-12.mjs', './lessons/audiovisual-13.mjs']) {
+for (const module of ['./lessons/audiovisual-09.mjs', './lessons/audiovisual-10.mjs', './lessons/audiovisual-11.mjs', './lessons/audiovisual-12.mjs', './lessons/audiovisual-13.mjs', './lessons/audiovisual-14.mjs']) {
   assert.ok(read('scripts/build-course-data.mjs').includes(module), `gerador geral sem ${module}`);
 }
 
@@ -245,4 +246,93 @@ for (const item of manifest13.files) {
 }
 assert.ok(read(kit13 + 'CREDITOS.txt').includes('creativecommons.org/licenses/by/3.0/'));
 assert.ok(read(kit13 + 'index.html').includes('Aula13-Canva-Free.zip'));
-console.log('Aulas 09 a 13 AV: paridade dos dados, 170 minutos (45 + 55 + 40 + 30), lanche, kits locais, integridade do ZIP da aula 13, pedidos, linguagem e visuais validados.');
+
+// Aula 14: mixing on the kit's offline mesa, buffering only for network playback.
+const slides14 = checkLesson('14', lesson14, {
+  slideCount: 22, localKit: true,
+  resources: ['Aula14-Som.zip', 'fones de ouvido', 'sem internet e sem conta', 'CC BY', 'Nenhum programa precisa ser instalado'],
+  observation: ['um de cada vez', 'Não depender de projetos anteriores', 'disco local'],
+  minTypes: 8
+});
+const kit14 = 'modelos/producao-audiovisual/aula-14/';
+for (const slide of slides14) {
+  const files = [...(slide.resources || []).map(item => item.href), ...(slide.av9.clips || []).flatMap(clip => [clip.src, clip.poster]), ...(slide.av9.images || []).map(item => item.src)];
+  for (const file of files.filter(Boolean)) {
+    assert.ok(file.startsWith(kit14) && !file.includes('..'), `Aula 14: recurso fora do kit: ${file}`);
+    assert.ok(fs.statSync(root + file.split('#')[0]).size > 0, `Aula 14: recurso ausente: ${file}`);
+    if (file.includes('#')) assert.ok(read(file.split('#')[0]).includes(`id="${file.split('#')[1]}"`), `Aula 14: destino de ajuda ausente: ${file}`);
+  }
+  assert.ok(!/copiar no caderno|Canva|Photopea|Shotcut|PA_A/.test(JSON.stringify(slide)), `${slide.title}: a aula 14 não depende de conta, ficha ou editor anterior`);
+}
+const requests14 = slides14.filter(slide => /^Pedido \d/.test(slide.title));
+assert.equal(requests14.length, 7, 'Aula 14: sete pedidos do cliente');
+assert.deepEqual([...new Set(requests14.map(slide => slide.block))], [1, 2, 3, 4], 'Aula 14: há pedido em todos os blocos');
+for (const slide of requests14) {
+  assert.equal(slide.promptLabel, 'Pronto quando', `${slide.title}: precisa do critério de pronto`);
+  assert.ok(slide.av9.result && slide.av9.tags.some(tag => tag.label === 'TERMINOU ANTES?'), `${slide.title}: precisa de melhoria para quem termina antes`);
+  assert.ok(slide.resources.some(item => item.href.includes('AJUDA.html#')), `${slide.title}: precisa de ajuda acessível ao estudante`);
+}
+assert.ok(slides14.findIndex(slide => slide.title.startsWith('Pedido 1')) < slides14.findIndex(slide => slide.pace === 'break'), 'Aula 14: a primeira mixagem acontece antes do lanche');
+assert.ok(slides14.some(slide => slide.pace === 'extra'), 'Aula 14: banco de melhorias');
+// Escuta crítica: the four layers on one 30 s timeline.
+const layers14 = slides14.find(slide => slide.av9.type === 'tracks').av9.tracks;
+assert.deepEqual(layers14.map(track => track.label), ['VOZ', 'TRILHA', 'AMBIÊNCIA', 'EFEITOS']);
+for (const track of layers14) {
+  assert.equal(track.clips.reduce((sum, clip) => sum + clip.seconds, 0), 30, `Aula 14: a trilha ${track.label} precisa somar 30 s`);
+  // The renderer prints seconds as given: whole numbers avoid "3.5 s" on the projector.
+  assert.ok(track.clips.every(clip => Number.isInteger(clip.seconds) && (!clip.label || clip.seconds >= 3)), `Aula 14: ${track.label} com duração fracionada ou cartão estreito`);
+}
+// Buffering names network playback; editor tools are named separately.
+const editorTable14 = slides14.find(slide => slide.title === 'No editor não é buffering').av9.rows.map(row => row[0]);
+assert.deepEqual(editorTable14, ['Resolução de preview', 'Cache', 'Proxy', 'Render de trecho']);
+assert.ok(/rede/.test(lesson14.support.plainLanguage) && lesson14.support.check.some(item => item.includes('buffering só para reprodução em rede')));
+
+const manifest14 = JSON.parse(read(kit14 + 'kit-manifest.json'));
+assert.deepEqual(manifest14.files.map(item => item.name).sort(), ['AJUDA.html', 'COMECE-AQUI.txt', 'CREDITOS.txt', 'buffering.html', 'cena.mp4', 'mesa.html', 'sons.js', 'trilhas/ambiencia.mp3', 'trilhas/efeitos.mp3', 'trilhas/trilha.mp3', 'trilhas/voz.mp3'].sort());
+const zip14 = fs.readFileSync(root + kit14 + manifest14.zip);
+assert.equal(zip14.length, manifest14.bytes, 'Aula 14: ZIP diverge do manifesto; rode scripts/build-audiovisual-14-kit.py');
+assert.ok(zip14.length < 10 * 1024 * 1024, 'Aula 14: kit excessivamente grande');
+const entries14 = new Map();
+for (let cursor = 0; zip14.readUInt32LE(cursor) === 0x04034b50;) {
+  assert.equal(zip14.readUInt16LE(cursor + 8), 0, 'Aula 14: ZIP deve usar armazenamento sem compressão');
+  const size = zip14.readUInt32LE(cursor + 18);
+  const nameLength = zip14.readUInt16LE(cursor + 26);
+  const start = cursor + 30 + nameLength + zip14.readUInt16LE(cursor + 28);
+  entries14.set(zip14.toString('utf8', cursor + 30, cursor + 30 + nameLength), zip14.subarray(start, start + size));
+  cursor = start + size;
+}
+assert.equal(entries14.size, manifest14.files.length);
+for (const item of manifest14.files) {
+  const data = fs.readFileSync(root + kit14 + item.name);
+  assert.equal(createHash('sha256').update(data).digest('hex'), item.sha256, `Aula 14: ${item.name} mudou depois do ZIP; rode scripts/build-audiovisual-14-kit.py`);
+  assert.deepEqual(entries14.get('Aula14-Som/' + item.name), data, `Aula 14: ZIP diverge de ${item.name}`);
+  if (item.duration) assert.ok(Math.abs(item.duration - 30) < 0.1, `Aula 14: ${item.name} precisa durar 30 s`);
+}
+// The mesa reads every layer from sons.js, so it opens straight from the extracted folder.
+const sounds14 = {window: {}};
+vm.runInNewContext(read(kit14 + 'sons.js'), sounds14);
+const data14 = sounds14.window.AULA14_SONS;
+assert.deepEqual(Object.keys(data14.stems), ['voz', 'trilha', 'ambiencia', 'efeitos']);
+for (const [name, url] of Object.entries(data14.stems)) {
+  assert.ok(Buffer.from(url.split(',')[1], 'base64').equals(fs.readFileSync(root + kit14 + `trilhas/${name}.mp3`)), `Aula 14: sons.js diverge de trilhas/${name}.mp3`);
+}
+assert.deepEqual(plain(data14.falas), manifest14.falas);
+assert.equal(data14.falas.length, 4);
+assert.ok(data14.falas.every((fala, index) => fala.end > fala.start && (index === 0 || fala.start > data14.falas[index - 1].end) && fala.end < 30));
+assert.equal(data14.clips.at(-1).end, 30);
+for (const page of ['mesa.html', 'buffering.html', 'AJUDA.html', 'index.html']) {
+  const html = read(kit14 + page);
+  assert.ok(!/(?:src|href)="(?:https?:)?\/\//.test(html.replace(/href="https:\/\/(?:github\.com|creativecommons\.org)[^"]*"/g, '')), `Aula 14: ${page} sem dependências remotas`);
+}
+assert.ok(read(kit14 + 'mesa.html').includes('<script src="sons.js"></script>') && read(kit14 + 'mesa.html').includes('OfflineAudioContext'));
+const help14 = read(kit14 + 'AJUDA.html');
+for (const section of ['preparo', 'mesa', 'medidor', 'falas', 'ruido', 'espaco', 'exportar', 'versoes', 'buffering', 'editor', 'tempo']) {
+  assert.ok(help14.includes(`id="${section}"`), `Aula 14: ajuda sem a seção ${section}`);
+}
+const credits14 = read(kit14 + 'CREDITOS.txt');
+assert.ok(credits14.includes('creativecommons.org/licenses/by/3.0/') && credits14.includes('Piper') && credits14.includes('CC0'));
+assert.ok(read(kit14 + 'index.html').includes('Aula14-Som.zip'));
+for (const file of ['exemplo-mixado.mp4', 'telas/voz-antes.jpg', 'telas/voz-depois.jpg', 'telas/cena.jpg']) assert.ok(fs.statSync(root + kit14 + file).size > 0, `Aula 14: ${file} ausente`);
+assert.equal(manifest14.referencia.passa_alta, 120);
+
+console.log('Aulas 09 a 14 AV: paridade dos dados, 170 minutos (45 + 55 + 40 + 30), lanche, kits locais, integridade dos ZIP das aulas 13 e 14, pedidos, linguagem e visuais validados.');
