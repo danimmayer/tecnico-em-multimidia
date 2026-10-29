@@ -335,6 +335,13 @@ saída −2 dB. Resultado perto de −23 LUFS, com pico perto de −4,5 dBFS; es
 cache, proxy e render de trecho no editor. Sem fone para todos, duplas com
 um fone por vez.
 
+O kit também está publicado junto com as oficinas de Design Web, em
+https://oficinas-design-web.vercel.app/audiovisual/aula-14/ (seção Produção
+Audiovisual da página inicial). A publicação leva só os arquivos da turma: o
+`exemplo-mixado.mp4` e o `kit-manifest.json`, com a mixagem de referência,
+ficam no repositório. `node scripts/prepare-design-web-deploy.mjs` monta a
+pasta completa das oficinas.
+
 Os 23 slides próprios vêm de `scripts/lessons/audiovisual-14.mjs`.
 Regenerar mídias exige numpy, ffmpeg e Piper com a voz pt_BR faber:
 `python3 scripts/build-audiovisual-14-kit.py --piper … --voz …`. Depois de

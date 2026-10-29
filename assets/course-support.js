@@ -11150,6 +11150,10 @@ window.SENAI_TEACHING_SUPPORT = {
             },
             "resources": [
               {
+                "href": "https://oficinas-design-web.vercel.app/audiovisual/aula-14/",
+                "label": "Abrir o kit na internet"
+              },
+              {
                 "href": "modelos/producao-audiovisual/aula-14/index.html",
                 "label": "Ver o kit da aula"
               },

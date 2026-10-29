@@ -258,6 +258,7 @@ const kit14 = 'modelos/producao-audiovisual/aula-14/';
 for (const slide of slides14) {
   const files = [...(slide.resources || []).map(item => item.href), ...(slide.av9.clips || []).flatMap(clip => [clip.src, clip.poster]), ...(slide.av9.images || []).map(item => item.src)];
   for (const file of files.filter(Boolean)) {
+    if (file === lesson14.workshopUrl) continue;
     assert.ok(file.startsWith(kit14) && !file.includes('..'), `Aula 14: recurso fora do kit: ${file}`);
     assert.ok(fs.statSync(root + file.split('#')[0]).size > 0, `Aula 14: recurso ausente: ${file}`);
     if (file.includes('#')) assert.ok(read(file.split('#')[0]).includes(`id="${file.split('#')[1]}"`), `Aula 14: destino de ajuda ausente: ${file}`);
@@ -348,5 +349,10 @@ assert.ok(credits14.includes('creativecommons.org/licenses/by/3.0/') && credits1
 assert.ok(read(kit14 + 'index.html').includes('Aula14-Som.zip'));
 for (const file of ['exemplo-mixado.mp4', 'telas/voz-antes.jpg', 'telas/voz-depois.jpg', 'telas/cena.jpg']) assert.ok(fs.statSync(root + kit14 + file).size > 0, `Aula 14: ${file} ausente`);
 assert.equal(manifest14.referencia.passa_alta, 120);
+// Public site: the kit goes next to the Design Web workshops, without the reference mix.
+assert.equal(lesson14.workshopUrl, 'https://oficinas-design-web.vercel.app/audiovisual/aula-14/');
+const deploy14 = read('scripts/prepare-design-web-deploy.mjs');
+assert.ok(deploy14.includes("'aula-14':[") && !/'aula-14':\[[^\]]*(exemplo-mixado|kit-manifest)/.test(deploy14), 'Aula 14: publicação sem a mixagem de referência');
+assert.ok(read('modelos/design-web/oficinas/index.html').includes('href="audiovisual/aula-14/"'), 'Aula 14: card na página das oficinas');
 
 console.log('Aulas 09 a 14 AV: paridade dos dados, 170 minutos (45 + 55 + 40 + 30), lanche, kits locais, integridade dos ZIP das aulas 13 e 14, pedidos, linguagem e visuais validados.');
