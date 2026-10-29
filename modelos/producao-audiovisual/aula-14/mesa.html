@@ -120,7 +120,7 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
   const app = document.getElementById('app');
   const loading = document.getElementById('loading');
   if (!DATA || !(window.AudioContext || window.webkitAudioContext) || !window.OfflineAudioContext) {
-    loading.textContent = 'Não foi possível abrir a mesa. Confirme que sons.js está na mesma pasta e use um navegador atualizado (Chrome, Edge ou Firefox).';
+    loading.textContent = 'Não foi possível abrir a mesa de som. Confirme que sons.js está na mesma pasta e use um navegador atualizado (Chrome, Edge ou Firefox).';
     return;
   }
   const DUR = DATA.duration;
@@ -224,7 +224,7 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
       let last = automation;
       const node = {source, automation};
       if (env[id]) {
-        const start = Math.min(POINTS - 2, Math.floor(offset * RATE));
+        const start = Math.max(0, Math.min(POINTS - 2, Math.floor(offset * RATE)));
         automation.gain.value = env[id][start];
         automation.gain.setValueCurveAtTime(env[id].slice(start), when, Math.max(0.01, length));
       }
@@ -305,14 +305,14 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
           <div class="master">
             <div class="meter" role="img" aria-label="Medidor de pico da saída, esquerda e direita"><canvas id="meterL"></canvas><canvas id="meterR"></canvas></div>
             <div>
-              <div class="label">Pico máximo desde o início</div>
-              <div class="peak ok" id="peak" aria-live="polite">−∞ dBFS</div>
+              <div class="label">Pico máximo desde que foi zerado</div>
+              <div class="peak ok" id="peak">−∞ dBFS</div>
               <p><span class="led" id="clip">Estourou</span></p>
               <button class="btn" id="resetPeak" type="button">Zerar pico</button>
               <div class="legend">
-                <span><b style="background:var(--ok)"></b>Verde: abaixo de −6 dBFS</span>
-                <span><b style="background:var(--warn)"></b>Amarelo: entre −6 e −1 dBFS</span>
-                <span><b style="background:var(--bad)"></b>Vermelho: acima de −1 dBFS, risco de distorção</span>
+                <span><b style="background:var(--ok)"></b>Verde: tranquilo, sobra espaço</span>
+                <span><b style="background:var(--warn)"></b>Amarelo: forte, sem distorcer</span>
+                <span><b style="background:var(--bad)"></b>Vermelho: passou do limite, pode distorcer</span>
               </div>
             </div>
           </div>
@@ -327,6 +327,7 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
                 <option value="mix-v1">mix-v1.wav</option>
                 <option value="mix-final">mix-final.wav</option>
                 <option value="sem-voz">sem-voz.wav</option>
+                <option value="teste">teste.wav</option>
               </select>
               <button class="btn primary" id="export" type="button">Baixar WAV</button>
             </div>
@@ -335,7 +336,7 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
         </div>
       </section>
       <section class="panel timeline" id="timeline" aria-label="Linha do tempo">
-        <h2>Linha do tempo · o desenho mostra o volume depois dos seus ajustes</h2>
+        <h2>Linha do tempo · a forma de onda mostra o volume depois dos seus ajustes</h2>
         <div class="ruler" id="ruler"></div>
         ${CHANNELS.map((channel) => `
           <div class="lane">
@@ -343,7 +344,7 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
             <div class="lane-wave" data-lane="${channel.id}"><canvas></canvas>${channel.id === 'trilha' ? '<span class="draw-readout" id="drawReadout" aria-live="off"></span>' : ''}</div>
           </div>`).join('')}
         <div class="playhead" id="playhead" aria-hidden="true"></div>
-        <p class="hint">Escala em dB. Contorno claro: gravação original. Cor cheia: o que sai pela mesa. Clique em uma fala para ouvi-la. Com o volume desenhado ligado, a faixa TRILHA vira área de desenho.</p>
+        <p class="hint">Escala em dB. Sombra clara: gravação original. Cor: o que sai pela mesa de som. Clique em uma fala para ouvi-la. Com o volume desenhado ligado, a faixa TRILHA vira área de desenho.</p>
       </section>
       <section class="strips" aria-label="Canais da mesa">
         ${CHANNELS.map((channel) => strip(channel)).join('')}
@@ -461,7 +462,8 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
       if (drawGroup()) drawGroup().disabled = on;
     };
     trilhaLane.addEventListener('pointerdown', (event) => {
-      if (!settings.trilha.useDraw || event.target.closest('.fala')) return;
+      // Só a ponta (botão 0) desenha; a borracha da caneta (botão 5) apaga.
+      if (!settings.trilha.useDraw || event.target.closest('.fala') || ![0, 5].includes(event.button)) return;
       event.preventDefault();
       // Alguns drivers de mesa digitalizadora recusam a captura; o desenho continua sem ela.
       try { trilhaLane.setPointerCapture(event.pointerId); } catch (error) { /* sem captura */ }
@@ -475,16 +477,18 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
       const point = pointFromEvent(event);
       readout.textContent = `${fmtTime(point.t)} · ${fmtDb(stroke?.erase ? 0 : point.db)}`;
       if (!stroke) return;
+      // Sem captura, o levantar da caneta fora da faixa se perde: sem botão pressionado, o traço acaba.
+      if (event.buttons === 0) { endStroke(); return; }
       for (const sample of (event.getCoalescedEvents ? event.getCoalescedEvents() : [event])) paint(pointFromEvent(sample), stroke.erase);
       drawWaves();
     });
-    const endStroke = () => {
+    function endStroke() {
       if (!stroke) return;
       stroke = null;
       save();
       restartIfPlaying();
-    };
-    trilhaLane.addEventListener('pointerup', endStroke);
+    }
+    window.addEventListener('pointerup', endStroke);
     trilhaLane.addEventListener('pointercancel', endStroke);
     trilhaLane.addEventListener('pointerleave', () => { if (!stroke) readout.textContent = ''; });
 
@@ -549,7 +553,7 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
       settings.trilha.useDraw = v;
       if (v && !Array.isArray(settings.trilha.draw)) settings.trilha.draw = new Array(DRAW_POINTS).fill(0);
       refreshDrawMode();
-      status.textContent = v ? 'Desenhe na faixa TRILHA: em cima a música sobe, embaixo desce. A linha tracejada é 0 dB.' : 'Volume desenhado desligado.';
+      status.textContent = v ? 'Desenhe na faixa TRILHA: em cima a música sobe, embaixo desce. A linha tracejada é o volume normal.' : 'Volume desenhado desligado.';
     });
     $('clearDraw').addEventListener('click', () => {
       settings.trilha.draw = new Array(DRAW_POINTS).fill(0);
@@ -583,7 +587,8 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
     }
 
     // ---------- Transporte ----------
-    const now = () => playing ? Math.min(DUR, ctx.currentTime - startedAt) : position;
+    // O áudio pode levar alguns milissegundos para começar: a posição nunca fica antes do início.
+    const now = () => playing ? Math.max(0, Math.min(DUR, ctx.currentTime - startedAt)) : position;
     function stopGraph() {
       if (!graph) return;
       graph.sources.forEach((source) => { try { source.stop(); } catch (error) { /* já parou */ } });
@@ -611,7 +616,7 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
       playButton.textContent = '▶ Tocar';
     }
     function seek(to) {
-      const target = Math.max(0, Math.min(DUR - 0.05, to));
+      const target = Math.max(0, Math.min(DUR - 0.1, to));
       if (playing) play(target);
       else { position = target; video.currentTime = target; }
     }
@@ -621,6 +626,8 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
     abButton.addEventListener('click', () => {
       abMode = !abMode;
       abButton.setAttribute('aria-pressed', String(abMode));
+      // A mesa inicial estoura de propósito: o pico dela não entra na leitura da sua mixagem.
+      maxPeak = 0; clipped = false; renderPeak();
       $('abBanner').classList.toggle('on', abMode);
       restartIfPlaying();
     });
@@ -632,6 +639,12 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
       const box = lane.getBoundingClientRect();
       seek((event.clientX - box.left) / box.width * DUR);
     }));
+    // Depois de tocar um controle com a caneta ou o mouse, o foco sai dele: assim o espaço sempre toca e pausa.
+    // Quem navega pelo teclado (Tab) mantém o foco e usa o espaço no próprio controle.
+    document.addEventListener('pointerup', () => setTimeout(() => {
+      const active = document.activeElement;
+      if (active && active.matches('button, input[type="range"], input[type="checkbox"], input[type="radio"]')) active.blur();
+    }, 0));
     document.addEventListener('keydown', (event) => {
       if (event.target.closest('input, select, textarea, button, a')) return;
       if (event.code === 'Space') { event.preventDefault(); playing ? pause() : play(); }
@@ -647,7 +660,8 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
       for (let i = 0; i < analyser.fftSize; i++) { const v = Math.abs(sample[i]); if (v > max) max = v; }
       return max;
     };
-    const zone = (db) => db > -1 ? 'bad' : db > -6 ? 'warn' : 'ok';
+    // Compara o valor arredondado que aparece na tela: −1,0 nunca aparece como acima do limite.
+    const zone = (db) => { const shown = Math.round(db * 10) / 10; return shown > -1 ? 'bad' : shown > -6 ? 'warn' : 'ok'; };
     function renderPeak() {
       const db = toDb(maxPeak);
       const el = $('peak');
@@ -692,8 +706,8 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
         const levels = graph.meters.map(peakOf);
         levels.forEach((level, index) => drawMeter(index, level));
         const top = Math.max(...levels);
-        if (top > maxPeak) { maxPeak = top; renderPeak(); }
-        if (top >= gain(-0.1) && !clipped) { clipped = true; renderPeak(); }
+        if (!abMode && top > maxPeak) { maxPeak = top; renderPeak(); }
+        if (!abMode && top >= gain(-0.1) && !clipped) { clipped = true; renderPeak(); }
         for (const channel of CHANNELS) {
           const level = toDb(peakOf(graph.channels[channel.id].meter));
           document.querySelector(`#${channel.id}-level i`).style.width = `${Math.max(0, Math.min(100, (level + 48) / 51 * 100))}%`;
@@ -743,9 +757,18 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
         link.remove();
         setTimeout(() => URL.revokeObjectURL(link.href), 60000);
         const db = toDb(peak);
-        const ok = db <= -1;
-        result.className = `result ${ok ? 'ok' : 'bad'}`;
-        result.textContent = `${name}.wav · ${DUR.toFixed(0)} s processados em ${seconds.toFixed(1).replace('.', ',')} s · pico ${fmtDb(db).replace(' dB', ' dBFS')}${ok ? ' · dentro do limite.' : ' · acima de −1 dBFS: abaixe a saída e exporte de novo.'}`;
+        const ok = zone(db) !== 'bad';
+        const solos = CHANNELS.filter((c) => settings[c.id].solo).map((c) => c.name);
+        const mutes = CHANNELS.filter((c) => settings[c.id].mute).map((c) => c.name);
+        const warnings = [];
+        if (solos.length) warnings.push(`S ligado em ${solos.join(', ')}: o arquivo tem só ${solos.length > 1 ? 'esses canais' : 'esse canal'}.`);
+        if (name === 'sem-voz' && !settings.voz.mute) warnings.push('sem-voz.wav saiu com a VOZ: ligue o M da VOZ e exporte de novo.');
+        if (name !== 'sem-voz' && mutes.length) warnings.push(`M ligado em ${mutes.join(', ')}: ${mutes.length > 1 ? 'esses canais ficaram' : 'esse canal ficou'} fora do arquivo.`);
+        result.className = `result ${ok && !warnings.length ? 'ok' : 'bad'}`;
+        result.textContent = `${name}.wav · ${DUR.toFixed(0)} s processados em ${seconds.toFixed(1).replace('.', ',')} s · pico ${fmtDb(db).replace(' dB', ' dBFS')}`
+          + (ok ? ' · dentro do limite.' : ' · passou do limite: abaixe a trilha ou a saída e exporte de novo.')
+          + (warnings.length ? ` Atenção: ${warnings.join(' ')}` : '')
+          + ' Se exportar de novo, apague antes o arquivo anterior em Downloads.';
         status.textContent = 'Abra o arquivo baixado no player do computador e ouça até o final, com fone.';
       } catch (error) {
         result.className = 'result bad';
@@ -777,14 +800,14 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
           <div class="falas">${DATA.falas.map((fala, index) => `
             <div class="row"><label for="fala${index}" title="${fala.text}">${fala.id}</label><input id="fala${index}" type="range" min="-6" max="12" step="1"><span class="value" id="fala${index}Value"></span></div>`).join('')}
           </div></div>
-        ${radios('hp', [[0, 'Desligado'], [80, '80 Hz'], [120, '120 Hz'], [160, '160 Hz']], 'Filtro passa-alta: tira o grave abaixo de')}
-        <div class="field">${radios('pres', [[0, '0 dB'], [3, '+3 dB'], [6, '+6 dB']], 'Presença da voz (3 kHz)')}</div>
+        ${radios('hp', [[0, 'Desligado'], [80, 'Leve'], [120, 'Médio'], [160, 'Forte']], 'Tirar o ronco grave (filtro passa-alta)')}
+        <div class="field">${radios('pres', [[0, 'Normal'], [3, 'Um pouco'], [6, 'Muito']], 'Voz mais nítida (presença)')}</div>
         <label class="switch"><input type="checkbox" id="vaos"> Cortar os vãos entre as falas</label>`,
       trilha: `
         <label class="switch"><input type="checkbox" id="useDraw"> Usar o volume desenhado</label>
-        <p class="note">Desenhe com a caneta ou o mouse na faixa TRILHA da linha do tempo. Virar a caneta para a borracha apaga.</p>
+        <p class="note">Desenhe com a caneta (ou o mouse) na faixa TRILHA da linha do tempo: em cima a música sobe, embaixo desce. Errou? Desenhe por cima ou use Apagar desenho.</p>
         <button class="btn" id="clearDraw" type="button">Apagar desenho</button>
-        <div class="field">${radios('duck', [[0, 'Desligado'], [-6, '−6 dB'], [-12, '−12 dB'], [-18, '−18 dB']], 'Abaixar a trilha durante a voz (automático)')}</div>
+        <div class="field">${radios('duck', [[0, 'Desligado'], [-6, 'Pouco'], [-12, 'Médio'], [-18, 'Muito']], 'Abaixar a música durante a voz (automático)')}</div>
         <label class="switch"><input type="checkbox" id="fadeIn"> Entrada gradual (2 s)</label>
         <label class="switch"><input type="checkbox" id="fadeOut"> Saída gradual (3 s)</label>`,
       ambiencia: '<p class="status">Mar distante e vento na neve. Situa o lugar sem chamar atenção.</p>',
