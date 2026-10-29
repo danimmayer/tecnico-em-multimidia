@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Oficina de acessibilidade e usabilidade da Aula 13 de Design Web.">
+  <title>Oficina · Aula 13 · Rota acessível</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="oficina.css?v=20261023-rota-2">
+  <script src="oficina.js?v=20261023-rota-2" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#workspace">Pular para a atividade</a>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="course-line"><span>SENAI · Design Web · Aula 13</span></div>
+      <div class="masthead-title">
+        <h1>Rota acessível<span>.</span></h1>
+      </div>
+      <div class="utility-bar">
+        <label for="team">Dupla ou apelido</label>
+        <input id="team" type="text" maxlength="65" autocomplete="off" placeholder="Ex.: Lu + Caio" aria-describedby="team-help">
+        <span id="team-help" class="visually-hidden">Use só um apelido para organizar a entrega local.</span>
+        <p id="save-status" role="status" aria-live="polite"></p>
+        <div class="utility-actions">
+          <button type="button" id="export" class="button primary">Exportar entrega</button>
+          <a class="kit-link" href="kit-aula-13.zip" download>Baixar kit offline</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="phase-rail" aria-label="Paradas da oficina">
+    <ol class="phase-rail-inner">
+      <li><button type="button" data-phase="1" aria-current="step"><span class="stop" aria-hidden="true">1</span><span class="stop-name">Auditar</span><small>19:00–19:45</small><span class="visually-hidden rail-state"></span></button></li>
+      <li><button type="button" data-phase="2"><span class="stop" aria-hidden="true">2</span><span class="stop-name">Estações</span><small>20:05–20:50</small><span class="visually-hidden rail-state"></span></button></li>
+      <li><button type="button" data-phase="3"><span class="stop" aria-hidden="true">3</span><span class="stop-name">Corrigir</span><small>20:50–21:35</small><span class="visually-hidden rail-state"></span></button></li>
+      <li><button type="button" data-phase="4"><span class="stop" aria-hidden="true">4</span><span class="stop-name">Testar e pactuar</span><small>21:35–22:10</small><span class="visually-hidden rail-state"></span></button></li>
+    </ol>
+  </nav>
+  <div class="clockbar" id="clockbar" hidden></div>
+
+  <main id="workspace" tabindex="-1">
+    <noscript><p class="noscript">Esta oficina precisa de JavaScript para mostrar a página de demonstração e guardar as decisões da dupla.</p></noscript>
+  </main>
+
+  <footer class="site-footer">
+    <p><a href="../">Voltar às oficinas</a></p>
+  </footer>
+</body>
+</html>

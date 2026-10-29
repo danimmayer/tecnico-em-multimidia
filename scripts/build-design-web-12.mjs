@@ -8,7 +8,7 @@ import {lesson,support} from './lessons/design-web-12.mjs';
 
 const root=fileURLToPath(new URL('../',import.meta.url));
 const output=path.join(root,'modelos/design-web/aula-12');
-const assets=['index.html','desafio.html','laboratorio.css','laboratorio.js','guia-docente.html','LEIA-ME.txt'];
+const assets=['index.html','desafio.html','laboratorio.css','laboratorio.js','LEIA-ME.txt'];
 const read=file=>fs.readFileSync(file,'utf8');
 
 function updateGlobal(file, global, mutate) {
@@ -33,7 +33,7 @@ updateGlobal(path.join(root,'assets/course-support.js'),'SENAI_TEACHING_SUPPORT'
   data['design-web'].lessons['12']=support;
 });
 
-for(const asset of assets) {
+for(const asset of [...assets,'guia-docente.html']) {
   if(!fs.existsSync(path.join(output,asset))) throw new Error(`Arquivo da oficina ausente: ${asset}`);
 }
 // Index and fallback local must always be the same workshop.
@@ -46,6 +46,7 @@ try {
     fs.copyFileSync(path.join(output,asset),destination);
     fs.utimesSync(destination,new Date('2026-10-16T20:10:00Z'),new Date('2026-10-16T20:10:00Z'));
   }
+  fs.rmSync(path.join(output,'kit-aula-12.zip'),{force:true});
   execFileSync('zip',['-X','-q',path.join(output,'kit-aula-12.zip'),...assets],{cwd:tmp});
 } finally {
   fs.rmSync(tmp,{recursive:true,force:true});

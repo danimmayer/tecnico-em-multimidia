@@ -21,7 +21,9 @@ A aula trabalha decisões com evidência e restrições, sem repetir a criação
 
 **Exportar entrega** baixa um HTML autônomo com todos os registros e as pendências que ainda existirem. O rascunho é salvo neste navegador quando o armazenamento está disponível; o arquivo exportado é a cópia para guardar. Não há sincronização entre computadores nem importação do HTML para continuar a atividade.
 
-Sem internet, baixar e extrair `kit-aula-12.zip` inteiro e abrir `index.html`. `desafio.html` é uma entrada equivalente, mantida por compatibilidade. CSS e JavaScript estão na mesma pasta; não há bibliotecas ou fontes remotas. Se o navegador bloquear o armazenamento local, ainda é possível trabalhar e exportar sem fechar a página. O `guia-docente.html` contém roteiro, rubrica e alternativa no caderno.
+Sem internet, baixar e extrair `kit-aula-12.zip` inteiro e abrir `index.html`. `desafio.html` é uma entrada equivalente, mantida por compatibilidade. CSS e JavaScript estão na mesma pasta; não há bibliotecas ou fontes remotas. Se o navegador bloquear o armazenamento local, ainda é possível trabalhar e exportar sem fechar a página.
+
+O `guia-docente.html` (roteiro, rubrica e alternativa no caderno) é só do professor: fica no repositório, não entra no kit nem na publicação. Abrir pelo servidor local.
 
 ## Fontes e verificação
 

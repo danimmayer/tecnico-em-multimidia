@@ -161,6 +161,14 @@ A oficina Plantão UX (`modelos/design-web/aula-12/index.html`) reúne quatro de
 
 A apresentação de condução permanece na plataforma (`aula-kit.html?uc=design-web&aula=12`); os estudantes usam `https://oficinas-design-web.vercel.app/aula-12/`, inclusive os links diretos `?fase=1` a `?fase=4`. A entrega é um HTML com evidências, hipóteses revisadas, os dois planos preservados e o aviso. O progresso fica no navegador quando o armazenamento está disponível; exportar antes de fechar. O ZIP offline contém todos os arquivos necessários e pode ser aberto sem internet após extração. Não exige login, programação, dados pessoais ou impressão. Gerar com `node scripts/build-design-web-12.mjs`; roteiro e verificações em `modelos/design-web/aula-12/README.md`.
 
+### Aula 13 · Rota acessível
+
+A oficina Rota acessível (`modelos/design-web/aula-13/index.html`) leva a turma por quatro paradas: auditar a página fictícia da Virada Criativa, que chega com barreiras intencionais; passar por quatro estações de 10 minutos (contraste, zoom 200%, só teclado e texto alternativo); corrigir o protótipo no editor visual, sem código, inclusive sob o choque de conexão lenta (limite de 1 MB sem perder informação); e fazer o teste cruzado com outra dupla, seguido do pacto da turma. A noite vai de 19:00 a 22:10, com intervalo de 19:45 a 20:05.
+
+Para a turma andar sem depender do professor, cada parada tem uma missão que se completa sozinha, o botão “Estou travado” com três dicas e a regra “3 antes de mim”. As paradas e estações abrem no horário do roteiro; quem termina antes recebe um desafio extra conferido pela oficina, sem avançar. Se os relógios dos computadores estiverem errados, as palavras `rampa`, `legenda` e `pacto` (nas notas dos slides) abrem as Paradas 2, 3 e 4.
+
+As medições acontecem na própria página de demonstração (razão de contraste pela fórmula das WCAG, tamanho de letra e de alvo, foco, texto alternativo, rótulos e ordem de leitura); a leitura linear é uma aproximação didática do leitor de tela. Ninguém simula deficiência: a barreira é tratada como falha do projeto. A apresentação fica na plataforma (`aula-kit.html?uc=design-web&aula=13`); os estudantes usam `https://oficinas-design-web.vercel.app/aula-13/`, com links diretos `?fase=1` a `?fase=4` e `?fase=2&estacao=1` a `4`. A entrega é um HTML com auditoria, estações, correções justificadas, páginas Antes e Depois incorporadas, teste cruzado e pacto. Não exige login, programação, dados pessoais ou impressão; o ZIP offline funciona sem internet após extração. Gerar com `node scripts/build-design-web-13.mjs`; roteiro e verificações em `modelos/design-web/aula-13/README.md`.
+
 ### Aulas 12 e 13 · UX e acessibilidade
 
 As análises usam telas preparadas e dados fictícios; aplicativos bancários,
