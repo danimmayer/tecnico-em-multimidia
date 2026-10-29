@@ -10786,10 +10786,11 @@ window.SENAI_TEACHING_SUPPORT = {
         "plainLanguage": "Mixar é decidir quem fala primeiro. A voz é a referência; música, ambiência e efeitos entram em volta dela. Buffering é a espera para carregar uma reprodução que vem pela rede; dentro do editor, travamentos de pré-visualização se resolvem com resolução de preview, cache, proxy ou render de trecho.",
         "say": "Hoje vocês são o estúdio de som e eu sou o cliente. O trailer está pronto na imagem, mas ninguém entende a locução. Os pedidos chegam um de cada vez.",
         "demo": [
-          "Toco a cena na mesa e uso solo em cada canal: voz, trilha, ambiência e efeitos.",
+          "Toco a cena na mesa de som e uso solo em cada canal: voz, trilha, ambiência e efeitos.",
+          "Opero a mesa de som com a caneta da mesa digitalizadora no projetor: apontar sem encostar, tocar para clicar e arrastar um volume.",
           "Mostro o medidor no vermelho e baixo a trilha até a voz ficar clara e o pico sair do vermelho.",
           "Subo a fala 3 e mostro que o ruído sobe junto; ligo o passa-alta em 120 Hz e corto os vãos.",
-          "Ligo o abaixamento da trilha durante a voz e as entradas e saídas graduais; mostro a mudança no desenho da linha do tempo.",
+          "Ligo o volume desenhado e, com a caneta, desenho a linha da trilha: baixa sob cada fala, alta nos intervalos. Mostro a borracha da caneta e comparo com o abaixamento automático.",
           "Exporto um WAV e abro no player do computador.",
           "No Laboratório de espera, provoco travadas com 1 Mbps em 1080p e resolvo com qualidade automática."
         ],
@@ -10797,26 +10798,34 @@ window.SENAI_TEACHING_SUPPORT = {
         "check": [
           "As quatro falas se entendem sem esforço e parecem gravadas na mesma distância do microfone.",
           "O zumbido grave some entre as falas e diminui durante elas, sem deixar a voz fina.",
-          "A trilha abaixa durante a voz, volta nos intervalos e começa e termina de forma gradual.",
+          "A linha de volume da trilha, desenhada com a caneta ou com o abaixamento automático, desce durante a voz, volta nos intervalos e começa e termina de forma gradual.",
           "O pico do arquivo exportado fica em −1 dBFS ou abaixo e o medidor não acende Estourou.",
           "A versão sem voz mantém trilha, ambiência e efeitos com o mesmo equilíbrio.",
           "O registro de rede mostra uma configuração com travadas e outra sem travadas.",
           "O diagnóstico usa buffering só para reprodução em rede e escolhe resolução de preview, cache, proxy ou render de trecho para o editor."
         ],
-        "fallback": "Sem fones para todos, trabalho em duplas com um fone por vez e alternância a cada pedido. Se algum computador não abrir a mesa, a dupla do lado opera e o estudante decide e registra os valores no caderno. Se a caixa de som do projetor falhar, faço a escuta crítica com a turma usando os próprios fones, um canal em solo por vez.",
+        "fallback": "Sem fones para todos, trabalho em duplas com um fone por vez e alternância a cada pedido. Sem mesa digitalizadora para todos, a caneta passa de mão a cada pedido e o outro estudante usa o mouse; o abaixamento automático cumpre o pedido 4 para quem não puder desenhar. Se algum computador não abrir a mesa, a dupla do lado opera e o estudante decide e registra os valores no caderno. Se a caixa de som do projetor falhar, faço a escuta crítica com a turma usando os próprios fones, um canal em solo por vez.",
         "extension": "Cada pedido traz no slide uma melhoria para quem termina antes. Quem conclui tudo usa o banco de melhorias: comparar o passa-alta de 80 e 160 Hz, testar o abaixamento de −18 dB, exportar uma versão só com voz e ambiência ou testar rede instável no laboratório.",
         "commonProblems": [
           [
-            "A mesa fica em Carregando",
+            "A mesa de som fica em Carregando",
             "Confiro se o ZIP foi extraído e se mesa.html, sons.js e cena.mp4 estão na mesma pasta. Atualizo a página."
+          ],
+          [
+            "A caneta não move a seta ou a seta vai para outro monitor",
+            "Confiro o cabo da mesa digitalizadora e, no painel do driver, mapeio a área para a tela principal. Se não resolver, o posto segue no mouse."
+          ],
+          [
+            "O traço da caneta sai torto ou atrasado",
+            "Peço o punho apoiado na mesa digitalizadora e um traço lento; para corrigir, desenho por cima ou viro a caneta para a borracha."
           ],
           [
             "Não sai som",
             "Confiro fone, volume do computador e se algum canal ficou em M ou outro em S."
           ],
           [
-            "A turma sobe o volume do computador em vez de mexer na mesa",
-            "Peço volume do computador confortável e fixo; todos os ajustes acontecem na mesa, para o arquivo exportado sair certo."
+            "A turma sobe o volume do computador em vez de mexer na mesa de som",
+            "Peço volume do computador confortável e fixo; todos os ajustes acontecem na mesa de som, para o arquivo exportado sair certo."
           ],
           [
             "O pico continua vermelho",
@@ -10828,7 +10837,7 @@ window.SENAI_TEACHING_SUPPORT = {
           ],
           [
             "A música sumiu",
-            "O abaixamento está em −18 dB com a trilha já baixa. Subo o volume do canal da trilha e uso −12 dB."
+            "A linha desenhada ficou no fundo da faixa ou o abaixamento está em −18 dB com a trilha já baixa. Redesenho acima ou subo o volume do canal da trilha."
           ],
           [
             "O WAV não aparece",
@@ -10853,20 +10862,20 @@ window.SENAI_TEACHING_SUPPORT = {
                   "time": "19:00–19:45",
                   "minutes": 45,
                   "title": "Escutar e equilibrar",
-                  "text": "Quatro camadas e a voz na frente."
+                  "text": "Quatro camadas, caneta na mão e a voz na frente."
                 },
                 {
                   "time": "19:45–20:05",
                   "minutes": 20,
                   "title": "Lanche",
-                  "text": "Ajustes guardados na mesa.",
+                  "text": "Ajustes guardados na mesa de som.",
                   "pause": true
                 },
                 {
                   "time": "20:05–21:00",
                   "minutes": 55,
                   "title": "Tratar o som",
-                  "text": "Falas, ruído e espaço para a voz."
+                  "text": "Falas, ruído e volume desenhado."
                 },
                 {
                   "time": "21:00–21:40",
@@ -11016,7 +11025,7 @@ window.SENAI_TEACHING_SUPPORT = {
             ],
             "teacher": {
               "steps": [
-                "8 min · Toco a cena inteira na mesa, depois cada canal em solo e, por fim, tudo menos um canal. A turma diz o que perdeu a cada vez."
+                "7 min · Toco a cena inteira na mesa de som, depois cada canal em solo e, por fim, tudo menos um canal. A turma diz o que perdeu a cada vez."
               ],
               "watch": "Busco quatro funções: a voz conta, a trilha dá ritmo e emoção, a ambiência diz onde estamos, os efeitos confirmam as ações.",
               "rescue": "Se a caixa do projetor estiver fraca, peço os fones e indico o canal em solo para todos ouvirem juntos."
@@ -11066,7 +11075,7 @@ window.SENAI_TEACHING_SUPPORT = {
             },
             "teacher": {
               "steps": [
-                "5 min · Leio uma linha por vez e peço um exemplo de cada camada em filmes que a turma conhece."
+                "4 min · Leio uma linha por vez e peço um exemplo de cada camada em filmes que a turma conhece."
               ],
               "watch": "Ambiência é diferente de ruído: é escolhida e combina com o lugar; ruído é o que entrou sem querer.",
               "rescue": "Se o tempo apertar, fico só na voz e na trilha; ambiência e efeitos aparecem nos pedidos."
@@ -11096,13 +11105,13 @@ window.SENAI_TEACHING_SUPPORT = {
                 "3 min · Toco o exemplo uma vez e comparo com a mesa inicial que acabamos de ouvir."
               ],
               "watch": "Não detalho os valores: cada estudante encontra os seus ao longo dos pedidos.",
-              "rescue": "Se o vídeo não tocar, uso a mesa no estado inicial e conto o que vai mudar."
+              "rescue": "Se o vídeo não tocar, uso a mesa de som no estado inicial e conto o que vai mudar."
             }
           },
           {
-            "title": "Preparar a mesa",
+            "title": "Preparar a mesa de som",
             "kicker": "Antes do primeiro pedido",
-            "heading": "A mesa abre direto do disco",
+            "heading": "A mesa de som abre direto do disco",
             "lede": "Sem internet, sem conta e sem instalar nada.",
             "block": 1,
             "av9": {
@@ -11121,7 +11130,7 @@ window.SENAI_TEACHING_SUPPORT = {
                 {
                   "word": "FONE",
                   "who": "Volume do computador",
-                  "text": "Confortável e fixo. Daqui em diante, quem ajusta é a mesa."
+                  "text": "Confortável e fixo. Daqui em diante, quem ajusta é a mesa de som."
                 },
                 {
                   "word": "TOCAR",
@@ -11149,17 +11158,71 @@ window.SENAI_TEACHING_SUPPORT = {
             ],
             "teacher": {
               "steps": [
-                "6 min · Mostro onde está o kit e abro a mesa direto da pasta; atendo primeiro quem ainda não ouviu som."
+                "6 min · Mostro onde está o kit e abro a mesa de som direto da pasta; atendo primeiro quem ainda não ouviu som."
               ],
               "watch": "Volume do computador fixo é condição para comparar ajustes; quem mexe nele mascara o problema.",
               "rescue": "Se um posto não abrir, a dupla do lado opera e o estudante decide os ajustes."
             }
           },
           {
+            "title": "Caneta na mão",
+            "kicker": "Mesa digitalizadora",
+            "heading": "A caneta substitui o mouse",
+            "lede": "Hoje a mesa de som é operada com a caneta. A área da mesa digitalizadora corresponde à tela inteira.",
+            "block": 1,
+            "av9": {
+              "type": "commands",
+              "commands": [
+                {
+                  "word": "APONTAR",
+                  "who": "Caneta perto, sem encostar",
+                  "text": "A seta acompanha a ponta. Nada é clicado."
+                },
+                {
+                  "word": "TOCAR",
+                  "who": "Encostar e levantar",
+                  "text": "É o clique: tocar e pausar a cena."
+                },
+                {
+                  "word": "ARRASTAR",
+                  "who": "Encostar e mover",
+                  "text": "Levar o volume da AMBIÊNCIA até o fim e voltar."
+                },
+                {
+                  "word": "ONDE ESTOU?",
+                  "who": "Canto da superfície = canto da tela",
+                  "text": "Tocar os quatro cantos e ver a seta saltar."
+                }
+              ],
+              "tags": [
+                {
+                  "label": "POSTURA",
+                  "kind": "good"
+                }
+              ],
+              "result": "Segurar como um lápis, punho apoiado na superfície. Sem mesa digitalizadora no posto, o mouse faz o mesmo."
+            },
+            "promptLabel": "Diferença do mouse",
+            "prompt": "O mouse anda a partir de onde está. A caneta salta para o ponto da tela que corresponde ao lugar tocado.",
+            "resources": [
+              {
+                "href": "modelos/producao-audiovisual/aula-14/AJUDA.html#caneta",
+                "label": "Abrir passos e soluções"
+              }
+            ],
+            "teacher": {
+              "steps": [
+                "4 min · Demonstro no projetor apontar, tocar e arrastar; a turma repete com a própria caneta e toca os quatro cantos."
+              ],
+              "watch": "Posição absoluta é a diferença principal para quem só usou mouse. Peço punho apoiado: mão no ar cansa e treme o traço.",
+              "rescue": "Se a seta for para outro monitor, mapeio a mesa digitalizadora para a tela principal no painel do driver; se ainda falhar, o posto segue no mouse e a caneta volta no pedido 4."
+            }
+          },
+          {
             "title": "Ler o medidor",
-            "kicker": "Saída da mesa",
+            "kicker": "Saída da mesa de som",
             "heading": "O vermelho avisa distorção",
-            "lede": "O medidor mostra o pico do som que sai da mesa, em dBFS. Zero é o teto do arquivo.",
+            "lede": "O medidor mostra o pico do som que sai da mesa de som, em dBFS. Zero é o teto do arquivo.",
             "block": 1,
             "av9": {
               "type": "checks",
@@ -11184,7 +11247,7 @@ window.SENAI_TEACHING_SUPPORT = {
             },
             "teacher": {
               "steps": [
-                "4 min · Toco a mesa inicial até acender Estourou e explico que a soma das camadas passou do teto."
+                "3 min · Toco a mesa inicial até acender Estourou e explico que a soma das camadas passou do teto."
               ],
               "watch": "Mais alto não é melhor: acima do teto o som se deforma e não há como recuperar no arquivo.",
               "rescue": "Se ninguém viu o vermelho, toco o trecho da perseguição, onde a soma é maior."
@@ -11238,8 +11301,8 @@ window.SENAI_TEACHING_SUPPORT = {
             ],
             "teacher": {
               "steps": [
-                "2 min · Demonstro o solo na voz e a descida da trilha, sem dizer um valor.",
-                "14 min · A turma equilibra os canais; circulo conferindo o pico máximo e peço que salvem antes do lanche."
+                "2 min · Demonstro com a caneta o solo na voz e a descida da trilha, sem dizer um valor.",
+                "13 min · A turma equilibra os canais com a caneta; circulo conferindo o pico máximo e a postura com a caneta."
               ],
               "watch": "A fala 3 continua fraca: é o próximo pedido. Não deixo ninguém resolver isso subindo o canal inteiro da voz.",
               "rescue": "Se alguém só abaixa a saída, peço que olhe a fala no desenho: ela continua escondida atrás da música."
@@ -11249,25 +11312,25 @@ window.SENAI_TEACHING_SUPPORT = {
             "title": "Lanche",
             "kicker": "Aula 14 · Som na pós-produção",
             "heading": "Lanche até 20:05",
-            "lede": "A mesa guarda os ajustes neste navegador. Não fechem a pasta do kit.",
+            "lede": "A mesa de som guarda os ajustes neste navegador. Não fechem a pasta do kit.",
             "block": 1,
             "av9": {
               "type": "checks",
               "items": [
                 {
                   "label": "Guardar",
-                  "text": "Deixar a mesa aberta ou anotar os volumes no caderno."
+                  "text": "Deixar a mesa de som aberta ou anotar os volumes no caderno."
                 },
                 {
                   "label": "Voltar",
-                  "text": "Mesmo posto, mesma mesa, mesmo fone."
+                  "text": "Mesmo posto, mesmo fone. Caneta no suporte da mesa digitalizadora."
                 }
               ]
             },
             "pace": "break",
             "teacher": {
               "steps": [
-                "20 min · Lanche. Confiro que nenhuma mesa ficou em solo esquecido."
+                "20 min · Lanche. Confiro que nenhuma mesa de som ficou em solo esquecido e que as canetas estão nos suportes."
               ],
               "watch": "Os ajustes ficam no armazenamento do navegador; o que vale como entrega é o WAV exportado.",
               "rescue": "Se algum computador reiniciar, o estudante refaz o pedido 1 com os valores anotados."
@@ -11415,33 +11478,33 @@ window.SENAI_TEACHING_SUPPORT = {
             }
           },
           {
-            "title": "Pedido 4 · Espaço para a voz",
+            "title": "Pedido 4 · Desenhar o volume da trilha",
             "kicker": "Pedido do cliente",
             "heading": "Quero a música forte, mas atrás da voz",
-            "lede": "A trilha veio cortada de uma música maior: começa e termina de repente.",
+            "lede": "Com a caneta, desenhar na faixa TRILHA a linha de volume da música, como o lápis de automação dos editores.",
             "block": 2,
             "av9": {
               "type": "commands",
               "commands": [
                 {
-                  "word": "ABAIXAR",
-                  "who": "Abaixar a trilha durante a voz",
-                  "text": "Comparar −6, −12 e −18 dB."
+                  "word": "ATIVAR",
+                  "who": "Usar o volume desenhado",
+                  "text": "A faixa TRILHA cresce e vira área de desenho, com a linha em 0 dB."
                 },
                 {
-                  "word": "SUBIR",
-                  "who": "Volume da TRILHA",
-                  "text": "Agora a música pode voltar a crescer nos intervalos."
+                  "word": "DESENHAR",
+                  "who": "Caneta na faixa TRILHA",
+                  "text": "Linha baixa sob cada fala, alta nos intervalos e na perseguição."
                 },
                 {
-                  "word": "ENTRAR",
-                  "who": "Entrada gradual (2 s)",
-                  "text": "A música nasce em vez de começar no meio."
+                  "word": "OUVIR",
+                  "who": "Tocar a cena",
+                  "text": "Redesenhar por cima onde a música ainda cobre a voz. Virar a caneta apaga."
                 },
                 {
-                  "word": "SAIR",
-                  "who": "Saída gradual (3 s)",
-                  "text": "Termina junto com a assinatura."
+                  "word": "SUAVIZAR",
+                  "who": "Entrada e saída graduais",
+                  "text": "A música veio cortada: ligar as duas para não começar nem terminar de repente."
                 }
               ],
               "tags": [
@@ -11450,7 +11513,7 @@ window.SENAI_TEACHING_SUPPORT = {
                   "kind": "good"
                 }
               ],
-              "result": "Veja o desenho da trilha descer em cada fala e conte quantas vezes a música respira."
+              "result": "Desligue o desenho, ligue o abaixamento automático de −12 dB e compare. Fique com o que soar melhor."
             },
             "promptLabel": "Pronto quando",
             "prompt": "A música desce em cada fala, volta nos intervalos e começa e termina sem susto.",
@@ -11462,18 +11525,18 @@ window.SENAI_TEACHING_SUPPORT = {
             ],
             "teacher": {
               "steps": [
-                "2 min · Ligo o abaixamento em −12 dB e mostro o desenho da trilha mudando; ligo as duas transições.",
-                "12 min · Prática; circulo conferindo pico máximo de novo, porque a trilha pode ter subido."
+                "2 min · Demonstro com a caneta no projetor: desenho baixo sob F1, subo no intervalo, mostro a borracha e Apagar desenho.",
+                "12 min · Prática com a caneta; circulo conferindo o pico máximo de novo, porque a perseguição pode ter subido demais."
               ],
-              "watch": "Esse abaixamento automático se chama ducking nos editores; aqui ele segue as falas já marcadas.",
-              "rescue": "Se o pico voltar ao vermelho, a trilha subiu demais: desço o canal até sair do vermelho."
+              "watch": "O lápis de automação existe nos editores profissionais como keyframes de volume; o abaixamento automático se chama ducking. O desenho substitui o automático enquanto estiver ligado.",
+              "rescue": "Sem caneta ou com dificuldade motora, o mouse desenha igual, e o abaixamento automático de −12 dB cumpre o pedido. Se o pico voltar ao vermelho, desço a linha da perseguição."
             }
           },
           {
             "title": "Exportar a primeira versão",
             "kicker": "Antes de seguir",
             "heading": "mix-v1.wav no disco",
-            "lede": "A mesa processa os 30 segundos sem tocar e baixa um WAV.",
+            "lede": "A mesa de som processa os 30 segundos sem tocar e baixa um WAV.",
             "block": 2,
             "av9": {
               "type": "checks",
@@ -11506,7 +11569,7 @@ window.SENAI_TEACHING_SUPPORT = {
               "steps": [
                 "8 min · Demonstro a exportação e a leitura do resultado; a turma exporta e confere fora da mesa."
               ],
-              "watch": "Reparo no tempo de processamento mostrado pela mesa: 30 s de som em poucos segundos. Uso isso para abrir o bloco das esperas.",
+              "watch": "Reparo no tempo de processamento mostrado pela mesa de som: 30 s de som em poucos segundos. Uso isso para abrir o bloco das esperas.",
               "rescue": "Se o resultado vier vermelho, baixo a saída em 2 dB e exporto de novo com o mesmo nome."
             }
           },
@@ -11649,7 +11712,7 @@ window.SENAI_TEACHING_SUPPORT = {
             },
             "teacher": {
               "steps": [
-                "6 min · Leio cada linha e relaciono com a mesa: o WAV foi processado sem tocar, como um render."
+                "6 min · Leio cada linha e relaciono com a mesa de som: o WAV foi processado sem tocar, como um render."
               ],
               "watch": "Nenhuma dessas ferramentas muda o arquivo final; elas só aliviam a prévia. Proxy e cache ocupam disco.",
               "rescue": "Se faltar tempo, fico em proxy e render de trecho, que aparecem mais nos editores do laboratório."
@@ -11832,7 +11895,7 @@ window.SENAI_TEACHING_SUPPORT = {
                 "8 min · Escuta cruzada em duplas; quem receber um apontamento corrige e exporta de novo com o mesmo nome."
               ],
               "watch": "Peço apontamentos verificáveis, com o momento da cena: “na fala 3 a música cobre a palavra amigo”.",
-              "rescue": "Se o fone não puder ser trocado, o colega ouve pela mesa do vizinho, sem trocar de posto."
+              "rescue": "Se o fone não puder ser trocado, o colega ouve pelo computador do vizinho, sem trocar de posto."
             }
           },
           {
@@ -11850,7 +11913,7 @@ window.SENAI_TEACHING_SUPPORT = {
                 },
                 {
                   "label": "Trilha",
-                  "text": "Testar abaixamento de −18 dB e decidir se a música ainda conta algo."
+                  "text": "Desenhar uma subida da música na perseguição e comparar com o abaixamento automático."
                 },
                 {
                   "label": "Versão",
@@ -11873,7 +11936,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "title": "Encerramento",
             "kicker": "Aula 14 · Som na pós-produção",
             "heading": "O trailer agora se ouve",
-            "lede": "Na pasta Aula14-Som: três WAV, o diagnóstico e os créditos.",
+            "lede": "Na pasta Aula14-Som: três WAV, o diagnóstico e os créditos. Caneta no suporte da mesa digitalizadora.",
             "block": 4,
             "av9": {
               "type": "checks",
@@ -11898,10 +11961,10 @@ window.SENAI_TEACHING_SUPPORT = {
             },
             "teacher": {
               "steps": [
-                "10 min · Confiro nas telas os arquivos e o pico; três estudantes respondem por que a voz é a referência e qual a diferença entre buffering e proxy."
+                "10 min · Confiro nas telas os arquivos e o pico; três estudantes respondem por que a voz é a referência e qual a diferença entre buffering e proxy. Confiro canetas nos suportes e mesas digitalizadoras no lugar."
               ],
               "watch": "Encerro ligando com as aulas 15 e 16: blocagem e render da mostra.",
-              "rescue": "Quem não terminou guarda os ajustes da mesa e exporta o que tiver; o diagnóstico pode ser concluído no começo da próxima aula."
+              "rescue": "Quem não terminou guarda os ajustes da mesa de som e exporta o que tiver; o diagnóstico pode ser concluído no começo da próxima aula."
             }
           }
         ],

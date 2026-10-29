@@ -58,6 +58,11 @@ input[type="range"] { width: 100%; accent-color: var(--accent); min-height: 28px
 .lane-wave canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
 .fala { position: absolute; top: 0; bottom: 0; border: 1px dashed rgba(127, 209, 174, .6); border-radius: 4px; background: rgba(127, 209, 174, .07); font: 700 12px/1 ui-monospace, monospace; color: var(--voz); padding: 3px; text-align: left; vertical-align: top; cursor: pointer; }
 .fala span { position: absolute; top: 3px; left: 3px; z-index: 1; padding: 2px 5px; border-radius: 4px; background: #0b1820; }
+.lane-wave.is-drawing { height: 128px; cursor: crosshair; touch-action: none; box-shadow: inset 0 0 0 2px var(--trilha); }
+.draw-readout { position: absolute; top: 4px; right: 6px; z-index: 2; padding: 2px 6px; border-radius: 4px; background: #0b1820; font: 700 12px/1.3 ui-monospace, monospace; color: var(--trilha); pointer-events: none; }
+.draw-readout:empty { display: none; }
+.seg:disabled { opacity: .45; }
+.note { margin: 4px 0 8px; font-size: 14px; color: var(--muted); }
 .playhead { position: absolute; top: 0; bottom: 0; width: 2px; background: var(--accent); pointer-events: none; left: 110px; box-shadow: 0 0 8px rgba(247, 184, 102, .7); }
 .hint { margin: 8px 0 0 110px; font-size: 13px; color: var(--muted); }
 .strips { display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr)); gap: 14px; }
@@ -128,7 +133,7 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
   ];
   const DEFAULTS = {
     voz: {db: 0, mute: false, solo: false, falas: DATA.falas.map(() => 0), hp: 0, pres: 0, vaos: false},
-    trilha: {db: 0, mute: false, solo: false, duck: 0, fadeIn: false, fadeOut: false},
+    trilha: {db: 0, mute: false, solo: false, duck: 0, fadeIn: false, fadeOut: false, useDraw: false, draw: null},
     ambiencia: {db: 0, mute: false, solo: false},
     efeitos: {db: 0, mute: false, solo: false},
     master: {db: 0}
@@ -138,7 +143,10 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
   let settings = clone(DEFAULTS);
   try {
     const saved = JSON.parse(localStorage.getItem(STORE) || 'null');
-    if (saved && saved.voz && saved.voz.falas?.length === DATA.falas.length) settings = Object.assign(clone(DEFAULTS), saved);
+    if (saved && saved.voz && saved.voz.falas?.length === DATA.falas.length) {
+      settings = Object.assign(clone(DEFAULTS), saved);
+      settings.trilha = Object.assign(clone(DEFAULTS.trilha), saved.trilha);
+    }
   } catch (error) { /* armazenamento indisponível: começa da mesa inicial */ }
   const save = () => { try { localStorage.setItem(STORE, JSON.stringify(settings)); } catch (error) { /* sem armazenamento */ } };
 
@@ -172,9 +180,18 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
     });
     return smooth(values, Math.round(0.06 * RATE));
   };
+  // Volume desenhado: um ponto por décimo de segundo, em dB; 0 dB mantém o volume do canal.
+  const DRAW_RATE = 10, DRAW_POINTS = Math.round(DUR * DRAW_RATE) + 1, DRAW_TOP = 6, DRAW_BOTTOM = -30;
+  const drawnDb = (draw, t) => {
+    const x = Math.max(0, Math.min(DRAW_POINTS - 1, t * DRAW_RATE)), i = Math.floor(x), f = x - i;
+    return draw[i] + ((draw[Math.min(DRAW_POINTS - 1, i + 1)] ?? draw[i]) - draw[i]) * f;
+  };
   const musicEnvelope = (s) => {
     let values = new Float32Array(POINTS).fill(1);
-    if (s.duck) {
+    if (s.useDraw && Array.isArray(s.draw)) {
+      // O desenho substitui o abaixamento automático; as transições continuam valendo.
+      for (let i = 0; i < POINTS; i++) values[i] = gain(drawnDb(s.draw, i / RATE));
+    } else if (s.duck) {
       DATA.falas.forEach((fala) => {
         for (let i = Math.max(0, Math.round((fala.start - 0.3) * RATE)); i < Math.min(POINTS, Math.round((fala.end + 0.4) * RATE)); i++) values[i] = gain(s.duck);
       });
@@ -323,10 +340,10 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
         ${CHANNELS.map((channel) => `
           <div class="lane">
             <span class="lane-name" style="color:${channel.color}">${channel.name}</span>
-            <div class="lane-wave" data-lane="${channel.id}"><canvas></canvas></div>
+            <div class="lane-wave" data-lane="${channel.id}"><canvas></canvas>${channel.id === 'trilha' ? '<span class="draw-readout" id="drawReadout" aria-live="off"></span>' : ''}</div>
           </div>`).join('')}
         <div class="playhead" id="playhead" aria-hidden="true"></div>
-        <p class="hint">Escala em dB. Contorno claro: gravação original. Cor cheia: o que sai pela mesa. Clique em uma fala para ouvi-la.</p>
+        <p class="hint">Escala em dB. Contorno claro: gravação original. Cor cheia: o que sai pela mesa. Clique em uma fala para ouvi-la. Com o volume desenhado ligado, a faixa TRILHA vira área de desenho.</p>
       </section>
       <section class="strips" aria-label="Canais da mesa">
         ${CHANNELS.map((channel) => strip(channel)).join('')}
@@ -396,8 +413,80 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
           g.fillStyle = level > gain(-1) ? '#ff6b5e' : channel.hex;
           g.fillRect(x, mid - h, 1, h * 2 || 1);
         }
+        const drawing = channel.id === 'trilha' && s.trilha.useDraw && Array.isArray(s.trilha.draw);
+        if (drawing) { g.fillStyle = 'rgba(11, 24, 32, .55)'; g.fillRect(0, 0, width, height); }
+        if (drawing && s.trilha.useDraw && Array.isArray(s.trilha.draw)) {
+          // Linha desenhada: topo +6 dB, base −30 dB, guia tracejada em 0 dB.
+          const yOf = (db) => (DRAW_TOP - db) / (DRAW_TOP - DRAW_BOTTOM) * height;
+          g.strokeStyle = 'rgba(245, 239, 226, .45)';
+          g.setLineDash([4, 4]);
+          g.beginPath(); g.moveTo(0, yOf(0)); g.lineTo(width, yOf(0)); g.stroke();
+          g.setLineDash([]);
+          const path = () => { g.beginPath(); s.trilha.draw.forEach((db, i) => { const x = i / (DRAW_POINTS - 1) * width; i ? g.lineTo(x, yOf(db)) : g.moveTo(x, yOf(db)); }); };
+          g.lineJoin = 'round';
+          g.strokeStyle = '#0b1820'; g.lineWidth = 6; path(); g.stroke();
+          g.strokeStyle = '#f7b866'; g.lineWidth = 3; path(); g.stroke();
+          g.fillStyle = 'rgba(245, 239, 226, .7)';
+          g.font = '11px ui-monospace, monospace';
+          g.fillText('0 dB', 4, yOf(0) + 13);
+        }
       }
     };
+
+    // ---------- Volume desenhado com a caneta (ou o mouse) ----------
+    const trilhaLane = document.querySelector('[data-lane="trilha"]');
+    const readout = $('drawReadout');
+    const drawGroup = () => document.getElementById('duck-group');
+    const pointFromEvent = (event) => {
+      const box = trilhaLane.getBoundingClientRect();
+      const x = Math.max(0, Math.min(1, (event.clientX - box.left) / box.width));
+      const y = Math.max(0, Math.min(1, (event.clientY - box.top) / box.height));
+      return {index: Math.round(x * (DRAW_POINTS - 1)), db: Math.round((DRAW_TOP - y * (DRAW_TOP - DRAW_BOTTOM)) * 2) / 2, t: x * DUR};
+    };
+    let stroke = null;
+    const paint = (point, erase) => {
+      const db = erase ? 0 : point.db;
+      const from = stroke.last ?? point;
+      const steps = Math.max(1, Math.abs(point.index - from.index));
+      for (let k = 0; k <= steps; k++) {
+        const i = Math.round(from.index + (point.index - from.index) * k / steps);
+        settings.trilha.draw[i] = erase ? 0 : from.db + (db - from.db) * k / steps;
+      }
+      stroke.last = {index: point.index, db};
+    };
+    const refreshDrawMode = () => {
+      const on = settings.trilha.useDraw;
+      trilhaLane.classList.toggle('is-drawing', on);
+      trilhaLane.setAttribute('aria-label', on ? 'Faixa TRILHA: desenhe a linha de volume' : 'Faixa TRILHA');
+      if (drawGroup()) drawGroup().disabled = on;
+    };
+    trilhaLane.addEventListener('pointerdown', (event) => {
+      if (!settings.trilha.useDraw || event.target.closest('.fala')) return;
+      event.preventDefault();
+      // Alguns drivers de mesa digitalizadora recusam a captura; o desenho continua sem ela.
+      try { trilhaLane.setPointerCapture(event.pointerId); } catch (error) { /* sem captura */ }
+      // Borracha da caneta: botão 5 ou bit 32 de buttons.
+      stroke = {erase: event.button === 5 || (event.buttons & 32) === 32, last: null};
+      paint(pointFromEvent(event), stroke.erase);
+      drawWaves();
+    });
+    trilhaLane.addEventListener('pointermove', (event) => {
+      if (!settings.trilha.useDraw) return;
+      const point = pointFromEvent(event);
+      readout.textContent = `${fmtTime(point.t)} · ${fmtDb(stroke?.erase ? 0 : point.db)}`;
+      if (!stroke) return;
+      for (const sample of (event.getCoalescedEvents ? event.getCoalescedEvents() : [event])) paint(pointFromEvent(sample), stroke.erase);
+      drawWaves();
+    });
+    const endStroke = () => {
+      if (!stroke) return;
+      stroke = null;
+      save();
+      restartIfPlaying();
+    };
+    trilhaLane.addEventListener('pointerup', endStroke);
+    trilhaLane.addEventListener('pointercancel', endStroke);
+    trilhaLane.addEventListener('pointerleave', () => { if (!stroke) readout.textContent = ''; });
 
     // ---------- Controles ----------
     const bindRange = (input, read, write, format) => {
@@ -456,6 +545,19 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
     bindSwitch('vaos', () => settings.voz.vaos, (v) => { settings.voz.vaos = v; });
     bindSwitch('fadeIn', () => settings.trilha.fadeIn, (v) => { settings.trilha.fadeIn = v; });
     bindSwitch('fadeOut', () => settings.trilha.fadeOut, (v) => { settings.trilha.fadeOut = v; });
+    bindSwitch('useDraw', () => settings.trilha.useDraw, (v) => {
+      settings.trilha.useDraw = v;
+      if (v && !Array.isArray(settings.trilha.draw)) settings.trilha.draw = new Array(DRAW_POINTS).fill(0);
+      refreshDrawMode();
+      status.textContent = v ? 'Desenhe na faixa TRILHA: em cima a música sobe, embaixo desce. A linha tracejada é 0 dB.' : 'Volume desenhado desligado.';
+    });
+    $('clearDraw').addEventListener('click', () => {
+      settings.trilha.draw = new Array(DRAW_POINTS).fill(0);
+      save();
+      drawWaves();
+      restartIfPlaying();
+    });
+    refreshDrawMode();
     $('resetMesa').addEventListener('click', () => {
       if (!window.confirm('Voltar todos os controles para a mesa inicial? Seus ajustes serão perdidos.')) return;
       settings = clone(DEFAULTS);
@@ -524,6 +626,7 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
     });
     [playButton, rewindButton, abButton].forEach((button) => { button.disabled = false; });
     document.querySelectorAll('.lane-wave').forEach((lane) => lane.addEventListener('click', (event) => {
+      if (lane === trilhaLane && settings.trilha.useDraw) return;
       const fala = event.target.closest('.fala');
       if (fala) { seek(DATA.falas.find((item) => item.id === fala.dataset.fala).start); if (!playing) play(); return; }
       const box = lane.getBoundingClientRect();
@@ -666,7 +769,7 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
 
   function strip(channel) {
     const id = channel.id;
-    const radios = (name, options, legend) => `<fieldset class="seg"><legend>${legend}</legend>${options.map(([value, label]) =>
+    const radios = (name, options, legend) => `<fieldset class="seg" id="${name}-group"><legend>${legend}</legend>${options.map(([value, label]) =>
       `<label><input type="radio" name="${name}" value="${value}"><span>${label}</span></label>`).join('')}</fieldset>`;
     const extra = {
       voz: `
@@ -678,7 +781,10 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
         <div class="field">${radios('pres', [[0, '0 dB'], [3, '+3 dB'], [6, '+6 dB']], 'Presença da voz (3 kHz)')}</div>
         <label class="switch"><input type="checkbox" id="vaos"> Cortar os vãos entre as falas</label>`,
       trilha: `
-        ${radios('duck', [[0, 'Desligado'], [-6, '−6 dB'], [-12, '−12 dB'], [-18, '−18 dB']], 'Abaixar a trilha durante a voz')}
+        <label class="switch"><input type="checkbox" id="useDraw"> Usar o volume desenhado</label>
+        <p class="note">Desenhe com a caneta ou o mouse na faixa TRILHA da linha do tempo. Virar a caneta para a borracha apaga.</p>
+        <button class="btn" id="clearDraw" type="button">Apagar desenho</button>
+        <div class="field">${radios('duck', [[0, 'Desligado'], [-6, '−6 dB'], [-12, '−12 dB'], [-18, '−18 dB']], 'Abaixar a trilha durante a voz (automático)')}</div>
         <label class="switch"><input type="checkbox" id="fadeIn"> Entrada gradual (2 s)</label>
         <label class="switch"><input type="checkbox" id="fadeOut"> Saída gradual (3 s)</label>`,
       ambiencia: '<p class="status">Mar distante e vento na neve. Situa o lugar sem chamar atenção.</p>',

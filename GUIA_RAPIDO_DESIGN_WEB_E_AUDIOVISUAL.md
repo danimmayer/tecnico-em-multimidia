@@ -304,8 +304,19 @@ Caminandes 3) chega com quatro camadas: voz, trilha, ambiência e efeitos.
 A mesa inicial estoura (+2 dBFS), a música cobre a locução, a fala 3 está
 10 dB abaixo e a voz tem zumbido de 60 Hz e ronco de rua. Sete pedidos, um
 de cada vez: voz na frente, falas niveladas, passa-alta e corte dos vãos,
-trilha abaixo da voz com entradas e saídas graduais, buffering provocado e
-resolvido, diagnóstico do editor e duas entregas.
+volume da trilha desenhado abaixo da voz, com entradas e saídas graduais,
+buffering provocado e resolvido, diagnóstico do editor e duas entregas.
+
+A turma opera a mesa de som com a caneta das **mesas digitalizadoras**. O
+slide "Caneta na mão", antes do pedido 1, apresenta apontar sem encostar,
+tocar, arrastar e a posição absoluta (canto da superfície = canto da tela).
+No pedido 4 a caneta desenha a automação de volume da trilha, como o lápis
+de keyframes dos editores; pairar mostra tempo e volume, e a ponta de
+borracha volta a 0 dB. Antes da turma, conecto as mesas digitalizadoras e
+confiro que a caneta move a seta na tela principal; se cair em outro
+monitor, mapeio a área no painel do driver. Sem caneta, o mouse faz o
+mesmo, e o abaixamento automático (−12 dB) cumpre o pedido 4. No fim,
+canetas nos suportes.
 
 Mixagem de referência para minhas conferências: falas 0/0/+10/0 dB,
 passa-alta 120 Hz, presença +3 dB, vãos cortados, trilha −9 dB com
@@ -317,7 +328,7 @@ saída −2 dB. Resultado perto de −23 LUFS, com pico perto de −4,5 dBFS; es
 cache, proxy e render de trecho no editor. Sem fone para todos, duplas com
 um fone por vez.
 
-Os 22 slides próprios vêm de `scripts/lessons/audiovisual-14.mjs`.
+Os 23 slides próprios vêm de `scripts/lessons/audiovisual-14.mjs`.
 Regenerar mídias exige numpy, ffmpeg e Piper com a voz pt_BR faber:
 `python3 scripts/build-audiovisual-14-kit.py --piper … --voz …`. Depois de
 editar só as páginas ou os TXT do kit, use `--so-pacote`. Em seguida,

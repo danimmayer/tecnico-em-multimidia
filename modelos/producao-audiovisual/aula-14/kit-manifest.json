@@ -1,6 +1,6 @@
 {
   "zip": "Aula14-Som.zip",
-  "bytes": 7314162,
+  "bytes": 7322549,
   "duration": 30.0,
   "falas": [
     {
@@ -50,8 +50,8 @@
   "files": [
     {
       "name": "COMECE-AQUI.txt",
-      "bytes": 838,
-      "sha256": "ef685cda48b636eb38abe6427333572c13aeeb50fc67ab87bab4e78c2f023552"
+      "bytes": 1058,
+      "sha256": "b81ddf7c72aea31b5474a9e0feea62ba4ebe5479862a1ec4293dd8372c9dc0bb"
     },
     {
       "name": "CREDITOS.txt",
@@ -60,13 +60,13 @@
     },
     {
       "name": "AJUDA.html",
-      "bytes": 8782,
-      "sha256": "db217b43b35b0e1500349c2aaeb7d2e16909d0e652322adc5252601b60526a37"
+      "bytes": 10548,
+      "sha256": "86b845fff5ec48c2f78f2a88164cb99540fc3bee95c1092259ee26f8124b316a"
     },
     {
       "name": "mesa.html",
-      "bytes": 37948,
-      "sha256": "98cbd681d2adb5414362014801683ef441962a6ff50735cfe0ffbba1356b980e"
+      "bytes": 44349,
+      "sha256": "41de07b6f07e630da5e4b04987a7ab0dd93a5e2f6b3c8faf44516d245edbfe75"
     },
     {
       "name": "sons.js",

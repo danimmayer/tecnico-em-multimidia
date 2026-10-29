@@ -21,9 +21,9 @@ kbd { font: 600 15px ui-monospace, monospace; padding: 1px 6px; border-radius: 4
 </head>
 <body>
 <h1>Som na pós-produção · um passo por vez</h1>
-<p>Tudo funciona sem internet e sem conta: <a href="mesa.html">Mesa de som</a> e <a href="buffering.html">Laboratório de espera</a>. Use fone de ouvido. Os ajustes ficam guardados neste navegador; o arquivo que vale como entrega é o WAV baixado.</p>
+<p>Tudo funciona sem internet e sem conta, com a caneta da mesa digitalizadora ou com o mouse: <a href="mesa.html">Mesa de som</a> e <a href="buffering.html">Laboratório de espera</a>. Use fone de ouvido. Os ajustes ficam guardados neste navegador; o arquivo que vale como entrega é o WAV baixado.</p>
 <nav aria-label="Seções">
-  <a href="#preparo">Preparar</a><a href="#mesa">Mesa</a><a href="#medidor">Medidor</a><a href="#falas">Falas</a><a href="#ruido">Ruído</a><a href="#espaco">Espaço para a voz</a><a href="#exportar">Exportar</a><a href="#versoes">Duas entregas</a><a href="#buffering">Buffering</a><a href="#editor">No editor</a><a href="#tempo">Tempo de processamento</a>
+  <a href="#preparo">Preparar</a><a href="#caneta">Caneta</a><a href="#mesa">Mesa de som</a><a href="#medidor">Medidor</a><a href="#falas">Falas</a><a href="#ruido">Ruído</a><a href="#espaco">Espaço para a voz</a><a href="#exportar">Exportar</a><a href="#versoes">Duas entregas</a><a href="#buffering">Buffering</a><a href="#editor">No editor</a><a href="#tempo">Tempo de processamento</a>
 </nav>
 
 <section id="preparo">
@@ -39,8 +39,24 @@ kbd { font: 600 15px ui-monospace, monospace; padding: 1px 6px; border-radius: 4
   </dl>
 </section>
 
+<section id="caneta">
+  <h2>Caneta da mesa digitalizadora</h2>
+  <ul>
+    <li><strong>Apontar</strong>: caneta perto da superfície, sem encostar. A seta acompanha e nada é clicado.</li>
+    <li><strong>Tocar</strong>: encostar e levantar é o clique.</li>
+    <li><strong>Arrastar</strong>: encostar e mover leva um controle de volume ou desenha na faixa TRILHA.</li>
+    <li><strong>Posição</strong>: cada ponto da mesa digitalizadora corresponde a um ponto da tela. O canto da mesa é o canto da tela.</li>
+    <li><strong>Borracha</strong>: se a caneta tiver borracha na outra ponta, virar a caneta apaga o desenho da trilha.</li>
+  </ul>
+  <dl>
+    <dt>A seta não se mexe ou vai para outro monitor</dt><dd>Confira o cabo. Chame o professor para mapear a área da mesa digitalizadora para a tela principal. Enquanto isso, use o mouse.</dd>
+    <dt>O traço sai tremido</dt><dd>Apoie o punho na superfície, segure a caneta como um lápis e desenhe devagar.</dd>
+    <dt>No fim da aula</dt><dd>Caneta no suporte e mesa digitalizadora no lugar.</dd>
+  </dl>
+</section>
+
 <section id="mesa">
-  <h2>Como a mesa funciona</h2>
+  <h2>Como a mesa de som funciona</h2>
   <ul>
     <li>Cada camada tem um canal: VOZ, TRILHA, AMBIÊNCIA e EFEITOS.</li>
     <li><strong>M</strong> deixa o canal mudo. <strong>S</strong> (solo) faz ouvir só aquele canal; dá para ligar mais de um solo.</li>
@@ -88,7 +104,9 @@ kbd { font: 600 15px ui-monospace, monospace; padding: 1px 6px; border-radius: 4
 <section id="espaco">
   <h2>Espaço para a voz</h2>
   <dl>
-    <dt>Abaixar a trilha durante a voz</dt><dd>A música desce sozinha enquanto alguém fala e volta nos intervalos. Compare −6, −12 e −18 dB: a música deve continuar presente, mas atrás da voz.</dd>
+    <dt>Desenhar o volume da trilha</dt><dd>No canal TRILHA, ligue Usar o volume desenhado. A faixa TRILHA da linha do tempo cresce e mostra uma linha tracejada em 0 dB. Com a caneta (ou o mouse), desenhe: em cima a música sobe, embaixo desce. Desenhe baixo sob cada fala e mais alto nos intervalos. Pairar a caneta mostra o tempo e o volume antes de encostar.</dd>
+    <dt>Errou o traço</dt><dd>Desenhe por cima, vire a caneta para a borracha (volta a 0 dB) ou use Apagar desenho.</dd>
+    <dt>Abaixar a trilha durante a voz (automático)</dt><dd>A música desce sozinha enquanto alguém fala e volta nos intervalos. Compare −6, −12 e −18 dB: a música deve continuar presente, mas atrás da voz. Fica bloqueado enquanto o volume desenhado estiver ligado: desligue o desenho para comparar.</dd>
     <dt>Entrada e saída graduais</dt><dd>A trilha veio cortada de uma música maior: começa e termina de repente. A entrada gradual sobe em 2 s; a saída gradual desce nos últimos 3 s, junto com a assinatura.</dd>
     <dt>Ambiência e efeitos</dt><dd>A ambiência situa o lugar sem chamar atenção. Os efeitos acompanham ações da imagem: confira se os passos aparecem quando a lhama anda.</dd>
   </dl>

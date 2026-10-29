@@ -1595,11 +1595,11 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:45",
-            "atividade": "Escuta crítica de uma cena com e sem cada camada sonora, preparo da mesa de som e primeiro pedido do cliente: a voz na frente, sem estourar o medidor."
+            "atividade": "Escuta crítica de uma cena com e sem cada camada sonora, preparo da mesa de som, primeiro contato com a caneta da mesa digitalizadora e primeiro pedido do cliente: a voz na frente, sem estourar o medidor."
           },
           {
             "horario": "20:05 - 21:00",
-            "atividade": "Falas no mesmo volume, ruído do ar-condicionado e da rua tratado com filtro passa-alta e corte dos vãos, música abaixo da voz com entrada e saída graduais e primeira exportação em WAV."
+            "atividade": "Falas no mesmo volume, ruído do ar-condicionado e da rua tratado com filtro passa-alta e corte dos vãos, volume da música desenhado com a caneta abaixo da voz, entrada e saída graduais e primeira exportação em WAV."
           },
           {
             "horario": "21:00 - 21:40",
@@ -1607,12 +1607,12 @@ window.SENAI_COURSES = {
           },
           {
             "horario": "21:40 - 22:10",
-            "atividade": "Exportar a mixagem final e a versão sem voz, conferir em fone fora da mesa e fazer a escuta cruzada com o colega do lado."
+            "atividade": "Exportar a mixagem final e a versão sem voz, conferir em fone fora da mesa de som e fazer a escuta cruzada com o colega do lado."
           }
         ],
-        "methodology": "Oficina individual guiada por pedidos de um cliente fictício, revelados um de cada vez pelos slides. Escuta crítica antes da prática, demonstrações de até dois minutos, critério de pronto em cada pedido e melhorias para quem termina antes. A turma permanece nos postos e faz a escuta cruzada com o colega do lado.",
-        "resources": "Projetor com caixa de som, computadores com navegador e fones de ouvido. Kit Aula14-Som.zip no disco local: cena de 30 segundos com imagens CC BY de Caminandes 3, quatro camadas de som, Mesa de som e Laboratório de espera, que funcionam sem internet e sem conta. Nenhum programa precisa ser instalado. Nenhuma ficha impressa.",
-        "observation": "Aula das 19:00 às 22:10; lanche das 19:45 às 20:05 e chamada no início de cada bloco. Os estudantes permanecem nos postos; somente o professor circula. Pedidos um de cada vez: quem termina faz a melhoria do próprio slide e espera o próximo. Distribuir o Aula14-Som.zip antes da prática, por pendrive ou rede local; a mesa abre direto do disco. Não depender de projetos anteriores: a cena e as camadas são do kit. Sem fone para todos, trabalhar em dupla com um fone por vez e alternar a operação a cada pedido. Os WAV, o diagnóstico e os créditos ficam no disco local; mostrar na própria tela, sem envio pela internet."
+        "methodology": "Oficina individual guiada por pedidos de um cliente fictício, revelados um de cada vez pelos slides. Escuta crítica antes da prática, demonstrações de até dois minutos, critério de pronto em cada pedido e melhorias para quem termina antes. A mesa de som é operada com a caneta da mesa digitalizadora, que também desenha a automação de volume, como nos editores profissionais. A turma permanece nos postos e faz a escuta cruzada com o colega do lado.",
+        "resources": "Projetor com caixa de som, computadores com navegador, fones de ouvido e mesas digitalizadoras com caneta. Kit Aula14-Som.zip no disco local: cena de 30 segundos com imagens CC BY de Caminandes 3, quatro camadas de som, Mesa de som e Laboratório de espera, que funcionam sem internet e sem conta. Nenhum programa precisa ser instalado. Sem mesa digitalizadora no posto, o mouse faz as mesmas ações. Nenhuma ficha impressa.",
+        "observation": "Aula das 19:00 às 22:10; lanche das 19:45 às 20:05 e chamada no início de cada bloco. Os estudantes permanecem nos postos; somente o professor circula. Pedidos um de cada vez: quem termina faz a melhoria do próprio slide e espera o próximo. Distribuir o Aula14-Som.zip antes da prática, por pendrive ou rede local; a mesa de som abre direto do disco. Antes da turma, conectar as mesas digitalizadoras e conferir no navegador que a caneta move a seta na tela principal; o driver já instalado no laboratório basta. Mesa digitalizadora e caneta voltam ao lugar no fim, caneta no suporte. Não depender de projetos anteriores: a cena e as camadas são do kit. Sem fone para todos, trabalhar em dupla com um fone por vez e alternar a operação a cada pedido. Os WAV, o diagnóstico e os créditos ficam no disco local; mostrar na própria tela, sem envio pela internet."
       },
       {
         "num": "15",

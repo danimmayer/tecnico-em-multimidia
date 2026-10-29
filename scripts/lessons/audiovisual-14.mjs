@@ -11,14 +11,14 @@ export const lesson = {
   ],
   socioemotional: ['Reconhecer a importância da gestão do tempo como fator de impacto na qualidade dos serviços executados.'],
   schedule: [
-    {horario: '19:00 - 19:45', atividade: 'Escuta crítica de uma cena com e sem cada camada sonora, preparo da mesa de som e primeiro pedido do cliente: a voz na frente, sem estourar o medidor.'},
-    {horario: '20:05 - 21:00', atividade: 'Falas no mesmo volume, ruído do ar-condicionado e da rua tratado com filtro passa-alta e corte dos vãos, música abaixo da voz com entrada e saída graduais e primeira exportação em WAV.'},
+    {horario: '19:00 - 19:45', atividade: 'Escuta crítica de uma cena com e sem cada camada sonora, preparo da mesa de som, primeiro contato com a caneta da mesa digitalizadora e primeiro pedido do cliente: a voz na frente, sem estourar o medidor.'},
+    {horario: '20:05 - 21:00', atividade: 'Falas no mesmo volume, ruído do ar-condicionado e da rua tratado com filtro passa-alta e corte dos vãos, volume da música desenhado com a caneta abaixo da voz, entrada e saída graduais e primeira exportação em WAV.'},
     {horario: '21:00 - 21:40', atividade: 'Provocar e resolver o buffering em um simulador de rede e diagnosticar travamentos no editor: resolução de preview, cache, proxy e render de trecho. Planejar o tempo de processamento da equipe.'},
-    {horario: '21:40 - 22:10', atividade: 'Exportar a mixagem final e a versão sem voz, conferir em fone fora da mesa e fazer a escuta cruzada com o colega do lado.'}
+    {horario: '21:40 - 22:10', atividade: 'Exportar a mixagem final e a versão sem voz, conferir em fone fora da mesa de som e fazer a escuta cruzada com o colega do lado.'}
   ],
-  methodology: 'Oficina individual guiada por pedidos de um cliente fictício, revelados um de cada vez pelos slides. Escuta crítica antes da prática, demonstrações de até dois minutos, critério de pronto em cada pedido e melhorias para quem termina antes. A turma permanece nos postos e faz a escuta cruzada com o colega do lado.',
-  resources: 'Projetor com caixa de som, computadores com navegador e fones de ouvido. Kit Aula14-Som.zip no disco local: cena de 30 segundos com imagens CC BY de Caminandes 3, quatro camadas de som, Mesa de som e Laboratório de espera, que funcionam sem internet e sem conta. Nenhum programa precisa ser instalado. Nenhuma ficha impressa.',
-  observation: 'Aula das 19:00 às 22:10; lanche das 19:45 às 20:05 e chamada no início de cada bloco. Os estudantes permanecem nos postos; somente o professor circula. Pedidos um de cada vez: quem termina faz a melhoria do próprio slide e espera o próximo. Distribuir o Aula14-Som.zip antes da prática, por pendrive ou rede local; a mesa abre direto do disco. Não depender de projetos anteriores: a cena e as camadas são do kit. Sem fone para todos, trabalhar em dupla com um fone por vez e alternar a operação a cada pedido. Os WAV, o diagnóstico e os créditos ficam no disco local; mostrar na própria tela, sem envio pela internet.'
+  methodology: 'Oficina individual guiada por pedidos de um cliente fictício, revelados um de cada vez pelos slides. Escuta crítica antes da prática, demonstrações de até dois minutos, critério de pronto em cada pedido e melhorias para quem termina antes. A mesa de som é operada com a caneta da mesa digitalizadora, que também desenha a automação de volume, como nos editores profissionais. A turma permanece nos postos e faz a escuta cruzada com o colega do lado.',
+  resources: 'Projetor com caixa de som, computadores com navegador, fones de ouvido e mesas digitalizadoras com caneta. Kit Aula14-Som.zip no disco local: cena de 30 segundos com imagens CC BY de Caminandes 3, quatro camadas de som, Mesa de som e Laboratório de espera, que funcionam sem internet e sem conta. Nenhum programa precisa ser instalado. Sem mesa digitalizadora no posto, o mouse faz as mesmas ações. Nenhuma ficha impressa.',
+  observation: 'Aula das 19:00 às 22:10; lanche das 19:45 às 20:05 e chamada no início de cada bloco. Os estudantes permanecem nos postos; somente o professor circula. Pedidos um de cada vez: quem termina faz a melhoria do próprio slide e espera o próximo. Distribuir o Aula14-Som.zip antes da prática, por pendrive ou rede local; a mesa de som abre direto do disco. Antes da turma, conectar as mesas digitalizadoras e conferir no navegador que a caneta move a seta na tela principal; o driver já instalado no laboratório basta. Mesa digitalizadora e caneta voltam ao lugar no fim, caneta no suporte. Não depender de projetos anteriores: a cena e as camadas são do kit. Sem fone para todos, trabalhar em dupla com um fone por vez e alternar a operação a cada pedido. Os WAV, o diagnóstico e os créditos ficam no disco local; mostrar na própria tela, sem envio pela internet.'
 };
 
 const base = 'modelos/producao-audiovisual/aula-14/';
@@ -33,10 +33,11 @@ export const support = {
   plainLanguage: 'Mixar é decidir quem fala primeiro. A voz é a referência; música, ambiência e efeitos entram em volta dela. Buffering é a espera para carregar uma reprodução que vem pela rede; dentro do editor, travamentos de pré-visualização se resolvem com resolução de preview, cache, proxy ou render de trecho.',
   say: 'Hoje vocês são o estúdio de som e eu sou o cliente. O trailer está pronto na imagem, mas ninguém entende a locução. Os pedidos chegam um de cada vez.',
   demo: [
-    'Toco a cena na mesa e uso solo em cada canal: voz, trilha, ambiência e efeitos.',
+    'Toco a cena na mesa de som e uso solo em cada canal: voz, trilha, ambiência e efeitos.',
+    'Opero a mesa de som com a caneta da mesa digitalizadora no projetor: apontar sem encostar, tocar para clicar e arrastar um volume.',
     'Mostro o medidor no vermelho e baixo a trilha até a voz ficar clara e o pico sair do vermelho.',
     'Subo a fala 3 e mostro que o ruído sobe junto; ligo o passa-alta em 120 Hz e corto os vãos.',
-    'Ligo o abaixamento da trilha durante a voz e as entradas e saídas graduais; mostro a mudança no desenho da linha do tempo.',
+    'Ligo o volume desenhado e, com a caneta, desenho a linha da trilha: baixa sob cada fala, alta nos intervalos. Mostro a borracha da caneta e comparo com o abaixamento automático.',
     'Exporto um WAV e abro no player do computador.',
     'No Laboratório de espera, provoco travadas com 1 Mbps em 1080p e resolvo com qualidade automática.'
   ],
@@ -44,21 +45,23 @@ export const support = {
   check: [
     'As quatro falas se entendem sem esforço e parecem gravadas na mesma distância do microfone.',
     'O zumbido grave some entre as falas e diminui durante elas, sem deixar a voz fina.',
-    'A trilha abaixa durante a voz, volta nos intervalos e começa e termina de forma gradual.',
+    'A linha de volume da trilha, desenhada com a caneta ou com o abaixamento automático, desce durante a voz, volta nos intervalos e começa e termina de forma gradual.',
     'O pico do arquivo exportado fica em −1 dBFS ou abaixo e o medidor não acende Estourou.',
     'A versão sem voz mantém trilha, ambiência e efeitos com o mesmo equilíbrio.',
     'O registro de rede mostra uma configuração com travadas e outra sem travadas.',
     'O diagnóstico usa buffering só para reprodução em rede e escolhe resolução de preview, cache, proxy ou render de trecho para o editor.'
   ],
-  fallback: 'Sem fones para todos, trabalho em duplas com um fone por vez e alternância a cada pedido. Se algum computador não abrir a mesa, a dupla do lado opera e o estudante decide e registra os valores no caderno. Se a caixa de som do projetor falhar, faço a escuta crítica com a turma usando os próprios fones, um canal em solo por vez.',
+  fallback: 'Sem fones para todos, trabalho em duplas com um fone por vez e alternância a cada pedido. Sem mesa digitalizadora para todos, a caneta passa de mão a cada pedido e o outro estudante usa o mouse; o abaixamento automático cumpre o pedido 4 para quem não puder desenhar. Se algum computador não abrir a mesa, a dupla do lado opera e o estudante decide e registra os valores no caderno. Se a caixa de som do projetor falhar, faço a escuta crítica com a turma usando os próprios fones, um canal em solo por vez.',
   extension: 'Cada pedido traz no slide uma melhoria para quem termina antes. Quem conclui tudo usa o banco de melhorias: comparar o passa-alta de 80 e 160 Hz, testar o abaixamento de −18 dB, exportar uma versão só com voz e ambiência ou testar rede instável no laboratório.',
   commonProblems: [
-    ['A mesa fica em Carregando', 'Confiro se o ZIP foi extraído e se mesa.html, sons.js e cena.mp4 estão na mesma pasta. Atualizo a página.'],
+    ['A mesa de som fica em Carregando', 'Confiro se o ZIP foi extraído e se mesa.html, sons.js e cena.mp4 estão na mesma pasta. Atualizo a página.'],
+    ['A caneta não move a seta ou a seta vai para outro monitor', 'Confiro o cabo da mesa digitalizadora e, no painel do driver, mapeio a área para a tela principal. Se não resolver, o posto segue no mouse.'],
+    ['O traço da caneta sai torto ou atrasado', 'Peço o punho apoiado na mesa digitalizadora e um traço lento; para corrigir, desenho por cima ou viro a caneta para a borracha.'],
     ['Não sai som', 'Confiro fone, volume do computador e se algum canal ficou em M ou outro em S.'],
-    ['A turma sobe o volume do computador em vez de mexer na mesa', 'Peço volume do computador confortável e fixo; todos os ajustes acontecem na mesa, para o arquivo exportado sair certo.'],
+    ['A turma sobe o volume do computador em vez de mexer na mesa de som', 'Peço volume do computador confortável e fixo; todos os ajustes acontecem na mesa de som, para o arquivo exportado sair certo.'],
     ['O pico continua vermelho', 'Baixo primeiro a trilha, que é a camada mais forte; só depois mexo na saída. Zero o pico e ouço a cena inteira.'],
     ['A voz ficou fina', 'O passa-alta está em 160 Hz. Volto para 120 ou 80 Hz e comparo em solo.'],
-    ['A música sumiu', 'O abaixamento está em −18 dB com a trilha já baixa. Subo o volume do canal da trilha e uso −12 dB.'],
+    ['A música sumiu', 'A linha desenhada ficou no fundo da faixa ou o abaixamento está em −18 dB com a trilha já baixa. Redesenho acima ou subo o volume do canal da trilha.'],
     ['O WAV não aparece', 'Procuro na pasta Downloads e movo para a pasta Aula14-Som.'],
     ['Confundem buffering com travamento do editor', 'Pergunto de onde vem o vídeo: se vem pela rede, é buffering; se o computador está processando, é preview, cache, proxy ou render.']
   ],
@@ -67,9 +70,9 @@ export const support = {
       title: 'Ordem do dia', kicker: 'Aula 14 · Som na pós-produção', heading: 'A imagem está pronta. O som, ainda não.',
       lede: 'Hoje vocês são o estúdio de som. Os pedidos do cliente chegam um de cada vez.', block: 1,
       av9: {type: 'day', rows: [
-        {time: '19:00–19:45', minutes: 45, title: 'Escutar e equilibrar', text: 'Quatro camadas e a voz na frente.'},
-        {time: '19:45–20:05', minutes: 20, title: 'Lanche', text: 'Ajustes guardados na mesa.', pause: true},
-        {time: '20:05–21:00', minutes: 55, title: 'Tratar o som', text: 'Falas, ruído e espaço para a voz.'},
+        {time: '19:00–19:45', minutes: 45, title: 'Escutar e equilibrar', text: 'Quatro camadas, caneta na mão e a voz na frente.'},
+        {time: '19:45–20:05', minutes: 20, title: 'Lanche', text: 'Ajustes guardados na mesa de som.', pause: true},
+        {time: '20:05–21:00', minutes: 55, title: 'Tratar o som', text: 'Falas, ruído e volume desenhado.'},
         {time: '21:00–21:40', minutes: 40, title: 'Esperas', text: 'Buffering na rede e prévia no editor.'},
         {time: '21:40–22:10', minutes: 30, title: 'Entregar', text: 'Mixagem final e versão sem voz.'}
       ]},
@@ -86,7 +89,7 @@ export const support = {
         {label: 'EFEITOS', clips: [{kind: 'empty', seconds: 7}, {kind: 'video', label: 'Passos', seconds: 4}, {kind: 'empty', seconds: 1}, {kind: 'video', label: 'Surpresa', seconds: 3}, {kind: 'empty', seconds: 4}, {kind: 'video', label: 'Perseguição', seconds: 6}, {kind: 'video', label: 'Impacto', seconds: 5}]}
       ], caption: 'A última fruta: trailer de', total: true},
       resources: [{href: `${base}mesa.html`, label: 'Abrir a mesa de som'}],
-      teacher: teacher(['8 min · Toco a cena inteira na mesa, depois cada canal em solo e, por fim, tudo menos um canal. A turma diz o que perdeu a cada vez.'], 'Busco quatro funções: a voz conta, a trilha dá ritmo e emoção, a ambiência diz onde estamos, os efeitos confirmam as ações.', 'Se a caixa do projetor estiver fraca, peço os fones e indico o canal em solo para todos ouvirem juntos.')
+      teacher: teacher(['7 min · Toco a cena inteira na mesa de som, depois cada canal em solo e, por fim, tudo menos um canal. A turma diz o que perdeu a cada vez.'], 'Busco quatro funções: a voz conta, a trilha dá ritmo e emoção, a ambiência diz onde estamos, os efeitos confirmam as ações.', 'Se a caixa do projetor estiver fraca, peço os fones e indico o canal em solo para todos ouvirem juntos.')
     },
     {
       title: 'Cada camada tem um trabalho', kicker: 'Antes de mexer', heading: 'Cada camada tem um trabalho',
@@ -97,37 +100,50 @@ export const support = {
         ['Ambiência', 'Dizer onde estamos.', 'Mar distante e vento na neve.', 'O lugar parece vazio.'],
         ['Efeitos', 'Confirmar as ações.', 'Passos, surpresa e impacto.', 'A ação perde força.']
       ]},
-      teacher: teacher(['5 min · Leio uma linha por vez e peço um exemplo de cada camada em filmes que a turma conhece.'], 'Ambiência é diferente de ruído: é escolhida e combina com o lugar; ruído é o que entrou sem querer.', 'Se o tempo apertar, fico só na voz e na trilha; ambiência e efeitos aparecem nos pedidos.')
+      teacher: teacher(['4 min · Leio uma linha por vez e peço um exemplo de cada camada em filmes que a turma conhece.'], 'Ambiência é diferente de ruído: é escolhida e combina com o lugar; ruído é o que entrou sem querer.', 'Se o tempo apertar, fico só na voz e na trilha; ambiência e efeitos aparecem nos pedidos.')
     },
     {
       title: 'O ponto de chegada', kicker: 'Uma ideia do que vamos criar', heading: 'A mesma cena, mixada',
       lede: 'Escutem: em algum momento a música disputa com a voz?', block: 1,
       av9: {type: 'media', clips: [{src: `${base}exemplo-mixado.mp4`, label: 'EXEMPLO', text: 'Voz clara, música atrás dela, começo e fim graduais.', poster: `${base}telas/cena.jpg`}]},
       promptLabel: 'Repare', prompt: 'A música desce sozinha quando alguém fala e volta nos intervalos.',
-      teacher: teacher(['3 min · Toco o exemplo uma vez e comparo com a mesa inicial que acabamos de ouvir.'], 'Não detalho os valores: cada estudante encontra os seus ao longo dos pedidos.', 'Se o vídeo não tocar, uso a mesa no estado inicial e conto o que vai mudar.')
+      teacher: teacher(['3 min · Toco o exemplo uma vez e comparo com a mesa inicial que acabamos de ouvir.'], 'Não detalho os valores: cada estudante encontra os seus ao longo dos pedidos.', 'Se o vídeo não tocar, uso a mesa de som no estado inicial e conto o que vai mudar.')
     },
     {
-      title: 'Preparar a mesa', kicker: 'Antes do primeiro pedido', heading: 'A mesa abre direto do disco',
+      title: 'Preparar a mesa de som', kicker: 'Antes do primeiro pedido', heading: 'A mesa de som abre direto do disco',
       lede: 'Sem internet, sem conta e sem instalar nada.', block: 1,
       av9: {type: 'commands', commands: [
         {word: 'EXTRAIR', who: 'Aula14-Som.zip', text: 'Extrair no disco local, não abrir de dentro do ZIP.'},
         {word: 'ABRIR', who: 'mesa.html', text: 'Dois cliques; Chrome, Edge ou Firefox.'},
-        {word: 'FONE', who: 'Volume do computador', text: 'Confortável e fixo. Daqui em diante, quem ajusta é a mesa.'},
+        {word: 'FONE', who: 'Volume do computador', text: 'Confortável e fixo. Daqui em diante, quem ajusta é a mesa de som.'},
         {word: 'TOCAR', who: 'Espaço ou botão Tocar', text: 'Usar M e S para ouvir cada canal.'}
       ], tags: [{label: 'PRONTO', kind: 'good'}], result: 'A cena toca com som e o medidor da saída se mexe.'},
       resources: [{href: `${base}index.html`, label: 'Ver o kit da aula'}, ...help('preparo')],
-      teacher: teacher(['6 min · Mostro onde está o kit e abro a mesa direto da pasta; atendo primeiro quem ainda não ouviu som.'], 'Volume do computador fixo é condição para comparar ajustes; quem mexe nele mascara o problema.', 'Se um posto não abrir, a dupla do lado opera e o estudante decide os ajustes.')
+      teacher: teacher(['6 min · Mostro onde está o kit e abro a mesa de som direto da pasta; atendo primeiro quem ainda não ouviu som.'], 'Volume do computador fixo é condição para comparar ajustes; quem mexe nele mascara o problema.', 'Se um posto não abrir, a dupla do lado opera e o estudante decide os ajustes.')
     },
     {
-      title: 'Ler o medidor', kicker: 'Saída da mesa', heading: 'O vermelho avisa distorção',
-      lede: 'O medidor mostra o pico do som que sai da mesa, em dBFS. Zero é o teto do arquivo.', block: 1,
+      title: 'Caneta na mão', kicker: 'Mesa digitalizadora', heading: 'A caneta substitui o mouse',
+      lede: 'Hoje a mesa de som é operada com a caneta. A área da mesa digitalizadora corresponde à tela inteira.', block: 1,
+      av9: {type: 'commands', commands: [
+        {word: 'APONTAR', who: 'Caneta perto, sem encostar', text: 'A seta acompanha a ponta. Nada é clicado.'},
+        {word: 'TOCAR', who: 'Encostar e levantar', text: 'É o clique: tocar e pausar a cena.'},
+        {word: 'ARRASTAR', who: 'Encostar e mover', text: 'Levar o volume da AMBIÊNCIA até o fim e voltar.'},
+        {word: 'ONDE ESTOU?', who: 'Canto da superfície = canto da tela', text: 'Tocar os quatro cantos e ver a seta saltar.'}
+      ], tags: [{label: 'POSTURA', kind: 'good'}], result: 'Segurar como um lápis, punho apoiado na superfície. Sem mesa digitalizadora no posto, o mouse faz o mesmo.'},
+      promptLabel: 'Diferença do mouse', prompt: 'O mouse anda a partir de onde está. A caneta salta para o ponto da tela que corresponde ao lugar tocado.',
+      resources: help('caneta'),
+      teacher: teacher(['4 min · Demonstro no projetor apontar, tocar e arrastar; a turma repete com a própria caneta e toca os quatro cantos.'], 'Posição absoluta é a diferença principal para quem só usou mouse. Peço punho apoiado: mão no ar cansa e treme o traço.', 'Se a seta for para outro monitor, mapeio a mesa digitalizadora para a tela principal no painel do driver; se ainda falhar, o posto segue no mouse e a caneta volta no pedido 4.')
+    },
+    {
+      title: 'Ler o medidor', kicker: 'Saída da mesa de som', heading: 'O vermelho avisa distorção',
+      lede: 'O medidor mostra o pico do som que sai da mesa de som, em dBFS. Zero é o teto do arquivo.', block: 1,
       av9: checks([
         ['Verde', 'Abaixo de −6 dBFS: há folga.'],
         ['Amarelo', 'Entre −6 e −1 dBFS: forte, sem distorcer. Lugar dos trechos mais altos.'],
         ['Vermelho', 'Acima de −1 dBFS: risco de distorção no arquivo.'],
         ['Estourou', 'Acende quando a soma passa do teto. Zerar o pico e ouvir de novo.']
       ]),
-      teacher: teacher(['4 min · Toco a mesa inicial até acender Estourou e explico que a soma das camadas passou do teto.'], 'Mais alto não é melhor: acima do teto o som se deforma e não há como recuperar no arquivo.', 'Se ninguém viu o vermelho, toco o trecho da perseguição, onde a soma é maior.')
+      teacher: teacher(['3 min · Toco a mesa inicial até acender Estourou e explico que a soma das camadas passou do teto.'], 'Mais alto não é melhor: acima do teto o som se deforma e não há como recuperar no arquivo.', 'Se ninguém viu o vermelho, toco o trecho da perseguição, onde a soma é maior.')
     },
     {
       title: 'Pedido 1 · A voz na frente', kicker: 'Pedido do cliente', heading: 'Ninguém entende o narrador',
@@ -140,17 +156,17 @@ export const support = {
       ], 'Use A/B para comparar com a mesa inicial e descreva em uma frase o que mudou.'),
       promptLabel: 'Pronto quando', prompt: 'As falas 1, 2 e 4 se entendem com tudo tocando e o pico máximo fica abaixo de −1 dBFS.',
       resources: help('medidor'),
-      teacher: teacher(['2 min · Demonstro o solo na voz e a descida da trilha, sem dizer um valor.', '14 min · A turma equilibra os canais; circulo conferindo o pico máximo e peço que salvem antes do lanche.'], 'A fala 3 continua fraca: é o próximo pedido. Não deixo ninguém resolver isso subindo o canal inteiro da voz.', 'Se alguém só abaixa a saída, peço que olhe a fala no desenho: ela continua escondida atrás da música.')
+      teacher: teacher(['2 min · Demonstro com a caneta o solo na voz e a descida da trilha, sem dizer um valor.', '13 min · A turma equilibra os canais com a caneta; circulo conferindo o pico máximo e a postura com a caneta.'], 'A fala 3 continua fraca: é o próximo pedido. Não deixo ninguém resolver isso subindo o canal inteiro da voz.', 'Se alguém só abaixa a saída, peço que olhe a fala no desenho: ela continua escondida atrás da música.')
     },
     {
       title: 'Lanche', kicker: 'Aula 14 · Som na pós-produção', heading: 'Lanche até 20:05',
-      lede: 'A mesa guarda os ajustes neste navegador. Não fechem a pasta do kit.', block: 1,
+      lede: 'A mesa de som guarda os ajustes neste navegador. Não fechem a pasta do kit.', block: 1,
       av9: checks([
-        ['Guardar', 'Deixar a mesa aberta ou anotar os volumes no caderno.'],
-        ['Voltar', 'Mesmo posto, mesma mesa, mesmo fone.']
+        ['Guardar', 'Deixar a mesa de som aberta ou anotar os volumes no caderno.'],
+        ['Voltar', 'Mesmo posto, mesmo fone. Caneta no suporte da mesa digitalizadora.']
       ]),
       pace: 'break',
-      teacher: teacher(['20 min · Lanche. Confiro que nenhuma mesa ficou em solo esquecido.'], 'Os ajustes ficam no armazenamento do navegador; o que vale como entrega é o WAV exportado.', 'Se algum computador reiniciar, o estudante refaz o pedido 1 com os valores anotados.')
+      teacher: teacher(['20 min · Lanche. Confiro que nenhuma mesa de som ficou em solo esquecido e que as canetas estão nos suportes.'], 'Os ajustes ficam no armazenamento do navegador; o que vale como entrega é o WAV exportado.', 'Se algum computador reiniciar, o estudante refaz o pedido 1 com os valores anotados.')
     },
     {
       title: 'Pedido 2 · Falas no mesmo volume', kicker: 'Pedido do cliente', heading: 'A fala 3 parece vir de longe',
@@ -189,21 +205,21 @@ export const support = {
       teacher: teacher(['2 min · Demonstro o passa-alta nas três posições, em solo, e o corte dos vãos.', '13 min · Prática; circulo pedindo que cada um justifique a frequência escolhida.'], '120 Hz é o meio-termo para esta voz. 160 Hz já afina o narrador; 80 Hz deixa parte do ronco do carro.', 'Se alguém não ouvir diferença, peço volume confortável mais alto no fone, toco a fala 3 em solo e alterno Desligado e 120 Hz.')
     },
     {
-      title: 'Pedido 4 · Espaço para a voz', kicker: 'Pedido do cliente', heading: 'Quero a música forte, mas atrás da voz',
-      lede: 'A trilha veio cortada de uma música maior: começa e termina de repente.', block: 2,
+      title: 'Pedido 4 · Desenhar o volume da trilha', kicker: 'Pedido do cliente', heading: 'Quero a música forte, mas atrás da voz',
+      lede: 'Com a caneta, desenhar na faixa TRILHA a linha de volume da música, como o lápis de automação dos editores.', block: 2,
       av9: commands([
-        ['ABAIXAR', 'Abaixar a trilha durante a voz', 'Comparar −6, −12 e −18 dB.'],
-        ['SUBIR', 'Volume da TRILHA', 'Agora a música pode voltar a crescer nos intervalos.'],
-        ['ENTRAR', 'Entrada gradual (2 s)', 'A música nasce em vez de começar no meio.'],
-        ['SAIR', 'Saída gradual (3 s)', 'Termina junto com a assinatura.']
-      ], 'Veja o desenho da trilha descer em cada fala e conte quantas vezes a música respira.'),
+        ['ATIVAR', 'Usar o volume desenhado', 'A faixa TRILHA cresce e vira área de desenho, com a linha em 0 dB.'],
+        ['DESENHAR', 'Caneta na faixa TRILHA', 'Linha baixa sob cada fala, alta nos intervalos e na perseguição.'],
+        ['OUVIR', 'Tocar a cena', 'Redesenhar por cima onde a música ainda cobre a voz. Virar a caneta apaga.'],
+        ['SUAVIZAR', 'Entrada e saída graduais', 'A música veio cortada: ligar as duas para não começar nem terminar de repente.']
+      ], 'Desligue o desenho, ligue o abaixamento automático de −12 dB e compare. Fique com o que soar melhor.'),
       promptLabel: 'Pronto quando', prompt: 'A música desce em cada fala, volta nos intervalos e começa e termina sem susto.',
       resources: help('espaco'),
-      teacher: teacher(['2 min · Ligo o abaixamento em −12 dB e mostro o desenho da trilha mudando; ligo as duas transições.', '12 min · Prática; circulo conferindo pico máximo de novo, porque a trilha pode ter subido.'], 'Esse abaixamento automático se chama ducking nos editores; aqui ele segue as falas já marcadas.', 'Se o pico voltar ao vermelho, a trilha subiu demais: desço o canal até sair do vermelho.')
+      teacher: teacher(['2 min · Demonstro com a caneta no projetor: desenho baixo sob F1, subo no intervalo, mostro a borracha e Apagar desenho.', '12 min · Prática com a caneta; circulo conferindo o pico máximo de novo, porque a perseguição pode ter subido demais.'], 'O lápis de automação existe nos editores profissionais como keyframes de volume; o abaixamento automático se chama ducking. O desenho substitui o automático enquanto estiver ligado.', 'Sem caneta ou com dificuldade motora, o mouse desenha igual, e o abaixamento automático de −12 dB cumpre o pedido. Se o pico voltar ao vermelho, desço a linha da perseguição.')
     },
     {
       title: 'Exportar a primeira versão', kicker: 'Antes de seguir', heading: 'mix-v1.wav no disco',
-      lede: 'A mesa processa os 30 segundos sem tocar e baixa um WAV.', block: 2,
+      lede: 'A mesa de som processa os 30 segundos sem tocar e baixa um WAV.', block: 2,
       av9: checks([
         ['Nome', 'Exportar a mixagem como mix-v1.wav.'],
         ['Pico', 'O resultado precisa mostrar −1 dBFS ou abaixo.'],
@@ -211,7 +227,7 @@ export const support = {
         ['Guardar', 'Mover o arquivo de Downloads para a pasta Aula14-Som.']
       ]),
       resources: help('exportar'),
-      teacher: teacher(['8 min · Demonstro a exportação e a leitura do resultado; a turma exporta e confere fora da mesa.'], 'Reparo no tempo de processamento mostrado pela mesa: 30 s de som em poucos segundos. Uso isso para abrir o bloco das esperas.', 'Se o resultado vier vermelho, baixo a saída em 2 dB e exporto de novo com o mesmo nome.')
+      teacher: teacher(['8 min · Demonstro a exportação e a leitura do resultado; a turma exporta e confere fora da mesa.'], 'Reparo no tempo de processamento mostrado pela mesa de som: 30 s de som em poucos segundos. Uso isso para abrir o bloco das esperas.', 'Se o resultado vier vermelho, baixo a saída em 2 dB e exporto de novo com o mesmo nome.')
     },
     {
       title: 'Buffering', kicker: 'Vídeo pela rede', heading: 'O vídeo para quando a reserva acaba',
@@ -247,7 +263,7 @@ export const support = {
         ['Proxy', 'Cópia leve do original para editar.', 'Arquivos pesados, como 4K.'],
         ['Render de trecho', 'Processa antes só o trecho pesado.', 'Trecho com muitos efeitos.']
       ]},
-      teacher: teacher(['6 min · Leio cada linha e relaciono com a mesa: o WAV foi processado sem tocar, como um render.'], 'Nenhuma dessas ferramentas muda o arquivo final; elas só aliviam a prévia. Proxy e cache ocupam disco.', 'Se faltar tempo, fico em proxy e render de trecho, que aparecem mais nos editores do laboratório.')
+      teacher: teacher(['6 min · Leio cada linha e relaciono com a mesa de som: o WAV foi processado sem tocar, como um render.'], 'Nenhuma dessas ferramentas muda o arquivo final; elas só aliviam a prévia. Proxy e cache ocupam disco.', 'Se faltar tempo, fico em proxy e render de trecho, que aparecem mais nos editores do laboratório.')
     },
     {
       title: 'Pedido 6 · Diagnóstico', kicker: 'Pedido do cliente', heading: 'A equipe perdeu a noite esperando',
@@ -295,14 +311,14 @@ export const support = {
         ['Música', 'Ela cobre alguma fala ou some demais?'],
         ['Começo e fim', 'Algo começa ou termina de repente?']
       ]),
-      teacher: teacher(['8 min · Escuta cruzada em duplas; quem receber um apontamento corrige e exporta de novo com o mesmo nome.'], 'Peço apontamentos verificáveis, com o momento da cena: “na fala 3 a música cobre a palavra amigo”.', 'Se o fone não puder ser trocado, o colega ouve pela mesa do vizinho, sem trocar de posto.')
+      teacher: teacher(['8 min · Escuta cruzada em duplas; quem receber um apontamento corrige e exporta de novo com o mesmo nome.'], 'Peço apontamentos verificáveis, com o momento da cena: “na fala 3 a música cobre a palavra amigo”.', 'Se o fone não puder ser trocado, o colega ouve pelo computador do vizinho, sem trocar de posto.')
     },
     {
       title: 'Banco de melhorias', kicker: 'Para quem concluiu tudo', heading: 'Um teste a mais, sem perder a entrega',
       lede: 'Os arquivos finais continuam guardados. Testem e comparem.', block: 4,
       av9: checks([
         ['Voz', 'Comparar passa-alta em 80 e 160 Hz e explicar a diferença.'],
-        ['Trilha', 'Testar abaixamento de −18 dB e decidir se a música ainda conta algo.'],
+        ['Trilha', 'Desenhar uma subida da música na perseguição e comparar com o abaixamento automático.'],
         ['Versão', 'Exportar só voz e ambiência, como um podcast da cena.'],
         ['Rede', 'Rede instável a 3 Mbps: qual qualidade assiste sem travar?']
       ]),
@@ -311,14 +327,14 @@ export const support = {
     },
     {
       title: 'Encerramento', kicker: 'Aula 14 · Som na pós-produção', heading: 'O trailer agora se ouve',
-      lede: 'Na pasta Aula14-Som: três WAV, o diagnóstico e os créditos.', block: 4,
+      lede: 'Na pasta Aula14-Som: três WAV, o diagnóstico e os créditos. Caneta no suporte da mesa digitalizadora.', block: 4,
       av9: checks([
         ['Mixagem', 'mix-v1.wav, mix-final.wav e sem-voz.wav, pico em −1 dBFS ou abaixo.'],
         ['Diagnóstico', 'diagnostico-aula14.txt com testes de rede e as oito situações.'],
         ['Explicar', 'Por que a voz é a referência da mixagem?'],
         ['Próxima aula', 'Organizar a composição em blocos: o som entra como bloco também.']
       ]),
-      teacher: teacher(['10 min · Confiro nas telas os arquivos e o pico; três estudantes respondem por que a voz é a referência e qual a diferença entre buffering e proxy.'], 'Encerro ligando com as aulas 15 e 16: blocagem e render da mostra.', 'Quem não terminou guarda os ajustes da mesa e exporta o que tiver; o diagnóstico pode ser concluído no começo da próxima aula.')
+      teacher: teacher(['10 min · Confiro nas telas os arquivos e o pico; três estudantes respondem por que a voz é a referência e qual a diferença entre buffering e proxy. Confiro canetas nos suportes e mesas digitalizadoras no lugar.'], 'Encerro ligando com as aulas 15 e 16: blocagem e render da mostra.', 'Quem não terminou guarda os ajustes da mesa de som e exporta o que tiver; o diagnóstico pode ser concluído no começo da próxima aula.')
     }
   ],
   appendDefaultClosing: false

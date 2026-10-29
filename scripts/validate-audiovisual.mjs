@@ -249,9 +249,9 @@ assert.ok(read(kit13 + 'index.html').includes('Aula13-Canva-Free.zip'));
 
 // Aula 14: mixing on the kit's offline mesa, buffering only for network playback.
 const slides14 = checkLesson('14', lesson14, {
-  slideCount: 22, localKit: true,
-  resources: ['Aula14-Som.zip', 'fones de ouvido', 'sem internet e sem conta', 'CC BY', 'Nenhum programa precisa ser instalado'],
-  observation: ['um de cada vez', 'Não depender de projetos anteriores', 'disco local'],
+  slideCount: 23, localKit: true,
+  resources: ['Aula14-Som.zip', 'fones de ouvido', 'mesas digitalizadoras com caneta', 'o mouse faz as mesmas ações', 'sem internet e sem conta', 'CC BY', 'Nenhum programa precisa ser instalado'],
+  observation: ['um de cada vez', 'Não depender de projetos anteriores', 'disco local', 'mesas digitalizadoras', 'caneta no suporte'],
   minTypes: 8
 });
 const kit14 = 'modelos/producao-audiovisual/aula-14/';
@@ -274,6 +274,15 @@ for (const slide of requests14) {
 }
 assert.ok(slides14.findIndex(slide => slide.title.startsWith('Pedido 1')) < slides14.findIndex(slide => slide.pace === 'break'), 'Aula 14: a primeira mixagem acontece antes do lanche');
 assert.ok(slides14.some(slide => slide.pace === 'extra'), 'Aula 14: banco de melhorias');
+// Mesas digitalizadoras: familiarization before the first request, then the pen draws the music automation.
+const pen14 = slides14.findIndex(slide => slide.title === 'Caneta na mão');
+assert.ok(pen14 > 0 && pen14 < slides14.findIndex(slide => slide.title.startsWith('Pedido 1')) && slides14[pen14].block === 1, 'Aula 14: familiarização com a caneta antes do pedido 1');
+const draw14 = slides14.find(slide => slide.title.startsWith('Pedido 4'));
+assert.ok(/caneta/i.test(draw14.lede) && draw14.av9.commands.some(command => command.who === 'Usar o volume desenhado'), 'Aula 14: o pedido 4 é desenhado com a caneta');
+assert.ok(/abaixamento automático/.test(draw14.av9.result) && /mouse/.test(draw14.teacher.rescue), 'Aula 14: alternativa sem caneta no pedido 4');
+// "Mesa" alone is ambiguous with tablets in the room: the public layer names mesa de som or mesa digitalizadora.
+const mesa14 = JSON.stringify(slides14.map(({teacher, ...slide}) => slide)).match(/\bmesa\b(?! de som| digitalizadora| inicial|\.html)/gi);
+assert.equal(mesa14, null, 'Aula 14: "mesa" sem complemento na camada da turma');
 // Escuta crítica: the four layers on one 30 s timeline.
 const layers14 = slides14.find(slide => slide.av9.type === 'tracks').av9.tracks;
 assert.deepEqual(layers14.map(track => track.label), ['VOZ', 'TRILHA', 'AMBIÊNCIA', 'EFEITOS']);
@@ -325,8 +334,9 @@ for (const page of ['mesa.html', 'buffering.html', 'AJUDA.html', 'index.html']) 
   assert.ok(!/(?:src|href)="(?:https?:)?\/\//.test(html.replace(/href="https:\/\/(?:github\.com|creativecommons\.org)[^"]*"/g, '')), `Aula 14: ${page} sem dependências remotas`);
 }
 assert.ok(read(kit14 + 'mesa.html').includes('<script src="sons.js"></script>') && read(kit14 + 'mesa.html').includes('OfflineAudioContext'));
+assert.ok(/touch-action: none/.test(read(kit14 + 'mesa.html')) && read(kit14 + 'mesa.html').includes('getCoalescedEvents'), 'Aula 14: área de desenho pronta para caneta');
 const help14 = read(kit14 + 'AJUDA.html');
-for (const section of ['preparo', 'mesa', 'medidor', 'falas', 'ruido', 'espaco', 'exportar', 'versoes', 'buffering', 'editor', 'tempo']) {
+for (const section of ['preparo', 'caneta', 'mesa', 'medidor', 'falas', 'ruido', 'espaco', 'exportar', 'versoes', 'buffering', 'editor', 'tempo']) {
   assert.ok(help14.includes(`id="${section}"`), `Aula 14: ajuda sem a seção ${section}`);
 }
 const credits14 = read(kit14 + 'CREDITOS.txt');

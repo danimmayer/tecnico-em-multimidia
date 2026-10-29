@@ -74,6 +74,39 @@ const manifest = JSON.parse(fs.readFileSync(path.join(kit, 'kit-manifest.json'),
     assert.equal(saved.trilha.db, -12);
     assert.equal(saved.voz.hp, 120);
 
+    // Volume desenhado: a stroke low on the TRILHA lane lowers the music; the pen eraser restores 0 dB.
+    await page.locator('#useDraw').check();
+    assert.equal(await page.locator('input[name="duck"]').first().isDisabled(), true, 'o desenho substitui o abaixamento automático');
+    const lane = await page.locator('[data-lane="trilha"]').boundingBox();
+    const xAt = (seconds) => lane.x + seconds / 30 * lane.width;
+    await page.mouse.move(xAt(10), lane.y + lane.height * 0.95);
+    await page.mouse.down();
+    for (let t = 10; t <= 20; t += 0.5) await page.mouse.move(xAt(t), lane.y + lane.height * 0.95);
+    await page.mouse.up();
+    const drawn = await page.evaluate(async () => {
+      const s = window.AULA14_MESA.settings();
+      const rms = (buffer, from, to) => { let sum = 0, n = 0; const d = buffer.getChannelData(0); for (let i = Math.round(from * 48000); i < Math.round(to * 48000); i++) { sum += d[i] * d[i]; n++; } return 10 * Math.log10(sum / n + 1e-30); };
+      const only = (settings) => { const copy = JSON.parse(JSON.stringify(settings)); copy.trilha.solo = true; return copy; };
+      const flat = JSON.parse(JSON.stringify(s)); flat.trilha.useDraw = false;
+      const [withDraw, without] = await Promise.all([only(s), only(flat)].map((x) => window.AULA14_MESA.render(x)));
+      return {low: s.trilha.draw[150], untouched: s.trilha.draw[50], drop: rms(without, 12, 18) - rms(withDraw, 12, 18), same: Math.abs(rms(without, 2, 6) - rms(withDraw, 2, 6))};
+    });
+    assert.ok(drawn.low <= -27 && drawn.untouched === 0, `o traço grava o volume desenhado (${drawn.low} dB)`);
+    assert.ok(drawn.drop > 20 && drawn.same < 0.5, 'a música desce só onde a linha foi desenhada');
+    // Pen hover shows the value before touching; the eraser end (button 5) restores 0 dB.
+    await page.evaluate(({x, y}) => {
+      const target = document.querySelector('[data-lane="trilha"]');
+      const pen = (type, extra) => target.dispatchEvent(new PointerEvent(type, {bubbles: true, pointerId: 7, pointerType: 'pen', clientX: x, clientY: y, ...extra}));
+      pen('pointermove', {buttons: 0, pressure: 0});
+      window.__hover = document.getElementById('drawReadout').textContent;
+      pen('pointerdown', {button: 5, buttons: 32, pressure: 0.6});
+      pen('pointerup', {button: 5, buttons: 0, pressure: 0});
+    }, {x: xAt(15), y: lane.y + lane.height * 0.95});
+    assert.match(await page.evaluate(() => window.__hover), /00:15,0 · −2\d,\d dB/, 'a caneta pairando mostra tempo e volume');
+    assert.equal(await page.evaluate(() => window.AULA14_MESA.settings().trilha.draw[150]), 0, 'a borracha da caneta volta a 0 dB');
+    await page.click('#clearDraw');
+    await page.locator('#useDraw').uncheck();
+
     // Laboratório de espera: 1 Mbps in 1080p stalls; the editor diagnosis separates the five tools.
     await page.goto('file://' + path.join(extracted, 'buffering.html'));
     await page.locator('input[name="bw"][value="1"]').check({force: true});
@@ -91,7 +124,7 @@ const manifest = JSON.parse(fs.readFileSync(path.join(kit, 'kit-manifest.json'),
     assert.match(fs.readFileSync(await diagnosis.path(), 'utf8'), /Correta: Render de trecho/);
 
     assert.deepEqual(errors, [], 'sem erros nas páginas do kit');
-    console.log(`Aula 14 no navegador: mesa abre do ZIP extraído, inicial ${measured.initialPeak.toFixed(1)} dBFS, referência ${measured.refPeak.toFixed(1)} dBFS, WAV de 30 s, ajustes guardados, buffering e diagnóstico 8/8.`);
+    console.log(`Aula 14 no navegador: mesa abre do ZIP extraído, inicial ${measured.initialPeak.toFixed(1)} dBFS, referência ${measured.refPeak.toFixed(1)} dBFS, WAV de 30 s, ajustes guardados, volume desenhado com caneta e borracha, buffering e diagnóstico 8/8.`);
   } finally {
     await browser.close();
     fs.rmSync(folder, {recursive: true, force: true});
