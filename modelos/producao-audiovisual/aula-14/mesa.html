@@ -34,8 +34,8 @@ video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; bor
 .banner.on { display: block; }
 .status { min-height: 1.4em; color: var(--muted); }
 .master { display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 16px; align-items: stretch; }
-.meter { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; height: 250px; padding: 4px; background: #0b1820; border-radius: 8px; }
-.meter canvas { width: 100%; height: 100%; display: block; }
+.meter { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); gap: 6px; height: 250px; padding: 4px; background: #0b1820; border-radius: 8px; }
+.meter canvas { width: 100%; height: 100%; min-width: 0; min-height: 0; display: block; }
 .peak { font: 700 26px/1.1 ui-monospace, monospace; }
 .peak.ok { color: var(--ok); } .peak.warn { color: var(--warn); } .peak.bad { color: var(--bad); }
 .led { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: var(--muted); }
@@ -672,7 +672,12 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
     function drawMeter(index, level) {
       const canvas = meterCanvases[index];
       const width = canvas.clientWidth, height = canvas.clientHeight, ratio = window.devicePixelRatio || 1;
-      if (canvas.width !== width * ratio) { canvas.width = width * ratio; canvas.height = height * ratio; }
+      // Canvas dimensions are integers; fractional comparisons resize every frame at 125%/150% scale.
+      const bitmapWidth = Math.round(width * ratio), bitmapHeight = Math.round(height * ratio);
+      if (canvas.width !== bitmapWidth || canvas.height !== bitmapHeight) {
+        canvas.width = bitmapWidth;
+        canvas.height = bitmapHeight;
+      }
       const g = canvas.getContext('2d');
       g.setTransform(ratio, 0, 0, ratio, 0, 0);
       g.clearRect(0, 0, width, height);
