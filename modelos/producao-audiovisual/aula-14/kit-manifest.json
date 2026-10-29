@@ -1,0 +1,112 @@
+{
+  "zip": "Aula14-Som.zip",
+  "bytes": 7322549,
+  "duration": 30.0,
+  "falas": [
+    {
+      "id": "F1",
+      "start": 0.85,
+      "end": 4.4,
+      "text": "No fim do mundo, onde a neve não acaba, mora o Koro."
+    },
+    {
+      "id": "F2",
+      "start": 7.55,
+      "end": 11.07,
+      "text": "Ele só pensa em uma coisa: a última fruta da estação."
+    },
+    {
+      "id": "F3",
+      "start": 13.55,
+      "end": 16.7,
+      "text": "Para chegar lá, vai precisar de um amigo improvável."
+    },
+    {
+      "id": "F4",
+      "start": 25.75,
+      "end": 29.18,
+      "text": "A última fruta. Em breve, na mostra da turma."
+    }
+  ],
+  "referencia": {
+    "voz_db": 0,
+    "falas_db": [
+      0,
+      0,
+      10,
+      0
+    ],
+    "passa_alta": 120,
+    "presenca_db": 3,
+    "vaos": true,
+    "trilha_db": -9,
+    "abaixar_db": -12,
+    "entrada": true,
+    "saida": true,
+    "ambiencia_db": -4,
+    "efeitos_db": -3,
+    "master_db": -2
+  },
+  "files": [
+    {
+      "name": "COMECE-AQUI.txt",
+      "bytes": 1058,
+      "sha256": "b81ddf7c72aea31b5474a9e0feea62ba4ebe5479862a1ec4293dd8372c9dc0bb"
+    },
+    {
+      "name": "CREDITOS.txt",
+      "bytes": 1270,
+      "sha256": "9f9cfb6c70e8635e37a00f5eb92b6966338d504d5d8761a509cc7ec37f44af83"
+    },
+    {
+      "name": "AJUDA.html",
+      "bytes": 10548,
+      "sha256": "86b845fff5ec48c2f78f2a88164cb99540fc3bee95c1092259ee26f8124b316a"
+    },
+    {
+      "name": "mesa.html",
+      "bytes": 44349,
+      "sha256": "41de07b6f07e630da5e4b04987a7ab0dd93a5e2f6b3c8faf44516d245edbfe75"
+    },
+    {
+      "name": "sons.js",
+      "bytes": 2244786,
+      "sha256": "986ca65be7bb149368a6d8db0b051353f1d5349bb30712e77d1b5fe3bedb695f"
+    },
+    {
+      "name": "buffering.html",
+      "bytes": 19372,
+      "sha256": "6bc6356b977a03d7a343aa4d19ed85a21fb303ad3944ab310d26112098ac9613"
+    },
+    {
+      "name": "cena.mp4",
+      "bytes": 3316902,
+      "sha256": "a2b87fc97ec2b82da14ab526cf8a108ebd0232731ebb98985e24cf0b44808ed6",
+      "duration": 30.0
+    },
+    {
+      "name": "trilhas/voz.mp3",
+      "bytes": 360621,
+      "sha256": "6453c9d2e71effd2cdf0aff2a47ec4a69c1b637c9e170ad2b5356bdf74e22e58",
+      "duration": 30.02
+    },
+    {
+      "name": "trilhas/trilha.mp3",
+      "bytes": 480813,
+      "sha256": "27004662d08e6af77a95956b96e2e8a527536cc9128bb796a5bc5cc5f85f4845",
+      "duration": 30.02
+    },
+    {
+      "name": "trilhas/ambiencia.mp3",
+      "bytes": 480813,
+      "sha256": "53ec245fdd33c3fde539df08bafc210f424cf19b1cd8961aac9f7efe5d666fcd",
+      "duration": 30.02
+    },
+    {
+      "name": "trilhas/efeitos.mp3",
+      "bytes": 360621,
+      "sha256": "1e7677f99f3d2efdff6bf5f3f1a23f146eee444b3cd638430adfc255669db139",
+      "duration": 30.02
+    }
+  ]
+}

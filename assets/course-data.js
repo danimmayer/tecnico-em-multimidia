@@ -1581,7 +1581,7 @@ window.SENAI_COURSES = {
       {
         "num": "14",
         "title": "Áudio na pós-produção e buffering",
-        "description": "Edição e tratamento de áudio, com distinção entre buffering na reprodução em rede e preview, cache, proxy e render de trecho dentro do editor.",
+        "description": "Mixar voz, trilha, ambiência e efeitos de um trailer de 30 segundos: falas no mesmo volume, ruído tratado, música abaixo da voz e pico sob controle. Ver o buffering acontecer em rede e separá-lo de cache, proxy e render de trecho no editor.",
         "objectives": [
           "Edição de vídeos e sons: manipulação, tratamento, buffering."
         ],
@@ -1594,25 +1594,25 @@ window.SENAI_COURSES = {
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Revisão da aula anterior: chroma key e correção de cor. Escuta crítica no projetor: exibição de uma cena com e sem cada camada sonora para identificar voz, trilha, ambiência e efeitos sonoros, discutindo a função narrativa de cada camada."
+            "horario": "19:00 - 19:45",
+            "atividade": "Escuta crítica de uma cena com e sem cada camada sonora, preparo da mesa de som, primeiro contato com a caneta da mesa digitalizadora e primeiro pedido do cliente: a voz na frente, sem estourar o medidor."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "Edição e tratamento de áudio no software de edição, com apoio de editor de áudio (Audacity): ajuste de volume entre trechos, equalização da voz, redução de ruído do ar-condicionado e da rua, e mixagem com trilhas da biblioteca livre da turma."
+            "horario": "20:05 - 21:00",
+            "atividade": "Falas no mesmo volume, ruído do ar-condicionado e da rua tratado com filtro passa-alta e corte dos vãos, volume da música desenhado com a caneta abaixo da voz, entrada e saída graduais e primeira exportação em WAV."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "Pré-visualização no editor: resolução de preview, cache, arquivos proxy e render de trecho. Buffering fica reservado à espera de carregamento durante reprodução em rede. Boas práticas para não perder tempo de trabalho: prever os momentos de processamento e organizar a fila de tarefas da equipe."
+            "horario": "21:00 - 21:40",
+            "atividade": "Provocar e resolver o buffering em um simulador de rede e diagnosticar travamentos no editor: resolução de preview, cache, proxy e render de trecho. Planejar o tempo de processamento da equipe."
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "Prática: finalizar o áudio do comercial e do microcurta (trilha, efeitos sonoros e voz mixados), conferindo volumes em fone de ouvido e deixando os dois projetos prontos para o render da aula 16."
+            "horario": "21:40 - 22:10",
+            "atividade": "Exportar a mixagem final e a versão sem voz, conferir em fone fora da mesa de som e fazer a escuta cruzada com o colega do lado."
           }
         ],
-        "methodology": "Escuta crítica seguida de prática de mixagem e otimização do fluxo de trabalho no software de edição.",
-        "resources": "Computadores do laboratório com software de edição, fones de ouvido e biblioteca de trilhas livres.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "Oficina individual guiada por pedidos de um cliente fictício, revelados um de cada vez pelos slides. Escuta crítica antes da prática, demonstrações de até dois minutos, critério de pronto em cada pedido e melhorias para quem termina antes. A mesa de som é operada com a caneta da mesa digitalizadora, que também desenha a automação de volume, como nos editores profissionais. A turma permanece nos postos e faz a escuta cruzada com o colega do lado.",
+        "resources": "Projetor com caixa de som, computadores com navegador, fones de ouvido e mesas digitalizadoras com caneta. Kit Aula14-Som.zip no disco local: cena de 30 segundos com imagens CC BY de Caminandes 3, quatro camadas de som, Mesa de som e Laboratório de espera, que funcionam sem internet e sem conta. Nenhum programa precisa ser instalado. Sem mesa digitalizadora no posto, o mouse faz as mesmas ações. Nenhuma ficha impressa.",
+        "observation": "Aula das 19:00 às 22:10; lanche das 19:45 às 20:05 e chamada no início de cada bloco. Os estudantes permanecem nos postos; somente o professor circula. Pedidos um de cada vez: quem termina faz a melhoria do próprio slide e espera o próximo. Distribuir o Aula14-Som.zip antes da prática, por pendrive ou rede local; a mesa de som abre direto do disco. Antes da turma, conectar as mesas digitalizadoras e conferir no navegador que a caneta move a seta na tela principal; o driver já instalado no laboratório basta. Mesa digitalizadora e caneta voltam ao lugar no fim, caneta no suporte. Não depender de projetos anteriores: a cena e as camadas são do kit. Sem fone para todos, trabalhar em dupla com um fone por vez e alternar a operação a cada pedido. Os WAV, o diagnóstico e os créditos ficam no disco local; mostrar na própria tela, sem envio pela internet."
       },
       {
         "num": "15",

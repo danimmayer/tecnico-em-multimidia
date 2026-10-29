@@ -1,0 +1,20 @@
+AULA 14 · SOM NA PÓS-PRODUÇÃO E BUFFERING
+
+Sem internet, sem conta e sem instalar programa. Use fone de ouvido.
+Opere com a caneta da mesa digitalizadora; sem ela, o mouse faz o mesmo.
+
+1. Extraia Aula14-Som.zip no disco local.
+2. Dê dois cliques em mesa.html (Chrome, Edge ou Firefox).
+3. Clique em Tocar e escute as quatro camadas: voz, trilha, ambiência e efeitos.
+4. Os pedidos do cliente aparecem um de cada vez nos slides. Faça só o pedido do slide.
+5. No pedido 4, desenhe com a caneta o volume da trilha na linha do tempo.
+6. Exporte pela própria mesa de som: mix-v1.wav, mix-final.wav e sem-voz.wav.
+7. Abra buffering.html para os testes de rede e o diagnóstico do editor.
+   Baixe diagnostico-aula14.txt no final.
+8. Guarde os WAV, o diagnóstico e CREDITOS.txt na pasta Aula14-Som.
+
+Dúvidas: AJUDA.html, organizada por sintoma.
+No fim: caneta no suporte e mesa digitalizadora no lugar.
+
+Pasta trilhas/: as quatro camadas em MP3, para usar em outro editor se o
+professor pedir. A mesa de som não precisa delas; ela lê tudo de sons.js.

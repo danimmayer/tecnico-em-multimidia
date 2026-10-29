@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kit aula 14 · Som na pós-produção</title>
+<style>
+body { font: 18px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; max-width: 900px; margin: auto; padding: 32px 20px 60px; background: #10202b; color: #f5efe2; }
+a { color: #f7b866; }
+h1 { line-height: 1.15; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
+.actions a { padding: 10px 16px; border-radius: 8px; border: 1px solid #2c4a5e; background: #172c3a; text-decoration: none; font-weight: 600; }
+.actions a.main { background: #f7b866; color: #10202b; border-color: #f7b866; }
+video, img { display: block; max-width: 100%; border-radius: 8px; }
+li { margin: 4px 0; }
+</style>
+</head>
+<body>
+<p><a href="../../../aula-kit.html?uc=producao-audiovisual&amp;aula=14">Voltar à aula</a></p>
+<h1>Quatro camadas.<br>Uma cena que se ouve.</h1>
+<p>Mixagem de voz, trilha, ambiência e efeitos em uma mesa de som que roda no navegador, sem internet, sem conta e sem instalar programa. No mesmo kit, um laboratório para ver o buffering acontecer e separar buffering de cache, proxy e render de trecho.</p>
+<div class="actions">
+  <a class="main" href="Aula14-Som.zip" download>Baixar Aula14-Som.zip</a>
+  <a href="mesa.html">Abrir mesa de som</a>
+  <a href="buffering.html">Abrir laboratório de espera</a>
+  <a href="AJUDA.html">Ajuda</a>
+</div>
+<p>Extraia a pasta no disco local e abra mesa.html com dois cliques. Use fone de ouvido e a caneta da mesa digitalizadora; a caneta também desenha o volume da trilha na linha do tempo. Sem mesa digitalizadora, o mouse faz o mesmo.</p>
+<h2>Materiais do ZIP</h2>
+<ul>
+  <li><a href="mesa.html">mesa.html</a> e sons.js: mesa de som com as quatro camadas.</li>
+  <li><a href="buffering.html">buffering.html</a>: simulador de rede e diagnóstico do editor.</li>
+  <li><a href="cena.mp4">cena.mp4</a>: A última fruta, 30 s, sem som.</li>
+  <li>trilhas/: <a href="trilhas/voz.mp3">voz</a>, <a href="trilhas/trilha.mp3">trilha</a>, <a href="trilhas/ambiencia.mp3">ambiência</a> e <a href="trilhas/efeitos.mp3">efeitos</a> em MP3.</li>
+  <li><a href="AJUDA.html">AJUDA.html</a>, <a href="COMECE-AQUI.txt">COMECE-AQUI.txt</a> e <a href="CREDITOS.txt">CREDITOS.txt</a>.</li>
+</ul>
+<h2>Onde está o ruído</h2>
+<p>Espectrograma da voz: o tempo corre da esquerda para a direita e o grave fica embaixo.</p>
+<img src="telas/voz-antes.jpg" alt="Espectrograma da voz original: faixa grave contínua do começo ao fim, também entre as falas" width="1280" height="720" loading="lazy">
+<img src="telas/voz-depois.jpg" alt="Espectrograma da voz tratada: grave filtrado e silêncio entre as falas" width="1280" height="720" loading="lazy">
+<h2>Entregas</h2>
+<p>mix-v1.wav, mix-final.wav e sem-voz.wav, com pico em −1 dBFS ou abaixo, e diagnostico-aula14.txt. Créditos: imagens de Caminandes 3: Llamigos, Blender Foundation / Blender Institute, CC BY 3.0, remontadas sem o som original; locução sintetizada com Piper e voz pt_BR faber; trilha, ambiência e efeitos originais. Consulte CREDITOS.txt.</p>
+</body>
+</html>

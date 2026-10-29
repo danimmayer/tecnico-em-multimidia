@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Laboratório de espera · Aula 14</title>
+<style>
+:root { --bg: #10202b; --panel: #172c3a; --panel-2: #1d3647; --line: #2c4a5e; --text: #f5efe2; --muted: #a9bcc7; --accent: #f7b866; --ok: #6fd39b; --bad: #ff6b5e; --buffer: #5e7d90; }
+* { box-sizing: border-box; }
+html { color-scheme: dark; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+button, input { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+a { color: var(--accent); }
+header { padding: 18px 20px; border-bottom: 1px solid var(--line); background: #0b1820; display: flex; flex-wrap: wrap; gap: 10px 20px; align-items: baseline; }
+header h1 { margin: 0 auto 0 0; font-size: 22px; }
+main { max-width: 1240px; margin: 0 auto; padding: 18px 20px 48px; display: grid; gap: 22px; }
+section.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
+h2 { margin: 0 0 6px; font-size: 22px; }
+h2 small { color: var(--accent); font-size: 15px; letter-spacing: .08em; display: block; text-transform: uppercase; }
+.lede { margin: 0 0 14px; color: var(--muted); max-width: 70ch; }
+.net { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr); gap: 18px; }
+.screen { position: relative; border-radius: 8px; overflow: hidden; background: #000; }
+.screen video { display: block; width: 100%; aspect-ratio: 16 / 9; transition: filter .3s; }
+.spinner { position: absolute; inset: 0; display: none; place-content: center; justify-items: center; gap: 12px; background: rgba(0, 0, 0, .55); font-weight: 700; font-size: 20px; }
+.spinner.on { display: grid; }
+.spinner i { width: 54px; height: 54px; border-radius: 50%; border: 6px solid rgba(255, 255, 255, .25); border-top-color: var(--accent); animation: spin .9s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.quality-tag { position: absolute; top: 10px; right: 10px; padding: 3px 8px; border-radius: 6px; background: rgba(0, 0, 0, .65); font: 700 14px/1.4 ui-monospace, monospace; }
+.progress { position: relative; height: 16px; margin-top: 10px; border-radius: 8px; background: #0b1820; overflow: hidden; }
+.progress span { position: absolute; top: 0; bottom: 0; left: 0; }
+.progress .buffered { background: var(--buffer); }
+.progress .played { background: var(--accent); }
+.progress .stall { width: 3px; background: var(--bad); }
+.key { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 8px 0 0; font-size: 14px; color: var(--muted); }
+.key b { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+fieldset { border: 0; padding: 0; margin: 0 0 14px; }
+legend { font-weight: 700; margin-bottom: 6px; }
+.seg { display: flex; flex-wrap: wrap; gap: 6px; }
+.seg label { position: relative; }
+.seg input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.seg span { display: inline-block; padding: 7px 11px; border: 1px solid var(--line); border-radius: 7px; background: var(--panel-2); font-size: 15px; }
+.seg input:checked + span { background: var(--accent); color: #10202b; border-color: var(--accent); font-weight: 700; }
+.seg input:focus-visible + span { outline: 3px solid var(--accent); outline-offset: 2px; }
+.switch { display: flex; gap: 10px; align-items: center; margin-bottom: 14px; }
+.switch input { width: 20px; height: 20px; accent-color: var(--accent); }
+.btn { border: 1px solid var(--line); background: var(--panel-2); border-radius: 8px; padding: 9px 16px; min-height: 42px; }
+.btn.primary { background: var(--accent); color: #10202b; border-color: var(--accent); font-weight: 700; }
+.metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 14px 0; }
+.metric { background: #0b1820; border-radius: 8px; padding: 10px 12px; }
+.metric span { display: block; font-size: 13px; color: var(--muted); }
+.metric strong { font: 700 22px/1.2 ui-monospace, monospace; }
+.log { margin: 0; padding-left: 20px; color: var(--muted); font-size: 15px; }
+.log li { margin: 4px 0; }
+.log strong { color: var(--text); }
+.defs { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 10px 0 18px; }
+.def { background: #0b1820; border-radius: 10px; padding: 12px 14px; border-top: 3px solid var(--accent); }
+.def strong { display: block; font-size: 17px; }
+.def p { margin: 4px 0 0; color: var(--muted); font-size: 15px; }
+.def.net-def { border-top-color: var(--buffer); }
+.quiz { display: grid; gap: 12px; padding: 0; margin: 0; list-style: none; counter-reset: q; }
+.quiz li { background: #0b1820; border-radius: 10px; padding: 12px 14px; }
+.quiz .ask { margin: 0 0 8px; }
+.quiz .ask::before { counter-increment: q; content: counter(q) ". "; color: var(--accent); font-weight: 700; }
+.answers { display: flex; flex-wrap: wrap; gap: 6px; }
+.answers button { border: 1px solid var(--line); background: var(--panel-2); border-radius: 7px; padding: 6px 10px; font-size: 15px; }
+.answers button.right { background: var(--ok); color: #10202b; border-color: var(--ok); font-weight: 700; }
+.answers button.wrong { border-color: var(--bad); color: var(--bad); }
+.feedback { margin: 8px 0 0; font-size: 15px; }
+.feedback.ok { color: var(--ok); } .feedback.bad { color: var(--bad); }
+.score { font-weight: 700; font-size: 18px; }
+.foot { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 16px; }
+@media (max-width: 860px) { .net { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .spinner i { animation-duration: 3s; } .screen video { transition: none; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Laboratório de espera</h1>
+  <a href="AJUDA.html#buffering" target="_blank" rel="noopener">Ajuda</a>
+  <a href="mesa.html">Mesa de som</a>
+</header>
+<main>
+  <section class="panel" aria-labelledby="t-rede">
+    <h2 id="t-rede"><small>1 · Na rede</small>Buffering: a reserva acabou</h2>
+    <p class="lede">O player baixa alguns segundos antes de mostrar. Essa reserva é o buffer. Se a rede entrega menos dados por segundo do que a qualidade escolhida consome, a reserva acaba e o vídeo para para carregar.</p>
+    <div class="net">
+      <div>
+        <div class="screen">
+          <video id="video" src="cena.mp4" muted playsinline preload="auto" aria-label="Cena reproduzida no simulador, sem som"></video>
+          <div class="spinner" id="spinner" role="status"><i aria-hidden="true"></i><span>Carregando…</span></div>
+          <span class="quality-tag" id="qualityTag">1080p</span>
+        </div>
+        <div class="progress" id="progress" role="img" aria-label="Barra de reprodução: laranja já assistido, cinza já baixado"><span class="buffered" id="buffered"></span><span class="played" id="played"></span></div>
+        <p class="key"><span><b style="background:var(--accent)"></b>Assistido</span><span><b style="background:var(--buffer)"></b>Baixado na reserva</span><span><b style="background:var(--bad)"></b>Travada</span></p>
+      </div>
+      <div>
+        <fieldset class="seg-wrap"><legend>Conexão</legend><div class="seg" id="bandwidth"></div></fieldset>
+        <fieldset class="seg-wrap"><legend>Qualidade do vídeo</legend><div class="seg" id="quality"></div></fieldset>
+        <label class="switch"><input type="checkbox" id="unstable"> Rede instável (sobe e desce)</label>
+        <label class="switch"><input type="checkbox" id="fast"> Simular 4× mais rápido</label>
+        <div class="foot"><button class="btn primary" id="start" type="button">▶ Assistir do início</button><button class="btn" id="stop" type="button">Parar e registrar</button></div>
+        <div class="metrics" aria-live="polite">
+          <div class="metric"><span>Espera para começar</span><strong id="mWait">0,0 s</strong></div>
+          <div class="metric"><span>Travadas</span><strong id="mStalls">0</strong></div>
+          <div class="metric"><span>Tempo parado</span><strong id="mStalled">0,0 s</strong></div>
+          <div class="metric"><span>Reserva agora</span><strong id="mBuffer">0,0 s</strong></div>
+        </div>
+      </div>
+    </div>
+    <h3>Testes que você fez</h3>
+    <ol class="log" id="log"><li>Nenhum teste concluído ainda.</li></ol>
+  </section>
+
+  <section class="panel" aria-labelledby="t-editor">
+    <h2 id="t-editor"><small>2 · No editor</small>Travou no editor? Não é buffering</h2>
+    <p class="lede">Dentro do editor o vídeo não vem pela rede: o computador processa cada quadro. Para a pré-visualização ficar leve, o editor tem outras ferramentas.</p>
+    <div class="defs">
+      <div class="def net-def"><strong>Buffering</strong><p>Espera para carregar a reserva de um vídeo que chega pela rede.</p></div>
+      <div class="def"><strong>Resolução de preview</strong><p>Mostra a prévia em tamanho menor, como 1/2 ou 1/4. O arquivo final não muda.</p></div>
+      <div class="def"><strong>Cache</strong><p>Resultado já processado guardado no disco. Na segunda vez, o trecho roda liso.</p></div>
+      <div class="def"><strong>Proxy</strong><p>Cópia leve do arquivo original para editar. O render final usa o original.</p></div>
+      <div class="def"><strong>Render de trecho</strong><p>Processa antes só o trecho pesado, com efeitos, para ele tocar sem engasgar.</p></div>
+    </div>
+    <h3>Diagnóstico: qual é a ferramenta certa?</h3>
+    <ol class="quiz" id="quiz"></ol>
+    <div class="foot">
+      <span class="score" id="score" aria-live="polite">Acertos na primeira tentativa: 0 de 8</span>
+      <button class="btn primary" id="download" type="button">Baixar diagnóstico (TXT)</button>
+    </div>
+  </section>
+</main>
+<script>
+(() => {
+  'use strict';
+  const DUR = 30, START_AT = 2, RESUME_AT = 2;
+  const BANDWIDTHS = [[1, '1 Mbps'], [3, '3 Mbps'], [8, '8 Mbps'], [25, '25 Mbps']];
+  const QUALITIES = [['360p', 0.8, 2.2], ['720p', 2.5, 0.8], ['1080p', 5, 0], ['4K', 16, 0], ['auto', 0, 0]];
+  const $ = (id) => document.getElementById(id);
+  const video = $('video');
+  const fmt = (value) => value.toFixed(1).replace('.', ',') + ' s';
+  const radio = (name, value, label, checked) => `<label><input type="radio" name="${name}" value="${value}"${checked ? ' checked' : ''}><span>${label}</span></label>`;
+  $('bandwidth').innerHTML = BANDWIDTHS.map(([value, label]) => radio('bw', value, label, value === 3)).join('');
+  $('quality').innerHTML = QUALITIES.map(([label, rate]) => radio('q', label, label === 'auto' ? 'Automática' : `${label} · ${String(rate).replace('.', ',')} Mbps`, label === '1080p')).join('');
+  const selected = (name) => document.querySelector(`input[name="${name}"]:checked`).value;
+
+  let sim = null;
+  const tests = [];
+  const qualityInfo = (label) => QUALITIES.find((item) => item[0] === label);
+  function chooseQuality(bandwidth) {
+    if (selected('q') !== 'auto') return qualityInfo(selected('q'));
+    // Automática: a maior qualidade que cabe em 80% da rede medida.
+    return [...QUALITIES].filter((item) => item[1] && item[1] <= bandwidth * 0.8).pop() || QUALITIES[0];
+  }
+  function reset() {
+    sim = {state: 'starting', downloaded: 0, played: 0, wait: 0, stalls: 0, stalled: 0, marks: [], last: performance.now(),
+      measured: Number(selected('bw')), noise: 1, quality: chooseQuality(Number(selected('bw'))), config: describe()};
+    video.pause();
+    video.currentTime = 0;
+    document.querySelectorAll('.progress .stall').forEach((mark) => mark.remove());
+  }
+  function describe() {
+    const q = selected('q');
+    return `${selected('bw')} Mbps · ${q === 'auto' ? 'automática' : q}${$('unstable').checked ? ' · instável' : ''}`;
+  }
+  function finish(state = 'ended') {
+    const partial = state === 'stopped' ? ` (parado em ${fmt(sim.played)} de ${DUR} s)` : '';
+    tests.push({config: sim.config + partial, wait: sim.wait, stalls: sim.stalls, stalled: sim.stalled});
+    $('log').innerHTML = tests.map((test) => `<li><strong>${test.config}</strong> → espera ${fmt(test.wait)}, ${test.stalls} travada${test.stalls === 1 ? '' : 's'}, ${fmt(test.stalled)} parado</li>`).join('');
+    sim.state = state;
+    video.pause();
+  }
+  function tick(nowTime) {
+    if (sim && sim.state !== 'ended' && sim.state !== 'stopped') {
+      // Os tempos medidos ficam em segundos do vídeo, também no modo 4×.
+      const speed = $('fast').checked ? 4 : 1;
+      const dt = Math.min(0.25, (nowTime - sim.last) / 1000) * speed;
+      sim.last = nowTime;
+      video.playbackRate = speed;
+      const bandwidth = Number(selected('bw'));
+      // Rede instável: oscila entre 30% e 130% da velocidade escolhida.
+      if ($('unstable').checked) sim.noise += ((0.3 + Math.random()) - sim.noise) * Math.min(1, dt * 1.5);
+      else sim.noise = 1;
+      const effective = bandwidth * sim.noise;
+      sim.measured += (effective - sim.measured) * Math.min(1, dt);
+      sim.quality = chooseQuality(sim.measured);
+      sim.downloaded = Math.min(DUR, sim.downloaded + dt * effective / sim.quality[1]);
+      const buffer = sim.downloaded - sim.played;
+      if (sim.state === 'starting') {
+        sim.wait += dt;
+        if (buffer >= START_AT || sim.downloaded >= DUR) { sim.state = 'playing'; video.play().catch(() => {}); }
+      } else if (sim.state === 'playing') {
+        sim.played = Math.min(sim.downloaded, sim.played + dt);
+        if (Math.abs(video.currentTime - sim.played) > 0.3) video.currentTime = sim.played;
+        if (sim.played >= DUR - 0.05) finish();
+        else if (sim.downloaded - sim.played <= 0.01) {
+          sim.state = 'stalled';
+          sim.stalls++;
+          sim.marks.push(sim.played);
+          $('progress').insertAdjacentHTML('beforeend', `<span class="stall" style="left:${sim.played / DUR * 100}%"></span>`);
+          video.pause();
+        }
+      } else if (sim.state === 'stalled') {
+        sim.stalled += dt;
+        if (buffer >= RESUME_AT || sim.downloaded >= DUR) { sim.state = 'playing'; video.play().catch(() => {}); }
+      }
+    }
+    render();
+    requestAnimationFrame(tick);
+  }
+  function render() {
+    const s = sim || {downloaded: 0, played: 0, wait: 0, stalls: 0, stalled: 0, state: 'idle', quality: chooseQuality(Number(selected('bw')))};
+    $('buffered').style.width = `${s.downloaded / DUR * 100}%`;
+    $('played').style.width = `${s.played / DUR * 100}%`;
+    $('spinner').classList.toggle('on', s.state === 'starting' || s.state === 'stalled');
+    $('mWait').textContent = fmt(s.wait);
+    $('mStalls').textContent = String(s.stalls);
+    $('mStalled').textContent = fmt(s.stalled);
+    $('mBuffer').textContent = fmt(Math.max(0, s.downloaded - s.played));
+    $('qualityTag').textContent = s.quality[0];
+    video.style.filter = s.quality[2] ? `blur(${s.quality[2]}px)` : 'none';
+  }
+  $('start').addEventListener('click', () => { reset(); sim.last = performance.now(); });
+  $('stop').addEventListener('click', () => { if (sim && sim.state !== 'ended' && sim.state !== 'stopped') finish('stopped'); });
+  document.querySelectorAll('input[name="bw"], input[name="q"], #unstable').forEach((input) => input.addEventListener('change', () => {
+    if (sim && sim.state !== 'ended' && sim.state !== 'stopped') sim.config = `${sim.config.split(' → ')[0]} → ${describe()}`;
+  }));
+  requestAnimationFrame(tick);
+
+  // ---------- Diagnóstico no editor ----------
+  const OPTIONS = ['Buffering', 'Resolução de preview', 'Cache', 'Proxy', 'Render de trecho'];
+  const CASES = [
+    ['O vídeo da turma publicado no site para a cada poucos segundos e aparece um círculo girando.', 'Buffering', 'A reserva de dados da rede acabou. Baixar a qualidade ou melhorar a conexão resolve.'],
+    ['Na linha do tempo, o trecho com três efeitos empilhados engasga; sem os efeitos, ele roda liso.', 'Render de trecho', 'O peso está só naquele trecho: processar antes deixa o trecho tocar sem engasgar.'],
+    ['Os arquivos 4K da câmera deixam toda a edição lenta no computador do laboratório.', 'Proxy', 'Uma cópia leve substitui o original durante a edição; o render final volta ao 4K.'],
+    ['A prévia perde quadros, mas agora a equipe só precisa conferir o ritmo dos cortes, não os detalhes.', 'Resolução de preview', 'Mostrar a prévia em 1/2 ou 1/4 alivia o computador sem mudar a exportação.'],
+    ['Na primeira reprodução o trecho engasga; na segunda, ele roda liso porque o editor guardou o resultado.', 'Cache', 'O resultado processado ficou guardado no disco e foi reaproveitado.'],
+    ['Em casa, longe do roteador, o vídeo publicado fica pausando; trocar de 1080p para 480p resolve.', 'Buffering', 'Com menos dados por segundo, a reserva deixa de acabar.'],
+    ['O disco do computador está quase cheio de arquivos de pré-visualização de projetos antigos.', 'Cache', 'Esses arquivos podem ser apagados pelo editor e refeitos quando preciso.'],
+    ['A equipe vai editar em notebooks fracos e entregar em 1080p, usando o original só na exportação final.', 'Proxy', 'É exatamente o fluxo de proxy: editar leve, exportar com o original.']
+  ];
+  const first = [];
+  $('quiz').innerHTML = CASES.map(([text], index) => `<li><p class="ask">${text}</p><div class="answers" role="group" aria-label="Respostas da situação ${index + 1}">${OPTIONS.map((option) => `<button type="button" data-case="${index}">${option}</button>`).join('')}</div><p class="feedback" id="fb${index}" aria-live="polite"></p></li>`).join('');
+  $('quiz').addEventListener('click', (event) => {
+    const button = event.target.closest('button[data-case]');
+    if (!button) return;
+    const index = Number(button.dataset.case);
+    const [, answer, why] = CASES[index];
+    const right = button.textContent === answer;
+    if (first[index] === undefined) first[index] = button.textContent;
+    button.classList.add(right ? 'right' : 'wrong');
+    const feedback = $(`fb${index}`);
+    feedback.className = `feedback ${right ? 'ok' : 'bad'}`;
+    feedback.textContent = right ? `Certo. ${why}` : 'Ainda não. Compare com as definições acima e tente outra opção.';
+    const score = CASES.filter(([, correct], i) => first[i] === correct).length;
+    $('score').textContent = `Acertos na primeira tentativa: ${score} de ${CASES.length}`;
+  });
+  $('download').addEventListener('click', () => {
+    const lines = ['AULA 14 · LABORATÓRIO DE ESPERA', '', 'TESTES DE REDE'];
+    lines.push(...(tests.length ? tests.map((t, i) => `${i + 1}. ${t.config}: espera ${fmt(t.wait)}, ${t.stalls} travada(s), ${fmt(t.stalled)} parado`) : ['Nenhum teste concluído.']));
+    lines.push('', 'DIAGNÓSTICO NO EDITOR');
+    CASES.forEach(([text, answer], i) => lines.push(`${i + 1}. ${text}`, `   Primeira resposta: ${first[i] || 'sem resposta'} · Correta: ${answer}`));
+    lines.push('', $('score').textContent);
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(new Blob([lines.join('\r\n') + '\r\n'], {type: 'text/plain;charset=utf-8'}));
+    link.download = 'diagnostico-aula14.txt';
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    setTimeout(() => URL.revokeObjectURL(link.href), 60000);
+  });
+})();
+</script>
+</body>
+</html>
