@@ -311,16 +311,23 @@ A turma opera a mesa de som com a caneta das **mesas digitalizadoras**. O
 slide "Caneta na mão", antes do pedido 1, apresenta apontar sem encostar,
 tocar, arrastar e a posição absoluta (canto da superfície = canto da tela).
 No pedido 4 a caneta desenha a automação de volume da trilha, como o lápis
-de keyframes dos editores; pairar mostra tempo e volume, e a ponta de
-borracha volta a 0 dB. Antes da turma, conecto as mesas digitalizadoras e
+de keyframes dos editores; pairar mostra tempo e volume, e Apagar desenho
+recomeça (a ponta de borracha também apaga, nas canetas que a têm). Antes da turma, conecto as mesas digitalizadoras e
 confiro que a caneta move a seta na tela principal; se cair em outro
 monitor, mapeio a área no painel do driver. Sem caneta, o mouse faz o
-mesmo, e o abaixamento automático (−12 dB) cumpre o pedido 4. No fim,
+mesmo, e o abaixamento automático Médio cumpre o pedido 4. No fim,
 canetas nos suportes.
 
+Linguagem da turma: os controles e slides falam em verde, amarelo e
+vermelho, Leve, Médio e Forte, Pouco e Muito; os nomes técnicos (filtro
+passa-alta, presença, ducking, dBFS) aparecem uma vez, na demonstração, e
+ficam nas minhas notas. A noite tem dois jogos curtos: adivinhar a camada
+que sumiu, no início, e o teste às cegas entre mix-v1 e mix-final, no fim.
+
 Mixagem de referência para minhas conferências: falas 0/0/+10/0 dB,
-passa-alta 120 Hz, presença +3 dB, vãos cortados, trilha −9 dB com
-abaixamento de −12 dB e as duas transições, ambiência −4 dB, efeitos −3 dB,
+Tirar o ronco grave em Médio (passa-alta 120 Hz), Voz mais nítida em Um pouco
+(presença +3 dB), vãos cortados, trilha −9 dB com abaixamento automático
+Médio (−12 dB) e as duas transições, ambiência −4 dB, efeitos −3 dB,
 saída −2 dB. Resultado perto de −23 LUFS, com pico perto de −4,5 dBFS; está em
 `exemplo-mixado.mp4`. Entregas: `mix-v1.wav`, `mix-final.wav`, `sem-voz.wav`
 (pico até −1 dBFS) e `diagnostico-aula14.txt` do **Laboratório de espera**

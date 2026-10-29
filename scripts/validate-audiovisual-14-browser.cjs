@@ -59,14 +59,41 @@ const manifest = JSON.parse(fs.readFileSync(path.join(kit, 'kit-manifest.json'),
     assert.equal(wav.toString('ascii', 0, 4), 'RIFF');
     assert.equal(wav.readUInt16LE(22), 2);
     assert.equal(wav.readUInt32LE(40), 30 * 48000 * 4);
-    assert.match(await page.locator('#exportResult').innerText(), /acima de −1 dBFS/, 'a mesa inicial avisa o pico acima do limite');
+    assert.match(await page.locator('#exportResult').innerText(), /passou do limite/, 'a mesa inicial avisa o pico acima do limite');
+    assert.match(await page.locator('#exportResult').innerText(), /apague antes o arquivo anterior/);
+    // Leftover solo is flagged on export.
+    await page.click('#voz-solo');
+    await Promise.all([page.waitForEvent('download'), page.click('#export')]);
+    assert.match(await page.locator('#exportResult').innerText(), /S ligado em VOZ/, 'exportar com solo ligado avisa');
+    // After a pointer click on M/S, Space plays instead of toggling the focused button.
+    await page.keyboard.press('Space');
+    assert.equal(await page.locator('#voz-solo').getAttribute('aria-pressed'), 'true', 'espaço não alterna o botão tocado com a caneta');
+    assert.match(await page.locator('#play').innerText(), /Pausar/, 'espaço toca a cena');
+    await page.keyboard.press('Space');
+    await page.click('#voz-solo');
+    // A/B plays the clipping initial mesa without polluting the peak of the student's mix.
+    // Play and pause in quick succession must never leave the position before the start.
+    await page.click('#play');
+    await page.click('#play');
+    const ambience = await page.locator('[data-lane="ambiencia"]').boundingBox();
+    await page.mouse.click(ambience.x + ambience.width * 19 / 30, ambience.y + ambience.height / 2);
+    const peakBefore = await page.locator('#peak').innerText();
+    await page.click('#ab');
+    await page.click('#play');
+    await page.waitForTimeout(5000);
+    await page.click('#play');
+    assert.equal(await page.locator('#clip').getAttribute('class'), 'led', 'A/B toca a mesa inicial sem acender Estourou');
+    await page.click('#ab');
+    assert.equal(await page.locator('#peak').innerText(), peakBefore, 'A/B não muda nem apaga o pico da mixagem do estudante');
+    await page.click('#rewind');
 
     // Controls persist and redraw; the playhead moves with the video.
     await page.locator('#trilhaDb').fill('-12');
     await page.locator('input[name="hp"][value="120"]').check({force: true});
     await page.click('#play');
     await page.waitForTimeout(1500);
-    assert.ok(await page.evaluate(() => document.getElementById('video').currentTime) > 0.8, 'o vídeo acompanha o som');
+    const sync = await page.evaluate(() => ({video: document.getElementById('video').currentTime, label: document.getElementById('play').textContent, time: document.getElementById('time').textContent}));
+    assert.ok(sync.video > 0.8, 'o vídeo acompanha o som');
     await page.click('#play');
     await page.reload();
     await page.waitForFunction(() => window.AULA14_MESA);

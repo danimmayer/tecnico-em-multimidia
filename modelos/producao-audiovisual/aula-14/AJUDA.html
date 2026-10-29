@@ -29,12 +29,12 @@ kbd { font: 600 15px ui-monospace, monospace; padding: 1px 6px; border-radius: 4
 <section id="preparo">
   <h2>Preparar</h2>
   <ol>
-    <li>Extraia Aula14-Som.zip no disco local. Não abra os arquivos de dentro do ZIP sem extrair.</li>
+    <li>Extraia Aula14-Som.zip no disco local. Não abra os arquivos de dentro do ZIP sem extrair. Se aparecer uma pasta Aula14-Som dentro de outra, entre até ver mesa.html.</li>
     <li>Abra a pasta Aula14-Som e dê dois cliques em mesa.html. Use Chrome, Edge ou Firefox.</li>
-    <li>Coloque o fone e clique em Tocar. Ajuste o volume do computador para uma escuta confortável e não mexa mais nele: quem ajusta é a mesa.</li>
+    <li>Coloque o fone e clique em Tocar. Ajuste o volume do computador para uma escuta confortável e não mexa mais nele: quem ajusta é a mesa de som.</li>
   </ol>
   <dl>
-    <dt>A mesa não abre ou fica em “Carregando”</dt><dd>Confira se mesa.html, sons.js e cena.mp4 estão na mesma pasta extraída. Atualize a página.</dd>
+    <dt>A mesa de som não abre ou fica em “Carregando”</dt><dd>Confira se mesa.html, sons.js e cena.mp4 estão na mesma pasta extraída. Atualize a página.</dd>
     <dt>Não sai som</dt><dd>Confira o fone, o volume do computador e se nenhum canal está em M (mudo) ou se outro está em S (solo).</dd>
   </dl>
 </section>
@@ -45,7 +45,7 @@ kbd { font: 600 15px ui-monospace, monospace; padding: 1px 6px; border-radius: 4
     <li><strong>Apontar</strong>: caneta perto da superfície, sem encostar. A seta acompanha e nada é clicado.</li>
     <li><strong>Tocar</strong>: encostar e levantar é o clique.</li>
     <li><strong>Arrastar</strong>: encostar e mover leva um controle de volume ou desenha na faixa TRILHA.</li>
-    <li><strong>Posição</strong>: cada ponto da mesa digitalizadora corresponde a um ponto da tela. O canto da mesa é o canto da tela.</li>
+    <li><strong>Posição</strong>: cada ponto da mesa digitalizadora corresponde a um ponto da tela. O canto da superfície é o canto da tela. Nos cantos, só aponte: encostar ali pode fechar o navegador.</li>
     <li><strong>Borracha</strong>: se a caneta tiver borracha na outra ponta, virar a caneta apaga o desenho da trilha.</li>
   </ul>
   <dl>
@@ -72,7 +72,7 @@ kbd { font: 600 15px ui-monospace, monospace; padding: 1px 6px; border-radius: 4
   <p>A voz é a referência: primeiro a fala fica clara, depois as outras camadas entram em volta dela.</p>
   <dl>
     <dt>O medidor chega ao vermelho e acende “Estourou”</dt><dd>A soma passou do limite e o arquivo vai distorcer. Abaixe a trilha antes de mexer na saída. Depois clique em Zerar pico e ouça a cena inteira de novo.</dd>
-    <dt>Onde deve ficar o pico</dt><dd>No amarelo, abaixo de −1 dBFS, nos trechos mais fortes. Verde o tempo todo pode significar som baixo demais.</dd>
+    <dt>Onde deve ficar o pico</dt><dd>No amarelo nos trechos mais fortes, sem chegar ao vermelho. Verde o tempo todo pode significar som baixo demais. Enquanto o A/B toca a mesa inicial, o pico não é contado.</dd>
     <dt>A voz some debaixo da música</dt><dd>Use solo na VOZ para entender o que é dito. Volte e baixe a TRILHA até entender cada palavra sem esforço.</dd>
   </dl>
 </section>
@@ -81,7 +81,7 @@ kbd { font: 600 15px ui-monospace, monospace; padding: 1px 6px; border-radius: 4
   <h2>Falas no mesmo volume</h2>
   <p>Uma fala foi gravada mais longe do microfone. Ajuste o volume de cada fala até as quatro parecerem ditas na mesma distância.</p>
   <dl>
-    <dt>Como comparar</dt><dd>Ouça F2 e logo depois F3. Suba F3 de 2 em 2 dB. Compare o desenho das falas na linha do tempo.</dd>
+    <dt>Como comparar</dt><dd>Ouça F2 e logo depois F3. Suba F3 de 2 em 2 dB. Compare a altura das falas na forma de onda da linha do tempo.</dd>
     <dt>Ao subir a fala, o ruído também subiu</dt><dd>É esperado: o volume de um trecho sobe tudo o que está nele. O próximo passo trata esse ruído.</dd>
   </dl>
 </section>
@@ -94,9 +94,9 @@ kbd { font: 600 15px ui-monospace, monospace; padding: 1px 6px; border-radius: 4
     <li><strong>Chiado</strong>: agudo e baixo, fica no fundo.</li>
   </ul>
   <dl>
-    <dt>Filtro passa-alta</dt><dd>Corta o grave abaixo da frequência escolhida. Compare 80, 120 e 160 Hz em solo na VOZ. Escolha o menor valor que tira o ronco sem deixar a voz fina.</dd>
-    <dt>Cortar os vãos</dt><dd>Silencia a trilha de voz entre as falas, onde só havia ruído. A ambiência continua preenchendo o lugar.</dd>
-    <dt>Presença da voz</dt><dd>Realça a região de 3 kHz, onde ficam as consoantes. +3 dB costuma bastar; +6 dB pode deixar a voz áspera.</dd>
+    <dt>Tirar o ronco grave</dt><dd>Corta os sons mais graves, onde ficam o ronco e o zumbido. O nome técnico é filtro passa-alta. Compare Leve, Médio e Forte em solo na VOZ. Escolha o mais fraco que tira o ronco sem deixar a voz fina.</dd>
+    <dt>Cortar os vãos</dt><dd>Silencia o canal VOZ entre as falas, onde só havia ruído. A ambiência continua preenchendo o lugar.</dd>
+    <dt>Voz mais nítida</dt><dd>Realça a parte do som onde ficam as consoantes, como o S e o T. O nome técnico é presença. Um pouco costuma bastar; Muito pode deixar a voz áspera.</dd>
     <dt>O que não sai na edição</dt><dd>O chiado misturado à própria fala não desaparece por completo. A melhor redução de ruído acontece na gravação: microfone perto, aparelhos desligados, porta fechada.</dd>
   </dl>
 </section>
@@ -105,8 +105,8 @@ kbd { font: 600 15px ui-monospace, monospace; padding: 1px 6px; border-radius: 4
   <h2>Espaço para a voz</h2>
   <dl>
     <dt>Desenhar o volume da trilha</dt><dd>No canal TRILHA, ligue Usar o volume desenhado. A faixa TRILHA da linha do tempo cresce e mostra uma linha tracejada em 0 dB. Com a caneta (ou o mouse), desenhe: em cima a música sobe, embaixo desce. Desenhe baixo sob cada fala e mais alto nos intervalos. Pairar a caneta mostra o tempo e o volume antes de encostar.</dd>
-    <dt>Errou o traço</dt><dd>Desenhe por cima, vire a caneta para a borracha (volta a 0 dB) ou use Apagar desenho.</dd>
-    <dt>Abaixar a trilha durante a voz (automático)</dt><dd>A música desce sozinha enquanto alguém fala e volta nos intervalos. Compare −6, −12 e −18 dB: a música deve continuar presente, mas atrás da voz. Fica bloqueado enquanto o volume desenhado estiver ligado: desligue o desenho para comparar.</dd>
+    <dt>Errou o traço</dt><dd>Desenhe por cima ou use Apagar desenho. Se a sua caneta tiver borracha na outra ponta, virar a caneta também apaga.</dd>
+    <dt>Abaixar a trilha durante a voz (automático)</dt><dd>A música desce sozinha enquanto alguém fala e volta nos intervalos. Compare Pouco, Médio e Muito: a música deve continuar presente, mas atrás da voz. Fica bloqueado enquanto o volume desenhado estiver ligado: desligue o desenho para comparar.</dd>
     <dt>Entrada e saída graduais</dt><dd>A trilha veio cortada de uma música maior: começa e termina de repente. A entrada gradual sobe em 2 s; a saída gradual desce nos últimos 3 s, junto com a assinatura.</dd>
     <dt>Ambiência e efeitos</dt><dd>A ambiência situa o lugar sem chamar atenção. Os efeitos acompanham ações da imagem: confira se os passos aparecem quando a lhama anda.</dd>
   </dl>
@@ -115,12 +115,12 @@ kbd { font: 600 15px ui-monospace, monospace; padding: 1px 6px; border-radius: 4
 <section id="exportar">
   <h2>Exportar</h2>
   <ol>
-    <li>Escolha o nome do arquivo e clique em Baixar WAV. A mesa processa os 30 s em poucos segundos.</li>
-    <li>Leia o resultado: o pico do arquivo precisa ficar em −1 dBFS ou abaixo.</li>
+    <li>Escolha o nome do arquivo e clique em Baixar WAV. A mesa de som processa os 30 s em poucos segundos.</li>
+    <li>Leia o resultado: a linha precisa aparecer em verde. Vermelho indica som acima do limite ou um aviso de M ou S ligado.</li>
     <li>Abra o WAV baixado no player do computador e ouça até o final, com fone.</li>
   </ol>
   <dl>
-    <dt>O resultado ficou vermelho</dt><dd>Abaixe o volume da saída ou a trilha e exporte de novo com o mesmo nome.</dd>
+    <dt>O resultado ficou vermelho</dt><dd>Leia o aviso. Se passou do limite, abaixe a trilha ou a saída. Antes de exportar de novo, apague o arquivo anterior em Downloads; senão o navegador salva outro com (1) no nome.</dd>
     <dt>Não encontro o arquivo</dt><dd>Procure na pasta Downloads. Mova o WAV para a pasta Aula14-Som.</dd>
   </dl>
 </section>
@@ -141,7 +141,7 @@ kbd { font: 600 15px ui-monospace, monospace; padding: 1px 6px; border-radius: 4
     <li>Use Simular 4× mais rápido para testar sem esperar. Parar e registrar guarda o teste na lista.</li>
   </ol>
   <dl>
-    <dt>Regra prática</dt><dd>Se a qualidade consome mais Mbps do que a conexão entrega, a reserva acaba. Qualidade automática escolhe a maior qualidade que cabe na rede.</dd>
+    <dt>Regra prática</dt><dd>Se a qualidade consome mais Mbps do que a conexão entrega, a reserva acaba. Qualidade automática escolhe a maior qualidade que cabe na rede, deixando uma folga de 20% para quando a rede cair.</dd>
   </dl>
 </section>
 
@@ -161,7 +161,7 @@ kbd { font: 600 15px ui-monospace, monospace; padding: 1px 6px; border-radius: 4
   <ul>
     <li>Antes de exportar, ouça a cena inteira uma vez. Exportar o mesmo erro duas vezes gasta tempo.</li>
     <li>Enquanto um computador processa, a equipe confere nomes de arquivo e créditos.</li>
-    <li>Depois de exportar, ouça o arquivo fora da mesa, até o final.</li>
+    <li>Depois de exportar, ouça o arquivo fora da mesa de som, até o final.</li>
   </ul>
 </section>
 </body>

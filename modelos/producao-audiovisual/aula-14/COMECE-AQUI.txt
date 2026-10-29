@@ -3,7 +3,8 @@ AULA 14 · SOM NA PÓS-PRODUÇÃO E BUFFERING
 Sem internet, sem conta e sem instalar programa. Use fone de ouvido.
 Opere com a caneta da mesa digitalizadora; sem ela, o mouse faz o mesmo.
 
-1. Extraia Aula14-Som.zip no disco local.
+1. Extraia Aula14-Som.zip no disco local. Se aparecer uma pasta Aula14-Som
+   dentro de outra, entre até ver mesa.html.
 2. Dê dois cliques em mesa.html (Chrome, Edge ou Firefox).
 3. Clique em Tocar e escute as quatro camadas: voz, trilha, ambiência e efeitos.
 4. Os pedidos do cliente aparecem um de cada vez nos slides. Faça só o pedido do slide.
@@ -12,6 +13,7 @@ Opere com a caneta da mesa digitalizadora; sem ela, o mouse faz o mesmo.
 7. Abra buffering.html para os testes de rede e o diagnóstico do editor.
    Baixe diagnostico-aula14.txt no final.
 8. Guarde os WAV, o diagnóstico e CREDITOS.txt na pasta Aula14-Som.
+   Vai exportar de novo? Apague antes o arquivo anterior em Downloads.
 
 Dúvidas: AJUDA.html, organizada por sintoma.
 No fim: caneta no suporte e mesa digitalizadora no lugar.

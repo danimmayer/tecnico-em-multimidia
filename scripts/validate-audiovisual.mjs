@@ -283,6 +283,10 @@ assert.ok(/abaixamento automático/.test(draw14.av9.result) && /mouse/.test(draw
 // "Mesa" alone is ambiguous with tablets in the room: the public layer names mesa de som or mesa digitalizadora.
 const mesa14 = JSON.stringify(slides14.map(({teacher, ...slide}) => slide)).match(/\bmesa\b(?! de som| digitalizadora| inicial|\.html)/gi);
 assert.equal(mesa14, null, 'Aula 14: "mesa" sem complemento na camada da turma');
+for (const file of ['AJUDA.html', 'COMECE-AQUI.txt', 'index.html']) {
+  const text = read('modelos/producao-audiovisual/aula-14/' + file).replace(/<[^>]+>/g, ' ');
+  assert.equal(text.match(/\bmesa\b(?! de som| digitalizadora| inicial|\.html)/gi), null, `Aula 14: "mesa" sem complemento em ${file}`);
+}
 // Escuta crítica: the four layers on one 30 s timeline.
 const layers14 = slides14.find(slide => slide.av9.type === 'tracks').av9.tracks;
 assert.deepEqual(layers14.map(track => track.label), ['VOZ', 'TRILHA', 'AMBIÊNCIA', 'EFEITOS']);

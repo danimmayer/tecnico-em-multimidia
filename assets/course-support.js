@@ -10783,14 +10783,14 @@ window.SENAI_TEACHING_SUPPORT = {
       },
       "14": {
         "teacherGoal": "Cada estudante entrega até 22:10 a mixagem do trailer em dois arquivos (final e sem voz), com falas niveladas, ruído tratado, trilha abaixo da voz e pico até −1 dBFS, e um diagnóstico que separa buffering de resolução de preview, cache, proxy e render de trecho.",
-        "plainLanguage": "Mixar é decidir quem fala primeiro. A voz é a referência; música, ambiência e efeitos entram em volta dela. Buffering é a espera para carregar uma reprodução que vem pela rede; dentro do editor, travamentos de pré-visualização se resolvem com resolução de preview, cache, proxy ou render de trecho.",
+        "plainLanguage": "Mixar é decidir quem fica na frente. A voz é a referência; música, ambiência e efeitos entram em volta dela. Buffering é a espera para carregar uma reprodução que vem pela rede; dentro do editor, travamentos de pré-visualização se resolvem com resolução de preview, cache, proxy ou render de trecho.",
         "say": "Hoje vocês são o estúdio de som e eu sou o cliente. O trailer está pronto na imagem, mas ninguém entende a locução. Os pedidos chegam um de cada vez.",
         "demo": [
           "Toco a cena na mesa de som e uso solo em cada canal: voz, trilha, ambiência e efeitos.",
-          "Opero a mesa de som com a caneta da mesa digitalizadora no projetor: apontar sem encostar, tocar para clicar e arrastar um volume.",
+          "Opero a mesa de som com a caneta da mesa digitalizadora no projetor: apontar sem encostar, encostar para clicar e arrastar um volume.",
           "Mostro o medidor no vermelho e baixo a trilha até a voz ficar clara e o pico sair do vermelho.",
-          "Subo a fala 3 e mostro que o ruído sobe junto; ligo o passa-alta em 120 Hz e corto os vãos.",
-          "Ligo o volume desenhado e, com a caneta, desenho a linha da trilha: baixa sob cada fala, alta nos intervalos. Mostro a borracha da caneta e comparo com o abaixamento automático.",
+          "Subo a fala 3 e mostro que o ruído sobe junto; ligo Tirar o ronco grave em Médio (120 Hz) e corto os vãos.",
+          "Ligo o volume desenhado e, com a caneta, desenho a linha da trilha: baixa sob cada fala, alta nos intervalos. Mostro Apagar desenho (e a borracha, se a caneta tiver) e comparo com o abaixamento automático.",
           "Exporto um WAV e abro no player do computador.",
           "No Laboratório de espera, provoco travadas com 1 Mbps em 1080p e resolvo com qualidade automática."
         ],
@@ -10817,7 +10817,7 @@ window.SENAI_TEACHING_SUPPORT = {
           ],
           [
             "O traço da caneta sai torto ou atrasado",
-            "Peço o punho apoiado na mesa digitalizadora e um traço lento; para corrigir, desenho por cima ou viro a caneta para a borracha."
+            "Peço o punho apoiado na mesa digitalizadora e um traço lento; para corrigir, desenho por cima, uso a borracha da caneta se houver ou Apagar desenho."
           ],
           [
             "Não sai som",
@@ -10833,11 +10833,11 @@ window.SENAI_TEACHING_SUPPORT = {
           ],
           [
             "A voz ficou fina",
-            "O passa-alta está em 160 Hz. Volto para 120 ou 80 Hz e comparo em solo."
+            "O ronco grave está em Forte (160 Hz). Volto para Médio (120 Hz) ou Leve (80 Hz) e comparo em solo."
           ],
           [
             "A música sumiu",
-            "A linha desenhada ficou no fundo da faixa ou o abaixamento está em −18 dB com a trilha já baixa. Redesenho acima ou subo o volume do canal da trilha."
+            "A linha desenhada ficou no fundo da faixa ou o abaixamento automático está em Muito (−18 dB) com a trilha já baixa. Redesenho acima ou subo o volume do canal da trilha."
           ],
           [
             "O WAV não aparece",
@@ -10907,6 +10907,8 @@ window.SENAI_TEACHING_SUPPORT = {
             "heading": "Uma cena, quatro camadas de som",
             "lede": "Escutem com e sem cada camada. O que muda na história quando uma delas some?",
             "block": 1,
+            "promptLabel": "Jogo rápido",
+            "prompt": "Olhos fechados. Uma camada vai sumir: qual foi?",
             "av9": {
               "type": "tracks",
               "tracks": [
@@ -11025,7 +11027,7 @@ window.SENAI_TEACHING_SUPPORT = {
             ],
             "teacher": {
               "steps": [
-                "7 min · Toco a cena inteira na mesa de som, depois cada canal em solo e, por fim, tudo menos um canal. A turma diz o que perdeu a cada vez."
+                "7 min · Toco a cena inteira na mesa de som e depois cada canal em solo. No jogo, toco tudo menos um canal, sem mostrar a tela; a turma, de olhos fechados, adivinha qual sumiu. Três rodadas."
               ],
               "watch": "Busco quatro funções: a voz conta, a trilha dá ritmo e emoção, a ambiência diz onde estamos, os efeitos confirmam as ações.",
               "rescue": "Se a caixa do projetor estiver fraca, peço os fones e indico o canal em solo para todos ouvirem juntos."
@@ -11179,19 +11181,19 @@ window.SENAI_TEACHING_SUPPORT = {
                   "text": "A seta acompanha a ponta. Nada é clicado."
                 },
                 {
-                  "word": "TOCAR",
+                  "word": "ENCOSTAR",
                   "who": "Encostar e levantar",
-                  "text": "É o clique: tocar e pausar a cena."
+                  "text": "É o clique: no botão Tocar, iniciar e pausar a cena."
                 },
                 {
                   "word": "ARRASTAR",
                   "who": "Encostar e mover",
-                  "text": "Levar o volume da AMBIÊNCIA até o fim e voltar."
+                  "text": "Levar o volume da AMBIÊNCIA até o fim e voltar ao normal com dois toques no controle."
                 },
                 {
                   "word": "ONDE ESTOU?",
                   "who": "Canto da superfície = canto da tela",
-                  "text": "Tocar os quatro cantos e ver a seta saltar."
+                  "text": "Apontar, sem encostar, nos quatro cantos e ver a seta saltar."
                 }
               ],
               "tags": [
@@ -11212,9 +11214,9 @@ window.SENAI_TEACHING_SUPPORT = {
             ],
             "teacher": {
               "steps": [
-                "4 min · Demonstro no projetor apontar, tocar e arrastar; a turma repete com a própria caneta e toca os quatro cantos."
+                "4 min · Demonstro no projetor apontar, encostar e arrastar; a turma repete com a própria caneta e aponta, sem encostar, os quatro cantos."
               ],
-              "watch": "Posição absoluta é a diferença principal para quem só usou mouse. Peço punho apoiado: mão no ar cansa e treme o traço.",
+              "watch": "Posição absoluta é a diferença principal para quem só usou mouse. Peço punho apoiado: mão no ar cansa e treme o traço. Nos cantos, só apontar: encostar ali pode fechar o navegador ou abrir o menu Iniciar.",
               "rescue": "Se a seta for para outro monitor, mapeio a mesa digitalizadora para a tela principal no painel do driver; se ainda falhar, o posto segue no mouse e a caneta volta no pedido 4."
             }
           },
@@ -11222,26 +11224,26 @@ window.SENAI_TEACHING_SUPPORT = {
             "title": "Ler o medidor",
             "kicker": "Saída da mesa de som",
             "heading": "O vermelho avisa distorção",
-            "lede": "O medidor mostra o pico do som que sai da mesa de som, em dBFS. Zero é o teto do arquivo.",
+            "lede": "O medidor mostra o volume que sai da mesa de som. Ele tem um teto: passar dele estraga o som.",
             "block": 1,
             "av9": {
               "type": "checks",
               "items": [
                 {
                   "label": "Verde",
-                  "text": "Abaixo de −6 dBFS: há folga."
+                  "text": "Tranquilo: sobra espaço."
                 },
                 {
                   "label": "Amarelo",
-                  "text": "Entre −6 e −1 dBFS: forte, sem distorcer. Lugar dos trechos mais altos."
+                  "text": "Forte, sem distorcer. Os trechos mais altos ficam aqui."
                 },
                 {
                   "label": "Vermelho",
-                  "text": "Acima de −1 dBFS: risco de distorção no arquivo."
+                  "text": "Passou do limite: o som pode distorcer no arquivo."
                 },
                 {
                   "label": "Estourou",
-                  "text": "Acende quando a soma passa do teto. Zerar o pico e ouvir de novo."
+                  "text": "A soma das camadas passou do teto. Baixar, clicar em Zerar pico e ouvir de novo."
                 }
               ]
             },
@@ -11249,7 +11251,7 @@ window.SENAI_TEACHING_SUPPORT = {
               "steps": [
                 "3 min · Toco a mesa inicial até acender Estourou e explico que a soma das camadas passou do teto."
               ],
-              "watch": "Mais alto não é melhor: acima do teto o som se deforma e não há como recuperar no arquivo.",
+              "watch": "Mais alto não é melhor: acima do teto o som se deforma e não há como recuperar no arquivo. Pico (dBFS) não é sensação de volume (LUFS): um estalo curto pode ter pico alto e soar baixo.",
               "rescue": "Se ninguém viu o vermelho, toco o trecho da perseguição, onde a soma é maior."
             }
           },
@@ -11292,7 +11294,7 @@ window.SENAI_TEACHING_SUPPORT = {
               "result": "Use A/B para comparar com a mesa inicial e descreva em uma frase o que mudou."
             },
             "promptLabel": "Pronto quando",
-            "prompt": "As falas 1, 2 e 4 se entendem com tudo tocando e o pico máximo fica abaixo de −1 dBFS.",
+            "prompt": "As falas 1, 2 e 4 se entendem com tudo tocando e o pico máximo não fica vermelho.",
             "resources": [
               {
                 "href": "modelos/producao-audiovisual/aula-14/AJUDA.html#medidor",
@@ -11312,7 +11314,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "title": "Lanche",
             "kicker": "Aula 14 · Som na pós-produção",
             "heading": "Lanche até 20:05",
-            "lede": "A mesa de som guarda os ajustes neste navegador. Não fechem a pasta do kit.",
+            "lede": "O navegador guarda os ajustes da mesa de som. Voltem ao mesmo computador.",
             "block": 1,
             "av9": {
               "type": "checks",
@@ -11357,7 +11359,7 @@ window.SENAI_TEACHING_SUPPORT = {
                 },
                 {
                   "word": "VER",
-                  "who": "Desenho da voz",
+                  "who": "Forma de onda da VOZ",
                   "text": "Comparar a altura de F3 com as outras falas."
                 },
                 {
@@ -11375,7 +11377,7 @@ window.SENAI_TEACHING_SUPPORT = {
               "result": "Ajuste F1, F2 e F4 em até 1 dB para soarem ainda mais iguais."
             },
             "promptLabel": "Pronto quando",
-            "prompt": "As quatro falas parecem ditas na mesma distância e nenhuma assusta ou some.",
+            "prompt": "Na forma de onda, F3 fica da altura das outras falas, e no fone nenhuma assusta ou some.",
             "resources": [
               {
                 "href": "modelos/producao-audiovisual/aula-14/AJUDA.html#falas",
@@ -11388,13 +11390,13 @@ window.SENAI_TEACHING_SUPPORT = {
                 "10 min · Prática; circulo perguntando o que subiu junto com a fala 3."
               ],
               "watch": "Ao subir F3, o ronco do carro e o zumbido sobem juntos. Uso isso para abrir o próximo slide.",
-              "rescue": "Quem passar de +12 dB e ainda não ouvir bem provavelmente está com a trilha alta: volto ao pedido 1."
+              "rescue": "Quem chegar a +12 dB e ainda não ouvir bem provavelmente está com a trilha alta: volto ao pedido 1."
             }
           },
           {
             "title": "Onde está o ruído",
             "kicker": "Espectrograma da voz",
-            "heading": "O ruído aparece no desenho",
+            "heading": "O ruído aparece no espectrograma",
             "lede": "O tempo corre para a direita; o grave fica embaixo. Quanto mais claro, mais forte.",
             "block": 2,
             "av9": {
@@ -11416,7 +11418,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "prompt": "Qual parte do ruído só existe porque ninguém fechou a janela na gravação?",
             "teacher": {
               "steps": [
-                "6 min · Aponto a faixa grave contínua, os vãos e o reforço durante a fala 3, onde passa o carro."
+                "6 min · Aponto a faixa grave contínua e os vãos entre as falas, onde só havia ruído."
               ],
               "watch": "O que a edição faz bem: tirar grave e silenciar vãos. O que não faz: limpar chiado misturado à fala. Retomo a aula 8: som limpo se resolve na gravação.",
               "rescue": "Se a imagem parecer abstrata, toco a voz em solo e aponto o trecho no espectrograma ao mesmo tempo."
@@ -11433,8 +11435,8 @@ window.SENAI_TEACHING_SUPPORT = {
               "commands": [
                 {
                   "word": "FILTRAR",
-                  "who": "Passa-alta",
-                  "text": "Comparar 80, 120 e 160 Hz. Escolher o menor que tira o ronco."
+                  "who": "Tirar o ronco grave",
+                  "text": "Comparar Leve, Médio e Forte. Escolher o mais fraco que tira o ronco."
                 },
                 {
                   "word": "CORTAR",
@@ -11443,8 +11445,8 @@ window.SENAI_TEACHING_SUPPORT = {
                 },
                 {
                   "word": "REALÇAR",
-                  "who": "Presença da voz",
-                  "text": "+3 dB para as consoantes ficarem nítidas."
+                  "who": "Voz mais nítida",
+                  "text": "Um pouco já basta para as consoantes ficarem claras."
                 },
                 {
                   "word": "CONFERIR",
@@ -11458,10 +11460,10 @@ window.SENAI_TEACHING_SUPPORT = {
                   "kind": "good"
                 }
               ],
-              "result": "Em solo, compare +3 e +6 dB de presença e explique quando a voz fica áspera."
+              "result": "Em solo, compare Um pouco e Muito na voz mais nítida e explique quando a voz fica áspera."
             },
             "promptLabel": "Pronto quando",
-            "prompt": "Entre as falas não há zumbido e a voz não ficou fina nem áspera.",
+            "prompt": "Entre as falas a forma de onda da VOZ fica vazia e a voz não ficou fina nem áspera.",
             "resources": [
               {
                 "href": "modelos/producao-audiovisual/aula-14/AJUDA.html#ruido",
@@ -11470,8 +11472,8 @@ window.SENAI_TEACHING_SUPPORT = {
             ],
             "teacher": {
               "steps": [
-                "2 min · Demonstro o passa-alta nas três posições, em solo, e o corte dos vãos.",
-                "13 min · Prática; circulo pedindo que cada um justifique a frequência escolhida."
+                "2 min · Demonstro Tirar o ronco grave em Leve, Médio e Forte (80, 120 e 160 Hz), em solo, e o corte dos vãos. Apresento o nome técnico, filtro passa-alta, uma vez só.",
+                "13 min · Prática; circulo pedindo que cada um justifique a posição escolhida."
               ],
               "watch": "120 Hz é o meio-termo para esta voz. 160 Hz já afina o narrador; 80 Hz deixa parte do ronco do carro.",
               "rescue": "Se alguém não ouvir diferença, peço volume confortável mais alto no fone, toco a fala 3 em solo e alterno Desligado e 120 Hz."
@@ -11489,7 +11491,7 @@ window.SENAI_TEACHING_SUPPORT = {
                 {
                   "word": "ATIVAR",
                   "who": "Usar o volume desenhado",
-                  "text": "A faixa TRILHA cresce e vira área de desenho, com a linha em 0 dB."
+                  "text": "A faixa TRILHA cresce e vira área de desenho; a linha tracejada é o volume normal."
                 },
                 {
                   "word": "DESENHAR",
@@ -11499,7 +11501,7 @@ window.SENAI_TEACHING_SUPPORT = {
                 {
                   "word": "OUVIR",
                   "who": "Tocar a cena",
-                  "text": "Redesenhar por cima onde a música ainda cobre a voz. Virar a caneta apaga."
+                  "text": "Redesenhar por cima onde a música ainda cobre a voz. Apagar desenho recomeça."
                 },
                 {
                   "word": "SUAVIZAR",
@@ -11513,7 +11515,7 @@ window.SENAI_TEACHING_SUPPORT = {
                   "kind": "good"
                 }
               ],
-              "result": "Desligue o desenho, ligue o abaixamento automático de −12 dB e compare. Fique com o que soar melhor."
+              "result": "Desligue o desenho, ligue o abaixamento automático Médio e compare. Fique com o que soar melhor."
             },
             "promptLabel": "Pronto quando",
             "prompt": "A música desce em cada fala, volta nos intervalos e começa e termina sem susto.",
@@ -11525,7 +11527,7 @@ window.SENAI_TEACHING_SUPPORT = {
             ],
             "teacher": {
               "steps": [
-                "2 min · Demonstro com a caneta no projetor: desenho baixo sob F1, subo no intervalo, mostro a borracha e Apagar desenho.",
+                "2 min · Demonstro com a caneta no projetor: desenho baixo sob F1, subo no intervalo, mostro Apagar desenho e a borracha, se a caneta tiver.",
                 "12 min · Prática com a caneta; circulo conferindo o pico máximo de novo, porque a perseguição pode ter subido demais."
               ],
               "watch": "O lápis de automação existe nos editores profissionais como keyframes de volume; o abaixamento automático se chama ducking. O desenho substitui o automático enquanto estiver ligado.",
@@ -11546,8 +11548,8 @@ window.SENAI_TEACHING_SUPPORT = {
                   "text": "Exportar a mixagem como mix-v1.wav."
                 },
                 {
-                  "label": "Pico",
-                  "text": "O resultado precisa mostrar −1 dBFS ou abaixo."
+                  "label": "Conferir",
+                  "text": "A linha do resultado precisa aparecer em verde."
                 },
                 {
                   "label": "Ouvir",
@@ -11567,10 +11569,10 @@ window.SENAI_TEACHING_SUPPORT = {
             ],
             "teacher": {
               "steps": [
-                "8 min · Demonstro a exportação e a leitura do resultado; a turma exporta e confere fora da mesa."
+                "8 min · Demonstro a exportação e a leitura do resultado; a turma exporta e confere fora da mesa de som."
               ],
               "watch": "Reparo no tempo de processamento mostrado pela mesa de som: 30 s de som em poucos segundos. Uso isso para abrir o bloco das esperas.",
-              "rescue": "Se o resultado vier vermelho, baixo a saída em 2 dB e exporto de novo com o mesmo nome."
+              "rescue": "Se o resultado vier vermelho, baixo a saída em 2 dB, apago o arquivo anterior em Downloads e exporto de novo; senão o navegador salva mix-v1 (1).wav."
             }
           },
           {
@@ -11650,7 +11652,7 @@ window.SENAI_TEACHING_SUPPORT = {
                   "kind": "good"
                 }
               ],
-              "result": "Ligue Rede instável e descubra qual qualidade ainda assiste sem travar."
+              "result": "Ligue Rede instável e descubra com qual qualidade dá para assistir sem travar."
             },
             "promptLabel": "Pronto quando",
             "prompt": "A lista mostra um teste com travadas e outro sem, na mesma conexão.",
@@ -11669,7 +11671,7 @@ window.SENAI_TEACHING_SUPPORT = {
                 "2 min · Mostro 1 Mbps em 1080p travando, com a simulação 4× ligada.",
                 "10 min · Prática; circulo pedindo a regra com as palavras de cada um."
               ],
-              "watch": "Regra que busco: a qualidade precisa consumir menos Mbps do que a rede entrega. A automática escolhe por isso.",
+              "watch": "Regra que busco: a qualidade precisa consumir menos Mbps do que a rede entrega. A automática deixa 20% de folga: a 3 Mbps escolhe 360p, embora 720p (2,5 Mbps) passe sem travar numa rede estável. A folga protege contra a rede instável.",
               "rescue": "Se a espera cansar, lembro o Simular 4× mais rápido e o Parar e registrar."
             }
           },
@@ -11825,11 +11827,11 @@ window.SENAI_TEACHING_SUPPORT = {
                 {
                   "word": "FINAL",
                   "who": "mix-final.wav",
-                  "text": "Todas as camadas, pico em −1 dBFS ou abaixo."
+                  "text": "Nenhum M ou S ligado; resultado em verde."
                 },
                 {
                   "word": "SEM VOZ",
-                  "who": "M na VOZ",
+                  "who": "M na VOZ, nenhum S ligado",
                   "text": "Exportar sem-voz.wav e depois desligar o M."
                 },
                 {
@@ -11866,19 +11868,19 @@ window.SENAI_TEACHING_SUPPORT = {
           {
             "title": "Escuta cruzada",
             "kicker": "Com o colega do lado",
-            "heading": "Troquem de fone, não de lugar",
-            "lede": "Cada um ouve o mix-final.wav do colega e aponta um ponto verificável.",
+            "heading": "Teste às cegas: troquem de fone, não de lugar",
+            "lede": "Toquem mix-v1.wav e mix-final.wav para o colega, em ordem sorteada. Ele acerta qual é a versão final?",
             "block": 4,
             "av9": {
               "type": "checks",
               "items": [
                 {
-                  "label": "Voz",
-                  "text": "Todas as palavras se entendem?"
+                  "label": "Às cegas",
+                  "text": "O colega diz qual é a final e por quê."
                 },
                 {
-                  "label": "Ruído",
-                  "text": "Há zumbido entre as falas?"
+                  "label": "Voz",
+                  "text": "Todas as palavras se entendem?"
                 },
                 {
                   "label": "Música",
@@ -11892,7 +11894,7 @@ window.SENAI_TEACHING_SUPPORT = {
             },
             "teacher": {
               "steps": [
-                "8 min · Escuta cruzada em duplas; quem receber um apontamento corrige e exporta de novo com o mesmo nome."
+                "8 min · Teste às cegas em duplas: cada um toca as duas versões em ordem sorteada e o colega aponta a final e um ponto verificável; quem receber um apontamento corrige, apaga o arquivo anterior em Downloads e exporta de novo com o mesmo nome."
               ],
               "watch": "Peço apontamentos verificáveis, com o momento da cena: “na fala 3 a música cobre a palavra amigo”.",
               "rescue": "Se o fone não puder ser trocado, o colega ouve pelo computador do vizinho, sem trocar de posto."
@@ -11909,7 +11911,7 @@ window.SENAI_TEACHING_SUPPORT = {
               "items": [
                 {
                   "label": "Voz",
-                  "text": "Comparar passa-alta em 80 e 160 Hz e explicar a diferença."
+                  "text": "Comparar Leve e Forte no ronco grave e explicar a diferença."
                 },
                 {
                   "label": "Trilha",
@@ -11917,11 +11919,11 @@ window.SENAI_TEACHING_SUPPORT = {
                 },
                 {
                   "label": "Versão",
-                  "text": "Exportar só voz e ambiência, como um podcast da cena."
+                  "text": "Exportar só voz e ambiência como teste.wav, como um podcast da cena."
                 },
                 {
                   "label": "Rede",
-                  "text": "Rede instável a 3 Mbps: qual qualidade assiste sem travar?"
+                  "text": "Rede instável a 3 Mbps: com qual qualidade dá para assistir sem travar?"
                 }
               ]
             },
@@ -11943,7 +11945,7 @@ window.SENAI_TEACHING_SUPPORT = {
               "items": [
                 {
                   "label": "Mixagem",
-                  "text": "mix-v1.wav, mix-final.wav e sem-voz.wav, pico em −1 dBFS ou abaixo."
+                  "text": "mix-v1.wav, mix-final.wav e sem-voz.wav, com resultado em verde."
                 },
                 {
                   "label": "Diagnóstico",

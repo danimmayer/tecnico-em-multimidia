@@ -84,7 +84,7 @@ legend { font-weight: 700; margin-bottom: 6px; }
 <main>
   <section class="panel" aria-labelledby="t-rede">
     <h2 id="t-rede"><small>1 · Na rede</small>Buffering: a reserva acabou</h2>
-    <p class="lede">O player baixa alguns segundos antes de mostrar. Essa reserva é o buffer. Se a rede entrega menos dados por segundo do que a qualidade escolhida consome, a reserva acaba e o vídeo para para carregar.</p>
+    <p class="lede">O player baixa alguns segundos antes de mostrar. Essa reserva é o buffer. Se a rede entrega menos dados por segundo do que a qualidade escolhida consome, a reserva acaba e o vídeo trava para carregar.</p>
     <div class="net">
       <div>
         <div class="screen">
@@ -129,6 +129,7 @@ legend { font-weight: 700; margin-bottom: 6px; }
       <span class="score" id="score" aria-live="polite">Acertos na primeira tentativa: 0 de 8</span>
       <button class="btn primary" id="download" type="button">Baixar diagnóstico (TXT)</button>
     </div>
+    <p class="lede">Baixe antes de fechar ou atualizar a página: testes e respostas não ficam guardados.</p>
   </section>
 </main>
 <script>
@@ -179,9 +180,12 @@ legend { font-weight: 700; margin-bottom: 6px; }
       sim.last = nowTime;
       video.playbackRate = speed;
       const bandwidth = Number(selected('bw'));
-      // Rede instável: oscila entre 30% e 130% da velocidade escolhida.
-      if ($('unstable').checked) sim.noise += ((0.3 + Math.random()) - sim.noise) * Math.min(1, dt * 1.5);
-      else sim.noise = 1;
+      // Rede instável: a cada 2,5 s de vídeo sorteia um novo nível entre 30% e 130% da velocidade escolhida.
+      if ($('unstable').checked) {
+        sim.untilChange = (sim.untilChange ?? 0) - dt;
+        if (sim.untilChange <= 0) { sim.target = 0.3 + Math.random(); sim.untilChange = 2.5; }
+        sim.noise += (sim.target - sim.noise) * Math.min(1, dt * 2);
+      } else sim.noise = 1;
       const effective = bandwidth * sim.noise;
       sim.measured += (effective - sim.measured) * Math.min(1, dt);
       sim.quality = chooseQuality(sim.measured);
@@ -236,8 +240,8 @@ legend { font-weight: 700; margin-bottom: 6px; }
     ['Os arquivos 4K da câmera deixam toda a edição lenta no computador do laboratório.', 'Proxy', 'Uma cópia leve substitui o original durante a edição; o render final volta ao 4K.'],
     ['A prévia perde quadros, mas agora a equipe só precisa conferir o ritmo dos cortes, não os detalhes.', 'Resolução de preview', 'Mostrar a prévia em 1/2 ou 1/4 alivia o computador sem mudar a exportação.'],
     ['Na primeira reprodução o trecho engasga; na segunda, ele roda liso porque o editor guardou o resultado.', 'Cache', 'O resultado processado ficou guardado no disco e foi reaproveitado.'],
-    ['Em casa, longe do roteador, o vídeo publicado fica pausando; trocar de 1080p para 480p resolve.', 'Buffering', 'Com menos dados por segundo, a reserva deixa de acabar.'],
-    ['O disco do computador está quase cheio de arquivos de pré-visualização de projetos antigos.', 'Cache', 'Esses arquivos podem ser apagados pelo editor e refeitos quando preciso.'],
+    ['Em casa, longe do roteador, o vídeo publicado fica pausando; trocar de 1080p para 360p resolve.', 'Buffering', 'Com menos dados por segundo, a reserva deixa de acabar.'],
+    ['O disco do computador está quase cheio de arquivos de cache que o editor guardou em projetos antigos.', 'Cache', 'O cache pode ser apagado pelo editor e é refeito quando preciso.'],
     ['A equipe vai editar em notebooks fracos e entregar em 1080p, usando o original só na exportação final.', 'Proxy', 'É exatamente o fluxo de proxy: editar leve, exportar com o original.']
   ];
   const first = [];
@@ -248,6 +252,8 @@ legend { font-weight: 700; margin-bottom: 6px; }
     const index = Number(button.dataset.case);
     const [, answer, why] = CASES[index];
     const right = button.textContent === answer;
+    // Depois de acertar, a situação fica resolvida: outros cliques não mudam o retorno.
+    if (first[index] !== undefined && button.parentElement.querySelector('.right')) return;
     if (first[index] === undefined) first[index] = button.textContent;
     button.classList.add(right ? 'right' : 'wrong');
     const feedback = $(`fb${index}`);
