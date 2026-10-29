@@ -9,6 +9,7 @@ import { lesson as audiovisual09Lesson } from './lessons/audiovisual-09.mjs';
 import { lesson as audiovisual10Lesson } from './lessons/audiovisual-10.mjs';
 import { lesson as audiovisual11Lesson } from './lessons/audiovisual-11.mjs';
 import { lesson as audiovisual12Lesson } from './lessons/audiovisual-12.mjs';
+import { lesson as audiovisual13Lesson } from './lessons/audiovisual-13.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -557,6 +558,7 @@ Object.assign(courses['producao-audiovisual'].lessons.find(lesson => lesson.num 
 Object.assign(courses['producao-audiovisual'].lessons.find(lesson => lesson.num === '10'), audiovisual10Lesson);
 Object.assign(courses['producao-audiovisual'].lessons.find(lesson => lesson.num === '11'), audiovisual11Lesson);
 Object.assign(courses['producao-audiovisual'].lessons.find(lesson => lesson.num === '12'), audiovisual12Lesson);
+Object.assign(courses['producao-audiovisual'].lessons.find(lesson => lesson.num === '13'), audiovisual13Lesson);
 
 const output = `/* Arquivo gerado por scripts/build-course-data.mjs. */\nwindow.SENAI_COURSES = ${JSON.stringify(courses, null, 2)};\n`;
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
@@ -564,3 +566,4 @@ const projectRoot = path.resolve(scriptDirectory, '..');
 const outputPath = path.join(projectRoot, 'assets/course-data.js');
 fs.writeFileSync(outputPath, output);
 console.log(`Gerado ${outputPath}: ${courses['design-web'].lessons.length + courses['producao-audiovisual'].lessons.length} aulas.`);
+

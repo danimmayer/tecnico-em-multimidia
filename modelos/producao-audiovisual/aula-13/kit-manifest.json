@@ -1,0 +1,92 @@
+{
+  "zip": "Aula13-Canva-Free.zip",
+  "bytes": 1317858,
+  "files": [
+    {
+      "name": "COMECE-AQUI.txt",
+      "bytes": 3760,
+      "sha256": "86b8236de6e88da631c1d90ac18f90519c3b6123b9b6f60fd5c34187978cae7a"
+    },
+    {
+      "name": "AJUDA.html",
+      "bytes": 5433,
+      "sha256": "1106794a96772c2e9a57491d9ea099071dfb2704a38bb6a765eb9ffd240f3182"
+    },
+    {
+      "name": "CREDITOS.txt",
+      "bytes": 1484,
+      "sha256": "7542df16d11378e51dbecd28dbc723554aee8190f25d27370b27a281413ca1ba"
+    },
+    {
+      "name": "personagem-verde.mp4",
+      "bytes": 11427,
+      "sha256": "abb5ff7d23748b1585fb4dc79760bc4a22d57803a43627792dd500ee3e81ccb2",
+      "duration": 6.0,
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1"
+    },
+    {
+      "name": "personagem-cracha.mp4",
+      "bytes": 11606,
+      "sha256": "c2b0c221e143e399cd6136a5bfed298e123913b56cd12a9444504a05a8df8f1c",
+      "duration": 6.0,
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1"
+    },
+    {
+      "name": "cenario-estudio.png",
+      "bytes": 4538,
+      "sha256": "08c02a9102d883a95e4b4df70d6ee279a0dcc0ebadb1b133645533dd81c1e487"
+    },
+    {
+      "name": "cenario-noite.png",
+      "bytes": 4524,
+      "sha256": "ca35ed514f86251a38b674881e996898534303a26ce2985eced77db945973f88"
+    },
+    {
+      "name": "cor-referencia.mp4",
+      "bytes": 595805,
+      "sha256": "c0dba2ff17d7b436dd5653c1aae6a31eefffa0abb9529ba2560b25e9796ad37d",
+      "duration": 6.0,
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1"
+    },
+    {
+      "name": "cor-alterada.mp4",
+      "bytes": 579322,
+      "sha256": "4ec20fcb863f85e7591a5a5bc3d86d040a994fd26062f2e5110a4f10c106b3fd",
+      "duration": 6.0,
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1"
+    },
+    {
+      "name": "personagem-verde.png",
+      "bytes": 4644,
+      "sha256": "f7877911f882eb97653de05b6ef75215dcbdc50e423499d373d8b2bbc5fe35c6"
+    },
+    {
+      "name": "personagem-cracha.png",
+      "bytes": 4666,
+      "sha256": "f1491f32708defdcffe9d01d6221d0bf9225b8a0fbac2edbcbba90be14f8fb50"
+    },
+    {
+      "name": "personagem-recortado.png",
+      "bytes": 5657,
+      "sha256": "b73fc7c99e3cdabea328d7c53170df2ef68e85a4bc87eb8d4c0fd6107c5509ee"
+    },
+    {
+      "name": "telas/cor-referencia.jpg",
+      "bytes": 42371,
+      "sha256": "114f21882182a12cecd3e7cdc0281e5e62df160d80edb072c134702a166a1904"
+    },
+    {
+      "name": "telas/cor-alterada.jpg",
+      "bytes": 40513,
+      "sha256": "b29bb55b0dbc99c21d44b57c6407940d3b568beb91f3f271d38abe27b82f6746"
+    }
+  ]
+}

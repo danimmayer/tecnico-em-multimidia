@@ -440,3 +440,8 @@
   .av9-now { display: none !important; }
   .av9-order li.av9-arrow { border: 0; color: #08706d; }
 }
+
+/* Four-step requests need balanced rows on the narrow presentation panel. */
+@media screen and (min-width: 700px) and (max-width: 1100px) {
+  .av-thirteen .av9-commands ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

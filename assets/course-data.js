@@ -1545,38 +1545,38 @@ window.SENAI_COURSES = {
       },
       {
         "num": "13",
-        "title": "Chroma key e correção de cor",
-        "description": "Gravação com fundo verde em estações rotativas e prática de recorte de chroma key, correção e tratamento de cor no material da turma.",
+        "title": "Composição e cor no Canva Free",
+        "description": "Recortar um personagem por cor no Photopea, compor uma cena no Canva Free e aproximar a cor de duas imagens. Exportar vídeos curtos sem recursos pagos.",
         "objectives": [
           "Edição de vídeos e sons: chroma key, efeitos e tratamento de vídeo."
         ],
         "technical": [
-          "Aplicar ajustes de cor, chroma key, efeitos visuais e sonoros."
+          "Compreender chroma key por comparação; praticar seleção por cor em imagem, composição em camadas e correção de cor."
         ],
         "socioemotional": [
           "Demonstrar no desenvolvimento das atividades sob a sua responsabilidade os princípios de profissionalismo."
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Revisão da aula anterior: grafismos, títulos e máscaras. Bastidores no projetor: cenas de filmes e quadros de previsão do tempo antes e depois do chroma key. O que faz um fundo verde funcionar: luz uniforme, distância entre pessoa e fundo, recorte limpo. Montagem coletiva das estações de gravação."
+            "horario": "19:00 - 19:45",
+            "atividade": "Recortar o personagem no Photopea e criar a primeira composição no Canva Free."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "Gravação em chroma key em 2 ou 3 estações simultâneas com fundos verdes de tecido ou TNT (providenciados antes da aula), iluminados com softbox e ring light, usando câmeras e tripés do laboratório. Enquanto aguardam a vez na estação, as duplas praticam correção de cor no material do comercial nos computadores."
+            "horario": "20:05 - 21:00",
+            "atividade": "Criar duas versões da cena com enquadramento, título e hierarquia diferentes."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "No software de edição: recorte do chroma key, ajuste de bordas e de vazamento de verde, e correção de cor para integrar a pessoa ao novo fundo (temperatura, contraste e saturação combinando com o cenário)."
+            "horario": "21:00 - 21:40",
+            "atividade": "Corrigir a cor de uma imagem e comparar correção com tratamento."
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "Desafio prático \"Cenário impossível\": cada dupla insere o colega em um cenário criado pela equipe ou composto com material licenciado com cor tratada. Exibição dos resultados mais convincentes no projetor e análise coletiva do que funcionou."
+            "horario": "21:40 - 22:10",
+            "atividade": "Baixar dois MP4, assistir fora do navegador e conferir créditos."
           }
         ],
-        "methodology": "Prática completa de captação e pós-produção de chroma key na mesma noite, em estações rotativas com atividade paralela de correção de cor.",
-        "resources": "Fundos verdes de tecido ou TNT (baixo custo, providenciar antes da aula), softbox, ring lights, câmeras, tripés e computadores com software de edição.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "Oficina individual com pedidos revelados um de cada vez e demonstrações de até dois minutos. Cada pedido tem resultado verificável e uma variação para quem termina antes. Em postos compartilhados, alternar a operação. A turma permanece nos postos e mostra a tela ao colega do lado.",
+        "resources": "Projetor, computadores com internet e navegador, fones de ouvido, conta gratuita do Canva e Photopea sem login. Kit Aula13-Canva-Free.zip no disco local com PNGs próprios, comparações CC BY e ajuda de consulta. Nenhuma ficha impressa.",
+        "observation": "Aula das 19:00 às 22:10, com lanche das 19:45 às 20:05 e chamada no início de cada bloco; somente o professor circula. Não depender de projetos anteriores. Preparar acesso à conta gratuita do Canva e testar upload e download no laboratório. Pedidos um de cada vez. O Canva exige conta; somente o Photopea dispensa login. Não solicitar assinatura, cartão, teste Pro ou ferramentas de IA. Remoção de fundo de vídeo é Pro: chroma key em vídeo é conceito demonstrado por comparações prontas, não competência prática concluída nesta aula. A prática de recorte ocorre numa imagem estática via Varinha Mágica no Photopea, exportada como PNG com transparência. Usar o PNG já recortado se houver bloqueio e registrar a etapa pendente. Ajustes de cor são feitos nas imagens do kit, sem depender de controles de vídeo. Guardar dois designs na conta, PNG, MP4 e créditos no disco local. Conferir salvamento antes de sair da conta em computador compartilhado. Sem internet em toda a sala, analisar os exemplos locais e registrar decisões; retomar a produção e exportação depois, sem contar análise como entrega prática."
       },
       {
         "num": "14",
@@ -1972,3 +1972,4 @@ window.SENAI_COURSES = {
     ]
   }
 };
+

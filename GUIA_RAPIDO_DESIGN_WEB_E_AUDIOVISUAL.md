@@ -271,6 +271,31 @@ gerado por `scripts/build-audiovisual-12-package.py`; as telas de comparação,
 por `build-audiovisual-12-media.py`. Os slides vêm de
 `scripts/lessons/audiovisual-12.mjs`.
 
+Na Aula 13, use **Canva Free** para compor e exportar e **Photopea**
+(https://www.photopea.com/) como apoio gratuito e sem login. O Canva exige
+conta gratuita. Recorte `personagem-verde.png` no Photopea com Varinha Mágica,
+apague o verde e exporte PNG com transparência. Não usar IA ou teste Pro.
+O removedor de fundo de vídeo do Canva é Pro: a prática é seleção por cor em
+imagem estática; chroma key em vídeo permanece como conceito demonstrado.
+
+Distribua `modelos/producao-audiovisual/aula-13/Aula13-Canva-Free.zip`.
+Inclui originais, PNG recortado de contingência, cenários, imagens para cor,
+exemplos em vídeo, ajuda e créditos. Os ajustes de cor são nas imagens JPG,
+sem depender de controles de vídeo. Canva e Photopea usam internet; a ajuda
+pode ser lida sem conexão. Sem acesso à web, a prática fica pendente.
+
+Pedidos um de cada vez, demonstrações curtas e melhorias para quem termina
+antes. A primeira composição acontece antes do lanche. Entregas:
+`cenario.mp4` (6 s), `cor.mp4` (12 s), PNG e créditos no disco; dois designs
+salvos na conta. O estilo fica numa cópia. Conferir MP4 no player e salvamento
+antes de sair da conta em computador compartilhado.
+
+Os 21 slides próprios vêm de `scripts/lessons/audiovisual-13.mjs`.
+Regenerar: `python3 scripts/build-audiovisual-13-kit.py`,
+`node scripts/build-audiovisual.mjs` e `node scripts/validate-course-kit.mjs`.
+170 minutos de atividade, das 19:00 às 22:10, com lanche 19:45–20:05;
+somente o professor circula.
+
 ### Edição
 
 O percurso principal usa **DaVinci Resolve**. O **CapCut** aparece como
@@ -314,3 +339,4 @@ cópias de segurança substituem qualquer dependência de streaming.
 - `modelos/design-web/materiais-de-aula/` · fichas, provas, gabaritos e rubrica;
 - `modelos/producao-audiovisual/` · fichas, provas, gabaritos e documentos de produção;
 - botão **PDF** · versão projetável da aula, sem as anotações privadas.
+
