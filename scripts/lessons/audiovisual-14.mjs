@@ -18,10 +18,12 @@ export const lesson = {
   ],
   methodology: 'Oficina individual guiada por pedidos de um cliente fictício, revelados um de cada vez pelos slides. Escuta crítica antes da prática, demonstrações de até dois minutos, critério de pronto em cada pedido e melhorias para quem termina antes. A mesa de som é operada com a caneta da mesa digitalizadora, que também desenha a automação de volume, como nos editores profissionais. A turma permanece nos postos e faz a escuta cruzada com o colega do lado.',
   resources: 'Projetor com caixa de som, computadores com navegador, fones de ouvido e mesas digitalizadoras com caneta. Kit Aula14-Som.zip no disco local: cena de 30 segundos com imagens CC BY de Caminandes 3, quatro camadas de som, Mesa de som e Laboratório de espera, que funcionam sem internet e sem conta. Nenhum programa precisa ser instalado. Sem mesa digitalizadora no posto, o mouse faz as mesmas ações. Nenhuma ficha impressa.',
-  observation: 'Aula das 19:00 às 22:10; lanche das 19:45 às 20:05 e chamada no início de cada bloco. Os estudantes permanecem nos postos; somente o professor circula. Pedidos um de cada vez: quem termina faz a melhoria do próprio slide e espera o próximo. Distribuir o Aula14-Som.zip antes da prática, por pendrive ou rede local; a mesa de som abre direto do disco. Antes da turma, conectar as mesas digitalizadoras e conferir no navegador que a caneta move a seta na tela principal; o driver já instalado no laboratório basta. Mesa digitalizadora e caneta voltam ao lugar no fim, caneta no suporte. Não depender de projetos anteriores: a cena e as camadas são do kit. Sem fone para todos, trabalhar em dupla com um fone por vez e alternar a operação a cada pedido. Os WAV, o diagnóstico e os créditos ficam no disco local; mostrar na própria tela, sem envio pela internet.'
+  observation: 'Aula das 19:00 às 22:10; lanche das 19:45 às 20:05 e chamada no início de cada bloco. Os estudantes permanecem nos postos; somente o professor circula. Pedidos um de cada vez: quem termina faz a melhoria do próprio slide e espera o próximo. Distribuir o Aula14-Som.zip antes da prática, por pendrive ou rede local, ou pedir que baixem em oficinas-design-web.vercel.app, seção Produção Audiovisual; a mesa de som abre direto do disco. Antes da turma, conectar as mesas digitalizadoras e conferir no navegador que a caneta move a seta na tela principal; o driver já instalado no laboratório basta. Mesa digitalizadora e caneta voltam ao lugar no fim, caneta no suporte. Não depender de projetos anteriores: a cena e as camadas são do kit. Sem fone para todos, trabalhar em dupla com um fone por vez e alternar a operação a cada pedido. Os WAV, o diagnóstico e os créditos ficam no disco local; mostrar na própria tela, sem envio pela internet.'
 };
 
 const base = 'modelos/producao-audiovisual/aula-14/';
+// Endereço público do kit, publicado junto com as oficinas de Design Web.
+export const workshopUrl = 'https://oficinas-design-web.vercel.app/audiovisual/aula-14/';
 const help = section => [{href: `${base}AJUDA.html#${section}`, label: 'Abrir passos e soluções'}];
 const checks = items => ({type: 'checks', items: items.map(([label, text]) => ({label, text}))});
 const commands = (items, result) => ({type: 'commands', commands: items.map(([word, who, text]) => ({word, who, text})), tags: [{label: 'TERMINOU ANTES?', kind: 'good'}], result});
@@ -119,7 +121,7 @@ export const support = {
         {word: 'FONE', who: 'Volume do computador', text: 'Confortável e fixo. Daqui em diante, quem ajusta é a mesa de som.'},
         {word: 'TOCAR', who: 'Espaço ou botão Tocar', text: 'Usar M e S para ouvir cada canal.'}
       ], tags: [{label: 'PRONTO', kind: 'good'}], result: 'A cena toca com som e o medidor da saída se mexe.'},
-      resources: [{href: `${base}index.html`, label: 'Ver o kit da aula'}, ...help('preparo')],
+      resources: [{href: workshopUrl, label: 'Abrir o kit na internet'}, {href: `${base}index.html`, label: 'Ver o kit da aula'}, ...help('preparo')],
       teacher: teacher(['6 min · Mostro onde está o kit e abro a mesa de som direto da pasta; atendo primeiro quem ainda não ouviu som.'], 'Volume do computador fixo é condição para comparar ajustes; quem mexe nele mascara o problema.', 'Se um posto não abrir, a dupla do lado opera e o estudante decide os ajustes.')
     },
     {
