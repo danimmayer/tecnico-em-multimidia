@@ -1,5 +1,6 @@
 import {lesson as designWeb12Lesson, support as designWeb12Support} from './lessons/design-web-12.mjs';
 import {lesson as designWeb13Lesson, support as designWeb13Support} from './lessons/design-web-13.mjs';
+import {lesson as designWeb14Lesson, support as designWeb14Support} from './lessons/design-web-14.mjs';
 import { lesson as designWeb11Lesson, support as designWeb11Support } from './lessons/design-web-11.mjs';
 import { planning as designWeb07Planning, support as designWeb07Support } from './lessons/design-web-07.mjs';
 import { planning as designWeb08Planning, support as designWeb08Support } from './lessons/design-web-08.mjs';
@@ -324,6 +325,7 @@ revisedLessons['11'] = {
 
 revisedLessons['12'] = { ...designWeb12Lesson, socio: designWeb12Lesson.socioemotional, times: designWeb12Lesson.schedule.map(b => b.horario), blocks: designWeb12Lesson.schedule.map(b => b.atividade) };
 revisedLessons['13'] = { ...designWeb13Lesson, socio: designWeb13Lesson.socioemotional, times: designWeb13Lesson.schedule.map(b => b.horario), blocks: designWeb13Lesson.schedule.map(b => b.atividade) };
+revisedLessons['14'] = { ...designWeb14Lesson, socio: designWeb14Lesson.socioemotional, times: designWeb14Lesson.schedule.map(b => b.horario), blocks: designWeb14Lesson.schedule.map(b => b.atividade) };
 
 function renderLesson(number, lesson) {
   const objectiveRows = Math.max(lesson.objectives.length, lesson.technical.length, lesson.socio.length);
@@ -2062,6 +2064,7 @@ support['design-web'].lessons['08'] = designWeb08Support;
 support['design-web'].lessons['11'] = designWeb11Support;
 support['design-web'].lessons['12'] = designWeb12Support;
 support['design-web'].lessons['13'] = designWeb13Support;
+support['design-web'].lessons['14'] = designWeb14Support;
 
 const supportOutput = `/* Anotações de aula do Prof. Daniel Marcos Mayer. */\nwindow.SENAI_TEACHING_SUPPORT = ${JSON.stringify(support, null, 2)};\n`;
 fs.writeFileSync(supportPath, supportOutput);

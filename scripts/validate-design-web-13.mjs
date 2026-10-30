@@ -102,6 +102,6 @@ try {
   assert.ok(!fs.readdirSync(published,{recursive:true}).some(file=>/guia-docente/.test(String(file))),'guia docente não pode ser publicado');
 } finally { fs.rmSync(published,{recursive:true,force:true}); }
 for(const script of ['scripts/build-course-data.mjs','scripts/rebuild-design-web-no-code.mjs']) assert.match(read(path.join(root,script)),/\.\/lessons\/design-web-13\.mjs/,'gerador principal sem Aula 13');
-assert.match(read(path.join(root,'assets/course-lesson.js')),/'12', '13'\]\.includes\(lesson\.num\)/,'Aula 13 precisa usar o layout e o ritmo por slide');
+assert.match(read(path.join(root,'assets/course-lesson.js')),/'12', '13'(, '14')?\]\.includes\(lesson\.num\)/,'Aula 13 precisa usar o layout e o ritmo por slide');
 assert.match(read(path.join(root,'modelos/design-web/oficinas/index.html')),/href="aula-13\/"/,'página inicial das oficinas sem Aula 13');
 console.log('Aula 13: paridade, 170 min com intervalo, ritmo dos slides, links Vercel, contraste, kit offline e sintaxe da Rota acessível conferidos.');
