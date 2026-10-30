@@ -668,7 +668,12 @@
     if (target.dataset.fhp !== undefined) { state.fhp[Number(target.dataset.fhp)] = target.value; save(); render(); document.querySelector(`[name="${target.name}"][value="${target.value}"]`)?.focus(); return; }
     if (target.dataset.pepita) { const [i, k] = target.dataset.pepita.split(':').map(Number); state.interview.rounds[i].pepitas[k] = target.checked; save(); render(); document.querySelector(`[data-pepita="${i}:${k}"]`)?.focus(); return; }
     if (target.dataset.confirm !== undefined) { state.interview.rounds[Number(target.dataset.confirm)].confirmed = target.checked; save(); return; }
-    if (target.name === 'chosen') { const next = Number(target.value); if (state.interview.chosen && state.interview.chosen !== next) resetForClient(); state.interview.chosen = next; save(); render(); document.querySelector(`[name="chosen"][value="${target.value}"]`)?.focus(); return; }
+    if (target.name === 'chosen') {
+      const next = Number(target.value), switching = state.interview.chosen && state.interview.chosen !== next;
+      const started = ['objetivo', 'publico', 'falta', 'sucesso'].some(id => state.doc[id].trim()) || Object.keys(state.research.matrix).length || state.research.opportunity.trim() || state.research.call.cut.trim();
+      if (switching && started && !confirm('Trocar de projeto apaga o briefing, a comparação de concorrentes e a resposta ao telefonema do cliente anterior. As entrevistas continuam guardadas. Trocar mesmo?')) { target.checked = false; document.querySelector(`[name="chosen"][value="${state.interview.chosen}"]`).checked = true; return; }
+      if (switching) resetForClient();
+      state.interview.chosen = next; save(); render(); document.querySelector(`[name="chosen"][value="${target.value}"]`)?.focus(); return; }
     if (target.dataset.method !== undefined) { state.research.methods[Number(target.dataset.method)] = target.value; save(); render(); document.querySelector(`[name="${target.name}"][value="${target.value}"]`)?.focus(); return; }
     if (target.dataset.matrix) { if (target.value) state.research.matrix[target.dataset.matrix] = target.value; else delete state.research.matrix[target.dataset.matrix]; save(); const cap = document.querySelector('.matrix caption'); if (cap) cap.textContent = `Comparação · ${matrixFilled()} de 18 marcadas`; return; }
     if (target.dataset.ref) { const id = target.dataset.ref; if (target.checked) state.research.refs[id] = state.research.refs[id] || ''; else delete state.research.refs[id]; save(); render(); document.querySelector(target.checked ? `[data-ref-note="${id}"]` : `[data-ref="${id}"]`)?.focus(); return; }
