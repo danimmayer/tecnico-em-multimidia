@@ -277,7 +277,8 @@
     clean.research = {methods:arr(r.methods, METHOD_CARDS.length, v => pick(v, METHODS.map(([id]) => id), '')), matrix, checked:bool(r.checked), opportunity:str(r.opportunity), refs, trends,
       web:{site:str(web.site).slice(0, 120), learn:str(web.learn)}, call:{open:bool(call.open), cut:str(call.cut), change:str(call.change)}};
     const d = obj(s.doc); clean.doc = {prefilled:bool(d.prefilled), ...Object.fromEntries(DOC_FIELDS.map(([id]) => [id, str(d[id])])), access:Array.isArray(d.access) ? [...new Set(d.access.filter(id => ACCESS.some(([key]) => key === id)))] : []};
-    const rv = obj(s.review); clean.review = {peer:str(rv.peer).slice(0, 65), checks:arr(rv.checks, CHECKS.length, v => pick(v, CHECK_STATUS.map(([id]) => id), '')), suggestion:str(rv.suggestion), adjust:str(rv.adjust)};
+    const rv = obj(s.review); clean.review = {peer:str(rv.peer).slice(0, 120), checks:arr(rv.checks, CHECKS.length, v => pick(v, CHECK_STATUS.map(([id]) => id), '')), suggestion:str(rv.suggestion), adjust:str(rv.adjust)};
+    clean.interview.rounds.forEach((round, i) => { if (clean.interview.draw.length) round.client = clean.interview.draw[i]; else Object.assign(round, emptyRound()); });
     return clean;
   }
   let state = initial(), storageOK = true;
@@ -288,7 +289,7 @@
   if (phaseParam >= 1 && phaseParam <= 4) state.phase = phaseParam;
   if (roundParam >= 1 && roundParam <= 3) state.round = roundParam;
   // A ficha secreta e o cartão aberto valem só para a tela atual: não são salvos.
-  const ui = {hints:{}, warmCard:null, lockedView:false, sentence:null, secret:false, view:{}, checkMsg:''};
+  const ui = {hints:{}, warmCard:null, lockedView:false, sentence:null, secret:false, view:{}, checkMsg:'', stretch:{}};
 
   function save() {
     try { localStorage.setItem(KEY, JSON.stringify(state)); storageOK = true; }
@@ -324,10 +325,14 @@
   function updateClock() {
     const bar = $('clockbar'); if (!bar) return;
     const n = nowMin(), slot = inClass() && SCHEDULE.find(s => n >= s.from && n < s.to);
-    if (!slot) { bar.hidden = true; return; }
+    if (!slot) { bar.hidden = true; bar.dataset.key = ''; return; }
     const here = slot.phase === state.phase && (!slot.round || slot.round === state.round);
     bar.hidden = false;
-    bar.innerHTML = `<div class="clockbar-inner"><span class="clock-now">${clock(n)}</span><span>Agora: <strong>${slot.label}</strong> · até ${clock(slot.to)} <span class="clock-left">(${slot.to - n} min)</span></span>${slot.phase && !here ? `<button type="button" class="button" data-jump="${slot.phase}:${slot.round || ''}">Ir para lá</button>` : ''}</div>`;
+    const html = `<div class="clockbar-inner"><span class="clock-now">${clock(n)}</span><span>Agora: <strong>${slot.label}</strong> · até ${clock(slot.to)} <span class="clock-left">(${slot.to - n} min)</span></span>${slot.phase && !here ? `<button type="button" class="button" data-jump="${slot.phase}:${slot.round || ''}">Ir para lá</button>` : ''}</div>`;
+    // Só reconstrói a faixa quando a etapa muda; a cada minuto troca apenas o texto, sem tirar o foco do botão.
+    const key = `${slot.from}:${here}`;
+    if (bar.dataset.key === key) { bar.querySelector('.clock-now').textContent = clock(n); bar.querySelector('.clock-left').textContent = `(${slot.to - n} min)`; return; }
+    bar.dataset.key = key; bar.innerHTML = html;
   }
 
   /* ---------- Cálculos de progresso ---------- */
@@ -457,7 +462,7 @@
           return `<div class="weak-item${mark ? (right ? ' is-right' : ' is-wrong') : ''}">${radioGroup(`weak-${i}`, partName(part), [['claro', 'Está claro'], ['furo', 'É furo']], mark, ` data-weak="${i}"`)}${mark ? `<p class="weak-why">${right ? '<span class="mark ok">Certo</span>' : '<span class="mark no">Reveja</span>'} ${right ? esc(why) : 'Procure no texto uma informação concreta sobre esta parte.'}</p>` : ''}</div>`; }).join('')}</div>
         ${field('weak.questions', `Perguntas para o cliente fechar os furos (uma por linha, com “?”) · ${questionCount()} de ${MIN_QUESTIONS}`, state.weak.questions, 'O que mais atrapalha o salão hoje?\nPara quando o site precisa estar no ar?', 4)}
       </section>
-      <details class="stretch"><summary>Desafio extra · fato, hipótese ou pergunta?</summary>
+      <details class="stretch"${ui.stretch[1] ? ' open' : ''}><summary>Desafio extra · fato, hipótese ou pergunta?</summary>
         <p class="fine">Num briefing, separar o que é certo do que é suposição evita retrabalho.</p>
         <div class="fhp-grid">${FHP.map(([text, answer], i) => { const v = state.fhp[i]; return `<div class="fhp-item">${radioGroup(`fhp-${i}`, esc(text), FHP_LABELS, v, ` data-fhp="${i}"`)}${v ? `<p class="weak-why">${v === answer ? '<span class="mark ok">Certo</span>' : '<span class="mark no">Reveja</span>'}</p>` : ''}</div>`; }).join('')}</div>
       </details>
@@ -515,6 +520,13 @@
         : `<section class="locked"><h3>${ROUND_NAMES[r - 1]}</h3><p class="locked-time">Abre às <strong>${clock(OPENS.round[r])}</strong></p><button type="button" class="button primary" data-round="${r - 1}">Voltar à ${ROUND_NAMES[r - 2]}</button>${keyForm()}</section>`);
   }
 
+  // Trocar de projeto troca o cliente: o que dependia do cliente anterior recomeça.
+  function resetForClient() {
+    const d = state.doc, rs = state.research;
+    for (const id of ['resumo', 'objetivo', 'publico', 'tem', 'prazo', 'restricoes', 'sucesso']) d[id] = '';
+    d.prefilled = false; rs.matrix = {}; rs.checked = false; rs.opportunity = ''; rs.call = {open:false, cut:'', change:''};
+  }
+
   /* ---------- Parada 3 · Pesquisar ---------- */
   function mockHTML(rival, client, i) {
     const t = rival.f, phone = ui.view[i] === 'celular';
@@ -558,7 +570,7 @@
         <p class="fine">Tendência útil resolve algo para o público do cliente. Moda passageira só enfeita. Avalie pelo menos ${MIN_TRENDS}.</p>
         <div class="trend-grid">${TRENDS.map(([id, title, note]) => { const t = rs.trends[id] || {verdict:'', why:''}; return `<div class="trend">${radioGroup(`trend-${id}`, esc(title), VERDICTS, t.verdict, ` data-trend="${id}"`)}${t.verdict ? `<p class="weak-why">${esc(note)}</p><label class="field">Motivo para este cliente<input type="text" data-trend-why="${id}" maxlength="200" value="${esc(t.why)}"></label>` : ''}</div>`; }).join('')}</div></section>
       ${callHTML()}
-      <details class="stretch"><summary>Desafio extra · um achado da internet</summary><p class="fine">Pesquise um site real que resolve bem algo parecido. Não precisa de login e não copie imagens: anote só a ideia.</p>
+      <details class="stretch"${ui.stretch[3] ? ' open' : ''}><summary>Desafio extra · um achado da internet</summary><p class="fine">Pesquise um site real que resolve bem algo parecido. Não precisa de login e não copie imagens: anote só a ideia.</p>
         ${line('research.web.site', 'Nome do site', rs.web.site, 'Ex.: site de uma livraria do bairro')}${field('research.web.learn', 'O que o projeto pode aprender com ele?', rs.web.learn, '', 2)}</details>
       ${nextButton('4', 'Ir para a Parada 4 →')}`;
   }
@@ -653,10 +665,10 @@
       save(); render('part-select'); return;
     }
     if (target.dataset.weak !== undefined) { state.weak.marks[Number(target.dataset.weak)] = target.value; save(); render(); document.querySelector(`[name="${target.name}"][value="${target.value}"]`)?.focus(); return; }
-    if (target.dataset.fhp !== undefined) { state.fhp[Number(target.dataset.fhp)] = target.value; save(); render(); const box = document.querySelector('.stretch'); if (box) box.open = true; document.querySelector(`[name="${target.name}"][value="${target.value}"]`)?.focus(); return; }
+    if (target.dataset.fhp !== undefined) { state.fhp[Number(target.dataset.fhp)] = target.value; save(); render(); document.querySelector(`[name="${target.name}"][value="${target.value}"]`)?.focus(); return; }
     if (target.dataset.pepita) { const [i, k] = target.dataset.pepita.split(':').map(Number); state.interview.rounds[i].pepitas[k] = target.checked; save(); render(); document.querySelector(`[data-pepita="${i}:${k}"]`)?.focus(); return; }
     if (target.dataset.confirm !== undefined) { state.interview.rounds[Number(target.dataset.confirm)].confirmed = target.checked; save(); return; }
-    if (target.name === 'chosen') { state.interview.chosen = Number(target.value); state.doc.prefilled = false; save(); render(); document.querySelector(`[name="chosen"][value="${target.value}"]`)?.focus(); return; }
+    if (target.name === 'chosen') { const next = Number(target.value); if (state.interview.chosen && state.interview.chosen !== next) resetForClient(); state.interview.chosen = next; save(); render(); document.querySelector(`[name="chosen"][value="${target.value}"]`)?.focus(); return; }
     if (target.dataset.method !== undefined) { state.research.methods[Number(target.dataset.method)] = target.value; save(); render(); document.querySelector(`[name="${target.name}"][value="${target.value}"]`)?.focus(); return; }
     if (target.dataset.matrix) { if (target.value) state.research.matrix[target.dataset.matrix] = target.value; else delete state.research.matrix[target.dataset.matrix]; save(); const cap = document.querySelector('.matrix caption'); if (cap) cap.textContent = `Comparação · ${matrixFilled()} de 18 marcadas`; return; }
     if (target.dataset.ref) { const id = target.dataset.ref; if (target.checked) state.research.refs[id] = state.research.refs[id] || ''; else delete state.research.refs[id]; save(); render(); document.querySelector(target.checked ? `[data-ref-note="${id}"]` : `[data-ref="${id}"]`)?.focus(); return; }
@@ -682,7 +694,7 @@
     if (button.dataset.sentence !== undefined) { ui.sentence = Number(button.dataset.sentence); render('part-select'); return; }
     if (button.id === 'draw') {
       const pool = [...CLIENT_IDS].sort(() => Math.random() - 0.5).slice(0, 2);
-      state.interview.draw = pool; state.interview.rounds.forEach((r, i) => { r.client = pool[i]; }); save(); render(); $('secret-show')?.focus(); return;
+      state.interview.draw = pool; state.interview.rounds = pool.map(client => ({...emptyRound(), client})); save(); render(); $('secret-show')?.focus(); return;
     }
     if (button.id === 'secret-show') { ui.secret = true; render(); $('secret')?.querySelector('h4')?.setAttribute('tabindex', '-1'); $('secret')?.querySelector('h4')?.focus(); return; }
     if (button.id === 'secret-hide') { ui.secret = false; render(); $('secret-show')?.focus(); return; }
@@ -693,6 +705,7 @@
     if (button.id === 'call') { state.research.call.open = true; save(); render(); $('call-title')?.focus(); return; }
     if (button.id === 'export' || button.hasAttribute('data-export')) exportReport();
   });
+  document.addEventListener('toggle', event => { if (event.target.matches?.('details.stretch')) ui.stretch[state.phase] = event.target.open; }, true);
   document.addEventListener('keydown', event => { if (event.key === 'Enter' && event.target.id === 'key-input') { event.preventDefault(); $('key-ok').click(); } });
   $('team').value = state.team;
   $('team').addEventListener('input', event => { state.team = event.target.value; save(); });
@@ -700,11 +713,15 @@
   /* ---------- Exportação: HTML autônomo, sem recursos de rede ---------- */
   function pending() {
     const list = [];
+    if (warmAnswered() < WARMUP.length) list.push(`aquecimento (${warmAnswered()} de ${WARMUP.length})`);
     if (tagsRight() < GOOD.length) list.push(`partes do briefing comentado (${tagsRight()} de ${GOOD.length})`);
     if (weakRight() < WEAK.length) list.push(`furos do briefing fraco (${weakRight()} de ${WEAK.length})`);
+    if (questionCount() < MIN_QUESTIONS) list.push(`perguntas para fechar os furos (${questionCount()} de ${MIN_QUESTIONS})`);
     [0, 1].forEach(i => { if (!roundDone(i)) list.push(`rodada ${i + 1} da entrevista`); });
     if (!state.interview.chosen || !filled(state.interview.motivo, 20)) list.push('escolha do projeto com motivo');
+    if (methodsRight() < METHOD_CARDS.length) list.push(`métodos de pesquisa (${methodsRight()} de ${METHOD_CARDS.length})`);
     if (!state.research.checked || matrixRight() < MIN_MATRIX) list.push('comparação de concorrentes conferida');
+    if (!filled(state.research.opportunity, 20)) list.push('oportunidade que ninguém aproveita');
     if (refsDone() < MIN_REFS) list.push(`painel de referências (${refsDone()} de ${MIN_REFS})`);
     if (trendsDone() < MIN_TRENDS) list.push(`tendências avaliadas (${trendsDone()} de ${MIN_TRENDS})`);
     if (!callDone()) list.push('resposta ao telefonema do cliente');
@@ -715,8 +732,9 @@
     return list;
   }
   function exportReport() {
-    state.exports++; if (state.phase === 4) state.exportedFinal = true;
-    const s = state, missing = pending(), team = s.team.trim(), dash = '<em>Não registrado.</em>', c = chosenClient(), rs = s.research;
+    const missing = pending();
+    state.exports++; if (state.phase === 4 && !missing.length) state.exportedFinal = true;
+    const s = state, team = s.team.trim(), dash = '<em>Não registrado.</em>', c = chosenClient(), rs = s.research;
     const text = value => value && value.trim() ? esc(value.trim()) : dash;
     const lines = value => value && value.trim() ? esc(value.trim()).replace(/\n/g, '<br>') : dash;
     const roundHTML = (r, i) => !r.client ? `<p>${dash}</p>` : `<h3 class="r-h3">Rodada ${i + 1} · ${esc(CLIENTS[r.client].name)}${s.interview.chosen === i + 1 ? ' · projeto escolhido' : ''}</h3>
@@ -770,6 +788,6 @@ ${rs.web.site.trim() ? `<h3 class="r-h3">Achado da internet</h3><p><strong>${esc
   setInterval(() => {
     updateClock(); updateRail();
     if (ui.lockedView && phaseOpen(state.phase) && (state.phase !== 2 || roundOpen(state.round))) render();
-    else if (state.phase === 3 && callOpen()) { const waiting = document.querySelector('.shock-closed.is-locked'); if (waiting) waiting.outerHTML = callHTML(); refreshMission(); }
+    else if (state.phase === 3 && callOpen()) { const waiting = document.querySelector('.shock-closed.is-locked'); if (waiting) { waiting.outerHTML = callHTML(); refreshMission(); } }
   }, 20000);
 })();

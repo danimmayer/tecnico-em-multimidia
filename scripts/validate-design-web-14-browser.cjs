@@ -135,6 +135,32 @@ const mission=page=>page.locator('#mission').innerText();
   assert.match(await page.locator('#workspace').innerText(),/O que um briefing precisa dizer/,'oficina já carregada funciona offline');
   await context.close();
 
+  // Casos de borda: exportação vazia não fecha a Parada 4; trocar de projeto recomeça o que era do cliente anterior.
+  const edgeContext=await browser.newContext({viewport:{width:1366,height:900},acceptDownloads:true});
+  const edge=await edgeContext.newPage(); edge.on('pageerror',error=>errors.push(error.message));
+  await edge.goto(join(openUrl,'fase=4'),{waitUntil:'networkidle'});
+  const [empty]=await Promise.all([edge.waitForEvent('download'),edge.locator('#export').click()]);
+  const emptyHtml=await fs.readFile(await empty.path(),'utf8');
+  for(const item of ['aquecimento','perguntas para fechar os furos','métodos de pesquisa','oportunidade que ninguém aproveita']) assert.ok(emptyHtml.includes(item),`pendências sem ${item}`);
+  assert.doesNotMatch(await edge.locator('#mission').innerText(),/Exportar a entrega final \(feito\)/,'exportação vazia não conta como entrega final');
+  await edge.goto(join(openUrl,'fase=2&rodada=1'),{waitUntil:'networkidle'});
+  await edge.locator('#draw').click();
+  const pair=await edge.evaluate(()=>JSON.parse(localStorage.getItem('senai-design-web-14-briefing-v1')).interview.draw);
+  for(const i of [0,1]) await edge.evaluate(([i,text])=>{const s=JSON.parse(localStorage.getItem('senai-design-web-14-briefing-v1'));s.interview.rounds[i].answers.publico=text;s.interview.chosen=1;s.research.matrix={'0-horario':'sim'};localStorage.setItem('senai-design-web-14-briefing-v1',JSON.stringify(s));},[i,`Público da rodada ${i+1}`]);
+  await edge.goto(join(openUrl,'fase=4'),{waitUntil:'networkidle'});
+  assert.equal(await edge.locator('[data-field="doc.publico"]').inputValue(),'Público da rodada 1');
+  await edge.goto(join(openUrl,'fase=2&rodada=3'),{waitUntil:'networkidle'});
+  await edge.locator('[name="chosen"][value="2"]').check();
+  await edge.goto(join(openUrl,'fase=4'),{waitUntil:'networkidle'});
+  assert.equal(await edge.locator('[data-field="doc.publico"]').inputValue(),'Público da rodada 2','briefing segue o novo projeto');
+  assert.match(await edge.locator('.brief-sheet').innerText(),new RegExp(CLIENTS[pair[1]].name,'i'));
+  assert.deepEqual(await edge.evaluate(()=>JSON.parse(localStorage.getItem('senai-design-web-14-briefing-v1')).research.matrix),{},'comparação do cliente anterior não conta para o novo');
+  await edge.goto(join(openUrl,'fase=1'),{waitUntil:'networkidle'});
+  await edge.locator('details.stretch summary').click();
+  await edge.locator('[data-weak="0"][value="furo"]').check();
+  assert.equal(await edge.locator('details.stretch').evaluate(el=>el.open),true,'desafio aberto continua aberto após nova renderização');
+  await edgeContext.close();
+
   // Telas estreitas: sem rolagem horizontal em 320 px em nenhuma parada, com a ficha aberta na Parada 2.
   const phoneContext=await browser.newContext({viewport:{width:320,height:740}});
   const phone=await phoneContext.newPage(); phone.on('pageerror',error=>errors.push(error.message));
