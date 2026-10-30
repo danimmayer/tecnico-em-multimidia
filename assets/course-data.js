@@ -494,7 +494,7 @@ window.SENAI_COURSES = {
       {
         "num": "14",
         "title": "Briefing e Pesquisa de Projeto",
-        "description": "Metodologia de projeto: coleta de briefing com cliente simulado e pesquisa de referências, concorrentes e tendências para um projeto que terá continuidade nas próximas aulas.",
+        "description": "Transforme um pedido vago em briefing: identifique o que não pode faltar, entreviste um cliente fictício com ficha secreta, pesquise concorrentes, referências e tendências e entregue um briefing de uma página validado por outra dupla.",
         "objectives": [
           "Desenvolvimento do Projeto: briefing, pesquisa, tendência.",
           "Pesquisa: tipos, métodos."
@@ -507,25 +507,25 @@ window.SENAI_COURSES = {
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Revisão da Aula 13: acessibilidade como compromisso de projeto. O que é briefing: análise comentada de um briefing real de projeto web, destacando o que não pode faltar (objetivo, público, conteúdo, referências, prazo)."
+            "horario": "19:00 - 19:45",
+            "atividade": "Revisão da Aula 13: acessibilidade como requisito de projeto. Aquecimento “pedido vago ou briefing?”, leitura comentada de um briefing completo, identificando problema, objetivo, público, conteúdo, referências, prazo, restrições e critério de sucesso, e caça aos furos de um briefing fraco, transformados em perguntas."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "Simulação \"Cliente e designer\": em duplas, um aluno faz o papel de cliente (negócio fictício sorteado: pizzaria, estúdio de tatuagem, petshop, escola de dança) e o outro conduz a entrevista de briefing; depois os papéis se invertem e, ao final, a dupla escolhe qual dos dois briefings será o projeto desenvolvido nas próximas aulas."
+            "horario": "20:05 - 20:50",
+            "atividade": "Simulação “Cliente e designer”: em duas rodadas, cada integrante faz uma vez o papel de cliente de um negócio fictício sorteado (pizzaria, estúdio de tatuagem, petshop ou escola de dança), com ficha secreta, e o outro conduz a entrevista de briefing. A dupla escolhe qual dos dois briefings seguirá nas próximas aulas."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "Tipos e métodos de pesquisa aplicados ao design. Pesquisa orientada de referências, concorrentes e tendências para o projeto do cliente fictício escolhido, com registro dos achados em um painel de referências."
+            "horario": "20:50 - 21:35",
+            "atividade": "Tipos e métodos de pesquisa aplicados ao design. Pesquisa orientada para o cliente escolhido: comparação de três concorrentes fictícios no computador e no celular, painel de referências de outros segmentos e avaliação de tendências; resposta a um telefonema do cliente que reduz o escopo."
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "Consolidação: montagem do documento de briefing com os achados da pesquisa e apresentação de dois minutos por dupla, com a turma validando se o briefing responde às perguntas essenciais do projeto."
+            "horario": "21:35 - 22:10",
+            "atividade": "Consolidação: briefing de uma página com entrevista e pesquisa, acessibilidade como requisito e validação pela dupla vizinha com seis critérios. Apresentação de dois minutos no quarteto, três briefings para a turma e exportação da entrega."
           }
         ],
-        "methodology": "Simulação de atendimento a cliente com pesquisa orientada e apresentação breve.",
-        "resources": "Laboratório com computadores, acesso à internet e projetor.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "Leitura comentada, simulação de atendimento com cliente fictício e ficha secreta, pesquisa orientada com material preparado e validação entre pares com critérios observáveis. Clientes, negócios e concorrentes são fictícios; a pesquisa na internet é opcional e sem login.",
+        "resources": "Computadores com navegador e a oficina da Aula 14 na Vercel, com kit offline como reserva; projetor com a apresentação na plataforma; caderno e caneta. Sem login, instalação, impressão ou dados pessoais.",
+        "observation": "19:00–22:10, intervalo 19:45–20:05. Chamada às 19:00, 20:05, 20:50 e 21:35. Duplas no mesmo posto, alternando quem opera. Na Parada 2, quem faz o cliente lê a ficha secreta e quem entrevista não olha. Na Parada 4, cada dupla forma um quarteto com a dupla vizinha; o quarteto é o grupo da Aula 15. A oficina salva o progresso no navegador quando disponível; exportar antes de fechar. Sem internet, usar o kit offline; sem computador, seguir a alternativa em caderno do guia docente."
       },
       {
         "num": "15",
@@ -1972,4 +1972,3 @@ window.SENAI_COURSES = {
     ]
   }
 };
-
