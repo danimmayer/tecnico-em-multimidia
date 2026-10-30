@@ -51,6 +51,8 @@ const mission=page=>page.locator('#mission').innerText();
   await page.locator('details.stretch summary').click();
   for(const [i,v] of ['fato','hipotese','pergunta','fato','hipotese','pergunta'].entries()) await page.locator(`[data-fhp="${i}"][value="${v}"]`).check();
   assert.match(await page.locator('.extra').innerText(),/Fato, hipótese ou pergunta \(6\/6\)/);
+  await fill(page.locator('[data-field="weak.rewrite"]'),'O Salão Bela Vista precisa que clientes do bairro agendem cortes pelo celular, vendo horários e preços.');
+  assert.match(await page.locator('.extra').innerText(),/Pedido do salão reescrito como briefing\s*\(feito\)/);
 
   // Parada 2: sorteio, ficha secreta e duas rodadas completas.
   await page.locator('[data-go="2"]').click();
@@ -100,7 +102,7 @@ const mission=page=>page.locator('#mission').innerText();
   assert.match(await page.locator('#matrix-status').innerText(),/18 de 18[\s\S]*perfeita/);
   await fill(page.locator('[data-field="research.opportunity"]'),'Nenhum concorrente resolve isso bem: é a nossa chance.');
   for(const id of ['precos','agenda','mensagem','topo']) { await page.locator(`[data-ref="${id}"]`).check(); await fill(page.locator(`[data-ref-note="${id}"]`),'Serve porque o público do cliente usa o celular.'); }
-  for(const [id,v] of [['mensagem','usar'],['video','observar'],['leve','usar'],['acessivel','usar']]) { await page.locator(`[data-trend="${id}"][value="${v}"]`).check(); await fill(page.locator(`[data-trend-why="${id}"]`),'Ajuda o público do cliente.'); }
+  for(const [id,v] of [['mensagem','usar'],['video','observar'],['leve','usar'],['escuro','observar']]) { await page.locator(`[data-trend="${id}"][value="${v}"]`).check(); await fill(page.locator(`[data-trend-why="${id}"]`),'Ajuda o público do cliente.'); }
   await page.locator('#call').click();
   assert.match(await page.locator('#call-title').innerText(),new RegExp(chosen.call.slice(0,20)));
   await fill(page.locator('[data-field="research.call.cut"]'),'Galeria completa\nDepoimentos\nBlog');

@@ -62,7 +62,7 @@ assert.ok(!/<(?:script|link)[^>]+(?:src|href)="https?:/i.test(index),'oficina n�
 assert.match(index,/class="skip-link"/,'oficina precisa de atalho para o conteúdo');
 const js=read(path.join(workshop,'oficina.js'));
 new vm.Script(js);
-for(const fragment of ['MIN_TOPICS = 6','MIN_REFS = 4','MIN_TRENDS = 4','localStorage','exportReport','briefing-data','normalize(']) assert.ok(js.includes(fragment),`oficina sem ${fragment}`);
+for(const fragment of ['MIN_TOPICS = 6','MIN_REFS = 3','MIN_TRENDS = 3','localStorage','exportReport','briefing-data','normalize(']) assert.ok(js.includes(fragment),`oficina sem ${fragment}`);
 assert.ok(!/https?:\/\/(?!www\.w3\.org\/2000\/svg)/.test(js),'oficina não pode carregar recursos externos');
 
 // Dados da oficina: clientes completos e lacuna real entre os concorrentes.

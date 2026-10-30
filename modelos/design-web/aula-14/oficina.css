@@ -277,6 +277,7 @@ fieldset.radios legend{flex-basis:100%;width:100%;margin-bottom:4px;padding:0;fo
 .sentence.is-right .sentence-tag{background:var(--ok)}
 .sentence.is-wrong .sentence-tag{background:var(--alert)}
 .tagger{padding:14px;background:var(--chalk);border:2px solid var(--ink)}
+@media (min-width:901px){#tagger{position:sticky;top:116px}}
 .tagger-quote{margin:0 0 6px;font-size:1.05rem;font-style:italic}
 .weak-brief{margin:0 0 14px;padding:16px 18px;background:var(--chalk);border-left:6px solid var(--alert);font-size:1.05rem}
 .weak-grid,.fhp-grid,.method-grid,.trend-grid,.check-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:12px}

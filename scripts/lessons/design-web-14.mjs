@@ -40,7 +40,7 @@ const slide = (block, title, time, minutes, lede, extra, notes) => ({
 
 export const support = {
   appendDefaultClosing: false,
-  teacherGoal: 'Ao fim da noite, cada dupla terá exportado um briefing de uma página do cliente escolhido, com as duas entrevistas, a comparação de concorrentes conferida, um painel de pelo menos quatro referências com motivo, quatro tendências avaliadas, a resposta ao corte de escopo, dois requisitos de acessibilidade e a validação da dupla vizinha.',
+  teacherGoal: 'Ao fim da noite, cada dupla terá exportado um briefing de uma página do cliente escolhido, com as duas entrevistas, a comparação de concorrentes conferida, um painel de pelo menos três referências com motivo, três tendências avaliadas, a resposta ao corte de escopo, dois requisitos de acessibilidade e a validação da dupla vizinha.',
   routine: [
     'Antes da aula, abro a oficina da Aula 14 na Vercel, faço uma exportação de teste e deixo o kit offline extraído como reserva.',
     'Faço chamada às 19:00, 20:05, 20:50 e 21:35. Cada parada abre sozinha no horário: Parada 2 às 20:05, Parada 3 às 20:50 e Parada 4 às 21:35. Na Parada 2, a Rodada 2 abre às 20:25 e a Escolha às 20:40; o telefonema do cliente toca às 21:20. Se os relógios dos computadores estiverem errados, digo a palavra da parada: escuta, farol ou acordo.',
@@ -60,15 +60,15 @@ export const support = {
   ],
   studentDeliverable: 'Arquivo HTML exportado pela oficina com: o briefing de uma página do cliente escolhido; as perguntas que fecham os furos do briefing fraco; as duas entrevistas com pepitas e resumo confirmado; a comparação de concorrentes conferida e a oportunidade; o painel de referências e as tendências com motivo; a resposta ao telefonema; os requisitos de acessibilidade; a validação da dupla vizinha e o ajuste feito. A exportação parcial aponta as pendências. Sem computador: quatro páginas no caderno, conforme o guia docente.',
   check: [
-    'O objetivo descreve uma ação de quem visita o site, não uma qualidade visual.',
+    'O objetivo descreve uma ação de quem visita o site.',
     'O público é específico o bastante para orientar decisões.',
-    'O conteúdo que existe e o que falta estão separados, com quem produz.',
-    'Existe pelo menos uma restrição real e uma lista do que não entra agora.',
+    'O conteúdo que existe e o que falta estão separados.',
+    'Há pelo menos uma restrição real: prazo, orçamento, equipe ou regra.',
     'O sucesso pode ser observado ou medido.',
-    'Referências, concorrentes e tendências têm motivo ligado ao cliente, e a acessibilidade aparece como requisito.'
+    'Referências e pesquisa têm motivo ligado ao cliente.'
   ],
   fallback: 'Sem internet, abrir o kit offline. Sem computador para a dupla, projetar o briefing comentado e as fichas dos clientes: o cliente recebe a ficha impressa ou lida pelo professor em voz baixa; a dupla registra a entrevista no caderno em oito linhas, uma por tema, e a pesquisa vira a análise dos concorrentes projetados. A validação da dupla vizinha usa os seis critérios escritos no quadro.',
-  extension: 'O desafio extra aparece sozinho quando a missão termina e é conferido pela própria oficina: partes certas na primeira tentativa e fato, hipótese ou pergunta na Parada 1; as três pepitas de um cliente e dois “por quê?” por rodada na Parada 2; comparação sem erros, seis referências, todas as tendências e um achado da internet na Parada 3; seis critérios “Sim” e três itens em “não entra agora” na Parada 4. A próxima parada continua fechada até o horário.',
+  extension: 'O desafio extra aparece sozinho quando a missão termina e é conferido pela própria oficina: partes certas na primeira tentativa, fato, hipótese ou pergunta e o pedido do salão reescrito na Parada 1; as três pepitas de um cliente e dois “por quê?” por rodada na Parada 2; comparação sem erros, seis referências, todas as tendências e um achado da internet na Parada 3; seis critérios “Sim” e três itens em “não entra agora” na Parada 4. A próxima parada continua fechada até o horário.',
   commonProblems: [
     ['O briefing vira lista de cores e fontes', 'Volto ao problema e à tarefa: “o que a pessoa precisa conseguir fazer?”. Identidade visual vem depois.'],
     ['Quem entrevista lê a ficha secreta', 'Peço que a dupla troque de cliente com a dupla vizinha naquela rodada. A graça está em descobrir conversando.'],
@@ -95,7 +95,7 @@ export const support = {
       { speech: 'Demonstro uma frase no projetor: a do público. Mostro que acessibilidade aparece como restrição de projeto, ligando à Aula 13.', steps: 'Apresentação das partes e demonstração de uma marcação.', watch: 'Ninguém começa pela frase que demonstrei.' }),
     slide(1, 'Parada 1 · Leia um briefing de verdade', '19:15 - 19:30', 15,
       'O briefing da Pedal Leve tem dez frases. Digam qual parte cada uma cumpre. O retorno aparece na hora.',
-      { cards: [card('Meta', 'As dez frases com a parte certa.'), card('Atenção', 'Duas frases são restrições. Uma delas é sobre acessibilidade.')], promptLabel: 'Regra', prompt: 'Errou? Releiam a frase e perguntem: o que ela garante para o projeto?', resource: resource(1, 'Abrir oficina · Parada 1 · Briefing comentado') },
+      { cards: [card('Meta', 'As dez frases com a parte certa.'), card('Atenção', 'Duas frases são restrições e requisitos. Uma delas é sobre acessibilidade.')], promptLabel: 'Regra', prompt: 'Errou? Releiam a frase e perguntem: o que ela garante para o projeto?', resource: resource(1, 'Abrir oficina · Parada 1 · Briefing comentado') },
       { speech: 'Circulo primeiro por quem ainda não marcou nada. Peço que alternem quem opera a cada duas frases.', steps: 'Identificação das partes em dupla.', watch: 'A dupla lê a frase em voz alta antes de escolher a parte.' }),
     slide(1, 'Caça aos furos', '19:30 - 19:40', 10,
       'O briefing do Salão Bela Vista parece pronto, mas está cheio de furos. Encontrem cada um e escrevam perguntas para fechá-los.',
@@ -134,7 +134,7 @@ export const support = {
       { cards: [card('Seis critérios', 'Horário, ação principal, preço, fotos reais, celular e leitura.'), card('Oportunidade', 'O que nenhum concorrente faz bem é a chance do seu cliente.')], promptLabel: 'Conferir', prompt: 'A oficina diz quantas marcações estão certas, não quais. Olhem de novo.', resource: resource(3, 'Abrir oficina · Parada 3 · Concorrentes') },
       { speech: 'Demonstro o botão Celular num concorrente que corta a página e lembro o contraste da Aula 13. Peço que escrevam a oportunidade com as palavras do cliente.', steps: 'Observação, comparação conferida e oportunidade.', watch: 'Duplas abrindo o modo celular antes de marcar “funciona no celular”.' }),
     slide(3, 'Referências de outros mundos', '21:10 - 21:20', 10,
-      'Dez boas ideias de outros tipos de negócio. Levem pelo menos quatro para o painel e digam por que servem ao cliente.',
+      'Dez boas ideias de outros tipos de negócio. Levem pelo menos três para o painel e digam por que servem ao cliente.',
       { cards: [card('Copiar a ideia', 'Uma agenda de clínica pode inspirar a grade de uma escola de dança.'), card('Não a aparência', 'Referência é solução, não cor nem fonte.')], promptLabel: 'Motivo', prompt: '“Serve porque o público do cliente…”', resource: resource(3, 'Abrir oficina · Parada 3 · Referências') },
       { speech: 'Explico que copiar a aparência de outro site pode violar direitos e não resolve o problema do cliente; copiar a ideia, citando a origem, é pesquisa. Peço um motivo ligado ao público ou ao objetivo.', steps: 'Painel de referências com motivo.', watch: 'Motivos que citam o público ou o objetivo do briefing.' }),
     slide(3, 'Tendências e o telefonema', '21:20 - 21:30', 10,
@@ -143,7 +143,7 @@ export const support = {
       { speech: 'O telefonema abre sozinho às 21:20. Explico que todo projeto real muda no meio, e que a lista “não entra agora” protege o prazo sem brigar com o cliente.', steps: 'Tendências avaliadas e resposta ao telefonema.', watch: 'Listas “não entra agora” com itens concretos e uma mudança no briefing.' }),
     slide(3, 'Painel de referências', '21:30 - 21:35', 5,
       'Confiram o painel, as tendências e a resposta ao cliente. A pesquisa vira argumento no briefing.',
-      { cards: [card('Painel', 'Quatro ou mais referências com motivo.'), card('Internet', 'Desafio extra: um achado real, sem login e sem copiar imagens.')], promptLabel: 'Pergunta', prompt: 'Qual achado da pesquisa mais mudou a ideia inicial do projeto?', resource: resource(3, 'Abrir oficina · Parada 3 · Painel') },
+      { cards: [card('Painel', 'Três ou mais referências com motivo.'), card('Internet', 'Desafio extra: um achado real, sem login e sem copiar imagens.')], promptLabel: 'Pergunta', prompt: 'Qual achado da pesquisa mais mudou a ideia inicial do projeto?', resource: resource(3, 'Abrir oficina · Parada 3 · Painel') },
       { speech: 'Ouço duas respostas rápidas. Lembro que pesquisa é fonte de inovação: a oportunidade nasce do que ninguém faz bem.', steps: 'Conferência da missão e conversa rápida.', watch: 'Missão da Parada 3 completa; quem terminou está no desafio extra.' }),
     slide(4, 'Parada 4 · Um briefing de uma página', '21:35 - 21:45', 10,
       'A oficina já trouxe as respostas da entrevista. Revisem cada campo e escolham dois requisitos de acessibilidade.',

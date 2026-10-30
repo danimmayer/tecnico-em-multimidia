@@ -2706,7 +2706,7 @@ window.SENAI_TEACHING_SUPPORT = {
       },
       "14": {
         "appendDefaultClosing": false,
-        "teacherGoal": "Ao fim da noite, cada dupla terá exportado um briefing de uma página do cliente escolhido, com as duas entrevistas, a comparação de concorrentes conferida, um painel de pelo menos quatro referências com motivo, quatro tendências avaliadas, a resposta ao corte de escopo, dois requisitos de acessibilidade e a validação da dupla vizinha.",
+        "teacherGoal": "Ao fim da noite, cada dupla terá exportado um briefing de uma página do cliente escolhido, com as duas entrevistas, a comparação de concorrentes conferida, um painel de pelo menos três referências com motivo, três tendências avaliadas, a resposta ao corte de escopo, dois requisitos de acessibilidade e a validação da dupla vizinha.",
         "routine": [
           "Antes da aula, abro a oficina da Aula 14 na Vercel, faço uma exportação de teste e deixo o kit offline extraído como reserva.",
           "Faço chamada às 19:00, 20:05, 20:50 e 21:35. Cada parada abre sozinha no horário: Parada 2 às 20:05, Parada 3 às 20:50 e Parada 4 às 21:35. Na Parada 2, a Rodada 2 abre às 20:25 e a Escolha às 20:40; o telefonema do cliente toca às 21:20. Se os relógios dos computadores estiverem errados, digo a palavra da parada: escuta, farol ou acordo.",
@@ -2726,15 +2726,15 @@ window.SENAI_TEACHING_SUPPORT = {
         ],
         "studentDeliverable": "Arquivo HTML exportado pela oficina com: o briefing de uma página do cliente escolhido; as perguntas que fecham os furos do briefing fraco; as duas entrevistas com pepitas e resumo confirmado; a comparação de concorrentes conferida e a oportunidade; o painel de referências e as tendências com motivo; a resposta ao telefonema; os requisitos de acessibilidade; a validação da dupla vizinha e o ajuste feito. A exportação parcial aponta as pendências. Sem computador: quatro páginas no caderno, conforme o guia docente.",
         "check": [
-          "O objetivo descreve uma ação de quem visita o site, não uma qualidade visual.",
+          "O objetivo descreve uma ação de quem visita o site.",
           "O público é específico o bastante para orientar decisões.",
-          "O conteúdo que existe e o que falta estão separados, com quem produz.",
-          "Existe pelo menos uma restrição real e uma lista do que não entra agora.",
+          "O conteúdo que existe e o que falta estão separados.",
+          "Há pelo menos uma restrição real: prazo, orçamento, equipe ou regra.",
           "O sucesso pode ser observado ou medido.",
-          "Referências, concorrentes e tendências têm motivo ligado ao cliente, e a acessibilidade aparece como requisito."
+          "Referências e pesquisa têm motivo ligado ao cliente."
         ],
         "fallback": "Sem internet, abrir o kit offline. Sem computador para a dupla, projetar o briefing comentado e as fichas dos clientes: o cliente recebe a ficha impressa ou lida pelo professor em voz baixa; a dupla registra a entrevista no caderno em oito linhas, uma por tema, e a pesquisa vira a análise dos concorrentes projetados. A validação da dupla vizinha usa os seis critérios escritos no quadro.",
-        "extension": "O desafio extra aparece sozinho quando a missão termina e é conferido pela própria oficina: partes certas na primeira tentativa e fato, hipótese ou pergunta na Parada 1; as três pepitas de um cliente e dois “por quê?” por rodada na Parada 2; comparação sem erros, seis referências, todas as tendências e um achado da internet na Parada 3; seis critérios “Sim” e três itens em “não entra agora” na Parada 4. A próxima parada continua fechada até o horário.",
+        "extension": "O desafio extra aparece sozinho quando a missão termina e é conferido pela própria oficina: partes certas na primeira tentativa, fato, hipótese ou pergunta e o pedido do salão reescrito na Parada 1; as três pepitas de um cliente e dois “por quê?” por rodada na Parada 2; comparação sem erros, seis referências, todas as tendências e um achado da internet na Parada 3; seis critérios “Sim” e três itens em “não entra agora” na Parada 4. A próxima parada continua fechada até o horário.",
         "commonProblems": [
           [
             "O briefing vira lista de cores e fontes",
@@ -2892,7 +2892,7 @@ window.SENAI_TEACHING_SUPPORT = {
               },
               {
                 "title": "Atenção",
-                "text": "Duas frases são restrições. Uma delas é sobre acessibilidade."
+                "text": "Duas frases são restrições e requisitos. Uma delas é sobre acessibilidade."
               }
             ],
             "promptLabel": "Regra",
@@ -3215,7 +3215,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "heading": "Referências de outros mundos",
             "time": "21:10 - 21:20",
             "layout": "dw8",
-            "lede": "Dez boas ideias de outros tipos de negócio. Levem pelo menos quatro para o painel e digam por que servem ao cliente.",
+            "lede": "Dez boas ideias de outros tipos de negócio. Levem pelo menos três para o painel e digam por que servem ao cliente.",
             "cards": [
               {
                 "title": "Copiar a ideia",
@@ -3287,7 +3287,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "cards": [
               {
                 "title": "Painel",
-                "text": "Quatro ou mais referências com motivo."
+                "text": "Três ou mais referências com motivo."
               },
               {
                 "title": "Internet",

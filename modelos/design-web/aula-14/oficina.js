@@ -4,7 +4,7 @@
   const esc = (value = '') => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
   const norm = (text = '') => String(text).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
   const KEY = 'senai-design-web-14-briefing-v1';
-  const MIN_TOPICS = 6, MIN_REFS = 4, MIN_TRENDS = 4, MIN_MATRIX = 15, MIN_QUESTIONS = 3;
+  const MIN_TOPICS = 6, MIN_REFS = 3, MIN_TRENDS = 3, MIN_MATRIX = 15, MIN_QUESTIONS = 3;
   const filled = (value, min = 12) => typeof value === 'string' && value.trim().length >= min;
 
   /* ---------- Parada 1 · Aquecimento: pedido vago ou briefing? ---------- */
@@ -22,20 +22,20 @@
   /* ---------- Parada 1 · Anatomia de um briefing bem-feito ---------- */
   const PARTS = [
     ['cliente', 'Cliente'], ['problema', 'Problema'], ['objetivo', 'Objetivo'], ['publico', 'Público'], ['conteudo', 'Conteúdo'],
-    ['referencias', 'Referências'], ['prazo', 'Prazo'], ['restricoes', 'Restrições'], ['sucesso', 'Critério de sucesso']
+    ['referencias', 'Referências'], ['prazo', 'Prazo'], ['restricoes', 'Restrições e requisitos'], ['sucesso', 'Critério de sucesso']
   ];
   const partName = id => (PARTS.find(([key]) => key === id) || ['', id])[1];
   const GOOD = [
     ['cliente', 'A Pedal Leve é uma oficina de bicicletas com dois mecânicos, aberta há seis anos no centro da cidade.'],
     ['problema', 'Hoje os clientes ligam para perguntar preço e prazo de conserto, e o telefone toca o dia inteiro durante o trabalho.'],
     ['objetivo', 'O site deve permitir que a pessoa descubra o preço dos serviços mais comuns e peça um orçamento por mensagem, com a foto da bicicleta.'],
-    ['publico', 'Público principal: pessoas de 20 a 45 anos que usam a bicicleta para ir ao trabalho e acessam pelo celular no intervalo do almoço.'],
-    ['conteudo', 'Conteúdo disponível: tabela de preços e endereço. Falta: fotos da oficina e um texto curto sobre cada serviço.'],
-    ['referencias', 'Referência: o site de uma lavanderia que mostra os preços em cartões grandes. O cliente gostou porque se entende em segundos.'],
-    ['prazo', 'Prazo: primeira versão no ar em cinco semanas, antes das férias escolares, quando o movimento aumenta.'],
-    ['restricoes', 'Restrições: sem pagamento pelo site, orçamento pequeno e páginas leves para quem usa dados móveis.'],
-    ['sucesso', 'Sucesso: em dois meses, metade dos orçamentos chega por mensagem e as ligações caem pela metade.'],
-    ['restricoes', 'Acessibilidade é requisito: contraste suficiente, texto que pode ser ampliado e botões fáceis de tocar.']
+    ['publico', 'Quem mais usa são pessoas de 20 a 45 anos que usam a bicicleta para ir ao trabalho e acessam pelo celular no intervalo do almoço.'],
+    ['conteudo', 'Já existem a tabela de preços e o endereço; faltam fotos da oficina e um texto curto sobre cada serviço.'],
+    ['referencias', 'O dono admira o site de uma lavanderia que mostra os preços em cartões grandes, porque se entende em segundos.'],
+    ['prazo', 'A primeira versão precisa estar no ar em cinco semanas, antes das férias escolares, quando o movimento aumenta.'],
+    ['restricoes', 'Não haverá pagamento pelo site, o orçamento é pequeno e as páginas precisam ser leves para quem usa dados móveis.'],
+    ['sucesso', 'Em dois meses, metade dos orçamentos deve chegar por mensagem e as ligações devem cair pela metade.'],
+    ['restricoes', 'O site precisa ter contraste suficiente, texto que pode ser ampliado e botões fáceis de tocar.']
   ];
 
   /* ---------- Parada 1 · Caça aos furos de um briefing fraco ---------- */
@@ -44,7 +44,7 @@
     ['problema', true, 'O texto não diz o que está atrapalhando o salão hoje.'],
     ['objetivo', true, '“Site moderno” não diz o que a pessoa deve conseguir fazer.'],
     ['publico', true, '“Todo mundo” não orienta nenhuma decisão.'],
-    ['conteudo', false, 'Existe conteúdo concreto: 40 fotos profissionais de agosto.'],
+    ['conteudo', false, 'É a única parte com algo concreto: 40 fotos de agosto. Ainda vale perguntar o que falta (textos, preços), mas não está vazia.'],
     ['referencias', true, '“As cores que achar melhor” não é referência; falta o que o cliente admira e por quê.'],
     ['prazo', true, '“O quanto antes” não é data.'],
     ['restricoes', true, 'Nada sobre orçamento, equipe, regras ou acessibilidade.'],
@@ -52,7 +52,7 @@
   ];
   const FHP = [
     ['O salão abre às 9h.', 'fato'], ['Acho que os clientes preferem agendar por mensagem.', 'hipotese'],
-    ['Os clientes mais velhos usam o celular para agendar?', 'pergunta'], ['Temos 40 fotos de cortes feitas em agosto.', 'fato'],
+    ['Precisamos descobrir se os clientes mais velhos agendam pelo celular.', 'pergunta'], ['Na última terça, o salão atendeu só três clientes.', 'fato'],
     ['Um site com vídeo deve atrair mais clientes jovens.', 'hipotese'], ['Quem vai atualizar os preços quando mudarem?', 'pergunta']
   ];
   const FHP_LABELS = [['fato', 'Fato'], ['hipotese', 'Hipótese'], ['pergunta', 'Pergunta']];
@@ -102,7 +102,7 @@
       ]
     },
     tatuagem: {
-      name:'Estúdio Traço Fino', person:'Mari', role:'tatuadora há 8 anos', color:'#3f3f46', action:'Pedir orçamento',
+      name:'Estúdio Traço Fino', person:'Mari', role:'tatuadora há 8 anos', color:'#3f3f46', action:'Enviar sua ideia',
       pedido:'Quero um site com a minha cara, bem escuro e artístico.',
       acting:'Você é artista e fala do seu estilo com paixão. Fica impaciente com pergunta genérica como “o que você quer?”.',
       topics:{
@@ -188,10 +188,10 @@
   /* ---------- Parada 3 · Métodos, referências e tendências ---------- */
   const METHODS = [['entrevista', 'Entrevista com pessoas'], ['concorrentes', 'Análise de concorrentes'], ['referencias', 'Referências'], ['tendencias', 'Tendências']];
   const METHOD_CARDS = [
-    ['Entender o problema e o objetivo do dono do negócio.', 'entrevista', 'Pesquisa com pessoas: ouvir quem vive o problema. Vocês já fizeram isso na Parada 2.'],
-    ['Descobrir o que os negócios parecidos da região já mostram no site.', 'concorrentes', 'Comparar concorrentes revela o que é básico e o que ninguém faz bem.'],
-    ['Encontrar boas formas de mostrar horários, mesmo em outro tipo de negócio.', 'referencias', 'Referência é uma solução boa para copiar a ideia, não a aparência.'],
-    ['Saber se pedir e agendar por mensagem está crescendo no comportamento das pessoas.', 'tendencias', 'Tendência é mudança de comportamento ou de tecnologia que dura, não moda passageira.']
+    ['Entender o problema e o objetivo do dono do negócio.', 'entrevista', 'Pesquisa primária e qualitativa: vocês mesmos ouvem quem vive o problema e entendem o porquê. Foi o que fizeram na Parada 2.'],
+    ['Descobrir o que os negócios parecidos da região já mostram no site.', 'concorrentes', 'Pesquisa primária por observação: vocês mesmos olham os sites e comparam o que é básico e o que ninguém faz bem.'],
+    ['Encontrar boas formas de mostrar horários, mesmo em outro tipo de negócio.', 'referencias', 'Pesquisa exploratória: buscar boas soluções em outros lugares para copiar a ideia, não a aparência.'],
+    ['Saber se pedir e agendar por mensagem está crescendo no comportamento das pessoas.', 'tendencias', 'Pesquisa secundária e quantitativa: usa números que outras pessoas já publicaram. Tendência é mudança que dura, não moda passageira.']
   ];
   const REFS = [
     ['precos', 'Cartões de preço grandes', 'Lavanderia', 'O preço aparece antes da pergunta.'],
@@ -209,7 +209,7 @@
     ['mensagem', 'Pedido e agendamento por mensagem', 'Para muita gente, mandar mensagem é mais fácil que ligar ou preencher cadastro.'],
     ['video', 'Vídeos curtos na vertical', 'Funcionam no celular, mas pesam: use poucos e com legenda.'],
     ['leve', 'Páginas leves para dados móveis', 'Quem tem pacote limitado agradece. Página leve também carrega mais rápido.'],
-    ['acessivel', 'Acessibilidade desde o rascunho', 'É requisito, não enfeite: ajuda pessoas com deficiência, idosos e quem está com pressa.'],
+    ['escuro', 'Modo escuro', 'Muita gente gosta e economiza bateria em algumas telas. Não substitui o contraste: o texto continua precisando ser legível.'],
     ['movimento', 'Textos gigantes que se movem na tela', 'Chamam atenção, mas atrapalham a leitura. Se usar, deixe pausar.'],
     ['3d', 'Efeitos 3D pesados na página inicial', 'Impressionam no computador e travam celulares simples.']
   ];
@@ -219,7 +219,7 @@
   const ACCESS = [
     ['contraste', 'Contraste de pelo menos 4,5:1 nos textos.'], ['ampliar', 'Texto que pode ser ampliado a 200% sem cortar.'],
     ['toque', 'Botões grandes, fáceis de tocar.'], ['teclado', 'Tudo funciona com o teclado.'],
-    ['alt', 'Imagens com texto alternativo pela função.'], ['leve', 'Página leve para conexão lenta.']
+    ['alt', 'Imagens com texto alternativo pela função.'], ['legenda', 'Vídeos com legenda.']
   ];
   const CHECKS = [
     'O objetivo descreve uma ação de quem visita o site.',
@@ -245,7 +245,7 @@
   const emptyRound = () => ({client:'', answers:Object.fromEntries(TOPICS.map(([id]) => [id, ''])), why:0, pepitas:[false, false, false], revealed:false, resumo:'', confirmed:false});
   const initial = () => ({version:1, phase:1, round:1, team:'', warmup:Array(WARMUP.length).fill(''), exports:0, exportedFinal:false, keys:[],
     anatomy:{tags:Array(GOOD.length).fill(''), first:Array(GOOD.length).fill(null)},
-    weak:{marks:Array(WEAK.length).fill(''), questions:''}, fhp:Array(FHP.length).fill(''),
+    weak:{marks:Array(WEAK.length).fill(''), questions:'', rewrite:''}, fhp:Array(FHP.length).fill(''),
     interview:{draw:[], rounds:[emptyRound(), emptyRound()], chosen:0, motivo:''},
     research:{methods:Array(METHOD_CARDS.length).fill(''), matrix:{}, checked:false, opportunity:'', refs:{}, trends:{}, web:{site:'', learn:''}, call:{open:false, cut:'', change:''}},
     doc:{prefilled:false, ...Object.fromEntries(DOC_FIELDS.map(([id]) => [id, ''])), access:[]},
@@ -264,7 +264,7 @@
     clean.exports = int(s.exports, 0, 9999, 0); clean.exportedFinal = bool(s.exportedFinal);
     clean.keys = Array.isArray(s.keys) ? s.keys.filter(k => [2, 3, 4].includes(k)) : [];
     const a = obj(s.anatomy); clean.anatomy = {tags:arr(a.tags, GOOD.length, v => pick(v, PART_IDS, '')), first:arr(a.first, GOOD.length, v => typeof v === 'boolean' ? v : null)};
-    const w = obj(s.weak); clean.weak = {marks:arr(w.marks, WEAK.length, v => pick(v, ['claro', 'furo'], '')), questions:str(w.questions)};
+    const w = obj(s.weak); clean.weak = {marks:arr(w.marks, WEAK.length, v => pick(v, ['claro', 'furo'], '')), questions:str(w.questions), rewrite:str(w.rewrite)};
     clean.fhp = arr(s.fhp, FHP.length, v => pick(v, FHP_LABELS.map(([id]) => id), ''));
     const iv = obj(s.interview);
     const draw = Array.isArray(iv.draw) ? iv.draw.filter(id => CLIENT_IDS.includes(id)) : [];
@@ -365,7 +365,7 @@
   const progress = (label, n, need) => ({label:`${label} (${Math.min(n, need)}/${need})`, done:n >= need});
   function mission(p) {
     if (p === 1) return {items:[progress('Aquecimento', warmAnswered(), WARMUP.length), progress('Partes do briefing identificadas', tagsRight(), GOOD.length), progress('Furos do briefing fraco avaliados', weakRight(), WEAK.length), progress('Perguntas para fechar furos', questionCount(), MIN_QUESTIONS), {label:'Exportar uma cópia', done:state.exports > 0}],
-      extra:{title:'Olho de briefing', goals:[progress('Partes certas na primeira tentativa', firstRight(), GOOD.length), progress('Fato, hipótese ou pergunta', fhpRight(), FHP.length)]}};
+      extra:{title:'Olho de briefing', goals:[progress('Partes certas na primeira tentativa', firstRight(), GOOD.length), progress('Fato, hipótese ou pergunta', fhpRight(), FHP.length), {label:'Pedido do salão reescrito como briefing', done:filled(state.weak.rewrite, 60)}]}};
     if (p === 2) {
       const iv = state.interview, gold = iv.rounds.some(r => r.revealed && r.pepitas.every(Boolean));
       return {items:[{label:'Sortear os dois clientes', done:iv.draw.length === 2}, {label:'Rodada 1 completa', done:roundDone(0)}, {label:'Rodada 2 completa', done:roundDone(1)}, {label:'Projeto escolhido com motivo', done:!!iv.chosen && filled(iv.motivo, 20)}],
@@ -378,7 +378,7 @@
   }
   const phaseDone = p => mission(p).items.every(item => item.done);
   const HINTS = {
-    1:['Clique numa frase do briefing da Pedal Leve e escolha a parte. O retorno aparece na hora.', 'Duas frases falam de restrições. Uma delas é a de acessibilidade.', 'No briefing fraco, procure a única parte que traz algo concreto: as 40 fotos. As outras são furos.'],
+    1:['Clique numa frase do briefing da Pedal Leve e escolha a parte. O retorno aparece na hora.', 'Duas frases são de restrições e requisitos. Uma delas é a de acessibilidade.', 'No briefing fraco, procure a única parte que traz algo concreto: as 40 fotos. As outras são furos.'],
     r1:['Primeiro sorteiem os dois clientes. Quem faz o cliente lê a ficha secreta e esconde.', 'Use as perguntas de exemplo de cada tema. Pergunte “por quê?” e marque no contador.', 'No fim, quem fez o cliente revela as pepitas que saíram na conversa. Depois, escrevam o resumo e peçam a confirmação.'],
     r2:['Troquem os papéis: quem entrevistou agora é o cliente.', 'Comecem pelo problema, não pelas cores.', 'Pepitas aparecem quando vocês aprofundam: “como assim?”, “por quê?”, “me dá um exemplo?”.'],
     r3:['Comparem os dois resumos.', 'Escolham o projeto com mais informação concreta ou o que a dupla quer desenvolver nas próximas aulas.', 'Escrevam o motivo em uma ou duas frases.'],
@@ -457,14 +457,16 @@
       </div>
       <section class="desk wide" aria-labelledby="weak-title"><p class="section-label">Caça aos furos</p><h3 id="weak-title">Salão Bela Vista</h3>
         <blockquote class="weak-brief">${esc(WEAK_TEXT)}</blockquote>
-        <p class="fine">Para cada parte, decidam: o briefing deixa claro ou é um furo?</p>
+        <p class="fine">Para cada parte, decidam: o texto traz algo concreto ou é um furo?</p>
         <div class="weak-grid">${WEAK.map(([part, isGap, why], i) => { const mark = state.weak.marks[i], right = mark && (mark === 'furo') === isGap;
-          return `<div class="weak-item${mark ? (right ? ' is-right' : ' is-wrong') : ''}">${radioGroup(`weak-${i}`, partName(part), [['claro', 'Está claro'], ['furo', 'É furo']], mark, ` data-weak="${i}"`)}${mark ? `<p class="weak-why">${right ? '<span class="mark ok">Certo</span>' : '<span class="mark no">Reveja</span>'} ${right ? esc(why) : 'Procure no texto uma informação concreta sobre esta parte.'}</p>` : ''}</div>`; }).join('')}</div>
+          return `<div class="weak-item${mark ? (right ? ' is-right' : ' is-wrong') : ''}">${radioGroup(`weak-${i}`, partName(part), [['claro', 'Tem algo concreto'], ['furo', 'É furo']], mark, ` data-weak="${i}"`)}${mark ? `<p class="weak-why">${right ? '<span class="mark ok">Certo</span>' : '<span class="mark no">Reveja</span>'} ${right ? esc(why) : 'Procure no texto uma informação concreta sobre esta parte.'}</p>` : ''}</div>`; }).join('')}</div>
         ${field('weak.questions', `Perguntas para o cliente fechar os furos (uma por linha, com “?”) · ${questionCount()} de ${MIN_QUESTIONS}`, state.weak.questions, 'O que mais atrapalha o salão hoje?\nPara quando o site precisa estar no ar?', 4)}
       </section>
-      <details class="stretch"${ui.stretch[1] ? ' open' : ''}><summary>Desafio extra · fato, hipótese ou pergunta?</summary>
+      <details class="stretch"${ui.stretch[1] ? ' open' : ''}><summary>Desafio extra · fato, hipótese ou pergunta? E o salão reescrito</summary>
         <p class="fine">Num briefing, separar o que é certo do que é suposição evita retrabalho.</p>
         <div class="fhp-grid">${FHP.map(([text, answer], i) => { const v = state.fhp[i]; return `<div class="fhp-item">${radioGroup(`fhp-${i}`, esc(text), FHP_LABELS, v, ` data-fhp="${i}"`)}${v ? `<p class="weak-why">${v === answer ? '<span class="mark ok">Certo</span>' : '<span class="mark no">Reveja</span>'}</p>` : ''}</div>`; }).join('')}</div>
+        <p class="fine">Agora reescrevam o pedido do Salão Bela Vista como um bom briefing de três ou quatro frases. Inventem as respostas que faltam, com cuidado para serem realistas.</p>
+        ${field('weak.rewrite', 'Briefing reescrito do Salão Bela Vista', state.weak.rewrite, 'O Salão Bela Vista precisa que…', 4)}
       </details>
       <div class="next"><button type="button" class="button" data-export>Exportar uma cópia</button><button type="button" class="button primary" data-go="2">Ir para a Parada 2 →</button></div>`;
   }
@@ -477,7 +479,7 @@
   }
   function secretHTML(c) {
     return `<div class="secret" id="secret" role="region" aria-label="Ficha secreta do cliente">
-      <p class="secret-warn">Só quem faz o papel do cliente lê esta ficha. Quem entrevista olha para o lado.</p>
+      <p class="secret-warn">Só quem faz o papel do cliente lê esta ficha. Quem entrevista vira de costas. O cliente pode reabrir a ficha quando esquecer algo.</p>
       <h4>${esc(c.person)} · ${esc(c.name)}</h4><p class="fine">${esc(c.role)}</p>
       <p><strong>Como atuar:</strong> ${esc(c.acting)}</p>
       <dl class="secret-topics">${TOPICS.map(([id, label]) => `<div><dt>${label}</dt><dd>${esc(c.topics[id])}</dd></div>`).join('')}</dl>
@@ -523,7 +525,7 @@
   // Trocar de projeto troca o cliente: o que dependia do cliente anterior recomeça.
   function resetForClient() {
     const d = state.doc, rs = state.research;
-    for (const id of ['resumo', 'objetivo', 'publico', 'tem', 'prazo', 'restricoes', 'sucesso']) d[id] = '';
+    for (const id of ['resumo', 'objetivo', 'publico', 'tem', 'falta', 'prazo', 'restricoes', 'sucesso']) d[id] = '';
     d.prefilled = false; rs.matrix = {}; rs.checked = false; rs.opportunity = ''; rs.call = {open:false, cut:'', change:''};
   }
 
@@ -535,7 +537,7 @@
     return `<div class="mock-frame${phone ? ' is-phone' : ''}"><div class="mock ${t.celular ? 'is-fluid' : 'is-fixed'} ${t.contraste ? '' : 'is-faint'}" style="--brand:${client.color}" aria-label="Site fictício ${esc(rival.name)}">
       <div class="mock-head"><strong>${esc(rival.name)}</strong><span class="mock-nav">Início · Sobre · Galeria · Contato</span></div>
       <div class="mock-hero"><p class="mock-tag">${esc(rival.tagline)}</p>${t.acao ? `<span class="mock-cta">${esc(client.action)}</span>` : '<p class="mock-text">Seja bem-vindo ao nosso espaço. Aqui você encontra tudo o que precisa, com qualidade e carinho.</p>'}</div>
-      ${t.horario ? '<p class="mock-info">Ter a dom · 9h às 19h · Rua das Flores, 120</p>' : ''}
+      ${t.horario ? `<p class="mock-info">${({pizzaria:'Ter a dom · 18h às 23h', tatuagem:'Ter a sáb · 10h às 19h', petshop:'Seg a sáb · 8h às 18h', danca:'Seg a sex · 14h às 21h'})[chosenClientId()]} · Rua das Flores, 120</p>` : ''}
       <div class="mock-photos">${photos}</div>
       ${t.preco ? `<ul class="mock-prices">${prices.map(p => `<li>${esc(p)}</li>`).join('')}</ul>` : '<p class="mock-text">Consulte valores.</p>'}
       <p class="mock-text">© ${esc(rival.name)}. Todos os direitos reservados.</p></div></div>`;
@@ -556,7 +558,7 @@
         ${field('research.call.change', 'O que muda no briefing por causa da ligação?', rs.call.change, '', 2)}</section>`;
   }
   function researchBody(c, rs, methodsHTML, matrixRows) {
-    return `<section class="desk wide" aria-labelledby="methods-title"><p class="section-label">Tipos e métodos</p><h3 id="methods-title">Qual método responde a cada pergunta?</h3><div class="method-grid">${methodsHTML}</div></section>
+    return `<section class="desk wide" aria-labelledby="methods-title"><p class="section-label">Tipos e métodos</p><h3 id="methods-title">Qual método responde a cada pergunta?</h3><p class="fine"><strong>Primária:</strong> vocês coletam. <strong>Secundária:</strong> usa o que outros já publicaram. <strong>Qualitativa:</strong> entende o porquê. <strong>Quantitativa:</strong> conta quantos.</p><div class="method-grid">${methodsHTML}</div></section>
       <section class="desk wide" aria-labelledby="rivals-title"><p class="section-label">Análise de concorrentes</p><h3 id="rivals-title">Três concorrentes fictícios de ${esc(c.name)}</h3>
         <p class="fine">Observe cada site no computador e no celular. Depois, preencha a comparação.</p>
         <div class="rival-grid">${c.rivals.map((rival, i) => `<figure class="rival"><figcaption><strong>${esc(rival.name)}</strong><span class="toolbar tabs" role="group" aria-label="Visualização de ${esc(rival.name)}"><button type="button" data-mock="${i}:computador" aria-pressed="${ui.view[i] !== 'celular'}">Computador</button><button type="button" data-mock="${i}:celular" aria-pressed="${ui.view[i] === 'celular'}">Celular</button></span></figcaption>${mockHTML(rival, c, i)}</figure>`).join('')}</div>
@@ -564,7 +566,7 @@
         <div class="toolbar"><button type="button" class="button" id="check-matrix">Conferir comparação</button><p class="status-line" id="matrix-status" role="status">${rs.checked ? `${matrixRight()} de 18 corretas.${matrixRight() < 18 ? ' Olhem de novo o que não bate: o modo celular e o contraste revelam detalhes.' : ' Comparação perfeita.'}` : ''}</p></div>
         ${field('research.opportunity', 'Oportunidade: o que nenhum concorrente faz bem e o seu cliente pode fazer?', rs.opportunity, '', 2)}</section>
       <section class="desk wide" aria-labelledby="refs-title"><p class="section-label">Referências</p><h3 id="refs-title">Boas ideias de outros tipos de negócio</h3>
-        <p class="fine">Escolha pelo menos ${MIN_REFS} para o painel e escreva por que servem para ${esc(c.name)}. Copiamos a ideia, não a aparência.</p>
+        <p class="fine">Escolham pelo menos ${MIN_REFS} para o painel e escreva por que servem para ${esc(c.name)}. Copiamos a ideia, não a aparência.</p>
         <div class="ref-grid">${REFS.map(([id, title, from, text]) => { const on = id in rs.refs; return `<div class="ref${on ? ' is-on' : ''}"><div class="ref-art ref-${id}" aria-hidden="true"></div><p class="ref-from">${esc(from)}</p><h4>${esc(title)}</h4><p>${esc(text)}</p><label class="check"><input type="checkbox" data-ref="${id}"${on ? ' checked' : ''}> No painel</label>${on ? `<label class="field">Por que serve para este cliente?<textarea data-ref-note="${id}" rows="2" maxlength="600">${esc(rs.refs[id])}</textarea></label>` : ''}</div>`; }).join('')}</div></section>
       <section class="desk wide" aria-labelledby="trends-title"><p class="section-label">Tendências</p><h3 id="trends-title">Usar, observar ou evitar?</h3>
         <p class="fine">Tendência útil resolve algo para o público do cliente. Moda passageira só enfeita. Avalie pelo menos ${MIN_TRENDS}.</p>
@@ -767,7 +769,7 @@ ${DOC_FIELDS.slice(1).map(([id, label]) => `<dt>${esc(label)}</dt><dd>${text(s.d
 <dt>Referências</dt><dd>${data.referencias.length ? data.referencias.map(r => `${esc(r.ideia)}: ${esc(r.motivo) || '<em>sem motivo</em>'}`).join('<br>') : dash}</dd>
 <dt>Tendências a usar</dt><dd>${data.tendencias.filter(t => t.decisao === 'usar').map(t => `${esc(t.tendencia)}${t.motivo ? `: ${esc(t.motivo)}` : ''}`).join('<br>') || dash}</dd></dl></section>
 <h2 class="r-h2">01 / Decifrar</h2><p>Aquecimento: ${warmRight()} de ${WARMUP.length} certos. Partes do briefing comentado: ${tagsRight()} de ${GOOD.length} (${firstRight()} na primeira tentativa). Furos do briefing fraco: ${weakRight()} de ${WEAK.length}.</p>
-<h3 class="r-h3">Perguntas para fechar os furos</h3><p>${lines(s.weak.questions)}</p>
+<h3 class="r-h3">Perguntas para fechar os furos</h3><p>${lines(s.weak.questions)}</p>${s.weak.rewrite.trim() ? `<h3 class="r-h3">Salão Bela Vista reescrito</h3><p>${lines(s.weak.rewrite)}</p>` : ''}
 <h2 class="r-h2">02 / Entrevistas</h2>${s.interview.rounds.map(roundHTML).join('')}
 <h3 class="r-h3">Motivo da escolha</h3><p>${text(s.interview.motivo)}</p>
 <h2 class="r-h2">03 / Pesquisa</h2><p>Métodos: ${methodsRight()} de ${METHOD_CARDS.length} certos.</p>
