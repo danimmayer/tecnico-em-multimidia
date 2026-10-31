@@ -1,0 +1,111 @@
+/* Aula 14: the client's request becomes a working plan, one visual decision at a time. */
+.design-fourteen{--f14-paper:#f6f1e5;--f14-ink:#263c34;--f14-red:#a53d29;--f14-line:#b7b8a6}
+.design-fourteen .kit-slide-main{background:var(--f14-paper);color:var(--f14-ink);padding:28px 48px;gap:0;max-width:none}
+.design-fourteen .kit-slide h1,.design-fourteen .kit-slide h2{font-family:Georgia,'Times New Roman',serif;font-weight:600;letter-spacing:-.045em;text-wrap:balance;line-height:1.05}
+.design-fourteen .kit-slide h2{font-size:clamp(34px,4.4vw,58px)}
+.design-fourteen .slide-kicker{color:var(--f14-red);font-size:13px;font-weight:800;letter-spacing:.12em;margin:0 0 14px;text-transform:uppercase}
+.design-fourteen .kit-slide .slide-lede{color:#506157;font-size:21px;line-height:1.4;margin:14px 0 22px;max-width:65ch}
+.design-fourteen .f14-visual{margin:0 0 20px;max-width:1060px}
+.design-fourteen .f14-task{border-top:2px solid currentColor;padding-top:13px;display:grid;grid-template-columns:110px 1fr;gap:18px;margin-top:8px}
+.design-fourteen .f14-task>span{font-size:11px;letter-spacing:.12em;font-weight:800;padding-top:5px}
+.design-fourteen .f14-task strong{font-size:20px;line-height:1.4;font-weight:600}
+.design-fourteen .f14-caption{font-size:21px;line-height:1.4;margin:16px 0 0;max-width:60ch}
+.design-fourteen .f14-note{font-size:15px;line-height:1.4;margin:12px 0 0;color:#59675d}
+.design-fourteen .f14-chat{border-radius:2px 24px 24px 24px;background:#e3e7d7;padding:22px 28px;max-width:860px;border-left:5px solid #41634f}
+.design-fourteen .f14-chat>span{font-size:12px;letter-spacing:.1em;font-weight:800}
+.design-fourteen .f14-chat blockquote{font-family:Georgia,serif;font-size:clamp(25px,3vw,36px);line-height:1.3;margin:10px 0 0}
+.design-fourteen .f14-reveal{border-top:1px solid var(--f14-line);padding:0;background:transparent}
+.design-fourteen .f14-reveal:last-child{border-bottom:1px solid var(--f14-line)}
+.design-fourteen .f14-reveal summary{cursor:pointer;font-size:23px;line-height:1.3;padding:16px 36px 16px 0;list-style: none;position:relative;font-weight:600}
+.design-fourteen .f14-reveal summary:after{content:'+';position:absolute;right:8px;top:13px;font-size:28px;color:var(--f14-red)}
+.design-fourteen .f14-reveal[open] summary:after{content:'−'}
+.design-fourteen .f14-reveal p{margin:0 40px 16px 0;font-size:20px;line-height:1.4;color:#506157}
+.design-fourteen :focus-visible{outline:3px solid #b8492e;outline-offset:5px}
+.design-fourteen .f14-sentence>s{font-size:23px;color:#756a5b;text-decoration-color:var(--f14-red)}
+.design-fourteen .f14-sentence>div{font-family:Georgia,serif;font-size:clamp(30px,3.8vw,46px);line-height:1.8;margin:12px 0}
+.design-fourteen mark{background:#e3bc69;color:#293b30;padding:3px 10px;white-space:nowrap}
+.design-fourteen .f14-sentence p{font-size:18px;color:#506157;line-height:1.4}
+.design-fourteen .f14-row{display:grid;grid-template-columns:135px 1fr;gap:20px;padding:12px 0;border-bottom:1px solid var(--f14-line);font-size:21px;line-height:1.35}
+.design-fourteen .f14-row b{color:var(--f14-red)}
+.design-fourteen .f14-evidence{margin-bottom:20px}
+.design-fourteen .f14-scope{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-bottom:20px;border-top:1px solid var(--f14-line)}
+.design-fourteen .f14-scope>span{padding:18px 14px 18px 0;display:flex;gap:12px;border-bottom:1px solid var(--f14-line);font-size:21px;line-height:1.3}
+.design-fourteen .f14-scope i{font-style:normal;font-size:12px;color:#78654b;padding-top:4px}
+.design-fourteen .f14-wire{display:grid;grid-template-columns:2fr 1fr;gap:32px;align-items:center;margin:0}
+.design-fourteen .f14-sketch{border:2px solid #415c4d;padding:18px;transform:rotate(-1deg);background:#fffdf6;box-shadow:8px 8px 0 #dedbcd}
+.design-fourteen .f14-sketch-title{font-size:21px;font-weight:700;display:block;border-bottom:2px solid #415c4d;padding-bottom:14px}
+.design-fourteen .f14-sketch-blocks{display:flex;gap:10px;margin:18px 0}
+.design-fourteen .f14-sketch-blocks>span{flex:1;border:1px dashed #657d6f;padding:22px 8px;font-size:15px;text-align:center}
+.design-fourteen .f14-sketch-action{display:block;border:2px solid #415c4d;text-align:center;padding:9px;font-size:18px;font-weight:700}
+.design-fourteen .f14-wire figcaption{font-family:Georgia,serif;font-size:25px;line-height:1.5}
+.design-fourteen .is-f14-timer .kit-slide-main,.design-fourteen .is-f14-pause .kit-slide-main,.design-fourteen .is-f14-exit .kit-slide-main{background:#243e33;color:#faf2df}
+.design-fourteen .is-f14-timer .slide-lede,.design-fourteen .is-f14-pause .slide-lede,.design-fourteen .is-f14-exit .slide-lede{color:#d0d9c7}
+.design-fourteen .is-f14-timer .slide-kicker,.design-fourteen .is-f14-pause .slide-kicker,.design-fourteen .is-f14-exit .slide-kicker{color:#edbb72}
+.design-fourteen .f14-timer{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.design-fourteen .f14-timer strong,.design-fourteen .f14-pause strong{font-family:Georgia,serif;font-size:clamp(90px,13vw,170px);font-weight:400;letter-spacing:-.065em;line-height:1}
+.design-fourteen .f14-timer span,.design-fourteen .f14-pause span{display:block;font-size:17px;margin-top:8px}
+.design-fourteen .f14-timer ol{padding-left:24px;font-size:25px;line-height:1.5;display:grid;gap:20px}
+.design-fourteen .f14-pause{display:flex;align-items:baseline;gap:32px}
+.design-fourteen .f14-refs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.design-fourteen .f14-refs article{background:#fffdf8;border:1px solid #aaa995;padding:18px;min-width:0;display:flex;flex-direction:column;box-shadow:0 5px 0 #dedacc}
+.design-fourteen .f14-refs article>span{font-size:10px;letter-spacing:.07em;display:block;color:#5c6759;font-weight:800}
+.design-fourteen .f14-refs h3{font-family:Georgia,serif;font-size:25px;line-height:1.1;margin:16px 0 12px;color:#263c34}
+.design-fourteen .f14-refs p{font-size:16px;line-height:1.5;margin:0 0 12px;color:#3f5044}
+.design-fourteen .f14-refs b{font-size:14px;padding:10px 8px;background:#28513e;color:#fff8e9;margin-top:auto;display:block}
+.design-fourteen .f14-refs small{font-size:12px;line-height:1.4;display:block;margin-top:12px;color:#59675d}
+.design-fourteen .f14-refs .f14-ref-b{background:#eadfce}
+.design-fourteen .f14-ref-b h3{font-size:30px}
+.design-fourteen .f14-ref-b b{background:#684b39}
+.design-fourteen .f14-reason{border-left:4px solid #a53d29;padding-left:24px}
+.design-fourteen .f14-reason>div{position:relative;display:grid;grid-template-columns:100px 1fr;gap:16px;padding:10px 0 20px}
+.design-fourteen .f14-reason span{font-size:12px;color:var(--f14-red);font-weight:800;padding-top:6px}
+.design-fourteen .f14-reason p{font-size:25px;margin:0;line-height:1.3}
+.design-fourteen .f14-reason b{position:absolute;bottom:-4px;left:116px;font-size:20px;color:var(--f14-red)}
+.design-fourteen .f14-buttons{display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:center;padding:24px 0}
+.design-fourteen .f14-buttons div>span{display:block;font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+.design-fourteen .f14-buttons b{display:inline-block;padding:18px 24px;font-size:25px;border-radius:4px}
+.design-fourteen .f14-vague{background:#d9d5c9;color:#57584c}
+.design-fourteen .f14-clear{background:#21523b;color:#fff8e9;border:2px solid #173b29}
+.design-fourteen .f14-brief{background:#fffdf6;max-width:900px;border-top:6px solid #a53d29;padding:18px 26px;box-shadow:7px 7px 0 #e1ddcd}
+.design-fourteen .f14-brief>span{font-size:12px;font-weight:800;letter-spacing:.1em}
+.design-fourteen .f14-brief .f14-row{font-size:19px;padding:10px 0}
+.design-fourteen .f14-handoff .f14-row{grid-template-columns:140px 1fr;padding:18px 0;font-size:23px}
+.design-fourteen .f14-handoff b{font-family:Georgia,serif;font-size:32px}
+.design-fourteen .f14-files{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.design-fourteen .f14-files>div{padding:20px 0;border-block:1px solid #b7b8a6}
+.design-fourteen .f14-files span{font-size:50px;color:var(--f14-red);display:block;line-height:1;margin-bottom:12px}
+.design-fourteen .f14-files b{font-family:monospace;font-size:clamp(16px,2vw,25px);overflow-wrap:anywhere}
+.design-fourteen .f14-files p{font-size:21px;margin:10px 0 0}
+.design-fourteen .f14-exit{list-style:decimal-leading-zero;padding-left:48px;font-size:26px;line-height:1.4;display:grid;gap:18px}
+.design-fourteen .f14-exit li::marker{color:#edbb72;font-family:Georgia,serif}
+.design-fourteen .student-resource-link{background:transparent;color:#294e3b;border:1px solid #74846c;font-size:17px;padding:9px 14px}
+.design-fourteen .student-resource-links{margin-top:16px;gap:10px}
+.design-fourteen .cover-meta .meta-chip{background:#e4e4d4;color:#294e3b;border-color:#b3bba9}
+.design-fourteen .title-rule{background:#a53d29}
+@media(max-height:800px) and (min-width:821px){
+.design-fourteen .kit-slide-main,.design-fourteen .projection-mode .kit-slide-main{padding:20px 40px}
+.design-fourteen .kit-slide h2{font-size:40px}.design-fourteen .slide-kicker{margin-bottom:10px}
+.design-fourteen .kit-slide .slide-lede{font-size:19px;margin:10px 0 16px}
+.design-fourteen .f14-visual{margin-bottom:14px}.design-fourteen .f14-task strong{font-size:18px}
+.design-fourteen .f14-refs h3{font-size:22px;margin:12px 0}.design-fourteen .f14-refs p{font-size:15px}
+.design-fourteen .f14-reveal summary{font-size:21px;padding-block:12px}.design-fourteen .f14-reveal p{font-size:18px}
+.design-fourteen .f14-timer strong,.design-fourteen .f14-pause strong{font-size:110px}
+}
+@media(max-width:820px){
+.design-fourteen .kit-slide-main,.design-fourteen .projection-mode .kit-slide-main{padding:24px}
+.design-fourteen .kit-slide h2{font-size:36px}.design-fourteen .kit-slide .slide-lede{font-size:19px}
+.design-fourteen .f14-refs,.design-fourteen .f14-files,.design-fourteen .f14-buttons,.design-fourteen .f14-wire{grid-template-columns:1fr}
+.design-fourteen .f14-scope{grid-template-columns:1fr 1fr}.design-fourteen .f14-task{grid-template-columns:1fr;gap:6px}
+.design-fourteen .f14-timer{grid-template-columns:1fr;gap:12px}.design-fourteen .f14-pause{display:block}
+.design-fourteen .f14-row{grid-template-columns:100px 1fr;font-size:18px;gap:12px}
+.design-fourteen .f14-reason>div{grid-template-columns:80px 1fr}.design-fourteen .f14-reason p{font-size:22px}
+.design-fourteen .f14-exit{font-size:23px}.design-fourteen .f14-refs article{box-shadow:none}
+}
+@media(prefers-reduced-motion:reduce){.design-fourteen .kit-slide{transition:none;transform:none}}
+.design-fourteen .f14-cover-title{display:flex;align-items:center;gap:50px;margin:12px 0 20px}
+.design-fourteen .f14-cover-title h1{font-size:clamp(58px,7.5vw,100px);margin:0;line-height:.98}
+.design-fourteen .f14-stamp{display:block;border:3px solid #a53d29;color:#a53d29;border-radius:50%;width:190px;height:190px;flex-shrink:0;text-align:center;align-content:center;font-family:Georgia,serif;font-size:42px;font-weight:700;transform:rotate(-10deg)}
+.design-fourteen .f14-stamp small{display:block;font:9px/2 system-ui,sans-serif;letter-spacing:.05em}
+.design-fourteen .f14-route{list-style:decimal-leading-zero;display:grid;grid-template-columns:repeat(4,1fr);padding:22px 0 22px 25px;gap:32px;border-block:1px solid #b7b8a6;font-size:18px;line-height:1.4}
+.design-fourteen .f14-route li::marker{font-size:13px;color:#a53d29}
+@media(max-width:820px){.design-fourteen .f14-cover-title{gap:20px;flex-wrap:wrap}.design-fourteen .f14-stamp{width:120px;height:120px;font-size:30px}.design-fourteen .f14-stamp small{font-size:6px}.design-fourteen .f14-cover-title h1{font-size:56px}.design-fourteen .f14-route{grid-template-columns:1fr 1fr}}

@@ -1,51 +1,65 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Oficina de briefing e pesquisa de projeto da Aula 14 de Design Web.">
-  <title>Oficina · Aula 14 · Estúdio de briefing</title>
-  <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="oficina.css?v=20261030-briefing-1">
-  <script src="oficina.js?v=20261030-briefing-1" defer></script>
-</head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Do pedido ao plano · Oficina 14</title><link rel="icon" href="data:,"><style>
+:root{color-scheme:light;--paper:#f6f3eb;--ink:#242d2b;--muted:#51605b;--accent:#215d4c;--line:#b8c5ba}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:18px/1.55 system-ui,sans-serif}button,input,textarea{font:inherit}button,a{touch-action:manipulation}button{padding:10px 16px;background:#fffdf7;border:1px solid var(--line);border-radius:8px;color:var(--ink);cursor:pointer}button:hover{background:#e3ecdf}button:disabled{opacity:.5;cursor:default}button.primary,nav button[aria-current=step]{background:var(--accent);color:white;border-color:var(--accent)}:focus-visible{outline:3px solid #b65d20;outline-offset:4px}::selection{background:#cde8bb}header{border-bottom:1px solid var(--line);padding:18px max(22px,calc((100vw - 1080px)/2));display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}header a{color:var(--accent)}header strong{display:block}header small{color:var(--muted)}.files{display:flex;gap:8px;flex-wrap:wrap}.files button{font-size:15px}main{max-width:1080px;margin:auto;padding:32px 22px 64px}nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px}nav button{font-size:16px}h1{font-size:clamp(32px,5vw,54px);line-height:1.1;letter-spacing:-.03em;margin:0 0 18px;text-wrap:balance;max-width:20ch}h2{font-size:23px;line-height:1.3}p{max-width:68ch}p.lede{font-size:21px;color:var(--muted)}.brief{border-block:1px solid var(--line);padding:12px 0;margin:24px 0}.brief strong{color:var(--accent)}.columns{display:grid;grid-template-columns:1fr 1fr;gap:32px}label{display:block;font-weight:650;margin:22px 0 7px}label small{display:block;font-size:15px;color:var(--muted);font-weight:400}textarea{width:100%;min-height:94px;resize:vertical;border:1px solid #81968a;border-radius:8px;background:#fffdf7;color:var(--ink);padding:12px}details{border-bottom:1px solid var(--line);padding:14px 0}summary{font-weight:600;cursor:pointer}details p{margin-bottom:4px;color:var(--muted)}.choices{display:grid;gap:10px;margin:24px 0}.choices button{text-align:left}.choices button[aria-pressed=true]{border:2px solid var(--accent);background:#e4eedf}.response{min-height:2em;color:var(--accent);font-weight:600}.footer{border-top:1px solid var(--line);margin-top:36px;padding-top:22px;display:flex;justify-content:space-between;gap:16px}.hint{color:var(--muted);font-size:16px}.ref{padding:18px;background:#fffdf7;border:1px solid var(--line);margin:14px 0;border-radius:8px}.ref h3{margin-top:0}.sample{padding:18px;min-height:150px;background:#eee9dc}.sample strong{display:block;font-size:25px}.sample .cta{display:inline-block;background:#245a49;color:white;padding:6px 12px;margin-top:10px;border-radius:4px}.sample .weak{font-size:13px;color:#665d50}.sample p{margin:5px 0}#review{white-space:pre-wrap;background:#fffdf7;border-block:1px solid var(--line);padding:20px;overflow-wrap:anywhere}#status{margin:0;padding:10px 22px;background:#e1ecde;color:#254d37;font-size:15px}.import{position:relative;display:inline-flex;align-items:center}.import input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%}.import:focus-within{outline:3px solid #b65d20;outline-offset:3px}.import span{border:1px solid var(--line);padding:10px 16px;border-radius:8px;background:#fffdf7;font-size:15px}[hidden]{display:none!important}@media(max-width:700px){.columns{grid-template-columns:1fr;gap:8px}nav{gap:6px}nav button{padding:8px 10px}header{padding:16px 22px}main{padding-top:22px}.footer{align-items:center}}@media print{header,nav,.footer,#status,button,.hint{display:none}body{background:white}main{padding:0}section{display:none!important}#printout{display:block!important;white-space:pre-wrap}h1{font-size:26px}}
+</style></head>
 <body>
-  <a class="skip-link" href="#workspace">Pular para a atividade</a>
-  <header class="masthead">
-    <div class="masthead-inner">
-      <div class="course-line"><span>SENAI · Design Web · Aula 14</span></div>
-      <div class="masthead-title">
-        <h1>Estúdio de briefing<span>.</span></h1>
-      </div>
-      <div class="utility-bar">
-        <label for="team">Dupla ou apelido</label>
-        <input id="team" type="text" maxlength="65" autocomplete="off" placeholder="Ex.: Lu + Caio" aria-describedby="team-help">
-        <span id="team-help" class="visually-hidden">Use só um apelido para organizar a entrega local.</span>
-        <p id="save-status" role="status" aria-live="polite"></p>
-        <div class="utility-actions">
-          <button type="button" id="export" class="button primary">Exportar entrega</button>
-          <a class="kit-link" href="kit-aula-14.zip" download>Baixar kit offline</a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <nav class="phase-rail" aria-label="Paradas da oficina">
-    <ol class="phase-rail-inner">
-      <li><button type="button" data-phase="1" aria-current="step"><span class="stop" aria-hidden="true">1</span><span class="stop-name">Decifrar</span><small>19:00–19:45</small><span class="visually-hidden rail-state"></span></button></li>
-      <li><button type="button" data-phase="2"><span class="stop" aria-hidden="true">2</span><span class="stop-name">Entrevistar</span><small>20:05–20:50</small><span class="visually-hidden rail-state"></span></button></li>
-      <li><button type="button" data-phase="3"><span class="stop" aria-hidden="true">3</span><span class="stop-name">Pesquisar</span><small>20:50–21:35</small><span class="visually-hidden rail-state"></span></button></li>
-      <li><button type="button" data-phase="4"><span class="stop" aria-hidden="true">4</span><span class="stop-name">Consolidar</span><small>21:35–22:10</small><span class="visually-hidden rail-state"></span></button></li>
-    </ol>
-  </nav>
-  <div class="clockbar" id="clockbar" hidden></div>
-
-  <main id="workspace" tabindex="-1">
-    <noscript><p class="noscript">Esta oficina precisa de JavaScript para mostrar os briefings, as fichas dos clientes e guardar as decisões da dupla.</p></noscript>
-  </main>
-
-  <footer class="site-footer">
-    <p><a href="../">Voltar às oficinas</a></p>
-  </footer>
-</body>
-</html>
+<header><div><strong>Do pedido ao plano</strong><small>Design Web · Aula 14 · uma ficha por dupla</small></div><div class="files"><button id="save">Salvar projeto</button><label class="import" style="margin:0"><span>Abrir projeto</span><input id="open" type="file" accept=".json,application/json" aria-label="Abrir projeto"></label><button id="text">Baixar resumo</button></div></header>
+<p id="status" role="status" aria-live="polite">Preencha uma etapa por vez. Salvar projeto baixa uma cópia para guardar.</p>
+<main><nav aria-label="Missões da oficina"></nav>
+<section data-step="0"><h1>1. O que a página resolve?</h1><p class="lede">O cliente pediu um site bonito. Você precisa descobrir uma ação útil.</p>
+<div class="brief"><strong>Cliente fictício · Pizzaria Fatia</strong><p>“Todo dia respondo as mesmas perguntas no chat: quais sabores têm, quanto custa e até que horas abro. Quero um site bonito para facilitar.”</p></div>
+<h2>Qual objetivo combina com o pedido?</h2><div class="choices" id="choices"><button data-choice="visual" aria-pressed="false">Mostrar animações e um logo enorme.</button><button data-choice="menu" aria-pressed="false">Ajudar a consultar sabores, preços e horários.</button><button data-choice="followers" aria-pressed="false">Conseguir seguidores para todas as redes.</button></div><p id="answer" class="response" role="status"></p>
+<label for="objective">Objetivo em uma frase <small>Complete: “A página ajuda ___ a ___.”</small></label><textarea id="objective" maxlength="500" placeholder="A página ajuda…"></textarea><p class="hint">Terminou? Leia ao colega e peça que ele identifique a ação, sem dar pistas.</p></section>
+<section data-step="1" hidden><h1>2. Pergunte ao cliente</h1><p class="lede">Abra as três perguntas. Depois anote só duas respostas curtas.</p>
+<details><summary>Quem vai usar a página?</summary><p>Moradores do bairro que consultam pelo celular, muitas vezes com conexão lenta. Querem decidir antes de sair de casa.</p></details>
+<details><summary>O que já existe para colocar no site?</summary><p>Lista de seis sabores com preços, horário de terça a domingo, endereço e uma foto própria. Falta confirmar o horário dos feriados.</p></details>
+<details><summary>Qual é o limite da primeira versão?</summary><p>Uma semana e uma página simples. Não teremos pagamento no site nem conta de usuário. O cliente consegue atualizar uma lista curta de preços.</p></details>
+<div class="columns"><div><label for="audience">Quem usa e em qual situação? <small>Resuma em uma frase a resposta de “Quem vai usar a página?”, acima.</small></label><textarea id="audience" maxlength="500"></textarea></div><div><label for="question">Uma pergunta que ainda falta responder <small>Exemplo: um horário que o cliente ainda não confirmou.</small></label><textarea id="question" maxlength="500"></textarea></div></div><p class="hint">Isso é uma entrevista simulada. Numa pesquisa primária real, você faria as perguntas ao cliente e registraria as respostas.</p></section>
+<section data-step="2" hidden><h1>3. Cabe na primeira versão?</h1><p class="lede">Escolha três conteúdos. Guarde uma ideia para depois.</p>
+<div class="columns"><div><label for="content">Três conteúdos essenciais <small>Uma lista curta, separada por vírgulas.</small></label><textarea id="content" maxlength="500"></textarea></div><div><label for="later">O que fica para depois? <small>Um recurso que não impede a consulta principal.</small></label><textarea id="later" maxlength="500"></textarea></div></div>
+<details><summary>Novo recado do cliente · abra quando o professor pedir</summary><p>“Importante: não fazemos delivery. É retirada no balcão. Antes de vir, a pessoa deve conferir o cardápio e nosso horário.”</p></details>
+<label for="button">O que estará escrito no botão principal? <small>Um verbo que não prometa entrega, compra ou reserva inexistentes.</small></label><textarea id="button" maxlength="200" placeholder="Ex.: Consultar…"></textarea>
+<div class="brief"><strong>Agora, papel e caneta · cada pessoa</strong><p>Desenhe título, três informações e um botão. Retângulos bastam. Mostre por cinco segundos ao colega e pergunte: “O que você consegue fazer aqui?”</p></div></section>
+<section data-step="3" hidden><h1>4. Pegue uma boa ideia</h1><p class="lede">Compare três referências fictícias. Observe preço, horário e botão.</p><p class="hint">São exemplos didáticos locais, sem links para negócios reais. Servem para treinar pesquisa secundária; não são evidência sobre um mercado real.</p>
+<div class="ref"><h2>Referência A · consulta direta</h2><div class="sample"><strong>Fatia · cardápio</strong><p>Margherita R$ 32 · Calabresa R$ 34</p><p>Ter–dom, 18h–23h · retirada no balcão</p><span class="cta">Ver todos os sabores</span></div><p class="hint">Observe: preço e horário perto da ação. Valores ilustrativos desta referência.</p></div>
+<div class="ref"><h2>Referência B · aparência primeiro</h2><div class="sample"><strong>Viva uma experiência única.</strong><p>Uma história de encontros e sabores.</p><span class="cta">Descubra</span><p class="weak">Cardápio e horário só aparecem no fim da página.</p></div><p class="hint">Observe: o texto chama atenção, mas adia a informação que o visitante procura.</p></div>
+<div class="ref"><h2>Referência C · escolha por grupos</h2><div class="sample"><strong>Qual sabor você procura?</strong><p>Tradicionais · Vegetarianas · Doces</p><p>Nome e preço aparecem juntos em cada grupo.</p><span class="cta">Consultar cardápio</span></div><p class="hint">Observe: grupos ajudam a localizar; precisam corresponder ao cardápio disponível.</p></div>
+<div class="columns"><div><label for="reference1">Primeira ideia que você usaria <small>“Na referência __ vi __; vou usar __ porque __.”</small></label><textarea id="reference1" maxlength="600"></textarea></div><div><label for="reference2">Segunda ideia que você usaria <small>Pode ser outro detalhe da mesma referência.</small></label><textarea id="reference2" maxlength="600"></textarea></div></div>
+<details><summary>Pedido novo · “quero vídeo automático, está na moda”</summary><p>É uma sugestão do cliente, não um requisito confirmado. Decida se ela ajuda a consulta rápida pelo celular. Usar, adaptar ou deixar para depois são escolhas possíveis com uma razão.</p></details>
+<label for="trend">Sua decisão sobre o vídeo e por quê <small>Uma frase; relacione ao objetivo da página.</small></label><textarea id="trend" maxlength="500"></textarea>
+<label for="care">Uma regra para seu rascunho <small>Ex.: botão com verbo e legível, informação além da cor ou foto própria com autorização.</small></label><textarea id="care" maxlength="500"></textarea><p class="hint">Aplique uma ideia ao seu desenho. Aproveitar uma solução não dá permissão para copiar fotos, textos ou a página inteira. Para imagem externa, confira licença e crédito.</p></section>
+<section data-step="4" hidden><h1>5. Outra dupla entende?</h1><p class="lede">Troque a ficha e o desenho com a dupla vizinha. Dois minutos, uma dúvida, um ajuste.</p>
+<label for="test">Qual tarefa ela deve conseguir fazer? <small>“O colega deve encontrar ___ no rascunho sem eu explicar.”</small></label><textarea id="test" maxlength="500"></textarea>
+<label for="change">Qual dúvida apareceu e o que vocês mudaram? <small>Uma frase. Se não houve dúvida, registre o que ela encontrou sem ajuda.</small></label><textarea id="change" maxlength="500"></textarea><details><summary>Ver meu briefing até aqui</summary><div id="review"></div></details><p class="hint">Primeiro a dupla vizinha testa, depois vocês trocam os papéis. Não é apresentação para a sala.</p></section>
+<section data-step="5" hidden><h1>6. Guarde para a aula 15</h1><p class="lede">Sua ficha está montada. Confira os campos e guarde os dois arquivos.</p><div id="checklist"></div><ol><li><strong>Salvar projeto</strong> baixa briefing-fatia.json.</li><li><strong>Baixar resumo</strong> gera briefing-fatia.txt para leitura.</li><li>Use <strong>Abrir projeto</strong> para testar o JSON baixado.</li><li>Guarde os arquivos e os rascunhos na pasta Aula-14.</li></ol><div class="brief"><strong>Próxima aula</strong><p>Os três conteúdos escolhidos vão virar grupos e caminhos de navegação. Não precisa desenhar o site inteiro hoje.</p></div><p class="hint">Os botões baixam arquivos; não enviam ao professor. Use o canal de entrega combinado com a turma.</p><button id="print">Imprimir resumo</button></section>
+<div class="footer"><button id="prev">← Missão anterior</button><span id="progress" class="hint"></span><button id="next" class="primary">Próxima missão →</button></div><div id="printout" hidden></div>
+</main>
+<script>
+'use strict';
+const names=['Objetivo','Cliente','Escopo','Referências','Teste','Guardar'];
+const fields={objective:'Objetivo',audience:'Público e situação',question:'Pergunta ao cliente',content:'Três conteúdos',later:'Fica para depois',button:'Botão principal',reference1:'Referência 1 e decisão',reference2:'Referência 2 e decisão',trend:'Decisão sobre a tendência',care:'Acesso ou uso de imagem',test:'Tarefa do teste',change:'Dúvida e ajuste'};
+const key='senai-dw14-fatia-v1';
+let step=0,choice='',dirty=false;
+const status=document.getElementById('status');
+const inputs=Object.keys(fields).map(id=>document.getElementById(id));
+const nav=document.querySelector('nav');
+names.forEach((name,i)=>{const b=document.createElement('button');b.textContent=(i+1)+'. '+name;b.addEventListener('click',()=>show(i));nav.append(b)});
+function project(){return {version:1,client:'Pizzaria Fatia',step,choice,answers:Object.fromEntries(inputs.map(el=>[el.id,el.value]))}}
+function summary(){return 'BRIEFING · PIZZARIA FATIA\nCliente fictício · Design Web · Aula 14\nPrazo: uma semana. Uma página simples; sem pagamento nem conta de usuário.\nReferências A/B/C são exemplos didáticos fictícios.\n\n'+Object.entries(fields).map(([id,name])=>name+'\n'+(document.getElementById(id).value.trim()||'(a preencher)')).join('\n\n')}
+function refresh(){document.getElementById('review').textContent=summary();document.getElementById('printout').textContent=summary();const missing=inputs.filter(el=>!el.value.trim());document.getElementById('checklist').textContent=missing.length?'Ainda faltam: '+missing.map(el=>fields[el.id]).join(', ')+'. Você pode voltar e completar.':'Todos os campos têm registro. Confiram se o conteúdo combina com o pedido; campo preenchido não significa resposta correta.';}
+function persist(){try{localStorage.setItem(key,JSON.stringify(project()));status.textContent='Rascunho guardado neste navegador. Use Salvar projeto para levar uma cópia.'}catch{status.textContent='Este navegador não guardou o rascunho. Use Salvar projeto antes de sair.'}}
+function show(i){step=Math.max(0,Math.min(5,i));document.querySelectorAll('section[data-step]').forEach((el,j)=>el.hidden=j!==step);Array.from(nav.children).forEach((b,j)=>{if(j===step)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current')});document.getElementById('prev').disabled=step===0;document.getElementById('next').disabled=step===5;document.getElementById('progress').textContent='Missão '+(step+1)+' de 6';refresh();if(dirty)persist();document.querySelector('section:not([hidden]) h1').setAttribute('tabindex','-1');document.querySelector('section:not([hidden]) h1').focus();}
+inputs.forEach(el=>el.addEventListener('input',()=>{dirty=true;persist();refresh()}));
+function answer(){document.querySelectorAll('[data-choice]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.choice===choice)));document.getElementById('answer').textContent=choice==='menu'?'Combina com o pedido: a pessoa encontra as informações antes de usar o chat.':choice?'Esse pedido não resolve as perguntas repetidas. Tente uma ação ligada a sabores, preços e horários.':''}
+document.querySelectorAll('[data-choice]').forEach(b=>b.addEventListener('click',()=>{choice=b.dataset.choice;dirty=true;answer();persist()}));
+document.getElementById('prev').onclick=()=>show(step-1);document.getElementById('next').onclick=()=>show(step+1);
+function download(filename,content,type){const url=URL.createObjectURL(new Blob([content],{type}));const a=document.createElement('a');a.href=url;a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);status.textContent='Arquivo preparado: '+filename+'. Confira a pasta de downloads.'}
+document.getElementById('save').onclick=()=>download('briefing-fatia.json',JSON.stringify(project(),null,2),'application/json');
+document.getElementById('text').onclick=()=>download('briefing-fatia.txt',summary(),'text/plain;charset=utf-8');
+function validate(p){if(!p||p.version!==1||p.client!=='Pizzaria Fatia'||!Number.isInteger(p.step)||p.step<0||p.step>5||!['','menu','visual','followers'].includes(p.choice)||!p.answers||typeof p.answers!=='object')throw Error('invalid');for(const el of inputs)if(typeof p.answers[el.id]!=='string'||p.answers[el.id].length>el.maxLength)throw Error('invalid');return p}
+function load(p){validate(p);inputs.forEach(el=>el.value=p.answers[el.id]);choice=p.choice;dirty=true;answer();show(p.step);persist()}
+document.getElementById('open').addEventListener('change',async e=>{const file=e.target.files[0];if(!file)return;try{if(file.size>50000)throw Error('large');const p=validate(JSON.parse(await file.text()));if(inputs.some(el=>el.value.trim())&&!confirm('Abrir este arquivo substitui a ficha atual. Você já salvou o que quer guardar?'))return;load(p);status.textContent='Projeto aberto. Confira a última alteração na missão 5.'}catch{status.textContent='Não consegui abrir. Escolha um briefing-fatia.json salvo por esta oficina. A ficha atual foi mantida.'}finally{e.target.value=''}});
+document.getElementById('print').onclick=()=>{refresh();window.print()};
+try{const saved=localStorage.getItem(key);if(saved){load(JSON.parse(saved));status.textContent='Rascunho recuperado deste navegador. Salve um arquivo para levar.'}else show(0)}catch{show(0);status.textContent='O rascunho não pôde ser recuperado. Abra um JSON salvo ou comece uma ficha nova.'}
+</script></body></html>
