@@ -8,7 +8,7 @@ import {lesson,support} from './lessons/design-web-14.mjs';
 
 const root=fileURLToPath(new URL('../',import.meta.url));
 const output=path.join(root,'modelos/design-web/aula-14');
-const assets=['index.html','oficina.css','oficina.js','LEIA-ME.txt'];
+const assets=['index.html','LEIA-ME.txt'];
 const read=file=>fs.readFileSync(file,'utf8');
 
 function updateGlobal(file, global, mutate) {
@@ -33,7 +33,7 @@ updateGlobal(path.join(root,'assets/course-support.js'),'SENAI_TEACHING_SUPPORT'
   data['design-web'].lessons['14']=support;
 });
 
-for(const asset of [...assets,'guia-docente.html']) {
+for(const asset of assets) {
   if(!fs.existsSync(path.join(output,asset))) throw new Error(`Arquivo da oficina ausente: ${asset}`);
 }
 
@@ -50,4 +50,4 @@ try {
 } finally {
   fs.rmSync(tmp,{recursive:true,force:true});
 }
-console.log('Aula 14 atualizada: Estúdio de briefing em quatro paradas, dados da plataforma e kit offline sincronizados.');
+console.log('Aula 14 atualizada: Do pedido ao plano em seis etapas, dados da plataforma e kit offline sincronizados.');

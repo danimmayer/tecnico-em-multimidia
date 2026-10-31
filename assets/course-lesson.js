@@ -341,6 +341,8 @@
       </section>`
   });
 
+  const isDesignFourteen = course.slug === 'design-web' && lesson.num === '14';
+  if (isDesignFourteen) document.body.classList.add('design-fourteen');
   const isDesignSeven = course.slug === 'design-web' && lesson.num === '07';
   if (isDesignSeven) document.body.classList.add('design-seven');
   // Aulas 09 a 13 reuse the Aula 08 slide layout; each lesson keeps its illustrations in its own folder.
@@ -602,8 +604,8 @@
       block,
       pace: item.pace === 'break' ? 'break' : '',
       paceStart, paceEnd,
-      className: isDesignSeven ? 'is-dw7' : isDesignEight ? 'is-dw8' : isAvNine ? `is-av9 is-av9-${item.av9?.type || 'text'}` : denseCards ? 'is-dense-cards' : '',
-      main: `
+      className: isDesignFourteen ? `is-f14 is-f14-${item.dw14?.type || 'text'}` : isDesignSeven ? 'is-dw7' : isDesignEight ? 'is-dw8' : isAvNine ? `is-av9 is-av9-${item.av9?.type || 'text'}` : denseCards ? 'is-dense-cards' : '',
+      main: isDesignFourteen ? window.renderDesignWeb14(item) : `
         ${item.kicker ? `<p class="slide-kicker">${escapeHtml(item.kicker)}</p>` : ''}
         <h2>${escapeHtml(item.heading || title)}</h2>
         ${item.lede ? `<p class="slide-lede">${escapeHtml(item.lede)}</p>` : ''}
@@ -671,7 +673,8 @@
   slides.push(slide({
     title: `Aula ${lesson.num} · ${lesson.title}`,
     block: 1,
-    main: `
+    className: isDesignFourteen ? 'is-f14-cover' : '',
+    main: isDesignFourteen ? window.renderDesignWeb14Cover() : `
       <p class="slide-kicker">${escapeHtml(course.title)} · Aula ${lesson.num}</p>
       <h1>${escapeHtml(lesson.title)}</h1>
       <p class="slide-lede">${escapeHtml(lesson.description)}</p>
