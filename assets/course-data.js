@@ -529,8 +529,8 @@ window.SENAI_COURSES = {
       },
       {
         "num": "15",
-        "title": "Arquitetura de Informação",
-        "description": "Arquitetura de informação e estrutura de navegação do projeto do cliente fictício iniciado na aula anterior, com card sorting e mapa do site que alimentará os wireframes.",
+        "title": "Onde eu encontro isso?",
+        "description": "Arquitetura da informação na prática: organizar e testar os conteúdos do Café Aurora; depois, criar duas aberturas para o Festival Vira-Luz, priorizando informações para quem planeja a visita e para quem já está chegando. Tudo fica na oficina.",
         "objectives": [
           "Interfaces Web e App: planejamento, arquitetura de informação, estrutura de navegação."
         ],
@@ -542,25 +542,25 @@ window.SENAI_COURSES = {
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Revisão da Aula 14: briefing e pesquisa do cliente fictício. Desafio de abertura cronometrado \"Caça à informação\": encontrar uma informação escondida em um site mal organizado (horário de atendimento em um site institucional confuso) e discutir por que foi tão difícil."
+            "horario": "19:00 - 19:45",
+            "atividade": "Comparar as navegações da Estação Girassol, ler o pedido do Café Aurora e organizar os cartões. Separar o que fica fora do combinado, comparar duas organizações e começar a nomear as seções."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "Arquitetura de informação e estrutura de navegação: mapa do site, rotulagem, hierarquia de conteúdo e padrões de menu (navegação global, navegação local, trilha de migalhas). Exemplos bons e ruins projetados para análise da turma."
+            "horario": "20:05 - 20:45",
+            "atividade": "Finalizar os nomes, incorporar o feriado e o pagamento no balcão e conferir o mapa do café. Uma pessoa de outra dupla faz as cinco tarefas em Modo visitante. Registrar a decisão de ajustar ou manter e conferir a entrega do café. Quem concluir pode abrir o Festival Vira-Luz assim que concluir o café."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "Card sorting em grupos formados por duas duplas da Aula 14: cada grupo escolhe um dos seus briefings e, com post-its, organiza todo o conteúdo do projeto do cliente fictício em categorias que façam sentido para o usuário, nomeando cada categoria como um rótulo de menu."
+            "horario": "20:45 - 21:30",
+            "atividade": "Na missão 4, criar duas primeiras telas do Festival Vira-Luz: Antes de sair e Já estou chegando. Escolher três destaques para cada situação, escrever títulos e nomes de menu e definir um botão com destino. Justificar as prioridades e comparar as duas propostas."
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "Construção do mapa do site e do fluxo de navegação em papel kraft, com validação cruzada: cada grupo recebe o mapa de outro grupo e testa se encontra um conteúdo sorteado em até três cliques. O material aprovado alimenta os wireframes das próximas aulas."
+            "horario": "21:30 - 22:10",
+            "atividade": "Outra dupla testa duas situações do festival no mesmo computador. Receber a mudança do cliente: oficina lotada e entrada principal fechada. Escrever e posicionar um aviso, decidir o que fazer com o botão e testar a terceira situação. Registrar a conclusão e mostrar os dois projetos na própria oficina."
           }
         ],
-        "methodology": "Aprendizagem por desafio com dinâmica de card sorting aplicada ao projeto em andamento e validação entre grupos.",
-        "resources": "Post-its, papel kraft e canetas, computadores do laboratório e projetor.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "Seis missões com dois projetos: organizar e testar o Café Aurora; depois, na missão 4, criar prioridades e caminhos para dois contextos do Festival Vira-Luz. O segundo caso oferece conteúdos já agrupados e exige autoria de títulos, destaques, botão e aviso, em vez de repetir a triagem. Alternância de quem opera, visita sem explicação dos autores e decisões apoiadas no que o visitante conseguiu fazer.",
+        "resources": "Slides, navegador e oficina da aula 15. Briefings, cartões, conteúdos do festival, mudanças do cliente, mapas, testes e registros ficam na oficina. Sem login, instalação, impressão, busca externa ou transferência de arquivos obrigatória.",
+        "observation": "19:00–22:10; 170 minutos de atividade e intervalo 19:45–20:05. Os tempos são estimativas para condução, ajustáveis ao ritmo da turma; não são garantia de duração ou envolvimento. Chamada no início dos quatro blocos. Casos e dados fictícios, completos na oficina e independentes de arquivos anteriores. Uma dupla por computador. Rascunho salvo neste navegador; em outro aparelho ele não aparece. Cópia de segurança é opcional."
       },
       {
         "num": "16",

@@ -341,6 +341,8 @@
       </section>`
   });
 
+  const isDesignFifteen = course.slug === 'design-web' && lesson.num === '15';
+  if (isDesignFifteen) document.body.classList.add('design-fifteen');
   const isDesignFourteen = course.slug === 'design-web' && lesson.num === '14';
   if (isDesignFourteen) document.body.classList.add('design-fourteen');
   const isDesignSeven = course.slug === 'design-web' && lesson.num === '07';
@@ -356,7 +358,7 @@
   // Four-step requests keep two balanced columns on the narrow panel.
   if (isAvNine && ['13', '14'].includes(lesson.num)) document.body.classList.add('av-thirteen');
   // These lessons time each slide from the minutes written in the teacher steps.
-  const usesSlidePace = isDesignSeven || isDesignEight || isAvNine;
+  const usesSlidePace = isDesignSeven || isDesignEight || isAvNine || isDesignFifteen;
   const isDesignSix = course.slug === 'design-web' && lesson.num === '06';
   const isAvSeven = course.slug === 'producao-audiovisual' && lesson.num === '07';
   if (isDesignSix) document.body.classList.add('design-six');
@@ -604,8 +606,8 @@
       block,
       pace: item.pace === 'break' ? 'break' : '',
       paceStart, paceEnd,
-      className: isDesignFourteen ? `is-f14 is-f14-${item.dw14?.type || 'text'}` : isDesignSeven ? 'is-dw7' : isDesignEight ? 'is-dw8' : isAvNine ? `is-av9 is-av9-${item.av9?.type || 'text'}` : denseCards ? 'is-dense-cards' : '',
-      main: isDesignFourteen ? window.renderDesignWeb14(item) : `
+      className: isDesignFifteen ? `is-w15 is-w15-${item.dw15?.type || 'text'}` : isDesignFourteen ? `is-f14 is-f14-${item.dw14?.type || 'text'}` : isDesignSeven ? 'is-dw7' : isDesignEight ? 'is-dw8' : isAvNine ? `is-av9 is-av9-${item.av9?.type || 'text'}` : denseCards ? 'is-dense-cards' : '',
+      main: isDesignFifteen ? window.renderDesignWeb15(item) : isDesignFourteen ? window.renderDesignWeb14(item) : `
         ${item.kicker ? `<p class="slide-kicker">${escapeHtml(item.kicker)}</p>` : ''}
         <h2>${escapeHtml(item.heading || title)}</h2>
         ${item.lede ? `<p class="slide-lede">${escapeHtml(item.lede)}</p>` : ''}
@@ -673,8 +675,8 @@
   slides.push(slide({
     title: `Aula ${lesson.num} · ${lesson.title}`,
     block: 1,
-    className: isDesignFourteen ? 'is-f14-cover' : '',
-    main: isDesignFourteen ? window.renderDesignWeb14Cover() : `
+    className: isDesignFifteen ? 'is-w15-cover' : isDesignFourteen ? 'is-f14-cover' : '',
+    main: isDesignFifteen ? window.renderDesignWeb15Cover() : isDesignFourteen ? window.renderDesignWeb14Cover() : `
       <p class="slide-kicker">${escapeHtml(course.title)} · Aula ${lesson.num}</p>
       <h1>${escapeHtml(lesson.title)}</h1>
       <p class="slide-lede">${escapeHtml(lesson.description)}</p>

@@ -3294,36 +3294,566 @@ window.SENAI_TEACHING_SUPPORT = {
         ]
       },
       "15": {
-        "teacherGoal": "Organizar conteúdo em mapa do site e fluxo de tarefa.",
-        "plainLanguage": "Arquitetura da informação decide categorias, nomes e caminhos. Sitemap mostra onde o conteúdo mora; fluxo mostra os passos de uma tarefa.",
-        "say": "Sitemap responde “quais páginas existem?”. Fluxo responde “por onde a pessoa passa para conseguir algo?”.",
+        "appendDefaultClosing": false,
+        "teacherGoal": "Cada dupla organiza e testa a página do Café Aurora; depois cria duas aberturas para o mesmo festival, explica como o contexto muda a prioridade das informações e responde a uma mudança do cliente com um aviso e uma decisão de navegação.",
+        "plainLanguage": "Arquitetura da informação é decidir onde cada conteúdo fica e como a pessoa o encontra. Mapa mostra a organização; fluxo registra o caminho de uma tarefa.",
+        "say": "Tudo fica nesta oficina. Primeiro vocês organizam uma página de café. Depois, o problema muda: o mesmo festival precisa ajudar quem ainda planeja a visita e quem já está chegando.",
+        "routine": [
+          "Abro os slides e a oficina antes da entrada. Confiro o aviso de salvamento no navegador.",
+          "Conduzo apenas a etapa atual, com demonstrações de até dois minutos. O restante é leitura, decisão, criação e visita em dupla.",
+          "Depois do intervalo, troco quem opera. Concluímos o café nas missões 3, 4, 5 e 6. Para começar o segundo projeto, voltamos à missão 4 e abrimos Festival Vira-Luz: duas primeiras telas.",
+          "No café, outra pessoa faz as cinco tarefas em Modo visitante. Os autores observam em silêncio. O primeiro teste guarda a referência automaticamente; não exijo mudar uma solução que os testes sustentaram.",
+          "O festival já traz os conteúdos agrupados. A dupla escolhe prioridades, escreve os próprios textos e define caminhos; não precisa refazer a separação dos cartões. Alterno os papéis a cada perfil.",
+          "No último bloco, o visitante testa primeiro duas situações do festival. Só depois abro Receber mudança do festival, reviso o aviso e o botão e testo a terceira situação.",
+          "Confiro o café na missão 6 e o festival na missão 4. Ninguém precisa enviar link, foto ou documento. A cópia de segurança é opcional.",
+          "Se o café terminar cedo, a dupla pode antecipar o festival assim que concluir o café. Se precisar de apoio, modelo uma decisão, sem fazer o projeto todo. Não alongo buscas concluídas para preencher o horário."
+        ],
         "demo": [
-          "Distribua cartões com conteúdos de um site fictício.",
-          "Agrupe por afinidade e dê nomes que usuários reconheceriam.",
-          "Desenhe o sitemap com até três níveis.",
-          "Trace o fluxo da tarefa principal e conte os passos."
+          "Faço um caminho errado na Estação Girassol e mostro a volta.",
+          "Movo somente um cartão do Café Aurora usando seu seletor.",
+          "Mostro o mapa e explico o teste de árvore: ele testa onde procurar, sem representar a aparência ou os cliques da página final.",
+          "No festival, mostro onde escolher um destaque e o destino do botão. Não escolho os três destaques nem escrevo a justificativa pela dupla."
         ],
-        "studentDeliverable": "Sitemap e fluxo principal do projeto, validados por outra dupla.",
+        "studentDeliverable": "Na própria oficina: painel do Café Aurora com mapa, cinco testes de visitante na organização atual e decisão justificada; e projeto Festival Vira-Luz com duas aberturas, três destaques por situação, títulos, menu, botão com destino e razões das escolhas. O festival inclui os três registros de visita, aviso após a mudança do cliente e conclusão. Sem relatório externo.",
         "check": [
-          "Rótulos usam linguagem do usuário.",
-          "Não há páginas duplicadas com nomes diferentes.",
-          "O fluxo tem início, decisão, sucesso e saída de erro.",
-          "A navegação principal não está sobrecarregada."
+          "Café: oito conteúdos úteis nos grupos; conta, delivery e vídeo automático separados. Os nomes são diferentes e coerentes com o conteúdo.",
+          "Café: preço, horário habitual, local, retirada e feriado encontrados por um visitante. Os cinco testes correspondem à versão atual; observação e decisão estão justificadas. Se o café mudou depois da visita, a oficina pode pedir as cinco tarefas novamente.",
+          "Festival: as duas aberturas têm três destaques cada, título, botão com destino e justificativa que se refere à situação do visitante. A dupla pode manter algum conteúdo nas duas quando isso fizer sentido.",
+          "Festival: os registros mostram como a outra pessoa procurou atividade, acesso ou ajuda e reagiu à mudança. O aviso diferencia oficina lotada de entrada fechada e indica o acesso lateral disponível.",
+          "Festival: a dupla decidiu o que fazer com o botão e explica sua conclusão com base no teste, sem confundir preenchimento dos campos com prova de qualidade."
         ],
-        "fallback": "Faça tudo com post-its ou pedaços de papel; software não é necessário.",
+        "fallback": "Sem internet, uso o index.html local da oficina, que contém todos os recursos e funciona sem rede. Se o armazenamento do navegador estiver bloqueado, o aviso orienta manter a aba aberta e usar a cópia opcional. Sem computador, a dupla participa no posto vizinho alternando os papéis; não depende de material impresso.",
         "commonProblems": [
           [
-            "Organizar pelo organograma da empresa",
-            "Peça que um usuário externo tente encontrar uma informação."
+            "Não sabe o que agrupar",
+            "Abro a pista da missão 2 e pergunto qual dúvida aquele cartão responde."
           ],
           [
-            "Menu com opções demais",
-            "Agrupe itens de baixa prioridade e destaque a tarefa principal."
+            "Confundiu o teste com o site pronto",
+            "Explico que abrir grupo e cartão é o mecanismo do teste de árvore. No festival, a proposta também serve para decidir conteúdo e caminho; não estamos programando uma página."
           ],
           [
-            "Fluxo sem estado de erro",
-            "Pergunte: “e se faltar um dado ou a ação falhar?”"
+            "Terminou o café cedo",
+            "A partir de 20:35, abre o Festival Vira-Luz na missão 4. O próximo desafio muda o tipo de decisão; não repete as cinco buscas."
+          ],
+          [
+            "Mudou o mapa do café depois da visita",
+            "O painel marca os testes antigos. Reservo tempo para as cinco tarefas na versão atual; não prometo validar só a tarefa afetada."
+          ],
+          [
+            "Todos encontraram sem ajuda",
+            "Aceito manter com uma justificativa apoiada no teste. No festival, o novo recado traz outra decisão, sem exigir mudança artificial no café."
+          ],
+          [
+            "As duas aberturas ficaram iguais",
+            "Pergunto o que a pessoa precisa resolver antes de sair e o que precisa ao chegar. A dupla justifica o que mantém e o que prioriza; não troco conteúdos só para fabricar diferenças."
+          ],
+          [
+            "Não sabe escrever o aviso",
+            "Peço três respostas curtas: o que mudou, quem é afetado e o que pode fazer agora. A localização do aviso precisa ajudar essa pessoa."
           ]
+        ],
+        "presentationSlides": [
+          {
+            "title": "Você só quer saber o horário.",
+            "block": 1,
+            "layout": "dw15",
+            "lede": "A Estação Girassol tem uma oficina de cerâmica. Mas onde está o horário?",
+            "promptLabel": "Na oficina",
+            "prompt": "Abra a missão 1. Teste o menu confuso antes de comparar com o claro.",
+            "dw15": {
+              "type": "menu",
+              "items": [
+                "Nosso universo",
+                "Inspire-se",
+                "Mais"
+              ],
+              "caption": "Uma pergunta simples pode virar uma caça."
+            },
+            "teacher": {
+              "speech": "Faço chamada. A dupla clica por conta própria; não revelo onde a informação está. Uso o resultado para abrir o problema, sem prolongar a demonstração.",
+              "steps": [
+                "5 min · Demonstração de até 2 minutos; tentativa em dupla, conferência e ajuste no tempo restante."
+              ],
+              "watch": "Abra a missão 1. Teste o menu confuso antes de comparar com o claro.",
+              "rescue": "Abro “Preciso de uma pista” na missão atual, modelo só um item e devolvo o controle à dupla."
+            },
+            "resources": [
+              {
+                "href": "https://oficinas-design-web.vercel.app/aula-15/",
+                "label": "Abrir a oficina da aula 15"
+              },
+              {
+                "href": "modelos/design-web/aula-15/index.html",
+                "label": "Abrir a oficina local"
+              }
+            ]
+          },
+          {
+            "title": "Quantas voltas você deu?",
+            "block": 1,
+            "layout": "dw15",
+            "lede": "O conteúdo existia. O caminho é que não ajudava.",
+            "promptLabel": "Na oficina",
+            "prompt": "Conclua as duas versões da missão 1. Compare os caminhos e diga qual nome ajudou a prever o conteúdo.",
+            "dw15": {
+              "type": "compare",
+              "left": [
+                "Nosso universo",
+                "Nossa história",
+                "Horário"
+              ],
+              "right": [
+                "Horários e local"
+              ],
+              "caption": "O nome do caminho muda a busca."
+            },
+            "teacher": {
+              "speech": "Peço uma resposta curta por dupla. Voltar também conta como clique. Não trato menos cliques como garantia de boa experiência nem repito a busca depois que a diferença ficou clara.",
+              "steps": [
+                "7 min · Demonstração de até 2 minutos; tentativa em dupla, conferência e ajuste no tempo restante."
+              ],
+              "watch": "Conclua as duas versões da missão 1. Compare os caminhos e diga qual nome ajudou a prever o conteúdo.",
+              "rescue": "Abro “Preciso de uma pista” na missão atual, modelo só um item e devolvo o controle à dupla."
+            }
+          },
+          {
+            "title": "Novo cliente. Perguntas úteis.",
+            "block": 1,
+            "layout": "dw15",
+            "lede": "O Café Aurora quer uma página para consultar o cardápio antes de ir ao balcão.",
+            "promptLabel": "Na oficina",
+            "prompt": "Leia o pedido na missão 2. Aponte objetivo, público e o que fica de fora.",
+            "dw15": {
+              "type": "brief",
+              "items": [
+                [
+                  "Objetivo",
+                  "Consultar sabores, preços, horário e local."
+                ],
+                [
+                  "Pessoa",
+                  "Quem está no celular e quer decidir uma visita."
+                ],
+                [
+                  "Limite",
+                  "Uma página. Compra no balcão. Sem delivery ou conta."
+                ]
+              ]
+            },
+            "teacher": {
+              "speech": "Retomo o processo da aula 14 sem abrir arquivos. O caso está completo na oficina. Uma pessoa lê o pedido; a outra aponta as três informações do briefing.",
+              "steps": [
+                "7 min · Demonstração de até 2 minutos; tentativa em dupla, conferência e ajuste no tempo restante."
+              ],
+              "watch": "Leia o pedido na missão 2. Aponte objetivo, público e o que fica de fora.",
+              "rescue": "Abro “Preciso de uma pista” na missão atual, modelo só um item e devolvo o controle à dupla."
+            }
+          },
+          {
+            "title": "O que você procura junto?",
+            "block": 1,
+            "layout": "dw15",
+            "lede": "Na Vértice Skate, medida e preço do shape precisam se encontrar.",
+            "promptLabel": "Na oficina",
+            "prompt": "Na missão 2, distribua os cartões do Café Aurora. Depois compare duas formas de organizar horário e endereço.",
+            "dw15": {
+              "type": "sort",
+              "groups": [
+                [
+                  "Produtos",
+                  "Shape 8,0”",
+                  "Preço do shape"
+                ],
+                [
+                  "Visita",
+                  "Endereço",
+                  "Horário"
+                ]
+              ],
+              "caption": "Agrupar pelo que o visitante quer resolver."
+            },
+            "teacher": {
+              "speech": "Modelo só um cartão. A dupla organiza os demais, troca quem opera e usa a comparação da missão 3. Card sorting é agrupar conteúdo por afinidade. Peço uma razão para a escolha; não há um gabarito único.",
+              "steps": [
+                "18 min · Demonstração de até 2 minutos; tentativa em dupla, conferência e ajuste no tempo restante."
+              ],
+              "watch": "Na missão 2, distribua os cartões do Café Aurora. Depois compare duas formas de organizar horário e endereço.",
+              "rescue": "Abro “Preciso de uma pista” na missão atual, modelo só um item e devolvo o controle à dupla."
+            }
+          },
+          {
+            "title": "Um pedido também pode esperar.",
+            "block": 1,
+            "layout": "dw15",
+            "lede": "Se não cabe no combinado, não ganha um lugar escondido no menu.",
+            "promptLabel": "Na oficina",
+            "prompt": "Separe conta, delivery e vídeo automático em Fica para depois. Confira os grupos e comece a trocar os nomes provisórios.",
+            "dw15": {
+              "type": "scope",
+              "items": [
+                "Conta de usuário",
+                "Delivery",
+                "Vídeo automático"
+              ],
+              "caption": "O visitante precisa consultar antes de ir ao balcão."
+            },
+            "teacher": {
+              "speech": "A conferência identifica pendências e itens fora do escopo; não avalia sozinha a coerência dos grupos. A dupla precisa explicar a função de cada grupo. Quem concluiu começa a nomear na missão 3.",
+              "steps": [
+                "8 min · Demonstração de até 2 minutos; tentativa em dupla, conferência e ajuste no tempo restante."
+              ],
+              "watch": "Separe conta, delivery e vídeo automático em Fica para depois. Confira os grupos e comece a trocar os nomes provisórios.",
+              "rescue": "Abro “Preciso de uma pista” na missão atual, modelo só um item e devolvo o controle à dupla."
+            }
+          },
+          {
+            "title": "Pausa. Volta às 20:05.",
+            "block": 1,
+            "layout": "dw15",
+            "lede": "Confira o aviso de salvamento e mantenha a oficina aberta.",
+            "promptLabel": "Na oficina",
+            "prompt": "Na volta, troquem quem usa o teclado.",
+            "dw15": {
+              "type": "pause",
+              "time": "20:05"
+            },
+            "teacher": {
+              "speech": "Intervalo fora dos 170 minutos de atividade. Se o navegador não guarda dados, mantenho a aba e demonstro a cópia opcional.",
+              "steps": [
+                "20 min · Demonstração de até 2 minutos; tentativa em dupla, conferência e ajuste no tempo restante."
+              ],
+              "watch": "Na volta, troquem quem usa o teclado.",
+              "rescue": "Abro “Preciso de uma pista” na missão atual, modelo só um item e devolvo o controle à dupla."
+            },
+            "pace": "break"
+          },
+          {
+            "title": "Nomes claros. Recado novo.",
+            "block": 2,
+            "layout": "dw15",
+            "lede": "“No feriado, abrimos das 16h às 19h. No balcão, aceitamos dinheiro, cartão ou Pix.”",
+            "promptLabel": "Na oficina",
+            "prompt": "Na missão 3, finalize os nomes e receba o novo recado. Na missão 2, encaixe os dois cartões; depois confira nomes e ordem.",
+            "dw15": {
+              "type": "labels",
+              "pairs": [
+                [
+                  "Explore",
+                  "Filmes em cartaz"
+                ],
+                [
+                  "Conexões",
+                  "Sessões e ingressos"
+                ],
+                [
+                  "Outros",
+                  "Como chegar"
+                ]
+              ]
+            },
+            "teacher": {
+              "speech": "Faço chamada. Troco quem opera. No Cine Órbita, comparo um nome vago com um específico e devolvo a decisão à dupla. O horário especial precisa ser distinguível do habitual; pagamento continua no balcão.",
+              "steps": [
+                "10 min · Demonstração de até 2 minutos; tentativa em dupla, conferência e ajuste no tempo restante."
+              ],
+              "watch": "Na missão 3, finalize os nomes e receba o novo recado. Na missão 2, encaixe os dois cartões; depois confira nomes e ordem.",
+              "rescue": "Abro “Preciso de uma pista” na missão atual, modelo só um item e devolvo o controle à dupla."
+            }
+          },
+          {
+            "title": "Mapa organiza. Fluxo percorre.",
+            "block": 2,
+            "layout": "dw15",
+            "lede": "Uma página, três seções. O mapa mostra onde o conteúdo fica; o fluxo mostra um percurso.",
+            "promptLabel": "Na oficina",
+            "prompt": "Na missão 4, confira o mapa do café e compare mapa, fluxo e os exemplos de navegação. Depois vá à missão 5.",
+            "dw15": {
+              "type": "map",
+              "caption": "Café Aurora: cada conteúdo útil precisa ter um lugar."
+            },
+            "teacher": {
+              "speech": "Mostro a diferença por até dois minutos. Os exemplos de menu global, navegação local e trilha ficam na própria missão 4. O teste de árvore verifica nomes e grupos; seus cliques não representam a aparência ou os cliques da página final.",
+              "steps": [
+                "8 min · Demonstração de até 2 minutos; tentativa em dupla, conferência e ajuste no tempo restante."
+              ],
+              "watch": "Na missão 4, confira o mapa do café e compare mapa, fluxo e os exemplos de navegação. Depois vá à missão 5.",
+              "rescue": "Abro “Preciso de uma pista” na missão atual, modelo só um item e devolvo o controle à dupla."
+            }
+          },
+          {
+            "title": "Quem criou fica em silêncio.",
+            "block": 2,
+            "layout": "dw15",
+            "lede": "Preço, horário habitual, endereço, retirada e atendimento no feriado.",
+            "promptLabel": "Na oficina",
+            "prompt": "Na missão 5, ative Modo visitante. Uma pessoa da dupla vizinha faz as cinco tarefas no seu computador; vocês observam sem explicar.",
+            "dw15": {
+              "type": "roles",
+              "items": [
+                [
+                  "Visitante",
+                  "Lê a tarefa e procura a informação."
+                ],
+                [
+                  "Autor",
+                  "Observa sem indicar o grupo."
+                ],
+                [
+                  "Feriado às 19h30",
+                  "O cartão especial informa fechamento às 19h."
+                ]
+              ]
+            },
+            "teacher": {
+              "speech": "As duplas trocam um integrante. O visitante lê as tarefas e abre os cartões; o autor observa nomes, dúvidas, voltas e informação encontrada. Não faço antes uma rodada longa das mesmas cinco tarefas com o autor.",
+              "steps": [
+                "12 min · Demonstração de até 2 minutos; tentativa em dupla, conferência e ajuste no tempo restante."
+              ],
+              "watch": "Na missão 5, ative Modo visitante. Uma pessoa da dupla vizinha faz as cinco tarefas no seu computador; vocês observam sem explicar.",
+              "rescue": "Abro “Preciso de uma pista” na missão atual, modelo só um item e devolvo o controle à dupla."
+            }
+          },
+          {
+            "title": "O teste indicou ajustar ou manter?",
+            "block": 2,
+            "layout": "dw15",
+            "lede": "Uma boa decisão se apoia no que a pessoa conseguiu fazer.",
+            "promptLabel": "Na oficina",
+            "prompt": "Na missão 6, registre observação e decisão. Confira a entrega do café. Depois volte à missão 4 e abra Festival Vira-Luz: duas primeiras telas.",
+            "dw15": {
+              "type": "compare",
+              "left": [
+                "Visitante procurou em outro grupo.",
+                "Rever o nome ou o conteúdo."
+              ],
+              "right": [
+                "Visitante encontrou sem ajuda.",
+                "Manter e explicar o resultado."
+              ],
+              "caption": "Café concluído: missão 6. Novo projeto: missão 4."
+            },
+            "teacher": {
+              "speech": "A primeira visita guarda a referência automaticamente. Aceito manter quando o teste sustenta a organização. Se houve mudança no café, os cinco testes precisam corresponder à versão atual. Quem concluir pode começar o festival assim que concluir o café; ajusto a transição ao ritmo real.",
+              "steps": [
+                "10 min · Demonstração de até 2 minutos; tentativa em dupla, conferência e ajuste no tempo restante."
+              ],
+              "watch": "Na missão 6, registre observação e decisão. Confira a entrega do café. Depois volte à missão 4 e abra Festival Vira-Luz: duas primeiras telas.",
+              "rescue": "Abro “Preciso de uma pista” na missão atual, modelo só um item e devolvo o controle à dupla."
+            }
+          },
+          {
+            "title": "Mesmo festival. Duas situações.",
+            "block": 3,
+            "layout": "dw15",
+            "lede": "Uma pessoa planeja a visita. Outra já está chegando ao Festival Vira-Luz.",
+            "promptLabel": "Na oficina",
+            "prompt": "Na missão 4, abra Festival Vira-Luz: duas primeiras telas. Leia os conteúdos e compare Antes de sair com Já estou chegando.",
+            "dw15": {
+              "type": "festival",
+              "caption": "Mesmo conteúdo disponível. Prioridades que precisam fazer sentido em cada situação."
+            },
+            "teacher": {
+              "speech": "Faço chamada. O festival já traz os conteúdos agrupados: não vamos repetir a triagem do café. Peço que cada integrante assuma uma situação e diga o que a pessoa precisa resolver agora.",
+              "steps": [
+                "7 min · Demonstração de até 2 minutos; tentativa em dupla, conferência e ajuste no tempo restante."
+              ],
+              "watch": "Na missão 4, abra Festival Vira-Luz: duas primeiras telas. Leia os conteúdos e compare Antes de sair com Já estou chegando.",
+              "rescue": "Abro “Preciso de uma pista” na missão atual, modelo só um item e devolvo o controle à dupla."
+            }
+          },
+          {
+            "title": "Só três destaques. Quais entram?",
+            "block": 3,
+            "layout": "dw15",
+            "lede": "Ter a informação no site não significa que ela precise aparecer primeiro.",
+            "promptLabel": "Na oficina",
+            "prompt": "Escolha três destaques para Antes de sair e três para Já estou chegando. Nomeie os três itens de menu e confira o que cada nome promete.",
+            "dw15": {
+              "type": "questions",
+              "items": [
+                "O que ajuda a escolher a visita?",
+                "O que ajuda quem já está chegando?",
+                "O que pode continuar no menu?"
+              ]
+            },
+            "teacher": {
+              "speech": "As pessoas propõem prioridades para seus perfis e depois trocam quem opera. Comparam o que entrou, o que ficou no menu e o que não precisa de destaque. Aceito conteúdos repetidos nas duas aberturas quando a dupla explica a função de cada um.",
+              "steps": [
+                "18 min · Demonstração de até 2 minutos; tentativa em dupla, conferência e ajuste no tempo restante."
+              ],
+              "watch": "Escolha três destaques para Antes de sair e três para Já estou chegando. Nomeie os três itens de menu e confira o que cada nome promete.",
+              "rescue": "Abro “Preciso de uma pista” na missão atual, modelo só um item e devolvo o controle à dupla."
+            }
+          },
+          {
+            "title": "O botão promete um caminho.",
+            "block": 3,
+            "layout": "dw15",
+            "lede": "Um título situa a pessoa. O botão precisa dizer o que ela poderá fazer.",
+            "promptLabel": "Na oficina",
+            "prompt": "Escreva o título de cada abertura. Defina o texto do botão e seu destino; confira se a informação de chegada cumpre a promessa.",
+            "dw15": {
+              "type": "route",
+              "items": [
+                "Situação do visitante",
+                "Título e destaque",
+                "Botão com destino coerente"
+              ],
+              "caption": "Quem lê o botão deve conseguir prever o próximo passo."
+            },
+            "teacher": {
+              "speech": "Mostro o controle de destino, sem fornecer um título ou botão para copiar. Um integrante lê apenas o texto do botão; o outro prevê a informação que deve aparecer depois. Se a previsão não combina, a dupla revê texto ou destino.",
+              "steps": [
+                "12 min · Demonstração de até 2 minutos; tentativa em dupla, conferência e ajuste no tempo restante."
+              ],
+              "watch": "Escreva o título de cada abertura. Defina o texto do botão e seu destino; confira se a informação de chegada cumpre a promessa.",
+              "rescue": "Abro “Preciso de uma pista” na missão atual, modelo só um item e devolvo o controle à dupla."
+            }
+          },
+          {
+            "title": "Defenda a prioridade escolhida.",
+            "block": 3,
+            "layout": "dw15",
+            "lede": "Duas propostas só ficam úteis quando as escolhas têm uma razão.",
+            "promptLabel": "Na oficina",
+            "prompt": "Escreva até duas frases de justificativa para cada perfil. Compare as duas aberturas e prepare o computador para o visitante.",
+            "dw15": {
+              "type": "compare",
+              "left": [
+                "Antes de sair",
+                "O que preciso decidir para ir?"
+              ],
+              "right": [
+                "Já estou chegando",
+                "O que preciso resolver agora?"
+              ],
+              "caption": "Prioridade de conteúdo e caminho. Sem programação ou arquivo externo."
+            },
+            "teacher": {
+              "speech": "Peço razões ligadas a necessidades: escolher uma atividade, planejar o tempo, encontrar acesso ou ajuda. Evito justificativas como ficou mais bonito. A dupla não precisa inventar diferenças; precisa explicar as que fez ou manteve.",
+              "steps": [
+                "8 min · Demonstração de até 2 minutos; tentativa em dupla, conferência e ajuste no tempo restante."
+              ],
+              "watch": "Escreva até duas frases de justificativa para cada perfil. Compare as duas aberturas e prepare o computador para o visitante.",
+              "rescue": "Abro “Preciso de uma pista” na missão atual, modelo só um item e devolvo o controle à dupla."
+            }
+          },
+          {
+            "title": "Outra pessoa consegue decidir?",
+            "block": 4,
+            "layout": "dw15",
+            "lede": "O visitante usa as duas propostas sem ouvir a explicação dos autores.",
+            "promptLabel": "Na oficina",
+            "prompt": "No festival da missão 4, peça à dupla vizinha as duas primeiras tarefas. Registre por onde procurou e a resposta que encontrou.",
+            "dw15": {
+              "type": "roles",
+              "items": [
+                [
+                  "Visitante",
+                  "Procura atividade, acesso ou ajuda."
+                ],
+                [
+                  "Autor",
+                  "Registra o caminho e a resposta."
+                ],
+                [
+                  "Pergunta de revisão",
+                  "O destaque ou o menu ajudou a decidir?"
+                ]
+              ]
+            },
+            "teacher": {
+              "speech": "Faço chamada. Testo a escolha de uma atividade para uma hora disponível e a procura de acesso ou ajuda. O autor observa; o visitante responde com base no conteúdo. Não abro ainda a mudança do cliente.",
+              "steps": [
+                "10 min · Demonstração de até 2 minutos; tentativa em dupla, conferência e ajuste no tempo restante."
+              ],
+              "watch": "No festival da missão 4, peça à dupla vizinha as duas primeiras tarefas. Registre por onde procurou e a resposta que encontrou.",
+              "rescue": "Abro “Preciso de uma pista” na missão atual, modelo só um item e devolvo o controle à dupla."
+            }
+          },
+          {
+            "title": "A oficina lotou. A entrada mudou.",
+            "block": 4,
+            "layout": "dw15",
+            "lede": "A oficina do festival está lotada. A entrada principal fechou; o acesso lateral continua aberto.",
+            "promptLabel": "Na oficina",
+            "prompt": "Clique em Receber mudança do festival. Escreva o aviso, escolha onde aparece e decida o que acontece com o botão. Justifique.",
+            "dw15": {
+              "type": "brief",
+              "items": [
+                [
+                  "Oficina",
+                  "As vagas acabaram. O restante do festival continua."
+                ],
+                [
+                  "Entrada",
+                  "Principal fechada; lateral disponível."
+                ],
+                [
+                  "Decisão",
+                  "Onde avisar e para onde o botão deve levar?"
+                ]
+              ]
+            },
+            "teacher": {
+              "speech": "A dupla precisa responder o que mudou, quem é afetado e qual alternativa continua possível. Fechamento da entrada principal não significa festival cancelado. Não peço só outro cartão: agora a informação muda prioridades e a promessa do botão.",
+              "steps": [
+                "10 min · Demonstração de até 2 minutos; tentativa em dupla, conferência e ajuste no tempo restante."
+              ],
+              "watch": "Clique em Receber mudança do festival. Escreva o aviso, escolha onde aparece e decida o que acontece com o botão. Justifique.",
+              "rescue": "Abro “Preciso de uma pista” na missão atual, modelo só um item e devolvo o controle à dupla."
+            }
+          },
+          {
+            "title": "A nova informação ajuda a agir?",
+            "block": 4,
+            "layout": "dw15",
+            "lede": "Um aviso só funciona se a pessoa entende o que fazer depois.",
+            "promptLabel": "Na oficina",
+            "prompt": "Peça ao visitante a terceira tarefa do festival. Confira a reação ao aviso e ao botão; ajuste se necessário e registre sua conclusão.",
+            "dw15": {
+              "type": "questions",
+              "items": [
+                "Entendeu que a oficina lotou?",
+                "Encontrou o acesso lateral?",
+                "O botão leva a uma alternativa possível?"
+              ]
+            },
+            "teacher": {
+              "speech": "O visitante tenta lidar com a oficina lotada e com o acesso fechado. A dupla registra a resposta e revê o que o teste mostrou; se altera a proposta, atualiza o registro pertinente. Não recomeço as cinco buscas do café quando só o festival mudou.",
+              "steps": [
+                "12 min · Demonstração de até 2 minutos; tentativa em dupla, conferência e ajuste no tempo restante."
+              ],
+              "watch": "Peça ao visitante a terceira tarefa do festival. Confira a reação ao aviso e ao botão; ajuste se necessário e registre sua conclusão.",
+              "rescue": "Abro “Preciso de uma pista” na missão atual, modelo só um item e devolvo o controle à dupla."
+            }
+          },
+          {
+            "title": "Dois projetos. Evidências na oficina.",
+            "block": 4,
+            "layout": "dw15",
+            "lede": "No café, vocês organizaram conteúdos. No festival, decidiram o que merece vir primeiro.",
+            "promptLabel": "Na oficina",
+            "prompt": "Confira o festival na missão 4 e o café na missão 6. Mostre os registros e a conclusão; confira o rascunho e organize o posto.",
+            "dw15": {
+              "type": "check",
+              "items": [
+                "Café: mapa e cinco tarefas na versão atual.",
+                "Festival: duas aberturas e escolhas justificadas.",
+                "Mudança: aviso, botão e três registros de visita.",
+                "Conclusão apoiada no que o visitante fez."
+              ]
+            },
+            "teacher": {
+              "speech": "Confiro no próprio computador, sem PDF, foto ou envio. Peço à dupla que mostre uma escolha apoiada na visita e uma decisão que precisou mudar com o contexto. Os tempos são estimativas: se alguém termina, compara uma prioridade alternativa e explica o efeito, sem repetir buscas só para ocupar tempo.",
+              "steps": [
+                "8 min · Demonstração de até 2 minutos; tentativa em dupla, conferência e ajuste no tempo restante."
+              ],
+              "watch": "Confira o festival na missão 4 e o café na missão 6. Mostre os registros e a conclusão; confira o rascunho e organize o posto.",
+              "rescue": "Abro “Preciso de uma pista” na missão atual, modelo só um item e devolvo o controle à dupla."
+            }
+          }
         ]
       },
       "16": {

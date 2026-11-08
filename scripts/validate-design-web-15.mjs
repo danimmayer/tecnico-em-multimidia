@@ -1,0 +1,27 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import vm from 'node:vm';
+import {lesson,support} from './lessons/design-web-15.mjs';
+import {workshopPage} from './lessons/design-web-15-workshop.mjs';
+const root=new URL('../',import.meta.url),context={window:{}};
+for(const f of ['assets/course-data.js','assets/course-support.js'])vm.runInNewContext(fs.readFileSync(new URL(f,root),'utf8'),context);
+const plain=x=>JSON.parse(JSON.stringify(x));
+const actual=plain(context.window.SENAI_COURSES['design-web'].lessons.find(x=>x.num==='15'));
+for(const [key,value] of Object.entries(lesson))assert.deepEqual(actual[key],value);
+assert.deepEqual(plain(context.window.SENAI_TEACHING_SUPPORT['design-web'].lessons['15']),support);
+const minutes=[0,0,0,0];
+for(const slide of support.presentationSlides){assert(slide.prompt&&slide.teacher.rescue);if(slide.pace!=='break')minutes[slide.block-1]+=Number(slide.teacher.steps[0].match(/^(\d+) min/)[1]);}
+assert.deepEqual(minutes,[45,40,45,40]);
+assert.equal(support.appendDefaultClosing,false);
+const html=fs.readFileSync(new URL('modelos/design-web/aula-15/index.html',root),'utf8');
+assert.equal(html,workshopPage(),'A oficina deve ser regenerável.');
+for(const script of html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g))new vm.Script(script[1]);
+assert(!/(?:src|href)="https?:/.test(html),'Oficina sem dependências de rede.');
+assert.equal((html.match(/<section data-step=/g)||[]).length,6);
+for(const id of ['new-request','decision','observation','improvement','check-final'])assert(html.includes(`id="${id}"`));
+assert((html.match(/<summary>Preciso de uma pista<\/summary>/g)||[]).length>=6);
+assert(html.includes('id="challenge-lab"'),'O projeto autoral deve estar na própria oficina.');
+const slides=fs.readFileSync(new URL('modelos/design-web/aula-15/slides.html',root),'utf8');
+assert(!/(?:src|href)="https?:/.test(slides),'Cópia dos slides sem dependências de rede.');
+for(const script of slides.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g))new vm.Script(script[1]);
+console.log('Aula 15: paridade, seis missões offline, pistas, novo pedido e 170 minutos + intervalo validados.');

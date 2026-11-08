@@ -1,0 +1,46 @@
+/* Aula 15: a navigation map is the primary teaching visual. */
+.design-fifteen{--w15-blue:#144fbe;--w15-ink:#123354;--w15-line:#adc3d9}
+.design-fifteen .kit-slide-main{background:#edf4fb;color:var(--w15-ink);padding:34px 48px;gap:0;max-width:none}
+.design-fifteen .kit-slide h1,.design-fifteen .kit-slide h2{font-family:'Trebuchet MS',system-ui,sans-serif;font-weight:700;line-height:1.06;letter-spacing:-.045em;text-wrap:balance}
+.design-fifteen .kit-slide h1{font-size:clamp(56px,7.5vw,104px);margin:20px 0 28px}
+.design-fifteen .kit-slide h2{font-size:clamp(32px,4vw,55px)}
+.design-fifteen .slide-kicker{font-size:16px;color:#375675;letter-spacing:0;text-transform:none;margin-bottom:20px}
+.design-fifteen .kit-slide .slide-lede{font-size:clamp(19px,1.9vw,25px);line-height:1.4;color:#375675;max-width:68ch;margin:16px 0 22px}
+.design-fifteen .w15-visual{max-width:1100px;margin-bottom:20px}
+.design-fifteen .w15-task{border-top:2px solid var(--w15-ink);padding-top:15px;display:grid;grid-template-columns:100px 1fr;gap:18px;margin-top:10px}
+.design-fifteen .w15-task>span{font-size:15px;font-weight:700;padding-top:3px}
+.design-fifteen .w15-task strong{font-size:clamp(18px,1.8vw,23px);line-height:1.4;font-weight:600}
+.design-fifteen .w15-caption{font-size:19px;line-height:1.4;margin:18px 0 0;max-width:70ch;color:#375675}
+.design-fifteen .w15-menu,.design-fifteen .w15-cover-menu{display:flex;gap:12px;flex-wrap:wrap;padding:24px 0}
+.design-fifteen .w15-menu span,.design-fifteen .w15-cover-menu span{padding:15px 24px;background:#144fbe;color:white;border-radius:6px;font-size:clamp(20px,2.5vw,32px);font-weight:600}
+.design-fifteen .w15-cover-menu span{font-size:24px}
+.design-fifteen .w15-compare{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.design-fifteen .w15-compare>div{border-left:4px solid #809cba;padding-left:22px}
+.design-fifteen .w15-compare>div:last-child{border-color:#144fbe}
+.design-fifteen .w15-route{list-style:none;margin:0;padding:0;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.design-fifteen .w15-route li{background:white;border:1px solid var(--w15-line);padding:18px 22px;border-radius:6px;font-size:22px;max-width:28ch;overflow-wrap:anywhere}
+.design-fifteen .w15-route li+li:before{content:'→';margin-right:14px;color:#144fbe}
+.design-fifteen .w15-compare .w15-route{flex-direction:column;align-items:stretch;gap:10px}
+.design-fifteen .w15-compare .w15-route li{padding:12px 18px;font-size:22px;max-width:none}
+.design-fifteen .w15-facts{margin:0}
+.design-fifteen .w15-facts>div{border-bottom:1px solid var(--w15-line);display:grid;grid-template-columns:150px 1fr;gap:22px;padding:16px 0;font-size:22px;line-height:1.35}
+.design-fifteen .w15-facts dt{font-weight:700;color:#144fbe}.design-fifteen .w15-facts dd{margin:0}
+.design-fifteen .w15-sort{display:flex;gap:28px}.design-fifteen .w15-sort>div{flex:1;background:#dce9fc;padding:20px;display:grid;gap:12px}
+.design-fifteen .w15-sort b{font-size:23px}.design-fifteen .w15-sort span{background:white;padding:14px;font-size:23px;border-bottom:2px solid #adc3d9}
+.design-fifteen .w15-later{border:2px dashed #809cba;padding:24px;display:flex;gap:20px;flex-wrap:wrap;align-items:center}
+.design-fifteen .w15-later b{font-size:23px;color:#144fbe}.design-fifteen .w15-later span{background:white;padding:12px;font-size:21px}
+.design-fifteen .w15-pause{font-size:110px;line-height:1;font-weight:700;color:#144fbe;padding:20px 0}
+.design-fifteen .w15-pause span{display:block;font-size:22px;margin-top:14px}
+.design-fifteen .w15-questions{list-style:none;padding:0;margin:0;counter-reset:items}
+.design-fifteen .w15-questions li{border-bottom:1px solid var(--w15-line);padding:14px 0;font-size:24px;line-height:1.35}
+.design-fifteen .w15-questions li:before{content:'✓';display:inline-block;width:38px;color:#144fbe}
+.design-fifteen .w15-labels>div{display:grid;grid-template-columns:1fr 40px 1.5fr;gap:22px;align-items:center;padding:15px 0;border-bottom:1px solid var(--w15-line);font-size:26px}
+.design-fifteen .w15-labels s{color:#657f9a}.design-fifteen .w15-labels b{color:#144fbe}
+.design-fifteen .w15-root{margin:0 auto 22px;background:#123354;color:white;font-size:24px;padding:16px 28px;width:max-content;max-width:100%;font-weight:700}
+.design-fifteen .w15-branches{border-top:2px solid #144fbe;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding-top:20px}
+.design-fifteen .w15-branches>div{border-left:2px solid #adc3d9;padding-left:16px}.design-fifteen .w15-branches b{display:block;font-size:24px;color:#144fbe;margin-bottom:12px}.design-fifteen .w15-branches span{font-size:22px;line-height:1.6}
+.design-fifteen .is-w15-exit .w15-root{padding:12px 24px;margin-bottom:16px}.design-fifteen .is-w15-exit .w15-branches span{line-height:1.35}.design-fifteen .is-w15-exit .w15-caption{margin-top:12px}
+.design-fifteen .w15-festival{display:grid;grid-template-columns:1fr 1fr;gap:22px}.design-fifteen .w15-festival article{background:white;border:1px solid #adc3d9;border-top:6px solid #6541ad;padding:18px 22px}.design-fifteen .w15-festival article>span{font-size:17px;color:#6541ad;font-weight:700}.design-fifteen .w15-festival h3{font-size:27px;line-height:1.12;margin:12px 0}.design-fifteen .w15-festival ul{font-size:20px;line-height:1.45;margin:12px 0;padding-left:22px}.design-fifteen .w15-festival b{display:inline-block;background:#6541ad;color:white;padding:10px 16px;font-size:19px;border-radius:5px}
+@media(max-width:700px){.design-fifteen .w15-festival{grid-template-columns:1fr}}
+@media(max-width:700px){.design-fifteen .kit-slide-main{padding:26px 22px}.design-fifteen .w15-task{grid-template-columns:1fr;gap:6px}.design-fifteen .w15-compare{grid-template-columns:1fr;gap:15px}.design-fifteen .w15-facts>div{grid-template-columns:1fr;gap:5px}.design-fifteen .w15-branches{grid-template-columns:1fr}.design-fifteen .w15-sort{gap:12px}.design-fifteen .w15-labels>div{font-size:20px;gap:10px}.design-fifteen .w15-route li{font-size:19px;padding:10px}.design-fifteen .w15-pause{font-size:75px}}
+@media print{.design-fifteen .kit-slide-main{background:white}.design-fifteen .kit-slide h1{font-size:70px}}
