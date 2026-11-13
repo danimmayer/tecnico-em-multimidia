@@ -1,0 +1,3326 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Aula 16 · Ideação, conceito e esboços de página</title><link rel="icon" href="data:,"><style>/* =====================================================================
+ * SENAI · PLANEJAMENTOS DE DESIGN WEB + PRODUÇÃO AUDIOVISUAL
+ * Aulas offline, responsivas e projetáveis.
+ * ===================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  --ink: #0d1117;
+  --ink-soft: #151b23;
+  --panel: rgba(255, 255, 255, 0.045);
+  --panel-strong: rgba(255, 255, 255, 0.075);
+  --line: rgba(255, 255, 255, 0.11);
+  --line-strong: rgba(255, 255, 255, 0.2);
+  --paper: #f7f5ee;
+  --paper-soft: #c7cbd2;
+  --muted: #89919d;
+  --accent: #63e6d8;
+  --accent-rgb: 99, 230, 216;
+  --accent-2: #5b7cfa;
+  --danger: #ff7a75;
+  --success: #7fe0a3;
+  --warning: #ffc86b;
+  --display: "Avenir Next Condensed", "Avenir Next", "Segoe UI", sans-serif;
+  --body: "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --mono: "SFMono-Regular", "Cascadia Code", "Fira Code", Consolas, monospace;
+  --radius: 14px;
+  --shadow: 0 26px 70px rgba(0, 0, 0, 0.32);
+}
+
+body[data-theme="av"] {
+  --accent: #ffb45d;
+  --accent-rgb: 255, 180, 93;
+  --accent-2: #ff6d61;
+  --ink: #12100f;
+  --ink-soft: #1d1816;
+}
+
+html {
+  min-height: 100%;
+  background: var(--ink);
+  color-scheme: dark;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  color: var(--paper);
+  background:
+    radial-gradient(circle at 10% 0%, rgba(var(--accent-rgb), 0.12), transparent 28rem),
+    radial-gradient(circle at 95% 18%, rgba(var(--accent-rgb), 0.07), transparent 24rem),
+    var(--ink);
+  font-family: var(--body);
+}
+
+button, input { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== Course dashboard ===== */
+
+.course-shell {
+  width: min(100% - 40px, 1320px);
+  margin: 0 auto;
+  padding: 28px 0 72px;
+}
+
+.course-topbar,
+.lesson-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.course-topbar {
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.course-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--paper-soft);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.course-brand img {
+  width: auto;
+  height: 24px;
+  opacity: 0.92;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--paper-soft);
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.back-link:hover,
+.back-link:focus-visible { color: var(--accent); }
+
+.course-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(300px, 0.7fr);
+  gap: 44px;
+  align-items: end;
+  padding: 72px 0 54px;
+}
+
+.course-kicker,
+.slide-kicker {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.course-hero h1 {
+  max-width: 840px;
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(48px, 7vw, 92px);
+  font-weight: 750;
+  letter-spacing: -0.045em;
+  line-height: 0.94;
+  text-wrap: balance;
+}
+
+.course-hero .course-lede {
+  max-width: 720px;
+  margin: 26px 0 0;
+  color: var(--paper-soft);
+  font-size: clamp(17px, 2vw, 21px);
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+.course-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+}
+
+.course-facts div {
+  min-height: 98px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(145deg, rgba(var(--accent-rgb), 0.08), rgba(255, 255, 255, 0.025));
+}
+
+.course-facts dt {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.course-facts dd {
+  margin: 8px 0 0;
+  color: var(--paper);
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.teacher-promise {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+  margin: 0 0 48px;
+  padding: 24px 26px;
+  border: 1px solid rgba(var(--accent-rgb), 0.28);
+  border-radius: var(--radius);
+  background: rgba(var(--accent-rgb), 0.075);
+}
+
+.teacher-promise .promise-mark {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--ink);
+  background: var(--accent);
+  font-family: var(--mono);
+  font-weight: 900;
+}
+
+.teacher-promise strong {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--accent);
+  font-size: 13px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.teacher-promise p {
+  margin: 0;
+  color: var(--paper-soft);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.course-tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.course-tools h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 28px;
+}
+
+.lesson-search {
+  width: min(100%, 360px);
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  outline: none;
+  color: var(--paper);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.lesson-search:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.13);
+}
+
+.lesson-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.lesson-card {
+  position: relative;
+  display: flex;
+  min-height: 260px;
+  flex-direction: column;
+  padding: 24px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: inherit;
+  background: rgba(255, 255, 255, 0.035);
+  text-decoration: none;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.lesson-card::after {
+  position: absolute;
+  right: -44px;
+  bottom: -56px;
+  width: 160px;
+  height: 160px;
+  border: 1px solid rgba(var(--accent-rgb), 0.14);
+  border-radius: 50%;
+  content: "";
+  transition: transform 220ms ease, border-color 220ms ease;
+}
+
+.lesson-card:hover,
+.lesson-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: rgba(var(--accent-rgb), 0.48);
+  background: rgba(var(--accent-rgb), 0.055);
+  outline: none;
+}
+
+.lesson-card:hover::after { transform: scale(1.15); border-color: rgba(var(--accent-rgb), 0.3); }
+
+.lesson-card-num {
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+}
+
+.lesson-card h3 {
+  margin: 18px 0 10px;
+  font-family: var(--display);
+  font-size: 24px;
+  line-height: 1.12;
+}
+
+.lesson-card p {
+  display: -webkit-box;
+  margin: 0 0 24px;
+  overflow: hidden;
+  color: var(--paper-soft);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.lesson-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.teacher-promise p {
+  text-wrap: pretty;
+}
+
+.resource-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  margin-top: 12px;
+}
+
+.classroom-lab {
+  margin: 0 0 54px;
+  padding: clamp(24px, 4vw, 42px);
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 4px);
+  background:
+    linear-gradient(135deg, rgba(var(--accent-rgb), 0.075), transparent 42%),
+    rgba(255, 255, 255, 0.025);
+}
+
+.classroom-lab__intro {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(320px, 1.2fr);
+  gap: 36px;
+  align-items: end;
+}
+
+.classroom-lab__intro h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1;
+}
+
+.classroom-lab__intro > p {
+  margin: 0;
+  color: var(--paper-soft);
+  font-size: 16px;
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+.lab-tool-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.lab-tool-card {
+  position: relative;
+  display: flex;
+  min-height: 260px;
+  flex-direction: column;
+  padding: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(var(--accent-rgb), 0.25);
+  border-radius: var(--radius);
+  background: rgba(var(--accent-rgb), 0.055);
+  text-decoration: none;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.lab-tool-card:hover,
+.lab-tool-card:focus-visible {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  background: rgba(var(--accent-rgb), 0.09);
+  outline: none;
+}
+
+.lab-tool-card--local {
+  border-color: var(--line);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.lab-tool-card__number {
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.lab-tool-card__meta {
+  margin: 28px 0 8px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lab-tool-card strong {
+  font-family: var(--display);
+  font-size: 26px;
+}
+
+.lab-tool-card p {
+  margin: 10px 0 22px;
+  color: var(--paper-soft);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.lab-tool-card__action {
+  margin-top: auto;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.lab-flow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin: 24px 0 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--line);
+  list-style: none;
+}
+
+.lab-flow li {
+  display: grid;
+  gap: 7px;
+  min-height: 110px;
+  padding: 18px;
+  background: var(--ink-soft);
+}
+
+.lab-flow strong {
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.lab-flow span {
+  color: var(--paper-soft);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.lab-privacy {
+  margin: 18px 0 0;
+  padding-left: 16px;
+  border-left: 3px solid var(--warning);
+  color: var(--paper-soft);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.lab-privacy strong { color: var(--warning); }
+
+.lesson-card-footer strong { color: var(--paper); font-weight: 700; }
+.lesson-card-arrow { color: var(--accent); font-size: 20px; }
+
+.empty-state {
+  grid-column: 1 / -1;
+  padding: 56px;
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius);
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ===== Lesson deck ===== */
+
+body.lesson-page {
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.lesson-app {
+  display: grid;
+  grid-template-rows: 58px minmax(0, 1fr) 58px;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+}
+
+.lesson-topbar {
+  position: relative;
+  z-index: 20;
+  padding: 0 22px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(13, 17, 23, 0.88);
+  backdrop-filter: blur(18px);
+}
+
+body[data-theme="av"] .lesson-topbar { background: rgba(18, 16, 15, 0.9); }
+
+.lesson-ident {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 14px;
+}
+
+.lesson-ident .uc-short {
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.lesson-ident .lesson-short {
+  max-width: min(52vw, 680px);
+  overflow: hidden;
+  color: var(--paper-soft);
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.top-actions,
+.deck-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tool-btn,
+.deck-btn {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: var(--paper-soft);
+  background: rgba(255, 255, 255, 0.035);
+  cursor: pointer;
+  transition: color 150ms ease, border-color 150ms ease, background 150ms ease, transform 150ms ease;
+}
+
+.tool-btn:hover,
+.tool-btn:focus-visible,
+.deck-btn:hover,
+.deck-btn:focus-visible {
+  border-color: rgba(var(--accent-rgb), 0.48);
+  color: var(--paper);
+  background: rgba(var(--accent-rgb), 0.09);
+  outline: none;
+}
+
+.tool-btn:active,
+.deck-btn:active { transform: scale(0.96); }
+.tool-btn.is-active { color: var(--ink); border-color: var(--accent); background: var(--accent); }
+.tool-btn .key { color: var(--muted); font-family: var(--mono); font-size: 10px; }
+.tool-btn.is-active .key { color: rgba(13, 17, 23, 0.65); }
+
+.deck-stage {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.deck-track { height: 100%; }
+
+.kit-slide {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(18px);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.kit-slide.is-active {
+  z-index: 2;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+.kit-slide-main {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: safe center;
+  padding: clamp(30px, 5vh, 68px) clamp(34px, 5vw, 78px);
+  overflow: auto;
+}
+
+.kit-slide-main > * { width: min(100%, 1120px); margin-right: auto; margin-left: auto; }
+
+.kit-slide h1,
+.kit-slide h2 {
+  margin: 0;
+  font-family: var(--display);
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.kit-slide h1 { max-width: 1050px; font-size: clamp(52px, 7vw, 96px); line-height: 0.96; }
+.kit-slide h2 { max-width: 920px; font-size: clamp(38px, 5vw, 66px); line-height: 1.02; }
+
+.slide-lede {
+  max-width: 900px;
+  margin-top: 22px;
+  color: var(--paper-soft);
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.title-rule {
+  width: 90px;
+  height: 5px;
+  margin: 30px 0 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+.cover-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 32px;
+}
+
+.meta-chip,
+.tag-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--paper-soft);
+  background: rgba(255, 255, 255, 0.035);
+  font-size: 12px;
+}
+
+.meta-chip strong { color: var(--paper); }
+
+.teacher-panel {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 28px 24px;
+  overflow: auto;
+  border-left: 1px solid rgba(var(--accent-rgb), 0.22);
+  background:
+    linear-gradient(180deg, rgba(var(--accent-rgb), 0.1), transparent 35%),
+    var(--ink-soft);
+}
+
+.teacher-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.teacher-label {
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.teacher-panel h3 {
+  margin: 0 0 8px;
+  color: var(--paper);
+  font-size: 15px;
+}
+
+.teacher-note {
+  margin: 0 0 20px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  color: var(--paper-soft);
+  background: rgba(255, 255, 255, 0.035);
+  font-size: 13px;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.teacher-note.is-speech {
+  border-color: rgba(var(--accent-rgb), 0.3);
+  color: var(--paper);
+  background: rgba(var(--accent-rgb), 0.075);
+}
+
+.teacher-note ol,
+.teacher-note ul { margin: 8px 0 0; padding-left: 19px; }
+.teacher-note li + li { margin-top: 6px; }
+
+.projection-mode .kit-slide { grid-template-columns: 1fr; }
+.projection-mode .teacher-panel { display: none; }
+.projection-mode .kit-slide-main { padding-right: clamp(34px, 7vw, 110px); padding-left: clamp(34px, 7vw, 110px); }
+
+.cards-2,
+.cards-3,
+.cards-4 {
+  display: grid;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.cards-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.cards-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.cards-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+.content-card {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+
+.content-card strong,
+.content-card h3 {
+  display: block;
+  margin: 0 0 8px;
+  color: var(--paper);
+  font-size: 17px;
+}
+
+.content-card p {
+  margin: 0;
+  color: var(--paper-soft);
+  font-size: 14px;
+  line-height: 1.52;
+}
+
+.presentation-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.presentation-card {
+  min-height: 142px;
+  background:
+    linear-gradient(145deg, rgba(var(--accent-rgb), 0.075), transparent 72%),
+    var(--panel);
+}
+
+.kit-slide.is-dense-cards .kit-slide-main {
+  justify-content: safe center;
+  padding-top: clamp(16px, 2.5vh, 24px);
+  padding-bottom: clamp(16px, 2.5vh, 24px);
+}
+
+.kit-slide.is-dense-cards .slide-kicker {
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+
+.kit-slide.is-dense-cards h2 {
+  max-width: none;
+  font-size: clamp(30px, 3.3vw, 46px);
+  line-height: 1;
+}
+
+.kit-slide.is-dense-cards .slide-lede {
+  max-width: none;
+  margin-top: 8px;
+  font-size: clamp(14px, 1.5vw, 18px);
+  line-height: 1.3;
+}
+
+.presentation-card-grid.is-dense {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+
+/* A grade tem quatro colunas. Com dois, três ou seis cartões isso deixava
+   uma coluna vazia à direita; aqui ela se ajusta à quantidade. Fica acima do
+   ponto de quebra porque essas regras têm especificidade maior que a de tela
+   estreita e manteriam várias colunas no celular. */
+@media (min-width: 821px) {
+  .presentation-card-grid.is-dense:has(> :last-child:nth-child(2)) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .presentation-card-grid.is-dense:has(> :last-child:nth-child(3)),
+  .presentation-card-grid.is-dense:has(> :last-child:nth-child(5)),
+  .presentation-card-grid.is-dense:has(> :last-child:nth-child(6)) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.presentation-card-grid.is-dense .presentation-card {
+  min-height: 104px;
+  padding: 12px 14px;
+}
+
+.presentation-card-grid.is-dense .card-index { margin-bottom: 6px; font-size: 12px; }
+.presentation-card-grid.is-dense .content-card strong { margin-bottom: 5px; font-size: 15px; }
+.presentation-card-grid.is-dense .content-card p { font-size: 12.5px; line-height: 1.3; }
+
+.kit-slide.is-dense-cards .presentation-prompt {
+  margin-top: 10px;
+  padding: 10px 14px;
+}
+
+.kit-slide.is-dense-cards .presentation-prompt .card-index { display: none; }
+.kit-slide.is-dense-cards .presentation-prompt strong { font-size: clamp(16px, 1.65vw, 21px); }
+
+.kit-slide.is-dense-cards .presentation-bullets {
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.kit-slide.is-dense-cards .presentation-bullets li {
+  padding: 8px 12px 8px 34px;
+  font-size: clamp(13px, 1.25vw, 16px);
+  line-height: 1.3;
+}
+
+.kit-slide.is-dense-cards .presentation-bullets li::before {
+  top: 12px;
+  left: 15px;
+  width: 7px;
+  height: 7px;
+}
+
+.kit-slide.is-dense-cards .student-resource-link {
+  margin-top: 10px;
+  padding: 7px 10px;
+}
+
+.projection-mode .kit-slide.is-dense-cards .slide-kicker {
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.projection-mode .kit-slide.is-dense-cards h2 { font-size: clamp(36px, 4vw, 58px); }
+
+.projection-mode .kit-slide.is-dense-cards .slide-lede {
+  margin-top: 12px;
+  font-size: clamp(16px, 1.7vw, 21px);
+  line-height: 1.35;
+}
+
+.projection-mode .presentation-card-grid.is-dense {
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.projection-mode .presentation-card-grid.is-dense .presentation-card {
+  min-height: 128px;
+  padding: 16px 18px;
+}
+
+.projection-mode .presentation-card-grid.is-dense .card-index { margin-bottom: 8px; font-size: 13px; }
+.projection-mode .presentation-card-grid.is-dense .content-card strong { margin-bottom: 6px; font-size: 18px; }
+.projection-mode .presentation-card-grid.is-dense .content-card p { font-size: 14px; line-height: 1.38; }
+
+.projection-mode .kit-slide.is-dense-cards .presentation-prompt {
+  margin-top: 14px;
+  padding: 14px 18px;
+}
+
+.projection-mode .kit-slide.is-dense-cards .presentation-prompt strong { font-size: clamp(20px, 1.8vw, 25px); }
+
+@media (max-aspect-ratio: 3 / 2) {
+  .projection-mode .kit-slide.is-dense-cards h2 { font-size: clamp(32px, 3.6vw, 50px); }
+
+  .projection-mode .kit-slide.is-dense-cards .slide-lede {
+    margin-top: 10px;
+    line-height: 1.3;
+  }
+
+  .projection-mode .presentation-card-grid.is-dense {
+    gap: 9px;
+    margin-top: 12px;
+  }
+
+  .projection-mode .presentation-card-grid.is-dense .presentation-card {
+    min-height: 0;
+    padding: 12px 14px;
+  }
+
+  .projection-mode .kit-slide.is-dense-cards .presentation-bullets { margin-top: 10px; }
+  .projection-mode .kit-slide.is-dense-cards .presentation-bullets li { padding: 7px 12px 7px 32px; }
+  .projection-mode .kit-slide.is-dense-cards .presentation-bullets li::before { top: 11px; }
+  .projection-mode .kit-slide.is-dense-cards .presentation-prompt { margin-top: 10px; padding: 11px 16px; }
+
+  .projection-mode .presentation-card-grid.is-dense .card-index { margin-bottom: 6px; }
+  .projection-mode .presentation-card-grid.is-dense .content-card strong { margin-bottom: 4px; }
+  .projection-mode .presentation-card-grid.is-dense .content-card p { line-height: 1.32; }
+  .projection-mode .kit-slide.is-dense-cards .presentation-bullets { gap: 5px; }
+
+  /* Mesmo aperto para os slides de layout padrão, que em 4:3 empurravam
+     parte do conteúdo para fora da tela. */
+  .projection-mode .kit-slide h2 { font-size: clamp(34px, 4.4vw, 56px); }
+  .projection-mode .kit-slide .slide-lede { margin-top: 16px; line-height: 1.4; }
+  .projection-mode .kit-slide .cards-2,
+  .projection-mode .kit-slide .cards-3,
+  .projection-mode .kit-slide .cards-4 { gap: 10px; margin-top: 18px; }
+  .projection-mode .kit-slide .content-card { padding: 14px; }
+  .projection-mode .kit-slide .block-focus { gap: 20px; margin-top: 20px; }
+  .projection-mode .kit-slide .block-time { padding: 14px; }
+  .projection-mode .kit-slide .block-directions { margin-top: 14px; }
+  .projection-mode .kit-slide .presentation-bullets { margin-top: 16px; gap: 7px; }
+
+  .projection-mode .kit-slide .block-step-list li {
+    min-height: 0;
+    padding-top: 8px;
+    padding-bottom: 7px;
+  }
+
+  .projection-mode .kit-slide .block-step-list li::before { top: 8px; }
+
+  /* A barra superior quebrava em duas linhas nessa largura e roubava altura
+     de todos os slides. */
+  .tool-btn,
+  .deck-btn { min-height: 36px; padding: 0 10px; }
+}
+
+/* Projetor 4:3 e 5:4: quatro cartões em duas colunas, bloco mais estreito
+   e centralizado, sem coluna vazia nem faixas estreitas demais. */
+@media (max-aspect-ratio: 4 / 3) {
+  .projection-mode .kit-slide-main > * { width: min(100%, 980px); }
+
+  .projection-mode .presentation-card-grid.is-dense:has(> :last-child:nth-child(4)) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .projection-mode .kit-slide.is-dense-cards h2 {
+    font-size: clamp(28px, 3.2vw, 40px);
+  }
+
+  .projection-mode .kit-slide.is-dense-cards .slide-lede {
+    margin-top: 8px;
+    font-size: clamp(15px, 1.55vw, 18px);
+  }
+
+  .projection-mode .presentation-card-grid.is-dense {
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  .projection-mode .presentation-card-grid.is-dense .presentation-card {
+    min-height: 0;
+    padding: 12px 14px;
+  }
+}
+
+@media (max-aspect-ratio: 5 / 4) {
+  .projection-mode .kit-slide-main > * { width: min(100%, 920px); }
+
+  .projection-mode .kit-slide.is-dense-cards h2 {
+    font-size: clamp(26px, 3vw, 36px);
+    line-height: 1.05;
+  }
+
+  .projection-mode .kit-slide.is-dense-cards .slide-lede {
+    margin-top: 6px;
+    line-height: 1.28;
+  }
+
+  .projection-mode .presentation-card-grid.is-dense {
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .projection-mode .kit-slide.is-dense-cards .presentation-bullets { margin-top: 8px; }
+  .projection-mode .kit-slide.is-dense-cards .presentation-prompt { margin-top: 8px; padding: 10px 14px; }
+}
+
+.presentation-bullets {
+  display: grid;
+  gap: 10px;
+  margin: 26px auto 0;
+  padding: 0;
+  list-style: none;
+}
+
+.presentation-bullets li {
+  position: relative;
+  padding: 13px 16px 13px 42px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  color: var(--paper-soft);
+  background: rgba(255, 255, 255, 0.03);
+  font-size: clamp(15px, 1.6vw, 19px);
+  line-height: 1.45;
+}
+
+.presentation-bullets li::before {
+  position: absolute;
+  top: 17px;
+  left: 18px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 5px rgba(var(--accent-rgb), 0.11);
+  content: "";
+}
+
+.presentation-prompt {
+  margin-top: 24px;
+  padding: 18px 22px;
+  border: 1px solid rgba(var(--accent-rgb), 0.42);
+  border-radius: var(--radius);
+  background: rgba(var(--accent-rgb), 0.09);
+}
+
+.presentation-prompt .card-index { margin-bottom: 7px; }
+
+.presentation-prompt strong {
+  display: block;
+  color: var(--paper);
+  font-family: var(--display);
+  font-size: clamp(20px, 2.4vw, 31px);
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.card-index {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.schedule-card {
+  position: relative;
+  min-height: 170px;
+  overflow: hidden;
+}
+
+.schedule-card time {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.schedule-card p {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.block-focus {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+  margin-top: 34px;
+}
+
+.block-time {
+  padding: 20px;
+  border: 1px solid rgba(var(--accent-rgb), 0.35);
+  border-radius: var(--radius);
+  color: var(--accent);
+  background: rgba(var(--accent-rgb), 0.075);
+  font-family: var(--mono);
+  font-size: 17px;
+  font-weight: 800;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.block-activity {
+  margin: 0;
+  color: var(--paper-soft);
+  font-size: clamp(18px, 2.1vw, 26px);
+  line-height: 1.55;
+}
+
+.block-activity.is-compact {
+  font-size: clamp(15px, 1.55vw, 20px);
+  line-height: 1.45;
+}
+
+.block-title,
+.student-sheet-title {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.block-title {
+  font-size: clamp(36px, 4.2vw, 58px) !important;
+}
+
+.student-sheet-title {
+  font-size: clamp(36px, 4.4vw, 60px) !important;
+}
+
+.review-title {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.review-deliverable {
+  max-width: 900px;
+  margin: 24px 0 0;
+  color: var(--paper-soft);
+  font-size: 18px;
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+.review-deliverable strong {
+  color: var(--paper);
+  font-weight: 650;
+}
+
+.block-directions {
+  margin-top: 20px;
+}
+
+.block-directions .card-index {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.block-step-list,
+.student-sheet-list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: compact-steps;
+}
+
+.block-step-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 26px;
+  border-top: 1px solid var(--line);
+}
+
+.block-step-list li {
+  position: relative;
+  min-height: 46px;
+  padding: 11px 0 10px 34px;
+  border-bottom: 1px solid var(--line);
+  color: var(--paper-soft);
+  font-size: 13px;
+  line-height: 1.38;
+  text-wrap: pretty;
+  counter-increment: compact-steps;
+}
+
+.block-step-list li::before {
+  position: absolute;
+  top: 11px;
+  left: 3px;
+  color: var(--accent);
+  content: counter(compact-steps, decimal-leading-zero);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.student-sheet-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin-top: 24px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.student-sheet-section {
+  padding: 18px 22px 18px 0;
+}
+
+.student-sheet-section + .student-sheet-section {
+  padding-left: 22px;
+  border-left: 1px solid var(--line);
+}
+
+.student-sheet-section .card-index {
+  margin-bottom: 10px;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+.student-sheet-list {
+  gap: 7px;
+}
+
+.student-sheet-list li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--paper-soft);
+  font-size: 13px;
+  line-height: 1.4;
+  text-wrap: pretty;
+}
+
+.student-sheet-list li::before {
+  position: absolute;
+  top: 0.55em;
+  left: 2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  content: "";
+}
+
+.student-resource-link {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  margin-top: 18px;
+  padding: 11px 14px;
+  border: 1px solid rgba(var(--accent-rgb), 0.38);
+  border-radius: 9px;
+  color: var(--accent);
+  background: rgba(var(--accent-rgb), 0.07);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.student-resource-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.student-resource-link:hover,
+.student-resource-link:focus-visible {
+  border-color: var(--accent);
+  color: var(--paper);
+  outline: none;
+}
+
+.extension-callout {
+  margin: 14px 0 0;
+  padding: 11px 14px;
+  border-left: 3px solid var(--accent-2);
+  color: var(--paper-soft);
+  background: transparent;
+  font-size: 13px;
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+
+.extension-callout strong {
+  color: var(--paper);
+}
+
+.step-list,
+.check-list,
+.problem-list {
+  display: grid;
+  gap: 12px;
+  margin: 30px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step-list { grid-template-columns: repeat(2, minmax(0, 1fr)); counter-reset: steps; }
+
+.step-list li {
+  position: relative;
+  min-height: 92px;
+  padding: 18px 18px 18px 54px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--paper-soft);
+  background: var(--panel);
+  font-size: 15px;
+  line-height: 1.48;
+  counter-increment: steps;
+}
+
+.step-list li::before {
+  position: absolute;
+  top: 17px;
+  left: 16px;
+  display: grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--ink);
+  background: var(--accent);
+  content: counter(steps);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.check-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+.check-list li {
+  position: relative;
+  padding: 15px 16px 15px 46px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  color: var(--paper-soft);
+  background: var(--panel);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.check-list li::before {
+  position: absolute;
+  top: 13px;
+  left: 15px;
+  color: var(--success);
+  content: "✓";
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.formative-check-list {
+  gap: 0 26px;
+  border-top: 1px solid var(--line);
+}
+
+.formative-check-list li {
+  padding: 14px 8px 13px 32px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  text-wrap: pretty;
+}
+
+.formative-check-list li::before {
+  top: 12px;
+  left: 5px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.code-stack {
+  display: grid;
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.code-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #080b0f;
+  box-shadow: var(--shadow);
+}
+
+.code-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px 10px 16px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.04);
+  font-family: var(--mono);
+  font-size: 11px;
+}
+
+.copy-btn {
+  min-width: 40px;
+  min-height: 40px;
+  padding: 6px 9px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  color: var(--paper-soft);
+  background: transparent;
+  cursor: pointer;
+}
+
+.copy-btn:hover,
+.copy-btn:focus-visible { color: var(--accent); border-color: var(--accent); outline: none; }
+
+.code-card pre {
+  max-height: 260px;
+  margin: 0;
+  padding: 18px;
+  overflow: auto;
+  color: #d6e5f2;
+  font-family: var(--mono);
+  font-size: clamp(12px, 1.2vw, 15px);
+  line-height: 1.58;
+  tab-size: 2;
+  white-space: pre;
+}
+
+.problem-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.problem-list li {
+  padding: 18px;
+  border: 1px solid rgba(255, 122, 117, 0.22);
+  border-radius: 12px;
+  background: rgba(255, 122, 117, 0.055);
+}
+
+.problem-list strong {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--danger);
+  font-size: 14px;
+}
+
+.problem-list span {
+  color: var(--paper-soft);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.fallback-box {
+  margin-top: 20px;
+  padding: 20px 22px;
+  border-left: 4px solid var(--warning);
+  border-radius: 0 12px 12px 0;
+  color: var(--paper-soft);
+  background: rgba(255, 200, 107, 0.075);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.fallback-box strong { color: var(--warning); }
+
+.deck-bottombar {
+  position: relative;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+  padding: 0 22px;
+  border-top: 1px solid var(--line);
+  background: rgba(13, 17, 23, 0.94);
+}
+
+body[data-theme="av"] .deck-bottombar { background: rgba(18, 16, 15, 0.96); }
+
+.deck-progress {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  transition: width 220ms ease;
+}
+
+.deck-counter {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 12px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.deck-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.course-pace-dot {
+  width: 12px;
+  height: 12px;
+  flex: 0 0 12px;
+  border-radius: 50%;
+  background: #7cc49a;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.42),
+    0 0 0 5px rgba(124, 196, 154, 0.12),
+    0 4px 12px rgba(0, 0, 0, 0.38);
+  transition: background 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+}
+
+.course-pace-dot.is-ok {
+  background: #7cc49a;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.42),
+    0 0 0 5px rgba(124, 196, 154, 0.12),
+    0 4px 12px rgba(0, 0, 0, 0.38);
+}
+
+.course-pace-dot.is-warn {
+  background: #e7b66e;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.42),
+    0 0 0 5px rgba(231, 182, 110, 0.18),
+    0 4px 12px rgba(0, 0, 0, 0.38);
+}
+
+.course-pace-dot.is-err {
+  background: #d98a8a;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.42),
+    0 0 0 5px rgba(217, 138, 138, 0.2),
+    0 4px 12px rgba(0, 0, 0, 0.38);
+  animation: coursePacePulse 1.2s ease-in-out infinite;
+}
+
+.course-pace-dot:hover {
+  transform: scale(1.25);
+}
+
+@keyframes coursePacePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+.deck-actions:last-child { justify-content: flex-end; }
+.deck-btn[disabled] { opacity: 0.28; cursor: not-allowed; }
+
+.slide-overview {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: none;
+  padding: 34px;
+  overflow: auto;
+  background: rgba(5, 7, 10, 0.96);
+  backdrop-filter: blur(18px);
+}
+
+.slide-overview.is-open { display: block; }
+
+.overview-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(100%, 1180px);
+  margin: 0 auto 24px;
+}
+
+.overview-head h2 { margin: 0; font-family: var(--display); font-size: 34px; }
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  width: min(100%, 1180px);
+  margin: 0 auto;
+}
+
+.overview-card {
+  min-height: 150px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--paper);
+  background: var(--panel);
+  text-align: left;
+  cursor: pointer;
+}
+
+.overview-card:hover,
+.overview-card:focus-visible { border-color: var(--accent); outline: none; }
+.overview-card.is-current { border-color: var(--accent); background: rgba(var(--accent-rgb), 0.08); }
+.overview-card span { display: block; margin-bottom: 12px; color: var(--accent); font-family: var(--mono); font-size: 11px; }
+.overview-card strong { font-family: var(--display); font-size: 20px; line-height: 1.18; }
+
+.toast {
+  position: fixed;
+  right: 24px;
+  bottom: 78px;
+  z-index: 100;
+  padding: 11px 15px;
+  border: 1px solid rgba(var(--accent-rgb), 0.35);
+  border-radius: 9px;
+  opacity: 0;
+  color: var(--paper);
+  background: var(--ink-soft);
+  box-shadow: var(--shadow);
+  font-size: 13px;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.toast.is-visible { opacity: 1; transform: translateY(0); }
+
+.error-screen {
+  display: grid;
+  min-height: 100vh;
+  min-height: 100dvh;
+  place-items: center;
+  padding: 30px;
+}
+
+.error-card {
+  max-width: 620px;
+  padding: 34px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+
+.error-card h1 { margin: 0 0 12px; font-family: var(--display); }
+.error-card p { color: var(--paper-soft); line-height: 1.6; }
+
+@media (max-width: 1080px) {
+  .lesson-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lab-tool-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lab-flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .kit-slide { grid-template-columns: minmax(0, 1fr) 320px; }
+  .cards-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 820px) {
+  .course-shell { width: min(100% - 26px, 1320px); }
+  .course-hero { grid-template-columns: 1fr; padding-top: 48px; }
+  .classroom-lab__intro { grid-template-columns: 1fr; gap: 16px; }
+  .lab-tool-grid,
+  .lab-flow { grid-template-columns: 1fr; }
+  .lab-tool-card { min-height: 220px; }
+  .course-facts { max-width: 560px; }
+  .course-tools { align-items: stretch; flex-direction: column; }
+  .lesson-search { width: 100%; }
+  .lesson-grid { grid-template-columns: 1fr; }
+  .lesson-card { min-height: 220px; }
+
+  .lesson-app { grid-template-rows: 52px minmax(0, 1fr) 56px; }
+  .kit-slide { grid-template-columns: 1fr; }
+  .teacher-panel {
+    position: absolute;
+    inset: auto 0 0;
+    max-height: 52%;
+    border-top: 1px solid rgba(var(--accent-rgb), 0.25);
+    border-left: 0;
+    box-shadow: 0 -24px 50px rgba(0, 0, 0, 0.38);
+  }
+  .projection-mode .teacher-panel { display: none; }
+  .kit-slide-main { padding: 28px 22px 34px; }
+  .kit-slide.is-dense-cards .kit-slide-main {
+    justify-content: flex-start;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .kit-slide.is-dense-cards .kit-slide-main > * { flex-shrink: 0; }
+  .top-actions .tool-btn:not(.mode-btn) { display: none; }
+  .lesson-ident .lesson-short { max-width: 45vw; }
+  .cards-2,
+  .cards-3,
+  .cards-4,
+  .presentation-card-grid,
+  .step-list,
+  .check-list,
+  .problem-list,
+  .block-step-list,
+  .student-sheet-grid { grid-template-columns: 1fr; }
+  .presentation-card-grid.is-dense { grid-template-columns: 1fr; }
+  .student-sheet-section,
+  .student-sheet-section + .student-sheet-section {
+    padding: 16px 0;
+    border-left: 0;
+  }
+  .student-sheet-section + .student-sheet-section {
+    border-top: 1px solid var(--line);
+  }
+  .schedule-card {
+    min-height: 0;
+    overflow: visible;
+  }
+  .schedule-card p {
+    display: block;
+    overflow: visible;
+    -webkit-line-clamp: unset;
+  }
+  .block-focus { grid-template-columns: 1fr; gap: 14px; }
+  .block-time { width: fit-content; }
+  .deck-bottombar { grid-template-columns: 1fr auto 1fr; padding: 0 10px; }
+  .deck-actions .button-label { display: none; }
+  .overview-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 520px) {
+  .course-topbar { align-items: flex-start; flex-direction: column; }
+  .course-hero h1 { font-size: 50px; }
+  .course-facts { grid-template-columns: 1fr; }
+  .teacher-promise { grid-template-columns: 1fr; }
+  .lesson-ident .uc-short { display: none; }
+  .lesson-ident .lesson-short { max-width: 58vw; }
+  .back-text { display: none; }
+  .tool-btn { padding: 0 9px; }
+  .tool-btn .button-label { display: none; }
+  .kit-slide h1 { font-size: 44px; }
+  .kit-slide h2 { font-size: 36px; }
+  .slide-lede { font-size: 18px; }
+  .slide-overview { padding: 22px 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  @page { size: A4 landscape; margin: 0; }
+  body.lesson-page { height: auto; overflow: visible; background: #fff; color: #111; }
+  .lesson-topbar,
+  .deck-bottombar,
+  .slide-overview,
+  .toast { display: none !important; }
+  .lesson-app,
+  .deck-stage,
+  .deck-track { display: block; height: auto; overflow: visible; }
+  .kit-slide {
+    position: relative;
+    display: grid !important;
+    grid-template-columns: 1fr;
+    width: 297mm;
+    height: 210mm;
+    page-break-after: always;
+    opacity: 1 !important;
+    color: #111;
+    background: #fff;
+    pointer-events: auto;
+    transform: none !important;
+  }
+  .kit-slide-main { padding: 16mm; overflow: visible; }
+  .teacher-panel { display: none !important; }
+  .kit-slide h1,
+  .kit-slide h2,
+  .content-card strong,
+  .content-card h3,
+  .teacher-panel h3 { color: #111; }
+  .slide-kicker,
+  .card-index,
+  .block-time { color: #08706d !important; }
+  .meta-chip {
+    color: #333;
+    border-color: #999;
+    background: #fff;
+  }
+  .meta-chip strong { color: #111; }
+  .slide-lede,
+  .content-card p,
+  .block-activity,
+  .teacher-note,
+  .check-list li,
+  .step-list li,
+  .block-step-list li,
+  .student-sheet-list li,
+  .problem-list span { color: #333; }
+  .content-card,
+  .presentation-bullets li,
+  .presentation-prompt,
+  .teacher-note,
+  .step-list li,
+  .check-list li { border-color: #bbb; background: #fafafa; }
+  .presentation-prompt strong { color: #111; }
+  .block-step-list,
+  .block-step-list li,
+  .student-sheet-grid,
+  .student-sheet-section + .student-sheet-section { border-color: #bbb; }
+  .student-resource-link { color: #08706d; border-color: #777; background: #fff; }
+  .extension-callout { color: #333; background: #fafafa; }
+  .code-card { border-color: #777; background: #f7f7f7; box-shadow: none; }
+  .code-card-head { color: #333; background: #ececec; border-color: #999; }
+  .code-card pre { max-height: none; color: #111; background: #fff; }
+  .copy-btn { display: none; }
+}
+
+.design-sixteen{--w16-paper:#f5f2ea;--w16-ink:#182f3d;--w16-accent:#155c68;--w16-rule:#c5cfca}
+.design-sixteen .kit-slide-main{background:var(--w16-paper);color:var(--w16-ink);padding:32px 48px;gap:0;max-width:none}
+.design-sixteen .kit-slide h1,.design-sixteen .kit-slide h2{font-family:'Trebuchet MS',sans-serif;font-weight:700;letter-spacing:-.045em;line-height:1.08;text-wrap:balance}
+.design-sixteen .kit-slide h1{font-size:clamp(52px,6.2vw,86px);margin:12px 0 22px}
+.design-sixteen .kit-slide h2{font-size:clamp(32px,3.6vw,50px);margin:0}
+.design-sixteen .slide-kicker{font-size:15px;color:var(--w16-accent);letter-spacing:.035em;text-transform:none;margin-bottom:14px;font-weight:700}
+.design-sixteen .kit-slide .slide-lede{font-size:clamp(19px,1.8vw,25px);line-height:1.4;color:#385160;max-width:68ch;margin:16px 0 20px}
+.design-sixteen .w16-caption{font-size:17px;color:#385160;line-height:1.4;margin:12px 0 0}
+.design-sixteen .w16-sketches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;max-width:860px;margin:0 0 20px}
+.design-sixteen .w16-sketches figure{margin:0;transform:rotate(-1deg)}
+.design-sixteen .w16-sketches figure:nth-child(2){transform:rotate(1deg)}
+.design-sixteen .w16-sketches svg{width:100%;max-height:150px;display:block;color:var(--w16-ink)}
+.design-sixteen .w16-sketches figcaption{font-size:15px;margin-top:7px;color:#385160}
+.design-sixteen .w16-task{border-top:2px solid var(--w16-accent);padding-top:15px;display:grid;grid-template-columns:110px 1fr;gap:18px;margin-top:18px;max-width:1100px}
+.design-sixteen .w16-task>span{font-size:16px;color:var(--w16-accent);font-weight:700}
+.design-sixteen .w16-task strong{font-size:clamp(18px,1.7vw,23px);line-height:1.4;font-weight:600}
+.design-sixteen .w16-list{margin:0;padding:0;list-style:none;counter-reset:w16;max-width:1040px}
+.design-sixteen .w16-list li{font-size:clamp(19px,1.9vw,26px);line-height:1.4;padding:12px 0;border-bottom:1px solid var(--w16-rule);counter-increment:w16;overflow-wrap:anywhere}
+.design-sixteen .w16-list li::before{content:counter(w16,decimal-leading-zero);font-size:15px;font-weight:700;color:var(--w16-accent);display:inline-block;width:40px;vertical-align:middle}
+.design-sixteen .w16-brief{margin:0;max-width:1100px}
+.design-sixteen .w16-brief>div{display:grid;grid-template-columns:155px 1fr;gap:20px;border-bottom:1px solid var(--w16-rule);padding:13px 0;line-height:1.4;font-size:clamp(19px,1.8vw,24px)}
+.design-sixteen .w16-brief dt{font-weight:700;color:var(--w16-accent)}
+.design-sixteen .w16-brief dd{margin:0;overflow-wrap:anywhere}
+.design-sixteen .w16-compare{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:1000px}
+.design-sixteen .w16-compare svg{width:100%;height:135px;color:var(--w16-ink)}
+.design-sixteen .w16-compare .w16-list li{font-size:21px;padding:10px 0}
+.design-sixteen .w16-criteria{display:grid;grid-template-columns:1fr 1fr;gap:0 32px;list-style:none;padding:0;margin:0;max-width:1100px}
+.design-sixteen .w16-criteria li{display:flex;gap:15px;border-bottom:1px solid var(--w16-rule);padding:14px 0;font-size:clamp(19px,1.8vw,24px);line-height:1.35}
+.design-sixteen .w16-criteria b{font-size:15px;color:var(--w16-accent);padding-top:5px}
+.design-sixteen .w16-pause{font-size:clamp(80px,10vw,140px);font-weight:700;color:var(--w16-accent);padding:20px 0}
+.design-sixteen .w16-pause span{display:block;font-size:24px;font-weight:400;margin-top:12px}
+.design-sixteen .student-resource-link{background:var(--w16-accent);color:white;border-color:var(--w16-accent)}
+@media(max-width:700px){.design-sixteen .kit-slide-main{padding:24px 22px}.design-sixteen .w16-task{grid-template-columns:1fr;gap:6px}.design-sixteen .w16-criteria,.design-sixteen .w16-compare{grid-template-columns:1fr}.design-sixteen .w16-brief>div{grid-template-columns:1fr;gap:4px}.design-sixteen .w16-sketches{gap:10px}.design-sixteen .w16-compare svg{height:100px}.design-sixteen .w16-list li{font-size:19px}}
+@media print{.design-sixteen .kit-slide-main{background:white}.design-sixteen .w16-sketches svg{max-height:115px}}
+</style></head><body class="lesson-page"><div id="lessonRoot"></div><div class="toast" id="toast" role="status" aria-live="polite"></div><script>window.SENAI_COURSES={"design-web":{"slug":"design-web","code":"UC · Design Web","title":"Design Web","workload":"100 h","lessonCount":29,"module":"Módulo Específico II","teacher":"Daniel Marcos Mayer","period":"2026/2","theme":"web","description":"Comunicação visual, interfaces, prototipação, mídias sociais, acessibilidade e projeto de presença digital, sem programação discente.","sourceLabel":"Planejamento_Geral_UC_Design_Web.md","lessons":[{"num":"16","title":"Ideias que viram direção","description":"Uma oficina de soluções de software: transformar um pedido do Festival Vira-Luz em seis alternativas, conceito e três esboços de página de início mais uma página interna que outra pessoa consegue testar.","objectives":["Desenvolvimento do Projeto: ideação, conceituação, rafes.","Inovação: visão inovadora."],"technical":["Selecionar a criação de elementos gráficos para o desenvolvimento de design web, interfaces e redes sociais, tendo vista a propriedade."],"socioemotional":["Demonstrar espírito colaborativo em atividades coletivas.","Aplicar os aspectos de inovação em suas atividades profissionais."],"schedule":[{"horario":"19:00 - 19:45","atividade":"Ler a situação-problema, fazer o diagnóstico de duas soluções e gerar seis alternativas de primeira tela para o Festival Vira-Luz. Comparar alternativas pela tarefa que ajudam a realizar."},{"horario":"20:05 - 20:45","atividade":"Selecionar três alternativas promissoras, definir o conceito da solução e usar três critérios para justificar a escolha. Alternar quem opera e iniciar os esboços de página."},{"horario":"20:45 - 21:30","atividade":"Montar na oficina três esboços de página de baixa fidelidade para a página inicial e uma página interna da direção escolhida. Organizar blocos, título, ação e conteúdo prioritário. Entre 21h15 e 21h30, realizar a visita de uma pessoa de outra dupla, sem explicação dos autores."},{"horario":"21:30 - 22:00","atividade":"Concluir o registro da visita já realizada, revisar a direção, responder aos registros individuais A/B e participar da síntese final. Das 22:00 às 22:30: clínica e apoio técnico opcional, sem conteúdo ou avaliação nova."}],"methodology":"Situação-problema profissional inteiramente praticada na oficina: diagnóstico por comparação, ideação divergente e seleção convergente, construção de esboços de página, teste por observação e revisão baseada em evidência. Os 160 minutos letivos priorizam decisões e ações do estudante; a fala demonstrativa do docente soma no máximo 12 minutos, distribuída em intervenções de até dois minutos. A dupla alterna autoria e observação; cada estudante registra sua autoavaliação.","resources":"Projetor, navegador e Estúdio de Direções da Aula 16. A oficina local reúne o briefing, as alternativas, a criação, o teste, os critérios e o rascunho. Sem login, instalação, impressão, pesquisa externa ou envio obrigatório.","observation":"19:00–22:00 de conteúdo e evidência avaliável, com intervalo 19:45–20:05. Das 22:00 às 22:30 é somente apoio técnico individual, salvamento e organização do trabalho já concluído; não apresenta conteúdo novo nem cria exigência para quem saiu. Chamada no início dos quatro blocos. Os casos são fictícios; uma dupla por computador; rascunho fica neste navegador."}]}};window.SENAI_TEACHING_SUPPORT={"design-web":{"courseTips":{"promise":"Em cada aula, uso explicação de 10 a 15 minutos, modelo visual, prática em duplas ou equipes, produto visível na mesma noite, critérios de conferência e plano B sem internet.","routine":["Antes da turma entrar, deixo abertas as referências, a ferramenta visual e a pasta de entrega.","Apresento o objetivo e mostro um exemplo pronto sem transformar a demonstração em aula de programação.","Divido a produção em passos curtos, com papéis claros e uma verificação intermediária.","Encerro com teste entre pares, registro do que mudou e conferência do arquivo final.","Se a tecnologia falhar, uso a mesma atividade em papel, cartões e fichas impressas."],"onlineRoutines":[{"lessons":["01","02","03","04","05","06","07","08","09","11","12","13","14","15","16","17","18","19","20","23","24","25","26"],"text":"A conexão é apoio para referências e testes. A atividade possui versão local ou impressa e não depende de cadastro pessoal."},{"lessons":["10","28","29"],"text":"A publicação é feita de forma assistida em modelo preparado ou ambiente autorizado; a equipe valida o link e mantém a pasta local como evidência."},{"lessons":["21","22","27"],"text":"A produção gráfica e audiovisual usa software instalado ou ferramenta visual autorizada, com arquivos editáveis e exportados salvos antes do fim da aula."}],"rescue":"Se eu perder o fio da aula, retomo objetivo, exemplo, passos, entrega e critérios; não abro uma explicação técnica paralela.","commonProblems":[["A turma pergunta qual comando usar","Explico a função visual e retorno à ferramenta ou ao modelo pronto; programação não é requisito da atividade."],["Parte da turma ainda não começou","Repito o primeiro passo no projetor e formo duplas de apoio."],["A ferramenta visual fica indisponível","Ativo o plano B em papel e preservo a mesma entrega e os mesmos critérios."]]},"lessons":{"16":{"appendDefaultClosing":false,"teacherGoal":"Cada dupla produz e compara alternativas, define um conceito e constrói três esboços de página de início mais uma página interna que permitem a outra pessoa realizar uma tarefa. Cada estudante explica uma decisão e o que revisaria.","plainLanguage":"Idear é abrir possibilidades antes de escolher. Conceito é a ideia que guia as escolhas. Esboço de página é um desenho rápido da organização da tela: mostra ordem, conteúdo e ação, sem acabamento final.","say":"Hoje vocês trabalham como uma equipe de produto: entendem o pedido, criam possibilidades, escolhem uma direção e testam se o esboço ajuda alguém a agir.","routine":["Abro slides e Estúdio de Direções antes da entrada; confiro o rascunho e a tela de diagnóstico.","Faço chamada no início de 19:00, 20:05, 20:45 e 21:30. Reservo no máximo 12 minutos totais para demonstrações, em intervenções de até dois minutos; o restante é ação do estudante.","A dupla alterna quem opera no começo do bloco 2. Na visita, autores observam sem explicar ou apontar caminhos.","Os critérios aparecem antes da produção, mas a turma os lê e procura na oficina; não os converto em exposição. Uso a conferência como devolutiva; a coerência da decisão é lida na conversa com a dupla.","Até 22:00 verifico a entrega na própria oficina. Depois disso, oriento salvamento e organização e esclareço dúvidas sobre o trabalho já concluído; não completo critério nem recolho evidência avaliativa adicional."],"demo":["Mostro uma alternativa que põe o mesmo conteúdo em outra ordem e pergunto qual tarefa ela favorece.","Registro apenas uma ideia curta, sem transformar a geração em desenho acabado.","Monto um bloco do esboço e uma nota de decisão; não escolho a direção pela dupla.","Faço a pergunta da visita e registro apenas o que a pessoa disse ou fez."],"studentDeliverable":"Na oficina: diagnóstico inicial, seis alternativas, conceito nomeado e explicado, três critérios aplicados às razões de escolha, direção escolhida, três esboços de página de início, página interna, observação de uma visita, revisão e autoavaliação individual. Sem relatório ou arquivo externo.","check":["Explica qual problema, público e tarefa prioriza; não usa somente gosto pessoal para justificar.","As alternativas mudam ordem, foco ou caminho e não são seis cópias com enfeites diferentes.","O conceito tem nome e explicação relacionados ao público e ao objetivo; os três critérios sustentam a escolha.","Os três esboços de página têm contexto, conteúdo prioritário e ação compreensível; a página interna completa o caminho da direção escolhida.","A observação registra comportamento ou fala do visitante e a revisão responde a essa evidência.","Cada estudante conclui autoavaliação curta: decisão defendida, evidência observada e próximo ajuste."],"fallback":"Sem internet, abrir a oficina local. Sem armazenamento, manter a aba aberta e usar a cópia opcional. Sem computador, a dupla replica os três esboços de página de início e a página interna no caderno e usa os mesmos critérios; a observação ocorre no desenho.","commonProblems":[["Ideias todas iguais","Peço que mude a informação que vem primeiro, a ação principal ou o caminho para a página interna."],["Confundiu esboço com tela final","Retomo que blocos e rótulos respondem à tarefa; cor, foto e acabamento não são a entrega de hoje."],["Escolheu por gosto","Pergunto qual evidência do briefing ou da visita sustenta a escolha."],["Visitante recebeu explicação","Reinicio somente a tarefa, com o autor em silêncio; registro o novo resultado."],["Precisa de apoio depois das 22h","Oriento salvamento e organização. Qualquer recuperação avaliativa ocorre até 22h ou em oportunidade equivalente para todos."]],"presentationSlides":[{"title":"Uma solução começa antes da tela.","block":1,"layout":"dw16","lede":"Hoje a entrega é uma direção que outra pessoa consegue testar.","promptLabel":"Na oficina","prompt":"Abra a oficina. Leia objetivo, pessoa e tarefa antes de clicar em qualquer solução.","dw16":{"type":"brief","items":[["Pedido","Festival Vira-Luz quer ajudar a pessoa a escolher e chegar a uma atividade."],["Pessoa","Jovem que abre o celular no caminho ou antes de sair."],["Entrega às 22h","Três esboços de página de início, uma interna, justificativas e uma observação de teste."]]},"teacher":{"speech":"Faço a chamada e situo a noite como trabalho de equipe. Não apresento uma tela pronta como resposta.","steps":["5 min · A dupla lê, compara, decide, produz ou testa na oficina. A intervenção docente é por pergunta; demonstrações somam no máximo 12 minutos na noite."],"watch":"Abra a oficina. Leia objetivo, pessoa e tarefa antes de clicar em qualquer solução.","rescue":"Retomo a situação com uma pergunta curta, modelo apenas um primeiro bloco e devolvo a decisão à dupla."},"resources":[{"href":"index.html","label":"Abrir a oficina de esboços"}]},{"title":"O que você já consegue perceber?","block":1,"layout":"dw16","lede":"Diagnóstico não vale nota: ele mostra de onde a dupla parte.","promptLabel":"Na oficina","prompt":"Compare as duas soluções. Aponte qual ajuda a encontrar uma atividade e diga por quê.","dw16":{"type":"compare","left":["Título genérico","Muitos itens com o mesmo peso","Botão: Saiba mais"],"right":["Atividade e horário visíveis","Uma ação principal","Botão: Ver programação"],"caption":"A tarefa orienta a leitura da interface.","labels":["Dificulta a tarefa","Favorece a tarefa"]},"teacher":{"speech":"Leio só a tarefa. Peço que apontem evidências na tela, não “a mais bonita”. Uso as respostas para decidir quem precisa de apoio.","steps":["8 min · A dupla lê, compara, decide, produz ou testa na oficina. A intervenção docente é por pergunta; demonstrações somam no máximo 12 minutos na noite."],"watch":"Compare as duas soluções. Aponte qual ajuda a encontrar uma atividade e diga por quê.","rescue":"Retomo a situação com uma pergunta curta, modelo apenas um primeiro bloco e devolvo a decisão à dupla."}},{"title":"Capacidade que vamos evidenciar.","block":1,"layout":"dw16","lede":"Criar possibilidades, conceituar uma direção e esboçar um caminho.","promptLabel":"Na oficina","prompt":"Leia os critérios. Ao final, mostre onde cada um aparece no seu trabalho.","dw16":{"type":"criteria","items":["Alternativas respondem ao pedido e mudam uma decisão relevante.","Conceito orienta as escolhas, não é uma lista solta de adjetivos.","Esboços de página tornam a tarefa e o próximo passo compreensíveis.","Revisão usa uma observação da visita."]},"teacher":{"speech":"Apresento critérios antes da produção. Digo que a oficina confere presença; eu observo a coerência na fala e na visita.","steps":["5 min · A dupla lê, compara, decide, produz ou testa na oficina. A intervenção docente é por pergunta; demonstrações somam no máximo 12 minutos na noite."],"watch":"Leia os critérios. Ao final, mostre onde cada um aparece no seu trabalho.","rescue":"Retomo a situação com uma pergunta curta, modelo apenas um primeiro bloco e devolvo a decisão à dupla."}},{"title":"Primeiro abrir. Depois escolher.","block":1,"layout":"dw16","lede":"Quantidade primeiro: seis ideias simples e diferentes dão material para comparar.","promptLabel":"Na oficina","prompt":"Crie seis alternativas curtas. Em cada uma, escolha o destaque, a ação e o caminho que vem depois.","dw16":{"type":"steps","items":["Escolha o que a pessoa precisa resolver agora.","Diga o que aparece primeiro.","Dê nome à ação.","Indique a página interna que continua o caminho."],"caption":"Uma alternativa pode ser escrita em poucos blocos."},"teacher":{"speech":"Modelo uma alternativa em até dois minutos. Não avalio enquanto a dupla gera. Se travar, uso a pista e peço uma mudança de prioridade.","steps":["27 min · A dupla lê, compara, decide, produz ou testa na oficina. A intervenção docente é por pergunta; demonstrações somam no máximo 12 minutos na noite."],"watch":"Crie seis alternativas curtas. Em cada uma, escolha o destaque, a ação e o caminho que vem depois.","rescue":"Retomo a situação com uma pergunta curta, modelo apenas um primeiro bloco e devolvo a decisão à dupla."}},{"title":"Pausa. Volta às 20:05.","block":1,"layout":"dw16","lede":"Mantenha a oficina aberta; a ideia não precisa estar acabada.","promptLabel":"Na oficina","prompt":"Na volta, troquem quem opera.","dw16":{"type":"pause","time":"20:05"},"teacher":{"speech":"O intervalo não é tarefa. Confiro se a aba permaneceu aberta e acolho quem não conseguiu iniciar.","steps":["20 min · A dupla lê, compara, decide, produz ou testa na oficina. A intervenção docente é por pergunta; demonstrações somam no máximo 12 minutos na noite."],"watch":"Na volta, troquem quem opera.","rescue":"Retomo a situação com uma pergunta curta, modelo apenas um primeiro bloco e devolvo a decisão à dupla."},"pace":"break"},{"title":"Tarefas diferentes, caminhos diferentes.","block":2,"layout":"dw16","lede":"Três direções podem atender ao mesmo pedido de modos diferentes.","promptLabel":"Na oficina","prompt":"Escolha três alternativas suas e compare com estes efeitos possíveis.","dw16":{"type":"compare","left":["Escolher antes de sair","Destaque: atividade + horário","Ação: ver programação"],"right":["Resolver ao chegar","Destaque: local + acesso","Ação: como chegar"],"caption":"Mudou a tarefa, muda a ordem da informação."},"teacher":{"speech":"Volto com chamada e alterno o operador. O objetivo não é copiar: é perceber que prioridade cria consequência.","steps":["10 min · A dupla lê, compara, decide, produz ou testa na oficina. A intervenção docente é por pergunta; demonstrações somam no máximo 12 minutos na noite."],"watch":"Escolha três alternativas suas e compare com estes efeitos possíveis.","rescue":"Retomo a situação com uma pergunta curta, modelo apenas um primeiro bloco e devolvo a decisão à dupla."}},{"title":"Escolha com critério.","block":2,"layout":"dw16","lede":"Uma direção promissora serve ao pedido e ainda deixa caminho para construir.","promptLabel":"Na oficina","prompt":"Compare clareza, coerência e viabilidade. Registre por que selecionou cada uma das três ideias; depois escolha uma direção para testar.","dw16":{"type":"criteria","items":["Clareza: a pessoa entende o que consegue fazer.","Coerência: destaque, título e ação apontam para a mesma tarefa.","Viabilidade: cabe em duas telas simples e pode ser testado hoje."]},"teacher":{"speech":"Peço razões ligadas a clareza, coerência e viabilidade. Não uso votação por gosto.","steps":["10 min · A dupla lê, compara, decide, produz ou testa na oficina. A intervenção docente é por pergunta; demonstrações somam no máximo 12 minutos na noite."],"watch":"Compare clareza, coerência e viabilidade. Registre por que selecionou cada uma das três ideias; depois escolha uma direção para testar.","rescue":"Retomo a situação com uma pergunta curta, modelo apenas um primeiro bloco e devolvo a decisão à dupla."}},{"title":"Conceito é bússola.","block":2,"layout":"dw16","lede":"Nome, explicação e critérios evitam que a tela vire coleção de efeitos.","promptLabel":"Na oficina","prompt":"Dê nome e explicação ao conceito; confira os três critérios antes de escolher a direção.","dw16":{"type":"steps","items":["Para quem é esta solução?","Que tarefa ela torna mais clara?","Qual informação não pode ficar escondida?","Como nome, explicação e critérios orientam a escolha?"]},"teacher":{"speech":"Mostro um exemplo breve ligado ao briefing. Não escolho o conceito pela dupla.","steps":["10 min · A dupla lê, compara, decide, produz ou testa na oficina. A intervenção docente é por pergunta; demonstrações somam no máximo 12 minutos na noite."],"watch":"Dê nome e explicação ao conceito; confira os três critérios antes de escolher a direção.","rescue":"Retomo a situação com uma pergunta curta, modelo apenas um primeiro bloco e devolvo a decisão à dupla."}},{"title":"Esboço mostra a estrutura.","block":2,"layout":"dw16","lede":"Blocos antes de acabamento: conteúdo, ordem e ação.","promptLabel":"Na oficina","prompt":"Abra os três esboços de página de início. Posicione título, conteúdo prioritário e ação.","dw16":{"type":"steps","items":["Contexto: onde estou e por que isso importa?","Prioridade: o que vejo primeiro?","Ação: o que faço agora?","Relação: a estrutura cumpre a razão escolhida?"]},"teacher":{"speech":"Distingo esboço de wireframe técnico: hoje não há grade, medidas ou acabamento. A Aula 17 dará estrutura técnica ao que escolherem.","steps":["10 min · A dupla lê, compara, decide, produz ou testa na oficina. A intervenção docente é por pergunta; demonstrações somam no máximo 12 minutos na noite."],"watch":"Abra os três esboços de página de início. Posicione título, conteúdo prioritário e ação.","rescue":"Retomo a situação com uma pergunta curta, modelo apenas um primeiro bloco e devolvo a decisão à dupla."}},{"title":"Quatro esboços de página, um caminho escolhido.","block":3,"layout":"dw16","lede":"Três inícios permitem comparar; a página interna cumpre a promessa da direção escolhida.","promptLabel":"Na oficina","prompt":"Monte três esboços de página de início e a página interna. Confira se a ação do esboço escolhido leva a uma resposta útil.","dw16":{"type":"steps","items":["Três inícios: título, destaque e ação.","Interna: detalhe útil para decidir ou chegar.","Ligação: a ação da direção escolhida promete o que a interna entrega.","Confira: a estrutura corresponde à razão da direção."]},"teacher":{"speech":"Faço chamada. Demonstro apenas mover um bloco. Enquanto produzem, observo se a dupla alterna decisão e registro.","steps":["30 min · A dupla lê, compara, decide, produz ou testa na oficina. A intervenção docente é por pergunta; demonstrações somam no máximo 12 minutos na noite."],"watch":"Monte três esboços de página de início e a página interna. Confira se a ação do esboço escolhido leva a uma resposta útil.","rescue":"Retomo a situação com uma pergunta curta, modelo apenas um primeiro bloco e devolvo a decisão à dupla."}},{"title":"Quem criou observa em silêncio.","block":3,"layout":"dw16","lede":"Teste não é explicar o projeto; é descobrir o que a pessoa entende e faz.","promptLabel":"Na oficina","prompt":"Convide uma pessoa da dupla vizinha. Peça uma tarefa; registre onde ela procurou, o que disse e se conseguiu concluir.","dw16":{"type":"compare","left":["Observação útil","“Procurou em Programação; esperava mapa; hesitou no botão.”"],"right":["Opinião vaga","“Achou legal.”"],"caption":"Registre comportamento e fala, não elogio."},"teacher":{"speech":"Visita curta no mesmo computador. Se o visitante perguntar, o autor responde “o que você esperava encontrar?” e anota, sem ensinar o caminho.","steps":["15 min · A dupla lê, compara, decide, produz ou testa na oficina. A intervenção docente é por pergunta; demonstrações somam no máximo 12 minutos na noite."],"watch":"Convide uma pessoa da dupla vizinha. Peça uma tarefa; registre onde ela procurou, o que disse e se conseguiu concluir.","rescue":"Retomo a situação com uma pergunta curta, modelo apenas um primeiro bloco e devolvo a decisão à dupla."}},{"title":"Revisar é decidir de novo.","block":4,"layout":"dw16","lede":"A evidência pode confirmar uma escolha ou pedir ajuste.","promptLabel":"Na oficina","prompt":"Use a observação para manter ou alterar um bloco, texto ou ação. Escreva por quê.","dw16":{"type":"criteria","items":["Qual foi a evidência?","Que escolha ela confirma ou questiona?","O que você manteve ou ajustou?"]},"teacher":{"speech":"Faço chamada. Não exijo mudança artificial: manter também é decisão se a visita a sustentar.","steps":["15 min · A dupla lê, compara, decide, produz ou testa na oficina. A intervenção docente é por pergunta; demonstrações somam no máximo 12 minutos na noite."],"watch":"Use a observação para manter ou alterar um bloco, texto ou ação. Escreva por quê.","rescue":"Retomo a situação com uma pergunta curta, modelo apenas um primeiro bloco e devolvo a decisão à dupla."}},{"title":"Cada pessoa explica sua parte.","block":4,"layout":"dw16","lede":"Autoavaliação torna a aprendizagem visível sem separar a dupla do projeto.","promptLabel":"Na oficina","prompt":"Cada integrante responde às três perguntas na oficina e mostra sua contribuição. Deixe os registros prontos para o fechamento às 22h.","dw16":{"type":"check","items":["Qual decisão eu consigo defender?","O que a visita mostrou?","Qual ajuste eu faria na próxima versão?"]},"teacher":{"speech":"Leio as perguntas antes do registro. Faço devolutiva breve por critério pendente, não por acabamento.","steps":["12 min · A dupla lê, compara, decide, produz ou testa na oficina. A intervenção docente é por pergunta; demonstrações somam no máximo 12 minutos na noite."],"watch":"Cada integrante responde às três perguntas na oficina e mostra sua contribuição. Deixe os registros prontos para o fechamento às 22h.","rescue":"Retomo a situação com uma pergunta curta, modelo apenas um primeiro bloco e devolvo a decisão à dupla."}},{"title":"O que leva para a próxima versão?","block":4,"layout":"dw16","lede":"Uma decisão de projeto precisa ligar pedido, estrutura e evidência.","promptLabel":"Na oficina","prompt":"Mostre uma escolha que atende ao briefing, diga o que a visita revelou e esclareça sua última dúvida. Salve uma cópia do rascunho.","dw16":{"type":"check","items":["Pedido → prioridade: para quem e para quê?","Estrutura → ação: o que a pessoa encontra e faz?","Visita → decisão: o que manter ou ajustar?"],"caption":"Aula 17: desenvolver a direção escolhida em uma representação mais detalhada das telas."},"teacher":{"speech":"Sistematizo com a turma: abrir possibilidades, escolher por critérios e revisar por evidência. Recolho dúvidas antes das 22h. Anuncio apenas a continuidade: na Aula 17, a direção escolhida será desenvolvida em wireframes, representações mais detalhadas da organização das telas; não ensino conteúdo novo agora.","steps":["3 min · A dupla lê, compara, decide, produz ou testa na oficina. A intervenção docente é por pergunta; demonstrações somam no máximo 12 minutos na noite."],"watch":"Mostre uma escolha que atende ao briefing, diga o que a visita revelou e esclareça sua última dúvida. Salve uma cópia do rascunho.","rescue":"Retomo a situação com uma pergunta curta, modelo apenas um primeiro bloco e devolvo a decisão à dupla."}},{"title":"22h–22h30: clínica opcional.","block":4,"layout":"dw16","lede":"Sem conteúdo ou avaliação nova: apoio técnico, salvamento e organização do trabalho já concluído.","promptLabel":"Na oficina","prompt":"Salve e organize o posto. Se precisar, peça ajuda técnica ou esclareça uma dúvida sobre o trabalho já concluído.","dw16":{"type":"pause","time":"22:00","caption":"Conteúdo concluído · apoio opcional até 22h30"},"teacher":{"speech":"Atendo dúvidas e apoio técnico. Não completo critérios nem recolho evidência adicional após 22h. Recuperação avaliativa pendente terá oportunidade equivalente para todos.","steps":["30 min · A dupla lê, compara, decide, produz ou testa na oficina. A intervenção docente é por pergunta; demonstrações somam no máximo 12 minutos na noite."],"watch":"Salve e organize o posto. Se precisar, peça ajuda técnica ou esclareça uma dúvida sobre o trabalho já concluído.","rescue":"Retomo a situação com uma pergunta curta, modelo apenas um primeiro bloco e devolvo a decisão à dupla."},"pace":"extra"}]}}}};</script><script>/* Explicit slide windows prevent long practical activities from counting as short explanations. */
+window.SENAI_SLIDE_PACE = function ({now, start, end, lessonStart, lessonEnd, isBreak, isLast}) {
+  const clock = value => `${String(Math.floor(value / 60)).padStart(2, '0')}:${String(value % 60).padStart(2, '0')}`;
+  if (now < lessonStart) return {level:'ok',message:`Aula começa às ${clock(lessonStart)}`};
+  if (now >= lessonEnd) return {level:isLast ? 'ok' : 'err',message:isLast ? `Encerramento · ${clock(lessonEnd)}` : `Horário encerrado · finalizar até ${clock(lessonEnd)}`};
+  if (isBreak && now >= start && now < end) return {level:'ok',message:`Intervalo no horário · retorno ${clock(end)}`};
+  if (now < start - 2) return {level:'warn',message:`Adiantado ${Math.ceil(start - now)} min · etapa prevista ${clock(start)}–${clock(end)}`};
+  if (now >= end + 2) return {level:'err',message:`Atrasado ${Math.floor(now - end)} min · etapa prevista até ${clock(end)}`};
+  return {level:'ok',message:`No ritmo · etapa prevista ${clock(start)}–${clock(end)}`};
+};
+</script><script>(function () {
+  'use strict';
+  const e = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const list = items => `<ol class="w16-list">${(items || []).map(x => `<li>${e(x)}</li>`).join('')}</ol>`;
+  const sketch = variant => `<svg viewBox="0 0 240 170" role="img" aria-label="${e(['Esboço com chamada antes das atividades','Esboço com atividades antes da chamada','Esboço com navegação e chamada lado a lado'][variant])}"><rect x="2" y="2" width="236" height="166" rx="4" fill="#fffdf7" stroke="currentColor" stroke-width="2"/><path d="M15 22H70 M140 22H225" stroke="currentColor" stroke-width="4"/>${variant === 0 ? '<rect x="15" y="40" width="115" height="60" fill="#d9e7e5"/><path d="M15 40L130 100M130 40L15 100" stroke="#8eaeaa"/><path d="M145 48H223M145 62H214" stroke="currentColor" stroke-width="5"/><rect x="145" y="79" width="65" height="19" fill="#155c68"/><path d="M15 123H220M15 143H180" stroke="#8eaeaa" stroke-width="10"/>' : variant === 1 ? '<path d="M15 47H195" stroke="currentColor" stroke-width="7"/><rect x="15" y="65" width="61" height="53" fill="#d9e7e5"/><rect x="89" y="65" width="61" height="53" fill="#d9e7e5"/><rect x="163" y="65" width="61" height="53" fill="#d9e7e5"/><rect x="15" y="133" width="89" height="20" fill="#155c68"/>' : '<path d="M17 52H69M17 78H69M17 104H69" stroke="#8eaeaa" stroke-width="7"/><path d="M93 48H219M93 66H190" stroke="currentColor" stroke-width="6"/><rect x="93" y="84" width="130" height="39" fill="#d9e7e5"/><rect x="93" y="136" width="78" height="18" fill="#155c68"/>'}</svg>`;
+  function visual(v) {
+    switch (v.type) {
+      case 'brief': return `<dl class="w16-brief">${(v.items || []).map(pair => `<div><dt>${e(Array.isArray(pair) ? pair[0] : '')}</dt><dd>${e(Array.isArray(pair) ? pair[1] : pair)}</dd></div>`).join('')}</dl>`;
+      case 'compare': return `<div class="w16-compare"><div>${v.labels?.[0] ? `<p class="w16-caption">${e(v.labels[0])}</p>` : ''}${sketch(0)}${list(v.left)}</div><div>${v.labels?.[1] ? `<p class="w16-caption">${e(v.labels[1])}</p>` : ''}${sketch(1)}${list(v.right)}</div></div>`;
+      case 'pause': return `<div class="w16-pause">${e(v.time || '20:05')}<span>${e(v.caption || 'Horário de retorno')}</span></div>`;
+      case 'criteria': return `<ul class="w16-criteria">${(v.items || []).map((x,i) => `<li><b>${String(i+1).padStart(2,'0')}</b><span>${e(x)}</span></li>`).join('')}</ul>`;
+      case 'check': return `<div class="w16-check">${list(v.items)}</div>`;
+      default: return list(v.items);
+    }
+  }
+  window.renderDesignWeb16Cover = () => `<p class="slide-kicker">Design Web · Aula 16 · Ideação, conceito e esboços de página</p><h1>Uma ideia.<br>Outros caminhos.</h1><div class="w16-sketches">${[0,1,2].map(i => `<figure>${sketch(i)}<figcaption>Alternativa ${String.fromCharCode(65+i)}</figcaption></figure>`).join('')}</div><p class="slide-lede">Crie alternativas. Compare com o briefing.<br>Escolha uma direção e mostre por quê.</p><p class="w16-caption">Entrega e fechamento até 22h · Apoio opcional até 22h30</p>`;
+  window.renderDesignWeb16 = item => `<p class="slide-kicker">${e(item.kicker || 'Estúdio de direções · Festival Vira-Luz')}</p><h2>${e(item.heading || item.title)}</h2>${item.lede ? `<p class="slide-lede">${e(item.lede)}</p>` : ''}<div class="w16-visual">${visual(item.dw16 || {items:item.bullets || []})}</div>${item.prompt ? `<aside class="w16-task"><span>${e(item.promptLabel || 'Na oficina')}</span><strong>${e(item.prompt)}</strong></aside>` : ''}${item.resources?.length ? `<div class="student-resource-links">${item.resources.map(r => `<a class="student-resource-link" href="${e(r.href)}" target="_blank" rel="noopener">${e(r.label)}</a>`).join('')}</div>` : ''}`;
+})();
+</script><script>(function () {
+  'use strict';
+
+  const params = new URLSearchParams(window.location.search);
+  const courseSlug = params.get('uc') || 'design-web';
+  const lessonNumber = String(params.get('aula') || '16').padStart(2, '0');
+  const course = window.SENAI_COURSES && window.SENAI_COURSES[courseSlug];
+  const courseSupport = window.SENAI_TEACHING_SUPPORT && window.SENAI_TEACHING_SUPPORT[courseSlug];
+  const lesson = course && course.lessons.find((item) => item.num === lessonNumber);
+  const support = courseSupport && courseSupport.lessons[lessonNumber];
+
+  const escapeHtml = (value = '') => String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+
+  const listHtml = (items, className = '') => `
+    <ul class="${className}">
+      ${items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}
+    </ul>`;
+
+  const timeToMinutes = (value) => {
+    const [hours, minutes] = String(value).trim().split(':').map(Number);
+    return hours * 60 + minutes;
+  };
+
+  const timeRange = (range) => String(range)
+    .split(/\s*[-–—]\s*/)
+    .map((value) => value.trim());
+
+  const minutesBetween = (range) => {
+    const [start, end] = timeRange(range);
+    return Math.max(1, timeToMinutes(end) - timeToMinutes(start));
+  };
+
+  const firstPersonVerbs = {
+    abandone: 'abandono',
+    aceite: 'aceito',
+    adapte: 'adapto',
+    adicione: 'adiciono',
+    agrupe: 'agrupo',
+    ajude: 'ajudo',
+    ajuste: 'ajusto',
+    altere: 'altero',
+    antecipe: 'antecipo',
+    aplique: 'aplico',
+    anote: 'anoto',
+    anime: 'animo',
+    abra: 'abro',
+    apresente: 'apresento',
+    aproxime: 'aproximo',
+    assista: 'assisto',
+    ative: 'ativo',
+    atualize: 'atualizo',
+    aumente: 'aumento',
+    avalie: 'avalio',
+    abaixe: 'abaixo',
+    baixe: 'baixo',
+    bloqueie: 'bloqueio',
+    capte: 'capto',
+    carregue: 'carrego',
+    circule: 'circulo',
+    classifique: 'classifico',
+    combine: 'combino',
+    comece: 'começo',
+    compare: 'comparo',
+    confirme: 'confirmo',
+    confira: 'confiro',
+    configure: 'configuro',
+    conecte: 'conecto',
+    construa: 'construo',
+    conte: 'conto',
+    conduza: 'conduzo',
+    congele: 'congelo',
+    controle: 'controlo',
+    converta: 'converto',
+    copie: 'copio',
+    corrija: 'corrijo',
+    crie: 'crio',
+    cronometre: 'cronometro',
+    decida: 'decido',
+    defina: 'defino',
+    dê: 'dou',
+    deixe: 'deixo',
+    dependa: 'dependo',
+    desative: 'desativo',
+    desenhe: 'desenho',
+    descreva: 'descrevo',
+    destaque: 'destaco',
+    diga: 'digo',
+    digite: 'digito',
+    distribua: 'distribuo',
+    dobre: 'dobro',
+    duplique: 'duplico',
+    edite: 'edito',
+    empilhe: 'empilho',
+    ensaie: 'ensaio',
+    ensine: 'ensino',
+    entregue: 'entrego',
+    escolha: 'escolho',
+    escreva: 'escrevo',
+    escute: 'escuto',
+    estruture: 'estruturo',
+    evite: 'evito',
+    execute: 'executo',
+    exiba: 'exibo',
+    explique: 'explico',
+    exporte: 'exporto',
+    faça: 'faço',
+    feche: 'fecho',
+    finalize: 'finalizo',
+    foque: 'foco',
+    forneça: 'forneço',
+    grave: 'gravo',
+    identifique: 'identifico',
+    implemente: 'implemento',
+    imponha: 'imponho',
+    improvise: 'improviso',
+    inclua: 'incluo',
+    insira: 'insiro',
+    integre: 'integro',
+    interrompa: 'interrompo',
+    leia: 'leio',
+    leve: 'levo',
+    limpe: 'limpo',
+    limite: 'limito',
+    liste: 'listo',
+    mantenha: 'mantenho',
+    marque: 'marco',
+    misture: 'misturo',
+    modele: 'modelo',
+    monte: 'monto',
+    mostre: 'mostro',
+    mova: 'movo',
+    mude: 'mudo',
+    navegue: 'navego',
+    nomeie: 'nomeio',
+    normalize: 'normalizo',
+    observe: 'observo',
+    organize: 'organizo',
+    oriente: 'oriento',
+    ordene: 'ordeno',
+    ouça: 'ouço',
+    pare: 'paro',
+    passe: 'passo',
+    peça: 'peço',
+    percorra: 'percorro',
+    pergunte: 'pergunto',
+    permita: 'permito',
+    pesquise: 'pesquiso',
+    pense: 'penso',
+    planeje: 'planejo',
+    pontue: 'pontuo',
+    prefira: 'prefiro',
+    prepare: 'preparo',
+    pressione: 'pressiono',
+    priorize: 'priorizo',
+    proíba: 'proíbo',
+    procure: 'procuro',
+    projete: 'projeto',
+    publique: 'publico',
+    quebre: 'quebro',
+    rebata: 'rebato',
+    recorte: 'recorto',
+    redimensione: 'redimensiono',
+    reduza: 'reduzo',
+    refaça: 'refaço',
+    registre: 'registro',
+    relacione: 'relaciono',
+    remova: 'removo',
+    renomeie: 'renomeio',
+    renderize: 'renderizo',
+    reorganize: 'reorganizo',
+    repita: 'repito',
+    reproduza: 'reproduzo',
+    resolva: 'resolvo',
+    restaure: 'restauro',
+    retome: 'retomo',
+    reutilize: 'reutilizo',
+    reveja: 'revejo',
+    revise: 'reviso',
+    rode: 'rodo',
+    salve: 'salvo',
+    selecione: 'seleciono',
+    separe: 'separo',
+    simplifique: 'simplifico',
+    simule: 'simulo',
+    suavize: 'suavizo',
+    substitua: 'substituo',
+    teste: 'testo',
+    tente: 'tento',
+    trace: 'traço',
+    trabalhe: 'trabalho',
+    trate: 'trato',
+    transforme: 'transformo',
+    trave: 'travo',
+    treine: 'treino',
+    troque: 'troco',
+    use: 'uso',
+    valide: 'valido',
+    verifique: 'verifico',
+    vincule: 'vinculo',
+    volte: 'volto'
+  };
+
+  const ownVoice = (value = '') => {
+    let text = String(value)
+      .trim()
+      .replace(/\bO professor fica\b/g, 'Fico')
+      .replace(/\bo professor fica\b/g, 'fico');
+
+    const ambiguousNouns = new Set(['controle', 'destaque', 'escolha', 'limite', 'peça', 'recorte', 'teste']);
+    const sources = Object.keys(firstPersonVerbs).join('|');
+    const coordinatedSources = Object.keys(firstPersonVerbs)
+      .filter((verb) => !ambiguousNouns.has(verb))
+      .join('|');
+    const replaceVerb = (match) => {
+      const replacement = firstPersonVerbs[match.toLocaleLowerCase('pt-BR')];
+      return match[0] === match[0].toLocaleUpperCase('pt-BR')
+        ? replacement[0].toLocaleUpperCase('pt-BR') + replacement.slice(1)
+        : replacement;
+    };
+    const replaceInContext = (pattern) => {
+      text = text.replace(pattern, (...parts) => {
+        const verb = parts.at(-3);
+        return parts.slice(1, -3).join('') + replaceVerb(verb);
+      });
+    };
+
+    replaceInContext(new RegExp(`^(\\s*)(${sources})(?![\\p{L}\\p{N}_])`, 'iu'));
+    replaceInContext(new RegExp(`([.;:!?—–]\\s+)([“"'(]?\\s*)(${sources})(?![\\p{L}\\p{N}_])`, 'giu'));
+    replaceInContext(new RegExp(
+      `^((?:Sem|Se|No|Na|Nos|Nas|Dentro|Antes|Após|Primeiro|Em|Ao|Para)\\b[^,;.!?]{0,120},\\s*)(${sources})(?![\\p{L}\\p{N}_])`,
+      'iu'
+    ));
+    replaceInContext(new RegExp(`(\\s+e\\s+)(${coordinatedSources})(?![\\p{L}\\p{N}_])`, 'giu'));
+    replaceInContext(new RegExp(`(,\\s+)(${coordinatedSources})(?![\\p{L}\\p{N}_])`, 'giu'));
+    text = text
+      .replace(/\be destaque (?=(?:o|a|os|as|um|uma|entregáveis)\b)/giu, 'e destaco ')
+      .replace(/\be peça (?=(?:que|confirmação|pensamento)\b)/giu, 'e peço ')
+      .replace(/\be teste (?=(?:novamente|em|no|na|com|o|a)\b)/giu, 'e testo ');
+
+    return text;
+  };
+
+  const activityVoice = (value = '') => String(value)
+    .replace(/^Chamada\.\s*/i, '')
+    .replace(/\bfala do professor:/gi, 'síntese de encerramento:')
+    .replace(/\bdevolutivas individuais do professor\b/gi, 'minhas devolutivas individuais')
+    .replace(/\bfeedback respeitoso da turma e do professor\b/gi, 'feedback respeitoso da turma e minha devolutiva')
+    .replace(/\bpara o professor e a turma\b/gi, 'para mim e para a turma')
+    .replace(/\bvalidação do professor\b/gi, 'minha validação')
+    .replace(/\bmediação do professor\b/gi, 'minha mediação')
+    .replace(/\batendimento individualizado do professor\b/gi, 'meu atendimento individualizado')
+    .replace(/\bao professor\b/gi, 'para mim')
+    .replace(/\bpelo professor\b/gi, 'por mim')
+    .replace(/\bO professor\b/g, 'Eu')
+    .replace(/\bo professor\b/g, 'eu')
+    .replace(/\bProfessor\b/g, 'Eu')
+    .trim();
+
+  const modeForBlock = (activity, override = '') => {
+    if (override) return override;
+    const value = activity.toLocaleLowerCase('pt-BR');
+    if (/^prova\b|^recuperação:.*\bprova\b|avaliação individual|recuperação individual/.test(value)) return 'assessment';
+    if (/^rodada \d (?:de testes|com papéis invertidos)|^teste rápido de usabilidade|teste cruzado|validação entre grupos|validação cruzada/.test(value)) return 'testing';
+    if (
+      /^pitch\b|\bdefesa\b|^apresentações (?:finais|da)\b|^mostra (?:dos minidocumentários|final)\b|\bexibição (?:no projetor|dos (?:resultados|microcurtas|projetos))\b|\bapresenta(?:r|m)\s+(?:em|sua|o|a)\b|\bapresentação de \d|\bensaio (?:geral|cronometrado)\b|\bfestival\b|\bsocialização dos cronogramas\b/.test(value)
+    ) return 'presentation';
+    if (/grava|captação|filmagem|set|edição|montagem|implementação|construção|prática|exercício|oficina|produção/.test(value)) return 'production';
+    return 'orientation';
+  };
+
+  const blockModes = {
+    orientation: {
+      label: 'Discussão orientada',
+      evidence: 'Síntese do bloco registrada.'
+    },
+    assessment: {
+      label: 'Avaliação individual',
+      evidence: 'Atividade identificada e entregue.'
+    },
+    testing: {
+      label: 'Teste e observação',
+      evidence: 'Evidências registradas antes das correções.'
+    },
+    presentation: {
+      label: 'Apresentação e devolutiva',
+      evidence: 'Apresentação concluída no tempo e devolutiva registrada.'
+    },
+    production: {
+      label: 'Prática da turma',
+      evidence: 'Arquivo ou registro do bloco salvo e conferido.'
+    }
+  };
+
+  if (!course || !courseSupport || !lesson || !support) {
+    document.getElementById('lessonRoot').innerHTML = `
+      <main class="error-screen">
+        <div class="error-card">
+          <p class="course-kicker">Planejamento de aulas</p>
+          <h1>Aula não encontrada</h1>
+          <p>Não foi possível abrir esta aula. Retorne à página da Unidade Curricular e selecione-a novamente.</p>
+          <a class="back-link" href="index.html">← Voltar ao início</a>
+        </div>
+      </main>`;
+    return;
+  }
+
+  document.body.dataset.theme = course.theme;
+  document.title = `Aula ${lesson.num} · ${lesson.title} · ${course.title}`;
+
+  const teacherPanel = ({ speech, steps = [], watch = '', rescue = '' }) => `
+    <aside class="teacher-panel" aria-label="Minhas anotações de aula">
+      <div class="teacher-panel-head">
+        <span class="teacher-label">Minhas anotações</span>
+        <span class="tag-chip">P oculta as notas</span>
+      </div>
+      ${speech ? `
+        <h3>Abertura</h3>
+        <p class="teacher-note is-speech">${escapeHtml(speech)}</p>` : ''}
+      ${steps.length ? `
+        <h3>Sequência prevista</h3>
+        <div class="teacher-note">${listHtml(steps)}</div>` : ''}
+      ${watch ? `
+        <h3>Evidências</h3>
+        <p class="teacher-note">${escapeHtml(watch)}</p>` : ''}
+      ${rescue ? `
+        <h3>Alternativa</h3>
+        <p class="teacher-note">${escapeHtml(rescue)}</p>` : ''}
+    </aside>`;
+
+  const slide = ({ title, main, teacher, block = 1, className = '', pace = '', paceStart = '', paceEnd = '' }) => ({
+    title,
+    html: `
+      <section class="kit-slide${className ? ` ${escapeHtml(className)}` : ''}" data-title="${escapeHtml(title)}" data-block="${block}" data-pace="${escapeHtml(pace)}" data-pace-start="${paceStart}" data-pace-end="${paceEnd}" aria-label="${escapeHtml(title)}">
+        <div class="kit-slide-main">${main}</div>
+        ${teacherPanel(teacher)}
+      </section>`
+  });
+
+  const isDesignSixteen = course.slug === 'design-web' && lesson.num === '16';
+  if (isDesignSixteen) document.body.classList.add('design-sixteen');
+  const isDesignFifteen = course.slug === 'design-web' && lesson.num === '15';
+  if (isDesignFifteen) document.body.classList.add('design-fifteen');
+  const isDesignFourteen = course.slug === 'design-web' && lesson.num === '14';
+  if (isDesignFourteen) document.body.classList.add('design-fourteen');
+  const isDesignSeven = course.slug === 'design-web' && lesson.num === '07';
+  if (isDesignSeven) document.body.classList.add('design-seven');
+  // Aulas 09 e 10 reuse the Aula 08 slide layout; each lesson keeps its illustrations in its own folder.
+  const isDesignEight = course.slug === 'design-web' && ['08', '09', '10', '11', '14'].includes(lesson.num);
+  if (isDesignEight) document.body.classList.add('design-eight');
+  // Aulas 09 a 13 de Audiovisual share the production visuals of av-nine.css.
+  const isAvNine = course.slug === 'producao-audiovisual' && ['09', '10', '11', '12', '13'].includes(lesson.num);
+  if (isAvNine) document.body.classList.add('av-nine');
+  // Aulas 11 a 13 use local kits and share the wider command grid.
+  if (isAvNine && ['11', '12', '13'].includes(lesson.num)) document.body.classList.add('av-eleven');
+  // These lessons time each slide from the minutes written in the teacher steps.
+  const usesSlidePace = isDesignSeven || isDesignEight || isAvNine || isDesignFifteen || isDesignSixteen;
+  const isDesignSix = course.slug === 'design-web' && lesson.num === '06';
+  const isAvSeven = course.slug === 'producao-audiovisual' && lesson.num === '07';
+  if (isDesignSix) document.body.classList.add('design-six');
+  if (isAvSeven) document.body.classList.add('av-seven');
+
+  // Fixed teaching samples keep colors and lettering identical on every projector.
+  const designSixVisual = (kind) => {
+    if (!isDesignSix || !kind) return '';
+    const styles = ['serious', 'sweet', 'night'];
+    if (styles.includes(kind)) return `<div class="dw-style dw-style--${kind}"><span>Seu próximo passo</span><b>começa aqui.</b><small>Conheça a marca</small></div>`;
+    const contrast = ['contrast1', 'contrast2', 'contrast3', 'contrast4'];
+    if (contrast.includes(kind)) return `<div class="dw-contrast dw-${kind}">Seu pedido chegou.</div>`;
+    const palettes = {
+      palette1: ['#181818', '#FFFFFF', '#FF9A3C'],
+      palette2: ['#FFF4E6', '#382218', '#D75483'],
+      palette3: ['#F2F4F7', '#142438', '#FFD34E'],
+      palette4: ['#F1FAF5', '#153C2D', '#56B88A']
+    };
+    return palettes[kind] ? `<div class="dw-palette">${palettes[kind].map((color, i) => `<div><i style="background:${color}" aria-hidden="true"></i><span>${['Fundo', 'Texto', 'Destaque'][i]}</span><code>${color}</code></div>`).join('')}</div>` : '';
+  };
+
+  const avSevenVisual = (kind, subject) => {
+    if (!isAvSeven || !['front', 'angle', 'fill'].includes(kind)) return '';
+    const frontal = kind === 'front';
+    const subjectLabel = subject === 'person' ? 'PESSOA' : 'OBJETO';
+    const fill = kind === 'fill';
+    const label = frontal
+      ? 'Vista de cima: ring light próxima ao eixo da câmera, iluminando a frente do objeto.'
+      : `Vista de cima: ring light na diagonal, cerca de 45 graus em relação à câmera.${fill ? ' Papel branco no lado oposto devolve luz para a sombra.' : ''}`;
+    // The object-to-camera axis is vertical; the diagonal key is 45 degrees from it.
+    return `<figure class="av7-diagram">
+      <svg viewBox="0 0 360 210" role="img" aria-label="${escapeHtml(subject === 'person' ? label.replaceAll('objeto', 'rosto') : label)}">
+        <path d="M150 75 L150 155" stroke="#81766b" stroke-dasharray="4 5" fill="none"/>
+        <path d="${frontal ? 'M162 143 L126 72 L174 72 Z' : 'M80 145 L131 62 L163 94 Z'}" fill="#ffb45d" opacity=".16"/>
+        <path d="${frontal ? 'M162 134 L152 91' : 'M86 138 L130 94'}" stroke="#ffc477" stroke-width="3"/>
+        ${fill ? '<path d="M153 77 L245 98 L170 85" fill="none" stroke="#cbe6dc" stroke-width="2" stroke-dasharray="5 4"/><path d="M248 68 L248 123" stroke="#eaf3ed" stroke-width="8"/><text x="268" y="88">PAPEL</text><text x="268" y="108">BRANCO</text>' : ''}
+        <circle cx="150" cy="75" r="21" fill="#c78c52"/>
+        ${!frontal ? '<path d="M150 54 A21 21 0 0 1 150 96 Z" fill="' + (fill ? '#8d653e' : '#44372a') + '"/>' : ''}
+        <text x="150" y="35" text-anchor="middle">${subjectLabel}</text>
+        <circle cx="${frontal ? 166 : 80}" cy="${frontal ? 146 : 145}" r="14" fill="none" stroke="#ffc477" stroke-width="5"/>
+        <text x="${frontal ? 195 : 22}" y="${frontal ? 149 : 180}">RING LIGHT</text>
+        <rect x="132" y="162" width="36" height="22" rx="4" fill="#d6d1c9"/>
+        <path d="M143 162 L143 153 L157 153 L157 162" fill="#d6d1c9"/>
+        <text x="150" y="204" text-anchor="middle">CÂMERA</text>
+        ${!frontal ? '<text x="108" y="130" fill="#ffc477">45°</text>' : ''}
+      </svg>
+      <figcaption>Vista de cima · esquema de posição, sem escala</figcaption>
+    </figure>`;
+  };
+
+  // Aula 09: framing sketches, 16:9, drawn with the same strokes on every projector.
+  const avNineFrame = (id) => {
+    const product = '<rect x="68" y="30" width="24" height="44" rx="5"/><rect x="73" y="22" width="14" height="9" rx="2"/>';
+    const drawings = {
+      P1: '<circle cx="80" cy="30" r="11"/><path d="M52 90 C54 60 64 50 80 50 C96 50 106 60 108 90"/><path d="M14 76 H44 M116 76 H146" class="is-soft"/>',
+      P2: `${product}<path d="M20 74 H140" class="is-soft"/>`,
+      P3: '<path d="M18 92 C20 72 34 62 52 60 H108 C126 62 140 72 142 92"/><rect x="44" y="8" width="72" height="52" rx="6"/><path d="M56 14 V54 M68 14 V54 M80 14 V54 M92 14 V54 M104 14 V54" class="is-soft"/>',
+      P4: '<rect x="66" y="20" width="28" height="52" rx="5"/><rect x="72" y="11" width="16" height="10" rx="2"/><path d="M40 92 L52 62 C54 56 60 54 66 56 L94 50 C100 49 102 55 97 58 L94 60 C101 60 102 66 96 68 C102 69 102 75 96 76 C101 78 99 84 93 84 L70 88 L64 92" class="is-hand"/>',
+      P5: `${product}<path d="M20 74 H140" class="is-soft"/><rect x="102" y="34" width="40" height="30" rx="3" class="is-card"/><path d="M109 45 H135 M109 53 H127" class="is-soft"/>`
+    };
+    return `<svg class="av9-frame" viewBox="0 0 160 90" aria-hidden="true" focusable="false"><rect class="av9-frame-edge" x="1" y="1" width="158" height="88" rx="4"/><g>${drawings[id] || ''}</g></svg>`;
+  };
+
+  const avNineVisual = (visual) => {
+    if (!isAvNine || !visual || typeof visual !== 'object') return '';
+    const e = escapeHtml;
+    const planHead = (plan) => `<span class="av9-plan-id">${e(plan.id)}</span><strong>${e(plan.name)}</strong>`;
+    if (visual.type === 'media') {
+      return `<div class="av11-media${visual.clips.length === 1 ? ' is-single' : ''}">${visual.clips.map(clip => `<figure><video controls playsinline preload="none" poster="${escapeHtml(clip.poster)}" aria-label="${escapeHtml(clip.label)}" width="1280" height="720"><source src="${escapeHtml(clip.src)}" type="video/mp4">Seu navegador não reproduz este vídeo.</video><figcaption><strong>${escapeHtml(clip.label)}</strong><span>${escapeHtml(clip.text)}</span></figcaption></figure>`).join('')}</div>`;
+    }
+    if (visual.type === 'stills') {
+      return `<div class="av11-media is-stills${visual.images.length === 2 ? ' is-pair' : ''}">${visual.images.map(image => `<figure><img src="${e(image.src)}" alt="${e(`${image.label}: ${image.text}`)}" width="1280" height="720" loading="lazy"><figcaption><strong>${e(image.label)}</strong><span>${e(image.text)}</span></figcaption></figure>`).join('')}</div>`;
+    }
+    if (visual.type === 'day') {
+      return `<ol class="av9-day">${visual.rows.map((row) => {
+        const [start, end] = timeRange(row.time).map(timeToMinutes);
+        return `<li class="av9-day-row${row.pause ? ' is-pause' : ''}" data-start="${start}" data-end="${end}">
+          <time>${e(row.time)}</time>
+          <div><strong>${e(row.title)}</strong><span>${e(row.text)}</span></div>
+          <span class="av9-day-min">${e(row.minutes)} min</span>
+          <span class="av9-now">Agora</span>
+        </li>`;
+      }).join('')}</ol>`;
+    }
+    if (visual.type === 'flow') {
+      return `<ol class="av9-flow">${visual.steps.map((step, index) => `
+        <li class="${step.later ? 'is-later' : ''}">
+          <span class="av9-flow-num">${index + 1}</span>
+          <strong>${e(step.label)}</strong>
+          <span class="av9-flow-text">${e(step.text)}</span>
+          <span class="av9-mark">${e(step.mark)}</span>
+        </li>`).join('')}</ol>`;
+    }
+    if (visual.type === 'plans') {
+      const total = visual.plans.reduce((sum, plan) => sum + plan.seconds, 0);
+      return `<div class="av9-plans">
+        <ol class="av9-plan-row">${visual.plans.map((plan) => `
+          <li>
+            ${avNineFrame(plan.id)}
+            <div class="av9-plan-head">${planHead(plan)}</div>
+            <span class="av9-plan-meta">${e(plan.frame)}</span>
+            <p>${e(plan.text)}</p>
+          </li>`).join('')}</ol>
+        <div class="av9-timebar" role="img" aria-label="${e(visual.plans.map((plan) => `${plan.id}: ${plan.seconds} segundos`).join(', '))}; total ${total} segundos">
+          ${visual.plans.map((plan) => `<span style="flex:${plan.seconds}">${e(plan.id)} · ${plan.seconds} s</span>`).join('')}
+          <b>${total} s</b>
+        </div>
+      </div>`;
+    }
+    if (visual.type === 'table') {
+      const example = Number(visual.exampleRows || 0);
+      return `<div class="av9-table-wrap is-${e(visual.variant || 'data')}">
+        <table class="av9-table">
+          <thead><tr>${visual.columns.map((column) => `<th scope="col">${e(column)}</th>`).join('')}</tr></thead>
+          <tbody>${visual.rows.map((row, rowIndex) => `<tr${rowIndex < example ? ' class="is-example"' : ''}>${row.map((cell, cellIndex) => cellIndex === 0 && visual.variant === 'brief'
+            ? `<th scope="row">${e(cell)}</th>`
+            : `<td${cell ? '' : ' class="is-blank"'}>${e(cell)}</td>`).join('')}</tr>`).join('')}</tbody>
+        </table>
+        ${example ? `<p class="av9-table-note">${example === 1 ? 'Linha em cinza' : 'Linhas em cinza'}: exemplo de preenchimento.</p>` : ''}
+        ${visual.footer ? `<p class="av9-table-footer">${visual.footer.map((item) => `<span>${e(item)}</span>`).join('')}</p>` : ''}
+      </div>`;
+    }
+    if (visual.type === 'sets') {
+      return `<div class="av9-sets">${visual.sets.map((set) => `
+        <section class="av9-set">
+          <span class="av9-set-label">${e(set.label)}</span>
+          <strong>${e(set.title)}</strong>
+          <span class="av9-set-when">${e(set.when)}</span>
+          ${set.plans.length ? `<ul class="av9-chips">${set.plans.map((plan) => `<li>${planHead(plan)}</li>`).join('')}</ul>` : '<ul class="av9-chips"><li><span class="av9-plan-id">LOC</span><strong>SLOGAN</strong></li></ul>'}
+          <p>${e(set.note)}</p>
+        </section>`).join('')}</div>`;
+    }
+    if (visual.type === 'roles') {
+      return `<div class="av9-roles">${visual.roles.map((role) => `
+        <article>
+          <strong>${e(role.label)}</strong>
+          <span class="av9-decides">${e(role.decides)}</span>
+          <p>${e(role.text)}</p>
+        </article>`).join('')}</div>`;
+    }
+    if (visual.type === 'checks') {
+      return `<ul class="av9-checks${visual.items.length > 2 ? ' is-four' : ''}">${visual.items.map((item) => `
+        <li><strong>${e(item.label)}</strong><span>${e(item.text)}</span></li>`).join('')}</ul>`;
+    }
+    if (visual.type === 'commands') {
+      return `<div class="av9-commands">
+        <ol>${visual.commands.map((command, index) => `
+          <li>
+            <span class="av9-flow-num">${index + 1}</span>
+            <strong>${e(command.word)}</strong>
+            <span class="av9-who">${e(command.who)}</span>
+            <span class="av9-flow-text">${e(command.text)}</span>
+          </li>`).join('')}</ol>
+        <p class="av9-result">${(visual.tags || [{label: 'BOA', kind: 'good'}, {label: 'REFAZER', kind: 'redo'}]).map((tag) => `<span class="is-${e(tag.kind)}">${e(tag.label)}</span>`).join('')}${e(visual.result)}</p>
+      </div>`;
+    }
+    if (visual.type === 'slate') {
+      return `<div class="av9-slate">
+        <figure class="av9-paper" aria-label="Exemplo de claquete de papel: equipe ${e(visual.team)}, plano ${e(visual.plan)}, tomada ${e(visual.take)}">
+          <span class="av9-paper-team">${e(visual.team)}</span>
+          <span class="av9-paper-line"><b>${e(visual.plan)}</b><b>${e(visual.take)}</b></span>
+          <figcaption>Folha do caderno · letras grossas</figcaption>
+        </figure>
+        <ol class="av9-rules">${visual.rules.map((rule) => `<li>${e(rule)}</li>`).join('')}</ol>
+      </div>`;
+    }
+    if (visual.type === 'shoot') {
+      return `<div class="av9-shoot">
+        <ol class="av9-shoot-plans is-${visual.plans.length}">${visual.plans.map((plan) => `
+          <li>
+            ${avNineFrame(plan.id)}
+            <div><div class="av9-plan-head">${planHead(plan)}</div><p>${e(plan.criterion)}</p></div>
+          </li>`).join('')}</ol>
+        ${visual.good ? `<p class="av9-good"><span>Tomada BOA</span>${visual.good.map((item) => `<b>${e(item)}</b>`).join('')}</p>` : ''}
+        ${visual.extra ? `<p class="av9-extra"><span class="av9-plan-id">${e(visual.extra.id)}</span><strong>${e(visual.extra.name)}</strong>${e(visual.extra.text)}</p>` : ''}
+      </div>`;
+    }
+    if (visual.type === 'onair') {
+      return `<div class="av9-onair">
+        <div class="av9-onair-panel">
+          <p class="av9-onair-status" aria-live="polite"><span class="av9-rec" aria-hidden="true"></span><span data-av9-status>Aguardando a primeira equipe</span></p>
+          <div class="av9-teams">${visual.teams.map((team) => `<button type="button" data-av9-team="${e(team)}" aria-pressed="false">${e(team)}</button>`).join('')}</div>
+        </div>
+        <ol class="av9-rules">${visual.rules.map((rule) => `<li>${e(rule)}</li>`).join('')}</ol>
+      </div>`;
+    }
+    if (visual.type === 'folder') {
+      return `<div class="av9-folder">
+        <div class="av9-tree" aria-label="Exemplo de pasta da equipe">
+          <strong>${e(visual.folder)}</strong>
+          <ul>${visual.files.map((file) => `<li>${e(file)}</li>`).join('')}</ul>
+        </div>
+        <ol class="av9-rules">${visual.steps.map((step) => `<li>${e(step)}</li>`).join('')}</ol>
+      </div>`;
+    }
+    if (visual.type === 'editor') {
+      return `<div class="av9-editor">
+        <div class="av9-editor-window" aria-hidden="true">${visual.areas.map((area, index) => `<div class="av9-area av9-area-${index + 1}"><span class="av9-flow-num">${index + 1}</span><strong>${e(area.label)}</strong></div>`).join('')}</div>
+        <ol class="av9-rules">${visual.areas.map((area) => `<li><strong>${e(area.label)}</strong> · ${e(area.text)}</li>`).join('')}</ol>
+      </div>`;
+    }
+    if (visual.type === 'tracks') {
+      const total = Math.max(...visual.tracks.map((track) => track.clips.reduce((sum, clip) => sum + clip.seconds, 0)));
+      return `<div class="av9-tracks">${visual.tracks.map((track) => `
+        <div class="av9-track">
+          <span class="av9-track-label">${e(track.label)}</span>
+          <div class="av9-track-lane">${track.clips.map((clip) => `<span class="av9-clip is-${e(clip.kind || 'video')}" style="flex:${clip.seconds}">${clip.label ? `${e(clip.label)}<small>${clip.seconds} s</small>` : ''}</span>`).join('')}</div>
+        </div>`).join('')}
+        ${visual.caption ? `<p class="av9-track-caption">${e(visual.caption)}${visual.total ? ` <b>${total} s</b>` : ''}</p>` : ''}
+      </div>`;
+    }
+    if (visual.type === 'dailies') {
+      return `<div class="av9-dailies">
+        <ol class="av9-order">${visual.order.map((id) => `<li>${e(id)}</li>`).join('<li class="av9-arrow" aria-hidden="true">→</li>')}</ol>
+        <ol class="av9-rules">${visual.steps.map((step) => `<li>${e(step)}</li>`).join('')}</ol>
+      </div>`;
+    }
+    return '';
+  };
+
+  const slideMinutesByBlock = {};
+  const presentationSlide = (item, index) => {
+    const cards = Array.isArray(item.cards) ? item.cards : [];
+    const bullets = Array.isArray(item.bullets) ? item.bullets : [];
+    const teacher = item.teacher && typeof item.teacher === 'object' ? item.teacher : {};
+    const resource = item.resource && typeof item.resource === 'object' ? item.resource : {};
+    const resources = Array.isArray(item.resources)
+      ? item.resources.filter((entry) => entry && typeof entry === 'object' && entry.href)
+      : (resource.href ? [resource] : []);
+    const block = Number.isFinite(Number(item.block)) ? Math.max(1, Number(item.block)) : 1;
+    const title = item.title || item.heading || `Conteúdo ${index + 1}`;
+    const denseCards = item.layout === 'dense-cards';
+    let paceStart = '', paceEnd = '';
+    if (usesSlidePace) {
+      const [start, end] = timeRange(lesson.schedule[block - 1].horario).map(timeToMinutes);
+      paceStart = item.pace === 'break' ? end : start + (slideMinutesByBlock[block] || 0);
+      const duration = (teacher.steps || []).reduce((sum, step) => sum + Number(String(step).match(/^(\d+) min/)?.[1] || 0), 0);
+      paceEnd = paceStart + duration;
+      // Break and optional extra-challenge slides do not push the timing of the slides after them.
+      if (item.pace !== 'break' && item.pace !== 'extra') slideMinutesByBlock[block] = (slideMinutesByBlock[block] || 0) + duration;
+    }
+
+    return slide({
+      title,
+      block,
+      pace: item.pace === 'break' ? 'break' : '',
+      paceStart, paceEnd,
+      className: isDesignSixteen ? `is-w16 is-w16-${item.dw16?.type || 'text'}` : isDesignFifteen ? `is-w15 is-w15-${item.dw15?.type || 'text'}` : isDesignFourteen ? `is-f14 is-f14-${item.dw14?.type || 'text'}` : isDesignSeven ? 'is-dw7' : isDesignEight ? 'is-dw8' : isAvNine ? `is-av9 is-av9-${item.av9?.type || 'text'}` : denseCards ? 'is-dense-cards' : '',
+      main: isDesignSixteen ? window.renderDesignWeb16(item) : isDesignFifteen ? window.renderDesignWeb15(item) : isDesignFourteen ? window.renderDesignWeb14(item) : `
+        ${item.kicker ? `<p class="slide-kicker">${escapeHtml(item.kicker)}</p>` : ''}
+        <h2>${escapeHtml(item.heading || title)}</h2>
+        ${item.lede ? `<p class="slide-lede">${escapeHtml(item.lede)}</p>` : ''}
+        ${isDesignSeven && ['before', 'after'].includes(item.visual) ? `<figure class="dw7-example"><img src="modelos/design-web/aula-07/${item.visual}.svg" alt="${item.visual === 'before' ? 'Página inicial com títulos e detalhes distantes entre si' : 'Página com títulos e detalhes agrupados e alinhados'}"></figure>` : ''}
+        ${avNineVisual(item.av9)}
+        ${isDesignEight && item.visual ? `<figure class="dw8-example">${[item.visual].flat().map((name, i) => `<img src="modelos/design-web/aula-${lesson.num}/${escapeHtml(name)}.svg" alt="${escapeHtml([item.visualAlt || []].flat()[i] || '')}">`).join('')}</figure>` : ''}
+        ${cards.length ? `
+          <div class="presentation-card-grid${denseCards ? ' is-dense' : ''}">
+            ${cards.map((card) => `
+              <article class="content-card presentation-card">
+                ${card.eyebrow ? `<span class="card-index">${escapeHtml(card.eyebrow)}</span>` : ''}
+                ${avSevenVisual(card.visual, card.subject)}
+                ${card.title ? `<strong>${escapeHtml(card.title)}</strong>` : ''}
+                ${card.text ? `<p>${escapeHtml(card.text)}</p>` : ''}
+                ${designSixVisual(card.visual)}
+              </article>`).join('')}
+          </div>` : ''}
+        ${bullets.length ? listHtml(bullets, 'presentation-bullets') : ''}
+        ${item.prompt ? `
+          <aside class="presentation-prompt">
+            <span class="card-index">${escapeHtml(item.promptLabel || 'Pergunta para a turma')}</span>
+            <strong>${escapeHtml(item.prompt)}</strong>
+          </aside>` : ''}
+        ${resources.length ? `
+          <div class="student-resource-links">
+            ${resources.map((entry) => `
+              <a class="student-resource-link" href="${escapeHtml(entry.href)}" target="_blank" rel="noopener">
+                ${escapeHtml(entry.label || 'Abrir material da aula')} →
+              </a>${isDesignSix && entry.qr ? `<button type="button" class="student-resource-link qr-open" data-qr="${escapeHtml(entry.qr)}" data-qr-label="${escapeHtml(entry.label)}" data-qr-url="${escapeHtml(entry.href)}" aria-label="QR code: ${escapeHtml(entry.label)}">QR code</button>` : ''}`).join('')}
+          </div>` : ''}`,
+      teacher: {
+        speech: teacher.speech || '',
+        steps: Array.isArray(teacher.steps) ? teacher.steps : [],
+        watch: teacher.watch || '',
+        rescue: teacher.rescue || ''
+      }
+    });
+  };
+
+  const phaseSupport = Object.values(courseSupport.courseTips.phases || {})
+    .find((phase) => phase.lessons && phase.lessons.includes(lesson.num));
+  const generalRoutine = (support.routine || phaseSupport?.routine || courseSupport.courseTips.routine).map(ownVoice);
+  const onlineSupport = (courseSupport.courseTips.onlineRoutines || [])
+    .find((item) => item.lessons && item.lessons.includes(lesson.num));
+  const onlineRoutine = support.onlineRoutine ? ownVoice(support.onlineRoutine) : onlineSupport?.text
+    ? ownVoice(onlineSupport.text)
+    : '';
+  const coreObjectives = [...lesson.objectives, ...lesson.technical].filter(Boolean).slice(0, 6);
+  const commonProblems = support.commonProblems && support.commonProblems.length
+    ? support.commonProblems
+    : phaseSupport?.commonProblems && phaseSupport.commonProblems.length
+      ? phaseSupport.commonProblems
+    : courseSupport.courseTips.commonProblems || [
+        ['A equipe não consegue iniciar', 'Reduza a atividade ao primeiro passo demonstrado e confira uma evidência antes de avançar.'],
+        ['Equipamento, software ou arquivo falhou', support.fallback],
+        ['O tempo ficou curto', 'Preserve a capacidade central, simplifique o acabamento e salve uma versão utilizável.']
+      ];
+  const nextLesson = course.lessons[course.lessons.findIndex((item) => item.num === lesson.num) + 1];
+  const previousLesson = support.previousLessonNumber
+    ? course.lessons.find((item) => item.num === support.previousLessonNumber)
+    : course.lessons[course.lessons.findIndex((item) => item.num === lesson.num) - 1];
+
+  const slides = [];
+
+  slides.push(slide({
+    title: `Aula ${lesson.num} · ${lesson.title}`,
+    block: 1,
+    className: isDesignSixteen ? 'is-w16-cover' : isDesignFifteen ? 'is-w15-cover' : isDesignFourteen ? 'is-f14-cover' : '',
+    main: isDesignSixteen ? window.renderDesignWeb16Cover() : isDesignFifteen ? window.renderDesignWeb15Cover() : isDesignFourteen ? window.renderDesignWeb14Cover() : `
+      <p class="slide-kicker">${escapeHtml(course.title)} · Aula ${lesson.num}</p>
+      <h1>${escapeHtml(lesson.title)}</h1>
+      <p class="slide-lede">${escapeHtml(lesson.description)}</p>
+      <div class="title-rule"></div>
+      <div class="cover-meta">
+        <span class="meta-chip"><strong>4 blocos</strong> · conceito · atividade · evidência</span>
+        <span class="meta-chip"><strong>${escapeHtml(course.workload)}</strong> na UC</span>
+        <span class="meta-chip"><strong>Prof. ${escapeHtml(course.teacher)}</strong></span>
+      </div>`,
+    teacher: {
+      steps: [
+        `Recursos separados: ${lesson.resources || 'computador, projetor e materiais indicados no planejamento.'}`,
+        ...generalRoutine.slice(0, 2),
+        ...(onlineRoutine ? [onlineRoutine] : []),
+        `Entrega prevista: ${support.studentDeliverable}`
+      ],
+      watch: support.teacherGoal,
+      rescue: ownVoice(courseSupport.courseTips.rescue)
+    }
+  }));
+
+  const presentationSlides = Array.isArray(support.presentationSlides)
+    ? support.presentationSlides.filter((item) => item && typeof item === 'object')
+    : [];
+
+  if (presentationSlides.length) {
+    presentationSlides.forEach((item, index) => slides.push(presentationSlide(item, index)));
+  } else {
+
+  slides.push(slide({
+    title: 'Mapa da noite',
+    block: 1,
+    main: `
+      <p class="slide-kicker">Ritmo da aula</p>
+      <h2>Quatro blocos, um produto</h2>
+      <div class="cards-4">
+        ${lesson.schedule.map((block, index) => `
+          <article class="content-card schedule-card">
+            <span class="card-index">Bloco ${index + 1}</span>
+            <time>${escapeHtml(block.horario)}</time>
+            <p>${escapeHtml(activityVoice(block.atividade))}</p>
+          </article>`).join('')}
+      </div>`,
+    teacher: {
+      steps: lesson.schedule.map((block, index) => `Bloco ${index + 1} · ${block.horario}`),
+      watch: 'Faço a chamada no início de cada bloco, conforme o planejamento.',
+      rescue: 'Com atraso, preservo a atividade central e reduzo apenas o acabamento.'
+    }
+  }));
+
+  slides.push(slide({
+    title: 'Objetivo da aula',
+    block: 1,
+    main: `
+      <p class="slide-kicker">Conceito central</p>
+      <h2>Objetivo da aula</h2>
+      <p class="slide-lede">${escapeHtml(support.plainLanguage)}</p>
+      <div class="cards-2">
+        <article class="content-card">
+          <span class="card-index">Objetivo de aprendizagem</span>
+          <strong>Capacidade trabalhada</strong>
+          <p>${escapeHtml(lesson.technical[0] || lesson.objectives[0] || support.teacherGoal)}</p>
+        </article>
+        <article class="content-card">
+          <span class="card-index">Entrega da turma</span>
+          <strong>Registro previsto</strong>
+          <p>${escapeHtml(support.studentDeliverable)}</p>
+        </article>
+      </div>`,
+    teacher: {
+      speech: support.say,
+      steps: [
+        'Apresento o conceito em linguagem direta.',
+        'Relaciono o tema a um exemplo concreto da turma.',
+        'Confirmo a compreensão antes de avançar.'
+      ],
+      watch: coreObjectives[0] || support.teacherGoal,
+      rescue: 'Se a explicação não funcionar, volto ao exemplo concreto e retomo o termo técnico depois.'
+    }
+  }));
+
+  if (support.studentSheet) {
+    const sheetSections = support.studentSheet.sections || [];
+    slides.push(slide({
+      title: support.studentSheet.title || 'Ficha da aula',
+      block: 1,
+      main: `
+        <p class="slide-kicker">Material da dupla</p>
+        <h2 class="student-sheet-title">${escapeHtml(support.studentSheet.title || 'Ficha da aula')}</h2>
+        <p class="slide-lede">${escapeHtml(support.studentSheet.intro || 'Siga os campos na ordem e registre evidências observáveis.')}</p>
+        <div class="student-sheet-grid">
+          ${sheetSections.map((section) => `
+            <section class="student-sheet-section">
+              <span class="card-index">${escapeHtml(section.title)}</span>
+              ${listHtml(section.items || [], 'student-sheet-list')}
+            </section>`).join('')}
+        </div>
+        ${support.studentSheet.href ? `
+          <a class="student-resource-link" href="${escapeHtml(support.studentSheet.href)}" target="_blank" rel="noopener">
+            ${escapeHtml(support.studentSheet.linkLabel || 'Abrir material preenchível')} →
+          </a>` : ''}
+        ${support.extension ? `
+          <p class="extension-callout"><strong>Terminou antes?</strong> ${escapeHtml(support.extension)}</p>` : ''}`,
+      teacher: {
+        steps: [
+          'Entrego ou abro uma ficha por dupla.',
+          'Preencho o primeiro item no projetor sem completar a atividade pela turma.',
+          'Aponto onde ficará o arquivo ou a folha ao fim da aula.',
+          'Confirmo que respostas curtas precisam trazer evidência.'
+        ],
+        watch: 'A dupla sabe qual trecho analisa, o que deve registrar e onde entregará o arquivo.',
+        rescue: ownVoice(support.fallback)
+      }
+    }));
+  }
+
+  lesson.schedule.forEach((block, index) => {
+    const duration = minutesBetween(block.horario);
+    const introMinutes = duration <= 40 ? 5 : 10;
+    const demoMinutes = duration <= 40 ? 8 : 15;
+    const closeMinutes = 5;
+    const practiceMinutes = Math.max(8, duration - introMinutes - demoMinutes - closeMinutes);
+    const blockPlan = support.blocks && support.blocks[index] ? support.blocks[index] : {};
+    const activity = activityVoice(block.atividade);
+    const mode = modeForBlock(activity, blockPlan.mode);
+    const modeDetails = blockModes[mode];
+    const blockLabel = blockPlan.label || modeDetails.label;
+    const studentSteps = Array.isArray(blockPlan.studentSteps) ? blockPlan.studentSteps : [];
+    const blockExtension = blockPlan.extension || '';
+    const action = blockPlan.action
+      || ownVoice(support.demo[index] || 'Retomo o procedimento previsto no roteiro e acompanho a primeira execução.');
+    const evidence = blockPlan.evidence || modeDetails.evidence;
+    const objective = blockPlan.focus || coreObjectives[index] || coreObjectives[0] || support.teacherGoal;
+    let sequence;
+    if (mode === 'assessment') {
+      sequence = [
+        `${introMinutes} min · Organizo a entrada, a chamada e as orientações.`,
+        `${duration - introMinutes - closeMinutes} min · Acompanho a avaliação sem interferir nas respostas.`,
+        `${closeMinutes} min · Confiro a identificação e recolho as atividades.`
+      ];
+    } else if (mode === 'presentation') {
+      sequence = [
+        `${introMinutes} min · Organizo a ordem, o tempo e os critérios de devolutiva.`,
+        `${duration - introMinutes - closeMinutes} min · ${action}`,
+        `${closeMinutes} min · Registro a evidência e anuncio a próxima equipe ou etapa.`
+      ];
+    } else if (mode === 'testing') {
+      sequence = [
+        `${introMinutes} min · Organizo participantes, tarefas e registros de observação.`,
+        `${demoMinutes} min · ${action}`,
+        `${practiceMinutes} min · As equipes executam os testes; observo sem conduzir as respostas.`,
+        `${closeMinutes} min · Interrompo antes das correções e confiro as evidências registradas.`
+      ];
+    } else if (mode === 'orientation') {
+      sequence = [
+        `${introMinutes} min · Faço a chamada e apresento a pergunta central do bloco.`,
+        `${demoMinutes} min · ${action}`,
+        `${practiceMinutes} min · A turma analisa, compara ou registra a síntese prevista.`,
+        `${closeMinutes} min · Retomo a pergunta central e confiro uma evidência.`
+      ];
+    } else {
+      sequence = [
+        `${introMinutes} min · Faço a chamada e retomo o foco do bloco.`,
+        `${demoMinutes} min · ${action}`,
+        `${practiceMinutes} min · A turma produz; acompanho quem ainda não iniciou e confiro o salvamento.`,
+        `${closeMinutes} min · Interrompo, salvamos o registro e confiro uma evidência.`
+      ];
+    }
+    if (Array.isArray(blockPlan.teacherSteps) && blockPlan.teacherSteps.length) {
+      sequence = blockPlan.teacherSteps.map(ownVoice);
+    }
+
+    slides.push(slide({
+      title: `Bloco ${index + 1} · ${block.horario}`,
+      block: index + 1,
+      main: `
+        <p class="slide-kicker">Bloco ${index + 1} · ${escapeHtml(block.horario)}</p>
+        <h2${blockPlan.label ? ' class="block-title"' : ''}>${escapeHtml(blockLabel)}</h2>
+        <div class="block-focus">
+          <div class="block-time">${duration} min</div>
+          <p class="block-activity${studentSteps.length ? ' is-compact' : ''}">${escapeHtml(activity)}</p>
+        </div>
+        ${studentSteps.length ? `
+          <div class="block-directions">
+            <span class="card-index">Faça nesta ordem</span>
+            ${listHtml(studentSteps, 'block-step-list')}
+          </div>` : ''}
+        <div class="cards-2">
+          <article class="content-card">
+            <span class="card-index">Foco do bloco</span>
+            <strong>Capacidade em desenvolvimento</strong>
+            <p>${escapeHtml(objective)}</p>
+          </article>
+          <article class="content-card">
+            <span class="card-index">Registro do bloco</span>
+            <strong>${escapeHtml(evidence)}</strong>
+            <p>O registro compõe a entrega prevista para a aula.</p>
+          </article>
+        </div>
+        ${blockExtension ? `
+          <p class="extension-callout"><strong>Se sobrar tempo:</strong> ${escapeHtml(blockExtension)}</p>` : ''}`,
+      teacher: {
+        steps: sequence,
+        watch: blockPlan.evidence || support.check[index] || evidence,
+        rescue: ownVoice(blockPlan.rescue || support.fallback)
+      }
+    }));
+  });
+
+  slides.push(slide({
+    title: 'Procedimento em etapas',
+    block: lesson.schedule.length,
+    main: `
+      <p class="slide-kicker">Demonstração</p>
+      <h2>Procedimento em etapas</h2>
+      ${listHtml(support.demo.map(ownVoice), 'step-list')}`,
+    teacher: {
+      steps: [
+        'Apresento o resultado de referência antes dos passos.',
+        'Executo uma etapa de cada vez e explico o que confiro.',
+        'Reservo a segunda passagem para a turma repetir.',
+        'Avanço apenas depois de verificar o ponto comum.'
+      ],
+      watch: 'Evito resolver silenciosamente no computador do estudante; explico o diagnóstico em voz alta.',
+      rescue: ownVoice(support.fallback)
+    }
+  }));
+
+  if (support.code && support.code.length) {
+    slides.push(slide({
+      title: 'Exemplo de código',
+      block: lesson.schedule.length,
+      main: `
+        <p class="slide-kicker">Design Web · referência da aula</p>
+        <h2>Exemplo de código</h2>
+        <div class="code-stack">
+          ${support.code.map((snippet, index) => `
+            <article class="code-card">
+              <div class="code-card-head">
+                <span>${escapeHtml(snippet.label)} · ${escapeHtml(snippet.language)}</span>
+                <button class="copy-btn" type="button" data-copy="${index}">Copiar</button>
+              </div>
+              <pre><code>${escapeHtml(snippet.content)}</code></pre>
+            </article>`).join('')}
+        </div>`,
+      teacher: {
+        steps: [
+          'Parto do bloco completo para manter a explicação no conceito.',
+          'Mostro o arquivo e o ponto exato em que o trecho entra.',
+          'Salvo, atualizo e confiro o resultado.',
+          'Altero uma linha e recolho previsões antes de atualizar.'
+        ],
+        watch: 'A turma localiza o arquivo, salva a mudança e explica o efeito sem depender de memorização.',
+        rescue: 'Retomo o projeto inicial da UC e reaplico somente a alteração central.'
+      }
+    }));
+  }
+
+  const review = support.review || {};
+  const reviewTitle = review.title || 'Entrega e critérios de avaliação';
+  slides.push(slide({
+    title: reviewTitle,
+    block: lesson.schedule.length,
+    main: `
+      <p class="slide-kicker">${escapeHtml(review.kicker || 'Como saber se funcionou')}</p>
+      <h2${review.title ? ' class="review-title"' : ''}>${escapeHtml(reviewTitle)}</h2>
+      ${review.intro ? `<p class="slide-lede">${escapeHtml(review.intro)}</p>` : ''}
+      ${review.title
+        ? `<p class="review-deliverable"><strong>Entrega:</strong> ${escapeHtml(support.studentDeliverable)}</p>`
+        : `<p class="slide-lede"><strong>${escapeHtml(support.studentDeliverable)}</strong></p>`}
+      ${listHtml(support.check, review.title ? 'check-list formative-check-list' : 'check-list')}`,
+    teacher: {
+      steps: review.teacherSteps || [
+        'Projeto os critérios antes do fim da atividade.',
+        'Reservo uma autoavaliação breve.',
+        'Confiro o arquivo, o registro ou a demonstração correspondente.',
+        'Anoto as retomadas necessárias para a aula seguinte.',
+        ...commonProblems.slice(0, 3).map(([problem, fix]) => `${problem}: ${ownVoice(fix)}`)
+      ],
+      watch: support.check[0] || support.studentDeliverable,
+      rescue: ownVoice(support.fallback)
+    }
+  }));
+
+  }
+
+  if (support.appendDefaultClosing !== false) slides.push(slide({
+    title: 'Fechamento da aula',
+    block: lesson.schedule.length,
+    main: `
+      <p class="slide-kicker">Bilhete de saída</p>
+      <h2>O que ficou pronto hoje?</h2>
+      <p class="slide-lede">${escapeHtml(support.studentDeliverable)}</p>
+      <div class="cards-2">
+        <article class="content-card">
+          <span class="card-index">Responda em uma frase</span>
+          <strong>O que você aprendeu a fazer?</strong>
+          <p>Use um verbo: criar, analisar, aplicar, testar, publicar, gravar ou editar.</p>
+        </article>
+        <article class="content-card">
+          <span class="card-index">${nextLesson ? 'Próxima aula' : 'Encerramento da UC'}</span>
+          <strong>${escapeHtml(nextLesson ? `Aula ${nextLesson.num} · ${nextLesson.title}` : 'Mostra, reflexão e próximos passos')}</strong>
+          <p>${escapeHtml(nextLesson ? nextLesson.description : 'Guarde as evidências e registre o que faria em uma próxima versão.')}</p>
+        </article>
+      </div>`,
+    teacher: {
+      steps: [
+        'Interrompo a atividade cinco minutos antes do final.',
+        'Confiro o salvamento e a cópia da entrega.',
+        'Ouço duas ou três respostas.',
+        nextLesson ? `Anteciparei apenas o material necessário para a Aula ${nextLesson.num}.` : 'Conduzo uma retrospectiva breve da UC.'
+      ],
+      watch: support.check.at(-1) || support.studentDeliverable,
+      rescue: 'Sem tempo para socialização oral, recolho a frase em papel ou formulário.'
+    }
+  }));
+
+  const root = document.getElementById('lessonRoot');
+  root.innerHTML = `
+    <div class="lesson-app projection-mode" id="lessonApp">
+      <header class="lesson-topbar">
+        <div class="lesson-ident">
+          <a class="back-link" href="index.html" aria-label="Voltar à oficina de ${escapeHtml(course.title)}" title="Voltar à oficina (H)">← <span class="back-text">Oficina</span></a>
+          <span class="uc-short">${escapeHtml(course.title)}</span>
+          <span class="lesson-short">Aula ${lesson.num} · ${escapeHtml(lesson.title)}</span>
+        </div>
+        <div class="top-actions">
+          <button class="tool-btn mode-btn" id="modeBtn" type="button" aria-pressed="false" title="Mostrar minhas anotações (P)">
+            <span aria-hidden="true">▣</span><span class="button-label">Notas</span><span class="key">P</span>
+          </button>
+          <button class="tool-btn" id="gridBtn" type="button" title="Ver todos os slides (G)">
+            <span aria-hidden="true">▦</span><span class="button-label">Grade</span><span class="key">G</span>
+          </button>
+          <button class="tool-btn" id="printBtn" type="button" title="Imprimir guia completo (D)">
+            <span aria-hidden="true">↓</span><span class="button-label">PDF</span><span class="key">D</span>
+          </button>
+          <button class="tool-btn" id="fullscreenBtn" type="button" title="Tela cheia (F)">
+            <span aria-hidden="true">⛶</span><span class="button-label">Tela cheia</span><span class="key">F</span>
+          </button>
+        </div>
+      </header>
+
+      <main class="deck-stage">
+        <div class="deck-track">${slides.map((item) => item.html).join('')}</div>
+      </main>
+
+      <footer class="deck-bottombar">
+        <div class="deck-progress" id="deckProgress"></div>
+        <div class="deck-actions">
+          <button class="deck-btn" id="prevBtn" type="button"><span aria-hidden="true">←</span><span class="button-label">Anterior</span></button>
+          ${previousLesson ? `<a class="deck-btn" href="aula-kit.html?uc=${encodeURIComponent(courseSlug)}&aula=${previousLesson.num}" title="Aula anterior">Aula ${previousLesson.num}</a>` : ''}
+        </div>
+        <div class="deck-center">
+          <span
+            class="course-pace-dot is-ok"
+            id="coursePaceDot"
+            role="status"
+            aria-live="polite"
+            aria-label="Ritmo da aula: No ritmo"
+            title="No ritmo"
+          ></span>
+          <div class="deck-counter" id="deckCounter" aria-live="polite"></div>
+        </div>
+        <div class="deck-actions">
+          ${nextLesson ? `<a class="deck-btn" href="aula-kit.html?uc=${encodeURIComponent(courseSlug)}&aula=${nextLesson.num}" title="Próxima aula">Aula ${nextLesson.num}</a>` : ''}
+          <button class="deck-btn" id="nextBtn" type="button"><span class="button-label">Próximo</span><span aria-hidden="true">→</span></button>
+        </div>
+      </footer>
+    </div>
+
+    <div class="slide-overview" id="slideOverview" role="dialog" aria-modal="true" aria-labelledby="overviewTitle" aria-hidden="true" inert>
+      <div class="overview-head">
+        <h2 id="overviewTitle">Mapa da aula</h2>
+        <button class="tool-btn" id="closeOverview" type="button">Fechar · Esc</button>
+      </div>
+      <div class="overview-grid">
+        ${slides.map((item, index) => `
+          <button class="overview-card" type="button" data-go="${index}">
+            <span>${String(index + 1).padStart(2, '0')}</span>
+            <strong>${escapeHtml(item.title)}</strong>
+          </button>`).join('')}
+      </div>
+    </div>`;
+
+  const app = document.getElementById('lessonApp');
+  const slideElements = [...document.querySelectorAll('.kit-slide')];
+  const overview = document.getElementById('slideOverview');
+  const counter = document.getElementById('deckCounter');
+  const progress = document.getElementById('deckProgress');
+  const prevButton = document.getElementById('prevBtn');
+  const nextButton = document.getElementById('nextBtn');
+  const modeButton = document.getElementById('modeBtn');
+  const paceDot = document.getElementById('coursePaceDot');
+  const toast = document.getElementById('toast');
+  const scheduleWindows = lesson.schedule.map((block, index) => {
+    const [start, end] = timeRange(block.horario);
+    return {
+      number: index + 1,
+      label: `Bloco ${index + 1}`,
+      start: timeToMinutes(start),
+      end: timeToMinutes(end)
+    };
+  });
+  let currentIndex = 0;
+  let toastTimer;
+  let overviewTrigger = null;
+
+  function currentScheduleWindow(now = new Date()) {
+    const minutes = now.getHours() * 60 + now.getMinutes() + now.getSeconds() / 60;
+    const active = scheduleWindows.find((block) => minutes >= block.start && minutes < block.end);
+    if (active) {
+      return {
+        block: active,
+        progress: (minutes - active.start) / (active.end - active.start),
+        status: 'active'
+      };
+    }
+    if (minutes < scheduleWindows[0].start) {
+      return { block: scheduleWindows[0], progress: 0, status: 'before' };
+    }
+    for (let index = 0; index < scheduleWindows.length - 1; index += 1) {
+      const current = scheduleWindows[index];
+      const next = scheduleWindows[index + 1];
+      if (minutes >= current.end && minutes < next.start) {
+        return {
+          block: next,
+          progress: (minutes - current.end) / Math.max(1, next.start - current.end),
+          status: 'break'
+        };
+      }
+    }
+    return {
+      block: scheduleWindows.at(-1),
+      progress: 1,
+      status: 'after'
+    };
+  }
+
+  function paceHealth() {
+    const activeSlide = slideElements[currentIndex];
+    const slideBlock = Number(activeSlide?.dataset.block || 0);
+    const expected = currentScheduleWindow();
+    if (usesSlidePace && window.SENAI_SLIDE_PACE) {
+      const now = new Date();
+      const start = activeSlide?.dataset.paceStart === '' ? scheduleWindows[0].start : Number(activeSlide?.dataset.paceStart);
+      const end = activeSlide?.dataset.paceEnd === '' ? scheduleWindows[0].start + 5 : Number(activeSlide?.dataset.paceEnd);
+      return window.SENAI_SLIDE_PACE({now: now.getHours() * 60 + now.getMinutes(), start, end,
+        lessonStart: scheduleWindows[0].start, lessonEnd: scheduleWindows.at(-1).end,
+        isBreak: activeSlide?.dataset.pace === 'break', isLast: currentIndex === slideElements.length - 1});
+    }
+    if (!slideBlock || !expected) return { level: 'ok', message: 'No ritmo' };
+    if (activeSlide?.dataset.pace === 'break' && expected.status === 'break') {
+      return { level: 'ok', message: 'Intervalo no horário' };
+    }
+    if (expected.block.number < slideBlock) {
+      return { level: 'warn', message: `Adiantado · slide é do Bloco ${slideBlock}` };
+    }
+    if (expected.block.number > slideBlock) {
+      return { level: 'err', message: `Atrasado · slide é do Bloco ${slideBlock}` };
+    }
+
+    const slidesInBlock = slideElements.filter((element) => Number(element.dataset.block) === slideBlock);
+    if (slidesInBlock.length <= 1) return { level: 'ok', message: 'No ritmo' };
+    const position = slidesInBlock.indexOf(activeSlide);
+    const expectedProgress = (position + 1) / slidesInBlock.length;
+    const delta = expectedProgress - expected.progress;
+    if (delta > 0.25) {
+      return { level: 'warn', message: 'Adiantado no bloco · há tempo para aprofundar' };
+    }
+    if (delta < -0.25) {
+      return { level: 'warn', message: 'Atrasado no bloco · priorize o essencial' };
+    }
+    return { level: 'ok', message: 'No ritmo' };
+  }
+
+  function renderPace() {
+    if (!paceDot) return;
+    const health = paceHealth();
+    paceDot.classList.remove('is-ok', 'is-warn', 'is-err');
+    paceDot.classList.add(`is-${health.level}`);
+    paceDot.title = health.message;
+    paceDot.setAttribute('aria-label', `Ritmo da aula: ${health.message}`);
+    paceDot.dataset.state = health.level;
+  }
+
+  function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add('is-visible');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('is-visible'), 1600);
+  }
+
+  if (usesSlidePace && paceDot) {
+    paceDot.tabIndex = 0;
+    paceDot.addEventListener('click', () => showToast(paceDot.title));
+    paceDot.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); event.stopPropagation(); showToast(paceDot.title); }
+    });
+  }
+
+  function renderCurrent() {
+    slideElements.forEach((element, index) => {
+      element.classList.toggle('is-active', index === currentIndex);
+      element.setAttribute('aria-hidden', index === currentIndex ? 'false' : 'true');
+      element.inert = index !== currentIndex;
+    });
+    document.querySelectorAll('.overview-card').forEach((element, index) => {
+      element.classList.toggle('is-current', index === currentIndex);
+    });
+    counter.textContent = `${String(currentIndex + 1).padStart(2, '0')} / ${String(slideElements.length).padStart(2, '0')}`;
+    progress.style.width = `${((currentIndex + 1) / slideElements.length) * 100}%`;
+    prevButton.disabled = currentIndex === 0;
+    nextButton.disabled = currentIndex === slideElements.length - 1;
+    document.title = `${slides[currentIndex].title} · ${course.title}`;
+    renderPace();
+  }
+
+  function goTo(index) {
+    slideElements[currentIndex].querySelectorAll('video').forEach(video => video.pause());
+    currentIndex = Math.max(0, Math.min(slideElements.length - 1, index));
+    renderCurrent();
+  }
+
+  function toggleProjection(force) {
+    const on = typeof force === 'boolean' ? force : !app.classList.contains('projection-mode');
+    app.classList.toggle('projection-mode', on);
+    modeButton.classList.toggle('is-active', !on);
+    modeButton.setAttribute('aria-pressed', String(!on));
+    modeButton.querySelector('.button-label').textContent = on ? 'Notas' : 'Projetar';
+    modeButton.title = on ? 'Mostrar minhas anotações (P)' : 'Ocultar anotações e projetar (P)';
+    showToast(on ? 'Projeção: anotações ocultas' : 'Minhas anotações estão visíveis');
+  }
+
+  function toggleOverview(force) {
+    const on = typeof force === 'boolean' ? force : !overview.classList.contains('is-open');
+    if (on) overviewTrigger = document.activeElement;
+    overview.classList.toggle('is-open', on);
+    overview.setAttribute('aria-hidden', String(!on));
+    overview.inert = !on;
+    app.inert = on;
+    if (on) {
+      const current = overview.querySelector('.overview-card.is-current') || overview.querySelector('.overview-card');
+      current.focus();
+    } else if (overviewTrigger instanceof HTMLElement) {
+      overviewTrigger.focus();
+    }
+  }
+
+  async function toggleFullscreen() {
+    try {
+      if (!document.fullscreenElement) {
+        await document.documentElement.requestFullscreen();
+      } else {
+        await document.exitFullscreen();
+      }
+    } catch {
+      showToast('Tela cheia não disponível neste navegador');
+    }
+  }
+
+  prevButton.addEventListener('click', () => goTo(currentIndex - 1));
+  nextButton.addEventListener('click', () => goTo(currentIndex + 1));
+  modeButton.addEventListener('click', () => toggleProjection());
+  document.getElementById('gridBtn').addEventListener('click', () => toggleOverview());
+  document.getElementById('printBtn').addEventListener('click', () => window.print());
+  document.getElementById('fullscreenBtn').addEventListener('click', toggleFullscreen);
+  document.getElementById('closeOverview').addEventListener('click', () => toggleOverview(false));
+
+  overview.addEventListener('click', (event) => {
+    if (event.target === overview) toggleOverview(false);
+    const button = event.target.closest('[data-go]');
+    if (!button) return;
+    goTo(Number(button.dataset.go));
+    toggleOverview(false);
+  });
+
+  overview.addEventListener('keydown', (event) => {
+    if (event.key !== 'Tab') return;
+    const focusable = [...overview.querySelectorAll('button:not([disabled]), a[href]')];
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable.at(-1);
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+
+  document.addEventListener('click', async (event) => {
+    const button = event.target.closest('[data-copy]');
+    if (!button) return;
+    const snippet = support.code && support.code[Number(button.dataset.copy)];
+    if (!snippet) return;
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(snippet.content);
+      } else {
+        const helper = document.createElement('textarea');
+        helper.value = snippet.content;
+        helper.setAttribute('readonly', '');
+        helper.style.position = 'fixed';
+        helper.style.opacity = '0';
+        document.body.appendChild(helper);
+        helper.select();
+        const copied = document.execCommand('copy');
+        helper.remove();
+        if (!copied) throw new Error('copy unavailable');
+      }
+      button.textContent = 'Copiado';
+      showToast('Código copiado');
+      setTimeout(() => { button.textContent = 'Copiar'; }, 1200);
+    } catch {
+      showToast('Selecione o código e copie manualmente');
+    }
+  });
+
+  if (isDesignSix) {
+    const qrDialog = document.createElement('dialog');
+    qrDialog.className = 'tool-qr-dialog';
+    qrDialog.setAttribute('aria-labelledby', 'toolQrTitle');
+    qrDialog.innerHTML = '<form method="dialog"><button autofocus aria-label="Fechar QR code">Fechar ×</button></form><h2 id="toolQrTitle"></h2><p>Aponte a câmera do celular</p><img width="370" height="370" alt=""><a target="_blank" rel="noopener"></a>';
+    document.body.append(qrDialog);
+    document.addEventListener('click', (event) => {
+      const button = event.target.closest('.qr-open');
+      if (!button) return;
+      qrDialog.querySelector('h2').textContent = button.dataset.qrLabel;
+      const image = qrDialog.querySelector('img');
+      image.src = button.dataset.qr;
+      image.alt = 'QR code para ' + button.dataset.qrLabel;
+      const link = qrDialog.querySelector('a');
+      link.href = button.dataset.qrUrl;
+      link.textContent = button.dataset.qrUrl;
+      qrDialog.showModal();
+    });
+  }
+
+  // Native controls remain usable; only one teaching example plays at a time.
+  document.querySelectorAll('.av11-media video').forEach(video => {
+    video.addEventListener('play', () => {
+      document.querySelectorAll('.av11-media video').forEach(other => {
+        if (other !== video) other.pause();
+      });
+    });
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (document.querySelector('.tool-qr-dialog[open]')) return;
+    const target = event.target;
+    if (target && /INPUT|TEXTAREA|SELECT|VIDEO/.test(target.tagName)) return;
+
+    if (event.key === 'Escape' && overview.classList.contains('is-open')) {
+      event.preventDefault();
+      toggleOverview(false);
+      return;
+    }
+
+    if (overview.classList.contains('is-open')) return;
+
+    if (event.key === 'ArrowRight' || event.key === 'PageDown' || (event.key === ' ' && target === document.body)) {
+      event.preventDefault();
+      goTo(currentIndex + 1);
+      return;
+    }
+    if (event.key === 'ArrowLeft' || event.key === 'PageUp' || event.key === 'Backspace') {
+      event.preventDefault();
+      goTo(currentIndex - 1);
+      return;
+    }
+    if (event.key === 'Home') {
+      event.preventDefault();
+      goTo(0);
+      return;
+    }
+    if (event.key === 'End') {
+      event.preventDefault();
+      goTo(slideElements.length - 1);
+      return;
+    }
+    if (event.key === 'p' || event.key === 'P') {
+      event.preventDefault();
+      toggleProjection();
+      return;
+    }
+    if (event.key === 'g' || event.key === 'G') {
+      event.preventDefault();
+      toggleOverview();
+      return;
+    }
+    if (event.key === 'd' || event.key === 'D') {
+      event.preventDefault();
+      window.print();
+      return;
+    }
+    if (event.key === 'f' || event.key === 'F') {
+      event.preventDefault();
+      toggleFullscreen();
+      return;
+    }
+    if (event.key === 'h' || event.key === 'H') {
+      event.preventDefault();
+      window.location.href = `index.html`;
+    }
+  });
+
+  if (isAvNine) {
+    // The projected night map marks the block happening now, from the computer clock.
+    const markCurrentBlock = () => {
+      const now = new Date();
+      const minutes = now.getHours() * 60 + now.getMinutes();
+      document.querySelectorAll('.av9-day-row').forEach((row) => {
+        row.classList.toggle('is-now', minutes >= Number(row.dataset.start) && minutes < Number(row.dataset.end));
+      });
+    };
+    markCurrentBlock();
+    window.setInterval(markCurrentBlock, 15000);
+
+    // Voice-over window: one click puts a team on air; the previous team is marked as recorded.
+    document.addEventListener('click', (event) => {
+      const button = event.target.closest('[data-av9-team]');
+      if (!button) return;
+      const panel = button.closest('.av9-onair');
+      const status = panel.querySelector('[data-av9-status]');
+      const wasOnAir = button.classList.contains('is-on-air');
+      panel.querySelectorAll('[data-av9-team].is-on-air').forEach((item) => {
+        item.classList.remove('is-on-air');
+        item.classList.add('is-done');
+        item.setAttribute('aria-pressed', 'false');
+      });
+      if (!wasOnAir) {
+        button.classList.remove('is-done');
+        button.classList.add('is-on-air');
+        button.setAttribute('aria-pressed', 'true');
+      }
+      panel.classList.toggle('is-live', !wasOnAir);
+      const done = panel.querySelectorAll('[data-av9-team].is-done').length;
+      status.textContent = wasOnAir
+        ? `${button.dataset.av9Team} gravada · ${done} de 7 equipes`
+        : `Gravando: ${button.dataset.av9Team} · silêncio na sala`;
+      button.blur();
+    });
+  }
+
+  renderCurrent();
+  window.setInterval(renderPace, 1000);
+})();
+</script></body></html>
