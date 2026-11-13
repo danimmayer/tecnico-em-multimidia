@@ -4,7 +4,7 @@
 
 Na comunicação com os estudantes, usar **esboços de página**. O termo “rafe”, mantido na referência curricular, significa um esboço rápido da organização visual da tela.
 
-Nesta aula, a turma atua como equipe de produto para transformar uma situação-problema em alternativas, conceito e rafes de baixa fidelidade. O produto da noite não é uma tela acabada: são três estruturas de página inicial, uma página interna da direção escolhida, um conceito justificado e uma revisão apoiada no que outra pessoa conseguiu fazer.
+Nesta aula, a turma atua como equipe de produto para transformar uma situação-problema em alternativas, conceito e rafes de baixa fidelidade. O produto da noite não é uma tela acabada: são três estruturas alternativas de página inicial, uma página interna principal consolidável da direção escolhida, um conceito justificado e uma revisão apoiada no que outra pessoa conseguiu fazer. A rota de quatro telas do briefing é referência do projeto, não quatro entregas independentes hoje: a interna principal reúne horário, detalhe e acesso.
 
 Os 160 minutos letivos priorizam a ação discente na oficina: ler, comparar, escrever, escolher, montar, observar, revisar e explicar. A fala demonstrativa do docente está limitada a 12 minutos no total, distribuída em intervenções de até dois minutos para destravar um primeiro passo. Critério, diagnóstico e contexto não viram palestra: a dupla os lê, aponta e usa dentro do software.
 
@@ -36,7 +36,7 @@ Referência curricular disponível: a Aula 16 de `assets/course-data.js` registr
 | --- | --- |
 | Idear possibilidades para uma situação profissional | Seis alternativas que mudam prioridade, ação ou continuação do caminho. |
 | Conceituar uma direção | Nome curto e explicação coerente com o público e o objetivo, conferidos por três critérios. |
-| Produzir rafes | Três esboços de início e uma página interna de baixa fidelidade, com contexto, conteúdo prioritário e ação; razões da seleção registradas na missão 3. |
+| Produzir rafes | Três esboços de início e uma página interna principal de baixa fidelidade, com contexto, conteúdo prioritário, ação, horário, detalhe e acesso; razões da seleção registradas na missão 3. Páginas internas extras são opcionais (até seis) e não criam critério novo. |
 | Colaborar e inovar | Alternância de operação, justificativas ancoradas no briefing e escolha após comparar alternativas. |
 | Avaliar e revisar | Registro do comportamento/fala de um visitante, decisão de manter ou ajustar e registros individuais A/B. |
 
@@ -68,7 +68,7 @@ Usar os quatro critérios já comunicados, sem exigir tarefa adicional. O docent
 | --- | --- | --- |
 | Alternativas relevantes | Seis ideias e três direções selecionadas mudam prioridade, ação ou caminho; as razões fazem referência ao pedido. | Pedir que altere o que aparece primeiro e explique a consequência para a pessoa usuária. |
 | Conceito orientador | Nome e explicação se relacionam ao público e ao objetivo; clareza, coerência e viabilidade sustentam as razões de escolha. | Perguntar qual informação ou ação o conceito ajuda a priorizar. |
-| Estrutura e continuidade | Três inícios mostram contexto, conteúdo prioritário e ação; a interna responde à promessa da direção escolhida. | Pedir que compare o texto do botão com a informação encontrada na interna. |
+| Estrutura e continuidade | Três inícios mostram contexto, conteúdo prioritário e ação; a interna principal responde à promessa da direção escolhida ao reunir horário, detalhe e acesso. | Pedir que compare o texto do botão com a informação encontrada na interna. |
 | Revisão por evidência | Registro descreve comportamento ou fala do visitante; a decisão de manter ou ajustar responde ao registro, e cada estudante explica sua contribuição. | Pedir uma observação concreta antes de decidir por uma alteração. |
 
 A contribuição individual é observada na alternância de papéis, na conversa e nos registros A/B. A referência de desempenho é desta oficina formativa; critérios e ponderação de eventual avaliação somativa dependem da definição da UC.
