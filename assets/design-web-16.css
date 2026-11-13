@@ -1,0 +1,34 @@
+.design-sixteen{--w16-paper:#f5f2ea;--w16-ink:#182f3d;--w16-accent:#155c68;--w16-rule:#c5cfca}
+.design-sixteen .kit-slide-main{background:var(--w16-paper);color:var(--w16-ink);padding:32px 48px;gap:0;max-width:none}
+.design-sixteen .kit-slide h1,.design-sixteen .kit-slide h2{font-family:'Trebuchet MS',sans-serif;font-weight:700;letter-spacing:-.045em;line-height:1.08;text-wrap:balance}
+.design-sixteen .kit-slide h1{font-size:clamp(52px,6.2vw,86px);margin:12px 0 22px}
+.design-sixteen .kit-slide h2{font-size:clamp(32px,3.6vw,50px);margin:0}
+.design-sixteen .slide-kicker{font-size:15px;color:var(--w16-accent);letter-spacing:.035em;text-transform:none;margin-bottom:14px;font-weight:700}
+.design-sixteen .kit-slide .slide-lede{font-size:clamp(19px,1.8vw,25px);line-height:1.4;color:#385160;max-width:68ch;margin:16px 0 20px}
+.design-sixteen .w16-caption{font-size:17px;color:#385160;line-height:1.4;margin:12px 0 0}
+.design-sixteen .w16-sketches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;max-width:860px;margin:0 0 20px}
+.design-sixteen .w16-sketches figure{margin:0;transform:rotate(-1deg)}
+.design-sixteen .w16-sketches figure:nth-child(2){transform:rotate(1deg)}
+.design-sixteen .w16-sketches svg{width:100%;max-height:150px;display:block;color:var(--w16-ink)}
+.design-sixteen .w16-sketches figcaption{font-size:15px;margin-top:7px;color:#385160}
+.design-sixteen .w16-task{border-top:2px solid var(--w16-accent);padding-top:15px;display:grid;grid-template-columns:110px 1fr;gap:18px;margin-top:18px;max-width:1100px}
+.design-sixteen .w16-task>span{font-size:16px;color:var(--w16-accent);font-weight:700}
+.design-sixteen .w16-task strong{font-size:clamp(18px,1.7vw,23px);line-height:1.4;font-weight:600}
+.design-sixteen .w16-list{margin:0;padding:0;list-style:none;counter-reset:w16;max-width:1040px}
+.design-sixteen .w16-list li{font-size:clamp(19px,1.9vw,26px);line-height:1.4;padding:12px 0;border-bottom:1px solid var(--w16-rule);counter-increment:w16;overflow-wrap:anywhere}
+.design-sixteen .w16-list li::before{content:counter(w16,decimal-leading-zero);font-size:15px;font-weight:700;color:var(--w16-accent);display:inline-block;width:40px;vertical-align:middle}
+.design-sixteen .w16-brief{margin:0;max-width:1100px}
+.design-sixteen .w16-brief>div{display:grid;grid-template-columns:155px 1fr;gap:20px;border-bottom:1px solid var(--w16-rule);padding:13px 0;line-height:1.4;font-size:clamp(19px,1.8vw,24px)}
+.design-sixteen .w16-brief dt{font-weight:700;color:var(--w16-accent)}
+.design-sixteen .w16-brief dd{margin:0;overflow-wrap:anywhere}
+.design-sixteen .w16-compare{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:1000px}
+.design-sixteen .w16-compare svg{width:100%;height:135px;color:var(--w16-ink)}
+.design-sixteen .w16-compare .w16-list li{font-size:21px;padding:10px 0}
+.design-sixteen .w16-criteria{display:grid;grid-template-columns:1fr 1fr;gap:0 32px;list-style:none;padding:0;margin:0;max-width:1100px}
+.design-sixteen .w16-criteria li{display:flex;gap:15px;border-bottom:1px solid var(--w16-rule);padding:14px 0;font-size:clamp(19px,1.8vw,24px);line-height:1.35}
+.design-sixteen .w16-criteria b{font-size:15px;color:var(--w16-accent);padding-top:5px}
+.design-sixteen .w16-pause{font-size:clamp(80px,10vw,140px);font-weight:700;color:var(--w16-accent);padding:20px 0}
+.design-sixteen .w16-pause span{display:block;font-size:24px;font-weight:400;margin-top:12px}
+.design-sixteen .student-resource-link{background:var(--w16-accent);color:white;border-color:var(--w16-accent)}
+@media(max-width:700px){.design-sixteen .kit-slide-main{padding:24px 22px}.design-sixteen .w16-task{grid-template-columns:1fr;gap:6px}.design-sixteen .w16-criteria,.design-sixteen .w16-compare{grid-template-columns:1fr}.design-sixteen .w16-brief>div{grid-template-columns:1fr;gap:4px}.design-sixteen .w16-sketches{gap:10px}.design-sixteen .w16-compare svg{height:100px}.design-sixteen .w16-list li{font-size:19px}}
+@media print{.design-sixteen .kit-slide-main{background:white}.design-sixteen .w16-sketches svg{max-height:115px}}

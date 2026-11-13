@@ -399,3 +399,9 @@ cópias de segurança substituem qualquer dependência de streaming.
 - `modelos/producao-audiovisual/` · fichas, provas, gabaritos e documentos de produção;
 - botão **PDF** · versão projetável da aula, sem as anotações privadas.
 
+## Aula 16 de Design Web — 13/11/2026
+
+Oficina de ideação, conceito e esboços de página: `modelos/design-web/aula-16/index.html`; projeção offline: `modelos/design-web/aula-16/slides.html`. O plano docente e o relatório R01–R20 ficam na mesma pasta. Conteúdo e evidências até 22h, intervalo 19h45–20h05 e apoio opcional até 22h30. Critérios antes de criar; seis alternativas, três esboços de início, uma página interna, visita e revisão.
+
+Em todas as UCs, atualizar o relatório por aula em `RELATORIO_ALINHAMENTO_INSTITUCIONAL.md`, conforme `AGENTS.md` e a skill pessoal `metodologia-senai`. Planejamento evidenciado, observação em sala e registros institucionais são estados distintos.
+

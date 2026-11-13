@@ -3857,36 +3857,453 @@ window.SENAI_TEACHING_SUPPORT = {
         ]
       },
       "16": {
-        "teacherGoal": "Gerar alternativas antes de escolher uma solução.",
-        "plainLanguage": "Ideação separa quantidade de julgamento. Rafes são esboços rápidos para comparar estruturas, não desenhos bonitos.",
-        "say": "Nos primeiros dez minutos, qualidade é quantidade. Desenho feio é permitido; ideia repetida sem variação, não.",
+        "appendDefaultClosing": false,
+        "teacherGoal": "Cada dupla produz e compara alternativas, define um conceito e constrói três esboços de página de início mais uma página interna que permitem a outra pessoa realizar uma tarefa. Cada estudante explica uma decisão e o que revisaria.",
+        "plainLanguage": "Idear é abrir possibilidades antes de escolher. Conceito é a ideia que guia as escolhas. Esboço de página é um desenho rápido da organização da tela: mostra ordem, conteúdo e ação, sem acabamento final.",
+        "say": "Hoje vocês trabalham como uma equipe de produto: entendem o pedido, criam possibilidades, escolhem uma direção e testam se o esboço ajuda alguém a agir.",
+        "routine": [
+          "Abro slides e Estúdio de Direções antes da entrada; confiro o rascunho e a tela de diagnóstico.",
+          "Faço chamada no início de 19:00, 20:05, 20:45 e 21:30. Reservo no máximo 12 minutos totais para demonstrações, em intervenções de até dois minutos; o restante é ação do estudante.",
+          "A dupla alterna quem opera no começo do bloco 2. Na visita, autores observam sem explicar ou apontar caminhos.",
+          "Os critérios aparecem antes da produção, mas a turma os lê e procura na oficina; não os converto em exposição. Uso a conferência como devolutiva; a coerência da decisão é lida na conversa com a dupla.",
+          "Até 22:00 verifico a entrega na própria oficina. Depois disso, oriento salvamento e organização e esclareço dúvidas sobre o trabalho já concluído; não completo critério nem recolho evidência avaliativa adicional."
+        ],
         "demo": [
-          "Dobre uma folha em oito quadros.",
-          "Defina uma única tela e uma única tarefa.",
-          "Cronometre um minuto por variação.",
-          "Circule padrões promissores e combine duas ideias em uma proposta."
+          "Mostro uma alternativa que põe o mesmo conteúdo em outra ordem e pergunto qual tarefa ela favorece.",
+          "Registro apenas uma ideia curta, sem transformar a geração em desenho acabado.",
+          "Monto um bloco do esboço e uma nota de decisão; não escolho a direção pela dupla.",
+          "Faço a pergunta da visita e registro apenas o que a pessoa disse ou fez."
         ],
-        "studentDeliverable": "Oito rafes, seleção justificada de duas alternativas e uma versão combinada.",
+        "studentDeliverable": "Na oficina: diagnóstico inicial, seis alternativas, conceito nomeado e explicado, três critérios aplicados às razões de escolha, direção escolhida, três esboços de página de início, página interna, observação de uma visita, revisão e autoavaliação individual. Sem relatório ou arquivo externo.",
         "check": [
-          "As opções mudam estrutura, não apenas cor.",
-          "A tarefa principal continua visível.",
-          "A escolha se relaciona ao briefing.",
-          "O grupo registrou o motivo de descartar alternativas."
+          "Explica qual problema, público e tarefa prioriza; não usa somente gosto pessoal para justificar.",
+          "As alternativas mudam ordem, foco ou caminho e não são seis cópias com enfeites diferentes.",
+          "O conceito tem nome e explicação relacionados ao público e ao objetivo; os três critérios sustentam a escolha.",
+          "Os três esboços de página têm contexto, conteúdo prioritário e ação compreensível; a página interna completa o caminho da direção escolhida.",
+          "A observação registra comportamento ou fala do visitante e a revisão responde a essa evidência.",
+          "Cada estudante conclui autoavaliação curta: decisão defendida, evidência observada e próximo ajuste."
         ],
-        "fallback": "Se a turma travar, imponha variações: menu no topo/lateral, imagem grande/sem imagem, ação fixa/no fluxo.",
+        "fallback": "Sem internet, abrir a oficina local. Sem armazenamento, manter a aba aberta e usar a cópia opcional. Sem computador, a dupla replica os três esboços de página de início e a página interna no caderno e usa os mesmos critérios; a observação ocorre no desenho.",
         "commonProblems": [
           [
-            "Aluno detalha o primeiro desenho",
-            "Use cronômetro e caneta; proíba borracha nesta etapa."
+            "Ideias todas iguais",
+            "Peço que mude a informação que vem primeiro, a ação principal ou o caminho para a página interna."
           ],
           [
-            "Alternativas quase idênticas",
-            "Mude uma regra estrutural em cada quadro."
+            "Confundiu esboço com tela final",
+            "Retomo que blocos e rótulos respondem à tarefa; cor, foto e acabamento não são a entrega de hoje."
           ],
           [
-            "Escolha por votação de gosto",
-            "Pontue cada opção contra objetivo, público e conteúdo."
+            "Escolheu por gosto",
+            "Pergunto qual evidência do briefing ou da visita sustenta a escolha."
+          ],
+          [
+            "Visitante recebeu explicação",
+            "Reinicio somente a tarefa, com o autor em silêncio; registro o novo resultado."
+          ],
+          [
+            "Precisa de apoio depois das 22h",
+            "Oriento salvamento e organização. Qualquer recuperação avaliativa ocorre até 22h ou em oportunidade equivalente para todos."
           ]
+        ],
+        "presentationSlides": [
+          {
+            "title": "Uma solução começa antes da tela.",
+            "block": 1,
+            "layout": "dw16",
+            "lede": "Hoje a entrega é uma direção que outra pessoa consegue testar.",
+            "promptLabel": "Na oficina",
+            "prompt": "Abra a oficina. Leia objetivo, pessoa e tarefa antes de clicar em qualquer solução.",
+            "dw16": {
+              "type": "brief",
+              "items": [
+                [
+                  "Pedido",
+                  "Festival Vira-Luz quer ajudar a pessoa a escolher e chegar a uma atividade."
+                ],
+                [
+                  "Pessoa",
+                  "Jovem que abre o celular no caminho ou antes de sair."
+                ],
+                [
+                  "Entrega às 22h",
+                  "Três esboços de página de início, uma interna, justificativas e uma observação de teste."
+                ]
+              ]
+            },
+            "teacher": {
+              "speech": "Faço a chamada e situo a noite como trabalho de equipe. Não apresento uma tela pronta como resposta.",
+              "steps": [
+                "5 min · A dupla lê, compara, decide, produz ou testa na oficina. A intervenção docente é por pergunta; demonstrações somam no máximo 12 minutos na noite."
+              ],
+              "watch": "Abra a oficina. Leia objetivo, pessoa e tarefa antes de clicar em qualquer solução.",
+              "rescue": "Retomo a situação com uma pergunta curta, modelo apenas um primeiro bloco e devolvo a decisão à dupla."
+            },
+            "resources": [
+              {
+                "href": "modelos/design-web/aula-16/index.html",
+                "label": "Abrir Estúdio de Direções"
+              }
+            ]
+          },
+          {
+            "title": "O que você já consegue perceber?",
+            "block": 1,
+            "layout": "dw16",
+            "lede": "Diagnóstico não vale nota: ele mostra de onde a dupla parte.",
+            "promptLabel": "Na oficina",
+            "prompt": "Compare as duas soluções. Aponte qual ajuda a encontrar uma atividade e diga por quê.",
+            "dw16": {
+              "type": "compare",
+              "left": [
+                "Título genérico",
+                "Muitos itens com o mesmo peso",
+                "Botão: Saiba mais"
+              ],
+              "right": [
+                "Atividade e horário visíveis",
+                "Uma ação principal",
+                "Botão: Ver programação"
+              ],
+              "caption": "A tarefa orienta a leitura da interface.",
+              "labels": [
+                "Dificulta a tarefa",
+                "Favorece a tarefa"
+              ]
+            },
+            "teacher": {
+              "speech": "Leio só a tarefa. Peço que apontem evidências na tela, não “a mais bonita”. Uso as respostas para decidir quem precisa de apoio.",
+              "steps": [
+                "8 min · A dupla lê, compara, decide, produz ou testa na oficina. A intervenção docente é por pergunta; demonstrações somam no máximo 12 minutos na noite."
+              ],
+              "watch": "Compare as duas soluções. Aponte qual ajuda a encontrar uma atividade e diga por quê.",
+              "rescue": "Retomo a situação com uma pergunta curta, modelo apenas um primeiro bloco e devolvo a decisão à dupla."
+            }
+          },
+          {
+            "title": "Capacidade que vamos evidenciar.",
+            "block": 1,
+            "layout": "dw16",
+            "lede": "Criar possibilidades, conceituar uma direção e esboçar um caminho.",
+            "promptLabel": "Na oficina",
+            "prompt": "Leia os critérios. Ao final, mostre onde cada um aparece no seu trabalho.",
+            "dw16": {
+              "type": "criteria",
+              "items": [
+                "Alternativas respondem ao pedido e mudam uma decisão relevante.",
+                "Conceito orienta as escolhas, não é uma lista solta de adjetivos.",
+                "Esboços de página tornam a tarefa e o próximo passo compreensíveis.",
+                "Revisão usa uma observação da visita."
+              ]
+            },
+            "teacher": {
+              "speech": "Apresento critérios antes da produção. Digo que a oficina confere presença; eu observo a coerência na fala e na visita.",
+              "steps": [
+                "5 min · A dupla lê, compara, decide, produz ou testa na oficina. A intervenção docente é por pergunta; demonstrações somam no máximo 12 minutos na noite."
+              ],
+              "watch": "Leia os critérios. Ao final, mostre onde cada um aparece no seu trabalho.",
+              "rescue": "Retomo a situação com uma pergunta curta, modelo apenas um primeiro bloco e devolvo a decisão à dupla."
+            }
+          },
+          {
+            "title": "Primeiro abrir. Depois escolher.",
+            "block": 1,
+            "layout": "dw16",
+            "lede": "Quantidade primeiro: seis ideias simples e diferentes dão material para comparar.",
+            "promptLabel": "Na oficina",
+            "prompt": "Crie seis alternativas curtas. Em cada uma, escolha o destaque, a ação e o caminho que vem depois.",
+            "dw16": {
+              "type": "steps",
+              "items": [
+                "Escolha o que a pessoa precisa resolver agora.",
+                "Diga o que aparece primeiro.",
+                "Dê nome à ação.",
+                "Indique a página interna que continua o caminho."
+              ],
+              "caption": "Uma alternativa pode ser escrita em poucos blocos."
+            },
+            "teacher": {
+              "speech": "Modelo uma alternativa em até dois minutos. Não avalio enquanto a dupla gera. Se travar, uso a pista e peço uma mudança de prioridade.",
+              "steps": [
+                "27 min · A dupla lê, compara, decide, produz ou testa na oficina. A intervenção docente é por pergunta; demonstrações somam no máximo 12 minutos na noite."
+              ],
+              "watch": "Crie seis alternativas curtas. Em cada uma, escolha o destaque, a ação e o caminho que vem depois.",
+              "rescue": "Retomo a situação com uma pergunta curta, modelo apenas um primeiro bloco e devolvo a decisão à dupla."
+            }
+          },
+          {
+            "title": "Pausa. Volta às 20:05.",
+            "block": 1,
+            "layout": "dw16",
+            "lede": "Mantenha a oficina aberta; a ideia não precisa estar acabada.",
+            "promptLabel": "Na oficina",
+            "prompt": "Na volta, troquem quem opera.",
+            "dw16": {
+              "type": "pause",
+              "time": "20:05"
+            },
+            "teacher": {
+              "speech": "O intervalo não é tarefa. Confiro se a aba permaneceu aberta e acolho quem não conseguiu iniciar.",
+              "steps": [
+                "20 min · A dupla lê, compara, decide, produz ou testa na oficina. A intervenção docente é por pergunta; demonstrações somam no máximo 12 minutos na noite."
+              ],
+              "watch": "Na volta, troquem quem opera.",
+              "rescue": "Retomo a situação com uma pergunta curta, modelo apenas um primeiro bloco e devolvo a decisão à dupla."
+            },
+            "pace": "break"
+          },
+          {
+            "title": "Tarefas diferentes, caminhos diferentes.",
+            "block": 2,
+            "layout": "dw16",
+            "lede": "Três direções podem atender ao mesmo pedido de modos diferentes.",
+            "promptLabel": "Na oficina",
+            "prompt": "Escolha três alternativas suas e compare com estes efeitos possíveis.",
+            "dw16": {
+              "type": "compare",
+              "left": [
+                "Escolher antes de sair",
+                "Destaque: atividade + horário",
+                "Ação: ver programação"
+              ],
+              "right": [
+                "Resolver ao chegar",
+                "Destaque: local + acesso",
+                "Ação: como chegar"
+              ],
+              "caption": "Mudou a tarefa, muda a ordem da informação."
+            },
+            "teacher": {
+              "speech": "Volto com chamada e alterno o operador. O objetivo não é copiar: é perceber que prioridade cria consequência.",
+              "steps": [
+                "10 min · A dupla lê, compara, decide, produz ou testa na oficina. A intervenção docente é por pergunta; demonstrações somam no máximo 12 minutos na noite."
+              ],
+              "watch": "Escolha três alternativas suas e compare com estes efeitos possíveis.",
+              "rescue": "Retomo a situação com uma pergunta curta, modelo apenas um primeiro bloco e devolvo a decisão à dupla."
+            }
+          },
+          {
+            "title": "Escolha com critério.",
+            "block": 2,
+            "layout": "dw16",
+            "lede": "Uma direção promissora serve ao pedido e ainda deixa caminho para construir.",
+            "promptLabel": "Na oficina",
+            "prompt": "Compare clareza, coerência e viabilidade. Registre por que selecionou cada uma das três ideias; depois escolha uma direção para testar.",
+            "dw16": {
+              "type": "criteria",
+              "items": [
+                "Clareza: a pessoa entende o que consegue fazer.",
+                "Coerência: destaque, título e ação apontam para a mesma tarefa.",
+                "Viabilidade: cabe em duas telas simples e pode ser testado hoje."
+              ]
+            },
+            "teacher": {
+              "speech": "Peço razões ligadas a clareza, coerência e viabilidade. Não uso votação por gosto.",
+              "steps": [
+                "10 min · A dupla lê, compara, decide, produz ou testa na oficina. A intervenção docente é por pergunta; demonstrações somam no máximo 12 minutos na noite."
+              ],
+              "watch": "Compare clareza, coerência e viabilidade. Registre por que selecionou cada uma das três ideias; depois escolha uma direção para testar.",
+              "rescue": "Retomo a situação com uma pergunta curta, modelo apenas um primeiro bloco e devolvo a decisão à dupla."
+            }
+          },
+          {
+            "title": "Conceito é bússola.",
+            "block": 2,
+            "layout": "dw16",
+            "lede": "Nome, explicação e critérios evitam que a tela vire coleção de efeitos.",
+            "promptLabel": "Na oficina",
+            "prompt": "Dê nome e explicação ao conceito; confira os três critérios antes de escolher a direção.",
+            "dw16": {
+              "type": "steps",
+              "items": [
+                "Para quem é esta solução?",
+                "Que tarefa ela torna mais clara?",
+                "Qual informação não pode ficar escondida?",
+                "Como nome, explicação e critérios orientam a escolha?"
+              ]
+            },
+            "teacher": {
+              "speech": "Mostro um exemplo breve ligado ao briefing. Não escolho o conceito pela dupla.",
+              "steps": [
+                "10 min · A dupla lê, compara, decide, produz ou testa na oficina. A intervenção docente é por pergunta; demonstrações somam no máximo 12 minutos na noite."
+              ],
+              "watch": "Dê nome e explicação ao conceito; confira os três critérios antes de escolher a direção.",
+              "rescue": "Retomo a situação com uma pergunta curta, modelo apenas um primeiro bloco e devolvo a decisão à dupla."
+            }
+          },
+          {
+            "title": "Esboço mostra a estrutura.",
+            "block": 2,
+            "layout": "dw16",
+            "lede": "Blocos antes de acabamento: conteúdo, ordem e ação.",
+            "promptLabel": "Na oficina",
+            "prompt": "Abra os três esboços de página de início. Posicione título, conteúdo prioritário e ação.",
+            "dw16": {
+              "type": "steps",
+              "items": [
+                "Contexto: onde estou e por que isso importa?",
+                "Prioridade: o que vejo primeiro?",
+                "Ação: o que faço agora?",
+                "Relação: a estrutura cumpre a razão escolhida?"
+              ]
+            },
+            "teacher": {
+              "speech": "Distingo esboço de wireframe técnico: hoje não há grade, medidas ou acabamento. A Aula 17 dará estrutura técnica ao que escolherem.",
+              "steps": [
+                "10 min · A dupla lê, compara, decide, produz ou testa na oficina. A intervenção docente é por pergunta; demonstrações somam no máximo 12 minutos na noite."
+              ],
+              "watch": "Abra os três esboços de página de início. Posicione título, conteúdo prioritário e ação.",
+              "rescue": "Retomo a situação com uma pergunta curta, modelo apenas um primeiro bloco e devolvo a decisão à dupla."
+            }
+          },
+          {
+            "title": "Quatro esboços de página, um caminho escolhido.",
+            "block": 3,
+            "layout": "dw16",
+            "lede": "Três inícios permitem comparar; a página interna cumpre a promessa da direção escolhida.",
+            "promptLabel": "Na oficina",
+            "prompt": "Monte três esboços de página de início e a página interna. Confira se a ação do esboço escolhido leva a uma resposta útil.",
+            "dw16": {
+              "type": "steps",
+              "items": [
+                "Três inícios: título, destaque e ação.",
+                "Interna: detalhe útil para decidir ou chegar.",
+                "Ligação: a ação da direção escolhida promete o que a interna entrega.",
+                "Confira: a estrutura corresponde à razão da direção."
+              ]
+            },
+            "teacher": {
+              "speech": "Faço chamada. Demonstro apenas mover um bloco. Enquanto produzem, observo se a dupla alterna decisão e registro.",
+              "steps": [
+                "30 min · A dupla lê, compara, decide, produz ou testa na oficina. A intervenção docente é por pergunta; demonstrações somam no máximo 12 minutos na noite."
+              ],
+              "watch": "Monte três esboços de página de início e a página interna. Confira se a ação do esboço escolhido leva a uma resposta útil.",
+              "rescue": "Retomo a situação com uma pergunta curta, modelo apenas um primeiro bloco e devolvo a decisão à dupla."
+            }
+          },
+          {
+            "title": "Quem criou observa em silêncio.",
+            "block": 3,
+            "layout": "dw16",
+            "lede": "Teste não é explicar o projeto; é descobrir o que a pessoa entende e faz.",
+            "promptLabel": "Na oficina",
+            "prompt": "Convide uma pessoa da dupla vizinha. Peça uma tarefa; registre onde ela procurou, o que disse e se conseguiu concluir.",
+            "dw16": {
+              "type": "compare",
+              "left": [
+                "Observação útil",
+                "“Procurou em Programação; esperava mapa; hesitou no botão.”"
+              ],
+              "right": [
+                "Opinião vaga",
+                "“Achou legal.”"
+              ],
+              "caption": "Registre comportamento e fala, não elogio."
+            },
+            "teacher": {
+              "speech": "Visita curta no mesmo computador. Se o visitante perguntar, o autor responde “o que você esperava encontrar?” e anota, sem ensinar o caminho.",
+              "steps": [
+                "15 min · A dupla lê, compara, decide, produz ou testa na oficina. A intervenção docente é por pergunta; demonstrações somam no máximo 12 minutos na noite."
+              ],
+              "watch": "Convide uma pessoa da dupla vizinha. Peça uma tarefa; registre onde ela procurou, o que disse e se conseguiu concluir.",
+              "rescue": "Retomo a situação com uma pergunta curta, modelo apenas um primeiro bloco e devolvo a decisão à dupla."
+            }
+          },
+          {
+            "title": "Revisar é decidir de novo.",
+            "block": 4,
+            "layout": "dw16",
+            "lede": "A evidência pode confirmar uma escolha ou pedir ajuste.",
+            "promptLabel": "Na oficina",
+            "prompt": "Use a observação para manter ou alterar um bloco, texto ou ação. Escreva por quê.",
+            "dw16": {
+              "type": "criteria",
+              "items": [
+                "Qual foi a evidência?",
+                "Que escolha ela confirma ou questiona?",
+                "O que você manteve ou ajustou?"
+              ]
+            },
+            "teacher": {
+              "speech": "Faço chamada. Não exijo mudança artificial: manter também é decisão se a visita a sustentar.",
+              "steps": [
+                "15 min · A dupla lê, compara, decide, produz ou testa na oficina. A intervenção docente é por pergunta; demonstrações somam no máximo 12 minutos na noite."
+              ],
+              "watch": "Use a observação para manter ou alterar um bloco, texto ou ação. Escreva por quê.",
+              "rescue": "Retomo a situação com uma pergunta curta, modelo apenas um primeiro bloco e devolvo a decisão à dupla."
+            }
+          },
+          {
+            "title": "Cada pessoa explica sua parte.",
+            "block": 4,
+            "layout": "dw16",
+            "lede": "Autoavaliação torna a aprendizagem visível sem separar a dupla do projeto.",
+            "promptLabel": "Na oficina",
+            "prompt": "Cada integrante responde às três perguntas na oficina e mostra sua contribuição. Deixe os registros prontos para o fechamento às 22h.",
+            "dw16": {
+              "type": "check",
+              "items": [
+                "Qual decisão eu consigo defender?",
+                "O que a visita mostrou?",
+                "Qual ajuste eu faria na próxima versão?"
+              ]
+            },
+            "teacher": {
+              "speech": "Leio as perguntas antes do registro. Faço devolutiva breve por critério pendente, não por acabamento.",
+              "steps": [
+                "12 min · A dupla lê, compara, decide, produz ou testa na oficina. A intervenção docente é por pergunta; demonstrações somam no máximo 12 minutos na noite."
+              ],
+              "watch": "Cada integrante responde às três perguntas na oficina e mostra sua contribuição. Deixe os registros prontos para o fechamento às 22h.",
+              "rescue": "Retomo a situação com uma pergunta curta, modelo apenas um primeiro bloco e devolvo a decisão à dupla."
+            }
+          },
+          {
+            "title": "O que leva para a próxima versão?",
+            "block": 4,
+            "layout": "dw16",
+            "lede": "Uma decisão de projeto precisa ligar pedido, estrutura e evidência.",
+            "promptLabel": "Na oficina",
+            "prompt": "Mostre uma escolha que atende ao briefing, diga o que a visita revelou e esclareça sua última dúvida. Salve uma cópia do rascunho.",
+            "dw16": {
+              "type": "check",
+              "items": [
+                "Pedido → prioridade: para quem e para quê?",
+                "Estrutura → ação: o que a pessoa encontra e faz?",
+                "Visita → decisão: o que manter ou ajustar?"
+              ],
+              "caption": "Aula 17: desenvolver a direção escolhida em uma representação mais detalhada das telas."
+            },
+            "teacher": {
+              "speech": "Sistematizo com a turma: abrir possibilidades, escolher por critérios e revisar por evidência. Recolho dúvidas antes das 22h. Anuncio apenas a continuidade: na Aula 17, a direção escolhida será desenvolvida em wireframes, representações mais detalhadas da organização das telas; não ensino conteúdo novo agora.",
+              "steps": [
+                "3 min · A dupla lê, compara, decide, produz ou testa na oficina. A intervenção docente é por pergunta; demonstrações somam no máximo 12 minutos na noite."
+              ],
+              "watch": "Mostre uma escolha que atende ao briefing, diga o que a visita revelou e esclareça sua última dúvida. Salve uma cópia do rascunho.",
+              "rescue": "Retomo a situação com uma pergunta curta, modelo apenas um primeiro bloco e devolvo a decisão à dupla."
+            }
+          },
+          {
+            "title": "22h–22h30: clínica opcional.",
+            "block": 4,
+            "layout": "dw16",
+            "lede": "Sem conteúdo ou avaliação nova: apoio técnico, salvamento e organização do trabalho já concluído.",
+            "promptLabel": "Na oficina",
+            "prompt": "Salve e organize o posto. Se precisar, peça ajuda técnica ou esclareça uma dúvida sobre o trabalho já concluído.",
+            "dw16": {
+              "type": "pause",
+              "time": "22:00",
+              "caption": "Conteúdo concluído · apoio opcional até 22h30"
+            },
+            "teacher": {
+              "speech": "Atendo dúvidas e apoio técnico. Não completo critérios nem recolho evidência adicional após 22h. Recuperação avaliativa pendente terá oportunidade equivalente para todos.",
+              "steps": [
+                "30 min · A dupla lê, compara, decide, produz ou testa na oficina. A intervenção docente é por pergunta; demonstrações somam no máximo 12 minutos na noite."
+              ],
+              "watch": "Salve e organize o posto. Se precisar, peça ajuda técnica ou esclareça uma dúvida sobre o trabalho já concluído.",
+              "rescue": "Retomo a situação com uma pergunta curta, modelo apenas um primeiro bloco e devolvo a decisão à dupla."
+            },
+            "pace": "extra"
+          }
         ]
       },
       "17": {

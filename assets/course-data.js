@@ -564,8 +564,8 @@ window.SENAI_COURSES = {
       },
       {
         "num": "16",
-        "title": "Ideação, Conceito e Rafes",
-        "description": "Ideação, conceituação e rafes em papel, exercitando a visão inovadora sobre o briefing e a arquitetura de informação construídos nas aulas anteriores.",
+        "title": "Ideias que viram direção",
+        "description": "Uma oficina de soluções de software: transformar um pedido do Festival Vira-Luz em seis alternativas, conceito e três esboços de página de início mais uma página interna que outra pessoa consegue testar.",
         "objectives": [
           "Desenvolvimento do Projeto: ideação, conceituação, rafes.",
           "Inovação: visão inovadora."
@@ -579,25 +579,25 @@ window.SENAI_COURSES = {
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Revisão da aula anterior: mapa do site e estrutura de navegação do cliente fictício. Aquecimento criativo com a dinâmica \"Crazy 8s\": cada aluno dobra uma folha em 8 partes e esboça 8 versões de uma tela de aplicativo em 8 minutos."
+            "horario": "19:00 - 19:45",
+            "atividade": "Ler a situação-problema, fazer o diagnóstico de duas soluções e gerar seis alternativas de primeira tela para o Festival Vira-Luz. Comparar alternativas pela tarefa que ajudam a realizar."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "Técnicas de ideação: brainstorming com regras (adiar o julgamento, quantidade antes de qualidade), combinação de referências e moodboard rápido. Definição do conceito visual do projeto a partir do briefing e do mapa do site: personalidade da marca, palavras-chave e direção estética de cada grupo."
+            "horario": "20:05 - 20:45",
+            "atividade": "Selecionar três alternativas promissoras, definir o conceito da solução e usar três critérios para justificar a escolha. Alternar quem opera e iniciar os esboços de página."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "Produção de rafes em papel: esboços rápidos da página inicial e de uma página interna, com pelo menos três variações de solução por página. Traço solto, sem régua, com anotações ao lado do desenho explicando cada decisão."
+            "horario": "20:45 - 21:30",
+            "atividade": "Montar na oficina três esboços de página de baixa fidelidade para a página inicial e uma página interna da direção escolhida. Organizar blocos, título, ação e conteúdo prioritário. Entre 21h15 e 21h30, realizar a visita de uma pessoa de outra dupla, sem explicação dos autores."
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "Revisão dos esboços: esboços fixados na parede, rodada de feedback entre grupos com post-its (o que funciona, o que confunde) e escolha da direção mais promissora, que vira base do wireframe da próxima aula."
+            "horario": "21:30 - 22:00",
+            "atividade": "Concluir o registro da visita já realizada, revisar a direção, responder aos registros individuais A/B e participar da síntese final. Das 22:00 às 22:30: clínica e apoio técnico opcional, sem conteúdo ou avaliação nova."
           }
         ],
-        "methodology": "Oficina criativa com técnicas de ideação rápida e feedback entre pares.",
-        "resources": "Papel, canetas e canetões, quadro e projetor.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "Situação-problema profissional inteiramente praticada na oficina: diagnóstico por comparação, ideação divergente e seleção convergente, construção de esboços de página, teste por observação e revisão baseada em evidência. Os 160 minutos letivos priorizam decisões e ações do estudante; a fala demonstrativa do docente soma no máximo 12 minutos, distribuída em intervenções de até dois minutos. A dupla alterna autoria e observação; cada estudante registra sua autoavaliação.",
+        "resources": "Projetor, navegador e Estúdio de Direções da Aula 16. A oficina local reúne o briefing, as alternativas, a criação, o teste, os critérios e o rascunho. Sem login, instalação, impressão, pesquisa externa ou envio obrigatório.",
+        "observation": "19:00–22:00 de conteúdo e evidência avaliável, com intervalo 19:45–20:05. Das 22:00 às 22:30 é somente apoio técnico individual, salvamento e organização do trabalho já concluído; não apresenta conteúdo novo nem cria exigência para quem saiu. Chamada no início dos quatro blocos. Os casos são fictícios; uma dupla por computador; rascunho fica neste navegador."
       },
       {
         "num": "17",
