@@ -17,3 +17,7 @@ O rascunho fica no navegador deste computador. Use **Meu rascunho → Baixar JSO
 Consulte [PLANO-DOCENTE.md](PLANO-DOCENTE.md) para mediação, critérios, instrumentos, inclusão e recuperação. A avaliação da aprendizagem exige leitura docente das decisões e evidências; o software verifica presença dos registros.
 
 Fontes de implementação: `scripts/lessons/design-web-16.mjs`, `scripts/lessons/design-web-16-workshop.mjs` e `assets/design-web-16.*`. Regenerar com `node scripts/build-design-web-16.mjs`; validar com `node scripts/validate-design-web-16.mjs` e o teste de navegador.
+
+### Revisão visual da apresentação
+
+A apresentação usa três esboços distintos para comparar prioridades, diagramas de conceito e estrutura, etapas conectadas e cartões de evidência. O contraste e a variação de composição apoiam a leitura em projeção. A oficina, os critérios e os horários mantêm o mesmo planejamento; slides continuam locais.

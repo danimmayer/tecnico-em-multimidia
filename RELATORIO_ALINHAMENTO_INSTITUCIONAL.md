@@ -193,3 +193,7 @@ Fonte: HTMLs autônomos na raiz: `Aula_01_A_Imagem_Atraves_do_Tempo.html` a `Aul
 
 
 Publicação da Aula 16 em 13/11/2026: oficina em https://oficinas-design-web.vercel.app/aula-16/ (produção READY). Slides e kit docente permanecem locais, conforme orientação do professor. A verificação técnica pública está registrada no relatório detalhado da aula; não altera o estado preliminar das demais fichas.
+
+### Aula 16 — revisão visual de 13/11/2026
+
+A apresentação recebeu exemplos de interface distintos por prioridade, diagramas de conceito/estrutura e contraste entre observação e opinião. A mudança apoia R06, R17 e R20 no material, preservando os critérios, a oficina e o encerramento avaliativo até 22h. Não altera os estados de observação ou pendência das demais aulas e atribuições institucionais.

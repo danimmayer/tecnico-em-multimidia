@@ -77,3 +77,9 @@ A revisão corrigiu a coerência do cronograma com o teste e acrescentou síntes
 Validação: geração e paridade do material, cronograma de 160 minutos letivos e 20 de intervalo, teste completo da oficina no Chrome local e público, cópia/importação/exportação e versão móvel aprovados. Os 62 arquivos publicados conferem por SHA1. As pendências de observação docente, validação curricular e fluxos institucionais desta matriz permanecem abertas conforme o estado indicado.
 
 Conferência visual final: 16 de 16 slides sem transbordamento horizontal/vertical e sem erros de JavaScript no Chrome, em 1366 × 768. Rótulos das comparações, critérios, instruções e encerramento conferidos.
+
+### Refinamento visual da apresentação
+
+R06/R17/R20: a apresentação diferencia exemplos de programação, acesso e atividade em destaque; transforma perguntas de conceito/estrutura em diagramas e contrasta observação concreta com opinião vaga. As variações visuais apoiam comparação e compreensão sem acrescentar tarefa, critério ou tempo. Os estados da matriz permanecem os mesmos: material visual não comprova aprendizagem ou mediação realizada.
+
+Verificação após o refinamento: 16 slides sem transbordamento e sem erro de JavaScript no Chrome a 1366 × 768; capa, comparações, diagramas e evidências inspecionados visualmente.
