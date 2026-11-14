@@ -1,58 +1,49 @@
-# Aula 18 — Design Web: ficha de clareza
+# Relatório pedagógico — Design Web, Aula 18: Wireframes responsivos
 
-## Fonte consultada e limite
+## Finalidade e base
 
-Consultadas a fonte gerada `assets/course-data.js`, o apoio docente em `assets/course-support.js` e os produtos previstos na Aula 17. Esta ficha trata do planejamento; não declara aprendizagem observada nem registros administrativos realizados.
+Este documento apresenta o planejamento da Aula 18 caso a coordenação pedagógica solicite esclarecimentos sobre seu alinhamento metodológico. Ele descreve uma proposta didática e suas evidências previstas; não declara aprendizagem observada, frequência, mediação realizada ou registros administrativos.
 
-## Situação e resultado esperado
+A aula retoma os wireframes da Aula 17 para adaptar página inicial e Página de informações de computador para celular. “Responsivo” é explicado como reorganizar a tela para que a pessoa entenda, leia e toque o que importa em tamanhos diferentes; não é apenas encolher o desenho.
 
-O grupo adapta os dois wireframes escolhidos — página inicial e Página de informações — de computador para celular. “Responsivo” é explicado como reorganizar a tela para que a pessoa entenda, leia e toque o que importa em tamanhos diferentes. A área em que se desenha cada versão é chamada de área da tela.
+## Situação de aprendizagem e protagonismo
 
-## Percurso claro para o estudante
+O desafio é preservar uma tarefa de navegação em uma tela menor. A dupla compara as versões de computador e celular, decide qual informação e ação aparecem primeiro, empilha ou reorganiza blocos e testa se uma pessoa encontra a informação e conclui a ação principal.
 
-1. Colocar lado a lado as duas telas de computador e as molduras de celular.
-2. Dizer qual informação e qual ação a pessoa precisa encontrar primeiro.
-3. Empilhar ou mudar de ordem os blocos na página inicial de celular; anotar uma mudança e o motivo.
-4. Fazer o mesmo na Página de informações e conferir o caminho entre as duas telas.
-5. Pedir a um visitante que encontre uma informação e conclua a ação sem explicação.
-6. Usar a observação para manter ou ajustar e salvar/fotografar as quatro telas até 22h.
+O resultado esperado é visível: quatro wireframes — página inicial e Página de informações em computador e celular — com mudanças anotadas e observação do teste. A atividade exige decisões de prioridade e ordem; o visitante realiza uma tarefa sem explicação dos autores, e a dupla usa o que observou para manter ou ajustar uma escolha.
 
-## Critérios e evidências previstas
+## Mediação, clareza e inclusão
 
-| Critério conhecido antes da produção | Instrumento | Evidência de planejamento | Limite |
-|---|---|---|---|
-| A dupla explica uma mudança de computador para celular e seu motivo. | Anotação junto ao wireframe e pergunta docente. | Wireframes lado a lado. | A explicação precisa ser apreciada pelo docente. |
-| Informação e ação prioritárias aparecem em ordem compreensível no celular. | Tarefa de visitante. | Página inicial de celular. | Um teste curto não cobre todos os usos. |
-| O caminho entre página inicial e Página de informações continua possível. | Observação da navegação no papel ou computador. | Quatro wireframes e setas. | A presença de setas não certifica usabilidade. |
-| A dupla usa observação para decidir manter ou ajustar. | Registro de comportamento/fala e decisão. | Anotação da visita. | Feedback e recuperação efetivos dependem da mediação docente. |
+O docente demonstra somente o primeiro passo: coloca lado a lado uma área de computador e outra de celular, empilha dois blocos e pergunta o que deve aparecer antes da rolagem. Depois acompanha com perguntas como: “o que a pessoa precisa ver primeiro?”, “o que mudou e por quê?” e “o caminho continua claro?”.
 
-## Inclusão, privacidade e horário
+O percurso diz o que fazer, onde fazer e como conferir: desenhar nas molduras de celular; anotar uma mudança; pedir a outra pessoa que encontre uma informação; observar onde ela hesita. Sem internet ou equipamento, os blocos podem ser recortados e reorganizados em papel. Qualquer adaptação individual depende da necessidade identificada e da orientação pedagógica.
 
-Quando não houver internet ou equipamento, os blocos podem ser recortados e reorganizados em papel. Adaptação PcD requer análise da necessidade real e validação pedagógica. O caso é fictício, sem dados pessoais. Conteúdo, teste e evidência acabam às 22h; das 22h às 22h30 há apenas apoio técnico, salvamento e organização. Frequência, diário/SGN e demais registros institucionais não são produzidos por este material.
+## Avaliação prevista
 
-## Matriz R01–R20 — planejamento e material
+| Critério conhecido antes da produção | Instrumento | Evidência prevista |
+|---|---|---|
+| A dupla explica uma mudança de computador para celular e seu motivo. | Anotação junto ao wireframe e pergunta docente. | Wireframes lado a lado. |
+| Informação e ação prioritárias aparecem em ordem compreensível no celular. | Tarefa de visitante. | Página inicial de celular. |
+| O caminho entre página inicial e Página de informações continua possível. | Observação da navegação no papel ou computador. | Quatro wireframes e setas. |
+| A dupla usa observação para decidir manter ou ajustar. | Registro de comportamento/fala e decisão. | Anotação da visita. |
 
-Estados: **E** evidenciado no planejamento/material; **P** parcial; **O** depende de observação/registro humano; **F** depende da fase ou condição institucional. A matriz não certifica execução, aprendizagem, mediação ou registros no SGN.
+Os critérios orientam a devolutiva. As quatro telas, setas e anotações são evidências previstas, não certificação automática de aprendizagem, qualidade ou usabilidade. Feedback e recuperação dependem da mediação docente.
 
-| Req. | Estado | Evidência concreta | Lacuna / próxima ação |
-| --- | --- | --- | --- |
-| R01 | E | `design-web-17-18-clarity.mjs`: objetivo, quatro blocos de horário, recursos e alternativa em papel. | Confirmar sala, materiais e tempo reais antes da aula. |
-| R02 | E | Retoma os wireframes da Aula 17 e conecta a tarefa à adaptação de interface para celular. | Confirmar a pertinência da retomada com a turma. |
-| R03 | E | A tarefa produz quatro wireframes e um caminho que permite encontrar informação e concluir ação no celular. | Ajustar o caso se o diagnóstico da turma pedir. |
-| R04 | E | Dupla compara, decide prioridade, reorganiza blocos, testa e revisa com alternância de papéis. | Participação e autonomia efetivas são O. |
-| R05 | E | Metodologia prevê perguntas, observação e mediação docente durante comparação e teste. | Mediação e ajuste realizados são O. |
-| R06 | P | “Responsivo” recebe explicação e exemplo de reorganização; o percurso informa ação, lugar e conferência. | Validar com a próxima turma se adolescentes entendem sem explicação extra; não chamar legibilidade de aprovada antes disso. |
-| R07 | E | Critérios são conhecidos antes da produção; teste e anotação sustentam devolutiva formativa. | Feedback oportuno e compreensão são O. |
-| R08 | E | Hesitação do visitante orienta manter ou ajustar, sem transformar campos preenchidos em aprovação. | Uso do erro sem constrangimento é O. |
-| R09 | P | Recortar e reorganizar blocos no papel é alternativa de recurso. | Adequação PcD exige necessidade concreta e validação pedagógica. |
-| R10 | P | Salvar/fotografar as quatro telas e continuidade entre aulas estão previstos até 22h. | Síntese coletiva e dúvidas precisam ser conduzidas/registradas. |
-| R11 | O | Horário pedagógico até 22h e apoio posterior estão documentados. | Chamada, diário/SGN, frequência e permanência são ações humanas. |
-| R12 | P | Visitante realiza tarefa sem explicação e a dupla alterna papéis. | Escuta, equidade, privacidade, conflitos e canais dependem de conduta e fluxo institucional. |
-| R13 | O/F | Recursos, alternativa e horário estão listados. | Ensalamento, materiais, agenda, comunicação e registros institucionais devem ser confirmados pelo docente. |
-| R14 | E | Fontes curriculares: estrutura de wireframes/protótipos e gestão do tempo; tarefa mobiliza prioridade, organização e colaboração. | Desempenho demonstrado é O. |
-| R15 | E | Tabela relaciona critério, instrumento e evidência; apreciação docente não é preenchimento automático. | Ponderação formal, se houver, depende da UC. |
-| R16 | P | Ações observáveis aparecem no percurso (comparar, reorganizar, testar, revisar), mas a ementa registra “wireframes responsivos” como conhecimento. | Confirmar/redigir objetivo oficial com verbo, objeto e contexto no plano homologado. |
-| R17 | P | Tecnologia e papel têm uso intencional; caso fictício e sem dados pessoais. | Privacidade de dispositivo compartilhado e condições reais requerem orientação/observação. |
-| R18 | E | Quatro wireframes, anotações de mudança e visita permitem acompanhar o processo e orientar revisão. | Registro docente e recuperação efetiva são O. |
-| R19 | F/O | Não há avaliação formal nem fechamento de UC definido nesta ficha. | Cumprir prazos, SGN, médias e demais atos apenas quando aplicáveis. |
-| R20 | E | Há teoria-prática: a mesma tarefa é comparada em computador/celular e a prioridade é justificada e testada. | Significado percebido pela turma é O. |
+## Tempo e continuidade
+
+Conteúdo, teste e evidência previstos terminam às 22h. Das 22h às 22h30, há consolidação opcional: comparar o caminho no computador e no celular, explicar uma prioridade a outra pessoa e organizar os arquivos. Esse período não acrescenta conteúdo, critério, nota, entrega ou registro avaliativo.
+
+Antes das 22h, a aula conta com três ciclos autônomos de reserva, de até 30 minutos cada: repetir a tarefa no celular com papéis trocados; mover um bloco secundário e comparar as duas ordens; ou testar uma tarefa diferente nas mesmas quatro telas. Sem dupla, o estudante escreve a tarefa, afasta-se dos wireframes e percorre o caminho como visitante; sem internet, recorta e reorganiza blocos em papel. Cada ciclo termina em marcação no wireframe ou anotação curta e pode ser repetido ou substituído por outro ciclo, sem criar uma entrega obrigatória.
+
+## Referências institucionais aplicadas
+
+- **Tempo de Planejar — MSEP:** situação de aprendizagem com contexto, desafio e resultado; avaliação ligada a critérios e evidências.
+- **Orientações Didáticas aos Docentes:** protagonismo, mediação por perguntas, linguagem clara, alternativa de recurso e revisão a partir do erro.
+- **Orientações da Orientação Pedagógica ao Docente:** articulação entre conhecimento técnico, decisão, colaboração e contexto profissional.
+- **Critérios de avaliação:** critérios apresentados antes da produção, instrumentos coerentes e evidências de processo e produto.
+- **Taxonomia de Bloom:** ações como comparar, reorganizar, testar e revisar em complexidade compatível com a continuidade da aula.
+- **Checklist — Atribuições do Docente Presencial:** organização de recursos e acompanhamento são previstos no planejamento; registros e procedimentos institucionais dependem da execução do docente.
+
+## Conclusão
+
+O planejamento propõe uma oficina prática que transforma comparação entre telas em decisão, teste e revisão. O alinhamento descrito é do material e da proposta; sua realização em sala deve ser observada e registrada pelo docente.

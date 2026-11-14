@@ -1,58 +1,49 @@
-# Aula 17 — Design Web: ficha de clareza
+# Relatório pedagógico — Design Web, Aula 17: Wireframes
 
-## Fonte consultada e limite
+## Finalidade e base
 
-Consultadas a fonte gerada `assets/course-data.js`, o apoio docente em `assets/course-support.js` e a continuidade planejada na Aula 16. Esta ficha descreve planejamento e material; não comprova participação, aprendizagem, frequência, mediação ou registros institucionais.
+Este documento apresenta o planejamento da Aula 17 caso a coordenação pedagógica solicite esclarecimentos sobre seu alinhamento metodológico. Ele descreve uma proposta didática e suas evidências previstas; não afirma participação, aprendizagem, frequência, mediação realizada ou registros institucionais.
 
-## Situação e resultado esperado
+A aula dá continuidade à produção anterior: cada dupla escolhe uma versão inicial já criada e a transforma em dois wireframes — página inicial e Página de informações. Wireframe é apresentado como “desenho da tela com espaços e tamanhos”, para que os estudantes decidam ordem, conteúdo e ação antes de cor e acabamento.
 
-O grupo escolhe **uma** das três versões iniciais feitas na Aula 16 e a transforma em dois wireframes: página inicial e Página de informações. Wireframe é apresentado na primeira vez como “desenho da tela com espaços e tamanhos”. O produto mostra a ordem de título, informação e ação, mais o caminho entre as duas telas.
+## Situação de aprendizagem e protagonismo
 
-## Percurso claro para o estudante
+O desafio é organizar duas telas que ajudem uma pessoa a cumprir uma tarefa sem receber explicação dos autores. Os estudantes escolhem uma versão, definem a tarefa do visitante, organizam os blocos, ligam a ação da página inicial à Página de informações e testam esse caminho.
 
-1. Abrir os esboços anteriores e marcar a versão escolhida.
-2. Dizer qual tarefa a pessoa deve conseguir realizar.
-3. Desenhar a página inicial na área de tela do computador.
-4. Desenhar a Página de informações que responde ao botão.
-5. Entregar a tarefa a um visitante sem explicar o caminho; registrar procura, encontro ou hesitação.
-6. Manter ou ajustar algo por um motivo e salvar/fotografar as duas telas até 22h.
+O resultado esperado é visível: dois wireframes ligados por uma seta, com título, informação prioritária e ação em ordem compreensível, além de uma anotação sobre o teste. A oficina preserva a troca de conhecimento: uma pessoa realiza a tarefa como visitante, enquanto a dupla observa e decide manter ou ajustar algo por um motivo.
 
-## Critérios e evidências previstas
+## Mediação, clareza e inclusão
 
-| Critério conhecido antes da produção | Instrumento | Evidência de planejamento | Limite |
-|---|---|---|---|
-| A escolha atende a uma tarefa identificável. | Perguntas e checklist docente. | Uma versão inicial é marcada e ligada à tarefa. | A qualidade da decisão é apreciada pelo docente; não é aprovada automaticamente. |
-| Título, informação e ação estão em ordem localizável. | Observação da tela e visita. | Dois wireframes com blocos e caminho. | Requer observação durante a aula. |
-| O botão entrega uma Página de informações coerente. | Tarefa do visitante. | Seta entre telas e anotação do visitante. | Uma anotação não prova, sozinha, aprendizagem. |
-| A dupla revisa com base em evidência. | Registro curto de manter/ajustar e motivo. | Registro da visita. | Feedback e recuperação efetivos dependem do docente. |
+O docente modela apenas o início: mostra a área da tela, transforma um título, texto e botão em linhas e retângulos e demonstra a ligação entre as telas. Depois acompanha por perguntas: “qual tarefa a pessoa precisa realizar?”, “o que ela vê primeiro?” e “a segunda tela cumpre a promessa do botão?”.
 
-## Inclusão, privacidade e horário
+O percurso informa o que fazer, onde fazer e como conferir: abrir os esboços da Aula 16; desenhar na moldura de computador; entregar uma tarefa ao visitante; conferir onde ele procurou, encontrou ou hesitou. Há alternativa em papel, post-its e molduras impressas quando faltar internet ou equipamento. Qualquer adaptação individual depende da necessidade identificada e da orientação pedagógica.
 
-Há alternativa em papel, post-its e molduras impressas para indisponibilidade de internet ou equipamento. Adaptações PcD dependem da necessidade identificada e validação pedagógica; não são inferidas por esta ficha. O caso é fictício e não usa dados pessoais. Conteúdo, teste e evidência acabam às 22h; das 22h às 22h30 há somente apoio técnico, salvamento e organização. Frequência, diário/SGN, devolutivas e demais atribuições administrativas permanecem dependentes de execução e registro institucional.
+## Avaliação prevista
 
-## Matriz R01–R20 — planejamento e material
+| Critério conhecido antes da produção | Instrumento | Evidência prevista |
+|---|---|---|
+| A versão escolhida atende a uma tarefa identificável. | Perguntas do docente e checklist. | Versão marcada e ligada à tarefa. |
+| Título, informação e ação aparecem em ordem localizável. | Observação da tela e tarefa de visitante. | Dois wireframes com blocos e caminho. |
+| O botão entrega uma Página de informações coerente. | Tarefa do visitante. | Seta entre as telas e anotação do teste. |
+| A dupla revisa com base na observação. | Decisão curta de manter ou ajustar, com motivo. | Anotação da visita. |
 
-Estados: **E** evidenciado no planejamento/material; **P** parcial; **O** depende de observação/registro humano; **F** depende da fase ou condição institucional. A matriz não certifica execução, aprendizagem, mediação ou registros no SGN.
+Os critérios orientam a devolutiva; preencher campos ou possuir uma anotação não comprova aprendizagem por si só. Feedback, recuperação e apreciação da qualidade dependem da mediação docente.
 
-| Req. | Estado | Evidência concreta | Lacuna / próxima ação |
-| --- | --- | --- | --- |
-| R01 | E | `design-web-17-18-clarity.mjs`: objetivo, quatro blocos de horário, recursos e alternativa em papel. | Confirmar sala, materiais e tempo reais antes da aula. |
-| R02 | E | Retoma a escolha da Aula 16 e a aplica ao trabalho profissional de organizar conteúdo e caminho. | Confirmar a pertinência da retomada com a turma. |
-| R03 | E | A tarefa define um resultado: dois wireframes ligados, capazes de atender uma tarefa de visitante. | Ajustar o caso se o diagnóstico da turma pedir. |
-| R04 | E | Dupla escolhe uma versão, constrói, testa, revisa e alterna papéis. | Participação e autonomia efetivas são O. |
-| R05 | E | Metodologia prevê observação, perguntas e feedback por critério. | Mediação e ajuste realizados são O. |
-| R06 | P | “Wireframe” recebe explicação concreta; o percurso informa ação, lugar e conferência. | Validar com a próxima turma se adolescentes entendem sem explicação extra; não chamar legibilidade de aprovada antes disso. |
-| R07 | E | Critérios são apresentados antes da produção; checklist, visita e registro sustentam devolutiva formativa. | Feedback oportuno e compreensão são O. |
-| R08 | E | Visita entre pares gera decisão de manter ou ajustar, sem aprovação automática. | Uso do erro sem constrangimento é O. |
-| R09 | P | Papel, post-its e molduras são alternativas de recurso. | Adequação PcD exige necessidade concreta e validação pedagógica. |
-| R10 | P | Salvar/fotografar, nomear os dois arquivos e ligação com a próxima etapa estão previstos até 22h. | Síntese coletiva e dúvidas precisam ser conduzidas/registradas. |
-| R11 | O | Horário pedagógico até 22h e apoio posterior estão documentados. | Chamada, diário/SGN, frequência e permanência são ações humanas. |
-| R12 | P | Teste sem explicação dos autores e colaboração são previstos. | Escuta, equidade, privacidade, conflitos e canais dependem de conduta e fluxo institucional. |
-| R13 | O/F | Recursos, alternativa e horário estão listados. | Ensalamento, materiais, agenda, comunicação e registros institucionais devem ser confirmados pelo docente. |
-| R14 | E | Fonte curricular: estrutura técnica de wireframes e organização; a tarefa mobiliza decisão, colaboração e organização. | Desempenho demonstrado é O. |
-| R15 | E | Tabela relaciona critério, instrumento e evidência; apreciação docente não é preenchimento automático. | Ponderação formal, se houver, depende da UC. |
-| R16 | P | Ações observáveis aparecem no percurso (escolher, montar, testar, revisar), mas a ementa registra “wireframes” como conhecimento. | Confirmar/redigir objetivo oficial com verbo, objeto e contexto no plano homologado. |
-| R17 | P | Tecnologia e papel têm uso intencional; caso fictício e sem dados pessoais. | Privacidade de dispositivo compartilhado e condições reais requerem orientação/observação. |
-| R18 | E | Dois wireframes, seta, anotação de visita e decisão de revisão permitem acompanhar o processo. | Registro docente e recuperação efetiva são O. |
-| R19 | F/O | Não há avaliação formal nem fechamento de UC definido nesta ficha. | Cumprir prazos, SGN, médias e demais atos apenas quando aplicáveis. |
-| R20 | E | Há teoria-prática: ordem, conteúdo, ação e caminho são decididos e testados numa tarefa de design web. | Significado percebido pela turma é O. |
+## Tempo e continuidade
+
+Conteúdo, teste e evidência previstos terminam às 22h. Das 22h às 22h30, há consolidação opcional: reabrir as duas telas, explicar o caminho a outra pessoa, comparar onde ela procura e organizar os arquivos. Esse período não acrescenta conteúdo, critério, nota, entrega ou registro avaliativo.
+
+Antes das 22h, a aula conta com três ciclos autônomos de reserva, de até 30 minutos cada: repetir a tarefa com papéis trocados; comparar duas ordens dos mesmos blocos; ou testar uma tarefa diferente nas mesmas telas. Sem dupla, o estudante escreve a tarefa, afasta-se do wireframe e percorre o caminho como visitante; sem internet, trabalha na moldura de papel. Cada ciclo termina em marcação no wireframe ou anotação curta e pode ser repetido ou substituído por outro ciclo, sem criar uma entrega obrigatória.
+
+## Referências institucionais aplicadas
+
+- **Tempo de Planejar — MSEP:** situação de aprendizagem com contexto, desafio e resultado; avaliação ligada a critérios e evidências.
+- **Orientações Didáticas aos Docentes:** protagonismo, mediação por perguntas, linguagem clara, alternativa de recurso e revisão a partir do erro.
+- **Orientações da Orientação Pedagógica ao Docente:** articulação entre conhecimento técnico, decisão, colaboração e contexto profissional.
+- **Critérios de avaliação:** critérios apresentados antes da produção, instrumentos coerentes e evidências de processo e produto.
+- **Taxonomia de Bloom:** ações como escolher, organizar, testar e revisar em complexidade compatível com a continuidade da aula.
+- **Checklist — Atribuições do Docente Presencial:** organização de recursos e acompanhamento são previstos no planejamento; registros e procedimentos institucionais dependem da execução do docente.
+
+## Conclusão
+
+O planejamento propõe uma oficina prática, com decisões dos estudantes, teste entre pares e revisão orientada por critério. O alinhamento descrito é do material e da proposta; sua realização em sala deve ser observada e registrada pelo docente.

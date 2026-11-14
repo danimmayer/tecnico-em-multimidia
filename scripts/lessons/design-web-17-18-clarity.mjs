@@ -18,12 +18,13 @@ export const lessonPatches = {
       },
       {
         horario: '21:30 - 22:00',
-        atividade: 'Teste entre pares: um visitante tenta cumprir a tarefa sem explicação; a dupla registra onde ele procurou, o que encontrou e uma decisão de manter ou ajustar. Salvar ou fotografar o wireframe e nomear os dois arquivos. Das 22:00 às 22:30: somente apoio técnico, salvamento e organização do trabalho já concluído.'
+        atividade: 'Teste entre pares: um visitante tenta cumprir a tarefa sem explicação; a dupla registra onde ele procurou, o que encontrou e uma decisão de manter ou ajustar. Salvar ou fotografar o wireframe e nomear os dois arquivos. Das 22:00 às 22:30: consolidação opcional do que já foi feito — reabrir as duas telas, explicar o caminho a outra pessoa, comparar onde ela procura e organizar os arquivos. Não há nova entrega, critério, nota ou registro avaliativo.'
       }
     ],
     methodology: 'Oficina de continuidade da Aula 16: escolher uma das três versões iniciais e desenvolver somente essa versão escolhida, junto da Página de informações. Demonstrações curtas mostram a convenção; estudantes constroem, testam uma tarefa e revisam com base no que o visitante fez. O docente observa, pergunta e devolve feedback por critério, sem aprovação automática.',
     resources: 'Projetor, computador com navegador ou papel A4, régua, caneta e os esboços salvos da Aula 16. Alternativa sem internet: papel, post-its e molduras impressas de computador. Casos fictícios; não usar dados pessoais.',
-    observation: 'Conteúdo, teste e evidência previstos até 22:00, com intervalo de 19:45 a 20:05. Das 22:00 às 22:30: apoio técnico, salvamento e organização, sem conteúdo, requisito ou evidência avaliativa nova. A execução, a aprendizagem observada, a frequência e registros institucionais dependem do docente.'
+    observation: 'Conteúdo, teste e evidência previstos até 22:00, com intervalo de 19:45 a 20:05. Das 22:00 às 22:30: consolidação opcional do trabalho concluído, sem conteúdo, requisito, nota, entrega ou evidência avaliativa nova. A execução, a aprendizagem observada, a frequência e registros institucionais dependem do docente.',
+    continuity: 'Reserva antes das 22h: ciclos autônomos e graduais de até 90 minutos. Ciclo 1 (30 min): alternar os papéis de autor e visitante e testar outra tarefa no mesmo par de telas; conferir se a pessoa encontra início, botão e Página de informações sem ajuda. Ciclo 2 (30 min): comparar duas ordens possíveis dos mesmos blocos, marcar qual deixa a tarefa mais clara e explicar a decisão. Ciclo 3 (30 min): repetir o teste com outra pessoa ou variar a tarefa, mantendo as mesmas duas telas. Sem dupla: escrever a tarefa em um papel, afastar-se do wireframe e seguir o caminho como visitante; depois registrar somente a própria decisão de revisão. Sem internet: usar papel, post-its e molduras. Cada ciclo termina em uma marcação visível no wireframe ou numa anotação curta, sem criar uma entrega adicional obrigatória.'
   },
   '18': {
     description: 'Adaptar os wireframes da página inicial e da Página de informações para celular, decidindo o que aparece primeiro, o que muda de lugar e como a navegação continua compreensível em uma tela menor.',
@@ -42,12 +43,13 @@ export const lessonPatches = {
       },
       {
         horario: '21:30 - 22:00',
-        atividade: 'Teste entre pares no papel ou no computador: outra pessoa tenta encontrar uma informação e concluir a ação principal no wireframe de celular. Registrar onde ela hesitou e ajustar, se a observação justificar. Salvar ou fotografar as quatro telas. Das 22:00 às 22:30: somente apoio técnico, salvamento e organização do trabalho já concluído.'
+        atividade: 'Teste entre pares no papel ou no computador: outra pessoa tenta encontrar uma informação e concluir a ação principal no wireframe de celular. Registrar onde ela hesitou e ajustar, se a observação justificar. Salvar ou fotografar as quatro telas. Das 22:00 às 22:30: consolidação opcional do que já foi feito — comparar o caminho no computador e no celular, explicar uma prioridade a outra pessoa e organizar os arquivos. Não há nova entrega, critério, nota ou registro avaliativo.'
       }
     ],
     methodology: 'Comparação de uma mesma tarefa em computador e celular, adaptação prática de dois wireframes e teste entre pares. A turma toma decisões de prioridade, ordem e toque; o docente usa perguntas e observação para mediar, sem transformar o preenchimento de itens em comprovação automática de aprendizagem.',
     resources: 'Projetor, computador com navegador ou papel A4, régua, caneta, molduras de computador e celular, e os wireframes da Aula 17. Alternativa sem internet: recortar e reorganizar blocos em uma moldura de celular. Casos fictícios; não usar dados pessoais.',
-    observation: 'Conteúdo, teste e evidência previstos até 22:00, com intervalo de 19:45 a 20:05. Das 22:00 às 22:30: apoio técnico, salvamento e organização, sem conteúdo, requisito ou evidência avaliativa nova. A execução, a aprendizagem observada, a frequência e registros institucionais dependem do docente.'
+    observation: 'Conteúdo, teste e evidência previstos até 22:00, com intervalo de 19:45 a 20:05. Das 22:00 às 22:30: consolidação opcional do trabalho concluído, sem conteúdo, requisito, nota, entrega ou evidência avaliativa nova. A execução, a aprendizagem observada, a frequência e registros institucionais dependem do docente.',
+    continuity: 'Reserva antes das 22h: ciclos autônomos e graduais de até 90 minutos. Ciclo 1 (30 min): alternar os papéis de autor e visitante e testar outra tarefa nos wireframes de celular; conferir se a pessoa encontra a informação e a ação principal sem ajuda. Ciclo 2 (30 min): escolher um bloco secundário, mover sua posição no celular e comparar as duas ordens com uma justificativa. Ciclo 3 (30 min): repetir o teste com outra pessoa ou variar a tarefa, mantendo as mesmas quatro telas. Sem dupla: escrever a tarefa em um papel, afastar-se dos wireframes e seguir o caminho como visitante; depois registrar somente a própria decisão de revisão. Sem internet: recortar blocos e reorganizá-los em papel. Cada ciclo termina em uma marcação visível no wireframe ou numa anotação curta, sem criar uma entrega adicional obrigatória.'
   }
 };
 
