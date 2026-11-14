@@ -66,7 +66,7 @@ Antes da aula: conferir computadores, projeção, acesso local, ensalamento e po
 
 ## Publicação de 13/11/2026
 
-Oficina estudantil publicada em https://oficinas-design-web.vercel.app/aula-16/, no projeto `oficinas-design-web`, implantação `dpl_DqgoiUfYYC5VMwyNvmUmXDq8fBX6`, estado READY/produção. Somente a oficina da Aula 16 foi adicionada e a página inicial recebeu seu acesso. Slides, ZIP docente e relatórios da Aula 16 permanecem locais; os respectivos endereços públicos retornam HTTP 404. A oficina não oferece link para a apresentação. Trata-se de uma preferência explícita do docente, para que os alunos não avancem os slides à sua frente.
+Oficina estudantil publicada em https://oficinas-design-web.vercel.app/aula-16/, no projeto `oficinas-design-web`, implantação `dpl_DqgoiUfYYC5VMwyNvmUmXDq8fBX6`, estado READY/produção. Somente a oficina da Aula 16 foi adicionada e a página inicial recebeu seu acesso. Slides, ZIP docente e relatórios da Aula 16 ficam fora do site estudantil; os respectivos endereços nesse site retornam HTTP 404. A oficina não oferece link para a apresentação. Trata-se de uma preferência explícita do docente, para que os alunos não avancem os slides à sua frente.
 
 Verificação técnica: fluxo completo no Chrome público (criação, seleção, edição, visita, revisão, salvamento, importação, exportação e tela pequena), sem erro de JavaScript; 62 arquivos públicos conferidos por SHA1, com os outros 60 arquivos preservados. Isso comprova o comportamento técnico publicado, sem inferir execução pedagógica ou aprendizagem.
 
@@ -99,3 +99,7 @@ A oficina revisada está em produção, implantação `dpl_8H2WpzrA6sHytv6zyAbiX
 O fluxo publicado foi exercitado no Chrome: criação, seleção, edição, navegação, visita, revisão, cópia JSON, reabertura, relatório e tela pequena. Uma atualização simulada da versão anterior para a atual preservou o rascunho v2 byte a byte na abertura e manteve histórico, páginas extras e rodada extra após uma nova visita e recarregamento. Na revisão local também passaram os percursos de visitas repetidas, teste com campos incompletos, recuperação de armazenamento incompatível e limite das 22h para a rodada extra. Os 16 slides foram conferidos em 1366 × 768, sem cortes, sobreposição ou erro de JavaScript.
 
 Essas evidências verificam o software e a apresentação. A compreensão dos estudantes continua pendente: R06 permanece P, conforme o relato de dificuldade em sala.
+
+### Limite da separação de acesso
+
+O site estudantil não publica a apresentação da Aula 16. Entretanto, o repositório GitHub é público e contém fontes, slides e kit docente versionados. Portanto, o HTTP 404 no site da oficina não comprova confidencialidade ou acesso restrito às cópias do repositório. A separação da oficina foi verificada; a restrição global de acesso aos slides não foi implementada. R17 permanece parcial também por esse limite.

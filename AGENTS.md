@@ -12,4 +12,4 @@ No planejamento noturno atual, concentrar conteúdo e evidência avaliável até
 
 Não incluir os anexos privados em publicação/repositório público. Validar o fluxo completo da oficina e os materiais gerados antes da entrega; preservar alterações locais de outras aulas.
 
-Manter a oficina dos alunos separada da apresentação docente. Os alunos não devem acessar os slides à frente do professor. Na publicação estática da Aula 16, disponibilizar somente a oficina: slides, kit docente ZIP e relatórios ficam locais. Não considerar ocultar um link como controle de acesso.
+Manter a oficina dos alunos separada da apresentação docente. Os alunos não devem acessar os slides à frente do professor. Na publicação estática da Aula 16, disponibilizar somente a oficina: slides, kit docente ZIP e relatórios ficam locais. Não considerar ocultar um link como controle de acesso. Verificar também a visibilidade do repositório: fontes e kits em repositório público continuam acessíveis; HTTP 404 no site estudantil não comprova confidencialidade global.

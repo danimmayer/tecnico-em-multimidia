@@ -6,7 +6,7 @@ Abra `slides.html` para projetar e `index.html` para a oficina. Ambos funcionam 
 
 A oficina dos estudantes está em https://oficinas-design-web.vercel.app/aula-16/. Publicar somente `index.html` dessa pasta. A oficina não contém apresentação nem link para os slides.
 
-`slides.html`, `aula-16-offline.zip`, plano docente e relatório institucional ficam locais para o professor. O ZIP é um **kit docente**, pois inclui a apresentação. Não disponibilizá-lo à turma: os alunos não devem avançar os slides à frente do professor. Um link público sem divulgação não constitui controle de acesso.
+`slides.html`, `aula-16-offline.zip`, plano docente e relatório institucional ficam fora do site estudantil, disponíveis para uso local do professor. O repositório GitHub é público e contém esses arquivos versionados; a ausência deles no site da oficina não restringe o acesso às cópias do repositório. O ZIP é um **kit docente**, pois inclui a apresentação. Não disponibilizá-lo à turma: os alunos não devem avançar os slides à frente do professor. Um link público sem divulgação não constitui controle de acesso.
 
 O Festival Vira-Luz é um caso fictício. Em dupla, os estudantes fazem seis ideias, escolhem três delas e montam **três versões da página inicial**. Os botões dessas versões abrem a mesma **Página de informações**, que junta horário, detalhes e acesso. Isso é uma entrega, não três sites. Páginas extras são opcionais e não criam critério, conteúdo ou exigência. Depois, uma pessoa faz a tarefa e a dupla registra o que observou para decidir se mantém ou ajusta.
 
