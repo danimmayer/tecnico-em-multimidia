@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "edition": "2027",
+  "courses": [
+    {
+      "slug": "design-web",
+      "title": "Design Web — edição de reuso 2027",
+      "count": 29
+    },
+    {
+      "slug": "producao-audiovisual",
+      "title": "Produção Audiovisual — reuso 2027",
+      "count": 23
+    },
+    {
+      "slug": "fotografia",
+      "title": "Fundamentos de Fotografia Digital e de Semiótica",
+      "count": 12
+    }
+  ]
+}

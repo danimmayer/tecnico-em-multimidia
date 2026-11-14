@@ -1,0 +1,2 @@
+beautifulsoup4==4.15.0
+Pillow==13.0.0
