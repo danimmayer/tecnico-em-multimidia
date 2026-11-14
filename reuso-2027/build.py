@@ -118,6 +118,34 @@ def validate(course):
                 assert all(all(c.get(k) for k in ("id", "label", "sufficient", "insufficient", "evidence")) for c in capacity["criteria"]), (label, "rubric evidence")
         if slug == "fotografia":
             assert l["deliveryMode"] == "slides", label
+        presentation = l.get("presentation")
+        assert isinstance(presentation, list) and presentation, (label, "Apresentação própria ausente")
+        for entry in presentation:
+            assert entry.get("title") and entry.get("blocks"), (label, "Slide incompleto")
+            text = " ".join([entry["title"]] + [b["label"] + " " + b["text"] for b in entry["blocks"]])
+            assert not re.search(r"\b(reuso|fallback|modelar|evidência individual)\b", text, re.I), (label, "Termo interno na projeção", entry["title"])
+
+
+def presentation_deck(course, lesson, output):
+    """Only explicitly authored student-facing content can become a slide."""
+    names = {"design-web": "DESIGN WEB", "producao-audiovisual": "PRODUÇÃO AUDIOVISUAL"}
+    slides = []
+    for index, entry in enumerate(lesson["presentation"]):
+        kind = "cover" if index == 0 else entry.get("kind", "")
+        assert kind in ("", "cover", "comparison", "steps"), kind
+        blocks = "".join('<p class="block">' + (f'<strong>{html.escape(b["label"])}</strong> ' if b["label"] else "") + html.escape(b["text"]) + '</p>' for b in entry["blocks"])
+        heading = "h1" if index == 0 else "h2"
+        words = len(" ".join(b["text"] for b in entry["blocks"]).split())
+        classes = "slide " + kind + (" dense" if words > 65 else "") + (" active" if index == 0 else "")
+        title = html.escape(entry["title"])
+        slides.append(f'<section class="{classes.strip()}" data-title="{title}" aria-hidden="{str(index != 0).lower()}"><header class="slide-header"><p class="eyebrow">{names[course["slug"]]} · AULA {int(lesson["id"])}</p><{heading}>{title}</{heading}></header><div class="slide-body">{blocks}</div></section>')
+    replacements = {"TITLE": f'Aula {int(lesson["id"])} · {html.escape(lesson["title"])}', "SLUG": course["slug"], "ID": lesson["id"], "SLIDES": "\n".join(slides), "STYLE": (HERE / "projection.css").read_text(), "SCRIPT": (HERE / "projection.js").read_text()}
+    rendered = (HERE / "projection.html").read_text()
+    for key, value in replacements.items():
+        rendered = rendered.replace("__" + key + "__", value)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(rendered)
+    return {"course": course["slug"], "lesson": lesson["id"], "slides": len(slides)}
 
 
 def new_slide(soup, title, blocks, identifier):
@@ -188,8 +216,136 @@ body,.slide{background:#faf8f0;color:#1b241d}
 .slide[data-title="O Triângulo de Exposição"] .two-col{display:flex;flex-direction:column;gap:18px;height:auto}
 .p-expand .p-expand-body{display:none}.p-expand.reuso-open .p-expand-body{display:block}.p-expand-head{cursor:pointer}
 @media(max-width:800px){.slide-inner{padding:30px 24px 65px}.reuso-body p{font-size:20px}.slide[data-title="O Triângulo de Exposição"] .slide-body{display:flex;flex-direction:column}}
+
+/* Sala: texto legível, sem rolagem na tela projetada. */
+.slide-inner{padding:34px 56px 72px!important;overflow:visible!important;max-height:100vh;box-sizing:border-box}
+.slide-body{overflow:visible!important;gap:20px!important}
+.slide .slide-body{font-size:23px;line-height:1.35}
+.slide .slide-body :is(p,li,td,th,.desc,.description,.text,.note,.detail,.sub,.label,.val,.iso-meta,.flow-step span,.software-card span,.photo-card .photo-desc,.type-card p,.decision-card p,.view-card p,.shutter-card p,.ap-card p){font-size:22px!important;line-height:1.35!important}
+.slide .slide-body :is(figcaption,.img-caption,.photo-credit){font-size:18px!important;line-height:1.3!important}
+.slide .slide-body :is(.card,.photo-card,.format-card,.type-card,.view-card,.decision-card,.shutter-card,.ap-card){font-size:22px!important;line-height:1.35}
+.slide .slide-body strong{font-size:inherit}
+.slide .slide-header{margin-bottom:24px!important}
+.slide .t-title{font-size:44px!important;line-height:1.12!important}
+.slide .t-subtitle{font-size:24px!important;line-height:1.35!important}
+.slide .t-eyebrow{font-size:16px!important}
+.title-slide .t-title,.title-slide h1{font-size:56px!important;line-height:1.1!important}
+.title-slide .t-subtitle{max-width:950px!important}
+.title-slide img{max-height:25vh!important;width:auto!important}
+.title-slide .slide-inner{justify-content:center;gap:14px}
+.slide .highlight-box{font-size:22px!important;line-height:1.35!important;padding:14px 18px!important}
+.slide .photo-card{padding:22px!important}
+.slide .p-expand{display:none!important}
+.slide .p-semiotic-toggle{font-size:18px!important;padding:10px 14px!important;opacity:1!important}
+.slide .photo-panel,.slide .img-frame,.slide .image-frame{background:transparent!important;border:0!important;box-shadow:none!important}
+.slide img.reuso-dark-matte{background:#191919!important;border:2px solid #191919}
+.slide img.reuso-white-matte{background:white!important;border:1px solid #c9c4b7}
+.slide .semiotic-triangle :is(line,path,polyline),.slide .triad-diagram :is(line,path,polyline){stroke:#70541c!important;stroke-width:2!important}
+.slide .triad-line{background:#70541c!important;opacity:1!important}
+.slide .data-table :is(td,th){padding:12px 16px!important}
+.slide.photo-single-column .img-frame{height:220px!important}
+.slide.photo-single-column .exif-photo{height:300px!important;max-width:550px;margin:auto}
+.slide.photo-single-column .bayer-grid{grid-template-columns:repeat(8,36px);grid-template-rows:repeat(8,36px)}
+.slide.photo-single-column .two-col>div{width:100%!important}
+.reuso-slide .slide-inner{overflow:visible!important}
+.reuso-body p{font-size:28px!important;line-height:1.4!important}
+.reuso-image-body p{font-size:22px!important}
+.slide .slide-header{flex:0 0 auto!important}
+.slide .slide-body :is(.card-body,.photo-name,.photo-period,.translation,.example,.step,.tool,.best,.mode,.flux-name,.flux-sub,.flux-label,.iso-label,.res-dims,.res-use,.dpi-label,.dpi-use,.fmt-name,.fmt-size,.fmt-when,.flow-name,.flow-sub,.sign-type,.sign-relation,.sign-example,.cat-desc,.photo-note,.exif-key,.exif-val){font-size:20px!important;line-height:1.35!important}
+.slide .slide-body :is(.read-list,.workflow-board,.critique-grid,.frame-map,.ratio-board,.tool-grid,.ethics-grid,.histo-grid,.type-card,.shutter-card,.ap-card,.decision-card) :is(span,small,h3){font-size:20px!important;line-height:1.35!important}
+.slide .slide-body .photo-name{font-size:24px!important}
+.slide .slide-body .check-card span{font-size:20px!important;line-height:1.35!important}
+.grid-thumb:focus-visible,.grid-close:focus-visible{outline:3px solid #70541c;outline-offset:3px}
+.grid-close{font:inherit;border:0}
+.slide .slide-body .tl-text{font-size:20px!important;line-height:1.35!important}
+.slide .slide-body .tl-year{font-size:19px!important}
+.slide .slide-body .quote-attr{font-size:20px!important}
+.slide .slide-body .exif-table{max-height:none!important}
+.slide .slide-body .exif-row{padding:8px 14px!important}
+.slide.photo-paginated .photo-study img,.slide.photo-paginated .layer-board img{max-height:360px!important;width:auto!important;margin:auto}
+.slide.photo-paginated :is(.map-layout,.ratio-layout)>div:has(img){max-height:350px}
+.slide .pixel-frame{height:290px!important}
+.slide .iso-grid{max-height:160px!important}
+.slide .iso-card{height:160px!important}
+.slide .sensor-sizes{max-height:160px!important}
+.slide .slide-body .asset-stage{max-height:310px}
+.slide .slide-body .image-led{gap:26px!important}
+.slide .reuso-eyebrow{font-size:16px!important}
+.slide-inner{padding-top:28px!important;padding-bottom:66px!important}
+.slide .slide-header{margin-bottom:18px!important}
+.slide .study-photo{height:380px!important;max-width:650px;margin:auto}
+.slide .triad-lines :is(path,circle){stroke:#70541c!important;stroke-width:2.5!important}
+.slide .triad-lines{opacity:1!important}
+.slide .exif-photo{height:270px!important;width:340px!important;max-width:100%;margin:auto!important;flex:none!important}
+.slide .exif-photo img{width:100%!important;height:100%!important;object-fit:contain!important}
+.slide.photo-paginated .photo-panel{max-height:360px!important;min-height:0!important}
+.slide.photo-paginated .photo-panel img{max-height:350px!important;object-fit:contain!important}
+.slide .route-card img{max-height:260px!important}
+.slide .flow-line{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+.slide .flow-step{min-width:0!important}
+.slide .flow-step span{font-size:22px!important;line-height:1.35!important}
+.slide[data-title="Revisão Aula 01"] .card{padding:20px!important}
+.slide[data-title^="O Sensor Digital"] .two-col>div{grid-template-columns:1fr!important}
+.slide .sensor-legend{font-size:20px!important;line-height:1.35!important;display:grid;gap:8px}
+.slide .sensor-title,.slide .sensor-rect span{font-size:18px!important;line-height:1.2!important}
+.slide .sensor-sizes{width:700px;max-width:100%;height:180px!important;max-height:none!important;margin:auto}
+.slide .exif-table{display:block!important;background:#eee8db!important;max-width:950px!important}
+.slide .exif-row{display:grid!important;grid-template-columns:220px 1fr!important}
+.slide .exif-photo{height:290px!important}
+.slide .exif-photo img{height:230px!important}
+.slide .exif-photo figcaption{position:static!important;display:block!important;color:#fff!important;background:#191919!important;font-size:16px!important;letter-spacing:0!important;text-transform:none!important;min-height:45px}
+.slide .iso-tile{height:150px!important;aspect-ratio:auto!important}
+.slide .iso-tile .iso-label{top:10px!important;bottom:auto!important;left:10px!important;color:#fff!important}
+.slide .iso-tile .iso-meta{bottom:8px!important;left:10px!important;right:10px!important;font-size:18px!important;line-height:1.25!important;color:#fff!important}
+.slide .data-table tbody{display:table-row-group!important}
+@media screen and (max-width:1100px){.slide-inner{padding:20px 18px 50px!important}.slide .data-table{table-layout:fixed}.slide .data-table tbody{display:table-row-group!important}.slide .data-table td{overflow-wrap:anywhere}.slide:not(.photo-paginated) .image-led,.slide:not(.photo-paginated) .image-led.reverse{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:24px!important}.slide .stack,.slide .check-grid,.slide .check-card{min-width:0!important}.slide .check-card{padding:12px!important;overflow-wrap:anywhere}}
 @media print{.slide{position:relative;opacity:1;display:flex;height:auto;min-height:95vh;break-after:page;pointer-events:auto}.slide-inner,.slide-body{overflow:visible}#bottomBar,#progressBar{display:none}}
 """
+
+
+def photo_paginate(soup):
+    """Give original comparisons and visual explanations enough projection space."""
+    def divide(slide, selector, size=1):
+        target=slide.select_one(selector)
+        if not target: return
+        children=target.find_all(recursive=False)
+        if len(children)<=size:return
+        title=slide.get("data-title", "")
+        count=(len(children)+size-1)//size
+        for part in range(count):
+            clone=copy.copy(slide)
+            grid=clone.select_one(selector)
+            for i,node in enumerate(grid.find_all(recursive=False)):
+                if not part*size<=i<(part+1)*size:node.decompose()
+            grid["style"]=f"display:grid;grid-template-columns:repeat({min(size,len(children)-part*size)},minmax(0,1fr));gap:22px;width:100%;max-width:1120px;margin:auto"
+            clone["data-title"]=f"{title} · {part+1}/{count}"
+            clone["class"]=clone.get("class",[])+["photo-paginated"]
+            slide.insert_before(clone)
+        slide.decompose()
+    groups={"Fotógrafos":(".photo-grid",3),"Formatos de Arquivo":(".fmt-grid",2),
+        "Tipos de Câmera":(".type-grid",2),"Ponto de Vista e Enquadramentos":(".viewpoint-board",2),
+        "Ambiente é Coautor":(".decision-grid",2),"Obturador e Tempo":(".shutter-demo",2),
+        "Diafragma e Profundidade":(".aperture-demo",2),"Ferramentas de Composição no Software":(".tool-grid",2),
+        "Ética na Edição":(".ethics-grid",2),"Ferramentas Gratuitas":(".software-grid",2),
+        "Câmera Obscura":(".two-col",1),"A Kodak":(".two-col",1),"DPI × PPI":(".two-col",1),"Mapa do Quadro":(".map-layout",1),
+        "Regra dos Terços sem Piloto Automático":(".photo-study",1),"Linhas Guia e Direção":(".photo-study",1),
+        "Moldura, Camadas e Profundidade":(".layer-board",1),"Corte, Proporção e Plataforma":(".ratio-layout",1),
+        "O Sensor Digital":(".two-col",1),"Padrão Bayer":(".two-col",1),"Espaço de Cores":(".two-col",1),
+        "ISO e Ruído":(".two-col",1),"Metadados EXIF":(".exif-panel",1),
+        "Edição Base":(".image-led",1),"Montagem da Entrega":(".image-led",1),"Ajustes Básicos":(".image-led",1),
+        "Pesquisa e Moodboard":(".image-led",1),"Shot List Semiótico":(".image-led",1),"Contact Sheet e Seleção":(".image-led",1),"Edição Consistente":(".image-led",1)}
+    for slide in list(soup.select(".slide")):
+        title=slide.get("data-title", "")
+        if title in groups:divide(slide,*groups[title])
+        elif title=="Analógico × Digital":divide(slide,"tbody",4)
+    for slide in list(soup.select('.slide[data-title^="Metadados EXIF"]')):
+        divide(slide,'.exif-table',5)
+    for slide in list(soup.select('.slide[data-title^="Mapa do Quadro"]')):
+        divide(slide,'.frame-map',3)
+    # Separate the sensor photograph from its scale diagram.
+    for slide in list(soup.select('.slide[data-title^="O Sensor Digital"]')):
+        col=slide.select_one('.two-col>div')
+        if col and col.select_one('.sensor-sizes'):divide(slide,'.two-col>div',2)
 
 
 def photo_deck(lesson, output, revision):
@@ -236,27 +392,13 @@ def photo_deck(lesson, output, revision):
         body["class"].append("reuso-image-body")
         body.append(soup.new_tag("img", src=image["path"], alt=image["title"]))
         caption = soup.new_tag("p")
-        caption.string = "Referência para a atividade: " + Path(image["path"]).name
+        caption.string = image.get("caption") or image["title"]
         body.append(caption)
         tail.append(visual)
     presentation = lesson.get("presentation")
-    if presentation:
-        for i, entry in enumerate(presentation):
-            tail.append(new_slide(soup, entry["title"], [(b["label"], b["text"]) for b in entry["blocks"]], f"atividade-{i}"))
-    else:
-        tail.append(new_slide(soup, "Nosso desafio", [("", lesson["context"]), ("", lesson["mission"])], "desafio"))
-        tail.append(new_slide(soup, "O que vamos entregar", [("", lesson["deliverable"])], "entrega"))
-        for stage in lesson["stages"]:
-            tail.append(new_slide(soup, {"Modelar só o primeiro passo":"Vamos começar juntos", "Planejar decisões":"Planeje seu trabalho", "Produzir e registrar o processo":"Hora de produzir", "Testar com evidências":"Mostre e compare", "Revisar e concluir":"Ajuste e guarde"}.get(stage["title"],stage["title"]), [("", stage["action"]), ("Confira:", stage["check"])], stage["id"]))
-        tail.append(new_slide(soup, "Antes de entregar", [(c["label"]+":", c["sufficient"]) for c in lesson["criteria"]], "criterios"))
-        if lesson.get("assessment"):
-            assessment=lesson["assessment"]
-            tail.append(new_slide(soup, assessment["title"], [("", assessment["instructions"])], "avaliacao"))
-            for item in assessment["items"]:
-                tail.append(new_slide(soup, "Questão "+item["id"], [("",item["question"])]+[("",o) for o in item["options"]], "questao-"+item["id"]))
-        for i, extra in enumerate(lesson["extensions"]):
-            action=extra["action"].split(" No caderno, galeria ou produto local")[0]
-            tail.append(new_slide(soup, extra["title"], [("Experimente:",action),("Compare:",extra["check"])], f"desafio-{i}"))
+    assert isinstance(presentation, list) and presentation, (lesson["id"], "Apresentação explícita obrigatória")
+    for i, entry in enumerate(presentation):
+        tail.append(new_slide(soup, entry["title"], [(b["label"], b["text"]) for b in entry["blocks"]], f"atividade-{i}"))
     # Keep original illustrations even when their old task text is superseded.
     for i, img in enumerate(removed_images):
         visual = new_slide(soup, "Observe a imagem", [], f"referencias-{i}")
@@ -269,6 +411,7 @@ def photo_deck(lesson, output, revision):
     for new in tail:
         last.insert_after(new)
         last = new
+    photo_paginate(soup)
     for img in soup.select("img[src]"):
         src = img["src"]
         if not src:
@@ -283,6 +426,8 @@ def photo_deck(lesson, output, revision):
             matte = "dark"
         if relative in mapping.get("clearMattePaths", []):
             matte = "clear"
+        if relative == "imagens/Daguerreotipo.jpg" or "You_press_the_button" in relative:
+            matte = "white"
         if img.find_parent(id="bottomBar"):
             matte = "clear"
         IMAGE_BACKGROUNDS[relative] = matte
@@ -334,6 +479,43 @@ def photo_deck(lesson, output, revision):
     for identifier in ("pdfBtn","homeBtn"):
         button=soup.find(id=identifier)
         if button: button["style"]="display:none"
+    close = soup.select_one(".grid-close")
+    assert close, (lesson["id"], "Falta botão de fechar índice")
+    close.name = "button"
+    close["type"] = "button"
+    close["aria-label"] = "Fechar índice de slides"
+    navigation = [script for script in soup.find_all("script") if "function buildGrid()" in script.get_text()]
+    assert len(navigation) == 1, (lesson["id"], "Navegação dos slides não encontrada")
+    script = navigation[0].get_text()
+    patches = {
+        "document.addEventListener('keydown', function(e) {": "document.addEventListener('keydown', function(e) {\n    if (e.key === ' ' && e.target.closest('button,a,input,select,textarea,[role=\"button\"]')) return;",
+        "thumb.className = 'grid-thumb' + (i === currentIndex ? ' current' : '');": """thumb.className = 'grid-thumb' + (i === currentIndex ? ' current' : '');
+      thumb.tabIndex = 0;
+      thumb.setAttribute('role', 'button');
+      thumb.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault(); e.stopPropagation(); this.click();
+        }
+      });""",
+    }
+    for old, new in patches.items():
+        assert script.count(old) == 1, (lesson["id"], "Navegação original mudou", old)
+        script = script.replace(old, new)
+    start = script.index("function toggleGrid()")
+    end = script.index("function toggleHelp()", start)
+    script = script[:start] + """function toggleGrid() {
+    gridOpen = !gridOpen;
+    var overlay = document.getElementById('gridOverlay');
+    if (gridOpen) {
+      buildGrid(); overlay.classList.add('open');
+      (overlay.querySelector('.grid-thumb.current') || overlay.querySelector('.grid-thumb')).focus();
+    } else {
+      overlay.classList.remove('open');
+      document.getElementById('gridBtn').focus();
+    }
+  }
+  """ + script[end:]
+    navigation[0].string = script
     style = soup.new_tag("style")
     style.string = PHOTO_STYLE
     soup.head.append(style)
@@ -374,6 +556,7 @@ def build(args):
     if isinstance(revision.get("lessons"), list):
         revision = {l["id"]: l for l in revision["lessons"]}
     photo_checks = [photo_deck(l, teacher / f'visuais/fotografia-{l["id"]}.html', revision) for l in photo["lessons"]]
+    presentation_checks = [presentation_deck(c, l, teacher / f'visuais/{c["slug"]}-{l["id"]}.html') for c in courses if c["slug"] != "fotografia" for l in c["lessons"]]
     for l in photo["lessons"]:
         for image in l.get("gallery", []):
             image["matte"] = image_background(image["path"])
@@ -428,11 +611,11 @@ def build(args):
         shutil.copy2(source, dest)
     write_json(package / "resources.json", sorted(paths))
     write_json(HERE / "data/resources.json", sorted(paths))
-    write_json(package / "verificacao-compilacao.json", {"lessons": 64, "teacherOutsideRepository": True, "photo": photo_checks, "resources": len(paths), "imageBackgrounds": IMAGE_BACKGROUNDS})
+    write_json(package / "verificacao-compilacao.json", {"lessons": 64, "teacherOutsideRepository": True, "photo": photo_checks, "presentations": presentation_checks, "resources": len(paths), "imageBackgrounds": IMAGE_BACKGROUNDS})
     for name in ("serve.py", "iniciar.command", "LEIA-ME.md"):
         shutil.copy2(HERE / name, package / name)
     (package / "iniciar.command").chmod(0o755)
-    print(f"64 aulas compiladas: {package}; {len(paths)} recursos; 12 apresentações visuais preservadas")
+    print(f"64 aulas compiladas: {package}; {len(paths)} recursos; 64 apresentações próprias")
 
 
 if __name__ == "__main__":

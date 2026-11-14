@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "slug": "producao-audiovisual",
-  "title": "Produção Audiovisual — reuso 2027",
+  "title": "Produção Audiovisual",
   "workload": "98 h totais:78 h presenciais +20 h de tutoria já incluídas; proposta 2027 de 22 encontros presenciais 210 min e encontro 23 de 60 min, mais 5 tutorias 240 min. Não somar tutorias às 98 h.",
   "lessons": [
     {
@@ -12,7 +12,7 @@
       "context": "A Mostra Recomeço quer um convite de até 30 segundos sobre uma mochila esquecida, sem usar rostos de terceiros.",
       "mission": "Escolha se a mochila vira ficção, anúncio de um serviço de achados e perdidos ou registro de como esse serviço funciona. Crie um convite que mostre essa escolha.",
       "deliverable": "Um mapa de três propostas e um vídeo de 10–20 segundos em tomada única, gravado com objeto; exportação do mapa em JSON.",
-      "grouping": "Duplas: uma pessoa cria/testa e outra observa/ouve e aponta uma dúvida; trocar a cada etapa de produção. Evidência individual de ambos.",
+      "grouping": "Duplas: uma pessoa cria/testa e outra observa/ouve e aponta uma dúvida; trocar a cada etapa de produção. Cada pessoa deve fazer sua parte e conseguir mostrá-la ao professor.",
       "previous": "Nenhum produto anterior é necessário. Comece com os três pedidos fornecidos e um objeto próprio de mesa.",
       "concepts": [
         {
@@ -198,7 +198,7 @@
         {
           "item": "Oficina e editor de peças locais",
           "use": "Planejar na etapa 3; comparar e exportar o mapa nas etapas 5 e 6. As peças não editam nem renderizam vídeo.",
-          "access": "Recurso do pacote de reuso; funcionamento depende de validação técnica do compilador. Não exige conta.",
+          "access": "Ferramenta incluída nesta oficina. Abre no navegador, sem conta.",
           "fallback": "Papel, setas e tempos com fotografia/arquivo local posterior."
         },
         {
@@ -239,7 +239,7 @@
       "context": "A biblioteca quer mostrar a devolução de um livro sem filmar leitores.",
       "mission": "Conte pegar, levar e devolver um livro em quatro planos e teste duas ordens.",
       "deliverable": "Quatro clipes próprios de 3–5 s, duas sequências no editor de peças e um vídeo de 15–25 s em tomada única que refaça a ordem escolhida.",
-      "grouping": "Duplas: uma pessoa cria/testa e outra observa/ouve e aponta uma dúvida; trocar a cada etapa de produção. Evidência individual de ambos.",
+      "grouping": "Duplas: uma pessoa cria/testa e outra observa/ouve e aponta uma dúvida; trocar a cada etapa de produção. Cada pessoa deve fazer sua parte e conseguir mostrá-la ao professor.",
       "previous": "Abra o produto anterior se estiver guardado e retome uma decisão por dois minutos. Se ele se perdeu, use as sementes concretas desta aula e faça o primeiro passo: não é necessário recuperar link, conta ou arquivo de colega.",
       "concepts": [
         {
@@ -433,7 +433,7 @@
         {
           "item": "Oficina e editor de peças locais",
           "use": "Planejar na etapa 3; comparar e exportar o mapa nas etapas 5 e 6. As peças não editam nem renderizam vídeo.",
-          "access": "Recurso do pacote de reuso; funcionamento depende de validação técnica do compilador. Não exige conta.",
+          "access": "Ferramenta incluída nesta oficina. Abre no navegador, sem conta.",
           "fallback": "Papel, setas e tempos com fotografia/arquivo local posterior."
         },
         {
@@ -474,7 +474,7 @@
       "context": "A equipe dispõe de uma sala por 20 minutos para gravar o convite da biblioteca; precisa sair com arquivos utilizáveis.",
       "mission": "Planeje uma diária de 20 minutos: preparar, gravar e conferir; execute um ensaio de 5 minutos para descobrir uma dependência esquecida.",
       "deliverable": "Cronograma de seis tarefas com responsável, duração e dependência; ensaio gravado de 5–10 s e cronograma revisado.",
-      "grouping": "Duplas: uma pessoa cria/testa e outra observa/ouve e aponta uma dúvida; trocar a cada etapa de produção. Evidência individual de ambos.",
+      "grouping": "Duplas: uma pessoa cria/testa e outra observa/ouve e aponta uma dúvida; trocar a cada etapa de produção. Cada pessoa deve fazer sua parte e conseguir mostrá-la ao professor.",
       "previous": "Abra o produto anterior se estiver guardado e retome uma decisão por dois minutos. Se ele se perdeu, use as sementes concretas desta aula e faça o primeiro passo: não é necessário recuperar link, conta ou arquivo de colega.",
       "concepts": [
         {
@@ -684,7 +684,7 @@
         {
           "item": "Oficina e editor de peças locais",
           "use": "Planejar na etapa 3; comparar e exportar o mapa nas etapas 5 e 6. As peças não editam nem renderizam vídeo.",
-          "access": "Recurso do pacote de reuso; funcionamento depende de validação técnica do compilador. Não exige conta.",
+          "access": "Ferramenta incluída nesta oficina. Abre no navegador, sem conta.",
           "fallback": "Papel, setas e tempos com fotografia/arquivo local posterior."
         },
         {
@@ -725,7 +725,7 @@
       "context": "O Festival Um Minuto aceita uma história de 30–45 s: uma pessoa procura algo que estava ao alcance.",
       "mission": "Invente o desfecho de O bilhete perdido e transforme a ideia em ações visíveis e seis quadros.",
       "deliverable": "Roteiro de uma cena, storyboard de seis quadros com duração total 30–45 s e teste gravado do primeiro plano.",
-      "grouping": "Duplas: uma pessoa cria/testa e outra observa/ouve e aponta uma dúvida; trocar a cada etapa de produção. Evidência individual de ambos.",
+      "grouping": "Duplas: uma pessoa cria/testa e outra observa/ouve e aponta uma dúvida; trocar a cada etapa de produção. Cada pessoa deve fazer sua parte e conseguir mostrá-la ao professor.",
       "previous": "Abra o produto anterior se estiver guardado e retome uma decisão por dois minutos. Se ele se perdeu, use as sementes concretas desta aula e faça o primeiro passo: não é necessário recuperar link, conta ou arquivo de colega.",
       "concepts": [
         {
@@ -935,7 +935,7 @@
         {
           "item": "Oficina e editor de peças locais",
           "use": "Planejar na etapa 3; comparar e exportar o mapa nas etapas 5 e 6. As peças não editam nem renderizam vídeo.",
-          "access": "Recurso do pacote de reuso; funcionamento depende de validação técnica do compilador. Não exige conta.",
+          "access": "Ferramenta incluída nesta oficina. Abre no navegador, sem conta.",
           "fallback": "Papel, setas e tempos com fotografia/arquivo local posterior."
         },
         {
@@ -976,7 +976,7 @@
       "context": "A biblioteca recebeu quatro materiais para um convite: objetos próprios, rosto de visitante, música de aplicativo e informação sem fonte.",
       "mission": "Decida o que pode entrar numa simulação local e o que precisa de confirmação antes de qualquer publicação. Produza uma versão com objetos próprios e som próprio.",
       "deliverable": "Quadro de quatro decisões justificadas, crédito do material próprio e vídeo local de 10–15 s sem terceiros identificáveis; nenhuma publicação.",
-      "grouping": "Duplas: uma pessoa cria/testa e outra observa/ouve e aponta uma dúvida; trocar a cada etapa de produção. Evidência individual de ambos.",
+      "grouping": "Duplas: uma pessoa cria/testa e outra observa/ouve e aponta uma dúvida; trocar a cada etapa de produção. Cada pessoa deve fazer sua parte e conseguir mostrá-la ao professor.",
       "previous": "Abra o produto anterior se estiver guardado e retome uma decisão por dois minutos. Se ele se perdeu, use as sementes concretas desta aula e faça o primeiro passo: não é necessário recuperar link, conta ou arquivo de colega.",
       "concepts": [
         {
@@ -1170,7 +1170,7 @@
         {
           "item": "Oficina e editor de peças locais",
           "use": "Planejar na etapa 3; comparar e exportar o mapa nas etapas 5 e 6. As peças não editam nem renderizam vídeo.",
-          "access": "Recurso do pacote de reuso; funcionamento depende de validação técnica do compilador. Não exige conta.",
+          "access": "Ferramenta incluída nesta oficina. Abre no navegador, sem conta.",
           "fallback": "Papel, setas e tempos com fotografia/arquivo local posterior."
         },
         {
@@ -1217,7 +1217,7 @@
       "context": "Uma oficina de conserto quer mostrar como guardar um cabo, sem revelar pessoas nem marcas.",
       "mission": "Grave uma demonstração curta na qual cabo, mãos e resultado fiquem visíveis.",
       "deliverable": "Três clipes de 5–8 s: aberto, detalhe e ação; seleção comentada no editor de peças.",
-      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa faz a evidência individual.",
+      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa deve fazer sua parte e conseguir mostrá-la ao professor.",
       "previous": "Abra o produto anterior se estiver guardado e retome uma decisão por dois minutos. Se ele se perdeu, use as sementes concretas desta aula e faça o primeiro passo: não é necessário recuperar link, conta ou arquivo de colega.",
       "concepts": [
         {
@@ -1403,7 +1403,7 @@
         {
           "item": "Oficina e editor de peças locais",
           "use": "Planejar na etapa 3; comparar e exportar o mapa nas etapas 5 e 6. As peças não editam nem renderizam vídeo.",
-          "access": "Recurso do pacote de reuso; funcionamento depende de validação técnica do compilador. Não exige conta.",
+          "access": "Ferramenta incluída nesta oficina. Abre no navegador, sem conta.",
           "fallback": "Papel, setas e tempos com fotografia/arquivo local posterior."
         },
         {
@@ -1444,7 +1444,7 @@
       "context": "Uma biblioteca quer que um livro pareça acolhedor num convite e misterioso numa ficção.",
       "mission": "Crie duas aparências do mesmo livro sem filtros prontos e explique a escolha de luz.",
       "deliverable": "Dois clipes de 6–8 s do mesmo enquadramento, mapa da posição da luz e escolha A/B.",
-      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa faz a evidência individual.",
+      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa deve fazer sua parte e conseguir mostrá-la ao professor.",
       "previous": "Abra o produto anterior se estiver guardado e retome uma decisão por dois minutos. Se ele se perdeu, use as sementes concretas desta aula e faça o primeiro passo: não é necessário recuperar link, conta ou arquivo de colega.",
       "concepts": [
         {
@@ -1630,7 +1630,7 @@
         {
           "item": "Oficina e editor de peças locais",
           "use": "Planejar na etapa 3; comparar e exportar o mapa nas etapas 5 e 6. As peças não editam nem renderizam vídeo.",
-          "access": "Recurso do pacote de reuso; funcionamento depende de validação técnica do compilador. Não exige conta.",
+          "access": "Ferramenta incluída nesta oficina. Abre no navegador, sem conta.",
           "fallback": "Papel, setas e tempos com fotografia/arquivo local posterior."
         },
         {
@@ -1671,7 +1671,7 @@
       "context": "O microcurta O bilhete perdido depende de ouvir uma página e uma batida, sem música de terceiros.",
       "mission": "Capture a cena e compare duas distâncias de captação para escolher a mais clara.",
       "deliverable": "Quatro a seis clipes para o microcurta e dois testes de som de 5 s, com seleção de tomadas identificada.",
-      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa faz a evidência individual.",
+      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa deve fazer sua parte e conseguir mostrá-la ao professor.",
       "previous": "Abra o produto anterior se estiver guardado e retome uma decisão por dois minutos. Se ele se perdeu, use as sementes concretas desta aula e faça o primeiro passo: não é necessário recuperar link, conta ou arquivo de colega.",
       "concepts": [
         {
@@ -1865,7 +1865,7 @@
         {
           "item": "Oficina e editor de peças locais",
           "use": "Planejar na etapa 3; comparar e exportar o mapa nas etapas 5 e 6. As peças não editam nem renderizam vídeo.",
-          "access": "Recurso do pacote de reuso; funcionamento depende de validação técnica do compilador. Não exige conta.",
+          "access": "Ferramenta incluída nesta oficina. Abre no navegador, sem conta.",
           "fallback": "Papel, setas e tempos com fotografia/arquivo local posterior."
         },
         {
@@ -1906,7 +1906,7 @@
       "context": "A marca fictícia Volta pede um anúncio de 15–20 s para uma garrafa reutilizável sem marca real; texto fornecido: Leve água. Reutilize. Cuide da sua rotina.",
       "mission": "Escolha um benefício observável e faça o público entender o uso da garrafa, sem prometer benefícios não demonstrados.",
       "deliverable": "Comercial de 15–20 s em tomada única ou montagem local, três brutos nomeados e plano de set com papéis.",
-      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa faz a evidência individual.",
+      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa deve fazer sua parte e conseguir mostrá-la ao professor.",
       "previous": "Abra o produto anterior se estiver guardado e retome uma decisão por dois minutos. Se ele se perdeu, use as sementes concretas desta aula e faça o primeiro passo: não é necessário recuperar link, conta ou arquivo de colega.",
       "concepts": [
         {
@@ -2092,7 +2092,7 @@
         {
           "item": "Oficina e editor de peças locais",
           "use": "Planejar na etapa 3; comparar e exportar o mapa nas etapas 5 e 6. As peças não editam nem renderizam vídeo.",
-          "access": "Recurso do pacote de reuso; funcionamento depende de validação técnica do compilador. Não exige conta.",
+          "access": "Ferramenta incluída nesta oficina. Abre no navegador, sem conta.",
           "fallback": "Papel, setas e tempos com fotografia/arquivo local posterior."
         },
         {
@@ -2133,7 +2133,7 @@
       "context": "Um editor recebeu três cenas do kit e precisa criar um convite de 20–30 s para uma sessão de cinema fictícia.",
       "mission": "Escolha trechos úteis, monte uma sequência e preserve os brutos para poder revisar.",
       "deliverable": "Vídeo WebM de 20–30 s, projeto local exportado e sequência de peças com nomes dos brutos e justificativa de cortes.",
-      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa faz a evidência individual.",
+      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa deve fazer sua parte e conseguir mostrá-la ao professor.",
       "previous": "Abra o produto anterior se estiver guardado e retome uma decisão por dois minutos. Se ele se perdeu, use as sementes concretas desta aula e faça o primeiro passo: não é necessário recuperar link, conta ou arquivo de colega.",
       "concepts": [
         {
@@ -2319,7 +2319,7 @@
         {
           "item": "Oficina e editor de peças locais",
           "use": "Planejar na etapa 3; comparar e exportar o mapa nas etapas 5 e 6. As peças não editam nem renderizam vídeo.",
-          "access": "Recurso do pacote de reuso; funcionamento depende de validação técnica do compilador. Não exige conta.",
+          "access": "Ferramenta incluída nesta oficina. Abre no navegador, sem conta.",
           "fallback": "Papel, setas e tempos com fotografia/arquivo local posterior."
         },
         {
@@ -2410,7 +2410,7 @@
       "context": "A Sessão das Ideias pede uma abertura de 12–18 s: apresente uma imagem fixa e conduza o olhar com o título em movimento, terminando num convite.",
       "mission": "Monte uma abertura A com título parado e uma B com o mesmo título em movimento; escolha a que melhor orienta o olhar.",
       "deliverable": "Dois WebM de 12–18 s e projeto que preserve posição inicial e final do movimento.",
-      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa faz a evidência individual.",
+      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa deve fazer sua parte e conseguir mostrá-la ao professor.",
       "previous": "Abra o produto anterior se estiver guardado e retome uma decisão por dois minutos. Se ele se perdeu, use as sementes concretas desta aula e faça o primeiro passo: não é necessário recuperar link, conta ou arquivo de colega.",
       "concepts": [
         {
@@ -2596,7 +2596,7 @@
         {
           "item": "Oficina e editor de peças locais",
           "use": "Planejar na etapa 3; comparar e exportar o mapa nas etapas 5 e 6. As peças não editam nem renderizam vídeo.",
-          "access": "Recurso do pacote de reuso; funcionamento depende de validação técnica do compilador. Não exige conta.",
+          "access": "Ferramenta incluída nesta oficina. Abre no navegador, sem conta.",
           "fallback": "Papel, setas e tempos com fotografia/arquivo local posterior."
         },
         {
@@ -2675,7 +2675,7 @@
       "context": "A abertura da Sessão das Ideias precisa de título, identificação de tema e convite sem cobrir a ação.",
       "mission": "Organize as informações e recorte uma imagem de destaque com máscara circular.",
       "deliverable": "Vídeo WebM de 12–18 s com título, informação alinhada e máscara circular; projeto e comparação A/B.",
-      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa faz a evidência individual.",
+      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa deve fazer sua parte e conseguir mostrá-la ao professor.",
       "previous": "Abra o produto anterior se estiver guardado e retome uma decisão por dois minutos. Se ele se perdeu, use as sementes concretas desta aula e faça o primeiro passo: não é necessário recuperar link, conta ou arquivo de colega.",
       "concepts": [
         {
@@ -2861,7 +2861,7 @@
         {
           "item": "Oficina e editor de peças locais",
           "use": "Planejar na etapa 3; comparar e exportar o mapa nas etapas 5 e 6. As peças não editam nem renderizam vídeo.",
-          "access": "Recurso do pacote de reuso; funcionamento depende de validação técnica do compilador. Não exige conta.",
+          "access": "Ferramenta incluída nesta oficina. Abre no navegador, sem conta.",
           "fallback": "Papel, setas e tempos com fotografia/arquivo local posterior."
         },
         {
@@ -2952,7 +2952,7 @@
       "context": "Um aviso fictício de estúdio precisa de personagem em dois cenários e imagem corrigida sem perder detalhes.",
       "mission": "Retire o verde do vídeo, escolha cenário e corrija um clipe alterado; preserve os originais.",
       "deliverable": "WebM de 6–10 s com chroma key em vídeo, WebM de 6–10 s com cor corrigida e projetos correspondentes.",
-      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa faz a evidência individual.",
+      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa deve fazer sua parte e conseguir mostrá-la ao professor.",
       "previous": "Abra o produto anterior se estiver guardado e retome uma decisão por dois minutos. Se ele se perdeu, use as sementes concretas desta aula e faça o primeiro passo: não é necessário recuperar link, conta ou arquivo de colega.",
       "concepts": [
         {
@@ -3138,7 +3138,7 @@
         {
           "item": "Oficina e editor de peças locais",
           "use": "Planejar na etapa 3; comparar e exportar o mapa nas etapas 5 e 6. As peças não editam nem renderizam vídeo.",
-          "access": "Recurso do pacote de reuso; funcionamento depende de validação técnica do compilador. Não exige conta.",
+          "access": "Ferramenta incluída nesta oficina. Abre no navegador, sem conta.",
           "fallback": "Papel, setas e tempos com fotografia/arquivo local posterior."
         },
         {
@@ -3253,7 +3253,7 @@
       "context": "O cliente da cena do kit 14 reclama que a música encobre a voz e que o teste de reprodução para no meio.",
       "mission": "Faça a voz ser compreendida sem sumir com os outros sons e descubra qual interrupção depende de dados ou de processamento.",
       "deliverable": "mix-v1.wav, mix-final.wav, sem-voz.wav e diagnostico-aula14.txt; mapa de decisões complementa os arquivos sonoros.",
-      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa faz a evidência individual.",
+      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa deve fazer sua parte e conseguir mostrá-la ao professor.",
       "previous": "Abra o produto anterior se estiver guardado e retome uma decisão por dois minutos. Se ele se perdeu, use as sementes concretas desta aula e faça o primeiro passo: não é necessário recuperar link, conta ou arquivo de colega.",
       "concepts": [
         {
@@ -3447,7 +3447,7 @@
         {
           "item": "Oficina e editor de peças locais",
           "use": "Planejar na etapa 3; comparar e exportar o mapa nas etapas 5 e 6. As peças não editam nem renderizam vídeo.",
-          "access": "Recurso do pacote de reuso; funcionamento depende de validação técnica do compilador. Não exige conta.",
+          "access": "Ferramenta incluída nesta oficina. Abre no navegador, sem conta.",
           "fallback": "Papel, setas e tempos com fotografia/arquivo local posterior."
         },
         {
@@ -3501,7 +3501,7 @@
       "context": "O microcurta precisa de uma primeira versão que conte a história inteira antes de polir cada detalhe.",
       "mission": "Monte todos os momentos do microcurta e uma biblioteca mínima de arquivos que permita continuar na próxima aula.",
       "deliverable": "Versão completa WebM de 30–45 s, projeto reabrível, pasta de brutos e mapa da sequência com áudio e legenda.",
-      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa faz a evidência individual.",
+      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa deve fazer sua parte e conseguir mostrá-la ao professor.",
       "previous": "Abra o produto anterior se estiver guardado e retome uma decisão por dois minutos. Se ele se perdeu, use as sementes concretas desta aula e faça o primeiro passo: não é necessário recuperar link, conta ou arquivo de colega.",
       "concepts": [
         {
@@ -3703,7 +3703,7 @@
         {
           "item": "Oficina e editor de peças locais",
           "use": "Planejar na etapa 3; comparar e exportar o mapa nas etapas 5 e 6. As peças não editam nem renderizam vídeo.",
-          "access": "Recurso do pacote de reuso; funcionamento depende de validação técnica do compilador. Não exige conta.",
+          "access": "Ferramenta incluída nesta oficina. Abre no navegador, sem conta.",
           "fallback": "Papel, setas e tempos com fotografia/arquivo local posterior."
         },
         {
@@ -3757,7 +3757,7 @@
       "context": "A mostra precisa de versão horizontal para tela e adaptação vertical para assistir no celular, sem publicar.",
       "mission": "Exporte o mesmo microcurta para dois enquadramentos e confira o que cada um preserva.",
       "deliverable": "Dois vídeos WebM: horizontal 16:9 e vertical 9:16, ambos 30–45 s; projetos e comparação técnica com formato real.",
-      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa faz a evidência individual.",
+      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa deve fazer sua parte e conseguir mostrá-la ao professor.",
       "previous": "Abra o produto anterior se estiver guardado e retome uma decisão por dois minutos. Se ele se perdeu, use as sementes concretas desta aula e faça o primeiro passo: não é necessário recuperar link, conta ou arquivo de colega.",
       "concepts": [
         {
@@ -3943,7 +3943,7 @@
         {
           "item": "Oficina e editor de peças locais",
           "use": "Planejar na etapa 3; comparar e exportar o mapa nas etapas 5 e 6. As peças não editam nem renderizam vídeo.",
-          "access": "Recurso do pacote de reuso; funcionamento depende de validação técnica do compilador. Não exige conta.",
+          "access": "Ferramenta incluída nesta oficina. Abre no navegador, sem conta.",
           "fallback": "Papel, setas e tempos com fotografia/arquivo local posterior."
         },
         {
@@ -3997,7 +3997,7 @@
       "context": "A Mostra Recomeço quer conhecer um processo simples da escola: organizar uma mesa de estudos ou guardar materiais após uma atividade.",
       "mission": "Escolha uma pergunta sobre um processo real e capte evidências visuais; entreviste integrante que aceite participar ou use sua própria voz sobre objetos.",
       "deliverable": "Pauta de uma pergunta central, três perguntas abertas,4–6 clipes de 5–8 s e uma fala própria de 10–20 s sobre processo realmente observado.",
-      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa faz a evidência individual.",
+      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa deve fazer sua parte e conseguir mostrá-la ao professor.",
       "previous": "Abra o produto anterior se estiver guardado e retome uma decisão por dois minutos. Se ele se perdeu, use as sementes concretas desta aula e faça o primeiro passo: não é necessário recuperar link, conta ou arquivo de colega.",
       "concepts": [
         {
@@ -4199,7 +4199,7 @@
         {
           "item": "Oficina e editor de peças locais",
           "use": "Planejar na etapa 3; comparar e exportar o mapa nas etapas 5 e 6. As peças não editam nem renderizam vídeo.",
-          "access": "Recurso do pacote de reuso; funcionamento depende de validação técnica do compilador. Não exige conta.",
+          "access": "Ferramenta incluída nesta oficina. Abre no navegador, sem conta.",
           "fallback": "Papel, setas e tempos com fotografia/arquivo local posterior."
         },
         {
@@ -4246,7 +4246,7 @@
       "context": "A mostra aceita mini-docs de 45–60 s e pede que o público compreenda a pergunta, a evidência e a conclusão.",
       "mission": "Finalize e confira o mini-doc de 45–60 s; depois responda individualmente ao instrumento impresso proposto, com decisões justificadas por indícios dos casos.",
       "deliverable": "Mini-doc WebM de 45–60 s e projeto reabrível; folha individual com 10 respostas e justificativas do instrumento proposto. Registrar separadamente evidência prática e análise escrita.",
-      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa faz a evidência individual.",
+      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa deve fazer sua parte e conseguir mostrá-la ao professor.",
       "previous": "Abra o produto anterior se estiver guardado e retome uma decisão por dois minutos. Se ele se perdeu, use as sementes concretas desta aula e faça o primeiro passo: não é necessário recuperar link, conta ou arquivo de colega.",
       "concepts": [
         {
@@ -4440,7 +4440,7 @@
         {
           "item": "Oficina e editor de peças locais",
           "use": "Planejar na etapa 3; comparar e exportar o mapa nas etapas 5 e 6. As peças não editam nem renderizam vídeo.",
-          "access": "Recurso do pacote de reuso; funcionamento depende de validação técnica do compilador. Não exige conta.",
+          "access": "Ferramenta incluída nesta oficina. Abre no navegador, sem conta.",
           "fallback": "Papel, setas e tempos com fotografia/arquivo local posterior."
         },
         {
@@ -4488,7 +4488,7 @@
       "cases": [],
       "assessment": {
         "title": "Avaliação individual proposta · homologação pendente",
-        "instructions": "Instrumento proposto para impressão: identificação individual, turma e data; 10 questões com quatro alternativas, uma escolha por questão e justificativa curta. Tempo: 60 min, individual, sem consulta ao gabarito e sem troca de respostas. O docente informa previamente condições de consulta, acessibilidade e critério de apreciação. Proposta de reuso sujeita a validação institucional; não é caderno oficial já homologado. As respostas não substituem a avaliação prática do mini-doc.",
+        "instructions": "Na folha impressa, preencha seu nome, turma e data. Responda às 10 questões: marque uma das quatro alternativas e escreva uma justificativa curta para cada escolha. Você tem 60 minutos e deve responder sozinho, sem consultar o gabarito ou trocar respostas. Siga as condições de consulta, acessibilidade e apreciação informadas previamente pelo professor. As respostas acompanham a avaliação prática do mini-doc; apresente também seu trabalho.",
         "items": [
           {
             "id": "AV18-01",
@@ -4722,7 +4722,7 @@
           }
         ]
       },
-      "assessmentInstructions": "Instrumento proposto para impressão: identificação individual, turma e data; 10 questões com quatro alternativas, uma escolha por questão e justificativa curta. Tempo: 60 min, individual, sem consulta ao gabarito e sem troca de respostas. O docente informa previamente condições de consulta, acessibilidade e critério de apreciação. Proposta de reuso sujeita a validação institucional; não é caderno oficial já homologado. As respostas não substituem a avaliação prática do mini-doc."
+      "assessmentInstructions": "Na folha impressa, preencha seu nome, turma e data. Responda às 10 questões: marque uma das quatro alternativas e escreva uma justificativa curta para cada escolha. Você tem 60 minutos e deve responder sozinho, sem consultar o gabarito ou trocar respostas. Siga as condições de consulta, acessibilidade e apreciação informadas previamente pelo professor. As respostas acompanham a avaliação prática do mini-doc; apresente também seu trabalho."
     },
     {
       "id": "19",
@@ -4732,7 +4732,7 @@
       "context": "A Mostra Recomeço oferece três pedidos: ficção O objeto que voltou, comercial Reutilize na rotina ou documentário Uma mudança na organização. A equipe escolhe um.",
       "mission": "Defina o que o público deve perceber e crie um plano filmável de 60–90 s para dois encontros de captação/edição.",
       "deliverable": "Dossiê: pauta com finalidade e público, roteiro, storyboard de 6–8 quadros, cronograma, papéis e relação de autorizações/alternativas sem terceiros; teste de um plano.",
-      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa faz a evidência individual.",
+      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa deve fazer sua parte e conseguir mostrá-la ao professor.",
       "previous": "Abra o produto anterior se estiver guardado e retome uma decisão por dois minutos. Se ele se perdeu, use as sementes concretas desta aula e faça o primeiro passo: não é necessário recuperar link, conta ou arquivo de colega.",
       "concepts": [
         {
@@ -4942,7 +4942,7 @@
         {
           "item": "Oficina e editor de peças locais",
           "use": "Planejar na etapa 3; comparar e exportar o mapa nas etapas 5 e 6. As peças não editam nem renderizam vídeo.",
-          "access": "Recurso do pacote de reuso; funcionamento depende de validação técnica do compilador. Não exige conta.",
+          "access": "Ferramenta incluída nesta oficina. Abre no navegador, sem conta.",
           "fallback": "Papel, setas e tempos com fotografia/arquivo local posterior."
         },
         {
@@ -4989,7 +4989,7 @@
       "context": "A produtora precisa voltar da diária com uma história montável e arquivos seguros.",
       "mission": "Capture os planos essenciais do projeto escolhido, verifique cada um e faça cópia antes de desmontar.",
       "deliverable": "6–8 clipes essenciais nomeados por cena/tomada, teste de som, ambiência e mapa que relaciona bruto a quadro; cópia conferida.",
-      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa faz a evidência individual.",
+      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa deve fazer sua parte e conseguir mostrá-la ao professor.",
       "previous": "Abra o produto anterior se estiver guardado e retome uma decisão por dois minutos. Se ele se perdeu, use as sementes concretas desta aula e faça o primeiro passo: não é necessário recuperar link, conta ou arquivo de colega.",
       "concepts": [
         {
@@ -5191,7 +5191,7 @@
         {
           "item": "Oficina e editor de peças locais",
           "use": "Planejar na etapa 3; comparar e exportar o mapa nas etapas 5 e 6. As peças não editam nem renderizam vídeo.",
-          "access": "Recurso do pacote de reuso; funcionamento depende de validação técnica do compilador. Não exige conta.",
+          "access": "Ferramenta incluída nesta oficina. Abre no navegador, sem conta.",
           "fallback": "Papel, setas e tempos com fotografia/arquivo local posterior."
         },
         {
@@ -5238,7 +5238,7 @@
       "context": "A primeira seleção revelou um plano ausente ou um áudio ruim; a equipe tem uma única rodada de recaptura antes do corte.",
       "mission": "Identifique a lacuna pelo efeito na mensagem, recapture somente o necessário e monte a história inteira.",
       "deliverable": "Primeiro corte WebM de 60–90 s, projeto, mapa de seleção e par antes/depois de uma correção.",
-      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa faz a evidência individual.",
+      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa deve fazer sua parte e conseguir mostrá-la ao professor.",
       "previous": "Abra o produto anterior se estiver guardado e retome uma decisão por dois minutos. Se ele se perdeu, use as sementes concretas desta aula e faça o primeiro passo: não é necessário recuperar link, conta ou arquivo de colega.",
       "concepts": [
         {
@@ -5440,7 +5440,7 @@
         {
           "item": "Oficina e editor de peças locais",
           "use": "Planejar na etapa 3; comparar e exportar o mapa nas etapas 5 e 6. As peças não editam nem renderizam vídeo.",
-          "access": "Recurso do pacote de reuso; funcionamento depende de validação técnica do compilador. Não exige conta.",
+          "access": "Ferramenta incluída nesta oficina. Abre no navegador, sem conta.",
           "fallback": "Papel, setas e tempos com fotografia/arquivo local posterior."
         },
         {
@@ -5492,9 +5492,9 @@
       "durationMinutes": 210,
       "objective": "Aplicar ajustes finais, efeitos e render do projeto final verificando direitos, legibilidade e reprodução.",
       "context": "A mostra vai receber o arquivo local; o cliente precisa aprovar mensagem e qualidade antes da exibição.",
-      "mission": "Finalize uma correção de cor, um recurso visual intencional e o som; renderize e ensaie uma defesa curta com evidência individual.",
+      "mission": "Finalize uma correção de cor, um recurso visual intencional e o som; renderize e ensaie uma defesa curta. Cada pessoa deve mostrar no vídeo uma decisão sua e explicar seu efeito.",
       "deliverable": "Vídeo final WebM 60–90 s, projeto e biblioteca; amostra alternativa de enquadramento 6–10 s e amostra técnica de chroma 6–10 s se o projeto não o utilizar; defesa com uma decisão por integrante.",
-      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa faz a evidência individual.",
+      "grouping": "Grupos de 3–4; alternar direção, câmera, som e produção entre tomadas; em duplas acumular direção/produção e câmera/som e trocar. Cada pessoa deve fazer sua parte e conseguir mostrá-la ao professor.",
       "previous": "Abra o produto anterior se estiver guardado e retome uma decisão por dois minutos. Se ele se perdeu, use as sementes concretas desta aula e faça o primeiro passo: não é necessário recuperar link, conta ou arquivo de colega.",
       "concepts": [
         {
@@ -5696,7 +5696,7 @@
         {
           "item": "Oficina e editor de peças locais",
           "use": "Planejar na etapa 3; comparar e exportar o mapa nas etapas 5 e 6. As peças não editam nem renderizam vídeo.",
-          "access": "Recurso do pacote de reuso; funcionamento depende de validação técnica do compilador. Não exige conta.",
+          "access": "Ferramenta incluída nesta oficina. Abre no navegador, sem conta.",
           "fallback": "Papel, setas e tempos com fotografia/arquivo local posterior."
         },
         {
@@ -5944,7 +5944,7 @@
         {
           "item": "Oficina e editor de peças locais",
           "use": "Planejar na etapa 3; comparar e exportar o mapa nas etapas 5 e 6. As peças não editam nem renderizam vídeo.",
-          "access": "Recurso do pacote de reuso; funcionamento depende de validação técnica do compilador. Não exige conta.",
+          "access": "Ferramenta incluída nesta oficina. Abre no navegador, sem conta.",
           "fallback": "Papel, setas e tempos com fotografia/arquivo local posterior."
         },
         {
@@ -6219,7 +6219,7 @@
       "distribution": "180 min de trabalho autônomo guiado +60 min de revisão e recuperação/atendimento previstos; total 20 h nas cinco tutorias, dentro das 98 h da UC. Proposta 2027, sem prova de cadastro SGN.",
       "action": "Em três blocos de 60 min, use somente o projeto final já iniciado. Bloco 1: reabra dossiê e projeto e confira materiais; bloco 2: revise trecho crítico de som, texto ou cor; bloco 3: renderize 60–90 s e teste início/meio/fim no player, anotando instante de uma decisão por integrante.",
       "review": "Em 60 min, recupere um critério ainda insuficiente com amostra curta ou correção de arquivo e prepare a defesa de 15 s por pessoa; mostre correção no encontro equivalente definido pelo docente.",
-      "deliverable": "Final reproduzível, projeto/cópia e evidência individual localizada.",
+      "deliverable": "Arquivo final que abre e reproduz por inteiro, projeto e cópia de segurança. Cada pessoa indica no vídeo o instante de uma decisão sua e explica seu efeito.",
       "check": "Reabrir o produto e mostrar uma decisão com antes/depois; preenchimento e tempo decorrido não comprovam aprendizagem. Apreciação por docente/tutoria no fluxo confirmado.",
       "access": "Materiais da oficina e arquivos locais, sem nova conta/instalação/pesquisa obrigatória. Sem computador, planejar em papel e reservar posto equivalente para captura/render; papel não comprova aplicação técnica.",
       "individualEvidence": "Cada estudante executa um ajuste/captura e identifica sua evidência; atuação coletiva não substitui demonstração individual."

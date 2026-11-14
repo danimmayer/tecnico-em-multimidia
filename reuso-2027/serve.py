@@ -40,7 +40,7 @@ def make_handler(package, role, source=False):
                     path = root / "index.html"
                 allowed = path.name in ("index.html", "app.js", "app.css", "media.js") and path.parent == root
                 allowed |= path.parent == root / "data" and path.suffix == ".json"
-                allowed |= role == "docente" and path.parent == root / "visuais" and bool(re.fullmatch(r"fotografia-\d{2}\.html", path.name))
+                allowed |= role == "docente" and path.parent == root / "visuais" and bool(re.fullmatch(r"(?:fotografia|design-web|producao-audiovisual)-\d{2}\.html", path.name))
                 if not allowed:
                     return self.send_error(404)
             if not path.is_relative_to(base) or not path.is_file():
