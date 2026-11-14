@@ -18,7 +18,7 @@ from PIL import Image
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parent
 EXPECTED = {"design-web": 29, "producao-audiovisual": 23, "fotografia": 12}
-PRIVATE_KEYS = {"teacher", "officialTitle", "sourceNote"}
+PRIVATE_KEYS = {"teacher", "officialTitle", "sourceNote", "presentation"}
 IMAGE_BACKGROUNDS = {}
 TRACKED_PATHS = subprocess.check_output(["git", "ls-files", "-z"], cwd=REPO).decode().split("\0")
 
@@ -125,7 +125,7 @@ def new_slide(soup, title, blocks, identifier):
     inner = soup.new_tag("div", attrs={"class": "slide-inner"})
     header = soup.new_tag("div", attrs={"class": "slide-header"})
     eyebrow = soup.new_tag("p", attrs={"class": "reuso-eyebrow"})
-    eyebrow.string = "FOTOGRAFIA / EDIÇÃO DE REUSO"
+    eyebrow.string = "FOTOGRAFIA DIGITAL E SEMIÓTICA"
     h2 = soup.new_tag("h2")
     h2.string = title
     header.extend([eyebrow, h2])
@@ -160,7 +160,7 @@ body,.slide{background:#faf8f0;color:#1b241d}
 .slide img{max-width:100%;object-fit:contain}
 #bottomBar{background:#f4f0e5;color:#354437;border-color:#b9b2a0}
 #bottomBar .bar-left img{filter:brightness(.25);opacity:1}
-#bottomBar button{color:#354437;opacity:1}
+#bottomBar{height:58px}#bottomBar button{color:#354437;opacity:1;width:auto;min-width:48px;height:40px;padding:0 12px;font:600 15px system-ui;border:1px solid #9c9583}#bottomBar button:disabled{opacity:.35}#bottomBar .bar-left{font-size:14px}#slideCounter{font-size:16px}#gridOverlay{background:#faf8f0;color:#1b241d}.grid-item{background:#eee8db;color:#1b241d;border-color:#9c9583}
 .p-semiotic-toggle{background:#eee7d6!important;color:#4b3812!important;border-color:#70541c!important}
 .reuso-body{justify-content:flex-start;gap:18px;max-width:1100px;padding-top:18px}
 .reuso-body p{font:clamp(22px,2.1vw,30px)/1.45 'Segoe UI',system-ui,sans-serif;max-width:72ch;margin:0}
@@ -225,17 +225,7 @@ def photo_deck(lesson, output, revision):
             slide.decompose()
     retained = soup.select(".slide")
     anchor = retained[0] if retained else None
-    intro = [
-        new_slide(soup, lesson["title"], [("Situação:", lesson["context"]), ("Desafio:", lesson["mission"])], "missao"),
-        new_slide(soup, "O que produzir", [("Entrega:", lesson["deliverable"]), ("Organização:", lesson["grouping"])], "entrega"),
-        new_slide(soup, lesson["stages"][0]["title"], [("Faça:", lesson["stages"][0]["action"]), ("Onde:", lesson["stages"][0]["where"]), ("Confira:", lesson["stages"][0]["check"])], "diagnostico"),
-        new_slide(soup, "Como vamos trabalhar", [("Até 19h45:", "retomada, exemplo e planejamento. Teoria visual por perguntas e comparações, sem leitura corrida dos slides."), ("19h45–20h05:", "intervalo de referência."), ("20h05–22h:", "produção, comparação, melhoria e evidência individual."), ("22h–22h20:", "somente consolidação opcional do que já foi trabalhado. Sem conteúdo, critério, nota ou entrega novos.")], "tempo"),
-    ]
-    for new in intro:
-        if anchor:
-            anchor.insert_before(new)
-        else:
-            parent.append(new)
+    # Open with the original visual cover. The teaching plan belongs in the teacher area.
     tail = []
     # Include activity references absent from the original presentation as well.
     for i, image in enumerate(lesson.get("gallery", [])):
@@ -249,36 +239,27 @@ def photo_deck(lesson, output, revision):
         caption.string = "Referência para a atividade: " + Path(image["path"]).name
         body.append(caption)
         tail.append(visual)
-    # Every supplied example is also projected: the external editor is optional.
-    seeds = lesson["workspace"]["items"]
-    for i in range(0, len(seeds), 2):
-        tail.append(new_slide(soup, lesson["workspace"]["title"], [(item["title"] + ":", item["text"]) for item in seeds[i:i+2]], f"insumos-{i}"))
-    seed_texts = {item["text"] for item in seeds}
-    cases = [c for c in lesson.get("cases", []) if c.get("text") not in seed_texts]
-    for i in range(0, len(cases), 2):
-        tail.append(new_slide(soup, "Situações para analisar", [(c["title"] + ":", c["text"]) for c in cases[i:i+2]], f"casos-{i}"))
-    assessment = lesson.get("assessment")
-    if assessment:
-        tail.append(new_slide(soup, assessment["title"], [("Como fazer:", assessment["instructions"])], "avaliacao-instrucoes"))
-        for item in assessment["items"]:
-            tail.append(new_slide(soup, "Questão " + item["id"], [("", item["question"])] + [("", option) for option in item["options"]], "questao-" + item["id"]))
-    for c in lesson["criteria"]:
-        tail.append(new_slide(soup, c["label"], [("Atende:", c["sufficient"]), ("Ainda precisa melhorar:", c["insufficient"]), ("Confira no trabalho:", c["evidence"])], c["id"]))
-    tail.append(new_slide(soup, lesson["starter"]["title"], [("Primeiro passo:", lesson["starter"]["instruction"]), ("Depois:", "continue pelas etapas seguintes; o exemplo não resolve a entrega inteira.")], "exemplo"))
-    model = lesson["stages"][1]
-    tail.append(new_slide(soup, model["title"], [("Faça:", model["action"]), ("Onde:", model["where"]), ("Confira:", model["check"]), ("Resultado:", model["output"])], model["id"]))
-    for s in lesson["stages"][2:]:
-        tail.append(new_slide(soup, s["title"], [("Faça:", s["action"]), ("Onde:", s["where"]), ("Confira:", s["check"]), ("Resultado:", s["output"])], s["id"]))
-    tail.append(new_slide(soup, "Cada pessoa mostra sua parte", [("Demonstre:", lesson["individualEvidence"])], "individual"))
-    tail.append(new_slide(soup, "Uma ajuda para retomar", [("Faça:", lesson["recovery"]["action"]), ("Confira:", lesson["recovery"]["check"])], "recuperacao"))
-    for i, x in enumerate(lesson["extensions"]):
-        tail.append(new_slide(soup, x["title"], [("Rodada de 10–15 min:", x["action"]), ("Resultado:", x["output"]), ("Confira:", x["check"]), ("Repita:", "mude a restrição indicada e compare novamente; após 22h, apenas consolidação opcional.")], f"reserva-{i}"))
-    for key, title in (("offline", "Sem internet"), ("solo", "Sem dupla"), ("equipment", "Sem o equipamento previsto")):
-        tail.append(new_slide(soup, title, [("Alternativa:", lesson["fallback"][key])], "alternativa-" + key))
-    tail.append(new_slide(soup, "Guardar, explicar e encerrar", [("Guarde:", lesson["deliverable"]), ("Explique:", lesson["individualEvidence"]), ("Até 22h:", "conclua a entrega essencial e a devolutiva. Depois desse horário, retome ou varie o mesmo trabalho sem nova avaliação.")], "encerramento"))
+    presentation = lesson.get("presentation")
+    if presentation:
+        for i, entry in enumerate(presentation):
+            tail.append(new_slide(soup, entry["title"], [(b["label"], b["text"]) for b in entry["blocks"]], f"atividade-{i}"))
+    else:
+        tail.append(new_slide(soup, "Nosso desafio", [("", lesson["context"]), ("", lesson["mission"])], "desafio"))
+        tail.append(new_slide(soup, "O que vamos entregar", [("", lesson["deliverable"])], "entrega"))
+        for stage in lesson["stages"]:
+            tail.append(new_slide(soup, {"Modelar só o primeiro passo":"Vamos começar juntos", "Planejar decisões":"Planeje seu trabalho", "Produzir e registrar o processo":"Hora de produzir", "Testar com evidências":"Mostre e compare", "Revisar e concluir":"Ajuste e guarde"}.get(stage["title"],stage["title"]), [("", stage["action"]), ("Confira:", stage["check"])], stage["id"]))
+        tail.append(new_slide(soup, "Antes de entregar", [(c["label"]+":", c["sufficient"]) for c in lesson["criteria"]], "criterios"))
+        if lesson.get("assessment"):
+            assessment=lesson["assessment"]
+            tail.append(new_slide(soup, assessment["title"], [("", assessment["instructions"])], "avaliacao"))
+            for item in assessment["items"]:
+                tail.append(new_slide(soup, "Questão "+item["id"], [("",item["question"])]+[("",o) for o in item["options"]], "questao-"+item["id"]))
+        for i, extra in enumerate(lesson["extensions"]):
+            action=extra["action"].split(" No caderno, galeria ou produto local")[0]
+            tail.append(new_slide(soup, extra["title"], [("Experimente:",action),("Compare:",extra["check"])], f"desafio-{i}"))
     # Keep original illustrations even when their old task text is superseded.
     for i, img in enumerate(removed_images):
-        visual = new_slide(soup, "Referências visuais preservadas", [], f"referencias-{i}")
+        visual = new_slide(soup, "Observe a imagem", [], f"referencias-{i}")
         body = visual.select_one(".slide-body")
         body["class"].append("reuso-image-body")
         img["style"] = "max-height:57vh;max-width:95%;object-fit:contain"
@@ -345,6 +326,14 @@ def photo_deck(lesson, output, revision):
         elif val.startswith("Aula_") and tag.name == "a":
             tag.name = "span"
             tag.attrs.pop("href", None)
+    for identifier, label in (("prevBtn","← Anterior"),("nextBtn","Próximo →"),("gridBtn","Slides"),("fsBtn","Tela cheia")):
+        button=soup.find(id=identifier)
+        if button:
+            button.string=label
+            button["aria-label"]=label
+    for identifier in ("pdfBtn","homeBtn"):
+        button=soup.find(id=identifier)
+        if button: button["style"]="display:none"
     style = soup.new_tag("style")
     style.string = PHOTO_STYLE
     soup.head.append(style)
