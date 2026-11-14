@@ -13,6 +13,7 @@ async function run(driver, url) {
     const context = await browser.newContext({viewport:{width:1366,height:768},acceptDownloads:true});
     const page = await context.newPage();
     page.setDefaultTimeout(5000);
+    await page.clock.install({time:new Date('2026-11-13T23:00:00Z')}); // 20h em São Paulo: extensão ainda permitida.
     await page.goto(workshop);
     const legacy = legacyV2();
     legacy.chosenDirection = 2;
@@ -73,6 +74,11 @@ async function run(driver, url) {
     await page.setViewportSize({width:390,height:844});
     await page.locator('#nav [data-go="5"]').click();
     assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),'Etapa 6 e extensão não criam rolagem horizontal no celular.');
+    await page.clock.setFixedTime(new Date('2026-11-14T01:00:00Z')); // 22h em São Paulo: somente consulta e salvamento.
+    await page.locator('#openExtension').click(); // fecha uma rodada já existente
+    await page.locator('#openExtension').click(); // reabre somente para consulta
+    assert(await page.locator('#extensionTimeNotice').isVisible(),'O aviso de encerramento aparece após 22h.');
+    for(const selector of ['#extensionTask','#extensionDirection','#startComparison','#extensionEdit','[data-extra="observationA"]','[data-extra="observationB"]','[data-extra="decision"]']) assert(await page.locator(selector).isDisabled(),'Após 22h, '+selector+' fica somente para consulta.');
     console.log('Aula 16: extensão opcional, snapshot, navegação, exportação, reload e mobile passaram.');
   } finally { await browser.close(); }
 }
