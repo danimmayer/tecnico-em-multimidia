@@ -30,14 +30,14 @@ O caso é fictício e completo na oficina: o Festival Vira-Luz precisa ajudar um
 
 ## Desdobramentos didáticos das capacidades previstas
 
-Fonte institucional disponível: Plano Concluído V0, consultado em 14/11/2026 e alterado em 12/08, pp. 15–16. A Aula 16 aparece como **Ideação em papel** e relaciona a capacidade de selecionar elementos gráficos para design web, interfaces e redes sociais, além de colaboração e inovação. Os verbos abaixo são desdobramentos para observar essa aprendizagem no roteiro digital revisado; não substituem a redação oficial da UC. A cópia interna `Planejamento_Geral_UC_Design_Web.md` e `assets/course-data.js` podem apoiar a consulta, mas não comprovam aprovação institucional nem cadastro da adaptação digital.
+Fonte institucional disponível: Plano Concluído V0, consultado em 14/11/2026 e alterado em 12/08, p. 15. A Aula 16 é **“Ideação, Conceito e Rafes”** e registra a capacidade técnica de selecionar a criação de elementos gráficos para o desenvolvimento de design web, interfaces e redes sociais. Os conhecimentos relacionados são Desenvolvimento do Projeto e Inovação; as estratégias são Design Thinking, Trabalho em Grupo, Atividade Prática e Exposição Dialogada. Os verbos abaixo são desdobramentos para observar essa aprendizagem no roteiro digital revisado; não substituem a redação oficial da UC. Colaboração e alternância de papéis são escolhas didáticas deste roteiro, não uma capacidade literal atribuída à Aula 16 pela fonte consultada. A cópia interna `Planejamento_Geral_UC_Design_Web.md` e `assets/course-data.js` podem apoiar a consulta, mas não comprovam aprovação institucional nem cadastro da adaptação digital.
 
-| Capacidade | Evidência observável na oficina |
+| Capacidade técnica ou desdobramento didático | Evidência observável na oficina |
 | --- | --- |
 | Idear possibilidades para uma situação profissional | Seis alternativas que mudam prioridade, ação ou continuação do caminho. |
 | Definir a ideia central e escolher caminhos | Nome e como a ideia aparece na página; três escolhas com razões ligadas ao pedido do Festival. |
 | Produzir desenhos de página | Três versões de início e uma Página de informações compartilhada, de baixa fidelidade. As versões mostram contexto, conteúdo prioritário e botão; a página comum mostra horário, detalhe e acesso. As razões da seleção ficam registradas na etapa 3. Páginas extras são opcionais (até seis) e não criam critério novo. |
-| Colaborar e inovar | Alternância de operação, justificativas ancoradas no briefing e escolha após comparar alternativas. |
+| Colaborar e comparar alternativas — desdobramento didático | Alternância de operação, justificativas ancoradas no briefing e escolha após comparar alternativas. |
 | Avaliar e revisar | Registro do comportamento/fala de um visitante, decisão de manter ou ajustar e registros individuais A/B. |
 
 ## Critérios comunicados antes da produção
@@ -95,7 +95,7 @@ Quando houver desenvolvimento a realizar, a devolutiva é direta: apontar o que 
 
 ## Fonte institucional e roteiro digital revisado
 
-Este documento é um roteiro digital revisado posteriormente à execução. Ele não substitui nem comprova aprovação, cadastro ou alteração do Plano Concluído V0. A fonte institucional disponível descreve a Aula 16 como **Ideação em papel** e prevê papel, canetas/canetões, quadro e projetor. O roteiro propõe, para futura aplicação e mediante o fluxo institucional aplicável antes da execução, uma oficina digital que preserva a seleção de elementos gráficos, a ideação, os desenhos rápidos e a colaboração. A comparação abaixo torna a diferença explícita; ela não transforma os recursos digitais em recursos já aprovados.
+Este documento é um roteiro digital revisado posteriormente à execução. Ele não substitui nem comprova aprovação, cadastro ou alteração do Plano Concluído V0. A fonte institucional disponível nomeia a Aula 16 como **“Ideação, Conceito e Rafes”** e prevê papel, canetas e canetões, quadro e projetor. O roteiro propõe, para futura aplicação e mediante o fluxo institucional aplicável antes da execução, uma oficina digital que preserva a seleção de elementos gráficos, a ideação, os desenhos rápidos e a colaboração. A comparação abaixo torna a diferença explícita; ela não transforma os recursos digitais em recursos já aprovados.
 
 | Recurso no Plano Concluído V0 | Proposta no roteiro digital revisado: momento e função | Limite e condição para uso futuro |
 | --- | --- | --- |
@@ -139,4 +139,4 @@ A versão selecionada, as três versões iniciais, a Página de informações e 
 - **Critérios de avaliação**, p. 1: critérios vinculados a capacidades e uso diagnóstico, formativo e somativo da lista de verificação.
 - **Taxonomia de Bloom**, seções “Matriz de Verbos de Ação” e “Como Construir Objetivos de Aula”: objetivo observável com verbos de ação e progressão de analisar para avaliar e criar; paginação do `.doc` não verificada.
 - **Checklist — Atribuições do Docente Presencial**, p. 1: chamada, acompanhamento, ajuste de estratégia, gestão do tempo e registro/devolutiva após a aula.
-- **Plano Concluído V0**, consulta de 14/11/2026, alteração indicada em 12/08, pp. 15–16: Aula 16 — **Ideação em papel**; capacidade de selecionar elementos gráficos para design web, interfaces e redes sociais; recursos de papel, canetas/canetões, quadro e projetor. A consulta confirma a fonte institucional disponível, mas não comprova cadastro ou aprovação do roteiro digital revisado.
+- **Plano Concluído V0**, consulta de 14/11/2026, alteração indicada em 12/08, p. 15: Aula 16 — **“Ideação, Conceito e Rafes”**; capacidade técnica de **“Selecionar a criação de elementos gráficos para o desenvolvimento de design web, interfaces e redes sociais, tendo vista a propriedade.”**; conhecimentos Desenvolvimento do Projeto e Inovação; estratégias Design Thinking, Trabalho em Grupo, Atividade Prática e Exposição Dialogada; recursos de papel, canetas e canetões, quadro e projetor. A consulta confirma a fonte institucional disponível, mas não comprova cadastro ou aprovação do roteiro digital revisado.
