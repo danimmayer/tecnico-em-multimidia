@@ -60,7 +60,7 @@ A conferência da oficina indica itens faltantes. A avaliação docente observa 
 
 Para acompanhamento, a oficina reúne cinco conjuntos de evidência: problema e prioridade; seis ideias; conceito, razões de escolha pelos três critérios e direção; três rafes de início e página interna; visita, revisão e autoavaliação. A conferência indica presença ou lacuna de cada item; a apreciação da qualidade considera justificativa e coerência com o problema, nunca apenas a contagem.
 
-Na visita, **Iniciar nova visita** cria uma nova rodada numerada e preserva as observações, direção e snapshot das anteriores. **Salvar observação e iniciar nova visita** encerra a rodada registrada e abre outra; **Recomeçar percurso** apenas retorna ao início do mesmo teste, sem criar rodada. A repetição serve à avaliação formativa e ao uso do erro como evidência (R07/R08/R18), não adiciona critério, nota ou obrigação: uma visita observada continua suficiente para a entrega-base. O formato legado `tests` da chave v2 é preservado.
+Na visita, **Iniciar nova visita** cria uma nova rodada numerada e preserva as observações, direção e snapshot das anteriores. **Salvar observação e iniciar nova visita** encerra a rodada registrada e abre outra; **Recomeçar percurso** apenas retorna ao início do mesmo teste, sem criar rodada. A interface informa, por direção, quais elementos merecem revisão, mas não bloqueia a abertura da visita por campos incompletos: o teste também pode revelar o que falta esclarecer. A repetição serve à avaliação formativa e ao uso do erro como evidência (R07/R08/R18), não adiciona critério, nota ou obrigação: uma visita observada continua suficiente para a entrega-base. O formato legado `tests` da chave v2 é preservado.
 
 ## Referência para a apreciação qualitativa
 

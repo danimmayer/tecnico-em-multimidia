@@ -14,8 +14,7 @@ function choices(){
   qa('[data-reason]').forEach(e=>e.oninput=()=>{s.reasons[e.dataset.reason]=e.value;save();choiceMessage()});choiceMessage();
 }
 function choiceMessage(){const ready=s.selected.length===3&&s.selected.every(i=>(s.reasons[i]||'').trim());$('choiceMsg').textContent=ready?'Três direções justificadas. Compare os esboços antes de eleger a direção do teste.':'Selecione três ideias e justifique cada uma. Critérios: clareza, coerência com o pedido e viabilidade para duas telas.'}
-function readyBlocks(bs){return ['title','text','cta'].every(type=>bs.some(b=>b.type===type&&b.text.trim()))}
-function visitReadiness(){return {brief:!!(s.problem.trim()&&s.priority.trim()),concept:!!(s.conceptName.trim()&&s.conceptWhy.trim()),choices:s.selected.length===3&&s.selected.every(i=>(s.reasons[i]||'').trim()),sketches:s.rafes.every(r=>readyBlocks(r.blocks))&&readyBlocks(s.internal)}}
+function sketchesWithoutContent(){return [...s.rafes.map((r,i)=>['Direção '+(i+1),r.blocks]),['Página interna principal',s.internal]].filter(([,bs])=>!bs.some(b=>b.text.trim()&&(b.type!=='image'||b.text.trim()!=='Imagem ou destaque'))).map(([label])=>label)}
 function pageLabel(id,catalog=pages()){return id==='home'?'Início':id==='internal'?'Página interna principal':catalog.find(p=>'extra:'+p.id===id)?.title||'Página interna'}
 function pageBlocks(id,d){return id==='home'?s.rafes[d].blocks:id==='internal'?s.internal:pages().find(p=>'extra:'+p.id===id)?.blocks}
 function phone(bs,page='home',catalog=pages()){return '<div class="phone"><div class="brand">Festival Vira-Luz · '+E(pageLabel(page,catalog))+'</div>'+bs.map(b=>b.type==='image'?'<div class="image">'+E(b.text)+'</div>':b.type==='title'?'<div class="title">'+E(b.text||'Título')+'</div>':b.type==='cta'?'<button class="cta" data-open="'+E(b.target||(page==='home'?'internal':'home'))+'">'+E(b.text||'Ação')+'</button>':'<div class="text">'+E(b.text||'Informação essencial')+'</div>').join('')+(page!=='home'?'<button class="back" data-open="home">Voltar ao início</button>':'')+'</div>'}
@@ -45,9 +44,6 @@ function visitor(){
 }
 function startVisit(){
   if(visiting)return;
-  const ready=visitReadiness(),missing=[];
-  if(!ready.brief)missing.push('briefing e prioridade');if(!ready.concept)missing.push('conceito e justificativa');if(!ready.choices)missing.push('três direções justificadas');if(!ready.sketches)missing.push('título, conteúdo e ação nos esboços');
-  if(missing.length){$('save').textContent='Antes da visita, complete: '+missing.join(', ')+'. A conferência continua sendo qualitativa do docente.';return}
   if(s.tests.length>=50){$('save').textContent='Limite de visitas alcançado. Faça uma cópia para arquivar.';return}
   s.visitNote='';qa('[data-text="visitNote"]').forEach(e=>e.value='');
   s.tests.push({at:Date.now(),direction:s.chosenDirection,blocks:JSON.parse(JSON.stringify(s.rafes[s.chosenDirection].blocks)),internal:JSON.parse(JSON.stringify(s.internal)),...(s.extraPages?{extraPages:JSON.parse(JSON.stringify(s.extraPages))}:{}),note:''});
@@ -66,7 +62,7 @@ $('extensionTask').onchange=event=>{if(extensionAvailability())return;e.task=eve
 const t=e.snapshot;$('comparisonPreviews').hidden=!t;$('startComparison').textContent=t?'Atualizar telas da comparação':'Abrir comparação A/B';$('comparisonTask').textContent=t?'Tarefa nas telas guardadas: '+extraTask(t.task):'Escolha a mesma tarefa para A e B; abra a comparação quando os esboços estiverem prontos.';
 if(t){$('compareALabel').textContent='A · Direção '+(t.directionA+1)+' (escolhida)';$('compareBLabel').textContent='B · Direção '+(t.directionB+1)+' (alternativa)';for(const [id,bs,d] of [['compareA',t.blocksA,t.directionA],['compareB',t.blocksB,t.directionB]]){const model={blocks:bs,internal:t.internal,extraPages:t.extraPages||[]};$(id).innerHTML=phone(bs,'home',model.extraPages);bindPhone($(id),d,model)}}}
 $('openExtension').onclick=()=>{if(!s.extension){if(extensionClosed()){$('save').textContent='Após 22h, somente consulta, apoio técnico e salvamento do trabalho já realizado.';return}s.extension={open:false,task:'activity',direction:(s.chosenDirection+1)%3,observationA:'',observationB:'',decision:''}}s.extension.open=!s.extension.open;save();renderExtension()};
-$('startComparison').onclick=()=>{if(extensionAvailability())return;if(!Object.values(visitReadiness()).every(Boolean)){$('comparisonTask').textContent='Conclua briefing, conceito, direções justificadas e esboços antes da rodada extra. A entrega principal vem primeiro.';return}const e=s.extension;if(e.snapshot&&!confirm('Atualizar as telas guardadas com os esboços atuais? Suas observações serão mantidas; confira se ainda descrevem este novo teste.'))return;e.direction=+$('extensionDirection').value;e.task=$('extensionTask').value;e.snapshot=JSON.parse(JSON.stringify({at:Date.now(),task:e.task,directionA:s.chosenDirection,directionB:e.direction,blocksA:s.rafes[s.chosenDirection].blocks,blocksB:s.rafes[e.direction].blocks,internal:s.internal,...(s.extraPages?{extraPages:s.extraPages}:{})}));save();renderExtension()};
+$('startComparison').onclick=()=>{if(extensionAvailability())return;const e=s.extension;if(e.snapshot&&!confirm('Atualizar as telas guardadas com os esboços atuais? Suas observações serão mantidas; confira se ainda descrevem este novo teste.'))return;e.direction=+$('extensionDirection').value;e.task=$('extensionTask').value;e.snapshot=JSON.parse(JSON.stringify({at:Date.now(),task:e.task,directionA:s.chosenDirection,directionB:e.direction,blocksA:s.rafes[s.chosenDirection].blocks,blocksB:s.rafes[e.direction].blocks,internal:s.internal,...(s.extraPages?{extraPages:s.extraPages}:{})}));save();renderExtension()};
 $('extensionEdit').onclick=()=>{if(!extensionAvailability())go(3)};setInterval(extensionAvailability,30000);
 $('check').onclick=()=>{
   const missing=[];
@@ -74,10 +70,10 @@ $('check').onclick=()=>{
   if(s.ideas.some(x=>!x.trim()))missing.push('seis ideias');
   if(!s.conceptName.trim()||!s.conceptWhy.trim())missing.push('nome e explicação do conceito');
   if(s.selected.length!==3||!s.selected.every(i=>(s.reasons[i]||'').trim()))missing.push('três direções justificadas');
-  if([...s.rafes.map(r=>r.blocks),s.internal].some(bs=>!bs.some(b=>b.type==='cta'&&b.text.trim())||!bs.some(b=>b.type==='title'&&b.text.trim())||!bs.some(b=>b.type==='text'&&b.text.trim())))missing.push('título, conteúdo e ação nos quatro esboços');
+  const emptySketches=sketchesWithoutContent();if(emptySketches.length)missing.push('esboços sem conteúdo próprio registrado: '+emptySketches.join(', '));
   if(!s.tests.some(t=>t.note.trim()))missing.push('visita com observação registrada');
   if(!s.revision.trim()||!s.memberA.trim()||!s.memberB.trim())missing.push('decisão após teste e registros A/B');
-  $('checkOut').innerHTML=missing.length?'<div class="issue">Registros a completar: '+missing.map(E).join(', ')+'.</div>':'<div class="result">Registros presentes. O docente ainda fará a conferência qualitativa da relação entre briefing, escolhas e teste.</div>';
+  $('checkOut').innerHTML=(missing.length?'<div class="issue">Registros a completar: '+missing.map(E).join(', ')+'.</div>':'<div class="result">Registros presentes. O docente ainda fará a conferência qualitativa da relação entre briefing, escolhas e teste.</div>')+'<p class="hint">Confira com o docente se cada esboço comunica contexto, informação prioritária e próximo passo. Esta lista verifica registros, sem exigir tipos específicos de bloco nem bloquear a visita ou certificar aprendizagem.</p>';
 };
 $('recovery').onclick=()=>{if(recoveryRaw)download(recoveryRaw,'aula16-recuperacao.json','application/json')};$('json').onclick=()=>download(storageLocked?recoveryRaw:JSON.stringify(s,null,2),'aula16-esbocos.json','application/json');
 $('html').onclick=()=>{
