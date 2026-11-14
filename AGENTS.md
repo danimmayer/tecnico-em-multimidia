@@ -4,6 +4,8 @@ Ao criar ou alterar qualquer aula deste repositório, em **todas as UCs**, aplic
 
 Preservar oficinas customizadas, troca de conhecimento e artefatos interativos já adotados. Relacionar capacidades, critérios prévios, instrumentos e evidências; preenchimento automático não comprova aprendizagem.
 
+Planejar a linguagem para adolescentes: cada ação do estudante diz **o que fazer, onde fazer e como conferir o resultado**. Apresentar termo novo junto de exemplo concreto; manter o mesmo nome nos slides, na oficina e na fala docente. O tutorial modela só o primeiro passo, sem resolver o desafio. Antes de publicar, fazer revisão cognitiva além da técnica: percurso experimentável antes de completar tudo, instruções compreensíveis e distinção entre verificação do software e compreensão observada. Aplicar a referência curta de clareza da skill `metodologia-senai` em qualquer UC.
+
 Atualizar a ficha da aula em `RELATORIO_ALINHAMENTO_INSTITUCIONAL.md` em toda implementação. Informar evidência concreta, lacuna e ação para os requisitos R01–R20, inclusive itens administrativos. Separar planejamento evidenciado, observação em sala e registros institucionais. Não afirmar conformidade total nem inferir prática ausente de documentação ausente. Inventários antigos sem leitura integral permanecem preliminares.
 
 No planejamento noturno atual, concentrar conteúdo e evidência avaliável até 22h. Reservar 22h–22h30 a apoio e organização, sem requisito novo ou prejuízo a quem saiu. Não alterar regras de frequência ou permanência por inferência. Pedidos atuais do usuário prevalecem.

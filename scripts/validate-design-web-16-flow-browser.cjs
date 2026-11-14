@@ -22,6 +22,7 @@ async function run(driver, url) {
     const saved = () => page.evaluate(key=>JSON.parse(localStorage.getItem(key)),KEY);
 
     await page.locator('#nav [data-go="3"]').click();
+    await page.getByText('Páginas extras (opcional)',{exact:true}).click();
     await page.locator('#pageTitle').fill('Como chegar');
     await page.locator('#addPage').click();
     const afterAdd = await saved();

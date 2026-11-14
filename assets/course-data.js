@@ -564,8 +564,8 @@ window.SENAI_COURSES = {
       },
       {
         "num": "16",
-        "title": "Ideias que viram direção",
-        "description": "Uma oficina de soluções de software: transformar um pedido do Festival Vira-Luz em seis alternativas, conceito e três esboços de página de início mais uma página interna que outra pessoa consegue testar.",
+        "title": "Criar e testar páginas",
+        "description": "Na oficina do Festival Vira-Luz, a dupla cria seis ideias, escolhe uma ideia central e monta três versões da página inicial mais uma Página de informações compartilhada. Depois, outra pessoa testa o caminho.",
         "objectives": [
           "Desenvolvimento do Projeto: ideação, conceituação, rafes.",
           "Inovação: visão inovadora."
@@ -580,29 +580,29 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:45",
-            "atividade": "Ler a situação-problema, fazer o diagnóstico de duas soluções e gerar seis alternativas de primeira tela para o Festival Vira-Luz. Comparar alternativas pela tarefa que ajudam a realizar."
+            "atividade": "Ler o pedido, comparar duas telas e criar seis ideias de página inicial para o Festival Vira-Luz. Em cada ideia, definir o que aparece primeiro, o botão principal e para onde ele leva."
           },
           {
             "horario": "20:05 - 20:45",
-            "atividade": "Selecionar três alternativas promissoras, definir o conceito da solução e usar três critérios para justificar a escolha. Alternar quem opera e iniciar os esboços de página."
+            "atividade": "Selecionar três ideias, explicar por que cada uma ajuda a pessoa e definir a ideia central da página. Alternar quem opera e começar as três versões da página inicial."
           },
           {
             "horario": "20:45 - 21:30",
-            "atividade": "Montar na oficina três esboços de página de baixa fidelidade para a página inicial e uma página interna da direção escolhida. Organizar blocos, título, ação e conteúdo prioritário. Entre 21h15 e 21h30, realizar a visita de uma pessoa de outra dupla, sem explicação dos autores."
+            "atividade": "Montar na oficina três versões testáveis da página inicial e uma Página de informações compartilhada. Organizar título, informação importante e botão. Entre 21h15 e 21h30, uma pessoa de outra dupla testa sem explicação dos autores."
           },
           {
             "horario": "21:30 - 22:00",
-            "atividade": "Concluir o registro da visita já realizada, revisar a direção, responder aos registros individuais A/B e participar da síntese final. Das 22:00 às 22:30: clínica e apoio técnico opcional, sem conteúdo ou avaliação nova."
+            "atividade": "Registrar o que a pessoa fez no teste, ajustar ou manter uma escolha com motivo, responder aos registros individuais A/B e participar da síntese final. Das 22:00 às 22:30: clínica e apoio técnico opcional, sem conteúdo ou avaliação nova."
           }
         ],
-        "methodology": "Situação-problema profissional inteiramente praticada na oficina: diagnóstico por comparação, ideação divergente e seleção convergente, construção de esboços de página, teste por observação e revisão baseada em evidência. Os 160 minutos letivos priorizam decisões e ações do estudante; a fala demonstrativa do docente soma no máximo 12 minutos, distribuída em intervenções de até dois minutos. A dupla alterna autoria e observação; cada estudante registra sua autoavaliação.",
-        "resources": "Projetor, navegador e Estúdio de Direções da Aula 16. A oficina local reúne o briefing, as alternativas, a criação, o teste, os critérios e o rascunho. Sem login, instalação, impressão, pesquisa externa ou envio obrigatório.",
+        "methodology": "Oficina baseada em um pedido profissional: comparar telas, criar ideias, escolher com critérios, montar páginas, observar um teste e revisar com base no que foi visto. Os 160 minutos letivos priorizam decisões e ações do estudante; a fala demonstrativa do docente soma no máximo 12 minutos, em intervenções de até dois minutos. A dupla alterna autoria e observação; cada estudante registra sua autoavaliação.",
+        "resources": "Projetor, navegador e Criar e testar páginas da Aula 16. A oficina local reúne o pedido, as ideias, as páginas, o teste, os critérios e o rascunho. Sem login, instalação, impressão, pesquisa externa ou envio obrigatório.",
         "observation": "19:00–22:00 de conteúdo e evidência avaliável, com intervalo 19:45–20:05. Das 22:00 às 22:30 é somente apoio técnico individual, salvamento e organização do trabalho já concluído; não apresenta conteúdo novo nem cria exigência para quem saiu. Chamada no início dos quatro blocos. Os casos são fictícios; uma dupla por computador; rascunho fica neste navegador."
       },
       {
         "num": "17",
         "title": "Wireframes de Interfaces",
-        "description": "Estrutura técnica de wireframes: dos rafes ao desenho estruturado das páginas do projeto fictício.",
+        "description": "Transformar uma das três versões iniciais escolhidas na Aula 16 e sua Página de informações em wireframes: desenhos da tela com espaços e tamanhos, para testar a ordem do conteúdo antes de usar cor e acabamento.",
         "objectives": [
           "Desenvolvimento do Projeto: wireframes."
         ],
@@ -614,30 +614,30 @@ window.SENAI_COURSES = {
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Revisão da aula anterior: retomada do rafe escolhido por cada grupo na galeria. Do rafe ao wireframe: níveis de fidelidade (baixa, média e alta) com exemplos reais exibidos no projetor."
+            "horario": "19:00 - 19:45",
+            "atividade": "Retomar a versão escolhida na Aula 16. Cada dupla abre seus três esboços iniciais e a Página de informações, aponta qual versão vai desenvolver e diz qual tarefa a pessoa deve conseguir realizar. Apresentação breve: wireframe é um desenho da tela com espaços e tamanhos; ele serve para decidir ordem, conteúdo e ação, não para escolher cores."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "Estrutura técnica de wireframes: grid de colunas, blocos de conteúdo (cabeçalho, área de destaque, seções, rodapé), hierarquia visual e convenções de representação (caixa com X para imagem, linhas para texto, retângulos para botões)."
+            "horario": "20:05 - 20:50",
+            "atividade": "Montar o wireframe da página inicial escolhida no computador ou no papel: marcar a área da tela, cabeçalho, destaque, informação principal, botão e rodapé. Usar linhas para texto, caixas para imagens e retângulos para botões. Conferir: o título, a informação prioritária e a ação aparecem na ordem combinada."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "Produção: wireframe da página inicial do projeto fictício no caderno de materiais ou em ferramenta visual disponível no laboratório, seguindo o mapa do site definido na arquitetura de informação."
+            "horario": "20:50 - 21:30",
+            "atividade": "Montar a Página de informações que completa a promessa do botão da página inicial. Ligar as duas telas com uma seta e escrever a tarefa do visitante. A dupla alterna quem organiza os blocos e quem confere se o caminho responde ao pedido."
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "Wireframes das páginas internas (ex.: sobre, serviços ou produtos, contato) e organização dos arquivos de projeto: nomeação padronizada de páginas e frames, pastas do grupo e checklist do que fica pronto para as próximas etapas."
+            "horario": "21:30 - 22:00",
+            "atividade": "Teste entre pares: um visitante tenta cumprir a tarefa sem explicação; a dupla registra onde ele procurou, o que encontrou e uma decisão de manter ou ajustar. Salvar ou fotografar o wireframe e nomear os dois arquivos. Das 22:00 às 22:30: somente apoio técnico, salvamento e organização do trabalho já concluído."
           }
         ],
-        "methodology": "Prática guiada de wireframing com produção individual orientada.",
-        "resources": "Laboratório com computadores, ferramenta gratuita de design e projetor.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "Oficina de continuidade da Aula 16: escolher uma das três versões iniciais e desenvolver somente essa versão escolhida, junto da Página de informações. Demonstrações curtas mostram a convenção; estudantes constroem, testam uma tarefa e revisam com base no que o visitante fez. O docente observa, pergunta e devolve feedback por critério, sem aprovação automática.",
+        "resources": "Projetor, computador com navegador ou papel A4, régua, caneta e os esboços salvos da Aula 16. Alternativa sem internet: papel, post-its e molduras impressas de computador. Casos fictícios; não usar dados pessoais.",
+        "observation": "Conteúdo, teste e evidência previstos até 22:00, com intervalo de 19:45 a 20:05. Das 22:00 às 22:30: apoio técnico, salvamento e organização, sem conteúdo, requisito ou evidência avaliativa nova. A execução, a aprendizagem observada, a frequência e registros institucionais dependem do docente."
       },
       {
         "num": "18",
         "title": "Wireframes Responsivos",
-        "description": "Adaptação dos wireframes para dispositivos móveis, priorizando conteúdo e navegação em telas pequenas.",
+        "description": "Adaptar os wireframes da página inicial e da Página de informações para celular, decidindo o que aparece primeiro, o que muda de lugar e como a navegação continua compreensível em uma tela menor.",
         "objectives": [
           "Interfaces Web e App: wireframes responsivos."
         ],
@@ -650,25 +650,25 @@ window.SENAI_COURSES = {
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Revisão da aula anterior: estrutura técnica dos wireframes de desktop. Análise comparativa no projetor: o mesmo site aberto em desktop e no celular, o que muda no leiaute, na navegação e na ordem do conteúdo, e por quê."
+            "horario": "19:00 - 19:45",
+            "atividade": "Retomar os dois wireframes da Aula 17. Comparar a mesma página no computador e no celular: localizar o que aparece primeiro, o que fica abaixo, o que muda de ordem e qual ação continua fácil de tocar. Responsivo significa reorganizar a tela para que a tarefa continue clara em tamanhos diferentes; não é apenas encolher o desenho."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "Adaptação dos wireframes para telas de celular: prioridade de conteúdo (o que o usuário precisa ver primeiro), empilhamento de colunas em coluna única e padrões de navegação mobile (menu hambúrguer, barra fixa, botões com área de toque adequada)."
+            "horario": "20:05 - 20:50",
+            "atividade": "Desenhar a versão de celular da página inicial. Na área da tela do celular, colocar primeiro título, informação e ação prioritários; empilhar o que ficava lado a lado no computador; decidir como o menu aparece. Anotar ao lado uma mudança e o motivo dela."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "Produção dos wireframes responsivos no caderno de materiais ou em ferramenta visual disponível no laboratório: versão mobile da página inicial e de uma página interna, mantendo consistência com a versão desktop. Cada grupo controla o tempo por tela para fechar as duas versões na noite."
+            "horario": "20:50 - 21:30",
+            "atividade": "Adaptar a Página de informações para celular e conferir o caminho entre as duas telas. A dupla marca o que se mantém, o que muda de ordem e o que pode ficar depois porque é secundário. Alternar quem desenha e quem lê o caminho como visitante."
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "\"Teste do corredor\": colegas de outros grupos navegam nos wireframes pelo próprio celular cumprindo uma tarefa simples (ex.: encontrar o telefone de contato) e apontam pontos confusos; ajustes imediatos nos wireframes."
+            "horario": "21:30 - 22:00",
+            "atividade": "Teste entre pares no papel ou no computador: outra pessoa tenta encontrar uma informação e concluir a ação principal no wireframe de celular. Registrar onde ela hesitou e ajustar, se a observação justificar. Salvar ou fotografar as quatro telas. Das 22:00 às 22:30: somente apoio técnico, salvamento e organização do trabalho já concluído."
           }
         ],
-        "methodology": "Análise comparativa seguida de produção prática e teste entre pares no celular.",
-        "resources": "Laboratório com computadores, ferramenta gratuita de prototipação e smartphones dos alunos.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "Comparação de uma mesma tarefa em computador e celular, adaptação prática de dois wireframes e teste entre pares. A turma toma decisões de prioridade, ordem e toque; o docente usa perguntas e observação para mediar, sem transformar o preenchimento de itens em comprovação automática de aprendizagem.",
+        "resources": "Projetor, computador com navegador ou papel A4, régua, caneta, molduras de computador e celular, e os wireframes da Aula 17. Alternativa sem internet: recortar e reorganizar blocos em uma moldura de celular. Casos fictícios; não usar dados pessoais.",
+        "observation": "Conteúdo, teste e evidência previstos até 22:00, com intervalo de 19:45 a 20:05. Das 22:00 às 22:30: apoio técnico, salvamento e organização, sem conteúdo, requisito ou evidência avaliativa nova. A execução, a aprendizagem observada, a frequência e registros institucionais dependem do docente."
       },
       {
         "num": "19",

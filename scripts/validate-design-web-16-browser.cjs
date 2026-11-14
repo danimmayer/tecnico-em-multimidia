@@ -56,15 +56,15 @@ async function run(driver, url) {
     await page.locator('[data-block="0"]').fill('Versão revisada depois da visita');
     assert.equal(JSON.stringify((await saved()).tests[0].blocks),before,'Preservar a versão testada antes da revisão.');
     await nav(5);await page.locator('#check').click();
-    assert.match(await page.locator('#checkOut').innerText(),/Registros presentes/);
-    assert.match(await page.locator('#checkOut').innerText(),/conferência qualitativa/);
+    assert.match(await page.locator('#checkOut').innerText(),/Os campos da atividade estão preenchidos/);
+    assert.match(await page.locator('#checkOut').innerText(),/expliquem suas escolhas/);
     await page.reload();assert.equal((await saved()).conceptName,'Seu próximo encontro');
-    await page.locator('header summary').click();
-    const backupPromise=page.waitForEvent('download');await page.locator('#json').click();const backup=await backupPromise;
+    const backupPromise=page.waitForEvent('download');await page.locator('#jsonEnd').click();const backup=await backupPromise;
     const backupData=JSON.parse(fs.readFileSync(await backup.path(),'utf8'));
+    await page.locator('header summary').click();
     const reportPromise=page.waitForEvent('download');await page.locator('#html').click();const report=await reportPromise;
     const reportText=fs.readFileSync(await report.path(),'utf8');
-    for(const text of ['Seu próximo encontro','Agenda primeiro','Página interna','Rua Cedro','Versão revisada'])assert(reportText.includes(text));
+    for(const text of ['Seu próximo encontro','Agenda primeiro','Página de informações','Rua Cedro','Versão revisada'])assert(reportText.includes(text));
     const baseline=await saved();
     for(const corrupt of [{...backupData,ideas:[null,1,2,3,4,5]},{...backupData,active:99},{...backupData,selected:[0,0,0]},{...backupData,problem:null},{...backupData,tests:[{}]}]) {
       await page.locator('#load').setInputFiles({name:'corrompido.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(corrupt))});
