@@ -72,7 +72,7 @@
         },
         {
           "id": "modelo",
-          "title": "Modelar só o primeiro passo",
+          "title": "Vamos começar juntos",
           "minutes": 15,
           "action": "No caderno, anote uma forma visível na reprodução de Le Gras e uma hipótese sobre ela. Separe as frases com Vejo e Talvez. Só este marco será modelado.",
           "where": "imagem projetada no slide Joseph Nicéphore Niépce e caderno",
@@ -93,7 +93,7 @@
           "title": "Produzir e registrar o processo",
           "minutes": 45,
           "action": "Conclua o painel com uma consequência técnica/comunicativa por marco. Faça pelo menos duas fotos do objeto, com uma tentativa por integrante, na câmera nativa disponível, mudando fundo ou distância; escolha uma e escreva a legenda no caderno. Sem câmera, compare a foto-fruta projetada e desenhe duas propostas de quadro, marcadas como estudo.",
-          "where": "caderno/papel; câmera nativa e galeria, quando disponíveis; imagem local projetada no fallback",
+          "where": "caderno/papel; câmera nativa e galeria, quando disponíveis; imagem local projetada na alternativa sem câmera",
           "check": "a foto escolhida comunica a intenção e as duas tentativas continuam guardadas",
           "output": "painel e foto consciente"
         },
@@ -280,7 +280,7 @@
           "title": "Daguerreótipo",
           "caption": "Imagem original do slide O Daguerreótipo; conservar a composição e o contexto da apresentação.",
           "credit": "Crédito/licença não identificados neste recorte; conferir a identificação no slide original antes de republicar.",
-          "matte": "clear"
+          "matte": "white"
         },
         {
           "path": "imagens/William_Henry_Fox_Talbot,_1864.jpg",
@@ -301,7 +301,7 @@
           "title": "Kodak - You press the button",
           "caption": "Imagem original do slide A Kodak; conservar a composição e o contexto da apresentação.",
           "credit": "Crédito/licença não identificados neste recorte; conferir a identificação no slide original antes de republicar.",
-          "matte": "clear"
+          "matte": "white"
         },
         {
           "path": "imagens/James Clerk Maxwell — primeira foto colorida usando três filtros RGB sobrepostos .webp",
@@ -382,8 +382,8 @@
         },
         {
           "path": "modelos/producao-audiovisual/aula-11/media/foto-fruta.jpg",
-          "title": "foto-fruta",
-          "caption": "Referência local existente para esta prática; não representa produção do estudante.",
+          "title": "Luz, cor e textura em uma natureza-morta",
+          "caption": "Observe o assunto, a luz e o fundo. Compare o efeito com a intenção da fotografia.",
           "credit": "Crédito não identificado no arquivo consultado; não presumir licença de republicação.",
           "matte": "clear"
         }
@@ -484,7 +484,7 @@
         },
         {
           "id": "modelo",
-          "title": "Modelar só o primeiro passo",
+          "title": "Vamos começar juntos",
           "minutes": 15,
           "action": "No caderno, calcule só a largura: 15 ÷ 2,54 × 300. Escreva a unidade em cada passo e arredonde para cima. Deixe a altura para o planejamento.",
           "where": "slide do briefing, calculadora local ou caderno",
@@ -710,15 +710,15 @@
         },
         {
           "path": "modelos/producao-audiovisual/aula-11/media/foto-fruta.jpg",
-          "title": "foto-fruta",
-          "caption": "Referência local existente para esta prática; não representa produção do estudante.",
+          "title": "Luz, cor e textura em uma natureza-morta",
+          "caption": "Observe o assunto, a luz e o fundo. Compare o efeito com a intenção da fotografia.",
           "credit": "Crédito não identificado no arquivo consultado; não presumir licença de republicação.",
           "matte": "clear"
         },
         {
           "path": "imagens/bayer-pattern-sensor.svg",
-          "title": "bayer-pattern-sensor",
-          "caption": "Referência local existente para esta prática; não representa produção do estudante.",
+          "title": "Como o sensor organiza as cores",
+          "caption": "Observe os detalhes da imagem e compare as escolhas de enquadramento, luz e composição.",
           "credit": "Crédito não identificado no arquivo consultado; não presumir licença de republicação.",
           "matte": "clear"
         }
@@ -818,7 +818,7 @@
         },
         {
           "id": "modelo",
-          "title": "Modelar só o primeiro passo",
+          "title": "Vamos começar juntos",
           "minutes": 15,
           "action": "No caderno, inicie a análise do Caso marca: escreva o signo visível e uma referência possível, sem inventar quem deixou a marca. A conclusão fica com você.",
           "where": "Caso marca projetado e caderno",
@@ -997,8 +997,8 @@
         },
         {
           "path": "imagens/aula06/still-life-subject.png",
-          "title": "still-life-subject",
-          "caption": "Referência local existente para esta prática; não representa produção do estudante.",
+          "title": "Um assunto, diferentes possibilidades de leitura",
+          "caption": "Observe os detalhes da imagem e compare as escolhas de enquadramento, luz e composição.",
           "credit": "Crédito não identificado no arquivo consultado; não presumir licença de republicação.",
           "matte": "clear"
         }
@@ -1099,7 +1099,7 @@
         },
         {
           "id": "modelo",
-          "title": "Modelar só o primeiro passo",
+          "title": "Vamos começar juntos",
           "minutes": 15,
           "action": "No caderno, descreva apenas tamanho e posição do carro no anúncio projetado. Veja como localizar uma característica sem concluir a promessa. A interpretação fica com o grupo.",
           "where": "anúncio Think Small projetado e caderno",
@@ -1272,7 +1272,7 @@
           "title": "Câmera daguerreotipo de madeira",
           "caption": "Imagem original do slide Ícone; conservar a composição e o contexto da apresentação.",
           "credit": "Crédito/licença não identificados neste recorte; conferir a identificação no slide original antes de republicar.",
-          "matte": "clear"
+          "matte": "white"
         },
         {
           "path": "imagens/fotografos/Migrant Mother (1936).jpg",
@@ -1300,7 +1300,7 @@
           "title": "Publicidade Kodak: You press the button, we do the rest",
           "caption": "Imagem original do slide Argumento; conservar a composição e o contexto da apresentação.",
           "credit": "Crédito/licença não identificados neste recorte; conferir a identificação no slide original antes de republicar.",
-          "matte": "clear"
+          "matte": "white"
         },
         {
           "path": "imagens/fotografos/W1siZiIsIjE0NDM3NiJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQDerrière la Gare Saint-Lazare (1932).jpg",
@@ -1311,22 +1311,22 @@
         },
         {
           "path": "imagens/banca/01-falling-soldier.jpg",
-          "title": "01-falling-soldier",
-          "caption": "Referência local existente para esta prática; não representa produção do estudante.",
+          "title": "O soldado que cai: leitura de uma fotografia",
+          "caption": "Observe os detalhes da imagem e compare as escolhas de enquadramento, luz e composição.",
           "credit": "Crédito não identificado no arquivo consultado; não presumir licença de republicação.",
           "matte": "clear"
         },
         {
           "path": "imagens/banca/02-anuncio.jpg",
-          "title": "02-anuncio",
-          "caption": "Referência local existente para esta prática; não representa produção do estudante.",
+          "title": "Publicidade: imagem e intenção",
+          "caption": "Observe os detalhes da imagem e compare as escolhas de enquadramento, luz e composição.",
           "credit": "Crédito não identificado no arquivo consultado; não presumir licença de republicação.",
           "matte": "clear"
         },
         {
           "path": "imagens/banca/03-capa-revista.jpg",
-          "title": "03-capa-revista",
-          "caption": "Referência local existente para esta prática; não representa produção do estudante.",
+          "title": "Capa de revista: imagem e contexto",
+          "caption": "Observe os detalhes da imagem e compare as escolhas de enquadramento, luz e composição.",
           "credit": "Crédito não identificado no arquivo consultado; não presumir licença de republicação.",
           "matte": "clear"
         }
@@ -1422,7 +1422,7 @@
         },
         {
           "id": "modelo",
-          "title": "Modelar só o primeiro passo",
+          "title": "Vamos começar juntos",
           "minutes": 15,
           "action": "No aparelho confirmado, acompanhe só o primeiro disparo: abra o aplicativo Câmera, escolha Foto se o modo existir, aponte para o caderno e use o botão de disparo indicado na tela. Abra a miniatura da captura ou a Galeria para rever. Se esses nomes não aparecerem, pare e peça ao professor que identifique o controle real; não altere menus desconhecidos.",
           "where": "câmera nativa disponível e galeria",
@@ -1503,7 +1503,7 @@
         "minItems": 3,
         "maxItems": 12
       },
-      "individualEvidence": "Cada estudante opera uma rodada, abre sua imagem e demonstra um controle real; no fallback distingue o controle representado da ação que ainda precisa praticar.",
+      "individualEvidence": "Cada estudante opera uma rodada, abre sua imagem e demonstra um controle real; na atividade em papel, distingue o controle representado da ação que ainda precisa praticar.",
       "recovery": {
         "action": "Refaça um detalhe com aparelho apoiado e assunto escolhido no foco quando disponível; confira antes/depois ampliando.",
         "check": "Textura reconhecível e explicação do controle/apoio que resolveu."
@@ -1616,8 +1616,8 @@
       "gallery": [
         {
           "path": "imagens/aula05/camera-dslr.png",
-          "title": "camera-dslr",
-          "caption": "Imagem original do slide Capa; conservar a composição e o contexto da apresentação.",
+          "title": "Câmera DSLR",
+          "caption": "Observe os detalhes da imagem e compare as escolhas de enquadramento, luz e composição.",
           "credit": "Crédito/licença não identificados neste recorte; conferir a identificação no slide original antes de republicar.",
           "matte": "clear"
         },
@@ -1651,8 +1651,8 @@
         },
         {
           "path": "imagens/aula05/camera-explodida-partes.png",
-          "title": "camera-explodida-partes",
-          "caption": "Imagem original do slide Anatomia da Câmera; conservar a composição e o contexto da apresentação.",
+          "title": "As partes de uma câmera",
+          "caption": "Observe os detalhes da imagem e compare as escolhas de enquadramento, luz e composição.",
           "credit": "Crédito/licença não identificados neste recorte; conferir a identificação no slide original antes de republicar.",
           "matte": "clear"
         },
@@ -1788,7 +1788,7 @@
         },
         {
           "id": "modelo",
-          "title": "Modelar só o primeiro passo",
+          "title": "Vamos começar juntos",
           "minutes": 15,
           "action": "Modele só a primeira missão: mover um objeto do centro para uma interseção imaginada dos terços. As outras nove ficam abertas.",
           "where": "câmera disponível ou janela desenhada no papel",
@@ -1809,7 +1809,7 @@
           "title": "Produzir e registrar o processo",
           "minutes": 45,
           "action": "Capture as 10 propostas; verifique a imagem depois de cada duas capturas. Troque operador/direção. Não bloqueie circulação nem fotografe pessoas sem combinação.",
-          "where": "câmera nativa e galeria; fallback em papel com imagem local",
+          "where": "câmera nativa e galeria; alternativa em papel com imagem local",
           "check": "cada legenda descreve uma decisão realmente visível; há 10 propostas diferentes",
           "output": "10 imagens e legendas"
         },
@@ -1995,29 +1995,29 @@
       "gallery": [
         {
           "path": "imagens/aula06/composition-frame.png",
-          "title": "composition-frame",
-          "caption": "Imagem original do slide Capa; conservar a composição e o contexto da apresentação.",
+          "title": "O enquadramento organiza a cena",
+          "caption": "Observe os detalhes da imagem e compare as escolhas de enquadramento, luz e composição.",
           "credit": "Crédito/licença não identificados neste recorte; conferir a identificação no slide original antes de republicar.",
           "matte": "clear"
         },
         {
           "path": "imagens/aula06/attention-path.png",
-          "title": "attention-path",
-          "caption": "Imagem original do slide A Pergunta da Composição; conservar a composição e o contexto da apresentação.",
+          "title": "Por onde o olhar percorre a imagem",
+          "caption": "Observe os detalhes da imagem e compare as escolhas de enquadramento, luz e composição.",
           "credit": "Crédito/licença não identificados neste recorte; conferir a identificação no slide original antes de republicar.",
           "matte": "clear"
         },
         {
           "path": "imagens/aula06/still-life-subject.png",
-          "title": "still-life-subject",
-          "caption": "Imagem original do slide Assunto, Fundo e Hierarquia; conservar a composição e o contexto da apresentação.",
+          "title": "Um assunto, diferentes possibilidades de leitura",
+          "caption": "Observe os detalhes da imagem e compare as escolhas de enquadramento, luz e composição.",
           "credit": "Crédito/licença não identificados neste recorte; conferir a identificação no slide original antes de republicar.",
           "matte": "clear"
         },
         {
           "path": "imagens/aula06/composition-map.png",
-          "title": "composition-map",
-          "caption": "Imagem original do slide Mapa do Quadro; conservar a composição e o contexto da apresentação.",
+          "title": "Mapa de composição",
+          "caption": "Observe os detalhes da imagem e compare as escolhas de enquadramento, luz e composição.",
           "credit": "Crédito/licença não identificados neste recorte; conferir a identificação no slide original antes de republicar.",
           "matte": "clear"
         },
@@ -2037,8 +2037,8 @@
         },
         {
           "path": "imagens/aula06/symmetry-asymmetry.png",
-          "title": "symmetry-asymmetry",
-          "caption": "Imagem original do slide Simetria e Quebra; conservar a composição e o contexto da apresentação.",
+          "title": "Simetria e assimetria",
+          "caption": "Observe os detalhes da imagem e compare as escolhas de enquadramento, luz e composição.",
           "credit": "Crédito/licença não identificados neste recorte; conferir a identificação no slide original antes de republicar.",
           "matte": "clear"
         },
@@ -2051,29 +2051,29 @@
         },
         {
           "path": "imagens/aula06/depth-layers.png",
-          "title": "depth-layers",
-          "caption": "Imagem original do slide Moldura, Camadas e Profundidade; conservar a composição e o contexto da apresentação.",
+          "title": "Planos e profundidade",
+          "caption": "Observe os detalhes da imagem e compare as escolhas de enquadramento, luz e composição.",
           "credit": "Crédito/licença não identificados neste recorte; conferir a identificação no slide original antes de republicar.",
           "matte": "clear"
         },
         {
           "path": "imagens/aula06/viewpoint-miniatures.png",
-          "title": "viewpoint-miniatures",
-          "caption": "Imagem original do slide Ponto de Vista e Enquadramentos; conservar a composição e o contexto da apresentação.",
+          "title": "Variações do ponto de vista",
+          "caption": "Observe os detalhes da imagem e compare as escolhas de enquadramento, luz e composição.",
           "credit": "Crédito/licença não identificados neste recorte; conferir a identificação no slide original antes de republicar.",
           "matte": "clear"
         },
         {
           "path": "imagens/aula06/negative-space.png",
-          "title": "negative-space",
-          "caption": "Imagem original do slide Peso Visual e Espaço Negativo; conservar a composição e o contexto da apresentação.",
+          "title": "O espaço ao redor do assunto",
+          "caption": "Observe os detalhes da imagem e compare as escolhas de enquadramento, luz e composição.",
           "credit": "Crédito/licença não identificados neste recorte; conferir a identificação no slide original antes de republicar.",
           "matte": "clear"
         },
         {
           "path": "imagens/aula06/crop-ratio-frames.png",
-          "title": "crop-ratio-frames",
-          "caption": "Imagem original do slide Corte, Proporção e Plataforma; conservar a composição e o contexto da apresentação.",
+          "title": "Recortes e proporções da mesma cena",
+          "caption": "Observe os detalhes da imagem e compare as escolhas de enquadramento, luz e composição.",
           "credit": "Crédito/licença não identificados neste recorte; conferir a identificação no slide original antes de republicar.",
           "matte": "clear"
         },
@@ -2086,15 +2086,15 @@
         },
         {
           "path": "imagens/aula06/editing-toolkit.png",
-          "title": "editing-toolkit",
-          "caption": "Imagem original do slide Ferramentas de Composição no Software; conservar a composição e o contexto da apresentação.",
+          "title": "Ferramentas para editar a imagem",
+          "caption": "Observe os detalhes da imagem e compare as escolhas de enquadramento, luz e composição.",
           "credit": "Crédito/licença não identificados neste recorte; conferir a identificação no slide original antes de republicar.",
           "matte": "clear"
         },
         {
           "path": "imagens/aula06/smartphone-editor.png",
-          "title": "smartphone-editor",
-          "caption": "Imagem original do slide Fluxo Prático no Celular ou Notebook; conservar a composição e o contexto da apresentação.",
+          "title": "Edição de imagem no celular",
+          "caption": "Observe os detalhes da imagem e compare as escolhas de enquadramento, luz e composição.",
           "credit": "Crédito/licença não identificados neste recorte; conferir a identificação no slide original antes de republicar.",
           "matte": "clear"
         },
@@ -2114,8 +2114,8 @@
         },
         {
           "path": "imagens/aula06/composition-sprint-contact-sheet.png",
-          "title": "composition-sprint-contact-sheet",
-          "caption": "Imagem original do slide Sprint de Composição; conservar a composição e o contexto da apresentação.",
+          "title": "Comparar fotografias antes de selecionar",
+          "caption": "Observe os detalhes da imagem e compare as escolhas de enquadramento, luz e composição.",
           "credit": "Crédito/licença não identificados neste recorte; conferir a identificação no slide original antes de republicar.",
           "matte": "clear"
         }
@@ -2220,7 +2220,7 @@
         },
         {
           "id": "modelo",
-          "title": "Modelar só o primeiro passo",
+          "title": "Vamos começar juntos",
           "minutes": 15,
           "action": "Modele só um cálculo:1/125→1/250 reduz tempo pela metade; para brilho parecido, que outro ajuste pode compensar? A solução fica com a turma.",
           "where": "slide stops-scale.svg e caderno",
@@ -2476,15 +2476,15 @@
         },
         {
           "path": "imagens/aula05/profundidade-f18.jpg",
-          "title": "profundidade-f 18",
-          "caption": "Referência local existente para esta prática; não representa produção do estudante.",
+          "title": "Fundo desfocado: abertura f/1,8",
+          "caption": "Observe os detalhes da imagem e compare as escolhas de enquadramento, luz e composição.",
           "credit": "Crédito não identificado no arquivo consultado; não presumir licença de republicação.",
           "matte": "clear"
         },
         {
           "path": "imagens/aula05/profundidade-f16.jpg",
-          "title": "profundidade-f 16",
-          "caption": "Referência local existente para esta prática; não representa produção do estudante.",
+          "title": "Fundo mais definido: abertura f/16",
+          "caption": "Observe os detalhes da imagem e compare as escolhas de enquadramento, luz e composição.",
           "credit": "Crédito não identificado no arquivo consultado; não presumir licença de republicação.",
           "matte": "clear"
         }
@@ -2584,7 +2584,7 @@
         },
         {
           "id": "modelo",
-          "title": "Modelar só o primeiro passo",
+          "title": "Vamos começar juntos",
           "minutes": 15,
           "action": "Veja como marcar posição do objeto e da câmera na mesa sem mexer em tudo. Modele apenas o primeiro quadro do esquema.",
           "where": "mesa permitida e caderno",
@@ -2983,7 +2983,7 @@
         },
         {
           "id": "modelo",
-          "title": "Modelar só o primeiro passo",
+          "title": "Vamos começar juntos",
           "minutes": 15,
           "action": "Modele só a lista da abertura: assunto, fundo e espaço para título; não forneça o enquadramento final.",
           "where": "slide shot-list-filmstrip.png e caderno",
@@ -3209,8 +3209,8 @@
         },
         {
           "path": "imagens/aula09/shot-list-filmstrip.png",
-          "title": "shot-list-filmstrip",
-          "caption": "Referência local existente para esta prática; não representa produção do estudante.",
+          "title": "Planejar uma sequência de fotografias",
+          "caption": "Observe os detalhes da imagem e compare as escolhas de enquadramento, luz e composição.",
           "credit": "Crédito não identificado no arquivo consultado; não presumir licença de republicação.",
           "matte": "clear"
         }
@@ -3310,7 +3310,7 @@
         },
         {
           "id": "modelo",
-          "title": "Modelar só o primeiro passo",
+          "title": "Vamos começar juntos",
           "minutes": 15,
           "action": "Acompanhe somente a cópia e o primeiro corte. No gerenciador local confirmado, selecione a foto, use Copiar e Cole em trabalho; abra essa cópia. No editor/galeria que oferece Editar, escolha Cortar, ajuste uma borda e confirme. Use Salvar cópia/Salvar como se disponível; confira que o original continua intacto. Se esses comandos não existirem, pare e use o plano de recorte desenhado sobre papel; o professor indica os nomes reais antes de outra operação.",
           "where": "galeria nativa em Editar quando existente; papel como alternativa",
@@ -3515,15 +3515,15 @@
         },
         {
           "path": "modelos/producao-audiovisual/aula-11/media/foto-fruta.jpg",
-          "title": "foto-fruta",
-          "caption": "Referência local existente para esta prática; não representa produção do estudante.",
+          "title": "Luz, cor e textura em uma natureza-morta",
+          "caption": "Observe o assunto, a luz e o fundo. Compare o efeito com a intenção da fotografia.",
           "credit": "Crédito não identificado no arquivo consultado; não presumir licença de republicação.",
           "matte": "clear"
         },
         {
           "path": "imagens/aula06/crop-ratio-frames.png",
-          "title": "crop-ratio-frames",
-          "caption": "Referência local existente para esta prática; não representa produção do estudante.",
+          "title": "Recortes e proporções da mesma cena",
+          "caption": "Observe os detalhes da imagem e compare as escolhas de enquadramento, luz e composição.",
           "credit": "Crédito não identificado no arquivo consultado; não presumir licença de republicação.",
           "matte": "clear"
         }
@@ -3737,7 +3737,7 @@
         },
         {
           "id": "modelo",
-          "title": "Modelar só o primeiro passo",
+          "title": "Vamos começar juntos",
           "minutes": 15,
           "action": "Modele apenas como extrair uma decisão de uma referência de composição: onde está o espaço negativo? O ensaio não será mostrado pronto.",
           "where": "slide original de referência e caderno",
@@ -3982,8 +3982,8 @@
         },
         {
           "path": "imagens/aula06/negative-space.png",
-          "title": "negative-space",
-          "caption": "Referência local existente para esta prática; não representa produção do estudante.",
+          "title": "O espaço ao redor do assunto",
+          "caption": "Observe os detalhes da imagem e compare as escolhas de enquadramento, luz e composição.",
           "credit": "Crédito não identificado no arquivo consultado; não presumir licença de republicação.",
           "matte": "clear"
         }
@@ -4087,7 +4087,7 @@
         },
         {
           "id": "modelo",
-          "title": "Modelar só o primeiro passo",
+          "title": "Vamos começar juntos",
           "minutes": 15,
           "action": "Acompanhe um exemplo de feedback com detalhe de uma imagem original do slide, sem avaliar um colega específico. Se houver mais de sete trios, os primeiros trios já podem iniciar as bancas depois desse exemplo, conforme a ordem combinada.",
           "where": "slide de critérios e caderno",
@@ -4175,7 +4175,7 @@
         "minItems": 3,
         "maxItems": 12
       },
-      "individualEvidence": "Cada pessoa defende uma evidência visual, responde uma pergunta e deixa um feedback específico; a recuperação objetiva, quando aplicável, acrescenta evidência individual de fundamentos, sem substituir produção autoral ausente.",
+      "individualEvidence": "Cada pessoa defende uma evidência visual, responde uma pergunta e deixa um feedback específico; a recuperação objetiva, quando aplicável, acrescenta demonstração de cada pessoa de fundamentos, sem substituir produção autoral ausente.",
       "recovery": {
         "action": "Use a pergunta da banca para refazer uma explicação: cite imagem, detalhe, escolha e efeito. Na prova, retome o fundamento identificado pelo docente com os itens fornecidos.",
         "check": "Explicação contém quatro relações observáveis; aprovação/nota e oportunidade equivalente dependem da regra institucional confirmada, não de campos preenchidos."
@@ -4265,15 +4265,15 @@
         },
         {
           "path": "imagens/aula11/base-producao-sala.jpg",
-          "title": "base-producao-sala",
-          "caption": "Referência local existente para esta prática; não representa produção do estudante.",
+          "title": "Organizar o espaço para fotografar",
+          "caption": "Observe os detalhes da imagem e compare as escolhas de enquadramento, luz e composição.",
           "credit": "Crédito não identificado no arquivo consultado; não presumir licença de republicação.",
           "matte": "clear"
         },
         {
           "path": "imagens/aula06/composition-sprint-contact-sheet.png",
-          "title": "composition-sprint-contact-sheet",
-          "caption": "Referência local existente para esta prática; não representa produção do estudante.",
+          "title": "Comparar fotografias antes de selecionar",
+          "caption": "Observe os detalhes da imagem e compare as escolhas de enquadramento, luz e composição.",
           "credit": "Crédito não identificado no arquivo consultado; não presumir licença de republicação.",
           "matte": "clear"
         }

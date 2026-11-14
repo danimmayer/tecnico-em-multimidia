@@ -19,9 +19,9 @@ No checkout do repositório, abra `reuso-2027/iniciar.command` ou execute `pytho
 
 ## Preparar e ministrar
 
-Escolha a aula, leia **Condução e slides** e confira os recursos físicos previstos antes da aula. A aba relaciona a proposta com o PEA consultado, seus recursos e os limites de cobertura. Recurso previsto precisa de uso real; qualquer mudança do plano vigente exige o encaminhamento institucional correspondente antes da execução.
+No catálogo docente, escolha a UC e clique no número ou título da aula para abrir diretamente sua capa. Use a busca para localizar um número ou assunto. O botão **ⓘ**, ao lado de cada aula, abre separadamente o roteiro de preparação: relação com o PEA consultado, recursos, instrumentos e limites de cobertura. Confira os recursos físicos antes da aula. Recurso previsto precisa de uso real; qualquer mudança do plano vigente exige o encaminhamento institucional correspondente antes da execução.
 
-Fotografia continua centrada nas apresentações: use **Slides visuais revisados · composição preservada**. As imagens originais e a composição foram mantidas nas cópias; as atividades e os critérios completos estão nos slides. O editor é apoio opcional. As apresentações de Design Web e Audiovisual são abertas somente na área docente.
+As três UCs têm apresentações próprias na área docente, com anterior/próximo, índice de slides e tela cheia. Em Design Web e Audiovisual, a barra também permite abrir a oficina. Fotografia continua centrada nas apresentações, com as imagens originais preservadas, atividades e critérios nos slides; o editor é apoio opcional. Os títulos projetados identificam a UC e a aula, sem rótulos de preparação da edição.
 
 Nas oficinas, a turma pode editar peças, criar uma versão B, comparar, abrir a prévia repetidamente e exportar/importar o projeto com mídias. Audiovisual também tem montagem local de vídeo curto, máscara, chroma por cor, ajustes de cor, dois pontos de movimento do texto e exportação em formato realmente oferecido pelo navegador. A mesa de som e o simulador de espera existentes são recursos específicos das aulas correspondentes. Não são equivalentes a todos os recursos de um editor profissional.
 
