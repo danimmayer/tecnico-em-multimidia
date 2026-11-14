@@ -30,7 +30,7 @@ O caso é fictício e completo na oficina: o Festival Vira-Luz precisa ajudar um
 
 ## Desdobramentos didáticos das capacidades previstas
 
-Referência de planejamento disponível: `Planejamento_Geral_UC_Design_Web.md`, linhas 417–424, identifica a Aula 16 como **Ideação, Conceito e Rafes** e relaciona conteúdo, capacidade técnica e colaboração. A mesma correspondência aparece em `assets/course-data.js`. Os verbos abaixo são desdobramentos para observar essa aprendizagem nesta oficina; não substituem a redação oficial da UC. A versão/assinatura institucional desse planejamento não foi localizada neste material; se necessário, a confirmação é feita nos canais institucionais, sem impedir o uso deste plano.
+Fonte institucional disponível: Plano Concluído V0, consultado em 14/11/2026 e alterado em 12/08, pp. 15–16. A Aula 16 aparece como **Ideação em papel** e relaciona a capacidade de selecionar elementos gráficos para design web, interfaces e redes sociais, além de colaboração e inovação. Os verbos abaixo são desdobramentos para observar essa aprendizagem no roteiro digital revisado; não substituem a redação oficial da UC. A cópia interna `Planejamento_Geral_UC_Design_Web.md` e `assets/course-data.js` podem apoiar a consulta, mas não comprovam aprovação institucional nem cadastro da adaptação digital.
 
 | Capacidade | Evidência observável na oficina |
 | --- | --- |
@@ -93,17 +93,17 @@ Quando houver desenvolvimento a realizar, a devolutiva é direta: apontar o que 
 | Bloco final antes de 22h | Prioriza teste, revisão e síntese da entrega-base. Quem já concluiu segue, sem esperar a turma, para conferir, comparar e defender decisões; o tempo é ajustado ao relógio e encerra às 22h. | Testa, revisa e sintetiza; se já concluiu, compara a versão escolhida com outra versão e explica a decisão a outra dupla. | A reserva aprofunda a leitura da evidência, mas não cria critério, nota ou recuperação; ausência dela não reduz a entrega-base. |
 | 22:00–22:30 | Conduz consolidação opcional de conteúdo já trabalhado e apoia quem quiser retomar uma decisão. | Escolhe uma proposta do banco de continuidade: ensaia uma variação em cópia temporária, compara uma decisão já criada, explica a escolha ao par ou retoma uma dúvida do percurso. | Sem conteúdo, critério, nota, entrega ou evidência formal nova. A participação não prejudica quem sai às 22h. Recuperação avaliativa ocorre até 22h ou em oportunidade equivalente para todos. |
 
-## Recursos previstos e adaptação
+## Fonte institucional e roteiro digital revisado
 
-Esta versão digital é o plano vigente da Aula 16 e deve ser executada como está descrita: três versões digitais, uma Página de informações comum, teste do percurso, mediação e consolidação. Ela preserva a fonte do planejamento-base — idear, conceituar, produzir desenhos rápidos e colaborar — e explicita a mudança antecipada de suporte e organização em relação às atividades em papel, galeria e materiais coletivos. Quando uma mudança posterior for necessária, ela deve seguir o fluxo institucional aplicável e ficar registrada como ajuste de execução; não substitui o cumprimento do plano nem autoriza reescrita retroativa para aparentar aderência.
+Este documento é um roteiro digital revisado posteriormente à execução. Ele não substitui nem comprova aprovação, cadastro ou alteração do Plano Concluído V0. A fonte institucional disponível descreve a Aula 16 como **Ideação em papel** e prevê papel, canetas/canetões, quadro e projetor. O roteiro propõe, para futura aplicação e mediante o fluxo institucional aplicável antes da execução, uma oficina digital que preserva a seleção de elementos gráficos, a ideação, os desenhos rápidos e a colaboração. A comparação abaixo torna a diferença explícita; ela não transforma os recursos digitais em recursos já aprovados.
 
-| Recurso no planejamento-base | Recurso nesta adaptação: momento e função | Limite e alternativa planejada |
+| Recurso no Plano Concluído V0 | Proposta no roteiro digital revisado: momento e função | Limite e condição para uso futuro |
 | --- | --- | --- |
-| Papel, canetas e canetões | Papel ou caderno, **se usado**, para alternativa de acesso ou cópia temporária; a dupla desenha três versões e a Página de informações. | Não é recurso obrigatório nesta adaptação. Sem computador, outra dupla lê e testa o caminho descrito; ao retornar à oficina, preservam-se tarefa e critérios. |
-| Quadro e projetor | Projetor na abertura e em pausa de mediação: comparar um exemplo ou localizar o primeiro passo sem resolver o desafio. | O quadro e canetões do plano-base não são previstos aqui. Sem projetor, o docente usa um computador disponível e perguntas curtas. |
-| Não previsto no planejamento-base | Computador do laboratório com navegador e oficina gratuita, sem login ou licença individual, da ideação ao teste: criar versões, percorrer o botão e observar a tarefa. | A disponibilidade do equipamento não é presumida. Se não houver acesso, aplicar a alternativa em papel/caderno acima, sem introduzir critério novo. |
+| Papel, canetas e canetões | Papel ou caderno pode sustentar os mesmos desenhos e teste do percurso; a proposta digital usa o papel também como alternativa de acesso ou cópia temporária. | São recursos institucionais identificados na fonte. A forma de uso segue o plano institucional e a orientação docente. |
+| Quadro e projetor | O projetor pode apoiar abertura e mediação; o roteiro digital não elimina quadro ou canetões da fonte institucional. | São recursos institucionais identificados na fonte. Qualquer reorganização requer o fluxo aplicável. |
+| Computador com navegador e oficina | Proposta para criar, testar e salvar o rascunho digital. | Não consta nos recursos identificados do Plano Concluído V0. Exige formalização da adequação e confirmação humana de disponibilidade antes de uma aplicação futura. |
 
-Os recursos acima integram o plano vigente e devem ser usados nos momentos indicados. Se ocorrer impedimento real, a alternativa descrita é aplicada e o ajuste é registrado pelos procedimentos institucionais aplicáveis; esse registro não substitui a atividade planejada nem altera retroativamente o plano.
+O quadro acima separa a fonte institucional da proposta revisada. O material não atesta que a adequação digital foi cadastrada, aprovada ou executada. Antes de nova aplicação, devem ser confirmados o plano institucional aplicável, a adequação autorizada e a disponibilidade dos recursos; registros posteriores não substituem essa definição prévia.
 
 ## Papéis e inclusão
 
@@ -139,4 +139,4 @@ A versão selecionada, as três versões iniciais, a Página de informações e 
 - **Critérios de avaliação**, p. 1: critérios vinculados a capacidades e uso diagnóstico, formativo e somativo da lista de verificação.
 - **Taxonomia de Bloom**, seções “Matriz de Verbos de Ação” e “Como Construir Objetivos de Aula”: objetivo observável com verbos de ação e progressão de analisar para avaliar e criar; paginação do `.doc` não verificada.
 - **Checklist — Atribuições do Docente Presencial**, p. 1: chamada, acompanhamento, ajuste de estratégia, gestão do tempo e registro/devolutiva após a aula.
-- **Planejamento Geral UC Design Web**, linhas 417–424: referência disponível para Aula 16 — Ideação, Conceito e Rafes, com relação entre conteúdo, capacidade técnica e colaboração; versão/assinatura institucional não localizada no arquivo consultado.
+- **Plano Concluído V0**, consulta de 14/11/2026, alteração indicada em 12/08, pp. 15–16: Aula 16 — **Ideação em papel**; capacidade de selecionar elementos gráficos para design web, interfaces e redes sociais; recursos de papel, canetas/canetões, quadro e projetor. A consulta confirma a fonte institucional disponível, mas não comprova cadastro ou aprovação do roteiro digital revisado.
