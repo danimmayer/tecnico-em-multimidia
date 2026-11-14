@@ -24,7 +24,7 @@ const course = context.window.SENAI_COURSES['design-web'];
 const onlyLesson = {...course,lessons:course.lessons.filter(x => x.num === '16')};
 const onlySupport = JSON.parse(JSON.stringify({...context.window.SENAI_TEACHING_SUPPORT['design-web'],lessons:{'16':support}}));
 for (const slide of onlySupport.lessons['16'].presentationSlides) {
-  if (slide.resources) slide.resources = [{href:'index.html',label:'Abrir a oficina de esboços'}];
+  if (slide.resources) slide.resources = [{href:'index.html',label:'Abrir Criar e testar páginas'}];
 }
 const script = value => '<script>'+value.replace(/<\/script/gi,'<\\/script')+'</script>';
 const runtime = read('assets/course-lesson.js')
@@ -33,5 +33,5 @@ const runtime = read('assets/course-lesson.js')
   .replaceAll('uc-${courseSlug}.html','index.html')
   .replaceAll('Voltar às aulas','Voltar à oficina')
   .replace('<span class="back-text">Aulas</span>','<span class="back-text">Oficina</span>');
-fs.writeFileSync(new URL('slides.html',directory),'<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Aula 16 · Ideação, conceito e esboços de página</title><link rel="icon" href="data:,"><style>'+read('assets/course-kit.css')+'\n'+read('assets/design-web-16.css')+'</style></head><body class="lesson-page"><div id="lessonRoot"></div><div class="toast" id="toast" role="status" aria-live="polite"></div>'+script('window.SENAI_COURSES='+JSON.stringify({'design-web':onlyLesson})+';window.SENAI_TEACHING_SUPPORT='+JSON.stringify({'design-web':onlySupport})+';')+script(read('assets/course-pace.js'))+script(read('assets/design-web-16.js'))+script(runtime)+'</body></html>');
+fs.writeFileSync(new URL('slides.html',directory),'<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Aula 16 · Criar e testar páginas</title><link rel="icon" href="data:,"><style>'+read('assets/course-kit.css')+'\n'+read('assets/design-web-16.css')+'</style></head><body class="lesson-page"><div id="lessonRoot"></div><div class="toast" id="toast" role="status" aria-live="polite"></div>'+script('window.SENAI_COURSES='+JSON.stringify({'design-web':onlyLesson})+';window.SENAI_TEACHING_SUPPORT='+JSON.stringify({'design-web':onlySupport})+';')+script(read('assets/course-pace.js'))+script(read('assets/design-web-16.js'))+script(runtime)+'</body></html>');
 console.log('Aula 16 gerada: oficina, slides offline e integração no curso.');

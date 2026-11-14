@@ -24,7 +24,7 @@ async function run(driver, url) {
 
     await page.locator('#nav [data-go="5"]').click();
     await page.locator('#check').click();
-    assert.match(await page.locator('#checkOut').innerText(),/Registros presentes/,'A entrega normal não exige a extensão.');
+    assert.match(await page.locator('#checkOut').innerText(),/Os campos da atividade estão preenchidos/,'A entrega normal não exige a extensão.');
     await page.locator('#openExtension').click();
     assert(await page.locator('#extensionPanel').isVisible(),'A extensão abre por escolha explícita na etapa 6.');
     await page.locator('#extensionTask').selectOption('activity');

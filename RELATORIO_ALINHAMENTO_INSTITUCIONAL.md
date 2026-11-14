@@ -2,7 +2,7 @@
 
 ## Regra permanente
 
-Este relatório vale **sempre** para o planejamento e a condução de todas as Unidades Curriculares deste repositório: Design Web (29 aulas), Produção Audiovisual (23) e Fotografia Digital (12). Ele reúne uma revisão detalhada da Aula 16 e um inventário preliminar dos demais materiais disponíveis em 13 de novembro de 2026; não é prova de execução em sala, lançamento no SGN, presença, devolutiva real ou resultado de aprendizagem. Por isso, não há nota ou declaração de conformidade total.
+Este relatório vale **sempre** para o planejamento e a condução de todas as Unidades Curriculares deste repositório: Design Web (29 aulas), Produção Audiovisual (23) e Fotografia Digital (12). Ele reúne uma revisão detalhada da Aula 16, fichas de continuidade das Aulas 17 e 18 e um inventário preliminar dos demais materiais, atualizado em 14 de novembro de 2026; não é prova de execução em sala, lançamento no SGN, presença, devolutiva real ou resultado de aprendizagem. Por isso, não há nota ou declaração de conformidade total.
 
 Legenda: **E** evidenciado no material; **P** parcial; **N** não evidenciado no material; **O** depende de observação/registro em sala; **F** fora do escopo de uma aula, mas obrigação institucional do docente/gestão.
 
@@ -71,10 +71,11 @@ Cada aula recebe um perfil abaixo para tornar explícitas as lacunas de inventá
 | A | `E P P P O O P P O P O O O P P P O P F P` | Inventário de descrição/cronograma: identifica tema, atividade e produto, mas não há roteiro de mediação, instrumento, adaptação ou registro integralmente analisado. |
 | B | `E P P E O P E E P P O O O P P P P E F P` | Há prática/produto e revisão ou teste identificável; os itens de execução continuam O/F. |
 | C | `E E E E O P E E P E O O O E P P P E F E` | Roteiro/material local revela contexto, desafio, produto, prática, revisão e fechamento; R15 permanece P sem tabela capacidade-critério-instrumento explicitamente verificada. |
-| D | `E E E E O P E E P E O O O E E E P E F E` | Aula 16: plano docente possui objetivo Bloom, contextualização/desafio/produto, capacidades-evidências, critérios e instrumentos. |
+| D | `E E E E O P E E P E O O O E E E P E F E` | Aula 16: plano docente possui objetivo Bloom, contextualização/desafio/produto, capacidades-evidências, critérios e instrumentos; R06 é parcial até validação de legibilidade com estudantes. |
+| G | `E E E E E P E E P P O P O E E P P E F E` | Aulas 17 e 18: fichas e fonte de clareza foram lidas integralmente; R06 permanece P até validação com estudantes, R10/R16 são parciais e atos humanos/institucionais seguem O/F. |
 | F | `P P P P O O P P O P O O O P P P O P F P` | Material de fotografia autônomo foi inventariado por título/arquivo; antes de afirmar E, a atividade, produto e critério precisam ser lidos no HTML correspondente. |
 
-**Mapa de perfis por aula.** DW01 B; DW02 B; DW03 C; DW04 B; DW05 C; DW06 C; DW07 C; DW08 C; DW09 C; DW10 C; DW11 C; DW12 B; DW13 A; DW14 C; DW15 C; **DW16 D**; DW17 B; DW18 B; DW19 B; DW20 B; DW21 B; DW22 B; DW23 B; DW24 B; DW25 B; DW26 B; DW27 B; DW28 B; DW29 B. PA01-10 A; PA11-13 C; PA14-23 A. FD01-FD12 F. Todos, exceto DW16 e os artefatos locais efetivamente citados, devem ser tratados como inventário preliminar até leitura integral do plano/material da aula.
+**Mapa de perfis por aula.** DW01 B; DW02 B; DW03 C; DW04 B; DW05 C; DW06 C; DW07 C; DW08 C; DW09 C; DW10 C; DW11 C; DW12 B; DW13 A; DW14 C; DW15 C; **DW16 D; DW17 G; DW18 G**; DW19 B; DW20 B; DW21 B; DW22 B; DW23 B; DW24 B; DW25 B; DW26 B; DW27 B; DW28 B; DW29 B. PA01-10 A; PA11-13 C; PA14-23 A. FD01-FD12 F. Todos, exceto DW16–18 e os artefatos locais efetivamente citados, devem ser tratados como inventário preliminar até leitura integral do plano/material da aula.
 
 ## Padrões encontrados e lacunas transversais
 
@@ -82,7 +83,7 @@ Cada aula recebe um perfil abaixo para tornar explícitas as lacunas de inventá
 
 **E:** as três UCs têm sequência temática, atividades práticas, produtos e, em várias aulas, testes, revisão por pares, projeto ou apresentação. Design Web 03, 05-11 e 14-15 contém objetivos, apoios e critérios mais explicitados em `assets/course-support.js`; aulas 07-11 e 14-15 possuem materiais locais em `modelos/design-web/`. Produção Audiovisual tem materiais de aula 11-13 em `modelos/producao-audiovisual/`. Fotografia tem 12 planos HTML na raiz.
 
-**P/N:** o banco não apresenta uma matriz institucional por aula que declare capacidades da ementa, critérios observáveis anteriores ao instrumento, instrumentos, adaptações PcD, plano de feedback ou registro pós-aula. Objetivos existentes muitas vezes descrevem conteúdo, e não sempre verbo + objeto + contexto profissional. Para as aulas genéricas de 16 em diante de Design Web e a maior parte de Audiovisual, há descrição/cronograma, mas não um roteiro docente com evidências verificáveis como nas aulas recém-produzidas.
+**P/N:** o banco não apresenta uma matriz institucional por aula que declare capacidades da ementa, critérios observáveis anteriores ao instrumento, instrumentos, adaptações PcD, plano de feedback ou registro pós-aula. Objetivos existentes muitas vezes descrevem conteúdo, e não sempre verbo + objeto + contexto profissional. Para as aulas genéricas de 19 em diante de Design Web e a maior parte de Audiovisual, há descrição/cronograma, mas não um roteiro docente com evidências verificáveis como nas aulas recém-produzidas.
 
 **Ação institucional recorrente:** antes de cada aula, verificar capacidades da UC, objetivo Bloom, critérios/instrumento, recursos e adaptações; durante, chamada, mediação e evidências; depois, registro de dificuldades, correção/feedback e procedimentos do SGN. Estas ações são `O/F` até haver registro institucional e não devem ser afirmadas como cumpridas pelo arquivo.
 
@@ -92,7 +93,7 @@ O limite pedagógico solicitado para a Aula 16 é 22h: entre 22h e 22h30 somente
 
 | UC | Aulas cujos materiais programam conteúdo, teste, avaliação ou entrega após 22h |
 |---|---|
-| Design Web | 01, 02, 04, 12, 13 e 17-29 programam atividade até 22h30; 03, 05-11, 14-15 encerram 22h07-22h10. A Aula 16 está planejada para concluir conteúdo, teste e avaliação até 22h; 22h-22h30 é apoio técnico opcional/salvamento, sem completar critério nem criar evidência avaliativa. |
+| Design Web | 01, 02, 04, 12, 13 e 19-29 programam atividade até 22h30; 03, 05-11, 14-15 encerram 22h07-22h10. As Aulas 16–18 têm conteúdo, teste e evidência até 22h; 22h-22h30 é apoio técnico opcional/salvamento, sem completar critério nem criar evidência avaliativa. |
 | Produção Audiovisual | Confirmar horário em cada roteiro antes da aplicação; o metadado de cronograma da UC não prova que o bloco final é apenas apoio. |
 | Fotografia Digital | Confirmar nos 12 HTMLs antes da aplicação; o conteúdo está em documentos autônomos, não no `course-data.js`. |
 
@@ -119,9 +120,9 @@ Fonte comum: `assets/course-data.js` e `assets/course-support.js`; os caminhos a
 | DW13 Acessibilidade | foco anunciado em acessibilidade/usabilidade. | Ver perfil e evidência citada; não inferir cumprimento. |
 | DW14 Pedido ao plano | material local e roteiro docente com briefing, critérios e revisão. | Ver perfil e evidência citada; não inferir cumprimento. |
 | DW15 Arquitetura da informação | `modelos/design-web/aula-15/`, situação de cliente, visitante, mudança e registros. | Ver perfil e evidência citada; não inferir cumprimento. |
-| DW16 Ideação, conceito e rafes | `modelos/design-web/aula-16/PLANO-DOCENTE.md` seções “Capacidades e evidências”, “Critérios comunicados antes da produção”, “Instrumentos e registros” e “Roteiro”; oficina em `modelos/design-web/aula-16/index.html`. A rota de quatro telas é referência; a entrega é consolidável em três inícios e uma interna principal, com extras opcionais. Visitas repetíveis preservam histórico numerado de direção, nota e snapshot no formato v2; recomeçar percurso não cria rodada. Indicações de revisão por direção são diagnósticas e não bloqueiam a visita: a lacuna também pode se tornar evidência formativa. Antes de 22h, a comparação A/B opcional usa a mesma tarefa e alternativas já produzidas, com até 45 min ajustáveis, sem novo critério ou requisito. | Ver perfil e evidência citada; a implementação é evidência técnica a validar, não certificação de execução, aprendizagem ou teste público. |
-| DW17 Wireframes | rafe, hierarquia, página principal/interna e organização. | Ver perfil e evidência citada; não inferir cumprimento. |
-| DW18 Wireframes responsivos | mobile, teste do corredor e ajustes. | Ver perfil e evidência citada; não inferir cumprimento. |
+| DW16 Criar e testar páginas | `modelos/design-web/aula-16/PLANO-DOCENTE.md` e oficina em `modelos/design-web/aula-16/index.html`. Entrega única: três versões da página inicial + Página de informações compartilhada, aberta pelos botões; não são três sites. Visitas repetíveis preservam histórico técnico. A **Rodada extra (opcional)** compara duas versões na mesma tarefa em até 35 min (20 testar, 10 melhorar se necessário, 5 explicar/salvar) e termina às 22h. | R06 é P: relato docente apontou linguagem confusa para adolescentes. A implementação e os testes técnicos não certificam compreensão, execução pedagógica ou aprendizagem; validar com a próxima turma. |
+| DW17 Wireframes | Ficha completa: [AULA-17-DESIGN-WEB-CLAREZA.md](docs/AULA-17-DESIGN-WEB-CLAREZA.md); fonte `scripts/lessons/design-web-17-18-clarity.mjs`. Uma versão inicial e Página de informações tornam-se dois wireframes; teste/revisão e encerramento até 22h. | Perfil G. R06 P até validação com turma; registros, mediação, frequência e ações administrativas não são inferidos. |
+| DW18 Wireframes responsivos | Ficha completa: [AULA-18-DESIGN-WEB-CLAREZA.md](docs/AULA-18-DESIGN-WEB-CLAREZA.md); fonte `scripts/lessons/design-web-17-18-clarity.mjs`. Dois wireframes tornam-se quatro versões computador/celular; teste/revisão e encerramento até 22h. | Perfil G. R06 P até validação com turma; registros, mediação, frequência e ações administrativas não são inferidos. |
 | DW19 Protótipo navegável | telas conectadas e teste no celular. | Ver perfil e evidência citada; não inferir cumprimento. |
 | DW20 Teste de usabilidade | papéis, ficha, evidência e priorização. | Ver perfil e evidência citada; não inferir cumprimento. |
 | DW21 Mídias sociais | formatos, produção e revisão cruzada. | Ver perfil e evidência citada; não inferir cumprimento. |
@@ -197,3 +198,7 @@ Publicação da Aula 16 em 13/11/2026: oficina em https://oficinas-design-web.ve
 ### Aula 16 — revisão visual de 13/11/2026
 
 A apresentação recebeu exemplos de interface distintos por prioridade, diagramas de conceito/estrutura e contraste entre observação e opinião. A mudança apoia R06, R17 e R20 no material, preservando os critérios, a oficina e o encerramento avaliativo até 22h. Não altera os estados de observação ou pendência das demais aulas e atribuições institucionais.
+
+### Aula 16 — autocrítica de clareza de 14/11/2026
+
+O relato docente indica que a redação e os termos da Aula 16 ficaram confusos para adolescentes. R06 permanece **P**: os testes de software comprovaram comportamento técnico, não compreensão. A revisão define a entrega sem ambiguidade como três versões da página inicial e uma Página de informações compartilhada, aberta pelos botões; não são três sites. A próxima turma deve validar instruções que digam o que fazer, onde fazer e como conferir, termos novos com exemplo concreto e tutorial de apenas um primeiro passo. A regra foi adicionada ao `AGENTS.md` e à skill `metodologia-senai` para todas as UCs; a observação real continua necessária antes de chamar a linguagem de aprovada.

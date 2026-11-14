@@ -1,30 +1,30 @@
-# Aula 16 Ideias que viram direção
+# Aula 16 — Criar e testar páginas
 
 ## Propósito
 
-Na comunicação com os estudantes, usar **esboços de página**. O termo “rafe”, mantido na referência curricular, significa um esboço rápido da organização visual da tela.
+Na comunicação com os estudantes, usar **desenho de página**. Na referência curricular, esse desenho rápido também pode aparecer como “rafe”.
 
-Nesta aula, a turma atua como equipe de produto para transformar uma situação-problema em alternativas, conceito e rafes de baixa fidelidade. O produto da noite não é uma tela acabada: são três estruturas alternativas de página inicial, uma página interna principal consolidável da direção escolhida, um conceito justificado e uma revisão apoiada no que outra pessoa conseguiu fazer. A rota de quatro telas do briefing é referência do projeto, não quatro entregas independentes hoje: a interna principal reúne horário, detalhe e acesso.
+Nesta aula, a turma atua como equipe de produto para transformar um problema em alternativas e desenhos simples. A entrega da noite é uma decisão explicada, **três versões da página inicial** e **uma Página de informações compartilhada**. Os botões das três versões levam a essa mesma página, que reúne horário, detalhe e acesso. É uma entrega única, não três sites.
 
 Os 160 minutos letivos priorizam a ação discente na oficina: ler, comparar, escrever, escolher, montar, observar, revisar e explicar. A fala demonstrativa do docente está limitada a 12 minutos no total, distribuída em intervenções de até dois minutos para destravar um primeiro passo. Critério, diagnóstico e contexto não viram palestra: a dupla os lê, aponta e usa dentro do software.
 
 O caso é fictício e completo na oficina: o Festival Vira-Luz precisa ajudar uma pessoa a escolher uma atividade antes de sair ou resolver sua chegada pelo celular. A aula não depende do arquivo da aula 15, mas retoma a ideia de que conteúdo, prioridade e caminho precisam responder à tarefa de alguém.
 
-**Objetivo de aprendizagem.** Ao final, o estudante será capaz de analisar uma necessidade de cliente e criar, testar e justificar três rafes de página inicial e uma página interna para uma situação profissional de design web. O percurso avança de analisar o pedido para avaliar alternativas e criar uma direção visual; não exige os seis níveis da taxonomia em uma única aula.
+**Objetivo de aprendizagem.** Ao final, o estudante será capaz de analisar uma necessidade de cliente e criar, testar e justificar três versões da página inicial ligadas a uma Página de informações para uma situação profissional de design web. O percurso vai de entender o pedido a comparar alternativas e criar um plano comum para as três versões; não exige os seis níveis da taxonomia em uma única aula.
 
 ## Estratégia de aprendizagem desafiadora
 
-**Contextualização.** A equipe de comunicação do Festival Vira-Luz recebeu relatos de que visitantes encontram a programação, mas hesitam ao escolher uma atividade ou ao chegar ao local. O cliente precisa de uma direção inicial para a próxima versão do site.
+**Contextualização.** A equipe de comunicação do Festival Vira-Luz recebeu relatos de que visitantes encontram a programação, mas hesitam ao escolher uma atividade ou ao chegar ao local. O cliente precisa de versões iniciais mais claras para a próxima versão do site.
 
-**Desafio.** Em dupla, diagnosticar as necessidades da pessoa usuária, propor seis alternativas de primeira tela, selecionar uma direção por critérios, criar três rafes de página inicial e uma página interna, e testá-los com uma pessoa visitante.
+**Desafio.** Em dupla, identificar o que a pessoa precisa resolver, propor seis começos de página, escolher três ideias com motivos, criar três versões de início ligadas à mesma Página de informações e observar uma pessoa realizando a tarefa.
 
-**Resultados esperados.** Uma solução de baixa fidelidade que torna visíveis prioridade, conteúdo e ação; uma escolha explicada pelo briefing e pela visita; e registros individuais A/B. A solução não exige grade técnica, medidas ou acabamento visual; esses aspectos serão aprofundados na Aula 17.
+**Resultados esperados.** Três versões simples que deixam visíveis prioridade, conteúdo e ação; uma Página de informações comum; uma escolha explicada pelo briefing e pela visita; e uma resposta curta de cada integrante sobre sua decisão. A solução não exige grade técnica, medidas ou acabamento visual; esses aspectos serão aprofundados na Aula 17.
 
 ## Conhecimentos mobilizados
 
 - Ideação divergente e seleção convergente;
 - conceito, tom e prioridade de informação;
-- rafe de baixa fidelidade: blocos, hierarquia, ação e continuação de caminho;
+- desenho de página de baixa fidelidade: blocos, ordem, ação e próximo passo;
 - observação de tarefa e revisão baseada em evidências;
 - colaboração, escuta e defesa profissional de decisões.
 
@@ -35,16 +35,16 @@ Referência curricular disponível: a Aula 16 de `assets/course-data.js` registr
 | Capacidade | Evidência observável na oficina |
 | --- | --- |
 | Idear possibilidades para uma situação profissional | Seis alternativas que mudam prioridade, ação ou continuação do caminho. |
-| Conceituar uma direção | Nome curto e explicação coerente com o público e o objetivo, conferidos por três critérios. |
-| Produzir rafes | Três esboços de início e uma página interna principal de baixa fidelidade, com contexto, conteúdo prioritário, ação, horário, detalhe e acesso; razões da seleção registradas na missão 3. Páginas internas extras são opcionais (até seis) e não criam critério novo. |
+| Definir o plano comum | Nome curto e explicação coerente com o público e o objetivo, conferidos por três critérios. |
+| Produzir desenhos de página | Três versões de início e uma Página de informações compartilhada, de baixa fidelidade. As versões mostram contexto, conteúdo prioritário e botão; a página comum mostra horário, detalhe e acesso. As razões da seleção ficam registradas na etapa 3. Páginas extras são opcionais (até seis) e não criam critério novo. |
 | Colaborar e inovar | Alternância de operação, justificativas ancoradas no briefing e escolha após comparar alternativas. |
 | Avaliar e revisar | Registro do comportamento/fala de um visitante, decisão de manter ou ajustar e registros individuais A/B. |
 
 ## Critérios comunicados antes da produção
 
 1. Alternativas atendem ao pedido e não repetem apenas decoração.
-2. Conceito nomeado e explicado orienta conteúdo e hierarquia; três critérios conferem a escolha.
-3. Três rafes e uma página interna deixam a tarefa e o próximo passo compreensíveis.
+2. Plano comum nomeado e explicado orienta conteúdo e hierarquia; três critérios conferem a escolha.
+3. As três versões iniciais e a Página de informações compartilhada deixam clara a tarefa e o próximo passo.
 4. A revisão responde a uma evidência de visita.
 
 A conferência da oficina indica itens faltantes. A avaliação docente observa a relação entre a decisão, o briefing e a evidência de teste; não confunde preenchimento de campos com domínio da capacidade.
@@ -55,12 +55,12 @@ A conferência da oficina indica itens faltantes. A avaliação docente observa 
 | --- | --- | --- |
 | Início | Diagnóstico na oficina | Identificar compreensão de pessoa, tarefa e prioridade; replanejar a mediação. |
 | Processo | Lista de verificação de quatro critérios e observação de papéis | Dar devolutiva formativa por pergunta e registrar critério pendente. |
-| Teste | Registro numerado de sucesso, dúvida ou volta do visitante, com direção e snapshot antes da revisão | Verificar se a dupla interpreta evidência antes de manter ou revisar; novas visitas podem ampliar a evidência sem criar critério adicional. |
-| Fechamento | Autoavaliação individual de três perguntas | Tornar a contribuição individual e o próximo ajuste visíveis. |
+| Teste | Registro numerado do que a pessoa conseguiu fazer ou onde teve dúvida, com versão e cópia da tela antes da revisão | Verificar se a dupla interpreta evidência antes de manter ou revisar; novas visitas podem ampliar a evidência sem criar critério adicional. |
+| Fechamento | Resposta de Pessoa A e Pessoa B: qual escolha ajudou ou precisa mudar, usando o teste | Tornar a contribuição individual e o próximo ajuste visíveis. |
 
-Para acompanhamento, a oficina reúne cinco conjuntos de evidência: problema e prioridade; seis ideias; conceito, razões de escolha pelos três critérios e direção; três rafes de início e página interna; visita, revisão e autoavaliação. A conferência indica presença ou lacuna de cada item; a apreciação da qualidade considera justificativa e coerência com o problema, nunca apenas a contagem.
+Para acompanhamento, a oficina reúne cinco conjuntos de evidência: problema e prioridade; seis ideias; plano comum e razões de escolha pelos três critérios; três versões de início e Página de informações; visita, revisão e respostas de Pessoa A e Pessoa B. A conferência indica presença ou lacuna de cada item; a apreciação da qualidade considera justificativa e coerência com o problema, nunca apenas a contagem.
 
-Na visita, **Iniciar nova visita** cria uma nova rodada numerada e preserva as observações, direção e snapshot das anteriores. **Salvar observação e iniciar nova visita** encerra a rodada registrada e abre outra; **Recomeçar percurso** apenas retorna ao início do mesmo teste, sem criar rodada. A interface informa, por direção, quais elementos merecem revisão, mas não bloqueia a abertura da visita por campos incompletos: o teste também pode revelar o que falta esclarecer. A repetição serve à avaliação formativa e ao uso do erro como evidência (R07/R08/R18), não adiciona critério, nota ou obrigação: uma visita observada continua suficiente para a entrega-base. O formato legado `tests` da chave v2 é preservado.
+Na visita, **Iniciar teste com visitante** abre a primeira rodada; **Iniciar nova visita** cria outra rodada numerada e preserva observação, versão e snapshot das anteriores. **Salvar anotação e iniciar outra visita** encerra a rodada registrada e abre outra; **Voltar ao começo deste teste** apenas retorna ao início do mesmo teste, sem criar rodada. A interface informa, por versão, quais elementos merecem revisão, mas não bloqueia a abertura da visita por campos incompletos: o teste também pode revelar o que falta esclarecer. A repetição serve à avaliação formativa e ao uso do erro como evidência (R07/R08/R18), não adiciona critério, nota ou obrigação: uma visita observada continua suficiente para a entrega-base. O formato legado `tests` da chave v2 é preservado.
 
 ## Referência para a apreciação qualitativa
 
@@ -68,9 +68,9 @@ Usar os quatro critérios já comunicados, sem exigir tarefa adicional. O docent
 
 | Critério | Evidência suficiente nesta etapa | Devolutiva quando ainda não aparece |
 | --- | --- | --- |
-| Alternativas relevantes | Seis ideias e três direções selecionadas mudam prioridade, ação ou caminho; as razões fazem referência ao pedido. | Pedir que altere o que aparece primeiro e explique a consequência para a pessoa usuária. |
-| Conceito orientador | Nome e explicação se relacionam ao público e ao objetivo; clareza, coerência e viabilidade sustentam as razões de escolha. | Perguntar qual informação ou ação o conceito ajuda a priorizar. |
-| Estrutura e continuidade | Três inícios mostram contexto, conteúdo prioritário e ação; a interna principal responde à promessa da direção escolhida ao reunir horário, detalhe e acesso. | Pedir que compare o texto do botão com a informação encontrada na interna. |
+| Alternativas relevantes | Seis ideias e três versões selecionadas mudam prioridade, ação ou caminho; as razões fazem referência ao pedido. | Pedir que altere o que aparece primeiro e explique a consequência para a pessoa usuária. |
+| Plano comum | Nome e explicação se relacionam ao público e ao objetivo; clareza, coerência e viabilidade sustentam as razões de escolha. | Perguntar qual informação ou ação o plano ajuda a priorizar nas três versões. |
+| Estrutura e continuidade | Três versões iniciais mostram contexto, conteúdo prioritário e botão; a Página de informações compartilhada responde à promessa do botão com horário, detalhe e acesso. | Pedir que compare o texto do botão com a informação encontrada na Página de informações. |
 | Revisão por evidência | Registro descreve comportamento ou fala do visitante; a decisão de manter ou ajustar responde ao registro, e cada estudante explica sua contribuição. | Pedir uma observação concreta antes de decidir por uma alteração. |
 
 A contribuição individual é observada na alternância de papéis, na conversa e nos registros A/B. A referência de desempenho é desta oficina formativa; critérios e ponderação de eventual avaliação somativa dependem da definição da UC.
@@ -85,29 +85,29 @@ A contribuição individual é observada na alternância de papéis, na conversa
 | 19:18–19:45 | Modela no máximo um exemplo de início e circula com perguntas. | Gera seis alternativas curtas. | Pista: mudar o que vem primeiro, a ação ou a continuação. |
 | 19:45–20:05 | Intervalo. | Mantém a oficina aberta. | Sem tarefa durante o intervalo. |
 | 20:05–20:15 | Faz chamada e pede troca de operador. | Escolhe e compara três alternativas estruturais presentes no software. | Pergunta por razões ligadas ao público e à tarefa. |
-| 20:15–20:25 | Aponta para os critérios já visíveis. | Compara clareza, coerência e viabilidade e justifica as três ideias selecionadas; escolhe a direção que será testada. | Recuperação imediata para escolha baseada apenas em gosto. |
-| 20:25–20:45 | Circula e pergunta pela relação entre conceito e prioridade. | Define nome curto, explicação e confere os três critérios; entre 20h35 e 20h45, inicia a organização dos esboços de página. | Confere coerência entre explicação e decisões. |
-| 20:45–21:15 | Faz chamada e, se necessário, modela um único bloco. Circula entre duplas. | Constrói os três rafes de início e a interna da direção escolhida. | Confere se a interna cumpre a promessa da ação inicial. |
+| 20:15–20:25 | Aponta para os critérios já visíveis. | Compara clareza, coerência e viabilidade e justifica as três ideias selecionadas; escolhe a versão que será testada. | Recuperação imediata para escolha baseada apenas em gosto. |
+| 20:25–20:45 | Circula e pergunta qual informação vem primeiro. | Define um nome curto para o plano comum, escreve a explicação e confere os três critérios; entre 20h35 e 20h45, começa a organizar os desenhos de página. | Confere se a explicação combina com as escolhas. |
+| 20:45–21:15 | Mostra somente o primeiro passo: onde colocar um bloco de contexto; depois circula com perguntas. | Na etapa de criar páginas, faz três versões de início e liga os botões à Página de informações. Confere se todos os botões chegam à mesma página. | Confere se a Página de informações entrega o que o botão promete. |
 | 21:15–21:30 | Organiza visita curta no mesmo computador. | Visitante cumpre uma tarefa; autores observam em silêncio. | Registro contém comportamento/fala, não elogio vago. |
 | 21:30–21:45 | Faz chamada e devolve perguntas de revisão. | Mantém ou ajusta com justificativa. | Aceita manter se a evidência sustentar a escolha. |
-| Bloco final antes de 22h | Para quem já concluiu a entrega-base, oferece a rodada A/B sem esperar a turma inteira: até 25 min para comparar/testar a direção escolhida e uma alternativa já produzida na mesma tarefa, até 10 min para revisar, até 5 min para defender a escolha para outra dupla já concluída e até 5 min para salvar; reservar 5 min de margem. Pode encurtar conforme o ritmo. | Compara no software ligado ao editor atual, sem criar tela nova, wireframe ou requisito; observa e justifica manter ou trocar, defende a decisão e salva uma cópia. | A rodada A/B aprofunda a leitura da evidência, mas não cria critério, nota ou recuperação; ausência dela não reduz a entrega-base. |
+| Bloco final antes de 22h | Para quem já concluiu a entrega-base, oferece a rodada extra A/B sem esperar a turma inteira: até 20 min para testar duas versões na mesma tarefa, até 10 min para melhorar se a observação justificar e até 5 min para explicar a decisão a outra dupla e salvar. Encerra às 22h. | Abre **Rodada extra (opcional)**, compara a versão escolhida com outra versão no software, registra o que o colega fez em cada uma, decide manter ou mudar e baixa uma cópia. | A rodada A/B aprofunda a leitura da evidência, mas não cria critério, nota ou recuperação; ausência dela não reduz a entrega-base. |
 | 22:00–22:30 | Apoio técnico opcional, salvamento e organização. | Organiza o trabalho já concluído e esclarece dúvidas. | Sem completar critério ou recolher evidência adicional. Recuperação avaliativa ocorre até 22h ou em oportunidade equivalente para todos. |
 
 ## Papéis e inclusão
 
-Uma dupla por computador alterna quem opera no início do segundo bloco. Na visita, os autores não explicam o caminho. Quem usa computador compartilhado alterna a operação e responde à própria autoavaliação. Sem internet, abre-se a oficina local; sem computador, os três rafes de início e a página interna são feitos no caderno a partir da projeção e testados pela leitura de outra dupla.
+Uma dupla por computador alterna quem opera no início do segundo bloco. Na visita, os autores não explicam o caminho. Quem usa computador compartilhado alterna a operação e registra a própria resposta sobre a escolha feita. Sem internet, abre-se a oficina local; sem computador, as três versões iniciais e a Página de informações são feitas no caderno a partir da projeção e testadas pela leitura de outra dupla.
 
-O apoio é por pergunta e primeiro passo, sem completar a solução: “Qual tarefa essa pessoa precisa resolver agora?”, “O que o botão promete?” e “O que a visita mostrou?”. A extensão para quem conclui antes é comparar uma segunda direção já gerada, sem iniciar conteúdo da aula seguinte.
+O apoio é por pergunta e primeiro passo, sem completar a solução: “Qual tarefa essa pessoa precisa resolver agora?”, “O que o botão promete?” e “O que a visita mostrou?”. A rodada extra para quem conclui antes compara outra versão já criada, sem iniciar conteúdo da aula seguinte.
 
 Após 22h, o atendimento não altera o julgamento da evidência recolhida até 22h. Recuperação avaliativa pendente deve ser oferecida em condição equivalente para todos, em momento combinado conforme a UC. Não se infere autorização de saída: frequência, confirmação da aula no diário e permanência seguem as orientações institucionais.
 
 ## Extensão opcional antes das 22h
 
-Se a dupla concluiu os registros obrigatórios, pode comparar a direção escolhida com uma das alternativas já produzidas usando a **mesma tarefa** da visita, no software ligado ao editor atual. Há até 45 minutos antes das 22h: até 25 para comparar/testar, 10 para revisar, 5 para defender a escolha a outra dupla já concluída e 5 para salvar, com margem de 5 minutos; o docente pode encurtar cada etapa conforme o ritmo e não espera a turma inteira. Observa-se o que a pessoa fez ou disse e registra-se uma justificativa de manter ou trocar a direção. A extensão não antecipa wireframes, não pede página nova e não altera os quatro critérios nem a entrega de três inícios, uma interna principal, visita e revisão. O campo técnico `extension`, quando disponível, é opcional, persistido e exportado somente como registro de processo; não entra na conferência nem na nota. Após 22h, não se inicia nem se completa esta rodada: ficam apenas apoio e salvamento.
+Se a dupla concluiu os registros obrigatórios, pode abrir **Rodada extra (opcional)** e comparar a versão escolhida com outra versão já produzida usando a **mesma tarefa** da visita. Há no máximo 35 minutos antes das 22h: até 20 para testar, 10 para melhorar se a observação justificar e 5 para explicar a decisão a outra dupla e salvar; o docente pode encurtar cada etapa e não espera a turma inteira. A dupla registra o que o colega fez em cada versão e decide manter ou mudar. A rodada não antecipa wireframes, não pede página nova e não altera os quatro critérios nem a entrega-base: três versões iniciais, uma Página de informações, visita e revisão. O campo técnico `extension`, quando disponível, é opcional, persistido e exportado somente como registro de processo; não entra na conferência nem na nota. Às 22h a rodada termina; depois ficam apenas apoio e salvamento.
 
 ## Encaminhamento
 
-A direção selecionada, os três rafes, a página interna e a observação serão a matéria-prima da Aula 17, quando a turma transformará a estrutura escolhida em wireframes técnicos. A Aula 16 não introduz grade, medidas ou acabamento visual como requisito.
+A versão selecionada, as três versões iniciais, a Página de informações e a observação serão a matéria-prima da Aula 17, quando a turma transformará a estrutura escolhida em wireframes técnicos. A Aula 16 não introduz grade, medidas ou acabamento visual como requisito.
 
 ## Referências de planejamento
 

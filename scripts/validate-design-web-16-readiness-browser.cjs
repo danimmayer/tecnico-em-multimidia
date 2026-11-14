@@ -30,12 +30,12 @@ async function run(driver,url){
     assert(await page.locator('#compareA .phone').isVisible(),'A/B abre com conteúdo navegável mesmo sem bloco do tipo título.');
     assert(await page.locator('#compareB .phone').isVisible());
     await page.locator('#nav [data-go="5"]').click();await page.locator('#check').click();
-    assert.match(await page.locator('#checkOut').innerText(),/Registros presentes/,'Checklist não cria falsa pendência pelo tipo título.');
+    assert.match(await page.locator('#checkOut').innerText(),/Os campos da atividade estão preenchidos/,'Checklist não cria falsa pendência pelo tipo título.');
 
     const withEmpty=legacyV2();withEmpty.step=5;withEmpty.rafes[1].blocks=empty();
     await boot(withEmpty);await page.locator('#check').click();
     const emptyCheck=await page.locator('#checkOut').innerText();
-    assert.match(emptyCheck,/Direção 2/,'Checklist identifica concretamente o esboço sem conteúdo.');
+    assert.match(emptyCheck,/Versão 2/,'Checklist identifica concretamente o esboço sem conteúdo.');
     assert.doesNotMatch(emptyCheck,/qualidade|bom|ruim/i,'Checklist informa registro ausente, sem certificar qualidade.');
 
     const incomplete=legacyV2();incomplete.step=4;incomplete.problem='';incomplete.priority='';incomplete.conceptName='';incomplete.conceptWhy='';incomplete.selected=[];incomplete.reasons={};
