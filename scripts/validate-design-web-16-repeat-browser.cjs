@@ -19,6 +19,9 @@ async function run(driver,url){
     await page.locator('#startVisit').click();
     assert(await page.locator('#nav').isHidden(),'A primeira rodada entra em modo visitante.');
     assert(await page.locator('#visitToolbar').isVisible(),'A barra da visita deixa claro como reiniciar ou encerrar.');
+    await page.locator('#visitContent [data-open="internal"]').click();
+    assert.equal(await page.locator('#visitContent [data-open="internal"]').count(),0,'A visita saiu do início antes de testar o reinício.');
+    assert(await page.locator('#visitContent [data-open="home"]').first().isVisible(),'A tela interna oferece retorno ao início.');
     await page.locator('#restartVisit').click();
     assert.equal((await saved()).tests.length,1,'Reiniciar a simulação volta ao início sem criar outra rodada.');
     assert(await page.locator('#visitContent [data-open="internal"]').isVisible(),'Reinício retorna à tela inicial da mesma direção.');
