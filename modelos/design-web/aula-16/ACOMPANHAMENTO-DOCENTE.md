@@ -8,11 +8,11 @@ Em cada checkpoint, observe uma ação e faça uma pergunta que permita ao estud
 
 ## Recursos: fonte institucional e roteiro proposto
 
-Este checklist não comprova que o roteiro digital foi aprovado ou executado. A fonte institucional disponível é o Plano Concluído V0, consultado em 14/11/2026 e alterado em 12/08, pp. 15–16: Aula 16 — **Ideação em papel**, com papel, canetas/canetões, quadro e projetor. Os itens digitais abaixo são proposta de aplicação futura e dependem do fluxo institucional aplicável e da confirmação humana antes da execução. Não é registro do estudante.
+Este checklist não comprova que o roteiro digital foi aprovado ou executado. A fonte institucional disponível é o Plano Concluído V0, consultado em 14/11/2026 e alterado em 12/08, p. 15: Aula 16 — **“Ideação, Conceito e Rafes”**, com papel, canetas e canetões, quadro e projetor. Os itens digitais abaixo são proposta de aplicação futura e dependem do fluxo institucional aplicável e da confirmação humana antes da execução. Não é registro do estudante.
 
 | Recurso institucional ou proposto | Conferir antes de aplicação futura |
 | --- | --- |
-| Papel, canetas/canetões, quadro e projetor — fonte institucional | Confirmar o plano institucional aplicável e preparar o uso correspondente à atividade de ideação em papel. |
+| Papel, canetas e canetões, quadro e projetor — fonte institucional | Confirmar o plano institucional aplicável e preparar o uso correspondente à Aula 16 “Ideação, Conceito e Rafes”. |
 | Computador com navegador e oficina gratuita, sem login ou licença individual — proposta do roteiro digital | Confirmar que a adequação foi formalizada e que o recurso está disponível antes da aplicação. Sem essa definição, não tratar a oficina digital como substituta do plano institucional. |
 | Papel ou caderno no roteiro digital — alternativa proposta | Só usar dentro de uma adequação definida para a aplicação; preservar tarefa e critério previstos. |
 
