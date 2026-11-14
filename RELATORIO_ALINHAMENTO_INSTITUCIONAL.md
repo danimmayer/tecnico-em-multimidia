@@ -9,10 +9,13 @@ Em **toda aula implementada ou revisada**, a entrega inclui um **relatório peda
 ## Índice de entregas apresentáveis
 
 - Design Web — Aula 16: [relatório pedagógico](modelos/design-web/aula-16/ALINHAMENTO-INSTITUCIONAL.md), [PDF para apresentar](relatorios/design-web/aula-16/RELATORIO-PEDAGOGICO.pdf) e [Word editável](relatorios/design-web/aula-16/RELATORIO-PEDAGOGICO.docx).
+- Apoio docente da Aula 16: [roteiro de acompanhamento](modelos/design-web/aula-16/ACOMPANHAMENTO-DOCENTE.md), com checkpoints, observação individual e conferência dos recursos previstos e utilizados.
 - Design Web — Aula 17: [relatório pedagógico do planejamento](docs/AULA-17-DESIGN-WEB-CLAREZA.md).
 - Design Web — Aula 18: [relatório pedagógico do planejamento](docs/AULA-18-DESIGN-WEB-CLAREZA.md).
 
 ## Inventário interno
+
+Em cada aula revisada, conferir que todas as atividades, metodologias e recursos do plano vigente estão preparados para execução. Gamificação pode ser usada e deve acontecer quando prevista. Distinguir o planejamento-base da adaptação antecipada, preservando a fonte e o fluxo institucional aplicável; registrar um desvio não substitui cumprir o plano nem autoriza reescrita retroativa para aparentar cumprimento. A Aula 16 explicita sua adaptação para oficina digital e projeção; as demais aulas ainda não receberam essa conferência detalhada de recursos. Uso efetivo e execução pedagógica exigem observação humana.
 
 Legenda: **E** evidenciado no material; **P** parcial; **N** não evidenciado no material; **O** depende de observação/registro em sala; **F** fora do escopo de uma aula, mas obrigação institucional do docente/gestão.
 

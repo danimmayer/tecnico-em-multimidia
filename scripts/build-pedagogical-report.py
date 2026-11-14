@@ -134,7 +134,7 @@ def build(source, output, label):
         elif line.startswith("## "):
             flush()
             heading = document.add_paragraph(line[3:].replace(":", ""), "Heading 1")
-            if line.startswith(("## Protagonismo", "## Organização do tempo")):
+            if line.startswith("## Protagonismo"):
                 heading.paragraph_format.page_break_before = True
         elif re.match(r"^\d+\. ", line):
             flush()

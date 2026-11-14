@@ -7,7 +7,7 @@ function render(){qa('section[data-step]').forEach((x,i)=>x.hidden=i!==s.step);
 $('nav').innerHTML=['Entender o pedido','Criar seis ideias','Escolher três ideias','Montar as páginas','Testar com colega','Revisar e salvar'].map((x,i)=>'<button data-go="'+i+'" aria-current="'+(i===s.step)+'">'+(i+1)+'. '+x+'</button>').join('');qa('[data-go]').forEach(b=>b.onclick=()=>go(+b.dataset.go));
 $('progress').textContent='Etapa '+(s.step+1)+' de 6';
 $('prev').disabled=!s.step;
-$('next').textContent='Próxima etapa';$('next').disabled=s.step===5;qa('[data-text]').forEach(e=>{let k=e.dataset.text;e.value=s[k];e.maxLength=800;e.oninput=()=>{s[k]=e.value;if(k==='visitNote'&&s.tests.length){s.tests[s.tests.length-1].note=e.value;renderVisitHistory()}save()}});ideas();choices();tabs();visitor();renderExtension()}
+$('next').textContent='Próxima etapa';$('next').disabled=s.step===5;qa('[data-text]').forEach(e=>{let k=e.dataset.text;e.value=s[k];e.maxLength=800;e.oninput=()=>{s[k]=e.value;if(k==='visitNote'&&s.tests.length){s.tests[s.tests.length-1].note=e.value;renderVisitHistory()}save()}});ideas();choices();tabs();visitor();renderExtension();if(s.step===5)checkSaved()}
 function ideas(){$('ideas').innerHTML=s.ideas.map((v,i)=>'<label class="idea">Ideia '+(i+1)+'<small>Pessoa '+(i<3?'A':'B')+'</small><textarea maxlength="800" data-idea="'+i+'" placeholder="Que informação aparece primeiro? O que a pessoa faz depois?">'+E(v)+'</textarea></label>').join('');qa('[data-idea]').forEach(e=>e.oninput=()=>{s.ideas[+e.dataset.idea]=e.value;save()})}
 function choices(){
   $('choices').innerHTML=s.ideas.map((v,i)=>'<div class="choice"><label><input type="checkbox" data-pick="'+i+'" '+(s.selected.includes(i)?'checked':'')+' '+(!v.trim()||s.selected.length===3&&!s.selected.includes(i)?'disabled':'')+'> <strong>Ideia '+(i+1)+'</strong>: '+E(v||'Escreva esta ideia na etapa 2.')+'</label><label '+(!s.selected.includes(i)?'hidden':'')+'>Por que escolher esta ideia?<textarea data-reason="'+i+'" maxlength="800" placeholder="Como esta ideia ajuda a escolher uma atividade ou chegar ao festival?">'+E(s.reasons[i]||'')+'</textarea></label></div>').join('');
@@ -66,17 +66,19 @@ if(t){$('compareALabel').textContent='A · Versão '+(t.directionA+1)+' (escolhi
 $('openExtension').onclick=()=>{if(!s.extension){if(extensionClosed()){$('save').textContent='Após 22h, usem a prática livre na etapa 6. As anotações extras já foram encerradas; vocês podem consultar e salvar o trabalho.';return}s.extension={open:false,task:'activity',direction:(s.chosenDirection+1)%3,observationA:'',observationB:'',decision:''}}s.extension.open=!s.extension.open;save();renderExtension()};
 $('startComparison').onclick=()=>{if(extensionAvailability())return;const e=s.extension;if(e.snapshot&&!confirm('Atualizar as telas guardadas com as páginas atuais? Suas observações serão mantidas; confira se ainda descrevem este novo teste.'))return;e.direction=+$('extensionDirection').value;e.task=$('extensionTask').value;e.snapshot=JSON.parse(JSON.stringify({at:Date.now(),task:e.task,directionA:s.chosenDirection,directionB:e.direction,blocksA:s.rafes[s.chosenDirection].blocks,blocksB:s.rafes[e.direction].blocks,internal:s.internal,...(s.extraPages?{extraPages:s.extraPages}:{})}));save();renderExtension()};
 $('extensionEdit').onclick=()=>{if(!extensionAvailability())go(3)};setInterval(extensionAvailability,30000);
-$('check').onclick=()=>{
+function checkSaved(){
   const missing=[];
-  if(!s.problem.trim()||!s.priority.trim())missing.push('etapa 1: tarefa da pessoa e informação que vem primeiro');
-  if(s.ideas.some(x=>!x.trim()))missing.push('etapa 2: seis ideias');
-  if(!s.conceptName.trim()||!s.conceptWhy.trim())missing.push('etapa 3: nome da ideia central e como ela aparece nas páginas');
-  if(s.selected.length!==3||!s.selected.every(i=>(s.reasons[i]||'').trim()))missing.push('etapa 3: três ideias escolhidas, com uma explicação para cada escolha');
-  const emptySketches=sketchesWithoutContent();if(emptySketches.length)missing.push('etapa 4: páginas ainda sem texto próprio — '+emptySketches.join(', '));
-  if(!s.tests.some(t=>t.note.trim()))missing.push('etapa 5: um teste com anotação do que aconteceu');
-  if(!s.revision.trim()||!s.memberA.trim()||!s.memberB.trim())missing.push('etapa 5: decisão da dupla e explicação de cada pessoa');
-  $('checkOut').innerHTML=(missing.length?'<div class="issue">Ainda falta escrever: '+missing.map(E).join(', ')+'.</div>':'<div class="result">Os campos da atividade estão preenchidos. Mostrem as páginas ao professor e expliquem suas escolhas e o que aconteceu no teste.</div>')+'<p class="hint">Esta lista só confere se há algo escrito. Com o professor, vejam se as páginas ajudam a escolher uma atividade e encontrar a entrada, se os botões funcionam e se o teste ajudou na revisão. Vocês podem testar mesmo com campos por terminar.</p>';
-};
+  if(!s.problem.trim()||!s.priority.trim())missing.push([0,'tarefa da pessoa e informação que vem primeiro']);
+  if(s.ideas.some(x=>!x.trim()))missing.push([1,'seis ideias']);
+  if(!s.conceptName.trim()||!s.conceptWhy.trim())missing.push([2,'nome da ideia central e como ela aparece nas páginas']);
+  if(s.selected.length!==3||!s.selected.every(i=>(s.reasons[i]||'').trim()))missing.push([2,'três ideias escolhidas, com uma explicação para cada escolha']);
+  const emptySketches=sketchesWithoutContent();if(emptySketches.length)missing.push([3,'páginas ainda sem texto próprio — '+emptySketches.join(', ')]);
+  if(!s.tests.some(t=>t.note.trim()))missing.push([4,'um teste com anotação do que aconteceu']);
+  if(!s.revision.trim()||!s.memberA.trim()||!s.memberB.trim())missing.push([4,'decisão da dupla e explicação de cada pessoa']);
+  $('checkOut').innerHTML=(missing.length?'<div class="issue"><strong>Ainda falta escrever:</strong><ul>'+missing.map(([step,label])=>'<li>etapa '+(step+1)+': '+E(label)+' · <button data-review-step="'+step+'">Ir à etapa '+(step+1)+'</button></li>').join('')+'</ul><p>Chegar à etapa 6 não conclui a atividade. Usem os atalhos para retomar o que falta; podem continuar explorando e testar antes de terminar os campos.</p></div>':'<div class="result">Os campos da atividade estão preenchidos. Mostrem as páginas ao professor e expliquem suas escolhas e o que aconteceu no teste.</div>')+'<p class="hint">Esta lista só confere se há algo escrito. Com o professor, vejam se as páginas ajudam a escolher uma atividade e encontrar a entrada, se os botões funcionam e se o teste ajudou na revisão. Vocês podem testar mesmo com campos por terminar.</p>';
+  qa('[data-review-step]').forEach(b=>b.onclick=()=>go(+b.dataset.reviewStep));
+}
+$('check').onclick=checkSaved;
 $('recovery').onclick=()=>{if(recoveryRaw)download(recoveryRaw,'aula16-recuperacao.json','application/json')};$('json').onclick=()=>download(storageLocked?recoveryRaw:JSON.stringify(s,null,2),'aula16-esbocos.json','application/json');
 $('jsonEnd').onclick=()=>$('json').click();
 $('html').onclick=()=>{
