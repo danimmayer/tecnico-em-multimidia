@@ -12,6 +12,8 @@ O Festival Vira-Luz é um caso fictício. Em dupla, os estudantes criam seis alt
 
 O roteiro reserva 19h–22h ao conteúdo e às evidências, com intervalo de 19h45–20h05. Das 22h às 22h30: apoio opcional, organização e salvamento, sem conceito ou requisito novo.
 
+Quem concluir a entrega-base antes das 22h pode fazer uma rodada A/B opcional de até 45 minutos, sem esperar a turma inteira: até 25 min para comparar/testar a direção escolhida com uma alternativa já produzida na mesma tarefa, 10 min para revisar, 5 min para defender a escolha a outra dupla já concluída e 5 min para salvar, com margem de 5 min. A comparação usa o software ligado ao editor atual. Não cria wireframe, página, critério ou nota novos; não participar não altera a entrega. Se disponível, o registro técnico `extension` é salvo e exportado apenas como memória do processo. Após 22h, essa rodada não começa nem continua.
+
 O rascunho fica no navegador deste computador, na chave v2 da oficina. Use **Meu rascunho → Baixar JSON** para levar uma cópia e **Reabrir cópia** para continuar em outro computador. Dados v2 válidos são preservados ao recarregar; se uma versão incompatível não puder ser aberta, o raw é preservado/baixável para recuperação, sem ser apagado silenciosamente. O relatório HTML é opcional e reúne os registros; não precisa imprimir nem enviar arquivo para concluir a atividade. No computador compartilhado, faça cópia antes de iniciar outro rascunho.
 
 Consulte [PLANO-DOCENTE.md](PLANO-DOCENTE.md) para mediação, critérios, instrumentos, inclusão e recuperação. A avaliação da aprendizagem exige leitura docente das decisões e evidências; o software verifica presença dos registros.

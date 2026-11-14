@@ -88,7 +88,7 @@ A contribuição individual é observada na alternância de papéis, na conversa
 | 20:45–21:15 | Faz chamada e, se necessário, modela um único bloco. Circula entre duplas. | Constrói os três rafes de início e a interna da direção escolhida. | Confere se a interna cumpre a promessa da ação inicial. |
 | 21:15–21:30 | Organiza visita curta no mesmo computador. | Visitante cumpre uma tarefa; autores observam em silêncio. | Registro contém comportamento/fala, não elogio vago. |
 | 21:30–21:45 | Faz chamada e devolve perguntas de revisão. | Mantém ou ajusta com justificativa. | Aceita manter se a evidência sustentar a escolha. |
-| 21:45–22:00 | Confere a oficina e autoavaliação individual. | Até 21h57, cada estudante defende uma decisão, cita observação e próximo ajuste. Nos três minutos finais, a turma sintetiza pedido → estrutura → evidência, esclarece dúvidas e salva uma cópia. | Registra necessidade de recuperação por critério. |
+| Bloco final antes de 22h | Para quem já concluiu a entrega-base, oferece a rodada A/B sem esperar a turma inteira: até 25 min para comparar/testar a direção escolhida e uma alternativa já produzida na mesma tarefa, até 10 min para revisar, até 5 min para defender a escolha para outra dupla já concluída e até 5 min para salvar; reservar 5 min de margem. Pode encurtar conforme o ritmo. | Compara no software ligado ao editor atual, sem criar tela nova, wireframe ou requisito; observa e justifica manter ou trocar, defende a decisão e salva uma cópia. | A rodada A/B aprofunda a leitura da evidência, mas não cria critério, nota ou recuperação; ausência dela não reduz a entrega-base. |
 | 22:00–22:30 | Apoio técnico opcional, salvamento e organização. | Organiza o trabalho já concluído e esclarece dúvidas. | Sem completar critério ou recolher evidência adicional. Recuperação avaliativa ocorre até 22h ou em oportunidade equivalente para todos. |
 
 ## Papéis e inclusão
@@ -98,6 +98,10 @@ Uma dupla por computador alterna quem opera no início do segundo bloco. Na visi
 O apoio é por pergunta e primeiro passo, sem completar a solução: “Qual tarefa essa pessoa precisa resolver agora?”, “O que o botão promete?” e “O que a visita mostrou?”. A extensão para quem conclui antes é comparar uma segunda direção já gerada, sem iniciar conteúdo da aula seguinte.
 
 Após 22h, o atendimento não altera o julgamento da evidência recolhida até 22h. Recuperação avaliativa pendente deve ser oferecida em condição equivalente para todos, em momento combinado conforme a UC. Não se infere autorização de saída: frequência, confirmação da aula no diário e permanência seguem as orientações institucionais.
+
+## Extensão opcional antes das 22h
+
+Se a dupla concluiu os registros obrigatórios, pode comparar a direção escolhida com uma das alternativas já produzidas usando a **mesma tarefa** da visita, no software ligado ao editor atual. Há até 45 minutos antes das 22h: até 25 para comparar/testar, 10 para revisar, 5 para defender a escolha a outra dupla já concluída e 5 para salvar, com margem de 5 minutos; o docente pode encurtar cada etapa conforme o ritmo e não espera a turma inteira. Observa-se o que a pessoa fez ou disse e registra-se uma justificativa de manter ou trocar a direção. A extensão não antecipa wireframes, não pede página nova e não altera os quatro critérios nem a entrega de três inícios, uma interna principal, visita e revisão. O campo técnico `extension`, quando disponível, é opcional, persistido e exportado somente como registro de processo; não entra na conferência nem na nota. Após 22h, não se inicia nem se completa esta rodada: ficam apenas apoio e salvamento.
 
 ## Encaminhamento
 
