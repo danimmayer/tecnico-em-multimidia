@@ -157,3 +157,31 @@ Essas evidências verificam o software e a apresentação. A compreensão dos es
 
 O site estudantil não publica a apresentação da Aula 16. Entretanto, o repositório GitHub é público e contém fontes, slides e kit docente versionados. Portanto, o HTTP 404 no site da oficina não comprova confidencialidade ou acesso restrito às cópias do repositório. A separação da oficina foi verificada; a restrição global de acesso aos slides não foi implementada. R17 permanece parcial também por esse limite.
 ```
+
+
+## Revisão integral de preparação — 14/11/2026
+
+Esta revisão substitui as conclusões anteriores sobre a preparação da Aula 16, sem apagar o histórico de problemas relatados pelo docente. Não certifica compreensão de adolescentes, execução em sala ou aprovação institucional.
+
+### Plano vigente e fidelidade da execução
+
+Foram consultados os planejamentos gerais de Design Web e Produção Audiovisual disponíveis em Downloads. A conferência detalhada desta revisão é somente da Aula 16 de Design Web. O planejamento-base de 2026 prevê atividades em papel, galeria, quadro e projetor; a adaptação digital agora explicita a diferença e preserva a fonte. A procedência institucional/homologação não foi confirmada por assinatura ou versão no arquivo consultado. As capacidades e os conteúdos originais foram preservados nos dados curriculares; seu desdobramento didático identifica o que se observa na oficina.
+
+O plano vigente deve ser cumprido: todas as metodologias, atividades e recursos previstos precisam estar preparados e ser realizados. Gamificação pode ser utilizada e deve acontecer se estiver prevista. A adaptação é antecipada e segue o fluxo institucional aplicável; registrar uma divergência ou reescrever o plano depois não substitui seu cumprimento. O roteiro docente confere computador/navegador, oficina, projetor e alternativa planejada, ligados ao momento e à função. Disponibilidade e execução efetivas dependem de confirmação humana.
+
+### Alterações pedagógicas e de interface
+
+- Critérios C1–C4 com exemplos suficientes e incompletos, descritores de apreciação e distinção entre “em desenvolvimento” e “não observado”.
+- Evidência individual durante a circulação: cada integrante opera uma parte e explica decisão/observação em 30–60 segundos. Campos A/B não substituem a observação.
+- Checkpoints 20h15, 20h45 e 21h15, alternativas para ritmos distintos e mediação flexível, sem tetos arbitrários de exposição.
+- Seis desafios de continuidade em progressão conferir → comparar → defender, com duas cópias temporárias independentes, comparação navegável e variantes reutilizáveis. A troca de desafio preserva as duas cópias. Recarregar descarta apenas o ensaio temporário, conforme informado na interface; o rascunho principal persiste.
+- A etapa 6 apresenta automaticamente os registros faltantes e atalhos para retomada, sem bloquear exploração, visitas ou criar aprovação automática.
+- Instruções iniciais e ajuda para iniciar a montagem mais explícitas. Conteúdo e evidência essenciais até 22h; 22h–22h30 somente consolidação opcional já ensinada, sem critério, nota ou entrega nova.
+
+### Evidências da revisão
+
+A geração/paridade e o validador geral passaram. Os sete percursos de navegador passaram: criação/importação/exportação, extensão opcional, destinos/páginas e legado, conferência não bloqueante, visitas repetidas, armazenamento e prática em duas cópias. O rascunho v2 foi preservado, inclusive raw incompatível sem sobrescrita silenciosa. O teste da prática confirma que ela não altera o trabalho principal nem o JSON exportado.
+
+Uma simulação independente percorreu as seis etapas somente pelos textos e controles visíveis, preencheu a atividade, realizou a visita, baixou JSON e reabriu em outro perfil. A confirmação de substituição foi aceita e as respostas, ideias e páginas foram restauradas. A primeira suspeita de falha de importação era um falso positivo da automação que dispensou esse diálogo. Não houve teste com estudantes nesta revisão.
+
+A inspeção dos 16 slides em 1366 × 768 encontrou instruções encobertas pelo rodapé, embora não houvesse overflow. O espaçamento foi corrigido; a nova inspeção dos 16 screenshots não encontrou cortes ou colisões. A revisão independente de código não encontrou achados acionáveis em cópias A/B e conferência automática. Relatório apresentável e instrumento docente permanecem separados desta auditoria técnica. A skill pessoal e o AGENTS.md exigem o mesmo rigor para toda UC; isso não transforma o inventário das demais aulas em auditoria concluída.

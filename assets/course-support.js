@@ -3858,36 +3858,41 @@ window.SENAI_TEACHING_SUPPORT = {
       },
       "16": {
         "appendDefaultClosing": false,
-        "teacherGoal": "Cada dupla cria e compara ideias, define uma ideia central e monta três versões da página inicial mais uma Página de informações compartilhada. Outra pessoa consegue testar o caminho. Cada estudante explica uma decisão e o que revisaria.",
-        "plainLanguage": "Criar ideias é pensar em jeitos diferentes de resolver o mesmo pedido antes de escolher. Ideia central é a frase que guia as escolhas da página. Exemplo: “Quem quer ir hoje encontra primeiro a atividade e o horário.” Versão da página inicial é uma proposta de primeira tela. Página de informações é a tela que abre pelo botão da página inicial e mostra atividade, horário, local e acesso.",
+        "teacherGoal": "Cada dupla cria e compara ideias, define uma ideia central e monta três versões da página inicial mais uma Página de informações compartilhada. As três versões mudam ordem ou destaque, mas seus botões abrem a mesma Página de informações. Outra pessoa consegue testar o caminho. Durante a circulação, cada estudante opera um bloco ou botão e explica, em 30–60 segundos, uma decisão ligada ao pedido ou ao teste; isso não cria nova entrega ou nota.",
+        "plainLanguage": "Criar ideias é pensar em jeitos diferentes de resolver o mesmo pedido antes de escolher. Ideia central é a frase que guia as escolhas da página. Exemplo: “Quem quer ir hoje encontra primeiro a atividade e o horário.” Versão da página inicial é uma proposta de primeira tela. Página de informações é a mesma tela aberta pelos botões das três versões; ela mostra atividade, horário, local, acesso e como voltar.",
         "say": "Hoje vocês vão entender um pedido, criar possibilidades, escolher uma ideia central e testar se outra pessoa consegue usar a página sem ajuda.",
         "routine": [
           "Abro slides e Criar e testar páginas antes da entrada; confiro o rascunho e a tela de comparação.",
-          "Faço chamada no início de 19:00, 20:05, 20:45 e 21:30. Reservo no máximo 12 minutos no total para demonstrações, em intervenções de até dois minutos; o restante é ação do estudante.",
-          "A dupla troca quem opera no começo do bloco 2. No teste, os autores observam sem explicar nem apontar caminhos.",
-          "Os critérios aparecem antes da produção, mas a turma os encontra na oficina; não transformo isso em palestra. Uso a conferência para devolver perguntas; a coerência da escolha aparece na conversa com a dupla.",
+          "Faço chamada no início de 19:00, 20:05, 20:45 e 21:30. Mantenho a maior parte do tempo em ação dos estudantes. Quando a compreensão travar, pergunto o que falta entender e modelo somente um bloco ou botão, sem resolver o projeto.",
+          "Às 20:15, confiro se a dupla marcou três ideias e escreveu um motivo curto para cada uma. Às 20:45, confiro uma primeira versão com blocos e botão; quem trava termina essa versão primeiro e usa a mesma estrutura como ponto de partida para as outras duas, mudando ordem ou destaque. Às 21:15, confiro os três botões para a mesma Página de informações, com atividade, horário, local/acesso e retorno claro.",
+          "A dupla troca quem opera no começo do bloco 2. Durante a circulação, cada pessoa opera ao menos um bloco ou botão e explica em 30–60 segundos uma escolha ligada ao pedido do Festival ou à observação do teste. Isso é observação de aprendizagem, não nova entrega nem nota. No teste, os autores observam sem explicar nem apontar caminhos.",
+          "Os critérios aparecem antes da produção, mas a turma os encontra na oficina; não transformo isso em palestra. Uso a conferência para devolver perguntas; a coerência da escolha aparece na conversa com a dupla. Para quem estiver atrasado, encurto a escrita para frases curtas, mas preservo os quatro critérios, o teste, a revisão e a síntese até 22h.",
           "Até 22:00 verifico a entrega na própria oficina. Depois disso, ofereço prática livre com os seis desafios da etapa 6 e apoio para dúvidas. O banco tem rotas estimadas de 30, 60 e 90 minutos, situações alternativas e ciclos que podem ser repetidos; aciono também antes das 22h para quem termina cedo. Na prática, a dupla modifica uma cópia temporária, sem alterar a entrega; não completo critério nem recolho evidência avaliativa adicional após 22h."
         ],
         "demo": [
           "Mostro duas páginas com as mesmas informações em ordens diferentes e pergunto qual tarefa cada uma ajuda a fazer.",
           "Preencho uma ideia curta como exemplo de formato, sem dar uma resposta para copiar.",
-          "Monto um bloco de página e uma justificativa; não escolho pela dupla.",
+          "Modelo um único bloco e mostro como conferir se um botão abre a Página de informações; não escolho conteúdo pela dupla.",
+          "Comparo uma razão ligada ao pedido com uma razão vaga e comparo uma observação de ação/fala com uma opinião vaga.",
           "Faço a pergunta do teste e anoto somente o que a pessoa disse ou fez."
         ],
-        "studentDeliverable": "Na oficina: comparação inicial, seis ideias, ideia central nomeada e explicada, motivos para três ideias selecionadas, uma versão escolhida para o teste, três versões da página inicial, Página de informações, observação de teste, revisão e autoavaliação individual. Sem relatório ou arquivo externo.",
+        "studentDeliverable": "Na oficina: comparação inicial, seis ideias, ideia central nomeada e explicada, motivos para três ideias selecionadas, três versões da página inicial com ordem ou destaque diferentes, uma Página de informações comum aberta pelos três botões, observação de teste, revisão e autoavaliação individual. Sem relatório ou arquivo externo.",
         "check": [
-          "Explica qual problema, pessoa e tarefa prioriza; não usa somente gosto pessoal para justificar.",
-          "As ideias mudam ordem, foco ou caminho; não são seis cópias com enfeites diferentes.",
-          "A ideia central tem nome e explicação ligados à pessoa e à tarefa; os três critérios sustentam a escolha.",
-          "As três versões da página inicial mostram contexto, informação importante e botão claro; a Página de informações completa o caminho da versão escolhida.",
-          "A observação registra comportamento ou fala da pessoa que testou; a revisão responde a essa observação.",
-          "Cada estudante conclui autoavaliação curta: decisão defendida, evidência observada e próximo ajuste."
+          "C1 · As três versões mudam a ordem ou o destaque das informações; não são cópias com enfeites diferentes.",
+          "C2 · Cada escolha tem um motivo ligado ao pedido do Festival Vira-Luz, à pessoa ou à tarefa; não somente gosto pessoal.",
+          "C3 · Os botões das três versões abrem a mesma Página de informações, que entrega atividade, horário, local/acesso e um retorno claro.",
+          "C4 · A dupla decide manter ou mudar algo com base no comportamento ou na fala observada no teste.",
+          "Cada estudante opera um bloco ou botão e explica uma decisão em 30–60 segundos durante a circulação; isso usa os mesmos critérios e não é nova entrega ou nota."
         ],
         "fallback": "Sem internet, abrir a oficina local. Sem armazenamento, manter a aba aberta e usar a cópia opcional. Sem computador, a dupla monta no caderno as três versões da página inicial e a Página de informações, usa os mesmos critérios e faz o teste no desenho.",
         "commonProblems": [
           [
             "Ideias todas iguais",
-            "Peço que mude o que aparece primeiro, o botão principal ou para onde o botão leva."
+            "Peço que mude o que aparece primeiro ou o que recebe destaque; as três podem continuar abrindo a mesma Página de informações."
+          ],
+          [
+            "Travou antes das três versões",
+            "Peço que termine primeiro uma versão curta com título, informação, destaque e botão. Depois usa essa estrutura nas outras duas e muda somente ordem ou destaque; não elimino os critérios."
           ],
           [
             "Confundiu versão de página com tela final",
@@ -3895,7 +3900,7 @@ window.SENAI_TEACHING_SUPPORT = {
           ],
           [
             "Escolheu por gosto",
-            "Pergunto qual parte do pedido ou do teste sustenta a escolha."
+            "Pergunto qual informação do pedido do Festival ajuda a pessoa e peço uma frase curta usando essa informação."
           ],
           [
             "Pessoa que testou recebeu explicação",
@@ -3913,7 +3918,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dw16",
             "lede": "Hoje sua dupla vai criar três versões da página inicial e uma Página de informações que outra pessoa consegue testar.",
             "promptLabel": "Na oficina",
-            "prompt": "Na etapa Entender o pedido, leia “O pedido do festival”. Preencha “O que a pessoa precisa conseguir fazer neste site?” e “Qual informação vem primeiro e por quê?”.",
+            "prompt": "Na etapa Entender o pedido, leia “O pedido do festival”. Preencha “O que a pessoa precisa conseguir fazer neste site?” e “Qual informação vocês mostrariam primeiro? Por quê?”.",
             "dw16": {
               "type": "brief",
               "items": [
@@ -3934,10 +3939,10 @@ window.SENAI_TEACHING_SUPPORT = {
             "teacher": {
               "speech": "Faço a chamada e situo a noite como trabalho de equipe. Não mostro uma página pronta como resposta.",
               "steps": [
-                "5 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e demonstra somente quando necessário; as demonstrações somam no máximo 12 minutos na noite."
+                "5 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e explica ou mostra um único exemplo apenas quando isso ajuda a dupla a entender a próxima ação."
               ],
-              "watch": "Na etapa Entender o pedido, leia “O pedido do festival”. Preencha “O que a pessoa precisa conseguir fazer neste site?” e “Qual informação vem primeiro e por quê?”.",
-              "rescue": "Faço uma pergunta sobre a próxima ação. Se necessário, mostro onde clicar ou preencher em um único exemplo; depois a dupla segue com suas próprias escolhas."
+              "watch": "Na etapa Entender o pedido, leia “O pedido do festival”. Preencha “O que a pessoa precisa conseguir fazer neste site?” e “Qual informação vocês mostrariam primeiro? Por quê?”.",
+              "rescue": "Confirmo o que fazer, onde fazer na oficina e como conferir. Se necessário, modelo um único bloco ou botão; depois a dupla faz suas próprias escolhas."
             },
             "resources": [
               {
@@ -3974,10 +3979,10 @@ window.SENAI_TEACHING_SUPPORT = {
             "teacher": {
               "speech": "Leio somente a tarefa. Peço que apontem evidências na tela, não “a mais bonita”. Uso as respostas para decidir quem precisa de apoio.",
               "steps": [
-                "8 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e demonstra somente quando necessário; as demonstrações somam no máximo 12 minutos na noite."
+                "8 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e explica ou mostra um único exemplo apenas quando isso ajuda a dupla a entender a próxima ação."
               ],
               "watch": "Compare as duas telas. Aponte uma informação que ajuda a escolher uma atividade e uma que atrapalha.",
-              "rescue": "Faço uma pergunta sobre a próxima ação. Se necessário, mostro onde clicar ou preencher em um único exemplo; depois a dupla segue com suas próprias escolhas."
+              "rescue": "Confirmo o que fazer, onde fazer na oficina e como conferir. Se necessário, modelo um único bloco ou botão; depois a dupla faz suas próprias escolhas."
             }
           },
           {
@@ -3986,23 +3991,23 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dw16",
             "lede": "Você vai criar opções, escolher com motivo, montar páginas e usar um teste para decidir o próximo ajuste.",
             "promptLabel": "Na oficina",
-            "prompt": "Leia os critérios. No final, localize cada um no trabalho da dupla.",
+            "prompt": "Leia os quatro critérios. No final, localize cada um no trabalho da dupla.",
             "dw16": {
               "type": "criteria",
               "items": [
-                "As ideias respondem ao pedido e mudam uma escolha importante.",
-                "A ideia central guia as escolhas; não é só uma lista de adjetivos.",
-                "As páginas deixam clara a tarefa e o próximo passo.",
-                "A revisão usa o que foi observado no teste."
+                "C1 · Três versões: mudam ordem ou destaque.",
+                "C2 · Três escolhas: têm motivo ligado ao pedido do Festival.",
+                "C3 · Três botões: abrem a mesma Página de informações, com promessa cumprida e retorno claro.",
+                "C4 · Manter ou mudar: decisão baseada no que a pessoa fez ou disse no teste."
               ]
             },
             "teacher": {
-              "speech": "Apresento os critérios antes da produção. Digo que a oficina confere presença; observo a coerência na fala e no teste.",
+              "speech": "Apresento os critérios antes da produção. Digo que a oficina confere os registros; observo a coerência também na fala e no teste.",
               "steps": [
-                "5 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e demonstra somente quando necessário; as demonstrações somam no máximo 12 minutos na noite."
+                "5 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e explica ou mostra um único exemplo apenas quando isso ajuda a dupla a entender a próxima ação."
               ],
-              "watch": "Leia os critérios. No final, localize cada um no trabalho da dupla.",
-              "rescue": "Faço uma pergunta sobre a próxima ação. Se necessário, mostro onde clicar ou preencher em um único exemplo; depois a dupla segue com suas próprias escolhas."
+              "watch": "Leia os quatro critérios. No final, localize cada um no trabalho da dupla.",
+              "rescue": "Confirmo o que fazer, onde fazer na oficina e como conferir. Se necessário, modelo um único bloco ou botão; depois a dupla faz suas próprias escolhas."
             }
           },
           {
@@ -4011,24 +4016,24 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dw16",
             "lede": "Faça seis ideias simples e diferentes. Assim, você terá o que comparar antes de decidir.",
             "promptLabel": "Na oficina",
-            "prompt": "Na etapa Criar seis ideias, preencha as seis caixas. Em cada uma, escreva o que aparece primeiro, o botão principal e para onde esse botão leva. Mude pelo menos uma dessas três partes de uma ideia para outra.",
+            "prompt": "Na etapa Criar seis ideias, escreva uma frase em cada uma das seis caixas. Diga o que aparece primeiro ou recebe destaque. Mude a prioridade, a ordem ou o destaque de uma ideia para outra.",
             "dw16": {
               "type": "steps",
               "items": [
-                "Escreva o que a pessoa precisa resolver agora.",
-                "Diga o que aparece primeiro.",
-                "Dê um nome claro ao botão.",
-                "Diga que tela abre depois do botão."
+                "Escreva uma forma de organizar a página inicial.",
+                "Diga o que aparece primeiro ou recebe destaque.",
+                "Na ideia seguinte, mude a prioridade, a ordem ou o destaque.",
+                "Confiram: as seis frases não repetem a mesma organização."
               ],
-              "caption": "Cada ideia cabe em poucos blocos."
+              "caption": "Cada ideia cabe em uma frase."
             },
             "teacher": {
-              "speech": "Mostro uma ideia em até dois minutos, apenas para explicar o formato. Não avalio enquanto a dupla cria. Se travar, peço uma mudança de prioridade.",
+              "speech": "Modelo uma ideia curta para explicar o formato e devolvo as escolhas à dupla. Se travar, pergunto qual informação a pessoa precisa ver primeiro.",
               "steps": [
-                "27 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e demonstra somente quando necessário; as demonstrações somam no máximo 12 minutos na noite."
+                "27 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e explica ou mostra um único exemplo apenas quando isso ajuda a dupla a entender a próxima ação."
               ],
-              "watch": "Na etapa Criar seis ideias, preencha as seis caixas. Em cada uma, escreva o que aparece primeiro, o botão principal e para onde esse botão leva. Mude pelo menos uma dessas três partes de uma ideia para outra.",
-              "rescue": "Faço uma pergunta sobre a próxima ação. Se necessário, mostro onde clicar ou preencher em um único exemplo; depois a dupla segue com suas próprias escolhas."
+              "watch": "Na etapa Criar seis ideias, escreva uma frase em cada uma das seis caixas. Diga o que aparece primeiro ou recebe destaque. Mude a prioridade, a ordem ou o destaque de uma ideia para outra.",
+              "rescue": "Confirmo o que fazer, onde fazer na oficina e como conferir. Se necessário, modelo um único bloco ou botão; depois a dupla faz suas próprias escolhas."
             }
           },
           {
@@ -4045,10 +4050,10 @@ window.SENAI_TEACHING_SUPPORT = {
             "teacher": {
               "speech": "O intervalo não é tarefa. Confiro se a aba permaneceu aberta e acolho quem não conseguiu iniciar.",
               "steps": [
-                "20 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e demonstra somente quando necessário; as demonstrações somam no máximo 12 minutos na noite."
+                "20 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e explica ou mostra um único exemplo apenas quando isso ajuda a dupla a entender a próxima ação."
               ],
               "watch": "Na volta, troquem quem opera.",
-              "rescue": "Faço uma pergunta sobre a próxima ação. Se necessário, mostro onde clicar ou preencher em um único exemplo; depois a dupla segue com suas próprias escolhas."
+              "rescue": "Confirmo o que fazer, onde fazer na oficina e como conferir. Se necessário, modelo um único bloco ou botão; depois a dupla faz suas próprias escolhas."
             },
             "pace": "break"
           },
@@ -4058,7 +4063,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dw16",
             "lede": "O mesmo pedido pode ter páginas iniciais diferentes. O que muda é a prioridade.",
             "promptLabel": "Na oficina",
-            "prompt": "Na etapa Escolher três ideias, marque três ideias. Em cada campo “Por que escolhi”, escreva o que a pessoa consegue fazer nessa versão.",
+            "prompt": "Na etapa Escolher três ideias, marque três ideias. Em “Por que escolher esta ideia?”, escreva como ela ajuda a pessoa.",
             "dw16": {
               "type": "compare",
               "left": [
@@ -4074,12 +4079,12 @@ window.SENAI_TEACHING_SUPPORT = {
               "caption": "Mudou a tarefa mais urgente, muda a ordem da informação."
             },
             "teacher": {
-              "speech": "Volto com chamada e alterno o operador. O objetivo não é copiar os exemplos: é perceber que mudar a prioridade muda o resultado.",
+              "speech": "Volto com chamada e alterno o operador. Às 20:15, confiro três ideias marcadas e um motivo curto em cada campo. O objetivo não é copiar os exemplos: é perceber que mudar a prioridade muda o resultado.",
               "steps": [
-                "10 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e demonstra somente quando necessário; as demonstrações somam no máximo 12 minutos na noite."
+                "10 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e explica ou mostra um único exemplo apenas quando isso ajuda a dupla a entender a próxima ação."
               ],
-              "watch": "Na etapa Escolher três ideias, marque três ideias. Em cada campo “Por que escolhi”, escreva o que a pessoa consegue fazer nessa versão.",
-              "rescue": "Faço uma pergunta sobre a próxima ação. Se necessário, mostro onde clicar ou preencher em um único exemplo; depois a dupla segue com suas próprias escolhas."
+              "watch": "Na etapa Escolher três ideias, marque três ideias. Em “Por que escolher esta ideia?”, escreva como ela ajuda a pessoa.",
+              "rescue": "Confirmo o que fazer, onde fazer na oficina e como conferir. Se necessário, modelo um único bloco ou botão; depois a dupla faz suas próprias escolhas."
             }
           },
           {
@@ -4088,22 +4093,26 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dw16",
             "lede": "As três versões resolvem o mesmo objetivo. O que muda é a ordem ou o destaque dado às informações.",
             "promptLabel": "Na oficina",
-            "prompt": "Compare clareza, coerência e viabilidade. Registre o motivo das três ideias marcadas; depois escolha uma para testar.",
+            "prompt": "Perguntem: a pessoa entende? Consegue achar a atividade e a entrada? Podemos mostrar isso nos blocos de hoje? Registrem o motivo das três ideias marcadas; depois escolham uma para testar.",
             "dw16": {
-              "type": "criteria",
-              "items": [
-                "Clareza: a pessoa entende o que consegue fazer.",
-                "Coerência: título, destaque e botão falam da mesma tarefa.",
-                "Viabilidade: cabe em páginas simples e pode ser testada hoje."
-              ]
+              "type": "compare",
+              "left": [
+                "Razão suficiente",
+                "“Escolhi horário primeiro porque ajuda quem decide antes de sair.”"
+              ],
+              "right": [
+                "Razão vaga",
+                "“Escolhi porque ficou melhor.”"
+              ],
+              "caption": "O motivo liga uma informação do Festival à tarefa da pessoa."
             },
             "teacher": {
-              "speech": "Peço motivos ligados a clareza, coerência e viabilidade. Não faço votação por gosto.",
+              "speech": "Peço motivos ligados ao pedido do Festival, não votação por gosto. Se a dupla travar, peço uma frase curta: “Escolhi porque [informação] ajuda [tarefa]”.",
               "steps": [
-                "10 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e demonstra somente quando necessário; as demonstrações somam no máximo 12 minutos na noite."
+                "10 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e explica ou mostra um único exemplo apenas quando isso ajuda a dupla a entender a próxima ação."
               ],
-              "watch": "Compare clareza, coerência e viabilidade. Registre o motivo das três ideias marcadas; depois escolha uma para testar.",
-              "rescue": "Faço uma pergunta sobre a próxima ação. Se necessário, mostro onde clicar ou preencher em um único exemplo; depois a dupla segue com suas próprias escolhas."
+              "watch": "Perguntem: a pessoa entende? Consegue achar a atividade e a entrada? Podemos mostrar isso nos blocos de hoje? Registrem o motivo das três ideias marcadas; depois escolham uma para testar.",
+              "rescue": "Confirmo o que fazer, onde fazer na oficina e como conferir. Se necessário, modelo um único bloco ou botão; depois a dupla faz suas próprias escolhas."
             }
           },
           {
@@ -4112,7 +4121,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dw16",
             "lede": "Objetivo comum é a ideia central que as três versões precisam atender. Ele não muda; o que muda é a ordem ou o destaque.",
             "promptLabel": "Na oficina",
-            "prompt": "Na etapa Escolher três ideias, dê um nome curto ao objetivo comum e escreva uma frase sobre o que deve ficar claro. Exemplo: “Quem quer ir hoje encontra primeiro a atividade e o horário.” Crie a sua, sem copiar o exemplo.",
+            "prompt": "Na etapa Escolher três ideias, preencha “Deem um nome curto à ideia central” e “Como essa ideia vai aparecer nas páginas?”. Exemplo: “Quem quer ir hoje encontra primeiro a atividade e o horário.” Crie a sua, sem copiar o exemplo.",
             "dw16": {
               "type": "steps",
               "diagram": "idea",
@@ -4126,10 +4135,10 @@ window.SENAI_TEACHING_SUPPORT = {
             "teacher": {
               "speech": "Mostro o exemplo breve ligado ao pedido. Não escolho o objetivo comum pela dupla.",
               "steps": [
-                "10 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e demonstra somente quando necessário; as demonstrações somam no máximo 12 minutos na noite."
+                "10 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e explica ou mostra um único exemplo apenas quando isso ajuda a dupla a entender a próxima ação."
               ],
-              "watch": "Na etapa Escolher três ideias, dê um nome curto ao objetivo comum e escreva uma frase sobre o que deve ficar claro. Exemplo: “Quem quer ir hoje encontra primeiro a atividade e o horário.” Crie a sua, sem copiar o exemplo.",
-              "rescue": "Faço uma pergunta sobre a próxima ação. Se necessário, mostro onde clicar ou preencher em um único exemplo; depois a dupla segue com suas próprias escolhas."
+              "watch": "Na etapa Escolher três ideias, preencha “Deem um nome curto à ideia central” e “Como essa ideia vai aparecer nas páginas?”. Exemplo: “Quem quer ir hoje encontra primeiro a atividade e o horário.” Crie a sua, sem copiar o exemplo.",
+              "rescue": "Confirmo o que fazer, onde fazer na oficina e como conferir. Se necessário, modelo um único bloco ou botão; depois a dupla faz suas próprias escolhas."
             }
           },
           {
@@ -4138,7 +4147,7 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dw16",
             "lede": "Antes do acabamento, decida o que aparece, em que ordem e qual botão leva ao próximo passo.",
             "promptLabel": "Na oficina",
-            "prompt": "Na etapa Montar as páginas, abra Versão 1. Preencha título, informação importante, destaque e botão. Depois faça o mesmo nas Versões 2 e 3.",
+            "prompt": "Na etapa Montar as páginas, abra Versão 1. Preencha título, informação importante, destaque e botão. Depois faça o mesmo nas Versões 2 e 3, mudando a ordem ou o destaque.",
             "dw16": {
               "type": "steps",
               "diagram": "page",
@@ -4150,37 +4159,37 @@ window.SENAI_TEACHING_SUPPORT = {
               ]
             },
             "teacher": {
-              "speech": "Explico que hoje não há medidas, grade ou acabamento final. A próxima aula aprofundará a estrutura técnica da página.",
+              "speech": "Às 20:45, confiro uma Versão 1 com blocos e botão. Quem travar termina essa primeira versão e usa a estrutura nas outras duas; encurta o texto, mas não pula os critérios.",
               "steps": [
-                "10 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e demonstra somente quando necessário; as demonstrações somam no máximo 12 minutos na noite."
+                "10 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e explica ou mostra um único exemplo apenas quando isso ajuda a dupla a entender a próxima ação."
               ],
-              "watch": "Na etapa Montar as páginas, abra Versão 1. Preencha título, informação importante, destaque e botão. Depois faça o mesmo nas Versões 2 e 3.",
-              "rescue": "Faço uma pergunta sobre a próxima ação. Se necessário, mostro onde clicar ou preencher em um único exemplo; depois a dupla segue com suas próprias escolhas."
+              "watch": "Na etapa Montar as páginas, abra Versão 1. Preencha título, informação importante, destaque e botão. Depois faça o mesmo nas Versões 2 e 3, mudando a ordem ou o destaque.",
+              "rescue": "Confirmo o que fazer, onde fazer na oficina e como conferir. Se necessário, modelo um único bloco ou botão; depois a dupla faz suas próprias escolhas."
             }
           },
           {
             "title": "Três versões iniciais, uma página compartilhada.",
             "block": 3,
             "layout": "dw16",
-            "lede": "As três versões permitem comparar. A Página de informações atende à promessa do botão da versão escolhida.",
+            "lede": "As três versões permitem comparar. A Página de informações atende à promessa do botão de todas as versões.",
             "promptLabel": "Na oficina",
-            "prompt": "Na etapa Montar as páginas, escolha uma das três versões. Confira o botão dela: ele abre a Página de informações. Nessa página, escreva atividade, horário, local e como chegar.",
+            "prompt": "Na etapa Montar as páginas, faça as três versões. Em cada uma, configure o botão para abrir a Página de informações. Nessa página, escreva atividade, horário, local, como chegar e um botão ou link claro para voltar.",
             "dw16": {
               "type": "steps",
               "items": [
                 "Versões da página inicial: título, destaque e botão.",
-                "Página de informações: atividade, horário, local e acesso.",
-                "Ligação: o botão da versão escolhida abre essa página.",
-                "Conferência: a página entrega o que o botão prometeu."
+                "Página de informações: atividade, horário, local, acesso e retorno.",
+                "Ligação: os botões das três versões abrem a mesma Página de informações.",
+                "Conferência: a página entrega o que cada botão prometeu e mostra como voltar."
               ]
             },
             "teacher": {
-              "speech": "Faço chamada. Demonstro somente como mover um bloco. Enquanto produzem, observo se a dupla alterna decisão e registro.",
+              "speech": "Faço chamada. Se necessário, modelo um único bloco ou botão. Enquanto produzem, observo se a dupla alterna decisão e registro; cada pessoa opera um bloco ou botão e explica uma decisão em 30–60 segundos.",
               "steps": [
-                "30 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e demonstra somente quando necessário; as demonstrações somam no máximo 12 minutos na noite."
+                "30 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e explica ou mostra um único exemplo apenas quando isso ajuda a dupla a entender a próxima ação."
               ],
-              "watch": "Na etapa Montar as páginas, escolha uma das três versões. Confira o botão dela: ele abre a Página de informações. Nessa página, escreva atividade, horário, local e como chegar.",
-              "rescue": "Faço uma pergunta sobre a próxima ação. Se necessário, mostro onde clicar ou preencher em um único exemplo; depois a dupla segue com suas próprias escolhas."
+              "watch": "Na etapa Montar as páginas, faça as três versões. Em cada uma, configure o botão para abrir a Página de informações. Nessa página, escreva atividade, horário, local, como chegar e um botão ou link claro para voltar.",
+              "rescue": "Confirmo o que fazer, onde fazer na oficina e como conferir. Se necessário, modelo um único bloco ou botão; depois a dupla faz suas próprias escolhas."
             }
           },
           {
@@ -4189,16 +4198,16 @@ window.SENAI_TEACHING_SUPPORT = {
             "layout": "dw16",
             "lede": "Testar não é explicar o projeto. É descobrir o que a outra pessoa entende e faz.",
             "promptLabel": "Na oficina",
-            "prompt": "Na etapa Testar com colega, convide uma pessoa da dupla vizinha. Diga: “Encontre a atividade, o horário e como chegar.” Fique em silêncio. Depois registre onde ela procurou, o que disse e se conseguiu concluir.",
+            "prompt": "Às 21:15, na etapa Montar as páginas, clique no botão de cada versão: os três devem abrir a mesma Página de informações. Confira atividade, horário, local/acesso e retorno. Depois, na etapa Testar com colega, convide uma pessoa da dupla vizinha. Diga: “Encontre a atividade, o horário e como chegar.” Fique em silêncio. Registre onde ela procurou, o que disse e se conseguiu concluir.",
             "dw16": {
               "type": "compare",
               "observation": true,
               "left": [
-                "Observação útil",
+                "Observação suficiente",
                 "“Procurou em Programação; esperava mapa; hesitou no botão.”"
               ],
               "right": [
-                "Opinião vaga",
+                "Observação vaga",
                 "“Achou legal.”"
               ],
               "caption": "Registre ação e fala, não apenas elogio."
@@ -4206,10 +4215,10 @@ window.SENAI_TEACHING_SUPPORT = {
             "teacher": {
               "speech": "O teste é curto e usa o mesmo computador. Se a pessoa perguntar, o autor responde “o que você esperava encontrar?” e anota, sem ensinar o caminho.",
               "steps": [
-                "15 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e demonstra somente quando necessário; as demonstrações somam no máximo 12 minutos na noite."
+                "15 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e explica ou mostra um único exemplo apenas quando isso ajuda a dupla a entender a próxima ação."
               ],
-              "watch": "Na etapa Testar com colega, convide uma pessoa da dupla vizinha. Diga: “Encontre a atividade, o horário e como chegar.” Fique em silêncio. Depois registre onde ela procurou, o que disse e se conseguiu concluir.",
-              "rescue": "Faço uma pergunta sobre a próxima ação. Se necessário, mostro onde clicar ou preencher em um único exemplo; depois a dupla segue com suas próprias escolhas."
+              "watch": "Às 21:15, na etapa Montar as páginas, clique no botão de cada versão: os três devem abrir a mesma Página de informações. Confira atividade, horário, local/acesso e retorno. Depois, na etapa Testar com colega, convide uma pessoa da dupla vizinha. Diga: “Encontre a atividade, o horário e como chegar.” Fique em silêncio. Registre onde ela procurou, o que disse e se conseguiu concluir.",
+              "rescue": "Confirmo o que fazer, onde fazer na oficina e como conferir. Se necessário, modelo um único bloco ou botão; depois a dupla faz suas próprias escolhas."
             }
           },
           {
@@ -4230,34 +4239,35 @@ window.SENAI_TEACHING_SUPPORT = {
             "teacher": {
               "speech": "Faço chamada. Não exijo mudança só para mudar: manter também é uma decisão quando o teste sustenta a escolha.",
               "steps": [
-                "15 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e demonstra somente quando necessário; as demonstrações somam no máximo 12 minutos na noite."
+                "15 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e explica ou mostra um único exemplo apenas quando isso ajuda a dupla a entender a próxima ação."
               ],
               "watch": "Ainda na etapa Testar com colega, use a observação para manter ou alterar um bloco, texto ou botão. Escreva o motivo.",
-              "rescue": "Faço uma pergunta sobre a próxima ação. Se necessário, mostro onde clicar ou preencher em um único exemplo; depois a dupla segue com suas próprias escolhas."
+              "rescue": "Confirmo o que fazer, onde fazer na oficina e como conferir. Se necessário, modelo um único bloco ou botão; depois a dupla faz suas próprias escolhas."
             }
           },
           {
             "title": "Cada pessoa explica sua parte.",
             "block": 4,
             "layout": "dw16",
-            "lede": "A autoavaliação mostra o que cada pessoa aprendeu sem separar a dupla do mesmo projeto.",
+            "lede": "A explicação ajuda cada pessoa a mostrar sua participação e defender uma decisão do projeto da dupla.",
             "promptLabel": "Na oficina",
-            "prompt": "Ainda na etapa Testar com colega, cada integrante responde no seu campo: “Qual escolha você manteria ou mudaria com base no que o colega fez ou disse?”.",
+            "prompt": "Ainda na etapa Testar com colega, cada integrante responde no seu campo: “Qual escolha você manteria ou mudaria com base no que o colega fez ou disse?”. Quando o professor chegar, cada pessoa opera um bloco ou botão e explica sua decisão em 30–60 segundos.",
             "dw16": {
               "type": "check",
               "items": [
-                "Qual escolha eu manteria ou mudaria?",
-                "O que o colega fez ou disse?",
-                "Como essa observação apoia minha decisão?"
+                "C1: onde as versões mudam ordem ou destaque?",
+                "C2: qual escolha responde ao pedido do Festival?",
+                "C3: clique no botão e mostre a Página de informações e o retorno.",
+                "C4: o que o colega fez ou disse e o que você mantém ou muda?"
               ]
             },
             "teacher": {
-              "speech": "Leio a pergunta antes do registro. Faço devolutiva breve por critério pendente, não por acabamento.",
+              "speech": "Leio a pergunta antes do registro. Faço devolutiva breve por critério pendente, não por acabamento. Essa explicação usa os mesmos critérios; não é nova entrega nem nota.",
               "steps": [
-                "12 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e demonstra somente quando necessário; as demonstrações somam no máximo 12 minutos na noite."
+                "12 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e explica ou mostra um único exemplo apenas quando isso ajuda a dupla a entender a próxima ação."
               ],
-              "watch": "Ainda na etapa Testar com colega, cada integrante responde no seu campo: “Qual escolha você manteria ou mudaria com base no que o colega fez ou disse?”.",
-              "rescue": "Faço uma pergunta sobre a próxima ação. Se necessário, mostro onde clicar ou preencher em um único exemplo; depois a dupla segue com suas próprias escolhas."
+              "watch": "Ainda na etapa Testar com colega, cada integrante responde no seu campo: “Qual escolha você manteria ou mudaria com base no que o colega fez ou disse?”. Quando o professor chegar, cada pessoa opera um bloco ou botão e explica sua decisão em 30–60 segundos.",
+              "rescue": "Confirmo o que fazer, onde fazer na oficina e como conferir. Se necessário, modelo um único bloco ou botão; depois a dupla faz suas próprias escolhas."
             }
           },
           {
@@ -4279,10 +4289,10 @@ window.SENAI_TEACHING_SUPPORT = {
             "teacher": {
               "speech": "Fecho com a turma: criar opções, escolher com critérios e revisar pelo teste. Recolho dúvidas antes das 22h. Aviso apenas a continuidade: na Aula 17, a versão escolhida será desenvolvida em wireframes, representações mais detalhadas da organização das telas; não ensino conteúdo novo agora.",
               "steps": [
-                "3 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e demonstra somente quando necessário; as demonstrações somam no máximo 12 minutos na noite."
+                "3 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e explica ou mostra um único exemplo apenas quando isso ajuda a dupla a entender a próxima ação."
               ],
               "watch": "Na etapa Revisar e salvar, confira os registros e salve uma cópia do rascunho. Esclareça sua última dúvida antes das 22h.",
-              "rescue": "Faço uma pergunta sobre a próxima ação. Se necessário, mostro onde clicar ou preencher em um único exemplo; depois a dupla segue com suas próprias escolhas."
+              "rescue": "Confirmo o que fazer, onde fazer na oficina e como conferir. Se necessário, modelo um único bloco ou botão; depois a dupla faz suas próprias escolhas."
             }
           },
           {
@@ -4305,10 +4315,10 @@ window.SENAI_TEACHING_SUPPORT = {
             "teacher": {
               "speech": "Acompanho a consolidação e as dúvidas; quem está sozinho pode percorrer a cópia ou desenhar no caderno. Se a tentativa terminar cedo, proponho outra situação do mesmo desafio. Não completo critérios nem recolho evidência avaliativa adicional após 22h. Recuperação pendente terá oportunidade equivalente para todos.",
               "steps": [
-                "30 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e demonstra somente quando necessário; as demonstrações somam no máximo 12 minutos na noite."
+                "30 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e explica ou mostra um único exemplo apenas quando isso ajuda a dupla a entender a próxima ação."
               ],
               "watch": "Na etapa 6, em “Terminou? Escolha outro desafio”, escolham a rota de 30 min. Experimentem em uma cópia, confiram o caminho e comparem. Se terminarem antes, tentem outra situação ou troquem os papéis.",
-              "rescue": "Faço uma pergunta sobre a próxima ação. Se necessário, mostro onde clicar ou preencher em um único exemplo; depois a dupla segue com suas próprias escolhas."
+              "rescue": "Confirmo o que fazer, onde fazer na oficina e como conferir. Se necessário, modelo um único bloco ou botão; depois a dupla faz suas próprias escolhas."
             },
             "pace": "extra"
           }

@@ -16,6 +16,15 @@ async function run(driver,url){
     await page.clock.install({time:new Date('2026-11-13T23:00:00Z')}); // 20h São Paulo
     await page.goto(workshop);
     const boot=async state=>{await page.evaluate(([key,value])=>localStorage.setItem(key,JSON.stringify(value)),[KEY,state]);await page.reload();};
+    await page.locator('#nav [data-go="5"]').click();
+    assert.match(await page.locator('#checkOut').innerText(),/Ainda falta escrever/,'Ir ao fim sem produzir mostra pendências automaticamente.');
+    assert.match(await page.locator('#checkOut').innerText(),/Chegar à etapa 6 não conclui/);
+    await page.locator('[data-review-step="1"]').click();
+    assert(await page.locator('section[data-step="1"]').isVisible(),'Cada pendência oferece retorno à etapa para continuar.');
+    await page.locator('#nav [data-go="4"]').click();
+    await page.locator('#startVisit').click();
+    assert(await page.locator('#nav').isHidden(),'O aviso no encerramento não impede teste exploratório de trabalho vazio.');
+    await page.locator('#endVisit').click();
 
     const partial=legacyV2();partial.step=4;partial.chosenDirection=2;
     partial.rafes=[{blocks:simple('A')},{blocks:empty()},{blocks:simple('C')}];partial.internal=simple('Interna');
@@ -41,7 +50,7 @@ async function run(driver,url){
     const incomplete=legacyV2();incomplete.step=4;incomplete.problem='';incomplete.priority='';incomplete.conceptName='';incomplete.conceptWhy='';incomplete.selected=[];incomplete.reasons={};
     await boot(incomplete);await page.locator('#startVisit').click();
     assert(await page.locator('#nav').isHidden(),'Contexto incompleto não bloqueia um teste exploratório.');
-    console.log('Aula 16: visita e A/B aceitam experimentação; checklist aponta apenas registros concretamente vazios.');
+    console.log('Aula 16: encerramento mostra pendências e atalhos; visita e A/B aceitam experimentação sem aprovação automática.');
   }finally{await browser.close();}
 }
 if(require.main===module)run().catch(error=>{console.error(error);process.exitCode=1;});

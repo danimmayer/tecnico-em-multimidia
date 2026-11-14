@@ -47,6 +47,24 @@ async function run(driver, url) {
     await page.locator('#practiceRestart').click();
     await page.locator('#practicePhone [data-open="internal"]').click();
     assert.match(await page.locator('#practicePhone').innerText(),/Informação somente no ensaio/);
+    await page.locator('[data-practice-slot="1"]').click();
+    await page.locator('[data-practice-text="0"]').fill('Alternativa da Cópia B');
+    await page.locator('[data-practice-slot="0"]').click();
+    assert.equal(await page.locator('[data-practice-text="1"]').inputValue(),'Ensaio temporário','Alternar cópias preserva a ordem e o texto da Cópia A.');
+    await page.locator('[data-practice-start="5"]').click();
+    assert.equal(await page.locator('[data-practice-text="1"]').inputValue(),'Ensaio temporário','Trocar de desafio não apaga o ensaio.');
+    await page.locator('#practiceCompare').click();
+    assert.match(await page.locator('#practiceCompareA').innerText(),/Ensaio temporário/);
+    assert.match(await page.locator('#practiceCompareB').innerText(),/Alternativa da Cópia B/);
+    await page.locator('#practiceCompareA [data-open="internal"]').click();
+    assert.match(await page.locator('#practiceCompareA').innerText(),/Informação somente no ensaio/);
+    assert.match(await page.locator('#practiceCompareB').innerText(),/Alternativa da Cópia B/,'Cada prévia mantém sua própria navegação.');
+    await page.locator('[data-practice-slot="1"]').click();
+    await page.locator('#practiceVersion').selectOption('0');
+    await page.locator('#practiceCopy').click();
+    assert.doesNotMatch(await page.locator('#practicePhone').innerText(),/Alternativa da Cópia B/);
+    await page.locator('[data-practice-slot="0"]').click();
+    assert.equal(await page.locator('[data-practice-text="1"]').inputValue(),'Ensaio temporário','Substituir B preserva A.');
     assert.equal(await saved(),raw,'Rotas, variações, edição, ordem e navegação da cópia não alteram o rascunho.');
 
     await page.locator('header summary').click();
@@ -62,7 +80,7 @@ async function run(driver, url) {
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'A prática cabe na tela móvel.');
     if(process.env.PRACTICE_SCREENSHOT) await page.screenshot({path:process.env.PRACTICE_SCREENSHOT,fullPage:true});
     assert.deepEqual(errors,[]);
-    console.log('Aula 16: seis desafios, rotas, variações e cópia navegável após 22h; rascunho e exportação preservados.');
+    console.log('Aula 16: desafios progressivos, duas cópias independentes e comparação navegável após 22h; rascunho e exportação preservados.');
   } finally {await browser.close();}
 }
 if(require.main===module) run().catch(error=>{console.error(error);process.exitCode=1;});

@@ -580,23 +580,23 @@ window.SENAI_COURSES = {
         "schedule": [
           {
             "horario": "19:00 - 19:45",
-            "atividade": "Ler o pedido, comparar duas telas e criar seis ideias de página inicial para o Festival Vira-Luz. Em cada ideia, definir o que aparece primeiro, o botão principal e para onde ele leva."
+            "atividade": "Ler o pedido, comparar duas telas e criar seis ideias de organização da página inicial para o Festival Vira-Luz. Em cada frase, decidir o que aparece primeiro ou recebe destaque."
           },
           {
             "horario": "20:05 - 20:45",
-            "atividade": "Selecionar três ideias, explicar por que cada uma ajuda a pessoa e definir a ideia central da página. Alternar quem opera e começar as três versões da página inicial."
+            "atividade": "Selecionar três ideias, explicar em frase curta por que cada uma ajuda no pedido do Festival e definir a ideia central da página. Às 20h15, conferir três escolhas e três motivos; alternar quem opera e começar as três versões da página inicial."
           },
           {
             "horario": "20:45 - 21:30",
-            "atividade": "Montar na oficina três versões testáveis da página inicial e uma Página de informações compartilhada. Organizar título, informação importante e botão. Entre 21h15 e 21h30, uma pessoa de outra dupla testa sem explicação dos autores."
+            "atividade": "Montar na oficina três versões testáveis da página inicial, mudando ordem ou destaque, e uma Página de informações compartilhada. Às 20h45, conferir a primeira versão; às 21h15, conferir que os três botões abrem a mesma Página de informações com atividade, horário, local/acesso e retorno claro. Entre 21h15 e 21h30, uma pessoa de outra dupla testa sem explicação dos autores."
           },
           {
             "horario": "21:30 - 22:00",
             "atividade": "Registrar o que a pessoa fez no teste, ajustar ou manter uma escolha com motivo, responder aos registros individuais A/B e participar da síntese final. Das 22:00 às 22:30: prática livre opcional com os conhecimentos já trabalhados, dúvidas e apoio técnico, sem conteúdo ou avaliação nova."
           }
         ],
-        "methodology": "Oficina baseada em um pedido profissional: comparar telas, criar ideias, escolher com critérios, montar páginas, observar um teste e revisar com base no que foi visto. Os 160 minutos letivos priorizam decisões e ações do estudante; a fala demonstrativa do docente soma no máximo 12 minutos, em intervenções de até dois minutos. A dupla alterna autoria e observação; cada estudante registra sua autoavaliação.",
-        "resources": "Projetor, navegador e Criar e testar páginas da Aula 16. A oficina local reúne o pedido, as ideias, as páginas, o teste, os critérios e o rascunho. Sem login, instalação, impressão, pesquisa externa ou envio obrigatório.",
+        "methodology": "Oficina baseada em um pedido profissional: comparar telas, criar ideias, escolher com critérios, montar páginas, observar um teste e revisar com base no que foi visto. Os 160 minutos letivos priorizam decisões e ações do estudante. A mediação é breve e flexível: o docente pergunta, escuta e, se a compreensão travar, modela um único bloco ou botão antes de devolver a decisão à dupla. A dupla alterna autoria e observação; cada estudante demonstra uma ação e explica uma decisão.",
+        "resources": "Computador com navegador e a oficina Criar e testar páginas da Aula 16 para criar, testar e salvar o rascunho; projetor para abertura e comparação mediada. Papel ou caderno e caneta são alternativa se não houver computador. A oficina local reúne o pedido, as ideias, as páginas, o teste, os critérios e o rascunho. Sem login, instalação, impressão, pesquisa externa ou envio obrigatório.",
         "observation": "19:00–22:00 de conteúdo e evidência avaliável, com intervalo 19:45–20:05. Das 22:00 às 22:30 há consolidação opcional dos conhecimentos já trabalhados: desafios em cópia temporária, comparação e revisão, além de dúvidas e apoio técnico. Não há conteúdo, nota, entrega ou evidência avaliativa nova, nem exigência para quem saiu. Chamada no início dos quatro blocos. Os casos são fictícios; uma dupla por computador; rascunho fica neste navegador."
       },
       {
