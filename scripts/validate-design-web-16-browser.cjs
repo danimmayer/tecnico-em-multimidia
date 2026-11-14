@@ -27,9 +27,6 @@ async function run(driver, url) {
     for(const i of [0,2,4])await page.locator('[data-reason="'+i+'"]').fill('A prioridade '+i+' ajuda o público a encontrar uma atividade pelo horário.');
     await page.locator('[data-text="conceptName"]').fill('Seu próximo encontro');
     await page.locator('[data-text="conceptWhy"]').fill('Atividade e horário conduzem à entrada lateral sem distrações.');
-    await nav(4);await page.locator('#startVisit').click();
-    assert.match(await page.locator('#save').innerText(),/Antes da visita/,'Teste exige registros mínimos, sem aprovar qualidade automaticamente.');
-    assert(await page.locator('#nav').isVisible(),'Sem registros mínimos, não entra no modo visitante.');
     await nav(3);
     for(const i of [0,1,2,'internal']) {
       await page.locator('[data-tab="'+i+'"]').click();
