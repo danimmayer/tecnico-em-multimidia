@@ -6,7 +6,7 @@ function render(){qa('section[data-step]').forEach((x,i)=>x.hidden=i!==s.step);
 $('nav').innerHTML=['Briefing','Ideias','Direções','Esboços','Teste','Registros'].map((x,i)=>'<button data-go="'+i+'" aria-current="'+(i===s.step)+'">'+(i+1)+'. '+x+'</button>').join('');qa('[data-go]').forEach(b=>b.onclick=()=>go(+b.dataset.go));
 $('progress').textContent='Missão '+(s.step+1)+' de 6';
 $('prev').disabled=!s.step;
-$('next').textContent='Próxima missão';$('next').disabled=s.step===5;qa('[data-text]').forEach(e=>{let k=e.dataset.text;e.value=s[k];e.maxLength=800;e.oninput=()=>{s[k]=e.value;if(k==='visitNote'&&s.tests.length)s.tests[s.tests.length-1].note=e.value;save()}});ideas();choices();tabs();visitor();renderExtension()}
+$('next').textContent='Próxima missão';$('next').disabled=s.step===5;qa('[data-text]').forEach(e=>{let k=e.dataset.text;e.value=s[k];e.maxLength=800;e.oninput=()=>{s[k]=e.value;if(k==='visitNote'&&s.tests.length){s.tests[s.tests.length-1].note=e.value;renderVisitHistory()}save()}});ideas();choices();tabs();visitor();renderExtension()}
 function ideas(){$('ideas').innerHTML=s.ideas.map((v,i)=>'<label class="idea">Ideia '+(i+1)+'<small>Integrante '+(i<3?'A':'B')+'</small><textarea maxlength="800" data-idea="'+i+'" placeholder="Uma possibilidade estrutural">'+E(v)+'</textarea></label>').join('');qa('[data-idea]').forEach(e=>e.oninput=()=>{s.ideas[+e.dataset.idea]=e.value;save()})}
 function choices(){
   $('choices').innerHTML=s.ideas.map((v,i)=>'<div class="choice"><label><input type="checkbox" data-pick="'+i+'" '+(s.selected.includes(i)?'checked':'')+' '+(!v.trim()||s.selected.length===3&&!s.selected.includes(i)?'disabled':'')+'> <strong>Ideia '+(i+1)+'</strong>: '+E(v||'Escreva na missão 2.')+'</label><label '+(!s.selected.includes(i)?'hidden':'')+'>Razão para esta direção<textarea data-reason="'+i+'" maxlength="800" placeholder="Qual público, tarefa e prioridade esta estrutura favorece?">'+E(s.reasons[i]||'')+'</textarea></label></div>').join('');
@@ -28,12 +28,23 @@ $('addPage').onclick=()=>{if(pages().length>=6){$('save').textContent='Até seis
 function bindPhone(container,d,model){
   qa('[data-open]',container).forEach(button=>button.onclick=()=>{const target=button.dataset.open;if(target==='finish'){let note=container.querySelector('.action-result');if(!note){note=document.createElement('p');note.className='action-result';note.setAttribute('role','status');container.append(note)}note.textContent='Simulação: ação “'+button.textContent+'” concluída. Você pode voltar ao início para testar outro caminho.';return}const bs=model?(target==='home'?model.blocks:target==='internal'?model.internal:(model.extraPages||[]).find(p=>'extra:'+p.id===target)?.blocks):pageBlocks(target,d);if(!bs){$('save').textContent='Destino não encontrado. Confira o destino deste botão no editor.';return}container.innerHTML=phone(bs,target,model?(model.extraPages||[]):pages());bindPhone(container,d,model)});
 }
-function visitor(){
-  document.body.classList.toggle('is-visiting',visiting);$('visitor').classList.toggle('active',visiting);$('endVisit').hidden=!visiting;
-  $('visitContent').innerHTML=visiting?'<p class="visit-task">Você está escolhendo uma atividade. Encontre o horário e como chegar. Use a proposta sem pedir explicação aos autores.</p>'+phone(s.rafes[s.chosenDirection].blocks):s.tests.length?'<p>Visita encerrada. Anote abaixo o que a pessoa fez ou disse antes de revisar.</p>':'';
-  if(visiting)bindPhone($('visitContent'),s.chosenDirection);
+function renderVisitHistory(){
+  $('visitHistory').innerHTML=s.tests.length?'<h2>Histórico de visitas</h2><ol>'+s.tests.map((t,i)=>'<li><strong>Visita '+(i+1)+' · Direção '+(t.direction+1)+'</strong><p>'+E(t.note||'Observação ainda não registrada.')+'</p></li>').join('')+'</ol>':'';
 }
-$('startVisit').onclick=()=>{
+function visitor(){
+  const count=s.tests.length;
+  document.body.classList.toggle('is-visiting',visiting);$('visitor').classList.toggle('active',visiting);$('visitToolbar').hidden=!visiting;
+  $('startVisit').textContent=count?'Iniciar nova visita':'Iniciar teste com visitante';
+  $('repeatVisit').hidden=!count;
+  $('visitSummary').textContent=count?count+(count===1?' visita registrada.':' visitas registradas.')+' Você pode repetir o teste com outro visitante ou outra direção. As observações anteriores ficam no histórico.':'Você pode repetir esta etapa. Encerre cada visita, registre a observação e inicie a próxima.';
+  $('activeVisitLabel').textContent='Visita '+count+' · Direção '+(s.chosenDirection+1);
+  $('visitNoteLabel').textContent=(count?'Observação da visita '+count+': ':'')+'O que o visitante procurou, entendeu ou não encontrou?';
+  $('visitContent').innerHTML=visiting?'<p class="visit-task">Você está escolhendo uma atividade. Encontre o horário e como chegar. Use a proposta sem pedir explicação aos autores.</p>'+phone(s.rafes[s.chosenDirection].blocks):count?'<p>Visita encerrada. Registre abaixo o que a pessoa fez ou disse. Para repetir, use “Iniciar nova visita”.</p>':'';
+  if(visiting)bindPhone($('visitContent'),s.chosenDirection);
+  renderVisitHistory();
+}
+function startVisit(){
+  if(visiting)return;
   const ready=visitReadiness(),missing=[];
   if(!ready.brief)missing.push('briefing e prioridade');if(!ready.concept)missing.push('conceito e justificativa');if(!ready.choices)missing.push('três direções justificadas');if(!ready.sketches)missing.push('título, conteúdo e ação nos esboços');
   if(missing.length){$('save').textContent='Antes da visita, complete: '+missing.join(', ')+'. A conferência continua sendo qualitativa do docente.';return}
@@ -41,7 +52,9 @@ $('startVisit').onclick=()=>{
   s.visitNote='';qa('[data-text="visitNote"]').forEach(e=>e.value='');
   s.tests.push({at:Date.now(),direction:s.chosenDirection,blocks:JSON.parse(JSON.stringify(s.rafes[s.chosenDirection].blocks)),internal:JSON.parse(JSON.stringify(s.internal)),...(s.extraPages?{extraPages:JSON.parse(JSON.stringify(s.extraPages))}:{}),note:''});
   visiting=true;save();visitor();$('endVisit').focus();
-};
+}
+$('startVisit').onclick=startVisit;$('repeatVisit').onclick=startVisit;
+$('restartVisit').onclick=()=>{if(visiting)visitor()};
 $('endVisit').onclick=()=>{visiting=false;save();visitor();qa('[data-text="visitNote"]')[0].focus()};
 function extensionClosed(){return +new Intl.DateTimeFormat('en-GB',{timeZone:'America/Sao_Paulo',hour:'2-digit',hourCycle:'h23'}).format(new Date())>=22}
 function extensionAvailability(){const closed=extensionClosed();$('extensionTimeNotice').hidden=!closed;for(const id of ['extensionTask','extensionDirection','startComparison','extensionEdit'])$(id).disabled=closed;qa('[data-extra]').forEach(e=>e.disabled=closed);return closed}
