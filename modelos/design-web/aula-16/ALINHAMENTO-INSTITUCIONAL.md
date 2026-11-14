@@ -1,105 +1,64 @@
-# Alinhamento institucional — Design Web, Aula 16
+# Relatório pedagógico de alinhamento metodológico — Design Web, Aula 16
 
-## Escopo e leitura responsável
+## Criar e testar páginas: oficina Festival Vira-Luz
 
-Este é um relatório de **planejamento e material**, não de execução, aprovação institucional, aprendizagem efetiva, frequência, lançamento no SGN ou conduta docente. Foram consultados o plano desta aula, `scripts/lessons/design-web-16.mjs`, a oficina Aula 16 e os seis documentos institucionais recebidos. Estados: **E** evidenciado no planejamento/material; **P** parcial; **N** não documentado; **O** depende de observação/registro humano; **F** depende da fase/condição.
+Este relatório apresenta o planejamento pedagógico da Aula 16 de Design Web para apreciação da coordenação pedagógica. Com base nos seis materiais institucionais, descreve como a oficina transforma orientações em experiência de aprendizagem. O documento descreve o planejamento e os materiais; as evidências de participação e aprendizagem dependem da observação em sala e dos registros docentes.
 
-A Aula 16 foi conferida em detalhe. As Aulas 17 e 18 receberam revisão de continuidade e fichas próprias em `docs/`; as demais 61 aulas do inventário permanecem preliminares. Isso não certifica execução nem conformidade delas.
+A proposta é uma oficina personalizada, situada em uma demanda profissional fictícia. No Festival Vira-Luz, a equipe de comunicação recebeu o relato de que visitantes encontram a programação, mas ainda hesitam para escolher uma atividade ou chegar ao local. Em duplas, os estudantes assumem a tarefa de melhorar essa experiência em uma tela de celular. O desafio é criar três versões iniciais da página principal e uma única Página de informações compartilhada; os botões das três versões devem abrir essa página comum. Assim, a turma não produz três sites: compara três caminhos para a mesma necessidade, escolhe um e explica por que ele atende melhor ao público e ao objetivo.
 
-## Matriz curricular e avaliativa
+O resultado esperado é concreto: três desenhos de página com prioridade e ação claras; uma Página de informações compartilhada; uma justificativa; e o registro individual de uma observação e possível melhoria. O caso aproxima a seleção de elementos gráficos de uma decisão profissional.
 
-| Capacidade curricular existente | Desdobramento didático da Aula 16 | Critério conhecido antes da produção | Instrumento | Evidência no material | Recuperação |
-| --- | --- | --- | --- | --- | --- |
-| Conhecimento curricular registrado: Desenvolvimento do Projeto — ideação, conceituação, rafes | Produzir seis possibilidades, nomear/explicar um plano comum e materializá-lo em desenhos de página | Alternativas mudam prioridade/ação/caminho; o plano comum atende público e objetivo; três critérios sustentam a escolha | Oficina: ideias, plano comum, critérios e seleção; observação docente | Rascunho salvo/local e justificativas na oficina | Pergunta de mediação e recuperação até 22h; pendências têm oportunidade equivalente para todos. Após 22h, apenas apoio técnico e organização |
-| Conhecimento curricular registrado: Inovação — visão inovadora | Comparar caminhos e decidir por evidência, não por gosto | O plano comum explica qual tarefa e informação as três versões priorizam | Razões do plano comum e conversa breve | Três versões, justificativas e desenhos de página | Retomar briefing e pedir uma razão ligada a público, objetivo e prioridade |
-| Capacidades socioemocionais existentes: colaboração e inovação | Alternar operação, observar colega visitante e registrar contribuição individual | Escuta, autoria compartilhada e registro individual | Observação de papéis; campos de Pessoa A/B | Visita sem explicação, revisão e respostas individuais | Reorganizar papel e pedir registro da decisão já trabalhada |
+## Capacidades e desdobramento didático
 
-A capacidade técnica registrada no repositório é a seleção de elementos gráficos para design web, interfaces e redes sociais. A oficina a desdobra em seleção de conteúdo, prioridade e ação nos desenhos de página. Os anexos são orientações gerais, não a ementa homologada da UC; o docente confirma essa correspondência. Os títulos de conhecimento acima não são apresentados como novas capacidades oficiais.
+A aula parte das capacidades já previstas na unidade curricular: selecionar elementos gráficos para projetos de design web, interfaces e redes sociais; colaborar; e atuar com inovação. Não acrescenta capacidade oficial; torna as existentes observáveis.
 
-## Requisitos R01–R20
+Cada dupla cria seis possibilidades, compara as propostas, registra a ideia central — nome e como ela aparece na página — e faz três escolhas com razão. Ao desenhar as telas, decide qual informação vem primeiro, qual ação a pessoa pode realizar e como ela chega à Página de informações. Na visita, os autores observam em silêncio o percurso de outra pessoa e, depois, decidem o que manter ou melhorar. O estudante experimenta, compara, justifica e revisa escolhas de design.
 
-| Req. | Estado | Evidência concreta | Limite / ação necessária |
+Os critérios são apresentados antes da produção, em linguagem direta:
+
+1. As três versões são diferentes na ordem ou no destaque das informações.
+2. As três escolhas atendem ao pedido do Festival.
+3. A Página de informações e o botão deixam claro o próximo passo.
+4. A decisão de manter ou mudar está ligada ao que foi observado no teste.
+
+A formulação retoma verbos de ação coerentes com a Taxonomia de Bloom: analisar a necessidade, criar alternativas, testar uma solução, avaliar a observação e justificar uma decisão. Para a turma, o termo utilizado é “desenho de página”; quando surgir um termo técnico, ele será acompanhado de um exemplo concreto. Dessa forma, a precisão curricular não se torna barreira de linguagem.
+
+## Protagonismo, colaboração e mediação
+
+A oficina foi desenhada para que os estudantes tomem decisões reais. As duplas alternam quem opera o computador e quem registra ou explica a decisão. Na visita, os autores não conduzem a pessoa visitante: observam o caminho, escutam e anotam. A troca de conhecimento ocorre quando apresentam opções, confrontam prioridades e mostram o que a visita revelou. O artefato digital organiza o processo, mas não substitui conversa, argumentação ou apreciação docente.
+
+A mediação prevista é breve e situada. O docente inicia com um único exemplo do primeiro passo — transformar uma necessidade do público em uma ideia de página — sem resolver o desafio. Depois circula e pergunta: “Quem vai usar esta página?”, “O que precisa encontrar primeiro?” e “O que na visita mostra que vale mudar?”. Assim, indica o próximo movimento possível sem entregar a solução pronta e convida a turma a compartilhar caminhos diferentes.
+
+## Avaliação formativa, instrumentos e evidências
+
+O diagnóstico inicial identifica como cada dupla entende a necessidade do Festival e já permite ao docente localizar dúvidas sobre público, prioridade e percurso. A avaliação acompanha o processo e o produto: não se limita a conferir se os campos foram preenchidos. A oficina oferece registros, mas a apreciação considera a relação entre a decisão da dupla, o critério conhecido e a evidência observada.
+
+| Critério de apreciação | Instrumento previsto | Evidência a observar | Devolutiva e revisão |
 | --- | --- | --- | --- |
-| R01 | E | Plano: propósito, roteiro 19h–22h, recursos e 160 min letivos com prioridade à ação dos estudantes; oficina local. | Confirmar condições reais de sala antes da execução. |
-| R02 | E | Objetivo observável, Festival Vira-Luz profissional, retomada da prioridade/caminho e conexão com Aula 17. | Funções/subfunções oficiais não estavam disponíveis; não foram inventadas. |
-| R03 | E | Plano explicita contextualização, desafio e resultados; oficina contém briefing, produto e teste. | Verificar se o desafio precisa de ajuste após diagnóstico real. |
-| R04 | E | Seis ideias, seleção, construção, visita e revisão são decisões da dupla; papéis alternados. | Participação efetiva é O e deve ser observada. |
-| R05 | E | Roteiro prevê circulação, perguntas, diagnóstico e pistas por problema. | Mediação realizada e ajuste real são O. |
-| R06 | P | A revisão documental passou a exigir ação com o que fazer, onde fazer e como conferir, e usa “desenho de página” na comunicação com a turma. Contudo, o relato docente apontou instruções confusas e termos rebuscados para adolescentes. | Não tratar legibilidade adolescente como aprovada. Validar com a próxima turma se entendem a ação sem explicação extra; ajustar material a partir dessa observação. |
-| R07 | E | Diagnóstico inicial sem nota; critérios pré-produção, visita, revisão e devolutiva por critério. Novas visitas preservam histórico numerado de versão, snapshot e observação; campos incompletos informam a próxima revisão, mas não impedem o teste. | Não há aprovação automática: conferência de campos não equivale a domínio. Feedback efetivo é O. |
-| R08 | E | Revisão aceita manter ou ajustar por evidência; uma nova visita pode testar novamente sem apagar a anterior. Voltar ao começo deste teste não cria registro novo; testar incompleto pode revelar o erro a revisar. Recuperação avaliativa é até 22h ou em oportunidade equivalente para todos. | Uso pedagógico do erro é O. |
-| R09 | P | Alternância, oficina local e alternativa em caderno estão previstas. | Adequação PcD depende da necessidade individual e validação com orientação pedagógica; não é prometida como universal. |
-| R10 | E | Registros até 22h, salvamento, ligação explícita com wireframes da Aula 17. | Síntese e dúvidas efetivamente feitas são O. |
-| R11 | O | Roteiro lembra chamada em cada bloco e limita pedagogicamente conteúdo até 22h. | Docente deve registrar frequência/confirmar diário-SGN e gerir permanência institucional; 22h não autoriza saída. |
-| R12 | P | Visita sem exposição dos autores, colaboração e perguntas respeitosas são planejadas. | Relações, privacidade, conflitos e fluxos institucionais dependem de conduta/registro humano. |
-| R13 | P | Recursos e abertura da oficina antes da entrada estão previstos. | Ensala, materiais, normas, comunicação, orientação e reflexão/equipe são atribuições humanas a confirmar. |
-| R14 | E | Matriz acima conecta capacidades existentes a decisão profissional, colaboração e inovação. | Não infere experiência pessoal do docente nem domínio observado. |
-| R15 | E | Critérios surgem antes do instrumento; separa presença de registros da apreciação qualitativa; inclui processo/produto. As indicações por versão são diagnósticas, não portões automáticos de acesso ao teste. | Margem aceitável/ponderação formal, se exigida, deve ser definida pela UC/orientação. |
-| R16 | E | Objetivo: analisar necessidade e criar/testar/justificar três versões iniciais ligadas à Página de informações em situação profissional; progressão analisar–avaliar–criar. | Não exige todos os níveis de Bloom na aula. |
-| R17 | P | Tecnologia serve à ideação, comparação, teste, revisão e cópia local. O caso é fictício; o aviso ao estudante orienta não inserir dados pessoais e esclarece armazenamento local. | Uso real de dados, privacidade do navegador compartilhado, downloads e condições de equipamento dependem de observação e orientação humana; não há garantia universal de segurança. |
-| R18 | E | Oficina reúne briefing, ideias, plano comum, desenhos de página, visitas com snapshots/observações preservados e revisão; mesmo um teste iniciado com lacuna pode gerar evidência para orientar a revisão. | Registro docente de desempenho e devolutiva posterior são O. |
-| R19 | F/O | Remissão detalhada abaixo, por fase. | Itens administrativos não são cumpridos pela presença deste material. |
-| R20 | E | Contexto profissional, prática com teoria mínima, pensamento crítico/criativo, inovação, mediação, avaliação e conexão com trabalho aparecem no plano/oficina. | A conexão com comunicação visual e experiência da pessoa usuária pode ser explicitada na mediação; aprendizagem significativa observada é O. |
+| Três versões diferentes | **Criar páginas** | Mudança de ordem ou destaque entre as três versões | Pedir que a dupla aponte o que mudou e por quê |
+| Escolhas atendem ao pedido | **Ideia central** e **3 escolhas com razão** | Nome, como a ideia aparece e razões ligadas ao Festival | Retomar o pedido do visitante e pedir uma razão concreta |
+| Página e botão orientam o próximo passo | **Criar páginas** e **Página de informações** | Botão conduz à informação prometida | Solicitar que a dupla percorra a tela como visitante |
+| Decisão ligada à observação | **Teste com visitante** e resposta de Pessoa A/B | O que a pessoa fez ou disse e a decisão de manter ou mudar | Indicar uma melhoria possível e justificar a decisão |
 
-## R19 — atribuições por fase
+Como instrumento previsto para o fechamento, cada estudante registra o que observou e qual decisão defenderia ou revisaria. Esse registro complementa o trabalho em dupla. Erros e dificuldades orientam nova tentativa: voltar ao briefing, simplificar a tarefa, testar de novo ou explicar melhor a escolha. A recuperação usa o mesmo critério, sem confundir preenchimento automático com comprovação de aprendizagem.
 
-| Fase / subitem do checklist | Estado | Evidência, limite ou ação |
-| --- | --- | --- |
-| Antes: acessar e-mail Tutor EaD, quando aplicável | F | Depende de modalidade/atribuição; não é ação do material. |
-| Antes: conferir materiais/orientações, ensalamento Agenda/SGN e CAEP | O | Oficina, plano e recursos foram preparados; conferências institucionais devem ser feitas pelo docente. |
-| Antes: reunião inicial, estudar plano presencial e analisar capacidades/competências | P | Plano e capacidades existentes foram analisados; reunião e plano presencial dependem de registro humano. |
-| Antes: adaptar turma e validar adaptações com Orientação Pedagógica | F | Há fallback; adaptação individual e validação dependem de necessidade/fluxo. |
-| Antes: confirmar materiais com Supervisão | O | Materiais estão listados; confirmação é humana. |
-| Antes: cadastrar avaliações presenciais, publicar online e cadastrar aulas no diário/SGN conforme formato | F | Depende do formato/atribuição; não realizado pelo material. |
-| Durante: mediar protagonismo e estratégias ativas | E/O | Oficina e roteiro evidenciam o desenho; execução é O. |
-| Durante: acompanhar capacidades/desempenho; diagnosticar e ajustar | E/O | Diagnóstico, observação e perguntas estão previstos; acompanhamento real é O. |
-| Durante: frequência, confirmar aula no diário, gerir tempo e permanência | O | Chamada e horários previstos; diário/SGN e permanência são responsabilidade humana. |
-| Depois: registrar acompanhamento no SGN quando necessário (aprendizagem, comportamento, inclusão/diversidade, retenção) | O | Não expor dados de estudantes aqui; registro depende de caso e ação docente. |
-| Depois: corrigir avaliações em até sete dias após aplicação | F | Só se a atividade for formalmente aplicada como avaliação; prazo não se estende a todos os registros. |
-| Depois: feedback à equipe e relato de positivos/desafios/percepções | O | Exige observação da aula e comunicação humana. |
-| Fechamento: avaliações publicadas no SGN, médias, ata/exame final, lançamento de notas e Conselho de Classe | F | Depende do fechamento da UC e cronograma institucional; fora do escopo desta aula. |
+## Organização do tempo, inclusão e continuidade
 
-## Próxima conferência humana
+O encontro concentra conteúdo essencial e evidências entre 19h e 22h. Abertura, diagnóstico, criação de alternativas, intervalo das 19h45 às 20h05, comparação, ideia central, escolhas, desenhos, visita e revisão formam a sequência. Antes das 22h, a turma faz a síntese. A Aula 17 retoma a versão selecionada para aprofundar os wireframes, sem exigir extensões nesta aula.
 
-Antes da aula: conferir computadores, projeção, acesso local, ensalamento e possíveis adaptações. Durante/depois: registrar frequência e execução nos fluxos institucionais aplicáveis, observar evidências qualitativas e comunicar à orientação/supervisão somente pelo canal previsto. Nenhum desses itens é concluído por este relatório.
+Das 22h às 22h30, o planejamento revisado prevê consolidação opcional de conteúdo já trabalhado: retomar o percurso com apoio, organizar a justificativa, comparar uma decisão já produzida ou esclarecer uma dúvida. Não há conteúdo, critério, nota, entrega ou exigência nova, nem prejuízo para quem sai às 22h. O planejamento adota um banco reutilizável de continuidade: reserva cíclica de até 90 minutos antes das 22h e de até 30 minutos após esse horário, sempre para retomada do que a turma já estudou.
 
+A organização prevê diferentes ritmos e condições de acesso. Sem computador ou conexão, a dupla pode desenhar no caderno e relatar o percurso oralmente; o mesmo critério permanece. A alternância de papéis amplia participação. Necessidades específicas requerem ajuste situado e articulação pelos procedimentos institucionais; não há uma adaptação única para todos.
 
-## Publicação de 13/11/2026
+## Referências institucionais e aplicação na aula
 
-Oficina estudantil publicada em https://oficinas-design-web.vercel.app/aula-16/, no projeto `oficinas-design-web`, implantação `dpl_DqgoiUfYYC5VMwyNvmUmXDq8fBX6`, estado READY/produção. Somente a oficina da Aula 16 foi adicionada e a página inicial recebeu seu acesso. Slides, ZIP docente e relatórios da Aula 16 ficam fora do site estudantil; os respectivos endereços nesse site retornam HTTP 404. A oficina não oferece link para a apresentação. Trata-se de uma preferência explícita do docente, para que os alunos não avancem os slides à sua frente.
+| Referência consultada | Aplicação concreta no planejamento |
+| --- | --- |
+| Tempo de Planejar — MSEP, pp. 26–28, 33 e 37–38 | Situação de aprendizagem com contexto, desafio, resultados, critérios antes do instrumento, avaliação processual e conexão com trabalho |
+| Orientações Didáticas aos Docentes, pp. 1–2 | Protagonismo, colaboração, mediação por perguntas, linguagem acessível, revisão e retomada |
+| Orientações da Orientação Pedagógica ao Docente, pp. 1–2 | Planejamento intencional, objetivos observáveis, acompanhamento e continuidade da aprendizagem |
+| Critérios de avaliação, p. 1 | Critérios claros, instrumentos coerentes, evidências de processo e produto e devolutiva para revisão |
+| Taxonomia de Bloom | Objetivo com verbos observáveis: analisar, criar, testar, avaliar e justificar |
+| Checklist — Atribuições do Docente Presencial, p. 1 | Preparação de materiais, gestão do tempo, acompanhamento da turma e registros pelos fluxos aplicáveis |
 
-Verificação técnica: fluxo completo no Chrome público (criação, seleção, edição, visita, revisão, salvamento, importação, exportação e tela pequena), sem erro de JavaScript; 62 arquivos públicos conferidos por SHA1, com os outros 60 arquivos preservados. Isso comprova o comportamento técnico publicado, sem inferir execução pedagógica ou aprendizagem.
-
-## Revisão de qualidade antes da aula
-
-A revisão corrigiu a coerência do cronograma com o teste e acrescentou síntese e dúvidas antes de 22h. Depois de 22h, o plano permite somente apoio técnico, salvamento e organização, sem evidência avaliativa adicional. Os critérios qualitativos de apreciação docente estão explicitados no plano. A oficina orienta a não inserir dados pessoais e informa, por versão, o que revisar, sem exigir registros mínimos como bloqueio ao modo visitante; essa indicação não representa aprovação.
-
-Como aprofundamento facultativo antes de 22h, quem concluiu a entrega-base pode abrir a **Rodada extra (opcional)** e comparar a versão escolhida com outra já produzida sob a mesma tarefa. São no máximo 35 minutos: testar até 20, melhorar até 10 se a observação justificar e explicar/salvar até 5; pode encurtar sem esperar toda a turma. Não há wireframe, página, critério, nota ou exigência novos. O registro `extension`, se usado, persiste e exporta como memória de processo, mas não integra a conferência automática ou apreciação docente. Às 22h a rodada termina; depois há apenas apoio e salvamento.
-
-Histórico técnico de 13/11: geração/paridade, cronograma de 160 minutos letivos e 20 de intervalo, fluxo no Chrome, cópia/importação/exportação e versão móvel foram verificados. Essa verificação não atestou compreensão da turma. A versão vigente define uma única entrega: três versões da página inicial e uma Página de informações compartilhada, aberta pelos botões; não são três sites. Páginas extras continuam opcionais. O armazenamento preserva rascunho v2 válido e oferece recuperação de raw incompatível sem sobrescrita silenciosa. Pendências de observação docente, validação curricular e fluxos institucionais permanecem abertas conforme a matriz.
-
-Conferência visual final: 16 de 16 slides sem transbordamento horizontal/vertical e sem erros de JavaScript no Chrome, em 1366 × 768. Rótulos das comparações, critérios, instruções e encerramento conferidos. Isso não validou compreensão de adolescentes.
-
-### Refinamento visual da apresentação
-
-R06/R17/R20: a apresentação diferencia exemplos de programação, acesso e atividade em destaque; transforma perguntas de conceito/estrutura em diagramas e contrasta observação concreta com opinião vaga. As variações visuais apoiam comparação e compreensão sem acrescentar tarefa, critério ou tempo. Os estados da matriz permanecem os mesmos: material visual não comprova aprendizagem ou mediação realizada.
-
-Verificação após o refinamento: 16 slides sem transbordamento e sem erro de JavaScript no Chrome a 1366 × 768; capa, comparações, diagramas e evidências inspecionados visualmente.
-
-## Registro histórico de clareza — 14/11/2026
-
-O relato docente mostrou que uma oficina tecnicamente validada ainda pode confundir: uma formulação anterior misturava “rafe”, “direção”, “rota de quatro telas”, “interna” e extensões. As verificações de software confirmaram fluxo, armazenamento e exportação; não atestaram que adolescentes compreenderam a tarefa. Por isso, R06 permanece **P** até validação com a próxima turma.
-
-O roteiro e os critérios foram reescritos para uma entrega única e direta: **três versões da página inicial + uma Página de informações compartilhada, aberta pelos botões**. Não são três sites. Cada instrução deve dizer o que fazer, onde fazer e como conferir; um termo novo recebe exemplo concreto; o docente modela somente o primeiro passo. A próxima aplicação deve observar se a turma começa sem explicação extra, consegue apontar onde trabalha e confere se os botões levam à página comum. Esse registro humano decide se R06 pode voltar a E.
-
-## Verificação da revisão de clareza — 14/11/2026
-
-A oficina revisada está em produção, implantação `dpl_8H2WpzrA6sHytv6zyAbiXBbmvfFG`, estado READY, no endereço público já usado pela turma. Os 62 arquivos publicados foram conferidos por SHA1: a oficina da Aula 16 corresponde ao HTML revisado e os outros 61 arquivos permanecem intactos. Slides, ZIP docente, plano e relatório continuam retornando HTTP 404 no site estudantil.
-
-O fluxo publicado foi exercitado no Chrome: criação, seleção, edição, navegação, visita, revisão, cópia JSON, reabertura, relatório e tela pequena. Uma atualização simulada da versão anterior para a atual preservou o rascunho v2 byte a byte na abertura e manteve histórico, páginas extras e rodada extra após uma nova visita e recarregamento. Na revisão local também passaram os percursos de visitas repetidas, teste com campos incompletos, recuperação de armazenamento incompatível e limite das 22h para a rodada extra. Os 16 slides foram conferidos em 1366 × 768, sem cortes, sobreposição ou erro de JavaScript.
-
-Essas evidências verificam o software e a apresentação. A compreensão dos estudantes continua pendente: R06 permanece P, conforme o relato de dificuldade em sala.
-
-### Limite da separação de acesso
-
-O site estudantil não publica a apresentação da Aula 16. Entretanto, o repositório GitHub é público e contém fontes, slides e kit docente versionados. Portanto, o HTTP 404 no site da oficina não comprova confidencialidade ou acesso restrito às cópias do repositório. A separação da oficina foi verificada; a restrição global de acesso aos slides não foi implementada. R17 permanece parcial também por esse limite.
+A Aula 16 integra contexto profissional, protagonismo, colaboração, mediação, avaliação formativa e continuidade no mesmo percurso. O estudante cria, testa e revisa uma solução de design; o docente acompanha esse caminho com critérios claros, intervenções breves e evidências que orientam a próxima ação pedagógica.

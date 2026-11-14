@@ -1,8 +1,18 @@
-# Relatório de alinhamento institucional das Unidades Curriculares
+# Base interna de rastreabilidade pedagógica das Unidades Curriculares
 
-## Regra permanente
+## Finalidade e uso
 
-Este relatório vale **sempre** para o planejamento e a condução de todas as Unidades Curriculares deste repositório: Design Web (29 aulas), Produção Audiovisual (23) e Fotografia Digital (12). Ele reúne uma revisão detalhada da Aula 16, fichas de continuidade das Aulas 17 e 18 e um inventário preliminar dos demais materiais, atualizado em 14 de novembro de 2026; não é prova de execução em sala, lançamento no SGN, presença, devolutiva real ou resultado de aprendizagem. Por isso, não há nota ou declaração de conformidade total.
+Este arquivo é a base **interna** de rastreabilidade do planejamento das Unidades Curriculares deste repositório: Design Web (29 aulas), Produção Audiovisual (23) e Fotografia Digital (12). Ele reúne uma revisão detalhada da Aula 16, fichas de continuidade das Aulas 17 e 18 e um inventário preliminar dos demais materiais, atualizado em 14 de novembro de 2026. Não é prova de execução em sala, lançamento no SGN, presença, devolutiva real ou resultado de aprendizagem.
+
+Em **toda aula implementada ou revisada**, a entrega inclui um **relatório pedagógico por aula**, claro e pronto para eventual apresentação à coordenação, seguindo `metodologia-senai/references/relatorio-para-coordenacao.md`; produzir Word e PDF quando apropriado. Sua finalidade exclusiva é responder a questionamento da coordenação sobre alinhamento ou metodologia. Esse documento apresenta o método, os critérios, os instrumentos, as evidências previstas e as fontes dos seis anexos. A matriz R01–R20 e seus subitens permanecem aqui como checagem interna: não organizam o relatório apresentável, não registram bastidores técnicos e não comprovam atos humanos ou administrativos.
+
+## Índice de entregas apresentáveis
+
+- Design Web — Aula 16: [relatório pedagógico](modelos/design-web/aula-16/ALINHAMENTO-INSTITUCIONAL.md), [PDF para apresentar](relatorios/design-web/aula-16/RELATORIO-PEDAGOGICO.pdf) e [Word editável](relatorios/design-web/aula-16/RELATORIO-PEDAGOGICO.docx).
+- Design Web — Aula 17: [relatório pedagógico do planejamento](docs/AULA-17-DESIGN-WEB-CLAREZA.md).
+- Design Web — Aula 18: [relatório pedagógico do planejamento](docs/AULA-18-DESIGN-WEB-CLAREZA.md).
+
+## Inventário interno
 
 Legenda: **E** evidenciado no material; **P** parcial; **N** não evidenciado no material; **O** depende de observação/registro em sala; **F** fora do escopo de uma aula, mas obrigação institucional do docente/gestão.
 

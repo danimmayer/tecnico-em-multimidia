@@ -3866,7 +3866,7 @@ window.SENAI_TEACHING_SUPPORT = {
           "Faço chamada no início de 19:00, 20:05, 20:45 e 21:30. Reservo no máximo 12 minutos no total para demonstrações, em intervenções de até dois minutos; o restante é ação do estudante.",
           "A dupla troca quem opera no começo do bloco 2. No teste, os autores observam sem explicar nem apontar caminhos.",
           "Os critérios aparecem antes da produção, mas a turma os encontra na oficina; não transformo isso em palestra. Uso a conferência para devolver perguntas; a coerência da escolha aparece na conversa com a dupla.",
-          "Até 22:00 verifico a entrega na própria oficina. Depois disso, oriento salvamento e organização e esclareço dúvidas sobre o trabalho já concluído; não completo critério nem recolho evidência avaliativa adicional."
+          "Até 22:00 verifico a entrega na própria oficina. Depois disso, ofereço prática livre com os seis desafios da etapa 6 e apoio para dúvidas. O banco tem rotas estimadas de 30, 60 e 90 minutos, situações alternativas e ciclos que podem ser repetidos; aciono também antes das 22h para quem termina cedo. Na prática, a dupla modifica uma cópia temporária, sem alterar a entrega; não completo critério nem recolho evidência avaliativa adicional após 22h."
         ],
         "demo": [
           "Mostro duas páginas com as mesmas informações em ordens diferentes e pergunto qual tarefa cada uma ajuda a fazer.",
@@ -3902,8 +3902,8 @@ window.SENAI_TEACHING_SUPPORT = {
             "Reinicio somente a tarefa, com o autor em silêncio; registro o novo resultado."
           ],
           [
-            "Precisa de apoio depois das 22h",
-            "Oriento salvamento e organização. Qualquer recuperação avaliativa ocorre até 22h ou em oportunidade equivalente para todos."
+            "Terminou cedo ou segue após as 22h",
+            "Ofereço os desafios da etapa 6: experimentar numa cópia, percorrer, comparar e melhorar. Alterno situações e papéis; há opção individual e no caderno. A consolidação após 22h é opcional e não gera nota ou entrega. Qualquer recuperação avaliativa terá oportunidade equivalente para todos."
           ]
         ],
         "presentationSlides": [
@@ -4286,23 +4286,28 @@ window.SENAI_TEACHING_SUPPORT = {
             }
           },
           {
-            "title": "22h–22h30: clínica opcional.",
+            "title": "22h–22h30: escolha outro desafio.",
             "block": 4,
             "layout": "dw16",
-            "lede": "Sem conteúdo ou avaliação nova: apoio técnico, salvamento e organização do trabalho já concluído.",
+            "lede": "Prática livre com o que vocês já aprenderam. Sem conteúdo, nota ou entrega nova.",
             "promptLabel": "Na oficina",
-            "prompt": "Salve e organize o posto. Se precisar, peça ajuda técnica ou esclareça uma dúvida sobre o trabalho já concluído.",
+            "prompt": "Na etapa 6, em “Terminou? Escolha outro desafio”, escolham a rota de 30 min. Experimentem em uma cópia, confiram o caminho e comparem. Se terminarem antes, tentem outra situação ou troquem os papéis.",
             "dw16": {
-              "type": "pause",
-              "time": "22:00",
-              "caption": "Conteúdo concluído · apoio opcional até 22h30"
+              "type": "check",
+              "items": [
+                "Escolher um desafio e uma situação",
+                "Experimentar numa cópia ou no caderno",
+                "Percorrer → comparar → melhorar",
+                "Outra situação ou troca de papéis se houver tempo"
+              ],
+              "caption": "Conteúdo concluído · prática opcional até 22h30"
             },
             "teacher": {
-              "speech": "Atendo dúvidas e apoio técnico. Não completo critérios nem recolho evidência adicional após 22h. Recuperação avaliativa pendente terá oportunidade equivalente para todos.",
+              "speech": "Acompanho a consolidação e as dúvidas; quem está sozinho pode percorrer a cópia ou desenhar no caderno. Se a tentativa terminar cedo, proponho outra situação do mesmo desafio. Não completo critérios nem recolho evidência avaliativa adicional após 22h. Recuperação pendente terá oportunidade equivalente para todos.",
               "steps": [
                 "30 min · A dupla faz a ação desta tela na oficina. O professor pergunta, acompanha e demonstra somente quando necessário; as demonstrações somam no máximo 12 minutos na noite."
               ],
-              "watch": "Salve e organize o posto. Se precisar, peça ajuda técnica ou esclareça uma dúvida sobre o trabalho já concluído.",
+              "watch": "Na etapa 6, em “Terminou? Escolha outro desafio”, escolham a rota de 30 min. Experimentem em uma cópia, confiram o caminho e comparem. Se terminarem antes, tentem outra situação ou troquem os papéis.",
               "rescue": "Faço uma pergunta sobre a próxima ação. Se necessário, mostro onde clicar ou preencher em um único exemplo; depois a dupla segue com suas próprias escolhas."
             },
             "pace": "extra"
