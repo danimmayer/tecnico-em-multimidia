@@ -5,6 +5,16 @@
   const $$ = (s, root = document) => [...root.querySelectorAll(s)];
   const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const clone = value => JSON.parse(JSON.stringify(value));
+  function uid() {
+    if(typeof globalThis.crypto?.randomUUID==='function')return globalThis.crypto.randomUUID();
+    const bytes=new Uint8Array(16);
+    if(typeof globalThis.crypto?.getRandomValues==='function')globalThis.crypto.getRandomValues(bytes);
+    else {let stamp=Date.now();for(let i=0;i<bytes.length;i++){bytes[i]=(Math.random()*256+stamp)%256;stamp=Math.floor(stamp/256);}}
+    bytes[6]=(bytes[6]&15)|64;bytes[8]=(bytes[8]&63)|128;
+    const hex=Array.from(bytes,b=>b.toString(16).padStart(2,'0')).join('');
+    return `${hex.slice(0,8)}-${hex.slice(8,12)}-${hex.slice(12,16)}-${hex.slice(16,20)}-${hex.slice(20)}`;
+  }
+  let importing=false;
   const isTeacher = document.documentElement.dataset.role === 'teacher';
   const main = $('#main');
   let courses = [], course, lesson, project, selected = '', pane = 'start', slideIndex = 0, noticeTimer;
@@ -28,8 +38,8 @@
   function newProject() { return {schema:1,slug:course.slug,lesson:lesson.id,active:'A',versions:{A:{items:clone(lesson.workspace.items)},B:{items:[]}},notes:{},runs:[],mediaStudio:{},updated:null}; }
   const linksFor=item=>Array.isArray(item.links)?item.links:item.target?[{target:item.target,label:item.linkLabel||''}]:[];
   function validItem(item) { return item && typeof item.id==='string' && typeof item.title==='string' && typeof item.text==='string' && (!item.target || typeof item.target==='string') && (!item.links || (Array.isArray(item.links)&&item.links.length<=3&&item.links.every(l=>typeof l.target==='string'&&typeof l.label==='string'))) && (!item.media || (typeof item.media.id==='string' && /^(image|audio|video)\//.test(item.media.type))); }
-  function validProject(p) {
-    return p && p.schema===1 && p.slug===course.slug && p.lesson===lesson.id && ['A','B'].includes(p.active) && p.versions && ['A','B'].every(v => Array.isArray(p.versions[v]?.items) && p.versions[v].items.length<=80 && p.versions[v].items.every(validItem) && new Set(p.versions[v].items.map(x=>x.id)).size===p.versions[v].items.length) && p.notes && typeof p.notes==='object' && !Array.isArray(p.notes) && Object.values(p.notes).every(x=>typeof x==='string') && (!p.runs || (Array.isArray(p.runs) && p.runs.every(x=>Number.isInteger(x.index)&&typeof x.at==='string'))) && (!p.mediaStudio || (typeof p.mediaStudio==='object' && !Array.isArray(p.mediaStudio) && (!p.mediaStudio.clips || (Array.isArray(p.mediaStudio.clips)&&p.mediaStudio.clips.length<=80&&p.mediaStudio.clips.every(c=>typeof c.mediaId==='string'&&typeof c.name==='string'&&Number.isFinite(c.inTime)&&Number.isFinite(c.outTime)&&c.inTime>=0&&c.outTime>c.inTime))) && (!p.mediaStudio.settings || (typeof p.mediaStudio.settings==='object'&&!Array.isArray(p.mediaStudio.settings)))));
+  function validProject(p,slug=course.slug,lessonId=lesson.id) {
+    return p && p.schema===1 && p.slug===slug && p.lesson===lessonId && ['A','B'].includes(p.active) && p.versions && ['A','B'].every(v => Array.isArray(p.versions[v]?.items) && p.versions[v].items.length<=80 && p.versions[v].items.every(validItem) && new Set(p.versions[v].items.map(x=>x.id)).size===p.versions[v].items.length) && p.notes && typeof p.notes==='object' && !Array.isArray(p.notes) && Object.values(p.notes).every(x=>typeof x==='string') && (!p.runs || (Array.isArray(p.runs) && p.runs.every(x=>Number.isInteger(x.index)&&typeof x.at==='string'))) && (!p.mediaStudio || (typeof p.mediaStudio==='object' && !Array.isArray(p.mediaStudio) && (!p.mediaStudio.clips || (Array.isArray(p.mediaStudio.clips)&&p.mediaStudio.clips.length<=80&&p.mediaStudio.clips.every(c=>typeof c.mediaId==='string'&&typeof c.name==='string'&&Number.isFinite(c.inTime)&&Number.isFinite(c.outTime)&&c.inTime>=0&&c.outTime>c.inTime))) && (!p.mediaStudio.settings || (typeof p.mediaStudio.settings==='object'&&!Array.isArray(p.mediaStudio.settings)))));
   }
   function openProject() {
     let raw;
@@ -53,23 +63,32 @@
   async function hydrateMedia(root=document) { for(const el of $$('[data-media-id]',root)){const id=el.dataset.mediaId;if(!objectURLs.has(id)){const blob=await mediaGet(id);if(blob)objectURLs.set(id,URL.createObjectURL(blob));}if(objectURLs.has(id))el.src=objectURLs.get(id);else el.replaceWith(Object.assign(document.createElement('p'),{textContent:'Mídia não encontrada neste navegador. Importe o projeto com as mídias.'}));} }
   function download(blob,name) { const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000); }
   async function exportProject() {
-    const copy=clone(project); copy.files={};
-    const ids=new Set(Object.values(copy.versions).flatMap(v=>v.items.map(x=>x.media?.id)).filter(Boolean));
-    for(const id of (copy.mediaStudio?.clips || []).map(x=>x.mediaId))if(id)ids.add(id);
-    if(copy.mediaStudio?.settings?.backgroundMedia)ids.add(copy.mediaStudio.settings.backgroundMedia);
-    for(const id of ids) { const blob=await mediaGet(id);if(blob)copy.files[id]=await new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(blob);}); }
-    download(new Blob([JSON.stringify(copy,null,2)],{type:'application/json'}),`${course.slug}-aula-${lesson.id}-projeto.json`);
-    notify('Projeto exportado com as versões e mídias disponíveis. Guarde esse arquivo.');
+    try {
+      const copy=clone(project),filename=`${course.slug}-aula-${lesson.id}-projeto.json`;copy.files={};
+      const ids=new Set(Object.values(copy.versions).flatMap(v=>v.items.map(x=>x.media?.id)).filter(Boolean));
+      for(const id of (copy.mediaStudio?.clips || []).map(x=>x.mediaId))if(id)ids.add(id);
+      if(copy.mediaStudio?.settings?.backgroundMedia)ids.add(copy.mediaStudio.settings.backgroundMedia);
+      for(const id of ids) {
+        const blob=await mediaGet(id);
+        if(!blob)throw Error('Uma mídia do projeto não foi encontrada. Restaure essa mídia antes de exportar.');
+        copy.files[id]=await new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=r.onabort=()=>reject(Error('Não foi possível ler uma mídia.'));r.readAsDataURL(blob);});
+      }
+      const backup=new Blob([JSON.stringify(copy,null,2)],{type:'application/json'});
+      download(backup,filename);
+      notify('Arquivo do projeto gerado com todas as mídias. Confira o download e guarde esse arquivo.');
+    } catch(error) {notify('Backup não gerado: '+error.message+' Se o projeto for grande, feche outras abas e tente novamente.');}
   }
   async function importProject(file) {
     if(!file)return;
+    if(importing)return notify('Aguarde a importação em andamento antes de importar outro projeto.');
+    const target={slug:course.slug,lessonId:lesson.id,key:key(),project};
+    if(!confirm('Importar substituirá o projeto aberto desta aula. Exporte o trabalho atual se quiser mantê-lo. Continuar?'))return;
+    importing=true;
     try {
-      if(file.size>150*1024*1024)throw Error('O arquivo excede 150 MB.');
       const imported=JSON.parse(await file.text());
-      if(!validProject(imported))throw Error('Este arquivo não corresponde à UC e à aula abertas, ou tem formato inválido.');
-      if(!confirm('Importar substituirá o projeto aberto desta aula. Exporte o trabalho atual se quiser mantê-lo. Continuar?'))return;
+      if(!validProject(imported,target.slug,target.lessonId))throw Error('Este arquivo não corresponde à UC e à aula abertas, ou tem formato inválido.');
       const pendingFiles=[],mediaIds=new Map();
-      const importedMediaId=id=>{if(!mediaIds.has(id))mediaIds.set(id,crypto.randomUUID());return mediaIds.get(id);};
+      const importedMediaId=id=>{if(!mediaIds.has(id))mediaIds.set(id,uid());return mediaIds.get(id);};
       for(const [id,value] of Object.entries(imported.files || {})) {
         if(typeof value!=='string' || !/^data:(?:image|audio|video)\/[\w.+-]+;base64,[A-Za-z0-9+/=\s]+$/.test(value))throw Error('O arquivo contém uma mídia inválida.');
         const comma=value.indexOf(','),type=value.slice(5,value.indexOf(';')),bytes=Uint8Array.from(atob(value.slice(comma+1)),c=>c.charCodeAt(0));
@@ -84,23 +103,27 @@
         await new Promise((resolve,reject)=>{
           const tx=db.transaction('files','readwrite');
           tx.oncomplete=resolve;
-          tx.onabort=tx.onerror=()=>reject(Error('Não foi possível guardar todas as mídias. O projeto anterior foi preservado.'));
+          tx.onabort=tx.onerror=()=>reject(Error('Não foi possível guardar todas as mídias.'));
           try {const store=tx.objectStore('files');for(const [id,blob] of pendingFiles)store.put(blob,id);}
           catch(error) {tx.abort();reject(error);}
         });
       }
       delete imported.files;imported.updated=new Date().toISOString();
-      localStorage.setItem(key(),JSON.stringify(imported));
+      localStorage.setItem(target.key,JSON.stringify(imported));
+      if(project!==target.project || course?.slug!==target.slug || lesson?.id!==target.lessonId) {
+        notify(`Projeto importado e guardado na aula ${target.lessonId}. Abra essa aula novamente para vê-lo.`);return;
+      }
       for(const url of objectURLs.values())URL.revokeObjectURL(url);
       objectURLs.clear();
       project=imported; selected=activeItems()[0]?.id || '';renderLesson();notify('Projeto importado. As versões foram restauradas.');
-    } catch(error) {notify('Importação recusada: '+error.message);}
+    } catch(error) {notify('Importação recusada: '+error.message+' O projeto anterior foi preservado. Se o arquivo for grande, feche outras abas e tente novamente.');}
+    finally {importing=false;}
   }
   async function attachMedia(file) {
     if(!file)return;
     if(!/^(image|audio|video)\//.test(file.type))return notify('Escolha uma imagem, um áudio ou um vídeo.');
     if(file.size>35*1024*1024)return notify('Use uma mídia de até 35 MB. Para vídeos, recorte um trecho curto.');
-    const id=crypto.randomUUID(),item=activeItems().find(x=>x.id===selected);if(!item)return;
+    const id=uid(),item=activeItems().find(x=>x.id===selected);if(!item)return;
     try {await mediaPut(id,file);item.media={id,type:file.type,name:file.name};save();renderEditor();notify('Mídia guardada neste computador.');}catch(error){notify(error.message+' O projeto anterior continua guardado.');}
   }
   function previewItem(item,index,items) {
@@ -148,7 +171,7 @@
     $$('[data-note]').forEach(input=>input.addEventListener('input',()=>{project.notes[input.dataset.note]=input.value;save();}));
     $('#check-file').onclick=()=>{const items=activeItems(),missing=items.filter(x=>!x.title.trim()).length,ids=new Set(items.map(x=>x.id)),broken=items.flatMap(linksFor).filter(l=>!ids.has(l.target)).length;$('#check-result').innerHTML=`<div class="check-result"><strong>Conferência do arquivo — versão ${project.active}</strong><p>${items.length} peças; ${missing} sem título; ${broken} ligações sem destino.</p><p>${items.length < lesson.workspace.minItems?'A proposta pede ao menos '+lesson.workspace.minItems+' peças. Você pode continuar testando enquanto cria.':'A quantidade prevista de peças foi alcançada.'}</p><p>Essa contagem não avalia a qualidade. Compare o produto com cada critério e mostre sua contribuição ao professor.</p></div>`;save();};
     $$('[data-run]').forEach(button=>button.onclick=()=>{project.runs=project.runs||[];project.runs.push({index:Number(button.dataset.run),at:new Date().toISOString()});save();$('#run-count').textContent=project.runs.length+' rodadas registradas neste projeto.';});
-    renderEditor();if(isTeacher)renderTeacher();if(course.slug==='producao-audiovisual')window.SenaiMedia?.mount($('#media-studio'),{project,save,mediaGet,mediaPut,download,notify,lesson,resourceURL});
+    renderEditor();if(isTeacher)renderTeacher();if(course.slug==='producao-audiovisual')window.SenaiMedia?.mount($('#media-studio'),{project,save,mediaGet,mediaPut,download,notify,lesson,resourceURL,uid});
   }
   function switchPane(id){pane=id;$$('[data-pane]').forEach(button=>{const active=button.dataset.pane===id;button.setAttribute('aria-selected',String(active));button.tabIndex=active?0:-1;});$$('.pane').forEach(el=>el.hidden=el.id!=='pane-'+id);}
   function renderEditor() {
@@ -157,7 +180,7 @@
     $$('[data-piece]').forEach(b=>b.onclick=()=>{selected=b.dataset.piece;renderEditor();});
     $$('[data-version]').forEach(b=>b.onclick=()=>{project.active=b.dataset.version;if(!activeItems().length && project.active==='B')notify('A versão B está vazia. Copie A para B ou adicione uma peça.');selected=activeItems()[0]?.id||'';save();renderEditor();});
     $('#copy-b').onclick=()=>{if(project.versions.B.items.length&&!confirm('Substituir a versão B por uma cópia da versão A?'))return;project.versions.B=clone(project.versions.A);project.active='B';selected=activeItems()[0]?.id||'';save();renderEditor();notify('Versão B criada. A versão A continua guardada.');};
-    $('#add-piece').onclick=()=>{if(items.length>=80)return notify('O limite do editor é 80 peças.');const x={id:crypto.randomUUID(),title:'Nova peça',text:'',color:'#41694d',duration:5};items.push(x);selected=x.id;save();renderEditor();$('#piece-title').focus();};
+    $('#add-piece').onclick=()=>{if(items.length>=80)return notify('O limite do editor é 80 peças.');const x={id:uid(),title:'Nova peça',text:'',color:'#41694d',duration:5};items.push(x);selected=x.id;save();renderEditor();$('#piece-title').focus();};
     $('#preview-button').onclick=()=>showPreview(false);$('#compare').onclick=()=>showPreview(true);
     $('#export-artifact').onclick=()=>exportArtifact();
     $('#viewport-mobile').onclick=()=>setViewport(true);$('#viewport-desktop').onclick=()=>setViewport(false);
@@ -172,7 +195,7 @@
       if($('#remove-media'))$('#remove-media').onclick=()=>{delete item.media;save();renderEditor();};
       const move=delta=>{const i=items.indexOf(item),j=i+delta;if(j<0||j>=items.length)return;[items[i],items[j]]=[items[j],items[i]];save();renderEditor();};
       $('#move-up').onclick=()=>move(-1);$('#move-down').onclick=()=>move(1);
-      $('#duplicate-piece').onclick=()=>{if(items.length>=80)return notify('Limite de 80 peças.');const x=clone(item);x.id=crypto.randomUUID();x.title+=' · cópia';items.splice(items.indexOf(item)+1,0,x);selected=x.id;save();renderEditor();};
+      $('#duplicate-piece').onclick=()=>{if(items.length>=80)return notify('Limite de 80 peças.');const x=clone(item);x.id=uid();x.title+=' · cópia';items.splice(items.indexOf(item)+1,0,x);selected=x.id;save();renderEditor();};
       $('#remove-piece').onclick=()=>{items.splice(items.indexOf(item),1);selected=items[0]?.id||'';save();renderEditor();};
     }
     bindDestinations($('#live-preview'));hydrateMedia($('#live-preview'));
@@ -195,5 +218,5 @@
   $('#help').onclick=()=>$('#help-dialog').showModal();$('#close-help').onclick=()=>$('#help-dialog').close();$('#close-preview').onclick=()=>$('#preview').close();
   document.addEventListener('keydown',e=>{const area=$('#slides-area');if(!isTeacher||!area||area.hidden||['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName))return;if(e.key==='ArrowRight')$('#slide-next').click();if(e.key==='ArrowLeft')$('#slide-prev').click();});
   fetch('data/catalog.json').then(r=>{if(!r.ok)throw Error('Catálogo indisponível.');return r.json();}).then(async catalog=>{courses=await Promise.all(catalog.courses.map(async c=>{const r=await fetch('data/'+c.slug+'.json');if(!r.ok)throw Error('Não foi possível abrir '+c.title);return r.json();}));route();}).catch(error=>{main.innerHTML=`<h1>Não foi possível abrir as aulas.</h1><p>${escape(error.message)}</p><p>Inicie o pacote pelo arquivo iniciar.command. Abrir o HTML diretamente não permite carregar os dados.</p>`;});
-  window.SenaiWorkshop={getProject:()=>clone(project),getLesson:()=>lesson,save,mediaGet,mediaPut,download,resourceURL};
+  window.SenaiWorkshop={getProject:()=>clone(project),getLesson:()=>lesson,save,mediaGet,mediaPut,download,resourceURL,uid};
 })();

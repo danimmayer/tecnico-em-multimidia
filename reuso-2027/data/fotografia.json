@@ -1303,11 +1303,11 @@
           "matte": "clear"
         },
         {
-          "path": "imagens/fotografos/W1siZiIsIjE0NDM3NiJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQDerrière la Gare Saint-Lazare (1932).jpg",
+          "path": "imagens/fotografos/W1siZiIsIjE0NDM3NiJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQDerrière la Gare Saint-Lazare (1932).jpg",
           "title": "Derrière la Gare Saint-Lazare · Henri Cartier-Bresson, 1932",
           "caption": "Imagem original do slide Leitura Guiada; conservar a composição e o contexto da apresentação.",
           "credit": "Crédito/licença não identificados neste recorte; conferir a identificação no slide original antes de republicar.",
-          "matte": "clear"
+          "matte": "dark"
         },
         {
           "path": "imagens/banca/01-falling-soldier.jpg",
@@ -4650,7 +4650,7 @@
       "sourceSlide": "apoio de prática"
     },
     {
-      "path": "imagens/fotografos/W1siZiIsIjE0NDM3NiJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQDerrière la Gare Saint-Lazare (1932).jpg",
+      "path": "imagens/fotografos/W1siZiIsIjE0NDM3NiJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQDerrière la Gare Saint-Lazare (1932).jpg",
       "title": "Derrière la Gare Saint-Lazare · Henri Cartier-Bresson, 1932",
       "caption": "Imagem original do slide Leitura Guiada; conservar a composição e o contexto da apresentação.",
       "credit": "Crédito/licença não identificados neste recorte; conferir a identificação no slide original antes de republicar.",

@@ -2,14 +2,20 @@
 
 O pacote reúne as 64 aulas existentes no acervo: Design Web (29), Produção Audiovisual (23) e Fotografia Digital e Semiótica (12). As outras UCs do plano de curso não têm acervo nesta revisão. Os originais foram preservados; esta edição é um apoio revisado para nova utilização, sem alteração do SGN e sem relatórios para a coordenação.
 
-## Abrir no Mac
+## Abrir o pacote docente compilado no Mac
 
 Abra `iniciar.command` e mantenha a janela do Terminal aberta. Exige Python 3 já instalado nesta máquina; funciona sem internet.
+
+Estas instruções se referem ao ZIP docente entregue localmente ao professor, que já contém `alunos/`, `docente/`, `recursos/` e `resources.json`. Ele fica fora do repositório público. Daniel recebeu o pacote e a autoria privada separadamente.
 
 - Professor: <http://127.0.0.1:8870> — roteiro e apresentações. Somente no computador do professor.
 - Alunos: <http://127.0.0.1:8871> — atividades, recursos e editor. Não contém roteiros ou apresentações docentes.
 
 Para compartilhar somente a oficina na rede local, execute `python3 serve.py --student-host 0.0.0.0`. O endereço para a turma é o IP local do computador, porta 8871; o servidor docente continua restrito a 127.0.0.1. Não compartilhe o ZIP docente com alunos. Não abra simplesmente o HTML: o navegador precisa do servidor local para ler os dados.
+
+## Abrir um checkout público
+
+No checkout do repositório, abra `reuso-2027/iniciar.command` ou execute `python3 reuso-2027/serve.py`. Essa versão inicia somente a oficina em <http://127.0.0.1:8871>, usando os recursos originais do checkout, sem depender da autoria privada ou de compilação. Não abre a porta docente. Para ministrar com os slides novos, use o pacote docente local. A seção de reconstrução abaixo explica o requisito de autoria para gerar outro pacote completo.
 
 ## Preparar e ministrar
 

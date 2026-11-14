@@ -7,6 +7,8 @@ import html
 import json
 import re
 import shutil
+import subprocess
+import unicodedata
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
@@ -18,6 +20,17 @@ REPO = HERE.parent
 EXPECTED = {"design-web": 29, "producao-audiovisual": 23, "fotografia": 12}
 PRIVATE_KEYS = {"teacher", "officialTitle", "sourceNote"}
 IMAGE_BACKGROUNDS = {}
+TRACKED_PATHS = subprocess.check_output(["git", "ls-files", "-z"], cwd=REPO).decode().split("\0")
+
+
+def canonical_resource(relative):
+    relative = unquote(urlsplit(relative).path).removeprefix("/recursos/")
+    if relative in TRACKED_PATHS:
+        return relative
+    key = unicodedata.normalize("NFC", relative).casefold()
+    matches = [p for p in TRACKED_PATHS if unicodedata.normalize("NFC", p).casefold() == key]
+    assert len(matches) == 1, ("Nome de recurso ausente ou ambíguo no Git", relative)
+    return matches[0]
 
 
 def image_background(relative):
@@ -185,7 +198,7 @@ def photo_deck(lesson, output, revision):
     assert len(originals) == 1, originals
     original = originals[0]
     soup = BeautifulSoup(original.read_text(), "html.parser")
-    original_images = [img.get("src") for img in soup.select(".slide img")]
+    original_images = [canonical_resource(img["src"]) for img in soup.select(".slide img[src]") if img["src"]]
     slides = soup.select(".slide")
     assert slides, original
     first = slides[0]
@@ -280,9 +293,10 @@ def photo_deck(lesson, output, revision):
         if not src:
             del img["src"]
             continue
-        if not urlsplit(src).scheme and not src.startswith(("/", "data:")):
-            img["src"] = "/recursos/" + src
-        relative = src.removeprefix("/recursos/")
+        if urlsplit(src).scheme or src.startswith("data:"):
+            continue
+        relative = canonical_resource(src)
+        img["src"] = "/recursos/" + relative
         matte = image_background(relative)
         if relative in mapping.get("darkMattePaths", []):
             matte = "dark"
@@ -392,6 +406,7 @@ def build(args):
                 if val.startswith("/recursos/"):
                     paths.add(val.removeprefix("/recursos/"))
     # Include local lab dependencies, never slide decks, teacher kits or institutional sources.
+    paths = {canonical_resource(p) for p in paths}
     pending = list(paths)
     while pending:
         relative = pending.pop()
@@ -409,7 +424,7 @@ def build(args):
             target = (source.parent / unquote(urlsplit(link).path)).resolve()
             if not target.is_relative_to(REPO) or not target.is_file():
                 continue
-            rel = str(target.relative_to(REPO))
+            rel = canonical_resource(str(target.relative_to(REPO)))
             if target.suffix.lower() not in (".png", ".jpg", ".jpeg", ".webp", ".svg", ".mp3", ".wav", ".ogg", ".mp4", ".webm", ".css", ".js", ".html", ".txt", ".pdf"):
                 continue
             if target.name.startswith("Aula_") or rel == "aula-kit.html" or "slides" in target.name.lower():
@@ -423,6 +438,7 @@ def build(args):
         dest.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source, dest)
     write_json(package / "resources.json", sorted(paths))
+    write_json(HERE / "data/resources.json", sorted(paths))
     write_json(package / "verificacao-compilacao.json", {"lessons": 64, "teacherOutsideRepository": True, "photo": photo_checks, "resources": len(paths), "imageBackgrounds": IMAGE_BACKGROUNDS})
     for name in ("serve.py", "iniciar.command", "LEIA-ME.md"):
         shutil.copy2(HERE / name, package / name)

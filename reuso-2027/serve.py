@@ -11,9 +11,11 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 
-def make_handler(package, role):
-    root = (package / role).resolve()
-    resources = set(json.loads((package / "resources.json").read_text()))
+def make_handler(package, role, source=False):
+    root = package.resolve() if source else (package / role).resolve()
+    resource_base = package.parent.resolve() if source else (package / "recursos").resolve()
+    manifest = package / "data/resources.json" if source else package / "resources.json"
+    resources = set(json.loads(manifest.read_text()))
     class Handler(BaseHTTPRequestHandler):
         def do_HEAD(self):
             self.respond(False)
@@ -25,11 +27,11 @@ def make_handler(package, role):
             url = unquote(urlsplit(self.path).path)
             if "\x00" in url or ".." in Path(url).parts:
                 return self.send_error(404)
-            if url.startswith("/recursos/"):
-                relative = url.removeprefix("/recursos/")
+            relative = url.removeprefix("/recursos/") if url.startswith("/recursos/") else url.lstrip("/")
+            if url.startswith("/recursos/") or (source and relative in resources):
                 if relative not in resources:
                     return self.send_error(404)
-                base = (package / "recursos").resolve()
+                base = resource_base
                 path = (base / relative).resolve()
             else:
                 base = root
@@ -103,15 +105,23 @@ def main():
     parser.add_argument("--open", action="store_true")
     args = parser.parse_args()
     package = args.package.resolve()
+    source = not (package / "resources.json").is_file()
+    if source and not all((package / p).is_file() for p in ("index.html", "data/catalog.json", "data/resources.json")):
+        parser.error("Pasta sem pacote compilado nem oficina-fonte. Use o pacote docente completo ou o checkout de reuso-2027.")
     servers = []
-    for role, host, port in (("docente", "127.0.0.1", args.teacher_port), ("alunos", args.student_host, args.student_port)):
-        server = ThreadingHTTPServer((host, port), make_handler(package, role))
+    endpoints = [("alunos", args.student_host, args.student_port)]
+    if source:
+        print("Checkout público: somente oficina discente. Para os slides, use o pacote docente compilado entregue separadamente.", flush=True)
+    else:
+        endpoints.insert(0, ("docente", "127.0.0.1", args.teacher_port))
+    for role, host, port in endpoints:
+        server = ThreadingHTTPServer((host, port), make_handler(package, role, source))
         servers.append(server)
         threading.Thread(target=server.serve_forever, daemon=True).start()
         print(f'{role}: http://127.0.0.1:{port} ({host})', flush=True)
     if args.open:
-        webbrowser.open(f"http://127.0.0.1:{args.teacher_port}")
-    print("Deixe esta janela aberta. Ctrl+C encerra os dois servidores.", flush=True)
+        webbrowser.open(f"http://127.0.0.1:{args.student_port if source else args.teacher_port}")
+    print("Deixe esta janela aberta. Ctrl+C encerra o serviço.", flush=True)
     try:
         threading.Event().wait()
     except KeyboardInterrupt:
