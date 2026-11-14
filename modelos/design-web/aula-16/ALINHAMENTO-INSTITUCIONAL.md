@@ -26,8 +26,8 @@ A capacidade técnica registrada no repositório é a seleção de elementos gr�
 | R04 | E | Seis ideias, seleção, construção, visita e revisão são decisões da dupla; papéis alternados. | Participação efetiva é O e deve ser observada. |
 | R05 | E | Roteiro prevê circulação, perguntas, diagnóstico e pistas por problema. | Mediação realizada e ajuste real são O. |
 | R06 | E | Slides usam instruções curtas; `plainLanguage` define idear, conceito e rafe. | Verificar compreensão concreta com a turma é O. |
-| R07 | E | Diagnóstico inicial sem nota; critérios pré-produção, visita, revisão e devolutiva por critério. | Não há aprovação automática: conferência de campos não equivale a domínio. Feedback efetivo é O. |
-| R08 | E | Revisão aceita manter ou ajustar por evidência; recuperação avaliativa é até 22h ou em oportunidade equivalente para todos. Após 22h há somente apoio técnico, salvamento e organização. | Uso pedagógico do erro é O. |
+| R07 | E | Diagnóstico inicial sem nota; critérios pré-produção, visita, revisão e devolutiva por critério. Novas visitas preservam histórico numerado de direção, snapshot e observação. | Não há aprovação automática: conferência de campos não equivale a domínio. Feedback efetivo é O. |
+| R08 | E | Revisão aceita manter ou ajustar por evidência; uma nova visita pode testar novamente sem apagar a anterior. Recomeçar percurso não cria registro novo. Recuperação avaliativa é até 22h ou em oportunidade equivalente para todos. | Uso pedagógico do erro é O. |
 | R09 | P | Alternância, oficina local e alternativa em caderno estão previstas. | Adequação PcD depende da necessidade individual e validação com orientação pedagógica; não é prometida como universal. |
 | R10 | E | Registros até 22h, salvamento, ligação explícita com wireframes da Aula 17. | Síntese e dúvidas efetivamente feitas são O. |
 | R11 | O | Roteiro lembra chamada em cada bloco e limita pedagogicamente conteúdo até 22h. | Docente deve registrar frequência/confirmar diário-SGN e gerir permanência institucional; 22h não autoriza saída. |
@@ -37,7 +37,7 @@ A capacidade técnica registrada no repositório é a seleção de elementos gr�
 | R15 | E | Critérios surgem antes do instrumento; separa presença de registros da apreciação qualitativa; inclui processo/produto. | Margem aceitável/ponderação formal, se exigida, deve ser definida pela UC/orientação. |
 | R16 | E | Objetivo: analisar necessidade e criar/testar/justificar rafes em situação profissional; progressão analisar–avaliar–criar. | Não exige todos os níveis de Bloom na aula. |
 | R17 | P | Tecnologia serve à ideação, comparação, teste, revisão e cópia local. O caso é fictício; o aviso ao estudante orienta não inserir dados pessoais e esclarece armazenamento local. | Uso real de dados, privacidade do navegador compartilhado, downloads e condições de equipamento dependem de observação e orientação humana; não há garantia universal de segurança. |
-| R18 | E | Oficina reúne briefing, ideias, conceito, rafes, visita e revisão; plano distingue conferência de qualidade. | Registro docente de desempenho e devolutiva posterior são O. |
+| R18 | E | Oficina reúne briefing, ideias, conceito, rafes, visitas com snapshots/observações preservados e revisão; plano distingue conferência de qualidade. | Registro docente de desempenho e devolutiva posterior são O. |
 | R19 | F/O | Remissão detalhada abaixo, por fase. | Itens administrativos não são cumpridos pela presença deste material. |
 | R20 | E | Contexto profissional, prática com teoria mínima, pensamento crítico/criativo, inovação, mediação, avaliação e conexão com trabalho aparecem no plano/oficina. | A conexão com comunicação visual e experiência da pessoa usuária pode ser explicitada na mediação; aprendizagem significativa observada é O. |
 

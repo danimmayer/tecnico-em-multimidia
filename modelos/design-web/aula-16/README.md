@@ -16,6 +16,8 @@ Quem concluir a entrega-base antes das 22h pode fazer uma rodada A/B opcional de
 
 O rascunho fica no navegador deste computador, na chave v2 da oficina. Use **Meu rascunho → Baixar JSON** para levar uma cópia e **Reabrir cópia** para continuar em outro computador. Dados v2 válidos são preservados ao recarregar; se uma versão incompatível não puder ser aberta, o raw é preservado/baixável para recuperação, sem ser apagado silenciosamente. O relatório HTML é opcional e reúne os registros; não precisa imprimir nem enviar arquivo para concluir a atividade. No computador compartilhado, faça cópia antes de iniciar outro rascunho.
 
+Na missão de visita, **Iniciar nova visita** abre outra rodada e mantém o histórico numerado de direção, observação e snapshot anterior. **Salvar observação e iniciar nova visita** registra a atual antes de abrir a próxima; **Recomeçar percurso** só retorna ao início daquela mesma visita. Repetir é opcional: a primeira visita observada já atende à entrega-base. O histórico usa e preserva `tests` no formato v2; ele é registro técnico de processo, não nota nem aprovação automática.
+
 Consulte [PLANO-DOCENTE.md](PLANO-DOCENTE.md) para mediação, critérios, instrumentos, inclusão e recuperação. A avaliação da aprendizagem exige leitura docente das decisões e evidências; o software verifica presença dos registros.
 
 Fontes de implementação: `scripts/lessons/design-web-16.mjs`, `scripts/lessons/design-web-16-workshop.mjs` e `assets/design-web-16.*`. Regenerar com `node scripts/build-design-web-16.mjs`; validar com `node scripts/validate-design-web-16.mjs`, o teste de navegador e `scripts/validate-design-web-16-storage-browser.cjs`. As verificações de fluxo, exportação e armazenamento são técnicas; não comprovam aprendizagem.
