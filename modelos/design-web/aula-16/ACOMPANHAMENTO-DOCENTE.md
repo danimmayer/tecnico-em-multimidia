@@ -6,15 +6,15 @@ Roteiro curto para a circulação do docente. Não é formulário dos estudantes
 
 Em cada checkpoint, observe uma ação e faça uma pergunta que permita ao estudante mostrar a próxima decisão. Registre apenas o necessário para orientar a devolutiva. “Não observado” significa que ainda não houve oportunidade de olhar ou escutar — não significa insuficiência.
 
-## Recursos: conferência antes e durante
+## Recursos: fonte institucional e roteiro proposto
 
-Este checklist apoia a conferência de que o recurso previsto foi usado no momento do plano. Não é registro do estudante. Se houver impedimento real, registrar o ajuste pelo fluxo institucional aplicável; o registro não substitui a atividade nem reescreve o plano depois da aula.
+Este checklist não comprova que o roteiro digital foi aprovado ou executado. A fonte institucional disponível é o Plano Concluído V0, consultado em 14/11/2026 e alterado em 12/08, pp. 15–16: Aula 16 — **Ideação em papel**, com papel, canetas/canetões, quadro e projetor. Os itens digitais abaixo são proposta de aplicação futura e dependem do fluxo institucional aplicável e da confirmação humana antes da execução. Não é registro do estudante.
 
-| Recurso previsto nesta adaptação | Conferir/registrar pelo docente |
+| Recurso institucional ou proposto | Conferir antes de aplicação futura |
 | --- | --- |
-| Computador do laboratório com navegador e oficina gratuita, sem login ou licença individual | Confirmar uso da dupla na criação e no teste. Se houver impedimento, aplicar papel/caderno e registrar a razão operacional no instrumento institucional protegido. |
-| Projetor | Confirmar uso na abertura e na pausa de mediação. Se houver impedimento, usar um computador disponível para mostrar o primeiro passo e registrar o ajuste aplicável. |
-| Papel ou caderno, se usado | Confirmar uso apenas como alternativa de acesso ou cópia temporária e preservar a mesma tarefa e critério. |
+| Papel, canetas/canetões, quadro e projetor — fonte institucional | Confirmar o plano institucional aplicável e preparar o uso correspondente à atividade de ideação em papel. |
+| Computador com navegador e oficina gratuita, sem login ou licença individual — proposta do roteiro digital | Confirmar que a adequação foi formalizada e que o recurso está disponível antes da aplicação. Sem essa definição, não tratar a oficina digital como substituta do plano institucional. |
+| Papel ou caderno no roteiro digital — alternativa proposta | Só usar dentro de uma adequação definida para a aplicação; preservar tarefa e critério previstos. |
 
 | Momento | Observar | Pergunta curta | Próxima intervenção possível |
 | --- | --- | --- | --- |
