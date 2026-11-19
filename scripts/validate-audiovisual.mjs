@@ -8,6 +8,7 @@ import * as lesson11 from './lessons/audiovisual-11.mjs';
 import * as lesson12 from './lessons/audiovisual-12.mjs';
 import * as lesson13 from './lessons/audiovisual-13.mjs';
 import * as lesson14 from './lessons/audiovisual-14.mjs';
+import * as lesson16 from './lessons/audiovisual-16.mjs';
 import {createHash} from 'node:crypto';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
@@ -356,3 +357,15 @@ assert.ok(deploy14.includes("'aula-14':[") && !/'aula-14':\[[^\]]*(exemplo-mixad
 assert.ok(read('modelos/design-web/oficinas/index.html').includes('href="audiovisual/aula-14/"'), 'Aula 14: card na página das oficinas');
 
 console.log('Aulas 09 a 14 AV: paridade dos dados, 170 minutos (45 + 55 + 40 + 30), lanche, kits locais, integridade dos ZIP das aulas 13 e 14, pedidos, linguagem e visuais validados.');
+
+const data16 = plain(context.window.SENAI_COURSES['producao-audiovisual'].lessons.find(item => item.num === '16'));
+for (const [key, value] of Object.entries(lesson16.lesson)) {
+  assert.deepEqual(data16[key], value, `Aula 16: course-data.js diverge em ${key}`);
+}
+assert.deepEqual(data16.schedule.map(block => block.horario), [
+  '19:00 - 19:45', '20:05 - 20:40', '20:40 - 21:20', '21:20 - 22:00'
+]);
+const html16 = read(data16.workshopHref);
+assert.doesNotMatch(html16, /(?:src|href)="(?:https?:)?\/\/|aula-kit\.html|slides\.html/);
+assert.ok(read('modelos/design-web/oficinas/index.html').includes('href="audiovisual/aula-16/"'));
+console.log('Aula 16 AV: dados, horário e rota da oficina independente validados.');

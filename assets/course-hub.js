@@ -189,12 +189,12 @@
     }
 
     grid.innerHTML = lessons.map((lesson) => `
-      <a class="lesson-card" href="${lessonUrl(lesson)}" aria-label="Abrir Aula ${escapeHtml(lesson.num)}: ${escapeHtml(lesson.title)}">
+      <a class="lesson-card" href="${escapeHtml(lesson.workshopHref || lessonUrl(lesson))}" aria-label="Abrir ${lesson.workshopHref ? 'oficina da ' : ''}Aula ${escapeHtml(lesson.num)}: ${escapeHtml(lesson.title)}">
         <span class="lesson-card-num">Aula ${escapeHtml(lesson.num)} · ${escapeHtml(phaseFor(lesson.num))}</span>
         <h3>${escapeHtml(lesson.title)}</h3>
         <p>${escapeHtml(lesson.description)}</p>
         <div class="lesson-card-footer">
-          <span><strong>4 blocos</strong> · conceito · atividade · evidência</span>
+          <span>${lesson.workshopHref ? '<strong>Oficina</strong> · comparação · exportação · estreia' : '<strong>4 blocos</strong> · conceito · atividade · evidência'}</span>
           <span class="lesson-card-arrow" aria-hidden="true">→</span>
         </div>
       </a>`).join('');

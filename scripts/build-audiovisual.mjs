@@ -7,6 +7,7 @@ import * as lesson11 from './lessons/audiovisual-11.mjs';
 import * as lesson12 from './lessons/audiovisual-12.mjs';
 import * as lesson13 from './lessons/audiovisual-13.mjs';
 import * as lesson14 from './lessons/audiovisual-14.mjs';
+import * as lesson16 from './lessons/audiovisual-16.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const indent = (value, spaces) => JSON.stringify(value, null, 2).split('\n').map(line => ' '.repeat(spaces) + line).join('\n');
@@ -24,7 +25,7 @@ function replaceBlock(file, num, findStart, findEnd, replacement) {
   fs.writeFileSync(root + file, next);
 }
 
-for (const [num, {lesson, support}] of [['09', lesson09], ['10', lesson10], ['11', lesson11], ['12', lesson12], ['13', lesson13], ['14', lesson14]]) {
+for (const [num, {lesson, support}] of [['09', lesson09], ['10', lesson10], ['11', lesson11], ['12', lesson12], ['13', lesson13], ['14', lesson14], ['16', lesson16]]) {
   const dataContext = {window: {}};
   vm.runInNewContext(fs.readFileSync(root + 'assets/course-data.js', 'utf8'), dataContext);
   const merged = Object.assign(dataContext.window.SENAI_COURSES['producao-audiovisual'].lessons.find(item => item.num === num), lesson);
@@ -33,6 +34,7 @@ for (const [num, {lesson, support}] of [['09', lesson09], ['10', lesson10], ['11
     (source, from) => source.indexOf(`      {\n        "num": "${nextNum(num)}"`, from),
     () => indent(merged, 6) + ',\n');
 
+  if (!support) continue;
   // In course-support.js the lesson is followed by another key or closes the lessons object.
   replaceBlock('assets/course-support.js', num,
     (source, from) => source.indexOf(`      "${num}": {`, from),
@@ -44,5 +46,5 @@ for (const [num, {lesson, support}] of [['09', lesson09], ['10', lesson10], ['11
     (old) => indent(support, 6).replace(/^ {6}\{/, `      "${num}": {`) + (old.trimEnd().endsWith(',') ? ',\n' : '\n'));
 }
 
-console.log('Aulas 09 a 14 de Produção Audiovisual geradas: dados públicos e slides.');
+console.log('Aulas 09 a 14 e 16 de Produção Audiovisual geradas.');
 

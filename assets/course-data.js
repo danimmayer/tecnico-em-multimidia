@@ -1656,7 +1656,7 @@ window.SENAI_COURSES = {
       {
         "num": "16",
         "title": "Render e estreia do microcurta",
-        "description": "Estudo de extensões, resoluções e codecs com prática de exportação: render do comercial em versões para diferentes plataformas e finalização do microcurta, com estreia dos microcurtas no projetor.",
+        "description": "Comparar quatro exportações do mesmo trecho, entregar o comercial em versões para projeção e web e estrear o microcurta depois de testá-lo fora do editor.",
         "objectives": [
           "Formatos de vídeo: extensões, resoluções, codecs e formatos de saída.",
           "Composição e Render: exportação e formatos, render."
@@ -1669,25 +1669,26 @@ window.SENAI_COURSES = {
         ],
         "schedule": [
           {
-            "horario": "19:00 - 19:30",
-            "atividade": "Revisão da aula anterior (blocagem e bibliotecas de composição). Quiz de abertura em duplas, \"Qual formato para qual tela?\": cada dupla indica formato e resolução adequados para quatro destinos (cinema, TV, redes sociais, web) e defende a resposta; o placar fica no quadro para conferência ao fim da noite."
+            "horario": "19:00 - 19:45",
+            "atividade": "Retomar blocagem e bibliotecas. Em duplas, escolher e defender formatos para cinema, TV, redes sociais e web. Registrar o placar para revisitar no fim."
           },
           {
-            "horario": "19:30 - 20:30",
-            "atividade": "Extensões, resoluções e codecs: diferença entre contêineres (MP4 e MOV) e codecs (H.264 e H.265), como funciona a compressão e a relação entre qualidade e peso de arquivo. Testes ao vivo no projetor: o mesmo trecho de vídeo exportado com bitrates e resoluções diferentes, com a turma comparando qualidade e tamanho dos arquivos."
+            "horario": "20:05 - 20:40",
+            "atividade": "Distinguir extensão, contêiner, codec e resolução. Exportar um trecho no projetor e comparar quatro versões do mesmo vídeo para observar efeito da resolução e da taxa de bits na imagem e no tamanho."
           },
           {
-            "horario": "20:30 - 21:30",
-            "atividade": "Configurações de exportação e fila de render no software de edição de vídeo não-linear (DaVinci Resolve, CapCut): presets, bitrate, resolução e formatos de saída para cada plataforma. Cada dupla exporta uma versão para projeção e uma versão otimizada para web. A versão vertical 9:16 só é produzida quando a captação previu área segura para o recorte."
+            "horario": "20:40 - 21:20",
+            "atividade": "Exportar o comercial em MP4 para projeção e web no editor. Só preparar a versão 9:16 quando a captação previu área segura. Conferir no projetor e no celular."
           },
           {
-            "horario": "21:30 - 22:30",
-            "atividade": "Render final do microcurta de cada dupla, com gestão da fila de render para todos entregarem no prazo, e estreia no projetor: exibição dos microcurtas concluídos com comentários rápidos da turma sobre corte, som e finalização, fechando o primeiro produto completo da UC."
+            "horario": "21:20 - 22:00",
+            "atividade": "Organizar a fila, renderizar o microcurta, testar o arquivo fora do editor e fazer a estreia com comentários sobre corte, som e finalização. Retomar o placar. Cada estudante explica e demonstra uma decisão."
           }
         ],
-        "methodology": "Quiz diagnóstico, demonstração técnica e prática comparativa de render, encerrando com a exibição do primeiro produto completo da turma.",
-        "resources": "Computadores do laboratório com software de edição, projetor e smartphones para testar as versões renderizadas.",
-        "observation": "Chamada realizada no início de cada bloco. Lanche de 20 min após o 1º bloco (incluído no intervalo entre blocos)."
+        "methodology": "Quiz diagnóstico em dupla, comparação de arquivos reais, demonstração curta, duas exportações no editor e exibição comentada com devolutiva individual.",
+        "resources": "Oficina de render em navegador, editor de vídeo disponível no laboratório, comercial e microcurta da turma ou mídia de reserva, computador, projetor com som e smartphone para conferência local.",
+        "observation": "Proposta de condução. Chamada no início de cada bloco, lanche de 19:45 a 20:05 e consolidação opcional entre 22:00 e 22:30. Os arquivos da turma ficam em armazenamento local. A exibição respeita o escopo autorizado para cada vídeo.",
+        "workshopHref": "modelos/producao-audiovisual/aula-16/index.html"
       },
       {
         "num": "17",
