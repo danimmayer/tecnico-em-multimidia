@@ -9,13 +9,22 @@ fs.mkdirSync(target,{recursive:true});
 for(const entry of fs.readdirSync(path.join(root,'modelos/design-web'),{withFileTypes:true})){
  if(!entry.isDirectory()||!/^aula-\d+$/.test(entry.name))continue;
  const source=path.join(root,'modelos/design-web',entry.name),dest=path.join(target,entry.name);
+ if(entry.name==='aula-16'){
+  fs.rmSync(dest,{recursive:true,force:true});
+  fs.mkdirSync(dest,{recursive:true});
+  fs.copyFileSync(path.join(source,'index.html'),path.join(dest,'index.html'));
+  continue;
+ }
  // Teacher guides hold answers and keywords: they stay in the repository, never on the public site.
  fs.cpSync(source,dest,{recursive:true,filter:file=>path.basename(file)!=='guia-docente.html'});
  // Earlier generators keep the classroom copy under a different filename.
  if(!fs.existsSync(path.join(dest,'index.html'))){const candidate=['oficina.html','editor.html'].find(p=>fs.existsSync(path.join(source,p)));if(candidate)fs.copyFileSync(path.join(source,candidate),path.join(dest,'index.html'));}
 }
-// Produção Audiovisual: only the class kit is public. The mixed example and the manifest hold the reference mix.
-const audiovisual={'aula-14':['index.html','mesa.html','sons.js','buffering.html','cena.mp4','AJUDA.html','COMECE-AQUI.txt','CREDITOS.txt','Aula14-Som.zip','trilhas','telas/voz-antes.jpg','telas/voz-depois.jpg']};
+// Expose only the student files of each Produção Audiovisual workshop.
+const audiovisual={
+ 'aula-14':['index.html','mesa.html','sons.js','buffering.html','cena.mp4','AJUDA.html','COMECE-AQUI.txt','CREDITOS.txt','Aula14-Som.zip','trilhas','telas/voz-antes.jpg','telas/voz-depois.jpg'],
+ 'aula-16':['index.html','oficina.css','oficina.js','trecho-projecao.mp4','trecho-1080-compacto.mp4','trecho-web.mp4','trecho-720-compacto.mp4','trecho-poster.jpg','CREDITOS.txt'],
+};
 for(const [lesson,files] of Object.entries(audiovisual)){
  const source=path.join(root,'modelos/producao-audiovisual',lesson),dest=path.join(target,'audiovisual',lesson);
  fs.rmSync(dest,{recursive:true,force:true});

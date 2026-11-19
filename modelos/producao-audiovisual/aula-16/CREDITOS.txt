@@ -1,0 +1,16 @@
+Aula 16 · Render e estreia do microcurta
+
+Imagens e som dos quatro vídeos e imagem de capa:
+Caminandes 3: Llamigos (2016), Blender Foundation / Blender Institute.
+Direção: Pablo Vazquez. Música: Torin Borrowdale. Som: Sander Houtman.
+Projeto: https://studio.blender.org/projects/caminandes-3/
+Arquivo utilizado:
+https://commons.wikimedia.org/wiki/File:Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm
+Licença: Creative Commons Atribuição 3.0 Não Adaptada.
+https://creativecommons.org/licenses/by/3.0/
+
+Adaptação didática: recorte de 12 segundos a partir de 1min26s do filme,
+quatro exportações com resoluções e taxas de bits diferentes e um quadro
+extraído para a capa. As exportações preservam a mesma montagem e o som
+do trecho. Ao reutilizar as mídias, mantenha a atribuição e indique as
+alterações feitas.

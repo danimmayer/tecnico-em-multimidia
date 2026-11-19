@@ -39,7 +39,8 @@ Endereço: [http://localhost:8901/](http://localhost:8901/)
 1. `index.html` apresenta as Unidades Curriculares.
 2. Cada página `uc-*.html` reúne a sequência de aulas.
 3. Design Web e Produção Audiovisual abrem as apresentações em
-   `aula-kit.html`.
+   `aula-kit.html`. A Aula 16 de Produção Audiovisual abre a
+   [oficina de render](modelos/producao-audiovisual/aula-16/index.html).
 4. As páginas de Fotografia usam apresentações individuais.
 
 ## Estrutura principal

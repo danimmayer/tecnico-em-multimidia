@@ -7,6 +7,10 @@
   const course = window.SENAI_COURSES && window.SENAI_COURSES[courseSlug];
   const courseSupport = window.SENAI_TEACHING_SUPPORT && window.SENAI_TEACHING_SUPPORT[courseSlug];
   const lesson = course && course.lessons.find((item) => item.num === lessonNumber);
+  if (lesson?.workshopHref) {
+    window.location.replace(lesson.workshopHref);
+    return;
+  }
   const support = courseSupport && courseSupport.lessons[lessonNumber];
 
   const escapeHtml = (value = '') => String(value)

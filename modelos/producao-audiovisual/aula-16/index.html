@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Compare exportações de vídeo, confira seus arquivos e organize a estreia do microcurta.">
+  <title>Render e estreia do microcurta · Aula 16</title>
+  <link rel="stylesheet" href="oficina.css">
+  <script src="oficina.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="top">
+    <div class="wrap top-inner">
+      <a class="course" href="#conteudo">Produção Audiovisual <span>· Aula 16</span></a>
+      <nav aria-label="Etapas da oficina">
+        <a href="#quiz">Quiz</a>
+        <a href="#laboratorio">Comparação</a>
+        <a href="#exportacao">Exportação</a>
+        <a href="#estreia">Estreia</a>
+        <a href="#registro">Registro</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="wrap">
+    <section class="hero" aria-labelledby="titulo">
+      <div>
+        <h1 id="titulo">Render e estreia do microcurta</h1>
+        <p>Exporte o comercial para o projetor e para a web. Depois, confira o arquivo final do microcurta e prepare a estreia da dupla.</p>
+        <a class="button" href="#quiz">Começar pelo quiz <span aria-hidden="true">↓</span></a>
+      </div>
+      <figure>
+        <img src="trecho-poster.jpg" alt="" width="960" height="540">
+        <figcaption>Um trecho, quatro exportações para comparar.</figcaption>
+      </figure>
+    </section>
+    <noscript><p class="callout">Ative o JavaScript para conferir o quiz e usar as ferramentas. As instruções seguem disponíveis e você pode abrir os MP4 na pasta da oficina.</p></noscript>
+
+    <section class="lesson-section" id="quiz" aria-labelledby="quiz-title">
+      <div class="section-heading">
+        <h2 id="quiz-title">Escolha o formato</h2>
+        <p>Leiam o pedido de cada destino, escolham uma opção e defendam a decisão usando uma exigência do pedido. Guardem o placar da primeira tentativa e retomem no fim da aula.</p>
+      </div>
+      <form id="quiz-form">
+        <div class="quiz-grid">
+          <fieldset class="panel">
+            <legend>Cinema</legend>
+            <p id="quiz-cinema-caption">O festival pediu um DCP Flat 2K para o servidor da sala de cinema.</p>
+            <label for="quiz-cinema">O que você entrega?</label>
+            <select id="quiz-cinema" required aria-describedby="quiz-cinema-caption quiz-cinema-feedback">
+              <option value="">Escolha uma opção</option>
+              <option value="mp4">MP4 1920×1080</option>
+              <option value="dcp">Pacote DCP Flat 2K</option>
+              <option value="mov">MOV 1280×720</option>
+            </select>
+            <p class="quiz-feedback" id="quiz-cinema-feedback" hidden></p>
+          </fieldset>
+          <fieldset class="panel">
+            <legend>TV</legend>
+            <p id="quiz-tv-caption">A emissora pediu um arquivo MOV Full HD para receber no sistema de edição.</p>
+            <label for="quiz-tv">O que você entrega?</label>
+            <select id="quiz-tv" required aria-describedby="quiz-tv-caption quiz-tv-feedback">
+              <option value="">Escolha uma opção</option>
+              <option value="mov">MOV 1920×1080</option>
+              <option value="mp4">MP4 1920×1080</option>
+              <option value="dcp">Pacote DCP Flat 2K</option>
+            </select>
+            <p class="quiz-feedback" id="quiz-tv-feedback" hidden></p>
+          </fieldset>
+          <fieldset class="panel">
+            <legend>Redes sociais</legend>
+            <p id="quiz-redes-caption">A rede pede 9:16 e aceita H.264. As pessoas e o texto do comercial cabem no recorte vertical.</p>
+            <label for="quiz-redes">O que você entrega?</label>
+            <select id="quiz-redes" required aria-describedby="quiz-redes-caption quiz-redes-feedback">
+              <option value="">Escolha uma opção</option>
+              <option value="wide">MP4/H.264 1920×1080</option>
+              <option value="square">MP4/H.264 1080×1080</option>
+              <option value="vertical">MP4/H.264 1080×1920</option>
+            </select>
+            <p class="quiz-feedback" id="quiz-redes-feedback" hidden></p>
+          </fieldset>
+          <fieldset class="panel">
+            <legend>Web</legend>
+            <p id="quiz-web-caption">O site precisa de um vídeo horizontal leve para conexões lentas. A equipe aceita HD em MP4/H.264.</p>
+            <label for="quiz-web">O que você entrega?</label>
+            <select id="quiz-web" required aria-describedby="quiz-web-caption quiz-web-feedback">
+              <option value="">Escolha uma opção</option>
+              <option value="full">MP4/H.264 1920×1080 com bitrate alto</option>
+              <option value="hd">MP4/H.264 1280×720 com bitrate moderado</option>
+              <option value="vertical">MP4/H.264 1080×1920</option>
+            </select>
+            <p class="quiz-feedback" id="quiz-web-feedback" hidden></p>
+          </fieldset>
+        </div>
+        <div class="action-row">
+          <button type="submit">Conferir escolhas</button>
+          <p id="quiz-status" role="status" class="status"></p>
+        </div>
+      </form>
+      <p class="hint">Sozinho? Escreva uma justificativa e compare sua escolha com o retorno do quiz.</p>
+    </section>
+
+    <section class="lesson-section" id="laboratorio" aria-labelledby="laboratorio-title">
+      <div class="section-heading">
+        <h2 id="laboratorio-title">Compare os renders</h2>
+        <p>Render é a geração do vídeo final a partir da linha do tempo. Aqui você tem o mesmo trecho de 12 segundos exportado de quatro maneiras, sempre em MP4, com vídeo H.264, áudio AAC e 24 quadros por segundo.</p>
+      </div>
+      <details class="panel concepts">
+        <summary>O que muda de um arquivo para outro?</summary>
+        <dl>
+          <div><dt>Contêiner</dt><dd>Organiza vídeo e áudio no mesmo arquivo. MP4 e MOV são dois exemplos.</dd></div>
+          <div><dt>Codec</dt><dd>Comprime e descomprime o vídeo. H.264 costuma tocar em mais aparelhos. H.265 pode entregar qualidade semelhante com menos dados quando o aparelho aceita o codec.</dd></div>
+          <div><dt>Resolução</dt><dd>É o tamanho do quadro em pixels. Em 1080p horizontal, o quadro mede 1920×1080.</dd></div>
+          <div><dt>Bitrate</dt><dd>É a quantidade de dados usada a cada segundo. Com menos dados, movimento e detalhes finos podem perder definição ou virar manchas.</dd></div>
+        </dl>
+      </details>
+      <div class="steps">
+        <p><strong>Comece com os dois renders de 1080p.</strong> Dê play e pause no mesmo momento nos dois ou use o botão de comparação. Aos 00:04, observe os pelos da lhama e o contorno da cabeça. Compare o tamanho dos arquivos.</p>
+        <p>Depois selecione <strong>Web</strong> no Render B. Os pelos e o contorno seguem legíveis em 720p? Observe o tamanho do arquivo e confira em tela cheia se a diferença for sutil.</p>
+      </div>
+      <div class="compare-grid">
+        <article class="panel render-card">
+          <label for="render-a">Render A</label>
+          <select id="render-a" data-render="a">
+            <option value="projecao">Projeção · 1080p</option>
+            <option value="1080-compacto">1080p compacto</option>
+            <option value="web">Web · 720p</option>
+            <option value="720-compacto">720p compacto</option>
+          </select>
+          <video id="video-a" poster="trecho-poster.jpg" controls playsinline preload="none" src="trecho-projecao.mp4" aria-label="Reprodução do Render A" aria-describedby="info-a"></video>
+          <p id="info-a" class="render-info">1920×1080 · bitrate maior</p>
+          <a id="download-a" href="trecho-projecao.mp4" download>Baixar render A</a>
+        </article>
+        <article class="panel render-card">
+          <label for="render-b">Render B</label>
+          <select id="render-b" data-render="b">
+            <option value="projecao">Projeção · 1080p</option>
+            <option value="1080-compacto" selected>1080p compacto</option>
+            <option value="web">Web · 720p</option>
+            <option value="720-compacto">720p compacto</option>
+          </select>
+          <video id="video-b" poster="trecho-poster.jpg" controls playsinline preload="none" src="trecho-1080-compacto.mp4" aria-label="Reprodução do Render B" aria-describedby="info-b"></video>
+          <p id="info-b" class="render-info">1920×1080 · bitrate menor</p>
+          <a id="download-b" href="trecho-1080-compacto.mp4" download>Baixar render B</a>
+        </article>
+      </div>
+      <div class="action-row">
+        <button type="button" class="secondary" id="compare-frame">Mostrar 00:04 nos dois players</button>
+      </div>
+      <p class="hint">Abra os players um de cada vez para ouvir. Se um vídeo ficar no início, dê play e pause aos 00:04. Você também pode baixar o render e pausar no reprodutor do computador. <a href="CREDITOS.txt">Créditos do trecho</a>.</p>
+    </section>
+
+    <section class="lesson-section" id="exportacao" aria-labelledby="exportacao-title">
+      <div class="section-heading">
+        <h2 id="exportacao-title">Exporte o comercial</h2>
+        <p>Abra o projeto do comercial no editor e confirme que a linha do tempo está com as mídias presentes. Sem o projeto? Peça o material de reserva ao professor.</p>
+      </div>
+      <ol class="checklist prep">
+        <li><strong>Salve uma cópia do projeto.</strong> No editor, duplique o projeto ou use a opção de salvar uma cópia. Confira o novo nome antes de trabalhar.</li>
+        <li><strong>Exporte de 5 a 10 segundos.</strong> Marque início e fim de um trecho com movimento e som. Exporte esse intervalo, cronometre até a conclusão e abra o teste para ver se contém só o trecho marcado.</li>
+        <li><strong>Restaure a linha do tempo inteira.</strong> Limpe as marcas ou selecione o intervalo de exportação completo. Confira duração, primeiro e último quadro antes de exportar os perfis abaixo.</li>
+      </ol>
+      <div class="profiles">
+        <article class="panel">
+          <h3>Projeção</h3>
+          <p class="format">MP4 · H.264 · AAC</p>
+          <p>1920×1080, horizontal, com a taxa de quadros da sequência. Se o editor permitir, comece em 12 Mb/s de vídeo.</p>
+          <p>Salve como <code>comercial-projecao.mp4</code>. Assista até o fim em tela grande e confira se texto e detalhes seguem legíveis.</p>
+        </article>
+        <article class="panel">
+          <h3>Web</h3>
+          <p class="format">MP4 · H.264 · AAC</p>
+          <p>1280×720, horizontal, com a mesma taxa de quadros. Se o editor permitir, comece em 3 Mb/s de vídeo.</p>
+          <p>Salve como <code>comercial-web.mp4</code>. Compare o tamanho com a versão de projeção e confira imagem e som no celular.</p>
+        </article>
+      </div>
+      <p class="hint">Na dupla, uma pessoa opera e a outra confere a Projeção. Troquem de papel na Web. Se estiver sozinho, opere e faça uma segunda passagem como conferente.</p>
+      <details class="panel editor">
+        <summary>Passos no DaVinci Resolve</summary>
+        <ol>
+          <li>Abra <strong>Entrega (Deliver)</strong> e escolha a exportação personalizada. Selecione <strong>Clipe único (Single Clip)</strong>, MP4 e H.264.</li>
+          <li>Escolha a resolução do destino e mantenha a taxa de quadros da sequência. Em <strong>Qualidade</strong>, use o limite de 12.000 kb/s para projeção ou 3.000 kb/s para web se o controle estiver disponível. Ative o áudio e selecione AAC quando disponível.</li>
+          <li>Nomeie o arquivo, escolha a pasta e adicione à <strong>Fila de renderização</strong>. Repita com o perfil do outro destino, confira os nomes na fila e execute os dois trabalhos.</li>
+        </ol>
+      </details>
+      <details class="panel editor">
+        <summary>Passos no CapCut ou em outro editor</summary>
+        <ol>
+          <li>Abra <strong>Exportar</strong>, escolha MP4 e o codec H.264 se houver seleção. Mantenha o áudio ligado.</li>
+          <li>Nomeie o arquivo e escolha 1080p ou 720p conforme o destino. Mantenha a taxa de quadros da sequência. Se o editor oferecer opções de bitrate, selecione um valor próximo ao perfil ou compare as opções de qualidade que aparecerem.</li>
+          <li>Exporte um perfil por vez e confira ambos fora do editor. Se usar Shotcut, abra <strong>Exportar → Avançado</strong> para ajustar a resolução e confirme a tarefa no painel <strong>Trabalhos</strong>.</li>
+        </ol>
+      </details>
+      <p class="callout"><strong>O recorte vertical é condicional.</strong> Só prepare 9:16 se a captação já deixou área segura, o espaço no meio do quadro que preserva pessoas, texto e ação ao recortar. Se tiver dúvida, confira tudo no editor antes de exportar.</p>
+      <p class="hint">Os bitrates são pontos de partida. Compare a reprodução, ajuste ao pedido real e use a resolução da fonte quando ela tiver menos pixels que o perfil.</p>
+    </section>
+
+    <section class="lesson-section" id="estreia" aria-labelledby="estreia-title">
+      <div class="section-heading">
+        <h2 id="estreia-title">Prepare a estreia</h2>
+        <p>Finalize o microcurta, reserve tempo para conferir o arquivo e esteja pronto para exibir até as 22h.</p>
+      </div>
+      <div class="tool-grid">
+        <article class="panel tool">
+          <h3>Estime a fila</h3>
+          <p>No editor, repita o teste de 5 a 10 segundos com um trecho representativo do microcurta. Preencha os três tempos em segundos para estimar o render inteiro.</p>
+          <form id="queue-form">
+            <div class="number-fields">
+              <label for="sample-length">Duração do trecho <span>(s)</span>
+                <input type="number" id="sample-length" min="1" max="99999" step="any" inputmode="decimal" required>
+              </label>
+              <label for="sample-render">Tempo de render do trecho <span>(s)</span>
+                <input type="number" id="sample-render" min="0.1" max="99999" step="any" inputmode="decimal" required>
+              </label>
+              <label for="project-length">Duração do microcurta <span>(s)</span>
+                <input type="number" id="project-length" min="1" max="99999" step="any" inputmode="decimal" required>
+              </label>
+            </div>
+            <div class="action-row">
+              <button type="submit">Calcular estimativa</button>
+            </div>
+            <p id="queue-status" class="status" role="status"></p>
+          </form>
+          <p class="hint">Mostre o tempo à dupla. Combinem com a turma quem exporta, quem confere e em que ordem. Guardem uma margem para reler o arquivo e corrigir falhas.</p>
+        </article>
+        <article class="panel tool">
+          <h3>Confira um arquivo local</h3>
+          <p>Selecione um MP4 exportado para ver tamanho, resolução e duração. O navegador lê o arquivo neste computador.</p>
+          <label for="local-file">Arquivo de vídeo</label>
+          <input type="file" id="local-file" accept="video/*,.mp4,.mov">
+          <p id="local-status" class="status" role="status"></p>
+          <video id="local-video" controls playsinline preload="metadata" aria-label="Reprodução do arquivo selecionado" hidden></video>
+          <p class="hint">Se o navegador não tocar o arquivo, abra no reprodutor do computador e teste no aparelho de destino. Confira o codec no editor ou num inspetor de mídia.</p>
+        </article>
+      </div>
+      <ol class="checklist">
+        <li><strong>Renderize.</strong> Exporte do editor para <code>microcurta-final.mp4</code>, considerando o perfil de projeção.</li>
+        <li><strong>Confira.</strong> Abra do início ao fim fora do editor. Procure texto cortado, imagem parada, fala coberta e áudio fora de sincronia. Se precisar, corrija no projeto e exporte de novo.</li>
+        <li><strong>Exiba.</strong> Combine a ordem no projetor. Ao assistir ao trabalho de outra dupla, anote um momento e diga o efeito de um corte, do som ou de uma escolha de finalização.</li>
+      </ol>
+      <p class="hint">Se estiver sozinho, faça uma pausa entre a exportação e a conferência. Mude de tela ou peça a alguém para observar o arquivo e trocar uma devolutiva curta.</p>
+    </section>
+
+    <section class="lesson-section" id="registro" aria-labelledby="registro-title">
+      <div class="section-heading">
+        <h2 id="registro-title">Registre sua decisão</h2>
+        <p>Cada pessoa registra uma observação própria antes das 22h. Use o caderno ou baixe seu registro em texto e guarde com os vídeos da dupla. Mostre o arquivo e o trecho citado ao professor.</p>
+      </div>
+      <form id="record-form" class="panel record">
+        <label for="observation">O que você viu na comparação?
+          <span>Informe os dois renders, o momento do vídeo e a diferença que observou ou o detalhe que continuou legível.</span>
+          <textarea id="observation" rows="3" maxlength="650" required></textarea>
+        </label>
+        <label for="decision">Qual ajuste você escolheu para um destino?
+          <span>Diga o que você operou pessoalmente, qual ajuste escolheu e o que viu ou ouviu no arquivo exportado para sustentar essa escolha.</span>
+          <textarea id="decision" rows="3" maxlength="650" required></textarea>
+        </label>
+        <label for="queue-decision">Como você cuidou do prazo da estreia?
+          <span>Registre a estimativa ou o tempo medido e uma ação que tomou para reservar tempo de conferência.</span>
+          <textarea id="queue-decision" rows="3" maxlength="650" required></textarea>
+        </label>
+        <div class="action-row">
+          <button type="submit">Baixar registro em texto</button>
+          <p id="record-status" class="status" role="status"></p>
+        </div>
+        <p class="hint">Guarde o registro antes de fechar ou atualizar a página.</p>
+      </form>
+      <details class="panel editor">
+        <summary>Terminou cedo? Use a espera antes das 22h</summary>
+        <ol>
+          <li><strong>Compare as duas versões 720p · 10 a 15 min.</strong> No laboratório, escolha Web e 720p compacto e pause as duas aos 00:04. Uma pessoa opera e outra procura diferenças na pelagem e no fundo. Troquem os papéis. Decidam se o arquivo menor preserva o detalhe e anotem qual detalhe sustenta a decisão.</li>
+          <li><strong>Teste o comercial Web em outra tela · 10 a 15 min.</strong> Abra o MP4 no celular ou numa janela estreita. Uma pessoa prepara a reprodução e outra aponta um título, gesto ou som que precisa continuar claro. Troquem para confirmar outro detalhe e anotem o instante e o resultado.</li>
+        </ol>
+        <p class="hint">Sozinho? Faça uma passagem para operar e outra para observar. Das 22h às 22h30, use o apoio opcional para salvar, organizar ou repetir um teste já feito.</p>
+      </details>
+    </section>
+  </main>
+  <footer class="wrap footer">
+    <p>Os vídeos da turma e os registros ficam no seu dispositivo. Para usar a oficina sem internet, abra <code>index.html</code> com todos os arquivos na mesma pasta.</p>
+    <a href="#conteudo">Voltar ao início ↑</a>
+  </footer>
+</body>
+</html>

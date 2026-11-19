@@ -355,6 +355,27 @@ editar só as páginas ou os TXT do kit, use `--so-pacote`. Em seguida,
 `node scripts/build-audiovisual.mjs`, `node scripts/validate-audiovisual.mjs`
 e `node scripts/validate-audiovisual-14-browser.cjs`.
 
+### Aula 16 · Render e estreia do microcurta
+
+Abra a [oficina de render](modelos/producao-audiovisual/aula-16/index.html)
+pelo catálogo da UC ou a partir da pasta copiada para o computador. O quiz
+retoma o destino de cada vídeo. O laboratório apresenta quatro arquivos do
+mesmo trecho para comparar resolução, taxa de bits, tamanho e imagem.
+
+As duplas exportam o comercial no editor para projeção e web, com conferência
+no projetor e no celular. A versão vertical depende de área segura planejada
+na captação. O microcurta é renderizado, testado em um player e exibido
+localmente conforme as autorizações. A oficina lê as propriedades básicas das
+mídias no navegador. Cada pessoa demonstra uma ação e explica uma decisão
+até 22h, com acompanhamento docente.
+
+A apresentação, o plano, o relatório e as mídias de reserva estão no pacote
+docente local. Para montar uma cópia estática com a rota estudantil
+`/audiovisual/aula-16/`, rode `node scripts/prepare-design-web-deploy.mjs`.
+É possível gerar novamente os exemplos com
+`python3 scripts/build-audiovisual-16-media.py /caminho/llamigos.webm` e o
+vídeo-fonte indicado em `CREDITOS.txt`.
+
 ### Edição
 
 O percurso principal usa **DaVinci Resolve**. O **CapCut** aparece como
